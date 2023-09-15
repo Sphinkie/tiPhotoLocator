@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.5
+//import QtQml.Models 2.3
 import Qt.labs.folderlistmodel 2.15
 import Qt.labs.platform 1.1
 
@@ -19,32 +20,71 @@ Window {
         id: menuBar
         Menu {
             id: fileMenu
-            title: qsTr("&Dossiers")
-            MenuItem  { text: qsTr("&Ouvrir..."); onTriggered: folderDialog.open()}
-            MenuItem  { text: qsTr("&Recents..."); enabled: false}
+            title: qsTr("Dossiers")
+            MenuItem  { text: qsTr("Ouvrir..."); onTriggered: folderDialog.open() }
+            MenuItem  { text: qsTr("Recents..."); enabled: false}
             MenuSeparator {}
-            MenuItem  { text: qsTr("&Quitter"); onTriggered: Qt.quit()}
+            MenuItem  { text: qsTr("Quitter"); onTriggered: Qt.quit()}
         }
         Menu {
             id: settingsMenu
-            title: qsTr("&Réglages")
+            title: qsTr("Réglages")
             MenuItem  { text: qsTr("Configuration") }
         }
         Menu {
             id:helpMenu
-            title: qsTr("&Aide")
+            title: qsTr("Aide")
             MenuItem  { text: qsTr("A propos"); onTriggered: about.open() }
         }
     }
     // ----------------------------------------------------------------
     FolderDialog {
         id: folderDialog
-        currentFolder: ""
-        // Dossier de départ
+        currentFolder: "file:///C:"
+        // URL du dossier de départ
         //folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
         folder: ""
         onFolderChanged: {
+            console.log(folder);
+            console.log(folderModel.count);
+//            folderModel2.append({ "name": "New York City"});
+//            folderModel2.append({ "name": "Los Angeles"});
+        }
+        onAccepted: {
             folderModel.folder = folder;
+            console.log("Accepted");
+            console.log(folder);
+            console.log(folderModel.count);
+        }
+    }
+    // ----------------------------------------------------------------
+    FolderListModel {
+        // Ce modele est la liste des fichiers du dossier
+        id: folderModel
+        sortCaseSensitive : false
+        showDirs: false
+        nameFilters: ["*.jpg"]
+        folder: ""
+        onDataChanged: {
+               console.log("data changed");}
+        onFolderChanged: {
+            console.log("folder changed");}
+        onCountChanged: {
+            console.log("count changed");
+            console.log(count);
+            for (var i = 0; i < count; )  {
+                console.log(i+": "+get(i,"fileName"));
+                i++
+            }
+        }
+    }
+    ListModel {
+        // Ce modele est la liste des éléments de la listView
+        id: folderModel2
+        ListElement {
+            name: "Paris"
+            localized: "true"
+            lat: 40.730610
         }
     }
     // ----------------------------------------------------------------
@@ -117,15 +157,6 @@ Window {
 
             // https://www.youtube.com/watch?v=ZArpJDRJxcI
 
-            FolderListModel {
-                // Le model est la liste des éléments
-                id: folderModel
-                sortCaseSensitive : false
-                showDirs: false
-                nameFilters: ["*.jpg"]
-                folder: ""
-            }
-
             Component{
                 // le délégué
                 id: listDelegate
@@ -141,10 +172,25 @@ Window {
                 }
             }
 
+            Component{
+                // le délégué
+                id: listDelegate2
+                Text{
+                    readonly property ListView __lv : ListView.view
+                    width: parent.width
+                    text: name + "   " + lat;
+                    font.pixelSize: 16
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: __lv.currentIndex = model.index
+                    }
+                }
+            }
+
             ListView{
                 anchors.fill: parent
-                model: folderModel
-                delegate: listDelegate
+                model: folderModel2
+                delegate: listDelegate2
                 focus: true
                 clip: true   // pour que les items restent à l'interieur de la listview
                 footer: Rectangle{
