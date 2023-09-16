@@ -1,10 +1,12 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.5
-//import QtQml.Models 2.3
+import QtQuick.Controls 2.12
 import Qt.labs.folderlistmodel 2.15
 import Qt.labs.platform 1.1
+
+import QtLocation 5.12
+import QtPositioning 5.12
 
 
 Window {
@@ -15,6 +17,8 @@ Window {
     color: "#f7f7f7"
     title: "tiPhotoLocator"
 
+    // ----------------------------------------------------------------
+    // Menu principal
     // ----------------------------------------------------------------
     MenuBar{
         id: menuBar
@@ -45,15 +49,11 @@ Window {
         //folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
         folder: ""
         onFolderChanged: {
-            console.log(folder);
-            console.log(folderModel.count);
-//            folderModel2.append({ "name": "New York City"});
-//            folderModel2.append({ "name": "Los Angeles"});
+            folderModel.folder = folder;
         }
         onAccepted: {
-            folderModel.folder = folder;
             console.log("Accepted");
-            console.log(folder);
+            console.log(folderModel.folder);
             console.log(folderModel.count);
         }
     }
@@ -65,15 +65,20 @@ Window {
         showDirs: false
         nameFilters: ["*.jpg"]
         folder: ""
-        onDataChanged: {
-               console.log("data changed");}
         onFolderChanged: {
             console.log("folder changed");}
         onCountChanged: {
             console.log("count changed");
+            folderModel2.clear();
             console.log(count);
             for (var i = 0; i < count; )  {
                 console.log(i+": "+get(i,"fileName"));
+                folderModel2.append({
+                                        "name":get(i,"fileName"),
+                                        "url":get(i,"fileUrl")
+                                    });
+                //  folderModel2.append({ "name": "Los Angeles"});
+
                 i++
             }
         }
@@ -81,10 +86,12 @@ Window {
     ListModel {
         // Ce modele est la liste des éléments de la listView
         id: folderModel2
+        // Initialisation des roles
         ListElement {
-            name: "Paris"
-            localized: "true"
-            lat: 40.730610
+            name: "Select your photo folder"
+            url: ""
+            lat: 0
+            longitude: 0
         }
     }
     // ----------------------------------------------------------------
@@ -158,7 +165,8 @@ Window {
             // https://www.youtube.com/watch?v=ZArpJDRJxcI
 
             Component{
-                // le délégué
+                // le délégate pour afficher la FolderListModel dans la ListView
+                // OBSOLETE
                 id: listDelegate
                 Text{
                     readonly property ListView __lv : ListView.view
@@ -173,12 +181,12 @@ Window {
             }
 
             Component{
-                // le délégué
+                // le délégate pour afficher la FolderListModel dans la ListView
                 id: listDelegate2
                 Text{
                     readonly property ListView __lv : ListView.view
                     width: parent.width
-                    text: name + "   " + lat;
+                    text: name;
                     font.pixelSize: 16
                     MouseArea{
                         anchors.fill: parent
@@ -214,6 +222,18 @@ Window {
             currentIndex: bar.currentIndex
             Item {
                 id: mapTab
+                Plugin{
+                    id: mapPlugin
+                    name: "osm"
+                    // parametres optionels
+                    //PluginParameter{ name: "" ; value: ""}
+                }
+                Map{
+                    anchors.fill: parent
+                    plugin: mapPlugin
+                    center: QtPositioning.coordinate(59.91, 10.75) // olso
+                    zoomLevel: 14
+                }
             }
             Item {
                 id: datesTab
