@@ -42,6 +42,8 @@ Window {
         }
     }
     // ----------------------------------------------------------------
+    // Fenetre de dialogue pour slectionner le dossier
+    // ----------------------------------------------------------------
     FolderDialog {
         id: folderDialog
         currentFolder: "file:///C:"
@@ -49,9 +51,11 @@ Window {
         //folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
         folder: ""
         onFolderChanged: {
-            folderModel.folder = folder;
+            //folderModel.folder = folder;
         }
         onAccepted: {
+            // On passe par ici, même si on reselectionne le même folder
+            folderModel.folder = folder;
             console.log("Accepted");
             console.log(folderModel.folder);
             console.log(folderModel.count);
@@ -61,37 +65,34 @@ Window {
     FolderListModel {
         // Ce modele est la liste des fichiers du dossier
         id: folderModel
-        sortCaseSensitive : false
+        sortCaseSensitive: false
         showDirs: false
         nameFilters: ["*.jpg"]
         folder: ""
         onFolderChanged: {
             console.log("folder changed");}
         onCountChanged: {
-            console.log("count changed");
-            folderModel2.clear();
-            console.log(count);
+            // En cas de changement, on met à jour la listModel
+            console.log("FolderListModel count changed:"+count);
+            listModel.clear();
             for (var i = 0; i < count; )  {
                 console.log(i+": "+get(i,"fileName"));
-                folderModel2.append({
-                                        "name":get(i,"fileName"),
-                                        "url":get(i,"fileUrl")
+                listModel.append({   "name":get(i,"fileName"),
+                                      "url":get(i,"fileUrl")
                                     });
-                //  folderModel2.append({ "name": "Los Angeles"});
-
                 i++
             }
         }
     }
     ListModel {
         // Ce modele est la liste des éléments de la listView
-        id: folderModel2
+        id: listModel
         // Initialisation des roles
         ListElement {
             name: "Select your photo folder"
-            url: ""
-            lat: 0
-            longitude: 0
+            fileurl: "file:///C:/Users/ddelorenzo/Pictures/Photos/IMG_20230709_145111.jpg"
+            latitude: 0.0
+            longitude: 0.0
         }
     }
     // ----------------------------------------------------------------
@@ -99,13 +100,41 @@ Window {
     {
         anchors.fill: parent
         anchors.margins: 8
-        rows: 4
+        rows: 5
         columns: 2
 
         // ------------------------------- Ligne 0
+        TextEdit {
+            Layout.row: 0
+            Layout.column: 0
+            id: folderPath
+            readOnly: true
+            //enabled: false
+            text: folderDialog.folder
+        }
+        Button{
+            Layout.row: 0
+            Layout.column: 1
+            id: refreshList
+            text: "Refresh"
+            onClicked: {
+                // On met à jour la listModel
+                console.log("Manual Refresh");
+                listModel.clear();
+                for (var i = 0; i < folderModel.count; )  {
+                    console.log(i+": "+folderModel.get(i,"fileName"));
+                    listModel.append({   "name":folderModel.get(i,"fileName"),
+                                         "url":folderModel.get(i,"fileUrl")
+                                        });
+                    i++
+                }
+            }
+        }
+
+        // ------------------------------- Ligne 1
         GroupBox{
             id: filterBox
-            Layout.row: 0
+            Layout.row: 1
             Layout.column: 0
             Layout.fillWidth: false
             Layout.alignment: Qt.AlignTop
@@ -139,23 +168,23 @@ Window {
 
         TabBar {
             id: bar
-            Layout.row: 0
+            Layout.row: 1
             Layout.column: 1
             Layout.fillWidth: true
+            TabButton {
+                text: qsTr("Preview")
+            }
             TabButton {
                 text: qsTr("Carte")
             }
             TabButton {
                 text: qsTr("Tag Dates")
             }
-            TabButton {
-                text: qsTr("Preview")
-            }
         }
 
-        // --------------------------------- Ligne 1
+        // --------------------------------- Ligne 2
         Frame{  // ou Rectangle
-            Layout.row: 1
+            Layout.row: 2
             Layout.column: 0
             Layout.fillWidth: false
             Layout.fillHeight: true
@@ -163,7 +192,7 @@ Window {
             Layout.preferredWidth: 380
 
             // https://www.youtube.com/watch?v=ZArpJDRJxcI
-
+            /*
             Component{
                 // le délégate pour afficher la FolderListModel dans la ListView
                 // OBSOLETE
@@ -179,9 +208,9 @@ Window {
                     }
                 }
             }
-
+*/
             Component{
-                // le délégate pour afficher la FolderListModel dans la ListView
+                // le délégate pour afficher la ListModel dans la ListView
                 id: listDelegate2
                 Text{
                     readonly property ListView __lv : ListView.view
@@ -190,14 +219,17 @@ Window {
                     font.pixelSize: 16
                     MouseArea{
                         anchors.fill: parent
-                        onClicked: __lv.currentIndex = model.index
+                        onClicked: {
+                            __lv.currentIndex = model.index
+                        }
                     }
                 }
             }
 
             ListView{
+                id: listView
                 anchors.fill: parent
-                model: folderModel2
+                model: listModel
                 delegate: listDelegate2
                 focus: true
                 clip: true   // pour que les items restent à l'interieur de la listview
@@ -216,10 +248,36 @@ Window {
         }
 
         StackLayout {
-            Layout.row: 1
+            Layout.row: 2
             Layout.column: 1
             Layout.fillWidth: true
             currentIndex: bar.currentIndex
+
+            Item {
+                id: previewTab
+                Image {
+                    id: previewImage
+                    readonly property ListView __lv : listView.view
+                    readonly property ListModel __model : listView.model
+                    property int currentItemIndex: -1
+                    width: 640; height: 480
+                    fillMode: Image.PreserveAspectFit
+                    // source: "file:///C:/Users/ddelorenzo/Pictures/Photos/IMG_20230709_145111.jpg"
+                    source: listModel.get(currentItemIndex, "fileurl")
+                    onSourceChanged: {
+                        console.log(currentItemIndex);
+                        console.log(source);
+                    }
+                    Component.onCompleted: {
+                        console.log("onCompleted");
+                        console.log("currentItemIndex:"+currentItemIndex);
+                        console.log(listView.currentIndex);
+                        currentItemIndex = listView.currentIndex
+                        console.log("currentItemIndex:"+currentItemIndex);
+                        console.log(listModel.get(currentItemIndex, "name"));
+                       }
+                }
+            }
             Item {
                 id: mapTab
                 Plugin{
@@ -231,8 +289,8 @@ Window {
                 Map{
                     anchors.fill: parent
                     plugin: mapPlugin
-                    center: QtPositioning.coordinate(59.91, 10.75) // olso
-                    zoomLevel: 14
+                    center: QtPositioning.coordinate(48.85, 2.34) // paris
+                    zoomLevel: 6
                 }
             }
             Item {
@@ -246,38 +304,35 @@ Window {
                     }
                 }
             }
-            Item {
-                id: previewTab
-                Image {
-                    id: previewImage
-                    width: 640; height: 480
-                    fillMode: Image.PreserveAspectFit
-                    source: "file:///C:/Users/ddelorenzo/Pictures/Photos/IMG_20230709_145111.jpg"
-                }
-            }
         }
-        // --------------------------------- Ligne 2
+        // --------------------------------- Ligne 3
         // Imagettes
         Frame{
-            Layout.row: 2
+            Layout.row: 3
             Layout.columnSpan: 2
             Layout.fillWidth: true
             Layout.preferredHeight: 120
 
-            ColumnLayout {
-                /*                Image {
+            ListView {
+                height: 120
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                orientation: Qt.Horizontal
+                delegate:
+                    Image {
                     width: 130
                     height: 100
                     fillMode: Image.PreserveAspectFit
-                    source: "file:///C:/Users/ddelorenzo/Pictures/Photos/IMG_20230709_145111.jpg"
-                }*/
+                    source: modelData // "file:///C:/Users/ddelorenzo/Pictures/Photos/IMG_20230709_145111.jpg"
+                }
             }
         }
 
-        // --------------------------------- Ligne 3
+        // --------------------------------- Ligne 4
         // Barre de boutons en bas
         RowLayout{
-            Layout.row: 3
+            Layout.row: 4
             Layout.columnSpan: 2
             Layout.fillHeight: true
             Layout.fillWidth: true
