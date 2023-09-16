@@ -43,24 +43,22 @@ Window {
     }
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour slectionner le dossier
+    //folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
     // ----------------------------------------------------------------
     FolderDialog {
         id: folderDialog
         currentFolder: "file:///C:"
         // URL du dossier de départ
-        //folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
         folder: ""
-        onFolderChanged: {
-            //folderModel.folder = folder;
-        }
         onAccepted: {
             // On passe par ici, même si on reselectionne le même folder
             folderModel.folder = folder;
             console.log("Accepted");
             console.log(folderModel.folder);
-            console.log(folderModel.count);
         }
     }
+    // ----------------------------------------------------------------
+    // Modèles de donnees
     // ----------------------------------------------------------------
     FolderListModel {
         // Ce modele est la liste des fichiers du dossier
@@ -75,11 +73,12 @@ Window {
             // En cas de changement, on met à jour la listModel
             console.log("FolderListModel count changed:"+count);
             listModel.clear();
+            // TODO : mettre un timer
             for (var i = 0; i < count; )  {
                 console.log(i+": "+get(i,"fileName"));
-                listModel.append({   "name":get(i,"fileName"),
-                                      "url":get(i,"fileUrl")
-                                    });
+                listModel.append({   "name": get(i,"fileName"),
+                                     "imageUrl": get(i,"fileUrl").toString()
+                                 });
                 i++
             }
         }
@@ -89,12 +88,14 @@ Window {
         id: listModel
         // Initialisation des roles
         ListElement {
-            name: "Select your photo folder"
-            fileurl: "file:///C:/Users/ddelorenzo/Pictures/Photos/IMG_20230709_145111.jpg"
+            name: qsTr("Select your photo folder")
+            imageUrl: ""
             latitude: 0.0
             longitude: 0.0
         }
     }
+    // ----------------------------------------------------------------
+    // Page principale
     // ----------------------------------------------------------------
     GridLayout
     {
@@ -116,16 +117,18 @@ Window {
             Layout.row: 0
             Layout.column: 1
             id: refreshList
-            text: "Refresh"
+            text: qsTr("Refresh")
             onClicked: {
                 // On met à jour la listModel
                 console.log("Manual Refresh");
                 listModel.clear();
                 for (var i = 0; i < folderModel.count; )  {
                     console.log(i+": "+folderModel.get(i,"fileName"));
+                    console.log(i+": "+folderModel.get(i,"fileUrl"));
                     listModel.append({   "name":folderModel.get(i,"fileName"),
-                                         "url":folderModel.get(i,"fileUrl")
-                                        });
+                                       "imageUrl":folderModel.get(i,"fileUrl").toString()
+                                     });
+                    // listModel.setProperty(listModel.count-1, "imageUrl", folderModel.get(i,"fileUrl").toString() )
                     i++
                 }
             }
@@ -138,7 +141,7 @@ Window {
             Layout.column: 0
             Layout.fillWidth: false
             Layout.alignment: Qt.AlignTop
-            title: "Filtres:"
+            title: qsTr("Filtres:")
             RowLayout{
                 anchors.fill: parent
                 CheckBox {
@@ -192,35 +195,20 @@ Window {
             Layout.preferredWidth: 380
 
             // https://www.youtube.com/watch?v=ZArpJDRJxcI
-            /*
             Component{
-                // le délégate pour afficher la FolderListModel dans la ListView
-                // OBSOLETE
-                id: listDelegate
-                Text{
-                    readonly property ListView __lv : ListView.view
-                    width: parent.width
-                    text: fileName + "   gps" + "    Bruxelles";
-                    font.pixelSize: 16
-                    MouseArea{
-                        anchors.fill: parent
-                        onClicked: __lv.currentIndex = model.index
-                    }
-                }
-            }
-*/
-            Component{
-                // le délégate pour afficher la ListModel dans la ListView
+                // le delegate pour afficher la ListModel dans la ListView
                 id: listDelegate2
                 Text{
                     readonly property ListView __lv : ListView.view
                     width: parent.width
                     text: name;
                     font.pixelSize: 16
+                    // Gestion du clic sur un item
                     MouseArea{
                         anchors.fill: parent
                         onClicked: {
                             __lv.currentIndex = model.index
+                            previewImage.clickedItem = model.index
                         }
                     }
                 }
@@ -257,25 +245,20 @@ Window {
                 id: previewTab
                 Image {
                     id: previewImage
-                    readonly property ListView __lv : listView.view
-                    readonly property ListModel __model : listView.model
-                    property int currentItemIndex: -1
+                    //readonly property ListView __lv : listView.view
+                    //readonly property ListModel __model : listView.model
+                    //property int currentItemIndex: -1
+                    property int clickedItem: -1
+                    property url imageURl: "qrc:///images/clock.png"
                     width: 640; height: 480
                     fillMode: Image.PreserveAspectFit
-                    // source: "file:///C:/Users/ddelorenzo/Pictures/Photos/IMG_20230709_145111.jpg"
-                    source: listModel.get(currentItemIndex, "fileurl")
-                    onSourceChanged: {
-                        console.log(currentItemIndex);
-                        console.log(source);
+                    source: imageURl
+                    onClickedItemChanged: {
+                        console.log("onClickedItemChanged:"+clickedItem);
+                        console.log(listModel.get(clickedItem).name);
+                        console.log(listModel.get(clickedItem).imageUrl);
+                        imageURl = Qt.resolvedUrl(listModel.get(clickedItem).imageUrl);
                     }
-                    Component.onCompleted: {
-                        console.log("onCompleted");
-                        console.log("currentItemIndex:"+currentItemIndex);
-                        console.log(listView.currentIndex);
-                        currentItemIndex = listView.currentIndex
-                        console.log("currentItemIndex:"+currentItemIndex);
-                        console.log(listModel.get(currentItemIndex, "name"));
-                       }
                 }
             }
             Item {

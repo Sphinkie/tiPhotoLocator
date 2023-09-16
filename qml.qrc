@@ -1,6 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>ShadowButton.qml</file>
+        <file>Components/ShadowButton.qml</file>
+        <file>images/cavehouse.png</file>
+        <file>images/clock.png</file>
+        <file>images/party.png</file>
     </qresource>
 </RCC>
