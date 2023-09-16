@@ -38,12 +38,13 @@ Window {
         Menu {
             id:helpMenu
             title: qsTr("Aide")
+            MenuItem  { text: qsTr("Obtenir une API KEY"); enabled: false }
             MenuItem  { text: qsTr("A propos"); onTriggered: about.open() }
         }
     }
     // ----------------------------------------------------------------
-    // Fenetre de dialogue pour slectionner le dossier
-    //folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
+    // Fenetre de dialogue pour selectionner le dossier
+    // example folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
     // ----------------------------------------------------------------
     FolderDialog {
         id: folderDialog
@@ -89,9 +90,9 @@ Window {
         // Initialisation des roles
         ListElement {
             name: qsTr("Select your photo folder")
-            imageUrl: ""
-            latitude: 0.0
-            longitude: 0.0
+            imageUrl: "qrc:///images/party.png"
+            latitude: 38.980
+            longitude: 1.433
         }
     }
     // ----------------------------------------------------------------
@@ -109,13 +110,16 @@ Window {
             Layout.row: 0
             Layout.column: 0
             id: folderPath
-            readOnly: true
-            //enabled: false
+            //readOnly: true
+            enabled: false
             text: folderDialog.folder
         }
         Button{
+            // TODO: le bouton pourra être supprimé quand on aura mis le timer
             Layout.row: 0
             Layout.column: 1
+            Layout.fillWidth: false
+            Layout.alignment: Qt.AlignRight
             id: refreshList
             text: qsTr("Refresh")
             onClicked: {
@@ -125,45 +129,38 @@ Window {
                 for (var i = 0; i < folderModel.count; )  {
                     console.log(i+": "+folderModel.get(i,"fileName"));
                     console.log(i+": "+folderModel.get(i,"fileUrl"));
-                    listModel.append({   "name":folderModel.get(i,"fileName"),
-                                       "imageUrl":folderModel.get(i,"fileUrl").toString()
+                    listModel.append({ "name":folderModel.get(i,"fileName"),
+                                         "imageUrl":folderModel.get(i,"fileUrl").toString(),
+                                         "latitude": 48.0 + Math.random(),
+                                         "longitude": 2.0 + Math.random()
                                      });
-                    // listModel.setProperty(listModel.count-1, "imageUrl", folderModel.get(i,"fileUrl").toString() )
                     i++
                 }
             }
         }
 
         // ------------------------------- Ligne 1
-        GroupBox{
+        Frame{
             id: filterBox
             Layout.row: 1
             Layout.column: 0
             Layout.fillWidth: false
-            Layout.alignment: Qt.AlignTop
-            title: qsTr("Filtres:")
             RowLayout{
                 anchors.fill: parent
                 CheckBox {
                     id: checkBox1
-                    x: 0
-                    y: 0
                     text: qsTr("sans date")
-                    // Liste des photos sans date
+                    // TODO : hint: "Liste des photos sans date"
                 }
                 CheckBox {
                     id: checkBox2
-                    x: 0
-                    y: 33
                     text: qsTr("sans localisation")
-                    // Liste des photos sans localisation
+                    // TODO : hint: "Liste des photos sans localisation"
                 }
                 CheckBox {
                     id: checkBox3
-                    x: 200
-                    y: 0
                     text: qsTr("subfolders")
-                    // include subfolders
+                    // TODO : hint: "include subfolders"
                     enabled: false
                 }
             }
@@ -175,13 +172,13 @@ Window {
             Layout.column: 1
             Layout.fillWidth: true
             TabButton {
-                text: qsTr("Preview")
+                text: qsTr("PREVIEW")
             }
             TabButton {
-                text: qsTr("Carte")
+                text: qsTr("CARTE")
             }
             TabButton {
-                text: qsTr("Tag Dates")
+                text: qsTr("TAG DATES")
             }
         }
 
@@ -209,6 +206,7 @@ Window {
                         onClicked: {
                             __lv.currentIndex = model.index
                             previewImage.clickedItem = model.index
+                            tabbedPage.selectedItem = model.index
                         }
                     }
                 }
@@ -224,66 +222,117 @@ Window {
                 footer: Rectangle{
                     anchors.left: parent.left
                     anchors.right: parent.right
+                    // Layout.fillWidth: true
                     height: 1
                     color: "darkgrey"
                 }
                 highlight: Rectangle{
-                    anchors.left: parent.left
-                    anchors.right: parent.right
+                    Layout.fillWidth: true
+                    //         anchors.left: parent.left
+                    //         anchors.right: parent.right
                     color: "lightgrey"
                 }
             }
         }
 
         StackLayout {
+            id: tabbedPage
             Layout.row: 2
             Layout.column: 1
-            Layout.fillWidth: true
-            currentIndex: bar.currentIndex
+            //Layout.fillWidth: true
 
+            currentIndex: bar.currentIndex
+            property int selectedItem: -1
+            onSelectedItemChanged: {
+                mapTab.latitude = listModel.get(selectedItem).latitude
+                mapTab.longitude = listModel.get(selectedItem).longitude
+            }
+            // ------------------ PREVIEW TAB --------------------------
             Item {
                 id: previewTab
-                Image {
-                    id: previewImage
-                    //readonly property ListView __lv : listView.view
-                    //readonly property ListModel __model : listView.model
-                    //property int currentItemIndex: -1
-                    property int clickedItem: -1
-                    property url imageURl: "qrc:///images/clock.png"
-                    width: 640; height: 480
-                    fillMode: Image.PreserveAspectFit
-                    source: imageURl
-                    onClickedItemChanged: {
-                        console.log("onClickedItemChanged:"+clickedItem);
-                        console.log(listModel.get(clickedItem).name);
-                        console.log(listModel.get(clickedItem).imageUrl);
-                        imageURl = Qt.resolvedUrl(listModel.get(clickedItem).imageUrl);
+
+                //Layout.fillHeight: true
+                ColumnLayout{
+                    anchors.fill: parent
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Image {
+                        id: previewImage
+                        property int clickedItem: -1
+                        property url imageURl: "qrc:///images/clock.png"   // TODO: mettre une image de l'appareil photo
+                        //Layout.preferredWidth: 480;
+                        //Layout.preferredHeight: 320
+                        //anchors.centerIn: parent
+                        Layout.alignment: Qt.AlignHCenter  // marche pas
+                        fillMode: Image.PreserveAspectFit
+                        source: imageURl
+                        onClickedItemChanged: {
+                            console.log("onClickedItemChanged:"+clickedItem);
+                            console.log(listModel.get(clickedItem).name);
+                            console.log(listModel.get(clickedItem).imageUrl);
+                            imageURl = Qt.resolvedUrl(listModel.get(clickedItem).imageUrl);
+                        }
+                        Component.onCompleted: {
+                            console.log(sourceSize.width)
+                            console.log(sourceSize.height)
+                        }
                     }
+                    Text{
+                        text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
+                    }
+
                 }
             }
+            // ------------------ MAP TAB ------------------------------
             Item {
                 id: mapTab
-                Plugin{
-                    id: mapPlugin
-                    name: "osm"
-                    // parametres optionels
-                    //PluginParameter{ name: "" ; value: ""}
-                }
-                Map{
-                    anchors.fill: parent
-                    plugin: mapPlugin
-                    center: QtPositioning.coordinate(48.85, 2.34) // paris
-                    zoomLevel: 6
-                }
+                property real latitude: 0
+                property real longitude: 0
+
+                //Column{
+                    //spacing: 2
+                    //anchors.top: parent.top
+                    Layout.fillWidth: true
+                    Plugin{
+                        id: mapPlugin
+                        name: "osm"
+                        // parametres optionels
+                        //PluginParameter{ name: "" ; value: ""}
+                    }
+                    Map{
+                        //anchors.fill: parent
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        width: mapTab.width
+                        height: 300
+                        plugin: mapPlugin
+                        center: QtPositioning.coordinate(48.85, 2.34) // paris
+                        zoomLevel: 6
+                    }
+               /*     Text{
+                        anchors.top: parent.top
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        text: "coordinates: " + mapTab.latitude.toString() + "LatN - " + mapTab.longitude.toString() + "longW"
+                    }
+                }*/
             }
+            // ------------------ DATES TAB ----------------------------
             Item {
                 id: datesTab
                 ColumnLayout{
-                    GroupBox{
-                        title: "Tags"
+                           anchors.fill: parent
+                    Rectangle{
+                        //title: "Tags"
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        color: "navajowhite"
                     }
-                    GroupBox{
-                        title: "Trashcan"
+                    Rectangle{
+                        //title: "Trashcan"
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        color: "darkseagreen"
                     }
                 }
             }
@@ -307,7 +356,7 @@ Window {
                     width: 130
                     height: 100
                     fillMode: Image.PreserveAspectFit
-                    source: modelData // "file:///C:/Users/ddelorenzo/Pictures/Photos/IMG_20230709_145111.jpg"
+                    source: modelData
                 }
             }
         }
@@ -348,6 +397,7 @@ Window {
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
         padding: 10
+        // TODO: Mettre en forme
         background: Rectangle {
             width: parent.width
             height: parent.height
@@ -356,8 +406,8 @@ Window {
         contentItem: Text {
             Column{
                 Text { text: qsTr("TiPhotoLocator a été concu en remplacement du freeware GeoSetter.")}
-                Text { text: qsTr("Il permet de placer ses photos sur une carte, et d'éditer des tags exifs.")}
-                Text { text: qsTr("Programme réalisé par David de Lorenzo")}
+                Text { text: qsTr("Il permet de placer ses photos sur une carte, et d'éditer les tags Exif internes à la photo.")}
+                Text { text: qsTr("Programme réalisé par David de Lorenzo.")}
                 Button {
                     text: "Close"
                     onClicked: about.close()
