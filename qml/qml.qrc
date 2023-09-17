@@ -5,5 +5,8 @@
         <file>images/cavehouse.png</file>
         <file>images/clock.png</file>
         <file>images/party.png</file>
+        <file>Dialogs/TiMenuBar.qml</file>
+        <file>Dialogs/TiFolderDialog.qml</file>
+        <file>Components/AboutPopup.qml</file>
     </qresource>
 </RCC>

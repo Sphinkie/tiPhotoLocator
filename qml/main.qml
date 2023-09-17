@@ -8,62 +8,48 @@ import Qt.labs.platform 1.1
 import QtLocation 5.12
 import QtPositioning 5.12
 
+import "./Dialogs"
+import "./Components"
 
 Window {
     id: window
-    width: 1200
-    height: 800
+    // TODO : passer en full screen
+    width: 1200 // controller.window.width
+    height: 800 // controller.window.height
     visible: true
     color: "#f7f7f7"
     title: "tiPhotoLocator"
 
+    // TODO : voir simon pour les tags généraux + police globale
+    /*  Component.onCompleted: {
+        // Center window on startup
+        root.x = (Screen.desktopAvailableWidth / 2) - (width / 2)
+        root.y = (Screen.desktopAvailableHeight / 2) - (height / 2)
+     }
+*/
     // ----------------------------------------------------------------
     // Menu principal
     // ----------------------------------------------------------------
-    MenuBar{
+    TiMenuBar
+    {
+        // anchors.fill: parent.width
         id: menuBar
-        Menu {
-            id: fileMenu
-            title: qsTr("Dossiers")
-            MenuItem  { text: qsTr("Ouvrir..."); onTriggered: folderDialog.open() }
-            MenuItem  { text: qsTr("Recents..."); enabled: false}
-            MenuSeparator {}
-            MenuItem  { text: qsTr("Quitter"); onTriggered: Qt.quit()}
-        }
-        Menu {
-            id: settingsMenu
-            title: qsTr("Réglages")
-            MenuItem  { text: qsTr("Configuration") }
-        }
-        Menu {
-            id:helpMenu
-            title: qsTr("Aide")
-            MenuItem  { text: qsTr("Obtenir une API KEY"); enabled: false }
-            MenuItem  { text: qsTr("A propos"); onTriggered: about.open() }
-        }
     }
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier
-    // example folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
     // ----------------------------------------------------------------
-    FolderDialog {
-        id: folderDialog
-        currentFolder: "file:///C:"
-        // URL du dossier de départ
-        folder: ""
-        onAccepted: {
-            // On passe par ici, même si on reselectionne le même folder
-            folderModel.folder = folder;
-            console.log("Accepted");
-            console.log(folderModel.folder);
-        }
-    }
+    TiFolderDialog { id: folderDialog }
+    // ----------------------------------------------------------------
+    // "About..." window
+    // ----------------------------------------------------------------
+    AboutPopup { id: about }
+
     // ----------------------------------------------------------------
     // Modèles de donnees
+    // Ce modele contient la liste des fichiers du dossier
     // ----------------------------------------------------------------
     FolderListModel {
-        // Ce modele est la liste des fichiers du dossier
-        id: folderModel
+        id: folderListModel
         sortCaseSensitive: false
         showDirs: false
         nameFilters: ["*.jpg"]
@@ -84,8 +70,11 @@ Window {
             }
         }
     }
+    // ----------------------------------------------------------------
+    // Modèles de donnees
+    // Ce modele contient la liste des éléments de la listView
+    // ----------------------------------------------------------------
     ListModel {
-        // Ce modele est la liste des éléments de la listView
         id: listModel
         // Initialisation des roles
         ListElement {
@@ -95,6 +84,7 @@ Window {
             longitude: 1.433
         }
     }
+
     // ----------------------------------------------------------------
     // Page principale
     // ----------------------------------------------------------------
@@ -126,11 +116,11 @@ Window {
                 // On met à jour la listModel
                 console.log("Manual Refresh");
                 listModel.clear();
-                for (var i = 0; i < folderModel.count; )  {
-                    console.log(i+": "+folderModel.get(i,"fileName"));
-                    console.log(i+": "+folderModel.get(i,"fileUrl"));
-                    listModel.append({ "name":folderModel.get(i,"fileName"),
-                                         "imageUrl":folderModel.get(i,"fileUrl").toString(),
+                for (var i = 0; i < folderListModel.count; )  {
+                    console.log(i+": "+folderListModel.get(i,"fileName"));
+                    console.log(i+": "+folderListModel.get(i,"fileUrl"));
+                    listModel.append({ "name":folderListModel.get(i,"fileName"),
+                                         "imageUrl":folderListModel.get(i,"fileUrl").toString(),
                                          "latitude": 48.0 + Math.random(),
                                          "longitude": 2.0 + Math.random()
                                      });
@@ -240,7 +230,6 @@ Window {
             Layout.row: 2
             Layout.column: 1
             //Layout.fillWidth: true
-
             currentIndex: bar.currentIndex
             property int selectedItem: -1
             onSelectedItemChanged: {
@@ -248,94 +237,89 @@ Window {
                 mapTab.longitude = listModel.get(selectedItem).longitude
             }
             // ------------------ PREVIEW TAB --------------------------
-            Item {
+            ColumnLayout {
                 id: previewTab
-
+                anchors.fill: parent
+                //Layout.fillWidth: true
                 //Layout.fillHeight: true
-                ColumnLayout{
-                    anchors.fill: parent
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    Image {
-                        id: previewImage
-                        property int clickedItem: -1
-                        property url imageURl: "qrc:///images/clock.png"   // TODO: mettre une image de l'appareil photo
-                        //Layout.preferredWidth: 480;
-                        //Layout.preferredHeight: 320
-                        //anchors.centerIn: parent
-                        Layout.alignment: Qt.AlignHCenter  // marche pas
-                        fillMode: Image.PreserveAspectFit
-                        source: imageURl
-                        onClickedItemChanged: {
-                            console.log("onClickedItemChanged:"+clickedItem);
-                            console.log(listModel.get(clickedItem).name);
-                            console.log(listModel.get(clickedItem).imageUrl);
-                            imageURl = Qt.resolvedUrl(listModel.get(clickedItem).imageUrl);
-                        }
-                        Component.onCompleted: {
-                            console.log(sourceSize.width)
-                            console.log(sourceSize.height)
-                        }
+                Layout.alignment: Qt.AlignHCenter
+                Image {
+                    id: previewImage
+                    property int clickedItem: -1
+                    property url imageURl: "qrc:///images/clock.png"   // TODO: mettre une image de l'appareil photo
+                    Layout.preferredWidth: 600
+                    Layout.preferredHeight: 600
+                    //Layout.implicitWidth: 800
+                    //Layout.implicitHeight: 800
+                    //Layout.alignment: Qt.AlignHCenter
+                    fillMode: Image.PreserveAspectFit
+                    source: imageURl
+                    onClickedItemChanged: {
+                        console.log("onClickedItemChanged:"+clickedItem);
+                        console.log(listModel.get(clickedItem).name);
+                        console.log(listModel.get(clickedItem).imageUrl);
+                        imageURl = Qt.resolvedUrl(listModel.get(clickedItem).imageUrl);
                     }
-                    Text{
-                        text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
-                    }
-
+                }
+                Text{
+                    text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
+                    Layout.alignment: Qt.AlignHCenter
                 }
             }
+
             // ------------------ MAP TAB ------------------------------
-            Item {
+            ColumnLayout {
                 id: mapTab
+                anchors.fill: parent
                 property real latitude: 0
                 property real longitude: 0
-
-                //Column{
-                    //spacing: 2
-                    //anchors.top: parent.top
+                spacing: 8
+                Layout.alignment: Qt.AlignHCenter
+                // Layout.fillWidth: true
+                Plugin{
+                    id: mapPlugin
+                    name: "osm"
+                    // parametres optionels
+                    //PluginParameter{ name: "" ; value: ""}
+                }
+                Map{
                     Layout.fillWidth: true
-                    Plugin{
-                        id: mapPlugin
-                        name: "osm"
-                        // parametres optionels
-                        //PluginParameter{ name: "" ; value: ""}
-                    }
-                    Map{
-                        //anchors.fill: parent
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        width: mapTab.width
-                        height: 300
-                        plugin: mapPlugin
-                        center: QtPositioning.coordinate(48.85, 2.34) // paris
-                        zoomLevel: 6
-                    }
-               /*     Text{
-                        anchors.top: parent.top
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        text: "coordinates: " + mapTab.latitude.toString() + "LatN - " + mapTab.longitude.toString() + "longW"
-                    }
-                }*/
+                    Layout.fillHeight: true
+                    plugin: mapPlugin
+                    center: QtPositioning.coordinate(48.85, 2.34) // paris
+                    zoomLevel: 6
+                }
+                Text{
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignRight
+                    text: "coordinates: " + mapTab.latitude.toString() + "LatN - " + mapTab.longitude.toString() + "longW"
+                }
             }
+
             // ------------------ DATES TAB ----------------------------
-            Item {
+            ColumnLayout {
                 id: datesTab
-                ColumnLayout{
-                           anchors.fill: parent
+                    anchors.fill: parent
+                    spacing: 8
+                    Text{
+                        Layout.alignment: Qt.AlignLeft
+                        text: "Tags:"
+                    }
                     Rectangle{
-                        //title: "Tags"
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         color: "navajowhite"
                     }
+                    Text{
+                        Layout.alignment: Qt.AlignLeft
+                        text: "Trashcan:"
+                    }
                     Rectangle{
-                        //title: "Trashcan"
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        color: "darkseagreen"
+                        color: "navajowhite"
                     }
                 }
-            }
         }
         // --------------------------------- Ligne 3
         // Imagettes
@@ -366,10 +350,10 @@ Window {
         RowLayout{
             Layout.row: 4
             Layout.columnSpan: 2
-            Layout.fillHeight: true
+            //Layout.fillHeight: true
             Layout.fillWidth: true
+            Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
             spacing: 20
-            //alignment: left
             CheckBox {
                 id: checkBox
                 text: qsTr("Générer backups")
@@ -377,41 +361,12 @@ Window {
             Button {
                 id: button1
                 text: qsTr("Enregistrer")
-                //onPressed: folderDialog.open()
+                // TODO : save the modified pictures
             }
             Button {
                 id: button
                 text: qsTr("Quitter")
                 onPressed: Qt.quit()
-            }
-        }
-    }
-
-    // ----------------------------------------------------------------
-    Popup {
-        id: about
-        anchors.centerIn: Overlay.overlay
-        width: 200
-        height: 300
-        modal: true
-        focus: true
-        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
-        padding: 10
-        // TODO: Mettre en forme
-        background: Rectangle {
-            width: parent.width
-            height: parent.height
-            color: "white"
-        }
-        contentItem: Text {
-            Column{
-                Text { text: qsTr("TiPhotoLocator a été concu en remplacement du freeware GeoSetter.")}
-                Text { text: qsTr("Il permet de placer ses photos sur une carte, et d'éditer les tags Exif internes à la photo.")}
-                Text { text: qsTr("Programme réalisé par David de Lorenzo.")}
-                Button {
-                    text: "Close"
-                    onClicked: about.close()
-                }
             }
         }
     }
