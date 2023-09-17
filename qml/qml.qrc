@@ -2,11 +2,13 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Components/ShadowButton.qml</file>
-        <file>images/cavehouse.png</file>
-        <file>images/clock.png</file>
-        <file>images/party.png</file>
         <file>Dialogs/TiMenuBar.qml</file>
         <file>Dialogs/TiFolderDialog.qml</file>
         <file>Components/AboutPopup.qml</file>
+        <file>Images/mappin.png</file>
+        <file>Images/canon.png</file>
+        <file>Images/kodak.png</file>
+        <file>Images/avatar.jpg</file>
+        <file>Images/party.png</file>
     </qresource>
 </RCC>

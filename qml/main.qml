@@ -79,7 +79,7 @@ Window {
         // Initialisation des roles
         ListElement {
             name: qsTr("Select your photo folder")
-            imageUrl: "qrc:///images/party.png"
+            imageUrl: "qrc:///Images/party.png"
             latitude: 38.980
             longitude: 1.433
         }
@@ -246,11 +246,12 @@ Window {
                 Image {
                     id: previewImage
                     property int clickedItem: -1
-                    property url imageURl: "qrc:///images/clock.png"   // TODO: mettre une image de l'appareil photo
+                    property url imageURl: "qrc:///Images/kodak.png"
                     Layout.preferredWidth: 600
                     Layout.preferredHeight: 600
                     //Layout.implicitWidth: 800
                     //Layout.implicitHeight: 800
+                    // TODO: limiter la taille de l'image affichée à la taille du fichier (pas de upscale)
                     //Layout.alignment: Qt.AlignHCenter
                     fillMode: Image.PreserveAspectFit
                     source: imageURl
@@ -271,8 +272,8 @@ Window {
             ColumnLayout {
                 id: mapTab
                 anchors.fill: parent
-                property real latitude: 0
-                property real longitude: 0
+                property real latitude: 48.85  // paris
+                property real longitude: 2.34
                 spacing: 8
                 Layout.alignment: Qt.AlignHCenter
                 // Layout.fillWidth: true
@@ -286,8 +287,24 @@ Window {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     plugin: mapPlugin
-                    center: QtPositioning.coordinate(48.85, 2.34) // paris
+                    center: QtPositioning.coordinate(latitude, longitude) // (48.85, 2.34)
                     zoomLevel: 6
+
+                    MapItemView {
+                        model: listModel
+                        delegate: MapQuickItem {
+                            // coordinate: place.location.coordinate
+                            // Attention: comme les noms sont les mêmes, il prend les roles du MODEL (et pas les propriétés !)
+                            coordinate: QtPositioning.coordinate(latitude, longitude)
+                            anchorPoint.x: image.width * 0.5
+                            anchorPoint.y: image.height
+
+                            sourceItem: Column {
+                                Image { id: image; source: "qrc:///Images/mappin.png" ; height: 48; width: 48}
+                                Text { text: "selected"; font.bold: true }
+                            }
+                        }
+                    }
                 }
                 Text{
                     Layout.fillWidth: true
@@ -299,27 +316,27 @@ Window {
             // ------------------ DATES TAB ----------------------------
             ColumnLayout {
                 id: datesTab
-                    anchors.fill: parent
-                    spacing: 8
-                    Text{
-                        Layout.alignment: Qt.AlignLeft
-                        text: "Tags:"
-                    }
-                    Rectangle{
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        color: "navajowhite"
-                    }
-                    Text{
-                        Layout.alignment: Qt.AlignLeft
-                        text: "Trashcan:"
-                    }
-                    Rectangle{
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        color: "navajowhite"
-                    }
+                anchors.fill: parent
+                spacing: 8
+                Text{
+                    Layout.alignment: Qt.AlignLeft
+                    text: "Tags:"
                 }
+                Rectangle{
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    color: "navajowhite"
+                }
+                Text{
+                    Layout.alignment: Qt.AlignLeft
+                    text: "Trashcan:"
+                }
+                Rectangle{
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    color: "navajowhite"
+                }
+            }
         }
         // --------------------------------- Ligne 3
         // Imagettes
