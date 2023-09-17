@@ -13,20 +13,13 @@ import "./Components"
 
 Window {
     id: window
-    // TODO : passer en full screen
-    width: 1200 // controller.window.width
-    height: 800 // controller.window.height
+    visibility: "Maximized"
+    width: 1200
+    height: 800
     visible: true
     color: "#f7f7f7"
     title: "tiPhotoLocator"
 
-    // TODO : voir simon pour les tags généraux + police globale
-    /*  Component.onCompleted: {
-        // Center window on startup
-        root.x = (Screen.desktopAvailableWidth / 2) - (width / 2)
-        root.y = (Screen.desktopAvailableHeight / 2) - (height / 2)
-     }
-*/
     // ----------------------------------------------------------------
     // Menu principal
     // ----------------------------------------------------------------
@@ -82,6 +75,20 @@ Window {
             imageUrl: "qrc:///Images/party.png"
             latitude: 38.980
             longitude: 1.433
+        }
+    }
+    // ----------------------------------------------------------------
+    // Modèles de donnees
+    // Ce modele contient la liste des éléments à afficher sur la map
+    // ----------------------------------------------------------------
+    ListModel {
+        id: mappinModel
+        // Initialisation des roles
+        ListElement {
+            name: ""
+            latitude: 0.0
+            longitude: 0.0
+            color: "red"
         }
     }
 
@@ -184,7 +191,7 @@ Window {
             // https://www.youtube.com/watch?v=ZArpJDRJxcI
             Component{
                 // le delegate pour afficher la ListModel dans la ListView
-                id: listDelegate2
+                id: listDelegate
                 Text{
                     readonly property ListView __lv : ListView.view
                     width: parent.width
@@ -206,7 +213,7 @@ Window {
                 id: listView
                 anchors.fill: parent
                 model: listModel
-                delegate: listDelegate2
+                delegate: listDelegate
                 focus: true
                 clip: true   // pour que les items restent à l'interieur de la listview
                 footer: Rectangle{
@@ -231,28 +238,31 @@ Window {
             Layout.column: 1
             //Layout.fillWidth: true
             currentIndex: bar.currentIndex
-            property int selectedItem: -1
+            property int selectedItem: -1   // Image sélectionnée dans la ListView
             onSelectedItemChanged: {
-                mapTab.latitude = listModel.get(selectedItem).latitude
-                mapTab.longitude = listModel.get(selectedItem).longitude
+                mapTab.pLatitude = listModel.get(selectedItem).latitude
+                mapTab.pLongitude = listModel.get(selectedItem).longitude
+                // On ajoute l'image sélectionnée aux pins à afficher sur la carte
+                mappinModel.append({"name": listModel.get(selectedItem).name,
+                                       "latitude": mapTab.pLatitude,
+                                       "longitude": mapTab.pLongitude})
             }
             // ------------------ PREVIEW TAB --------------------------
             ColumnLayout {
                 id: previewTab
-                anchors.fill: parent
+                //anchors.fill: parent
                 //Layout.fillWidth: true
                 //Layout.fillHeight: true
-                Layout.alignment: Qt.AlignHCenter
+                //Layout.alignment: Qt.AlignHCenter
+
                 Image {
                     id: previewImage
+                    Layout.alignment: Qt.AlignHCenter
                     property int clickedItem: -1
                     property url imageURl: "qrc:///Images/kodak.png"
                     Layout.preferredWidth: 600
                     Layout.preferredHeight: 600
-                    //Layout.implicitWidth: 800
-                    //Layout.implicitHeight: 800
                     // TODO: limiter la taille de l'image affichée à la taille du fichier (pas de upscale)
-                    //Layout.alignment: Qt.AlignHCenter
                     fillMode: Image.PreserveAspectFit
                     source: imageURl
                     onClickedItemChanged: {
@@ -264,7 +274,7 @@ Window {
                 }
                 Text{
                     text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
-                    Layout.alignment: Qt.AlignHCenter
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
                 }
             }
 
@@ -272,44 +282,57 @@ Window {
             ColumnLayout {
                 id: mapTab
                 anchors.fill: parent
-                property real latitude: 48.85  // paris
-                property real longitude: 2.34
+                // Les coordonnées du point sélectionné
+                property real pLatitude: 48.85  // paris
+                property real pLongitude: 2.34
                 spacing: 8
                 Layout.alignment: Qt.AlignHCenter
                 // Layout.fillWidth: true
+                // Si les coords changent (selection d'une autre photo), on recentre la carte
+                onPLatitudeChanged: {
+                    mapView.center = QtPositioning.coordinate(pLatitude, pLongitude)
+                }
+                CheckBox {
+                    id: showAll_box
+                    text: qsTr("Show All")
+                    // TODO : afficher tous les photos du dossier
+                }
                 Plugin{
                     id: mapPlugin
                     name: "osm"
                     // parametres optionels
                     //PluginParameter{ name: "" ; value: ""}
+                    // TODO : ajouter la KEY API
                 }
                 Map{
+                    id: mapView
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     plugin: mapPlugin
-                    center: QtPositioning.coordinate(latitude, longitude) // (48.85, 2.34)
+                    center: QtPositioning.coordinate(pLatitude, pLongitude)
                     zoomLevel: 6
 
                     MapItemView {
-                        model: listModel
+                        model: mappinModel
                         delegate: MapQuickItem {
-                            // coordinate: place.location.coordinate
-                            // Attention: comme les noms sont les mêmes, il prend les roles du MODEL (et pas les propriétés !)
+                            // Attention: le Delegate utilise les infos du MODEL (et pas les propriétés du parent!)
                             coordinate: QtPositioning.coordinate(latitude, longitude)
-                            anchorPoint.x: image.width * 0.5
-                            anchorPoint.y: image.height
-
+                            // Point d'ancrage de l'icone
+                            anchorPoint.x: markerIcon.width * 0.5
+                            anchorPoint.y: markerIcon.height
                             sourceItem: Column {
-                                Image { id: image; source: "qrc:///Images/mappin.png" ; height: 48; width: 48}
-                                Text { text: "selected"; font.bold: true }
+                                Image { id: markerIcon; source: "qrc:///Images/mappin-red.png"; height: 48; width: 48 }
+                                Text { text: name; font.bold: true }
                             }
+
                         }
                     }
+
                 }
                 Text{
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignRight
-                    text: "coordinates: " + mapTab.latitude.toString() + "LatN - " + mapTab.longitude.toString() + "longW"
+                    text: "Coordinates: " + mapTab.latitude.toString() + " [LatN} - " + mapTab.longitude.toString() + " [longW}"
                 }
             }
 
