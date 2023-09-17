@@ -8,7 +8,6 @@
         <file>Images/canon.png</file>
         <file>Images/kodak.png</file>
         <file>Images/avatar.jpg</file>
-        <file>Images/party.png</file>
         <file>qtquickcontrols2.conf</file>
         <file>Images/pin-green.png</file>
         <file>Images/pin-yellow.png</file>
@@ -16,5 +15,6 @@
         <file>Images/pin-red.png</file>
         <file>Images/mappin-yellow.png</file>
         <file>Images/mappin-green.png</file>
+        <file>Images/ibiza.png</file>
     </qresource>
 </RCC>

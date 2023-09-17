@@ -1,0 +1,116 @@
+# Docs
+
+## QML tutorials
+
+[7. Model-View-Delegate Qt5 Book](https://qmlbook.github.io/ch07-modelview/modelview.html)
+
+[QML designer in Qt Creator tutorial - April 2023 - eefbfcde - YouTube](https://www.youtube.com/watch?v=ePcJ2lbyVKs)
+
+[QML - Tutoriel 3 - Les attributs - YouTube](https://www.youtube.com/watch?v=tDSVlrsQJU0)
+
+[DMC Info - Resizing UIs with QML layouts](https://www.dmcinfo.com/latest-thinking/blog/id/10393/resizing-uis-with-qml-layouts)
+
+### KDAB Academy (Youtube):
+
+[Introduction to Qt / QML (Part 01) - Introduction to Qt Quick](https://www.youtube.com/watch?v=JxyTkXLbcV4)
+
+[Introduction to Qt / QML (Part 19) - Sizing components](https://www.youtube.com/watch?v=Lt-8fYWOVx8)
+
+[Introduction to Qt / QML (Part 30) - Customizing ListView](https://www.youtube.com/watch?v=ZArpJDRJxcI)
+
+[Introduction to Qt / QML (Part 37) - Qt Quick Layouts](https://www.youtube.com/watch?v=FwzQQ6YPlxE)
+
+### Qt Docs
+
+[QML Basic Types | Qt QML 5.15.15](https://doc.qt.io/qt-5/qtqml-typesystem-basictypes.html)
+
+[ListModel QML Type | Qt 5.15](https://doc.qt.io/qt-5/qml-qtqml-models-listmodel.html)
+
+[ListView QML Type | Qt Quick 6.5.2](https://doc.qt.io/qt-6/qml-qtquick-listview.html)
+
+[Qt Quick Layouts Overview | Qt Quick 5.15.1](https://qthub.com/static/doc/qt5/qtquick/qtquicklayouts-overview.html#)
+
+[Layout QML Type | Qt Quick 5.15.15](https://doc.qt.io/qt-5/qml-qtquick-layouts-layout.html#details)
+
+2 types of menuBar:
+
+[MenuBar QML Type | Qt Quick Controls 2 5.10](https://doc.qt.io/archives/qt-5.10/qml-qtquick-controls2-menubar.html)
+
+[MenuBar QML Type | Qt Labs Platform 5.15.15](https://doc.qt.io/qt-5/qml-qt-labs-platform-menubar.html)
+
+### Developper.com
+
+[Introduction au langage QML](https://qt.developpez.com/doc/4.7/qdeclarativeintroduction/)
+
+[Ecrire des composants QML : propriétés, méthodes et signaux](https://qt.developpez.com/doc/4.7/qml-extending-types/)
+
+[QExifImageHeader Class Reference](https://qt.developpez.com/doc/qtextended4.4/qexifimageheader/)
+
+## Qt Location
+
+[Places Map (QML) | Qt Location 5.7](https://stuff.mit.edu/afs/athena/software/texmaker_v5.0.2/qt57/doc/qtlocation/qtlocation-places-map-example.html)
+
+## EXIF Librairies
+
+Il existe deux standards concurrents pour la création, l’affichage et la  modification de métadonnées dans les fichiers d’images. Il y a d’un côté les métadonnées [EXIF](https://www.ionos.fr/digitalguide/sites-internet/web-design/que-sont-les-donnees-exif/) qui compilent les caractéristiques techniques des images comme le modèle de l’appareil photo, le temps de pose ou la résolution et de l’autre, les  données **IPTC** qui compilent les données de contenu comme la localisation, l’avis de droit d’auteur ou les données de contact. 
+
+Les données **EXIF** sont générées automatiquement lors de la création d’un fichier JPG. Les données **IPTC** en revanche doivent être entrées ultérieurement par l’utilisateur dans les métadonnées.
+
+* **Exiv2**
+  
+  * EXIF and IPTC
+  
+  * Nécessite Expat et Zlib
+  
+  * [Exiv2 - Image metadata library and tools](https://exiv2.org/getting-started.html)
+  
+  * [Success: sharing the process of compiling Exiv2 on Qt](https://dev.exiv2.org/boards/3/topics/1259)
+
+* **QExifImageHeader** : semble obsolète depuis 2009
+  
+  * [Read exif metadata of images in Qt - Stack Overflow](https://stackoverflow.com/questions/15128656/read-exif-metadata-of-images-in-qt)
+
+* **EasyExif**
+  
+  * Fast and easy to use. 2 files to include only. Third-party dependency free.
+  
+  * EXIF only (no IPTC)
+  
+  * [GitHub - mayanklahiri/easyexif: Tiny C++ EXIF parsing library](https://github.com/mayanklahiri/easyexif)
+
+* **ArcGIS**
+  
+  * EXIF only
+  
+  * https://developers.arcgis.com/appstudio/api-reference/qml-arcgis-appframework-exifinfo#details
+
+* **Tiny Exif**
+  
+  * [GitHub - cdcseacave/TinyEXIF: Tiny C++ EXIF and XMP parsing library](https://github.com/cdcseacave/TinyEXIF)
+  
+  * EXIF et XMP (adobe)
+  
+  * Pour la partie EXIF, c'est le même code que EasyExif
+
+* **Lib IPTC data** 
+  
+  * https://libiptcdata.sourceforge.net/
+  * Librairie en C  de 2009.
+
+* **Exif Tools**
+  
+  * ExifTool is a platform-independent Perl library plus a [command-line application](https://exiftool.org/exiftool_pod.html) for reading, writing and editing meta information.
+  
+  * https://exiftool.org/
+  
+  * L'idée avec ExifTools n'est pas de l'incorporer dans le code (en tant que librairie) mais d'appeler la command line.
+    
+    
+
+### IPTC metadata
+
+[Guide to Photo Metadata Fields &#8211; CARL SEIBERT SOLUTIONS](https://www.carlseibert.com/guide-iptc-photo-metadata-fields/)
+
+## Cousin projects
+
+https://github.com/Simon-12/tidy-images/blob/main/app/src/main.cpp

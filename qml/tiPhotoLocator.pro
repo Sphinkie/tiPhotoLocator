@@ -27,5 +27,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     images/cavehouse.png \
-    images/clock.png \
-    images/party.png
+    images/clock.png

@@ -3,7 +3,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
 
 // ----------------------------------------------------------------
-// Modal popup for the "About..." windows
+// Modal popup for the "About..." window
 // ----------------------------------------------------------------
 Popup {
     anchors.centerIn: Overlay.overlay
@@ -20,10 +20,14 @@ Popup {
         color: "white"
     }
     contentItem: Text {
-        Column{
-            Text { text: qsTr("TiPhotoLocator a été concu en remplacement du freeware GeoSetter.")}
-            Text { text: qsTr("Il permet de placer ses photos sur une carte, et d'éditer les tags Exif internes à la photo.")}
+        ColumnLayout{
+            anchors.fill: parent
+            Text { text: qsTr("TiPhotoLocator permet de placer ses photos sur une carte, et d'éditer les tags Exif internes à la photo.")}
+            Text { text: qsTr("TiPhotoLocator est gratuit et sans publicité.")}
             Text { text: qsTr("Programme réalisé par David de Lorenzo.")}
+            Text { text: "\n" + qsTr("Credits:")}
+            Text { text: qsTr("- Le freeware GeoSetter pour l'idée initiale.")}
+            Text { text: qsTr("- la librairie Exiv2 pour la gestion des données EXIF.")}
             Button {
                 text: "Close"
                 onClicked: about.close()
