@@ -37,7 +37,7 @@ Window {
         id: folderListModel
         sortCaseSensitive: false
         showDirs: false
-        nameFilters: ["*.jpg"]
+        nameFilters: ["*.jpg", "*.JPG"]
         folder: ""
         onFolderChanged: {
             console.log("folder changed");}
@@ -65,8 +65,11 @@ Window {
         ListElement {
             name: qsTr("Select your photo folder")
             imageUrl: "qrc:///Images/ibiza.png"
-            latitude: 38.980
-            longitude: 1.433
+            isDirty: false      // true if one of the following fields has been modified
+            latitude: 38.980    // GPS coordinates
+            longitude: 1.433    // (Ibiza)
+            hasGPS: false       // has GPS coordinates
+            nearSelected: false // inside the radius of nearby photos
         }
     }
     // ----------------------------------------------------------------
@@ -131,7 +134,8 @@ Window {
                     listModel.append({ "name":folderListModel.get(i,"fileName"),
                                          "imageUrl":folderListModel.get(i,"fileUrl").toString(),
                                          "latitude": 48.0 + Math.random(),
-                                         "longitude": 2.0 + Math.random()
+                                         "longitude": 2.0 + Math.random(),
+                                         "isDirty": folderListModel.get(i,"fileName")==="Salonique.jpg" ? true : false
                                      });
                     i++
                 }
@@ -194,17 +198,24 @@ Window {
                 // le delegate pour afficher la ListModel dans la ListView
                 id: listDelegate
                 Text{
+                    // Avec les required properties, on indique qu'il faut utiliser les roles du modèle
+                    required property int index
+                    required property string name
+                    required property string isDirty
                     readonly property ListView __lv : ListView.view
                     width: parent.width
                     text: name;
                     font.pixelSize: 16
+                    //visible: isDirty ? false : true
+                    color: isDirty===true ? "red" : "blue"
                     // Gestion du clic sur un item
                     MouseArea{
                         anchors.fill: parent
                         onClicked: {
-                            __lv.currentIndex = model.index
-                            previewImage.clickedItem = model.index
-                            tabbedPage.selectedItem = model.index
+                            __lv.currentIndex = index
+                            previewImage.clickedItem = index
+                            tabbedPage.selectedItem = index
+                            isDirty = true
                         }
                     }
                 }
@@ -262,13 +273,15 @@ Window {
                     property url imageURl: "qrc:///Images/kodak.png"
                     Layout.preferredWidth: 600
                     Layout.preferredHeight: 600
-                    // TODO: limiter la taille de l'image affichée à la taille du fichier (pas de upscale)
+                    // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
+                    Layout.maximumHeight: sourceSize.height
+                    Layout.maximumWidth: sourceSize.width
                     fillMode: Image.PreserveAspectFit
                     source: imageURl
                     onClickedItemChanged: {
-                        console.log("onClickedItemChanged:"+clickedItem);
-                        console.log(listModel.get(clickedItem).name);
-                        console.log(listModel.get(clickedItem).imageUrl);
+                        // console.log("onClickedItemChanged:"+clickedItem);
+                        // console.log(listModel.get(clickedItem).name);
+                        // console.log(listModel.get(clickedItem).imageUrl);
                         imageURl = Qt.resolvedUrl(listModel.get(clickedItem).imageUrl);
                     }
                 }
