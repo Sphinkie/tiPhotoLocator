@@ -21,14 +21,6 @@ Window {
     title: "tiPhotoLocator"
 
     // ----------------------------------------------------------------
-    // Menu principal
-    // ----------------------------------------------------------------
-    TiMenuBar
-    {
-        // anchors.fill: parent.width
-        id: menuBar
-    }
-    // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier
     // ----------------------------------------------------------------
     TiFolderDialog { id: folderDialog }
@@ -72,7 +64,7 @@ Window {
         // Initialisation des roles
         ListElement {
             name: qsTr("Select your photo folder")
-            imageUrl: "qrc:///Images/party.png"
+            imageUrl: "qrc:///Images/ibiza.png"
             latitude: 38.980
             longitude: 1.433
         }
@@ -99,21 +91,31 @@ Window {
     {
         anchors.fill: parent
         anchors.margins: 8
-        rows: 5
+        rows: 6
         columns: 2
 
-        // ------------------------------- Ligne 0
-        TextEdit {
+        // --------------------------------- Ligne 0
+        // Menu principal
+        TiMenuBar {
+            // anchors.fill: parent.width
+            id: menuBar
             Layout.row: 0
+            Layout.column: 0
+            Layout.columnSpan: 2
+        }
+
+        // --------------------------------- Ligne 1
+        TextEdit {
+            Layout.row: 1
             Layout.column: 0
             id: folderPath
             //readOnly: true
             enabled: false
             text: folderDialog.folder
         }
-        Button{
+        Button {
             // TODO: le bouton pourra être supprimé quand on aura mis le timer
-            Layout.row: 0
+            Layout.row: 1
             Layout.column: 1
             Layout.fillWidth: false
             Layout.alignment: Qt.AlignRight
@@ -136,10 +138,10 @@ Window {
             }
         }
 
-        // ------------------------------- Ligne 1
-        Frame{
+        // --------------------------------- Ligne 2
+        Frame {
             id: filterBox
-            Layout.row: 1
+            Layout.row: 2
             Layout.column: 0
             Layout.fillWidth: false
             RowLayout{
@@ -162,10 +164,9 @@ Window {
                 }
             }
         }
-
         TabBar {
             id: bar
-            Layout.row: 1
+            Layout.row: 2
             Layout.column: 1
             Layout.fillWidth: true
             TabButton {
@@ -179,9 +180,9 @@ Window {
             }
         }
 
-        // --------------------------------- Ligne 2
-        Frame{  // ou Rectangle
-            Layout.row: 2
+        // --------------------------------- Ligne 3
+        Frame {  // ou Rectangle
+            Layout.row: 3
             Layout.column: 0
             Layout.fillWidth: false
             Layout.fillHeight: true
@@ -231,10 +232,9 @@ Window {
                 }
             }
         }
-
         StackLayout {
             id: tabbedPage
-            Layout.row: 2
+            Layout.row: 3
             Layout.column: 1
             //Layout.fillWidth: true
             currentIndex: bar.currentIndex
@@ -309,7 +309,7 @@ Window {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     plugin: mapPlugin
-                    center: QtPositioning.coordinate(pLatitude, pLongitude)
+                    center: QtPositioning.coordinate(parent.pLatitude, parent.pLongitude)
                     zoomLevel: 6
 
                     MapItemView {
@@ -332,7 +332,7 @@ Window {
                 Text{
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignRight
-                    text: "Coordinates: " + mapTab.latitude.toString() + " [LatN} - " + mapTab.longitude.toString() + " [longW}"
+                    text: "Coordinates: " + mapTab.pLatitude.toString() + " [LatN} / " + mapTab.pLongitude.toString() + " [longW}"
                 }
             }
 
@@ -361,10 +361,11 @@ Window {
                 }
             }
         }
-        // --------------------------------- Ligne 3
+
+        // --------------------------------- Ligne 4
         // Imagettes
-        Frame{
-            Layout.row: 3
+        Frame {
+            Layout.row: 4
             Layout.columnSpan: 2
             Layout.fillWidth: true
             Layout.preferredHeight: 120
@@ -385,10 +386,10 @@ Window {
             }
         }
 
-        // --------------------------------- Ligne 4
+        // --------------------------------- Ligne 5
         // Barre de boutons en bas
-        RowLayout{
-            Layout.row: 4
+        RowLayout {
+            Layout.row: 5
             Layout.columnSpan: 2
             //Layout.fillHeight: true
             Layout.fillWidth: true
@@ -410,7 +411,6 @@ Window {
             }
         }
     }
-
 
 }
 

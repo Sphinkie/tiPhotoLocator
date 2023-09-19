@@ -12,43 +12,67 @@
 
 ### KDAB Academy (Youtube):
 
-[Introduction to Qt / QML (Part 01) - Introduction to Qt Quick](https://www.youtube.com/watch?v=JxyTkXLbcV4)
-
-[Introduction to Qt / QML (Part 19) - Sizing components](https://www.youtube.com/watch?v=Lt-8fYWOVx8)
-
-[Introduction to Qt / QML (Part 30) - Customizing ListView](https://www.youtube.com/watch?v=ZArpJDRJxcI)
-
-[Introduction to Qt / QML (Part 37) - Qt Quick Layouts](https://www.youtube.com/watch?v=FwzQQ6YPlxE)
+[Introduction to Qt / QML (Part 01) - Introduction to Qt Quick](https://www.youtube.com/watch?v=JxyTkXLbcV4)  
+[Introduction to Qt / QML (Part 19) - Sizing components](https://www.youtube.com/watch?v=Lt-8fYWOVx8)  
+[Introduction to Qt / QML (Part 30) - Customizing ListView](https://www.youtube.com/watch?v=ZArpJDRJxcI)  
+[Introduction to Qt / QML (Part 37) - Qt Quick Layouts](https://www.youtube.com/watch?v=FwzQQ6YPlxE)  
 
 ### Qt Docs
 
-[QML Basic Types | Qt QML 5.15.15](https://doc.qt.io/qt-5/qtqml-typesystem-basictypes.html)
+https://wiki.qt.io/Category:HowTo
 
-[ListModel QML Type | Qt 5.15](https://doc.qt.io/qt-5/qml-qtqml-models-listmodel.html)
+[QML Basic Types | Qt 5.15](https://doc.qt.io/qt-5/qtqml-typesystem-basictypes.html)
 
-[ListView QML Type | Qt Quick 6.5.2](https://doc.qt.io/qt-6/qml-qtquick-listview.html)
+[ListView QML Type | Qt 5.15](https://doc.qt.io/qt-5.15/qml-qtquick-listview.html)
 
-[Qt Quick Layouts Overview | Qt Quick 5.15.1](https://qthub.com/static/doc/qt5/qtquick/qtquicklayouts-overview.html#)
+[QML Applications | Qt 5.15](https://doc.qt.io/qt-5.15/qmlapplications.html)
 
-[Layout QML Type | Qt Quick 5.15.15](https://doc.qt.io/qt-5/qml-qtquick-layouts-layout.html#details)
-
-2 types of menuBar:
+#### 2 types of menuBar:
 
 [MenuBar QML Type | Qt Quick Controls 2 5.10](https://doc.qt.io/archives/qt-5.10/qml-qtquick-controls2-menubar.html)
 
 [MenuBar QML Type | Qt Labs Platform 5.15.15](https://doc.qt.io/qt-5/qml-qt-labs-platform-menubar.html)
 
+#### Vues, Models, Delegates
+
+[Les modèles de données QML](https://qt.developpez.com/doc/4.7/qdeclarativemodels)  
+[ListModel QML Type | Qt 5.15](https://doc.qt.io/qt-5/qml-qtqml-models-listmodel.html)  
+[Models and Views in Qt Quick](https://doc.qt.io/qt-5.15/qtquick-modelviewsdata-modelview.html)  
+[DelegateModel QML Type | Qt 5.15](https://doc.qt.io/qt-5.15/qml-qtqml-models-delegatemodel.html)  
+[DelegateModelGroup QML Type | Qt 5.15](https://doc.qt.io/qt-5.15/qml-qtqml-models-delegatemodelgroup.html)  
+
+
+#### Layouts
+
+[Qt quick - Layouts overview](https://doc.qt.io/qt-5.15/qtquicklayouts-overview.html)  
+[Qt Quick Layouts Overview | Qt 5.15](https://qthub.com/static/doc/qt5/qtquick/qtquicklayouts-overview.html)  
+[Layout QML Type | Qt 5.15](https://doc.qt.io/qt-5/qml-qtquick-layouts-layout.html)  
+[Qt quick - Stack Layouts](https://docs.w3cub.com/qt~5.15/qml-qtquick-layouts-stacklayout.html)  
+
 ### Developper.com
 
-[Introduction au langage QML](https://qt.developpez.com/doc/4.7/qdeclarativeintroduction/)
+[Les bases de la syntaxe Qt QML](https://runebook.dev/fr/docs/qt/qtqml-syntax-basics)  
 
-[Ecrire des composants QML : propriétés, méthodes et signaux](https://qt.developpez.com/doc/4.7/qml-extending-types/)
+[Introduction au langage QML](https://qt.developpez.com/doc/4.7/qdeclarativeintroduction/)  
 
-[QExifImageHeader Class Reference](https://qt.developpez.com/doc/qtextended4.4/qexifimageheader/)
+[Ecrire des composants QML : propriétés, méthodes et signaux](https://qt.developpez.com/doc/4.7/qml-extending-types/)  
+
+https://runebook.dev/fr/docs/qt/qml-qt-labs-platform-folderdialog  
+
+[QExifImageHeader Class Reference](https://qt.developpez.com/doc/qtextended4.4/qexifimageheader/)  
 
 ## Qt Location
 
-[Places Map (QML) | Qt Location 5.7](https://stuff.mit.edu/afs/athena/software/texmaker_v5.0.2/qt57/doc/qtlocation/qtlocation-places-map-example.html)
+[Places Map (QML) | Qt Location 5.7](https://stuff.mit.edu/afs/athena/software/texmaker_v5.0.2/qt57/doc/qtlocation/qtlocation-places-map-example.html)  
+https://stackoverflow.com/questions/61689939/qtlocation-osm-api-key-required  
+https://doc.qt.io/qt-5/location-plugin-osm.html  
+https://doc.qt.io/qt-5/qtlocation-minimal-map-example.html  
+https://www.mapbox.com/  
+
+## System commands
+
+[Running a system command through qml](https://forum.qt.io/topic/55522/running-a-system-command-through-qml-for-qt-5-4)  
+
 
 ## EXIF Librairies
 
@@ -111,6 +135,12 @@ Les données **EXIF** sont générées automatiquement lors de la création d�
 
 [Guide to Photo Metadata Fields &#8211; CARL SEIBERT SOLUTIONS](https://www.carlseibert.com/guide-iptc-photo-metadata-fields/)
 
+
+## IA and Deep Learning
+
+https://www.qt.io/resources/videos/build-deep-learning-applications-with-qt-and-tensorflow-lite-dev-des-2021
+
 ## Cousin projects
 
 https://github.com/Simon-12/tidy-images/blob/main/app/src/main.cpp
+
