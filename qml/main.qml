@@ -2,14 +2,16 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
-import Qt.labs.folderlistmodel 2.15
 import Qt.labs.platform 1.1
+
+import QtQml.Models 2.15
 
 import QtLocation 5.12
 import QtPositioning 5.12
 
 import "./Dialogs"
 import "./Components"
+import "./Models"
 
 Window {
     id: window
@@ -30,62 +32,82 @@ Window {
     AboutPopup { id: about }
 
     // ----------------------------------------------------------------
-    // Modèles de donnees
-    // Ce modele contient la liste des fichiers du dossier
+    // Modèles de données
     // ----------------------------------------------------------------
-    FolderListModel {
-        id: folderListModel
-        sortCaseSensitive: false
-        showDirs: false
-        nameFilters: ["*.jpg", "*.JPG"]
-        folder: ""
-        onFolderChanged: {
-            console.log("folder changed");}
-        onCountChanged: {
-            // En cas de changement, on met à jour la listModel
-            console.log("FolderListModel count changed:"+count);
-            listModel.clear();
-            // TODO : mettre un timer
-            for (var i = 0; i < count; )  {
-                console.log(i+": "+get(i,"fileName"));
-                listModel.append({   "name": get(i,"fileName"),
-                                     "imageUrl": get(i,"fileUrl").toString()
-                                 });
-                i++
+    // Liste des photos avec toutes leurs infos
+    PhotoListModel{ id: photoListModel}
+    // Liste des fichiers du dossier
+    FolderListModel { id: folderListModel }
+
+    /*
+    Package {
+        id: myPackage
+        // Le premier delegate
+        // le delegate pour afficher la ListModel dans la ListView
+        Text{
+            id: listDelegatePacked
+            Package.name: 'list'
+            // Avec les required properties, on indique qu'il faut utiliser les roles du modèle
+            readonly property ListView __lv : ListView.view
+            required property int index
+            required property string name
+            required property bool isDirty
+            width: parent.width
+            text: model.name;
+            font.pixelSize: 16
+            //visible: isDirty ? false : true
+            color: model.isDirty===true ? "red" : "blue"
+            // Gestion du clic sur un item
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    __lv.currentIndex = model.index
+                    previewImage.clickedItem = model.index
+                    tabbedPage.selectedItem = model.index
+                    console.log("clic !")
+                }
+            }
+        }
+
+        // Le deuxième delegate
+        MapQuickItem {
+            // le delegate pour afficher la ListModel sur la carte
+            id: mapDelegatePacked
+            Package.name: 'map'
+            coordinate: QtPositioning.coordinate(latitude, longitude)
+            // Point d'ancrage de l'icone
+            anchorPoint.x: markerIcon.width * 0.5
+            anchorPoint.y: markerIcon.height
+            sourceItem: Column {
+                Image { id: markerIcon; source: "qrc:///Images/mappin-red.png"; height: 48; width: 48 }
+                Text { text: name; font.bold: true }
             }
         }
     }
-    // ----------------------------------------------------------------
-    // Modèles de donnees
-    // Ce modele contient la liste des éléments de la listView
-    // ----------------------------------------------------------------
-    ListModel {
-        id: listModel
-        // Initialisation des roles
-        ListElement {
-            name: qsTr("Select your photo folder")
-            imageUrl: "qrc:///Images/ibiza.png"
-            isDirty: false      // true if one of the following fields has been modified
-            latitude: 38.980    // GPS coordinates
-            longitude: 1.433    // (Ibiza)
-            hasGPS: false       // has GPS coordinates
-            nearSelected: false // inside the radius of nearby photos
-        }
+    DelegateModel {
+        id: visualModel
+        delegate: myPackage
+        model: photoListModel
     }
-    // ----------------------------------------------------------------
-    // Modèles de donnees
-    // Ce modele contient la liste des éléments à afficher sur la map
-    // ----------------------------------------------------------------
-    ListModel {
-        id: mappinModel
-        // Initialisation des roles
-        ListElement {
-            name: ""
-            latitude: 0.0
-            longitude: 0.0
-            color: "red"
-        }
+    ListView {
+        id: lv
+        height: parent.height/2
+        width: parent.width
+        model: visualModel.parts.list
     }
+    GridView {
+        y: parent.height/2
+        height: parent.height/2
+        width: parent.width
+        cellWidth: width / 2
+        cellHeight: 50
+        model: visualModel.parts.map
+    }
+*/
+
+
+    MarkerListModel { id: mappinModel } // TODO : normalement inutile si on arrive à faire fonctionner le Package et DelegateModel
+
 
     // ----------------------------------------------------------------
     // Page principale
@@ -94,7 +116,7 @@ Window {
     {
         anchors.fill: parent
         anchors.margins: 8
-        rows: 6
+//        rows: 6
         columns: 2
 
         // --------------------------------- Ligne 0
@@ -105,6 +127,8 @@ Window {
             Layout.row: 0
             Layout.column: 0
             Layout.columnSpan: 2
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignTop
         }
 
         // --------------------------------- Ligne 1
@@ -127,15 +151,15 @@ Window {
             onClicked: {
                 // On met à jour la listModel
                 console.log("Manual Refresh");
-                listModel.clear();
+                photoListModel.clear();
                 for (var i = 0; i < folderListModel.count; )  {
                     console.log(i+": "+folderListModel.get(i,"fileName"));
                     console.log(i+": "+folderListModel.get(i,"fileUrl"));
-                    listModel.append({ "name":folderListModel.get(i,"fileName"),
+                    photoListModel.append({ "name":folderListModel.get(i,"fileName"),
                                          "imageUrl":folderListModel.get(i,"fileUrl").toString(),
                                          "latitude": 48.0 + Math.random(),
                                          "longitude": 2.0 + Math.random(),
-                                         "isDirty": folderListModel.get(i,"fileName")==="Salonique.jpg" ? true : false
+                                         "isDirty": false
                                      });
                     i++
                 }
@@ -201,7 +225,7 @@ Window {
                     // Avec les required properties, on indique qu'il faut utiliser les roles du modèle
                     required property int index
                     required property string name
-                    required property string isDirty
+                    required property bool isDirty
                     readonly property ListView __lv : ListView.view
                     width: parent.width
                     text: name;
@@ -224,8 +248,8 @@ Window {
             ListView{
                 id: listView
                 anchors.fill: parent
-                model: listModel
-                delegate: listDelegate
+                model: photoListModel
+                delegate: listDelegate   // WIP listDelegatePacked
                 focus: true
                 clip: true   // pour que les items restent à l'interieur de la listview
                 footer: Rectangle{
@@ -251,26 +275,24 @@ Window {
             currentIndex: bar.currentIndex
             property int selectedItem: -1   // Image sélectionnée dans la ListView
             onSelectedItemChanged: {
-                mapTab.pLatitude = listModel.get(selectedItem).latitude
-                mapTab.pLongitude = listModel.get(selectedItem).longitude
+                mapTab.pLatitude = photoListModel.get(selectedItem).latitude
+                mapTab.pLongitude = photoListModel.get(selectedItem).longitude
                 // On ajoute l'image sélectionnée aux pins à afficher sur la carte
-                mappinModel.append({"name": listModel.get(selectedItem).name,
+                mappinModel.append({"name": photoListModel.get(selectedItem).name,
                                        "latitude": mapTab.pLatitude,
                                        "longitude": mapTab.pLongitude})
             }
             // ------------------ PREVIEW TAB --------------------------
             ColumnLayout {
                 id: previewTab
-                //anchors.fill: parent
-                //Layout.fillWidth: true
-                //Layout.fillHeight: true
-                //Layout.alignment: Qt.AlignHCenter
+                // TODO: se perd quand on chaneg d'onglet.... particularité de la StackedView, je crois
+                anchors.fill: parent
 
                 Image {
                     id: previewImage
-                    Layout.alignment: Qt.AlignHCenter
                     property int clickedItem: -1
                     property url imageURl: "qrc:///Images/kodak.png"
+                    Layout.alignment: Qt.AlignCenter
                     Layout.preferredWidth: 600
                     Layout.preferredHeight: 600
                     // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
@@ -282,12 +304,12 @@ Window {
                         // console.log("onClickedItemChanged:"+clickedItem);
                         // console.log(listModel.get(clickedItem).name);
                         // console.log(listModel.get(clickedItem).imageUrl);
-                        imageURl = Qt.resolvedUrl(listModel.get(clickedItem).imageUrl);
+                        imageURl = Qt.resolvedUrl(photoListModel.get(clickedItem).imageUrl);
                     }
                 }
                 Text{
                     text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                    Layout.alignment: Qt.AlignCenter
                 }
             }
 
@@ -314,7 +336,7 @@ Window {
                     id: mapPlugin
                     name: "osm"
                     // parametres optionels
-                    //PluginParameter{ name: "" ; value: ""}
+                    // PluginParameter{ name: "" ; value: ""}
                     // TODO : ajouter la KEY API
                 }
                 Map{
