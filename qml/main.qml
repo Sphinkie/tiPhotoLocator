@@ -35,7 +35,7 @@ Window {
     // Modèles de données
     // ----------------------------------------------------------------
     // Liste des photos avec toutes leurs infos
-    PhotoListModel{ id: photoListModel}
+    //    PhotoListModel{ id: photoListModel}  : implémenté en C++
     // Liste des fichiers du dossier
     FolderListModel { id: folderListModel }
 
@@ -151,15 +151,15 @@ Window {
             onClicked: {
                 // On met à jour la listModel
                 console.log("Manual Refresh");
-                photoListModel.clear();
+                _photoListModel.clear();                                                       // implémenté en C++
                 for (var i = 0; i < folderListModel.count; )  {
                     console.log(i+": "+folderListModel.get(i,"fileName"));
                     console.log(i+": "+folderListModel.get(i,"fileUrl"));
-                    photoListModel.append({ "name":folderListModel.get(i,"fileName"),
+                    _photoListModel.append({ "filename":folderListModel.get(i,"fileName"),   // implémenté en C++
                                          "imageUrl":folderListModel.get(i,"fileUrl").toString(),
                                          "latitude": 48.0 + Math.random(),
-                                         "longitude": 2.0 + Math.random(),
-                                         "isDirty": false
+                                         "longitude": 2.0 + Math.random()
+                                         // "isDirty": false
                                      });
                     i++
                 }
@@ -224,14 +224,14 @@ Window {
                 Text{
                     // Avec les required properties, on indique qu'il faut utiliser les roles du modèle
                     required property int index
-                    required property string name
-                    required property bool isDirty
+                    required property string filename
+//                    required property bool isDirty
                     readonly property ListView __lv : ListView.view
                     width: parent.width
-                    text: name;
+                    text: filename;
                     font.pixelSize: 16
                     //visible: isDirty ? false : true
-                    color: isDirty===true ? "red" : "blue"
+                    //color: isDirty===true ? "red" : "blue"
                     // Gestion du clic sur un item
                     MouseArea{
                         anchors.fill: parent
@@ -239,7 +239,7 @@ Window {
                             __lv.currentIndex = index
                             previewImage.clickedItem = index
                             tabbedPage.selectedItem = index
-                            isDirty = true
+//                            isDirty = true
                         }
                     }
                 }
@@ -248,7 +248,7 @@ Window {
             ListView{
                 id: listView
                 anchors.fill: parent
-                model: photoListModel
+                model: _photoListModel                                                 // implémenté en C++
                 delegate: listDelegate   // WIP listDelegatePacked
                 focus: true
                 clip: true   // pour que les items restent à l'interieur de la listview
@@ -275,17 +275,20 @@ Window {
             currentIndex: bar.currentIndex
             property int selectedItem: -1   // Image sélectionnée dans la ListView
             onSelectedItemChanged: {
-                mapTab.pLatitude = photoListModel.get(selectedItem).latitude
-                mapTab.pLongitude = photoListModel.get(selectedItem).longitude
+                /*
+                // mapTab.pLatitude = _photoListModel.get(selectedItem).latitude
+                mapTab.pLatitude = _photoListModel.data(selectedItem,"latitude")
+                mapTab.pLongitude = _photoListModel.data(selectedItem,"longitude")
                 // On ajoute l'image sélectionnée aux pins à afficher sur la carte
-                mappinModel.append({"name": photoListModel.get(selectedItem).name,
+                mappinModel.append({"name": _photoListModel.data(selectedItem,"filename"),
                                        "latitude": mapTab.pLatitude,
                                        "longitude": mapTab.pLongitude})
+                                       */
             }
             // ------------------ PREVIEW TAB --------------------------
             ColumnLayout {
                 id: previewTab
-                // TODO: se perd quand on chaneg d'onglet.... particularité de la StackedView, je crois
+                // TODO: se perd quand on change d'onglet.... particularité de la StackedView, je crois
                 anchors.fill: parent
 
                 Image {
@@ -304,7 +307,8 @@ Window {
                         // console.log("onClickedItemChanged:"+clickedItem);
                         // console.log(listModel.get(clickedItem).name);
                         // console.log(listModel.get(clickedItem).imageUrl);
-                        imageURl = Qt.resolvedUrl(photoListModel.get(clickedItem).imageUrl);
+                        // imageURl = Qt.resolvedUrl(_photoListModel.get(clickedItem).imageUrl);
+                        imageURl = Qt.resolvedUrl(_photoListModel.get(clickedItem,"imageUrl"));
                     }
                 }
                 Text{

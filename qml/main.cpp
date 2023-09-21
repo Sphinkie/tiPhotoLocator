@@ -1,5 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickView>
+#include <QQmlContext>
+#include "Models/PhotoModel.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,16 +15,24 @@ int main(int argc, char *argv[])
     app.setApplicationName("TiPhotoLocator");
     //app.setWindowIcon(QIcon(":/icons/flaticon/icon.png"));
 
+    PhotoModel photoListModel;
+
     // Start QML engine
     QQmlApplicationEngine engine;
 
+    // Export our models
+    QQmlContext* context = engine.rootContext();
+    context->setContextProperty("_photoListModel", &photoListModel);
+
     // Start QML
     const QUrl url(QStringLiteral("qrc:/main.qml"));
+
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
+    }, Qt::QueuedConnection);   
+
     engine.load(url);
 
     return app.exec();
