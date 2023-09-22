@@ -12,14 +12,14 @@
 
 #include <QSortFilterProxyModel>
 
-class selectedFilterProxyModel : public QSortFilterProxyModel
+class SelectedFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
     Q_PROPERTY(bool selectedFilterEnabled READ selectedFilterEnabled WRITE setSelectedFilterEnabled NOTIFY selectedFilterEnabledChanged)
 
 public:
-    explicit selectedFilterProxyModel(QObject *parent = nullptr);
+    explicit SelectedFilterProxyModel(QObject *parent = nullptr);
 
     bool selectedFilterEnabled() const;
 

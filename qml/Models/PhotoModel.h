@@ -12,17 +12,22 @@
 // Data structure
 // -----------------------------------------------------------------------
 struct Data {
+    // Default constructor
     Data() {}
-    Data( const QString& filename,
-          const QString& imageUrl,
+    // Constructor avec valeurs
+    Data( const QString &filename,
+          const QString &imageUrl,
           double latitude,
-          double longitude
+          double longitude,
+          bool isSelected  = false
           )
-        : filename(filename), imageUrl(imageUrl), latitude(latitude), longitude(longitude) {}
+        : filename(filename), imageUrl(imageUrl), latitude(latitude), longitude(longitude), isSelected(isSelected) {}
+    // Elements de la structure
     QString filename;
     QString imageUrl;
     double latitude;
     double longitude;
+    bool isSelected;
 };
 
 // -----------------------------------------------------------------------
@@ -34,13 +39,14 @@ class PhotoModel : public QAbstractListModel
 
 public:
     enum Roles {
-        FilenameRole,  //  = Qt::UserRole,
+        FilenameRole,  //  = Qt::UserRole, (pour les enums ?)
         ImageUrlRole,
         LatitudeRole,
-        LongitudeRole
+        LongitudeRole,
+        IsSelectedRole
     };
 
-    Q_PROPERTY(int curIndex READ curIndex WRITE setcurIndex NOTIFY curIndexChanged)
+    Q_PROPERTY(bool selectedIndex READ getSelectedIndex WRITE selectedIndex NOTIFY selectedIndexChanged)
 
     QHash<int, QByteArray> roleNames() const override;
     explicit PhotoModel(QObject *parent = nullptr);
@@ -49,8 +55,9 @@ public:
     Q_INVOKABLE QVariant getUrl(int index);
     Q_INVOKABLE QVariantMap get(int row);
     Q_INVOKABLE void append(QString filename, QString url, double latitude=0, double longitude=0 );
-    Q_INVOKABLE void setCurrentIndex(int index);
-    Q_INVOKABLE int getCurrentIndex();
+    void selectedIndex(int index);
+    int getSelectedIndex();
+    bool setData2(const QModelIndex &index, const QVariant &value, int role);  // setData est deja dans la surclasse
 
 public slots:
     void duplicateData(int row);
@@ -59,9 +66,12 @@ public slots:
 private slots:
     void growPopulation();
 
+signals:
+    void selectedIndexChanged();
+
 private: //members
-    QVector< Data > m_data;
-    int m_currentIndex;
+    QVector<Data> m_data;
+    int m_lastSelectedIndex = 0;
 };
 
 #endif // PHOTOMODEL_H

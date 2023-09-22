@@ -8,13 +8,16 @@
  *
  *************************************************************************/
 
-#include "selectedFilterProxyModel.h"
+#include<QDebug>
+#include "SelectedFilterProxyModel.h"
 #include "PhotoModel.h"
+
+// #define QT_NO_DEBUG_OUTPUT
 
 /* *************************************************************************
  * Contructeur
  * *************************************************************************/
-selectedFilterProxyModel::selectedFilterProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
+SelectedFilterProxyModel::SelectedFilterProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
     , m_selectedFilterEnabled(true)
 {
 }
@@ -22,7 +25,7 @@ selectedFilterProxyModel::selectedFilterProxyModel(QObject *parent) : QSortFilte
 /* *************************************************************************
  * Retourne si le filter est actif ou non
  * *************************************************************************/
-bool selectedFilterProxyModel::selectedFilterEnabled() const
+bool SelectedFilterProxyModel::selectedFilterEnabled() const
 {
     return m_selectedFilterEnabled;
 }
@@ -30,7 +33,7 @@ bool selectedFilterProxyModel::selectedFilterEnabled() const
 /* *************************************************************************
  * Active/Désactive le filtre
  * *************************************************************************/
-void selectedFilterProxyModel::setSelectedFilterEnabled(bool enabled)
+void SelectedFilterProxyModel::setSelectedFilterEnabled(bool enabled)
 {
     if (m_selectedFilterEnabled == enabled)
         return;
@@ -42,20 +45,20 @@ void selectedFilterProxyModel::setSelectedFilterEnabled(bool enabled)
 }
 
 /* *************************************************************************
- * Effectue le filtrage
+ * Effectue le filtrage (toutes les 10 secondes)
  * @param sourceRow Le numero d'une ligne du modèle
  * @param sourceParent L'index du modèle
  * @return True si la ligne est acceptée
  * *************************************************************************/
-bool selectedFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
+bool SelectedFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
     if (!m_selectedFilterEnabled)
         return true;
     // On récupère l'index de la ligne à accepter ou pas
-    // const QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
-    // On regarde si c'est la ligne sélectionnée
-    // const QString mediaType = index.data(isSelected).toString();
-    // const double lat = index.data(PhotoModel::LatitudeRole).Double;
-    int cur = sourceParent.model()->curIndex;
-    return (sourceRow == 0);
+    const QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
+    // On récupère les données de la ligne
+    const bool isSelected = index.data(PhotoModel::IsSelectedRole).toBool();
+    const QString name = index.data(PhotoModel::FilenameRole).toString();
+    qDebug() << "Filtering: " << name << isSelected ;
+    return (!isSelected);
 }

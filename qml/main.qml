@@ -156,34 +156,6 @@ Window {
             Layout.preferredWidth: 380
 
             // https://www.youtube.com/watch?v=ZArpJDRJxcI
-            Component{
-                // le delegate pour afficher la ListModel dans la ListView
-                id: listDelegate
-                Text{
-                    // Avec les required properties, on indique qu'il faut utiliser les roles du modèle
-                    required property int index
-                    required property string filename
-                    //                    required property bool isDirty
-                    readonly property ListView __lv : ListView.view
-                    width: parent.width
-                    text: filename;
-                    font.pixelSize: 16
-                    //visible: isDirty ? false : true
-                    //color: isDirty===true ? "red" : "blue"
-                    // Gestion du clic sur un item
-                    MouseArea{
-                        anchors.fill: parent
-                        onClicked: {
-                            __lv.currentIndex = index
-                            previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante
-                            tabbedPage.selectedItem = index
-                            model.setCurrentIndex(index)
-                            // isDirty = true
-                        }
-                    }
-                }
-            }
-
             ListView{
                 id: listView
                 anchors.fill: parent
@@ -205,6 +177,38 @@ Window {
                     color: "lightgrey"
                 }
             }
+
+            Component{
+                // le delegate pour afficher la ListModel dans la ListView
+                id: listDelegate
+                Text{
+                    // Avec les required properties dans une delegate, on indique qu'il faut utiliser les roles du modèle
+                    required property string filename
+                    /* required */ property bool selectedIndex
+                    // index is a special role available in the delegate: the index of the item in the model.
+                    // Note this index is set to -1 if the item is removed from the model...
+                    required property int index
+                    readonly property ListView __lv : ListView.view
+                    width: parent.width
+                    text: filename;
+                    font.pixelSize: 16
+                    //visible: isDirty ? false : true
+                    //color: isDirty===true ? "red" : "blue"
+                    // Gestion du clic sur un item
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: {
+                            __lv.currentIndex = index
+      //                      previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante
+                            tabbedPage.selectedItem = index
+                            //model.setCurrentIndex(index)
+                            _photoListModel.selectedIndex = index
+                            console.log("MouseArea: "+index);
+                        }
+                    }
+                }
+            }
+
         }
         StackLayout {
             id: tabbedPage

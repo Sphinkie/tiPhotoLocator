@@ -1,25 +1,25 @@
 /*************************************************************************
  *
- * Copyright (c) 2010-2019, Klaralvdalens Datakonsult AB (KDAB)
- * All rights reserved.
- *
- * See the LICENSE.txt file shipped along with this file for the license.
- *
  *************************************************************************/
 
 #include "PhotoModel.h"
 
 #include <QByteArray>
 #include <QTimer>
+#include<QDebug>
 #include <cstdlib>
+
+
+// #define QT_NO_DEBUG_OUTPUT
 
 // -----------------------------------------------------------------------
 // Constructor
 // -----------------------------------------------------------------------
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
+    // On met quelques items dans la liste
     m_data
-//        << Data("Denmark", "qrc:images/denmark.jpg", 5.6, 0.0 )
+        << Data("Hello", "qrc:Images/kodak.png", 38.0, 1.4 )
         << Data("Select your photo folder", "qrc:///Images/ibiza.png", 38.980, 1.433);  // Ibiza
 
     QTimer *growthTimer = new QTimer(this);
@@ -28,9 +28,9 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 }
 
 // -----------------------------------------------------------------------
-// Returns the number of elements in the model
+// Returns the number of elements in the model. Implémentation obligatoire.
 // -----------------------------------------------------------------------
-int PhotoModel::rowCount( const QModelIndex& parent) const
+int PhotoModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid())
         return 0;
@@ -38,7 +38,7 @@ int PhotoModel::rowCount( const QModelIndex& parent) const
 }
 
 // -----------------------------------------------------------------------
-// Returns an element of the model
+// Returns an element of the model. Implémentation obligatoire.
 // -----------------------------------------------------------------------
 QVariant PhotoModel::data(const QModelIndex &index, int role) const
 {
@@ -55,12 +55,14 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         return data.latitude;
     else if ( role == LongitudeRole )
         return data.longitude;
+    else if ( role == LongitudeRole )
+        return data.longitude;
     else
         return QVariant();
 }
 
 // -----------------------------------------------------------------------
-// Table of Role names
+// Table of Role names. Implémentation obligatoire.
 // -----------------------------------------------------------------------
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
@@ -68,12 +70,16 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {FilenameRole, "filename"},
         {ImageUrlRole, "imageUrl"},
         {LatitudeRole, "latitude"},
-        {LongitudeRole, "longitude"}
+        {LongitudeRole, "longitude"},
+        {IsSelectedRole, "isSelected"}
     };
     return mapping;
 }
 
 
+// -----------------------------------------------------------------------
+// Example of get method
+// -----------------------------------------------------------------------
 QVariant PhotoModel::getUrl(int index){
     if (index < 0 || index >= m_data.count())
         return QVariant();
@@ -83,6 +89,9 @@ QVariant PhotoModel::getUrl(int index){
 }
 
 
+// -----------------------------------------------------------------------
+// Add an item in the Model
+// -----------------------------------------------------------------------
 void PhotoModel::append(QString filename, QString url, double latitude, double longitude )
 {
     const int rowOfInsert = m_data.count();
@@ -94,16 +103,52 @@ void PhotoModel::append(QString filename, QString url, double latitude, double l
 }
 
 
-
-void PhotoModel::setCurrentIndex(int index)
+// -----------------------------------------------------------------------
+// Mémorise la position fournie.
+// Met le flag "isSelected" du précédent item à False et le nouveau à True.
+// -----------------------------------------------------------------------
+void PhotoModel::selectedIndex(int pos)
 {
-    if (index>=0)
-        m_currentIndex = index;
+    qDebug() << "selectedIndex " << pos;
+    if (pos>=0){
+        m_data[m_lastSelectedIndex].isSelected = false;
+        m_data[pos].isSelected = true;
+        qDebug() << m_data[m_lastSelectedIndex].filename << m_data[m_lastSelectedIndex].isSelected ;
+        qDebug() << m_data[pos].filename << m_data[pos].isSelected ;
+        m_lastSelectedIndex = pos;
+        QModelIndex start_index = this->index(0,0);
+        QModelIndex end_index = this->index(1,0);
+        // emit selectedIndexChanged();
+        emit dataChanged(start_index, end_index, {IsSelectedRole});
+    }
 }
 
-int PhotoModel::getCurrentIndex()
+
+// Note: It is important to emit the dataChanged() signal after saving the changes.
+// Voir : https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
+bool PhotoModel::setData2(const QModelIndex &index, const QVariant &value, int role)
 {
-    return m_currentIndex;
+    if (index.isValid() && role == Qt::EditRole) {
+        // Set data in model here. It can also be a good idea to check whether
+        // the new value actually differs from the current value
+/*        if (m_entries[index.row()] != value.toString())
+        {
+            m_entries[index.row()] = value.toString();
+            emit dataChanged(index, index, { Qt::EditRole, Qt::DisplayRole });
+            return true;
+        }
+*/
+    }
+    return false;
+}
+
+
+// -----------------------------------------------------------------------
+// Useless
+// -----------------------------------------------------------------------
+int PhotoModel::getSelectedIndex()
+{
+    return m_lastSelectedIndex;
 }
 
 // -----------------------------------------------------------------------
