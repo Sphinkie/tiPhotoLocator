@@ -40,12 +40,17 @@ public:
         LongitudeRole
     };
 
+    Q_PROPERTY(int curIndex READ curIndex WRITE setcurIndex NOTIFY curIndexChanged)
+
     QHash<int, QByteArray> roleNames() const override;
     explicit PhotoModel(QObject *parent = nullptr);
     int rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
     Q_INVOKABLE QVariant getUrl(int index);
+    Q_INVOKABLE QVariantMap get(int row);
     Q_INVOKABLE void append(QString filename, QString url, double latitude=0, double longitude=0 );
+    Q_INVOKABLE void setCurrentIndex(int index);
+    Q_INVOKABLE int getCurrentIndex();
 
 public slots:
     void duplicateData(int row);
@@ -56,6 +61,7 @@ private slots:
 
 private: //members
     QVector< Data > m_data;
+    int m_currentIndex;
 };
 
 #endif // PHOTOMODEL_H

@@ -38,74 +38,6 @@ Window {
     //    PhotoListModel{ id: photoListModel}  : implémenté en C++
     // Liste des fichiers du dossier
     FolderListModel { id: folderListModel }
-
-    /*
-    Package {
-        id: myPackage
-        // Le premier delegate
-        // le delegate pour afficher la ListModel dans la ListView
-        Text{
-            id: listDelegatePacked
-            Package.name: 'list'
-            // Avec les required properties, on indique qu'il faut utiliser les roles du modèle
-            readonly property ListView __lv : ListView.view
-            required property int index
-            required property string name
-            required property bool isDirty
-            width: parent.width
-            text: model.name;
-            font.pixelSize: 16
-            //visible: isDirty ? false : true
-            color: model.isDirty===true ? "red" : "blue"
-            // Gestion du clic sur un item
-            MouseArea{
-                anchors.fill: parent
-                onClicked: {
-                    __lv.currentIndex = model.index
-                    previewImage.clickedItem = model.index
-                    tabbedPage.selectedItem = model.index
-                    console.log("clic !")
-                }
-            }
-        }
-
-        // Le deuxième delegate
-        MapQuickItem {
-            // le delegate pour afficher la ListModel sur la carte
-            id: mapDelegatePacked
-            Package.name: 'map'
-            coordinate: QtPositioning.coordinate(latitude, longitude)
-            // Point d'ancrage de l'icone
-            anchorPoint.x: markerIcon.width * 0.5
-            anchorPoint.y: markerIcon.height
-            sourceItem: Column {
-                Image { id: markerIcon; source: "qrc:///Images/mappin-red.png"; height: 48; width: 48 }
-                Text { text: name; font.bold: true }
-            }
-        }
-    }
-    DelegateModel {
-        id: visualModel
-        delegate: myPackage
-        model: photoListModel
-    }
-    ListView {
-        id: lv
-        height: parent.height/2
-        width: parent.width
-        model: visualModel.parts.list
-    }
-    GridView {
-        y: parent.height/2
-        height: parent.height/2
-        width: parent.width
-        cellWidth: width / 2
-        cellHeight: 50
-        model: visualModel.parts.map
-    }
-*/
-
-
     MarkerListModel { id: mappinModel } // TODO : normalement inutile si on arrive à faire fonctionner le Package et DelegateModel
 
 
@@ -116,7 +48,7 @@ Window {
     {
         anchors.fill: parent
         anchors.margins: 8
-//        rows: 6
+        //        rows: 6
         columns: 2
 
         // --------------------------------- Ligne 0
@@ -155,16 +87,16 @@ Window {
                 for (var i = 0; i < folderListModel.count; )  {
                     console.log(i+": "+folderListModel.get(i,"fileName"));
                     console.log(i+": "+folderListModel.get(i,"fileUrl"));
-//                    _photoListModel.append({ "filename":folderListModel.get(i,"fileName"),        // TODO implémenter le append() en C++ (?)
-//                                         "imageUrl":folderListModel.get(i,"fileUrl").toString(),
-//                                         "latitude": 48.0 + Math.random(),
-//                                         "longitude": 2.0 + Math.random()
-//                                     });
+                    //                    _photoListModel.append({ "filename":folderListModel.get(i,"fileName"),        // TODO implémenter le append() en C++ (?)
+                    //                                         "imageUrl":folderListModel.get(i,"fileUrl").toString(),
+                    //                                         "latitude": 48.0 + Math.random(),
+                    //                                         "longitude": 2.0 + Math.random()
+                    //                                     });
                     _photoListModel.append(folderListModel.get(i,"fileName"),        // TODO implémenter avec 1 parametre de type dictionnaire
                                            folderListModel.get(i,"fileUrl").toString(),
                                            48.0 + Math.random(),
                                            2.0 + Math.random()
-                                               )
+                                           )
                     i++
                 }
             }
@@ -214,6 +146,7 @@ Window {
 
         // --------------------------------- Ligne 3
         // LIST VIEW DES PHOTOS
+        // ---------------------------------
         Frame {  // ou Rectangle
             Layout.row: 3
             Layout.column: 0
@@ -230,7 +163,7 @@ Window {
                     // Avec les required properties, on indique qu'il faut utiliser les roles du modèle
                     required property int index
                     required property string filename
-//                    required property bool isDirty
+                    //                    required property bool isDirty
                     readonly property ListView __lv : ListView.view
                     width: parent.width
                     text: filename;
@@ -242,9 +175,10 @@ Window {
                         anchors.fill: parent
                         onClicked: {
                             __lv.currentIndex = index
-                            previewImage.clickedItem = index
+                            previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante
                             tabbedPage.selectedItem = index
-//                            isDirty = true
+                            model.setCurrentIndex(index)
+                            // isDirty = true
                         }
                     }
                 }
@@ -254,7 +188,7 @@ Window {
                 id: listView
                 anchors.fill: parent
                 model: _photoListModel                                                 // implémenté en C++
-                delegate: listDelegate   // WIP listDelegatePacked
+                delegate: listDelegate
                 focus: true
                 clip: true   // pour que les items restent à l'interieur de la listview
                 footer: Rectangle{
@@ -290,36 +224,53 @@ Window {
                                        */
             }
             // ------------------ PREVIEW TAB --------------------------
-            ColumnLayout {
-                id: previewTab
-                // TODO: se perd quand on change d'onglet.... particularité de la StackedView, je crois
-                anchors.fill: parent
+//            ColumnLayout {
+//                id: previewTab
+            //            anchors.fill: parent
 
-                Image {
-                    id: previewImage
-                    property int clickedItem: -1
-                    property url imageURl: "qrc:///Images/kodak.png"
-                    Layout.alignment: Qt.AlignCenter
-                    Layout.preferredWidth: 600
-                    Layout.preferredHeight: 600
-                    // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
-                    Layout.maximumHeight: sourceSize.height
-                    Layout.maximumWidth: sourceSize.width
-                    fillMode: Image.PreserveAspectFit
-                    source: imageURl
-                    onClickedItemChanged: {
-                        // console.log("onClickedItemChanged:"+clickedItem);
-                        // console.log(listModel.get(clickedItem).name);
-                        // console.log(listModel.get(clickedItem).imageUrl);
-                        // imageURl = Qt.resolvedUrl(_photoListModel.get(clickedItem).imageUrl);
-                        imageURl = Qt.resolvedUrl(_photoListModel.getUrl(clickedItem));
+                GridView{
+                    id: previewView
+                    model: _selectedPhotoModel      // Ce modèle ne contient que la photo sélectionnée dans la ListView
+                    delegate: previewDelegate
+                    // Layout.fillWidth: true
+                }
+
+                Component {
+                    id: previewDelegate
+                    Column{
+                        Image {
+                            id: previewImage
+                            //property int clickedItem: -1
+//                            property url imageURl: "qrc:///Images/kodak.png"
+                            Layout.alignment: Qt.AlignCenter
+                            Layout.preferredWidth: 600
+                            Layout.preferredHeight: 600
+                            // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
+                            Layout.maximumHeight: sourceSize.height
+                            Layout.maximumWidth: sourceSize.width
+                            fillMode: Image.PreserveAspectFit
+                            source: model.imageUrl
+                            /*                            onClickedItemChanged: {
+                                // TODO: comment recupérer les données du modèle quand on est dans une fonction et pas dans un delegate?
+                                //      il faut utiliser une méthode...
+                                //      ou utiliser des delegate, ce qui semble être la méthode recommandée
+                                //
+                                // console.log("onClickedItemChanged:"+clickedItem);
+                                // console.log(listModel.get(clickedItem).name);
+                                // console.log(listModel.get(clickedItem).imageUrl);
+                                // imageURl = Qt.resolvedUrl(_photoListModel.get(clickedItem).imageUrl);
+                                imageURl = Qt.resolvedUrl(_photoListModel.getUrl(clickedItem));
+                                console.log("data returns: ");
+                                console.log(_photoListModel.data(_photoListModel.index(clickedItem,_photoListModel.ImageUrlRole), _photoListModel.ImageUrlRole));
+                            }*/
+                        }
+                        Text{
+                            text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
+                            Layout.alignment: Qt.AlignCenter
+                        }
                     }
                 }
-                Text{
-                    text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
-                    Layout.alignment: Qt.AlignCenter
-                }
-            }
+//            }
 
             // ------------------ MAP TAB ------------------------------
             ColumnLayout {

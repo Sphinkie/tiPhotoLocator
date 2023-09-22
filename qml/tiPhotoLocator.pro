@@ -8,6 +8,7 @@ CONFIG += c++11
 
 SOURCES += \
         Models/PhotoModel.cpp \
+        Models/selectedFilterProxyModel.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -31,4 +32,5 @@ DISTFILES += \
     images/clock.png
 
 HEADERS += \
-    Models/PhotoModel.h
+    Models/PhotoModel.h \
+    Models/selectedFilterProxyModel.h

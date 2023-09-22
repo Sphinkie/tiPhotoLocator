@@ -93,6 +93,19 @@ void PhotoModel::append(QString filename, QString url, double latitude, double l
     endInsertRows();
 }
 
+
+
+void PhotoModel::setCurrentIndex(int index)
+{
+    if (index>=0)
+        m_currentIndex = index;
+}
+
+int PhotoModel::getCurrentIndex()
+{
+    return m_currentIndex;
+}
+
 // -----------------------------------------------------------------------
 // Autres fonctions / A supprimer si inutile
 // -----------------------------------------------------------------------
@@ -135,3 +148,26 @@ void PhotoModel::growPopulation()
     // ...but only the population field
     emit dataChanged(startIndex, endIndex, QVector<int>() << LatitudeRole);
 }
+
+
+// Methode get() venant du forum
+// QML usage = myModel.get(1).title  //where 1 is an valid index.
+// Declaration = // Q_INVOKABLE QVariantMap get(int row);
+
+//definition
+QVariantMap PhotoModel::get(int row)
+{
+    QHash<int,QByteArray> names = roleNames();
+    QHashIterator<int, QByteArray> i(names);
+    QVariantMap res;
+    while (i.hasNext()) {
+        i.next();
+        QModelIndex idx = index(row, 0);
+        QVariant data = idx.data(i.key());
+        res[i.value()] = data;
+        //cout << i.key() << ": " << i.value() << endl;
+    }
+    return res;
+}
+
+

@@ -3,6 +3,7 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include "Models/PhotoModel.h"
+#include "Models/selectedFilterProxyModel.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,6 +17,8 @@ int main(int argc, char *argv[])
     //app.setWindowIcon(QIcon(":/icons/flaticon/icon.png"));
 
     PhotoModel photoListModel;
+    selectedFilterProxyModel selectedPhotoModel;
+    selectedPhotoModel.setSourceModel(&photoListModel);
 
     // Start QML engine
     QQmlApplicationEngine engine;
@@ -23,6 +26,7 @@ int main(int argc, char *argv[])
     // Export our models
     QQmlContext* context = engine.rootContext();
     context->setContextProperty("_photoListModel", &photoListModel);
+    context->setContextProperty("_selectedPhotoModel", &selectedPhotoModel);
 
     // Start QML
     const QUrl url(QStringLiteral("qrc:/main.qml"));
