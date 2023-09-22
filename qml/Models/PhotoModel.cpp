@@ -74,13 +74,24 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 }
 
 
-QVariant PhotoModel::get(int index, QString role){
+QVariant PhotoModel::getUrl(int index){
     if (index < 0 || index >= m_data.count())
         return QVariant();
-    QVariant result = QVariant("qrc:///Images/ibiza.png");
+    // QVariant result = QVariant("qrc:///Images/ibiza.png");
+    QVariant result = QVariant(m_data[index].imageUrl);
     return result;
 }
 
+
+void PhotoModel::append(QString filename, QString url, double latitude, double longitude )
+{
+    const int rowOfInsert = m_data.count();
+    Data* data = new Data(filename, url, latitude, longitude);
+
+    beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
+    m_data.insert(rowOfInsert, *data);
+    endInsertRows();
+}
 
 // -----------------------------------------------------------------------
 // Autres fonctions / A supprimer si inutile

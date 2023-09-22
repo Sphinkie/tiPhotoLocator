@@ -17,6 +17,10 @@
 [Introduction to Qt / QML (Part 30) - Customizing ListView](https://www.youtube.com/watch?v=ZArpJDRJxcI)  
 [Introduction to Qt / QML (Part 37) - Qt Quick Layouts](https://www.youtube.com/watch?v=FwzQQ6YPlxE)  
 
+
+
+[GitHub - KDAB/kdabtv: This repository contains the code of the examples showcased in the KDAB TV video series.](https://github.com/KDAB/kdabtv/tree/master/qml-intro)
+
 ### Qt Docs
 
 https://wiki.qt.io/Category:HowTo
@@ -40,7 +44,6 @@ https://wiki.qt.io/Category:HowTo
 [Models and Views in Qt Quick](https://doc.qt.io/qt-5.15/qtquick-modelviewsdata-modelview.html)  
 [DelegateModel QML Type | Qt 5.15](https://doc.qt.io/qt-5.15/qml-qtqml-models-delegatemodel.html)  
 [DelegateModelGroup QML Type | Qt 5.15](https://doc.qt.io/qt-5.15/qml-qtqml-models-delegatemodelgroup.html)  
-
 
 #### Layouts
 
@@ -72,7 +75,6 @@ https://www.mapbox.com/
 ## System commands
 
 [Running a system command through qml](https://forum.qt.io/topic/55522/running-a-system-command-through-qml-for-qt-5-4)  
-
 
 ## EXIF Librairies
 
@@ -128,13 +130,10 @@ Les données **EXIF** sont générées automatiquement lors de la création d�
   * https://exiftool.org/
   
   * L'idée avec ExifTools n'est pas de l'incorporer dans le code (en tant que librairie) mais d'appeler la command line.
-    
-    
 
 ### IPTC metadata
 
 [Guide to Photo Metadata Fields &#8211; CARL SEIBERT SOLUTIONS](https://www.carlseibert.com/guide-iptc-photo-metadata-fields/)
-
 
 ## IA and Deep Learning
 
@@ -143,4 +142,3 @@ https://www.qt.io/resources/videos/build-deep-learning-applications-with-qt-and-
 ## Cousin projects
 
 https://github.com/Simon-12/tidy-images/blob/main/app/src/main.cpp
-

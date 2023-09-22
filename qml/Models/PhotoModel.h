@@ -44,7 +44,8 @@ public:
     explicit PhotoModel(QObject *parent = nullptr);
     int rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    Q_INVOKABLE QVariant get(int index, QString role);
+    Q_INVOKABLE QVariant getUrl(int index);
+    Q_INVOKABLE void append(QString filename, QString url, double latitude=0, double longitude=0 );
 
 public slots:
     void duplicateData(int row);

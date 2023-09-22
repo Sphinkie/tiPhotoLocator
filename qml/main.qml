@@ -151,16 +151,20 @@ Window {
             onClicked: {
                 // On met à jour la listModel
                 console.log("Manual Refresh");
-                _photoListModel.clear();                                                       // implémenté en C++
+                // _photoListModel.clear();                                                       // TODO implémenter le clear() en C++ (?)
                 for (var i = 0; i < folderListModel.count; )  {
                     console.log(i+": "+folderListModel.get(i,"fileName"));
                     console.log(i+": "+folderListModel.get(i,"fileUrl"));
-                    _photoListModel.append({ "filename":folderListModel.get(i,"fileName"),   // implémenté en C++
-                                         "imageUrl":folderListModel.get(i,"fileUrl").toString(),
-                                         "latitude": 48.0 + Math.random(),
-                                         "longitude": 2.0 + Math.random()
-                                         // "isDirty": false
-                                     });
+//                    _photoListModel.append({ "filename":folderListModel.get(i,"fileName"),        // TODO implémenter le append() en C++ (?)
+//                                         "imageUrl":folderListModel.get(i,"fileUrl").toString(),
+//                                         "latitude": 48.0 + Math.random(),
+//                                         "longitude": 2.0 + Math.random()
+//                                     });
+                    _photoListModel.append(folderListModel.get(i,"fileName"),        // TODO implémenter avec 1 parametre de type dictionnaire
+                                           folderListModel.get(i,"fileUrl").toString(),
+                                           48.0 + Math.random(),
+                                           2.0 + Math.random()
+                                               )
                     i++
                 }
             }
@@ -209,6 +213,7 @@ Window {
         }
 
         // --------------------------------- Ligne 3
+        // LIST VIEW DES PHOTOS
         Frame {  // ou Rectangle
             Layout.row: 3
             Layout.column: 0
@@ -271,9 +276,8 @@ Window {
             id: tabbedPage
             Layout.row: 3
             Layout.column: 1
-            //Layout.fillWidth: true
             currentIndex: bar.currentIndex
-            property int selectedItem: -1   // Image sélectionnée dans la ListView
+            property int selectedItem: -1   // Image sélectionnée dans la ListView (sert à toutes les pages de la Tab View) ... sauf PreviewTab pour le moment
             onSelectedItemChanged: {
                 /*
                 // mapTab.pLatitude = _photoListModel.get(selectedItem).latitude
@@ -308,7 +312,7 @@ Window {
                         // console.log(listModel.get(clickedItem).name);
                         // console.log(listModel.get(clickedItem).imageUrl);
                         // imageURl = Qt.resolvedUrl(_photoListModel.get(clickedItem).imageUrl);
-                        imageURl = Qt.resolvedUrl(_photoListModel.get(clickedItem,"imageUrl"));
+                        imageURl = Qt.resolvedUrl(_photoListModel.getUrl(clickedItem));
                     }
                 }
                 Text{
