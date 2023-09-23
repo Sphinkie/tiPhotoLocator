@@ -18,8 +18,9 @@
  * Contructeur
  * *************************************************************************/
 SelectedFilterProxyModel::SelectedFilterProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
-    , m_selectedFilterEnabled(true)
+//    , m_selectedFilterEnabled(true)
 {
+    m_selectedFilterEnabled=true;
 }
 
 /* *************************************************************************
@@ -37,17 +38,15 @@ void SelectedFilterProxyModel::setSelectedFilterEnabled(bool enabled)
 {
     if (m_selectedFilterEnabled == enabled)
         return;
-
     m_selectedFilterEnabled = enabled;
     emit selectedFilterEnabledChanged();
-
     invalidateFilter();
 }
 
 /* *************************************************************************
  * Effectue le filtrage (toutes les 10 secondes)
  * @param sourceRow Le numero d'une ligne du modèle
- * @param sourceParent L'index du modèle
+ * @param sourceParent ??
  * @return True si la ligne est acceptée
  * *************************************************************************/
 bool SelectedFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
@@ -59,6 +58,6 @@ bool SelectedFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex
     // On récupère les données de la ligne
     const bool isSelected = index.data(PhotoModel::IsSelectedRole).toBool();
     const QString name = index.data(PhotoModel::FilenameRole).toString();
-    qDebug() << "Filtering: " << name << isSelected ;
-    return (!isSelected);
+    qDebug() << "ProxyModel: " << sourceModel() << isSelected << name ;
+    return (isSelected);
 }

@@ -87,7 +87,7 @@ Window {
                 for (var i = 0; i < folderListModel.count; )  {
                     console.log(i+": "+folderListModel.get(i,"fileName"));
                     console.log(i+": "+folderListModel.get(i,"fileUrl"));
-                    //                    _photoListModel.append({ "filename":folderListModel.get(i,"fileName"),        // TODO implémenter le append() en C++ (?)
+                    //                    _photoListModel.append({ "filename":folderListModel.get(i,"fileName"),
                     //                                         "imageUrl":folderListModel.get(i,"fileUrl").toString(),
                     //                                         "latitude": 48.0 + Math.random(),
                     //                                         "longitude": 2.0 + Math.random()
@@ -184,7 +184,6 @@ Window {
                 Text{
                     // Avec les required properties dans une delegate, on indique qu'il faut utiliser les roles du modèle
                     required property string filename
-                    /* required */ property bool selectedIndex
                     // index is a special role available in the delegate: the index of the item in the model.
                     // Note this index is set to -1 if the item is removed from the model...
                     required property int index
@@ -198,12 +197,11 @@ Window {
                     MouseArea{
                         anchors.fill: parent
                         onClicked: {
-                            __lv.currentIndex = index
-      //                      previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante
-                            tabbedPage.selectedItem = index
-                            //model.setCurrentIndex(index)
-                            _photoListModel.selectedIndex = index
                             console.log("MouseArea: "+index);
+                            __lv.currentIndex = index            // Bouge le highlight dans la ListView
+      //                      previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel ?)
+                            _photoListModel.selectedRow = index  // Actualise le proxymodel
+                            tabbedPage.selectedItem = index      // inutile si pn utilise le ProxyModel
                         }
                     }
                 }

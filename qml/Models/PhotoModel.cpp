@@ -6,7 +6,7 @@
 
 #include <QByteArray>
 #include <QTimer>
-#include<QDebug>
+#include <QDebug>
 #include <cstdlib>
 
 
@@ -19,8 +19,8 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
     // On met quelques items dans la liste
     m_data
-        << Data("Hello", "qrc:Images/kodak.png", 38.0, 1.4 )
-        << Data("Select your photo folder", "qrc:///Images/ibiza.png", 38.980, 1.433);  // Ibiza
+        << Data("Select your photo folder", "qrc:Images/kodak.png", 38.0, 1.4, true)
+        << Data("Ibiza", "qrc:///Images/ibiza.png", 38.980, 1.433, false);
 
     QTimer *growthTimer = new QTimer(this);
     connect(growthTimer, &QTimer::timeout, this, &PhotoModel::growPopulation);
@@ -55,8 +55,8 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         return data.latitude;
     else if ( role == LongitudeRole )
         return data.longitude;
-    else if ( role == LongitudeRole )
-        return data.longitude;
+    else if ( role == IsSelectedRole )
+        return data.isSelected;
     else
         return QVariant();
 }
@@ -78,19 +78,19 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 
 
 // -----------------------------------------------------------------------
-// Example of get method
+// Example of get unitary data method
 // -----------------------------------------------------------------------
-QVariant PhotoModel::getUrl(int index){
+QVariant PhotoModel::getUrl(int index)
+{
     if (index < 0 || index >= m_data.count())
         return QVariant();
-    // QVariant result = QVariant("qrc:///Images/ibiza.png");
     QVariant result = QVariant(m_data[index].imageUrl);
     return result;
 }
 
 
 // -----------------------------------------------------------------------
-// Add an item in the Model
+// Add an item to the Model
 // -----------------------------------------------------------------------
 void PhotoModel::append(QString filename, QString url, double latitude, double longitude )
 {
@@ -100,6 +100,7 @@ void PhotoModel::append(QString filename, QString url, double latitude, double l
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_data.insert(rowOfInsert, *data);
     endInsertRows();
+    qDebug() << "append" << url << "to row" << rowOfInsert;
 }
 
 
@@ -107,20 +108,26 @@ void PhotoModel::append(QString filename, QString url, double latitude, double l
 // Mémorise la position fournie.
 // Met le flag "isSelected" du précédent item à False et le nouveau à True.
 // -----------------------------------------------------------------------
-void PhotoModel::selectedIndex(int pos)
+void PhotoModel::selectedRow(int row)
 {
-    qDebug() << "selectedIndex " << pos;
-    if (pos>=0){
-        m_data[m_lastSelectedIndex].isSelected = false;
-        m_data[pos].isSelected = true;
-        qDebug() << m_data[m_lastSelectedIndex].filename << m_data[m_lastSelectedIndex].isSelected ;
-        qDebug() << m_data[pos].filename << m_data[pos].isSelected ;
-        m_lastSelectedIndex = pos;
-        QModelIndex start_index = this->index(0,0);
-        QModelIndex end_index = this->index(1,0);
-        // emit selectedIndexChanged();
-        emit dataChanged(start_index, end_index, {IsSelectedRole});
+    qDebug() << "selectedRow " << row << "/" << m_data.count();
+    if (row < 0 || row >= m_data.count() || row == m_lastSelectedRow)
+        return;
+    // On remet à False le précédent item sélectionné
+    if (m_lastSelectedRow != -1)
+    {
+        m_data[m_lastSelectedRow].isSelected = false;
+        QModelIndex previous_index = this->index(m_lastSelectedRow, 0);
+        emit dataChanged(previous_index, previous_index, {IsSelectedRole});
+        qDebug() << m_data[m_lastSelectedRow].isSelected << m_data[m_lastSelectedRow].filename ;
     }
+    // On remet à True le nouvel item sélectionné
+    m_data[row].isSelected = true;
+    qDebug() << "PhotoModel: " << this << m_data[row].isSelected << m_data[row].filename  ;
+    QModelIndex new_index = this->index(row, 0);
+    emit dataChanged(new_index, new_index, {IsSelectedRole});
+    m_lastSelectedRow = row;
+
 }
 
 
@@ -146,9 +153,9 @@ bool PhotoModel::setData2(const QModelIndex &index, const QVariant &value, int r
 // -----------------------------------------------------------------------
 // Useless
 // -----------------------------------------------------------------------
-int PhotoModel::getSelectedIndex()
+int PhotoModel::getSelectedRow()
 {
-    return m_lastSelectedIndex;
+    return m_lastSelectedRow;
 }
 
 // -----------------------------------------------------------------------
@@ -198,8 +205,6 @@ void PhotoModel::growPopulation()
 // Methode get() venant du forum
 // QML usage = myModel.get(1).title  //where 1 is an valid index.
 // Declaration = // Q_INVOKABLE QVariantMap get(int row);
-
-//definition
 QVariantMap PhotoModel::get(int row)
 {
     QHash<int,QByteArray> names = roleNames();
