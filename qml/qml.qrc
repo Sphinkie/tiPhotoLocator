@@ -16,8 +16,6 @@
         <file>Images/mappin-yellow.png</file>
         <file>Images/mappin-green.png</file>
         <file>Images/ibiza.png</file>
-        <file>Models/PhotoListModel.qml</file>
-        <file>Models/MarkerListModel.qml</file>
         <file>Models/FolderListModel.qml</file>
     </qresource>
 </RCC>

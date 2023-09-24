@@ -89,7 +89,7 @@ Window {
                     //                                         "latitude": 48.0 + Math.random(),
                     //                                         "longitude": 2.0 + Math.random()
                     //                                     });
-                    _photoListModel.append(folderListModel.get(i,"fileName"),        // TODO: implémenter avec 1 parametre de type dictionnaire
+                    _photoListModel.append(folderListModel.get(i,"fileName"),        // TODO implémenter avec 1 parametre de type dictionnaire
                                            folderListModel.get(i,"fileUrl").toString(),
                                            48.0 + Math.random(),
                                            2.0 + Math.random()
@@ -149,7 +149,7 @@ Window {
         }
 
         // --------------------------------- Ligne 3
-        // ListView des photos (filenames)
+        // LIST VIEW DES PHOTOS
         // ---------------------------------
         Frame {  // ou Rectangle
             Layout.row: 3
@@ -188,8 +188,6 @@ Window {
                 Text{
                     // Avec les required properties dans une delegate, on indique qu'il faut utiliser les roles du modèle
                     required property string filename
-                    required property double latitude
-                    required property double longitude
                     // index is a special role available in the delegate: the index of the item in the model.
                     // Note this index is set to -1 if the item is removed from the model...
                     required property int index
@@ -204,15 +202,11 @@ Window {
                         anchors.fill: parent
                         onClicked: {
                             console.log("MouseArea: "+index);
-                            __lv.currentIndex = index             // Bouge le highlight dans la ListView
+                            __lv.currentIndex = index            // Bouge le highlight dans la ListView
+                            // ListView.view.currentIndex = index            // Bouge le highlight dans la ListView (dont work)
                             // previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel ?)
-                            _photoListModel.selectedRow = index   // Actualise le proxymodel
-                            tabbedPage.selectedItem = index       // inutile si on utilise le ProxyModel
-                            // On envoie les coordonnées pour centrer la carte
-                            mapTab.new_latitude = latitude
-                            mapTab.new_longitude = longitude
-                            mapTab.new_coords = !mapTab.new_coords
-
+                            _photoListModel.selectedRow = index  // Actualise le proxymodel
+                            tabbedPage.selectedItem = index      // inutile si on utilise le ProxyModel
                         }
                     }
                 }
@@ -297,54 +291,48 @@ Window {
                 spacing: 8
                 Layout.alignment: Qt.AlignHCenter
                 // Layout.fillWidth: true
+                // Si les coords changent (selection d'une autre photo), on recentre la carte
                 onNew_coordsChanged: {
-                    // Centrage de la carte sur les nouvelles coordonnées
+                    // Centrage de la carte
                     console.log("NewCoords");
                     mapView.center = QtPositioning.coordinate(new_latitude, new_longitude)
                 }
-
                 CheckBox {
                     id: showAll_box
                     text: qsTr("Show All")
                     // TODO : afficher tous les photos du dossier
                 }
-
                 Map{
                     id: mapView
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     plugin: mapPlugin
-                    center: QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
+                    //                    center: QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
                     zoomLevel: 6
-                    onMapItemsChanged: {
-                        // Called every time the maker changes on the map:
-                        // cad un clic dans la listView
-                        console.log("onMapItemsChanged.");
-                        center= QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
-                    }
 
-                    /** The MapItemView is used to populate Map with MapItems from a model.
-                     * The MapItemView type only makes sense when contained in a Map, meaning that it has no standalone presentation.
-                    */
                     MapItemView {
                         id: mapitemView
-                        model: _selectedPhotoModel
+                        model: _selectedPhotoModel  // mappinModel
                         delegate: mapDelegate
-
+                        // A mettre dans la Map ou la MapView ?
                         MouseArea {
                             anchors.fill: parent
+                            /*
+                                                    required property double latitude
+                                                    required property double longitude
+                            */
                             onClicked: {
                                 console.log("Click on the map.");
                                 console.log('latitude  = ' + (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude));
                                 console.log('longitude = ' + (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude));
-                                // On mémorise les coords du point dans les properties du parent
+                                // on a les coords, qu'est ce qu'on en fait ?
+                                // on les mémorise dans le sproperties du parent
                                 mapTab.new_latitude = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
                                 mapTab.new_longitude= (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
-                                // On demande un recentrage de la carte
-                                mapTab.new_coords = !mapTab.new_coords;
-                                // TODO: on les écrit dans l'item du modele
-                                mapitemView.model.index.latitude = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
-                                mapitemView.model.index.longitude= (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
+                                mapTab.new_coords   = !mapTab.new_coords;
+                                // on les écrit dans l'item du modele
+                                _selectedPhotoModel.latitude = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
+                                _selectedPhotoModel.longitude= (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
                             }
                         }
                     }
@@ -352,13 +340,12 @@ Window {
                     Component{
                         // Le delegate pour afficher le Marker dans la MapView
                         id: mapDelegate
+                        //required property string filename
+                        //required property double latitude
+                        //required property double longitude
                         // Affichage d'un marker avec sous-titre
                         MapQuickItem{
-                            // Avec les required properties dans une delegate, on indique qu'il faut utiliser les roles du modèle
-                            required property string filename
-                            required property double latitude
-                            required property double longitude
-                            // Position du maker
+                            // Attention: le Delegate utilise les infos du MODEL (et pas les propriétés du parent!)
                             coordinate: QtPositioning.coordinate(latitude, longitude)
                             // Point d'ancrage de l'icone
                             anchorPoint.x: markerIcon.width * 0.5
@@ -368,8 +355,9 @@ Window {
                                 Image { id: markerIcon; source: "qrc:///Images/mappin-red.png"; height: 48; width: 48 }
                                 Text { text: filename; font.bold: true }
                             }
-                            // TODO: On centre la carte
-                            // mapView.center: QtPositioning.coordinate(new_latitude, new_longitude)
+                            // We memorise the coord in parent properties, to show them in the bottomline
+                            // mapTab.new_latitude : latitude
+                            // mapTab.new_longitude: longitude
                         }
                     }
 
@@ -383,103 +371,90 @@ Window {
 
                 }
 
-                ListView{
-                    id: coordsTextView
-                    model: _selectedPhotoModel
-                    delegate: coordsTextDelegate
-                }
-
-                Component{
-                    id: coordsTextDelegate
-                    Text {
-                        required property string latitude
-                        required property string longitude
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignBottom
-                        text: "Coordinates: " + latitude + " [LatN] / " + longitude + " [longW]"   // TODO : formater à 5 digits
-                        font.pixelSize: 16
-                    }
+                Text{
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignRight
+                    text: "Coordinates: " + mapTab.new_latitude.toString() + " [LatN} / " + mapTab.new_longitude.toString() + " [longW}"
                 }
             }
 
+            // ------------------ DATES TAB ----------------------------
+            ColumnLayout {
+                id: datesTab
+                anchors.fill: parent
+                spacing: 8
+                Text{
+                    Layout.alignment: Qt.AlignLeft
+                    text: "Tags:"
+                }
+                Rectangle{
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    color: "navajowhite"
+                }
+                Text{
+                    Layout.alignment: Qt.AlignLeft
+                    text: "Trashcan:"
+                }
+                Rectangle{
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    color: "navajowhite"
+                }
+            }
+        }
 
-        // ------------------ DATES TAB ----------------------------
-        ColumnLayout {
-            id: datesTab
-            anchors.fill: parent
-            spacing: 8
-            Text{
-                Layout.alignment: Qt.AlignLeft
-                text: "Tags:"
+        // --------------------------------- Ligne 4
+        // Imagettes
+        // ---------------------------------
+        Frame {
+            Layout.row: 4
+            Layout.columnSpan: 2
+            Layout.fillWidth: true
+            Layout.preferredHeight: 120
+
+            ListView {
+                height: 120
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                orientation: Qt.Horizontal
+                delegate:
+                    Image {
+                    width: 130
+                    height: 100
+                    fillMode: Image.PreserveAspectFit
+                    source: modelData
+                }
             }
-            Rectangle{
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                color: "navajowhite"
+        }
+
+        // --------------------------------- Ligne 5
+        // Barre de boutons en bas
+        // ---------------------------------
+        RowLayout {
+            Layout.row: 5
+            Layout.columnSpan: 2
+            //Layout.fillHeight: true
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
+            spacing: 20
+            CheckBox {
+                id: checkBox
+                text: qsTr("Générer backups")
             }
-            Text{
-                Layout.alignment: Qt.AlignLeft
-                text: "Trashcan:"
+            Button {
+                id: button1
+                text: qsTr("Enregistrer")
+                // TODO : save the modified pictures
             }
-            Rectangle{
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                color: "navajowhite"
+            Button {
+                id: button
+                text: qsTr("Quitter")
+                onPressed: Qt.quit()
             }
         }
     }
-
-    // --------------------------------- Ligne 4
-    // Imagettes
-    // ---------------------------------
-    Frame {
-        Layout.row: 4
-        Layout.columnSpan: 2
-        Layout.fillWidth: true
-        Layout.preferredHeight: 120
-
-        ListView {
-            height: 120
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            orientation: Qt.Horizontal
-            delegate:
-                Image {
-                width: 130
-                height: 100
-                fillMode: Image.PreserveAspectFit
-                source: modelData
-            }
-        }
-    }
-
-    // --------------------------------- Ligne 5
-    // Barre de boutons en bas
-    // ---------------------------------
-    RowLayout {
-        Layout.row: 5
-        Layout.columnSpan: 2
-        //Layout.fillHeight: true
-        Layout.fillWidth: true
-        Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
-        spacing: 20
-        CheckBox {
-            id: checkBox
-            text: qsTr("Générer backups")
-        }
-        Button {
-            id: button1
-            text: qsTr("Enregistrer")
-            // TODO : save the modified pictures
-        }
-        Button {
-            id: button
-            text: qsTr("Quitter")
-            onPressed: Qt.quit()
-        }
-    }
-}
 
 }
 
