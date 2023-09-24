@@ -15,16 +15,16 @@
 class SelectedFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
-
     Q_PROPERTY(bool selectedFilterEnabled READ selectedFilterEnabled WRITE setSelectedFilterEnabled NOTIFY selectedFilterEnabledChanged)
 
 public:
     explicit SelectedFilterProxyModel(QObject *parent = nullptr);
-
     bool selectedFilterEnabled() const;
+    Q_INVOKABLE void setCoords(double l1, double l2);
 
 public slots:
     void setSelectedFilterEnabled(bool enabled);
+    void cppSlot(const double latit);
 
 signals:
     void selectedFilterEnabledChanged();

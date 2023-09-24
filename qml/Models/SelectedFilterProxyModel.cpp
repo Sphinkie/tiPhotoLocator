@@ -32,7 +32,42 @@ bool SelectedFilterProxyModel::selectedFilterEnabled() const
 }
 
 /* *************************************************************************
- * Active/Désactive le filtre
+ * On remaplace les coords de l'item pas celles recçues en paramètre.
+ * TODO: On devrait pouvoir faire cela avec un SLOT...
+ * *************************************************************************/
+void SelectedFilterProxyModel::cppSlot(const double latit)
+{
+    qDebug() << "Called the C++ slot with:" << latit;
+}
+
+/* *************************************************************************
+ * On remaplace les coords de l'item pas celles recçues en paramètre.
+ * *************************************************************************/
+void SelectedFilterProxyModel::setCoords(double lat, double lon)
+{
+    // Normalement, il n'y a qu'un seul item dans cette liste filtrée...
+    const QModelIndex index0 = this->index(0, 0);
+    const double old_lat = index0.data(PhotoModel::LatitudeRole).toDouble();
+    const double old_lon = index0.data(PhotoModel::LongitudeRole).toDouble();
+    qDebug() << "changing lat coords from " << old_lat << "to" << lat ;
+    qDebug() << "changing lon coords from " << old_lon << "to" << lon ;
+
+    // TODO: On écrit dans l'item
+    // WTF: Il ne veut pas modifier l'item !
+    setData(index(0, 0), lat, PhotoModel::LatitudeRole);
+    setData(index(0, 0), lon, PhotoModel::LongitudeRole);
+
+    setData(sourceModel()->index(0, 0), lat, PhotoModel::LatitudeRole);
+    //setData(sourceModel()->index(0, 0), lon, PhotoModel::LongitudeRole);
+
+    emit dataChanged(index0, index0);
+    qDebug() << "Proxy" << index0.data(PhotoModel::LatitudeRole).toDouble();
+    //qDebug() << "source" << sourceModel()->index(0, 0).data(PhotoModel::LatitudeRole).toDouble();
+}
+
+
+/* *************************************************************************
+ * SLOT: Active/Désactive le filtre
  * *************************************************************************/
 void SelectedFilterProxyModel::setSelectedFilterEnabled(bool enabled)
 {

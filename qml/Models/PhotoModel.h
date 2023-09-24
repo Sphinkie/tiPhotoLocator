@@ -44,7 +44,7 @@ public:
     enum Roles {
         FilenameRole = Qt::UserRole,  // The first role that can be used for application-specific purposes.
         ImageUrlRole,
-        LatitudeRole,
+        LatitudeRole = Qt::EditRole,  // Roles pouvant être modifiés
         LongitudeRole,
         IsSelectedRole
     };

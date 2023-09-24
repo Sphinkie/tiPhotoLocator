@@ -61,6 +61,8 @@ Window {
         }
 
         // --------------------------------- Ligne 1
+        // Rappel du nom du folder
+        // ---------------------------------
         TextEdit {
             Layout.row: 1
             Layout.column: 0
@@ -68,6 +70,7 @@ Window {
             //readOnly: true
             enabled: false
             text: folderDialog.folder
+            font.pixelSize: 16
         }
         Button {
             // TODO: le bouton pourra être supprimé quand on aura mis le timer
@@ -151,7 +154,7 @@ Window {
         // --------------------------------- Ligne 3
         // ListView des photos (filenames)
         // ---------------------------------
-        Frame {  // ou Rectangle
+        Frame {
             Layout.row: 3
             Layout.column: 0
             Layout.fillWidth: false
@@ -208,7 +211,7 @@ Window {
                             // previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel ?)
                             _photoListModel.selectedRow = index   // Actualise le proxymodel
                             tabbedPage.selectedItem = index       // inutile si on utilise le ProxyModel
-                            // On envoie les coordonnées pour centrer la carte
+                            // On envoie les coordonnées pour centrer la carte sur le point selectionné
                             mapTab.new_latitude = latitude
                             mapTab.new_longitude = longitude
                             mapTab.new_coords = !mapTab.new_coords
@@ -299,7 +302,7 @@ Window {
                 // Layout.fillWidth: true
                 onNew_coordsChanged: {
                     // Centrage de la carte sur les nouvelles coordonnées
-                    console.log("NewCoords");
+                    console.log("NewCoords: re-center the map");
                     mapView.center = QtPositioning.coordinate(new_latitude, new_longitude)
                 }
 
@@ -317,9 +320,8 @@ Window {
                     center: QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
                     zoomLevel: 6
                     onMapItemsChanged: {
-                        // Called every time the maker changes on the map:
-                        // cad un clic dans la listView
-                        console.log("onMapItemsChanged.");
+                        // Called every time the maker changes on the map: cad un clic dans la listView
+                        console.log("onMapItemsChanged: re-center the map");
                         center= QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
                     }
 
@@ -330,24 +332,32 @@ Window {
                         id: mapitemView
                         model: _selectedPhotoModel
                         delegate: mapDelegate
+                        signal qmlSignal(double latit)
 
+                        // ---------------------------
                         MouseArea {
                             anchors.fill: parent
                             onClicked: {
                                 console.log("Click on the map.");
-                                console.log('latitude  = ' + (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude));
-                                console.log('longitude = ' + (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude));
+                                var lati = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
+                                var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
+                                console.log('latitude  = ' + lati );
+                                console.log('longitude = ' + longi);
                                 // On mémorise les coords du point dans les properties du parent
-                                mapTab.new_latitude = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
-                                mapTab.new_longitude= (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
+                                mapTab.new_latitude = lati;
+                                mapTab.new_longitude= longi;
                                 // On demande un recentrage de la carte
                                 mapTab.new_coords = !mapTab.new_coords;
-                                // TODO: on les écrit dans l'item du modele
-                                mapitemView.model.index.latitude = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
-                                mapitemView.model.index.longitude= (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
+                                // TODO: on écrit les coordonnées dans l'item du modele
+                                console.log(mapitemView.model);
+                                // _selectedPhotoModel.setData(index(0,0), lati, photoModel.LatitudeRole)
+                                parent.qmlSignal(lati)
+                                _selectedPhotoModel.setCoords(lati, longi);
                             }
                         }
+                        // ---------------------------
                     }
+
 
                     Component{
                         // Le delegate pour afficher le Marker dans la MapView
@@ -368,8 +378,6 @@ Window {
                                 Image { id: markerIcon; source: "qrc:///Images/mappin-red.png"; height: 48; width: 48 }
                                 Text { text: filename; font.bold: true }
                             }
-                            // TODO: On centre la carte
-                            // mapView.center: QtPositioning.coordinate(new_latitude, new_longitude)
                         }
                     }
 
