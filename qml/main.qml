@@ -199,7 +199,7 @@ Window {
                         onClicked: {
                             console.log("MouseArea: "+index);
                             __lv.currentIndex = index            // Bouge le highlight dans la ListView
-      //                      previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel ?)
+                            //                      previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel ?)
                             _photoListModel.selectedRow = index  // Actualise le proxymodel
                             tabbedPage.selectedItem = index      // inutile si pn utilise le ProxyModel
                         }
@@ -226,33 +226,34 @@ Window {
                                        */
             }
             // ------------------ PREVIEW TAB --------------------------
-//            ColumnLayout {
-//                id: previewTab
+            //            ColumnLayout {
+            //                id: previewTab
             //            anchors.fill: parent
 
-                GridView{
-                    id: previewView
-                    model: _selectedPhotoModel      // Ce modèle ne contient que la photo sélectionnée dans la ListView
-                    delegate: previewDelegate
-                    // Layout.fillWidth: true
-                }
+            GridView{
+                id: previewView
+                model: _selectedPhotoModel      // Ce modèle ne contient que la photo sélectionnée dans la ListView
+                delegate: previewDelegate
+                clip: true                      // pour que les items restent à l'interieur de la View
+                // Layout.fillWidth: true
+            }
 
-                Component {
-                    id: previewDelegate
-                    Column{
-                        Image {
-                            id: previewImage
-                            //property int clickedItem: -1
-//                            property url imageURl: "qrc:///Images/kodak.png"
-                            Layout.alignment: Qt.AlignCenter
-                            Layout.preferredWidth: 600
-                            Layout.preferredHeight: 600
-                            // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
-                            Layout.maximumHeight: sourceSize.height
-                            Layout.maximumWidth: sourceSize.width
-                            fillMode: Image.PreserveAspectFit
-                            source: model.imageUrl
-                            /*                            onClickedItemChanged: {
+            Component {
+                id: previewDelegate
+                Column{
+                    Image {
+                        id: previewImage
+                        //property int clickedItem: -1
+                        //                            property url imageURl: "qrc:///Images/kodak.png"
+                        Layout.alignment: Qt.AlignCenter
+                        Layout.preferredWidth: 600
+                        Layout.preferredHeight: 600
+                        // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
+                        Layout.maximumHeight: sourceSize.height
+                        Layout.maximumWidth: sourceSize.width
+                        fillMode: Image.PreserveAspectFit
+                        source: model.imageUrl
+                        /*                            onClickedItemChanged: {
                                 // TODO: comment recupérer les données du modèle quand on est dans une fonction et pas dans un delegate?
                                 //      il faut utiliser une méthode...
                                 //      ou utiliser des delegate, ce qui semble être la méthode recommandée
@@ -265,70 +266,100 @@ Window {
                                 console.log("data returns: ");
                                 console.log(_photoListModel.data(_photoListModel.index(clickedItem,_photoListModel.ImageUrlRole), _photoListModel.ImageUrlRole));
                             }*/
-                        }
-                        Text{
-                            text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
-                            Layout.alignment: Qt.AlignCenter
-                        }
+                    }
+                    Text{
+                        text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
+                        Layout.alignment: Qt.AlignCenter
                     }
                 }
-//            }
+            }
+            //            }
 
             // ------------------ MAP TAB ------------------------------
             ColumnLayout {
                 id: mapTab
                 anchors.fill: parent
                 // Les coordonnées du point sélectionné
-                property real pLatitude: 48.85  // paris
-                property real pLongitude: 2.34
+                property real new_latitude
+                property real new_longitude
                 spacing: 8
                 Layout.alignment: Qt.AlignHCenter
                 // Layout.fillWidth: true
                 // Si les coords changent (selection d'une autre photo), on recentre la carte
-                onPLatitudeChanged: {
-                    mapView.center = QtPositioning.coordinate(pLatitude, pLongitude)
+                onNew_latitudeChanged: {
+                    // Centrage de la carte
+                    console.log("New_latitude Changed");
+                    mapView.center = QtPositioning.coordinate(new_latitude, new_longitude)
                 }
                 CheckBox {
                     id: showAll_box
                     text: qsTr("Show All")
                     // TODO : afficher tous les photos du dossier
                 }
-                Plugin{
-                    id: mapPlugin
-                    name: "osm"
-                    // parametres optionels
-                    // PluginParameter{ name: "" ; value: ""}
-                    // TODO : ajouter la KEY API
-                }
                 Map{
                     id: mapView
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     plugin: mapPlugin
-                    center: QtPositioning.coordinate(parent.pLatitude, parent.pLongitude)
+//                    center: QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
                     zoomLevel: 6
 
                     MapItemView {
-                        model: mappinModel
-                        delegate: MapQuickItem {
+                        model: _selectedPhotoModel  // mappinModel
+                        delegate: mapDelegate
+
+// A mettre dans la Map ou la MapView ?
+                        MouseArea {
+                            anchors.fill: parent
+    /*
+                            required property double latitude
+                            required property double longitude
+    */
+                            onClicked: {
+                                console.log("Click on the map.");
+
+                                console.log('latitude  = ' + (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude));
+                                console.log('longitude = ' + (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude));
+// on a les coords, qu'est ce qu'on en fait ?
+// on les écrit dans l'item du modele
+                                _selectedPhotoModel.latitude = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
+                                _selectedPhotoModel.longitude= (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
+                                }
+                            }
+                    }
+
+                    Component{
+                        // Le delegate pour afficher le Marker dans la MapView
+                        id: mapDelegate
+                        // Affichage d'un marker avec sous-titre
+                        MapQuickItem{
                             // Attention: le Delegate utilise les infos du MODEL (et pas les propriétés du parent!)
                             coordinate: QtPositioning.coordinate(latitude, longitude)
                             // Point d'ancrage de l'icone
                             anchorPoint.x: markerIcon.width * 0.5
                             anchorPoint.y: markerIcon.height
+                            // On dessine le marker et le texte
                             sourceItem: Column {
                                 Image { id: markerIcon; source: "qrc:///Images/mappin-red.png"; height: 48; width: 48 }
-                                Text { text: name; font.bold: true }
+                                Text { text: filename; font.bold: true }
                             }
-
                         }
                     }
 
+                    Plugin{
+                        id: mapPlugin
+                        name: "osm"
+                        // parametres optionels
+                        // PluginParameter{ name: "" ; value: ""}
+                        // TODO : ajouter la KEY API
+                    }
+
                 }
+
                 Text{
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignRight
-                    text: "Coordinates: " + mapTab.pLatitude.toString() + " [LatN} / " + mapTab.pLongitude.toString() + " [longW}"
+                    text: "Coordinates: " + mapTab.new_latitude.toString() + " [LatN} / " + mapTab.new_longitude.toString() + " [longW}"
                 }
             }
 

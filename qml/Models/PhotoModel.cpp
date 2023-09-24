@@ -19,7 +19,7 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
     // On met quelques items dans la liste
     m_data
-        << Data("Select your photo folder", "qrc:Images/kodak.png", 38.0, 1.4, true)
+        << Data("Select your photo folder", "qrc:Images/kodak.png", 48.866, 2.333, true)
         << Data("Ibiza", "qrc:///Images/ibiza.png", 38.980, 1.433, false);
 
     QTimer *growthTimer = new QTimer(this);

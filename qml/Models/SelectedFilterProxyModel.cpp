@@ -12,7 +12,7 @@
 #include "SelectedFilterProxyModel.h"
 #include "PhotoModel.h"
 
-// #define QT_NO_DEBUG_OUTPUT
+#define QT_NO_DEBUG_OUTPUT
 
 /* *************************************************************************
  * Contructeur
@@ -58,6 +58,6 @@ bool SelectedFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex
     // On récupère les données de la ligne
     const bool isSelected = index.data(PhotoModel::IsSelectedRole).toBool();
     const QString name = index.data(PhotoModel::FilenameRole).toString();
-    qDebug() << "ProxyModel: " << sourceModel() << isSelected << name ;
+    // qDebug() << "ProxyModel: " << sourceModel() << isSelected << name ;
     return (isSelected);
 }
