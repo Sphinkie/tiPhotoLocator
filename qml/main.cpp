@@ -5,6 +5,8 @@
 #include <QQuickItem>
 #include "Models/PhotoModel.h"
 #include "Models/SelectedFilterProxyModel.h"
+#include "cpp/ExifWrapper.h"
+
 
 int main(int argc, char *argv[])
 {
@@ -20,6 +22,8 @@ int main(int argc, char *argv[])
     PhotoModel photoListModel;
     SelectedFilterProxyModel selectedPhotoModel;
     selectedPhotoModel.setSourceModel(&photoListModel);
+
+    ExifWrapper exifWrapper;
 
     // Initialisation du moteur:
     // Au choix

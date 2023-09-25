@@ -17,5 +17,6 @@
         <file>Images/mappin-green.png</file>
         <file>Images/ibiza.png</file>
         <file>Models/FolderListModel.qml</file>
+        <file>Components/TiPhotoMap.qml</file>
     </qresource>
 </RCC>

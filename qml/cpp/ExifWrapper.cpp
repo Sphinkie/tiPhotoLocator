@@ -1,0 +1,113 @@
+#include "ExifWrapper.h"
+#include <QFile>
+#include <QTextStream>
+#include <QProcess>
+
+/**
+ * @brief Contructeur. Initialise le fichier de configuration pour exifTools.
+ **/
+ExifWrapper::ExifWrapper()
+{
+    this->writeConfigFile();
+}
+
+/**
+ * @brief Scan all the pictures in a folder with ExifTools
+ * @return true if successfull
+ **/
+bool ExifWrapper::scanFolder()
+{
+    QString folderPath = "E:\\TiPhotos";
+    QString folderPath2 = "E:\\\\TiPhotos";
+    QProcess exifProcess;
+    QString program = "./exifTools.exe";
+    QStringList arguments;
+    arguments << "-@ exiftools.config" << folderPath;
+
+    QObject *parent;
+    QProcess *myProcess = new QProcess(parent);
+    myProcess->start(program, arguments);
+
+    return true;
+}
+
+
+
+/**
+ * @brief Write the configuration file for ExifTools.
+ * @return true if the file was successfully created.
+ **/
+bool ExifWrapper::writeConfigFile()
+{
+    QFile file("exiftools.config");
+    if (!file.open(QFile::WriteOnly))
+        return false;
+
+    QTextStream out(&file);
+    // Formattage du flux de sortie de ExifTools
+    out << "-veryShort"         << Qt::endl;      // very short output format  (-S)
+    out << "--printConv"        << Qt::endl;      // no print conversion (-n)
+    out << "--duplicates"       << Qt::endl;      // suppress duplicate (--a)
+    out << "-preserve"          << Qt::endl;      // Preserve file modification date/time
+    out << "-json"              << Qt::endl;      // output in JSON format
+    // Liste des tags Exif à extraire
+    out << "-FileName"          << Qt::endl;
+    out << "-FileCreateDate"    << Qt::endl;
+    out << "-CreateDate"        << Qt::endl;
+    out << "-DateTimeOriginal"  << Qt::endl;
+    out << "-ModifyDate"        << Qt::endl;
+    // TODO : Rendre certains tags configurables depuis le menu settings
+    out << "-Model"             << Qt::endl;
+    out << "-Make"              << Qt::endl;
+    out << "-ImageWidth"        << Qt::endl;
+    out << "-ImageHeight"       << Qt::endl;
+    out << "-Artist"            << Qt::endl;
+    out << "-ImageDescription"  << Qt::endl;
+    // GPS coordinates
+    out << "-GPSLatitude"       << Qt::endl;
+    out << "-GPSLongitude"      << Qt::endl;
+    out << "-GPSLatitudeRef"    << Qt::endl;
+    out << "-GPSLongitudeRef"   << Qt::endl;
+    // Reverse Geocoding
+    out << "-City"              << Qt::endl;
+    out << "-Country"           << Qt::endl;
+    out << "-Caption"           << Qt::endl;
+    out << "-DescriptionWriter" << Qt::endl;
+    out << "-Headline"          << Qt::endl;
+    out << "-Keywords"          << Qt::endl;
+    out << "-Title"             << Qt::endl;
+
+    // Fermeture du fichier
+    file.close();
+    return true;
+}
+
+/*
+-j[[+]=*JSONFILE*] (-json)
+     Use JSON (JavaScript Object Notation) formatting for console output, or import JSON file if *JSONFILE* is specified. This option may be combined with -g to organize the output into objects by group, or -G to add group names to each tag. List-type tags with multiple items are output as JSON arrays unless -sep is used. By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings). The -a option is implied when -json is used,
+     but entries with identical JSON names are suppressed in the output. (-G4 may be used to ensure that all tags have unique JSON names.)
+     Adding the -D or -H option changes tag values to JSON objects with "val" and "id" fields, and adding -l adds a "desc" field, and a "num" field if the numerical value is different from the converted "val". The -b option may be added to output binary data, encoded in base64 if necessary (indicated by ASCII "base64:" as the first 7 bytes of the value), and -t may be added to include tag table information (see -t for details). The JSON output is UTF-8 regardless of any -L or -charset option setting, but the UTF-8 validation is disabled if a character set other than UTF-8 is specified. Note that ExifTool quotes JSON values only if they don't
+     look like numbers (regardless of the original storage format or the relevant metadata specification).
+
+     If *JSONFILE* is specified, the file is imported and the tag definitions from the file are used to set tag values on a per-file basis. The special "SourceFile" entry in each JSON object associates the information with a specific target file. An object with a missing SourceFile or a SourceFile of "*" defines default tags for all target files which are combined with any tags specified for the specific SourceFile processed. The imported JSON file must have the same format as the exported JSON files with the exception that options exporting JSON objects instead of simple values are not compatible with the import file format (ie. export
+     with -D, -H, -l, or -T is not compatable, and use -G instead of -g). Additionally, tag names in the input JSON file may be suffixed with a "#" to disable print conversion.
+
+     Unlike CSV import, empty values are not ignored, and will cause an empty value to be written if supported by the specific metadata type. Tags are deleted by using the -f option and setting the tag value to "-" (or to the MissingTagValue setting if this API option was used). Importing with -j+=*JSONFILE* causes new values to be added to existing lists.
+*/
+
+
+// Simple exemple. non utilisé.
+bool ExifWrapper::write(const QString& filename, const QString& data)
+{
+    if (filename.isEmpty())
+        return false;
+
+    QFile file(filename);
+    if (!file.open(QFile::WriteOnly | QFile::Truncate))
+        return false;
+
+    QTextStream out(&file);
+    out << data;
+    file.close();
+    return true;
+}

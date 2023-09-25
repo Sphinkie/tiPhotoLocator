@@ -6,9 +6,6 @@ import Qt.labs.platform 1.1
 
 import QtQml.Models 2.15
 
-import QtLocation 5.12
-import QtPositioning 5.12
-
 import "./Dialogs"
 import "./Components"
 import "./Models"
@@ -312,6 +309,14 @@ Window {
                     // TODO : afficher tous les photos du dossier
                 }
 
+                // Affichage de la carte
+                TiPhotoMap{
+                    id: mapView
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                }
+
+/**
                 Map{
                     id: mapView
                     Layout.fillWidth: true
@@ -325,9 +330,8 @@ Window {
                         center= QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
                     }
 
-                    /** The MapItemView is used to populate Map with MapItems from a model.
-                     * The MapItemView type only makes sense when contained in a Map, meaning that it has no standalone presentation.
-                    */
+                    // The MapItemView is used to populate Map with MapItems from a model.
+                    // The MapItemView type only makes sense when contained in a Map, meaning that it has no standalone presentation.
                     MapItemView {
                         id: mapitemView
                         model: _selectedPhotoModel
@@ -388,7 +392,7 @@ Window {
                     }
 
                 }
-
+**/
                 ListView{
                     id: coordsTextView
                     model: _selectedPhotoModel

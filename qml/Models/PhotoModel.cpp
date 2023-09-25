@@ -4,7 +4,7 @@
 
 #include "PhotoModel.h"
 
-#include <QByteArray>
+//#include <QByteArray>
 #include <QTimer>
 #include <QDebug>
 #include <cstdlib>
@@ -63,9 +63,9 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         return QVariant();
 }
 
-// -----------------------------------------------------------------------
-// Table of Role names. Implémentation obligatoire.
-// -----------------------------------------------------------------------
+/**
+ * Table of Role names. Implémentation obligatoire.
+ **/
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
