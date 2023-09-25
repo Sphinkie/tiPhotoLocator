@@ -347,12 +347,10 @@ Window {
                                 mapTab.new_latitude = lati;
                                 mapTab.new_longitude= longi;
                                 // On demande un recentrage de la carte
-                                mapTab.new_coords = !mapTab.new_coords;
-                                // TODO: on écrit les coordonnées dans l'item du modele
-                                console.log(mapitemView.model);
-                                // _selectedPhotoModel.setData(index(0,0), lati, photoModel.LatitudeRole)
-                                parent.qmlSignal(lati)
+                                // mapTab.new_coords = !mapTab.new_coords;
+                                // On écrit les coordonnées dans l'item du modele
                                 _selectedPhotoModel.setCoords(lati, longi);
+                                // parent.qmlSignal(lati) // marche pas
                             }
                         }
                         // ---------------------------

@@ -40,7 +40,7 @@ void SelectedFilterProxyModel::cppSlot(const double latit)
 }
 
 /* *************************************************************************
- * On remaplace les coords de l'item pas celles recçues en paramètre.
+ * On remplace les coords de l'item par celles reçues en paramètre.
  * *************************************************************************/
 void SelectedFilterProxyModel::setCoords(double lat, double lon)
 {
@@ -55,21 +55,20 @@ void SelectedFilterProxyModel::setCoords(double lat, double lon)
     // Méthode 1: on modifie l'item dans le proxy. Il faut implémenter setData() dans le sourceModel.
     setData(index0, lat, PhotoModel::LatitudeRole);
     setData(index0, lon, PhotoModel::LongitudeRole);
+
+/*
     setData(index0, "changed in proxy", PhotoModel::FilenameRole);
+    emit dataChanged(index0, index0); // inutile ici : c'est inclut dans le setData()
     qDebug() << "index0 " << index0;
-    // emit dataChanged(index0, index0); // inutile ici : c'est inclut dans le setData()
 
     // Méthode 2: on modifie l'item dans la source. Pareil.
-/*    const QModelIndex index_source = mapToSource(index0);
+    const QModelIndex index_source = mapToSource(index0);
     sourceModel()->setData(index_source, lat, PhotoModel::LatitudeRole);
     sourceModel()->setData(index_source, lon, PhotoModel::LongitudeRole);
     sourceModel()->setData(index_source, "changed in source", PhotoModel::FilenameRole);
-    qDebug() << "index_source " << index_source;
     emit dataChanged(index_source, index_source);
+    qDebug() << "index_source " << index_source;
 */
-    // Méthode 3: Appel d'une methode du modèle source: TODO
-    // sourceModel()->setCoordData(index_source, lat, lon);
-
 
     // Vérification
     qDebug() << "Proxy" << index0.data(PhotoModel::LatitudeRole).toDouble() << index0.data(PhotoModel::FilenameRole).toString();

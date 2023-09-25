@@ -27,10 +27,10 @@ struct Data {
     QString imageUrl;       // Example: "qrc:///Images/ibiza.png"
     double latitude;        // Example: 38.980    // GPS coordinates
     double longitude;       // Example: 1.433     // (Ibiza)
+    bool hasGPS = false;    // has GPS coordinates (latitude/longitude)
     bool isSelected;
     // isDirty: false      // true if one of the following fields has been modified
-    // hasGPS: false       // has GPS coordinates
-    // nearSelected: false // inside the radius of nearby photos
+    // insideCircle: false // inside the radius of nearby photos
 };
 
 // -----------------------------------------------------------------------
@@ -44,8 +44,9 @@ public:
     enum Roles {
         FilenameRole = Qt::UserRole,  // The first role that can be used for application-specific purposes.
         ImageUrlRole,
-        LatitudeRole = Qt::EditRole,  // Roles pouvant être modifiés
+        LatitudeRole,
         LongitudeRole,
+        HasGPSRole,
         IsSelectedRole
     };
 
@@ -61,8 +62,7 @@ public:
     Q_INVOKABLE QVariant getUrl(int index);
     Q_INVOKABLE QVariantMap get(int row);
     Q_INVOKABLE void append(QString filename, QString url, double latitude=0, double longitude=0 );
-    bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse // A voir si utile
-    bool setCoordData(const QModelIndex &index, double lat, double lon);
+    bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse
     // Getter and Setter
     void selectedRow(int row);
     int getSelectedRow();

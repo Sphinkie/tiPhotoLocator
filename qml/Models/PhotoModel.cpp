@@ -57,6 +57,8 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         return data.longitude;
     else if ( role == IsSelectedRole )
         return data.isSelected;
+    else if ( role == HasGPSRole )
+        return data.hasGPS;
     else
         return QVariant();
 }
@@ -71,6 +73,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {ImageUrlRole, "imageUrl"},
         {LatitudeRole, "latitude"},
         {LongitudeRole, "longitude"},
+        {HasGPSRole, "hasGPS"},
         {IsSelectedRole, "isSelected"}
     };
     return mapping;
@@ -130,25 +133,13 @@ void PhotoModel::selectedRow(int row)
 
 }
 
-
-bool PhotoModel::setCoordData(const QModelIndex &index, double lat, double lon)
-{
-    if (index.isValid()) {
-            m_data[index.row()].latitude = lat;
-            m_data[index.row()].longitude = lon;
-            emit dataChanged(index, index, { PhotoModel::LatitudeRole, PhotoModel::LongitudeRole });
-            return true;
-        }
-    return false;
-}
-
-
-// Note: It is important to emit the dataChanged() signal after saving the changes.
+// -----------------------------------------------------------------------
+// Surcharge de la fontion setData qui permet de modifier un item du modèle.
 // Voir : https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
+// -----------------------------------------------------------------------
 bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
-    // All Roles can be edited, in PhotoModel !
-    if (index.isValid() )    // && role == Qt::EditRole
+    if (index.isValid())
     {
         // Check if the new value differs from the current value
         if (m_data[index.row()].filename != value.toString())
@@ -157,18 +148,24 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
         }
 
         // Set data in model here.
-        switch (role) {
-        case FilenameRole:  // TODO : pour tests uniquement
+        switch (role)
+        {
+        // IsSelectedRole: non-modifiable par ici. Merci de paser par selectedRow().
+        // FilenameRole: pour tests uniquement. Normalement, on ne modifie pas ce role.
+        case FilenameRole:
             m_data[index.row()].filename = value.toString();
         break;
         case LatitudeRole:
             m_data[index.row()].latitude = value.toDouble();
+            m_data[index.row()].hasGPS = true;
         break;
         case LongitudeRole:
             m_data[index.row()].longitude = value.toDouble();
+            m_data[index.row()].hasGPS = true;
         break;
         }
-        emit dataChanged(index, index);   // , { Qt::EditRole, Qt::DisplayRole });
+        // Note: It is important to emit the dataChanged() signal after saving the changes.
+        emit dataChanged(index, index);   // , { Qt::UserRole });
         return true;
 
     }
