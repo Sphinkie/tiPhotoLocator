@@ -61,7 +61,8 @@ public:
     Q_INVOKABLE QVariant getUrl(int index);
     Q_INVOKABLE QVariantMap get(int row);
     Q_INVOKABLE void append(QString filename, QString url, double latitude=0, double longitude=0 );
-    bool setData2(const QModelIndex &index, const QVariant &value, int role);  // setData est deja dans la surclasse // A voir si utile
+    bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse // A voir si utile
+    bool setCoordData(const QModelIndex &index, double lat, double lon);
     // Getter and Setter
     void selectedRow(int row);
     int getSelectedRow();

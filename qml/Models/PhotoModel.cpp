@@ -131,20 +131,46 @@ void PhotoModel::selectedRow(int row)
 }
 
 
-// Note: It is important to emit the dataChanged() signal after saving the changes.
-// Voir : https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
-bool PhotoModel::setData2(const QModelIndex &index, const QVariant &value, int role)
+bool PhotoModel::setCoordData(const QModelIndex &index, double lat, double lon)
 {
-    if (index.isValid() && role == Qt::EditRole) {
-        // Set data in model here. It can also be a good idea to check whether
-        // the new value actually differs from the current value
-/*        if (m_entries[index.row()] != value.toString())
-        {
-            m_entries[index.row()] = value.toString();
-            emit dataChanged(index, index, { Qt::EditRole, Qt::DisplayRole });
+    if (index.isValid()) {
+            m_data[index.row()].latitude = lat;
+            m_data[index.row()].longitude = lon;
+            emit dataChanged(index, index, { PhotoModel::LatitudeRole, PhotoModel::LongitudeRole });
             return true;
         }
-*/
+    return false;
+}
+
+
+// Note: It is important to emit the dataChanged() signal after saving the changes.
+// Voir : https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
+bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int role)
+{
+    // All Roles can be edited, in PhotoModel !
+    if (index.isValid() )    // && role == Qt::EditRole
+    {
+        // Check if the new value differs from the current value
+        if (m_data[index.row()].filename != value.toString())
+        {
+           // TODO
+        }
+
+        // Set data in model here.
+        switch (role) {
+        case FilenameRole:  // TODO : pour tests uniquement
+            m_data[index.row()].filename = value.toString();
+        break;
+        case LatitudeRole:
+            m_data[index.row()].latitude = value.toDouble();
+        break;
+        case LongitudeRole:
+            m_data[index.row()].longitude = value.toDouble();
+        break;
+        }
+        emit dataChanged(index, index);   // , { Qt::EditRole, Qt::DisplayRole });
+        return true;
+
     }
     return false;
 }
