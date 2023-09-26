@@ -2,31 +2,52 @@
 #include <QFile>
 #include <QTextStream>
 #include <QProcess>
+#include <QDebug>
+#include <QCoreApplication>
+
 
 /**
  * @brief Contructeur. Initialise le fichier de configuration pour exifTools.
  **/
 ExifWrapper::ExifWrapper()
 {
-    this->writeConfigFile();
+    this->writeArgsFile();
 }
 
 /**
  * @brief Scan all the pictures in a folder with ExifTools
  * @return true if successfull
  **/
-bool ExifWrapper::scanFolder()
+bool ExifWrapper::scanFolder(QString folder)
 {
-    QString folderPath = "E:\\TiPhotos";
-    QString folderPath2 = "E:\\\\TiPhotos";
     QProcess exifProcess;
-    QString program = "./exifTools.exe";
-    QStringList arguments;
-    arguments << "-@ exiftools.config" << folderPath;
+    QString folderPath = "E:/TiPhotos";
 
-    QObject *parent;
-    QProcess *myProcess = new QProcess(parent);
-    myProcess->start(program, arguments);
+    qDebug() << QCoreApplication::applicationDirPath();  // For auxiliary binaries shipped with the application: "D:/Mes Programmes/Windows/tiPhotoLocator/build-tiPhotoLocator-Desktop_Qt_5_15_0_MSVC2019_64bit-Debug/debug"
+    qDebug() << exifProcess.workingDirectory() ;
+    exifProcess.setWorkingDirectory(QCoreApplication::applicationDirPath() + "/../../bin");
+    qDebug() << exifProcess.workingDirectory() ;
+    // QString program = QCoreApplication::applicationDirPath()+"/exifTool.exe";
+    QString program = "exifTool.exe ";
+    QStringList arguments;
+    arguments << "-@ exiftool.args" << folderPath ;  // TODO to fix
+
+    //    arguments << " > D:/Mes Programmes/Windows/tiPhotoLocator/bin/_result.txt" ;
+
+    qDebug() << "scanFolder" << folder;
+
+    exifProcess.start(program, arguments);
+    while(exifProcess.state() != QProcess::NotRunning)
+    {
+        if (exifProcess.atEnd())
+        {
+            exifProcess.waitForReadyRead();
+        }
+        qDebug() << exifProcess.readLine();
+    }
+    qDebug() << "Finished with code" << exifProcess.exitCode() << exifProcess.exitStatus() ;
+
+    // https://stackoverflow.com/questions/20331668/qxmlstreamreader-reading-from-slow-qprocess
 
     return true;
 }
@@ -34,47 +55,50 @@ bool ExifWrapper::scanFolder()
 
 
 /**
- * @brief Write the configuration file for ExifTools.
+ * @brief Write the Arg file for ExifTool.
  * @return true if the file was successfully created.
  **/
-bool ExifWrapper::writeConfigFile()
+bool ExifWrapper::writeArgsFile()
 {
-    QFile file("exiftools.config");
+    QFile file("exiftool.args");
     if (!file.open(QFile::WriteOnly))
         return false;
 
     QTextStream out(&file);
     // Formattage du flux de sortie de ExifTools
-    out << "-veryShort"         << Qt::endl;      // very short output format  (-S)
-    out << "--printConv"        << Qt::endl;      // no print conversion (-n)
-    out << "--duplicates"       << Qt::endl;      // suppress duplicate (--a)
-    out << "-preserve"          << Qt::endl;      // Preserve file modification date/time
-    out << "-json"              << Qt::endl;      // output in JSON format
+    out << "-preserve "          << Qt::endl;    // Preserve file modification date/time
+    out << "-veryShort "          << Qt::endl;    // very short output format  (-S)
+    out << "--printConv "          << Qt::endl;    // no print conversion (-n)
+    out << "-dateFormat %%Y-%%m-%%d "          << Qt::endl;    // datetime format YYYY-MM-DD
+    // Output format (au choix)
+    out << "-json "          << Qt::endl;    // output in JSON format
+    // out << "-xmlformat -escape(XML) -duplicates "          << Qt::endl;    // output in XML format
+    out << Qt::endl;
     // Liste des tags Exif à extraire
-    out << "-FileName"          << Qt::endl;
-    out << "-FileCreateDate"    << Qt::endl;
-    out << "-CreateDate"        << Qt::endl;
-    out << "-DateTimeOriginal"  << Qt::endl;
-    out << "-ModifyDate"        << Qt::endl;
-    // TODO : Rendre certains tags configurables depuis le menu settings
-    out << "-Model"             << Qt::endl;
-    out << "-Make"              << Qt::endl;
-    out << "-ImageWidth"        << Qt::endl;
-    out << "-ImageHeight"       << Qt::endl;
-    out << "-Artist"            << Qt::endl;
+    out << "-FileName"          << Qt::endl;    // "P8180028.JPG"
+    out << "-FileCreateDate"    << Qt::endl;    // "2018:01:28 20:14:44+01:00" - Ceci semble la date de la prise de vue
+    out << "-CreateDate"        << Qt::endl;    // "2017:08:23
+    out << "-DateTimeOriginal"  << Qt::endl;    // "2017:08:23
+    out << "-ModifyDate"        << Qt::endl;    // "2017:08:23
+    out << "-Model"             << Qt::endl;    // "E-M10MarkII"
+    out << "-Make"              << Qt::endl;    // "OLYMPUS"
+    out << "-ImageWidth"        << Qt::endl;    // 4608
+    out << "-ImageHeight"       << Qt::endl;    // 3072
+    out << "-Artist"            << Qt::endl;    // "Picasa"
     out << "-ImageDescription"  << Qt::endl;
     // GPS coordinates
-    out << "-GPSLatitude"       << Qt::endl;
-    out << "-GPSLongitude"      << Qt::endl;
-    out << "-GPSLatitudeRef"    << Qt::endl;
-    out << "-GPSLongitudeRef"   << Qt::endl;
+    out << "-GPSLatitude"       << Qt::endl;    // 45.4325547675333
+    out << "-GPSLongitude"      << Qt::endl;    // 12.3374594498028
+    out << "-GPSLatitudeRef"    << Qt::endl;    // "N"
+    out << "-GPSLongitudeRef"   << Qt::endl;    // "E"
     // Reverse Geocoding
     out << "-City"              << Qt::endl;
     out << "-Country"           << Qt::endl;
+    // TODO : Rendre certains tags configurables depuis le menu settings
     out << "-Caption"           << Qt::endl;
     out << "-DescriptionWriter" << Qt::endl;
     out << "-Headline"          << Qt::endl;
-    out << "-Keywords"          << Qt::endl;
+    out << "-Keywords"          << Qt::endl;    // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
     out << "-Title"             << Qt::endl;
 
     // Fermeture du fichier

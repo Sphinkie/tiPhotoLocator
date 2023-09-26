@@ -46,14 +46,17 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
-    // Slots customisés
-    //QObject *item = view.rootObject();
-    //QObject::connect(mapitemView, SIGNAL(qmlSignal(double)), &selectedPhotoModel, SLOT(cppSlot(double)));
-
 
     // Démarrage (au choix)
     engine.load(url);
     //view.show();
+
+    // Slots customisés
+    //QObject *item = view.rootObject();
+    // Le firstRootItem est la première balise du QML, cad "window".
+    QObject *firstRootItem = engine.rootObjects().first();
+    QObject::connect(firstRootItem, SIGNAL(qmlSignal(double)), &selectedPhotoModel, SLOT(cppSlot(double)));
+    QObject::connect(firstRootItem, SIGNAL(scanFolder(QString)), &exifWrapper, SLOT(scanFolder(QString)));
 
     // Exécution de QML
     return app.exec();

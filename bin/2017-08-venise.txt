@@ -1,0 +1,5805 @@
+======== P:/2017/2017-08 Venise/P8180028.JPG
+FileName: P8180028.JPG
+FileCreateDate: 2018:01:28 20:14:33+01:00
+CreateDate: 2017:08:18 10:09:38
+DateTimeOriginal: 2017:08:18 10:09:38
+ModifyDate: 2017:08:18 10:09:38
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180030.JPG
+FileName: P8180030.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 10:39:07
+DateTimeOriginal: 2017:08:18 10:39:07
+ModifyDate: 2017:08:18 10:39:07
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180031.JPG
+FileName: P8180031.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 10:39:39
+DateTimeOriginal: 2017:08:18 10:39:39
+ModifyDate: 2017:08:18 10:39:39
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180032.JPG
+FileName: P8180032.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 10:39:47
+DateTimeOriginal: 2017:08:18 10:39:47
+ModifyDate: 2017:08:18 10:39:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180034.JPG
+FileName: P8180034.JPG
+FileCreateDate: 2018:01:28 20:14:32+01:00
+CreateDate: 2017:08:18 10:42:53
+DateTimeOriginal: 2017:08:18 10:42:53
+ModifyDate: 2017:08:18 10:42:53
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180037.JPG
+FileName: P8180037.JPG
+FileCreateDate: 2018:01:28 20:14:32+01:00
+CreateDate: 2017:08:18 10:46:42
+DateTimeOriginal: 2017:08:18 10:46:42
+ModifyDate: 2017:08:18 10:46:42
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180039.JPG
+FileName: P8180039.JPG
+FileCreateDate: 2018:01:28 20:14:32+01:00
+CreateDate: 2017:08:18 10:54:08
+DateTimeOriginal: 2017:08:18 10:54:08
+ModifyDate: 2017:08:18 10:54:08
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180040.JPG
+FileName: P8180040.JPG
+FileCreateDate: 2018:01:28 20:14:33+01:00
+CreateDate: 2017:08:18 10:54:48
+DateTimeOriginal: 2017:08:18 10:54:48
+ModifyDate: 2017:08:18 10:54:48
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180041.JPG
+FileName: P8180041.JPG
+FileCreateDate: 2018:01:28 20:14:33+01:00
+CreateDate: 2017:08:18 10:55:37
+DateTimeOriginal: 2017:08:18 10:55:37
+ModifyDate: 2017:08:18 10:55:37
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180042.JPG
+FileName: P8180042.JPG
+FileCreateDate: 2018:01:28 20:14:33+01:00
+CreateDate: 2017:08:18 10:55:46
+DateTimeOriginal: 2017:08:18 10:55:46
+ModifyDate: 2017:08:18 10:55:46
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180043.JPG
+FileName: P8180043.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 10:56:07
+DateTimeOriginal: 2017:08:18 10:56:07
+ModifyDate: 2017:08:18 10:56:07
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180045.JPG
+FileName: P8180045.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 10:57:07
+DateTimeOriginal: 2017:08:18 10:57:07
+ModifyDate: 2017:08:18 10:57:07
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180046.JPG
+FileName: P8180046.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 10:57:19
+DateTimeOriginal: 2017:08:18 10:57:19
+ModifyDate: 2017:08:18 10:57:19
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180048.JPG
+FileName: P8180048.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 10:58:05
+DateTimeOriginal: 2017:08:18 10:58:05
+ModifyDate: 2017:08:18 10:58:05
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180049.JPG
+FileName: P8180049.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 10:59:13
+DateTimeOriginal: 2017:08:18 10:59:13
+ModifyDate: 2017:08:18 10:59:13
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180050.JPG
+FileName: P8180050.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 11:00:08
+DateTimeOriginal: 2017:08:18 11:00:08
+ModifyDate: 2017:08:18 11:00:08
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180053.JPG
+FileName: P8180053.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 11:01:17
+DateTimeOriginal: 2017:08:18 11:01:17
+ModifyDate: 2017:09:10 10:46:33
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180055.JPG
+FileName: P8180055.JPG
+FileCreateDate: 2018:01:28 20:14:33+01:00
+CreateDate: 2017:08:18 11:02:00
+DateTimeOriginal: 2017:08:18 11:02:00
+ModifyDate: 2017:08:18 11:02:00
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180057.JPG
+FileName: P8180057.JPG
+FileCreateDate: 2018:01:28 20:14:33+01:00
+CreateDate: 2017:08:18 11:02:29
+DateTimeOriginal: 2017:08:18 11:02:29
+ModifyDate: 2017:08:18 11:02:29
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180058.JPG
+FileName: P8180058.JPG
+FileCreateDate: 2018:01:28 20:14:33+01:00
+CreateDate: 2017:08:18 11:02:47
+DateTimeOriginal: 2017:08:18 11:02:47
+ModifyDate: 2017:08:18 11:02:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180059.JPG
+FileName: P8180059.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 11:03:22
+DateTimeOriginal: 2017:08:18 11:03:22
+ModifyDate: 2017:08:18 11:03:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180061.JPG
+FileName: P8180061.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 11:03:35
+DateTimeOriginal: 2017:08:18 11:03:35
+ModifyDate: 2017:08:18 11:03:35
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180062.JPG
+FileName: P8180062.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 11:04:54
+DateTimeOriginal: 2017:08:18 11:04:54
+ModifyDate: 2017:08:18 11:04:54
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180065.JPG
+FileName: P8180065.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 11:05:59
+DateTimeOriginal: 2017:08:18 11:05:59
+ModifyDate: 2017:08:18 11:05:59
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180068.JPG
+FileName: P8180068.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 11:06:26
+DateTimeOriginal: 2017:08:18 11:06:26
+ModifyDate: 2017:08:18 11:06:26
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180070.JPG
+FileName: P8180070.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 11:07:03
+DateTimeOriginal: 2017:08:18 11:07:03
+ModifyDate: 2017:08:18 11:07:03
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180071.JPG
+FileName: P8180071.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:18 11:07:59
+DateTimeOriginal: 2017:08:18 11:07:59
+ModifyDate: 2017:08:18 11:07:59
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180072.JPG
+FileName: P8180072.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:18 11:27:13
+DateTimeOriginal: 2017:08:18 11:27:13
+ModifyDate: 2017:09:10 10:46:35
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180073.JPG
+FileName: P8180073.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:18 11:27:20
+DateTimeOriginal: 2017:08:18 11:27:20
+ModifyDate: 2017:09:10 10:46:37
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8180074.JPG
+FileName: P8180074.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:18 11:56:21
+DateTimeOriginal: 2017:08:18 11:56:21
+ModifyDate: 2017:08:18 11:56:21
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.432545
+GPSLongitude: 12.320034
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.432545, geo:lon=12.320034
+======== P:/2017/2017-08 Venise/P8180075.JPG
+FileName: P8180075.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 11:57:42
+DateTimeOriginal: 2017:08:18 11:57:42
+ModifyDate: 2017:09:10 10:46:39
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4328474212028
+GPSLongitude: 12.3195435789056
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.432847, geo:lon=12.319544
+======== P:/2017/2017-08 Venise/P8180076.JPG
+FileName: P8180076.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 12:02:54
+DateTimeOriginal: 2017:08:18 12:02:54
+ModifyDate: 2017:08:18 12:02:54
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.433339
+GPSLongitude: 12.3202456316028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433339, geo:lon=12.320246
+======== P:/2017/2017-08 Venise/P8180078.JPG
+FileName: P8180078.JPG
+FileCreateDate: 2018:01:28 20:14:34+01:00
+CreateDate: 2017:08:18 12:04:38
+DateTimeOriginal: 2017:08:18 12:04:38
+ModifyDate: 2017:09:10 10:46:41
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4332924211111
+GPSLongitude: 12.3197127894861
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433292, geo:lon=12.319713
+======== P:/2017/2017-08 Venise/P8180079.JPG
+FileName: P8180079.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 12:11:57
+DateTimeOriginal: 2017:08:18 12:11:57
+ModifyDate: 2017:08:18 12:11:57
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4349197367869
+GPSLongitude: 12.3183738157933
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.434920, geo:lon=12.318374
+======== P:/2017/2017-08 Venise/P8180080.JPG
+FileName: P8180080.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 12:12:37
+DateTimeOriginal: 2017:08:18 12:12:37
+ModifyDate: 2017:09:10 10:46:43
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4350018420994
+GPSLongitude: 12.3183745789064
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.435002, geo:lon=12.318375
+======== P:/2017/2017-08 Venise/P8180081.JPG
+FileName: P8180081.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 12:13:34
+DateTimeOriginal: 2017:08:18 12:13:34
+ModifyDate: 2017:08:18 12:13:34
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4349342105
+GPSLongitude: 12.3178014211014
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.434934, geo:lon=12.317801
+======== P:/2017/2017-08 Venise/P8180083.JPG
+FileName: P8180083.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:18 12:16:18
+DateTimeOriginal: 2017:08:18 12:16:18
+ModifyDate: 2017:09:10 10:46:45
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4348642631994
+GPSLongitude: 12.3170485789014
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.434864, geo:lon=12.317049
+======== P:/2017/2017-08 Venise/P8180084.JPG
+FileName: P8180084.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:18 12:22:01
+DateTimeOriginal: 2017:08:18 12:22:01
+ModifyDate: 2017:08:18 12:22:01
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.43648
+GPSLongitude: 12.316702
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.436480, geo:lon=12.316702
+======== P:/2017/2017-08 Venise/P8180085.JPG
+FileName: P8180085.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:18 12:29:24
+DateTimeOriginal: 2017:08:18 12:29:24
+ModifyDate: 2017:08:18 12:29:24
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4368865788861
+GPSLongitude: 12.3194648946944
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.436887, geo:lon=12.319465
+======== P:/2017/2017-08 Venise/P8180086.JPG
+FileName: P8180086.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:18 12:31:11
+DateTimeOriginal: 2017:08:18 12:31:11
+ModifyDate: 2017:08:18 12:31:11
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4369108947
+GPSLongitude: 12.3194989474056
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.436911, geo:lon=12.319499
+======== P:/2017/2017-08 Venise/P8180089.JPG
+FileName: P8180089.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:18 12:32:21
+DateTimeOriginal: 2017:08:18 12:32:21
+ModifyDate: 2017:08:18 12:32:21
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4369956841972
+GPSLongitude: 12.3194573684028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.436996, geo:lon=12.319457
+======== P:/2017/2017-08 Venise/P8180090.JPG
+FileName: P8180090.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 12:32:50
+DateTimeOriginal: 2017:08:18 12:32:50
+ModifyDate: 2017:08:18 12:32:50
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.437008
+GPSLongitude: 12.319462
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.437008, geo:lon=12.319462
+======== P:/2017/2017-08 Venise/P8180091.JPG
+FileName: P8180091.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 12:43:08
+DateTimeOriginal: 2017:08:18 12:43:08
+ModifyDate: 2017:08:18 12:43:08
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4370530526
+GPSLongitude: 12.3194624211139
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.437053, geo:lon=12.319462
+======== P:/2017/2017-08 Venise/P8180092.JPG
+FileName: P8180092.JPG
+FileCreateDate: 2018:01:28 20:14:35+01:00
+CreateDate: 2017:08:18 12:43:30
+DateTimeOriginal: 2017:08:18 12:43:30
+ModifyDate: 2017:08:18 12:43:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4370909473944
+GPSLongitude: 12.3194427367942
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.437091, geo:lon=12.319443
+======== P:/2017/2017-08 Venise/P8180097.JPG
+FileName: P8180097.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:18 13:24:12
+DateTimeOriginal: 2017:08:18 13:24:12
+ModifyDate: 2017:09:10 10:46:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4369341053222
+GPSLongitude: 12.319646368425
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.436934, geo:lon=12.319646
+======== P:/2017/2017-08 Venise/P8180098.JPG
+FileName: P8180098.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:18 13:27:19
+DateTimeOriginal: 2017:08:18 13:27:19
+ModifyDate: 2017:09:10 10:46:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4374170526
+GPSLongitude: 12.3197834473972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.437417, geo:lon=12.319783
+======== P:/2017/2017-08 Venise/P8180101.JPG
+FileName: P8180101.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:18 13:32:54
+DateTimeOriginal: 2017:08:18 13:32:54
+ModifyDate: 2017:08:18 13:32:54
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4390350525917
+GPSLongitude: 12.3195364736972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Santa Croce, Veneto, Italy, geotagged, geo:lat=45.439035, geo:lon=12.319536
+======== P:/2017/2017-08 Venise/P8220287.JPG
+FileName: P8220287.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 14:24:13
+DateTimeOriginal: 2017:08:22 14:24:13
+ModifyDate: 2017:09:10 10:42:17
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4387763157889
+GPSLongitude: 12.3236052368028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.438776, geo:lon=12.323605
+======== P:/2017/2017-08 Venise/P8220288.JPG
+FileName: P8220288.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 14:32:57
+DateTimeOriginal: 2017:08:22 14:32:57
+ModifyDate: 2017:09:10 10:42:19
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4367889474056
+GPSLongitude: 12.3247520525444
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436789, geo:lon=12.324752
+======== P:/2017/2017-08 Venise/P8220289.JPG
+FileName: P8220289.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 14:40:13
+DateTimeOriginal: 2017:08:22 14:40:13
+ModifyDate: 2017:08:22 14:40:13
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4364195789028
+GPSLongitude: 12.3257798421056
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436420, geo:lon=12.325780
+======== P:/2017/2017-08 Venise/P8220291.JPG
+FileName: P8220291.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 14:41:06
+DateTimeOriginal: 2017:08:22 14:41:06
+ModifyDate: 2017:09:10 10:42:21
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.436443
+GPSLongitude: 12.325751
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436443, geo:lon=12.325751
+======== P:/2017/2017-08 Venise/P8220295.JPG
+FileName: P8220295.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 14:54:24
+DateTimeOriginal: 2017:08:22 14:54:24
+ModifyDate: 2017:09:12 21:25:27
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4361793683972
+GPSLongitude: 12.3255287894111
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436179, geo:lon=12.325529
+======== P:/2017/2017-08 Venise/P8220298.JPG
+FileName: P8220298.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 14:55:51
+DateTimeOriginal: 2017:08:22 14:55:51
+ModifyDate: 2017:08:22 14:55:51
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4361601053278
+GPSLongitude: 12.3255992631111
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436160, geo:lon=12.325599
+======== P:/2017/2017-08 Venise/P8220300.JPG
+FileName: P8220300.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 14:56:28
+DateTimeOriginal: 2017:08:22 14:56:28
+ModifyDate: 2017:09:12 21:25:29
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 2237
+ImageHeight: 1595
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.436284210525
+GPSLongitude: 12.3256785262944
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436284, geo:lon=12.325679
+======== P:/2017/2017-08 Venise/P8220301.JPG
+FileName: P8220301.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 14:56:33
+DateTimeOriginal: 2017:08:22 14:56:33
+ModifyDate: 2017:09:12 21:25:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 2809
+ImageHeight: 4244
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4363197368
+GPSLongitude: 12.3257048420917
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436320, geo:lon=12.325705
+======== P:/2017/2017-08 Venise/P8220304.JPG
+FileName: P8220304.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:22 15:00:32
+DateTimeOriginal: 2017:08:22 15:00:32
+ModifyDate: 2017:09:10 10:42:33
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4362126315778
+GPSLongitude: 12.3255809473778
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436213, geo:lon=12.325581
+======== P:/2017/2017-08 Venise/P8220305.JPG
+FileName: P8220305.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:22 15:32:32
+DateTimeOriginal: 2017:08:22 15:32:32
+ModifyDate: 2017:09:10 10:42:35
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4366214431889
+GPSLongitude: 12.3252797187722
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436621, geo:lon=12.325280
+======== P:/2017/2017-08 Venise/P8220308.JPG
+FileName: P8220308.JPG
+FileCreateDate: 2018:01:28 20:14:36+01:00
+CreateDate: 2017:08:22 15:55:40
+DateTimeOriginal: 2017:08:22 15:55:40
+ModifyDate: 2017:08:22 15:55:40
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4369426500139
+GPSLongitude: 12.3269498999806
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436943, geo:lon=12.326950
+======== P:/2017/2017-08 Venise/P8220311.JPG
+FileName: P8220311.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 15:58:01
+DateTimeOriginal: 2017:08:22 15:58:01
+ModifyDate: 2017:09:10 10:42:37
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4368721052861
+GPSLongitude: 12.3269047895389
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436872, geo:lon=12.326905
+======== P:/2017/2017-08 Venise/P8220312.JPG
+FileName: P8220312.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 16:00:35
+DateTimeOriginal: 2017:08:22 16:00:35
+ModifyDate: 2017:09:10 10:42:39
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4372826316333
+GPSLongitude: 12.3281845262944
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.437283, geo:lon=12.328185
+======== P:/2017/2017-08 Venise/P8220313.JPG
+FileName: P8220313.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 16:08:16
+DateTimeOriginal: 2017:08:22 16:08:16
+ModifyDate: 2017:09:10 10:42:41
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4368170525972
+GPSLongitude: 12.3290541051833
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436817, geo:lon=12.329054
+======== P:/2017/2017-08 Venise/P8220314.JPG
+FileName: P8220314.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 16:08:57
+DateTimeOriginal: 2017:08:22 16:08:57
+ModifyDate: 2017:09:10 10:42:43
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.436805631575
+GPSLongitude: 12.3290610525778
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436806, geo:lon=12.329061
+======== P:/2017/2017-08 Venise/P8220315.JPG
+FileName: P8220315.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 16:09:39
+DateTimeOriginal: 2017:08:22 16:09:39
+ModifyDate: 2017:09:10 10:42:45
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4368245789
+GPSLongitude: 12.3290892631917
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436825, geo:lon=12.329089
+======== P:/2017/2017-08 Venise/P8220318.JPG
+FileName: P8220318.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 16:10:46
+DateTimeOriginal: 2017:08:22 16:10:46
+ModifyDate: 2017:08:22 16:10:46
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4368684211
+GPSLongitude: 12.3291344737
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436868, geo:lon=12.329134
+======== P:/2017/2017-08 Venise/P8220320.JPG
+FileName: P8220320.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 16:23:36
+DateTimeOriginal: 2017:08:22 16:23:36
+ModifyDate: 2017:09:10 10:42:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4371456480722
+GPSLongitude: 12.3308460063028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.437146, geo:lon=12.330846
+======== P:/2017/2017-08 Venise/P8220321.JPG
+FileName: P8220321.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 16:33:43
+DateTimeOriginal: 2017:08:22 16:33:43
+ModifyDate: 2017:09:10 10:42:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4376985788944
+GPSLongitude: 12.3332452105
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437699, geo:lon=12.333245
+======== P:/2017/2017-08 Venise/P8220327.JPG
+FileName: P8220327.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 16:58:22
+DateTimeOriginal: 2017:08:22 16:58:22
+ModifyDate: 2017:08:22 16:58:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4381984211139
+GPSLongitude: 12.3358677367978
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.438198, geo:lon=12.335868
+======== P:/2017/2017-08 Venise/P8220328.JPG
+FileName: P8220328.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 17:00:07
+DateTimeOriginal: 2017:08:22 17:00:07
+ModifyDate: 2017:08:22 17:00:07
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4380044736944
+GPSLongitude: 12.3358705263158
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.438004, geo:lon=12.335871
+======== P:/2017/2017-08 Venise/P8220329.JPG
+FileName: P8220329.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 17:00:20
+DateTimeOriginal: 2017:08:22 17:00:20
+ModifyDate: 2017:08:22 17:00:20
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4380065263028
+GPSLongitude: 12.3358814737169
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.438007, geo:lon=12.335881
+======== P:/2017/2017-08 Venise/P8220331.JPG
+FileName: P8220331.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 17:01:04
+DateTimeOriginal: 2017:08:22 17:01:04
+ModifyDate: 2017:08:22 17:01:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.43799
+GPSLongitude: 12.335876
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437990, geo:lon=12.335876
+======== P:/2017/2017-08 Venise/P8220333.JPG
+FileName: P8220333.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 17:02:18
+DateTimeOriginal: 2017:08:22 17:02:18
+ModifyDate: 2017:08:22 17:02:18
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4379686841889
+GPSLongitude: 12.3359428946956
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437969, geo:lon=12.335943
+======== P:/2017/2017-08 Venise/P8220334.JPG
+FileName: P8220334.JPG
+FileCreateDate: 2018:01:28 20:14:37+01:00
+CreateDate: 2017:08:22 17:02:26
+DateTimeOriginal: 2017:08:22 17:02:26
+ModifyDate: 2017:08:22 17:02:26
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4379678946583
+GPSLongitude: 12.335956421095
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437968, geo:lon=12.335956
+======== P:/2017/2017-08 Venise/P8220335.JPG
+FileName: P8220335.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 17:02:38
+DateTimeOriginal: 2017:08:22 17:02:38
+ModifyDate: 2017:08:22 17:02:38
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4379552631583
+GPSLongitude: 12.3359589474064
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437955, geo:lon=12.335959
+======== P:/2017/2017-08 Venise/P8220336.JPG
+FileName: P8220336.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 17:03:03
+DateTimeOriginal: 2017:08:22 17:03:03
+ModifyDate: 2017:08:22 17:03:03
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.437893
+GPSLongitude: 12.335999
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437893, geo:lon=12.335999
+======== P:/2017/2017-08 Venise/P8220338.JPG
+FileName: P8220338.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 17:03:12
+DateTimeOriginal: 2017:08:22 17:03:12
+ModifyDate: 2017:08:22 17:03:12
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4379026315778
+GPSLongitude: 12.3359941052972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437903, geo:lon=12.335994
+======== P:/2017/2017-08 Venise/P8220342.JPG
+FileName: P8220342.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 17:26:35
+DateTimeOriginal: 2017:08:22 17:26:35
+ModifyDate: 2017:09:10 10:42:53
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4360114210906
+GPSLongitude: 12.3375614210972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.436011, geo:lon=12.337561
+======== P:/2017/2017-08 Venise/P8220346.JPG
+FileName: P8220346.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 17:49:27
+DateTimeOriginal: 2017:08:22 17:49:27
+ModifyDate: 2017:08:22 17:49:27
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.435787
+GPSLongitude: 12.338484
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.435787, geo:lon=12.338484
+======== P:/2017/2017-08 Venise/P8220347.JPG
+FileName: P8220347.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:22 18:00:39
+DateTimeOriginal: 2017:08:22 18:00:39
+ModifyDate: 2017:08:22 18:00:39
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.434414
+GPSLongitude: 12.3390576842361
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.434414, geo:lon=12.339058
+======== P:/2017/2017-08 Venise/P8220349.JPG
+FileName: P8220349.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:22 18:02:09
+DateTimeOriginal: 2017:08:22 18:02:09
+ModifyDate: 2017:08:22 18:02:09
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4343372105006
+GPSLongitude: 12.3390247367972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.434337, geo:lon=12.339025
+======== P:/2017/2017-08 Venise/P8220351.JPG
+FileName: P8220351.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:22 18:02:25
+DateTimeOriginal: 2017:08:22 18:02:25
+ModifyDate: 2017:08:22 18:02:25
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4343885788992
+GPSLongitude: 12.3390525263056
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.434389, geo:lon=12.339053
+======== P:/2017/2017-08 Venise/P8220355.JPG
+FileName: P8220355.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 18:09:15
+DateTimeOriginal: 2017:08:22 18:09:15
+ModifyDate: 2017:09:10 10:42:57
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.433040789475
+GPSLongitude: 12.3389764474306
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433041, geo:lon=12.338976
+======== P:/2017/2017-08 Venise/P8220357.JPG
+FileName: P8220357.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 18:14:42
+DateTimeOriginal: 2017:08:22 18:14:42
+ModifyDate: 2017:08:22 18:14:42
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4325484735972
+GPSLongitude: 12.3377694211028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432548, geo:lon=12.337769
+======== P:/2017/2017-08 Venise/P8220358.JPG
+FileName: P8220358.JPG
+FileCreateDate: 2018:01:28 20:14:38+01:00
+CreateDate: 2017:08:22 18:15:06
+DateTimeOriginal: 2017:08:22 18:15:06
+ModifyDate: 2017:08:22 18:15:06
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.432558947425
+GPSLongitude: 12.3376936315972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432559, geo:lon=12.337694
+======== P:/2017/2017-08 Venise/P8220359.JPG
+FileName: P8220359.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 18:21:44
+DateTimeOriginal: 2017:08:22 18:21:44
+ModifyDate: 2017:09:10 10:42:59
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.43313
+GPSLongitude: 12.3356390526086
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433130, geo:lon=12.335639
+======== P:/2017/2017-08 Venise/P8220360.JPG
+FileName: P8220360.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 18:36:14
+DateTimeOriginal: 2017:08:22 18:36:14
+ModifyDate: 2017:09:10 10:43:01
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4330632630417
+GPSLongitude: 12.3312137367917
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.433063, geo:lon=12.331214
+======== P:/2017/2017-08 Venise/P8220364.JPG
+FileName: P8220364.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 18:42:47
+DateTimeOriginal: 2017:08:22 18:42:47
+ModifyDate: 2017:08:22 18:42:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4316652632028
+GPSLongitude: 12.3290083420694
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.431665, geo:lon=12.329008
+======== P:/2017/2017-08 Venise/P8220365.JPG
+FileName: P8220365.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:22 18:43:45
+DateTimeOriginal: 2017:08:22 18:43:45
+ModifyDate: 2017:08:22 18:43:45
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4315372631778
+GPSLongitude: 12.3288036316083
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.431537, geo:lon=12.328804
+======== P:/2017/2017-08 Venise/P8220366.JPG
+FileName: P8220366.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:22 18:51:46
+DateTimeOriginal: 2017:08:22 18:51:46
+ModifyDate: 2017:09:10 10:43:03
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4323986316056
+GPSLongitude: 12.3251566315639
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.432399, geo:lon=12.325157
+======== P:/2017/2017-08 Venise/P8220368.JPG
+FileName: P8220368.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:22 18:52:35
+DateTimeOriginal: 2017:08:22 18:52:35
+ModifyDate: 2017:09:10 10:43:05
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4325933158
+GPSLongitude: 12.3251337894972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.432593, geo:lon=12.325134
+======== P:/2017/2017-08 Venise/P8220370.JPG
+FileName: P8220370.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:22 19:01:00
+DateTimeOriginal: 2017:08:22 19:01:00
+ModifyDate: 2017:08:22 19:01:00
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4330746350028
+GPSLongitude: 12.3248129981611
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433075, geo:lon=12.324813
+======== P:/2017/2017-08 Venise/P8220373.JPG
+FileName: P8220373.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:22 19:08:48
+DateTimeOriginal: 2017:08:22 19:08:48
+ModifyDate: 2017:09:12 21:25:32
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3144
+ImageHeight: 3072
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8220374.JPG
+FileName: P8220374.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:22 19:54:50
+DateTimeOriginal: 2017:08:22 19:54:50
+ModifyDate: 2017:08:22 19:54:50
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8220375.JPG
+FileName: P8220375.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 20:18:11
+DateTimeOriginal: 2017:08:22 20:18:11
+ModifyDate: 2017:09:10 10:43:07
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8220377.JPG
+FileName: P8220377.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 21:49:28
+DateTimeOriginal: 2017:08:22 21:49:28
+ModifyDate: 2017:08:22 21:49:28
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8220378.JPG
+FileName: P8220378.JPG
+FileCreateDate: 2018:01:28 20:14:39+01:00
+CreateDate: 2017:08:22 21:49:50
+DateTimeOriginal: 2017:08:22 21:49:50
+ModifyDate: 2017:08:22 21:49:50
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8220382.JPG
+FileName: P8220382.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:22 21:51:51
+DateTimeOriginal: 2017:08:22 21:51:51
+ModifyDate: 2017:09:10 10:38:27
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3969
+ImageHeight: 1862
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230386.JPG
+FileName: P8230386.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:23 07:28:18
+DateTimeOriginal: 2017:08:23 07:28:18
+ModifyDate: 2017:09:10 10:43:09
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230390.JPG
+FileName: P8230390.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:23 09:57:39
+DateTimeOriginal: 2017:08:23 09:57:39
+ModifyDate: 2017:09:10 10:43:11
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230391.JPG
+FileName: P8230391.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:23 10:10:36
+DateTimeOriginal: 2017:08:23 10:10:36
+ModifyDate: 2017:09:10 10:43:13
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 2460
+ImageHeight: 1393
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230392.JPG
+FileName: P8230392.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 10:14:34
+DateTimeOriginal: 2017:08:23 10:14:34
+ModifyDate: 2017:08:23 10:14:34
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230393.JPG
+FileName: P8230393.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 10:25:01
+DateTimeOriginal: 2017:08:23 10:25:01
+ModifyDate: 2017:08:23 10:25:01
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4436270089028
+GPSLongitude: 12.3272679240222
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.443627, geo:lon=12.327268
+======== P:/2017/2017-08 Venise/P8230395.JPG
+FileName: P8230395.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 10:25:36
+DateTimeOriginal: 2017:08:23 10:25:36
+ModifyDate: 2017:08:23 10:25:36
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4436352742417
+GPSLongitude: 12.3272703305056
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.443635, geo:lon=12.327270
+======== P:/2017/2017-08 Venise/P8230396.JPG
+FileName: P8230396.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 10:27:50
+DateTimeOriginal: 2017:08:23 10:27:50
+ModifyDate: 2017:08:23 10:27:50
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4436672616389
+GPSLongitude: 12.3272796443194
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.443667, geo:lon=12.327280
+======== P:/2017/2017-08 Venise/P8230398.JPG
+FileName: P8230398.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 10:34:00
+DateTimeOriginal: 2017:08:23 10:34:00
+ModifyDate: 2017:08:23 10:34:00
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.44391
+GPSLongitude: 12.327786
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.443910, geo:lon=12.327786
+======== P:/2017/2017-08 Venise/P8230401.JPG
+FileName: P8230401.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 10:40:56
+DateTimeOriginal: 2017:08:23 10:40:56
+ModifyDate: 2017:08:23 10:40:56
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4454146842056
+GPSLongitude: 12.3284057895111
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.445415, geo:lon=12.328406
+======== P:/2017/2017-08 Venise/P8230402.JPG
+FileName: P8230402.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:23 10:41:56
+DateTimeOriginal: 2017:08:23 10:41:56
+ModifyDate: 2017:09:10 10:43:16
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4456415787778
+GPSLongitude: 12.3277689474222
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.445642, geo:lon=12.327769
+======== P:/2017/2017-08 Venise/P8230403.JPG
+FileName: P8230403.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:23 10:42:49
+DateTimeOriginal: 2017:08:23 10:42:49
+ModifyDate: 2017:08:23 10:42:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4457227368
+GPSLongitude: 12.3274901578917
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.445723, geo:lon=12.327490
+======== P:/2017/2017-08 Venise/P8230404.JPG
+FileName: P8230404.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:23 10:58:57
+DateTimeOriginal: 2017:08:23 10:58:57
+ModifyDate: 2017:09:10 10:43:19
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4455084736972
+GPSLongitude: 12.3267522631861
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.445508, geo:lon=12.326752
+======== P:/2017/2017-08 Venise/P8230407.JPG
+FileName: P8230407.JPG
+FileCreateDate: 2018:01:28 20:14:40+01:00
+CreateDate: 2017:08:23 10:59:16
+DateTimeOriginal: 2017:08:23 10:59:16
+ModifyDate: 2017:09:10 10:43:20
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.445515
+GPSLongitude: 12.3267177895972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.445515, geo:lon=12.326718
+======== P:/2017/2017-08 Venise/P8230414.JPG
+FileName: P8230414.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 11:01:32
+DateTimeOriginal: 2017:08:23 11:01:32
+ModifyDate: 2017:08:23 11:01:32
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4455289473694
+GPSLongitude: 12.3267314736556
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.445529, geo:lon=12.326731
+======== P:/2017/2017-08 Venise/P8230415.JPG
+FileName: P8230415.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 11:04:02
+DateTimeOriginal: 2017:08:23 11:04:02
+ModifyDate: 2017:08:23 11:04:02
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4455829998972
+GPSLongitude: 12.3273869999333
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.445583, geo:lon=12.327387
+======== P:/2017/2017-08 Venise/P8230417.JPG
+FileName: P8230417.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 11:04:22
+DateTimeOriginal: 2017:08:23 11:04:22
+ModifyDate: 2017:08:23 11:04:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.44559
+GPSLongitude: 12.327394
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.445590, geo:lon=12.327394
+======== P:/2017/2017-08 Venise/P8230419.JPG
+FileName: P8230419.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 11:05:39
+DateTimeOriginal: 2017:08:23 11:05:39
+ModifyDate: 2017:09:10 10:43:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.445532
+GPSLongitude: 12.327621775025
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.445532, geo:lon=12.327622
+======== P:/2017/2017-08 Venise/P8230420.JPG
+FileName: P8230420.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 11:12:16
+DateTimeOriginal: 2017:08:23 11:12:16
+ModifyDate: 2017:09:10 10:43:24
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4449669473861
+GPSLongitude: 12.3303223158
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.444967, geo:lon=12.330322
+======== P:/2017/2017-08 Venise/P8230422.JPG
+FileName: P8230422.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 11:12:53
+DateTimeOriginal: 2017:08:23 11:12:53
+ModifyDate: 2017:09:10 10:43:26
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4449295789139
+GPSLongitude: 12.3306852633222
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.444930, geo:lon=12.330685
+======== P:/2017/2017-08 Venise/P8230423.JPG
+FileName: P8230423.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 11:17:03
+DateTimeOriginal: 2017:08:23 11:17:03
+ModifyDate: 2017:09:10 10:43:28
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4440636522167
+GPSLongitude: 12.3326178261583
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.444064, geo:lon=12.332618
+======== P:/2017/2017-08 Venise/P8230425.JPG
+FileName: P8230425.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 11:20:35
+DateTimeOriginal: 2017:08:23 11:20:35
+ModifyDate: 2017:09:10 10:43:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4434626315917
+GPSLongitude: 12.3337958421
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.443463, geo:lon=12.333796
+======== P:/2017/2017-08 Venise/P8230426.JPG
+FileName: P8230426.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 11:24:56
+DateTimeOriginal: 2017:08:23 11:24:56
+ModifyDate: 2017:09:10 10:43:31
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4429815714111
+GPSLongitude: 12.3351435714064
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442982, geo:lon=12.335144
+======== P:/2017/2017-08 Venise/P8230428.JPG
+FileName: P8230428.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 11:26:22
+DateTimeOriginal: 2017:08:23 11:26:22
+ModifyDate: 2017:08:23 11:26:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4435055555556
+GPSLongitude: 12.3346842222011
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.443506, geo:lon=12.334684
+======== P:/2017/2017-08 Venise/P8230432.JPG
+FileName: P8230432.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 11:29:23
+DateTimeOriginal: 2017:08:23 11:29:23
+ModifyDate: 2017:09:10 10:43:33
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4431308823528
+GPSLongitude: 12.3343425294
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.443131, geo:lon=12.334343
+======== P:/2017/2017-08 Venise/P8230433.JPG
+FileName: P8230433.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 11:32:06
+DateTimeOriginal: 2017:08:23 11:32:06
+ModifyDate: 2017:09:12 21:25:34
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 1680
+ImageHeight: 1887
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4428853158139
+GPSLongitude: 12.3345559473917
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442885, geo:lon=12.334556
+======== P:/2017/2017-08 Venise/P8230439.JPG
+FileName: P8230439.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 11:33:05
+DateTimeOriginal: 2017:08:23 11:33:05
+ModifyDate: 2017:09:12 21:25:36
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3779
+ImageHeight: 2751
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4429711578833
+GPSLongitude: 12.3346289474
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442971, geo:lon=12.334629
+======== P:/2017/2017-08 Venise/P8230444.JPG
+FileName: P8230444.JPG
+FileCreateDate: 2018:01:28 20:14:41+01:00
+CreateDate: 2017:08:23 11:34:54
+DateTimeOriginal: 2017:08:23 11:34:54
+ModifyDate: 2017:09:10 10:43:37
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4425313157389
+GPSLongitude: 12.33447
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442531, geo:lon=12.334470
+======== P:/2017/2017-08 Venise/P8230446.JPG
+FileName: P8230446.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 11:36:15
+DateTimeOriginal: 2017:08:23 11:36:15
+ModifyDate: 2017:09:10 10:43:41
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4422055788556
+GPSLongitude: 12.3340624736992
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442206, geo:lon=12.334062
+======== P:/2017/2017-08 Venise/P8230447.JPG
+FileName: P8230447.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 11:45:47
+DateTimeOriginal: 2017:08:23 11:45:47
+ModifyDate: 2017:09:10 10:43:43
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4423413683694
+GPSLongitude: 12.3356264736822
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442341, geo:lon=12.335626
+======== P:/2017/2017-08 Venise/P8230448.JPG
+FileName: P8230448.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 11:45:58
+DateTimeOriginal: 2017:08:23 11:45:58
+ModifyDate: 2017:08:23 11:45:58
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4424698947583
+GPSLongitude: 12.3356785788975
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442470, geo:lon=12.335679
+======== P:/2017/2017-08 Venise/P8230449.JPG
+FileName: P8230449.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 11:46:16
+DateTimeOriginal: 2017:08:23 11:46:16
+ModifyDate: 2017:09:12 21:25:38
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3361
+ImageHeight: 3072
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.44254
+GPSLongitude: 12.335726684205
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442540, geo:lon=12.335727
+======== P:/2017/2017-08 Venise/P8230450.JPG
+FileName: P8230450.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 11:49:51
+DateTimeOriginal: 2017:08:23 11:49:51
+ModifyDate: 2017:08:23 11:49:51
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4428389474056
+GPSLongitude: 12.3368680526
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442839, geo:lon=12.336868
+======== P:/2017/2017-08 Venise/P8230451.JPG
+FileName: P8230451.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 11:50:03
+DateTimeOriginal: 2017:08:23 11:50:03
+ModifyDate: 2017:09:10 10:43:45
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4428768421056
+GPSLongitude: 12.3369021579028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442877, geo:lon=12.336902
+======== P:/2017/2017-08 Venise/P8230452.JPG
+FileName: P8230452.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 11:54:04
+DateTimeOriginal: 2017:08:23 11:54:04
+ModifyDate: 2017:08:23 11:54:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4443073684222
+GPSLongitude: 12.3381088946889
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.444307, geo:lon=12.338109
+======== P:/2017/2017-08 Venise/P8230453.JPG
+FileName: P8230453.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 11:54:10
+DateTimeOriginal: 2017:08:23 11:54:10
+ModifyDate: 2017:08:23 11:54:10
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4443441052694
+GPSLongitude: 12.3381222104778
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.444344, geo:lon=12.338122
+======== P:/2017/2017-08 Venise/P8230454.JPG
+FileName: P8230454.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 11:54:17
+DateTimeOriginal: 2017:08:23 11:54:17
+ModifyDate: 2017:09:12 21:25:41
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3061
+ImageHeight: 3167
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4443687895222
+GPSLongitude: 12.3381225788611
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.444369, geo:lon=12.338123
+======== P:/2017/2017-08 Venise/P8230455.JPG
+FileName: P8230455.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 11:55:30
+DateTimeOriginal: 2017:08:23 11:55:30
+ModifyDate: 2017:08:23 11:55:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4441285261944
+GPSLongitude: 12.3386822104528
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.444129, geo:lon=12.338682
+======== P:/2017/2017-08 Venise/P8230456.JPG
+FileName: P8230456.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 11:56:38
+DateTimeOriginal: 2017:08:23 11:56:38
+ModifyDate: 2017:08:23 11:56:38
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4439589474139
+GPSLongitude: 12.3391422105417
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.443959, geo:lon=12.339142
+======== P:/2017/2017-08 Venise/P8230457.JPG
+FileName: P8230457.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 12:05:20
+DateTimeOriginal: 2017:08:23 12:05:20
+ModifyDate: 2017:09:12 21:25:42
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 2334
+ImageHeight: 2392
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4425411053167
+GPSLongitude: 12.3382772104722
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442541, geo:lon=12.338277
+======== P:/2017/2017-08 Venise/P8230459.JPG
+FileName: P8230459.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 12:05:33
+DateTimeOriginal: 2017:08:23 12:05:33
+ModifyDate: 2017:09:12 21:25:44
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 2287
+ImageHeight: 2932
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4425836842667
+GPSLongitude: 12.3382823421028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442584, geo:lon=12.338282
+======== P:/2017/2017-08 Venise/P8230460.JPG
+FileName: P8230460.JPG
+FileCreateDate: 2018:01:28 20:14:42+01:00
+CreateDate: 2017:08:23 12:14:51
+DateTimeOriginal: 2017:08:23 12:14:51
+ModifyDate: 2017:08:23 12:14:51
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4426255263028
+GPSLongitude: 12.338298736825
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442626, geo:lon=12.338299
+======== P:/2017/2017-08 Venise/P8230461.JPG
+FileName: P8230461.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 12:15:41
+DateTimeOriginal: 2017:08:23 12:15:41
+ModifyDate: 2017:08:23 12:15:41
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4422600525722
+GPSLongitude: 12.3380130526028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442260, geo:lon=12.338013
+======== P:/2017/2017-08 Venise/P8230462.JPG
+FileName: P8230462.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 12:16:42
+DateTimeOriginal: 2017:08:23 12:16:42
+ModifyDate: 2017:08:23 12:16:42
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4417936842111
+GPSLongitude: 12.3377496842194
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.441794, geo:lon=12.337750
+======== P:/2017/2017-08 Venise/P8230464.JPG
+FileName: P8230464.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 12:20:29
+DateTimeOriginal: 2017:08:23 12:20:29
+ModifyDate: 2017:09:10 10:43:52
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4403682105028
+GPSLongitude: 12.3382387894861
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.440368, geo:lon=12.338239
+======== P:/2017/2017-08 Venise/P8230466.JPG
+FileName: P8230466.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 12:22:38
+DateTimeOriginal: 2017:08:23 12:22:38
+ModifyDate: 2017:09:10 10:43:56
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4399389474639
+GPSLongitude: 12.3386099474
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439939, geo:lon=12.338610
+======== P:/2017/2017-08 Venise/P8230467.JPG
+FileName: P8230467.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 12:22:49
+DateTimeOriginal: 2017:08:23 12:22:49
+ModifyDate: 2017:09:12 21:25:46
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4399308421222
+GPSLongitude: 12.338516631625
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439931, geo:lon=12.338517
+======== P:/2017/2017-08 Venise/P8230468.JPG
+FileName: P8230468.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 12:25:49
+DateTimeOriginal: 2017:08:23 12:25:49
+ModifyDate: 2017:09:12 21:25:48
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 2758
+ImageHeight: 4070
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.439404
+GPSLongitude: 12.339226
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.439404, geo:lon=12.339226
+======== P:/2017/2017-08 Venise/P8230469.JPG
+FileName: P8230469.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 12:27:45
+DateTimeOriginal: 2017:08:23 12:27:45
+ModifyDate: 2017:08:23 12:27:45
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4387957895111
+GPSLongitude: 12.3397523684
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.438796, geo:lon=12.339752
+======== P:/2017/2017-08 Venise/P8230471.JPG
+FileName: P8230471.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 12:28:42
+DateTimeOriginal: 2017:08:23 12:28:42
+ModifyDate: 2017:09:10 10:44:02
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4387591579056
+GPSLongitude: 12.3397643157806
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.438759, geo:lon=12.339764
+======== P:/2017/2017-08 Venise/P8230473.JPG
+FileName: P8230473.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 12:29:39
+DateTimeOriginal: 2017:08:23 12:29:39
+ModifyDate: 2017:09:10 10:44:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.438512
+GPSLongitude: 12.3394808421139
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.438512, geo:lon=12.339481
+======== P:/2017/2017-08 Venise/P8230474.JPG
+FileName: P8230474.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 12:30:50
+DateTimeOriginal: 2017:08:23 12:30:50
+ModifyDate: 2017:09:10 10:44:06
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.438127684175
+GPSLongitude: 12.3389137368333
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.438128, geo:lon=12.338914
+======== P:/2017/2017-08 Venise/P8230475.JPG
+FileName: P8230475.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 12:32:33
+DateTimeOriginal: 2017:08:23 12:32:33
+ModifyDate: 2017:09:10 10:44:08
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4385448420583
+GPSLongitude: 12.338221631575
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.438545, geo:lon=12.338222
+======== P:/2017/2017-08 Venise/P8230476.JPG
+FileName: P8230476.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 12:56:53
+DateTimeOriginal: 2017:08:23 12:56:53
+ModifyDate: 2017:09:10 10:44:10
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4378352632
+GPSLongitude: 12.3324476315972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437835, geo:lon=12.332448
+======== P:/2017/2017-08 Venise/P8230477.JPG
+FileName: P8230477.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 12:56:59
+DateTimeOriginal: 2017:08:23 12:56:59
+ModifyDate: 2017:09:10 10:44:12
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4378497894833
+GPSLongitude: 12.3324008947778
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437850, geo:lon=12.332401
+======== P:/2017/2017-08 Venise/P8230478.JPG
+FileName: P8230478.JPG
+FileCreateDate: 2018:01:28 20:14:43+01:00
+CreateDate: 2017:08:23 12:57:16
+DateTimeOriginal: 2017:08:23 12:57:16
+ModifyDate: 2017:09:12 21:25:51
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 2654
+ImageHeight: 4342
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4378567367833
+GPSLongitude: 12.3322986842111
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437857, geo:lon=12.332299
+======== P:/2017/2017-08 Venise/P8230479.JPG
+FileName: P8230479.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 12:57:18
+DateTimeOriginal: 2017:08:23 12:57:18
+ModifyDate: 2017:09:12 21:25:53
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 2461
+ImageHeight: 4361
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4378523157917
+GPSLongitude: 12.3322925789083
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437852, geo:lon=12.332293
+======== P:/2017/2017-08 Venise/P8230480.JPG
+FileName: P8230480.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 15:22:19
+DateTimeOriginal: 2017:08:23 15:22:19
+ModifyDate: 2017:09:12 21:25:54
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3641
+ImageHeight: 2246
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.433254
+GPSLongitude: 12.324445
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433254, geo:lon=12.324445
+======== P:/2017/2017-08 Venise/P8230481.JPG
+FileName: P8230481.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 15:23:06
+DateTimeOriginal: 2017:08:23 15:23:06
+ModifyDate: 2017:08:23 15:23:06
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4331868421056
+GPSLongitude: 12.3244491578694
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433187, geo:lon=12.324449
+======== P:/2017/2017-08 Venise/P8230483.JPG
+FileName: P8230483.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 15:23:23
+DateTimeOriginal: 2017:08:23 15:23:23
+ModifyDate: 2017:08:23 15:23:23
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.433241157825
+GPSLongitude: 12.32463731575
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433241, geo:lon=12.324637
+======== P:/2017/2017-08 Venise/P8230485.JPG
+FileName: P8230485.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 15:28:14
+DateTimeOriginal: 2017:08:23 15:28:14
+ModifyDate: 2017:08:23 15:28:14
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4316129474306
+GPSLongitude: 12.3268257895056
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.431613, geo:lon=12.326826
+======== P:/2017/2017-08 Venise/P8230486.JPG
+FileName: P8230486.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 15:59:53
+DateTimeOriginal: 2017:08:23 15:59:53
+ModifyDate: 2017:09:10 10:44:20
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230487.JPG
+FileName: P8230487.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 16:07:56
+DateTimeOriginal: 2017:08:23 16:07:56
+ModifyDate: 2017:08:23 16:07:56
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230489.JPG
+FileName: P8230489.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 16:13:09
+DateTimeOriginal: 2017:08:23 16:13:09
+ModifyDate: 2017:09:12 21:25:56
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3820
+ImageHeight: 3068
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230490.JPG
+FileName: P8230490.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 16:20:11
+DateTimeOriginal: 2017:08:23 16:20:11
+ModifyDate: 2017:08:23 16:20:11
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230491.JPG
+FileName: P8230491.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 16:40:23
+DateTimeOriginal: 2017:08:23 16:40:23
+ModifyDate: 2017:09:12 21:25:58
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4022
+ImageHeight: 2616
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230493.JPG
+FileName: P8230493.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 16:40:46
+DateTimeOriginal: 2017:08:23 16:40:46
+ModifyDate: 2017:08:23 16:40:46
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230494.JPG
+FileName: P8230494.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 16:59:01
+DateTimeOriginal: 2017:08:23 16:59:01
+ModifyDate: 2017:08:23 16:59:01
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230495.JPG
+FileName: P8230495.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 17:06:33
+DateTimeOriginal: 2017:08:23 17:06:33
+ModifyDate: 2017:09:10 10:44:23
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230496.JPG
+FileName: P8230496.JPG
+FileCreateDate: 2018:01:28 20:14:44+01:00
+CreateDate: 2017:08:23 17:07:49
+DateTimeOriginal: 2017:08:23 17:07:49
+ModifyDate: 2017:09:10 10:44:25
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230498.JPG
+FileName: P8230498.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 17:20:04
+DateTimeOriginal: 2017:08:23 17:20:04
+ModifyDate: 2017:08:23 17:20:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4304527640278
+GPSLongitude: 12.3279276348222
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.430453, geo:lon=12.327928
+======== P:/2017/2017-08 Venise/P8230500.JPG
+FileName: P8230500.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 17:22:23
+DateTimeOriginal: 2017:08:23 17:22:23
+ModifyDate: 2017:08:23 17:22:23
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4304296702083
+GPSLongitude: 12.3279228054028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.430430, geo:lon=12.327923
+======== P:/2017/2017-08 Venise/P8230501.JPG
+FileName: P8230501.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 17:42:09
+DateTimeOriginal: 2017:08:23 17:42:09
+ModifyDate: 2017:08:23 17:42:09
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4284494736833
+GPSLongitude: 12.332365631625
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Giudecca, Veneto, Italy, geotagged, geo:lat=45.428449, geo:lon=12.332366
+======== P:/2017/2017-08 Venise/P8230502.JPG
+FileName: P8230502.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 17:43:25
+DateTimeOriginal: 2017:08:23 17:43:25
+ModifyDate: 2017:09:10 10:44:29
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.428642
+GPSLongitude: 12.332898
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Quartiere San Giacomo, Veneto, Italy, geotagged, geo:lat=45.428642, geo:lon=12.332898
+======== P:/2017/2017-08 Venise/P8230504.JPG
+FileName: P8230504.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 17:50:22
+DateTimeOriginal: 2017:08:23 17:50:22
+ModifyDate: 2017:08:23 17:50:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4298781578361
+GPSLongitude: 12.3352252632117
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.429878, geo:lon=12.335225
+======== P:/2017/2017-08 Venise/P8230505.JPG
+FileName: P8230505.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 17:50:56
+DateTimeOriginal: 2017:08:23 17:50:56
+ModifyDate: 2017:09:12 21:25:59
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3077
+ImageHeight: 2605
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4301857893778
+GPSLongitude: 12.3354808420953
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.430186, geo:lon=12.335481
+======== P:/2017/2017-08 Venise/P8230506.JPG
+FileName: P8230506.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 17:51:03
+DateTimeOriginal: 2017:08:23 17:51:03
+ModifyDate: 2017:08:23 17:51:03
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4302594736333
+GPSLongitude: 12.3355431052969
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.430259, geo:lon=12.335543
+======== P:/2017/2017-08 Venise/P8230507.JPG
+FileName: P8230507.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 17:52:11
+DateTimeOriginal: 2017:08:23 17:52:11
+ModifyDate: 2017:09:10 10:44:31
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4306432104806
+GPSLongitude: 12.3362834737056
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.430643, geo:lon=12.336283
+======== P:/2017/2017-08 Venise/P8230511.JPG
+FileName: P8230511.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 17:55:31
+DateTimeOriginal: 2017:08:23 17:55:31
+ModifyDate: 2017:08:23 17:55:31
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4309421052639
+GPSLongitude: 12.3369845262944
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.430942, geo:lon=12.336985
+======== P:/2017/2017-08 Venise/P8230513.JPG
+FileName: P8230513.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 18:04:06
+DateTimeOriginal: 2017:08:23 18:04:06
+ModifyDate: 2017:08:23 18:04:06
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4311593333333
+GPSLongitude: 12.3338987778014
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.431159, geo:lon=12.333899
+======== P:/2017/2017-08 Venise/P8230516.JPG
+FileName: P8230516.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 18:04:47
+DateTimeOriginal: 2017:08:23 18:04:47
+ModifyDate: 2017:08:23 18:04:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4317365788944
+GPSLongitude: 12.3339871053003
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.431737, geo:lon=12.333987
+======== P:/2017/2017-08 Venise/P8230518.JPG
+FileName: P8230518.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 18:06:01
+DateTimeOriginal: 2017:08:23 18:06:01
+ModifyDate: 2017:09:10 10:44:33
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4318012498778
+GPSLongitude: 12.3338982500047
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.431801, geo:lon=12.333898
+======== P:/2017/2017-08 Venise/P8230521.JPG
+FileName: P8230521.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 18:07:12
+DateTimeOriginal: 2017:08:23 18:07:12
+ModifyDate: 2017:08:23 18:07:12
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4318681579167
+GPSLongitude: 12.3339264210969
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.431868, geo:lon=12.333926
+======== P:/2017/2017-08 Venise/P8230523.JPG
+FileName: P8230523.JPG
+FileCreateDate: 2018:01:28 20:14:45+01:00
+CreateDate: 2017:08:23 18:09:45
+DateTimeOriginal: 2017:08:23 18:09:45
+ModifyDate: 2017:09:10 10:44:39
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4306406316
+GPSLongitude: 12.3334886842004
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.430641, geo:lon=12.333489
+======== P:/2017/2017-08 Venise/P8230524.JPG
+FileName: P8230524.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 18:15:07
+DateTimeOriginal: 2017:08:23 18:15:07
+ModifyDate: 2017:09:10 10:44:41
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.430386
+GPSLongitude: 12.330704
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.430386, geo:lon=12.330704
+======== P:/2017/2017-08 Venise/P8230526.JPG
+FileName: P8230526.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 18:17:34
+DateTimeOriginal: 2017:08:23 18:17:34
+ModifyDate: 2017:08:23 18:17:34
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4310458946806
+GPSLongitude: 12.3304282632139
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.431046, geo:lon=12.330428
+======== P:/2017/2017-08 Venise/P8230528.JPG
+FileName: P8230528.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 18:17:52
+DateTimeOriginal: 2017:08:23 18:17:52
+ModifyDate: 2017:09:10 10:44:43
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4310665264
+GPSLongitude: 12.3304354210889
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.431067, geo:lon=12.330435
+======== P:/2017/2017-08 Venise/P8230531.JPG
+FileName: P8230531.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 18:37:55
+DateTimeOriginal: 2017:08:23 18:37:55
+ModifyDate: 2017:09:10 10:44:45
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4337622105003
+GPSLongitude: 12.3259100526
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433762, geo:lon=12.325910
+======== P:/2017/2017-08 Venise/P8230532.JPG
+FileName: P8230532.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 18:39:15
+DateTimeOriginal: 2017:08:23 18:39:15
+ModifyDate: 2017:08:23 18:39:15
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4338434737
+GPSLongitude: 12.3269167895778
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433843, geo:lon=12.326917
+======== P:/2017/2017-08 Venise/P8230533.JPG
+FileName: P8230533.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:23 18:39:24
+DateTimeOriginal: 2017:08:23 18:39:24
+ModifyDate: 2017:08:23 18:39:24
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4338396841994
+GPSLongitude: 12.326940473725
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433840, geo:lon=12.326940
+======== P:/2017/2017-08 Venise/P8230534.JPG
+FileName: P8230534.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:23 18:39:48
+DateTimeOriginal: 2017:08:23 18:39:48
+ModifyDate: 2017:09:10 10:44:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.433838
+GPSLongitude: 12.326951
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433838, geo:lon=12.326951
+======== P:/2017/2017-08 Venise/P8230535.JPG
+FileName: P8230535.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:23 18:41:13
+DateTimeOriginal: 2017:08:23 18:41:13
+ModifyDate: 2017:09:10 10:44:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4338365262967
+GPSLongitude: 12.3263562105
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433837, geo:lon=12.326356
+======== P:/2017/2017-08 Venise/P8230540.JPG
+FileName: P8230540.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 18:42:09
+DateTimeOriginal: 2017:08:23 18:42:09
+ModifyDate: 2017:08:23 18:42:09
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.43374
+GPSLongitude: 12.325692
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433740, geo:lon=12.325692
+======== P:/2017/2017-08 Venise/P8230545.JPG
+FileName: P8230545.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 18:42:10
+DateTimeOriginal: 2017:08:23 18:42:10
+ModifyDate: 2017:08:23 18:42:10
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4337401579028
+GPSLongitude: 12.3256803157972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433740, geo:lon=12.325680
+======== P:/2017/2017-08 Venise/P8230563.JPG
+FileName: P8230563.JPG
+FileCreateDate: 2018:01:28 20:14:46+01:00
+CreateDate: 2017:08:23 19:00:18
+DateTimeOriginal: 2017:08:23 19:00:18
+ModifyDate: 2017:09:10 10:44:53
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4361936842111
+GPSLongitude: 12.3255881315917
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436194, geo:lon=12.325588
+======== P:/2017/2017-08 Venise/P8230564.JPG
+FileName: P8230564.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 19:00:30
+DateTimeOriginal: 2017:08:23 19:00:30
+ModifyDate: 2017:09:10 10:44:55
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.436207
+GPSLongitude: 12.32557
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436207, geo:lon=12.325570
+======== P:/2017/2017-08 Venise/P8230565.JPG
+FileName: P8230565.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 19:22:22
+DateTimeOriginal: 2017:08:23 19:22:22
+ModifyDate: 2017:09:10 10:44:57
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230567.JPG
+FileName: P8230567.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 19:22:40
+DateTimeOriginal: 2017:08:23 19:22:40
+ModifyDate: 2017:09:10 10:44:59
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230568.JPG
+FileName: P8230568.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:23 19:23:14
+DateTimeOriginal: 2017:08:23 19:23:14
+ModifyDate: 2017:08:23 19:23:14
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8230569.JPG
+FileName: P8230569.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:23 19:23:28
+DateTimeOriginal: 2017:08:23 19:23:28
+ModifyDate: 2017:08:23 19:23:28
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240571.JPG
+FileName: P8240571.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:24 09:16:29
+DateTimeOriginal: 2017:08:24 09:16:29
+ModifyDate: 2017:09:10 10:45:01
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240572.JPG
+FileName: P8240572.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:24 09:18:55
+DateTimeOriginal: 2017:08:24 09:18:55
+ModifyDate: 2017:08:24 09:18:55
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240574.JPG
+FileName: P8240574.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 09:21:34
+DateTimeOriginal: 2017:08:24 09:21:34
+ModifyDate: 2017:08:24 09:21:34
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240575.JPG
+FileName: P8240575.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 09:23:04
+DateTimeOriginal: 2017:08:24 09:23:04
+ModifyDate: 2017:08:24 09:23:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240577.JPG
+FileName: P8240577.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 09:27:59
+DateTimeOriginal: 2017:08:24 09:27:59
+ModifyDate: 2017:08:24 09:27:59
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240578.JPG
+FileName: P8240578.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:24 09:28:29
+DateTimeOriginal: 2017:08:24 09:28:29
+ModifyDate: 2017:09:12 21:26:01
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4044
+ImageHeight: 2967
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240579.JPG
+FileName: P8240579.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:24 09:28:42
+DateTimeOriginal: 2017:08:24 09:28:42
+ModifyDate: 2017:08:24 09:28:42
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240580.JPG
+FileName: P8240580.JPG
+FileCreateDate: 2018:01:28 20:14:47+01:00
+CreateDate: 2017:08:24 09:28:52
+DateTimeOriginal: 2017:08:24 09:28:52
+ModifyDate: 2017:08:24 09:28:52
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240582.JPG
+FileName: P8240582.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:24 09:33:41
+DateTimeOriginal: 2017:08:24 09:33:41
+ModifyDate: 2017:08:24 09:33:41
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240585.JPG
+FileName: P8240585.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:24 09:36:49
+DateTimeOriginal: 2017:08:24 09:36:49
+ModifyDate: 2017:08:24 09:36:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4325547675333
+GPSLongitude: 12.3374594498028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432555, geo:lon=12.337459
+======== P:/2017/2017-08 Venise/P8240588.JPG
+FileName: P8240588.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:24 09:37:56
+DateTimeOriginal: 2017:08:24 09:37:56
+ModifyDate: 2017:09:10 10:45:05
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4325471818417
+GPSLongitude: 12.3374840153
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432547, geo:lon=12.337484
+======== P:/2017/2017-08 Venise/P8240589.JPG
+FileName: P8240589.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:24 09:39:07
+DateTimeOriginal: 2017:08:24 09:39:07
+ModifyDate: 2017:09:12 21:26:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4597
+ImageHeight: 2522
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4325390727611
+GPSLongitude: 12.3375102755889
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432539, geo:lon=12.337510
+======== P:/2017/2017-08 Venise/P8240590.JPG
+FileName: P8240590.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 09:39:21
+DateTimeOriginal: 2017:08:24 09:39:21
+ModifyDate: 2017:08:24 09:39:21
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4325374652111
+GPSLongitude: 12.3375154817194
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432537, geo:lon=12.337515
+======== P:/2017/2017-08 Venise/P8240591.JPG
+FileName: P8240591.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 09:41:25
+DateTimeOriginal: 2017:08:24 09:41:25
+ModifyDate: 2017:08:24 09:41:25
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4325231004194
+GPSLongitude: 12.3375620004
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432523, geo:lon=12.337562
+======== P:/2017/2017-08 Venise/P8240593.JPG
+FileName: P8240593.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 09:42:14
+DateTimeOriginal: 2017:08:24 09:42:14
+ModifyDate: 2017:08:24 09:42:14
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4325173608
+GPSLongitude: 12.3375805872083
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432517, geo:lon=12.337581
+======== P:/2017/2017-08 Venise/P8240594.JPG
+FileName: P8240594.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 09:42:30
+DateTimeOriginal: 2017:08:24 09:42:30
+ModifyDate: 2017:08:24 09:42:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4325154788333
+GPSLongitude: 12.3375866817889
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432515, geo:lon=12.337587
+======== P:/2017/2017-08 Venise/P8240596.JPG
+FileName: P8240596.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 09:47:23
+DateTimeOriginal: 2017:08:24 09:47:23
+ModifyDate: 2017:08:24 09:47:23
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4330244210944
+GPSLongitude: 12.339245
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433024, geo:lon=12.339245
+======== P:/2017/2017-08 Venise/P8240597.JPG
+FileName: P8240597.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 09:47:49
+DateTimeOriginal: 2017:08:24 09:47:49
+ModifyDate: 2017:08:24 09:47:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4331370525944
+GPSLongitude: 12.3395573683806
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433137, geo:lon=12.339557
+======== P:/2017/2017-08 Venise/P8240598.JPG
+FileName: P8240598.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 09:55:34
+DateTimeOriginal: 2017:08:24 09:55:34
+ModifyDate: 2017:08:24 09:55:34
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.43463
+GPSLongitude: 12.340338736775
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.434630, geo:lon=12.340339
+======== P:/2017/2017-08 Venise/P8240599.JPG
+FileName: P8240599.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:24 09:57:00
+DateTimeOriginal: 2017:08:24 09:57:00
+ModifyDate: 2017:09:10 10:45:07
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4340748421025
+GPSLongitude: 12.3398573683917
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.434075, geo:lon=12.339857
+======== P:/2017/2017-08 Venise/P8240600.JPG
+FileName: P8240600.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:24 09:57:14
+DateTimeOriginal: 2017:08:24 09:57:14
+ModifyDate: 2017:08:24 09:57:14
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4339754736972
+GPSLongitude: 12.3398385263028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433975, geo:lon=12.339839
+======== P:/2017/2017-08 Venise/P8240601.JPG
+FileName: P8240601.JPG
+FileCreateDate: 2018:01:28 20:14:48+01:00
+CreateDate: 2017:08:24 09:57:25
+DateTimeOriginal: 2017:08:24 09:57:25
+ModifyDate: 2017:08:24 09:57:25
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4339315789
+GPSLongitude: 12.3398542105111
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433932, geo:lon=12.339854
+======== P:/2017/2017-08 Venise/P8240602.JPG
+FileName: P8240602.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 09:57:30
+DateTimeOriginal: 2017:08:24 09:57:30
+ModifyDate: 2017:08:24 09:57:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4339605263
+GPSLongitude: 12.3398747367778
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433961, geo:lon=12.339875
+======== P:/2017/2017-08 Venise/P8240606.JPG
+FileName: P8240606.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 10:01:15
+DateTimeOriginal: 2017:08:24 10:01:15
+ModifyDate: 2017:08:24 10:01:15
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4340077778
+GPSLongitude: 12.339849
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.434008, geo:lon=12.339849
+======== P:/2017/2017-08 Venise/P8240607.JPG
+FileName: P8240607.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 10:02:14
+DateTimeOriginal: 2017:08:24 10:02:14
+ModifyDate: 2017:09:10 10:45:08
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4340422460933
+GPSLongitude: 12.3399501775972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.434042, geo:lon=12.339950
+======== P:/2017/2017-08 Venise/P8240608.JPG
+FileName: P8240608.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 10:02:32
+DateTimeOriginal: 2017:08:24 10:02:32
+ModifyDate: 2017:09:10 10:45:10
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4340411936986
+GPSLongitude: 12.3399502842028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.434041, geo:lon=12.339950
+======== P:/2017/2017-08 Venise/P8240609.JPG
+FileName: P8240609.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 10:02:40
+DateTimeOriginal: 2017:08:24 10:02:40
+ModifyDate: 2017:09:10 10:45:13
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.434040726
+GPSLongitude: 12.3399503315917
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.434041, geo:lon=12.339950
+======== P:/2017/2017-08 Venise/P8240610.JPG
+FileName: P8240610.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 10:40:32
+DateTimeOriginal: 2017:08:24 10:40:32
+ModifyDate: 2017:08:24 10:40:32
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240611.JPG
+FileName: P8240611.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 10:41:12
+DateTimeOriginal: 2017:08:24 10:41:12
+ModifyDate: 2017:08:24 10:41:12
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240612.JPG
+FileName: P8240612.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 10:41:42
+DateTimeOriginal: 2017:08:24 10:41:42
+ModifyDate: 2017:08:24 10:41:42
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240615.JPG
+FileName: P8240615.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 10:44:15
+DateTimeOriginal: 2017:08:24 10:44:15
+ModifyDate: 2017:08:24 10:44:15
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240616.JPG
+FileName: P8240616.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 10:46:30
+DateTimeOriginal: 2017:08:24 10:46:30
+ModifyDate: 2017:08:24 10:46:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240617.JPG
+FileName: P8240617.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 10:52:19
+DateTimeOriginal: 2017:08:24 10:52:19
+ModifyDate: 2017:09:10 10:45:14
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240619.JPG
+FileName: P8240619.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 10:56:18
+DateTimeOriginal: 2017:08:24 10:56:18
+ModifyDate: 2017:08:24 10:56:18
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240620.JPG
+FileName: P8240620.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 11:00:02
+DateTimeOriginal: 2017:08:24 11:00:02
+ModifyDate: 2017:08:24 11:00:02
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240621.JPG
+FileName: P8240621.JPG
+FileCreateDate: 2018:01:28 20:14:49+01:00
+CreateDate: 2017:08:24 11:07:02
+DateTimeOriginal: 2017:08:24 11:07:02
+ModifyDate: 2017:09:10 10:45:16
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240624.JPG
+FileName: P8240624.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 11:16:59
+DateTimeOriginal: 2017:08:24 11:16:59
+ModifyDate: 2017:08:24 11:16:59
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240626.JPG
+FileName: P8240626.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 11:21:54
+DateTimeOriginal: 2017:08:24 11:21:54
+ModifyDate: 2017:08:24 11:21:54
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240628.JPG
+FileName: P8240628.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 11:30:24
+DateTimeOriginal: 2017:08:24 11:30:24
+ModifyDate: 2017:08:24 11:30:24
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240629.JPG
+FileName: P8240629.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 11:30:37
+DateTimeOriginal: 2017:08:24 11:30:37
+ModifyDate: 2017:08:24 11:30:37
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240630.JPG
+FileName: P8240630.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 11:30:49
+DateTimeOriginal: 2017:08:24 11:30:49
+ModifyDate: 2017:08:24 11:30:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240631.JPG
+FileName: P8240631.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 11:31:04
+DateTimeOriginal: 2017:08:24 11:31:04
+ModifyDate: 2017:08:24 11:31:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240632.JPG
+FileName: P8240632.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 11:31:30
+DateTimeOriginal: 2017:08:24 11:31:30
+ModifyDate: 2017:08:24 11:31:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240635.JPG
+FileName: P8240635.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 11:33:07
+DateTimeOriginal: 2017:08:24 11:33:07
+ModifyDate: 2017:09:10 10:45:18
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240636.JPG
+FileName: P8240636.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 11:33:26
+DateTimeOriginal: 2017:08:24 11:33:26
+ModifyDate: 2017:09:10 10:45:20
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240638.JPG
+FileName: P8240638.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 11:35:16
+DateTimeOriginal: 2017:08:24 11:35:16
+ModifyDate: 2017:08:24 11:35:16
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240639.JPG
+FileName: P8240639.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 11:37:32
+DateTimeOriginal: 2017:08:24 11:37:32
+ModifyDate: 2017:08:24 11:37:32
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240640.JPG
+FileName: P8240640.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 11:42:00
+DateTimeOriginal: 2017:08:24 11:42:00
+ModifyDate: 2017:08:24 11:42:00
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240641.JPG
+FileName: P8240641.JPG
+FileCreateDate: 2018:01:28 20:14:50+01:00
+CreateDate: 2017:08:24 11:42:17
+DateTimeOriginal: 2017:08:24 11:42:17
+ModifyDate: 2017:08:24 11:42:17
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240642.JPG
+FileName: P8240642.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 11:42:32
+DateTimeOriginal: 2017:08:24 11:42:32
+ModifyDate: 2017:09:10 10:45:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240643.JPG
+FileName: P8240643.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 11:43:32
+DateTimeOriginal: 2017:08:24 11:43:32
+ModifyDate: 2017:09:10 10:45:24
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240644.JPG
+FileName: P8240644.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 11:59:22
+DateTimeOriginal: 2017:08:24 11:59:22
+ModifyDate: 2017:08:24 11:59:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240645.JPG
+FileName: P8240645.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:03:29
+DateTimeOriginal: 2017:08:24 12:03:29
+ModifyDate: 2017:08:24 12:03:29
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240646.JPG
+FileName: P8240646.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:03:54
+DateTimeOriginal: 2017:08:24 12:03:54
+ModifyDate: 2017:08:24 12:03:54
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240647.JPG
+FileName: P8240647.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:05:22
+DateTimeOriginal: 2017:08:24 12:05:22
+ModifyDate: 2017:08:24 12:05:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240648.JPG
+FileName: P8240648.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:07:05
+DateTimeOriginal: 2017:08:24 12:07:05
+ModifyDate: 2017:08:24 12:07:05
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240649.JPG
+FileName: P8240649.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:07:58
+DateTimeOriginal: 2017:08:24 12:07:58
+ModifyDate: 2017:09:10 10:45:26
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240650.JPG
+FileName: P8240650.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:13:17
+DateTimeOriginal: 2017:08:24 12:13:17
+ModifyDate: 2017:08:24 12:13:17
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240651.JPG
+FileName: P8240651.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:13:39
+DateTimeOriginal: 2017:08:24 12:13:39
+ModifyDate: 2017:08:24 12:13:39
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240652.JPG
+FileName: P8240652.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 12:15:53
+DateTimeOriginal: 2017:08:24 12:15:53
+ModifyDate: 2017:08:24 12:15:53
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240653.JPG
+FileName: P8240653.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 12:33:16
+DateTimeOriginal: 2017:08:24 12:33:16
+ModifyDate: 2017:08:24 12:33:16
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240654.JPG
+FileName: P8240654.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 12:33:22
+DateTimeOriginal: 2017:08:24 12:33:22
+ModifyDate: 2017:08:24 12:33:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240655.JPG
+FileName: P8240655.JPG
+FileCreateDate: 2018:01:28 20:14:51+01:00
+CreateDate: 2017:08:24 12:33:33
+DateTimeOriginal: 2017:08:24 12:33:33
+ModifyDate: 2017:08:24 12:33:33
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240656.JPG
+FileName: P8240656.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:34:01
+DateTimeOriginal: 2017:08:24 12:34:01
+ModifyDate: 2017:08:24 12:34:01
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240657.JPG
+FileName: P8240657.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:34:48
+DateTimeOriginal: 2017:08:24 12:34:48
+ModifyDate: 2017:08:24 12:34:48
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240658.JPG
+FileName: P8240658.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:35:17
+DateTimeOriginal: 2017:08:24 12:35:17
+ModifyDate: 2017:09:10 10:45:28
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240660.JPG
+FileName: P8240660.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:36:16
+DateTimeOriginal: 2017:08:24 12:36:16
+ModifyDate: 2017:08:24 12:36:16
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240661.JPG
+FileName: P8240661.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:37:28
+DateTimeOriginal: 2017:08:24 12:37:28
+ModifyDate: 2017:09:10 10:45:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240662.JPG
+FileName: P8240662.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:38:58
+DateTimeOriginal: 2017:08:24 12:38:58
+ModifyDate: 2017:09:10 10:45:32
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240663.JPG
+FileName: P8240663.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 12:39:10
+DateTimeOriginal: 2017:08:24 12:39:10
+ModifyDate: 2017:09:10 10:45:34
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240665.JPG
+FileName: P8240665.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 12:40:18
+DateTimeOriginal: 2017:08:24 12:40:18
+ModifyDate: 2017:09:10 10:45:36
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240666.JPG
+FileName: P8240666.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 12:40:44
+DateTimeOriginal: 2017:08:24 12:40:44
+ModifyDate: 2017:09:10 10:45:37
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240667.JPG
+FileName: P8240667.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:41:08
+DateTimeOriginal: 2017:08:24 12:41:08
+ModifyDate: 2017:09:10 10:45:40
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240671.JPG
+FileName: P8240671.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:43:52
+DateTimeOriginal: 2017:08:24 12:43:52
+ModifyDate: 2017:08:24 12:43:52
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240672.JPG
+FileName: P8240672.JPG
+FileCreateDate: 2018:01:28 20:14:52+01:00
+CreateDate: 2017:08:24 12:44:28
+DateTimeOriginal: 2017:08:24 12:44:28
+ModifyDate: 2017:09:10 10:45:41
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240674.JPG
+FileName: P8240674.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:44:53
+DateTimeOriginal: 2017:08:24 12:44:53
+ModifyDate: 2017:09:10 10:45:43
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240676.JPG
+FileName: P8240676.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:47:48
+DateTimeOriginal: 2017:08:24 12:47:48
+ModifyDate: 2017:08:24 12:47:48
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240677.JPG
+FileName: P8240677.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:49:16
+DateTimeOriginal: 2017:08:24 12:49:16
+ModifyDate: 2017:09:10 10:45:45
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4334563184989
+GPSLongitude: 12.3400095240028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433456, geo:lon=12.340010
+======== P:/2017/2017-08 Venise/P8240680.JPG
+FileName: P8240680.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 12:50:23
+DateTimeOriginal: 2017:08:24 12:50:23
+ModifyDate: 2017:08:24 12:50:23
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4334524014
+GPSLongitude: 12.3400099208
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433452, geo:lon=12.340010
+======== P:/2017/2017-08 Venise/P8240681.JPG
+FileName: P8240681.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 13:00:01
+DateTimeOriginal: 2017:08:24 13:00:01
+ModifyDate: 2017:08:24 13:00:01
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4336298947022
+GPSLongitude: 12.3408102105389
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433630, geo:lon=12.340810
+======== P:/2017/2017-08 Venise/P8240682.JPG
+FileName: P8240682.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 13:00:14
+DateTimeOriginal: 2017:08:24 13:00:14
+ModifyDate: 2017:08:24 13:00:14
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.43368
+GPSLongitude: 12.3409498946583
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.433680, geo:lon=12.340950
+======== P:/2017/2017-08 Venise/P8240683.JPG
+FileName: P8240683.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 13:05:12
+DateTimeOriginal: 2017:08:24 13:05:12
+ModifyDate: 2017:09:10 10:45:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4324422105667
+GPSLongitude: 12.3412729473972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432442, geo:lon=12.341273
+======== P:/2017/2017-08 Venise/P8240684.JPG
+FileName: P8240684.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 13:05:47
+DateTimeOriginal: 2017:08:24 13:05:47
+ModifyDate: 2017:08:24 13:05:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4321538420611
+GPSLongitude: 12.3396801578556
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432154, geo:lon=12.339680
+======== P:/2017/2017-08 Venise/P8240685.JPG
+FileName: P8240685.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 13:09:39
+DateTimeOriginal: 2017:08:24 13:09:39
+ModifyDate: 2017:08:24 13:09:39
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4313324211611
+GPSLongitude: 12.3338775263011
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.431332, geo:lon=12.333878
+======== P:/2017/2017-08 Venise/P8240686.JPG
+FileName: P8240686.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 13:10:03
+DateTimeOriginal: 2017:08:24 13:10:03
+ModifyDate: 2017:08:24 13:10:03
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4313245263028
+GPSLongitude: 12.3328971578778
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.431325, geo:lon=12.332897
+======== P:/2017/2017-08 Venise/P8240687.JPG
+FileName: P8240687.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 13:10:37
+DateTimeOriginal: 2017:08:24 13:10:37
+ModifyDate: 2017:08:24 13:10:37
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4312215789
+GPSLongitude: 12.3313398946722
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.431222, geo:lon=12.331340
+======== P:/2017/2017-08 Venise/P8240688.JPG
+FileName: P8240688.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 13:10:58
+DateTimeOriginal: 2017:08:24 13:10:58
+ModifyDate: 2017:08:24 13:10:58
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4313238946833
+GPSLongitude: 12.3303542105056
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.431324, geo:lon=12.330354
+======== P:/2017/2017-08 Venise/P8240689.JPG
+FileName: P8240689.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 13:13:58
+DateTimeOriginal: 2017:08:24 13:13:58
+ModifyDate: 2017:08:24 13:13:58
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4332306843278
+GPSLongitude: 12.3271214737
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433231, geo:lon=12.327121
+======== P:/2017/2017-08 Venise/P8240690.JPG
+FileName: P8240690.JPG
+FileCreateDate: 2018:01:28 20:14:53+01:00
+CreateDate: 2017:08:24 13:14:09
+DateTimeOriginal: 2017:08:24 13:14:09
+ModifyDate: 2017:09:10 10:45:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.433376
+GPSLongitude: 12.32714
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433376, geo:lon=12.327140
+======== P:/2017/2017-08 Venise/P8240691.JPG
+FileName: P8240691.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 13:16:22
+DateTimeOriginal: 2017:08:24 13:16:22
+ModifyDate: 2017:08:24 13:16:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4348455263003
+GPSLongitude: 12.3272356315972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.434846, geo:lon=12.327236
+======== P:/2017/2017-08 Venise/P8240693.JPG
+FileName: P8240693.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 13:17:12
+DateTimeOriginal: 2017:08:24 13:17:12
+ModifyDate: 2017:08:24 13:17:12
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.43521
+GPSLongitude: 12.3278197000694
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.435210, geo:lon=12.327820
+======== P:/2017/2017-08 Venise/P8240694.JPG
+FileName: P8240694.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 13:25:30
+DateTimeOriginal: 2017:08:24 13:25:30
+ModifyDate: 2017:08:24 13:25:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.436943
+GPSLongitude: 12.325108
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436943, geo:lon=12.325108
+======== P:/2017/2017-08 Venise/P8240695.JPG
+FileName: P8240695.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 15:23:43
+DateTimeOriginal: 2017:08:24 15:23:43
+ModifyDate: 2017:08:24 15:23:43
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240697.JPG
+FileName: P8240697.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 15:26:55
+DateTimeOriginal: 2017:08:24 15:26:55
+ModifyDate: 2017:08:24 15:26:55
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240698.JPG
+FileName: P8240698.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 15:28:49
+DateTimeOriginal: 2017:08:24 15:28:49
+ModifyDate: 2017:08:24 15:28:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240699.JPG
+FileName: P8240699.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 15:29:34
+DateTimeOriginal: 2017:08:24 15:29:34
+ModifyDate: 2017:08:24 15:29:34
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240700.JPG
+FileName: P8240700.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 15:29:48
+DateTimeOriginal: 2017:08:24 15:29:48
+ModifyDate: 2017:09:10 10:45:51
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240701.JPG
+FileName: P8240701.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 15:30:39
+DateTimeOriginal: 2017:08:24 15:30:39
+ModifyDate: 2017:08:24 15:30:39
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240703.JPG
+FileName: P8240703.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 15:44:25
+DateTimeOriginal: 2017:08:24 15:44:25
+ModifyDate: 2017:08:24 15:44:25
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240704.JPG
+FileName: P8240704.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 15:44:29
+DateTimeOriginal: 2017:08:24 15:44:29
+ModifyDate: 2017:08:24 15:44:29
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240707.JPG
+FileName: P8240707.JPG
+FileCreateDate: 2018:01:28 20:14:54+01:00
+CreateDate: 2017:08:24 16:03:42
+DateTimeOriginal: 2017:08:24 16:03:42
+ModifyDate: 2017:08:24 16:03:42
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.44531
+GPSLongitude: 12.321502
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Santa Croce, Veneto, Italy, geotagged, geo:lat=45.445310, geo:lon=12.321502
+======== P:/2017/2017-08 Venise/P8240708.JPG
+FileName: P8240708.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 16:06:32
+DateTimeOriginal: 2017:08:24 16:06:32
+ModifyDate: 2017:08:24 16:06:32
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4487221053861
+GPSLongitude: 12.3217806842
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.448722, geo:lon=12.321781
+======== P:/2017/2017-08 Venise/P8240710.JPG
+FileName: P8240710.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 16:10:59
+DateTimeOriginal: 2017:08:24 16:10:59
+ModifyDate: 2017:08:24 16:10:59
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4493243685389
+GPSLongitude: 12.339325052575
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.449324, geo:lon=12.339325
+======== P:/2017/2017-08 Venise/P8240712.JPG
+FileName: P8240712.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 16:12:57
+DateTimeOriginal: 2017:08:24 16:12:57
+ModifyDate: 2017:08:24 16:12:57
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4536424210944
+GPSLongitude: 12.3423697367889
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.453642, geo:lon=12.342370
+======== P:/2017/2017-08 Venise/P8240713.JPG
+FileName: P8240713.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 16:18:55
+DateTimeOriginal: 2017:08:24 16:18:55
+ModifyDate: 2017:08:24 16:18:55
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.457193
+GPSLongitude: 12.3513565
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.457193, geo:lon=12.351356
+======== P:/2017/2017-08 Venise/P8240714.JPG
+FileName: P8240714.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 16:19:06
+DateTimeOriginal: 2017:08:24 16:19:06
+ModifyDate: 2017:08:24 16:19:06
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.456795
+GPSLongitude: 12.35153
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.456795, geo:lon=12.351530
+======== P:/2017/2017-08 Venise/P8240715.JPG
+FileName: P8240715.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 16:41:09
+DateTimeOriginal: 2017:08:24 16:41:09
+ModifyDate: 2017:09:10 10:45:53
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4583903684611
+GPSLongitude: 12.3570421579139
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.458390, geo:lon=12.357042
+======== P:/2017/2017-08 Venise/P8240717.JPG
+FileName: P8240717.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 16:42:33
+DateTimeOriginal: 2017:08:24 16:42:33
+ModifyDate: 2017:08:24 16:42:33
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4585229999167
+GPSLongitude: 12.357068
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.458523, geo:lon=12.357068
+======== P:/2017/2017-08 Venise/P8240718.JPG
+FileName: P8240718.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 16:42:36
+DateTimeOriginal: 2017:08:24 16:42:36
+ModifyDate: 2017:08:24 16:42:36
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4585229999167
+GPSLongitude: 12.357068
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.458523, geo:lon=12.357068
+======== P:/2017/2017-08 Venise/P8240719.JPG
+FileName: P8240719.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 16:51:04
+DateTimeOriginal: 2017:08:24 16:51:04
+ModifyDate: 2017:08:24 16:51:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4559473684222
+GPSLongitude: 12.3525912105
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.455947, geo:lon=12.352591
+======== P:/2017/2017-08 Venise/P8240720.JPG
+FileName: P8240720.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 16:51:12
+DateTimeOriginal: 2017:08:24 16:51:12
+ModifyDate: 2017:08:24 16:51:12
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4559161052972
+GPSLongitude: 12.3525755525986
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.455916, geo:lon=12.352576
+======== P:/2017/2017-08 Venise/P8240721.JPG
+FileName: P8240721.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 16:51:22
+DateTimeOriginal: 2017:08:24 16:51:22
+ModifyDate: 2017:08:24 16:51:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4558497895
+GPSLongitude: 12.3525473946942
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.455850, geo:lon=12.352547
+======== P:/2017/2017-08 Venise/P8240723.JPG
+FileName: P8240723.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 16:59:52
+DateTimeOriginal: 2017:08:24 16:59:52
+ModifyDate: 2017:08:24 16:59:52
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.454395789475
+GPSLongitude: 12.3527628421161
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.454396, geo:lon=12.352763
+======== P:/2017/2017-08 Venise/P8240725.JPG
+FileName: P8240725.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 17:05:14
+DateTimeOriginal: 2017:08:24 17:05:14
+ModifyDate: 2017:08:24 17:05:14
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4530023684111
+GPSLongitude: 12.3514418947017
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Murano, Veneto, Italy, geotagged, geo:lat=45.453002, geo:lon=12.351442
+======== P:/2017/2017-08 Venise/P8240728.JPG
+FileName: P8240728.JPG
+FileCreateDate: 2018:01:28 20:14:55+01:00
+CreateDate: 2017:08:24 17:37:03
+DateTimeOriginal: 2017:08:24 17:37:03
+ModifyDate: 2017:08:24 17:37:03
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4243721052861
+GPSLongitude: 12.3656181053111
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Quartiere S. Elena, Veneto, Italy, geotagged, geo:lat=45.424372, geo:lon=12.365618
+======== P:/2017/2017-08 Venise/P8240729.JPG
+FileName: P8240729.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 17:37:13
+DateTimeOriginal: 2017:08:24 17:37:13
+ModifyDate: 2017:08:24 17:37:13
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4242617895444
+GPSLongitude: 12.3650877895194
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Quartiere S. Elena, Veneto, Italy, geotagged, geo:lat=45.424262, geo:lon=12.365088
+======== P:/2017/2017-08 Venise/P8240731.JPG
+FileName: P8240731.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 17:38:45
+DateTimeOriginal: 2017:08:24 17:38:45
+ModifyDate: 2017:08:24 17:38:45
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4250695263056
+GPSLongitude: 12.3600896316028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Quartiere S. Elena, Veneto, Italy, geotagged, geo:lat=45.425070, geo:lon=12.360090
+======== P:/2017/2017-08 Venise/P8240732.JPG
+FileName: P8240732.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 17:39:05
+DateTimeOriginal: 2017:08:24 17:39:05
+ModifyDate: 2017:08:24 17:39:05
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4255625263056
+GPSLongitude: 12.3591428947167
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Quartiere S. Elena, Veneto, Italy, geotagged, geo:lat=45.425563, geo:lon=12.359143
+======== P:/2017/2017-08 Venise/P8240733.JPG
+FileName: P8240733.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 17:40:42
+DateTimeOriginal: 2017:08:24 17:40:42
+ModifyDate: 2017:08:24 17:40:42
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4284726315778
+GPSLongitude: 12.3548306316111
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Castello, Veneto, Italy, geotagged, geo:lat=45.428473, geo:lon=12.354831
+======== P:/2017/2017-08 Venise/P8240734.JPG
+FileName: P8240734.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 17:41:52
+DateTimeOriginal: 2017:08:24 17:41:52
+ModifyDate: 2017:08:24 17:41:52
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.43019
+GPSLongitude: 12.351277
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Castello, Veneto, Italy, geotagged, geo:lat=45.430190, geo:lon=12.351277
+======== P:/2017/2017-08 Venise/P8240735.JPG
+FileName: P8240735.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 17:42:04
+DateTimeOriginal: 2017:08:24 17:42:04
+ModifyDate: 2017:08:24 17:42:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4304577895083
+GPSLongitude: 12.3506346842011
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Castello, Veneto, Italy, geotagged, geo:lat=45.430458, geo:lon=12.350635
+======== P:/2017/2017-08 Venise/P8240736.JPG
+FileName: P8240736.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 17:43:17
+DateTimeOriginal: 2017:08:24 17:43:17
+ModifyDate: 2017:08:24 17:43:17
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4319121054167
+GPSLongitude: 12.3469975
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: San Giorgio Maggiore, Veneto, Italy, geotagged, geo:lat=45.431912, geo:lon=12.346998
+======== P:/2017/2017-08 Venise/P8240737.JPG
+FileName: P8240737.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 17:43:18
+DateTimeOriginal: 2017:08:24 17:43:18
+ModifyDate: 2017:08:24 17:43:18
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4319265262917
+GPSLongitude: 12.346953
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: San Giorgio Maggiore, Veneto, Italy, geotagged, geo:lat=45.431927, geo:lon=12.346953
+======== P:/2017/2017-08 Venise/P8240738.JPG
+FileName: P8240738.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 17:44:37
+DateTimeOriginal: 2017:08:24 17:44:37
+ModifyDate: 2017:08:24 17:44:37
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4327078947361
+GPSLongitude: 12.3435296316222
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.432708, geo:lon=12.343530
+======== P:/2017/2017-08 Venise/P8240739.JPG
+FileName: P8240739.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 17:56:35
+DateTimeOriginal: 2017:08:24 17:56:35
+ModifyDate: 2017:09:10 10:45:55
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4313261053083
+GPSLongitude: 12.3346686316003
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Marco, Veneto, Italy, geotagged, geo:lat=45.431326, geo:lon=12.334669
+======== P:/2017/2017-08 Venise/P8240743.JPG
+FileName: P8240743.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 18:02:25
+DateTimeOriginal: 2017:08:24 18:02:25
+ModifyDate: 2017:09:10 10:45:57
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4316634738194
+GPSLongitude: 12.3299282104306
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.431663, geo:lon=12.329928
+======== P:/2017/2017-08 Venise/P8240744.JPG
+FileName: P8240744.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 18:02:30
+DateTimeOriginal: 2017:08:24 18:02:30
+ModifyDate: 2017:09:10 10:45:59
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4316774210472
+GPSLongitude: 12.3298016316139
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.431677, geo:lon=12.329802
+======== P:/2017/2017-08 Venise/P8240746.JPG
+FileName: P8240746.JPG
+FileCreateDate: 2018:01:28 20:14:56+01:00
+CreateDate: 2017:08:24 18:08:06
+DateTimeOriginal: 2017:08:24 18:08:06
+ModifyDate: 2017:08:24 18:08:06
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4334141052999
+GPSLongitude: 12.3270227895139
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.433414, geo:lon=12.327023
+======== P:/2017/2017-08 Venise/P8240747.JPG
+FileName: P8240747.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 18:08:37
+DateTimeOriginal: 2017:08:24 18:08:37
+ModifyDate: 2017:08:24 18:08:37
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4341842105
+GPSLongitude: 12.3270365789
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.434184, geo:lon=12.327037
+======== P:/2017/2017-08 Venise/P8240748.JPG
+FileName: P8240748.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 18:08:58
+DateTimeOriginal: 2017:08:24 18:08:58
+ModifyDate: 2017:09:10 10:46:01
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4346547368022
+GPSLongitude: 12.3273151052556
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Dorsoduro, Veneto, Italy, geotagged, geo:lat=45.434655, geo:lon=12.327315
+======== P:/2017/2017-08 Venise/P8240749.JPG
+FileName: P8240749.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 18:10:27
+DateTimeOriginal: 2017:08:24 18:10:27
+ModifyDate: 2017:08:24 18:10:27
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4353007368
+GPSLongitude: 12.3280040526861
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.435301, geo:lon=12.328004
+======== P:/2017/2017-08 Venise/P8240750.JPG
+FileName: P8240750.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 18:10:40
+DateTimeOriginal: 2017:08:24 18:10:40
+ModifyDate: 2017:08:24 18:10:40
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4352910525936
+GPSLongitude: 12.3280554211028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.435291, geo:lon=12.328055
+======== P:/2017/2017-08 Venise/P8240752.JPG
+FileName: P8240752.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 19:38:28
+DateTimeOriginal: 2017:08:24 19:38:28
+ModifyDate: 2017:09:10 10:46:03
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240754.JPG
+FileName: P8240754.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 19:43:24
+DateTimeOriginal: 2017:08:24 19:43:24
+ModifyDate: 2017:09:10 10:46:05
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240757.JPG
+FileName: P8240757.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 19:43:49
+DateTimeOriginal: 2017:08:24 19:43:49
+ModifyDate: 2017:09:10 10:46:07
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240759.JPG
+FileName: P8240759.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:24 19:43:56
+DateTimeOriginal: 2017:08:24 19:43:56
+ModifyDate: 2017:09:10 10:46:09
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8240761.JPG
+FileName: P8240761.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:24 20:49:22
+DateTimeOriginal: 2017:08:24 20:49:22
+ModifyDate: 2017:08:24 20:49:22
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4367330525944
+GPSLongitude: 12.3331726315778
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.436733, geo:lon=12.333173
+======== P:/2017/2017-08 Venise/P8240762.JPG
+FileName: P8240762.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:24 20:50:03
+DateTimeOriginal: 2017:08:24 20:50:03
+ModifyDate: 2017:08:24 20:50:03
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4373020526056
+GPSLongitude: 12.3341679474044
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437302, geo:lon=12.334168
+======== P:/2017/2017-08 Venise/P8240763.JPG
+FileName: P8240763.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:24 20:50:29
+DateTimeOriginal: 2017:08:24 20:50:29
+ModifyDate: 2017:08:24 20:50:29
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.437758842125
+GPSLongitude: 12.3350793683994
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437759, geo:lon=12.335079
+======== P:/2017/2017-08 Venise/P8240764.JPG
+FileName: P8240764.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 20:50:38
+DateTimeOriginal: 2017:08:24 20:50:38
+ModifyDate: 2017:08:24 20:50:38
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4378886315889
+GPSLongitude: 12.3351755263011
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437889, geo:lon=12.335176
+======== P:/2017/2017-08 Venise/P8240765.JPG
+FileName: P8240765.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 20:54:12
+DateTimeOriginal: 2017:08:24 20:54:12
+ModifyDate: 2017:08:24 20:54:12
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4374658946944
+GPSLongitude: 12.3349683157989
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437466, geo:lon=12.334968
+======== P:/2017/2017-08 Venise/P8240768.JPG
+FileName: P8240768.JPG
+FileCreateDate: 2018:01:28 20:14:57+01:00
+CreateDate: 2017:08:24 20:58:08
+DateTimeOriginal: 2017:08:24 20:58:08
+ModifyDate: 2017:08:24 20:58:08
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.440323
+GPSLongitude: 12.334119
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.440323, geo:lon=12.334119
+======== P:/2017/2017-08 Venise/P8240769.JPG
+FileName: P8240769.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 20:58:14
+DateTimeOriginal: 2017:08:24 20:58:14
+ModifyDate: 2017:08:24 20:58:14
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4403735262583
+GPSLongitude: 12.3340372105
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.440374, geo:lon=12.334037
+======== P:/2017/2017-08 Venise/P8240770.JPG
+FileName: P8240770.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 20:58:25
+DateTimeOriginal: 2017:08:24 20:58:25
+ModifyDate: 2017:08:24 20:58:25
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4404661579306
+GPSLongitude: 12.3338872631992
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.440466, geo:lon=12.333887
+======== P:/2017/2017-08 Venise/P8240771.JPG
+FileName: P8240771.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 20:58:39
+DateTimeOriginal: 2017:08:24 20:58:39
+ModifyDate: 2017:08:24 20:58:39
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4405234737306
+GPSLongitude: 12.3338582105044
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.440523, geo:lon=12.333858
+======== P:/2017/2017-08 Venise/P8240772.JPG
+FileName: P8240772.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 20:58:46
+DateTimeOriginal: 2017:08:24 20:58:46
+ModifyDate: 2017:08:24 20:58:46
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4405466841778
+GPSLongitude: 12.3338580262997
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.440547, geo:lon=12.333858
+======== P:/2017/2017-08 Venise/P8240776.JPG
+FileName: P8240776.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:24 21:03:03
+DateTimeOriginal: 2017:08:24 21:03:03
+ModifyDate: 2017:08:24 21:03:03
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4421636842444
+GPSLongitude: 12.3301248420778
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442164, geo:lon=12.330125
+======== P:/2017/2017-08 Venise/P8240777.JPG
+FileName: P8240777.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:24 21:04:02
+DateTimeOriginal: 2017:08:24 21:04:02
+ModifyDate: 2017:08:24 21:04:02
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.442284
+GPSLongitude: 12.3293573683667
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442284, geo:lon=12.329357
+======== P:/2017/2017-08 Venise/P8240778.JPG
+FileName: P8240778.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:24 21:05:40
+DateTimeOriginal: 2017:08:24 21:05:40
+ModifyDate: 2017:08:24 21:05:40
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4424452632222
+GPSLongitude: 12.3288486316
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442445, geo:lon=12.328849
+======== P:/2017/2017-08 Venise/P8240779.JPG
+FileName: P8240779.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:24 21:05:49
+DateTimeOriginal: 2017:08:24 21:05:49
+ModifyDate: 2017:08:24 21:05:49
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4424616500833
+GPSLongitude: 12.3288245499889
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442462, geo:lon=12.328825
+======== P:/2017/2017-08 Venise/P8240780.JPG
+FileName: P8240780.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:24 21:06:27
+DateTimeOriginal: 2017:08:24 21:06:27
+ModifyDate: 2017:08:24 21:06:27
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4425250525917
+GPSLongitude: 12.3283789210139
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442525, geo:lon=12.328379
+======== P:/2017/2017-08 Venise/P8240781.JPG
+FileName: P8240781.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:24 21:06:33
+DateTimeOriginal: 2017:08:24 21:06:33
+ModifyDate: 2017:08:24 21:06:33
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4424972632722
+GPSLongitude: 12.3281393683972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di Cannaregio, Veneto, Italy, geotagged, geo:lat=45.442497, geo:lon=12.328139
+======== P:/2017/2017-08 Venise/P8240784.JPG
+FileName: P8240784.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 21:22:57
+DateTimeOriginal: 2017:08:24 21:22:57
+ModifyDate: 2017:08:24 21:22:57
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.437687
+GPSLongitude: 12.321212
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.437687, geo:lon=12.321212
+======== P:/2017/2017-08 Venise/P8240785.JPG
+FileName: P8240785.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 21:23:29
+DateTimeOriginal: 2017:08:24 21:23:29
+ModifyDate: 2017:08:24 21:23:29
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.437695
+GPSLongitude: 12.321252
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.437695, geo:lon=12.321252
+======== P:/2017/2017-08 Venise/P8240786.JPG
+FileName: P8240786.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 21:26:04
+DateTimeOriginal: 2017:08:24 21:26:04
+ModifyDate: 2017:08:24 21:26:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4369673684222
+GPSLongitude: 12.3210791579028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.436967, geo:lon=12.321079
+======== P:/2017/2017-08 Venise/P8240788.JPG
+FileName: P8240788.JPG
+FileCreateDate: 2018:01:28 20:14:58+01:00
+CreateDate: 2017:08:24 21:34:52
+DateTimeOriginal: 2017:08:24 21:34:52
+ModifyDate: 2017:08:24 21:34:52
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4360610525875
+GPSLongitude: 12.3244433683833
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Piazzale Roma, Veneto, Italy, geotagged, geo:lat=45.436061, geo:lon=12.324443
+======== P:/2017/2017-08 Venise/P8240790.JPG
+FileName: P8240790.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:24 21:35:26
+DateTimeOriginal: 2017:08:24 21:35:26
+ModifyDate: 2017:08:24 21:35:26
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4361160526028
+GPSLongitude: 12.3245617367972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.436116, geo:lon=12.324562
+======== P:/2017/2017-08 Venise/P8250791.JPG
+FileName: P8250791.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:25 10:04:47
+DateTimeOriginal: 2017:08:25 10:04:47
+ModifyDate: 2017:09:10 10:46:11
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4378732813833
+GPSLongitude: 12.3328144781139
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.437873, geo:lon=12.332814
+======== P:/2017/2017-08 Venise/P8250792.JPG
+FileName: P8250792.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:25 10:16:01
+DateTimeOriginal: 2017:08:25 10:16:01
+ModifyDate: 2017:09:10 10:46:13
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.438976
+GPSLongitude: 12.334518
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.438976, geo:lon=12.334518
+======== P:/2017/2017-08 Venise/P8250793.JPG
+FileName: P8250793.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:25 10:17:58
+DateTimeOriginal: 2017:08:25 10:17:58
+ModifyDate: 2017:09:10 10:46:15
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4394397999917
+GPSLongitude: 12.3347322000075
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439440, geo:lon=12.334732
+======== P:/2017/2017-08 Venise/P8250795.JPG
+FileName: P8250795.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:25 10:19:57
+DateTimeOriginal: 2017:08:25 10:19:57
+ModifyDate: 2017:08:25 10:19:57
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4396955263306
+GPSLongitude: 12.3343082104931
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439696, geo:lon=12.334308
+======== P:/2017/2017-08 Venise/P8250796.JPG
+FileName: P8250796.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:25 10:20:02
+DateTimeOriginal: 2017:08:25 10:20:02
+ModifyDate: 2017:09:10 10:46:17
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4397226316222
+GPSLongitude: 12.3342900526064
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439723, geo:lon=12.334290
+======== P:/2017/2017-08 Venise/P8250797.JPG
+FileName: P8250797.JPG
+FileCreateDate: 2018:01:28 20:15:01+01:00
+CreateDate: 2017:08:25 10:27:09
+DateTimeOriginal: 2017:08:25 10:27:09
+ModifyDate: 2017:09:10 10:46:19
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4398829473889
+GPSLongitude: 12.3344426842008
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439883, geo:lon=12.334443
+======== P:/2017/2017-08 Venise/P8250800.JPG
+FileName: P8250800.JPG
+FileCreateDate: 2018:01:28 20:15:01+01:00
+CreateDate: 2017:08:25 10:29:00
+DateTimeOriginal: 2017:08:25 10:29:00
+ModifyDate: 2017:08:25 10:29:00
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4398387368028
+GPSLongitude: 12.3343657895008
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439839, geo:lon=12.334366
+======== P:/2017/2017-08 Venise/P8250801.JPG
+FileName: P8250801.JPG
+FileCreateDate: 2018:01:28 20:15:01+01:00
+CreateDate: 2017:08:25 10:31:50
+DateTimeOriginal: 2017:08:25 10:31:50
+ModifyDate: 2017:08:25 10:31:50
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4398771579028
+GPSLongitude: 12.3344260525917
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439877, geo:lon=12.334426
+======== P:/2017/2017-08 Venise/P8250802.JPG
+FileName: P8250802.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:25 10:35:30
+DateTimeOriginal: 2017:08:25 10:35:30
+ModifyDate: 2017:08:25 10:35:30
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4399283158
+GPSLongitude: 12.3341264211006
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439928, geo:lon=12.334126
+======== P:/2017/2017-08 Venise/P8250805.JPG
+FileName: P8250805.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:25 10:39:27
+DateTimeOriginal: 2017:08:25 10:39:27
+ModifyDate: 2017:09:10 10:46:21
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4393940526
+GPSLongitude: 12.3333578947
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Venice, Veneto, Italy, geotagged, geo:lat=45.439394, geo:lon=12.333358
+======== P:/2017/2017-08 Venise/P8250806.JPG
+FileName: P8250806.JPG
+FileCreateDate: 2018:01:28 20:14:59+01:00
+CreateDate: 2017:08:25 10:53:03
+DateTimeOriginal: 2017:08:25 10:53:03
+ModifyDate: 2017:09:10 10:46:23
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4409487368167
+GPSLongitude: 12.3291453946972
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.440949, geo:lon=12.329145
+======== P:/2017/2017-08 Venise/P8250807.JPG
+FileName: P8250807.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:25 11:03:20
+DateTimeOriginal: 2017:08:25 11:03:20
+ModifyDate: 2017:09:10 10:46:25
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4386198421083
+GPSLongitude: 12.3294898159028
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.438620, geo:lon=12.329490
+======== P:/2017/2017-08 Venise/P8250808.JPG
+FileName: P8250808.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:25 11:04:23
+DateTimeOriginal: 2017:08:25 11:04:23
+ModifyDate: 2017:09:10 10:46:27
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4385110525833
+GPSLongitude: 12.3297085789139
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.438511, geo:lon=12.329709
+======== P:/2017/2017-08 Venise/P8250810.JPG
+FileName: P8250810.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:25 11:05:15
+DateTimeOriginal: 2017:08:25 11:05:15
+ModifyDate: 2017:08:25 11:05:15
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.438
+GPSLongitude: 12.3300830001222
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.438000, geo:lon=12.330083
+======== P:/2017/2017-08 Venise/P8250811.JPG
+FileName: P8250811.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:25 11:06:12
+DateTimeOriginal: 2017:08:25 11:06:12
+ModifyDate: 2017:09:10 10:46:29
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+GPSLatitude: 45.4374391579083
+GPSLongitude: 12.3301882105667
+GPSLatitudeRef: N
+GPSLongitudeRef: E
+Keywords: Sestire di San Polo, Veneto, Italy, geotagged, geo:lat=45.437439, geo:lon=12.330188
+======== P:/2017/2017-08 Venise/P8250812.JPG
+FileName: P8250812.JPG
+FileCreateDate: 2018:01:28 20:15:01+01:00
+CreateDate: 2017:08:25 12:26:27
+DateTimeOriginal: 2017:08:25 12:26:27
+ModifyDate: 2017:09:10 10:46:31
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 3072
+ImageHeight: 4608
+Artist: Picasa
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8250814.JPG
+FileName: P8250814.JPG
+FileCreateDate: 2018:01:28 20:15:01+01:00
+CreateDate: 2017:08:25 13:58:17
+DateTimeOriginal: 2017:08:25 13:58:17
+ModifyDate: 2017:08:25 13:58:17
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8250816.JPG
+FileName: P8250816.JPG
+FileCreateDate: 2018:01:28 20:15:01+01:00
+CreateDate: 2017:08:25 13:58:33
+DateTimeOriginal: 2017:08:25 13:58:33
+ModifyDate: 2017:08:25 13:58:33
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8250817.JPG
+FileName: P8250817.JPG
+FileCreateDate: 2018:01:28 20:15:02+01:00
+CreateDate: 2017:08:25 19:23:47
+DateTimeOriginal: 2017:08:25 19:23:47
+ModifyDate: 2017:08:25 19:23:47
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8250818.JPG
+FileName: P8250818.JPG
+FileCreateDate: 2018:01:28 20:15:02+01:00
+CreateDate: 2017:08:25 19:24:34
+DateTimeOriginal: 2017:08:25 19:24:34
+ModifyDate: 2017:08:25 19:24:34
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8250819.JPG
+FileName: P8250819.JPG
+FileCreateDate: 2018:01:28 20:15:02+01:00
+CreateDate: 2017:08:25 19:24:40
+DateTimeOriginal: 2017:08:25 19:24:40
+ModifyDate: 2017:08:25 19:24:40
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8260820.JPG
+FileName: P8260820.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:26 09:43:43
+DateTimeOriginal: 2017:08:26 09:43:43
+ModifyDate: 2017:08:26 09:43:43
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8260821.JPG
+FileName: P8260821.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:26 09:43:46
+DateTimeOriginal: 2017:08:26 09:43:46
+ModifyDate: 2017:08:26 09:43:46
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8260822.JPG
+FileName: P8260822.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:26 09:44:10
+DateTimeOriginal: 2017:08:26 09:44:10
+ModifyDate: 2017:08:26 09:44:10
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8260823.JPG
+FileName: P8260823.JPG
+FileCreateDate: 2018:01:28 20:15:00+01:00
+CreateDate: 2017:08:26 09:47:18
+DateTimeOriginal: 2017:08:26 09:47:18
+ModifyDate: 2017:08:26 09:47:18
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8260826.JPG
+FileName: P8260826.JPG
+FileCreateDate: 2018:01:28 20:15:01+01:00
+CreateDate: 2017:08:26 09:48:56
+DateTimeOriginal: 2017:08:26 09:48:56
+ModifyDate: 2017:08:26 09:48:56
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8260827.JPG
+FileName: P8260827.JPG
+FileCreateDate: 2018:01:28 20:15:01+01:00
+CreateDate: 2017:08:26 09:49:04
+DateTimeOriginal: 2017:08:26 09:49:04
+ModifyDate: 2017:08:26 09:49:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8260828.JPG
+FileName: P8260828.JPG
+FileCreateDate: 2018:01:28 20:15:01+01:00
+CreateDate: 2017:08:26 09:49:46
+DateTimeOriginal: 2017:08:26 09:49:46
+ModifyDate: 2017:08:26 09:49:46
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8260829.JPG
+FileName: P8260829.JPG
+FileCreateDate: 2018:01:28 20:15:02+01:00
+CreateDate: 2017:08:26 09:50:43
+DateTimeOriginal: 2017:08:26 09:50:43
+ModifyDate: 2017:08:26 09:50:43
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+======== P:/2017/2017-08 Venise/P8260830.JPG
+FileName: P8260830.JPG
+FileCreateDate: 2018:01:28 20:15:02+01:00
+CreateDate: 2017:08:26 09:51:04
+DateTimeOriginal: 2017:08:26 09:51:04
+ModifyDate: 2017:08:26 09:51:04
+Model: E-M10MarkII
+Make: OLYMPUS CORPORATION
+ImageWidth: 4608
+ImageHeight: 3072
+Artist: 
+ImageDescription: OLYMPUS DIGITAL CAMERA
+    1 directories scanned
+  382 image files read

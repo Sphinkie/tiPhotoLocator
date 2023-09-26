@@ -18,6 +18,8 @@ Window {
     visible: true
     color: "#f7f7f7"
     title: "tiPhotoLocator"
+    signal qmlSignal(double latit)
+    signal scanFolder(string str)
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier
@@ -80,6 +82,7 @@ Window {
             onClicked: {
                 // On met à jour la listModel
                 console.log("Manual Refresh");
+                window.scanFolder("text")
                 // _photoListModel.clear();                                                       // TODO implémenter le clear() en C++ (?)
                 for (var i = 0; i < folderListModel.count; )  {
                     console.log(i+": "+folderListModel.get(i,"fileName"));
@@ -300,7 +303,7 @@ Window {
                 onNew_coordsChanged: {
                     // Centrage de la carte sur les nouvelles coordonnées
                     console.log("NewCoords: re-center the map");
-                    mapView.center = QtPositioning.coordinate(new_latitude, new_longitude)
+                    // mapView.center = QtPositioning.coordinate(new_latitude, new_longitude)  TODO verifier si inutile
                 }
 
                 CheckBox {
@@ -336,7 +339,6 @@ Window {
                         id: mapitemView
                         model: _selectedPhotoModel
                         delegate: mapDelegate
-                        signal qmlSignal(double latit)
 
                         // ---------------------------
                         MouseArea {
