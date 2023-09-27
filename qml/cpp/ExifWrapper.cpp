@@ -21,20 +21,28 @@ ExifWrapper::ExifWrapper()
 bool ExifWrapper::scanFolder(QString folder)
 {
     QProcess exifProcess;
-    QString folderPath = "E:/TiPhotos";
+    QString folderPath = "E:\\TiPhotos";
+    qDebug() << "scanFolder" << folderPath;
 
-    qDebug() << QCoreApplication::applicationDirPath();  // For auxiliary binaries shipped with the application: "D:/Mes Programmes/Windows/tiPhotoLocator/build-tiPhotoLocator-Desktop_Qt_5_15_0_MSVC2019_64bit-Debug/debug"
-    qDebug() << exifProcess.workingDirectory() ;
-    exifProcess.setWorkingDirectory(QCoreApplication::applicationDirPath() + "/../../bin");
-    qDebug() << exifProcess.workingDirectory() ;
+//    qDebug() << QCoreApplication::applicationDirPath();  // For auxiliary binaries shipped with the application: "D:/Mes Programmes/Windows/tiPhotoLocator/build-tiPhotoLocator-Desktop_Qt_5_15_0_MSVC2019_64bit-Debug/debug"
+//    qDebug() << exifProcess.workingDirectory() ;
+//    exifProcess.setWorkingDirectory(QCoreApplication::applicationDirPath() + "/../../bin");
+//    qDebug() << exifProcess.workingDirectory() ;
     // QString program = QCoreApplication::applicationDirPath()+"/exifTool.exe";
-    QString program = "exifTool.exe ";
+    QString program = "exifTool";
     QStringList arguments;
-    arguments << "-@ exiftool.args" << folderPath ;  // TODO to fix
-
-    //    arguments << " > D:/Mes Programmes/Windows/tiPhotoLocator/bin/_result.txt" ;
-
-    qDebug() << "scanFolder" << folder;
+    // arguments << "-ver" ;
+    // Formattage du flux de sortie de ExifTool
+    arguments.append("-@");
+    arguments.append("exiftool.args");
+    arguments.append("-json");                                    // output in JSON format
+    //arguments.append("-xmlformat -escape(XML) -duplicates ")    // output in XML format
+    arguments.append("--printConv");                              // no print conversion (-n)
+    arguments.append("-preserve");                                // Preserve file modification date/time
+    arguments.append("-veryShort");                               // very short output format  (-S)
+    arguments.append("-dateFormat %Y-%m-%d");                     // datetime format YYYY-MM-DD : N'est pas pris en compte ...
+    arguments.append(folderPath);
+    // TODO : enlever les \r\n et \"
 
     exifProcess.start(program, arguments);
     while(exifProcess.state() != QProcess::NotRunning)
@@ -65,15 +73,6 @@ bool ExifWrapper::writeArgsFile()
         return false;
 
     QTextStream out(&file);
-    // Formattage du flux de sortie de ExifTools
-    out << "-preserve "          << Qt::endl;    // Preserve file modification date/time
-    out << "-veryShort "          << Qt::endl;    // very short output format  (-S)
-    out << "--printConv "          << Qt::endl;    // no print conversion (-n)
-    out << "-dateFormat %%Y-%%m-%%d "          << Qt::endl;    // datetime format YYYY-MM-DD
-    // Output format (au choix)
-    out << "-json "          << Qt::endl;    // output in JSON format
-    // out << "-xmlformat -escape(XML) -duplicates "          << Qt::endl;    // output in XML format
-    out << Qt::endl;
     // Liste des tags Exif à extraire
     out << "-FileName"          << Qt::endl;    // "P8180028.JPG"
     out << "-FileCreateDate"    << Qt::endl;    // "2018:01:28 20:14:44+01:00" - Ceci semble la date de la prise de vue
