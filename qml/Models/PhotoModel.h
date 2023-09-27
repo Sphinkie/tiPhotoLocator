@@ -11,27 +11,38 @@
 // -----------------------------------------------------------------------
 // Data structure
 // -----------------------------------------------------------------------
-struct Data {
+struct Data
+{
     // Default constructor
     Data() {}
     // Constructor avec valeurs
-    Data( const QString &filename,
-          const QString &imageUrl,
-          double latitude,
-          double longitude,
-          bool isSelected = false
+    Data( const QString &file_name,
+          const QString &image_url,
+          double gps_latitude,
+          double gps_longitude,
+          bool is_selected = false
           )
-        : filename(filename), imageUrl(imageUrl), latitude(latitude), longitude(longitude), isSelected(isSelected) {}
+    {
+        filename = file_name;
+        imageUrl = image_url;
+        latitude = gps_latitude;
+        longitude = gps_longitude;
+        hasGPS    = (gps_latitude!=0) && (gps_longitude!=0);
+        isSelected = is_selected;
+    }
+
     // Elements de la structure
     QString filename;       // Example: "IMG_20230823_1234500.jpg"
     QString imageUrl;       // Example: "qrc:///Images/ibiza.png"
     double latitude;        // Example: 38.980    // GPS coordinates
-    double longitude;       // Example: 1.433     // (Ibiza)
+    double longitude;       // Example: 1.4333    // (Ibiza)
+    // Elements déterminés automatiquement
     bool hasGPS = false;    // has GPS coordinates (latitude/longitude)
     bool isSelected;
     // isDirty: false      // true if one of the following fields has been modified
     // insideCircle: false // inside the radius of nearby photos
 };
+
 
 // -----------------------------------------------------------------------
 // Class
@@ -61,7 +72,8 @@ public:
     // Methodes
     Q_INVOKABLE QVariant getUrl(int index);
     Q_INVOKABLE QVariantMap get(int row);
-    Q_INVOKABLE void append(QString filename, QString url, double latitude=0, double longitude=0 );
+    Q_INVOKABLE void append(QString filename, QString url);   // , double latitude=0, double longitude=0 );
+    Q_INVOKABLE void append(QVariantMap data_dict);
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse
     // Getter and Setter
     void selectedRow(int row);

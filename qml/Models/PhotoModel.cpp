@@ -1,6 +1,6 @@
-/*************************************************************************
- *
- *************************************************************************/
+/**
+ * This Model class stores all the metadata of the photos present in the selected folder.
+ */
 
 #include "PhotoModel.h"
 
@@ -63,9 +63,10 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         return QVariant();
 }
 
+// -----------------------------------------------------------------------
 /**
  * Table of Role names. Implémentation obligatoire.
- **/
+ */
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
@@ -81,36 +82,61 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 
 
 // -----------------------------------------------------------------------
-// Example of get unitary data method
-// -----------------------------------------------------------------------
-QVariant PhotoModel::getUrl(int index)
+/**
+ * @brief Gives the full name (with absolute path) of the photo.
+ * This is an example of unitary gat data method.
+ * @param row Indice de l'element à lire
+ * @return a QVariant containg the image URL
+ */
+QVariant PhotoModel::getUrl(int row)
 {
-    if (index < 0 || index >= m_data.count())
+    if (row < 0 || row >= m_data.count())
         return QVariant();
-    QVariant result = QVariant(m_data[index].imageUrl);
+    QVariant result = QVariant(m_data[row].imageUrl);
     return result;
 }
 
 
 // -----------------------------------------------------------------------
-// Add an item to the Model
-// -----------------------------------------------------------------------
-void PhotoModel::append(QString filename, QString url, double latitude, double longitude )
+/**
+ * @brief Append a photo to the model with just a name and a path (url).
+ * Other data should be filled later, from exif data.
+ * @param filename filename of the photo
+ * @param url Full path of the photo in Qt format
+ */
+void PhotoModel::append(QString filename, QString url)
 {
-    const int rowOfInsert = m_data.count();
-    Data* data = new Data(filename, url, latitude, longitude);
+    QVariantMap map;
+    map.insert(roleNames().value(FilenameRole), QVariant(filename));
+    map.insert(roleNames().value(ImageUrlRole), QVariant(url));
+    this->append(map);
+}
 
+// -----------------------------------------------------------------------
+/**
+ * @brief Add an item to the Model from a dictionnary of metadata.
+ * This method can be called from QML.
+ * @param data: A dictionnary of key-value
+ */
+void PhotoModel::append(QVariantMap data)
+{
+    qDebug() << "append QVariantMap:" << data;
+    const int rowOfInsert = m_data.count();
+    Data* new_data = new Data(data["filename"].toString(), data["imageUrl"].toString(), data["latitude"].toDouble(), data["longitude"].toDouble());
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
-    m_data.insert(rowOfInsert, *data);
+    m_data.insert(rowOfInsert, *new_data);
     endInsertRows();
-    qDebug() << "append" << url << "to row" << rowOfInsert;
+    qDebug() << "append" << data.value("filename").toString() << "to row" << rowOfInsert;
+
 }
 
 
 // -----------------------------------------------------------------------
-// Mémorise la position fournie.
-// Met le flag "isSelected" du précédent item à False et le nouveau à True.
-// -----------------------------------------------------------------------
+/**
+ * @brief PhotoModel::selectedRow mémorise la position fournie.
+ * Met le flag "isSelected" du précédent item à False et le nouveau à True.
+ * @param row : l'indice de l'item sélectionné dans la ListView.
+ */
 void PhotoModel::selectedRow(int row)
 {
     qDebug() << "selectedRow " << row << "/" << m_data.count();
@@ -134,23 +160,29 @@ void PhotoModel::selectedRow(int row)
 }
 
 // -----------------------------------------------------------------------
-// Surcharge de la fontion setData qui permet de modifier un item du modèle.
-// Voir : https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
-// -----------------------------------------------------------------------
+/**
+ * @brief PhotoModel::setData surcharge la fonction setData qui permet de modifier un item du modèle.
+ * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS.
+ * @param index : l'index (au sens ModelIndex) de l'item à modifier
+ * @param value : la nouvelle valeur
+ * @param role : le role à modifier (ex: FilenameRole)
+ * @return true si la modification a réussi. False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
+ * @see: https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
+ */
 bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     if (index.isValid())
     {
         // Check if the new value differs from the current value
-        if (m_data[index.row()].filename != value.toString())
+        if (m_data[index.row()].filename == value.toString())
         {
-           // TODO
+            return false;
         }
 
         // Set data in model here.
         switch (role)
         {
-        // IsSelectedRole: non-modifiable par ici. Merci de paser par selectedRow().
+        // IsSelectedRole: non-modifiable par ici. Merci de passer par selectedRow().
         // FilenameRole: pour tests uniquement. Normalement, on ne modifie pas ce role.
         case FilenameRole:
             m_data[index.row()].filename = value.toString();
@@ -167,7 +199,6 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
         // Note: It is important to emit the dataChanged() signal after saving the changes.
         emit dataChanged(index, index);   // , { Qt::UserRole });
         return true;
-
     }
     return false;
 }

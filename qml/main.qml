@@ -82,21 +82,10 @@ Window {
             onClicked: {
                 // On met à jour la listModel
                 console.log("Manual Refresh");
-                window.scanFolder("text")
-                // _photoListModel.clear();                                                       // TODO implémenter le clear() en C++ (?)
+                window.scanFolder(folderListModel.folder)
+                // _photoListModel.clear();              // TODO implémenter le clear() en C++ (?)
                 for (var i = 0; i < folderListModel.count; )  {
-                    console.log(i+": "+folderListModel.get(i,"fileName"));
-                    console.log(i+": "+folderListModel.get(i,"fileUrl"));
-                    //                    _photoListModel.append({ "filename":folderListModel.get(i,"fileName"),
-                    //                                         "imageUrl":folderListModel.get(i,"fileUrl").toString(),
-                    //                                         "latitude": 48.0 + Math.random(),
-                    //                                         "longitude": 2.0 + Math.random()
-                    //                                     });
-                    _photoListModel.append(folderListModel.get(i,"fileName"),        // TODO: implémenter avec 1 parametre de type dictionnaire
-                                           folderListModel.get(i,"fileUrl").toString(),
-                                           48.0 + Math.random(),
-                                           2.0 + Math.random()
-                                           )
+                    _photoListModel.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
                     i++
                 }
             }
