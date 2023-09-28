@@ -19,6 +19,8 @@ private:
     bool write(const QString& source, const QString& data);
     bool writeArgsFile();
 
+    QString m_ArgFile;
+
 };
 
 #endif // EXIFWRAPPER_H

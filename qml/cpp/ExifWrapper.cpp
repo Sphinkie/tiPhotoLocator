@@ -4,6 +4,7 @@
 #include <QProcess>
 #include <QDebug>
 #include <QCoreApplication>
+#include <QStandardPaths>
 
 
 /**
@@ -33,8 +34,6 @@ bool ExifWrapper::scanFolder(QString folder)
     QStringList arguments;
     // arguments << "-ver" ;
     // Formattage du flux de sortie de ExifTool
-    arguments.append("-@");
-    arguments.append("exiftool.args");
     arguments.append("-json");                                    // output in JSON format
     //arguments.append("-xmlformat -escape(XML) -duplicates ")    // output in XML format
     arguments.append("--printConv");                              // no print conversion (-n)
@@ -42,7 +41,9 @@ bool ExifWrapper::scanFolder(QString folder)
     arguments.append("-veryShort");                               // very short output format  (-S)
     arguments.append("-dateFormat %Y-%m-%d");                     // datetime format YYYY-MM-DD : N'est pas pris en compte ...
     arguments.append(folderPath);
-    // TODO : enlever les \r\n et \"
+    // Liste des tags à lire
+    arguments.append("-@");
+    arguments.append(m_ArgFile);
 
     exifProcess.start(program, arguments);
     while(exifProcess.state() != QProcess::NotRunning)
@@ -68,7 +69,10 @@ bool ExifWrapper::scanFolder(QString folder)
  **/
 bool ExifWrapper::writeArgsFile()
 {
-    QFile file("exiftool.args");
+    m_ArgFile = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/exiftool.args";
+    qDebug() << "TempLocation:" << m_ArgFile;
+    QFile file(m_ArgFile);
+
     if (!file.open(QFile::WriteOnly))
         return false;
 
