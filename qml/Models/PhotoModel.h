@@ -41,6 +41,10 @@ struct Data
     bool isSelected;
     // isDirty: false      // true if one of the following fields has been modified
     // insideCircle: false // inside the radius of nearby photos
+
+    // Surcharges d'operateurs
+    bool operator == (const QString &file_name);
+    // int indexOf(const QString &text);
 };
 
 
@@ -61,23 +65,26 @@ public:
         IsSelectedRole
     };
 
-    Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow ) // NOTIFY selectedRowChanged)
+    Q_PROPERTY(int selectedRow READ getSelectedRow)    // WRITE selectedRow NOTIFY selectedRowChanged
 
     QHash<int, QByteArray> roleNames() const override;
 
-    explicit PhotoModel(QObject *parent = nullptr);
     // Surcharges obligatoires
+    explicit PhotoModel(QObject *parent = nullptr);
     int      rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    // Methodes
+
+    // Methodes pouvant être appelées depuis QML
     Q_INVOKABLE QVariant getUrl(int index);
     Q_INVOKABLE QVariantMap get(int row);
-    Q_INVOKABLE void append(QString filename, QString url);   // , double latitude=0, double longitude=0 );
+    Q_INVOKABLE void append(QString filename, QString url);
     Q_INVOKABLE void append(QVariantMap data_dict);
+    Q_INVOKABLE void dumpData();
+    // Methodes publiques
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse
-    // Getter and Setter
+    void setData(const QVariantMap &value_list);
     void selectedRow(int row);
-    int getSelectedRow();
+//    int getSelectedRow();
 
 public slots:
     void duplicateData(int row);
@@ -92,6 +99,7 @@ private slots:
 private: //members
     QVector<Data> m_data;
     int m_lastSelectedRow = 0;  // Au départ, on a un item: Kodak
+    int m_dumpedRow = 0;        // Compteur pour le dump de debug
 };
 
 #endif // PHOTOMODEL_H

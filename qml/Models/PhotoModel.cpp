@@ -161,7 +161,7 @@ void PhotoModel::selectedRow(int row)
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::setData surcharge la fonction setData qui permet de modifier un item du modèle.
+ * @brief PhotoModel::setData surcharge la fonction setData qui permet de modifier 1 role un item du modèle.
  * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS.
  * @param index : l'index (au sens ModelIndex) de l'item à modifier
  * @param value : la nouvelle valeur
@@ -203,14 +203,57 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
     return false;
 }
 
+// -----------------------------------------------------------------------
+/**
+ * @brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role FilenameRole.
+ * @param value_list : la liste des données à modifier. "filename" est obligatoire. "imageUrl" est ignoré.
+ */
+void PhotoModel::setData(const QVariantMap &value_list)
+{
+    qDebug() << "setData QVariantMap:" << value_list;
+    // On trouve l'index correspondant au "filename"
+    const QString file_name = value_list.value("filename").toString();
+    if (file_name.isEmpty()) return;
+
+    // const int row = m_data.indexOf(file_name);        // ne marche pas: il attend un Data
+    int row = -1;
+    for (row=0; row<m_data.count(); row++)
+    {
+        qDebug() << row << m_data[row].filename;
+        if (m_data[row] == file_name) break;        // on a surchargé l'opérateur ==   :-)
+    }
+
+    qDebug() << "found" << row ;
+    if (row==-1) return;
+
+    // On met à jour les data
+    Data data = m_data[row];
+    if (value_list.contains("latitude"))
+        data.latitude = value_list["latitude"].toDouble();
+    if (value_list.contains("longitude "))
+        data.longitude = value_list["longitude"].toDouble();
+}
+
 
 // -----------------------------------------------------------------------
-// Useless
+// Useless.
 // -----------------------------------------------------------------------
-int PhotoModel::getSelectedRow()
+/*int PhotoModel::getSelectedRow()
 {
     return m_lastSelectedRow;
 }
+*/
+
+// -----------------------------------------------------------------------
+/**
+ * @brief PhotoModel::dumpData is a debug function that print in the console one line of the model at every call.
+ */
+void PhotoModel::dumpData()
+{
+    qDebug() << m_data[m_dumpedRow].filename;
+    m_dumpedRow++;
+}
+
 
 // -----------------------------------------------------------------------
 // Autres fonctions / A supprimer si inutile
@@ -273,5 +316,17 @@ QVariantMap PhotoModel::get(int row)
     }
     return res;
 }
+
+
+// -----------------------------------------------------------------------
+// Surcharges d'operateurs
+// -----------------------------------------------------------------------
+bool Data::operator == (const QString &file_name)
+{
+   if (filename == file_name)
+      return true;
+  return false;
+}
+
 
 
