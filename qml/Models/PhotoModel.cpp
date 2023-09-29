@@ -229,12 +229,15 @@ void PhotoModel::setData(QVariantMap &value_list)
     // On met à jour les data
     Data data = m_data[row];
     if (value_list.contains("latitude"))
+    {
         data.latitude = value_list["latitude"].toDouble();
+        qDebug() << "data.latitude" << value_list["filename"] << data.latitude ;
+    }
     if (value_list.contains("longitude "))
         data.longitude = value_list["longitude"].toDouble();
     // Envoi du signal
-    QModelIndex index = new QModelIndex(row, 0);
-    emit dataChanged(index, index);   // , { Qt::UserRole });
+    QModelIndex index = this->index(row, 0);
+    emit dataChanged(index, index);
 }
 
 

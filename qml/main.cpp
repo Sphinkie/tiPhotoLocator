@@ -8,6 +8,9 @@
 #include "cpp/ExifWrapper.h"
 
 
+/** ********************************************************************************
+ * Programme principal
+ * *********************************************************************************/
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -19,10 +22,11 @@ int main(int argc, char *argv[])
     app.setApplicationName("TiPhotoLocator");
     //app.setWindowIcon(QIcon(":/icons/flaticon/icon.png"));  // TODO : ajouter une icone
 
+    // On initialise nos Models
     PhotoModel photoListModel;
     SelectedFilterProxyModel selectedPhotoModel;
     selectedPhotoModel.setSourceModel(&photoListModel);
-
+    // On initialise nos classes
     ExifWrapper exifWrapper(&photoListModel);
 
     // Initialisation du moteur:
