@@ -12,6 +12,9 @@
 
 #include <QSortFilterProxyModel>
 
+/**
+ * @brief The SelectedFilterProxyModel class if a filter ProxyModel, to keep only the selected photo(s).
+ */
 class SelectedFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT

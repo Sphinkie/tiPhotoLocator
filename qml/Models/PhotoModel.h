@@ -1,21 +1,17 @@
-/*************************************************************************
- *
- *************************************************************************/
-
 #ifndef PHOTOMODEL_H
 #define PHOTOMODEL_H
 
 #include <QAbstractListModel>
 #include <QColor>
 
-// -----------------------------------------------------------------------
-// Data structure
-// -----------------------------------------------------------------------
+/**
+ * @brief The Data structure contain all the attribute for a photo picture: filename, GPS ccordinates, etc.
+ */
 struct Data
 {
     // Default constructor
     Data() {}
-    // Constructor avec valeurs
+    // Constructeur avec valeurs
     Data( const QString &file_name,
           const QString &image_url,
           double gps_latitude,

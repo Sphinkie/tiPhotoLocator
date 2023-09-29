@@ -82,8 +82,8 @@ Window {
             onClicked: {
                 // On met à jour la listModel
                 console.log("Manual Refresh");
-                window.scanFolder(folderListModel.folder)
                 // _photoListModel.clear();              // TODO implémenter le clear() en C++ (?)
+                // On ajoute les photos du dossier dans le modèle
                 for (var i = 0; i < folderListModel.count; )  {
                     _photoListModel.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
                     i++
@@ -155,7 +155,7 @@ Window {
             ListView{
                 id: listView
                 anchors.fill: parent
-                model: _photoListModel                                                 // implémenté en C++
+                model: _photoListModel
                 delegate: listDelegate
                 focus: true
                 clip: true   // pour que les items restent à l'interieur de la listview
@@ -233,6 +233,7 @@ Window {
             //                id: previewTab
             //            anchors.fill: parent
 
+            // TODO : ce tab charge les images même quand il n'est pas visible, ce qui ralenti la GUI
             GridView{
                 id: previewView
                 model: _selectedPhotoModel      // Ce modèle ne contient que la photo sélectionnée dans la ListView
@@ -473,6 +474,7 @@ Window {
             id: button1
             text: qsTr("Enregistrer")
             // TODO : save the modified pictures
+            onPressed: window.scanFolder(folderListModel.folder)    // TODO : ceci est pour les tests
         }
         Button {
             id: button

@@ -13,15 +13,17 @@ public:
     explicit ExifWrapper(PhotoModel* photomodel);
 
 public slots:
-    bool scanFolder(QString folder);
+    bool scanFolder(QString folderPath);
 
 
 private:
-    bool write(const QString& source, const QString& data);
+    bool writeFile(const QString& source, const QString& data);
     bool writeArgsFile();
+    void processLine(QByteArray line);
 
     QString m_argFile;
     PhotoModel* m_photoModel;
+    QByteArray m_rxLine;
 
 };
 

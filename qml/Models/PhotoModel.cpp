@@ -3,8 +3,6 @@
  */
 
 #include "PhotoModel.h"
-
-//#include <QByteArray>
 #include <QTimer>
 #include <QDebug>
 #include <cstdlib>
@@ -206,35 +204,31 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 // -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role FilenameRole.
- * @param value_list : la liste des données à modifier. "filename" est obligatoire. "imageUrl" est ignoré.
+ * @param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire. "imageUrl" est ignoré.
  */
 void PhotoModel::setData(QVariantMap &value_list)
 {
     qDebug() << "setData QVariantMap:" << value_list;
     // On trouve l'index correspondant au "filename"
-    const QString file_name = value_list.value("filename").toString();
-    qDebug() << "file_name"  << file_name ;
-    if (file_name.isEmpty()) return;
+    const QString file_name = value_list.value("FileName").toString();
 
-    int row = -1;
+    if (file_name.isEmpty()) return;    // No "FileName" tag received
+    if (m_data.count() == 0) return;    // The list of photo data is empty.
+
+    int row;
     for (row=0; row<m_data.count(); row++)
-    {
-        qDebug() << row << m_data[row].filename;
-        if (m_data[row] == file_name) break;        // on a surchargé l'opérateur ==   :-)
-    }
+        if (m_data[row] == file_name) break;  // on a surchargé l'opérateur ==   :-)
 
     qDebug() << "found" << row ;
-    if (row==-1) return;
+    if (row >= m_data.count()) return;        // filename not found
 
     // On met à jour les data
-    Data data = m_data[row];
-    if (value_list.contains("latitude"))
+    if (value_list.contains("GPSLatitude"))
     {
-        data.latitude = value_list["latitude"].toDouble();
-        qDebug() << "data.latitude" << value_list["filename"] << data.latitude ;
+        m_data[row].latitude = value_list["GPSLatitude"].toDouble();       // 48.7664
     }
-    if (value_list.contains("longitude "))
-        data.longitude = value_list["longitude"].toDouble();
+    if (value_list.contains("GPSLongitude"))
+        m_data[row].longitude = value_list["GPSLongitude"].toDouble();  // 14.0194
     // Envoi du signal
     QModelIndex index = this->index(row, 0);
     emit dataChanged(index, index);
