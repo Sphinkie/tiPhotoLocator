@@ -44,7 +44,8 @@ struct Data
 
     // Surcharges d'operateurs
     bool operator == (const QString &file_name);
-    // int indexOf(const QString &text);
+    bool operator == (const Data &data);
+
 };
 
 
@@ -65,7 +66,7 @@ public:
         IsSelectedRole
     };
 
-    Q_PROPERTY(int selectedRow READ getSelectedRow)    // WRITE selectedRow NOTIFY selectedRowChanged
+    Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow)  // NOTIFY selectedRowChanged
 
     QHash<int, QByteArray> roleNames() const override;
 
@@ -82,9 +83,9 @@ public:
     Q_INVOKABLE void dumpData();
     // Methodes publiques
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse
-    void setData(const QVariantMap &value_list);
+    void setData(QVariantMap &value_list);
     void selectedRow(int row);
-//    int getSelectedRow();
+    int getSelectedRow();
 
 public slots:
     void duplicateData(int row);

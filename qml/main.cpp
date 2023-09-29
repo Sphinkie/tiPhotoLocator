@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     SelectedFilterProxyModel selectedPhotoModel;
     selectedPhotoModel.setSourceModel(&photoListModel);
 
-    ExifWrapper exifWrapper;
+    ExifWrapper exifWrapper(&photoListModel);
 
     // Initialisation du moteur:
     // Au choix

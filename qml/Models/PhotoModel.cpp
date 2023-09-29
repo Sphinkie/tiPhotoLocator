@@ -208,14 +208,14 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
  * @brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role FilenameRole.
  * @param value_list : la liste des données à modifier. "filename" est obligatoire. "imageUrl" est ignoré.
  */
-void PhotoModel::setData(const QVariantMap &value_list)
+void PhotoModel::setData(QVariantMap &value_list)
 {
     qDebug() << "setData QVariantMap:" << value_list;
     // On trouve l'index correspondant au "filename"
     const QString file_name = value_list.value("filename").toString();
+    qDebug() << "file_name"  << file_name ;
     if (file_name.isEmpty()) return;
 
-    // const int row = m_data.indexOf(file_name);        // ne marche pas: il attend un Data
     int row = -1;
     for (row=0; row<m_data.count(); row++)
     {
@@ -232,17 +232,22 @@ void PhotoModel::setData(const QVariantMap &value_list)
         data.latitude = value_list["latitude"].toDouble();
     if (value_list.contains("longitude "))
         data.longitude = value_list["longitude"].toDouble();
+    // Envoi du signal
+    QModelIndex index = new QModelIndex(row, 0);
+    emit dataChanged(index, index);   // , { Qt::UserRole });
 }
 
 
 // -----------------------------------------------------------------------
-// Useless.
-// -----------------------------------------------------------------------
-/*int PhotoModel::getSelectedRow()
+/**
+ * @brief Unused getter.
+ * @return the last selected row.
+ */
+int PhotoModel::getSelectedRow()
 {
     return m_lastSelectedRow;
 }
-*/
+
 
 // -----------------------------------------------------------------------
 /**
@@ -323,10 +328,14 @@ QVariantMap PhotoModel::get(int row)
 // -----------------------------------------------------------------------
 bool Data::operator == (const QString &file_name)
 {
-   if (filename == file_name)
+   if (this->filename == file_name)
       return true;
   return false;
 }
 
-
-
+bool Data::operator == (const Data &data)
+{
+   if (this->filename == data.filename)
+      return true;
+  return false;
+}

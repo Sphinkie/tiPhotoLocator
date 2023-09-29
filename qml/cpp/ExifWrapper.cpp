@@ -1,4 +1,3 @@
-#include "ExifWrapper.h"
 #include <QFile>
 #include <QTextStream>
 #include <QProcess>
@@ -6,12 +5,14 @@
 #include <QCoreApplication>
 #include <QStandardPaths>
 
+#include "ExifWrapper.h"
 
 /**
  * @brief Contructeur. Initialise le fichier de configuration pour exifTools.
  **/
-ExifWrapper::ExifWrapper()
+ExifWrapper::ExifWrapper(PhotoModel* photomodel)
 {
+    m_photoModel = photomodel;
     this->writeArgsFile();
 }
 
@@ -43,7 +44,7 @@ bool ExifWrapper::scanFolder(QString folder)
     arguments.append(folderPath);
     // Liste des tags à lire
     arguments.append("-@");
-    arguments.append(m_ArgFile);
+    arguments.append(m_argFile);
 
     exifProcess.start(program, arguments);
     while(exifProcess.state() != QProcess::NotRunning)
@@ -58,6 +59,12 @@ bool ExifWrapper::scanFolder(QString folder)
 
     // https://stackoverflow.com/questions/20331668/qxmlstreamreader-reading-from-slow-qprocess
 
+    QVariantMap photo_desc;
+    photo_desc.insert("filename", "Ibiza");
+    photo_desc.insert("latitude", 5.455);
+    photo_desc.insert("longitude", 12.44);
+    m_photoModel->setData(photo_desc);
+
     return true;
 }
 
@@ -69,9 +76,9 @@ bool ExifWrapper::scanFolder(QString folder)
  **/
 bool ExifWrapper::writeArgsFile()
 {
-    m_ArgFile = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/exiftool.args";
-    qDebug() << "TempLocation:" << m_ArgFile;
-    QFile file(m_ArgFile);
+    m_argFile = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/exiftool.args";
+    qDebug() << "TempLocation:" << m_argFile;
+    QFile file(m_argFile);
 
     if (!file.open(QFile::WriteOnly))
         return false;
