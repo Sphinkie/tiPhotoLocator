@@ -112,6 +112,7 @@ public:
     Q_INVOKABLE void append(QString filename, QString url);
     Q_INVOKABLE void append(QVariantMap data_dict);
     Q_INVOKABLE void dumpData();
+    Q_INVOKABLE void clear();
     // Methodes publiques
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse
     void setData(QVariantMap &value_list);

@@ -295,6 +295,17 @@ void PhotoModel::dumpData()
     m_dumpedRow++;
 }
 
+/**
+ * @brief PhotoModel::clear deletes all the items of the Model.
+ */
+void PhotoModel::clear()
+{
+    beginResetModel();  // cette methode envoie un signal indiquant à tous que ce modèle va subir un changement radiacal
+    m_data.clear();
+    m_lastSelectedRow = 0;
+    endResetModel();    // cette methode envoie un signal ModelReset
+}
+
 
 // -----------------------------------------------------------------------
 // Autres fonctions / A supprimer si inutile

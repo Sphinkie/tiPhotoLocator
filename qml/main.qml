@@ -68,21 +68,19 @@ Window {
             id: folderPath
             //readOnly: true
             enabled: false
-            text: folderDialog.folder
+            text: folderDialog.folder  // TODO Enlever les 8 premiers caractères
             font.pixelSize: 16
         }
         Button {
-            // TODO: le bouton pourra être supprimé quand on aura mis le timer
             Layout.row: 1
             Layout.column: 1
             Layout.fillWidth: false
             Layout.alignment: Qt.AlignRight
-            id: refreshList
+            id: refreshButton
             text: qsTr("Refresh")
             onClicked: {
-                // On met à jour la listModel
                 console.log("Manual Refresh");
-                // _photoListModel.clear();              // TODO implémenter le clear() en C++ (?)
+                _photoListModel.clear();
                 // On ajoute les photos du dossier dans le modèle
                 for (var i = 0; i < folderListModel.count; )  {
                     _photoListModel.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
@@ -298,7 +296,7 @@ Window {
                 CheckBox {
                     id: showAll_box
                     text: qsTr("Show All")
-                    // TODO : afficher tous les photos du dossier
+                    // TODO : afficher toutes les photos du dossier
                 }
 
                 // Affichage de la carte
@@ -308,82 +306,6 @@ Window {
                     Layout.fillHeight: true
                 }
 
-/**
-                Map{
-                    id: mapView
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    plugin: mapPlugin
-                    center: QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
-                    zoomLevel: 6
-                    onMapItemsChanged: {
-                        // Called every time the maker changes on the map: cad un clic dans la listView
-                        console.log("onMapItemsChanged: re-center the map");
-                        center= QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
-                    }
-
-                    // The MapItemView is used to populate Map with MapItems from a model.
-                    // The MapItemView type only makes sense when contained in a Map, meaning that it has no standalone presentation.
-                    MapItemView {
-                        id: mapitemView
-                        model: _selectedPhotoModel
-                        delegate: mapDelegate
-
-                        // ---------------------------
-                        MouseArea {
-                            anchors.fill: parent
-                            onClicked: {
-                                console.log("Click on the map.");
-                                var lati = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
-                                var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
-                                console.log('latitude  = ' + lati );
-                                console.log('longitude = ' + longi);
-                                // On mémorise les coords du point dans les properties du parent
-                                mapTab.new_latitude = lati;
-                                mapTab.new_longitude= longi;
-                                // On demande un recentrage de la carte
-                                // mapTab.new_coords = !mapTab.new_coords;
-                                // On écrit les coordonnées dans l'item du modele
-                                _selectedPhotoModel.setCoords(lati, longi);
-                                // parent.qmlSignal(lati) // marche pas
-                            }
-                        }
-                        // ---------------------------
-                    }
-
-
-                    Component{
-                        // Le delegate pour afficher le Marker dans la MapView
-                        id: mapDelegate
-                        // Affichage d'un marker avec sous-titre
-                        MapQuickItem{
-                            // Avec les required properties dans une delegate, on indique qu'il faut utiliser les roles du modèle
-                            required property string filename
-                            required property double latitude
-                            required property double longitude
-                            // Position du maker
-                            coordinate: QtPositioning.coordinate(latitude, longitude)
-                            // Point d'ancrage de l'icone
-                            anchorPoint.x: markerIcon.width * 0.5
-                            anchorPoint.y: markerIcon.height
-                            // On dessine le marker et le texte
-                            sourceItem: Column {
-                                Image { id: markerIcon; source: "qrc:///Images/mappin-red.png"; height: 48; width: 48 }
-                                Text { text: filename; font.bold: true }
-                            }
-                        }
-                    }
-
-                    Plugin{
-                        id: mapPlugin
-                        name: "osm"
-                        // parametres optionels
-                        // PluginParameter{ name: "" ; value: ""}
-                        // TODO : ajouter la KEY API
-                    }
-
-                }
-**/
                 ListView{
                     id: coordsTextView
                     model: _selectedPhotoModel
@@ -393,11 +315,11 @@ Window {
                 Component{
                     id: coordsTextDelegate
                     Text {
-                        required property string latitude
-                        required property string longitude
+                        required property double latitude
+                        required property double longitude
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignBottom
-                        text: "Coordinates: " + latitude + " [LatN] / " + longitude + " [longW]"   // TODO : formater à 5 digits
+                        text: "Coordinates: " + latitude.toFixed(4) + " [LatN] / " + longitude.toFixed(4) + " [longW]"
                         font.pixelSize: 16
                     }
                 }

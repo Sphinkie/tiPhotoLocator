@@ -17,12 +17,10 @@ FolderListModel {
     folder: ""
 
     onFolderChanged: {
-        console.log("folder changed");}
-
+        console.log("folder changed");
+    }
     onCountChanged: {
-        // En cas de changement, on met à jour la PhotoListModel
         console.log("FolderListModel count changed:"+count);
-        // TODO : mettre un timer pour copier fileName et fileUrl dans la PhotoListModel
     }
 
 }
