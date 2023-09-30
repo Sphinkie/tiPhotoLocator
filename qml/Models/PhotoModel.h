@@ -21,8 +21,8 @@ struct Data
     {
         filename = file_name;
         imageUrl = image_url;
-        latitude = gps_latitude;
-        longitude = gps_longitude;
+        gpsLatitude = gps_latitude;
+        gpsLongitude = gps_longitude;
         hasGPS    = (gps_latitude!=0) && (gps_longitude!=0);
         isSelected = is_selected;
     }
@@ -30,13 +30,31 @@ struct Data
     // Elements de la structure
     QString filename;       // Example: "IMG_20230823_1234500.jpg"
     QString imageUrl;       // Example: "qrc:///Images/ibiza.png"
-    double latitude;        // Example: 38.980    // GPS coordinates
-    double longitude;       // Example: 1.4333    // (Ibiza)
+    double gpsLatitude;     // Example: 38.980    // GPS coordinates
+    double gpsLongitude;    // Example: 1.4333    // (Ibiza)
     // Elements déterminés automatiquement
     bool hasGPS = false;    // has GPS coordinates (latitude/longitude)
     bool isSelected;
-    // isDirty: false      // true if one of the following fields has been modified
-    // insideCircle: false // inside the radius of nearby photos
+    // isDirty: false         // true if one of the following fields has been modified
+    // insideCircle: false    // inside the radius of nearby photos
+    // EXIF/IPTC tags
+    QString fileCreateDate;
+    QString createDate;
+    QString dateTimeOriginal;
+    QString modifyDate;
+    QString camModel;           // camera model
+    QString make;               // camera maker
+    int imageWidth;
+    int imageHeight;
+    QString artist;             // can be: Artist or Creator
+    QString gpsLatitudeRef;
+    QString gpsLongitudeRef;
+    QString city;
+    QString country;
+    QString description;        // can be: Description, ImageDescription or Caption;
+    QString descriptionWriter;
+    QString headline;           // short description
+    QString keywords;           // this is a list of keywords
 
     // Surcharges d'operateurs
     bool operator == (const QString &file_name);
@@ -59,7 +77,24 @@ public:
         LatitudeRole,
         LongitudeRole,
         HasGPSRole,
-        IsSelectedRole
+        IsSelectedRole,
+        FileCreateDateRole,
+        CreateDateRole,
+        DateTimeOriginalRole,
+        ModifyDateRole,
+        CamModelRole,
+        MakeRole,
+        ImageWidthRole,
+        ImageHeightRole,
+        ArtistRole,
+        GPSLatitudeRefRole,
+        GPSLongitudeRefRole,
+        CityRole,
+        CountryRole,
+        DescriptionRole,
+        DescriptionWriterRole,
+        HeadlineRole,
+        KeywordsRole
     };
 
     Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow)  // NOTIFY selectedRowChanged

@@ -26,8 +26,11 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 }
 
 // -----------------------------------------------------------------------
-// Returns the number of elements in the model. Implémentation obligatoire.
-// -----------------------------------------------------------------------
+/**
+ * @brief PhotoModel::rowCount returns the number of elements in the model. Implémentation obligatoire.
+ * @param parent : parent of the model
+ * @return the number of elements in the model
+ */
 int PhotoModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid())
@@ -36,8 +39,12 @@ int PhotoModel::rowCount(const QModelIndex& parent) const
 }
 
 // -----------------------------------------------------------------------
-// Returns an element of the model. Implémentation obligatoire.
-// -----------------------------------------------------------------------
+/**
+ * @brief PhotoModel::data returns the requeted role value of an element of the model. Implémentation obligatoire.
+ * @param index : index of the element of the model
+ * @param role : the requested role (enum)
+ * @return the value of the role for this element.
+ */
 QVariant PhotoModel::data(const QModelIndex &index, int role) const
 {
     if ( !index.isValid() )
@@ -45,34 +52,49 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 
     const Data &data = m_data.at(index.row());
 
-    if ( role == FilenameRole )
-        return data.filename;
-    else if ( role == ImageUrlRole )
-        return data.imageUrl;
-    else if ( role == LatitudeRole )
-        return data.latitude;
-    else if ( role == LongitudeRole )
-        return data.longitude;
-    else if ( role == IsSelectedRole )
-        return data.isSelected;
-    else if ( role == HasGPSRole )
-        return data.hasGPS;
-    else
-        return QVariant();
+    switch(role)
+    {
+        case FilenameRole:          return data.filename;
+        case ImageUrlRole:          return data.imageUrl;
+        case LatitudeRole:          return data.gpsLatitude;
+        case LongitudeRole:         return data.gpsLongitude;
+        case IsSelectedRole:        return data.isSelected;
+        case HasGPSRole:            return data.hasGPS;
+        case FileCreateDateRole:    return data.fileCreateDate;
+        case CreateDateRole:        return data.createDate;
+        case DateTimeOriginalRole:  return data.dateTimeOriginal;
+        case ModifyDateRole:        return data.modifyDate;
+        case CamModelRole:          return data.camModel;
+        case MakeRole:              return data.make;
+        case ImageWidthRole:        return data.imageWidth;
+        case ImageHeightRole:       return data.imageHeight;
+        case ArtistRole:            return data.artist;
+        case GPSLatitudeRefRole:    return data.gpsLatitude;
+        case GPSLongitudeRefRole:   return data.gpsLongitude;
+        case CityRole:              return data.city;
+        case CountryRole:           return data.country;
+        case DescriptionRole:       return data.description;
+        case DescriptionWriterRole: return data.descriptionWriter;
+        case HeadlineRole:          return data.headline;
+        case KeywordsRole:          return data.keywords;
+        default:
+            return QVariant();
+    }
 }
 
 // -----------------------------------------------------------------------
 /**
  * Table of Role names. Implémentation obligatoire.
+ * C'est la correspondance entre le role C++ et le nom de la property dans QML
  */
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
-        {FilenameRole, "filename"},
-        {ImageUrlRole, "imageUrl"},
-        {LatitudeRole, "latitude"},
-        {LongitudeRole, "longitude"},
-        {HasGPSRole, "hasGPS"},
+        {FilenameRole,   "filename"},
+        {ImageUrlRole,   "imageUrl"},
+        {LatitudeRole,   "latitude"},
+        {LongitudeRole,  "longitude"},
+        {HasGPSRole,     "hasGPS"},
         {IsSelectedRole, "isSelected"}
     };
     return mapping;
@@ -83,7 +105,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 /**
  * @brief Gives the full name (with absolute path) of the photo.
  * This is an example of unitary gat data method.
- * @param row Indice de l'element à lire
+ * @param row : Indice de l'element à lire
  * @return a QVariant containg the image URL
  */
 QVariant PhotoModel::getUrl(int row)
@@ -98,9 +120,9 @@ QVariant PhotoModel::getUrl(int row)
 // -----------------------------------------------------------------------
 /**
  * @brief Append a photo to the model with just a name and a path (url).
- * Other data should be filled later, from exif data.
- * @param filename filename of the photo
- * @param url Full path of the photo in Qt format
+ * Other data should be filled later, from exif metadata.
+ * @param filename : filename of the photo
+ * @param url : Full path of the photo (in Qt format)
  */
 void PhotoModel::append(QString filename, QString url)
 {
@@ -159,7 +181,7 @@ void PhotoModel::selectedRow(int row)
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::setData surcharge la fonction setData qui permet de modifier 1 role un item du modèle.
+ * @brief PhotoModel::setData est une surcharge qui permet de modifier unitairement 1 role un item du modèle.
  * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS.
  * @param index : l'index (au sens ModelIndex) de l'item à modifier
  * @param value : la nouvelle valeur
@@ -186,16 +208,16 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_data[index.row()].filename = value.toString();
         break;
         case LatitudeRole:
-            m_data[index.row()].latitude = value.toDouble();
+            m_data[index.row()].gpsLatitude = value.toDouble();
             m_data[index.row()].hasGPS = true;
         break;
         case LongitudeRole:
-            m_data[index.row()].longitude = value.toDouble();
+            m_data[index.row()].gpsLongitude = value.toDouble();
             m_data[index.row()].hasGPS = true;
         break;
         }
         // Note: It is important to emit the dataChanged() signal after saving the changes.
-        emit dataChanged(index, index);   // , { Qt::UserRole });
+        emit dataChanged(index, index);
         return true;
     }
     return false;
@@ -220,18 +242,35 @@ void PhotoModel::setData(QVariantMap &value_list)
         if (m_data[row] == file_name) break;  // on a surchargé l'opérateur ==   :-)
 
     qDebug() << "found" << row ;
-    if (row >= m_data.count()) return;        // filename not found
+    if (row >= m_data.count()) return;        // FileName not found
 
     // On met à jour les data
     if (value_list.contains("GPSLatitude"))
-    {
-        m_data[row].latitude = value_list["GPSLatitude"].toDouble();       // 48.7664
-    }
+        m_data[row].gpsLatitude = value_list["GPSLatitude"].toDouble();
     if (value_list.contains("GPSLongitude"))
-        m_data[row].longitude = value_list["GPSLongitude"].toDouble();  // 14.0194
-    // Envoi du signal
-    QModelIndex index = this->index(row, 0);
-    emit dataChanged(index, index);
+        m_data[row].gpsLongitude = value_list["GPSLongitude"].toDouble();
+    // TODO : verifier si ca passe si un tag n'est pas présent
+    m_data[row].fileCreateDate  = value_list["FileCreateDate"].toString();
+    m_data[row].createDate      = value_list["CreateDate"].toString();
+    m_data[row].dateTimeOriginal = value_list["DateTimeOriginal"].toString();
+    m_data[row].modifyDate      = value_list["ModifyDate"].toString();
+    m_data[row].camModel        = value_list["Model"].toString();
+    m_data[row].make            = value_list["Make"].toString();
+    m_data[row].imageWidth      = value_list["ImageWidth"].toInt();
+    m_data[row].imageHeight     = value_list["ImageHeight"].toInt();
+    m_data[row].artist          = value_list["Artist"].toString();           // TODO : gérer Creator
+    m_data[row].gpsLatitudeRef  = value_list["GPSLatitudeRef"].toString();
+    m_data[row].gpsLongitudeRef = value_list["GPSLongitudeRef"].toString();
+    m_data[row].city            = value_list["City"].toString();
+    m_data[row].country         = value_list["Country"].toString();
+    m_data[row].description     = value_list["Description"].toString();     // TODO : aka Caption / ImageDescription
+    m_data[row].headline        = value_list["Headline"].toString();
+    m_data[row].keywords        = value_list["Keywords"].toString();        // TODO: this is a list of keywords
+    m_data[row].descriptionWriter = value_list["DescriptionWriter"].toString();
+
+    // Envoi du signal dataChanged()
+    QModelIndex changed_index = this->index(row, 0);
+    emit dataChanged(changed_index, changed_index);
 }
 
 
@@ -289,7 +328,7 @@ void PhotoModel::growPopulation()
 
     const int count = m_data.count();
     for (int i = 0; i < count; ++i) {
-        m_data[i].latitude += m_data[i].latitude * 0.1 * growthFactor;
+        m_data[i].gpsLatitude += m_data[i].gpsLatitude * 0.1 * growthFactor;
     }
 
     // we've just updated all rows...

@@ -17,7 +17,6 @@ public slots:
 
 
 private:
-    bool writeFile(const QString& source, const QString& data);
     bool writeArgsFile();
     void processLine(QByteArray line);
 

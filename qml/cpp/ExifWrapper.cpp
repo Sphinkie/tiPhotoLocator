@@ -25,31 +25,32 @@ ExifWrapper::ExifWrapper(PhotoModel* photomodel)
  **/
 bool ExifWrapper::scanFolder(QString folderPath)
 {
-    QProcess exifProcess;
-    folderPath = "E:\\TiPhotos";
-    qDebug() << "scanFolder" << folderPath;
+    qDebug() << "scanFolder parameter :" << folderPath;
+    folderPath.remove(0,8);
+    // if (folderPath.isEmpty())
+        folderPath = "E:/TiPhotos";
+    qDebug() << "scanFolder final format" << folderPath;
 
-//    qDebug() << QCoreApplication::applicationDirPath();  // For auxiliary binaries shipped with the application: "D:/Mes Programmes/Windows/tiPhotoLocator/build-tiPhotoLocator-Desktop_Qt_5_15_0_MSVC2019_64bit-Debug/debug"
-//    qDebug() << exifProcess.workingDirectory() ;
-//    exifProcess.setWorkingDirectory(QCoreApplication::applicationDirPath() + "/../../bin");
-//    qDebug() << exifProcess.workingDirectory() ;
-    // QString program = QCoreApplication::applicationDirPath()+"/exifTool.exe";
+    QProcess exifProcess;
     QString program = "exifTool";
     QStringList arguments;
-    // arguments << "-ver" ;
     // Formattage du flux de sortie de ExifTool
-    arguments.append("-json");                                    // output in JSON format
-    //arguments.append("-xmlformat -escape(XML) -duplicates ")    // output in XML format
-    arguments.append("--printConv");                              // no print conversion (-n)
-    arguments.append("-preserve");                                // Preserve file modification date/time
-    arguments.append("-veryShort");                               // very short output format  (-S)
-    arguments.append("-dateFormat %%Y-%%m-%%d");                  // datetime format YYYY-MM-DD : N'est pas pris en compte ...
+    arguments.append("-json");                      // output in JSON format
+    arguments.append("--printConv");                // no print conversion (-n)
+    arguments.append("-preserve");                  // Preserve file modification date/time
+    arguments.append("-veryShort");                 // very short output format  (-S)
+    arguments.append("-dateFormat");    // datetime format
+    arguments.append("'%Y-%m-%d'");    // YYYY-MM-DD : N'est pas pris en compte ...
+    arguments.append("-ext");                  // Filtre sur les extensions
+    arguments.append("JPG");
+    arguments.append("-ext");                  // Filtre sur les extensions
+    arguments.append("JPEG");
     // Liste des tags à lire
     arguments.append("-@");
     arguments.append(m_argFile);
     // Le dossier à scanner
     arguments.append(folderPath);
-
+    qDebug() << program << arguments;
     exifProcess.start(program, arguments);
     while(exifProcess.state() != QProcess::NotRunning)
     {
@@ -64,10 +65,11 @@ bool ExifWrapper::scanFolder(QString folderPath)
 }
 
 
-
 /**
  * @brief Write the Arg file for ExifTool.
  * @return true if the file was successfully created.
+ * @see https://www.carlseibert.com/guide-iptc-photo-metadata-fields/ to learn about the usage of IPTC tags.
+ * @see https://iptc.org/std/photometadata/documentation/mappingguidelines/
  **/
 bool ExifWrapper::writeArgsFile()
 {
@@ -82,29 +84,35 @@ bool ExifWrapper::writeArgsFile()
     // Liste des tags Exif à extraire
     out << "-FileName"          << Qt::endl;    // "P8180028.JPG"
     out << "-FileCreateDate"    << Qt::endl;    // "2018:01:28 20:14:44+01:00" - Ceci semble la date de la prise de vue
-    out << "-CreateDate"        << Qt::endl;    // "2017:08:23
-    out << "-DateTimeOriginal"  << Qt::endl;    // "2017:08:23
-    out << "-ModifyDate"        << Qt::endl;    // "2017:08:23
+    out << "-CreateDate"        << Qt::endl;    // "2017:08:23 08:03:16"
+    out << "-DateTimeOriginal"  << Qt::endl;    // "2017:08:23 08:03:16"
+    out << "-ModifyDate"        << Qt::endl;    // "2017:08:23 08:03:16"
     out << "-Model"             << Qt::endl;    // "E-M10MarkII"
     out << "-Make"              << Qt::endl;    // "OLYMPUS"
     out << "-ImageWidth"        << Qt::endl;    // 4608
     out << "-ImageHeight"       << Qt::endl;    // 3072
-    out << "-Artist"            << Qt::endl;    // "Picasa"
-    out << "-ImageDescription"  << Qt::endl;
     // GPS coordinates
     out << "-GPSLatitude"       << Qt::endl;    // 45.4325547675333
     out << "-GPSLongitude"      << Qt::endl;    // 12.3374594498028
     out << "-GPSLatitudeRef"    << Qt::endl;    // "N"
     out << "-GPSLongitudeRef"   << Qt::endl;    // "E"
+    // IPTC tags
+    // TODO : Menu settings: choisir le tag à écrire: Description ou ImageDescription ou Caption
+    out << "-Description"       << Qt::endl;    // Description du contenu de la photo (important)
+    out << "-ImageDescription"  << Qt::endl;    // Alternate tag label for "Description" (EXIF)
+    out << "-Caption"           << Qt::endl;    // Alternate tag label for "Description" (IPTC)
+    out << "-Keywords"          << Qt::endl;    // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
+    // TODO : Menu settings: renseigner la valeur par défaut pour Artist/Creator
+    // TODO : Menu settings: choisir le tag à écrire: Artist ou Creator
+    out << "-Artist"            << Qt::endl;    // Name of the photographer (EXIF tag label)
+    out << "-Creator"           << Qt::endl;    // Name of the photographer (IPTC tag label)
     // Reverse Geocoding
     out << "-City"              << Qt::endl;
     out << "-Country"           << Qt::endl;
-    // TODO : Rendre certains tags configurables depuis le menu settings
-    out << "-Caption"           << Qt::endl;
-    out << "-DescriptionWriter" << Qt::endl;
-    out << "-Headline"          << Qt::endl;
-    out << "-Keywords"          << Qt::endl;    // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
-    out << "-Title"             << Qt::endl;
+    // TODO : Rendre les tags ci-dessous activables depuis le menu settings
+    // TODO : Menu settings: renseigner la valeur par défaut pour DescriptionWriter
+    out << "-DescriptionWriter" << Qt::endl;    // (optional) Initials of the writer
+    out << "-Headline"          << Qt::endl;    // (optional) Short description in 2 to 5 words
 
     // Fermeture du fichier
     file.close();
@@ -130,23 +138,6 @@ bool ExifWrapper::writeArgsFile()
     Note that ExifTool quotes JSON values only if they don't look like numbers (regardless of the original storage format or the relevant metadata specification).
 
 */
-
-
-// Simple exemple. non utilisé.
-bool ExifWrapper::writeFile(const QString& filename, const QString& data)
-{
-    if (filename.isEmpty())
-        return false;
-
-    QFile file(filename);
-    if (!file.open(QFile::WriteOnly | QFile::Truncate))
-        return false;
-
-    QTextStream out(&file);
-    out << data;
-    file.close();
-    return true;
-}
 
 
 /**
@@ -177,7 +168,7 @@ bool ExifWrapper::writeFile(const QString& filename, const QString& data)
  */
 void ExifWrapper::processLine(QByteArray line)
 {
-    // qDebug(line);
+    qDebug(line);
     if (line.startsWith("{"))
     {
         // Première ligne
@@ -192,7 +183,7 @@ void ExifWrapper::processLine(QByteArray line)
         QJsonObject jsonObject = jsonDoc.object();
         QVariantMap photo_desc;
         photo_desc = jsonObject.toVariantMap();
-        m_photoModel->setData(photo_desc);          // TODO : remplacer par un signal ?
+        m_photoModel->setData(photo_desc);          // TODO : remplacer par un signal
     }
     else if (line.startsWith("[{"))
     {
@@ -202,40 +193,24 @@ void ExifWrapper::processLine(QByteArray line)
     }
     else
         m_rxLine.append(line);
-
-/*
-    qDebug("go toto !");
-    QByteArray toto;
-    toto.append("{\r\n");
-    toto.append("  \"SourceFile\": \"E:/TiPhotos/P8160449.JPG\",\r\n");
-    toto.append("  \"FileName\": \"P8160449.JPG\",\r\n");
-    toto.append("  \"GPSLatitude\": 48.7664165199528,\r\n");
-    toto.append("  \"GPSLongitude\": 14.0194248700017\r\n");
-    toto.append("}\r\n");
-    qDebug(toto);
-    // photo_desc.insert("filename", "Salonique.jpg");
-    // photo_desc.insert("latitude", 5.455);
-    // photo_desc.insert("longitude", 12.44);
-*/
-
 }
 
 /*
 setData
 QVariantMap: QMap(
-("Artist", QVariant(QString, ""))
-("CreateDate", QVariant(QString, "2023:08:16 13:30:20"))
-("DateTimeOriginal", QVariant(QString, "2023:08:16 13:30:20"))
-("FileCreateDate", QVariant(QString, "2023:09:18 21:38:26+02:00"))
- ("FileName", QVariant(QString, "P8160449.JPG"))
- ("GPSLatitude", QVariant(double, 48.7664))("GPSLatitudeRef", QVariant(QString, "N"))
- ("GPSLongitude", QVariant(double, 14.0194))("GPSLongitudeRef", QVariant(QString, "E"))
-("ImageDescription", QVariant(QString, "OLYMPUS DIGITAL CAMERA         "))
+("FileName",    QVariant(QString, "P8160449.JPG"))
+("Artist",      QVariant(QString, "Picasa"))
+("CreateDate",  QVariant(QString, "2023:08:16 13:30:20"))
+("DateTimeOriginal",    QVariant(QString, "2023:08:16 13:30:20"))
+("FileCreateDate",      QVariant(QString, "2023:09:18 21:38:26+02:00"))
+("GPSLatitude",         QVariant(double, 48.7664))("GPSLatitudeRef", QVariant(QString, "N"))
+("GPSLongitude",        QVariant(double, 14.0194))("GPSLongitudeRef", QVariant(QString, "E"))
+("ImageDescription",    QVariant(QString, "OLYMPUS DIGITAL CAMERA         "))
 ("ImageHeight", QVariant(qlonglong, 3072))
-("ImageWidth", QVariant(qlonglong, 4608))
-("Make", QVariant(QString, "OLYMPUS CORPORATION"))
-("Model", QVariant(QString, "E-M10MarkII"))
-("ModifyDate", QVariant(QString, "2023:08:16 13:30:20"))
-("SourceFile", QVariant(QString, "E:/TiPhotos/P8160449.JPG")))
+("ImageWidth",  QVariant(qlonglong, 4608))
+("Make",        QVariant(QString, "OLYMPUS CORPORATION"))
+("Model",       QVariant(QString, "E-M10MarkII"))
+("ModifyDate",  QVariant(QString, "2023:08:16 13:30:20"))
+("SourceFile",  QVariant(QString, "E:/TiPhotos/P8160449.JPG")))
 
 */
