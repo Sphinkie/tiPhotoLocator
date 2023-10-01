@@ -18,5 +18,9 @@
         <file>Images/ibiza.png</file>
         <file>Models/FolderListModel.qml</file>
         <file>Components/TiPhotoMap.qml</file>
+        <file>Components/TiToolBar.qml</file>
+        <file>Images/refresh.png</file>
+        <file>Images/reload.png</file>
+        <file>Images/rescan.png</file>
     </qresource>
 </RCC>

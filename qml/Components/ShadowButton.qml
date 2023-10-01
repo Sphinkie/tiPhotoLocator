@@ -2,10 +2,19 @@ import QtQuick 2.0
 import QtQuick.Controls 2.5
 import QtGraphicalEffects 1.0
 
+
+
+/*
+Pressed:  event is generated when you push down the mouse button
+Released: event is generated when you release the mouse button (which has been pressed down before)
+Clicked:  event is generated when a mouse button Pressed & Released.
+*/
+
 Button {
     id: root
     property color backgroundDefaultColor: "#4E5BF2"
-    property color backgroundPressedColor: Qt.darker(backgroundDefaultColor, 1.2)
+    property color backgroundPressedColor: Qt.darker(backgroundDefaultColor, 1.8)
+    property color backgroundHoveredColor: Qt.lighter(backgroundDefaultColor, 1.2)
     property color contentItemTextColor: "white"
 
     text: "Button"
@@ -23,7 +32,11 @@ Button {
     background: Rectangle {
         implicitWidth: 83
         implicitHeight: 37
-        color: root.down ? root.backgroundPressedColor : root.backgroundDefaultColor
+        color: {
+            root.hovered ?  root.backgroundHoveredColor:
+                            root.down ? root.backgroundPressedColor: // TODO: ne marche pas bien
+                                        root.backgroundDefaultColor;
+        }
         radius: 3
         layer.enabled: true
         layer.effect: DropShadow {

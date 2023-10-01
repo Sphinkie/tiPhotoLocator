@@ -6,7 +6,6 @@ import "../Components"
 // Menu principal
 // ----------------------------------------------------------------
 MenuBar{
-    // TODO : prendre toute la largeur
     Menu {
         id: fileMenu
         title: qsTr("Dossiers")

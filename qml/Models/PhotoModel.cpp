@@ -287,11 +287,17 @@ int PhotoModel::getSelectedRow()
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::dumpData is a debug function that print in the console one line of the model at every call.
+ * @brief PhotoModel::dumpData is a debug function that print (in the console) one line of the model at every call.
  */
 void PhotoModel::dumpData()
 {
-    qDebug() << m_data[m_dumpedRow].filename;
+    if (m_dumpedRow>=m_data.count()) {
+        qDebug() << "dump completed";
+        m_dumpedRow = 0;
+        return;
+    }
+    qDebug() << m_data[m_dumpedRow].filename << m_data[m_dumpedRow].city << m_data[m_dumpedRow].gpsLatitude
+             << m_data[m_dumpedRow].camModel << m_data[m_dumpedRow].make;
     m_dumpedRow++;
 }
 

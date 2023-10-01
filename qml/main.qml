@@ -31,9 +31,8 @@ Window {
     AboutPopup { id: about }
 
     // ----------------------------------------------------------------
-    // Modèles de données
+    // Modèles de données: Liste des fichiers du dossier
     // ----------------------------------------------------------------
-    // Liste des fichiers du dossier
     FolderListModel { id: folderListModel }
 
     // ----------------------------------------------------------------
@@ -42,7 +41,6 @@ Window {
     GridLayout
     {
         anchors.fill: parent
-        anchors.margins: 8
         //        rows: 6
         columns: 2
 
@@ -55,38 +53,20 @@ Window {
             Layout.row: 0
             Layout.column: 0
             Layout.columnSpan: 2
-            Layout.fillWidth: true
+            Layout.fillWidth: true       // Prend toute la largeur
             Layout.alignment: Qt.AlignTop
         }
 
         // --------------------------------- Ligne 1
-        // Rappel du nom du folder
+        // Barre d'outils du folder: refresh / reload / rescan / display name
         // ---------------------------------
-        TextEdit {
+        TiToolBar {
+            id: toolBar
             Layout.row: 1
             Layout.column: 0
-            id: folderPath
-            //readOnly: true
-            enabled: false
-            text: folderDialog.folder  // TODO Enlever les 8 premiers caractères
-            font.pixelSize: 16
-        }
-        Button {
-            Layout.row: 1
-            Layout.column: 1
-            Layout.fillWidth: false
-            Layout.alignment: Qt.AlignRight
-            id: refreshButton
-            text: qsTr("Refresh")
-            onClicked: {
-                console.log("Manual Refresh");
-                _photoListModel.clear();
-                // On ajoute les photos du dossier dans le modèle
-                for (var i = 0; i < folderListModel.count; )  {
-                    _photoListModel.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
-                    i++
-                }
-            }
+            Layout.columnSpan: 2
+            Layout.fillWidth: true       // Prend toute la largeur
+            Layout.margins: 8
         }
 
         // --------------------------------- Ligne 2
@@ -395,12 +375,13 @@ Window {
             id: button1
             text: qsTr("Enregistrer")
             // TODO : save the modified pictures
-            onPressed: window.scanFolder(folderListModel.folder)    // TODO : ceci est pour les tests
+            onClicked:
+                _photoListModel.dumpData()  // Pour les tests
         }
         Button {
             id: button
             text: qsTr("Quitter")
-            onPressed: Qt.quit()
+            onClicked: Qt.quit()
         }
     }
 }
