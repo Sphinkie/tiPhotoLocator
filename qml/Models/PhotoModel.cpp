@@ -8,7 +8,7 @@
 #include <cstdlib>
 
 
-// #define QT_NO_DEBUG_OUTPUT
+#define QT_NO_DEBUG_OUTPUT
 
 // -----------------------------------------------------------------------
 // Constructor
@@ -140,7 +140,7 @@ void PhotoModel::append(QString filename, QString url)
  */
 void PhotoModel::append(QVariantMap data)
 {
-    qDebug() << "append QVariantMap:" << data;
+    // qDebug() << "append QVariantMap:" << data;
     const int rowOfInsert = m_data.count();
     Data* new_data = new Data(data["filename"].toString(), data["imageUrl"].toString(), data["latitude"].toDouble(), data["longitude"].toDouble());
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);

@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
+import "TiUtilities.js" as Utilities
 
 /**
   * @see https://doc.qt.io/qt-5/qtquickcontrols2-customize.html#customizing-button
@@ -40,7 +41,7 @@ RowLayout{
     }
     Text {
         id: folderPath
-        text: folderDialog.folder  // TODO Enlever les 8 premiers caractères .substring(0,8)
+        text: Utilities.toStandardPath(folderDialog.folder)  // TODO Enlever les 8 premiers caractères .substring(0,8)
         font.pixelSize: 16
     }
 }

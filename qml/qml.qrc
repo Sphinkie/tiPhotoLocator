@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Components/ShadowButton.qml</file>
-        <file>Dialogs/TiMenuBar.qml</file>
         <file>Dialogs/TiFolderDialog.qml</file>
         <file>Components/AboutPopup.qml</file>
         <file>Images/canon.png</file>
@@ -22,5 +21,7 @@
         <file>Images/refresh.png</file>
         <file>Images/reload.png</file>
         <file>Images/rescan.png</file>
+        <file>Components/TiMenuBar.qml</file>
+        <file>Components/TiUtilities.js</file>
     </qresource>
 </RCC>
