@@ -116,7 +116,6 @@ QVariant PhotoModel::getUrl(int row)
     return result;
 }
 
-
 // -----------------------------------------------------------------------
 /**
  * @brief Append a photo to the model with just a name and a path (url).
@@ -126,17 +125,21 @@ QVariant PhotoModel::getUrl(int row)
  */
 void PhotoModel::append(QString filename, QString url)
 {
-    QVariantMap map;
-    map.insert(roleNames().value(FilenameRole), QVariant(filename));
-    map.insert(roleNames().value(ImageUrlRole), QVariant(url));
-    this->append(map);
+    const int rowOfInsert = m_data.count();
+    Data* new_data = new Data(filename, url);
+    beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
+    m_data.insert(rowOfInsert, *new_data);
+    endInsertRows();
 }
 
 // -----------------------------------------------------------------------
 /**
  * @brief Add an item to the Model from a dictionnary of metadata.
- * This method can be called from QML.
  * @param data: A dictionnary of key-value
+ * @example
+    QVariantMap map;
+    map.insert(roleNames().value(FilenameRole), QVariant(filename));
+    map.insert(roleNames().value(ImageUrlRole), QVariant(url));
  */
 void PhotoModel::append(QVariantMap data)
 {

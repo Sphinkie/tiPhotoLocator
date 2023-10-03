@@ -14,8 +14,8 @@ struct Data
     // Constructeur avec valeurs
     Data( const QString &file_name,
           const QString &image_url,
-          double gps_latitude,
-          double gps_longitude,
+          double gps_latitude = 0,
+          double gps_longitude = 0,
           bool is_selected = false
           )
     {
@@ -23,7 +23,7 @@ struct Data
         imageUrl = image_url;
         gpsLatitude = gps_latitude;
         gpsLongitude = gps_longitude;
-        hasGPS    = (gps_latitude!=0) && (gps_longitude!=0);
+        hasGPS    = (gps_latitude!=0) || (gps_longitude!=0);
         isSelected = is_selected;
     }
 
@@ -106,23 +106,23 @@ public:
     int      rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
 
-    // Methodes pouvant être appelées depuis QML
+    // Méthodes pouvant être appelées depuis QML
     Q_INVOKABLE QVariant getUrl(int index);
     Q_INVOKABLE QVariantMap get(int row);
-    Q_INVOKABLE void append(QString filename, QString url);
-    Q_INVOKABLE void append(QVariantMap data_dict);
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
     // Methodes publiques
+    void append(QVariantMap data_dict);
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse
     void setData(QVariantMap &value_list);
     void selectedRow(int row);
     int getSelectedRow();
 
 public slots:
+    void append(QString filename, QString url);
+    void fetchExifMetadata();
     void duplicateData(int row);
     void removeData(int row);
-    void fetchExifMetadata();
 
 private slots:
     void growPopulation();

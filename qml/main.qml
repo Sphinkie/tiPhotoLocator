@@ -17,8 +17,10 @@ Window {
     visible: true
     color: "#f7f7f7"
     title: "tiPhotoLocator"
+    // Les signaux
     signal qmlSignal(double latit)
     signal scanFolder(string str)
+    signal append(string filename, string url)
     signal fetchExifMetadata()
 
     // ----------------------------------------------------------------
@@ -29,7 +31,6 @@ Window {
     // "About..." window
     // ----------------------------------------------------------------
     AboutPopup { id: about }
-
     // ----------------------------------------------------------------
     // Modèles de données: Liste des fichiers du dossier
     // ----------------------------------------------------------------
@@ -119,7 +120,7 @@ Window {
         }
 
         // --------------------------------- Ligne 3
-        // ListView des photos (filenames)
+        // ListView des filenames des photos
         // ---------------------------------
         Frame {
             Layout.row: 3
@@ -130,81 +131,6 @@ Window {
             Layout.preferredWidth: 380
 
             TiPhotoListview { id: photoListAndDelegate }
-/*
-            // https://www.youtube.com/watch?v=ZArpJDRJxcI
-            ListView{
-                id: listView
-                anchors.fill: parent
-                model: _photoListModel
-                delegate: listDelegate
-                focus: true
-                clip: true   // pour que les items restent à l'interieur de la listview
-                footer: Rectangle{
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    // Layout.fillWidth: true
-                    height: 1
-                    color: "darkgrey"
-                }
-                highlight: Rectangle{
-                    Layout.fillWidth: true
-                    //         anchors.left: parent.left
-                    //         anchors.right: parent.right
-                    color: "lightgrey"
-                }
-            }
-
-            Component{
-                // le delegate pour afficher la ListModel dans la ListView
-                id: listDelegate
-                Item {
-                    id: wrapper
-                    height: 30
-                    width: parent.width
-                    // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
-                    required property string filename
-                    required property double latitude
-                    required property double longitude
-                    required property bool hasGPS
-                    // index is a special role available in the delegate: the index of the item in the model.
-                    // (the index is -1 if the item is removed from the model...)
-                    required property int index
-                    readonly property ListView __lv : ListView.view
-                    // icone Has GPS
-                    Image {
-                        id: gpsIcon
-                        anchors.left: parent.left
-                        visible: hasGPS
-                        source: "qrc:///Images/mappin-red.png"
-                        height: 24; width: 24;
-                    }
-                    // Filename de l'image
-                    Text{
-                        anchors.left: gpsIcon.right
-                        text: filename;
-                        font.pixelSize: 16
-                        //visible: isDirty ? false : true
-                        //color: isDirty===true ? "red" : "blue"
-                    }
-                    // Gestion du clic sur un item
-                    MouseArea{
-                        anchors.fill: parent
-                        onClicked: {
-                            console.log("MouseArea: "+index);
-                            __lv.currentIndex = index             // Bouge le highlight dans la ListView
-                            // previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel ?)
-                            _photoListModel.selectedRow = index   // Actualise le proxymodel
-                            tabbedPage.selectedItem = index       // inutile si on utilise le ProxyModel
-                            // On envoie les coordonnées pour centrer la carte sur le point selectionné
-                            if (hasGPS) {
-                                mapTab.new_latitude = latitude
-                                mapTab.new_longitude = longitude
-                                mapTab.new_coords = !mapTab.new_coords
-                            }
-                        }
-                    }
-                }
-            } */
         }
 
         StackLayout {
@@ -222,7 +148,7 @@ Window {
                 mappinModel.append({"name": _photoListModel.data(selectedItem,"filename"),
                                        "latitude": mapTab.pLatitude,
                                        "longitude": mapTab.pLongitude})
-                                       */
+                */
             }
             // ------------------ PREVIEW TAB --------------------------
             //            ColumnLayout {
@@ -273,7 +199,6 @@ Window {
                     }
                 }
             }
-            //            }
 
             // ------------------ MAP TAB ------------------------------
             ColumnLayout {

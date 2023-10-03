@@ -7,8 +7,7 @@ import Qt.labs.platform 1.1
 // example folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
 // ----------------------------------------------------------------
 FolderDialog {
-    // id: folderDialog
-    currentFolder: "file:///C:"
+    currentFolder: "file:///C:"    // TODO warning
     // URL du dossier de départ
     folder: ""
     onAccepted: {
@@ -16,7 +15,7 @@ FolderDialog {
         folderListModel.folder = folder;
         console.log("Accepted");
         console.log(folderListModel.folder);
-        // Il faut attendre que le FolderModel soit à jour (timer),
+        // Il faut attendre que le FolderModel soit à jour (timer 1 seconde),
         // puis on met à jour la PhotoListModel (fileName et fileUrl )
         folderTimer.start();
     }
@@ -32,10 +31,10 @@ FolderDialog {
             _photoListModel.clear();
             // On ajoute les photos du dossier dans le modèle
             for (var i = 0; i < folderListModel.count; i++ ) {                
-                _photoListModel.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )    // TODO : signal ?
+                window.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
+            }
             // Puis on lance la récuperation des données EXIF (envoi signal)
             window.fetchExifMetadata()
-            }
         }
     }
 }
