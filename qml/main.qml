@@ -161,6 +161,7 @@ Window {
                     required property string filename
                     required property double latitude
                     required property double longitude
+                    required property double hasGPS
                     // index is a special role available in the delegate: the index of the item in the model.
                     // Note this index is set to -1 if the item is removed from the model...
                     required property int index
@@ -180,9 +181,11 @@ Window {
                             _photoListModel.selectedRow = index   // Actualise le proxymodel
                             tabbedPage.selectedItem = index       // inutile si on utilise le ProxyModel
                             // On envoie les coordonnées pour centrer la carte sur le point selectionné
-                            mapTab.new_latitude = latitude
-                            mapTab.new_longitude = longitude
-                            mapTab.new_coords = !mapTab.new_coords
+                            if (hasGPS) {
+                                mapTab.new_latitude = latitude
+                                mapTab.new_longitude = longitude
+                                mapTab.new_coords = !mapTab.new_coords
+                            }
                        }
                     }
                 }

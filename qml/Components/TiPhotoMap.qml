@@ -66,13 +66,15 @@ Map{
             required property string filename
             required property double latitude
             required property double longitude
+            required property double hasGPS
             // Position du maker
             coordinate: QtPositioning.coordinate(latitude, longitude)
             // Point d'ancrage de l'icone
             anchorPoint.x: markerIcon.width * 0.5
             anchorPoint.y: markerIcon.height
-            // On dessine le marker et le texte
+            // On dessine le marker et le texte (si la photo possede des coordonnées GPS)
             sourceItem: Column {
+                visible: hasGPS
                 Image { id: markerIcon; source: "qrc:///Images/mappin-red.png"; height: 48; width: 48 }
                 Text { text: filename; font.bold: true }
             }
