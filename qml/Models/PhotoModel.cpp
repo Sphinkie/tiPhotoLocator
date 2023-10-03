@@ -244,12 +244,14 @@ void PhotoModel::setData(QVariantMap &value_list)
     qDebug() << "found" << row ;
     if (row >= m_data.count()) return;        // FileName not found
 
-    // On met à jour les data
-    if (value_list.contains("GPSLatitude"))
-        m_data[row].gpsLatitude = value_list["GPSLatitude"].toDouble();
-    if (value_list.contains("GPSLongitude"))
-        m_data[row].gpsLongitude = value_list["GPSLongitude"].toDouble();
-    // TODO : verifier si ca passe si un tag n'est pas présent
+    // On met à jour les data (apparement, ça passe même s'il n'y a pas de valeur)
+//    if (value_list.contains("GPSLatitude"))
+    m_data[row].gpsLatitude = value_list["GPSLatitude"].toDouble();
+//    if (value_list.contains("GPSLongitude"))
+    m_data[row].gpsLongitude = value_list["GPSLongitude"].toDouble();
+    // Les indicateurs calculés
+    m_data[row].hasGPS = ((m_data[row].gpsLatitude!=0) || ( m_data[row].gpsLongitude!=0));
+    // Les metadata EXIF
     m_data[row].fileCreateDate  = value_list["FileCreateDate"].toString();
     m_data[row].createDate      = value_list["CreateDate"].toString();
     m_data[row].dateTimeOriginal = value_list["DateTimeOriginal"].toString();

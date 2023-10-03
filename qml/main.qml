@@ -156,21 +156,35 @@ Window {
             Component{
                 // le delegate pour afficher la ListModel dans la ListView
                 id: listDelegate
-                Text{
-                    // Avec les required properties dans une delegate, on indique qu'il faut utiliser les roles du modèle
+                Item {
+                    id: wrapper
+                    height: 30
+                    width: parent.width
+                    // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
                     required property string filename
                     required property double latitude
                     required property double longitude
-                    required property double hasGPS
+                    required property bool hasGPS
                     // index is a special role available in the delegate: the index of the item in the model.
-                    // Note this index is set to -1 if the item is removed from the model...
+                    // (the index is -1 if the item is removed from the model...)
                     required property int index
                     readonly property ListView __lv : ListView.view
-                    width: parent.width
-                    text: filename;
-                    font.pixelSize: 16
-                    //visible: isDirty ? false : true
-                    //color: isDirty===true ? "red" : "blue"
+                    // icone Has GPS
+                    Image {
+                        id: gpsIcon
+                        anchors.left: parent.left
+                        visible: hasGPS
+                        source: "qrc:///Images/mappin-red.png"
+                        height: 24; width: 24;
+                    }
+                    // Filename de l'image
+                    Text{
+                        anchors.left: gpsIcon.right
+                        text: filename;
+                        font.pixelSize: 16
+                        //visible: isDirty ? false : true
+                        //color: isDirty===true ? "red" : "blue"
+                    }
                     // Gestion du clic sur un item
                     MouseArea{
                         anchors.fill: parent
@@ -186,11 +200,10 @@ Window {
                                 mapTab.new_longitude = longitude
                                 mapTab.new_coords = !mapTab.new_coords
                             }
-                       }
+                        }
                     }
                 }
             }
-
         }
         StackLayout {
             id: tabbedPage

@@ -27,9 +27,9 @@ bool ExifWrapper::scanFolder(QString folderPath)
 {
     qDebug() << "scanFolder parameter :" << folderPath;
     folderPath.remove(0,8);
-    // if (folderPath.isEmpty())
-        folderPath = "E:/TiPhotos";
     qDebug() << "scanFolder final format" << folderPath;
+    // if (folderPath.isEmpty())
+        folderPath = "C:\\Users\\David\\Pictures\\World";
 
     QProcess exifProcess;
     QString program = "exifTool";

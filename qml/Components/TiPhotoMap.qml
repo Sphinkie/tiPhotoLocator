@@ -66,7 +66,7 @@ Map{
             required property string filename
             required property double latitude
             required property double longitude
-            required property double hasGPS
+            required property bool hasGPS
             // Position du maker
             coordinate: QtPositioning.coordinate(latitude, longitude)
             // Point d'ancrage de l'icone
