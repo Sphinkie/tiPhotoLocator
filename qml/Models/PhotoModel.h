@@ -122,6 +122,7 @@ public:
 public slots:
     void duplicateData(int row);
     void removeData(int row);
+    void fetchExifMetadata();
 
 private slots:
     void growPopulation();

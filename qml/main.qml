@@ -20,6 +20,7 @@ Window {
     title: "tiPhotoLocator"
     signal qmlSignal(double latit)
     signal scanFolder(string str)
+    signal fetchExifMetadata()
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier

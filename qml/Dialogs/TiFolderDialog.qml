@@ -31,8 +31,10 @@ FolderDialog {
             console.log("Triggered refresh");
             _photoListModel.clear();
             // On ajoute les photos du dossier dans le modèle
-            for (var i = 0; i < folderListModel.count; i++ ) {
-                _photoListModel.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
+            for (var i = 0; i < folderListModel.count; i++ ) {                
+                _photoListModel.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )    // TODO : signal ?
+            // Puis on lance la récuperation des données EXIF (envoi signal)
+            window.fetchExifMetadata()
             }
         }
     }

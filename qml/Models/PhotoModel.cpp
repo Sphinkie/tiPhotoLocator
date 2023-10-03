@@ -312,6 +312,13 @@ void PhotoModel::clear()
     endResetModel();    // cette methode envoie un signal ModelReset
 }
 
+/**
+ * @brief PhotoModel::photoListModel traite le SIGNAL indiquant qu'il faut lire des données EXIF des photos du répertoire.
+ */
+void PhotoModel::fetchExifMetadata()
+{
+    qDebug() << "fetchExifMetadata";
+}
 
 // -----------------------------------------------------------------------
 // Autres fonctions / A supprimer si inutile

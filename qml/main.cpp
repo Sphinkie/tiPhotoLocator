@@ -61,6 +61,7 @@ int main(int argc, char *argv[])
     QObject *firstRootItem = engine.rootObjects().first();
     QObject::connect(firstRootItem, SIGNAL(qmlSignal(double)), &selectedPhotoModel, SLOT(cppSlot(double)));
     QObject::connect(firstRootItem, SIGNAL(scanFolder(QString)), &exifWrapper, SLOT(scanFolder(QString)));
+    QObject::connect(firstRootItem, SIGNAL(fetchExifMetadata()), &photoListModel, SLOT(fetchExifMetadata()));
 
     // Exécution de QML
     return app.exec();

@@ -33,7 +33,7 @@ RowLayout{
         text: qsTr("Rescan")
         onClicked: {
             console.log("Manual Rescan");
-            window.scanFolder(folderListModel.folder)
+            window.scanFolder(folderListModel.folder)        // envoi signal
         }
     }
     Text {
