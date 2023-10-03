@@ -3,7 +3,6 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
 import Qt.labs.platform 1.1
-
 import QtQml.Models 2.15
 
 import "./Dialogs"
@@ -130,6 +129,8 @@ Window {
             Layout.preferredHeight: 200
             Layout.preferredWidth: 380
 
+            TiPhotoListview { id: photoListAndDelegate }
+/*
             // https://www.youtube.com/watch?v=ZArpJDRJxcI
             ListView{
                 id: listView
@@ -203,8 +204,9 @@ Window {
                         }
                     }
                 }
-            }
+            } */
         }
+
         StackLayout {
             id: tabbedPage
             Layout.row: 3

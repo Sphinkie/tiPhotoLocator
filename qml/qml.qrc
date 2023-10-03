@@ -23,5 +23,6 @@
         <file>Images/rescan.png</file>
         <file>Components/TiMenuBar.qml</file>
         <file>Components/TiUtilities.js</file>
+        <file>Components/TiPhotoListview.qml</file>
     </qresource>
 </RCC>
