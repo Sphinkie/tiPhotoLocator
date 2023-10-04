@@ -39,15 +39,25 @@ ListView{
             required property double latitude
             required property double longitude
             required property bool hasGPS
+            required property bool insideCircle
             // index is a special role available in the delegate: the index of the item in the model.
             // (the index is -1 if the item is removed from the model...)
             required property int index
             readonly property ListView __lv : ListView.view
 
+            // icone In Circle
+            Image {
+                id: circleIcon
+                anchors.left: parent.left
+                visible: insideCircle
+                source: "qrc:///Images/circle-red.png"
+                height: 24; width: 24;
+            }
+
             // icone Has GPS
             Image {
                 id: gpsIcon
-                anchors.left: parent.left
+                anchors.left: circleIcon.right
                 visible: hasGPS
                 source: "qrc:///Images/mappin-red.png"
                 height: 24; width: 24;

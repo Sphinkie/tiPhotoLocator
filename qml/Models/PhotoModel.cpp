@@ -20,6 +20,7 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
         << Data("Select your photo folder", "qrc:Images/kodak.png", 48.866, 2.333, true)
         << Data("Ibiza", "qrc:///Images/ibiza.png", 38.980, 1.433, false);
 
+    // bout de code d'exemple de timer
     QTimer *growthTimer = new QTimer(this);
     connect(growthTimer, &QTimer::timeout, this, &PhotoModel::growPopulation);
     growthTimer->start(10000);
@@ -58,8 +59,9 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         case ImageUrlRole:          return data.imageUrl;
         case LatitudeRole:          return data.gpsLatitude;
         case LongitudeRole:         return data.gpsLongitude;
-        case IsSelectedRole:        return data.isSelected;
         case HasGPSRole:            return data.hasGPS;
+        case IsSelectedRole:        return data.isSelected;
+        case InsideCircleRole:      return data.insideCircle;
         case FileCreateDateRole:    return data.fileCreateDate;
         case CreateDateRole:        return data.createDate;
         case DateTimeOriginalRole:  return data.dateTimeOriginal;
@@ -90,12 +92,13 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
-        {FilenameRole,   "filename"},
-        {ImageUrlRole,   "imageUrl"},
-        {LatitudeRole,   "latitude"},
-        {LongitudeRole,  "longitude"},
-        {HasGPSRole,     "hasGPS"},
-        {IsSelectedRole, "isSelected"}
+        {FilenameRole,     "filename"},
+        {ImageUrlRole,     "imageUrl"},
+        {LatitudeRole,     "latitude"},
+        {LongitudeRole,    "longitude"},
+        {HasGPSRole,       "hasGPS"},
+        {IsSelectedRole,   "isSelected"},
+        {InsideCircleRole, "insideCircle"}
     };
     return mapping;
 }
@@ -158,6 +161,7 @@ void PhotoModel::append(QVariantMap data)
 /**
  * @brief PhotoModel::selectedRow mémorise la position fournie.
  * Met le flag "isSelected" du précédent item à False et le nouveau à True.
+ * Met aussi le flag "insideCircle" du précédent item à False et le nouveau à True.
  * @param row : l'indice de l'item sélectionné dans la ListView.
  */
 void PhotoModel::selectedRow(int row)
@@ -169,17 +173,18 @@ void PhotoModel::selectedRow(int row)
     if (m_lastSelectedRow != -1)
     {
         m_data[m_lastSelectedRow].isSelected = false;
+        m_data[m_lastSelectedRow].insideCircle = false;
         QModelIndex previous_index = this->index(m_lastSelectedRow, 0);
-        emit dataChanged(previous_index, previous_index, {IsSelectedRole});
+        emit dataChanged(previous_index, previous_index, {IsSelectedRole, InsideCircleRole});
         qDebug() << m_data[m_lastSelectedRow].isSelected << m_data[m_lastSelectedRow].filename ;
     }
     // On remet à True le nouvel item sélectionné
     m_data[row].isSelected = true;
-    qDebug() << "PhotoModel: " << this << m_data[row].isSelected << m_data[row].filename  ;
+    m_data[row].insideCircle = true;
     QModelIndex new_index = this->index(row, 0);
-    emit dataChanged(new_index, new_index, {IsSelectedRole});
+    emit dataChanged(new_index, new_index, {IsSelectedRole, InsideCircleRole});
+    qDebug() << "PhotoModel: " << this << m_data[row].isSelected << m_data[row].filename  ;
     m_lastSelectedRow = row;
-
 }
 
 // -----------------------------------------------------------------------
@@ -229,7 +234,8 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 // -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role FilenameRole.
- * @param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire. "imageUrl" est ignoré.
+ * @param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
+ * Roles non modifiables (ignorés): imageUrl; insideCircle, hasGPS
  */
 void PhotoModel::setData(QVariantMap &value_list)
 {
@@ -351,13 +357,14 @@ void PhotoModel::removeData(int row)
     endRemoveRows();
 }
 
+/**
+ * @brief Fonction de test qui met une * dans la headline toutes les 10 secondes.
+ */
 void PhotoModel::growPopulation()
 {
-    const double growthFactor = 0.01 / RAND_MAX;
-
     const int count = m_data.count();
     for (int i = 0; i < count; ++i) {
-        m_data[i].gpsLatitude += m_data[i].gpsLatitude * 0.1 * growthFactor;
+        m_data[i].headline += m_data[i].headline + "*";
     }
 
     // we've just updated all rows...
@@ -365,7 +372,7 @@ void PhotoModel::growPopulation()
     const QModelIndex endIndex   = index(count - 1, 0);
 
     // ...but only the population field
-    emit dataChanged(startIndex, endIndex, QVector<int>() << LatitudeRole);
+    emit dataChanged(startIndex, endIndex, QVector<int>() << HeadlineRole);
 }
 
 

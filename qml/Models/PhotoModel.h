@@ -36,7 +36,7 @@ struct Data
     bool hasGPS = false;    // has GPS coordinates (latitude/longitude)
     bool isSelected;
     // isDirty: false         // true if one of the following fields has been modified
-    // insideCircle: false    // inside the radius of nearby photos
+    bool insideCircle= false; // inside the radius of nearby photos
     // EXIF/IPTC tags
     QString fileCreateDate;
     QString createDate;
@@ -78,6 +78,7 @@ public:
         LongitudeRole,
         HasGPSRole,
         IsSelectedRole,
+        InsideCircleRole,
         FileCreateDateRole,
         CreateDateRole,
         DateTimeOriginalRole,

@@ -27,19 +27,19 @@ bool ExifWrapper::scanFolder(QString folderPath)
 {
     qDebug() << "scanFolder parameter :" << folderPath;
     folderPath.remove(0,8);
-    qDebug() << "scanFolder final format" << folderPath;
-    // if (folderPath.isEmpty())
-        folderPath = "C:\\Users\\David\\Pictures\\World";
+    qDebug() << "scanFolder modified" << folderPath;
+    if (folderPath.isEmpty())
+        folderPath = QStandardPaths::PicturesLocation;
 
     QProcess exifProcess;
     QString program = "exifTool";
     QStringList arguments;
     // Formattage du flux de sortie de ExifTool
     arguments.append("-json");                      // output in JSON format
-    arguments.append("--printConv");                // no print conversion (-n)
+    arguments.append("--printConv");                // no print conversion (do not use human-readable tag names)
     arguments.append("-preserve");                  // Preserve file modification date/time
     arguments.append("-veryShort");                 // very short output format  (-S)
-    arguments.append("-dateFormat");    // datetime format
+    arguments.append("-dateFormat");                // datetime format
     arguments.append("'%Y-%m-%d'");    // YYYY-MM-DD : N'est pas pris en compte ...
     arguments.append("-ext");                  // Filtre sur les extensions
     arguments.append("JPG");

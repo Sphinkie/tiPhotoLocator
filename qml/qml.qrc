@@ -24,5 +24,6 @@
         <file>Components/TiMenuBar.qml</file>
         <file>Components/TiUtilities.js</file>
         <file>Components/TiPhotoListview.qml</file>
+        <file>Images/circle-red.png</file>
     </qresource>
 </RCC>
