@@ -40,6 +40,8 @@ ListView{
             required property double longitude
             required property bool hasGPS
             required property bool insideCircle
+            required property bool toBeSaved
+            required property string city
             // index is a special role available in the delegate: the index of the item in the model.
             // (the index is -1 if the item is removed from the model...)
             required property int index
@@ -65,11 +67,22 @@ ListView{
 
             // Filename de l'image
             Text{
+                id: nameText
                 anchors.left: gpsIcon.right
-                text: filename;
+                text: filename
                 font.pixelSize: 16
-                //visible: isDirty ? false : true
-                //color: isDirty===true ? "red" : "blue"
+                color: toBeSaved ? "firebrick" : "navy"
+                //color: toBeSaved ? tiStyle.secondaryTextColor : tiStyle.primaryTextColor
+            }
+
+            // Tag City
+            Text{
+                anchors.left: nameText.right
+                anchors.leftMargin: 8
+                text: city
+                font.pixelSize: 12
+                color: "slateblue"
+                // visible: city? true : false
             }
 
             // Gestion du clic sur un item

@@ -33,10 +33,10 @@ struct Data
     double gpsLatitude;     // Example: 38.980    // GPS coordinates
     double gpsLongitude;    // Example: 1.4333    // (Ibiza)
     // Elements déterminés automatiquement
-    bool hasGPS = false;    // has GPS coordinates (latitude/longitude)
-    bool isSelected;
-    // isDirty: false         // true if one of the following fields has been modified
-    bool insideCircle= false; // inside the radius of nearby photos
+    bool hasGPS = false;       // has GPS coordinates (latitude/longitude)
+    bool isSelected;           // Indique que cet item est sélectionné dans la ListView
+    bool insideCircle = false; // inside the radius of nearby photos
+    bool toBeSaved = false;    // true if one of the following fields has been modified
     // EXIF/IPTC tags
     QString fileCreateDate;
     QString createDate;
@@ -79,6 +79,7 @@ public:
         HasGPSRole,
         IsSelectedRole,
         InsideCircleRole,
+        ToBeSavedRole,
         FileCreateDateRole,
         CreateDateRole,
         DateTimeOriginalRole,
@@ -98,7 +99,7 @@ public:
         KeywordsRole
     };
 
-    Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow)  // NOTIFY selectedRowChanged
+    Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
 
     QHash<int, QByteArray> roleNames() const override;
 
@@ -128,8 +129,8 @@ public slots:
 private slots:
     void growPopulation();
 
-// signals:
-//    void selectedRowChanged();
+signals:
+    void selectedRowChanged();
 
 private: //members
     QVector<Data> m_data;

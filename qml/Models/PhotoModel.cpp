@@ -20,7 +20,7 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
         << Data("Select your photo folder", "qrc:Images/kodak.png", 48.866, 2.333, true)
         << Data("Ibiza", "qrc:///Images/ibiza.png", 38.980, 1.433, false);
 
-    // bout de code d'exemple de timer
+    // Bout de code d'exemple de timer
     QTimer *growthTimer = new QTimer(this);
     connect(growthTimer, &QTimer::timeout, this, &PhotoModel::growPopulation);
     growthTimer->start(10000);
@@ -62,6 +62,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         case HasGPSRole:            return data.hasGPS;
         case IsSelectedRole:        return data.isSelected;
         case InsideCircleRole:      return data.insideCircle;
+        case ToBeSavedRole:         return data.toBeSaved;
         case FileCreateDateRole:    return data.fileCreateDate;
         case CreateDateRole:        return data.createDate;
         case DateTimeOriginalRole:  return data.dateTimeOriginal;
@@ -98,7 +99,9 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {LongitudeRole,    "longitude"},
         {HasGPSRole,       "hasGPS"},
         {IsSelectedRole,   "isSelected"},
-        {InsideCircleRole, "insideCircle"}
+        {InsideCircleRole, "insideCircle"},
+        {ToBeSavedRole,    "toBeSaved"},
+        {CityRole,         "city"}
     };
     return mapping;
 }
@@ -190,10 +193,11 @@ void PhotoModel::selectedRow(int row)
 // -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::setData est une surcharge qui permet de modifier unitairement 1 role un item du modèle.
- * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS.
+ * Cette fonction met à TRUE le flag "To Be Saved".
+ * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename
  * @param index : l'index (au sens ModelIndex) de l'item à modifier
  * @param value : la nouvelle valeur
- * @param role : le role à modifier (ex: FilenameRole)
+ * @param role : le role à modifier (ex: LatitudeRole, LongitudeRole)
  * @return true si la modification a réussi. False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
  * @see: https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
  */
@@ -201,28 +205,20 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 {
     if (index.isValid())
     {
-        // Check if the new value differs from the current value
-        if (m_data[index.row()].filename == value.toString())
-        {
-            return false;
-        }
-
         // Set data in model here.
         switch (role)
         {
-        // IsSelectedRole: non-modifiable par ici. Merci de passer par selectedRow().
-        // FilenameRole: pour tests uniquement. Normalement, on ne modifie pas ce role.
-        case FilenameRole:
-            m_data[index.row()].filename = value.toString();
-        break;
         case LatitudeRole:
             m_data[index.row()].gpsLatitude = value.toDouble();
             m_data[index.row()].hasGPS = true;
-        break;
+            m_data[index.row()].toBeSaved = true;
+            break;
         case LongitudeRole:
             m_data[index.row()].gpsLongitude = value.toDouble();
             m_data[index.row()].hasGPS = true;
-        break;
+            m_data[index.row()].toBeSaved = true;
+            break;
+        // TODO : Eventuellement, donner la possibilité de modifier d'autres roles.
         }
         // Note: It is important to emit the dataChanged() signal after saving the changes.
         emit dataChanged(index, index);
@@ -235,7 +231,9 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 /**
  * @brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role FilenameRole.
  * @param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
- * Roles non modifiables (ignorés): imageUrl; insideCircle, hasGPS
+ * Roles non modifiables (ignorés): imageUrl; insideCircle.
+ * Roles non modifiables (recalculés): hasGPS, toBeSaved.
+ * Cette fonction ne modifie pas le flag "ToBeSaved" car elle est dédiée à la lecture Exif.
  */
 void PhotoModel::setData(QVariantMap &value_list)
 {
@@ -248,18 +246,16 @@ void PhotoModel::setData(QVariantMap &value_list)
 
     int row;
     for (row=0; row<m_data.count(); row++)
-        if (m_data[row] == file_name) break;  // on a surchargé l'opérateur ==   :-)
+        if (m_data[row] == file_name) break;  // Possible grace à notre surcharge de l'opérateur ==   :-)
 
     qDebug() << "found" << row ;
     if (row >= m_data.count()) return;        // FileName not found
 
     // On met à jour les data (apparement, ça passe même s'il n'y a pas de valeur)
-//    if (value_list.contains("GPSLatitude"))
-    m_data[row].gpsLatitude = value_list["GPSLatitude"].toDouble();
-//    if (value_list.contains("GPSLongitude"))
-    m_data[row].gpsLongitude = value_list["GPSLongitude"].toDouble();
+    m_data[row].gpsLatitude     = value_list["GPSLatitude"].toDouble();
+    m_data[row].gpsLongitude    = value_list["GPSLongitude"].toDouble();
     // Les indicateurs calculés
-    m_data[row].hasGPS = ((m_data[row].gpsLatitude!=0) || ( m_data[row].gpsLongitude!=0));
+    m_data[row].hasGPS          = ((m_data[row].gpsLatitude!=0) || ( m_data[row].gpsLongitude!=0));
     // Les metadata EXIF
     m_data[row].fileCreateDate  = value_list["FileCreateDate"].toString();
     m_data[row].createDate      = value_list["CreateDate"].toString();
@@ -308,7 +304,7 @@ void PhotoModel::dumpData()
         return;
     }
     qDebug() << m_data[m_dumpedRow].filename << m_data[m_dumpedRow].city << m_data[m_dumpedRow].gpsLatitude
-             << m_data[m_dumpedRow].camModel << m_data[m_dumpedRow].make;
+             << m_data[m_dumpedRow].camModel << m_data[m_dumpedRow].make << "to be saved:" << m_data[m_dumpedRow].toBeSaved ;
     m_dumpedRow++;
 }
 
@@ -370,8 +366,7 @@ void PhotoModel::growPopulation()
     // we've just updated all rows...
     const QModelIndex startIndex = index(0, 0);
     const QModelIndex endIndex   = index(count - 1, 0);
-
-    // ...but only the population field
+    // ...but only the headline field
     emit dataChanged(startIndex, endIndex, QVector<int>() << HeadlineRole);
 }
 

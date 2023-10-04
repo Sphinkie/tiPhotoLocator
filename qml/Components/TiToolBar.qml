@@ -7,13 +7,10 @@ import "TiUtilities.js" as Utilities
   * @see https://doc.qt.io/qt-5/qtquickcontrols2-customize.html#customizing-button
   */
 RowLayout{
-    Button {
+    TiButton {
         //Layout.fillWidth: false
         id: reloadButton
-        display: AbstractButton.TextBesideIcon   // IconOnly
         icon.source: "qrc:/Images/reload.png"
-        //icon.width: 45
-        //icon.height: 45
         text: qsTr("Reload")
         onClicked: {
             console.log("Manual Reload");

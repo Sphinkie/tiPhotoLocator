@@ -25,5 +25,7 @@
         <file>Components/TiUtilities.js</file>
         <file>Components/TiPhotoListview.qml</file>
         <file>Images/circle-red.png</file>
+        <file>Components/TiStyle.qml</file>
+        <file>Components/TiButton.qml</file>
     </qresource>
 </RCC>
