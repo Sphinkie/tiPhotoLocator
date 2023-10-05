@@ -193,7 +193,7 @@ void PhotoModel::selectedRow(int row)
 // -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::setData est une surcharge qui permet de modifier unitairement 1 role un item du modèle.
- * Cette fonction met à TRUE le flag "To Be Saved".
+ * Cette fonction met à TRUE le flag "To Be Saved" car il s'agit d'actions opérateur.
  * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename
  * @param index : l'index (au sens ModelIndex) de l'item à modifier
  * @param value : la nouvelle valeur
@@ -230,10 +230,10 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 // -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role FilenameRole.
- * @param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
  * Roles non modifiables (ignorés): imageUrl; insideCircle.
  * Roles non modifiables (recalculés): hasGPS, toBeSaved.
- * Cette fonction ne modifie pas le flag "ToBeSaved" car elle est dédiée à la lecture Exif.
+ * Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle conient à la lecture (ou relecture) globale des tags Exif des photos originales.
+ * @param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
  */
 void PhotoModel::setData(QVariantMap &value_list)
 {
@@ -256,6 +256,7 @@ void PhotoModel::setData(QVariantMap &value_list)
     m_data[row].gpsLongitude    = value_list["GPSLongitude"].toDouble();
     // Les indicateurs calculés
     m_data[row].hasGPS          = ((m_data[row].gpsLatitude!=0) || ( m_data[row].gpsLongitude!=0));
+    m_data[row].toBeSaved       = false;  // Les tags sont rétablis à leur valeur originelle
     // Les metadata EXIF
     m_data[row].fileCreateDate  = value_list["FileCreateDate"].toString();
     m_data[row].createDate      = value_list["CreateDate"].toString();

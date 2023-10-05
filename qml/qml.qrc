@@ -27,5 +27,6 @@
         <file>Images/circle-red.png</file>
         <file>Components/TiStyle.qml</file>
         <file>Components/TiButton.qml</file>
+        <file>Components/qmldir</file>
     </qresource>
 </RCC>

@@ -23,7 +23,7 @@ ListView{
     // background de l'item sélectionné
     highlight: Rectangle{
         Layout.fillWidth: true
-        color: "lightgrey"
+        color: TiStyle.highlightBackgroundColor
     }
 
 
@@ -71,8 +71,7 @@ ListView{
                 anchors.left: gpsIcon.right
                 text: filename
                 font.pixelSize: 16
-                color: toBeSaved ? "firebrick" : "navy"
-                //color: toBeSaved ? tiStyle.secondaryTextColor : tiStyle.primaryTextColor
+                color: toBeSaved ? TiStyle.secondaryTextColor : TiStyle.primaryTextColor
             }
 
             // Tag City

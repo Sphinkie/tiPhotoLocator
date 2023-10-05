@@ -1,15 +1,35 @@
+pragma Singleton
 import QtQuick 2.15
 
 // @see http://www.w3.org/TR/SVG/types.html#ColorKeywords
+// @see http://imaginativethinking.ca/make-qml-component-singleton/
+
 Item{
-    id: tiStyle
-    property color primaryBackgroundColor: "#white"
-    property color primaryForegroundColor: "#4E5BF2"
-    property color buttonPressedColor: Qt.darker(primaryForegroundColor, 1.8)
-    property color buttonHoveredColor: Qt.lighter(primaryForegroundColor, 1.2)
-    property color buttonIdleColor: primaryForegroundColor
-    property color primaryTextColor: "navy"
-    property color secondaryTextColor: "firebrick"   // images toBeSaved
-    property color highlightBackgroundColor: "black"
+    readonly property color primaryForegroundColor: "#4E5BF2"
+    readonly property color primaryBackgroundColor: "white"
+
+    readonly property color buttonIdleColor: primaryForegroundColor
+    readonly property color buttonHoveredColor: Qt.lighter(buttonIdleColor, 1.2)
+    readonly property color buttonPressedColor: Qt.darker(buttonIdleColor, 1.8)
+
+    readonly property color primaryTextColor: "navy"
+    readonly property color secondaryTextColor: "firebrick"             // images toBeSaved
+    readonly property color highlightBackgroundColor: "lightgrey"
 
 }
+
+
+/*
+
+  Soit ajouter un fichier qmldir dan le même répertoire contenant la ligne:
+  singleton TiStyle 1.0 TiStyle.qml
+  Et déclarer ce fichier dans les ressources
+
+  Soit appeler (dans le main.cpp, par ex):
+
+    #include <QtQml>
+    ...
+    qmlRegisterSingletonType( QUrl("file:///Components/TiStyle.qml"), "ca.imaginativethinking.tutorial.style", 1, 0, "TiStyle" );
+    ...
+
+  */
