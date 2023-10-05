@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     // Le firstRootItem est la première balise du QML, cad "window".
     QObject *firstRootItem = engine.rootObjects().first();
     QObject::connect(firstRootItem, SIGNAL(qmlSignal(double)), &selectedPhotoModel, SLOT(cppSlot(double)));
-    QObject::connect(firstRootItem, SIGNAL(scanFolder(QString)), &exifWrapper, SLOT(scanFolder(QString)));
+    QObject::connect(firstRootItem, SIGNAL(scanFile(QString)), &exifWrapper, SLOT(scanFile(QString)));
     QObject::connect(firstRootItem, SIGNAL(append(QString,QString)), &photoListModel, SLOT(append(QString,QString)));
     QObject::connect(firstRootItem, SIGNAL(fetchExifMetadata()), &photoListModel, SLOT(fetchExifMetadata()));
 

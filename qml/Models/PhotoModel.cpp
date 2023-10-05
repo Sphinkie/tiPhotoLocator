@@ -21,9 +21,11 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
         << Data("Ibiza", "qrc:///Images/ibiza.png", 38.980, 1.433, false);
 
     // Bout de code d'exemple de timer
+    /*
     QTimer *growthTimer = new QTimer(this);
     connect(growthTimer, &QTimer::timeout, this, &PhotoModel::growPopulation);
     growthTimer->start(10000);
+    */
 }
 
 // -----------------------------------------------------------------------
@@ -93,15 +95,17 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
-        {FilenameRole,     "filename"},
-        {ImageUrlRole,     "imageUrl"},
-        {LatitudeRole,     "latitude"},
-        {LongitudeRole,    "longitude"},
-        {HasGPSRole,       "hasGPS"},
-        {IsSelectedRole,   "isSelected"},
-        {InsideCircleRole, "insideCircle"},
-        {ToBeSavedRole,    "toBeSaved"},
-        {CityRole,         "city"}
+        {FilenameRole,      "filename"},
+        {ImageUrlRole,      "imageUrl"},
+        {LatitudeRole,      "latitude"},
+        {LongitudeRole,     "longitude"},
+        {HasGPSRole,        "hasGPS"},
+        {IsSelectedRole,    "isSelected"},
+        {InsideCircleRole,  "insideCircle"},
+        {ToBeSavedRole,     "toBeSaved"},
+        {FileCreateDateRole,"fileCreateDate"},
+        {CreateDateRole,    "createDate"},
+        {CityRole,          "city"}
     };
     return mapping;
 }
@@ -305,7 +309,8 @@ void PhotoModel::dumpData()
         return;
     }
     qDebug() << m_data[m_dumpedRow].filename << m_data[m_dumpedRow].city << m_data[m_dumpedRow].gpsLatitude
-             << m_data[m_dumpedRow].camModel << m_data[m_dumpedRow].make << "to be saved:" << m_data[m_dumpedRow].toBeSaved ;
+             << m_data[m_dumpedRow].camModel << m_data[m_dumpedRow].make << "to be saved:" << m_data[m_dumpedRow].toBeSaved
+             << "fileCreateDate:" << m_data[m_dumpedRow].fileCreateDate  <<  "createDate:" << m_data[m_dumpedRow].createDate ;
     m_dumpedRow++;
 }
 

@@ -18,18 +18,18 @@ ExifWrapper::ExifWrapper(PhotoModel* photomodel)
 }
 
 /**
- * @brief ExifWrapper::scanFolder scans all the pictures in a folder with ExifTools.
+ * @brief ExifWrapper::scanFile scans all the pictures in a folder with ExifTools.
  * @param folderPath : the folder to scan (ex: "E:\\TiPhotos")
  * @return true if successfull
  * @see https://stackoverflow.com/questions/20331668/qxmlstreamreader-reading-from-slow-qprocess
  **/
-bool ExifWrapper::scanFolder(QString folderPath)
+bool ExifWrapper::scanFile(QString filePath)
 {
-    qDebug() << "scanFolder parameter :" << folderPath;
-    folderPath.remove(0,8);
-    qDebug() << "scanFolder modified" << folderPath;
-    if (folderPath.isEmpty())
-        folderPath = QStandardPaths::PicturesLocation;
+    qDebug() << "scanFile parameter :" << filePath;
+    filePath.remove(0,8);
+    qDebug() << "scanFile modified" << filePath;
+    if (filePath.isEmpty())
+        filePath = QStandardPaths::PicturesLocation;
 
     QProcess exifProcess;
     QString program = "exifTool";
@@ -40,7 +40,7 @@ bool ExifWrapper::scanFolder(QString folderPath)
     arguments.append("-preserve");                  // Preserve file modification date/time
     arguments.append("-veryShort");                 // very short output format  (-S)
     arguments.append("-dateFormat");                // datetime format
-    arguments.append("'%Y-%m-%d'");    // YYYY-MM-DD : N'est pas pris en compte ...
+    arguments.append("'%d-%m-%Y'");    // DD-MM-YYYY : N'est pas pris en compte ...
     arguments.append("-ext");                  // Filtre sur les extensions
     arguments.append("JPG");
     arguments.append("-ext");                  // Filtre sur les extensions
@@ -49,7 +49,7 @@ bool ExifWrapper::scanFolder(QString folderPath)
     arguments.append("-@");
     arguments.append(m_argFile);
     // Le dossier à scanner
-    arguments.append(folderPath);
+    arguments.append(filePath);
     qDebug() << program << arguments;
     exifProcess.start(program, arguments);
     while(exifProcess.state() != QProcess::NotRunning)
@@ -83,8 +83,8 @@ bool ExifWrapper::writeArgsFile()
     QTextStream out(&file);
     // Liste des tags Exif à extraire
     out << "-FileName"          << Qt::endl;    // "P8180028.JPG"
-    out << "-FileCreateDate"    << Qt::endl;    // "2018:01:28 20:14:44+01:00" - Ceci semble la date de la prise de vue
-    out << "-CreateDate"        << Qt::endl;    // "2017:08:23 08:03:16"
+//    out << "-FileCreateDate"    << Qt::endl;    // "2018:01:28 20:14:44+01:00" - date de copie du fichier sur le disque
+    out << "-CreateDate"        << Qt::endl;    // "2017:08:23 08:03:16" - Ceci semble la date de la prise de vue
     out << "-DateTimeOriginal"  << Qt::endl;    // "2017:08:23 08:03:16"
     out << "-ModifyDate"        << Qt::endl;    // "2017:08:23 08:03:16"
     out << "-Model"             << Qt::endl;    // "E-M10MarkII"

@@ -3,7 +3,6 @@
 // ------------------------------------------
 
 
-
 /**
  * Transforme un chemin du type "file:///C:/Users/David/Pictures" en "C:\Users\David\Pictures"
  */
@@ -19,3 +18,18 @@ function toStandardPath(objet)
     return texte;
 }
 	
+/**
+ * Transforme une date du type "YYYY-MM-DD HH:MM:SS" en "DD/MM/YYYY"
+ */
+function toStandardDate(objet, sep="/")
+{
+    let texte = objet.toString();
+    if (texte.length > 10)
+    {
+        let groups = texte.split(/-|\:|\s|\+/);  // 4 séparateurs: '-', ':', 'space' et '+'
+        texte = groups[2]+sep+groups[1]+sep+groups[0];
+        // console.log(groups);
+    }
+    // console.log(texte);
+    return texte;
+}

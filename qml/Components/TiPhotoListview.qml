@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Layouts  1.15
-
+import "TiUtilities.js" as Utilities
 
 // https://www.youtube.com/watch?v=ZArpJDRJxcI
 
@@ -42,6 +42,7 @@ ListView{
             required property bool insideCircle
             required property bool toBeSaved
             required property string city
+            required property string createDate
             // index is a special role available in the delegate: the index of the item in the model.
             // (the index is -1 if the item is removed from the model...)
             required property int index
@@ -76,12 +77,22 @@ ListView{
 
             // Tag City
             Text{
+                id: cityText
                 anchors.left: nameText.right
                 anchors.leftMargin: 8
                 text: city
                 font.pixelSize: 12
                 color: "slateblue"
                 // visible: city? true : false
+            }
+
+            // Date de création
+            Text{
+                anchors.right: parent.right
+                anchors.rightMargin: 4
+                text: Utilities.toStandardDate(createDate)
+                font.pixelSize: 12
+                color: "grey"
             }
 
             // Gestion du clic sur un item

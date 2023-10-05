@@ -5,8 +5,9 @@ import QtQuick.Controls 2.5
 Pressed:  event is generated when you push down the mouse button
 Released: event is generated when you release the mouse button (which has been pressed down before)
 Clicked:  event is generated when a mouse button Pressed & Released.
-*/
 
+* @see https://doc.qt.io/qt-5/qtquickcontrols2-customize.html#customizing-button
+*/
 Button {
     display: AbstractButton.TextBesideIcon   // IconOnly
     //icon.width: 45

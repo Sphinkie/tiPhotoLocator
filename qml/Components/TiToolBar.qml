@@ -3,9 +3,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
 import "TiUtilities.js" as Utilities
 
-/**
-  * @see https://doc.qt.io/qt-5/qtquickcontrols2-customize.html#customizing-button
-  */
+
 RowLayout{
     TiButton {
         //Layout.fillWidth: false
@@ -29,7 +27,7 @@ RowLayout{
         text: qsTr("Rescan")
         onClicked: {
             console.log("Manual Rescan");
-            window.scanFolder(folderListModel.folder)        // envoi signal
+            window.scanFile(folderListModel.folder)        // envoi signal
         }
     }
     Text {
@@ -37,7 +35,7 @@ RowLayout{
     }
     Text {
         id: folderPath
-        text: Utilities.toStandardPath(folderDialog.folder)  // TODO Enlever les 8 premiers caractères .substring(0,8)
+        text: Utilities.toStandardPath(folderDialog.folder)
         font.pixelSize: 16
     }
 }

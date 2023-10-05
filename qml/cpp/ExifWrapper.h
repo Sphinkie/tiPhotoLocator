@@ -13,7 +13,7 @@ public:
     explicit ExifWrapper(PhotoModel* photomodel);
 
 public slots:
-    bool scanFolder(QString folderPath);
+    bool scanFile(QString filePath);
 
 
 private:
