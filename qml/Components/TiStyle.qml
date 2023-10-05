@@ -6,7 +6,7 @@ import QtQuick 2.15
 
 Item{
     readonly property color primaryForegroundColor: "#4E5BF2"
-    readonly property color primaryBackgroundColor: "white"
+    readonly property color primaryBackgroundColor: "#f7f7f7"
 
     readonly property color buttonIdleColor: primaryForegroundColor
     readonly property color buttonHoveredColor: Qt.lighter(buttonIdleColor, 1.2)

@@ -28,5 +28,6 @@
         <file>Components/TiStyle.qml</file>
         <file>Components/TiButton.qml</file>
         <file>Components/qmldir</file>
+        <file>Dialogs/Credits.qml</file>
     </qresource>
 </RCC>

@@ -83,12 +83,12 @@ bool ExifWrapper::writeArgsFile()
     QTextStream out(&file);
     // Liste des tags Exif à extraire
     out << "-FileName"          << Qt::endl;    // "P8180028.JPG"
-//    out << "-FileCreateDate"    << Qt::endl;    // "2018:01:28 20:14:44+01:00" - date de copie du fichier sur le disque
-    out << "-CreateDate"        << Qt::endl;    // "2017:08:23 08:03:16" - Ceci semble la date de la prise de vue
-    out << "-DateTimeOriginal"  << Qt::endl;    // "2017:08:23 08:03:16"
-    out << "-ModifyDate"        << Qt::endl;    // "2017:08:23 08:03:16"
-    out << "-Model"             << Qt::endl;    // "E-M10MarkII"
-    out << "-Make"              << Qt::endl;    // "OLYMPUS"
+//  out << "-FileCreateDate"    << Qt::endl;    // "2023:10:05 20:14:44+01:00" -- Date de copie du fichier sur le disque.
+    out << "-DateTimeOriginal"  << Qt::endl;    // "2017:08:25 08:03:16" -- Time of the shutter actuation (normally identical to CreateDate).
+//  out << "-CreateDate"        << Qt::endl;    // "2017:08:25 08:03:16" -- Time that the file was written to the memory card.
+//  out << "-ModifyDate"        << Qt::endl;    // "2021:02:18 16:15:21" -- Date of modification by Photoshop or other
+    out << "-Model"             << Qt::endl;    // "E-M10MarkII"         -- Camera model
+    out << "-Make"              << Qt::endl;    // "OLYMPUS"             -- Camera maker
     out << "-ImageWidth"        << Qt::endl;    // 4608
     out << "-ImageHeight"       << Qt::endl;    // 3072
     // GPS coordinates
@@ -147,10 +147,7 @@ bool ExifWrapper::writeArgsFile()
         "{\r\n"
         "  \"SourceFile\": \"E:/TiPhotos/P8160449.JPG\",\r\n"
         "  \"FileName\": \"P8160449.JPG\",\r\n"
-        "  \"FileCreateDate\": \"2023:09:18 21:38:26+02:00\",\r\n"   -- QString
-        "  \"CreateDate\": \"2023:08:16 13:30:20\",\r\n"
         "  \"DateTimeOriginal\": \"2023:08:16 13:30:20\",\r\n"
-        "  \"ModifyDate\": \"2023:08:16 13:30:20\",\r\n"
         "  \"Model\": \"E-M10MarkII\",\r\n"
         "  \"Make\": \"OLYMPUS CORPORATION\",\r\n"
         "  \"ImageWidth\": 4608,\r\n"                                -- qlonglong
@@ -200,9 +197,7 @@ setData
 QVariantMap: QMap(
 ("FileName",    QVariant(QString, "P8160449.JPG"))
 ("Artist",      QVariant(QString, "Picasa"))
-("CreateDate",  QVariant(QString, "2023:08:16 13:30:20"))
 ("DateTimeOriginal",    QVariant(QString, "2023:08:16 13:30:20"))
-("FileCreateDate",      QVariant(QString, "2023:09:18 21:38:26+02:00"))
 ("GPSLatitude",         QVariant(double, 48.7664))("GPSLatitudeRef", QVariant(QString, "N"))
 ("GPSLongitude",        QVariant(double, 14.0194))("GPSLongitudeRef", QVariant(QString, "E"))
 ("ImageDescription",    QVariant(QString, "OLYMPUS DIGITAL CAMERA         "))
@@ -210,7 +205,6 @@ QVariantMap: QMap(
 ("ImageWidth",  QVariant(qlonglong, 4608))
 ("Make",        QVariant(QString, "OLYMPUS CORPORATION"))
 ("Model",       QVariant(QString, "E-M10MarkII"))
-("ModifyDate",  QVariant(QString, "2023:08:16 13:30:20"))
 ("SourceFile",  QVariant(QString, "E:/TiPhotos/P8160449.JPG")))
 
 */

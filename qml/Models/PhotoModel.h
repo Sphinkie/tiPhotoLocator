@@ -37,15 +37,13 @@ struct Data
     bool isSelected;           // Indique que cet item est sélectionné dans la ListView
     bool insideCircle = false; // inside the radius of nearby photos
     bool toBeSaved = false;    // true if one of the following fields has been modified
-    // EXIF/IPTC tags
-    QString fileCreateDate;
-    QString createDate;
-    QString dateTimeOriginal;
-    QString modifyDate;
-    QString camModel;           // camera model
-    QString make;               // camera maker
-    int imageWidth;
-    int imageHeight;
+    // EXIF tags
+    QString dateTimeOriginal;   // Time when the camera shutter was pressed (no changes allowed in this app)
+    QString camModel;           // camera model (no changes allowed in this app)
+    QString make;               // camera maker (no changes allowed in this app)
+    int imageWidth;             // image width (no changes allowed in this app)
+    int imageHeight;            // image height (no changes allowed in this app)
+    // IPTC tags
     QString artist;             // can be: Artist or Creator
     QString gpsLatitudeRef;
     QString gpsLongitudeRef;
@@ -80,10 +78,7 @@ public:
         IsSelectedRole,
         InsideCircleRole,
         ToBeSavedRole,
-        FileCreateDateRole,
-        CreateDateRole,
         DateTimeOriginalRole,
-        ModifyDateRole,
         CamModelRole,
         MakeRole,
         ImageWidthRole,

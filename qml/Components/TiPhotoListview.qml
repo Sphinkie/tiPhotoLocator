@@ -42,7 +42,7 @@ ListView{
             required property bool insideCircle
             required property bool toBeSaved
             required property string city
-            required property string createDate
+            required property string dateTimeOriginal
             // index is a special role available in the delegate: the index of the item in the model.
             // (the index is -1 if the item is removed from the model...)
             required property int index
@@ -90,7 +90,7 @@ ListView{
             Text{
                 anchors.right: parent.right
                 anchors.rightMargin: 4
-                text: Utilities.toStandardDate(createDate)
+                text: Utilities.toStandardDate(dateTimeOriginal)
                 font.pixelSize: 12
                 color: "grey"
             }

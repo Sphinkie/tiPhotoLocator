@@ -15,7 +15,7 @@ Window {
     width: 1200
     height: 800
     visible: true
-    color: "#f7f7f7"
+    color: TiStyle.primaryBackgroundColor
     title: "tiPhotoLocator"
     // Les signaux
     signal qmlSignal(double latit)
@@ -31,6 +31,7 @@ Window {
     // "About..." window
     // ----------------------------------------------------------------
     AboutPopup { id: about }
+    Credits { id: creditsPage}
     // ----------------------------------------------------------------
     // Modèles de données: Liste des fichiers du dossier
     // ----------------------------------------------------------------

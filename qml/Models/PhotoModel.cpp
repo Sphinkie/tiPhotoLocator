@@ -65,10 +65,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         case IsSelectedRole:        return data.isSelected;
         case InsideCircleRole:      return data.insideCircle;
         case ToBeSavedRole:         return data.toBeSaved;
-        case FileCreateDateRole:    return data.fileCreateDate;
-        case CreateDateRole:        return data.createDate;
         case DateTimeOriginalRole:  return data.dateTimeOriginal;
-        case ModifyDateRole:        return data.modifyDate;
         case CamModelRole:          return data.camModel;
         case MakeRole:              return data.make;
         case ImageWidthRole:        return data.imageWidth;
@@ -95,17 +92,17 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
-        {FilenameRole,      "filename"},
-        {ImageUrlRole,      "imageUrl"},
-        {LatitudeRole,      "latitude"},
-        {LongitudeRole,     "longitude"},
-        {HasGPSRole,        "hasGPS"},
-        {IsSelectedRole,    "isSelected"},
-        {InsideCircleRole,  "insideCircle"},
-        {ToBeSavedRole,     "toBeSaved"},
-        {FileCreateDateRole,"fileCreateDate"},
-        {CreateDateRole,    "createDate"},
-        {CityRole,          "city"}
+        {FilenameRole,        "filename"},
+        {ImageUrlRole,        "imageUrl"},
+        {LatitudeRole,        "latitude"},
+        {LongitudeRole,       "longitude"},
+        {HasGPSRole,          "hasGPS"},
+        {IsSelectedRole,      "isSelected"},
+        {InsideCircleRole,    "insideCircle"},
+        {ToBeSavedRole,       "toBeSaved"},
+        {DateTimeOriginalRole,"dateTimeOriginal"},
+        {CamModelRole,        "camModel"},
+        {CityRole,            "city"}
     };
     return mapping;
 }
@@ -262,10 +259,7 @@ void PhotoModel::setData(QVariantMap &value_list)
     m_data[row].hasGPS          = ((m_data[row].gpsLatitude!=0) || ( m_data[row].gpsLongitude!=0));
     m_data[row].toBeSaved       = false;  // Les tags sont rétablis à leur valeur originelle
     // Les metadata EXIF
-    m_data[row].fileCreateDate  = value_list["FileCreateDate"].toString();
-    m_data[row].createDate      = value_list["CreateDate"].toString();
-    m_data[row].dateTimeOriginal = value_list["DateTimeOriginal"].toString();
-    m_data[row].modifyDate      = value_list["ModifyDate"].toString();
+    m_data[row].dateTimeOriginal= value_list["DateTimeOriginal"].toString();
     m_data[row].camModel        = value_list["Model"].toString();
     m_data[row].make            = value_list["Make"].toString();
     m_data[row].imageWidth      = value_list["ImageWidth"].toInt();
@@ -308,9 +302,9 @@ void PhotoModel::dumpData()
         m_dumpedRow = 0;
         return;
     }
-    qDebug() << m_data[m_dumpedRow].filename << m_data[m_dumpedRow].city << m_data[m_dumpedRow].gpsLatitude
+    qDebug() << m_data[m_dumpedRow].filename << m_data[m_dumpedRow].city << m_data[m_dumpedRow].gpsLatitude << m_data[m_dumpedRow].gpsLongitude
              << m_data[m_dumpedRow].camModel << m_data[m_dumpedRow].make << "to be saved:" << m_data[m_dumpedRow].toBeSaved
-             << "fileCreateDate:" << m_data[m_dumpedRow].fileCreateDate  <<  "createDate:" << m_data[m_dumpedRow].createDate ;
+             << "dateTimeOriginal:" << m_data[m_dumpedRow].dateTimeOriginal  <<  "description:" << m_data[m_dumpedRow].description ;
     m_dumpedRow++;
 }
 
