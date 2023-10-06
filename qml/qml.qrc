@@ -3,7 +3,6 @@
         <file>main.qml</file>
         <file>Components/ShadowButton.qml</file>
         <file>Dialogs/TiFolderDialog.qml</file>
-        <file>Components/AboutPopup.qml</file>
         <file>Images/canon.png</file>
         <file>Images/kodak.png</file>
         <file>Images/avatar.jpg</file>
@@ -29,5 +28,6 @@
         <file>Components/TiButton.qml</file>
         <file>Components/qmldir</file>
         <file>Dialogs/Credits.qml</file>
+        <file>Dialogs/About.qml</file>
     </qresource>
 </RCC>

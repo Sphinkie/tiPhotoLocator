@@ -30,7 +30,7 @@ Window {
     // ----------------------------------------------------------------
     // "About..." window
     // ----------------------------------------------------------------
-    AboutPopup { id: about }
+    About { id: about }
     Credits { id: creditsPage}
     // ----------------------------------------------------------------
     // Modèles de données: Liste des fichiers du dossier
