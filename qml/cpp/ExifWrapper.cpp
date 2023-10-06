@@ -39,8 +39,8 @@ bool ExifWrapper::scanFile(QString filePath)
     arguments.append("--printConv");                // no print conversion (do not use human-readable tag names)
     arguments.append("-preserve");                  // Preserve file modification date/time
     arguments.append("-veryShort");                 // very short output format  (-S)
-    arguments.append("-dateFormat");                // datetime format
-    arguments.append("'%d-%m-%Y'");    // DD-MM-YYYY : N'est pas pris en compte ...
+//    arguments.append("-dateFormat");                // datetime format
+//    arguments.append("'%d-%m-%Y'");    // DD-MM-YYYY : N'est pas pris en compte ...
     arguments.append("-ext");                  // Filtre sur les extensions
     arguments.append("JPG");
     arguments.append("-ext");                  // Filtre sur les extensions

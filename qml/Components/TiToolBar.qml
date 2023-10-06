@@ -6,7 +6,6 @@ import "TiUtilities.js" as Utilities
 
 RowLayout{
     TiButton {
-        //Layout.fillWidth: false
         id: reloadButton
         icon.source: "qrc:/Images/reload.png"
         text: qsTr("Reload")
@@ -19,10 +18,9 @@ RowLayout{
             }
         }
     }
-    ShadowButton {
+    TiButton {
         Layout.fillWidth: false
         id: rescanButton
-        display: AbstractButton.TextBesideIcon
         icon.source: "qrc:/Images/rescan.png"
         text: qsTr("Rescan")
         onClicked: {

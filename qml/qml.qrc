@@ -29,5 +29,6 @@
         <file>Components/qmldir</file>
         <file>Dialogs/Credits.qml</file>
         <file>Dialogs/About.qml</file>
+        <file>Components/Pastille.qml</file>
     </qresource>
 </RCC>

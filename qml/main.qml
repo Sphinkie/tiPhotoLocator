@@ -68,7 +68,7 @@ Window {
             Layout.column: 0
             Layout.columnSpan: 2
             Layout.fillWidth: true       // Prend toute la largeur
-            Layout.margins: 8
+            Layout.margins: 16
         }
 
         // --------------------------------- Ligne 2
@@ -265,6 +265,10 @@ Window {
                 Layout.fillHeight: true
                 color: "navajowhite"
             }
+            Pastille{
+                id: p1
+            }
+
             Text{
                 Layout.alignment: Qt.AlignLeft
                 text: "Trashcan:"
@@ -311,6 +315,7 @@ Window {
         //Layout.fillHeight: true
         Layout.fillWidth: true
         Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
+        Layout.margins: 16
         spacing: 20
         CheckBox {
             id: checkBox

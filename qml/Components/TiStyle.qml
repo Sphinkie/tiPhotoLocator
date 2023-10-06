@@ -16,6 +16,9 @@ Item{
     readonly property color secondaryTextColor: "firebrick"             // images toBeSaved
     readonly property color highlightBackgroundColor: "lightgrey"
 
+    readonly property color secondaryForegroundColor: "blue"
+    readonly property color secondaryBackgroundColor: "lightblue"
+
 }
 
 
