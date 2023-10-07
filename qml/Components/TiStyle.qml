@@ -5,8 +5,12 @@ import QtQuick 2.15
 // @see http://imaginativethinking.ca/make-qml-component-singleton/
 
 Item{
-    readonly property color primaryForegroundColor: "#4E5BF2"
+    readonly property color primaryForegroundColor: "green"
     readonly property color primaryBackgroundColor: "#f7f7f7"
+
+    readonly property color secondaryForegroundColor: "blue"
+    readonly property color secondaryBackgroundColor: "lightblue"
+
 
     readonly property color buttonIdleColor: primaryForegroundColor
     readonly property color buttonHoveredColor: Qt.lighter(buttonIdleColor, 1.2)
@@ -16,8 +20,6 @@ Item{
     readonly property color secondaryTextColor: "firebrick"             // images toBeSaved
     readonly property color highlightBackgroundColor: "lightgrey"
 
-    readonly property color secondaryForegroundColor: "blue"
-    readonly property color secondaryBackgroundColor: "lightblue"
 
 }
 

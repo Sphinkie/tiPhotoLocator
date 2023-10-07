@@ -30,5 +30,10 @@
         <file>Dialogs/Credits.qml</file>
         <file>Dialogs/About.qml</file>
         <file>Components/Pastille.qml</file>
+        <file>Images/edit1-button.png</file>
+        <file>Images/edit2-button.png</file>
+        <file>Images/suppr-button.png</file>
+        <file>Components/TiToolMap.qml</file>
+        <file>Components/Zone.qml</file>
     </qresource>
 </RCC>

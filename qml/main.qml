@@ -130,7 +130,6 @@ Window {
             Layout.fillHeight: true
             Layout.preferredHeight: 200
             Layout.preferredWidth: 380
-
             TiPhotoListview { id: photoListAndDelegate }
         }
 
@@ -167,7 +166,7 @@ Window {
 
             Component {
                 id: previewDelegate
-                Column{
+                Row{
                     Image {
                         id: previewImage
                         //property int clickedItem: -1
@@ -180,7 +179,7 @@ Window {
                         Layout.maximumWidth: sourceSize.width
                         fillMode: Image.PreserveAspectFit
                         source: model.imageUrl
-                        /*                            onClickedItemChanged: {
+                        /*  onClickedItemChanged: {
                                 // TODO: comment recupérer les données du modèle quand on est dans une fonction et pas dans un delegate?
                                 //      il faut utiliser une méthode...
                                 //      ou utiliser des delegate, ce qui semble être la méthode recommandée
@@ -198,6 +197,7 @@ Window {
                         text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
                         Layout.alignment: Qt.AlignCenter
                     }
+                    Zone { id: zone1 }
                 }
             }
 
@@ -214,14 +214,13 @@ Window {
                 // Layout.fillWidth: true
                 onNew_coordsChanged: {
                     // Centrage de la carte sur les nouvelles coordonnées
-                    console.log("NewCoords: re-center the map");
+                    // console.log("NewCoords: re-center the map");
                     // mapView.center = QtPositioning.coordinate(new_latitude, new_longitude)  TODO verifier si inutile
                 }
 
-                CheckBox {
-                    id: showAll_box
-                    text: qsTr("Show All")
-                    // TODO : afficher toutes les photos du dossier
+                TiToolMap{
+                    id: mapTools
+                    Layout.fillWidth: true
                 }
 
                 // Affichage de la carte
@@ -317,19 +316,23 @@ Window {
         Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
         Layout.margins: 16
         spacing: 20
+        TiButton {
+            id: bt_dump
+            text: qsTr("Dump model")
+            onClicked: _photoListModel.dumpData()  // Pour les tests
+        }
         CheckBox {
             id: checkBox
             text: qsTr("Générer backups")
         }
-        Button {
-            id: button1
+        TiButton {
+            id: bt_save
             text: qsTr("Enregistrer")
             // TODO : save the modified pictures
-            onClicked:
-                _photoListModel.dumpData()  // Pour les tests
+            // onClicked: _photoListModel.dumpData()
         }
-        Button {
-            id: button
+        TiButton {
+            id: bt_quit
             text: qsTr("Quitter")
             onClicked: Qt.quit()
         }
