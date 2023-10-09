@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.15
-
+import "TiUtilities.js" as Utilities
 
 // TODO : ce tab charge les images même quand il n'est pas visible, ce qui ralenti la GUI
 GridView{
@@ -22,7 +22,8 @@ GridView{
             required property int imageHeight
             required property string camModel
             required property string make
-                 required property string dateTimeOriginal
+            required property string dateTimeOriginal
+            required property string imageUrl
 
             Image {
                 id: previewImage
@@ -35,7 +36,7 @@ GridView{
                 Layout.maximumHeight: sourceSize.height
                 Layout.maximumWidth: sourceSize.width
                 fillMode: Image.PreserveAspectFit
-                source: model.imageUrl
+                source: imageUrl
                 /*  onClickedItemChanged: {
                         // TODO: comment recupérer les données du modèle quand on est dans une fonction et pas dans un delegate?
                         //      il faut utiliser une méthode...
@@ -52,23 +53,43 @@ GridView{
             }
 
             Zone {
-       //         anchors.right: parent.right
                 id: zone1
+                //Layout.alignment: right
                 ColumnLayout{
-                    Text{ text: qsTr("Dimensions:") }
+                    Text{
+                        Layout.topMargin: 20
+                        Layout.leftMargin: 10
+                        text: qsTr("Photographie:") }
                     Pastille{
+                        Layout.leftMargin: 20
 //                        content: previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
-                        content: imageWidth + "x" + imageHeight
+                        content: imageWidth + " x " + imageHeight
                         editable: false
                         deletable: false
                     }
-                    Text{ text: qsTr("Appareil photo:") }
                     Pastille{
+                        Layout.leftMargin: 20
+                        content: Utilities.toStandardDate(dateTimeOriginal)
+                        editable: false
+                        deletable: false
+                    }
+                    Pastille{
+                        Layout.leftMargin: 20
+                        content: Utilities.toStandardTime(dateTimeOriginal)
+                        editable: false
+                        deletable: false
+                    }
+                    Text{
+                        Layout.leftMargin: 10
+                        text: qsTr("Appareil photo:") }
+                    Pastille{
+                        Layout.leftMargin: 20
                         content: camModel
                         editable: false
                         deletable: false
                     }
                     Pastille{
+                        Layout.leftMargin: 20
                         content: make
                         editable: false
                         deletable: false

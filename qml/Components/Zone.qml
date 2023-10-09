@@ -5,7 +5,7 @@ Rectangle {
     radius: 16
     color: TiStyle.primaryForegroundColor
     implicitHeight: 600
-    implicitWidth: 500
+    implicitWidth: 400
     property bool dropable: true
     // icone de fond
     // gridlayout

@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Layouts  1.15
-import "TiUtilities.js" as Utilities
+
 
 // https://www.youtube.com/watch?v=ZArpJDRJxcI
 
@@ -79,7 +79,7 @@ ListView{
                 id: cityText
                 anchors.left: nameText.right
                 anchors.leftMargin: 8
-                content: "city"
+                content: city
                 editable: false
                 deletable: false
                 height: 20

@@ -26,10 +26,24 @@ function toStandardDate(objet, sep="/")
     let texte = objet.toString();
     if (texte.length > 10)
     {
-        let groups = texte.split(/-|\:|\s|\+/);  // 4 séparateurs: '-', ':', 'space' et '+'
-        texte = groups[2]+sep+groups[1]+sep+groups[0];
+        let groups = texte.split(/-|\:|\s|\+/);        // 4 séparateurs: '-', ':', 'space' et '+'
+        texte = groups[2] + sep + groups[1] + sep + groups[0];
         // console.log(groups);
     }
     // console.log(texte);
+    return texte;
+}
+
+/**
+ * Transforme une date du type "YYYY-MM-DD HH:MM:SS" en "HH:MM"
+ */
+function toStandardTime(objet)
+{
+    let texte = objet.toString();
+    if (texte.length > 16)
+    {
+        let groups = texte.split(/-|\:|\s|\+/);  // 4 séparateurs: '-', ':', 'space' et '+'
+        texte = groups[3] + ":" + groups[4];
+    }
     return texte;
 }

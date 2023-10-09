@@ -18,7 +18,20 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
     // On met quelques items dans la liste
     m_data
         << Data("Select your photo folder", "qrc:Images/kodak.png", 48.866, 2.333, true)
-        << Data("Ibiza", "qrc:///Images/ibiza.png", 38.980, 1.433, false);
+        << Data("Ibiza", "qrc:///Images/ibiza.png");
+
+
+    QVariantMap ibizaData;
+    ibizaData.insert("FileName", "Ibiza");
+    ibizaData.insert("DateTimeOriginal", "2023:08:25 01:03:16");
+    ibizaData.insert("Model", "Generative AI");
+    ibizaData.insert("Make", "MIDJOURNEY");
+    ibizaData.insert("ImageHeight", 603);
+    ibizaData.insert("ImageWidth", 603);
+    ibizaData.insert("City", "Ibiza");
+    ibizaData.insert("GPSLatitude", 38.980);
+    ibizaData.insert("GPSLongitude", 1.433);
+    this->setData(ibizaData);
 
     // Bout de code d'exemple de timer
     /*
@@ -102,10 +115,10 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {ToBeSavedRole,       "toBeSaved"},
         {DateTimeOriginalRole,"dateTimeOriginal"},
         {CamModelRole,        "camModel"},
-        {ImageWidthRole,        "imageWidth"},
-        {ImageHeightRole,        "imageHeight"},
+        {ImageWidthRole,      "imageWidth"},
+        {ImageHeightRole,     "imageHeight"},
         {CamModelRole,        "camModel"},
-        {MakeRole,        "make"},
+        {MakeRole,            "make"},
         {CityRole,            "city"}
     };
     return mapping;
@@ -237,7 +250,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
  * @brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role FilenameRole.
  * Roles non modifiables (ignorés): imageUrl; insideCircle.
  * Roles non modifiables (recalculés): hasGPS, toBeSaved.
- * Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle conient à la lecture (ou relecture) globale des tags Exif des photos originales.
+ * Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales.
  * @param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
  */
 void PhotoModel::setData(QVariantMap &value_list)
