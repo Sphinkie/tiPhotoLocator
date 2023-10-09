@@ -102,6 +102,10 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {ToBeSavedRole,       "toBeSaved"},
         {DateTimeOriginalRole,"dateTimeOriginal"},
         {CamModelRole,        "camModel"},
+        {ImageWidthRole,        "imageWidth"},
+        {ImageHeightRole,        "imageHeight"},
+        {CamModelRole,        "camModel"},
+        {MakeRole,        "make"},
         {CityRole,            "city"}
     };
     return mapping;

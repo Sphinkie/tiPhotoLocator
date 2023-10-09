@@ -30,6 +30,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     ../docs/readme.md \
+    Components/PhotoPreview.qml \
     images/cavehouse.png \
     images/clock.png
 

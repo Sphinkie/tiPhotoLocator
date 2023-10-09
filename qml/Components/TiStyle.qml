@@ -8,7 +8,7 @@ Item{
     readonly property color primaryForegroundColor: "green"
     readonly property color primaryBackgroundColor: "#f7f7f7"
 
-    readonly property color secondaryForegroundColor: "blue"
+    readonly property color secondaryForegroundColor: "slateblue"
     readonly property color secondaryBackgroundColor: "lightblue"
 
 

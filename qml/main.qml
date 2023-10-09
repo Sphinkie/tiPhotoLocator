@@ -156,7 +156,12 @@ Window {
             //            anchors.fill: parent
 
             // TODO : ce tab charge les images même quand il n'est pas visible, ce qui ralenti la GUI
-            GridView{
+            TiPhotoPreview {
+                id: previewView
+
+            }
+
+            /*GridView{
                 id: previewView
                 model: _selectedPhotoModel      // Ce modèle ne contient que la photo sélectionnée dans la ListView
                 delegate: previewDelegate
@@ -179,28 +184,20 @@ Window {
                         Layout.maximumWidth: sourceSize.width
                         fillMode: Image.PreserveAspectFit
                         source: model.imageUrl
-                        /*  onClickedItemChanged: {
-                                // TODO: comment recupérer les données du modèle quand on est dans une fonction et pas dans un delegate?
-                                //      il faut utiliser une méthode...
-                                //      ou utiliser des delegate, ce qui semble être la méthode recommandée
-                                //
-                                // console.log("onClickedItemChanged:"+clickedItem);
-                                // console.log(listModel.get(clickedItem).name);
-                                // console.log(listModel.get(clickedItem).imageUrl);
-                                // imageURl = Qt.resolvedUrl(_photoListModel.get(clickedItem).imageUrl);
-                                imageURl = Qt.resolvedUrl(_photoListModel.getUrl(clickedItem));
-                                console.log("data returns: ");
-                                console.log(_photoListModel.data(_photoListModel.index(clickedItem,_photoListModel.ImageUrlRole), _photoListModel.ImageUrlRole));
-                            }*/
                     }
                     Text{
                         text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
                         Layout.alignment: Qt.AlignCenter
                     }
-                    Zone { id: zone1 }
+                    Zone {
+                        id: zone1
+                        ColumnLayout{
+                            Text{ text: "Dimensions:" }
+                            Text{ text: previewImage.sourceSize.height + "x" + previewImage.sourceSize.height   }
+                        }
+                    }
                 }
-            }
-
+              */
             // ------------------ MAP TAB ------------------------------
             ColumnLayout {
                 id: mapTab

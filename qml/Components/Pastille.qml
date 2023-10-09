@@ -8,6 +8,8 @@ Rectangle {
     implicitWidth: 160
     property bool editable: true
     property bool deletable: true
+    property string content
+    visible: content? true : false
 
     Image{
         id: pastilleEdit
@@ -24,7 +26,8 @@ Rectangle {
         anchors.left: pastilleEdit.right
         anchors.leftMargin: 4
         anchors.topMargin: 4
-        text: qsTr("Contenu")
+        text: content
+        font.pixelSize: 14
         color: TiStyle.secondaryBackgroundColor
     }
     Image{

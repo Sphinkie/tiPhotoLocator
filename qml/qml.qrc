@@ -35,5 +35,6 @@
         <file>Images/suppr-button.png</file>
         <file>Components/TiToolMap.qml</file>
         <file>Components/Zone.qml</file>
+        <file>Components/TiPhotoPreview.qml</file>
     </qresource>
 </RCC>
