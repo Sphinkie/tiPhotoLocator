@@ -19,14 +19,12 @@ Item{
     readonly property color primaryTextColor: "navy"
     readonly property color secondaryTextColor: "firebrick"             // images toBeSaved
     readonly property color highlightBackgroundColor: "lightgrey"
-
-
 }
 
 
 /*
 
-  Soit ajouter un fichier qmldir dan le même répertoire contenant la ligne:
+  Soit ajouter un fichier qmldir dans le même répertoire, contenant la ligne:
   singleton TiStyle 1.0 TiStyle.qml
   Et déclarer ce fichier dans les ressources
 

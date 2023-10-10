@@ -29,6 +29,7 @@ GridView{
                 //property int clickedItem: -1
                 //                            property url imageURl: "qrc:///Images/kodak.png"
                 Layout.alignment: Qt.AlignCenter
+                //Layout.fillWidth: true       // Prend toute la largeur
                 Layout.preferredWidth: 600
                 Layout.preferredHeight: 600
                 // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
@@ -53,7 +54,7 @@ GridView{
 
             Zone {
                 id: zone1
-                //Layout.alignment: right
+                //Layout.alignment: Qt.AlignRight
                 ColumnLayout{
                     Text{
                         Layout.topMargin: 20

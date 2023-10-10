@@ -14,7 +14,7 @@
         <file>Images/mappin-yellow.png</file>
         <file>Images/mappin-green.png</file>
         <file>Images/IMG_00000001.png</file>
-        <file>Models/FolderListModel.qml</file>
+        <file>Models/ModelFolderList.qml</file>
         <file>Components/TiPhotoMap.qml</file>
         <file>Components/TiToolBar.qml</file>
         <file>Images/refresh.png</file>

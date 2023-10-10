@@ -2,7 +2,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
-import Qt.labs.platform 1.1
+//import Qt.labs.platform 1.1
 import QtQml.Models 2.15
 
 import "./Dialogs"
@@ -28,7 +28,7 @@ Window {
     // ----------------------------------------------------------------
     TiFolderDialog { id: folderDialog }
     // ----------------------------------------------------------------
-    // "About..." window
+    // Déclaration des popups  // TODO : est-ce le bon endroit ?
     // ----------------------------------------------------------------
     About { id: about }
     Credits { id: creditsPage}
@@ -36,7 +36,7 @@ Window {
     // ----------------------------------------------------------------
     // Modèles de données: Liste des fichiers du dossier
     // ----------------------------------------------------------------
-    FolderListModel { id: folderListModel }
+    ModelFolderList { id: folderListModel }
 
     // ----------------------------------------------------------------
     // Page principale
@@ -44,8 +44,8 @@ Window {
     GridLayout
     {
         anchors.fill: parent
-        //        rows: 6
         columns: 2
+        //        rows: 6
 
         // --------------------------------- Ligne 0
         // Menu principal
@@ -110,15 +110,9 @@ Window {
             Layout.row: 2
             Layout.column: 1
             Layout.fillWidth: true
-            TabButton {
-                text: qsTr("PREVIEW")
-            }
-            TabButton {
-                text: qsTr("CARTE")
-            }
-            TabButton {
-                text: qsTr("TAG DATES")
-            }
+            TabButton { text: qsTr("PREVIEW") }
+            TabButton { text: qsTr("CARTE")   }
+            TabButton { text: qsTr("EXIF/IPTC TAGS") }
         }
 
         // --------------------------------- Ligne 3
@@ -151,54 +145,11 @@ Window {
                                        "longitude": mapTab.pLongitude})
                 */
             }
+
             // ------------------ PREVIEW TAB --------------------------
-            //            ColumnLayout {
-            //                id: previewTab
-            //            anchors.fill: parent
-
             // TODO : ce tab charge les images même quand il n'est pas visible, ce qui ralenti la GUI
-            TiPhotoPreview {
-                id: previewView
+            TiPhotoPreview { id: previewView }
 
-            }
-
-            /*GridView{
-                id: previewView
-                model: _selectedPhotoModel      // Ce modèle ne contient que la photo sélectionnée dans la ListView
-                delegate: previewDelegate
-                clip: true                      // pour que les items restent à l'interieur de la View
-                // Layout.fillWidth: true
-            }
-
-            Component {
-                id: previewDelegate
-                Row{
-                    Image {
-                        id: previewImage
-                        //property int clickedItem: -1
-                        //                            property url imageURl: "qrc:///Images/kodak.png"
-                        Layout.alignment: Qt.AlignCenter
-                        Layout.preferredWidth: 600
-                        Layout.preferredHeight: 600
-                        // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
-                        Layout.maximumHeight: sourceSize.height
-                        Layout.maximumWidth: sourceSize.width
-                        fillMode: Image.PreserveAspectFit
-                        source: model.imageUrl
-                    }
-                    Text{
-                        text: "Dimensions: " + previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
-                        Layout.alignment: Qt.AlignCenter
-                    }
-                    Zone {
-                        id: zone1
-                        ColumnLayout{
-                            Text{ text: "Dimensions:" }
-                            Text{ text: previewImage.sourceSize.height + "x" + previewImage.sourceSize.height   }
-                        }
-                    }
-                }
-              */
             // ------------------ MAP TAB ------------------------------
             ColumnLayout {
                 id: mapTab
@@ -213,9 +164,10 @@ Window {
                 onNew_coordsChanged: {
                     // Centrage de la carte sur les nouvelles coordonnées
                     // console.log("NewCoords: re-center the map");
-                    // mapView.center = QtPositioning.coordinate(new_latitude, new_longitude)  TODO verifier si inutile
+                    // mapView.center = QtPositioning.coordinate(new_latitude, new_longitude)  TODO A enlever si inutile
                 }
 
+                // Barre d'outils pour la carte
                 TiToolMap{
                     id: mapTools
                     Layout.fillWidth: true
@@ -248,95 +200,94 @@ Window {
             }
 
 
-        // ------------------ DATES TAB ----------------------------
-        ColumnLayout {
-            id: datesTab
-            anchors.fill: parent
-            spacing: 8
-            Text{
-                Layout.alignment: Qt.AlignLeft
-                text: "Tags:"
-            }
-            Rectangle{
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                color: "navajowhite"
-            }
-            Pastille{
-                id: p1
-            }
+            // ------------------ TAGS TAB ----------------------------
+            ColumnLayout {
+                id: datesTab
+                anchors.fill: parent
+                spacing: 8
+                Text{
+                    Layout.alignment: Qt.AlignLeft
+                    text: "Tags:"
+                }
+                Rectangle{
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    color: "navajowhite"
+                }
+                Pastille{
+                    id: p1
+                }
 
-            Text{
-                Layout.alignment: Qt.AlignLeft
-                text: "Trashcan:"
+                Text{
+                    Layout.alignment: Qt.AlignLeft
+                    text: "Trashcan:"
+                }
+                Rectangle{
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    color: "navajowhite"
+                }
             }
-            Rectangle{
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                color: "navajowhite"
+        }
+
+        // --------------------------------- Ligne 4
+        // Imagettes
+        // ---------------------------------
+        Frame {
+            Layout.row: 4
+            Layout.columnSpan: 2
+            Layout.fillWidth: true
+            Layout.preferredHeight: 120
+
+            ListView {
+                height: 120
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                orientation: Qt.Horizontal
+                delegate:
+                    Image {
+                    width: 130
+                    height: 100
+                    fillMode: Image.PreserveAspectFit
+                    source: modelData
+                }
+            }
+        }
+
+        // --------------------------------- Ligne 5
+        // Barre de boutons en bas
+        // ---------------------------------
+        RowLayout {
+            Layout.row: 5
+            Layout.columnSpan: 2
+            //Layout.fillHeight: true
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
+            Layout.margins: 16
+            spacing: 20
+            TiButton {
+                id: bt_dump
+                text: qsTr("Dump model")
+                onClicked: _photoListModel.dumpData()  // Pour les tests
+            }
+            CheckBox {
+                id: checkBox
+                text: qsTr("Générer backups")
+            }
+            TiButton {
+                id: bt_save
+                text: qsTr("Enregistrer")
+                // TODO : save the modified pictures
+                // onClicked: _photoListModel.dumpData()
+            }
+            TiButton {
+                id: bt_quit
+                text: qsTr("Quitter")
+                onClicked: Qt.quit()
             }
         }
     }
-
-    // --------------------------------- Ligne 4
-    // Imagettes
-    // ---------------------------------
-    Frame {
-        Layout.row: 4
-        Layout.columnSpan: 2
-        Layout.fillWidth: true
-        Layout.preferredHeight: 120
-
-        ListView {
-            height: 120
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            orientation: Qt.Horizontal
-            delegate:
-                Image {
-                width: 130
-                height: 100
-                fillMode: Image.PreserveAspectFit
-                source: modelData
-            }
-        }
-    }
-
-    // --------------------------------- Ligne 5
-    // Barre de boutons en bas
-    // ---------------------------------
-    RowLayout {
-        Layout.row: 5
-        Layout.columnSpan: 2
-        //Layout.fillHeight: true
-        Layout.fillWidth: true
-        Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
-        Layout.margins: 16
-        spacing: 20
-        TiButton {
-            id: bt_dump
-            text: qsTr("Dump model")
-            onClicked: _photoListModel.dumpData()  // Pour les tests
-        }
-        CheckBox {
-            id: checkBox
-            text: qsTr("Générer backups")
-        }
-        TiButton {
-            id: bt_save
-            text: qsTr("Enregistrer")
-            // TODO : save the modified pictures
-            // onClicked: _photoListModel.dumpData()
-        }
-        TiButton {
-            id: bt_quit
-            text: qsTr("Quitter")
-            onClicked: Qt.quit()
-        }
-    }
-}
-
 }
 
 

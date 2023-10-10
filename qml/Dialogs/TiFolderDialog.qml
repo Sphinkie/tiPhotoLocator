@@ -7,7 +7,7 @@ import Qt.labs.platform 1.1
 // example folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
 // ----------------------------------------------------------------
 FolderDialog {
-    currentFolder: "file:///C:"    // TODO warning
+    currentFolder: "file:///C:"    // TODO solve warning
     // URL du dossier de départ
     folder: ""
     onAccepted: {
