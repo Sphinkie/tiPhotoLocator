@@ -121,6 +121,9 @@ public slots:
     void duplicateData(int row);
     void removeData(int row);
 
+private:
+    void addTestItem();
+
 private slots:
     void growPopulation();
 

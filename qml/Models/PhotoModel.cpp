@@ -16,22 +16,10 @@
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
     // On met quelques items dans la liste
-    m_data
-        << Data("Select your photo folder", "qrc:Images/kodak.png", 48.866, 2.333, true)
-        << Data("Ibiza", "qrc:///Images/ibiza.png");
+    m_data << Data("Select your photo folder", "qrc:Images/kodak.png", 48.866, 2.333, true);
 
+    this->addTestItem();
 
-    QVariantMap ibizaData;
-    ibizaData.insert("FileName", "Ibiza");
-    ibizaData.insert("DateTimeOriginal", "2023:08:25 01:03:16");
-    ibizaData.insert("Model", "Generative AI");
-    ibizaData.insert("Make", "MIDJOURNEY");
-    ibizaData.insert("ImageHeight", 603);
-    ibizaData.insert("ImageWidth", 603);
-    ibizaData.insert("City", "Ibiza");
-    ibizaData.insert("GPSLatitude", 38.980);
-    ibizaData.insert("GPSLongitude", 1.433);
-    this->setData(ibizaData);
 
     // Bout de code d'exemple de timer
     /*
@@ -344,6 +332,25 @@ void PhotoModel::fetchExifMetadata()
     qDebug() << "fetchExifMetadata";
 }
 
+/**
+ * @brief PhotoModel::addTestItem add a test item to the Model.
+ * For testing purpose.
+ */
+void PhotoModel::addTestItem()
+{
+    this->m_data << Data("IMG_00000001", "qrc:///Images/IMG_00000001.png");
+    QVariantMap ibizaData;
+    ibizaData.insert("FileName", "IMG_00000001");
+    ibizaData.insert("DateTimeOriginal", "2023:08:25 01:03:16");
+    ibizaData.insert("Model", "Generative AI");
+    ibizaData.insert("Make", "MIDJOURNEY");
+    ibizaData.insert("ImageHeight", 603);
+    ibizaData.insert("ImageWidth", 603);
+    ibizaData.insert("City", "Ibiza");
+    ibizaData.insert("GPSLatitude", 38.980);
+    ibizaData.insert("GPSLongitude", 1.433);
+    this->setData(ibizaData);
+}
 // -----------------------------------------------------------------------
 // Autres fonctions / A supprimer si inutile
 // -----------------------------------------------------------------------

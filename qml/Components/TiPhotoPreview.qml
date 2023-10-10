@@ -16,8 +16,7 @@ GridView{
 
         RowLayout{                          // wrapper
          //   spacing: 20
-           // height: parent.height
-           // width: parent.width
+            required property string filename
             required property int imageWidth
             required property int imageHeight
             required property string camModel
@@ -60,6 +59,12 @@ GridView{
                         Layout.topMargin: 20
                         Layout.leftMargin: 10
                         text: qsTr("Photographie:") }
+                    Pastille{
+                        Layout.leftMargin: 20
+                        content: filename
+                        editable: false
+                        deletable: false
+                    }
                     Pastille{
                         Layout.leftMargin: 20
 //                        content: previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
