@@ -36,5 +36,6 @@
         <file>Components/TiToolMap.qml</file>
         <file>Components/Zone.qml</file>
         <file>Components/TiPhotoPreview.qml</file>
+        <file>Dialogs/RescanWarning.qml</file>
     </qresource>
 </RCC>

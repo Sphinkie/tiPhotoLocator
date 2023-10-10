@@ -32,6 +32,7 @@ Window {
     // ----------------------------------------------------------------
     About { id: about }
     Credits { id: creditsPage}
+    RescanWarning { id: rescanWarning}
     // ----------------------------------------------------------------
     // Modèles de données: Liste des fichiers du dossier
     // ----------------------------------------------------------------

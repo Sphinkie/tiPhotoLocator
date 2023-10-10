@@ -23,10 +23,7 @@ RowLayout{
         id: rescanButton
         icon.source: "qrc:/Images/rescan.png"
         text: qsTr("Rescan")
-        onClicked: {
-            console.log("Manual Rescan");
-            window.scanFile(folderListModel.folder)        // envoi signal
-        }
+        onClicked: rescanWarning.open()
     }
     Text {
         text: qsTr("Répertoire:")
