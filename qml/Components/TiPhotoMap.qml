@@ -43,14 +43,14 @@ Map{
                 var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
                 console.log('latitude  = ' + lati );
                 console.log('longitude = ' + longi);
-                // On mémorise les coords du point dans les properties du parent
+                // On mémorise les coords du point cliqué dans les properties du parent
                 mapTab.new_latitude = lati;
                 mapTab.new_longitude= longi;
                 // On demande un recentrage de la carte
                 // mapTab.new_coords = !mapTab.new_coords;
                 // On écrit les coordonnées dans l'item du modele
                 _selectedPhotoModel.setCoords(lati, longi);
-                // parent.qmlSignal(lati) // marche pas
+                // parent.qmlSignal(lati, longi) // TODO : utiliser un signal
             }
         }
         // ---------------------------

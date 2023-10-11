@@ -4,7 +4,9 @@
 
 
 /**
- * Transforme un chemin du type "file:///C:/Users/David/Pictures" en "C:\Users\David\Pictures"
+ * @brief Transforme un chemin du type "file:///C:/Users/David/Pictures" en "C:\Users\David\Pictures"
+ * @param objet: un chemin au format "file:///C:/Users/David/Pictures"
+ * @return un chemin au format "C:\Users\David\Pictures"
  */
 function toStandardPath(objet)
 {
@@ -19,7 +21,10 @@ function toStandardPath(objet)
 }
 	
 /**
- * Transforme une date du type "YYYY-MM-DD HH:MM:SS" en "DD/MM/YYYY"
+ * @brief Transforme une date du type "YYYY-MM-DD HH:MM:SS" en "DD/MM/YYYY"
+ * @param objet: une date du type "YYYY-MM-DD HH:MM:SS"
+ * @param sep: (optionel) Le séparateur à utiliser dans le résultat
+ * @return une date au format "DD<sep>MM<sep>YYYY"
  */
 function toStandardDate(objet, sep="/")
 {
@@ -35,7 +40,9 @@ function toStandardDate(objet, sep="/")
 }
 
 /**
- * Transforme une date du type "YYYY-MM-DD HH:MM:SS" en "HH:MM"
+ * @brief Transforme une date du type "YYYY-MM-DD HH:MM:SS" en "HH:MM"
+ * @param objet: une date du type "YYYY-MM-DD HH:MM:SS"
+ * @return une heure au format "HH:MM"
  */
 function toStandardTime(objet)
 {

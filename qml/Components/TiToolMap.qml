@@ -14,8 +14,10 @@ RowLayout {
     TiButton {
         id: bt_save_pos
         text: qsTr("Save Position")
-        icon.source: "qrc:/Images/mappin-green.png"
-        // onClicked: // TODO
+        icon.source: "qrc:/Images/mappin-yellow.png"
+        onClicked: {
+            window.savePosition(mapTab.new_latitude, mapTab.new_longitude);
+        }
     }
 
     TiButton {

@@ -118,6 +118,7 @@ public:
 public slots:
     void append(QString filename, QString url);
     void fetchExifMetadata();
+    void appendSavedPosition(double lati, double longi);
     void duplicateData(int row);
     void removeData(int row);
 

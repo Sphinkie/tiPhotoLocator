@@ -165,6 +165,20 @@ void PhotoModel::append(QVariantMap data)
 
 }
 
+/**
+ * @brief PhotoModel::appendSavedPosition ajoute une entrée spéciale dans le odèle
+ * correspondant à une position GPS mémorisée (marker jaune)
+ * @param lati; latitude
+ * @param longi: longitude
+ */
+void PhotoModel::appendSavedPosition(double lati, double longi)
+{
+    const int rowOfInsert = m_data.count();
+    Data* new_data = new Data("Saved Position", "", lati, longi, true);
+    beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
+    m_data.insert(rowOfInsert, *new_data);
+    endInsertRows();
+}
 
 // -----------------------------------------------------------------------
 /**

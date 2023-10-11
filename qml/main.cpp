@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)), &photoListModel, SLOT(append(QString,QString)));
     QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()), &photoListModel, SLOT(fetchExifMetadata()));
     QObject::connect(&photoListModel, SIGNAL(scanFile(QString)), &exifWrapper, SLOT(scanFile(QString)));
+    QObject::connect(firstRootItem,   SIGNAL(savePosition(double, double)), &photoListModel, SLOT(appendSavedPosition(double, double)));
 
     // Exécution de QML
     return app.exec();

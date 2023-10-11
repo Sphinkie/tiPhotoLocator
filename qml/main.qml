@@ -18,7 +18,8 @@ Window {
     color: TiStyle.primaryBackgroundColor
     title: "tiPhotoLocator"
     // Les signaux
-    signal qmlSignal(double latit)
+    signal qmlSignal(double lati, double longi)
+    signal savePosition(double lati, double longi)
     signal append(string filename, string url)
     signal fetchExifMetadata()
 
@@ -146,13 +147,13 @@ Window {
             }
 
             // ------------------ PREVIEW TAB --------------------------
-            // TODO : ce tab charge les images même quand il n'est pas visible, ce qui ralenti la GUI
             TiPhotoPreview { id: previewView }
 
             // ------------------ MAP TAB ------------------------------
             ColumnLayout {
                 id: mapTab
                 anchors.fill: parent
+                // TODO : Nettoyer
                 // Les coordonnées du point sélectionné
                 property double new_latitude
                 property double new_longitude
