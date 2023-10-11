@@ -12,7 +12,7 @@ RowLayout{
         onClicked: {
             console.log("Manual Reload");
             _photoListModel.clear();
-            // On ajoute les photos du dossier dans le modèle
+            // On ajoute une à une les photos du dossier dans le modèle
             for (var i = 0; i < folderListModel.count; i++)  {
                 window.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
             }

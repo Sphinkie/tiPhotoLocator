@@ -19,7 +19,6 @@ Window {
     title: "tiPhotoLocator"
     // Les signaux
     signal qmlSignal(double latit)
-    signal scanFile(string str)
     signal append(string filename, string url)
     signal fetchExifMetadata()
 

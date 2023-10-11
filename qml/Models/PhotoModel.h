@@ -129,6 +129,7 @@ private slots:
 
 signals:
     void selectedRowChanged();
+    void scanFile(QString imagePath);
 
 private: //members
     QVector<Data> m_data;

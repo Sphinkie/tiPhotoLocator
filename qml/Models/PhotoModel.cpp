@@ -330,6 +330,11 @@ void PhotoModel::clear()
 void PhotoModel::fetchExifMetadata()
 {
     qDebug() << "fetchExifMetadata";
+    // TODO: envoyer un signal image par image et non plus un signal pour le répertoire entier
+    QString path = m_data[0].imageUrl;
+    int lim = path.lastIndexOf("/");
+    path.truncate(lim);
+    emit scanFile(path);
 }
 
 /**
