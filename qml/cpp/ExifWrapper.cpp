@@ -165,7 +165,7 @@ bool ExifWrapper::writeArgsFile()
  */
 void ExifWrapper::processLine(QByteArray line)
 {
-    qDebug(line);
+    qDebug() << line;
     if (line.startsWith("{"))
     {
         // Première ligne
@@ -208,3 +208,12 @@ QVariantMap: QMap(
 ("SourceFile",  QVariant(QString, "E:/TiPhotos/P8160449.JPG")))
 
 */
+
+/**
+ * @brief ExifWrapper::writeMetadata
+ * @param filePath
+ */
+void ExifWrapper::writeMetadata(QString filePath)
+{
+    qDebug() << "writeMetadata" << filePath;
+}

@@ -37,5 +37,8 @@
         <file>Components/Zone.qml</file>
         <file>Components/TiPhotoPreview.qml</file>
         <file>Dialogs/RescanWarning.qml</file>
+        <file>Components/TiBottomToolBar.qml</file>
+        <file>Components/TiImagettes.qml</file>
+        <file>Components/TiPhotoTags.qml</file>
     </qresource>
 </RCC>

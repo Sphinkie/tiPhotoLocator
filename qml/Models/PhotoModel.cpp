@@ -173,6 +173,7 @@ void PhotoModel::append(QVariantMap data)
  */
 void PhotoModel::appendSavedPosition(double lati, double longi)
 {
+    // On insère à la fin
     const int rowOfInsert = m_data.count();
     Data* new_data = new Data("Saved Position", "", lati, longi, true);
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
@@ -351,6 +352,26 @@ void PhotoModel::fetchExifMetadata()
     emit scanFile(path);
 }
 
+
+/**
+ * @brief PhotoModel::saveExifMetadata enregistre dans le fichiers JPG les metadonnées SXIF qui ont été modifiées.
+ */
+void PhotoModel::saveExifMetadata()
+{
+    qDebug() << "saveExifMetadata";
+    QMutableVectorIterator<Data> it_data(m_data);  // on definit un iterateur (en RW)
+    while (it_data.hasNext()) {
+        Data data = it_data.next();
+        if (data.toBeSaved) {
+            emit writeMetadata(data.imageUrl);
+            it_data.value().toBeSaved = false;
+         int row = 1;  // TODO mettre un simple parcourt d'index   std::distance(m_data.begin(), it_data); //
+            QModelIndex idx = index(row, 0);
+            emit dataChanged(idx, idx, QVector<int>() << ToBeSavedRole);
+         }
+    }
+}
+
 /**
  * @brief PhotoModel::addTestItem add a test item to the Model.
  * For testing purpose.
@@ -370,6 +391,7 @@ void PhotoModel::addTestItem()
     ibizaData.insert("GPSLongitude", 1.433);
     this->setData(ibizaData);
 }
+
 // -----------------------------------------------------------------------
 // Autres fonctions / A supprimer si inutile
 // -----------------------------------------------------------------------

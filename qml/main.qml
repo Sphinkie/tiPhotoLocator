@@ -22,6 +22,7 @@ Window {
     signal savePosition(double lati, double longi)
     signal append(string filename, string url)
     signal fetchExifMetadata()
+    signal saveExifMetadata()
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier
@@ -201,91 +202,27 @@ Window {
 
 
             // ------------------ TAGS TAB ----------------------------
-            ColumnLayout {
+            TiPhotoTags {
                 id: datesTab
                 anchors.fill: parent
-                spacing: 8
-                Text{
-                    Layout.alignment: Qt.AlignLeft
-                    text: "Tags:"
-                }
-                Rectangle{
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    color: "navajowhite"
-                }
-                Pastille{
-                    id: p1
-                }
-
-                Text{
-                    Layout.alignment: Qt.AlignLeft
-                    text: "Trashcan:"
-                }
-                Rectangle{
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    color: "navajowhite"
-                }
             }
         }
-
         // --------------------------------- Ligne 4
         // Imagettes
         // ---------------------------------
-        Frame {
+        TiImagettes{
             Layout.row: 4
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            Layout.preferredHeight: 120
-
-            ListView {
-                height: 120
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.bottom: parent.bottom
-                orientation: Qt.Horizontal
-                delegate:
-                    Image {
-                    width: 130
-                    height: 100
-                    fillMode: Image.PreserveAspectFit
-                    source: modelData
-                }
-            }
         }
 
         // --------------------------------- Ligne 5
         // Barre de boutons en bas
         // ---------------------------------
-        RowLayout {
+        TiBottomToolBar {
             Layout.row: 5
             Layout.columnSpan: 2
-            //Layout.fillHeight: true
             Layout.fillWidth: true
-            Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
-            Layout.margins: 16
-            spacing: 20
-            TiButton {
-                id: bt_dump
-                text: qsTr("Dump model")
-                onClicked: _photoListModel.dumpData()  // Pour les tests
-            }
-            CheckBox {
-                id: checkBox
-                text: qsTr("Générer backups")
-            }
-            TiButton {
-                id: bt_save
-                text: qsTr("Enregistrer")
-                // TODO : save the modified pictures
-                // onClicked: _photoListModel.dumpData()
-            }
-            TiButton {
-                id: bt_quit
-                text: qsTr("Quitter")
-                onClicked: Qt.quit()
-            }
         }
     }
 }

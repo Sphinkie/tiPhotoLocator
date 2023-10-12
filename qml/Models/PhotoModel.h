@@ -118,6 +118,7 @@ public:
 public slots:
     void append(QString filename, QString url);
     void fetchExifMetadata();
+    void saveExifMetadata();
     void appendSavedPosition(double lati, double longi);
     void duplicateData(int row);
     void removeData(int row);
@@ -131,10 +132,12 @@ private slots:
 signals:
     void selectedRowChanged();
     void scanFile(QString imagePath);
+    void writeMetadata(QString imagePath);
 
 private: //members
     QVector<Data> m_data;
     int m_lastSelectedRow = 0;  // Au départ, on a un item: Kodak
+    QModelIndex m_markerIndex = QModelIndex();
     int m_dumpedRow = 0;        // Compteur pour le dump de debug
 };
 
