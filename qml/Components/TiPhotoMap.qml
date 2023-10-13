@@ -32,7 +32,6 @@ Map{
         id: mapitemView
         model: _selectedPhotoModel
         delegate: mapDelegate
-        signal qmlSignal(double latit)
 
         // ---------------------------
         MouseArea {
@@ -49,8 +48,7 @@ Map{
                 // On demande un recentrage de la carte
                 // mapTab.new_coords = !mapTab.new_coords;
                 // On écrit les coordonnées dans l'item du modele
-                _selectedPhotoModel.setCoords(lati, longi);
-                // parent.qmlSignal(lati, longi) // TODO : utiliser un signal
+                window.setCoords(lati, longi);
             }
         }
         // ---------------------------
@@ -67,6 +65,7 @@ Map{
             required property double latitude
             required property double longitude
             required property bool hasGPS
+            required property bool isMarker
             // Position du maker
             coordinate: QtPositioning.coordinate(latitude, longitude)
             // Point d'ancrage de l'icone
@@ -75,8 +74,12 @@ Map{
             // On dessine le marker et le texte (si la photo possede des coordonnées GPS)
             sourceItem: Column {
                 visible: hasGPS
-                Image { id: markerIcon; source: "qrc:///Images/mappin-red.png"; height: 48; width: 48 }
                 Text { text: filename; font.bold: true }
+                Image {
+                    id: markerIcon;
+                    source: isMarker ? "qrc:///Images/mappin-yellow.png" : "qrc:///Images/mappin-red.png";
+                    height: 48; width: 48
+                }
             }
         }
     }

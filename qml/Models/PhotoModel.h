@@ -16,18 +16,20 @@ struct Data
     // Constructeur avec valeurs
     Data( const QString &file_name,
           const QString &image_url,
-          const Data::ItemType image_type = photo,
+//        const Data::ItemType image_type = photo,
+          const bool is_marker = false,
+          const bool is_welcome = false,
           bool is_selected = false
           )
     {
         filename = file_name;
         imageUrl = image_url;
-        type = image_type;
+        isMarker = is_marker;
+        isWelcome = is_welcome;
         isSelected = is_selected;
     }
 
     // Elements de la structure
-    ItemType type;             // Type of item: "marker", "photo" or "welcome"
     QString filename;          // Example: "IMG_20230823_1234500.jpg"
     QString imageUrl;          // Example: "qrc:///Images/ibiza.png"
     double gpsLatitude = 0;    // Example: 38.980    // GPS coordinates
@@ -35,6 +37,8 @@ struct Data
     // Elements déterminés automatiquement
     bool hasGPS = false;       // has GPS coordinates (latitude/longitude)
     bool isSelected;           // Indique que cet item est sélectionné dans la ListView
+    bool isMarker = false;     // Exemple: une position sauvegardée sur la carte
+    bool isWelcome = false;    // Exemple: L'image de la page d'acceuil
     bool insideCircle = false; // inside the radius of nearby photos
     bool toBeSaved = false;    // true if one of the following fields has been modified
     // EXIF tags
@@ -70,13 +74,14 @@ class PhotoModel : public QAbstractListModel
 
 public:
     enum Roles {
-        TypeRole  = Qt::UserRole,  // The first role that can be used for application-specific purposes.
-        FilenameRole,
+        FilenameRole  = Qt::UserRole,  // The first role that can be used for application-specific purposes.
         ImageUrlRole,
         LatitudeRole,
         LongitudeRole,
         HasGPSRole,
         IsSelectedRole,
+        IsMarkerRole,
+        IsWelcomeRole,
         InsideCircleRole,
         ToBeSavedRole,
         DateTimeOriginalRole,

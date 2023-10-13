@@ -19,7 +19,7 @@ Window {
     title: "tiPhotoLocator"
     // Les signaux
     signal append(string filename, string url)
-    signal qmlSignal(double lati, double longi)
+    signal setCoords(double lati, double longi)
     signal savePosition(double lati, double longi)
     signal clearSavedPosition()
     signal fetchExifMetadata()

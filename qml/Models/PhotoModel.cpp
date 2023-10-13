@@ -16,7 +16,7 @@
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
     // On met quelques items dans la liste
-    m_data << Data("Select your photo folder", "qrc:Images/kodak.png", Data::welcome, true);
+    m_data << Data("Select your photo folder", "qrc:Images/kodak.png", false, true, true); // Welcome
 
     this->addTestItem();
 
@@ -58,13 +58,14 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 
     switch(role)
     {
-        case TypeRole:              return data.type;
         case FilenameRole:          return data.filename;
         case ImageUrlRole:          return data.imageUrl;
         case LatitudeRole:          return data.gpsLatitude;
         case LongitudeRole:         return data.gpsLongitude;
         case HasGPSRole:            return data.hasGPS;
         case IsSelectedRole:        return data.isSelected;
+        case IsMarkerRole:          return data.isMarker;
+        case IsWelcomeRole:         return data.isWelcome;
         case InsideCircleRole:      return data.insideCircle;
         case ToBeSavedRole:         return data.toBeSaved;
         case DateTimeOriginalRole:  return data.dateTimeOriginal;
@@ -94,13 +95,14 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
-        {TypeRole,            "type"},
         {FilenameRole,        "filename"},
         {ImageUrlRole,        "imageUrl"},
         {LatitudeRole,        "latitude"},
         {LongitudeRole,       "longitude"},
         {HasGPSRole,          "hasGPS"},
         {IsSelectedRole,      "isSelected"},
+        {IsMarkerRole,        "isMarker"},
+        {IsWelcomeRole,       "isWelcome"},
         {InsideCircleRole,    "insideCircle"},
         {ToBeSavedRole,       "toBeSaved"},
         {DateTimeOriginalRole,"dateTimeOriginal"},
@@ -159,7 +161,8 @@ void PhotoModel::append(QVariantMap data)
 {
     // qDebug() << "append QVariantMap:" << data;
     const int rowOfInsert = m_data.count();
-    Data* new_data = new Data(data["filename"].toString(), data["imageUrl"].toString()); // , data["latitude"].toDouble(), data["longitude"].toDouble());
+    Data* new_data = new Data(data["filename"].toString(), data["imageUrl"].toString());
+    // TODO: il faudrait probablement ajouter aussi un setData()
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_data.insert(rowOfInsert, *new_data);
     endInsertRows();
@@ -169,8 +172,8 @@ void PhotoModel::append(QVariantMap data)
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::appendSavedPosition ajoute une entrée spéciale dans le odèle
- * correspondant à une position GPS mémorisée (marker jaune)
+ * @brief PhotoModel::appendSavedPosition ajoute une entrée spéciale dans le Modèle
+ * correspondant à une position GPS mémorisée (marker jaune).
  * @param lati; latitude
  * @param longi: longitude
  */
@@ -211,14 +214,14 @@ void PhotoModel::selectedRow(int row)
         m_data[m_lastSelectedRow].isSelected = false;
         m_data[m_lastSelectedRow].insideCircle = false;
         QModelIndex previous_index = this->index(m_lastSelectedRow, 0);
-        emit dataChanged(previous_index, previous_index, {IsSelectedRole, InsideCircleRole});
+        emit dataChanged(previous_index, previous_index, {IsSelectedRole, InsideCircleRole} );
         qDebug() << m_data[m_lastSelectedRow].isSelected << m_data[m_lastSelectedRow].filename ;
     }
     // On remet à True le nouvel item sélectionné
     m_data[row].isSelected = true;
     m_data[row].insideCircle = true;
     QModelIndex new_index = this->index(row, 0);
-    emit dataChanged(new_index, new_index, {IsSelectedRole, InsideCircleRole});
+    emit dataChanged(new_index, new_index, {IsSelectedRole, InsideCircleRole} );
     qDebug() << "PhotoModel: " << this << m_data[row].isSelected << m_data[row].filename  ;
     m_lastSelectedRow = row;
 }
@@ -265,7 +268,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role FilenameRole.
+ * @brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
  * Roles non modifiables (ignorés): imageUrl; insideCircle.
  * Roles non modifiables (recalculés): hasGPS, toBeSaved.
  * Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales.
@@ -380,7 +383,7 @@ void PhotoModel::saveExifMetadata()
     for (int row = 0; row < nb_items; row++)
     {
         Data data = m_data[row];
-        if (data.toBeSaved && (data.type == Data::photo))
+        if (data.toBeSaved && !data.isMarker && !data.isWelcome)
         {
             emit writeMetadata(data.imageUrl);
             QModelIndex idx = index(row, 0);
