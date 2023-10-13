@@ -9,29 +9,29 @@
  */
 struct Data
 {
+    enum ItemType {photo, marker, welcome};
+
     // Default constructor
     Data() {}
     // Constructeur avec valeurs
     Data( const QString &file_name,
           const QString &image_url,
-          double gps_latitude = 0,
-          double gps_longitude = 0,
+          const Data::ItemType image_type = photo,
           bool is_selected = false
           )
     {
         filename = file_name;
         imageUrl = image_url;
-        gpsLatitude = gps_latitude;
-        gpsLongitude = gps_longitude;
-        hasGPS    = (gps_latitude!=0) || (gps_longitude!=0);
+        type = image_type;
         isSelected = is_selected;
     }
 
     // Elements de la structure
-    QString filename;       // Example: "IMG_20230823_1234500.jpg"
-    QString imageUrl;       // Example: "qrc:///Images/ibiza.png"
-    double gpsLatitude;     // Example: 38.980    // GPS coordinates
-    double gpsLongitude;    // Example: 1.4333    // (Ibiza)
+    ItemType type;             // Type of item: "marker", "photo" or "welcome"
+    QString filename;          // Example: "IMG_20230823_1234500.jpg"
+    QString imageUrl;          // Example: "qrc:///Images/ibiza.png"
+    double gpsLatitude = 0;    // Example: 38.980    // GPS coordinates
+    double gpsLongitude = 0;   // Example: 1.4333    // (Ibiza)
     // Elements déterminés automatiquement
     bool hasGPS = false;       // has GPS coordinates (latitude/longitude)
     bool isSelected;           // Indique que cet item est sélectionné dans la ListView
@@ -70,7 +70,8 @@ class PhotoModel : public QAbstractListModel
 
 public:
     enum Roles {
-        FilenameRole = Qt::UserRole,  // The first role that can be used for application-specific purposes.
+        TypeRole  = Qt::UserRole,  // The first role that can be used for application-specific purposes.
+        FilenameRole,
         ImageUrlRole,
         LatitudeRole,
         LongitudeRole,

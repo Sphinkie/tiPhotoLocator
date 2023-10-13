@@ -16,7 +16,7 @@
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
     // On met quelques items dans la liste
-    m_data << Data("Select your photo folder", "qrc:Images/kodak.png", 48.866, 2.333, true);
+    m_data << Data("Select your photo folder", "qrc:Images/kodak.png", Data::welcome, true);
 
     this->addTestItem();
 
@@ -32,7 +32,7 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 // -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::rowCount returns the number of elements in the model. Implémentation obligatoire.
- * @param parent : parent of the model
+ * @param parent: parent of the model
  * @return the number of elements in the model
  */
 int PhotoModel::rowCount(const QModelIndex& parent) const
@@ -45,8 +45,8 @@ int PhotoModel::rowCount(const QModelIndex& parent) const
 // -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::data returns the requeted role value of an element of the model. Implémentation obligatoire.
- * @param index : index of the element of the model
- * @param role : the requested role (enum)
+ * @param index: index of the element of the model
+ * @param role: the requested role (enum)
  * @return the value of the role for this element.
  */
 QVariant PhotoModel::data(const QModelIndex &index, int role) const
@@ -58,6 +58,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 
     switch(role)
     {
+        case TypeRole:              return data.type;
         case FilenameRole:          return data.filename;
         case ImageUrlRole:          return data.imageUrl;
         case LatitudeRole:          return data.gpsLatitude;
@@ -93,6 +94,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
+        {TypeRole,            "type"},
         {FilenameRole,        "filename"},
         {ImageUrlRole,        "imageUrl"},
         {LatitudeRole,        "latitude"},
@@ -132,8 +134,8 @@ QVariant PhotoModel::getUrl(int row)
 /**
  * @brief Append a photo to the model with just a name and a path (url).
  * Other data should be filled later, from exif metadata.
- * @param filename : filename of the photo
- * @param url : Full path of the photo (in Qt format)
+ * @param filename: filename of the photo
+ * @param url: Full path of the photo (in Qt format)
  */
 void PhotoModel::append(QString filename, QString url)
 {
@@ -150,14 +152,14 @@ void PhotoModel::append(QString filename, QString url)
  * @param data: A dictionnary of key-value
  * @example
     QVariantMap map;
-    map.insert(roleNames().value(FilenameRole), QVariant(filename));
+    map.insert("filename", QVariant(filename));
     map.insert(roleNames().value(ImageUrlRole), QVariant(url));
  */
 void PhotoModel::append(QVariantMap data)
 {
     // qDebug() << "append QVariantMap:" << data;
     const int rowOfInsert = m_data.count();
-    Data* new_data = new Data(data["filename"].toString(), data["imageUrl"].toString(), data["latitude"].toDouble(), data["longitude"].toDouble());
+    Data* new_data = new Data(data["filename"].toString(), data["imageUrl"].toString()); // , data["latitude"].toDouble(), data["longitude"].toDouble());
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_data.insert(rowOfInsert, *new_data);
     endInsertRows();
@@ -175,9 +177,11 @@ void PhotoModel::appendSavedPosition(double lati, double longi)
 {
     // On insère à la fin
     const int rowOfInsert = m_data.count();
-    Data* new_data = new Data("Saved Position", "", lati, longi, true);
+    Data* new_data = new Data("Saved Position", "", Data::marker);
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_data.insert(rowOfInsert, *new_data);
+    this->setData(index(rowOfInsert,0), lati, LatitudeRole);
+    this->setData(index(rowOfInsert,0), longi, LongitudeRole);
     endInsertRows();
 }
 
