@@ -18,9 +18,10 @@ Window {
     color: TiStyle.primaryBackgroundColor
     title: "tiPhotoLocator"
     // Les signaux
+    signal append(string filename, string url)
     signal qmlSignal(double lati, double longi)
     signal savePosition(double lati, double longi)
-    signal append(string filename, string url)
+    signal clearSavedPosition()
     signal fetchExifMetadata()
     signal saveExifMetadata()
 
@@ -154,19 +155,13 @@ Window {
             ColumnLayout {
                 id: mapTab
                 anchors.fill: parent
-                // TODO : Nettoyer
                 // Les coordonnées du point sélectionné
                 property double new_latitude
                 property double new_longitude
-                property bool   new_coords: false
+                // TODO : Nettoyer ?
+                // property bool   new_coords: false
                 spacing: 8
                 Layout.alignment: Qt.AlignHCenter
-                // Layout.fillWidth: true
-                onNew_coordsChanged: {
-                    // Centrage de la carte sur les nouvelles coordonnées
-                    // console.log("NewCoords: re-center the map");
-                    // mapView.center = QtPositioning.coordinate(new_latitude, new_longitude)  TODO A enlever si inutile
-                }
 
                 // Barre d'outils pour la carte
                 TiToolMap{

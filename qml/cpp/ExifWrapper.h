@@ -20,9 +20,9 @@ private:
     bool writeArgsFile();
     void processLine(QByteArray line);
 
-    QString m_argFile;
+    QString m_argFile;          // Nom du fichier contenant les argements de ExifTool
     PhotoModel* m_photoModel;
-    QByteArray m_rxLine;
+    QByteArray m_rxLine;        // Ligene ExifTool en cours de réception
 
 };
 

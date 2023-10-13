@@ -2,10 +2,10 @@
 #define PHOTOMODEL_H
 
 #include <QAbstractListModel>
-#include <QColor>
+//#include <QColor>
 
 /**
- * @brief The Data structure contain all the attribute for a photo picture: filename, GPS ccordinates, etc.
+ * @brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.
  */
 struct Data
 {
@@ -121,6 +121,7 @@ public slots:
     void fetchExifMetadata();
     void saveExifMetadata();
     void appendSavedPosition(double lati, double longi);
+    void removeSavedPosition();
     void duplicateData(int row);
     void removeData(int row);
 
@@ -138,8 +139,9 @@ signals:
 private: //members
     QVector<Data> m_data;
     int m_lastSelectedRow = 0;  // Au départ, on a un item: Kodak
-    QModelIndex m_markerIndex = QModelIndex();
     int m_dumpedRow = 0;        // Compteur pour le dump de debug
+    int m_markerRow = -1;     // Position du marker SavedPosition
+    QModelIndex m_markerIndex;  // = QModelIndex(); // TODO : utile ?
 };
 
 #endif // PHOTOMODEL_H

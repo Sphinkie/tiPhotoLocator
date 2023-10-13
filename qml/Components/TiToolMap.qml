@@ -13,10 +13,18 @@ RowLayout {
 
     TiButton {
         id: bt_save_pos
-        text: qsTr("Save Position")
+        text: buttonOn ? qsTr("Save Position") : qsTr("Clear Saved Position")
         icon.source: "qrc:/Images/mappin-yellow.png"
         onClicked: {
+            if (buttonOn){
             window.savePosition(mapTab.new_latitude, mapTab.new_longitude);
+            buttonOn = false
+            }
+            else {
+                // TODO Attention au cas où on a vidé le modèle: il faut remettre ce bouton à ON
+                window.clearSavedPosition();
+                buttonOn = true
+            }
         }
     }
 

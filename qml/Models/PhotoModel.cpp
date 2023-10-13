@@ -167,6 +167,7 @@ void PhotoModel::append(QVariantMap data)
 
 }
 
+// -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::appendSavedPosition ajoute une entrée spéciale dans le odèle
  * correspondant à une position GPS mémorisée (marker jaune)
@@ -183,6 +184,13 @@ void PhotoModel::appendSavedPosition(double lati, double longi)
     this->setData(index(rowOfInsert,0), lati, LatitudeRole);
     this->setData(index(rowOfInsert,0), longi, LongitudeRole);
     endInsertRows();
+    // On mémorise sa position
+    m_markerRow = rowOfInsert;
+}
+
+void PhotoModel::removeSavedPosition()
+{
+    this->removeData(m_markerRow);
 }
 
 // -----------------------------------------------------------------------
@@ -217,9 +225,10 @@ void PhotoModel::selectedRow(int row)
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::setData est une surcharge qui permet de modifier unitairement 1 role un item du modèle.
+ * @brief PhotoModel::setData est une surcharge qui permet de modifier unitairement un role d'un item du modèle.
  * Cette fonction met à TRUE le flag "To Be Saved" car il s'agit d'actions opérateur.
- * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename
+ * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename...
+ * Note: It is important to emit the dataChanged() signal after saving the changes.
  * @param index : l'index (au sens ModelIndex) de l'item à modifier
  * @param value : la nouvelle valeur
  * @param role : le role à modifier (ex: LatitudeRole, LongitudeRole)
@@ -230,26 +239,28 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 {
     if (index.isValid())
     {
-        // Set data in model here.
         switch (role)
         {
         case LatitudeRole:
             m_data[index.row()].gpsLatitude = value.toDouble();
             m_data[index.row()].hasGPS = true;
             m_data[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << LatitudeRole << HasGPSRole);
             break;
         case LongitudeRole:
             m_data[index.row()].gpsLongitude = value.toDouble();
             m_data[index.row()].hasGPS = true;
             m_data[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << LongitudeRole << HasGPSRole);
             break;
-        // TODO : Eventuellement, donner la possibilité de modifier d'autres roles.
+        case ToBeSavedRole:
+            m_data[index.row()].toBeSaved = value.toBool();
+            break;
         }
-        // Note: It is important to emit the dataChanged() signal after saving the changes.
-        emit dataChanged(index, index);
+        emit dataChanged(index, index, QVector<int>() << ToBeSavedRole);
         return true;
     }
-    return false;
+    else return false;
 }
 
 // -----------------------------------------------------------------------
@@ -314,7 +325,6 @@ int PhotoModel::getSelectedRow()
     return m_lastSelectedRow;
 }
 
-
 // -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::dumpData is a debug function that print (in the console) one line of the model at every call.
@@ -332,6 +342,7 @@ void PhotoModel::dumpData()
     m_dumpedRow++;
 }
 
+// -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::clear deletes all the items of the Model.
  */
@@ -357,25 +368,31 @@ void PhotoModel::fetchExifMetadata()
 }
 
 
+// -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::saveExifMetadata enregistre dans le fichiers JPG les metadonnées SXIF qui ont été modifiées.
  */
 void PhotoModel::saveExifMetadata()
 {
     qDebug() << "saveExifMetadata";
-    QMutableVectorIterator<Data> it_data(m_data);  // on definit un iterateur (en RW)
-    while (it_data.hasNext()) {
-        Data data = it_data.next();
-        if (data.toBeSaved) {
+    int nb_items = m_data.count();
+    // On parcourt tous les items du modèle
+    for (int row = 0; row < nb_items; row++)
+    {
+        Data data = m_data[row];
+        if (data.toBeSaved && (data.type == Data::photo))
+        {
             emit writeMetadata(data.imageUrl);
-            it_data.value().toBeSaved = false;
-         int row = 1;  // TODO mettre un simple parcourt d'index   std::distance(m_data.begin(), it_data); //
             QModelIndex idx = index(row, 0);
-            emit dataChanged(idx, idx, QVector<int>() << ToBeSavedRole);
+            // m_data[row].toBeSaved = false;
+            // emit dataChanged(idx, idx, QVector<int>() << ToBeSavedRole);
+            // ou:
+            setData(idx, false, ToBeSavedRole);
          }
     }
 }
 
+// -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::addTestItem add a test item to the Model.
  * For testing purpose.
@@ -412,6 +429,10 @@ void PhotoModel::duplicateData(int row)
     endInsertRows();
 }
 
+/**
+ * @brief PhotoModel::removeData est une fonction typqique qui supprime l'item désigné du modèle
+ * @param row: la position dans le vecteur de l'item à modifier.
+ */
 void PhotoModel::removeData(int row)
 {
     if (row < 0 || row >= m_data.count())

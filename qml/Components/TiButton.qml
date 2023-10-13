@@ -12,6 +12,8 @@ Button {
     display: AbstractButton.TextBesideIcon   // IconOnly
     //icon.width: 45
     //icon.height: 45
+    property bool buttonOn: true   // Certains boutons ont 2 positions ON et OFF
+
 /*
     background: Rectangle {
         implicitWidth: 83
