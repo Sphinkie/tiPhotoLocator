@@ -7,7 +7,6 @@
 #include <QDebug>
 #include <cstdlib>
 
-
 #define QT_NO_DEBUG_OUTPUT
 
 // -----------------------------------------------------------------------
@@ -116,7 +115,6 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
     return mapping;
 }
 
-
 // -----------------------------------------------------------------------
 /**
  * @brief Gives the full name (with absolute path) of the photo.
@@ -179,19 +177,25 @@ void PhotoModel::append(QVariantMap data)
  */
 void PhotoModel::appendSavedPosition(double lati, double longi)
 {
-    // On insère à la fin
-    const int rowOfInsert = m_data.count();
-    Data* new_data = new Data("Saved Position", "", Data::marker);
-    beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
-    m_data.insert(rowOfInsert, *new_data);
-    this->setData(index(rowOfInsert,0), lati, LatitudeRole);
-    this->setData(index(rowOfInsert,0), longi, LongitudeRole);
-    endInsertRows();
-    // On mémorise sa position
-    m_markerRow = rowOfInsert;
-    m_markerIndex = index(rowOfInsert,0);
+    // S'il n'y a pas encore de Saved Position, on insère à la fin
+    if (!m_markerIndex.isValid())
+    {
+        const int rowOfInsert = m_data.count();
+        Data* new_data = new Data("Saved Position", "", Data::marker);
+        beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
+        m_data.insert(rowOfInsert, *new_data);
+        endInsertRows();
+        // On mémorise sa position
+        m_markerRow = rowOfInsert;
+        m_markerIndex = index(rowOfInsert,0);
+    }
+    this->setData(m_markerIndex, lati, LatitudeRole);
+    this->setData(m_markerIndex, longi, LongitudeRole);
 }
 
+/**
+ * @brief PhotoModel::removeSavedPosition
+ */
 void PhotoModel::removeSavedPosition()
 {
     this->removeData(m_markerRow);
@@ -274,13 +278,13 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
         {
         case LatitudeRole:
             m_data[index.row()].gpsLatitude = value.toDouble();
-            m_data[index.row()].hasGPS = true;
+            m_data[index.row()].hasGPS = (value != 0);    // Pas hyper-rigoureux...
             m_data[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << LatitudeRole << HasGPSRole);
             break;
         case LongitudeRole:
             m_data[index.row()].gpsLongitude = value.toDouble();
-            m_data[index.row()].hasGPS = true;
+            m_data[index.row()].hasGPS = (value != 0);     // Théoriquement, il faudrait tester lat et long...
             m_data[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << LongitudeRole << HasGPSRole);
             break;
@@ -345,7 +349,6 @@ void PhotoModel::setData(QVariantMap &value_list)
     emit dataChanged(changed_index, changed_index);
 }
 
-
 // -----------------------------------------------------------------------
 /**
  * @brief Unused getter.
@@ -385,6 +388,7 @@ void PhotoModel::clear()
     endResetModel();    // cette methode envoie un signal ModelReset
 }
 
+// -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::photoListModel traite le SIGNAL indiquant qu'il faut lire des données EXIF des photos du répertoire.
  */

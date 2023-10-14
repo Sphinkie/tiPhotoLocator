@@ -183,14 +183,12 @@ Window {
                     model: _onTheMapProxyModel       // Ce modèle ne contient que les photos devant apparaitre sur la carte
                     delegate: coordsTextDelegate
                 }
-
                 Component{
                     id: coordsTextDelegate
                     Text {
                         required property double latitude
                         required property double longitude
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignBottom
+//                        Layout.fillWidth: true
                         text: "Coordinates: " + latitude.toFixed(4) + " [LatN] / " + longitude.toFixed(4) + " [longW]"
                         font.pixelSize: 16
                     }

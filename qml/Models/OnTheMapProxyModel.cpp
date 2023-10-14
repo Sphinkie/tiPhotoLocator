@@ -62,7 +62,7 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
             setData(idx, lat, PhotoModel::LatitudeRole);
             setData(idx, lon, PhotoModel::LongitudeRole);
             // Vérification
-            qDebug() << "ProxyModel: set latitude" << idx.data(PhotoModel::LatitudeRole).toDouble() << "for" << idx.data(PhotoModel::FilenameRole).toString();
+            qDebug() << "ProxyModel: set coords" << idx.data(PhotoModel::LatitudeRole).toDouble() << "for" << idx.data(PhotoModel::FilenameRole).toString();
         }
         // On passe à la photo suivante de la liste filtrée
         idx = idx.siblingAtRow(++row);

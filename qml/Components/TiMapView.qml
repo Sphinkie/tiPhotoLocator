@@ -3,6 +3,7 @@ import QtQuick.Layouts 1.15
 import QtLocation 5.12
 import QtPositioning 5.12
 
+
 // ----------------------------------------------------------------
 // Affichage d'une carte OpenStreetMap
 // - Map: Donner un id
@@ -47,6 +48,9 @@ Map {
                 mapTab.new_longitude= longi;
                 // On change les coordonnées dans l'item du modele
                 window.setSelectedItemCoords(lati, longi);
+                // On active le bouton "Save position"
+                mapTools.bt_save_pos.visible = true;
+                mapTools.bt_clear_coords.visible = true;
             }
         }
     }
@@ -77,7 +81,8 @@ Map {
                 Image {
                     id: markerIcon;
                     source: isMarker ? "qrc:///Images/mappin-yellow.png" : "qrc:///Images/mappin-red.png";
-                    height: 48; width: 48
+                    height: isMarker ? 42 : 48;
+                    width: height
                 }
             }
         }
