@@ -31,7 +31,10 @@ RowLayout {
     TiButton {
         id: bt_apply_pos
         text: qsTr("Apply Saved Position")
-        // onClicked:// TODO
+        onClicked: {
+            // On applique les coordonnées du marker à la photo sélectionnée
+            window.applySavedPositionTo();
+        }
     }
 
     TiButton {

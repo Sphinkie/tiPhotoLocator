@@ -42,9 +42,7 @@ ListView{
             required property bool insideCircle
             required property bool toBeSaved
             required property string city
-            // index is a special role available in the delegate: the index of the item in the model.
-            // (the index is -1 if the item is removed from the model...)
-            required property int index
+            required property int index // index is a special role available in the delegate: the row of the item in the model.
             readonly property ListView __lv : ListView.view
 
             // icone In Circle
@@ -91,7 +89,7 @@ ListView{
                 onClicked: {
                     console.log("MouseArea: "+index);
                     __lv.currentIndex = index             // Bouge le highlight dans la ListView
-                    // previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel ?)
+                    // previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel? )
                     _photoListModel.selectedRow = index   // Actualise le proxymodel
                     tabbedPage.selectedItem = index       // inutile si on utilise le ProxyModel
                     // On envoie les coordonnées pour centrer la carte sur le point selectionné

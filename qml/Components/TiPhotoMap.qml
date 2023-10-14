@@ -15,7 +15,7 @@ import QtPositioning 5.12
 // - Un clic sur la carte change la position de la photo (le curseur est repositionné)
 // ----------------------------------------------------------------
 
-Map{
+Map {
     // id: mapView
     plugin: mapPlugin
     center: QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
@@ -32,6 +32,7 @@ Map{
         id: mapitemView
         model: _selectedPhotoModel
         delegate: mapDelegate
+        //readonly property MapItemView __mv : MapItemView.view
 
         // ---------------------------
         MouseArea {
@@ -42,6 +43,7 @@ Map{
                 var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
                 console.log('latitude  = ' + lati );
                 console.log('longitude = ' + longi);
+                console.log('item index = ' + __mv.currentIndex );
                 // On mémorise les coords du point cliqué dans les properties du parent
                 mapTab.new_latitude = lati;
                 mapTab.new_longitude= longi;
@@ -66,6 +68,7 @@ Map{
             required property double longitude
             required property bool hasGPS
             required property bool isMarker
+            // required property int index   // index is a special role available in the delegate: the row of the item in the model.
             // Position du maker
             coordinate: QtPositioning.coordinate(latitude, longitude)
             // Point d'ancrage de l'icone

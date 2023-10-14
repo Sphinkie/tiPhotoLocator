@@ -58,6 +58,10 @@ void SelectedFilterProxyModel::setCoords(const double lat, const double lon)
 //    qDebug() << "source" << index_source.data(PhotoModel::LatitudeRole).toDouble() << index_source.data(PhotoModel::FilenameRole).toString();
 }
 
+void setSavedCoordsTo()
+{
+
+}
 
 /* *************************************************************************
  * SLOT: Active/Désactive le filtre

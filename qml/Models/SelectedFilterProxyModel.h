@@ -23,7 +23,6 @@ class SelectedFilterProxyModel : public QSortFilterProxyModel
 public:
     explicit SelectedFilterProxyModel(QObject *parent = nullptr);
     bool selectedFilterEnabled() const;
-    // Q_INVOKABLE void setCoords(double l1, double l2);
 
 public slots:
     void setSelectedFilterEnabled(bool enabled);
