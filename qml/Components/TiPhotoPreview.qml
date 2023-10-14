@@ -35,19 +35,6 @@ GridView{
                 Layout.maximumWidth: sourceSize.width
                 fillMode: Image.PreserveAspectFit
                 source: imageUrl
-                /*  onClickedItemChanged: {
-                        // TODO: comment recupérer les données du modèle quand on est dans une fonction et pas dans un delegate?
-                        //      il faut utiliser une méthode...
-                        //      ou utiliser des delegate, ce qui semble être la méthode recommandée
-                        //
-                        // console.log("onClickedItemChanged:"+clickedItem);
-                        // console.log(listModel.get(clickedItem).name);
-                        // console.log(listModel.get(clickedItem).imageUrl);
-                        // imageURl = Qt.resolvedUrl(_photoListModel.get(clickedItem).imageUrl);
-                        imageURl = Qt.resolvedUrl(_photoListModel.getUrl(clickedItem));
-                        console.log("data returns: ");
-                        console.log(_photoListModel.data(_photoListModel.index(clickedItem,_photoListModel.ImageUrlRole), _photoListModel.ImageUrlRole));
-                    }*/
             }
 
             Zone {
@@ -88,13 +75,13 @@ GridView{
                         text: qsTr("Appareil photo:") }
                     Pastille{
                         Layout.leftMargin: 20
-                        content: camModel
+                        content: make
                         editable: false
                         deletable: false
                     }
                     Pastille{
                         Layout.leftMargin: 20
-                        content: make
+                        content: camModel
                         editable: false
                         deletable: false
                     }

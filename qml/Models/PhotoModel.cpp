@@ -413,12 +413,19 @@ void PhotoModel::saveExifMetadata()
         Data data = m_data[row];
         if (data.toBeSaved && !data.isMarker && !data.isWelcome)
         {
-            emit writeMetadata(data.imageUrl);
-            QModelIndex idx = index(row, 0);
+            // On ecrit les metadonnées dans le fichier JPG
+            QVariantMap exifData;
+            exifData.insert("imageUrl", data.imageUrl);
+            exifData.insert("GPSLatitude", data.gpsLatitude);
+            exifData.insert("GPSLongitude", data.gpsLongitude);
+            exifData.insert("GPSLatitudeRef", data.gpsLatitude>0 ? "N" : "S" );
+            exifData.insert("GPSLongitudeRef", data.gpsLongitude<0 ? "W" : "E" );
+            emit writeMetadata(exifData);
+            // On fait retomber le flag "toBeSaved"
+            setData(index(row, 0), false, ToBeSavedRole);
+            // ou:
             // m_data[row].toBeSaved = false;
             // emit dataChanged(idx, idx, QVector<int>() << ToBeSavedRole);
-            // ou:
-            setData(idx, false, ToBeSavedRole);
          }
     }
 }

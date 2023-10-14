@@ -8,6 +8,8 @@
 #include <QJsonObject>
 #include "ExifWrapper.h"
 
+#define QT_NO_DEBUG_OUTPUT
+
 /**
  * @brief Contructeur. Initialise le fichier de configuration pour exifTools.
  **/
@@ -35,12 +37,9 @@ bool ExifWrapper::scanFile(QString filePath)
     QString program = "exifTool";
     QStringList arguments;
     // Formattage du flux de sortie de ExifTool
-    arguments.append("-json");                      // output in JSON format
-    arguments.append("--printConv");                // no print conversion (do not use human-readable tag names)
-    arguments.append("-preserve");                  // Preserve file modification date/time
-    arguments.append("-veryShort");                 // very short output format  (-S)
-//    arguments.append("-dateFormat");                // datetime format
-//    arguments.append("'%d-%m-%Y'");    // DD-MM-YYYY : N'est pas pris en compte ...
+    arguments.append("-json");                 // output in JSON format
+    arguments.append("--printConv");           // no print conversion (do not use human-readable tag names)
+    arguments.append("-veryShort");            // very short output format  (-S)
     arguments.append("-ext");                  // Filtre sur les extensions
     arguments.append("JPG");
     arguments.append("-ext");                  // Filtre sur les extensions
@@ -66,7 +65,7 @@ bool ExifWrapper::scanFile(QString filePath)
 
 
 /**
- * @brief Write the Arg file for ExifTool.
+ * @brief Write the Arguments file for ExifTool.
  * @return true if the file was successfully created.
  * @see https://www.carlseibert.com/guide-iptc-photo-metadata-fields/ to learn about the usage of IPTC tags.
  * @see https://iptc.org/std/photometadata/documentation/mappingguidelines/
@@ -210,10 +209,46 @@ QVariantMap: QMap(
 */
 
 /**
- * @brief ExifWrapper::writeMetadata
- * @param filePath
+ * @brief Le slot ExifWrapper::writeMetadata écrit les métadonnées recues dans les tags EXIF de la photo
+ * @param exifData: La liste des tags à écrire. Doit contenir "imageUrl" au format "file:///E:/Photos/IMG_20230709.jpg".
  */
-void ExifWrapper::writeMetadata(QString filePath)
+void ExifWrapper::writeMetadata(QVariantMap exifData)
 {
-    qDebug() << "writeMetadata" << filePath;
+    QString filePath = exifData.value("imageUrl").toString();
+    // qDebug() << "writeMetadata" << filePath ;
+    filePath.remove(0,8);
+    if (filePath.isEmpty())
+        return;
+
+    QProcess exifProcess;
+    QString program = "exifTool";
+    QStringList arguments;
+    arguments.append("-preserve");             // Preserve file modification date/time
+//    arguments.append("-dateFormat");         // datetime format
+//    arguments.append("'%d-%m-%Y'");          // DD-MM-YYYY
+    arguments.append("-ext");                  // Filtre sur les extensions
+    arguments.append("JPG");
+    arguments.append("-ext");                  // Filtre sur les extensions
+    arguments.append("JPEG");
+    // Liste des tags à écrire
+    arguments.append("-Artist=David de Lorenzo");
+    arguments.append("-GPSLatitude="+exifData.value("GPSLatitude").toString());
+    arguments.append("-GPSLongitude="+exifData.value("GPSLongitude").toString());
+    // TODO Faire une boucle du type
+    //    arguments.append("-" + exifData.key().toString() + "=" + exifData.value().toString());
+    arguments.append("-GPSLatitudeRef="+exifData.value("GPSLatitudeRef").toString());
+    arguments.append("-GPSLongitudeRef="+exifData.value("GPSLongitudeRef").toString());
+    // Le fichier à modifier
+    arguments.append(filePath);
+    qDebug() << program << arguments;
+    exifProcess.start(program, arguments);
+    while(exifProcess.state() != QProcess::NotRunning)
+    {
+        // We wait the end
+        if (exifProcess.atEnd())
+            exifProcess.waitForReadyRead();
+        // When a CRLF is receive, it is finished
+        qInfo() << exifProcess.readLine();  // On affiche une éventuelle erreur
+    }
+    // qDebug() << "Finished with code" << exifProcess.exitCode() << exifProcess.exitStatus() ;
 }

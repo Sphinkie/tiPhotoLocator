@@ -140,7 +140,7 @@ private slots:
 signals:
     void selectedRowChanged();
     void scanFile(QString imagePath);
-    void writeMetadata(QString imagePath);
+    void writeMetadata(QVariantMap exifData);
 
 private: //members
     QVector<Data> m_data;

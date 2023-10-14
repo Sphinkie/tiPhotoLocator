@@ -5,7 +5,8 @@ Rectangle {
     radius: 16
     color: TiStyle.secondaryForegroundColor
     implicitHeight: 32
-    implicitWidth: 160
+    // TODO agrandir la pastille si le texte est long
+    implicitWidth: 240
     property bool editable: true
     property bool deletable: true
     property string content

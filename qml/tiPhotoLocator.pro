@@ -29,7 +29,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    ../docs/readme.md \
     Components/PhotoPreview.qml \
     images/cavehouse.png \
     images/clock.png

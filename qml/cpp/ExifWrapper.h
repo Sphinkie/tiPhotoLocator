@@ -14,7 +14,7 @@ public:
 
 public slots:
     bool scanFile(QString filePath);
-    void writeMetadata(QString filePath);
+    void writeMetadata(QVariantMap exifData);
 
 private:
     bool writeArgsFile();
