@@ -7,8 +7,8 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        Models/OnTheMapProxyModel.cpp \
         Models/PhotoModel.cpp \
-        Models/SelectedFilterProxyModel.cpp \
         cpp/ExifWrapper.cpp \
         main.cpp
 
@@ -35,6 +35,6 @@ DISTFILES += \
     images/clock.png
 
 HEADERS += \
+    Models/OnTheMapProxyModel.h \
     Models/PhotoModel.h \
-    Models/SelectedFilterProxyModel.h \
     cpp/ExifWrapper.h

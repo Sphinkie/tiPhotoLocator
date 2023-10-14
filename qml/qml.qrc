@@ -33,12 +33,13 @@
         <file>Images/edit1-button.png</file>
         <file>Images/edit2-button.png</file>
         <file>Images/suppr-button.png</file>
-        <file>Components/TiMapButtonBar.qml</file>
+        <file>Components/TiMapButtonBar.ui.qml</file>
         <file>Components/Zone.qml</file>
         <file>Components/TiPhotoPreview.qml</file>
         <file>Dialogs/RescanWarning.qml</file>
         <file>Components/TiBottomToolBar.qml</file>
         <file>Components/TiImagettes.qml</file>
         <file>Components/TiPhotoTags.qml</file>
+        <file>Controllers/TiMapButtonBar_ctrl.qml</file>
     </qresource>
 </RCC>

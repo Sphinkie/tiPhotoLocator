@@ -4,6 +4,9 @@ import QtQuick.Controls 2.12
 
 
 RowLayout {
+    property alias bt_save_pos: bt_save_pos
+    property alias bt_apply_pos: bt_apply_pos
+    property alias bt_clear_pos: bt_clear_pos
 
     CheckBox {
         id: showAll_box
@@ -15,7 +18,7 @@ RowLayout {
         id: bt_save_pos
         text: buttonOn ? qsTr("Save Position") : qsTr("Clear Saved Position")
         icon.source: "qrc:/Images/mappin-yellow.png"
-        onClicked: {
+ /*       onClicked: {
             if (buttonOn){
             window.savePosition(mapTab.new_latitude, mapTab.new_longitude);
             buttonOn = false
@@ -25,16 +28,16 @@ RowLayout {
                 window.clearSavedPosition();
                 buttonOn = true
             }
-        }
+        }*/
     }
 
     TiButton {
         id: bt_apply_pos
         text: qsTr("Apply Saved Position")
-        onClicked: {
+ /*       onClicked: {
             // On applique les coordonnées du marker "SavedPosition" aux photos affichées
             window.applySavedPositionToCoords();
-        }
+        }*/
     }
 
     TiButton {

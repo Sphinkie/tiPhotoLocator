@@ -4,7 +4,7 @@
 #include <QQmlContext>
 #include <QQuickItem>
 #include "Models/PhotoModel.h"
-#include "Models/SelectedFilterProxyModel.h"
+#include "Models/OnTheMapProxyModel.h"
 #include "cpp/ExifWrapper.h"
 
 
@@ -24,8 +24,8 @@ int main(int argc, char *argv[])
 
     // On initialise nos Models
     PhotoModel photoListModel;
-    SelectedFilterProxyModel selectedPhotoModel;
-    selectedPhotoModel.setSourceModel(&photoListModel);
+    OnTheMapProxyModel onTheMapProxyModel;
+    onTheMapProxyModel.setSourceModel(&photoListModel);
     // On initialise nos classes
     ExifWrapper exifWrapper(&photoListModel);
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 //    QQmlContext* context = view.rootContext();
 
     context->setContextProperty("_photoListModel", &photoListModel);
-    context->setContextProperty("_selectedPhotoModel", &selectedPhotoModel);
+    context->setContextProperty("_onTheMapProxyModel", &onTheMapProxyModel);
 
     // Chargement du QMl. Au choix:
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -60,14 +60,14 @@ int main(int argc, char *argv[])
     // Le firstRootItem est la première balise du QML, cad "window".
     QObject *firstRootItem = engine.rootObjects().first();
 //  QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &photoListModel, SLOT(setInCircleItemCoords(double,double)));
-    QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &selectedPhotoModel, SLOT(setAllItemsCoords(double,double)));
+    QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &onTheMapProxyModel, SLOT(setAllItemsCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)), &photoListModel, SLOT(append(QString,QString)));
     QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()), &photoListModel, SLOT(fetchExifMetadata()));
     QObject::connect(firstRootItem,   SIGNAL(saveExifMetadata()), &photoListModel, SLOT(saveExifMetadata()));
     QObject::connect(&photoListModel, SIGNAL(scanFile(QString)), &exifWrapper, SLOT(scanFile(QString)));
     QObject::connect(&photoListModel, SIGNAL(writeMetadata(QString)), &exifWrapper, SLOT(writeMetadata(QString)));
     QObject::connect(firstRootItem,   SIGNAL(savePosition(double, double)), &photoListModel, SLOT(appendSavedPosition(double, double)));
-    QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()), &selectedPhotoModel, SLOT(setAllItemsSavedCoords()));
+    QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()), &onTheMapProxyModel, SLOT(setAllItemsSavedCoords()));
     QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()), &photoListModel, SLOT(removeSavedPosition()));
 
     // Exécution de QML

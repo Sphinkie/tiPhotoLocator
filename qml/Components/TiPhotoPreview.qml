@@ -5,7 +5,7 @@ import "TiUtilities.js" as Utilities
 // TODO : ce tab charge les images même quand il n'est pas visible, ce qui ralenti la GUI
 GridView{
     // id: previewView
-    model: _selectedPhotoModel      // Ce modèle ne contient que la photo sélectionnée dans la ListView
+    model: _onTheMapProxyModel      // Ce modèle ne contient que les photos devant apparaitre sur la carte
     delegate: previewDelegate
     clip: true                      // pour que les items restent à l'interieur de la View
     // Layout.fillWidth: true
@@ -26,8 +26,6 @@ GridView{
 
             Image {
                 id: previewImage
-                //property int clickedItem: -1
-                //                            property url imageURl: "qrc:///Images/kodak.png"
                 Layout.alignment: Qt.AlignCenter
                 //Layout.fillWidth: true       // Prend toute la largeur
                 Layout.preferredWidth: 600

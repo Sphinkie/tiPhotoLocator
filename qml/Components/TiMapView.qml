@@ -28,7 +28,7 @@ Map {
     // The MapItemView type only makes sense when contained in a Map, meaning that it has no standalone presentation.
     MapItemView {
         id: mapitemView
-        model: _selectedPhotoModel
+        model: _onTheMapProxyModel   // Ce modèle ne contient que les photos devant apparaitre sur la carte
         delegate: mapDelegate
 
         // ------------------------------------------

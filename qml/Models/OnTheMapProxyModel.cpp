@@ -9,15 +9,16 @@
  *************************************************************************/
 
 #include<QDebug>
-#include "SelectedFilterProxyModel.h"
+#include "OnTheMapProxyModel.h"
 #include "PhotoModel.h"
+#include "OnTheMapProxyModel.h"
 
 #define QT_NO_DEBUG_OUTPUT
 
 /* *************************************************************************
  * Contructeur
  * *************************************************************************/
-SelectedFilterProxyModel::SelectedFilterProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
+OnTheMapProxyModel::OnTheMapProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
     m_selectedFilterEnabled = true;
 }
@@ -27,7 +28,7 @@ SelectedFilterProxyModel::SelectedFilterProxyModel(QObject *parent) : QSortFilte
  * @brief SelectedFilterProxyModel::selectedFilterEnabled indique si le filtre est actif ou non.
  * @return TRUE si le filtre est actif.
  */
-bool SelectedFilterProxyModel::selectedFilterEnabled() const
+bool OnTheMapProxyModel::selectedFilterEnabled() const
 {
     return m_selectedFilterEnabled;
 }
@@ -41,7 +42,7 @@ bool SelectedFilterProxyModel::selectedFilterEnabled() const
  * @param lati; latitude au format GPS
  * @param longi: longitude au format GPS
  */
-void SelectedFilterProxyModel::setAllItemsCoords(const double lat, const double lon)
+void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 {
     // On parcourt tous les items du modèle FILTRÉ (par leur index dans le modèle)
     int row = 0;
@@ -52,8 +53,8 @@ void SelectedFilterProxyModel::setAllItemsCoords(const double lat, const double 
         // Si l'item n'est pas la SavedPosition, on modifie ses coords GPS
         if (!idx.data(PhotoModel::IsMarkerRole).toBool())
         {
-            //const double old_lat = index0.data(PhotoModel::LatitudeRole).toDouble();
-            //const double old_lon = index0.data(PhotoModel::LongitudeRole).toDouble();
+            //const double old_lat = idx.data(PhotoModel::LatitudeRole).toDouble();
+            //const double old_lon = idx.data(PhotoModel::LongitudeRole).toDouble();
             //qDebug() << "changing lat coords from " << old_lat << "to" << lat ;
             //qDebug() << "changing lon coords from " << old_lon << "to" << lon ;
 
@@ -73,7 +74,7 @@ void SelectedFilterProxyModel::setAllItemsCoords(const double lat, const double 
  * les photos du modèle filtré.
  * Ce slot appelé quand l'utilisateur appuye sur "Apply Saved Position".
  */
-void SelectedFilterProxyModel::setAllItemsSavedCoords()
+void OnTheMapProxyModel::setAllItemsSavedCoords()
 {
     auto source_model = dynamic_cast<PhotoModel*>(this->sourceModel());
     // On vérifie si on a bien un index valide pour la SavedPosition
@@ -89,7 +90,7 @@ void SelectedFilterProxyModel::setAllItemsSavedCoords()
 /* *************************************************************************
  * Ce slot Active/Désactive le filtrage
  * *************************************************************************/
-void SelectedFilterProxyModel::setSelectedFilterEnabled(bool enabled)
+void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
 {
     if (m_selectedFilterEnabled == enabled)
         return;
@@ -106,7 +107,7 @@ void SelectedFilterProxyModel::setSelectedFilterEnabled(bool enabled)
  * @param sourceParent
  * @return True si la ligne est acceptée
  */
-bool SelectedFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
+bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
     if (!m_selectedFilterEnabled) return true;
     // On récupère l'index de la ligne à accepter ou pas

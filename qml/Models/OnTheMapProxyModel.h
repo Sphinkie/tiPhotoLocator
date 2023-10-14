@@ -15,13 +15,13 @@
 /**
  * @brief The SelectedFilterProxyModel class if a filter ProxyModel, to keep only the selected photo(s).
  */
-class SelectedFilterProxyModel : public QSortFilterProxyModel
+class OnTheMapProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(bool selectedFilterEnabled READ selectedFilterEnabled WRITE setSelectedFilterEnabled NOTIFY selectedFilterEnabledChanged)
 
 public:
-    explicit SelectedFilterProxyModel(QObject *parent = nullptr);
+    explicit OnTheMapProxyModel(QObject *parent = nullptr);
     bool selectedFilterEnabled() const;
 
 public slots:

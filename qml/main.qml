@@ -2,7 +2,6 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
-//import Qt.labs.platform 1.1
 import QtQml.Models 2.15
 
 import "./Dialogs"
@@ -177,9 +176,10 @@ Window {
                     Layout.fillHeight: true
                 }
 
+                // Affichage des infos supplémentaires (coords GPS, etc)
                 ListView{
                     id: coordsTextView
-                    model: _selectedPhotoModel
+                    model: _onTheMapProxyModel       // Ce modèle ne contient que les photos devant apparaitre sur la carte
                     delegate: coordsTextDelegate
                 }
 
