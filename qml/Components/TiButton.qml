@@ -20,7 +20,7 @@ Button {
         implicitHeight: 37
         color: { tiStyle.buttonIdleColor
           parent.hovered ?  tiStyle.buttonHoveredColor:
-                           parent.down ? tiStyle.buttonPressedColor: // TODO: ne marche pas bien
+                           parent.down ? tiStyle.buttonPressedColor: // FIXME: ne marche pas bien
                                           tiStyle.buttonIdleColor;
         }
         radius: 3

@@ -179,7 +179,7 @@ void ExifWrapper::processLine(QByteArray line)
         QJsonObject jsonObject = jsonDoc.object();
         QVariantMap photo_desc;
         photo_desc = jsonObject.toVariantMap();
-        m_photoModel->setData(photo_desc);          // TODO : remplacer par un signal
+        m_photoModel->setData(photo_desc);          // TODO : Remplacer par un signal
     }
     else if (line.startsWith("[{"))
     {

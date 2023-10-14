@@ -66,7 +66,7 @@ Window {
         // --------------------------------- Ligne 1
         // Barre d'outils du folder: refresh / reload / rescan / display name
         // ---------------------------------
-        TiToolBar {
+        TiToolBar_ctrl {
             id: toolBar
             Layout.row: 1
             Layout.column: 0

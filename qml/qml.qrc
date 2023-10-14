@@ -16,12 +16,10 @@
         <file>Images/IMG_00000001.png</file>
         <file>Models/ModelFolderList.qml</file>
         <file>Components/TiMapView.qml</file>
-        <file>Components/TiToolBar.qml</file>
         <file>Images/refresh.png</file>
         <file>Images/reload.png</file>
         <file>Images/rescan.png</file>
         <file>Components/TiMenuBar.qml</file>
-        <file>Components/TiUtilities.js</file>
         <file>Components/TiPhotoListview.qml</file>
         <file>Images/circle-red.png</file>
         <file>Components/TiStyle.qml</file>
@@ -44,5 +42,8 @@
         <file>Images/mappin-grey.png</file>
         <file>Images/mappin-strike.png</file>
         <file>Vues/TiMapButtonBar.ui.qml</file>
+        <file>Controllers/TiToolBar_ctrl.qml</file>
+        <file>Vues/TiToolBar.ui.qml</file>
+        <file>Javascript/TiUtilities.js</file>
     </qresource>
 </RCC>

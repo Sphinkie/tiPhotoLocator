@@ -3,13 +3,9 @@ import Qt.labs.folderlistmodel 2.15
 
 
 // ----------------------------------------------------------------
-// Modèles de donnees
-// ----------------------------------------------------------------
-
-// ----------------------------------------------------------------
 // Ce modele contient la liste des fichiers du dossier
 // ----------------------------------------------------------------
-FolderListModel {     // TODO solve warning
+FolderListModel {
 
     sortCaseSensitive: false
     showDirs: false

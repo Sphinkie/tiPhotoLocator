@@ -26,7 +26,7 @@ RowLayout {
         id: bt_remove_pos
         text: qsTr("Clear Saved Position")
         icon.source: "qrc:/Images/mappin-strike.png"
-        // TODO Attention au cas où on a vidé le modèle (reload): il faut masquer ce bouton
+        // TODO Attention au cas ou on a vide le modele (reload): il faut masquer ce bouton
     }
 
     TiButton {

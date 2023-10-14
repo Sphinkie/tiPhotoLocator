@@ -1,8 +1,8 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.15
-import "TiUtilities.js" as Utilities
+import "../Javascript/TiUtilities.js" as Utilities
 
-// TODO : ce tab charge les images même quand il n'est pas visible, ce qui ralenti la GUI
+// TODO : ce tab charge les images meme quand il n'est pas visible, ce qui ralenti la GUI
 GridView{
     // id: previewView
     model: _onTheMapProxyModel      // Ce modèle ne contient que les photos devant apparaitre sur la carte
