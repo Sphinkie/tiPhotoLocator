@@ -1,29 +1,26 @@
 import QtQuick 2.0
-import QtQuick.Window 2.15
-// import "../Components"
+import "../Components"
 
-//Window{
-    TiMapButtonBar {
+TiMapButtonBar {
 
-        bt_save_pos.onClicked: {
-            if (buttonOn){
-                window.savePosition(mapTab.new_latitude, mapTab.new_longitude);
-                buttonOn = false
-            }
-            else {
-                // TODO Attention au cas où on a vidé le modèle: il faut remettre ce bouton à ON
-                window.clearSavedPosition();
-                buttonOn = true
-            }
-        }
-
-        bt_apply_pos.onClicked: {
-            // On applique les coordonnées du marker "SavedPosition" aux photos affichées
-            window.applySavedPositionToCoords();
-        }
-
-        bt_clear_pos.onClicked: {
-            // TODO
-        }
+    bt_save_pos.onClicked: {
+        // On enregistre la position de l'image
+        window.savePosition(mapTab.new_latitude, mapTab.new_longitude);
     }
-//}
+
+    bt_remove_pos.onClicked: {
+        // On efface la Saved Position
+        window.clearSavedPosition();
+    }
+
+    bt_apply_pos.onClicked: {
+        // On applique les coordonnées du marker "SavedPosition" aux photos affichées
+        window.applySavedPositionToCoords();
+    }
+
+    bt_clear_pos.onClicked: {
+        // On efface les coordonnées GPS des photos affichées
+        window.setSelectedItemCoords(0,0);
+    }
+
+}

@@ -87,9 +87,11 @@ void OnTheMapProxyModel::setAllItemsSavedCoords()
     emit setAllItemsCoords(savedLatitude, savedLongitude);
 }
 
-/* *************************************************************************
- * Ce slot Active/Désactive le filtrage
- * *************************************************************************/
+
+/**
+ * @brief Le slot OnTheMapProxyModel::setSelectedFilterEnabled active ou désactive le filtrage par le ProxyModel.
+ * @param enabled: TRUE pour activer le filtrage
+ */
 void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
 {
     if (m_selectedFilterEnabled == enabled)

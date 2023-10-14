@@ -2,9 +2,10 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
 
-
 RowLayout {
+    property alias showAll_box: showAll_box
     property alias bt_save_pos: bt_save_pos
+    property alias bt_remove_pos: bt_remove_pos
     property alias bt_apply_pos: bt_apply_pos
     property alias bt_clear_pos: bt_clear_pos
 
@@ -16,33 +17,24 @@ RowLayout {
 
     TiButton {
         id: bt_save_pos
-        text: buttonOn ? qsTr("Save Position") : qsTr("Clear Saved Position")
-        icon.source: "qrc:/Images/mappin-yellow.png"
- /*       onClicked: {
-            if (buttonOn){
-            window.savePosition(mapTab.new_latitude, mapTab.new_longitude);
-            buttonOn = false
-            }
-            else {
-                // TODO Attention au cas où on a vidé le modèle: il faut remettre ce bouton à ON
-                window.clearSavedPosition();
-                buttonOn = true
-            }
-        }*/
+        text: qsTr("Save Position")
+        icon.source: "qrc:/Images/mappin-black.png"
+    }
+
+    TiButton {
+        id: bt_remove_pos
+        text: qsTr("Clear Saved Position")
+        icon.source: "qrc:/Images/mappin-strike.png"
+        // TODO Attention au cas où on a vidé le modèle (reload): il faut masquer ce bouton
     }
 
     TiButton {
         id: bt_apply_pos
         text: qsTr("Apply Saved Position")
- /*       onClicked: {
-            // On applique les coordonnées du marker "SavedPosition" aux photos affichées
-            window.applySavedPositionToCoords();
-        }*/
     }
 
     TiButton {
         id: bt_clear_pos
-        text: qsTr("Clear Position")
-        // onClicked:// TODO
+        text: qsTr("Clear GPS Coords")
     }
 }

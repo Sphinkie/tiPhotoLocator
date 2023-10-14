@@ -2,7 +2,7 @@
 #define PHOTOMODEL_H
 
 #include <QAbstractListModel>
-//#include <QColor>
+
 
 /**
  * @brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.

@@ -7,6 +7,7 @@ import QtQml.Models 2.15
 import "./Dialogs"
 import "./Components"
 import "./Models"
+import "./Controllers"
 
 Window {
     id: window
@@ -163,8 +164,8 @@ Window {
                 spacing: 8
                 Layout.alignment: Qt.AlignHCenter
 
-                // Barre d'outils pour la carte
-                TiMapButtonBar {
+                // Barre d'outils pour la carte (controleur)
+                TiMapButtonBar_ctrl {
                     id: mapTools
                     Layout.fillWidth: true
                 }

@@ -68,6 +68,7 @@ int main(int argc, char *argv[])
     QObject::connect(&photoListModel, SIGNAL(writeMetadata(QString)), &exifWrapper, SLOT(writeMetadata(QString)));
     QObject::connect(firstRootItem,   SIGNAL(savePosition(double, double)), &photoListModel, SLOT(appendSavedPosition(double, double)));
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()), &onTheMapProxyModel, SLOT(setAllItemsSavedCoords()));
+    // QObject::connect(firstRootItem,   SIGNAL(eraseCoords()), &onTheMapProxyModel, SLOT(eraseAllCoords()));
     QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()), &photoListModel, SLOT(removeSavedPosition()));
 
     // Exécution de QML
