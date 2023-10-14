@@ -174,8 +174,8 @@ void PhotoModel::append(QVariantMap data)
 /**
  * @brief PhotoModel::appendSavedPosition ajoute une entrée spéciale dans le Modèle
  * correspondant à une position GPS mémorisée (marker jaune).
- * @param lati; latitude
- * @param longi: longitude
+ * @param lati; latitude au format GPS
+ * @param longi: longitude au format GPS
  */
 void PhotoModel::appendSavedPosition(double lati, double longi)
 {
@@ -189,11 +189,39 @@ void PhotoModel::appendSavedPosition(double lati, double longi)
     endInsertRows();
     // On mémorise sa position
     m_markerRow = rowOfInsert;
+    m_markerIndex = index(rowOfInsert,0);
 }
 
 void PhotoModel::removeSavedPosition()
 {
     this->removeData(m_markerRow);
+    m_markerIndex = index(-1,0);
+}
+
+/**
+ * @brief PhotoModel::setInCircleItemCoords affecte les coordonnées GPS fournies à toutes les photos
+ * géographiquement situées à l'interieur du cercle rouge.
+ * @param lati; latitude au format GPS
+ * @param longi: longitude au format GPS
+ */
+void PhotoModel::setInCircleItemCoords(double lati, double longi)
+{
+    // On parcourt tous les items du modèle (par leur index dans le modèle)
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        // qDebug() << "PhotoModel index" << row;
+        // Si la photo est dans le cercle, on modifie ses coords GPS
+        if (idx.data(InsideCircleRole).toBool())
+        {
+            setData(idx, lati, LatitudeRole);
+            setData(idx, longi, LongitudeRole);
+            // Vérification
+            qDebug() << "PhotoModel: set latitude" << idx.data(LatitudeRole).toDouble() << "for" << idx.data(FilenameRole).toString();
+        }
+        idx = idx.siblingAtRow(++row);
+    }
 }
 
 // -----------------------------------------------------------------------
@@ -373,13 +401,13 @@ void PhotoModel::fetchExifMetadata()
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::saveExifMetadata enregistre dans le fichiers JPG les metadonnées SXIF qui ont été modifiées.
+ * @brief PhotoModel::saveExifMetadata enregistre dans le fichiers JPG les metadonnées EXIF qui ont été modifiées.
  */
 void PhotoModel::saveExifMetadata()
 {
     qDebug() << "saveExifMetadata";
     int nb_items = m_data.count();
-    // On parcourt tous les items du modèle
+    // On parcourt tous les items du modèle (par leur indice dans le vecteur)
     for (int row = 0; row < nb_items; row++)
     {
         Data data = m_data[row];

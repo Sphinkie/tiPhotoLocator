@@ -26,7 +26,8 @@ public:
 
 public slots:
     void setSelectedFilterEnabled(bool enabled);
-    void setCoords(const double lat, const double lon);
+    void setAllItemsCoords(const double lat, const double lon);
+    void setAllItemsSavedCoords();
 
 signals:
     void selectedFilterEnabledChanged();

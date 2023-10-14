@@ -126,6 +126,7 @@ public slots:
     void fetchExifMetadata();
     void saveExifMetadata();
     void appendSavedPosition(double lati, double longi);
+    void setInCircleItemCoords(double lati, double longi);
     void removeSavedPosition();
     void duplicateData(int row);
     void removeData(int row);
@@ -145,8 +146,10 @@ private: //members
     QVector<Data> m_data;
     int m_lastSelectedRow = 0;  // Au départ, on a un item: Kodak
     int m_dumpedRow = 0;        // Compteur pour le dump de debug
-    int m_markerRow = -1;     // Position du marker SavedPosition
-    QModelIndex m_markerIndex;  // = QModelIndex(); // TODO : utile ?
+protected:
+    int m_markerRow = -1;       // Position du marker SavedPosition
+public:
+    QModelIndex m_markerIndex = QModelIndex(); // Initialisé à une valeur invalide
 };
 
 #endif // PHOTOMODEL_H

@@ -96,7 +96,7 @@ ListView{
                     if (hasGPS) {
                         mapTab.new_latitude = latitude
                         mapTab.new_longitude = longitude
-                        mapTab.new_coords = !mapTab.new_coords
+                        //mapTab.new_coords = !mapTab.new_coords
                     }
                 }
             }

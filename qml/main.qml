@@ -19,9 +19,10 @@ Window {
     title: "tiPhotoLocator"
     // Les signaux
     signal append(string filename, string url)
-    signal setCoords(double lati, double longi)
+    signal setSelectedItemCoords(double lati, double longi)
     signal savePosition(double lati, double longi)
     signal clearSavedPosition()
+    signal applySavedPositionToCoords()
     signal fetchExifMetadata()
     signal saveExifMetadata()
 
@@ -164,13 +165,13 @@ Window {
                 Layout.alignment: Qt.AlignHCenter
 
                 // Barre d'outils pour la carte
-                TiToolMap{
+                TiMapButtonBar {
                     id: mapTools
                     Layout.fillWidth: true
                 }
 
                 // Affichage de la carte
-                TiPhotoMap{
+                TiMapView {
                     id: mapView
                     Layout.fillWidth: true
                     Layout.fillHeight: true

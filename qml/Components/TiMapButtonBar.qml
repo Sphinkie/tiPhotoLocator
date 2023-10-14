@@ -32,8 +32,8 @@ RowLayout {
         id: bt_apply_pos
         text: qsTr("Apply Saved Position")
         onClicked: {
-            // On applique les coordonnées du marker à la photo sélectionnée
-            window.applySavedPositionTo();
+            // On applique les coordonnées du marker "SavedPosition" aux photos affichées
+            window.applySavedPositionToCoords();
         }
     }
 

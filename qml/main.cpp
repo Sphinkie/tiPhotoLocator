@@ -59,13 +59,15 @@ int main(int argc, char *argv[])
     //QObject *item = view.rootObject();
     // Le firstRootItem est la première balise du QML, cad "window".
     QObject *firstRootItem = engine.rootObjects().first();
-    QObject::connect(firstRootItem,   SIGNAL(setCoords(double,double)), &selectedPhotoModel, SLOT(setCoords(double,double)));
+//  QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &photoListModel, SLOT(setInCircleItemCoords(double,double)));
+    QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &selectedPhotoModel, SLOT(setAllItemsCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)), &photoListModel, SLOT(append(QString,QString)));
     QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()), &photoListModel, SLOT(fetchExifMetadata()));
     QObject::connect(firstRootItem,   SIGNAL(saveExifMetadata()), &photoListModel, SLOT(saveExifMetadata()));
     QObject::connect(&photoListModel, SIGNAL(scanFile(QString)), &exifWrapper, SLOT(scanFile(QString)));
     QObject::connect(&photoListModel, SIGNAL(writeMetadata(QString)), &exifWrapper, SLOT(writeMetadata(QString)));
     QObject::connect(firstRootItem,   SIGNAL(savePosition(double, double)), &photoListModel, SLOT(appendSavedPosition(double, double)));
+    QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()), &selectedPhotoModel, SLOT(setAllItemsSavedCoords()));
     QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()), &photoListModel, SLOT(removeSavedPosition()));
 
     // Exécution de QML
