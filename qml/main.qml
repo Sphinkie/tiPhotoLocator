@@ -166,7 +166,7 @@ Window {
                 // Barre d'outils pour la carte (controleur)
                 TiMapButtonBar_ctrl {
                     id: mapTools
-                    // comment prendre toute la largeur ?
+                    // TODO: comment prendre toute la largeur ?
                     // anchors.fill: parent.width
                     Layout.fillWidth: true
                 }

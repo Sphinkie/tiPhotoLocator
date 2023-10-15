@@ -16,6 +16,7 @@
 ExifWrapper::ExifWrapper(PhotoModel* photomodel)
 {
     m_photoModel = photomodel;
+    m_generateBackup = false;
     this->writeArgsFile();
 }
 
@@ -229,6 +230,8 @@ void ExifWrapper::writeMetadata(QVariantMap exifData)
     arguments.append("JPG");
     arguments.append("-ext");                  // Filtre sur les extensions
     arguments.append("JPEG");
+    // Genere un backup si demandé
+    if (!m_generateBackup) arguments.append("-overwrite_original");
     // Liste des tags à écrire
     QMapIterator<QString, QVariant> itr(exifData);
     while (itr.hasNext()) {

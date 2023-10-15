@@ -22,6 +22,8 @@ RowLayout {
         text: qsTr("Save Position")
         icon.source: "qrc:/Images/mappin-black.png"
         visible: false
+        ToolTip.text: qsTr("Mémorise la position de la photo courante")
+        ToolTip.visible: hovered
     }
 
     TiButton {
@@ -35,8 +37,9 @@ RowLayout {
     TiButton {
         id: bt_apply_pos
         text: qsTr("Apply Saved Position")
-        autoRepeat: true
         visible: false
+        ToolTip.text: qsTr("Applique la position mémorisée à la photo courante")
+        ToolTip.visible: hovered
     }
 
     Slider {
@@ -50,5 +53,7 @@ RowLayout {
         text: qsTr("Clear GPS Coords")
         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         visible: false
+        ToolTip.text: qsTr("Efface les coordonnées GPS de la photo (si besoin de confidentialité)")
+        ToolTip.visible: hovered
     }
 }

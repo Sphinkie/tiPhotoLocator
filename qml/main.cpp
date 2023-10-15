@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
 
     context->setContextProperty("_photoListModel", &photoListModel);
     context->setContextProperty("_onTheMapProxyModel", &onTheMapProxyModel);
+    context->setContextProperty("_exifWrapper", &exifWrapper);
 
     // Chargement du QMl. Au choix:
     const QUrl url(QStringLiteral("qrc:/main.qml"));
