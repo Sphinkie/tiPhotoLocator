@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    app.setOrganizationName("Sphinkie");
-    app.setOrganizationDomain("https://github.com/Sphinkie");
     app.setApplicationName("TiPhotoLocator");
+    app.setOrganizationName("Sphinkie");
+    app.setOrganizationDomain("de-lorenzo.fr");
     //app.setWindowIcon(QIcon(":/icons/flaticon/icon.png"));  // TODO : ajouter une icone
 
     // On initialise nos Models

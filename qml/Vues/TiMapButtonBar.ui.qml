@@ -24,6 +24,7 @@ RowLayout {
         visible: false
         ToolTip.text: qsTr("Mémorise la position de la photo courante")
         ToolTip.visible: hovered
+        ToolTip.delay: 500
     }
 
     TiButton {
@@ -40,6 +41,7 @@ RowLayout {
         visible: false
         ToolTip.text: qsTr("Applique la position mémorisée à la photo courante")
         ToolTip.visible: hovered
+        ToolTip.delay: 500
     }
 
     Slider {
@@ -55,5 +57,6 @@ RowLayout {
         visible: false
         ToolTip.text: qsTr("Efface les coordonnées GPS de la photo (si besoin de confidentialité)")
         ToolTip.visible: hovered
+        ToolTip.delay: 500
     }
 }

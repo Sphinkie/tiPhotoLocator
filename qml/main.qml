@@ -1,8 +1,9 @@
 import QtQuick 2.15
+import QtQml.Models 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
-import QtQml.Models 2.15
+import Qt.labs.settings 1.1
 
 import "./Dialogs"
 import "./Components"
@@ -17,7 +18,12 @@ Window {
     visible: true
     color: TiStyle.primaryBackgroundColor
     title: "tiPhotoLocator"
+
+
+
+    // ----------------------------------------------------------------
     // Les signaux
+    // ----------------------------------------------------------------
     signal append(string filename, string url)
     signal setSelectedItemCoords(double lati, double longi)
     signal savePosition(double lati, double longi)
@@ -40,6 +46,7 @@ Window {
     // Modèles de données: Liste des fichiers du dossier
     // ----------------------------------------------------------------
     ModelFolderList { id: folderListModel }
+
 
     // ----------------------------------------------------------------
     // Page principale
@@ -216,11 +223,22 @@ Window {
         // Barre de boutons en bas
         // ---------------------------------
         TiBottomToolBar {
+            id: bottomToolBar
             Layout.row: 5
             Layout.columnSpan: 2
             Layout.fillWidth: true
         }
     }
+
+    // ----------------------------------------------------------------
+    // Les Settings
+    // ----------------------------------------------------------------
+    Settings {
+        id: reglages
+        category: "general"
+        property string artistName: "David de Lorenzo"
+        }
+
 }
 
 
