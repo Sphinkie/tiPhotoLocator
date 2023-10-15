@@ -36,16 +36,19 @@ ListView{
             width: parent.width
             // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
             required property string filename
+            required property string city
             required property double latitude
             required property double longitude
             required property bool hasGPS
             required property bool insideCircle
             required property bool toBeSaved
-            required property string city
+            required property bool isMarker
             required property int index // index is a special role available in the delegate: the row of the item in the model.
             readonly property ListView __lv : ListView.view
 
-            // icone In Circle
+            visible: !isMarker    // On n'affiche pas la "Saved Position"
+
+            // icone "In Circle"
             Image {
                 id: circleIcon
                 anchors.left: parent.left
@@ -54,7 +57,7 @@ ListView{
                 height: 24; width: 24;
             }
 
-            // icone Has GPS
+            // icone "Has GPS"
             Image {
                 id: gpsIcon
                 anchors.left: circleIcon.right

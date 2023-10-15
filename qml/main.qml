@@ -137,17 +137,16 @@ Window {
             Layout.column: 1
             currentIndex: bar.currentIndex
             property int selectedItem: -1   // Image sélectionnée dans la ListView (sert à toutes les pages de la Tab View) ... sauf PreviewTab pour le moment
-            onSelectedItemChanged: {
-                /*
+            /*
+                onSelectedItemChanged: {
                 // mapTab.pLatitude = _photoListModel.get(selectedItem).latitude
                 mapTab.pLatitude = _photoListModel.data(selectedItem,"latitude")
                 mapTab.pLongitude = _photoListModel.data(selectedItem,"longitude")
                 // On ajoute l'image sélectionnée aux pins à afficher sur la carte
                 mappinModel.append({"name": _photoListModel.data(selectedItem,"filename"),
                                        "latitude": mapTab.pLatitude,
-                                       "longitude": mapTab.pLongitude})
-                */
-            }
+                                       "longitude": mapTab.pLongitude})               
+            }*/
 
             // ------------------ PREVIEW TAB --------------------------
             TiPhotoPreview { id: previewView }
@@ -155,7 +154,7 @@ Window {
             // ------------------ MAP TAB ------------------------------
             ColumnLayout {
                 id: mapTab
-                anchors.fill: parent
+                // anchors.fill: parent
                 // Les coordonnées du point sélectionné
                 property double new_latitude
                 property double new_longitude
@@ -167,6 +166,8 @@ Window {
                 // Barre d'outils pour la carte (controleur)
                 TiMapButtonBar_ctrl {
                     id: mapTools
+                    // comment prendre toute la largeur ?
+                    // anchors.fill: parent.width
                     Layout.fillWidth: true
                 }
 

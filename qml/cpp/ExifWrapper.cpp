@@ -59,7 +59,7 @@ bool ExifWrapper::scanFile(QString filePath)
         // When a CRLF is receive, we process the line
         this->processLine(exifProcess.readLine());
     }
-    qDebug() << "Finished with code" << exifProcess.exitCode() << exifProcess.exitStatus() ;
+    qDebug() << "scanFile finished" ;
     return true;
 }
 
@@ -93,8 +93,8 @@ bool ExifWrapper::writeArgsFile()
     // GPS coordinates
     out << "-GPSLatitude"       << Qt::endl;    // 45.4325547675333
     out << "-GPSLongitude"      << Qt::endl;    // 12.3374594498028
-    out << "-GPSLatitudeRef"    << Qt::endl;    // "N"
-    out << "-GPSLongitudeRef"   << Qt::endl;    // "E"
+//    out << "-GPSLatitudeRef"    << Qt::endl;    // "N"
+//    out << "-GPSLongitudeRef"   << Qt::endl;    // "E"
     // IPTC tags
     // TODO : Menu settings: choisir le tag à écrire: Description ou ImageDescription ou Caption
     out << "-Description"       << Qt::endl;    // Description du contenu de la photo (important)
@@ -192,20 +192,19 @@ void ExifWrapper::processLine(QByteArray line)
 }
 
 /*
-setData
 QVariantMap: QMap(
-("FileName",    QVariant(QString, "P8160449.JPG"))
-("Artist",      QVariant(QString, "Picasa"))
-("DateTimeOriginal",    QVariant(QString, "2023:08:16 13:30:20"))
-("GPSLatitude",         QVariant(double, 48.7664))("GPSLatitudeRef", QVariant(QString, "N"))
-("GPSLongitude",        QVariant(double, 14.0194))("GPSLongitudeRef", QVariant(QString, "E"))
-("ImageDescription",    QVariant(QString, "OLYMPUS DIGITAL CAMERA         "))
-("ImageHeight", QVariant(qlonglong, 3072))
-("ImageWidth",  QVariant(qlonglong, 4608))
-("Make",        QVariant(QString, "OLYMPUS CORPORATION"))
-("Model",       QVariant(QString, "E-M10MarkII"))
-("SourceFile",  QVariant(QString, "E:/TiPhotos/P8160449.JPG")))
-
+  ("FileName",         QVariant(QString,   "P8160449.JPG"))
+  ("Artist",           QVariant(QString,   "Picasa"))
+  ("DateTimeOriginal", QVariant(QString,   "2023:08:16 13:30:20"))
+  ("GPSLatitude",      QVariant(double,    48.7664))          ("GPSLatitudeRef", QVariant(QString, "N"))
+  ("GPSLongitude",     QVariant(double,    14.0194))          ("GPSLongitudeRef", QVariant(QString, "E"))
+  ("ImageDescription", QVariant(QString,   "OLYMPUS DIGITAL CAMERA         "))
+  ("ImageHeight",      QVariant(qlonglong, 3072))
+  ("ImageWidth",       QVariant(qlonglong, 4608))
+  ("Make",             QVariant(QString,   "OLYMPUS CORPORATION"))
+  ("Model",            QVariant(QString,   "E-M10MarkII"))
+  ("SourceFile",       QVariant(QString,   "E:/TiPhotos/P8160449.JPG"))
+)
 */
 
 /**
@@ -231,13 +230,11 @@ void ExifWrapper::writeMetadata(QVariantMap exifData)
     arguments.append("-ext");                  // Filtre sur les extensions
     arguments.append("JPEG");
     // Liste des tags à écrire
-    arguments.append("-Artist=David de Lorenzo");
-    arguments.append("-GPSLatitude="+exifData.value("GPSLatitude").toString());
-    arguments.append("-GPSLongitude="+exifData.value("GPSLongitude").toString());
-    // TODO Faire une boucle du type
-    //    arguments.append("-" + exifData.key().toString() + "=" + exifData.value().toString());
-    arguments.append("-GPSLatitudeRef="+exifData.value("GPSLatitudeRef").toString());
-    arguments.append("-GPSLongitudeRef="+exifData.value("GPSLongitudeRef").toString());
+    QMapIterator<QString, QVariant> itr(exifData);
+    while (itr.hasNext()) {
+        itr.next();
+        arguments.append("-" + itr.key() + "=" + itr.value().toString());
+    }
     // Le fichier à modifier
     arguments.append(filePath);
     qDebug() << program << arguments;

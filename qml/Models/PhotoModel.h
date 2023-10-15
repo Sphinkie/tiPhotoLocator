@@ -45,8 +45,8 @@ struct Data
     QString dateTimeOriginal;   // Time when the camera shutter was pressed (no changes allowed in this app)
     QString camModel;           // camera model (no changes allowed in this app)
     QString make;               // camera maker (no changes allowed in this app)
-    int imageWidth;             // image width (no changes allowed in this app)
-    int imageHeight;            // image height (no changes allowed in this app)
+    int imageWidth = 0;         // image width (no changes allowed in this app)
+    int imageHeight = 0;        // image height (no changes allowed in this app)
     // IPTC tags
     QString artist;             // can be: Artist or Creator
     QString gpsLatitudeRef;
@@ -90,8 +90,8 @@ public:
         ImageWidthRole,
         ImageHeightRole,
         ArtistRole,
-        GPSLatitudeRefRole,
-        GPSLongitudeRefRole,
+        GPSLatitudeRefRole,    // TODO A voir s'il faut le conserver
+        GPSLongitudeRefRole,   // ou s'il n'y en a pas besoin
         CityRole,
         CountryRole,
         DescriptionRole,

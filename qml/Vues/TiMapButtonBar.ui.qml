@@ -4,6 +4,7 @@ import QtQuick.Controls 2.12
 import "../Components"
 
 RowLayout {
+
     property alias showAll_box: showAll_box
     property alias bt_save_pos: bt_save_pos
     property alias bt_remove_pos: bt_remove_pos
@@ -34,12 +35,20 @@ RowLayout {
     TiButton {
         id: bt_apply_pos
         text: qsTr("Apply Saved Position")
+        autoRepeat: true
         visible: false
+    }
+
+    Slider {
+        id: circle_radius
+        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+        to: 50
     }
 
     TiButton {
         id: bt_clear_pos
         text: qsTr("Clear GPS Coords")
+        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         visible: false
     }
 }

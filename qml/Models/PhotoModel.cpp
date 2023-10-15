@@ -194,7 +194,7 @@ void PhotoModel::appendSavedPosition(double lati, double longi)
 }
 
 /**
- * @brief PhotoModel::removeSavedPosition
+ * @brief PhotoModel::removeSavedPosition supprime du modèle l'item correspondant à la possition sauvegardée.
  */
 void PhotoModel::removeSavedPosition()
 {
@@ -261,8 +261,8 @@ void PhotoModel::selectedRow(int row)
 // -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::setData est une surcharge qui permet de modifier unitairement un role d'un item du modèle.
- * Cette fonction met à TRUE le flag "To Be Saved" car il s'agit d'actions opérateur.
- * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename...
+ * Cette fonction met à TRUE le flag "To Be Saved" car il s'agit d'une action opérateur.
+ * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, etc.
  * Note: It is important to emit the dataChanged() signal after saving the changes.
  * @param index : l'index (au sens ModelIndex) de l'item à modifier
  * @param value : la nouvelle valeur
@@ -410,27 +410,34 @@ void PhotoModel::fetchExifMetadata()
 void PhotoModel::saveExifMetadata()
 {
     qDebug() << "saveExifMetadata";
-    int nb_items = m_data.count();
+    //int nb_items = m_data.count();
     // On parcourt tous les items du modèle (par leur indice dans le vecteur)
-    for (int row = 0; row < nb_items; row++)
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    // for (int row = 0; row < nb_items; row++)
     {
-        Data data = m_data[row];
-        if (data.toBeSaved && !data.isMarker && !data.isWelcome)
+        // Data data = m_data[row];
+        // if (data.toBeSaved && !data.isMarker && !data.isWelcome)
+        if (idx.data(ToBeSavedRole).toBool() && !idx.data(IsMarkerRole).toBool() && !idx.data(IsWelcomeRole).toBool())
         {
             // On ecrit les metadonnées dans le fichier JPG
             QVariantMap exifData;
-            exifData.insert("imageUrl", data.imageUrl);
-            exifData.insert("GPSLatitude", data.gpsLatitude);
-            exifData.insert("GPSLongitude", data.gpsLongitude);
-            exifData.insert("GPSLatitudeRef", data.gpsLatitude>0 ? "N" : "S" );
-            exifData.insert("GPSLongitudeRef", data.gpsLongitude<0 ? "W" : "E" );
+            exifData.insert("imageUrl", idx.data(ImageUrlRole));   // Ce champ sert de clef
+            exifData.insert("GPSLatitude", idx.data(LatitudeRole));
+            exifData.insert("GPSLongitude", idx.data(LongitudeRole));
+            exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
+            exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()<0 ? "W" : "E" );
+            exifData.insert("Artist", "DdL"); // idx.data(ArtistRole));
             emit writeMetadata(exifData);
             // On fait retomber le flag "toBeSaved"
-            setData(index(row, 0), false, ToBeSavedRole);
+            //setData(index(row, 0), false, ToBeSavedRole);
+            setData(idx, false, ToBeSavedRole);
             // ou:
             // m_data[row].toBeSaved = false;
             // emit dataChanged(idx, idx, QVector<int>() << ToBeSavedRole);
          }
+        idx = idx.siblingAtRow(++row);
     }
 }
 
@@ -455,6 +462,20 @@ void PhotoModel::addTestItem()
     this->setData(ibizaData);
 }
 
+/**
+ * @brief PhotoModel::removeData est une fonction typqique qui supprime l'item désigné du modèle
+ * @param row: la position dans le vecteur de l'item à modifier.
+ */
+void PhotoModel::removeData(int row)
+{
+    if (row < 0 || row >= m_data.count())
+        return;
+
+    beginRemoveRows(QModelIndex(), row, row);
+    m_data.removeAt(row);
+    endRemoveRows();
+}
+
 // -----------------------------------------------------------------------
 // Autres fonctions / A supprimer si inutile
 // -----------------------------------------------------------------------
@@ -469,20 +490,6 @@ void PhotoModel::duplicateData(int row)
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_data.insert(rowOfInsert, data);
     endInsertRows();
-}
-
-/**
- * @brief PhotoModel::removeData est une fonction typqique qui supprime l'item désigné du modèle
- * @param row: la position dans le vecteur de l'item à modifier.
- */
-void PhotoModel::removeData(int row)
-{
-    if (row < 0 || row >= m_data.count())
-        return;
-
-    beginRemoveRows(QModelIndex(), row, row);
-    m_data.removeAt(row);
-    endRemoveRows();
 }
 
 /**
@@ -502,23 +509,26 @@ void PhotoModel::growPopulation()
     emit dataChanged(startIndex, endIndex, QVector<int>() << HeadlineRole);
 }
 
-
-// Methode get() venant du forum
-// QML usage = myModel.get(1).title  //where 1 is an valid index.
-// Declaration = // Q_INVOKABLE QVariantMap get(int row);
+/**
+ * @brief Méthode get() venant du forum.
+ * Declaration dans .h = Q_INVOKABLE QVariantMap get(int row);
+ * Usage dans .qml = myModel.get(1).title  // where 1 is an valid index.
+ * @param row : indice
+ * @return une Map contenant toutes les valeurs de l'item
+ */
 QVariantMap PhotoModel::get(int row)
 {
     QHash<int,QByteArray> names = roleNames();
-    QHashIterator<int, QByteArray> i(names);
-    QVariantMap res;
-    while (i.hasNext()) {
-        i.next();
+    QHashIterator<int, QByteArray> itr(names);
+    QVariantMap result;
+    while (itr.hasNext()) {
+        itr.next();
         QModelIndex idx = index(row, 0);
-        QVariant data = idx.data(i.key());
-        res[i.value()] = data;
-        //cout << i.key() << ": " << i.value() << endl;
+        QVariant data = idx.data(itr.key());
+        result[itr.value()] = data;
+        //qDebug() << itr.key() << ": " << itr.value();
     }
-    return res;
+    return result;
 }
 
 
