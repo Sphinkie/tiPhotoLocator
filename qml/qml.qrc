@@ -27,7 +27,7 @@
         <file>Components/qmldir</file>
         <file>Dialogs/Credits.qml</file>
         <file>Dialogs/About.qml</file>
-        <file>Components/Pastille.qml</file>
+        <file>Components/Chips.qml</file>
         <file>Images/edit1-button.png</file>
         <file>Images/edit2-button.png</file>
         <file>Images/suppr-button.png</file>
@@ -45,5 +45,6 @@
         <file>Controllers/TiToolBar_ctrl.qml</file>
         <file>Vues/TiToolBar.ui.qml</file>
         <file>Javascript/TiUtilities.js</file>
+        <file>Components/SimpleChip.qml</file>
     </qresource>
 </RCC>

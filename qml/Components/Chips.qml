@@ -1,11 +1,16 @@
 import QtQuick 2.0
 
+/**
+ * Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle.
+ * A noter que le Rectangle contient un texte, mais ne s'adapte pas automatiquement à la longueur du texte.
+ * C'est plutot le texte qui s'adapte au rectangle parent.
+ * @see https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html
+ */
 Rectangle {
 
     radius: 16
     color: TiStyle.secondaryForegroundColor
     implicitHeight: 32
-    // TODO agrandir la pastille si le texte est long
     implicitWidth: 240
     property bool editable: true
     property bool deletable: true
@@ -13,7 +18,7 @@ Rectangle {
     visible: content? true : false
 
     Image{
-        id: pastilleEdit
+        id: chipEdit
         anchors.left: parent.left
         anchors.leftMargin: 4
         anchors.topMargin: 4
@@ -23,16 +28,22 @@ Rectangle {
         visible: editable
     }
     Text {
-        id: pastilleText
-        anchors.left: pastilleEdit.right
+        id: chipText
+        anchors.fill: parent
+        anchors.left: chipEdit.right
         anchors.leftMargin: 4
         anchors.topMargin: 4
         text: content
         font.pixelSize: 14
         color: TiStyle.secondaryBackgroundColor
+        // Positionnement du texte
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        wrapMode: Text.WordWrap  // Retour à la ligne si le texte est plus long que le Rectangle
+        clip: false // Le texte n'est pas tronqué
     }
     Image{
-        id: pastilleDel
+        id: chipDel
         anchors.right: parent.right
         anchors.rightMargin: 2
         anchors.topMargin: 4

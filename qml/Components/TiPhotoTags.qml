@@ -16,7 +16,7 @@ ColumnLayout {
         color: "navajowhite"
     }
 
-    Pastille {
+    Chips {
         id: p1
     }
 

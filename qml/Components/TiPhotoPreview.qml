@@ -45,26 +45,26 @@ GridView{
                         Layout.topMargin: 20
                         Layout.leftMargin: 10
                         text: qsTr("Photographie:") }
-                    Pastille{
+                    Chips{
                         Layout.leftMargin: 20
                         content: filename
                         editable: false
                         deletable: false
                     }
-                    Pastille{
+                    Chips{
                         Layout.leftMargin: 20
 //                        content: previewImage.sourceSize.height + "x" + previewImage.sourceSize.height
                         content: imageWidth + " x " + imageHeight
                         editable: false
                         deletable: false
                     }
-                    Pastille{
+                    Chips{
                         Layout.leftMargin: 20
                         content: Utilities.toStandardDate(dateTimeOriginal)
                         editable: false
                         deletable: false
                     }
-                    Pastille{
+                    Chips{
                         Layout.leftMargin: 20
                         content: Utilities.toStandardTime(dateTimeOriginal)
                         editable: false
@@ -73,13 +73,13 @@ GridView{
                     Text{
                         Layout.leftMargin: 10
                         text: qsTr("Appareil photo:") }
-                    Pastille{
+                    Chips{
                         Layout.leftMargin: 20
                         content: make
                         editable: false
                         deletable: false
                     }
-                    Pastille{
+                    Chips{
                         Layout.leftMargin: 20
                         content: camModel
                         editable: false

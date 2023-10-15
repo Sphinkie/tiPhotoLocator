@@ -64,7 +64,7 @@ ListView{
             }
 
             // Filename de l'image
-            Text{
+            Text {
                 id: nameText
                 anchors.left: gpsIcon.right
                 text: filename
@@ -73,7 +73,7 @@ ListView{
             }
 
             // Tag City
-            Pastille{
+            SimpleChip {
                 id: cityText
                 anchors.left: nameText.right
                 anchors.leftMargin: 8
@@ -84,7 +84,7 @@ ListView{
             }
 
             // Gestion du clic sur un item
-            MouseArea{
+            MouseArea {
                 anchors.fill: parent
                 onClicked: {
                     console.log("MouseArea: "+index);
