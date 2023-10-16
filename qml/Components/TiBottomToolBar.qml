@@ -13,7 +13,7 @@ RowLayout {
     TiButton {
         id: bt_dump
         text: qsTr("Dump model")
-        ToolTip.text: qsTr("DEBUG: affiche une ligne du modèle dans la console")
+        ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
         ToolTip.visible: hovered
         ToolTip.delay: 500
         onClicked: _photoListModel.dumpData()
@@ -22,15 +22,13 @@ RowLayout {
         id: cb_backups
         text: qsTr("Générer backups")
         ToolTip {
-            text: qsTr("Une sauvegarde de l'original peut être faite (sous le nom: IMAGE.jpg_original)")
+            text: qsTr("Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)")
             delay: 500
             visible: parent.hovered
         }
         onCheckedChanged:  {
             // On stocke l'état de la checkbox dans la propriété generateBackup de exifWrapper
             _exifWrapper.generateBackup = cb_backups.checked
-            console.log("_exifWrapper.generateBackup actalisé")
-
         }
     }
     TiButton {
@@ -38,11 +36,17 @@ RowLayout {
         text: qsTr("Enregistrer")
         // Puis on lance l'écriture des données EXIF (envoi signal)
         onClicked: window.saveExifMetadata()
+        ToolTip.text: qsTr("Enregistre les tags EXIF des photos modifiées")
+        ToolTip.visible: hovered
+        ToolTip.delay: 500
     }
     TiButton {
         id: bt_quit
         text: qsTr("Quitter")
         onClicked: Qt.quit()
+        ToolTip.text: qsTr("Quitte l'application")
+        ToolTip.visible: hovered
+        ToolTip.delay: 500
     }
 
     // ----------------------------------------------------------------

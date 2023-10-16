@@ -14,15 +14,21 @@ Button {
     //icon.height: 45
     property bool buttonOn: true   // Certains boutons ont 2 positions ON et OFF
 
-/*
+
     background: Rectangle {
-        implicitWidth: 83
-        implicitHeight: 37
-        color: { tiStyle.buttonIdleColor
-          parent.hovered ?  tiStyle.buttonHoveredColor:
-                           parent.down ? tiStyle.buttonPressedColor: // FIXME: ne marche pas bien
-                                          tiStyle.buttonIdleColor;
+        implicitWidth: 86
+        implicitHeight: 40
+        color: {
+            parent.pressed ? TiStyle.buttonPressedColor : (parent.hovered ? TiStyle.buttonHoveredColor : TiStyle.buttonIdleColor);
+            // getButtonColor(parent)
         }
-        radius: 3
-    }*/
+        radius: 6
+    }
+
+    // unused
+    function getButtonColor(bouton) {
+        if (bouton.down) return TiStyle.buttonPressedColor
+        else if (bouton.hovered) return TiStyle.buttonHoveredColor
+        else return TiStyle.buttonIdleColor;
+    }
 }

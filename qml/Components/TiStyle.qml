@@ -14,7 +14,7 @@ Item{
 
     readonly property color buttonIdleColor: primaryForegroundColor
     readonly property color buttonHoveredColor: Qt.lighter(buttonIdleColor, 1.2)
-    readonly property color buttonPressedColor: Qt.darker(buttonIdleColor, 1.8)
+    readonly property color buttonPressedColor: Qt.darker(buttonIdleColor, 1.3)
 
     readonly property color primaryTextColor: "navy"
     readonly property color secondaryTextColor: "firebrick"             // images toBeSaved

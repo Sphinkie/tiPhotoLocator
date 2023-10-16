@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import "../Vues"
-
+import "../Javascript/TiUtilities.js" as Utilities
 
 TiToolBar {
 
@@ -16,7 +16,9 @@ TiToolBar {
     
 
         bt_rescan.onClicked: {
-		rescanWarning.open()
+            rescanWarning.open()
 		}
  
+        folderPath.text: Utilities.toStandardPath(folderDialog.folder)
+
 }

@@ -3,19 +3,18 @@ import QtQuick.Layouts 1.15
 import "../Javascript/TiUtilities.js" as Utilities
 
 // TODO : ce tab charge les images meme quand il n'est pas visible, ce qui ralenti la GUI
-GridView{
+ListView{
     // id: previewView
     model: _onTheMapProxyModel      // Ce modèle ne contient que les photos devant apparaitre sur la carte
     delegate: previewDelegate
     clip: true                      // pour que les items restent à l'interieur de la View
-    // Layout.fillWidth: true
 
     // THE DELEGATE (displays one image and few metadata)
     Component {
         id: previewDelegate
 
-        RowLayout{                          // wrapper
-         //   spacing: 20
+        RowLayout {
+            anchors.fill: parent
             required property string filename
             required property int imageWidth
             required property int imageHeight
@@ -26,8 +25,9 @@ GridView{
 
             Image {
                 id: previewImage
-                Layout.alignment: Qt.AlignCenter
-                //Layout.fillWidth: true       // Prend toute la largeur
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true       // Prend toute la largeur
+                // On limite pour les grandes photos
                 Layout.preferredWidth: 600
                 Layout.preferredHeight: 600
                 // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
@@ -39,7 +39,7 @@ GridView{
 
             Zone {
                 id: zone1
-                //Layout.alignment: Qt.AlignRight
+                Layout.alignment: Qt.AlignRight
                 ColumnLayout{
                     Text{
                         Layout.topMargin: 20
