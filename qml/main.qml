@@ -163,10 +163,8 @@ Window {
                 id: mapTab
                 // anchors.fill: parent
                 // Les coordonnées du point sélectionné
-                property double new_latitude
-                property double new_longitude
-                // TODO : Nettoyer ?
-                // property bool   new_coords: false
+                property double photoLatitude
+                property double photoLongitude
                 spacing: 8
                 Layout.alignment: Qt.AlignHCenter
 
@@ -196,7 +194,6 @@ Window {
                     Text {
                         required property double latitude
                         required property double longitude
-//                        Layout.fillWidth: true
                         text: "Coordinates: " + latitude.toFixed(4) + " [LatN] / " + longitude.toFixed(4) + " [longW]"
                         font.pixelSize: 16
                     }

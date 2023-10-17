@@ -33,8 +33,8 @@ Button {
         implicitWidth: 83
         implicitHeight: 37
         color: {
+            root.down ? root.backgroundPressedColor:
             root.hovered ?  root.backgroundHoveredColor:
-                            root.down ? root.backgroundPressedColor: // FIXME: ne marche pas bien
                                         root.backgroundDefaultColor;
         }
         radius: 3

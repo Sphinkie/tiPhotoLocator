@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Layouts  1.15
 
 
+
 // https://www.youtube.com/watch?v=ZArpJDRJxcI
 
 ListView{
@@ -97,9 +98,8 @@ ListView{
                     tabbedPage.selectedItem = index       // inutile si on utilise le ProxyModel
                     // On envoie les coordonnées pour centrer la carte sur le point selectionné
                     if (hasGPS) {
-                        mapTab.new_latitude = latitude
-                        mapTab.new_longitude = longitude
-                        //mapTab.new_coords = !mapTab.new_coords
+                        mapTab.photoLatitude = latitude
+                        mapTab.photoLongitude = longitude
                     }
                 }
             }

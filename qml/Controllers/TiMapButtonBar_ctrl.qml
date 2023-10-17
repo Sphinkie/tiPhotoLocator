@@ -4,10 +4,11 @@ import "../Vues"
 TiMapButtonBar {
 
     bt_save_pos.onClicked: {
-        // On enregistre la position de l'image
-        window.savePosition(mapTab.new_latitude, mapTab.new_longitude);
+        // On enregistre la position de l'image dans la Saved Position
+        window.savePosition(mapTab.photoLatitude, mapTab.photoLongitude);
         bt_apply_pos.visible = true;
         bt_remove_pos.visible = true;
+
     }
 
     bt_remove_pos.onClicked: {

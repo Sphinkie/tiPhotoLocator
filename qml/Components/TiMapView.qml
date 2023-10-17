@@ -17,12 +17,21 @@ import QtPositioning 5.12
 
 Map {
     plugin: mapPlugin
-    center: QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
+    center: QtPositioning.coordinate(parent.photoLatitude, parent.photoLongitude)
     zoomLevel: 6
+
     onMapItemsChanged: {
-        // Called every time the maker changes on the map: cad un clic dans la listView
+        // Called every time the marker changes on the map: cad un clic dans la listView
         console.log("onMapItemsChanged: re-center the map");
-        center= QtPositioning.coordinate(parent.new_latitude, parent.new_longitude)
+        mapView.center = QtPositioning.coordinate(parent.photoLatitude, parent.photoLongitude)
+        mapCircle.center = QtPositioning.coordinate(parent.photoLatitude, parent.photoLongitude)
+    }
+
+    MapCircle {
+        id: mapCircle
+        radius: 50000.0         // 50 km
+        border.color: "red"
+        border.width: 3
     }
 
     // The MapItemView is used to populate Map with MapItems from a model.
@@ -39,13 +48,16 @@ Map {
             anchors.fill: parent
             onClicked: {
                 console.log("Click on the map.");
+                // On repositionne le cercle
+                mapCircle.center = mapView.toCoordinate(Qt.point(mouse.x,mouse.y))
+                // TODO utiliser une variable de type coordinate
                 var lati = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
                 var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
                 // console.log('latitude  = ' + lati );
                 // console.log('longitude = ' + longi);
                 // On mémorise les coords du point cliqué dans les properties du parent
-                mapTab.new_latitude = lati;
-                mapTab.new_longitude= longi;
+                mapTab.photoLatitude = lati;
+                mapTab.photoLongitude= longi;
                 // On change les coordonnées dans l'item du modele
                 window.setSelectedItemCoords(lati, longi);
                 // On active le bouton "Save position"
