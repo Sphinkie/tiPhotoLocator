@@ -33,6 +33,7 @@ RowLayout {
         id: bt_apply_pos
         enabled: false
         text: qsTr("Apply Saved Position")
+        icon.source: "qrc:/Images/mappin-go.png"
         ToolTip.text: qsTr("Applique la position mémorisée à la photo courante")
         ToolTip.visible: hovered
         ToolTip.delay: 500

@@ -160,22 +160,18 @@ Window {
             // ------------------ MAP TAB ------------------------------
             ColumnLayout {
                 id: mapTab
-                // anchors.fill: parent
                 // Les coordonnées du point sélectionné
                 property double photoLatitude: 0
                 property double photoLongitude: 0
                 spacing: 8
-                Layout.alignment: Qt.AlignHCenter
 
                 // Barre d'outils pour la carte (controleur)
                 TiMapButtonBar_ctrl {
                     id: mapTools
                     // TODO: comment prendre toute la largeur ?
-                    // anchors.fill: parent.width
                     Layout.fillWidth: true
                 }
 
-                // Affichage de la carte
                 TiMapView {
                     id: mapView
                     Layout.fillWidth: true
@@ -187,6 +183,7 @@ Window {
                     id: coordsTextView
                     model: _onTheMapProxyModel       // Ce modèle ne contient que les photos devant apparaitre sur la carte
                     delegate: coordsTextDelegate
+                    Layout.fillWidth: true
                 }
 
                 Component{
@@ -195,7 +192,6 @@ Window {
                         required property double latitude
                         required property double longitude
                         text: "Coordinates: " + latitude.toFixed(4) + " [LatN] / " + longitude.toFixed(4) + " [longW]"
-                        font.pixelSize: 16
                     }
                 }
             }

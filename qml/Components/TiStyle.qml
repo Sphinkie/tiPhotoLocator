@@ -11,6 +11,10 @@ Item{
     readonly property color secondaryForegroundColor: "slateblue"
     readonly property color secondaryBackgroundColor: "lightblue"
 
+    // Chips
+    readonly property color tertiaryForegroundColor: "slateblue"
+    readonly property color tertiaryBackgroundColor: "lightblue"
+    readonly property color tertiaryTextColor: "slateblue"
 
     readonly property color buttonIdleColor: primaryForegroundColor
     readonly property color buttonHoveredColor: Qt.lighter(buttonIdleColor, 1.2)

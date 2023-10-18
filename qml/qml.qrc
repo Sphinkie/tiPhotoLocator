@@ -46,5 +46,8 @@
         <file>Vues/TiToolBar.ui.qml</file>
         <file>Javascript/TiUtilities.js</file>
         <file>Components/SimpleChip.qml</file>
+        <file>Images/mappin-go.png</file>
+        <file>Vues/SettingsWindowForm.ui.qml</file>
+        <file>Controllers/SettingsWindow.qml</file>
     </qresource>
 </RCC>
