@@ -101,6 +101,10 @@ ListView{
                         mapTab.photoLatitude = latitude
                         mapTab.photoLongitude = longitude
                     }
+                    // On active (ou pas) le bouton "Save position"
+                    mapTools.bt_save_pos.enabled = hasGPS;
+                    mapTools.bt_clear_coords.enabled = hasGPS;
+                    mapTools.slider_radius.enabled = hasGPS;
                 }
             }
         }

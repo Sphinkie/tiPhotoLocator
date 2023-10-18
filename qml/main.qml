@@ -19,8 +19,6 @@ Window {
     color: TiStyle.primaryBackgroundColor
     title: "tiPhotoLocator"
 
-
-
     // ----------------------------------------------------------------
     // Les signaux
     // ----------------------------------------------------------------
@@ -31,6 +29,7 @@ Window {
     signal applySavedPositionToCoords()
     signal fetchExifMetadata()
     signal saveExifMetadata()
+    signal hasPos()
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier
@@ -163,8 +162,8 @@ Window {
                 id: mapTab
                 // anchors.fill: parent
                 // Les coordonnées du point sélectionné
-                property double photoLatitude
-                property double photoLongitude
+                property double photoLatitude: 0
+                property double photoLongitude: 0
                 spacing: 8
                 Layout.alignment: Qt.AlignHCenter
 
@@ -189,6 +188,7 @@ Window {
                     model: _onTheMapProxyModel       // Ce modèle ne contient que les photos devant apparaitre sur la carte
                     delegate: coordsTextDelegate
                 }
+
                 Component{
                     id: coordsTextDelegate
                     Text {
@@ -201,10 +201,9 @@ Window {
             }
 
 
-            // ------------------ TAGS TAB ----------------------------
+            // ------------------ IPTC/EXIF TAGS TAB ----------------------------
             TiPhotoTags {
                 id: datesTab
-                anchors.fill: parent
             }
         }
         // --------------------------------- Ligne 4

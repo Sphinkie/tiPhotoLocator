@@ -308,7 +308,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
  */
 void PhotoModel::setData(QVariantMap &value_list)
 {
-    qDebug() << "setData QVariantMap:" << value_list;
+    // qDebug() << "setData QVariantMap:" << value_list;
     // On trouve l'index correspondant au "filename"
     const QString file_name = value_list.value("FileName").toString();
 

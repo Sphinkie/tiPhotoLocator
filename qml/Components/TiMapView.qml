@@ -29,7 +29,7 @@ Map {
 
     MapCircle {
         id: mapCircle
-        radius: 50000.0         // 50 km
+        radius:  mapTools.slider_radius.value // en mètres
         border.color: "red"
         border.width: 3
     }
@@ -61,8 +61,9 @@ Map {
                 // On change les coordonnées dans l'item du modele
                 window.setSelectedItemCoords(lati, longi);
                 // On active le bouton "Save position"
-                mapTools.bt_save_pos.visible = true;
-                mapTools.bt_clear_coords.visible = true;
+                mapTools.bt_save_pos.enabled = true;
+                mapTools.bt_clear_coords.enabled = true;
+                mapTools.slider_radius.enabled = true;
             }
         }
     }
@@ -81,7 +82,7 @@ Map {
             required property double longitude
             required property bool hasGPS
             required property bool isMarker
-            // Position du maker
+            // Position du marker
             coordinate: QtPositioning.coordinate(latitude, longitude)
             // Point d'ancrage de l'icone
             anchorPoint.x: markerIcon.width * 0.5
