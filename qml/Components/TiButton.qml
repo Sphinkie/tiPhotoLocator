@@ -20,15 +20,8 @@ Button {
         implicitHeight: 40
         color: {
             parent.pressed ? TiStyle.buttonPressedColor : (parent.hovered ? TiStyle.buttonHoveredColor : TiStyle.buttonIdleColor);
-            // getButtonColor(parent)
         }
         radius: 6
     }
 
-    // unused
-    function getButtonColor(bouton) {
-        if (bouton.down) return TiStyle.buttonPressedColor
-        else if (bouton.hovered) return TiStyle.buttonHoveredColor
-        else return TiStyle.buttonIdleColor;
-    }
 }
