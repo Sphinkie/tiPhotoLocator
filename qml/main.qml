@@ -156,8 +156,8 @@ Window {
                 property double photoLatitude: 0
                 property double photoLongitude: 0
                 columnSpacing: 8
-                rows: 2     // toolbart et carte
-                columns: 2  // carte et zone des tags
+                rows: 4     // rangées: [toolbar] et [Carte/3 Zones]
+                columns: 2  // 2 colonnes: carte et zone des tags
 
                 // Barre d'outils pour la carte (controleur)
                 TiMapButtonBar_ctrl {
@@ -171,6 +171,7 @@ Window {
                     id: mapView
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+                    Layout.rowSpan: 3
                 }
 
                 // Affichage des infos supplémentaires (coords GPS, etc)
@@ -192,23 +193,19 @@ Window {
                             deletable: true
                             visible: (mapTab.photoLongitude != 0)
                         }
-/*
-                        ListView{
-                            id: coordsTextView
-                            model: _onTheMapProxyModel       // Ce modèle ne contient que les photos devant apparaitre sur la carte
-                            delegate: coordsTextDelegate     // TODO : réduire à la photo selectionnée uniquement
-                        }
-                        Component{
-                            id: coordsTextDelegate
-                            Text {
-                                required property double latitude
-                                required property double longitude
-                                text: "Coordinates: " + latitude.toFixed(4) + " [LatN] / " + longitude.toFixed(4) + " [longW]"
-                            }
-                        }
-                        */
                     }
                 }
+                Zone{
+
+                }
+                Zone{
+
+                }
+
+
+
+
+
             }
 
             // ------------------ IPTC/EXIF TAGS TAB ----------------------------
