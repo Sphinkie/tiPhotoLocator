@@ -410,15 +410,11 @@ void PhotoModel::fetchExifMetadata()
 void PhotoModel::saveExifMetadata()
 {
     qDebug() << "saveExifMetadata";
-    //int nb_items = m_data.count();
     // On parcourt tous les items du modèle (par leur indice dans le vecteur)
     int row = 0;
     QModelIndex idx = this->index(row, 0);
     while (idx.isValid())
-    // for (int row = 0; row < nb_items; row++)
     {
-        // Data data = m_data[row];
-        // if (data.toBeSaved && !data.isMarker && !data.isWelcome)
         if (idx.data(ToBeSavedRole).toBool() && !idx.data(IsMarkerRole).toBool() && !idx.data(IsWelcomeRole).toBool())
         {
             // On ecrit les metadonnées dans le fichier JPG
@@ -428,10 +424,9 @@ void PhotoModel::saveExifMetadata()
             exifData.insert("GPSLongitude", idx.data(LongitudeRole));
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
             exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()<0 ? "W" : "E" );
-            exifData.insert("Artist", "DdL"); // idx.data(ArtistRole));
+            exifData.insert("Software", "TiPhotoLocator");  // TODO: ou bien: from Settings
             emit writeMetadata(exifData);
             // On fait retomber le flag "toBeSaved"
-            //setData(index(row, 0), false, ToBeSavedRole);
             setData(idx, false, ToBeSavedRole);
             // ou:
             // m_data[row].toBeSaved = false;

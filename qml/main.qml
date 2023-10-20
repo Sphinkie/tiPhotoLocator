@@ -139,20 +139,11 @@ Window {
 
         StackLayout {
             id: tabbedPage
+            Layout.fillWidth: true
             Layout.row: 3
             Layout.column: 1
             currentIndex: bar.currentIndex
-            property int selectedItem: -1   // Image sélectionnée dans la ListView (sert à toutes les pages de la Tab View) ... sauf PreviewTab pour le moment
-            /*
-                onSelectedItemChanged: {
-                // mapTab.pLatitude = _photoListModel.get(selectedItem).latitude
-                mapTab.pLatitude = _photoListModel.data(selectedItem,"latitude")
-                mapTab.pLongitude = _photoListModel.data(selectedItem,"longitude")
-                // On ajoute l'image sélectionnée aux pins à afficher sur la carte
-                mappinModel.append({"name": _photoListModel.data(selectedItem,"filename"),
-                                       "latitude": mapTab.pLatitude,
-                                       "longitude": mapTab.pLongitude})               
-            }*/
+            property int selectedItem: -1   // TODO: encore utile ? Image sélectionnée dans la ListView (sert à toutes les pages de la Tab View) ... sauf PreviewTab pour le moment
 
             // ------------------ PREVIEW TAB --------------------------
             TiPhotoPreview { id: previewView }
@@ -160,6 +151,7 @@ Window {
             // ------------------ MAP TAB ------------------------------
             ColumnLayout {
                 id: mapTab
+                Layout.fillWidth: true
                 // Les coordonnées du point sélectionné
                 property double photoLatitude: 0
                 property double photoLongitude: 0
@@ -228,7 +220,7 @@ Window {
     Settings {
         id: reglages
         category: "general"
-        property string artistName: "David de Lorenzo"
+//        property string artistName: "David de Lorenzo"
         }
 
 }
