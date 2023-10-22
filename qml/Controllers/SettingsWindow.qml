@@ -1,9 +1,8 @@
 import QtQuick 2.4
 import "../Vues"
 
+// Controleur
 SettingsWindowForm {
-
-    // Controleur
 
     Component.onCompleted: settingsWindow.show();
 

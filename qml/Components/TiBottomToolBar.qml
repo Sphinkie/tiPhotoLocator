@@ -4,11 +4,17 @@ import QtQuick.Controls 2.12   // pour Checkbox
 import Qt.labs.settings 1.1
 
 
+Rectangle{
+    id: bgBottomToolBar
+    color: TiStyle.surfaceCountainerColor
+    width: parent.width
+    height: 50
+
 RowLayout {
 
     Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
     Layout.margins: 16
-    spacing: 20
+        spacing: 20
 
     TiButton {
         id: bt_dump
@@ -57,4 +63,5 @@ RowLayout {
         category: "general"
         property alias checkbox_backups: cb_backups.checked
         }
+}
 }

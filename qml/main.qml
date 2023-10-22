@@ -16,7 +16,7 @@ Window {
     width: 1200
     height: 800
     visible: true
-    color: TiStyle.primaryBackgroundColor
+    color: TiStyle.surfaceBackgroundColor
     title: "tiPhotoLocator"
 
     // ----------------------------------------------------------------
@@ -143,7 +143,7 @@ Window {
             Layout.row: 3
             Layout.column: 1
             currentIndex: bar.currentIndex
-            property int selectedItem: -1   // TODO: encore utile ? Image sélectionnée dans la ListView (sert à toutes les pages de la Tab View) ... sauf PreviewTab pour le moment
+            //property int selectedItem: -1   // TODO: encore utile ? Image sélectionnée dans la ListView
 
             // ------------------ PREVIEW TAB --------------------------
             TiPhotoPreview { id: previewView }
@@ -196,23 +196,15 @@ Window {
                     }
                 }
                 Zone{
-
                 }
                 Zone{
-
                 }
-
-
-
-
-
             }
 
             // ------------------ IPTC/EXIF TAGS TAB ----------------------------
-            TiPhotoTags {
-                id: datesTab
-            }
+            TiPhotoTags { id: datesTab }
         }
+
         // --------------------------------- Ligne 4
         // Imagettes
         // ---------------------------------
@@ -231,18 +223,20 @@ Window {
             Layout.columnSpan: 2
             Layout.fillWidth: true
         }
+
     }
 
     // ----------------------------------------------------------------
     // Les Settings
     // ----------------------------------------------------------------
-    Settings {
+/*    Settings {
         id: reglages
         category: "general"
-//        property string artistName: "David de Lorenzo"
+        property string artistName: "David de Lorenzo"
         }
+*/
 
-}
+        }
 
 
 
