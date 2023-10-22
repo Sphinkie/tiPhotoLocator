@@ -102,6 +102,7 @@ bool ExifWrapper::writeArgsFile()
     out << "-ImageDescription"  << Qt::endl;    // Alternate tag label for "Description" (EXIF)
     out << "-Caption"           << Qt::endl;    // Alternate tag label for "Description" (IPTC)
     out << "-Keywords"          << Qt::endl;    // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
+    // TODO : Menu settings: renseigner la valeur par défaut pour Artist/Creator
     // TODO : Menu settings: choisir le tag à écrire: Artist ou Creator
     out << "-Artist"            << Qt::endl;    // Name of the photographer (EXIF tag label)
     out << "-Creator"           << Qt::endl;    // Name of the photographer (IPTC tag label)
@@ -119,8 +120,6 @@ bool ExifWrapper::writeArgsFile()
 }
 
 /*
- * Description of JSON options for ExifTool
- *
 -j[[+]=*JSONFILE*] (-json)
   Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified).
   This option may be combined with:

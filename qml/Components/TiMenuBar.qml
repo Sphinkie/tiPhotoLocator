@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.12
+import "../Controllers"
 
 // ----------------------------------------------------------------
 // Menu principal
@@ -18,9 +19,9 @@ MenuBar{
         title: qsTr("Réglages")
         MenuItem  { text: qsTr("Configuration");
             onClicked: {
-                var component = Qt.createComponent("../Vues/SettingsWindowForm.qml");
+                var component = Qt.createComponent("SettingsWindow.qml");
                 var settingsWindow    = component.createObject();
-                settingsWindow.show();
+                // settingsWindow.show();
             }
         }
     }

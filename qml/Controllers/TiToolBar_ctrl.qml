@@ -2,7 +2,7 @@ import QtQuick 2.15
 import "../Vues"
 import "../Javascript/TiUtilities.js" as Utilities
 
-TiToolBarForm {
+TiToolBar {
 
 
         bt_reload.onClicked: {
