@@ -12,6 +12,7 @@ Rectangle {
     color: TiStyle.secondaryForegroundColor
     implicitHeight: 32
     implicitWidth: 240
+    // Propriétés modifiables depuis les parents:
     property bool editable: true
     property bool deletable: true
     property string content

@@ -50,5 +50,8 @@
         <file>Vues/SettingsWindowForm.qml</file>
         <file>Vues/TiToolBarForm.ui.qml</file>
         <file>Vues/TiMapButtonBarForm.ui.qml</file>
+        <file>Images/trashcan.png</file>
+        <file>Images/suggestion.png</file>
+        <file>Images/world.png</file>
     </qresource>
 </RCC>

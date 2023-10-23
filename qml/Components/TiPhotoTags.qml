@@ -49,6 +49,7 @@ GridLayout {
         Layout.fillHeight: true
         Layout.columnSpan: 2
         color: "lightblue"
+        icon: "qrc:/Images/suggestion.png"
         Text {
             text: "Suggestions"
         }
@@ -59,6 +60,7 @@ GridLayout {
         Layout.fillHeight: true
         Layout.columnSpan: 2
         color: "lightgrey"
+        icon: "qrc:/Images/trashcan.png"
         Text {
             text: "Corbeille"
         }

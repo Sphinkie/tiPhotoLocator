@@ -1,6 +1,9 @@
 import QtQuick 2.0
 
 Rectangle {
+    id: rectZone
+    // Propriétés modifiables depuis les parents:
+    property string icon : ""
 
     radius: 16
     color: TiStyle.primaryForegroundColor
@@ -10,5 +13,12 @@ Rectangle {
     // icone de fond
     // gridlayout
 
+    Image {
+//        width: 120
+        height: 200
+        fillMode: Image.PreserveAspectFit
+        source: icon
+        anchors.centerIn: rectZone
+    }
 
 }

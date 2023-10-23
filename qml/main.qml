@@ -120,13 +120,8 @@ Window {
                         _cppFilterProxyModel.gpsFilterEnabled = checked; // todo
                     }
                 }
-                //    CheckBox {
-                //        id: checkBox3
-                //        text: qsTr("subfolders")
-                //        // TODO : hint: "include subfolders"
-                //        enabled: false
-                //    }
-                //}
+
+
                 TabBar {
                     id: bar
                     //Layout.row: 2
@@ -197,6 +192,7 @@ Window {
                     // Affichage des infos supplémentaires (coords GPS, etc)
                     Zone{
                         Layout.rightMargin: 40
+                        icon: "qrc:/Images/world.png"
 
                         ColumnLayout{
                             spacing: 8
@@ -219,21 +215,6 @@ Window {
                                 deletable: true
                                 visible: (mapTab.photoLongitude != 0)
                             }
-
-                            //                        ListView{
-                            //                           id: coordsTextView
-                            //                            model: _onTheMapProxyModel       // Ce modèle ne contient que les photos devant apparaitre sur la carte
-                            //                            delegate: coordsTextDelegate     // TODO : réduire à la photo selectionnée uniquement
-                            //                        }
-                            //                        Component{
-                            //                            id: coordsTextDelegate
-                            //                            Text {
-                            //                                required property double latitude
-                            //                                required property double longitude
-                            //                                text: "Coordinates: " + latitude.toFixed(4) + " [LatN] / " + longitude.toFixed(4) + " [longW]"
-                            //                            }
-                            //                        }
-
                         }
                     }
                 }
