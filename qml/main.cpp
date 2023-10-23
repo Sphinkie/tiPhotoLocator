@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     app.setApplicationName("PhotoLocator");
     app.setOrganizationName("Sphinkie");
     app.setOrganizationDomain("de-lorenzo.fr");
-    //app.setWindowIcon(QIcon(":/icons/flaticon/icon.png"));  // TODO : ajouter une icone
+    app.setWindowIcon(QIcon(":Images/logo_TPL.png"));
 
     // On initialise nos Models
     PhotoModel photoListModel;

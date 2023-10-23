@@ -6,3 +6,5 @@ qml/*.pro.user
 qml/*.pro.user.*
 /build
 /build-tiPhotoLocator-Desktop*
+/build*
+*.bak

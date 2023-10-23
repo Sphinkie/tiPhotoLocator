@@ -41,13 +41,14 @@
         <file>Images/mappin-black.png</file>
         <file>Images/mappin-grey.png</file>
         <file>Images/mappin-strike.png</file>
-        <file>Vues/TiMapButtonBar.ui.qml</file>
         <file>Controllers/TiToolBar_ctrl.qml</file>
-        <file>Vues/TiToolBar.ui.qml</file>
         <file>Javascript/TiUtilities.js</file>
         <file>Components/SimpleChip.qml</file>
         <file>Images/mappin-go.png</file>
-        <file>Vues/SettingsWindowForm.ui.qml</file>
         <file>Controllers/SettingsWindow.qml</file>
+        <file>Images/logo_TPL.png</file>
+        <file>Vues/SettingsWindowForm.qml</file>
+        <file>Vues/TiToolBarForm.ui.qml</file>
+        <file>Vues/TiMapButtonBarForm.ui.qml</file>
     </qresource>
 </RCC>
