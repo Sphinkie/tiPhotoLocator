@@ -30,15 +30,16 @@ Item{
     */
 
     readonly property color surfaceBackgroundColor: "#f7f7f7"
-    readonly property color surfaceCountainerColor: "#dcedc8"
+    readonly property color surfaceContainerColor: "#dcedc8"
 
     readonly property color primaryForegroundColor: "#8bc34a"       // green
+    readonly property color primaryBackgroundColor: "#f7f7f7"
 
     readonly property color secondaryForegroundColor: "#689f38"     // darkgreen
     readonly property color secondaryBackgroundColor: "lightblue"
 
     // Chips
-    readonly property color tertiaryForegroundColor: "#448aff"
+        readonly property color tertiaryForegroundColor: "#448aff"
     readonly property color tertiaryBackgroundColor: "lightblue"
     readonly property color tertiaryTextColor: "slateblue"
 
@@ -47,7 +48,7 @@ Item{
     readonly property color buttonPressedColor: Qt.darker(buttonIdleColor, 1.3)
 
     readonly property color primaryTextColor:   "#212121"       // gris foncé
-    readonly property color secondaryyyyTextColor: "#757575"       // gris moyen
+    readonly property color secondaryTextColor: "#757575"       // gris moyen
     readonly property color dividerTextColor:   "#BDBDBD"       // gris très clair
 
     readonly property color accentTextColor: "firebrick"             // images toBeSaved
@@ -70,6 +71,6 @@ Item{
     #include <QtQml>
     ...
     qmlRegisterSingletonType( QUrl("file:///Components/TiStyle.qml"), "ca.imaginativethinking.tutorial.style", 1, 0, "TiStyle" );
-    ...
+
 
   */

@@ -12,7 +12,6 @@ Button {
     display: AbstractButton.TextBesideIcon   // IconOnly
     //icon.width: 45
     //icon.height: 45
-    property bool buttonOn: true   // Certains boutons ont 2 positions ON et OFF
 
 
     background: Rectangle {
@@ -20,15 +19,8 @@ Button {
         implicitHeight: 40
         color: {
             parent.pressed ? TiStyle.buttonPressedColor : (parent.hovered ? TiStyle.buttonHoveredColor : TiStyle.buttonIdleColor);
-            // getButtonColor(parent)
         }
         radius: 6
     }
 
-    // unused
-    function getButtonColor(bouton) {
-        if (bouton.down) return TiStyle.buttonPressedColor
-        else if (bouton.hovered) return TiStyle.buttonHoveredColor
-        else return TiStyle.buttonIdleColor;
-    }
 }

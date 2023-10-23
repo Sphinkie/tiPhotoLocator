@@ -73,7 +73,7 @@ ListView{
                 anchors.left: gpsIcon.right
                 text: filename
                 font.pixelSize: 16
-                color: toBeSaved ? TiStyle.accentTextColor : TiStyle.primaryTextColor
+                color: toBeSaved ? TiStyle.secondaryTextColor : TiStyle.primaryTextColor
             }
 
             // Tag City
@@ -95,7 +95,7 @@ ListView{
                     __lv.currentIndex = index             // Bouge le highlight dans la ListView
                     // previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel? )
                     _photoListModel.selectedRow = index   // Actualise le proxymodel
-                    //tabbedPage.selectedItem = index       // inutile si on utilise le ProxyModel
+                    tabbedPage.selectedItem = index       // inutile si on utilise le ProxyModel
                     // On envoie les coordonnées pour centrer la carte sur le point selectionné
                     if (hasGPS) {
                         mapTab.photoLatitude = latitude

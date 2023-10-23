@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import "../Vues"
 
-TiMapButtonBar {
+TiMapButtonBarForm {
 
     bt_save_pos.onClicked: {
         // Après un clic sur Save Position,

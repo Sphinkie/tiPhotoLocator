@@ -40,6 +40,9 @@ ListView{
             Zone {
                 id: zone1
                 Layout.alignment: Qt.AlignRight
+                Layout.rightMargin: 30
+                Layout.topMargin: 30
+
                 ColumnLayout{
                     Text{
                         Layout.topMargin: 20
