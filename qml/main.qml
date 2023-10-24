@@ -169,16 +169,19 @@ Window {
                 TiPhotoPreview { id: previewView }
 
                 // ------------------ MAP TAB ------------------------------
-                GridLayout {
+                GridLayout {                    
                     id: mapTab
                     Layout.fillWidth: true
                     // Les coordonnées du point sélectionné
                     property double photoLatitude: 0
                     property double photoLongitude: 0
                     columnSpacing: 8
-                    rows: 2     // toolbart et carte
+                    rows: 4     // toolbar et carte/zones
                     columns: 2  // carte et zone des tags
-
+                    // T T
+                    // M Z1
+                    // M Z2
+                    // M Z3
                     // Barre d'outils pour la carte (controleur)
                     TiMapButtonBar_ctrl {
                         id: mapTools
@@ -189,6 +192,7 @@ Window {
 
                     TiMapView {
                         id: mapView
+                        Layout.rowSpan: 3         // Haute comme 3 zones
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                     }
@@ -196,6 +200,7 @@ Window {
                     // Affichage des infos supplémentaires (coords GPS, etc)
                     Zone{
                         Layout.rightMargin: 40
+                        Layout.fillHeight: true
                         icon: "qrc:/Images/world.png"
 
                         ColumnLayout{
@@ -220,6 +225,18 @@ Window {
                                 visible: (mapTab.photoLongitude != 0)
                             }
                         }
+                    }
+                    Zone{
+                        Layout.rightMargin: 40
+                        Layout.fillHeight: true
+                        color: "lightblue"
+                        icon: "qrc:/Images/suggestion.png"
+                    }
+                    Zone{
+                        Layout.rightMargin: 40
+                        Layout.fillHeight: true
+                        color: "lightgrey"
+                        icon: "qrc:/Images/trashcan.png"
                     }
                 }
 

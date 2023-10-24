@@ -25,8 +25,9 @@ ListView{
 
             Image {
                 id: previewImage
-                Layout.alignment: Qt.AlignHCenter
-                Layout.fillWidth: true       // Prend toute la largeur
+                Layout.alignment: Qt.AlignHCenter   //  | Qt.AlignVCenter
+                Layout.fillWidth: true       // Prend toute la largeur disponible
+                // TODO : occuper toute la haute disponible
                 // On limite pour les grandes photos
                 Layout.preferredWidth: 600
                 Layout.preferredHeight: 600
@@ -39,6 +40,7 @@ ListView{
 
             Zone {
                 id: zone1
+                Layout.fillHeight: true
                 Layout.alignment: Qt.AlignRight
                 Layout.rightMargin: 30
                 Layout.topMargin: 30

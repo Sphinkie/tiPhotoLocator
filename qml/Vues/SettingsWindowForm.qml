@@ -8,6 +8,9 @@ Window {
     width: 560
     height: 720
 
+    // ------------------------------------------------------------------
+    // Valeur par défaut pour ARTIST
+    // ------------------------------------------------------------------
     GroupBox {
         id: groupBox1
         anchors.left: parent.left
@@ -21,7 +24,7 @@ Window {
         Text {
             id: element0
             x: 0;
-            y: 0;
+            y: 10;
             text: qsTr("Nom du photographe:")
             font.pixelSize: 14
         }
@@ -47,6 +50,7 @@ Window {
         }
 
         // ------------------------------------------------------------------
+        // Valeur par défaut pour DESCRIPTION WRITER
         // ------------------------------------------------------------------
         Text {
             id: element4
@@ -62,8 +66,8 @@ Window {
             anchors.left: element4.right
             anchors.bottom: element4.bottom
             anchors.bottomMargin: -10
-            anchors.leftMargin: 10
-            width: 80; height: 40;
+            anchors.leftMargin: 20
+            width: 90; height: 40;
             placeholderText: qsTr("initiales")
         }
         Text {
@@ -184,6 +188,7 @@ Window {
     }
 
     // ------------------------------------------------------------------
+    // Divers
     // ------------------------------------------------------------------
     GroupBox {
         id: groupBox3
@@ -205,6 +210,22 @@ Window {
     }
 
     // ------------------------------------------------------------------
+    // Descriptions
+    // ------------------------------------------------------------------
+    GroupBox {
+        id: groupBox4
+        anchors.left: parent.left
+        anchors.top : groupBox3.bottom
+        anchors.leftMargin: 10
+        anchors.topMargin: 20
+        width: parent.width-20
+        height: 60
+        // title: qsTr("Divers:")
+        Text { y:0;  text: qsTr("Les tags EXIF contiennent principalement des informations techniques (Modèle d'appareil, objectif...)") }
+        Text { y:20; text: qsTr("Les tags IPTC contiennent principalement des informations éditoriales (Description de l'image...)    ") }
+    }
+
+    // ------------------------------------------------------------------
     // ---------------- Buttons
     // ------------------------------------------------------------------
 /*    Button {
@@ -217,8 +238,8 @@ Window {
 */
     Button {
         id: buttonOk
-        anchors.top: groupBox3.bottom; anchors.topMargin: 20
-        anchors.right: groupBox3.right; anchors.rightMargin: 60
+        anchors.top: groupBox4.bottom; anchors.topMargin: 20
+        anchors.right: groupBox4.right; anchors.rightMargin: 60
         width: 100
         text: qsTr("Fermer")
         // onClicked: saveConfiguration()
