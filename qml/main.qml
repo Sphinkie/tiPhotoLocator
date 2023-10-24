@@ -12,12 +12,16 @@ import "./Controllers"
 
 Window {
     id: window
-    visibility: "Maximized"
-    width: 1200
-    height: 800
-    visible: true
-    color: TiStyle.primaryBackgroundColor
     title: "tiPhotoLocator"
+    visible: true
+    visibility: "Maximized"
+    // dimensions si on démaximise
+    width: 1920
+    height: 1080
+    // dimensions minimales
+    minimumHeight: 640
+    minimumWidth: 1200
+    color: TiStyle.primaryBackgroundColor
 
     // ----------------------------------------------------------------
     // Les signaux
