@@ -54,223 +54,193 @@ Window {
     // ----------------------------------------------------------------
     // Page principale
     // ----------------------------------------------------------------
-    //GridLayout
-    //Column
-    //{
-        //anchors.fill: parent
-        // columns: 2
-        // rows: 6
 
-        // ------------------------------------------------------ Ligne 0
-        // Menu principal (Prend toute la largeur)
-        // ------------------------------------------------------
-        TiMenuBar {
-            id: menuBar
-            //Layout.row: 0
-            //Layout.column: 0
-            //Layout.columnSpan: 2
-            //Layout.fillWidth: true
-            //Layout.alignment: Qt.AlignTop
-            anchors {top: parent.top; left: parent.left; right: parent.right;}
-        }
+    // Ligne 0 --------------------------------------------------------
+    // Menu principal (Prend toute la largeur)
+    // ----------------------------------------------------------------
+    TiMenuBar {
+        id: menuBar
+        anchors {top: parent.top; left: parent.left; right: parent.right;}
+    }
 
-        // ------------------------------------------------------ Ligne 1
-        // Barre d'outils du folder: refresh / reload / rescan / display name
-        // ------------------------------------------------------
-        TiToolBar_ctrl {
-            id: toolBar
-            //Layout.row: 1
-            //Layout.column: 0
-            //Layout.columnSpan: 2
-            //Layout.fillWidth: true       // Prend toute la largeur
-            //Layout.margins: 16
-            width: parent.width
-            anchors {top: menuBar.bottom; left: parent.left}
-        }
+    // Ligne 1 --------------------------------------------------------
+    // Barre d'outils du folder: refresh / reload / rescan / foldername
+    // ----------------------------------------------------------------
+    TiToolBar_ctrl {
+        id: toolBar
+        width: parent.width
+        anchors {top: menuBar.bottom; left: parent.left}
+    }
 
-        // --------------------------------- Ligne 2
-        // Filtres et Onglets
-        // ---------------------------------
-        Rectangle {
-            id:filtersAndTabsBar
-            anchors.top: toolBar.bottom
-            color: TiStyle.surfaceContainerColor
-            width: parent.width
-            height: filtersAndTabslayout.height
+    // Ligne 2 --------------------------------------------------------
+    // Filtres et Onglets
+    // ----------------------------------------------------------------
+    Rectangle {
+        id:filtersAndTabsBar
+        anchors.top: toolBar.bottom
+        color: TiStyle.surfaceContainerColor
+        width: parent.width
+        height: filtersAndTabslayout.height
 
-            RowLayout{
-                id: filtersAndTabslayout
-                anchors {left: parent.left; right: parent.right;}
-                //anchors.fill: parent.width
-                //Layout.row: 2
-                //Layout.column: 0
-                //Layout.fillWidth: false
-                //Layout.fillWidth: true
-                //  width:                 listViewFrame.width
-                CheckBox {
-                    Layout.leftMargin: 20
-                    id: checkBox1
-                    text: qsTr("sans date")
-                    // TODO : hint: "Liste des photos sans date"
-                }
-                CheckBox {
-                    Layout.leftMargin: 20
-                    id: checkBox2
-                    text: qsTr("sans localisation")
-                    // TODO : hint: "Liste des photos sans localisation"
-                    checked: false
-                    onClicked: {
-                        // voir exemple https://github.com/KDAB/kdabtv/blob/master/qml-intro/sol-qmlqsortfilterproxymodel/main.qml
-                        _cppFilterProxyModel.gpsFilterEnabled = checked; // todo
-                    }
-                }
-
-
-                TabBar {
-                    id: bar
-                    //Layout.row: 2
-                    //Layout.column: 1
-                    Layout.leftMargin: 120
-                    Layout.fillWidth: true
-                    Layout.rightMargin: 40
-                    TabButton { text: qsTr("PREVIEW") }
-                    TabButton { text: qsTr("CARTE")   }
-                    TabButton { text: qsTr("EXIF/IPTC TAGS") }
-                }
-            }
-        }
-
-        // --------------------------------- Ligne 3
-        // ListView des filenames des photos
-        // ---------------------------------
         RowLayout{
-            anchors {top: filtersAndTabsBar.bottom; bottom: imagettes.top; left: parent.left; right: parent.right;}
-
-            Frame {
-               id: listViewFrame
-                //Layout.row: 3
-                //Layout.column: 0
-                Layout.fillWidth: false
-                Layout.fillHeight: true
-                Layout.preferredHeight: 200
-                Layout.preferredWidth: 380
-                TiPhotoListview { id: photoListAndDelegate }
+            id: filtersAndTabslayout
+            anchors {left: parent.left; right: parent.right;}
+            CheckBox {
+                Layout.leftMargin: 20
+                id: checkBox1
+                text: qsTr("sans date")
+                // TODO : hint: "Liste des photos sans date"
+            }
+            CheckBox {
+                Layout.leftMargin: 20
+                id: checkBox2
+                text: qsTr("sans localisation")
+                // TODO : hint: "Liste des photos sans localisation"
+                checked: false
+                onClicked: {
+                    // voir exemple https://github.com/KDAB/kdabtv/blob/master/qml-intro/sol-qmlqsortfilterproxymodel/main.qml
+                    _cppFilterProxyModel.gpsFilterEnabled = checked; // todo
+                }
             }
 
-            StackLayout {
-                id: tabbedPage
+            TabBar {
+                id: bar
+                Layout.leftMargin: 120
                 Layout.fillWidth: true
-                //Layout.row: 3
-                //Layout.column: 1
-                currentIndex: bar.currentIndex
-                property int selectedItem: -1   // TODO: encore utile ? Image sélectionnée dans la ListView (sert à toutes les pages de la Tab View) ... sauf PreviewTab pour le moment
+                Layout.rightMargin: 40
+                TabButton { text: qsTr("PREVIEW") }
+                TabButton { text: qsTr("CARTE")   }
+                TabButton { text: qsTr("EXIF/IPTC TAGS") }
+            }
+        }
+    }
 
-                // ------------------ PREVIEW TAB --------------------------
-                TiPhotoPreview { id: previewView }
+    // Ligne 3 --------------------------------------------------------
+    // ListView des filenames des photos + page de contenu de l'onglet
+    // ----------------------------------------------------------------
+    RowLayout{
+        anchors {top: filtersAndTabsBar.bottom; bottom: imagettes.top; left: parent.left; right: parent.right;}
 
-                // ------------------ MAP TAB ------------------------------
-                GridLayout {                    
-                    id: mapTab
+        Frame {
+            id: listViewFrame
+            Layout.fillWidth: false
+            Layout.fillHeight: true
+            Layout.preferredHeight: 200
+            Layout.preferredWidth: 380
+            TiPhotoListview { id: photoListAndDelegate }
+        }
+
+        StackLayout {
+            id: tabbedPage
+            Layout.fillWidth: true
+            currentIndex: bar.currentIndex
+            property int selectedItem: -1   // TODO: encore utile ? Image sélectionnée dans la ListView (sert à toutes les pages de la Tab View) ... sauf PreviewTab pour le moment
+
+            // ------------------ PREVIEW TAB --------------------------
+            TiPhotoPreview { id: previewView }
+
+            // ------------------ MAP TAB ------------------------------
+            GridLayout {
+                id: mapTab
+                Layout.fillWidth: true
+                // Les coordonnées du point sélectionné
+                property double photoLatitude: 0
+                property double photoLongitude: 0
+                columnSpacing: 8
+                rows: 4     // toolbar et carte/zones
+                columns: 2  // carte et zone des tags
+                // T T
+                // M Z1
+                // M Z2
+                // M Z3
+                // Barre d'outils pour la carte (controleur)
+                TiMapButtonBar_ctrl {
+                    id: mapTools
+                    Layout.columnSpan: 2  // Toute la largeur
                     Layout.fillWidth: true
-                    // Les coordonnées du point sélectionné
-                    property double photoLatitude: 0
-                    property double photoLongitude: 0
-                    columnSpacing: 8
-                    rows: 4     // toolbar et carte/zones
-                    columns: 2  // carte et zone des tags
-                    // T T
-                    // M Z1
-                    // M Z2
-                    // M Z3
-                    // Barre d'outils pour la carte (controleur)
-                    TiMapButtonBar_ctrl {
-                        id: mapTools
-                        // TODO: comment prendre toute la largeur ?
-                        Layout.columnSpan: 2
-                        Layout.fillWidth: true
-                    }
+                }
 
-                    TiMapView {
-                        id: mapView
-                        Layout.rowSpan: 3         // Haute comme 3 zones
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                    }
+                TiMapView {
+                    id: mapView
+                    Layout.rowSpan: 3         // Haute comme 3 zones
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                }
 
-                    // Affichage des infos supplémentaires (coords GPS, etc)
-                    Zone{
-                        Layout.rightMargin: 40
-                        Layout.fillHeight: true
-                        icon: "qrc:/Images/world.png"
+                // Affichage des infos supplémentaires (coords GPS, etc)
+                Zone{
+                    Layout.rightMargin: 40
+                    Layout.fillHeight: true
+                    icon: "qrc:/Images/world.png"
 
-                        ColumnLayout{
-                            spacing: 8
-                            Text {
-                                Layout.topMargin: 20
-                                Layout.leftMargin: 10
-                                text: "Coordonnées GPS: "
-                            }
-                            Chips {
-                                content: mapTab.photoLatitude.toFixed(4) + " Lat "  + ((mapTab.photoLatitude>0) ? "N" : "S")
-                                Layout.leftMargin: 20
-                                editable: false
-                                deletable: true
-                                visible: (mapTab.photoLatitude != 0)
-                            }
-                            Chips {
-                                content: mapTab.photoLongitude.toFixed(4) + " Long " + ((mapTab.photoLongitude>0) ? "W" : "E")
-                                Layout.leftMargin: 20
-                                editable: false
-                                deletable: true
-                                visible: (mapTab.photoLongitude != 0)
-                            }
+                    ColumnLayout{
+                        spacing: 8
+                        Text {
+                            Layout.topMargin: 20
+                            Layout.leftMargin: 10
+                            text: "Coordonnées GPS: "
+                        }
+                        Chips {
+                            content: mapTab.photoLatitude.toFixed(4) + " Lat "  + ((mapTab.photoLatitude>0) ? "N" : "S")
+                            Layout.leftMargin: 20
+                            editable: false
+                            deletable: true
+                            visible: (mapTab.photoLatitude != 0)
+                        }
+                        Chips {
+                            content: mapTab.photoLongitude.toFixed(4) + " Long " + ((mapTab.photoLongitude>0) ? "W" : "E")
+                            Layout.leftMargin: 20
+                            editable: false
+                            deletable: true
+                            visible: (mapTab.photoLongitude != 0)
                         }
                     }
-                    Zone{
-                        Layout.rightMargin: 40
-                        Layout.fillHeight: true
-                        color: "lightblue"
-                        icon: "qrc:/Images/suggestion.png"
-                    }
-                    Zone{
-                        Layout.rightMargin: 40
-                        Layout.fillHeight: true
-                        color: "lightgrey"
-                        icon: "qrc:/Images/trashcan.png"
-                    }
                 }
-
-                // ------------------ IPTC/EXIF TAGS TAB ----------------------------
-                TiPhotoTags {
-                    id: datesTab
+                Zone{
+                    Layout.rightMargin: 40
+                    Layout.fillHeight: true
+                    color: "lightblue"
+                    icon: "qrc:/Images/suggestion.png"
+                }
+                Zone{
+                    Layout.rightMargin: 40
+                    Layout.fillHeight: true
+                    color: "lightgrey"
+                    icon: "qrc:/Images/trashcan.png"
                 }
             }
-        }
 
-        // --------------------------------- Ligne 4
-        // Imagettes
-        // ---------------------------------
-        TiImagettes{
-            id: imagettes
-            //            Layout.row: 4
-            //          Layout.columnSpan: 2
-            //        Layout.fillWidth: true
-            height: 120
-            anchors {bottom: bottomToolBar.top; left: parent.left; right: parent.right; }
+            // ------------------ IPTC/EXIF TAGS TAB ----------------------------
+            TiPhotoTags {
+                id: datesTab
+            }
         }
+    }
 
-        // --------------------------------- Ligne 5
-        // Barre de boutons en bas
-        // ---------------------------------
-        TiBottomToolBar {
-            id: bottomToolBar
-            //      Layout.row: 5
-            //    Layout.columnSpan: 2
-            //  Layout.fillWidth: true
-            anchors.bottom: parent.bottom
-            width: parent.width
-        }
-//    }
+    // --------------------------------- Ligne 4
+    // Imagettes
+    // ----------------------------------------------------------------
+    TiImagettes{
+        id: imagettes
+        //            Layout.row: 4
+        //          Layout.columnSpan: 2
+        //        Layout.fillWidth: true
+        height: 120
+        anchors {bottom: bottomToolBar.top; left: parent.left; right: parent.right; }
+    }
+
+    // --------------------------------- Ligne 5
+    // Barre de boutons en bas
+    // ----------------------------------------------------------------
+    TiBottomToolBar {
+        id: bottomToolBar
+        //      Layout.row: 5
+        //    Layout.columnSpan: 2
+        //  Layout.fillWidth: true
+        anchors.bottom: parent.bottom
+        width: parent.width
+    }
+    //    }
 
     // ----------------------------------------------------------------
     // Les Settings
