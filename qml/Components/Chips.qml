@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtGraphicalEffects 1.0
 
 /**
  * Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle.
@@ -17,6 +18,7 @@ Rectangle {
     property bool deletable: true
     property string content
     visible: content? true : false
+    layer.enabled: true
 
     Image{
         id: chipEdit
@@ -53,4 +55,13 @@ Rectangle {
         source: "qrc:/Images/suppr-button.png"
         visible: deletable
     }
+    layer.effect: DropShadow {
+        transparentBorder: true
+        color: "#88000000"    // alpha
+        radius: 4      // douceur de l'ombre
+        samples: 9     // 2*radius+1
+        cached: true   // Performances. Mettre false pour les objets animés uniquement.
+        verticalOffset: 5
+    }
+
 }

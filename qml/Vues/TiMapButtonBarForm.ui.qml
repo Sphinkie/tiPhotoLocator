@@ -3,7 +3,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12
 import "../Components"
 
-Row {
+Item {
     property alias bt_save_pos: bt_save_pos
     property alias bt_remove_pos: bt_remove_pos
     property alias bt_apply_pos: bt_apply_pos
