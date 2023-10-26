@@ -53,5 +53,8 @@
         <file>Images/trashcan.png</file>
         <file>Images/suggestion.png</file>
         <file>Images/world.png</file>
+        <file>Images/suppr-icon.png</file>
+        <file>Vues/ZonePreviewForm.ui.qml</file>
+        <file>Controllers/ZonePreview.qml</file>
     </qresource>
 </RCC>

@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.15
-import "../Javascript/TiUtilities.js" as Utilities
+import "../Controllers"
+// import "../Javascript/TiUtilities.js" as Utilities
 
 // TODO : ce tab charge les images meme quand il n'est pas visible, ce qui ralenti la GUI
 ListView{
@@ -38,6 +39,14 @@ ListView{
                 source: imageUrl
             }
 
+            ZonePreview {
+                id: zone1
+                Layout.fillHeight: true
+                Layout.alignment: Qt.AlignRight
+                Layout.rightMargin: 30
+                Layout.topMargin: 30
+            }
+            /*
             Zone {
                 id: zone1
                 Layout.fillHeight: true
@@ -92,6 +101,7 @@ ListView{
                     }
                 }
             }
+            */
         }
     }
 }

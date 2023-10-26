@@ -62,7 +62,7 @@ Item {
         id: bt_clear_pos
         enabled: false
         text: qsTr("Clear GPS Coords")
-        //Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+        icon.source: "qrc:/Images/suppr-icon.png"
         anchors.right: parent.right
         anchors.rightMargin: 40
         anchors.verticalCenter: parent.verticalCenter
