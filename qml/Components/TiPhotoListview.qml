@@ -6,7 +6,7 @@ import QtQuick.Layouts  1.15
 // https://www.youtube.com/watch?v=ZArpJDRJxcI
 
 ListView{
-    id: listView
+    //id: listView
     anchors.fill: parent
     model: _photoListModel
     delegate: listDelegate
@@ -93,9 +93,13 @@ ListView{
                 onClicked: {
                     console.log("MouseArea: "+index);
                     __lv.currentIndex = index             // Bouge le highlight dans la ListView
-                    // previewImage.imageUrl = imageUrl   // A essayer : creer la propriété correspondante (+ rapide que le proxymodel? )
                     _photoListModel.selectedRow = index   // Actualise le proxymodel
-                    tabbedPage.selectedItem = index       // inutile si on utilise le ProxyModel
+
+                    // Envoie au parent les data de l'item selectionné du modèle.
+                    // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
+                    tabbedPage.selectedItem = index
+                    tabbedPage.selectedData = _photoListModel.get(index)
+
                     // On envoie les coordonnées pour centrer la carte sur le point selectionné
                     if (hasGPS) {
                         mapTab.photoLatitude = latitude

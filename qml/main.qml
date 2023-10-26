@@ -104,7 +104,7 @@ Window {
             }
 
             TabBar {
-                id: bar
+                id: tabBar
                 Layout.leftMargin: 120
                 Layout.fillWidth: true
                 Layout.rightMargin: 40
@@ -133,8 +133,9 @@ Window {
         StackLayout {
             id: tabbedPage
             Layout.fillWidth: true
-            currentIndex: bar.currentIndex
-            property int selectedItem: -1   // TODO: encore utile ? Image sélectionnée dans la ListView (sert à toutes les pages de la Tab View) ... sauf PreviewTab pour le moment
+            currentIndex: tabBar.currentIndex
+            property int selectedItem: -1   // TODO: encore utile ?
+            property var selectedData
 
             // ------------------ PREVIEW TAB --------------------------
             TiPhotoPreview { id: previewView }
