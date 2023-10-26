@@ -8,3 +8,4 @@ qml/*.pro.user.*
 /build-tiPhotoLocator-Desktop*
 /build*
 *.bak
+*.bkp

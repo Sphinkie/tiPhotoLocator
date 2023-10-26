@@ -24,13 +24,13 @@ GridLayout {
         }
         Chips{
             Layout.leftMargin: 20
-            content: make
+            content: tabbedPage.selectedData.make
             editable: false
             deletable: false
         }
         Chips{
             Layout.leftMargin: 20
-            content: camModel
+            content: tabbedPage.selectedData.camModel
             editable: false
             deletable: false
         }

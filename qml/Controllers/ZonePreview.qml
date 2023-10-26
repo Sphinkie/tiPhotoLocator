@@ -9,8 +9,8 @@ ZonePreviewForm {
 
     chipName.content: tabbedPage.selectedData.filename
     chipSize.content: tabbedPage.selectedData.imageWidth + " x " + tabbedPage.selectedData.imageHeight
-    chipDate.content: Utilities.toStandardDate(dateTimeOriginal)
-    chipTime.content: Utilities.toStandardTime(dateTimeOriginal)
+    chipDate.content: Utilities.toStandardDate(tabbedPage.selectedData.dateTimeOriginal)
+    chipTime.content: Utilities.toStandardTime(tabbedPage.selectedData.dateTimeOriginal)
     chipMake.content: tabbedPage.selectedData.make
     chipCamModel.content: tabbedPage.selectedData.camModel
 

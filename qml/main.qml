@@ -86,14 +86,14 @@ Window {
             id: filtersAndTabslayout
             anchors {left: parent.left; right: parent.right;}
             CheckBox {
-                Layout.leftMargin: 20
                 id: checkBox1
+                Layout.leftMargin: 20
                 text: qsTr("sans date")
                 // TODO : hint: "Liste des photos sans date"
             }
             CheckBox {
-                Layout.leftMargin: 20
                 id: checkBox2
+                Layout.leftMargin: 20
                 text: qsTr("sans localisation")
                 // TODO : hint: "Liste des photos sans localisation"
                 checked: false
@@ -138,7 +138,7 @@ Window {
             property var selectedData
 
             // ------------------ PREVIEW TAB --------------------------
-            TiPhotoPreview { id: previewView }
+            TiPhotoPreview { id: previewView; Layout.fillWidth: true}
 
             // ------------------ MAP TAB ------------------------------
             GridLayout {
@@ -154,6 +154,7 @@ Window {
                 // M Z1
                 // M Z2
                 // M Z3
+
                 // Barre d'outils pour la carte (controleur)
                 TiMapButtonBar_ctrl {
                     id: mapTools
@@ -223,9 +224,6 @@ Window {
     // ----------------------------------------------------------------
     TiImagettes{
         id: imagettes
-        //            Layout.row: 4
-        //          Layout.columnSpan: 2
-        //        Layout.fillWidth: true
         height: 120
         anchors {bottom: bottomToolBar.top; left: parent.left; right: parent.right; }
     }
@@ -235,13 +233,10 @@ Window {
     // ----------------------------------------------------------------
     TiBottomToolBar {
         id: bottomToolBar
-        //      Layout.row: 5
-        //    Layout.columnSpan: 2
-        //  Layout.fillWidth: true
         anchors.bottom: parent.bottom
         width: parent.width
     }
-    //    }
+
 
     // ----------------------------------------------------------------
     // Les Settings
