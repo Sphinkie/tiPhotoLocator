@@ -6,21 +6,19 @@ import "../Controllers"
 // TODO : ce tab charge les images meme quand il n'est pas visible, ce qui ralenti la GUI
 
 RowLayout {
-    anchors.fill: parent
 
     Item{
         Layout.fillWidth: true       // Prend toute la largeur disponible
         Layout.fillHeight: true      // Occuper toute la hauteur disponible
+        clip: true                   // Tronque l'image au cas où elle deborderait
         Image {
             id: previewImage
-            // On limite pour les grandes photos
-            Layout.preferredWidth: 600
-            Layout.preferredHeight: 600
-            // On limite la taille de l'image affichée à la taille du fichier (pas de upscale)
-            Layout.maximumHeight: sourceSize.height
-            Layout.maximumWidth: sourceSize.width
-            fillMode: Image.PreserveAspectFit
             source: tabbedPage.selectedData.imageUrl
+            fillMode: Image.PreserveAspectFit
+            // On limite les grandes photos à la taille de la page: (image affichée avec downscale)
+            // On limite les petites photos à leur taille réelle: (image affichée sans upscale)
+            height: Math.min (sourceSize.height, parent.height)
+            width: Math.min (sourceSize.width, parent.width)
             // Centrer l'image
             anchors.centerIn: parent
         }

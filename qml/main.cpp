@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    app.setApplicationName("PhotoLocator");
+    app.setApplicationName("TiPhotoLocator");
     app.setOrganizationName("Sphinkie");
     app.setOrganizationDomain("de-lorenzo.fr");
     app.setWindowIcon(QIcon(":Images/logo_TPL.png"));

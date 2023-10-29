@@ -156,7 +156,7 @@ Window {
                 // M Z3
 
                 // Barre d'outils pour la carte (controleur)
-                TiMapButtonBar_ctrl {
+                TiMapToolBar_ctrl {
                     id: mapTools
                     Layout.columnSpan: 2  // Toute la largeur
                     Layout.fillWidth: true
@@ -190,7 +190,7 @@ Window {
                             visible: (mapTab.photoLatitude != 0)
                         }
                         Chips {
-                            content: mapTab.photoLongitude.toFixed(4) + " Long " + ((mapTab.photoLongitude>0) ? "W" : "E")
+                            content: mapTab.photoLongitude.toFixed(4) + " Long " + ((mapTab.photoLongitude>0) ? "E" : "W")
                             Layout.leftMargin: 20
                             editable: false
                             deletable: true
@@ -237,15 +237,6 @@ Window {
         width: parent.width
     }
 
-
-    // ----------------------------------------------------------------
-    // Les Settings
-    // ----------------------------------------------------------------
-    Settings {
-        id: reglages
-        category: "general"
-        //        property string artistName: "David de Lorenzo"
-    }
 
 }
 

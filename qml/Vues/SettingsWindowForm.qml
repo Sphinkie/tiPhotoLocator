@@ -7,9 +7,10 @@ import "../Components"
 Window {
     width: 560
     height: 720
+    property alias buttonOk: buttonOk
 
     // ------------------------------------------------------------------
-    // Valeur par défaut pour ARTIST
+    // ---------------- Group Box 1 "Default values"
     // ------------------------------------------------------------------
     GroupBox {
         id: groupBox1
@@ -21,6 +22,9 @@ Window {
         height: 200
         title: qsTr("Valeurs par défaut")
 
+        // ------------------------------------------------------------------
+        // Valeur par défaut pour ARTIST
+        // ------------------------------------------------------------------
         Text {
             id: element0
             x: 0;
@@ -81,6 +85,9 @@ Window {
             style: Text.Normal
         }
 
+        // ------------------------------------------------------------------
+        // Valeur par défaut pour SOFTWARE
+        // ------------------------------------------------------------------
         Text {
             id: element6
             anchors.left: element0.left
@@ -113,7 +120,7 @@ Window {
 
 
     // ------------------------------------------------------------------
-    // ---------------- Group Box 2
+    // ---------------- Group Box 2 "Duplicated Tags"
     // ------------------------------------------------------------------
     GroupBox {
         id: groupBox2
@@ -126,6 +133,7 @@ Window {
         title: qsTr("Tags dupliqués:")
 
         // ------------------------------------------------------------------
+        // CheckBox Artist/Creator
         // ------------------------------------------------------------------
         Text {
             id: element2
@@ -153,6 +161,7 @@ Window {
         }
 
         // ------------------------------------------------------------------
+        // CheckBox Description/Caption
         // ------------------------------------------------------------------
         Text {
             id: element3
@@ -188,7 +197,7 @@ Window {
     }
 
     // ------------------------------------------------------------------
-    // Divers
+    // ---------------- Group Box 3 "Misc"
     // ------------------------------------------------------------------
     GroupBox {
         id: groupBox3
@@ -196,7 +205,7 @@ Window {
         anchors.top : groupBox2.bottom
         anchors.leftMargin: 10
         anchors.topMargin: 20
-        width: parent.width-20
+        width: parent.width - 20
         height: 80
         title: qsTr("Divers:")
 
@@ -206,11 +215,10 @@ Window {
             y: 0
             text: "Debug mode"
         }
-
     }
 
     // ------------------------------------------------------------------
-    // Descriptions
+    // ---------------- Group Box 4 "Descriptions"
     // ------------------------------------------------------------------
     GroupBox {
         id: groupBox4
@@ -220,7 +228,6 @@ Window {
         anchors.topMargin: 20
         width: parent.width-20
         height: 60
-        // title: qsTr("Divers:")
         Text { y:0;  text: qsTr("Les tags EXIF contiennent principalement des informations techniques (Modèle d'appareil, objectif...)") }
         Text { y:20; text: qsTr("Les tags IPTC contiennent principalement des informations éditoriales (Description de l'image...)    ") }
     }
@@ -228,49 +235,30 @@ Window {
     // ------------------------------------------------------------------
     // ---------------- Buttons
     // ------------------------------------------------------------------
-/*    Button {
-        id: buttonCancel
-        x: 80
-        y: 630
-        text: qsTr("Annuler")
-        onClicked: close()
-    }
-*/
     Button {
         id: buttonOk
         anchors.top: groupBox4.bottom; anchors.topMargin: 20
         anchors.right: groupBox4.right; anchors.rightMargin: 60
         width: 100
         text: qsTr("Fermer")
-        // onClicked: saveConfiguration()
-        onClicked: close()
+        onClicked: {
+            close()
+        }
     }
 
-    // Ici, on enregistre les valeurs au moment du click sur OK.
-    // donc, on ne peut pas utiliser un alias, mais une fonction.
-    function saveConfiguration()
-    {
-        reglages.category= "configuration";
-        reglages.setValue("photographe", textFieldName.text);
-        reglages.setValue("initiales", textFieldInitials.text);
-        reglages.setValue("creatorEnabled", checkBoxCreator.checked);
-        reglages.setValue("captionEnabled", checkBoxCaption.checked);
-        reglages.setValue("imgDescEnabled", checkBoxImgDesc.checked);
-        reglages.setValue("debugMode", checkBoxDebug.checked);
-    }
 
     // ----------------------------------------------------------------
     // On mémorise la configuration dans les settings
     // ----------------------------------------------------------------
     Settings {
         id: reglages
-        category: "configuration"
+        //category: "configuration"
         property alias photographe: textFieldName.text
         property alias initiales: textFieldInitials.text
         property alias creatorEnabled: checkBoxCreator.checked
         property alias captionEnabled: checkBoxCaption.checked
         property alias imgDescEnabled: checkBoxImgDesc.checked
-        property alias debugMode: checkBoxDebug.checked
+        property alias debugModeEnabled: checkBoxDebug.checked
     }
 
 }

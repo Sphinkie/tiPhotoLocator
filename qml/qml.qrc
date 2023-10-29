@@ -34,10 +34,9 @@
         <file>Components/Zone.qml</file>
         <file>Components/TiPhotoPreview.qml</file>
         <file>Dialogs/RescanWarning.qml</file>
-        <file>Components/TiBottomToolBar.qml</file>
         <file>Components/TiImagettes.qml</file>
         <file>Components/TiPhotoTags.qml</file>
-        <file>Controllers/TiMapButtonBar_ctrl.qml</file>
+        <file>Controllers/TiMapToolBar_ctrl.qml</file>
         <file>Images/mappin-black.png</file>
         <file>Images/mappin-grey.png</file>
         <file>Images/mappin-strike.png</file>
@@ -49,12 +48,14 @@
         <file>Images/logo_TPL.png</file>
         <file>Vues/SettingsWindowForm.qml</file>
         <file>Vues/TiToolBarForm.ui.qml</file>
-        <file>Vues/TiMapButtonBarForm.ui.qml</file>
+        <file>Vues/TiMapToolBarForm.ui.qml</file>
         <file>Images/trashcan.png</file>
         <file>Images/suggestion.png</file>
         <file>Images/world.png</file>
         <file>Images/suppr-icon.png</file>
         <file>Vues/ZonePreviewForm.ui.qml</file>
         <file>Controllers/ZonePreview.qml</file>
+        <file>Controllers/TiBottomToolBar.qml</file>
+        <file>Vues/TiBottomToolBarForm.qml</file>
     </qresource>
 </RCC>

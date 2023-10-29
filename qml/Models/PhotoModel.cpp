@@ -5,7 +5,8 @@
 #include "PhotoModel.h"
 #include <QTimer>
 #include <QDebug>
-#include <cstdlib>
+#include <QSettings>
+//#include <cstdlib>
 
 #define QT_NO_DEBUG_OUTPUT
 
@@ -193,6 +194,7 @@ void PhotoModel::appendSavedPosition(double lati, double longi)
     this->setData(m_markerIndex, longi, LongitudeRole);
 }
 
+// -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::removeSavedPosition supprime du modèle l'item correspondant à la possition sauvegardée.
  */
@@ -202,6 +204,7 @@ void PhotoModel::removeSavedPosition()
     m_markerIndex = index(-1,0);
 }
 
+// -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::setInCircleItemCoords affecte les coordonnées GPS fournies à toutes les photos
  * géographiquement situées à l'interieur du cercle rouge.
@@ -382,7 +385,7 @@ void PhotoModel::dumpData()
  */
 void PhotoModel::clear()
 {
-    beginResetModel();  // cette methode envoie un signal indiquant à tous que ce modèle va subir un changement radiacal
+    beginResetModel();  // cette methode envoie un signal indiquant à tous que ce modèle va subir un changement radical
     m_data.clear();
     m_lastSelectedRow = 0;
     endResetModel();    // cette methode envoie un signal ModelReset
@@ -423,7 +426,7 @@ void PhotoModel::saveExifMetadata()
             exifData.insert("GPSLatitude", idx.data(LatitudeRole));
             exifData.insert("GPSLongitude", idx.data(LongitudeRole));
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
-            exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()<0 ? "W" : "E" );
+            exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
             exifData.insert("Software", "TiPhotoLocator");  // TODO: ou bien: from Settings
             emit writeMetadata(exifData);
             // On fait retomber le flag "toBeSaved"
@@ -438,11 +441,15 @@ void PhotoModel::saveExifMetadata()
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::addTestItem add a test item to the Model.
+ * @brief PhotoModel::addTestItem add a test item to the Model. (only if DebugMode is enabled)
  * For testing purpose.
  */
 void PhotoModel::addTestItem()
 {
+    QSettings settings;
+    bool debugMode = settings.value("debugModeEnabled", false).toBool();
+    if (!debugMode) return;
+
     this->m_data << Data("IMG_00000001", "qrc:///Images/IMG_00000001.png");
     QVariantMap ibizaData;
     ibizaData.insert("FileName", "IMG_00000001");
@@ -457,6 +464,7 @@ void PhotoModel::addTestItem()
     this->setData(ibizaData);
 }
 
+// -----------------------------------------------------------------------
 /**
  * @brief PhotoModel::removeData est une fonction typqique qui supprime l'item désigné du modèle
  * @param row: la position dans le vecteur de l'item à modifier.

@@ -2,11 +2,18 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.12   // pour Checkbox
 import Qt.labs.settings 1.1
+import "../Components"
 
 
 Rectangle {
     color: TiStyle.surfaceContainerColor
     height: bottomToolBarLayout.height + 20
+
+    property alias bt_dump: bt_dump
+    property alias cb_backups: cb_backups
+    property alias bt_save: bt_save
+    property alias bt_quit: bt_quit
+    property alias reglages2: reglages2
 
     RowLayout {
         id: bottomToolBarLayout
@@ -19,7 +26,6 @@ Rectangle {
             ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
             ToolTip.visible: hovered
             ToolTip.delay: 500
-            onClicked: _photoListModel.dumpData()
             Layout.leftMargin: 20
             Layout.topMargin: 10
         }
@@ -32,25 +38,18 @@ Rectangle {
                 delay: 500
                 visible: parent.hovered
             }
-            onCheckedChanged:  {
-                // On stocke l'état de la checkbox dans la propriété generateBackup de exifWrapper
-                _exifWrapper.generateBackup = cb_backups.checked
-            }
         }
         TiButton {
             id: bt_save
             text: qsTr("Enregistrer")
             Layout.topMargin: 10
-            // Puis on lance l'écriture des données EXIF (envoi signal)
-            onClicked: window.saveExifMetadata()
             ToolTip.text: qsTr("Enregistre les tags EXIF des photos modifiées")
             ToolTip.visible: hovered
             ToolTip.delay: 500
         }
         TiButton {
             id: bt_quit
-            text: qsTr("Quitter")
-            onClicked: Qt.quit()
+            text: qsTr("Quitter")       
             ToolTip.text: qsTr("Quitte l'application")
             ToolTip.visible: hovered
             ToolTip.delay: 500
@@ -62,8 +61,9 @@ Rectangle {
     // On mémorise la ckeckbox dans les settings
     // ----------------------------------------------------------------
     Settings {
-        id: reglages
-        category: "general"
-        property alias checkbox_backups: cb_backups.checked
+        id: reglages2
+        //category: "configuration"
+        property alias backupsEnabled: cb_backups.checked
+        property alias debugModeEnabled
     }
 }
