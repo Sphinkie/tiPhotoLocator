@@ -11,8 +11,10 @@ Item {
     property alias chipTime: chipTime
     property alias chipMake: chipMake
     property alias chipCamModel: chipCamModel
+    property string txtPreviewZone
 
     Zone {
+        txtZone: txtPreviewZone
 
         ColumnLayout {
             Text {
