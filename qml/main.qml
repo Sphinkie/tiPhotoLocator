@@ -173,7 +173,8 @@ Window {
                 Zone{
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
-                    icon: "qrc:/Images/world.png"
+                    iconZone: "qrc:/Images/world.png"
+                    txtZone: qsTr("Coordonnées GPS.")
 
                     ColumnLayout{
                         spacing: 8
@@ -202,13 +203,14 @@ Window {
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
                     color: "lightblue"
-                    icon: "qrc:/Images/suggestion.png"
+                    iconZone: "qrc:/Images/suggestion.png"
+                    txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
                 }
                 Zone{
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
                     color: "lightgrey"
-                    icon: "qrc:/Images/trashcan.png"
+                    iconZone: "qrc:/Images/trashcan.png"
                 }
             }
 
@@ -225,7 +227,7 @@ Window {
     TiImagettes{
         id: imagettes
         height: 120
-        anchors {bottom: bottomToolBar.top; left: parent.left; right: parent.right; }
+        anchors {bottom: bottomToolBar.top; left: parent.left; right: parent.right;}
     }
 
     // --------------------------------- Ligne 5

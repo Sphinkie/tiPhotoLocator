@@ -64,6 +64,5 @@ Rectangle {
         id: reglages2
         //category: "configuration"
         property alias backupsEnabled: cb_backups.checked
-        property alias debugModeEnabled
     }
 }

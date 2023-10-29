@@ -73,7 +73,7 @@ ListView{
                 anchors.left: gpsIcon.right
                 text: filename
                 font.pixelSize: 16
-                color: toBeSaved ? TiStyle.secondaryTextColor : TiStyle.primaryTextColor
+                color: toBeSaved ? TiStyle.accentTextColor : TiStyle.primaryTextColor
             }
 
             // Tag City

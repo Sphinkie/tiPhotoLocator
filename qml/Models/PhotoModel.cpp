@@ -138,7 +138,7 @@ QVariant PhotoModel::getUrl(int row)
  * @param filename: filename of the photo
  * @param url: Full path of the photo (in Qt format)
  */
-void PhotoModel::append(QString filename, QString url)
+void PhotoModel::append(const QString filename, const QString url)
 {
     const int rowOfInsert = m_data.count();
     Data* new_data = new Data(filename, url);
@@ -156,7 +156,7 @@ void PhotoModel::append(QString filename, QString url)
     map.insert("filename", QVariant(filename));
     map.insert(roleNames().value(ImageUrlRole), QVariant(url));
  */
-void PhotoModel::append(QVariantMap data)
+void PhotoModel::append(const QVariantMap data)
 {
     // qDebug() << "append QVariantMap:" << data;
     const int rowOfInsert = m_data.count();
@@ -309,7 +309,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
  * Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales.
  * @param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
  */
-void PhotoModel::setData(QVariantMap &value_list)
+void PhotoModel::setData(const QVariantMap &value_list)
 {
     // qDebug() << "setData QVariantMap:" << value_list;
     // On trouve l'index correspondant au "filename"

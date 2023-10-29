@@ -1,9 +1,9 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.12  // pour Frame
 
-Frame {
+Rectangle {
     Layout.preferredHeight: 120
+    color: TiStyle.surfaceContainerColor
 
     ListView {
         height: 120

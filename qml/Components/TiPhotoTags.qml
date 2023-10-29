@@ -6,15 +6,6 @@ GridLayout {
     columns: 2
     columnSpacing: 20
     rowSpacing: 20
-   /*
-    required property string filename
-    required property int imageWidth
-    required property int imageHeight
-    required property string camModel
-    required property string make
-    required property string dateTimeOriginal
-    required property string imageUrl
-    */
 
     Zone {
         Layout.fillWidth: true
@@ -49,7 +40,8 @@ GridLayout {
         Layout.fillHeight: true
         Layout.columnSpan: 2
         color: "lightblue"
-        icon: "qrc:/Images/suggestion.png"
+        iconZone: "qrc:/Images/suggestion.png"
+        txtZone: qsTr("Suggestions")
         Text {
             text: "Suggestions"
         }
@@ -60,10 +52,8 @@ GridLayout {
         Layout.fillHeight: true
         Layout.columnSpan: 2
         color: "lightgrey"
-        icon: "qrc:/Images/trashcan.png"
-        Text {
-            text: "Corbeille"
-        }
+        iconZone: "qrc:/Images/trashcan.png"
+        txtZone: qsTr("Corbeille")
     }
 }
 

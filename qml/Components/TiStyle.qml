@@ -51,7 +51,7 @@ Item{
     readonly property color secondaryTextColor: "#757575"       // gris moyen
     readonly property color dividerTextColor:   "#BDBDBD"       // gris très clair
 
-    readonly property color accentTextColor: "firebrick"             // images toBeSaved
+    readonly property color accentTextColor: "firebrick"        // images toBeSaved
 
     readonly property color highlightBackgroundColor: "lightgrey"
 }

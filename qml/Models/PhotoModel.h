@@ -115,14 +115,14 @@ public:
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
     // Methodes publiques
-    void append(QVariantMap data_dict);
+    void append(const QVariantMap data_dict);
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse
-    void setData(QVariantMap &value_list);
+    void setData(const QVariantMap &value_list);
     void selectedRow(int row);
     int getSelectedRow();
 
 public slots:
-    void append(QString filename, QString url);
+    void append(const QString filename, const QString url);
     void fetchExifMetadata();
     void saveExifMetadata();
     void appendSavedPosition(double lati, double longi);
