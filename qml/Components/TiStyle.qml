@@ -17,43 +17,44 @@ import QtQuick 2.15
  *   Le site suivant compare 9 différents outils de donstruction de palette
  *   @see https://www.webfx.com/blog/web-design/material-design-color-generators/
  *
- *   Le site le plus connu: MaterlaiPalette.com
+ *   Le site le plus connu: https://materialPalette.com
  *
  */
 Item{
 
     // Surface
-    /*
-     * Surface colors define contained areas, distinguishing them from a background and other on-screen elements.
-     * Surface = couleur de fond
-     * Surface container = couleur de fond des outils en haut et en bas
-    */
+    // Surface colors define contained areas, distinguishing them from a background and other on-screen elements.
+    // Surface = couleur de fond
+    // Surface container = couleur de fond des outils en haut et en bas
+    readonly property color surfaceBackgroundColor: "#f7f7f7"       // gris très clair pour la surface de fond
+    readonly property color surfaceContainerColor: "#dcedc8"        // vert très pale pour le container de fond
 
-    readonly property color surfaceBackgroundColor: "#f7f7f7"
-    readonly property color surfaceContainerColor: "#dcedc8"
-
-    readonly property color primaryForegroundColor: "#8bc34a"       // green
-    readonly property color primaryBackgroundColor: "#f7f7f7"
-
-    readonly property color secondaryForegroundColor: "#689f38"     // darkgreen
-    readonly property color secondaryBackgroundColor: "lightblue"
+    // Primary: Zones & boutons
+    readonly property color primaryForegroundColor: "#8bc34a"       // vert pour les boutons
+    readonly property color primaryBackgroundColor: "#8bc34a"       // vert pour les zones standard (darker=#6ca64f)
+    readonly property color trashcanBackgroundColor: "lightgrey"    // #d3d3d3 gris pour les zones corbeille  (darker=#c2c6c9)
+    readonly property color suggestionBackgroundColor: "lightblue"  // #add8e6 bleu pour les zones de suggestions (darker=#70b1c9)
 
     // Chips
-        readonly property color tertiaryForegroundColor: "#448aff"
-    readonly property color tertiaryBackgroundColor: "lightblue"
-    readonly property color tertiaryTextColor: "slateblue"
+    readonly property color secondaryForegroundColor: "#689f38"     // darkgreen : fond des chips + simplechips
+    readonly property color secondaryBackgroundColor: "lightblue"   // Textes des SimpleChips
 
+    // UNUSED
+    // readonly property color tertiaryForegroundColor: "#448aff"
+    // readonly property color tertiaryBackgroundColor: "lightblue"
+
+    // Boutons
     readonly property color buttonIdleColor: primaryForegroundColor
     readonly property color buttonHoveredColor: Qt.lighter(buttonIdleColor, 1.2)
     readonly property color buttonPressedColor: Qt.darker(buttonIdleColor, 1.3)
 
-    readonly property color primaryTextColor:   "#212121"       // gris foncé
-    readonly property color secondaryTextColor: "#757575"       // gris moyen
-    readonly property color dividerTextColor:   "#BDBDBD"       // gris très clair
-
-    readonly property color accentTextColor: "firebrick"        // images toBeSaved
-
-    readonly property color highlightBackgroundColor: "lightgrey"
+    // Textes
+    readonly property color primaryTextColor:   "#212121"          // gris foncé      : Listview + toolbar
+    readonly property color secondaryTextColor: "#757575"          // gris moyen      : Répertoire dans la toolbar
+    readonly property color tertiaryTextColor:  "#BDBDBD"          // gris très clair : chips + annotations dans les settings
+    //TODO : améliorer les couleurs suivantes:
+    readonly property color accentTextColor: "firebrick"           // filenames toBeSaved
+    readonly property color highlightBackgroundColor: "lightgrey"  // filename sélectionné
 }
 
 

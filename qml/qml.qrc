@@ -64,5 +64,6 @@
         <file>Images/camera.png</file>
         <file>Vues/ZoneGeolocForm.ui.qml</file>
         <file>Controllers/ZoneGeoloc.qml</file>
+        <file>Images/photo.png</file>
     </qresource>
 </RCC>

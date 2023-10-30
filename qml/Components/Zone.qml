@@ -7,7 +7,7 @@ Rectangle {
     property string txtZone
 
     radius: 16
-    color: TiStyle.primaryForegroundColor
+    color: TiStyle.primaryBackgroundColor
     implicitHeight: 300    // Note: Mettre Layout.fillHeight dans le parent pour bien occuper tout l'espace
     implicitWidth: 380
     property bool dropable: true
@@ -25,7 +25,6 @@ Rectangle {
     // Texte explicatif (optionnel)
     Text{
         color: Qt.darker(parent.color, 1.3)
-//        color: Qt.lighter(parent.color, 1.1)
         text: txtZone
         font.weight: Font.Thin
         font.pointSize: 16

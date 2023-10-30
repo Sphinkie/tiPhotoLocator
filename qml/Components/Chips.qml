@@ -42,7 +42,7 @@ Rectangle {
         anchors.topMargin: 4
         text: content
         font.pixelSize: 14
-        color: TiStyle.secondaryBackgroundColor
+        color: TiStyle.tertiaryTextColor
         // Positionnement du texte
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter

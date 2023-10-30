@@ -21,7 +21,7 @@ Window {
     // dimensions minimales
     minimumHeight: 640
     minimumWidth: 1200
-    color: TiStyle.primaryBackgroundColor
+    color: TiStyle.surfaceBackgroundColor
 
     // ----------------------------------------------------------------
     // Les signaux
@@ -175,60 +175,17 @@ Window {
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
                 }
-                /*
-                // TODO : A séparer dans ZoneGeoloc
                 Zone{
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
-                    iconZone: "qrc:/Images/world.png"
-                    txtZone: qsTr("Géolocalisation")
-
-                    ColumnLayout{
-                        //spacing: 8
-                        Chips {
-                            content: mapTab.photoLatitude.toFixed(4) + " Lat "  + ((mapTab.photoLatitude>0) ? "N" : "S")
-                            Layout.topMargin: 10
-                            Layout.leftMargin: 20
-                            editable: false
-                            deletable: true
-                            visible: (mapTab.photoLatitude != 0)
-                        }
-                        Chips {
-                            content: mapTab.photoLongitude.toFixed(4) + " Long " + ((mapTab.photoLongitude>0) ? "E" : "W")
-                            Layout.topMargin: 10
-                            Layout.leftMargin: 20
-                            editable: false
-                            deletable: true
-                            visible: (mapTab.photoLongitude != 0)
-                        }
-                        Chips {
-                            content: tabbedPage.selectedData.city
-                            Layout.topMargin: 10
-                            Layout.leftMargin: 20
-                            editable: false
-                            deletable: true
-                        }
-                        Chips {
-                            content: tabbedPage.selectedData.country
-                            Layout.topMargin: 10
-                            Layout.leftMargin: 20
-                            editable: false
-                            deletable: true
-                        }
-                    }
-                }
-                */
-                Zone{
-                    Layout.rightMargin: 40
-                    Layout.fillHeight: true
-                    color: "lightblue"
+                    color: TiStyle.suggestionBackgroundColor
                     iconZone: "qrc:/Images/suggestion.png"
                     txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
                 }
                 Zone{
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
-                    color: "lightgrey"
+                    color: TiStyle.trashcanBackgroundColor
                     iconZone: "qrc:/Images/trashcan.png"
                 }
             }

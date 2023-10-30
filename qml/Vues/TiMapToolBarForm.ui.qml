@@ -9,6 +9,8 @@ Item {
     property alias bt_apply_pos: bt_apply_pos
     property alias bt_clear_coords: bt_clear_pos
     property alias slider_radius: slider_radius
+    property alias bt_get_info: bt_get_info
+
     height: bt_save_pos.height + 20
 
     TiButton {
@@ -54,6 +56,14 @@ Item {
         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         to: 2000 // unité = 1 mètre
         anchors.left: bt_apply_pos.right
+        anchors.leftMargin: 20
+        anchors.verticalCenter: parent.verticalCenter
+    }
+
+    TiButton {
+        id: bt_get_info
+        text: qsTr("Get Info")
+        anchors.left: slider_radius.right
         anchors.leftMargin: 20
         anchors.verticalCenter: parent.verticalCenter
     }
