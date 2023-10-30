@@ -5,8 +5,6 @@ import "../Controllers"
 
 GridLayout {
     columns: 3
-    //columnSpacing: 20
-    //rowSpacing: 20
 
     ZoneCamera {
         Layout.fillWidth: true
@@ -18,6 +16,7 @@ GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
+        iconZone: "qrc:/Images/camera.png"
         txtZone: qsTr("Photo")
     }
 

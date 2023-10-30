@@ -62,5 +62,7 @@
         <file>Vues/ZoneCameraForm.ui.qml</file>
         <file>Controllers/ZoneCamera.qml</file>
         <file>Images/camera.png</file>
+        <file>Vues/ZoneGeolocForm.ui.qml</file>
+        <file>Controllers/ZoneGeoloc.qml</file>
     </qresource>
 </RCC>

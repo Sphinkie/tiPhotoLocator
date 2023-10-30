@@ -5,10 +5,10 @@ import "../Components"
 Item {
     width: 400
     //height: 600
+    property alias previewZone: previewZone
     property alias chipArtist: chipArtist
     property alias chipDescription: chipDescription
     property alias chipWriter: chipWriter
-    property alias previewZone: previewZone
 
     Zone {
         id: previewZone

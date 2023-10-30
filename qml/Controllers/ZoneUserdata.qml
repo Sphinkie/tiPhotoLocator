@@ -4,7 +4,7 @@ import "../Vues"
 // Controlleur
 ZoneUserdataForm {
 
-    // On determine le contenu des champs ici, mais ça marche aussi si on le fait dans la vue.
+    // On détermine le contenu des champs ici, mais ça marche aussi si on le fait dans la vue.
 
     chipArtist.content:      "tabbedPage.selectedData.artist"
     chipDescription.content: "tabbedPage.selectedData.description"

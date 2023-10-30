@@ -171,6 +171,11 @@ Window {
                 }
 
                 // Affichage des infos supplémentaires (coords GPS, etc)
+                ZoneGeoloc{
+                    Layout.rightMargin: 40
+                    Layout.fillHeight: true
+                }
+                /*
                 // TODO : A séparer dans ZoneGeoloc
                 Zone{
                     Layout.rightMargin: 40
@@ -212,6 +217,7 @@ Window {
                         }
                     }
                 }
+                */
                 Zone{
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
