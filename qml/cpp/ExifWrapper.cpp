@@ -10,6 +10,7 @@
 
 #define QT_NO_DEBUG_OUTPUT
 
+/* ********************************************************************************************************** */
 /**
  * @brief Contructeur. Initialise le fichier de configuration pour exifTools.
  **/
@@ -20,6 +21,7 @@ ExifWrapper::ExifWrapper(PhotoModel* photomodel)
     this->writeArgsFile();
 }
 
+/* ********************************************************************************************************** */
 /**
  * @brief ExifWrapper::scanFile scans all the pictures in a folder with ExifTools.
  * @param folderPath : the folder to scan (ex: "E:\\TiPhotos")
@@ -64,12 +66,13 @@ bool ExifWrapper::scanFile(QString filePath)
     return true;
 }
 
-
+/* ********************************************************************************************************** */
 /**
- * @brief Write the Arguments file for ExifTool.
+ * @brief List the tags to be read in the JPG files, and put them in the Arguments file for ExifTool.
  * @return true if the file was successfully created.
- * @see https://www.carlseibert.com/guide-iptc-photo-metadata-fields/ to learn about the usage of IPTC tags.
+ * To learn about the usage of IPTC tags:
  * @see https://iptc.org/std/photometadata/documentation/mappingguidelines/
+ * @see https://www.carlseibert.com/guide-iptc-photo-metadata-fields/
  **/
 bool ExifWrapper::writeArgsFile()
 {
@@ -94,22 +97,20 @@ bool ExifWrapper::writeArgsFile()
     // GPS coordinates
     out << "-GPSLatitude"       << Qt::endl;    // 45.4325547675333
     out << "-GPSLongitude"      << Qt::endl;    // 12.3374594498028
-//    out << "-GPSLatitudeRef"    << Qt::endl;    // "N"
-//    out << "-GPSLongitudeRef"   << Qt::endl;    // "E"
+//  out << "-GPSLatitudeRef"    << Qt::endl;    // "N"
+//  out << "-GPSLongitudeRef"   << Qt::endl;    // "E"
     // IPTC tags
-    // TODO : Menu settings: choisir le tag à écrire: Description ou ImageDescription ou Caption
     out << "-Description"       << Qt::endl;    // Description du contenu de la photo (important)
     out << "-ImageDescription"  << Qt::endl;    // Alternate tag label for "Description" (EXIF)
     out << "-Caption"           << Qt::endl;    // Alternate tag label for "Description" (IPTC)
     out << "-Keywords"          << Qt::endl;    // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
-    // TODO : Menu settings: choisir le tag à écrire: Artist ou Creator
     out << "-Artist"            << Qt::endl;    // Name of the photographer (EXIF tag label)
     out << "-Creator"           << Qt::endl;    // Name of the photographer (IPTC tag label)
     // Reverse Geocoding
     out << "-City"              << Qt::endl;
     out << "-Country"           << Qt::endl;
+    out << "-Landmark"          << Qt::endl;
     // TODO : Rendre les tags ci-dessous activables depuis le menu settings
-    // TODO : Menu settings: renseigner la valeur par défaut pour DescriptionWriter
     out << "-DescriptionWriter" << Qt::endl;    // (optional) Initials of the writer
     out << "-Headline"          << Qt::endl;    // (optional) Short description in 2 to 5 words
 
@@ -141,6 +142,7 @@ bool ExifWrapper::writeArgsFile()
 */
 
 
+/* ********************************************************************************************************** */
 /**
  * @brief ExifWrapper::processLine analyse une partie de texte reçu de exifTool.
  * @param line : the received text
@@ -195,6 +197,7 @@ void ExifWrapper::processLine(QByteArray line)
 
 /*
 QVariantMap: QMap(
+  ("SourceFile",       QVariant(QString,   "E:/TiPhotos/P8160449.JPG"))
   ("FileName",         QVariant(QString,   "P8160449.JPG"))
   ("Artist",           QVariant(QString,   "Picasa"))
   ("DateTimeOriginal", QVariant(QString,   "2023:08:16 13:30:20"))
@@ -205,7 +208,6 @@ QVariantMap: QMap(
   ("ImageWidth",       QVariant(qlonglong, 4608))
   ("Make",             QVariant(QString,   "OLYMPUS CORPORATION"))
   ("Model",            QVariant(QString,   "E-M10MarkII"))
-  ("SourceFile",       QVariant(QString,   "E:/TiPhotos/P8160449.JPG"))
 )
 */
 

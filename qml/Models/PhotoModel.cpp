@@ -97,21 +97,27 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
     static QHash<int, QByteArray> mapping {
         {FilenameRole,        "filename"},
         {ImageUrlRole,        "imageUrl"},
-        {LatitudeRole,        "latitude"},
-        {LongitudeRole,       "longitude"},
+        {ImageWidthRole,      "imageWidth"},
+        {ImageHeightRole,     "imageHeight"},
+        // flags
         {HasGPSRole,          "hasGPS"},
         {IsSelectedRole,      "isSelected"},
         {IsMarkerRole,        "isMarker"},
         {IsWelcomeRole,       "isWelcome"},
         {InsideCircleRole,    "insideCircle"},
         {ToBeSavedRole,       "toBeSaved"},
+        // Geolocation
+        {LatitudeRole,        "latitude"},
+        {LongitudeRole,       "longitude"},
+        {CityRole,            "city"},
+        {CountryRole,         "country"},
+        // Photo
         {DateTimeOriginalRole,"dateTimeOriginal"},
-        {CamModelRole,        "camModel"},
-        {ImageWidthRole,      "imageWidth"},
-        {ImageHeightRole,     "imageHeight"},
+        // Camera
         {CamModelRole,        "camModel"},
         {MakeRole,            "make"},
-        {CityRole,            "city"}
+        // Userdata
+        {ArtistRole,          "artist"}
     };
     return mapping;
 }
@@ -337,15 +343,18 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_data[row].make            = value_list["Make"].toString();
     m_data[row].imageWidth      = value_list["ImageWidth"].toInt();
     m_data[row].imageHeight     = value_list["ImageHeight"].toInt();
-    m_data[row].artist          = value_list["Artist"].toString();           // TODO : gérer Creator
-    m_data[row].gpsLatitudeRef  = value_list["GPSLatitudeRef"].toString();
-    m_data[row].gpsLongitudeRef = value_list["GPSLongitudeRef"].toString();
+    //m_data[row].gpsLatitudeRef  = value_list["GPSLatitudeRef"].toString();
+    //m_data[row].gpsLongitudeRef = value_list["GPSLongitudeRef"].toString();
     m_data[row].city            = value_list["City"].toString();
     m_data[row].country         = value_list["Country"].toString();
     m_data[row].description     = value_list["Description"].toString();     // TODO : aka Caption / ImageDescription
     m_data[row].headline        = value_list["Headline"].toString();
     m_data[row].keywords        = value_list["Keywords"].toString();        // TODO: this is a list of keywords
     m_data[row].descriptionWriter = value_list["DescriptionWriter"].toString();
+    if (value_list["Artist"].isNull())
+        m_data[row].artist          = value_list["Creator"].toString();
+    else
+        m_data[row].artist          = value_list["Artist"].toString();
 
     // Envoi du signal dataChanged()
     QModelIndex changed_index = this->index(row, 0);
@@ -375,7 +384,7 @@ void PhotoModel::dumpData()
     }
     qDebug() << m_data[m_dumpedRow].filename << m_data[m_dumpedRow].city << m_data[m_dumpedRow].gpsLatitude << m_data[m_dumpedRow].gpsLongitude
              << m_data[m_dumpedRow].camModel << m_data[m_dumpedRow].make << "to be saved:" << m_data[m_dumpedRow].toBeSaved
-             << "dateTimeOriginal:" << m_data[m_dumpedRow].dateTimeOriginal  <<  "description:" << m_data[m_dumpedRow].description ;
+             << "dateTimeOriginal:" << m_data[m_dumpedRow].dateTimeOriginal  <<  "description:" << m_data[m_dumpedRow].description  <<  "artist:" << m_data[m_dumpedRow].artist ;
     m_dumpedRow++;
 }
 
@@ -413,6 +422,10 @@ void PhotoModel::fetchExifMetadata()
 void PhotoModel::saveExifMetadata()
 {
     qDebug() << "saveExifMetadata";
+    QSettings settings;
+    bool creatorEnabled = settings.value("creatorEnabled", false).toBool();
+    QString software = settings.value("software", "").toString();
+
     // On parcourt tous les items du modèle (par leur indice dans le vecteur)
     int row = 0;
     QModelIndex idx = this->index(row, 0);
@@ -426,9 +439,12 @@ void PhotoModel::saveExifMetadata()
             exifData.insert("GPSLatitude", idx.data(LatitudeRole));
             exifData.insert("GPSLongitude", idx.data(LongitudeRole));
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
-            exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
-            exifData.insert("Software", "TiPhotoLocator");  // TODO: ou bien: from Settings
+            exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );           
+            exifData.insert("Artist", idx.data(ArtistRole));
+            if (creatorEnabled)  exifData.insert("Creator", idx.data(ArtistRole));
+            exifData.insert("Software", software);
             emit writeMetadata(exifData);
+
             // On fait retomber le flag "toBeSaved"
             setData(idx, false, ToBeSavedRole);
             // ou:

@@ -57,5 +57,7 @@
         <file>Controllers/ZonePreview.qml</file>
         <file>Controllers/TiBottomToolBar.qml</file>
         <file>Vues/TiBottomToolBarForm.qml</file>
+        <file>Vues/ZoneUserdataForm.ui.qml</file>
+        <file>Controllers/ZoneUserdata.qml</file>
     </qresource>
 </RCC>

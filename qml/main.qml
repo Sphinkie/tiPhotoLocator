@@ -197,6 +197,18 @@ Window {
                             deletable: true
                             visible: (mapTab.photoLongitude != 0)
                         }
+                        Chips {
+                            content: tabbedPage.selectedData.city
+                            Layout.leftMargin: 20
+                            editable: false
+                            deletable: true
+                        }
+                        Chips {
+                            content: selectedData.country
+                            Layout.leftMargin: 20
+                            editable: false
+                            deletable: true
+                        }
                     }
                 }
                 Zone{

@@ -30,3 +30,5 @@ REM Interresting options:
 --duplicates ^
 -fast[NUM]                       Increase speed when extracting metadata
 -@ ARGFILE                       Read command-line arguments from file
+-All                             List all metadata
+-sort                            Alphabetical order
