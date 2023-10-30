@@ -25,10 +25,9 @@ ExifWrapper::ExifWrapper(PhotoModel* photomodel)
 /**
  * @brief ExifWrapper::scanFile scans all the pictures in a folder with ExifTools.
  * @param folderPath : the folder to scan (ex: "E:\\TiPhotos")
- * @return true if successfull
  * @see https://stackoverflow.com/questions/20331668/qxmlstreamreader-reading-from-slow-qprocess
  **/
-bool ExifWrapper::scanFile(QString filePath)
+void ExifWrapper::scanFile(QString filePath)
 {
     qDebug() << "scanFile parameter :" << filePath;
     filePath.remove(0,8);
@@ -63,7 +62,6 @@ bool ExifWrapper::scanFile(QString filePath)
         this->processLine(exifProcess.readLine());
     }
     qDebug() << "scanFile finished" ;
-    return true;
 }
 
 /* ********************************************************************************************************** */
@@ -215,7 +213,7 @@ QVariantMap: QMap(
  * @brief Le slot ExifWrapper::writeMetadata écrit les métadonnées recues dans les tags EXIF de la photo
  * @param exifData: La liste des tags à écrire. Doit contenir "imageUrl" au format "file:///E:/Photos/IMG_20230709.jpg".
  */
-void ExifWrapper::writeMetadata(QVariantMap exifData)
+void ExifWrapper::writeMetadata(const QVariantMap exifData)
 {
     QString filePath = exifData.value("imageUrl").toString();
     // qDebug() << "writeMetadata" << filePath ;

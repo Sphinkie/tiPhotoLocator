@@ -34,6 +34,7 @@ Window {
     signal fetchExifMetadata()
     signal saveExifMetadata()
     signal hasPos()
+    signal requestReverseGeocode(double lati, double longi)
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier

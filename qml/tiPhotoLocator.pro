@@ -1,4 +1,6 @@
-QT += quick
+QT += quick \
+      positioning \
+      location
 
 CONFIG += c++11
 
@@ -10,6 +12,7 @@ SOURCES += \
         Models/OnTheMapProxyModel.cpp \
         Models/PhotoModel.cpp \
         cpp/ExifWrapper.cpp \
+        cpp/GeocodeWrapper.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -30,10 +33,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     Components/PhotoPreview.qml \
-    images/cavehouse.png \
     images/clock.png
 
 HEADERS += \
     Models/OnTheMapProxyModel.h \
     Models/PhotoModel.h \
-    cpp/ExifWrapper.h
+    cpp/ExifWrapper.h \
+    cpp/GeocodeWrapper.h

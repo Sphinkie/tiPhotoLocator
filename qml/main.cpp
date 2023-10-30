@@ -6,7 +6,7 @@
 #include "Models/PhotoModel.h"
 #include "Models/OnTheMapProxyModel.h"
 #include "cpp/ExifWrapper.h"
-
+#include "cpp/GeocodeWrapper.h"
 
 /** ********************************************************************************
  * Programme principal
@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
     onTheMapProxyModel.setSourceModel(&photoListModel);
     // On initialise nos classes
     ExifWrapper exifWrapper(&photoListModel);
+    GeocodeWrapper geocodeWrapper;
 
     // Initialisation du moteur:
     // Au choix
@@ -68,6 +69,7 @@ int main(int argc, char *argv[])
 //  QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &photoListModel, SLOT(setInCircleItemCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &onTheMapProxyModel, SLOT(setAllItemsCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel, SLOT(setAllItemsSavedCoords()));
+    QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper, SLOT(requestReverseGeocode(double,double)));
     QObject::connect(&photoListModel, SIGNAL(scanFile(QString)),          &exifWrapper, SLOT(scanFile(QString)));
     QObject::connect(&photoListModel, SIGNAL(writeMetadata(QVariantMap)), &exifWrapper, SLOT(writeMetadata(QVariantMap)));
 

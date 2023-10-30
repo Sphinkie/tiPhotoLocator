@@ -15,8 +15,8 @@ public:
     explicit ExifWrapper(PhotoModel* photomodel);
 
 public slots:
-    bool scanFile(QString filePath);
-    void writeMetadata(QVariantMap exifData);
+    void scanFile(QString filePath);
+    void writeMetadata(const QVariantMap exifData);
 
 private:
     bool writeArgsFile();

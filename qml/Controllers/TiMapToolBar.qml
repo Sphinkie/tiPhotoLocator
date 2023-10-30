@@ -28,6 +28,7 @@ TiMapToolBarForm {
 
     bt_get_info.onClicked: {
         // DEV: on recupere des infos à partir des coords GPS
+        window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
     }
 
     bt_clear_coords.onClicked: {
