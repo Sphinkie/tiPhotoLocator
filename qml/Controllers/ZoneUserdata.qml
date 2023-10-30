@@ -4,8 +4,6 @@ import "../Vues"
 // Controlleur
 ZoneUserdataForm {
 
-    txtPreviewZone : qsTr("user tags")
-
     // On determine le contenu des champs ici, mais ça marche aussi si on le fait dans la vue.
 
     chipArtist.content:      "tabbedPage.selectedData.artist"

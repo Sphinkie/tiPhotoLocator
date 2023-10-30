@@ -59,5 +59,8 @@
         <file>Vues/TiBottomToolBarForm.qml</file>
         <file>Vues/ZoneUserdataForm.ui.qml</file>
         <file>Controllers/ZoneUserdata.qml</file>
+        <file>Vues/ZoneCameraForm.ui.qml</file>
+        <file>Controllers/ZoneCamera.qml</file>
+        <file>Images/camera.png</file>
     </qresource>
 </RCC>

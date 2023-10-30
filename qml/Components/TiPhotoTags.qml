@@ -8,24 +8,12 @@ GridLayout {
     //columnSpacing: 20
     //rowSpacing: 20
 
-    Zone {
+    ZoneCamera {
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
-        txtZone: qsTr("Appareil photo")
-        Chips{
-            Layout.leftMargin: 20
-            content: tabbedPage.selectedData.make
-            editable: false
-            deletable: false
-        }
-        Chips{
-            Layout.leftMargin: 20
-            content: tabbedPage.selectedData.camModel
-            editable: false
-            deletable: false
-        }
     }
+
     Zone {
         Layout.fillWidth: true
         Layout.fillHeight: true
@@ -37,8 +25,6 @@ GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
-        //Layout.rightMargin: 30
-        //Layout.topMargin: 20
     }
 
 

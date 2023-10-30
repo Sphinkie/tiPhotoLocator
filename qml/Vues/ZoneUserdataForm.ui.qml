@@ -8,32 +8,29 @@ Item {
     property alias chipArtist: chipArtist
     property alias chipDescription: chipDescription
     property alias chipWriter: chipWriter
-    property string txtPreviewZone
+    property alias previewZone: previewZone
 
     Zone {
-        txtZone: txtPreviewZone
+        id: previewZone
+        anchors.fill: parent
+        txtZone: qsTr("Tags")
 
         ColumnLayout {
             Chips {
                 id: chipArtist
-                Layout.leftMargin: 20
-                editable: false
-                deletable: false
+                editable: true
+                deletable: true
             }
             Chips {
                 id: chipDescription
-                Layout.leftMargin: 20
-                editable: false
-                deletable: false
+                editable: true
+                deletable: true
             }
             Chips {
                 id: chipWriter
-                Layout.leftMargin: 20
-                editable: false
-                deletable: false
+                editable: true
+                deletable: true
             }
         }
     }
 }
-
-

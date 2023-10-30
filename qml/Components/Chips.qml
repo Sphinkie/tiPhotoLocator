@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 
 /**
@@ -8,6 +9,9 @@ import QtGraphicalEffects 1.0
  * @see https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html
  */
 Rectangle {
+    // Les Chips doivent être dans un ColumLayout/ On peut ainsi les positionner tous de la même façon
+    Layout.topMargin: 10
+    Layout.leftMargin: 20
 
     radius: 16
     color: TiStyle.secondaryForegroundColor
