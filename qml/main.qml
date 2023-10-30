@@ -145,6 +145,7 @@ Window {
                 id: mapTab
                 Layout.fillWidth: true
                 // Les coordonnées du point sélectionné
+                // Actualisé lors d'un clic sur la listView, ou sur la carte.
                 property double photoLatitude: 0
                 property double photoLongitude: 0
                 columnSpacing: 8
@@ -156,7 +157,7 @@ Window {
                 // M Z3
 
                 // Barre d'outils pour la carte (controleur)
-                TiMapToolBar_ctrl {
+                TiMapToolBar {
                     id: mapTools
                     Layout.columnSpan: 2  // Toute la largeur
                     Layout.fillWidth: true
@@ -170,21 +171,18 @@ Window {
                 }
 
                 // Affichage des infos supplémentaires (coords GPS, etc)
+                // TODO : A séparer dans ZoneGeoloc
                 Zone{
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
                     iconZone: "qrc:/Images/world.png"
-                    txtZone: qsTr("Coordonnées GPS.")
+                    txtZone: qsTr("Géolocalisation")
 
                     ColumnLayout{
-                        spacing: 8
-                        Text {
-                            Layout.topMargin: 20
-                            Layout.leftMargin: 10
-                            text: "Coordonnées GPS: "
-                        }
+                        //spacing: 8
                         Chips {
                             content: mapTab.photoLatitude.toFixed(4) + " Lat "  + ((mapTab.photoLatitude>0) ? "N" : "S")
+                            Layout.topMargin: 10
                             Layout.leftMargin: 20
                             editable: false
                             deletable: true
@@ -192,6 +190,7 @@ Window {
                         }
                         Chips {
                             content: mapTab.photoLongitude.toFixed(4) + " Long " + ((mapTab.photoLongitude>0) ? "E" : "W")
+                            Layout.topMargin: 10
                             Layout.leftMargin: 20
                             editable: false
                             deletable: true
@@ -199,12 +198,14 @@ Window {
                         }
                         Chips {
                             content: tabbedPage.selectedData.city
+                            Layout.topMargin: 10
                             Layout.leftMargin: 20
                             editable: false
                             deletable: true
                         }
                         Chips {
-                            content: selectedData.country
+                            content: tabbedPage.selectedData.country
+                            Layout.topMargin: 10
                             Layout.leftMargin: 20
                             editable: false
                             deletable: true

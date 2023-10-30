@@ -36,7 +36,7 @@
         <file>Dialogs/RescanWarning.qml</file>
         <file>Components/TiImagettes.qml</file>
         <file>Components/TiPhotoTags.qml</file>
-        <file>Controllers/TiMapToolBar_ctrl.qml</file>
+        <file>Controllers/TiMapToolBar.qml</file>
         <file>Images/mappin-black.png</file>
         <file>Images/mappin-grey.png</file>
         <file>Images/mappin-strike.png</file>

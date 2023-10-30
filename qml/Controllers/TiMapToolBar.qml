@@ -29,9 +29,13 @@ TiMapToolBarForm {
     bt_clear_coords.onClicked: {
         // On efface les coordonnées GPS des photos affichées
         window.setSelectedItemCoords(0,0);
+        // On grise certains boutons
         bt_save_pos.enabled = false;
         bt_clear_coords.enabled = false;
         slider_radius.enabled = false;
         slider_radius.value = 0;
+        // On efface la copie locale QML de ces corodonnées...
+        mapTab.photoLatitude = 0;
+        mapTab.photoLongitude = 0;
     }
 }
