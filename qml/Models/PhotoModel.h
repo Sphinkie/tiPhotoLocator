@@ -3,7 +3,7 @@
 
 #include <QAbstractListModel>
 
-
+// -----------------------------------------------------------------------
 /**
  * @brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.
  */
@@ -66,8 +66,9 @@ struct Data
 
 
 // -----------------------------------------------------------------------
-// Class
-// -----------------------------------------------------------------------
+/**
+ * @brief The PhotoModel class manages a list of photo Data.
+ */
 class PhotoModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -144,7 +145,7 @@ signals:
 
 private: //members
     QVector<Data> m_data;
-    int m_lastSelectedRow = 0;  // Au départ, on a un item: Kodak
+    int m_lastSelectedRow = 0;  // Au départ, on a un item: le Welcome Rolleyflex
     int m_dumpedRow = 0;        // Compteur pour le dump de debug
 protected:
     int m_markerRow = -1;       // Position du marker SavedPosition

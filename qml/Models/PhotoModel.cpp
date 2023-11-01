@@ -3,23 +3,25 @@
  */
 
 #include "PhotoModel.h"
-#include <QTimer>
+//#include <QTimer>
 #include <QDebug>
 #include <QSettings>
 //#include <cstdlib>
 
 #define QT_NO_DEBUG_OUTPUT
 
+
 // -----------------------------------------------------------------------
-// Constructor
-// -----------------------------------------------------------------------
+/**
+ * @brief Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose.
+ * @param parent
+ */
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
     // On met quelques items dans la liste
     m_data << Data("Select your photo folder", "qrc:Images/kodak.png", false, true, true); // Welcome
 
     this->addTestItem();
-
 
     // Bout de code d'exemple de timer
     /*

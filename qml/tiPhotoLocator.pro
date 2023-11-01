@@ -11,6 +11,7 @@ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs depr
 SOURCES += \
         Models/OnTheMapProxyModel.cpp \
         Models/PhotoModel.cpp \
+        Models/SuggestionModel.cpp \
         cpp/ExifWrapper.cpp \
         cpp/GeocodeWrapper.cpp \
         main.cpp
@@ -34,6 +35,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     Components/PhotoPreview.qml \
     images/clock.png
+
+HEADERS += \
+    Models/OnTheMapProxyModel.h \
+    Models/PhotoModel.h \
+    Models/SuggestionModel.h \
+    cpp/ExifWrapper.h \
+    cpp/GeocodeWrapper.h
+
 
 HEADERS += \
     Models/OnTheMapProxyModel.h \
