@@ -14,11 +14,11 @@
 /**
  * @brief Contructeur. Initialise le fichier de configuration pour exifTools.
  **/
-ExifWrapper::ExifWrapper(PhotoModel* photomodel)
+ExifWrapper::ExifWrapper(PhotoModel* photo_model)
 {
-    m_photoModel = photomodel;
     m_generateBackup = false;
-    this->writeArgsFile();
+    m_photoModel = photo_model;  // Le modèle qui memorisera les tags
+    this->writeArgsFile();      // On prepare la liste des tags
 }
 
 /* ********************************************************************************************************** */

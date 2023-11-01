@@ -3,25 +3,33 @@
 
 #include <QObject>
 #include <QtLocation/QGeoCodingManager>
-
+#include "Models/SuggestionModel.h"
 
 class GeocodeWrapper : public QObject
 {
     Q_OBJECT
 
-//    Q_PROPERTY(bool generateBackup MEMBER m_generateBackup)
-
 public:
-    explicit GeocodeWrapper();
+    // -----------------------------------
+    // Méthodes
+    // -----------------------------------
+    explicit GeocodeWrapper(SuggestionModel* suggestion_model);
 
 public slots:
+    // -----------------------------------
+    // Slots
+    // -----------------------------------
     void requestReverseGeocode(double lati, double longi);
 
 private slots:
     void geoCodeFinished(QGeoCodeReply* reply);
 
 private:
-    QGeoCodingManager* m_GeoManager;
+    // -----------------------------------
+    // Membres
+    // -----------------------------------
+    QGeoCodingManager* m_geoManager;
+    SuggestionModel* m_suggestionModel;
 
 };
 

@@ -8,31 +8,42 @@
 class ExifWrapper : public QObject
 {
     Q_OBJECT
-
     Q_PROPERTY(bool generateBackup MEMBER m_generateBackup)
 
 public:
-    explicit ExifWrapper(PhotoModel* photomodel);
+    // -----------------------------------
+    // Méthodes
+    // -----------------------------------
+    explicit ExifWrapper(PhotoModel* photo_model);
 
 public slots:
+    // -----------------------------------
+    // Slots
+    // -----------------------------------
     void scanFile(QString filePath);
     void writeMetadata(const QVariantMap exifData);
 
 private:
+    // -----------------------------------
+    // Méthodes privées
+    // -----------------------------------
     bool writeArgsFile();
     void processLine(QByteArray line);
 
-    QString m_argFile;          // Nom du fichier contenant les argements de ExifTool
-    PhotoModel* m_photoModel;
-    QByteArray m_rxLine;        // Ligene ExifTool en cours de réception
-    bool m_generateBackup;      // Accessible par QML
+    // -----------------------------------
+    // Membres
+    // -----------------------------------
+    QString m_argFile;          /// Nom du fichier contenant les argements de ExifTool
+    QByteArray m_rxLine;        /// Ligne ExifTool en cours de réception
+    bool m_generateBackup;      /// Accessible par QML
+    PhotoModel* m_photoModel;   /// Modèle contenant les photos et leurs tags
 
 };
 
 #endif // EXIFWRAPPER_H
 
 
-
-// https://scythe-studio.com/en/blog/how-to-integrate-qml-and-c-expose-object-and-register-c-class-to-qml
-// dit qu'il faut ajouter la ligen suivante dan le main pour éviter la ReferenceError: exifWrapper is not defined
+// Partage de la Property avec QML:
+// Ce site dit qu'il faut ajouter la ligne suivante dans le main.cpp pour éviter la "ReferenceError: exifWrapper is not defined"
 // context->setContextProperty("_exifWrapper", &exifWrapper);
+// https://scythe-studio.com/en/blog/how-to-integrate-qml-and-c-expose-object-and-register-c-class-to-qml
