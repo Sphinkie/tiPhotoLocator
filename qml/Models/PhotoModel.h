@@ -72,6 +72,7 @@ struct Data
 class PhotoModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
 
 public:
     enum Roles {
@@ -100,57 +101,73 @@ public:
         HeadlineRole,
         KeywordsRole
     };
-
-    Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
-
     QHash<int, QByteArray> roleNames() const override;
 
+    // -----------------------------------------------------
     // Surcharges obligatoires
+    // -----------------------------------------------------
     explicit PhotoModel(QObject *parent = nullptr);
     int      rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
 
+    // -----------------------------------------------------
     // Méthodes pouvant être appelées depuis QML
+    // -----------------------------------------------------
     Q_INVOKABLE QVariant getUrl(int index);
     Q_INVOKABLE QVariantMap get(int row);
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
+
+    // -----------------------------------------------------
     // Methodes publiques
+    // -----------------------------------------------------
     void append(const QVariantMap data_dict);
-    bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // setData est deja dans la surclasse
+    bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // On surcharge car setData() est deja dans la surclasse
     void setData(const QVariantMap &value_list);
+
+private:
+    // -----------------------------------------------------
+    // Méthodes privées
+    // -----------------------------------------------------
+    void addTestItem();
     void selectedRow(int row);
     int getSelectedRow();
 
+
 public slots:
+    // -----------------------------------------------------
+    // Slots
+    // -----------------------------------------------------
     void append(const QString filename, const QString url);
     void fetchExifMetadata();
     void saveExifMetadata();
-    void appendSavedPosition(double lati, double longi);
     void setInCircleItemCoords(double lati, double longi);
+    void appendSavedPosition(double lati, double longi);
     void removeSavedPosition();
     void duplicateData(int row);
     void removeData(int row);
 
-private:
-    void addTestItem();
-
-private slots:
-    void growPopulation();
 
 signals:
+    // -----------------------------------------------------
+    // Signaux émis
+    // -----------------------------------------------------
     void selectedRowChanged();
     void scanFile(QString imagePath);
     void writeMetadata(QVariantMap exifData);
 
-private: //members
-    QVector<Data> m_data;
-    int m_lastSelectedRow = 0;  // Au départ, on a un item: le Welcome Rolleyflex
-    int m_dumpedRow = 0;        // Compteur pour le dump de debug
-protected:
-    int m_markerRow = -1;       // Position du marker SavedPosition
+
+    // -----------------------------------------------------
+    // Membres
+    // -----------------------------------------------------
 public:
-    QModelIndex m_markerIndex = QModelIndex(); // Initialisé à une valeur invalide
+    QModelIndex m_markerIndex = QModelIndex();  /// Index du marker SavedPosition. Initialisé à une valeur invalide.
+protected:
+    int m_markerRow = -1;                       /// Position du marker SavedPosition
+private:
+    QVector<Data> m_data;                       /// La liste des photos
+    int m_lastSelectedRow = 0;                  /// Au départ, on a un item: le Welcome Rolleyflex
+    int m_dumpedRow = 0;                        /// Compteur pour le dump de debug
 };
 
 #endif // PHOTOMODEL_H

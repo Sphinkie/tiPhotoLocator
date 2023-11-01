@@ -42,10 +42,34 @@ class SuggestionModel : public QAbstractListModel
     Q_OBJECT
 
 public:
+    enum Roles {
+        TextRole  = Qt::UserRole,  // The first role that can be used for application-specific purposes.
+        TargetRole,
+        TypeRole,
+        PhotosRole
+    };
+    QHash<int, QByteArray> roleNames() const override;
+
+    // -----------------------------------------------------
+    // Surcharges obligatoires
+    // -----------------------------------------------------
     explicit SuggestionModel(QObject *parent = nullptr);
+    int      rowCount(const QModelIndex& parent) const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+
+    // -----------------------------------------------------
+    // Methodes publiques
+    // -----------------------------------------------------
+    void append(const QString text, const QString target, const Suggestion::ItemType item_type);
+    void addPhoto(const QModelIndex &index, const int photo_row);
+    void removePhoto(const QModelIndex &index, const int photo_row);
 
 
-private: //members
+
+    // -----------------------------------------------------
+    // Membres
+    // -----------------------------------------------------
+private:
     QVector<Suggestion> m_suggestions;
 
 

@@ -126,10 +126,10 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 
 // -----------------------------------------------------------------------
 /**
- * @brief Gives the full name (with absolute path) of the photo.
- * This is an example of unitary gat data method.
+ * @brief The getUrl() method gives the full name (with absolute path) of the photo.
+ * This is an example of unitary getData method.
  * @param row : Indice de l'element à lire
- * @return a QVariant containg the image URL
+ * @return a QVariant containing the image URL
  */
 QVariant PhotoModel::getUrl(int row)
 {
@@ -141,7 +141,7 @@ QVariant PhotoModel::getUrl(int row)
 
 // -----------------------------------------------------------------------
 /**
- * @brief Append a photo to the model with just a name and a path (url).
+ * @brief This append() method adds a photo to the model, with just a name and a path (url).
  * Other data should be filled later, from exif metadata.
  * @param filename: filename of the photo
  * @param url: Full path of the photo (in Qt format)
@@ -157,7 +157,7 @@ void PhotoModel::append(const QString filename, const QString url)
 
 // -----------------------------------------------------------------------
 /**
- * @brief Add an item to the Model from a dictionnary of metadata.
+ * @brief This append() method adds an item to the model, from a dictionnary of metadata.
  * @param data: A dictionnary of key-value
  * @example
     QVariantMap map;
@@ -174,7 +174,6 @@ void PhotoModel::append(const QVariantMap data)
     m_data.insert(rowOfInsert, *new_data);
     endInsertRows();
     qDebug() << "append" << data.value("filename").toString() << "to row" << rowOfInsert;
-
 }
 
 // -----------------------------------------------------------------------
@@ -513,22 +512,6 @@ void PhotoModel::duplicateData(int row)
     endInsertRows();
 }
 
-/**
- * @brief Fonction de test qui met une * dans la headline toutes les 10 secondes.
- */
-void PhotoModel::growPopulation()
-{
-    const int count = m_data.count();
-    for (int i = 0; i < count; ++i) {
-        m_data[i].headline += m_data[i].headline + "*";
-    }
-
-    // we've just updated all rows...
-    const QModelIndex startIndex = index(0, 0);
-    const QModelIndex endIndex   = index(count - 1, 0);
-    // ...but only the headline field
-    emit dataChanged(startIndex, endIndex, QVector<int>() << HeadlineRole);
-}
 
 /**
  * @brief Méthode get() venant du forum.
