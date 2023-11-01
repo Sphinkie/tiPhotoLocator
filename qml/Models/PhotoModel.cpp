@@ -266,6 +266,8 @@ void PhotoModel::selectedRow(int row)
     emit dataChanged(new_index, new_index, {IsSelectedRole, InsideCircleRole} );
     qDebug() << "PhotoModel: " << this << m_data[row].isSelected << m_data[row].filename  ;
     m_lastSelectedRow = row;
+    // On notifie les autres classes qui ont besoin de savoir quelle est photo sélectinée
+    emit selectedRowChanged(row);
 }
 
 // -----------------------------------------------------------------------
@@ -276,7 +278,7 @@ void PhotoModel::selectedRow(int row)
  * Note: It is important to emit the dataChanged() signal after saving the changes.
  * @param index : l'index (au sens ModelIndex) de l'item à modifier
  * @param value : la nouvelle valeur
- * @param role : le role à modifier (ex: LatitudeRole, LongitudeRole)
+ * @param role : le role à modifier (LatitudeRole, LongitudeRole, ToBeSavedRole)
  * @return true si la modification a réussi. False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
  * @see: https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
  */
@@ -330,7 +332,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
         if (m_data[row] == file_name) break;  // Possible grace à notre surcharge de l'opérateur ==   :-)
 
     qDebug() << "found" << row ;
-    if (row >= m_data.count()) return;        // FileName not found
+    if (row >= m_data.count()) return;        // Traitement du cas FileName not found
 
     // On met à jour les data (apparement, ça passe même s'il n'y a pas de valeur)
     m_data[row].gpsLatitude     = value_list["GPSLatitude"].toDouble();
@@ -513,6 +515,7 @@ void PhotoModel::duplicateData(int row)
 }
 
 
+// -----------------------------------------------------------------------
 /**
  * @brief Méthode get() venant du forum.
  * Declaration dans .h = Q_INVOKABLE QVariantMap get(int row);

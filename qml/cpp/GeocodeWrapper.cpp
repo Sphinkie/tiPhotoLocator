@@ -69,12 +69,16 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         qWarning() << reply->errorString();
     else if (reply->locations().count() >0)
     {
-        QGeoLocation g = reply->locations().value(0);
-        const QGeoAddress a = g.address();
-        qDebug() << a.text();
+        QGeoLocation geolocation = reply->locations().value(0);
+        const QGeoAddress adresse = geolocation.address();
+        qDebug() << adresse.text();
         // On mémorise les suggestions
-        m_suggestionModel->append(a.city(), "city", Suggestion::geo);
-        m_suggestionModel->append(a.country(), "country", Suggestion::geo);
+        m_suggestionModel->append(adresse.street(), "city", Suggestion::geo);
+        m_suggestionModel->append(adresse.district(), "city", Suggestion::geo);
+        m_suggestionModel->append(adresse.city(), "city", Suggestion::geo);
+        m_suggestionModel->append(adresse.county(), "city", Suggestion::geo);
+        m_suggestionModel->append(adresse.state(), "country", Suggestion::geo);
+        m_suggestionModel->append(adresse.country(), "country", Suggestion::geo);
     }
 }
 

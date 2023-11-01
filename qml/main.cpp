@@ -70,11 +70,14 @@ int main(int argc, char *argv[])
     //view.show();
 
     // --------------------------------------
-    // Slots customisés
+    // Connexions
     // --------------------------------------
     //QObject *item = view.rootObject();
     // Le firstRootItem est la première balise du QML, cad "window".
     QObject *firstRootItem = engine.rootObjects().first();
+    // --------------------------------------
+    // Connexions QML vers classe C++
+    // --------------------------------------
     QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)),      &photoListModel, SLOT(append(QString,QString)));
     QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),          &photoListModel, SLOT(fetchExifMetadata()));
     QObject::connect(firstRootItem,   SIGNAL(saveExifMetadata()),           &photoListModel, SLOT(saveExifMetadata()));
@@ -82,9 +85,13 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),         &photoListModel, SLOT(removeSavedPosition()));
     QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &onTheMapProxyModel, SLOT(setAllItemsCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel, SLOT(setAllItemsSavedCoords()));
-    QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper, SLOT(requestReverseGeocode(double,double)));
+    QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper,     SLOT(requestReverseGeocode(double,double)));
+    // --------------------------------------
+    // Connexions entre classes C++
+    // --------------------------------------
     QObject::connect(&photoListModel, SIGNAL(scanFile(QString)),          &exifWrapper, SLOT(scanFile(QString)));
     QObject::connect(&photoListModel, SIGNAL(writeMetadata(QVariantMap)), &exifWrapper, SLOT(writeMetadata(QVariantMap)));
+    QObject::connect(&photoListModel, SIGNAL(selectedRowChanged(int)),    &suggestionModel, SLOT(selectedPhoto(int)));
 
     // --------------------------------------
     // Exécution de QML

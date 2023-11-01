@@ -75,9 +75,38 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
  */
 void SuggestionModel::append(const QString text, const QString target, const Suggestion::ItemType item_type)
 {
+    // TODO : en pas recreer si exisste deja
     const int rowOfInsert = m_suggestions.count();
     Suggestion* new_suggestion = new Suggestion(text, target, item_type);
+    this->addSelectedPhoto(new_suggestion);
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_suggestions.insert(rowOfInsert, *new_suggestion);
     endInsertRows();
 }
+
+// -----------------------------------------------------------------------
+/**
+ * @brief Le slot selectedPhoto() reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
+ * @param row: La position dans PhotoModel de la photo active
+ */
+void SuggestionModel::selectedPhoto(const int row)
+{
+    if (row<0) return;
+    // On mémorise la photo actuellement sélectionnée dans la ListView
+    m_selectedPhotoRow = row;
+}
+
+
+// -----------------------------------------------------------------------
+/**
+ * @brief La méthode addSelectedPhoto ajoute la photo actuellement sélectionnée dans la liste des
+ * photo ayant un "match" avec cette suggestion.
+ * @param suggestion: la suggestion à modifier
+ */
+void SuggestionModel::addSelectedPhoto(Suggestion* suggestion)
+{
+    // On ajoute la photo courante dans la liste.
+    suggestion->photos << m_selectedPhotoRow;
+
+}
+

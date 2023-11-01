@@ -152,7 +152,7 @@ signals:
     // -----------------------------------------------------
     // Signaux émis
     // -----------------------------------------------------
-    void selectedRowChanged();
+    void selectedRowChanged(const int row);
     void scanFile(QString imagePath);
     void writeMetadata(QVariantMap exifData);
 
@@ -166,7 +166,7 @@ protected:
     int m_markerRow = -1;                       /// Position du marker SavedPosition
 private:
     QVector<Data> m_data;                       /// La liste des photos
-    int m_lastSelectedRow = 0;                  /// Au départ, on a un item: le Welcome Rolleyflex
+    int m_lastSelectedRow = 0;                  /// L'indice de la précédente photo sélectionnée. (initilaisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
     int m_dumpedRow = 0;                        /// Compteur pour le dump de debug
 };
 

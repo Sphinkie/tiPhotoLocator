@@ -64,14 +64,20 @@ public:
     void addPhoto(const QModelIndex &index, const int photo_row);
     void removePhoto(const QModelIndex &index, const int photo_row);
 
+public slots:
+    void selectedPhoto(const int row);
 
+private:
+    // -----------------------------------------------------
+    // Methodes privées
+    // -----------------------------------------------------
+    void addSelectedPhoto(Suggestion* suggestion);
 
     // -----------------------------------------------------
     // Membres
     // -----------------------------------------------------
-private:
     QVector<Suggestion> m_suggestions;
-
+    int m_selectedPhotoRow = -1;
 
 };
 
