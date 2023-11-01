@@ -31,6 +31,9 @@ struct Suggestion
     ItemType itemType;         // Example: "geo"
     QList<int> photos;         // List of photo matching this suggestion
 
+    // Surcharges d'operateurs
+    bool operator== (const Suggestion &data) const;
+
 };
 
 

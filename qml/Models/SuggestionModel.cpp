@@ -75,9 +75,16 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
  */
 void SuggestionModel::append(const QString text, const QString target, const Suggestion::ItemType item_type)
 {
-    // TODO : en pas recreer si exisste deja
-    const int rowOfInsert = m_suggestions.count();
+    if (text.isEmpty()) return;
     Suggestion* new_suggestion = new Suggestion(text, target, item_type);
+    // Ne pas recreer si existe deja
+    if (m_suggestions.contains(*new_suggestion))  // utilise la surcharge de ==
+    {
+        qDebug()<< "already contains" << text;
+        return;
+    }
+    qDebug()<< "first append " << text;
+    const int rowOfInsert = m_suggestions.count();
     this->addSelectedPhoto(new_suggestion);
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_suggestions.insert(rowOfInsert, *new_suggestion);
@@ -107,6 +114,12 @@ void SuggestionModel::addSelectedPhoto(Suggestion* suggestion)
 {
     // On ajoute la photo courante dans la liste.
     suggestion->photos << m_selectedPhotoRow;
-
 }
 
+// -----------------------------------------------------------------------
+bool Suggestion::operator== (const Suggestion &data) const
+{
+    // As a member function, when binary operator is overloaded, the initial parameter required is a pointer to this.
+    // Even though the signature defines operator== to take three arguments, it can only accommodate two.
+    return (this->text == data.text);
+}
