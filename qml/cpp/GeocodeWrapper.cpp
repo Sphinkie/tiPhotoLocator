@@ -1,11 +1,12 @@
-#include <QtPositioning/QGeoCoordinate>
+#include <QtLocation>
 #include <QtLocation/QGeoServiceProvider>
-#include <QSslSocket>  // pour le plugin OSM
+#include <QtPositioning/QGeoCoordinate>
+#include <QSslSocket>                              // pour le plugin OSM
 #include <QDebug>
 
 #include "GeocodeWrapper.h"
 
-// On ajoute dans le fichier .pro
+// Attention: Ajouter les lignes suivantes dans le fichier .pro
 // QT += positioning
 // QT += location
 
@@ -22,15 +23,19 @@ GeocodeWrapper::GeocodeWrapper()
 
     // Plugin OSM :
     // Paramètres du plugin osm : https://doc.qt.io/qt-5/location-plugin-osm.html
-    // parameters.insert("osm.geocoding.host", "https://nominatim.openstreetmap.org/reverse");
+    parameters.insert("osm.geocoding.host", "https://nominatim.openstreetmap.org");
     // parameters.insert("osm.places.host", "https://nominatim.openstreetmap.org/reverse");
-    // Conseils (inéfficaces) pour éviter l'erreur: TLS initialization failed.
+    // Conseils (inefficaces) pour éviter l'erreur: TLS initialization failed.
     // parameters.insert("osm.mapping.providersrepository.disabled", "true");
     // parameters.insert("osm.mapping.providersrepository.address", "http://maps-redirect.qt.io/osm/5.6/");
     // L'autre conseil étant d'installer OpenSSL pour Windows
     // Url string set when making network requests to the geocoding server. This parameter should be set to a valid server url with the correct osm API. If not specified the default url will be used.
     // Note: The API documentation is available at Project OSM Nominatim. https://wiki.openstreetmap.org/wiki/Nominatim
     // https://nominatim.openstreetmap.org/reverse?format=xml&lat=38.980&lon=1.433&zoom=15&addressdetails=1
+
+    // les errerus rencontres
+    //osm : qt.network.ssl: QSslSocket::connectToHostEncrypted: TLS initialization failed
+    //esri: "Error transferring http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=json&langCode=fr&location=1.433,38.98 - server replied: Bad Request"
 
 
     // Plugin ESRI
@@ -55,8 +60,8 @@ GeocodeWrapper::GeocodeWrapper()
         << QSslSocket::supportsSsl()                   // doit retourner true
         << QSslSocket::sslLibraryBuildVersionString()  // la version utilisee pour compiler Qt   ("OpenSSL 1.1.1d  10 Sep 2019")
         << QSslSocket::sslLibraryVersionString();      // la version disponible
-    // Aller sur le site www.openssl.org et telechager la version 1.1.1
-    // ou sur https://slproweb.com/products/Win32OpenSSL.html et installer l'EXE (Win64 full, par ex)
+    // Installer les binaries openSSL avec le Qt Maintenance Tool
+
 }
 
 /* ********************************************************************************************************** */
@@ -69,10 +74,6 @@ GeocodeWrapper::GeocodeWrapper()
  **/
 void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
 {
-
-    lati = 38.980;
-    longi = 1.433;
-
     QGeoCoordinate coordinate = QGeoCoordinate(lati, longi);
     connect(m_GeoManager, SIGNAL(finished(QGeoCodeReply*)), this, SLOT(geoCodeFinished(QGeoCodeReply*)));
     QGeoCodeReply* geoReply = m_GeoManager->reverseGeocode(coordinate);
@@ -82,19 +83,27 @@ void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
     // On regarde s'il y a une erreur
     if (geoReply->isFinished())
         qWarning() << "requestReverseGeocode" << geoReply->error();
-
-    //osm : qt.network.ssl: QSslSocket::connectToHostEncrypted: TLS initialization failed
-    //esri: "Error transferring http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=json&langCode=fr&location=1.433,38.98 - server replied: Bad Request"
 }
 
 
 
 /* ********************************************************************************************************** */
+/**
+ * @brief Signal appelé lors de la réception de la réponse à la request
+ * @param reply : le contenu de la réponse
+ * @example "Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"
+ */
 void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
 {
     qDebug() << "finished with code" << reply->error();
-    if (reply->error() != QGeoCodeReply::NoError)   qDebug() << reply->errorString();
-
+    if (reply->error() != QGeoCodeReply::NoError)
+        qWarning() << reply->errorString();
+    else if (reply->locations().count() >0)
+    {
+        QGeoLocation g = reply->locations().value(0);
+        const QGeoAddress a = g.address();
+        qDebug() << a.text();
+    }
 }
 
 

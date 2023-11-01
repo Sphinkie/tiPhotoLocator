@@ -33,7 +33,7 @@ void ExifWrapper::scanFile(QString filePath)
     filePath.remove(0,8);
     qDebug() << "scanFile modified" << filePath;
     if (filePath.isEmpty())
-        filePath = QStandardPaths::PicturesLocation;
+        filePath = QStandardPaths::displayName(QStandardPaths::PicturesLocation);  // TODO : vérifier le résultat
 
     QProcess exifProcess;
     QString program = "exifTool";

@@ -1,7 +1,7 @@
-import QtQuick 2.4
-import QtQuick.Controls 2.15
-import QtQuick.Window 2.15
-import Qt.labs.settings 1.1
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Window
+import QtCore      // Qt.labs.settings
 import "../Components"
 
 Window {

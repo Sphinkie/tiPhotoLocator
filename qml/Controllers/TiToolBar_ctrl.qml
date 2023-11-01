@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 import "../Vues"
 import "../Javascript/TiUtilities.js" as Utilities
 

@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick
 import "../Vues"
 
 // Controlleur pour la barre de boutons du bas

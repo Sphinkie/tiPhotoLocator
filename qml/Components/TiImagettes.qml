@@ -1,5 +1,5 @@
-import QtQuick 2.0
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 
 Rectangle {
     Layout.preferredHeight: 120

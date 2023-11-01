@@ -1,4 +1,4 @@
-import QtQuick 2.4
+import QtQuick
 import "../Vues"
 
 // Controlleur de la zone avec les informations sur l'appareil photo

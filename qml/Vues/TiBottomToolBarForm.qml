@@ -1,7 +1,7 @@
-import QtQuick 2.0
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.12   // pour Checkbox
-import Qt.labs.settings 1.1
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls   // pour Checkbox
+import QtCore   // Qt.labs.settings
 import "../Components"
 
 
@@ -61,7 +61,7 @@ Rectangle {
     // On mémorise la ckeckbox dans les settings
     // ----------------------------------------------------------------
     Settings {
-        id: reglages2
+        id: reglages2  // A enlever ?
         //category: "configuration"
         property alias backupsEnabled: cb_backups.checked
     }

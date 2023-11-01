@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.5
+import QtQuick
+import QtQuick.Controls
 
 /*
 Pressed:  event is generated when you push down the mouse button

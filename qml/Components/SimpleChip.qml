@@ -1,5 +1,5 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.12
+import QtQuick
+import QtQuick.Controls
 
 /**
  * Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt label.

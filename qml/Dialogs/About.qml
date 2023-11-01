@@ -1,9 +1,9 @@
-import QtQuick 2.15
-import QtQuick.Dialogs 1.3
+import QtQuick
+import QtQuick.Dialogs
 
 MessageDialog {
     title: "About"
-    icon: StandardIcon.Information
+//    icon: StandardIcon.Information  // TODO
     text: "TiPhotoLocator"
     readonly property string t1 : qsTr("TiPhotoLocator est <b>gratuit et sans publicité</b>.<br/><br/>")
     readonly property string t2 : qsTr("Programme réalisé par David de Lorenzo.<br/>")

@@ -1,6 +1,6 @@
-import QtQuick 2.0
-import QtQuick.Layouts 1.3
-import QtGraphicalEffects 1.0
+import QtQuick
+import QtQuick.Layouts
+import Qt5Compat.GraphicalEffects
 
 /**
  * Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle.
