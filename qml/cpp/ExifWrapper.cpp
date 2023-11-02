@@ -75,7 +75,7 @@ void ExifWrapper::scanFile(QString filePath)
 bool ExifWrapper::writeArgsFile()
 {
     m_argFile = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/exiftool.args";
-    qDebug() << "TempLocation:" << m_argFile;
+    qDebug() << "writableLocation:" << m_argFile;
     QFile file(m_argFile);
 
     if (!file.open(QFile::WriteOnly))

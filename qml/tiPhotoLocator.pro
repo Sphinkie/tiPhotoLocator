@@ -12,6 +12,9 @@ SOURCES += \
         Models/OnTheMapProxyModel.cpp \
         Models/PhotoModel.cpp \
         Models/SuggestionModel.cpp \
+        cpp/ExifReadTask.cpp \
+        cpp/ExifReadThread.cpp \
+        cpp/ExifReadWorker.cpp \
         cpp/ExifWrapper.cpp \
         cpp/GeocodeWrapper.cpp \
         main.cpp
@@ -40,6 +43,9 @@ HEADERS += \
     Models/OnTheMapProxyModel.h \
     Models/PhotoModel.h \
     Models/SuggestionModel.h \
+    cpp/ExifReadTask.h \
+    cpp/ExifReadThread.h \
+    cpp/ExifReadWorker.h \
     cpp/ExifWrapper.h \
     cpp/GeocodeWrapper.h
 

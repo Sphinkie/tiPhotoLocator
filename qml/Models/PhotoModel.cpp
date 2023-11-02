@@ -1,12 +1,10 @@
-/**
- * This Model class stores all the metadata of the photos present in the selected folder.
- */
-
 #include "PhotoModel.h"
-//#include <QTimer>
-#include <QDebug>
+#include "cpp/ExifReadTask.h"
+
+#include <QThreadPool>
 #include <QSettings>
-//#include <cstdlib>
+#include <QDebug>
+
 
 #define QT_NO_DEBUG_OUTPUT
 
@@ -405,16 +403,31 @@ void PhotoModel::clear()
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::photoListModel traite le SIGNAL indiquant qu'il faut lire des données EXIF des photos du répertoire.
+ * @brief Le slot fetchExifMetadata() lit des données EXIF de toutes photos du répertoire.
  */
 void PhotoModel::fetchExifMetadata()
 {
     qDebug() << "fetchExifMetadata";
-    // TODO: envoyer un signal image par image et non plus un signal pour le répertoire entier
+    // Quantité maximum de threads = 3
+    QThreadPool::globalInstance()->setMaxThreadCount(3);
+    ExifReadTask::setArgFile(this);
+    //Instanciation et ajout de plusieurs tâches au pool de threads
+    for (int row = 0; row < m_data.count(); row++)
+    {
+        ExifReadTask *task = new ExifReadTask(m_data[row].imageUrl);
+        QThreadPool::globalInstance()->start(task);
+    }
+
+    // On n' pas besoin d'attendre de la fin de l'exécution des tâches du pool de threads
+    // QThreadPool::globalInstance()->waitForDone();
+
+    /*
     QString path = m_data[0].imageUrl;
     int lim = path.lastIndexOf("/");
     path.truncate(lim);
     emit scanFile(path);
+    */
+    // TODO : nettoyer ExifWrapper si on n'en a plus besoin
 }
 
 
