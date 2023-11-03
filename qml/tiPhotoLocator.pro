@@ -16,6 +16,7 @@ SOURCES += \
         cpp/ExifReadThread.cpp \
         cpp/ExifReadWorker.cpp \
         cpp/ExifWrapper.cpp \
+        cpp/ExifWriteTask.cpp \
         cpp/GeocodeWrapper.cpp \
         main.cpp
 
@@ -47,6 +48,7 @@ HEADERS += \
     cpp/ExifReadThread.h \
     cpp/ExifReadWorker.h \
     cpp/ExifWrapper.h \
+    cpp/ExifWriteTask.h \
     cpp/GeocodeWrapper.h
 
 

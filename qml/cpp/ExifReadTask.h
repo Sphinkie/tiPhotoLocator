@@ -9,8 +9,8 @@ class ExifReadTask : public QRunnable
 {
 public:
     explicit ExifReadTask(QString filePath);
+    static void init(PhotoModel* photoModel);
     virtual void run();
-    static void setArgFile(PhotoModel* photoModel);
 
 private:
     void processLine(QByteArray line);

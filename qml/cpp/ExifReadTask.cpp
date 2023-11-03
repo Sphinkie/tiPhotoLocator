@@ -15,6 +15,7 @@ QString ExifReadTask::m_argFile;
 
 
 
+/* ********************************************************************************************************** */
 /**
  * @brief Constructeur. On enregistre les parmètres.
  * @param filePath: le nom du fichier JPG à lire
@@ -28,6 +29,7 @@ ExifReadTask::ExifReadTask(QString filePath)
     m_filePath = filePath;
 }
 
+/* ********************************************************************************************************** */
 /**
  * @brief: Lancement de la tache. On lance exifTool dans un process, et on analyse la réponse.
  * Cette tache est exécutée dans un Thread.
@@ -119,11 +121,12 @@ void ExifReadTask::processLine(QByteArray line)
         m_rxLine.append(line);
 }
 
+/* ********************************************************************************************************** */
 /**
- * @brief A ppeler lors de la preière utilisation. Avec u peu de chance c'est mémorisé dans le smembres statqiques
- * @param photoModel
+ * @brief A appeler lors de la première utilisation. Mémorise quelques infos statiques.
+ * @param photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
  */
-void ExifReadTask::setArgFile(PhotoModel* photoModel)
+void ExifReadTask::init(PhotoModel* photoModel)
 {
     ExifReadTask::writeArgsFile();
     ExifReadTask::m_photoModel = photoModel;

@@ -1,5 +1,6 @@
 #include "PhotoModel.h"
 #include "cpp/ExifReadTask.h"
+#include "cpp/ExifWriteTask.h"
 
 #include <QThreadPool>
 #include <QSettings>
@@ -329,7 +330,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     for (row=0; row<m_data.count(); row++)
         if (m_data[row] == file_name) break;  // Possible grace à notre surcharge de l'opérateur ==   :-)
 
-    qDebug() << "found" << row ;
+    // qDebug() << "found" << row ;
     if (row >= m_data.count()) return;        // Traitement du cas FileName not found
 
     // On met à jour les data (apparement, ça passe même s'il n'y a pas de valeur)
@@ -410,7 +411,7 @@ void PhotoModel::fetchExifMetadata()
     qDebug() << "fetchExifMetadata";
     // Quantité maximum de threads = 3
     QThreadPool::globalInstance()->setMaxThreadCount(3);
-    ExifReadTask::setArgFile(this);
+    ExifReadTask::init(this);
     //Instanciation et ajout de plusieurs tâches au pool de threads
     for (int row = 0; row < m_data.count(); row++)
     {
@@ -439,8 +440,11 @@ void PhotoModel::saveExifMetadata()
 {
     qDebug() << "saveExifMetadata";
     QSettings settings;
+    bool backupsEnabled = settings.value("backupsEnabled", false).toBool();
     bool creatorEnabled = settings.value("creatorEnabled", false).toBool();
     QString software = settings.value("software", "").toString();
+
+    QThreadPool::globalInstance()->setMaxThreadCount(3);
 
     // On parcourt tous les items du modèle (par leur indice dans le vecteur)
     int row = 0;
@@ -459,7 +463,11 @@ void PhotoModel::saveExifMetadata()
             exifData.insert("Artist", idx.data(ArtistRole));
             if (creatorEnabled)  exifData.insert("Creator", idx.data(ArtistRole));
             exifData.insert("Software", software);
-            emit writeMetadata(exifData);
+
+            // emit writeMetadata(exifData);
+            //Instanciation et ajout de la tâche au pool de threads
+            ExifWriteTask *task = new ExifWriteTask(exifData, backupsEnabled);
+            QThreadPool::globalInstance()->start(task);
 
             // On fait retomber le flag "toBeSaved"
             setData(idx, false, ToBeSavedRole);

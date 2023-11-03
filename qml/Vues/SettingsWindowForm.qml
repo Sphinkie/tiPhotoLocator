@@ -158,6 +158,8 @@ Window {
             anchors.bottom: checkBoxArtist.bottom
             anchors.leftMargin: 10
             text: "Creator (IPTC)"
+            checkable: true
+            checked: true
         }
 
         // ------------------------------------------------------------------
@@ -218,18 +220,21 @@ Window {
     }
 
     // ------------------------------------------------------------------
-    // ---------------- Group Box 4 "Descriptions"
+    // ---------------- "Descriptions"
     // ------------------------------------------------------------------
-    GroupBox {
+    Item {
         id: groupBox4
         anchors.left: parent.left
         anchors.top : groupBox3.bottom
         anchors.leftMargin: 10
         anchors.topMargin: 20
         width: parent.width-20
-        height: 60
-        Text { y:0;  text: qsTr("Les tags EXIF contiennent principalement des informations techniques (Modèle d'appareil, objectif...)") }
-        Text { y:20; text: qsTr("Les tags IPTC contiennent principalement des informations éditoriales (Description de l'image...)    ") }
+        clip: true
+        height: 80
+        Text { y:0;  clip: true; text: qsTr("Les tags EXIF contiennent principalement des informations techniques (Modèle d'appareil, objectif...)") }
+        Text { y:20; clip: true; text: qsTr("Les données EXIF ne sont pas destinées à être modifiées.") }
+        Text { y:40; clip: true; text: qsTr("Elle sont définies (normalement) au moment de la prise de vue.") }
+        Text { y:60; clip: true; text: qsTr("Les tags IPTC contiennent principalement des informations éditoriales (Description de l'image...)    ") }
     }
 
     // ------------------------------------------------------------------
