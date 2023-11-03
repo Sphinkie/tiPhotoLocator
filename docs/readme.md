@@ -19,32 +19,36 @@ DateTimeOriginal
 | -------- | ---- |  ----- | ----------- | 
 | Model | yes | no | camera model | 
 | Make | yes |  no | camera manufacturer | 
-| ImageWidth | yes | no | | 
-| ImageHeight | yes | no |  | 
-| GPSLatitude | yes | yes |  | 
-| GPSLongitude | yes | yes |  | 
-| GPSLatitudeRef | no | yes |  North or South | 
+| ImageWidth | yes | no | Image width | 
+| ImageHeight | yes | no | Image height | 
+| ImageDescription | yes | no |  | 
+| GPSLatitude | yes | yes | photo location |
+| GPSLongitude | yes | yes | photo location |
+| GPSLatitudeRef | no | yes | North or South | 
 | GPSLongitudeRef | no |  yes | West or East | 
-| Software | -- |  yes | "TiPhotoLocator" | 
+| Artist | yes | yes | Nom du photographe | 
 
-ImageDescription
-Artist
 
-### IPTC tags
+### IPTC CORE tags
 
 | Tag name | Read |  Write | Description | 
 | -------- | ---- |  ----- | ----------- | 
 | Description |  |  |  | 
 | DescriptionWriter |  |  |  | 
 | Caption |  |  |  | 
+| Creator | yes | yes | Nom du photographe | 
+| City | yes | yes | obsolete | 
+| Country | yes | yes | obsolete | 
+| Software | -- | yes | "TiPhotoLocator" | 
 | Keywords |  |  |  | 
-| Creator | yes |  |  | 
-| City | yes |  | obsolete | 
-| Country |  |  | obsolete | 
 | Landmark |  |  | ??? | 
+
+### IPTC EXTENSION tags
+
+| Tag name | Read |  Write | Description | 
+| -------- | ---- |  ----- | ----------- | 
 | Location/City |  |  | IPTC Extension | 
 | Location/Country |  |  | IPTC Extension | 
-
 
 
 ## Compilation
