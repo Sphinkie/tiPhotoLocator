@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // Connexions entre classes C++
     // --------------------------------------
-    QObject::connect(&photoListModel, SIGNAL(selectedRowChanged(int)),    &suggestionModel, SLOT(selectedPhoto(int)));
+    QObject::connect(&photoListModel, SIGNAL(selectedRowChanged(int)),    &suggestionModel, SLOT(onSelectedPhotoChanged(int)));
 
     // --------------------------------------
     // Exécution de QML

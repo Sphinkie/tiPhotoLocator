@@ -68,7 +68,7 @@ public:
     void removePhoto(const QModelIndex &index, const int photo_row);
 
 public slots:
-    void selectedPhoto(const int row);
+    void onSelectedPhotoChanged(const int row);
 
 private:
     // -----------------------------------------------------

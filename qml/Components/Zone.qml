@@ -7,7 +7,7 @@ Rectangle {
     property string txtZone
 
     radius: 16
-    color: TiStyle.primaryBackgroundColor
+    color: TiStyle.zoneBackgroundColor
     implicitHeight: 300    // Note: Mettre Layout.fillHeight dans le parent pour bien occuper tout l'espace
     implicitWidth: 380
     property bool dropable: true

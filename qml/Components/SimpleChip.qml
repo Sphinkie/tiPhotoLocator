@@ -16,7 +16,7 @@ Label {
     visible: content? true : false
     text: content
     font.pixelSize: 14
-    color: TiStyle.secondaryBackgroundColor
+    color: TiStyle.simplechipTextColor
 
 
     background:
@@ -33,7 +33,7 @@ Label {
         }
 */
         Rectangle {
-            color: TiStyle.secondaryForegroundColor;
+            color: TiStyle.chipBackgroundColor;
             implicitHeight: 24
             radius: 12;
             id: pastilleText

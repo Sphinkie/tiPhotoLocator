@@ -14,7 +14,7 @@ Rectangle {
     Layout.leftMargin: 20
 
     radius: 16
-    color: TiStyle.secondaryForegroundColor
+    color: TiStyle.chipBackgroundColor
     implicitHeight: 32
     implicitWidth: 240
     // Propriétés modifiables depuis les parents:
@@ -42,7 +42,7 @@ Rectangle {
         anchors.topMargin: 4
         text: content
         font.pixelSize: 14
-        color: TiStyle.tertiaryTextColor
+        color: TiStyle.chipTextColor
         // Positionnement du texte
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter

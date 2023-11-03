@@ -96,7 +96,7 @@ void SuggestionModel::append(const QString text, const QString target, const Sug
  * @brief Le slot selectedPhoto() reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
  * @param row: La position dans PhotoModel de la photo active
  */
-void SuggestionModel::selectedPhoto(const int row)
+void SuggestionModel::onSelectedPhotoChanged(const int row)
 {
     if (row<0) return;
     // On mémorise la photo actuellement sélectionnée dans la ListView

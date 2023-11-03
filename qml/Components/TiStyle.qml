@@ -29,29 +29,31 @@ Item{
     readonly property color surfaceBackgroundColor: "#f7f7f7"       // gris très clair pour la surface de fond
     readonly property color surfaceContainerColor: "#dcedc8"        // vert très pale pour le container de fond
 
-    // Primary: Zones & boutons
-    readonly property color primaryForegroundColor: "#8bc34a"       // vert pour les boutons
-    readonly property color primaryBackgroundColor: "#8bc34a"       // vert pour les zones standard (darker=#6ca64f)
+    readonly property color primaryColor: "#8bc34a"                 // vert pour les boutons et les zones standard
+
+    // Primary: Zones
+    readonly property color zoneBackgroundColor: primaryColor       // vert pour les zones standard (darker=#6ca64f)
     readonly property color trashcanBackgroundColor: "lightgrey"    // #d3d3d3 gris pour les zones corbeille  (darker=#c2c6c9)
     readonly property color suggestionBackgroundColor: "lightblue"  // #add8e6 bleu pour les zones de suggestions (darker=#70b1c9)
 
     // Chips
-    readonly property color secondaryForegroundColor: "#689f38"     // darkgreen : fond des chips + simplechips
-    readonly property color secondaryBackgroundColor: "lightblue"   // Textes des SimpleChips
+    readonly property color chipBackgroundColor: "#689f38"          // darkgreen : fond des chips + simplechips
+    readonly property color simplechipTextColor: "lightblue"        // Textes des SimpleChips
+    readonly property color chipTextColor:       "#cdcdcd"          // gris très clair
 
     // UNUSED
-    // readonly property color tertiaryForegroundColor: "#448aff"
+    // readonly property color tertiaryForegroundColor: "#448aff"   // bleu soutenu
     // readonly property color tertiaryBackgroundColor: "lightblue"
 
     // Boutons
-    readonly property color buttonIdleColor: primaryForegroundColor
+    readonly property color buttonIdleColor: primaryColor
     readonly property color buttonHoveredColor: Qt.lighter(buttonIdleColor, 1.2)
     readonly property color buttonPressedColor: Qt.darker(buttonIdleColor, 1.3)
 
     // Textes
     readonly property color primaryTextColor:   "#212121"          // gris foncé      : Listview + toolbar
     readonly property color secondaryTextColor: "#757575"          // gris moyen      : Répertoire dans la toolbar
-    readonly property color tertiaryTextColor:  "#BDBDBD"          // gris très clair : chips + annotations dans les settings
+    readonly property color tertiaryTextColor:  "#bdbdbd"          // gris clair      : Annotations dans les settings
     //TODO : améliorer les couleurs suivantes:
     readonly property color accentTextColor: "firebrick"           // filenames toBeSaved
     readonly property color highlightBackgroundColor: "lightgrey"  // filename sélectionné
