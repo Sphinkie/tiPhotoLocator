@@ -13,8 +13,6 @@ SOURCES += \
         Models/PhotoModel.cpp \
         Models/SuggestionModel.cpp \
         cpp/ExifReadTask.cpp \
-        cpp/ExifReadThread.cpp \
-        cpp/ExifReadWorker.cpp \
         cpp/ExifWrapper.cpp \
         cpp/ExifWriteTask.cpp \
         cpp/GeocodeWrapper.cpp \
@@ -45,8 +43,6 @@ HEADERS += \
     Models/PhotoModel.h \
     Models/SuggestionModel.h \
     cpp/ExifReadTask.h \
-    cpp/ExifReadThread.h \
-    cpp/ExifReadWorker.h \
     cpp/ExifWrapper.h \
     cpp/ExifWriteTask.h \
     cpp/GeocodeWrapper.h
