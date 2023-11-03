@@ -9,12 +9,25 @@
  * @brief Constructeur. On enregistre les paramètres.
  * @param exifData: la liste des metadata à écrire dans le fichier JPG
  * @param generateBackup: true si un backup de l'image doit être généré avant sa modification.
+ * @example QVariantMap: QMap(
+ * ("SourceFile",       QVariant(QString,   "E:/TiPhotos/P8160449.JPG"))
+ * ("FileName",         QVariant(QString,   "P8160449.JPG"))
+ * ("Artist",           QVariant(QString,   "Blemia Borowicz"))
+ * ("DateTimeOriginal", QVariant(QString,   "2023:08:16 13:30:20"))
+ * ("GPSLatitude",      QVariant(double,    48.7664))          ("GPSLatitudeRef", QVariant(QString, "N"))
+ * ("GPSLongitude",     QVariant(double,    14.0194))          ("GPSLongitudeRef", QVariant(QString, "E"))
+ * ("Make",             QVariant(QString,   "OLYMPUS CORPORATION"))
+ * ("Model",            QVariant(QString,   "E-M10MarkII"))
+ * )
  */
 ExifWriteTask::ExifWriteTask(const QVariantMap exifData, bool generateBackup)
 {
     m_exifData = exifData;
     m_generateBackup = generateBackup;
 }
+
+/*
+*/
 
 /* ********************************************************************************************************** */
 /**
@@ -24,7 +37,6 @@ ExifWriteTask::ExifWriteTask(const QVariantMap exifData, bool generateBackup)
 void ExifWriteTask::run()
 {
     QString filePath = m_exifData.value("imageUrl").toString();
-    // qDebug() << "writeMetadata" << filePath ;
     filePath.remove(0,8);
     if (filePath.isEmpty())
         return;

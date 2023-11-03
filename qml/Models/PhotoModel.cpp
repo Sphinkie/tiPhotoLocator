@@ -421,14 +421,6 @@ void PhotoModel::fetchExifMetadata()
 
     // On n' pas besoin d'attendre de la fin de l'exécution des tâches du pool de threads
     // QThreadPool::globalInstance()->waitForDone();
-
-    /*
-    QString path = m_data[0].imageUrl;
-    int lim = path.lastIndexOf("/");
-    path.truncate(lim);
-    emit scanFile(path);
-    */
-    // TODO : nettoyer ExifWrapper si on n'en a plus besoin
 }
 
 
@@ -464,7 +456,6 @@ void PhotoModel::saveExifMetadata()
             if (creatorEnabled)  exifData.insert("Creator", idx.data(ArtistRole));
             exifData.insert("Software", software);
 
-            // emit writeMetadata(exifData);
             //Instanciation et ajout de la tâche au pool de threads
             ExifWriteTask *task = new ExifWriteTask(exifData, backupsEnabled);
             QThreadPool::globalInstance()->start(task);

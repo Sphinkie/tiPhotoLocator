@@ -11,7 +11,7 @@
 // Membres statiques
 // ------------------------------------------
 PhotoModel* ExifReadTask::m_photoModel;
-QString ExifReadTask::m_argFile;
+QString     ExifReadTask::m_argFile;
 
 
 
@@ -22,10 +22,8 @@ QString ExifReadTask::m_argFile;
  */
 ExifReadTask::ExifReadTask(QString filePath)
 {
-    // On enlève les premiers catactères (cad "file:///")
-    qDebug() << "scanFile parameter" << filePath;
+    // On enlève les premiers caractères (cad "file:///")
     filePath.remove(0,8);
-    qDebug() << "scanFile modified" << filePath;
     m_filePath = filePath;
 }
 
@@ -185,4 +183,27 @@ bool ExifReadTask::writeArgsFile()
     file.close();
     return true;
 }
+
+
+/*
+ * Description of JSON options for ExifTool
+ *
+-j[[+]=*JSONFILE*] (-json)
+  Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified).
+  This option may be combined with:
+    -g to organize the output into objects by group,
+    or -G to add group names to each tag.
+    -a option is implied when -json is used, but entries with identical JSON names are suppressed in the output.
+    -G4 may be used to ensure that all tags have unique JSON names.
+    -D or -H option changes tag values to JSON objects with "val" and "id" fields
+    -l adds a "desc" field, and a "num" field if the numerical value is different from the converted "val".
+    -b option may be added to output binary data, encoded in base64 if necessary (indicated by ASCII "base64:" as the first 7 bytes of the value)
+    -t may be added to include tag table information (see -t for details).
+
+    List-type tags with multiple items are output as JSON arrays unless -sep is used.
+    The JSON output is UTF-8 regardless of any -L or -charset option setting, but the UTF-8 validation is disabled if a character set other than UTF-8 is specified.
+    By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings).
+    Note that ExifTool quotes JSON values only if they don't look like numbers (regardless of the original storage format or the relevant metadata specification).
+*/
+
 

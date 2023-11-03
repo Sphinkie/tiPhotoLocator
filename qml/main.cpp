@@ -6,7 +6,6 @@
 #include "Models/PhotoModel.h"
 #include "Models/SuggestionModel.h"
 #include "Models/OnTheMapProxyModel.h"
-#include "cpp/ExifWrapper.h"
 #include "cpp/GeocodeWrapper.h"
 
 /** ********************************************************************************
@@ -33,7 +32,6 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // On initialise nos classes
     // --------------------------------------
-    ExifWrapper exifWrapper(&photoListModel);        // on lui passe le modèle qui mémorisera les tags
     GeocodeWrapper geocodeWrapper(&suggestionModel); // on lui passe le modèle qui mémorisera les suggestions
 
     // --------------------------------------
@@ -45,9 +43,11 @@ int main(int argc, char *argv[])
 //    QQuickView view;
 //    QQmlContext* context = view.rootContext();
 
+    // --------------------------------------
+    // On ajoute au contexte les classes  qui ont des property QML
+    // --------------------------------------
     context->setContextProperty("_photoListModel", &photoListModel);
     context->setContextProperty("_onTheMapProxyModel", &onTheMapProxyModel);
-    context->setContextProperty("_exifWrapper", &exifWrapper);
 
     // Chargement du QMl. Au choix:
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -89,8 +89,6 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // Connexions entre classes C++
     // --------------------------------------
-    QObject::connect(&photoListModel, SIGNAL(scanFile(QString)),          &exifWrapper, SLOT(scanFile(QString)));
-    QObject::connect(&photoListModel, SIGNAL(writeMetadata(QVariantMap)), &exifWrapper, SLOT(writeMetadata(QVariantMap)));
     QObject::connect(&photoListModel, SIGNAL(selectedRowChanged(int)),    &suggestionModel, SLOT(selectedPhoto(int)));
 
     // --------------------------------------

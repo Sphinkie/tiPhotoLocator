@@ -153,8 +153,6 @@ signals:
     // Signaux émis
     // -----------------------------------------------------
     void selectedRowChanged(const int row);
-    void scanFile(QString imagePath);
-    void writeMetadata(QVariantMap exifData);
 
 
     // -----------------------------------------------------
