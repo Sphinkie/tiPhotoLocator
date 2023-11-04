@@ -14,8 +14,7 @@ TiBottomToolBarForm {
     }
 
     cb_backups.onCheckedChanged:  {
-        // On stocke l'état de la checkbox dans la propriété generateBackup de exifWrapper
-        _exifWrapper.generateBackup = cb_backups.checked
+        // Statut mémorisé dans les Settings
     }
 
     bt_save.onClicked: {

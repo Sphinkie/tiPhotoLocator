@@ -11,30 +11,32 @@ But, if you don't have recorded any GPX file, or if your photos are older than h
 
 **TiPhotoLocator** manages the following EXIF and IPTC tags.
 
-exchangeable image file format 
-https://exiftool.org/TagNames/EXIF.html
-
-DateTimeOriginal 0x9003 ExifIFD
-date time when the photo was taken 
 
 ### Exif tags
 
-| Tag name | Read |  Write | Description | 
-| -------- | ---- |  ----- | ----------- | 
-| Model | yes | no | 0110 IDF0 camera model | 
-| Make | yes |  no | 010f IDF0 camera manufacturer | 
-| ImageWidth | yes | no | 0100 IDF0 Image width | 
-| ImageHeight | yes | no | 0101 IDF0 Image height | 
-| ImageDescription | yes | no | 010e IDF0 | 
-| GPSLatitude | yes | yes | 0x8825 IFD0 photo location |
-| GPSLongitude | yes | yes | photo location |
-| GPSLatitudeRef | no | yes | North or South | 
-| GPSLongitudeRef | no |  yes | West or East | 
-| Artist | yes | yes | 013b IFD0Nom du photographe | 
+EXchangeable Image Fileformat 
 
-IFD : image file directory
+https://exiftool.org/TagNames/EXIF.html
 
-When adding GPS information to an image, it is important to set all of the following tags: GPSLatitude, GPSLatitudeRef, GPSLongitude, GPSLongitudeRef, and GPSAltitude and GPSAltitudeRef if the altitude is known.
+
+| Tag name | Read |  Write | Id & group | Description | 
+| -------- | ---- |  ----- | ---------- | ----------- | 
+| ImageWidth  | yes | no | 0x0100 IFD0 | image width  | 
+| ImageHeight | yes | no | 0x0101 IFD0 | image height | 
+| ImageDescription | yes | no | 0x010e IDF0 | image description (pure ASCII) | 
+| Make     | yes | no  | 0x010f IFD0 | camera manufacturer | 
+| Model    | yes | no  | 0x0110 IFD0 | camera model        | 
+| Software | --  | yes | 0x0131 IFD0 | "TiPhotoLocator"    | 
+| Artist   | yes | opt | 0x013b IFD0 | nom du photographe  | 
+| GPSLatitude      | yes | yes | 0x8825 IFD0  | photo location |
+| GPSLongitude     | yes | yes | 0x8825 IFD0 | photo location  |
+| GPSLatitudeRef   | no  | yes | 0x8825 IFD0 | North or South  | 
+| GPSLongitudeRef  | no  | yes | 0x8825 IFD0 | East or West    | 
+| DateTimeOriginal | yes | no  | 0x9003 ExifIFD | date/time when the photo was taken | 
+
+IFD : Image File Directory
+
+*When adding GPS information to an image, it is important to set all of the following tags: GPSLatitude, GPSLatitudeRef, GPSLongitude, GPSLongitudeRef.*
 
 ### IPTC CORE tags
 
@@ -45,11 +47,10 @@ https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata
 | -------- | ---- |  ----- | ----------- | 
 | Description |  |  | describing the who, what, and why of what is happening in this image, | 
 | DescriptionWriter |  |  | name of the person involved in writing the Description, | 
-| Caption |  |  |  | 
-| Creator | yes | yes | Nom du photographe | 
-| City | yes | yes | obsolete Name of the city of the location shown in the image.| 
-| Country | yes | yes | obsolete Full name of the country of the location shown in the image.| 
-| Software | -- | yes | 0131 IFD0 "TiPhotoLocator" | 
+| Caption  |  |  |  | 
+| Creator  | yes | yes | Nom du photographe | 
+| City     | yes | yes | obsolete Name of the city of the location shown in the image.| 
+| Country  | yes | yes | obsolete Full name of the country of the location shown in the image.| 
 | Keywords |  |  |  | 
 | Landmark |  |  | ??? | 
 
@@ -57,7 +58,7 @@ https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata
 
 | Tag name | Read |  Write | Description | 
 | -------- | ---- |  ----- | ----------- | 
-| Location/City |  |  | IPTC Extension | 
+| Location/City    |  |  | IPTC Extension | 
 | Location/Country |  |  | IPTC Extension | 
 
 

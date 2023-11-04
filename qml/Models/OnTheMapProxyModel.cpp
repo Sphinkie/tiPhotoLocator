@@ -9,7 +9,6 @@
  *************************************************************************/
 
 #include<QDebug>
-#include "OnTheMapProxyModel.h"
 #include "PhotoModel.h"
 #include "OnTheMapProxyModel.h"
 
@@ -24,6 +23,7 @@ OnTheMapProxyModel::OnTheMapProxyModel(QObject *parent) : QSortFilterProxyModel(
 }
 
 
+/* ************************************************************************ */
 /**
  * @brief SelectedFilterProxyModel::selectedFilterEnabled indique si le filtre est actif ou non.
  * @return TRUE si le filtre est actif.
@@ -33,7 +33,42 @@ bool OnTheMapProxyModel::selectedFilterEnabled() const
     return m_selectedFilterEnabled;
 }
 
+/* ************************************************************************ */
+/**
+ * @brief Le slot OnTheMapProxyModel::setSelectedFilterEnabled active ou désactive le filtrage par le ProxyModel.
+ * @param enabled: TRUE pour activer le filtrage
+ */
+void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
+{
+    if (m_selectedFilterEnabled == enabled)
+        return;
+    m_selectedFilterEnabled = enabled;
+    emit selectedFilterEnabledChanged();
+    invalidateFilter();
+}
 
+/* ************************************************************************ */
+/**
+ * @brief SelectedFilterProxyModel::filterAcceptsRow effectue le filtrage (toutes les 10 secondes).
+ * Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position".
+ * @param sourceRow: Le numero d'une ligne du modèle parent (PhotoModel)
+ * @param sourceParent: Index de la ligne dans le modèle parent (PhotoModel)
+ * @return TRUE si la ligne est acceptée
+ */
+bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
+{
+    if (!m_selectedFilterEnabled) return true;
+    // On récupère l'index de la ligne à accepter ou pas
+    const QModelIndex idx = sourceModel()->index(sourceRow, 0, sourceParent);
+    // On récupère les données de la ligne
+    const bool isSelected = idx.data(PhotoModel::IsSelectedRole).toBool();
+    const bool isMarker = idx.data(PhotoModel::IsMarkerRole).toBool();
+    // qDebug() << "ProxyModel: " << sourceModel() << idx.row() << isMarker ;
+    return (isSelected || isMarker);
+}
+
+
+/* ************************************************************************ */
 /**
  * @brief Le slot SelectedFilterProxyModel::setAllCoords affecte les coordonnées GPS fournies à toutes les photos
  * du modèle filtré (hors saved position).
@@ -69,6 +104,7 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
     }
 }
 
+/* ************************************************************************ */
 /**
  * @brief Le slot SelectedFilterProxyModel::setAllItemsSavedCoords applique les coordonnées GPS de la SavedPosition à toutes
  * les photos du modèle filtré.
@@ -88,35 +124,5 @@ void OnTheMapProxyModel::setAllItemsSavedCoords()
 }
 
 
-/**
- * @brief Le slot OnTheMapProxyModel::setSelectedFilterEnabled active ou désactive le filtrage par le ProxyModel.
- * @param enabled: TRUE pour activer le filtrage
- */
-void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
-{
-    if (m_selectedFilterEnabled == enabled)
-        return;
-    m_selectedFilterEnabled = enabled;
-    emit selectedFilterEnabledChanged();
-    invalidateFilter();
-}
 
 
-/**
- * @brief SelectedFilterProxyModel::filterAcceptsRow effectue le filtrage (toutes les 10 secondes).
- * Laisse passer la (les) ligne(s) sélectionnée(s) et les marqueurs (aka: Saved Position)
- * @param sourceRow: Le numero d'une ligne du modèle.
- * @param sourceParent
- * @return True si la ligne est acceptée
- */
-bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
-{
-    if (!m_selectedFilterEnabled) return true;
-    // On récupère l'index de la ligne à accepter ou pas
-    const QModelIndex idx = sourceModel()->index(sourceRow, 0, sourceParent);
-    // On récupère les données de la ligne
-    const bool isSelected = idx.data(PhotoModel::IsSelectedRole).toBool();
-    const bool isMarker = idx.data(PhotoModel::IsMarkerRole).toBool();
-    // qDebug() << "ProxyModel: " << sourceModel() << idx.row() << isMarker ;
-    return (isSelected || isMarker);
-}

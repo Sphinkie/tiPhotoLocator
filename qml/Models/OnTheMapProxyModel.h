@@ -1,19 +1,10 @@
-/*************************************************************************
- *
- * Copyright (c) 2016-2019, Klaralvdalens Datakonsult AB (KDAB)
- * All rights reserved.
- *
- * See the LICENSE.txt file shipped along with this file for the license.
- *
- *************************************************************************/
-
-#ifndef SELECTEDFILTERPROXYMODEL_H
-#define SELECTEDFILTERPROXYMODEL_H
+#ifndef ONTHEMAPPROXYMODEL_H
+#define ONTHEMAPPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
 
 /**
- * @brief The SelectedFilterProxyModel class if a filter ProxyModel, to keep only the selected photo(s).
+ * @brief The OnTheMapProxyModel class if a filter ProxyModel, to keep only the selected photo(s).
  */
 class OnTheMapProxyModel : public QSortFilterProxyModel
 {
@@ -39,4 +30,4 @@ private:
     bool m_selectedFilterEnabled;
 };
 
-#endif // SELECTEDFILTERPROXYMODEL_H
+#endif // ONTHEMAPPROXYMODEL_H
