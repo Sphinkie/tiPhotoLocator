@@ -12,6 +12,7 @@ But, if you don't have recorded any GPX file, or if your photos are older than h
 **TiPhotoLocator** manages the following EXIF and IPTC tags.
 
 exchangeable image file format 
+https://exiftool.org/TagNames/EXIF.html
 
 DateTimeOriginal 0x9003 ExifIFD
 date time when the photo was taken 
@@ -37,14 +38,17 @@ When adding GPS information to an image, it is important to set all of the follo
 
 ### IPTC CORE tags
 
+https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata
+
+
 | Tag name | Read |  Write | Description | 
 | -------- | ---- |  ----- | ----------- | 
-| Description |  |  |  | 
-| DescriptionWriter |  |  |  | 
+| Description |  |  | describing the who, what, and why of what is happening in this image, | 
+| DescriptionWriter |  |  | name of the person involved in writing the Description, | 
 | Caption |  |  |  | 
 | Creator | yes | yes | Nom du photographe | 
-| City | yes | yes | obsolete | 
-| Country | yes | yes | obsolete | 
+| City | yes | yes | obsolete Name of the city of the location shown in the image.| 
+| Country | yes | yes | obsolete Full name of the country of the location shown in the image.| 
 | Software | -- | yes | 0131 IFD0 "TiPhotoLocator" | 
 | Keywords |  |  |  | 
 | Landmark |  |  | ??? | 
