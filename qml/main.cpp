@@ -6,6 +6,7 @@
 #include "Models/PhotoModel.h"
 #include "Models/SuggestionModel.h"
 #include "Models/OnTheMapProxyModel.h"
+#include "Models/SuggestionProxyModel.h"
 #include "cpp/GeocodeWrapper.h"
 
 /** ********************************************************************************
@@ -29,6 +30,8 @@ int main(int argc, char *argv[])
     OnTheMapProxyModel onTheMapProxyModel;
     onTheMapProxyModel.setSourceModel(&photoListModel);
     SuggestionModel suggestionModel;
+    SuggestionProxyModel suggestionProxyModel;
+    suggestionProxyModel.setSourceModel(&suggestionModel);
     // --------------------------------------
     // On initialise nos classes
     // --------------------------------------
@@ -48,6 +51,7 @@ int main(int argc, char *argv[])
     // --------------------------------------
     context->setContextProperty("_photoListModel", &photoListModel);
     context->setContextProperty("_onTheMapProxyModel", &onTheMapProxyModel);
+    context->setContextProperty("_suggestionProxyModel", &suggestionProxyModel);
 
     // Chargement du QMl. Au choix:
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -85,7 +89,9 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),         &photoListModel, SLOT(removeSavedPosition()));
     QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &onTheMapProxyModel, SLOT(setAllItemsCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel, SLOT(setAllItemsSavedCoords()));
+    QObject::connect(firstRootItem,   SIGNAL(setPhotoFilter(string)),                  &suggestionProxyModel, SLOT(setFilterFixedString(string)));
     QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper,     SLOT(requestReverseGeocode(double,double)));
+
     // --------------------------------------
     // Connexions entre classes C++
     // --------------------------------------

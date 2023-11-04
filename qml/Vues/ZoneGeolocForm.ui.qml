@@ -4,7 +4,6 @@ import "../Components"
 
 Zone{
     id: geolocZone
-//    property alias geolocZone: geolocZone
     property alias chipLat: chipLat
     property alias chipLong: chipLong
     property alias chipCity: chipCity

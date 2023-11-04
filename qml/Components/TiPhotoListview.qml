@@ -6,7 +6,6 @@ import QtQuick.Layouts
 // https://www.youtube.com/watch?v=ZArpJDRJxcI
 
 ListView{
-    //id: listView
     anchors.fill: parent
     model: _photoListModel
     delegate: listDelegate
@@ -91,7 +90,7 @@ ListView{
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("MouseArea: "+index);
+                    console.log("MouseArea: click sur" + index);
                     __lv.currentIndex = index             // Bouge le highlight dans la ListView
                     _photoListModel.selectedRow = index   // Actualise le proxymodel
 
@@ -103,6 +102,10 @@ ListView{
                     // On envoie les coordonnées pour centrer la carte sur le point selectionné
                     mapTab.photoLatitude = hasGPS? latitude : 0
                     mapTab.photoLongitude = hasGPS? longitude : 0
+
+                    // On change le filtrage des suggestions
+                    _suggestionProxyModel.photoFilter = index
+                    window.setSuggestionFilter(index)
 
                     // On active (ou pas) le bouton "Save position"
                     mapTools.bt_save_pos.enabled = hasGPS;

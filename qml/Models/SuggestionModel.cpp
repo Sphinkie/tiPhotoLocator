@@ -83,24 +83,19 @@ void SuggestionModel::append(const QString text, const QString target, const Sug
         qDebug()<< "already contains" << text;
         return;
     }
-    qDebug()<< "first append " << text;
+    qDebug()<< "Adding suggestion " << text << "for" << m_selectedPhotoRow;;
     const int rowOfInsert = m_suggestions.count();
-    this->addSelectedPhoto(new_suggestion);
+
+    this->addSelectedPhoto(new_suggestion);   
+    qDebug() << "Suggestion size" << new_suggestion->photos.size();
+
+
+    new_suggestion->photos << m_selectedPhotoRow;
+    qDebug() << "Suggestion size" << new_suggestion->photos.size();
+
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_suggestions.insert(rowOfInsert, *new_suggestion);
     endInsertRows();
-}
-
-// -----------------------------------------------------------------------
-/**
- * @brief Le slot selectedPhoto() reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
- * @param row: La position dans PhotoModel de la photo active
- */
-void SuggestionModel::onSelectedPhotoChanged(const int row)
-{
-    if (row<0) return;
-    // On mémorise la photo actuellement sélectionnée dans la ListView
-    m_selectedPhotoRow = row;
 }
 
 
@@ -115,6 +110,20 @@ void SuggestionModel::addSelectedPhoto(Suggestion* suggestion)
     // On ajoute la photo courante dans la liste.
     suggestion->photos << m_selectedPhotoRow;
 }
+
+
+// -----------------------------------------------------------------------
+/**
+ * @brief Le slot onSelectedPhotoChanged() reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
+ * @param row: La position dans PhotoModel de la photo active
+ */
+void SuggestionModel::onSelectedPhotoChanged(const int row)
+{
+    if (row<0) return;
+    // On mémorise la photo actuellement sélectionnée dans la ListView
+    m_selectedPhotoRow = row;
+}
+
 
 // -----------------------------------------------------------------------
 bool Suggestion::operator== (const Suggestion &data) const

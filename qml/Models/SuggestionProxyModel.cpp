@@ -41,21 +41,34 @@ void SuggestionProxyModel::setFilterEnabled(bool enabled)
 
 /* ************************************************************************ */
 /**
- * @brief La méthode filterAcceptsRow() effectue le filtrage (toutes les 10 secondes).
+ * @brief La méthode filterAcceptsRow() effectue le filtrage.
  * Elle laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo de mandée, et ayant le type demandé.
  * @param sourceRow: Le numero d'une ligne du modèle parent (SuggestionModel)
- * @param sourceIndex: Index de la ligne dans le modèle parent (SuggestionModel)
+ * @param sourceParent: Le modèle parent (SuggestionModel)
  * @return True si la ligne est acceptée
  */
-bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceIndex) const
+bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
     if (!m_filterEnabled) return true;
+    const QModelIndex idx = sourceModel()->index(sourceRow, 0, sourceParent);
+    qDebug() << "filtering" << idx.data(SuggestionModel::TextRole).toString();
+    qDebug() << "filter" << m_filterPhotoRow;
     // On récupère les données de la ligne à accepter ou pas
-    const QList<QVariant> listePhotos = sourceIndex.data(SuggestionModel::PhotosRole).toList();
+    const QList<QVariant> listePhotos = idx.data(SuggestionModel::PhotosRole).toList();
+    qDebug() << "QList size" << listePhotos.size();
+
+
+    const QVariant b = idx.data(SuggestionModel::TargetRole);
+    qDebug() << "b" << b.toString();
+    const QVariant a = idx.data(SuggestionModel::PhotosRole);
+    qDebug() << "a" << a.data();
+
+
     const bool photo_ok = listePhotos.contains(m_filterPhotoRow);
     // On récupère les données de la ligne à accepter ou pas
-    const int suggestionType = sourceIndex.data(SuggestionModel::TypeRole).toInt();
-    const bool type_ok  = (suggestionType == m_filterSuggestionType);
+    // const int suggestionType = sourceIndex.data(SuggestionModel::TypeRole).toInt();
+    const bool type_ok  = true;  // (suggestionType == m_filterSuggestionType);
+    qDebug() << "passed" << (photo_ok && type_ok);
     return (photo_ok && type_ok);
 }
 

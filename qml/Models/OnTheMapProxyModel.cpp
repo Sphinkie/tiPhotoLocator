@@ -52,7 +52,7 @@ void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
  * @brief SelectedFilterProxyModel::filterAcceptsRow effectue le filtrage (toutes les 10 secondes).
  * Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position".
  * @param sourceRow: Le numero d'une ligne du modèle parent (PhotoModel)
- * @param sourceParent: Index de la ligne dans le modèle parent (PhotoModel)
+ * @param sourceParent: Le modèle parent (PhotoModel)
  * @return TRUE si la ligne est acceptée
  */
 bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const

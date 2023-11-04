@@ -65,5 +65,7 @@
         <file>Vues/ZoneGeolocForm.ui.qml</file>
         <file>Controllers/ZoneGeoloc.qml</file>
         <file>Images/photo.png</file>
+        <file>Vues/ZoneSuggestionForm.ui.qml</file>
+        <file>Controllers/ZoneSuggestion.qml</file>
     </qresource>
 </RCC>

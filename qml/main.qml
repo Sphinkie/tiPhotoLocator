@@ -34,6 +34,7 @@ Window {
     signal fetchExifMetadata()
     signal saveExifMetadata()
     signal hasPos()
+    signal setSuggestionFilter(string row)
     signal requestReverseGeocode(double lati, double longi)
 
     // ----------------------------------------------------------------
@@ -100,7 +101,7 @@ Window {
                 checked: false
                 onClicked: {
                     // voir exemple https://github.com/KDAB/kdabtv/blob/master/qml-intro/sol-qmlqsortfilterproxymodel/main.qml
-                    _cppFilterProxyModel.gpsFilterEnabled = checked; // todo
+                    _cppFilterProxyModel.gpsFilterEnabled = checked; // TODO : implemenater un proxy model pour ce filtrage
                 }
             }
 
@@ -176,12 +177,9 @@ Window {
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
                 }
-                Zone{
+                ZoneSuggestion{
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
-                    color: TiStyle.suggestionBackgroundColor
-                    iconZone: "qrc:/Images/suggestion.png"
-                    txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
                 }
                 Zone{
                     Layout.rightMargin: 40

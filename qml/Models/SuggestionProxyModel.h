@@ -4,12 +4,13 @@
 #include <QSortFilterProxyModel>
 
 /**
- * @brief The SuggestionProxyModel class if a filter ProxyModel, to keep only the suggestions related to the selected photo.
+ * @brief The SuggestionProxyModel class if a filter ProxyModel, that filters the suggestions related to a given photo.
  */
 class SuggestionProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(bool filterEnabled READ filterEnabled WRITE setFilterEnabled NOTIFY filterEnabledChanged)
+    Q_PROPERTY(bool photoFilter MEMBER m_filterPhotoRow)
 
 public:
     explicit SuggestionProxyModel(QObject *parent = nullptr);
