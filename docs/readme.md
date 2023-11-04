@@ -11,23 +11,29 @@ But, if you don't have recorded any GPX file, or if your photos are older than h
 
 **TiPhotoLocator** manages the following EXIF and IPTC tags.
 
-DateTimeOriginal
+exchangeable image file format 
+
+DateTimeOriginal 0x9003 ExifIFD
+date time when the photo was taken 
 
 ### Exif tags
 
 | Tag name | Read |  Write | Description | 
 | -------- | ---- |  ----- | ----------- | 
-| Model | yes | no | camera model | 
-| Make | yes |  no | camera manufacturer | 
-| ImageWidth | yes | no | Image width | 
-| ImageHeight | yes | no | Image height | 
-| ImageDescription | yes | no |  | 
-| GPSLatitude | yes | yes | photo location |
+| Model | yes | no | 0110 IDF0 camera model | 
+| Make | yes |  no | 010f IDF0 camera manufacturer | 
+| ImageWidth | yes | no | 0100 IDF0 Image width | 
+| ImageHeight | yes | no | 0101 IDF0 Image height | 
+| ImageDescription | yes | no | 010e IDF0 | 
+| GPSLatitude | yes | yes | 0x8825 IFD0 photo location |
 | GPSLongitude | yes | yes | photo location |
 | GPSLatitudeRef | no | yes | North or South | 
 | GPSLongitudeRef | no |  yes | West or East | 
-| Artist | yes | yes | Nom du photographe | 
+| Artist | yes | yes | 013b IFD0Nom du photographe | 
 
+IFD : image file directory
+
+When adding GPS information to an image, it is important to set all of the following tags: GPSLatitude, GPSLatitudeRef, GPSLongitude, GPSLongitudeRef, and GPSAltitude and GPSAltitudeRef if the altitude is known.
 
 ### IPTC CORE tags
 
@@ -39,7 +45,7 @@ DateTimeOriginal
 | Creator | yes | yes | Nom du photographe | 
 | City | yes | yes | obsolete | 
 | Country | yes | yes | obsolete | 
-| Software | -- | yes | "TiPhotoLocator" | 
+| Software | -- | yes | 0131 IFD0 "TiPhotoLocator" | 
 | Keywords |  |  |  | 
 | Landmark |  |  | ??? | 
 
