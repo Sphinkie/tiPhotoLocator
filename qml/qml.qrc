@@ -67,5 +67,6 @@
         <file>Images/photo.png</file>
         <file>Vues/ZoneSuggestionForm.ui.qml</file>
         <file>Controllers/ZoneSuggestion.qml</file>
+        <file>Components/SuggestionListView.qml</file>
     </qresource>
 </RCC>

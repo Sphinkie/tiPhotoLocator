@@ -4,8 +4,8 @@ import "../Vues"
 // Controlleur
 ZoneSuggestionForm {
 
-//    chipSugg1.content: "chip Suggestion 1"
-//    chipSugg2.content: "chip Suggestion 2"
+
+
 
 }
 

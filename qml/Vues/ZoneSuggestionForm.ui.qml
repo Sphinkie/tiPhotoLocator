@@ -9,11 +9,16 @@ Zone{
     txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
     Layout.fillHeight: true
 
+
+    SuggestionListView {id : slv }
+
+    /*
+
     ListView{
-        id: suggestionListView
+        id: suggestionListView2
         anchors.fill: parent
         model: _suggestionProxyModel
-        delegate: suggestionDelegate
+        delegate: suggestionDelegate2
         focus: true
         clip: true   // pour que les items restent à l'interieur de la listview
     }
@@ -30,42 +35,35 @@ Zone{
 
         // le delegate pour afficher un item dans la ListView
         Component{
-            id: suggestionDelegate
+            id: suggestionDelegate2
 
             //        Item {
             //            width: parent.width
             //            height: 40
             //            required property string text
             //            required property string target
-            Chips {
-                // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
-                required property string text
-                required property string target
-                content: text + " (" + target + ")"
-                editable: false
-                deletable: true
-            }
-            //                }
-            /*
-                // Gestion du clic sur un item
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        console.log("MouseArea: "+index);
-                        __lv.currentIndex = index             // Bouge le highlight dans la ListView
-                        _photoListModel.selectedRow = index   // Actualise le proxymodel
-
-                        // Envoie au parent les data de l'item selectionné du modèle.
-                        // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
-                        tabbedPage.selectedItem = index
-                        tabbedPage.selectedData = _photoListModel.get(index)
-
-                        // On envoie les coordonnées pour centrer la carte sur le point selectionné
-                        mapTab.photoLatitude = hasGPS? latitude : 0
-                        mapTab.photoLongitude = hasGPS? longitude : 0
+            Item{
+                property alias suggestionChip: suggestionChip
+                property alias chipMouseArea: chipMouseArea
+                Chips {
+                    // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
+                    id: suggestionChip
+                    required property string text
+                    required property string target
+                    content: text + " (" + target + ")"
+                    editable: false
+                    deletable: true
+                    MouseArea {
+                        id: chipMouseArea
+                        anchors.fill: parent
                     }
-                } */
+                }
+            }
         }
     }
+    */
+
+
 }
+
 

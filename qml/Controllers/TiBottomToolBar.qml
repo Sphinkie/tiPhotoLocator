@@ -18,8 +18,8 @@ TiBottomToolBarForm {
     }
 
     bt_save.onClicked: {
-        // On lance l'écriture des données EXIF (envoi signal)
-        window.saveExifMetadata()
+        // On lance l'écriture des données EXIF et IPTC (envoi signal)
+        window.saveMetadata()
     }
 
     bt_quit.onClicked: {

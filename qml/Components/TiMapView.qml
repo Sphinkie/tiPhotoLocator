@@ -20,6 +20,18 @@ Map {
     center: QtPositioning.coordinate(parent.photoLatitude, parent.photoLongitude)
     zoomLevel: 6
 
+    DragHandler {
+        id: drag
+        target: null
+        onTranslationChanged: (delta) => parent.pan(-delta.x, -delta.y)
+    }
+    WheelHandler {
+        id: wheel
+        acceptedDevices: PointerDevice.Mouse
+        rotationScale: 1/60
+        property: "zoomLevel"
+    }
+
     onMapItemsChanged: {
         // Called every time the marker changes on the map: cad un clic dans la listView
         console.log("onMapItemsChanged: re-center the map");
@@ -46,7 +58,7 @@ Map {
         // ------------------------------------------
         MouseArea {
             anchors.fill: parent
-            onClicked: {
+            onClicked: (mouse) => {
                 console.log("Click on the map.");
                 // On repositionne le cercle
                 mapCircle.center = mapView.toCoordinate(Qt.point(mouse.x,mouse.y))

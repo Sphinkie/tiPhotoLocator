@@ -21,18 +21,18 @@ https://exiftool.org/TagNames/EXIF.html
 
 | Tag name | Read |  Write | Id & group | Description | 
 | -------- | ---- |  ----- | ---------- | ----------- | 
-| ImageWidth  | yes | no | 0x0100 IFD0 | image width  | 
-| ImageHeight | yes | no | 0x0101 IFD0 | image height | 
-| ImageDescription | yes | no | 0x010e IDF0 | image description (pure ASCII) | 
-| Make     | yes | no  | 0x010f IFD0 | camera manufacturer | 
-| Model    | yes | no  | 0x0110 IFD0 | camera model        | 
-| Software | --  | yes | 0x0131 IFD0 | "TiPhotoLocator"    | 
-| Artist   | yes | opt | 0x013b IFD0 | nom du photographe  | 
-| GPSLatitude      | yes | yes | 0x8825 IFD0  | photo location |
-| GPSLongitude     | yes | yes | 0x8825 IFD0 | photo location  |
-| GPSLatitudeRef   | no  | yes | 0x8825 IFD0 | North or South  | 
-| GPSLongitudeRef  | no  | yes | 0x8825 IFD0 | East or West    | 
-| DateTimeOriginal | yes | no  | 0x9003 ExifIFD | date/time when the photo was taken | 
+| ImageWidth  | yes | no | 0x0100 IFD0 | Image width  | 
+| ImageHeight | yes | no | 0x0101 IFD0 | Image height | 
+| ImageDescription | yes | no | 0x010e IDF0 | Image description (pure ASCII) | 
+| Make        | yes | no  | 0x010f IFD0 | Camera manufacturer | 
+| Model       | yes | no  | 0x0110 IFD0 | Camera model        | 
+| Software    | --  | yes | 0x0131 IFD0 | "TiPhotoLocator"    | 
+| Artist      | yes | opt | 0x013b IFD0 | Nom du photographe  | 
+| GPSLatitude      | yes | yes | 0x8825 IFD0 | Photo location |
+| GPSLongitude     | yes | yes | 0x8825 IFD0 | Photo location |
+| GPSLatitudeRef   | no  | yes | 0x8825 IFD0 | North or South | 
+| GPSLongitudeRef  | no  | yes | 0x8825 IFD0 | East or West   | 
+| DateTimeOriginal | yes | no  | 0x9003 ExifIFD | Date/time when the photo was taken | 
 
 IFD : Image File Directory
 
@@ -45,19 +45,19 @@ https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata
 
 | Tag name | Read |  Write | Description | 
 | -------- | ---- |  ----- | ----------- | 
-| Description |  |  | describing the who, what, and why of what is happening in this image, | 
-| DescriptionWriter |  |  | name of the person involved in writing the Description, | 
-| Caption  |  |  |  | 
 | Creator  | yes | yes | Nom du photographe | 
-| City     | yes | yes | obsolete Name of the city of the location shown in the image.| 
-| Country  | yes | yes | obsolete Full name of the country of the location shown in the image.| 
+| City     | yes | yes | obsolete - Name of the city of the location shown in the image.| 
+| Country  | yes | yes | obsolete - Full name of the country of the location shown in the image.| 
+| Description |  |  | Description of the who, what, and why of what is happening in this image. | 
+| DescriptionWriter |  |  | Name of the person involved in writing the Description, | 
+| Caption  |  |  |  | 
 | Keywords |  |  |  | 
 | Landmark |  |  | ??? | 
 
 ### IPTC EXTENSION tags
 
-| Tag name | Read |  Write | Description | 
-| -------- | ---- |  ----- | ----------- | 
+| Tag name         | Read |  Write | Description | 
+| ---------------- | ---- |  ----- | ----------- | 
 | Location/City    |  |  | IPTC Extension | 
 | Location/Country |  |  | IPTC Extension | 
 

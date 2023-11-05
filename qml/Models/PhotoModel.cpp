@@ -421,21 +421,23 @@ void PhotoModel::fetchExifMetadata()
         QThreadPool::globalInstance()->start(task);
     }
 
-    // On n' pas besoin d'attendre de la fin de l'exécution des tâches du pool de threads
+    // On n'a pas besoin d'attendre de la fin de l'exécution des tâches du pool de threads.
     // QThreadPool::globalInstance()->waitForDone();
 }
 
 
 // -----------------------------------------------------------------------
 /**
- * @brief PhotoModel::saveExifMetadata enregistre dans le fichiers JPG les metadonnées EXIF qui ont été modifiées.
+ * @brief Le slot saveMetadata() enregistre dans le fichiers JPG les metadonnées IPTC qui ont été modifiées.
+ * Non modifiées: Make, Model,
+ * EXIF modifiées: GPS, Artist
  */
-void PhotoModel::saveExifMetadata()
+void PhotoModel::saveMetadata()
 {
-    qDebug() << "saveExifMetadata";
+    qDebug() << "saveMetadata";
     QSettings settings;
     bool backupsEnabled = settings.value("backupsEnabled", false).toBool();
-    bool creatorEnabled = settings.value("creatorEnabled", false).toBool();
+    bool artistEnabled = settings.value("artistEnabled", false).toBool();
     QString software = settings.value("software", "").toString();
 
     QThreadPool::globalInstance()->setMaxThreadCount(3);
@@ -454,9 +456,11 @@ void PhotoModel::saveExifMetadata()
             exifData.insert("GPSLongitude", idx.data(LongitudeRole));
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
             exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );           
-            exifData.insert("Artist", idx.data(ArtistRole));
-            if (creatorEnabled)  exifData.insert("Creator", idx.data(ArtistRole));
+            exifData.insert("Creator", idx.data(ArtistRole));
+            if (artistEnabled)  exifData.insert("Artist", idx.data(ArtistRole));
             exifData.insert("Software", software);
+            exifData.insert("City", idx.data(CityRole));
+            exifData.insert("Country", idx.data(CountryRole));
 
             //Instanciation et ajout de la tâche au pool de threads
             ExifWriteTask *task = new ExifWriteTask(exifData, backupsEnabled);
@@ -488,10 +492,12 @@ void PhotoModel::addTestItem()
     ibizaData.insert("FileName", "IMG_00000001");
     ibizaData.insert("DateTimeOriginal", "2023:08:25 01:03:16");
     ibizaData.insert("Model", "Generative AI");
-    ibizaData.insert("Make", "MIDJOURNEY");
+    ibizaData.insert("Make", "Midjourney");
     ibizaData.insert("ImageHeight", 603);
     ibizaData.insert("ImageWidth", 603);
     ibizaData.insert("City", "Ibiza");
+    ibizaData.insert("Country", "Baleares");
+    ibizaData.insert("Creator", "Midjourney");
     ibizaData.insert("GPSLatitude", 38.980);
     ibizaData.insert("GPSLongitude", 1.433);
     this->setData(ibizaData);

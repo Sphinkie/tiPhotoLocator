@@ -261,7 +261,7 @@ Window {
         property alias photographe: textFieldName.text
         property alias initiales: textFieldInitials.text
         property alias software: textFieldSoftware.text
-        property alias creatorEnabled: checkBoxCreator.checked
+        property alias artistEnabled: checkBoxArtist.checked
         property alias captionEnabled: checkBoxCaption.checked
         property alias imgDescEnabled: checkBoxImgDesc.checked
         property alias debugModeEnabled: checkBoxDebug.checked

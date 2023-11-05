@@ -32,7 +32,7 @@ Window {
     signal clearSavedPosition()
     signal applySavedPositionToCoords()
     signal fetchExifMetadata()
-    signal saveExifMetadata()
+    signal saveMetadata()
     signal hasPos()
     signal requestReverseGeocode(double lati, double longi)
     signal setPhotoFilter(int row)
