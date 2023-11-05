@@ -49,8 +49,8 @@ struct Data
     int imageHeight = 0;        // image height (no changes allowed in this app)
     // IPTC tags
     QString artist;             // can be: Artist or Creator
-    QString gpsLatitudeRef;
-    QString gpsLongitudeRef;
+    //QString gpsLatitudeRef;
+    //QString gpsLongitudeRef;
     QString city;
     QString country;
     QString description;        // can be: Description, ImageDescription or Caption;
@@ -144,6 +144,7 @@ public slots:
     void setInCircleItemCoords(double lati, double longi);
     void appendSavedPosition(double lati, double longi);
     void removeSavedPosition();
+    void setData(int index, QString value, QString property) {};
     void duplicateData(int row);
     void removeData(int row);
 

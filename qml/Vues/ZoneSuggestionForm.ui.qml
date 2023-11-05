@@ -7,13 +7,21 @@ Zone{
     color: TiStyle.suggestionBackgroundColor
     iconZone: "qrc:/Images/suggestion.png"
     txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
-    Layout.fillHeight: true
 
+    ColumnLayout {
+        anchors.fill: parent
+        // Layout.fillWidth: true
+        // Layout.fillHeight: true
 
-    SuggestionListView {id : slv }
+        SuggestionListView {
+            id : slv
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+        }
+    }
+
 
     /*
-
     ListView{
         id: suggestionListView2
         anchors.fill: parent

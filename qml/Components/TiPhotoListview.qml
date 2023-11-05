@@ -1,8 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
 
-
-
 // https://www.youtube.com/watch?v=ZArpJDRJxcI
 
 ListView{

@@ -75,8 +75,8 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         case ImageWidthRole:        return data.imageWidth;
         case ImageHeightRole:       return data.imageHeight;
         case ArtistRole:            return data.artist;
-        case GPSLatitudeRefRole:    return data.gpsLatitude;
-        case GPSLongitudeRefRole:   return data.gpsLongitude;
+        //case GPSLatitudeRefRole:    return data.gpsLatitude;
+        //case GPSLongitudeRefRole:   return data.gpsLongitude;
         case CityRole:              return data.city;
         case CountryRole:           return data.country;
         case DescriptionRole:       return data.description;
@@ -537,17 +537,19 @@ void PhotoModel::duplicateData(int row)
 
 // -----------------------------------------------------------------------
 /**
- * @brief Méthode get() venant du forum.
- * Declaration dans .h = Q_INVOKABLE QVariantMap get(int row);
- * Usage dans .qml = myModel.get(1).title  // where 1 is an valid index.
+ * @brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
+ * Usage dans QML: titre = myModel.get(1).title  // where 1 is an valid index.
  * @param row : indice
- * @return une Map contenant toutes les valeurs de l'item
+ * @return une Map contenant toutes les propriétés de l'item. Continet auss une propriété "row".
  */
 QVariantMap PhotoModel::get(int row)
 {
+    // On cree un itérateur sur la table des Roles
     QHash<int,QByteArray> names = roleNames();
     QHashIterator<int, QByteArray> itr(names);
     QVariantMap result;
+    result["row"] = row;
+
     while (itr.hasNext()) {
         itr.next();
         QModelIndex idx = index(row, 0);

@@ -36,6 +36,7 @@ Window {
     signal hasPos()
     signal requestReverseGeocode(double lati, double longi)
     signal setPhotoFilter(int row)
+    signal setPhotoProperty(int index, string texte, string target)
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier
@@ -137,7 +138,7 @@ Window {
             Layout.fillWidth: true
             currentIndex: tabBar.currentIndex
             property int selectedItem: -1   // TODO: encore utile ?
-            property var selectedData: _photoListModel.get(0)  // On l'initialise sur la photo Welcome
+            property var selectedData: _photoListModel.get(0)  // On l'initialise sur la photo Welcome (type = QVariantMap)
 
             // ------------------ PREVIEW TAB --------------------------
             TiPhotoPreview { id: previewView; Layout.fillWidth: true}
