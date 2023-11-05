@@ -23,7 +23,7 @@ Window {
         title: qsTr("Valeurs par défaut")
 
         // ------------------------------------------------------------------
-        // Valeur par défaut pour ARTIST
+        // Valeur par défaut pour CREATOR
         // ------------------------------------------------------------------
         Text {
             id: element0
@@ -48,7 +48,7 @@ Window {
             anchors.bottom: element0.bottom
             anchors.leftMargin: 10
             color: TiStyle.tertiaryTextColor
-            text: "Artist (EXIF)"
+            text: "Creator (IPTC)"
             font.pixelSize: 14
             style: Text.Normal
         }
@@ -112,7 +112,7 @@ Window {
             anchors.bottom: element6.bottom
             anchors.leftMargin: 10
             color: TiStyle.tertiaryTextColor
-            text: "Software (IPTC)"
+            text: "Software (Exif)"
             font.pixelSize: 14
             style: Text.Normal
         }
@@ -143,21 +143,21 @@ Window {
             font.pixelSize: 14
         }
         CheckBox {
-            id: checkBoxArtist
+            id: checkBoxCreator
             anchors.left: element2.left
             anchors.top: element2.bottom
             anchors.topMargin: 6
-            text: "Artist (EXIF)"
+            text: "Creator (IPTC)"
             enabled: false
             checkable: true
             checked: true
         }
         CheckBox {
-            id: checkBoxCreator
-            anchors.left: checkBoxArtist.right
-            anchors.bottom: checkBoxArtist.bottom
+            id: checkBoxArtist
+            anchors.left: checkBoxCreator.right
+            anchors.bottom: checkBoxCreator.bottom
             anchors.leftMargin: 10
-            text: "Creator (IPTC)"
+            text: "Artist (EXIF)"
             checkable: true
             checked: true
         }

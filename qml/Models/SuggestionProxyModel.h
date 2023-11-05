@@ -10,7 +10,6 @@ class SuggestionProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(bool filterEnabled READ filterEnabled WRITE setFilterEnabled NOTIFY filterEnabledChanged)
-    //Q_PROPERTY(bool photoFilter MEMBER m_filterPhotoRow)
 
 public:
     explicit SuggestionProxyModel(QObject *parent = nullptr);
@@ -29,7 +28,6 @@ protected:
 private:
     bool m_filterEnabled;
     int  m_filterPhotoRow;
-    int  m_filterSuggestionType;
 
 };
 

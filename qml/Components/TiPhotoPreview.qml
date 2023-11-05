@@ -4,7 +4,7 @@ import QtQuick.Layouts
 import "../Controllers"
 
 
-// TODO : ce tab charge les images meme quand il n'est pas visible, ce qui ralenti la GUI
+// TODO : ce tab charge les images même quand il n'est pas visible, ce qui ralenti la GUI
 
 RowLayout {
 

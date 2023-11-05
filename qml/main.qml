@@ -35,8 +35,6 @@ Window {
     signal saveExifMetadata()
     signal hasPos()
     signal requestReverseGeocode(double lati, double longi)
-
-    signal setFilterRegularExpression(string row)
     signal setPhotoFilter(int row)
 
     // ----------------------------------------------------------------
@@ -139,7 +137,7 @@ Window {
             Layout.fillWidth: true
             currentIndex: tabBar.currentIndex
             property int selectedItem: -1   // TODO: encore utile ?
-            property var selectedData
+            property var selectedData: _photoListModel.get(0)  // On l'initialise sur la photo Welcome
 
             // ------------------ PREVIEW TAB --------------------------
             TiPhotoPreview { id: previewView; Layout.fillWidth: true}

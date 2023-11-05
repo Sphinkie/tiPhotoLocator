@@ -51,8 +51,7 @@ bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
 {
     if (!m_filterEnabled) return true;
     const QModelIndex idx = sourceModel()->index(sourceRow, 0, sourceParent);
-    qDebug() << "filtering" << idx.data(SuggestionModel::TextRole).toString();
-    qDebug() << "m_filterPhotoRow" << m_filterPhotoRow;
+    // qDebug() << "filtering" << idx.data(SuggestionModel::TextRole).toString();
 
     // On récupère les données de la ligne à accepter ou pas
     // const QList<QVariant> listePhotos = idx.data(SuggestionModel::PhotosRole).toList();  // (autre méthode)
@@ -70,7 +69,6 @@ bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
  */
 void SuggestionProxyModel::setFilterValue(const int photoRow)
 {
-    qDebug() << "old FilterValue" << m_filterPhotoRow;
     m_filterPhotoRow = photoRow;
     qDebug() << "setFilterValue" << m_filterPhotoRow;
     invalidateRowsFilter();   // Le filtre à changé: On force un recalcul du filtrage

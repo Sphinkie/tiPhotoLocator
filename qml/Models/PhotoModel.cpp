@@ -347,9 +347,11 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_data[row].imageHeight     = value_list["ImageHeight"].toInt();
     //m_data[row].gpsLatitudeRef  = value_list["GPSLatitudeRef"].toString();
     //m_data[row].gpsLongitudeRef = value_list["GPSLongitudeRef"].toString();
+    // ImageDescription
+    // Les metadata IPTC
     m_data[row].city            = value_list["City"].toString();
     m_data[row].country         = value_list["Country"].toString();
-    m_data[row].description     = value_list["Description"].toString();     // TODO : aka Caption / ImageDescription
+    m_data[row].description     = value_list["Description"].toString();     // TODO : aka Caption
     m_data[row].headline        = value_list["Headline"].toString();
     m_data[row].keywords        = value_list["Keywords"].toString();        // TODO: this is a list of keywords
     m_data[row].descriptionWriter = value_list["DescriptionWriter"].toString();

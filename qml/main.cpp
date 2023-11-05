@@ -89,11 +89,7 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),         &photoListModel, SLOT(removeSavedPosition()));
     QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &onTheMapProxyModel, SLOT(setAllItemsCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel, SLOT(setAllItemsSavedCoords()));
-
-    QObject::connect(firstRootItem,   SIGNAL(setFilterFixedString(string)),         &suggestionProxyModel, SLOT(setFilterFixedString(string)));
-    QObject::connect(firstRootItem,   SIGNAL(setFilterRegularExpression(string)),   &suggestionProxyModel, SLOT(setFilterRegularExpression(string)));
     QObject::connect(firstRootItem,   SIGNAL(setPhotoFilter(int)),                  &suggestionProxyModel, SLOT(setFilterValue(int)));
-
     QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper,     SLOT(requestReverseGeocode(double,double)));
 
     // --------------------------------------

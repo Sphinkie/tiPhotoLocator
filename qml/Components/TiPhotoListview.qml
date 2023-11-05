@@ -104,7 +104,6 @@ ListView{
                     mapTab.photoLongitude = hasGPS? longitude : 0
 
                     // On change le filtrage des suggestions
-                    window.setFilterRegularExpression("^"+index)
                     window.setPhotoFilter(index)
 
                     // On active (ou pas) le bouton "Save position"

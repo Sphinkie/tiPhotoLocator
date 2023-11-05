@@ -106,7 +106,7 @@ void ExifReadTask::processLine(QByteArray line)
         m_rxLine.append("}");
         QJsonDocument jsonDoc = QJsonDocument::fromJson(m_rxLine);
         QJsonObject jsonObject = jsonDoc.object();
-        // On envoie les data
+        // On envoie les data au PhotoModel
         m_photoModel->setData(jsonObject.toVariantMap());
     }
     else if (line.startsWith("[{"))
