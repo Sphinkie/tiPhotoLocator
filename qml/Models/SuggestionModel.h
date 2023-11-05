@@ -31,7 +31,7 @@ struct Suggestion
     QString text;              // Example: "COSTA RICA"
     QString target;            // Example: "Country"
     ItemType itemType;         // Example: "geo"
-    QList<int> photos;         // List of photos matching this suggestion
+    QSet<int> photos;          // List of photos matching this suggestion
 
     // Surcharges d'operateurs
     bool operator== (const Suggestion &data) const;

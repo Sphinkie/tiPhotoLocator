@@ -410,7 +410,7 @@ void PhotoModel::fetchExifMetadata()
 {
     qDebug() << "fetchExifMetadata";
     // Quantité maximum de threads = 3
-    QThreadPool::globalInstance()->setMaxThreadCount(3);
+    QThreadPool::globalInstance()->setMaxThreadCount(2);
     ExifReadTask::init(this);
     //Instanciation et ajout de plusieurs tâches au pool de threads
     for (int row = 0; row < m_data.count(); row++)

@@ -56,11 +56,9 @@ bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
 
     // On récupère les données de la ligne à accepter ou pas
     // const QList<QVariant> listePhotos = idx.data(SuggestionModel::PhotosRole).toList();  // (autre méthode)
-    const QList<int> listePhotosRow = idx.data(SuggestionModel::PhotosRole).value<QList<int>>();
-
+    const QSet<int> listePhotosRow = idx.data(SuggestionModel::PhotosRole).value<QSet<int>>();
+    // On effectue le test de filtrage
     const bool photo_ok = listePhotosRow.contains(m_filterPhotoRow);
-
-    qDebug() << "passed" << photo_ok;
     return (photo_ok);
 }
 
@@ -77,9 +75,6 @@ void SuggestionProxyModel::setFilterValue(const int photoRow)
     qDebug() << "setFilterValue" << m_filterPhotoRow;
     invalidateRowsFilter();   // Le filtre à changé: On force un recalcul du filtrage
     // This function should be called if you are implementing custom filtering (e.g. filterAcceptsRow()), and your filter parameters have changed.
-
-//    m_filterSuggestionType = suggestionType;
-
 }
 
 
