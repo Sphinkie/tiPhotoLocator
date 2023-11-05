@@ -17,12 +17,14 @@ struct Suggestion
     // Constructeur avec valeurs
     Suggestion(const QString &suggestion_text,
                const QString &suggestion_target,
-               const Suggestion::ItemType suggestion_type
+               const Suggestion::ItemType suggestion_type,
+               const int first_photo
                )
     {
         text = suggestion_text;
         target = suggestion_target;
         itemType = suggestion_type;
+        photos << first_photo;
     }
 
     // Elements de la structure
@@ -73,7 +75,7 @@ private:
     // -----------------------------------------------------
     // Methodes privées
     // -----------------------------------------------------
-    void addSelectedPhoto(Suggestion* suggestion);
+    void addCurrentPhotoToSuggestion(int row);
 
     // -----------------------------------------------------
     // Membres

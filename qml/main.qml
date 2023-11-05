@@ -34,8 +34,10 @@ Window {
     signal fetchExifMetadata()
     signal saveExifMetadata()
     signal hasPos()
-    signal setSuggestionFilter(string row)
     signal requestReverseGeocode(double lati, double longi)
+
+    signal setFilterRegularExpression(string row)
+    signal setPhotoFilter(int row)
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier

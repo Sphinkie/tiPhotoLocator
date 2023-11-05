@@ -90,7 +90,7 @@ ListView{
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("MouseArea: click sur" + index);
+                    console.log("MouseArea: clic sur " + index);
                     __lv.currentIndex = index             // Bouge le highlight dans la ListView
                     _photoListModel.selectedRow = index   // Actualise le proxymodel
 
@@ -104,8 +104,8 @@ ListView{
                     mapTab.photoLongitude = hasGPS? longitude : 0
 
                     // On change le filtrage des suggestions
-                    _suggestionProxyModel.photoFilter = index
-                    window.setSuggestionFilter(index)
+                    window.setFilterRegularExpression("^"+index)
+                    window.setPhotoFilter(index)
 
                     // On active (ou pas) le bouton "Save position"
                     mapTools.bt_save_pos.enabled = hasGPS;

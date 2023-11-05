@@ -1,16 +1,15 @@
 #include "SuggestionModel.h"
 
-// -----------------------------------------------------------------------
+
+/* ********************************************************************************** */
 /**
  * @brief Contructor
  * @param parent
  */
 SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
-{
+{}
 
-}
-
-// -----------------------------------------------------------------------
+/* ********************************************************************************** */
 /**
  * @brief rowCount returns the number of elements in the model. Implémentation obligatoire.
  * @param parent: parent of the model
@@ -24,7 +23,7 @@ int SuggestionModel::rowCount(const QModelIndex& parent) const
 }
 
 
-// -----------------------------------------------------------------------
+/* ********************************************************************************** */
 /**
  * @brief The method data() returns the requeted role value of an element of the model. Implémentation obligatoire.
  * @param index: index of the element of the model
@@ -43,13 +42,13 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
     case TextRole:      return data.text;
     case TargetRole:    return data.target;
     case TypeRole:      return data.itemType;
-//    case PhotosRole:    return data.photos;
+    case PhotosRole:    return QVariant::fromValue(data.photos);   // returns a QVariant containing a copy of value.  (lecture: liste = variant.value<QList<int>>();)
     default:
         return QVariant();
     }
 }
 
-// -----------------------------------------------------------------------
+/* ********************************************************************************** */
 /**
  * Table of Role names. Implémentation obligatoire.
  * C'est la correspondance entre le role C++ et le nom de la property dans QML.
@@ -66,7 +65,7 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 }
 
 
-// -----------------------------------------------------------------------
+/* ********************************************************************************** */
 /**
  * @brief This append() method adds a suggestion to the model.
  * @param text: text of the suggestion
@@ -76,43 +75,46 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 void SuggestionModel::append(const QString text, const QString target, const Suggestion::ItemType item_type)
 {
     if (text.isEmpty()) return;
-    Suggestion* new_suggestion = new Suggestion(text, target, item_type);
-    // Ne pas recreer si existe deja
-    if (m_suggestions.contains(*new_suggestion))  // utilise la surcharge de ==
+
+    for (int i=0; i<m_suggestions.count(); i++ )
     {
-        qDebug()<< "already contains" << text;
-        return;
+        if (m_suggestions.at(i).text == text)
+        {
+            // Trouvé: la suggestion existe dejà
+            qDebug() << "already contains" << text;
+            this->addCurrentPhotoToSuggestion(i);
+            return;
+        }
     }
+    // A la fin de la boucle, on ne l'a pas trouvé: il s'agit donc d'un nouvelle suggestion
     qDebug()<< "Adding suggestion " << text << "for" << m_selectedPhotoRow;;
+    Suggestion* new_suggestion = new Suggestion(text, target, item_type, m_selectedPhotoRow);
     const int rowOfInsert = m_suggestions.count();
-
-    this->addSelectedPhoto(new_suggestion);   
-    qDebug() << "Suggestion size" << new_suggestion->photos.size();
-
-
-    new_suggestion->photos << m_selectedPhotoRow;
-    qDebug() << "Suggestion size" << new_suggestion->photos.size();
-
+    // On ajoute la suggestion à la liste
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_suggestions.insert(rowOfInsert, *new_suggestion);
     endInsertRows();
 }
 
 
-// -----------------------------------------------------------------------
+/* ********************************************************************************** */
 /**
- * @brief La méthode addSelectedPhoto ajoute la photo actuellement sélectionnée dans la liste des
- * photo ayant un "match" avec cette suggestion.
- * @param suggestion: la suggestion à modifier
+ * @brief La méthode addCurrentPhotoToSuggestion() ajoute la photo actuellement sélectionnée
+ * à la liste des photos ayant un "match" avec cette suggestion.
+ * @param row: l'indice de la suggestion à modifier
  */
-void SuggestionModel::addSelectedPhoto(Suggestion* suggestion)
+void SuggestionModel::addCurrentPhotoToSuggestion(int row)
 {
+    if (row<0) return;
     // On ajoute la photo courante dans la liste.
-    suggestion->photos << m_selectedPhotoRow;
+    m_suggestions[row].photos << m_selectedPhotoRow;
+    // Emit signal
+    QModelIndex index = this->index(row, 0);;
+    emit dataChanged(index, index, QVector<int>() << PhotosRole);
 }
 
 
-// -----------------------------------------------------------------------
+/* ********************************************************************************** */
 /**
  * @brief Le slot onSelectedPhotoChanged() reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
  * @param row: La position dans PhotoModel de la photo active
@@ -125,7 +127,11 @@ void SuggestionModel::onSelectedPhotoChanged(const int row)
 }
 
 
-// -----------------------------------------------------------------------
+/* ********************************************************************************** */
+/**
+ * @brief La surcharge de l'operateur == permet d'utiliser la méthode contains().
+ * @param data: second operande
+ * @return TRUE si le "texte" des deux suggestions est identique */
 bool Suggestion::operator== (const Suggestion &data) const
 {
     // As a member function, when binary operator is overloaded, the initial parameter required is a pointer to this.

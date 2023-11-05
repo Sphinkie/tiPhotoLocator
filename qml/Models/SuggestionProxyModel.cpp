@@ -42,7 +42,7 @@ void SuggestionProxyModel::setFilterEnabled(bool enabled)
 /* ************************************************************************ */
 /**
  * @brief La méthode filterAcceptsRow() effectue le filtrage.
- * Elle laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo de mandée, et ayant le type demandé.
+ * Elle laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo de mandée.
  * @param sourceRow: Le numero d'une ligne du modèle parent (SuggestionModel)
  * @param sourceParent: Le modèle parent (SuggestionModel)
  * @return True si la ligne est acceptée
@@ -52,37 +52,34 @@ bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
     if (!m_filterEnabled) return true;
     const QModelIndex idx = sourceModel()->index(sourceRow, 0, sourceParent);
     qDebug() << "filtering" << idx.data(SuggestionModel::TextRole).toString();
-    qDebug() << "filter" << m_filterPhotoRow;
+    qDebug() << "m_filterPhotoRow" << m_filterPhotoRow;
+
     // On récupère les données de la ligne à accepter ou pas
-    const QList<QVariant> listePhotos = idx.data(SuggestionModel::PhotosRole).toList();
-    qDebug() << "QList size" << listePhotos.size();
+    // const QList<QVariant> listePhotos = idx.data(SuggestionModel::PhotosRole).toList();  // (autre méthode)
+    const QList<int> listePhotosRow = idx.data(SuggestionModel::PhotosRole).value<QList<int>>();
 
+    const bool photo_ok = listePhotosRow.contains(m_filterPhotoRow);
 
-    const QVariant b = idx.data(SuggestionModel::TargetRole);
-    qDebug() << "b" << b.toString();
-    const QVariant a = idx.data(SuggestionModel::PhotosRole);
-    qDebug() << "a" << a.data();
-
-
-    const bool photo_ok = listePhotos.contains(m_filterPhotoRow);
-    // On récupère les données de la ligne à accepter ou pas
-    // const int suggestionType = sourceIndex.data(SuggestionModel::TypeRole).toInt();
-    const bool type_ok  = true;  // (suggestionType == m_filterSuggestionType);
-    qDebug() << "passed" << (photo_ok && type_ok);
-    return (photo_ok && type_ok);
+    qDebug() << "passed" << photo_ok;
+    return (photo_ok);
 }
 
 /* ************************************************************************ */
 /**
- * @brief SuggestionProxyModel::setFilterValues memorise le filet à appliquer.
+ * @brief SuggestionProxyModel::setFilterValue memorise le filtre à appliquer.
  * (Note: On n'utilise pas les slots par défaut du ProxyModel, tels que setFilterRole() et SetFilterFixedValue()...)
  * @param photoRow : l'indice de la photo pour laquelle on veut des suggestions
- * @param suggestionType: le type de suggestions souhaitées
  */
-void SuggestionProxyModel::setFilterValues(const int photoRow, const int suggestionType)
+void SuggestionProxyModel::setFilterValue(const int photoRow)
 {
+    qDebug() << "old FilterValue" << m_filterPhotoRow;
     m_filterPhotoRow = photoRow;
-    m_filterSuggestionType = suggestionType;
+    qDebug() << "setFilterValue" << m_filterPhotoRow;
+    invalidateRowsFilter();   // Le filtre à changé: On force un recalcul du filtrage
+    // This function should be called if you are implementing custom filtering (e.g. filterAcceptsRow()), and your filter parameters have changed.
+
+//    m_filterSuggestionType = suggestionType;
+
 }
 
 

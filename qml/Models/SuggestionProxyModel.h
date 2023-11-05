@@ -10,7 +10,7 @@ class SuggestionProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(bool filterEnabled READ filterEnabled WRITE setFilterEnabled NOTIFY filterEnabledChanged)
-    Q_PROPERTY(bool photoFilter MEMBER m_filterPhotoRow)
+    //Q_PROPERTY(bool photoFilter MEMBER m_filterPhotoRow)
 
 public:
     explicit SuggestionProxyModel(QObject *parent = nullptr);
@@ -18,7 +18,7 @@ public:
 
 public slots:
     void setFilterEnabled(bool enabled);
-    void setFilterValues(const int photoRow, const int suggestionType);
+    void setFilterValue(const int photoRow);
 
 signals:
     void filterEnabledChanged();

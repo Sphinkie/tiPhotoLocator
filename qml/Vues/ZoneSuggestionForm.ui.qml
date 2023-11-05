@@ -4,12 +4,10 @@ import "../Components"
 
 Zone{
     id: suggestionZone
-    property alias chipSugg1: chipSugg1
-    property alias chipSugg2: chipSugg2
-
     color: TiStyle.suggestionBackgroundColor
     iconZone: "qrc:/Images/suggestion.png"
     txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
+    Layout.fillHeight: true
 
     ListView{
         id: suggestionListView
@@ -22,48 +20,33 @@ Zone{
 
     ColumnLayout {
 
+        //ListView{
+        //    id: suggestionListView
+        //    anchors.fill: parent
+        //    model: _suggestionProxyModel
+        //    delegate: suggestionDelegate
+        //    focus: true
+        //    clip: true   // pour que les items restent à l'interieur de la listview
 
         // le delegate pour afficher un item dans la ListView
         Component{
             id: suggestionDelegate
 
-            Item {
-                width: parent.width
-                height: 50 // parent.height
-                id: wrapper
+            //        Item {
+            //            width: parent.width
+            //            height: 40
+            //            required property string text
+            //            required property string target
+            Chips {
                 // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
                 required property string text
                 required property string target
-
-                Text {
-                    width: 30
-                    height: 10 // parent.height
-                    text: qsTr("test text")
-                }
-
-                Chips {
-                    content: "chip text"
-                    editable: false
-                    deletable: true
-                }
-
-                /*
-                height: 30
-                required property double latitude
-                required property double longitude
-                required property int index // index is a special role available in the delegate: the row of the item in the model.
-                readonly property ListView __lv : ListView.view
-
-                // Tag City
-                SimpleChip {
-                    id: cityText
-                    anchors.left: nameText.right
-                    anchors.leftMargin: 8
-                    editable: false
-                    deletable: false
-                    height: 20
-                }
-
+                content: text + " (" + target + ")"
+                editable: false
+                deletable: true
+            }
+            //                }
+            /*
                 // Gestion du clic sur un item
                 MouseArea {
                     anchors.fill: parent
@@ -81,26 +64,8 @@ Zone{
                         mapTab.photoLatitude = hasGPS? latitude : 0
                         mapTab.photoLongitude = hasGPS? longitude : 0
                     }
-                }
-*/
-            }
-        }
-
-
-
-
-        Chips {
-            id: chipSugg1
-            editable: false
-            deletable: true
-        }
-
-        Chips {
-            id: chipSugg2
-            editable: false
-            deletable: true
+                } */
         }
     }
-
-
 }
+
