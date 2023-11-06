@@ -18,7 +18,7 @@
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
     // On met quelques items dans la liste
-    m_data << Data("Select your photo folder", "qrc:Images/kodak.png", false, true, true); // Welcome
+    m_data << Data("Select your photo folder", "qrc:Images/welcome.png", false, true, true); // Welcome
 
     this->addTestItem();
 
@@ -277,7 +277,7 @@ void PhotoModel::selectedRow(int row)
  * Note: It is important to emit the dataChanged() signal after saving the changes.
  * @param index : l'index (au sens ModelIndex) de l'item à modifier
  * @param value : la nouvelle valeur
- * @param role : le role à modifier (LatitudeRole, LongitudeRole, ToBeSavedRole)
+ * @param role : le role à modifier (LatitudeRole, LongitudeRole, ToBeSavedRole, city, country)
  * @return true si la modification a réussi. False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
  * @see: https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
  */
@@ -298,6 +298,16 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_data[index.row()].hasGPS = (value != 0);     // Théoriquement, il faudrait tester lat et long...
             m_data[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << LongitudeRole << HasGPSRole);
+            break;
+        case CityRole:
+            m_data[index.row()].city = value.toString();
+            m_data[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << CityRole );
+            break;
+        case CountryRole:
+            m_data[index.row()].country = value.toString();
+            m_data[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << CountryRole );
             break;
         case ToBeSavedRole:
             m_data[index.row()].toBeSaved = value.toBool();
@@ -363,6 +373,21 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // Envoi du signal dataChanged()
     QModelIndex changed_index = this->index(row, 0);
     emit dataChanged(changed_index, changed_index);
+}
+
+/*! ****************************************************************************
+ * \brief Le slot setData() ajoute une propriété à une photo, par exemple si on clique sur une suggestion.
+ * \param row : indice de la photo
+ * \param value : valeur de la propriété
+ * \param property : nom de la propriété
+ */
+void PhotoModel::setData(int row, QString value, QString property)
+{
+    QModelIndex index = this->index(row, 0);
+    //QVariant val = value;
+    int role = roleNames().key(property.toUtf8());
+    this->setData(index, value, role);
+
 }
 
 // -----------------------------------------------------------------------

@@ -73,12 +73,12 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         const QGeoAddress adresse = geolocation.address();
         qDebug() << adresse.text();
         // On mémorise les suggestions
-        m_suggestionModel->append(adresse.street(), "city", Suggestion::geo);
-        m_suggestionModel->append(adresse.district(), "city", Suggestion::geo);
-        m_suggestionModel->append(adresse.city(), "city", Suggestion::geo);
-        m_suggestionModel->append(adresse.county(), "city", Suggestion::geo);
-        m_suggestionModel->append(adresse.state(), "country", Suggestion::geo);
-        m_suggestionModel->append(adresse.country(), "country", Suggestion::geo);
+        m_suggestionModel->append(adresse.street(), "city", "Geo");
+        m_suggestionModel->append(adresse.district(), "city", "Geo");
+        m_suggestionModel->append(adresse.city(), "city", "Geo");
+        m_suggestionModel->append(adresse.county(), "city", "Geo");
+        m_suggestionModel->append(adresse.state(), "country", "Geo");
+        m_suggestionModel->append(adresse.country(), "country", "Geo");
     }
 }
 

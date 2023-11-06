@@ -41,7 +41,7 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
     {
     case TextRole:      return data.text;
     case TargetRole:    return data.target;
-    case TypeRole:      return data.itemType;
+    case CategoryRole:  return data.category;
     case PhotosRole:    return QVariant::fromValue(data.photos);   // returns a QVariant containing a copy of value.  (lecture: liste = variant.value<QList<int>>();)
     default:
         return QVariant();
@@ -58,7 +58,7 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
     static QHash<int, QByteArray> mapping {
         {TextRole,      "text"},
         {TargetRole,    "target"},
-        {TypeRole,      "type"},
+        {CategoryRole,  "category"},
         {PhotosRole,    "photos"}
     };
     return mapping;
@@ -70,9 +70,9 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
  * @brief This append() method adds a suggestion to the model.
  * @param text: text of the suggestion
  * @param target: the name of the Exif tag compatible with this suggestion
- * @param item_type: the type of the suggestion (enum)
+ * @param category: the category of the suggestion ("Geo", ... )
  */
-void SuggestionModel::append(const QString text, const QString target, const Suggestion::ItemType item_type)
+void SuggestionModel::append(const QString text, const QString target, const QString category)
 {
     if (text.isEmpty()) return;
 
@@ -87,8 +87,8 @@ void SuggestionModel::append(const QString text, const QString target, const Sug
         }
     }
     // A la fin de la boucle, on ne l'a pas trouvé: il s'agit donc d'un nouvelle suggestion
-    qDebug()<< "Adding suggestion " << text << "for" << m_selectedPhotoRow;;
-    Suggestion* new_suggestion = new Suggestion(text, target, item_type, m_selectedPhotoRow);
+    qDebug()<< "Adding" << category << "suggestion " << text << "for" << m_selectedPhotoRow;;
+    Suggestion* new_suggestion = new Suggestion(text, target, category, m_selectedPhotoRow);
     const int rowOfInsert = m_suggestions.count();
     // On ajoute la suggestion à la liste
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
@@ -131,7 +131,8 @@ void SuggestionModel::onSelectedPhotoChanged(const int row)
 /**
  * @brief La surcharge de l'operateur == permet d'utiliser la méthode contains().
  * @param data: second operande
- * @return TRUE si le "texte" des deux suggestions est identique */
+ * @return TRUE si le "texte" des deux suggestions est identique
+ */
 bool Suggestion::operator== (const Suggestion &data) const
 {
     // As a member function, when binary operator is overloaded, the initial parameter required is a pointer to this.

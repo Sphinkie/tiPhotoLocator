@@ -5,8 +5,9 @@
 #define QT_NO_DEBUG_OUTPUT
 
 /* ************************************************************************ */
-/**
- * @brief Contructeur
+/*!
+ * \brief Contructeur.
+ * \param parent : modèle source
  */
 SuggestionProxyModel::SuggestionProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -28,7 +29,7 @@ bool SuggestionProxyModel::filterEnabled() const
 /* ************************************************************************ */
 /**
  * @brief Le slot SuggestionProxyModel::setFilterEnabled active ou désactive le filtrage par le ProxyModel.
- * @param enabled: TRUE pour activer le filtrage
+ * @param enabled : TRUE pour activer le filtrage
  */
 void SuggestionProxyModel::setFilterEnabled(bool enabled)
 {
@@ -43,8 +44,8 @@ void SuggestionProxyModel::setFilterEnabled(bool enabled)
 /**
  * @brief La méthode filterAcceptsRow() effectue le filtrage.
  * Elle laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo de mandée.
- * @param sourceRow: Le numero d'une ligne du modèle parent (SuggestionModel)
- * @param sourceParent: Le modèle parent (SuggestionModel)
+ * @param sourceRow : Le numero d'une ligne du modèle parent (SuggestionModel)
+ * @param sourceParent : Le modèle parent (SuggestionModel)
  * @return True si la ligne est acceptée
  */
 bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const

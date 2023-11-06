@@ -144,7 +144,7 @@ public slots:
     void setInCircleItemCoords(double lati, double longi);
     void appendSavedPosition(double lati, double longi);
     void removeSavedPosition();
-    void setData(int index, QString value, QString property) {};
+    void setData(int row, QString value, QString property);
     void duplicateData(int row);
     void removeData(int row);
 

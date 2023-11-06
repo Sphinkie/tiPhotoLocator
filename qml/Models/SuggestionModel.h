@@ -9,28 +9,26 @@
  */
 struct Suggestion
 {
-    enum ItemType {geo, ia, other};
-
     // Default constructor
     Suggestion() {}
 
     // Constructeur avec valeurs
     Suggestion(const QString &suggestion_text,
                const QString &suggestion_target,
-               const Suggestion::ItemType suggestion_type,
+               const QString suggestion_category,
                const int first_photo
                )
     {
         text = suggestion_text;
         target = suggestion_target;
-        itemType = suggestion_type;
+        category = suggestion_category;
         photos << first_photo;
     }
 
     // Elements de la structure
     QString text;              // Example: "COSTA RICA"
     QString target;            // Example: "Country"
-    ItemType itemType;         // Example: "geo"
+    QString category;          // Example: "Geo"
     QSet<int> photos;          // List of photos matching this suggestion
 
     // Surcharges d'operateurs
@@ -49,7 +47,7 @@ public:
     enum Roles {
         TextRole  = Qt::UserRole,  // The first role that can be used for application-specific purposes.
         TargetRole,
-        TypeRole,
+        CategoryRole,
         PhotosRole
     };
     QHash<int, QByteArray> roleNames() const override;
@@ -64,7 +62,7 @@ public:
     // -----------------------------------------------------
     // Methodes publiques
     // -----------------------------------------------------
-    void append(const QString text, const QString target, const Suggestion::ItemType item_type);
+    void append(const QString text, const QString target, const QString category);
     void addPhoto(const QModelIndex &index, const int photo_row);
     void removePhoto(const QModelIndex &index, const int photo_row);
 

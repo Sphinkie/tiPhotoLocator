@@ -1,6 +1,5 @@
 import QtQuick
 
-
 ListView{
     model: _suggestionProxyModel
     delegate: suggestionDelegate
@@ -19,14 +18,16 @@ ListView{
             // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
             required property string text
             required property string target
+            required property string category
 
             Chips {
                 content: text + " (" + target + ")"
                 editable: false
-                deletable: true
+                deletable: false
+                visible: (category === "Geo") ? true : false   // strict comparison (no type-conversion)
             }
 
-            // Gestion du clic sur un item
+            // Gestion du clic sur un item (Chip suggestion)
             MouseArea {
                 anchors.fill: parent
                 onClicked: {

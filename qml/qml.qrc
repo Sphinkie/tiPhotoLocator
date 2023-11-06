@@ -3,8 +3,6 @@
         <file>main.qml</file>
         <file>Components/ShadowButton.qml</file>
         <file>Dialogs/TiFolderDialog.qml</file>
-        <file>Images/canon.png</file>
-        <file>Images/kodak.png</file>
         <file>Images/avatar.jpg</file>
         <file>qtquickcontrols2.conf</file>
         <file>Images/pin-green.png</file>
@@ -68,5 +66,6 @@
         <file>Vues/ZoneSuggestionForm.ui.qml</file>
         <file>Controllers/ZoneSuggestion.qml</file>
         <file>Components/SuggestionListView.qml</file>
+        <file>Images/welcome.png</file>
     </qresource>
 </RCC>
