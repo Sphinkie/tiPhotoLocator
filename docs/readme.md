@@ -12,6 +12,9 @@ But, if you don't have recorded any GPX file, or if your photos are older than h
 **TiPhotoLocator** manages the following EXIF and IPTC tags.
 
 
+
+Les données EXIF et les données IPTC sont deux types de métadonnées utilisées dans la photographie numérique. Les données EXIF sont générées automatiquement par l'appareil photo et contiennent des informations techniques sur la prise de vue, tandis que les données IPTC sont des métadonnées ajoutées manuellement par l'utilisateur et contenant des informations éditoriales, telles que le titre, la description, les droits d'auteur, etc.
+
 ### Exif tags
 
 EXchangeable Image Fileformat 
@@ -40,6 +43,8 @@ IFD : Image File Directory
 
 ### IPTC CORE tags
 
+International Press Telecommunications Council
+
 https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata
 
 
@@ -51,7 +56,8 @@ https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata
 | Description |  |  | Description of the who, what, and why of what is happening in this image. | 
 | DescriptionWriter |  |  | Name of the person involved in writing the Description, | 
 | Caption  |  |  |  | 
-| Keywords |  |  |  | 
+| Keywords |  |  | List of keywords, terms or phrases used to express the subject matter in the image.
+ | 
 | Landmark |  |  | ??? | 
 
 ### IPTC EXTENSION tags
@@ -60,6 +66,28 @@ https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata
 | ---------------- | ---- |  ----- | ----------- | 
 | Location/City    |  |  | IPTC Extension | 
 | Location/Country |  |  | IPTC Extension | 
+
+
+Location shown
+- city
+- country name
+- latitude et longitude
+- location name
+- province or state
+- Name of a sublocation. This sublocation name could either be the name of a sublocation to a city or the name of a well known location or (natural) monument outside a city. In the sense of a sublocation to a city this element is at the fifth level of a top-down geographical hierarchy.
+- WorldRegion
+
+
+### unused 
+
+
+Title: a short verbal and human readable name for the image, (may be the file name).
+
+dateCreated : c'est la date de création du sujet.
+
+Headline: c'est un titre publiable
+
+
 
 
 ## Compilation
