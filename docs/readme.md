@@ -81,11 +81,11 @@ Location shown
 ### unused 
 
 
-Title: a short verbal and human readable name for the image, (may be the file name).
+* **Title**: A short verbal and human readable name for the image, (may be the file name).
 
-dateCreated : c'est la date de création du sujet.
+* **dateCreated** : La date de création du *sujet*.
 
-Headline: c'est un titre publiable
+* **Headline**: Un titre publiable
 
 
 
@@ -100,11 +100,11 @@ To compile the sources of this applciation, you need the Qt framework (Qt6).
 * Check the following options:
    * Qt 6.x
       * MSVC 2019 64-bits compiler
-      * MinGC 64-bits compiler
+      * MinGW 64-bits compiler
+      * Qt5 Compatibility module *(for DropShadow)*
       * Additional libraries:
          * Qt Locator
          * Qt Positionning
-         * Qt5 Compatibility module *(for DropShadow)*
    * OpenSSL *(binaries only)*
    * Qt Installer framework
 
