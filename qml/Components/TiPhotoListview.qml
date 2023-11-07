@@ -94,7 +94,6 @@ ListView{
 
                     // Envoie au parent les data de l'item selectionné du modèle.
                     // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
-                    tabbedPage.selectedItem = index
                     tabbedPage.selectedData = _photoListModel.get(index)
 
                     // On envoie les coordonnées pour centrer la carte sur le point selectionné

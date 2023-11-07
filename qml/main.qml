@@ -103,7 +103,7 @@ Window {
                 checked: false
                 onClicked: {
                     // voir exemple https://github.com/KDAB/kdabtv/blob/master/qml-intro/sol-qmlqsortfilterproxymodel/main.qml
-                    _cppFilterProxyModel.gpsFilterEnabled = checked; // TODO : implemenater un proxy model pour ce filtrage
+                    _cppFilterProxyModel.gpsFilterEnabled = checked; // TODO : implementer un proxy model pour ce filtrage
                 }
             }
 
@@ -138,7 +138,6 @@ Window {
             id: tabbedPage
             Layout.fillWidth: true
             currentIndex: tabBar.currentIndex
-            property int selectedItem: -1   // TODO: encore utile ?
             property var selectedData: _photoListModel.get(0)  // On l'initialise sur la photo Welcome (type = QVariantMap)
 
             // ------------------ PREVIEW TAB --------------------------
@@ -169,7 +168,7 @@ Window {
 
                 TiMapView {
                     id: mapView
-                    Layout.rowSpan: 3         // Haute comme 3 zones
+                    Layout.rowSpan: 3     // Haute comme 3 zones
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                 }

@@ -36,7 +36,10 @@ ListView{
                     // On affecte le texte de la suggestion à la target
                     window.setPhotoProperty(tabbedPage.selectedData.row, text, target);
                     // On enlève le Chip de la zone Suggestions
-                    window.removePhotoFrom(index)
+                    window.removePhotoFrom(index)           // (index dans le proxyModel)
+                    // On recharge les data pour forcer un refresh de la GeoZone
+                    tabbedPage.selectedData = _photoListModel.get(tabbedPage.selectedData.row)
+
                 }
             }
 

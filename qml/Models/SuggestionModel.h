@@ -63,10 +63,10 @@ public:
     // Methodes publiques
     // -----------------------------------------------------
     void append(const QString text, const QString target, const QString category);
+    void removeCurrentPhotoFromSuggestion(const QModelIndex index);
 
 public slots:
     void onSelectedPhotoChanged(const int row);
-    void removeCurrentPhotoFromSuggestion(const int row);
 
 private:
     // -----------------------------------------------------

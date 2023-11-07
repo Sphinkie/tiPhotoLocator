@@ -6,7 +6,6 @@ ZoneGeolocForm {
 
     chipLat.content: mapTab.photoLatitude.toFixed(4) + " Lat "  + ((mapTab.photoLatitude>0) ? "N" : "S")
     chipLong.content: mapTab.photoLongitude.toFixed(4) + " Long " + ((mapTab.photoLongitude>0) ? "E" : "W")
-
     chipCity.content: tabbedPage.selectedData.city
     chipCountry.content: tabbedPage.selectedData.country
 

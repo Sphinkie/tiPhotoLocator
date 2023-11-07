@@ -115,16 +115,16 @@ void SuggestionModel::addCurrentPhotoToSuggestion(int row)
 
 
 /*! **********************************************************************************
- * \brief Le slot removePhoto() enlève la photo courante de la liste des photos correspodant à une suggestion donnée.
- * \param suggestion_row : l'indice de la suggestion à modifier
+ * \brief Le slot removePhoto() enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
+ * \param index : l'index dans le Model de la suggestion à modifier
  */
-void SuggestionModel::removeCurrentPhotoFromSuggestion(const int row)
+void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 {
-    if (row<0 || row>m_suggestions.count() ) return;
-    // On ajoute la photo courante dans la liste.
+    if (! index.isValid()) return;
+    // On retire la photo courante de la liste.
+    int row = index.row();
     m_suggestions[row].photos.remove(m_selectedPhotoRow);
     // Emit signal
-    QModelIndex index = this->index(row, 0);;
     emit dataChanged(index, index, QVector<int>() << PhotosRole);
 }
 

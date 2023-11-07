@@ -13,7 +13,6 @@ Zone{
     txtZone: qsTr("Géolocalisation")
 
     ColumnLayout {
-
         Chips {
             id: chipLat
             editable: false
@@ -37,4 +36,5 @@ Zone{
             deletable: true
         }
     }
+
 }

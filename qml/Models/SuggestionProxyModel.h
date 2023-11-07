@@ -18,6 +18,7 @@ public:
 public slots:
     void setFilterEnabled(bool enabled);
     void setFilterValue(const int photoRow);
+    void removePhotoFromSuggestion(const int proxyRow);
 
 signals:
     void filterEnabledChanged();
