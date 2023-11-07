@@ -37,6 +37,7 @@ Window {
     signal requestReverseGeocode(double lati, double longi)
     signal setPhotoFilter(int row)
     signal setPhotoProperty(int index, string texte, string target)
+    signal removePhotoFrom(int row)
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier

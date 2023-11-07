@@ -19,6 +19,7 @@ ListView{
             required property string text
             required property string target
             required property string category
+            required property string index  // property parculière = indice de la suggestion
 
             Chips {
                 content: text + " (" + target + ")"
@@ -34,6 +35,8 @@ ListView{
                     console.log("chipMouseArea:" + target + " for " + tabbedPage.selectedData.row);
                     // On affecte le texte de la suggestion à la target
                     window.setPhotoProperty(tabbedPage.selectedData.row, text, target);
+                    // On enlève le Chip de la zone Suggestions
+                    window.removePhotoFrom(index)
                 }
             }
 
