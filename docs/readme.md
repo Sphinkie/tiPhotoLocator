@@ -113,5 +113,4 @@ To compile the sources of this applciation, you need the Qt framework (Qt6).
 
 If you recorded a GPX file during your trip, you can sync your photos with GPSync.
 
-A photo gallery developed with Qt: [Tidy Image](
-https://github.com/Simon-12/tidy-images/blob/main/app/src/main.cpp)
+A photo gallery developed with Qt, exiv2 and OpenCV: [Tidy Images](https://github.com/Simon-12/tidy-images)
