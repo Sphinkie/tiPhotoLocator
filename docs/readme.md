@@ -74,7 +74,7 @@ Location shown
 - latitude et longitude
 - location name
 - province or state
-- Name of a sublocation. This sublocation name could either be the name of a sublocation to a city or the name of a well known location or (natural) monument outside a city. In the sense of a sublocation to a city this element is at the fifth level of a top-down geographical hierarchy.
+- Name of a sublocation. This sublocation name could either be the name of a sublocation to a city or the name of a well known location or (natural) monument outside a city.
 - WorldRegion
 
 
@@ -83,7 +83,7 @@ Location shown
 
 * **Title**: A short verbal and human readable name for the image, (may be the file name).
 
-* **dateCreated** : La date de création du *sujet*.
+* **dateCreated** : Creation date of the *subject* of the image. 
 
 * **Headline**: Un titre publiable
 
@@ -102,16 +102,16 @@ To compile the sources of this applciation, you need the Qt framework (Qt6).
       * MSVC 2019 64-bits compiler
       * MinGW 64-bits compiler
       * Qt5 Compatibility module *(for DropShadow)*
+      * Qt Installer framework
       * Additional libraries:
          * Qt Locator
          * Qt Positionning
    * OpenSSL *(binaries only)*
-   * Qt Installer framework
 
 
 ## Cousin projects
 
 If you recorded a GPX file during your trip, you can sync your photos with GPSync.
 
-
-https://github.com/Simon-12/tidy-images/blob/main/app/src/main.cpp
+A photo gallery developed with Qt: [Tidy Image](
+https://github.com/Simon-12/tidy-images/blob/main/app/src/main.cpp)
