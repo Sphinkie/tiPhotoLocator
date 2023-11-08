@@ -111,6 +111,7 @@ To compile the sources of this applciation, you need the Qt framework (Qt6).
 
 ## Cousin projects
 
-If you recorded a GPX file during your trip, you can sync your photos with GPSync.
+Application to geotag your photos with a .gpx file : [GPicSync](
+https://github.com/notfrancois/GPicSync)
 
-A photo gallery developed with Qt, exiv2 and OpenCV: [Tidy Images](https://github.com/Simon-12/tidy-images)
+A photo gallery developed with Qt, exiv2 and OpenCV: [Tidy Images](https://github.com/Simon-12/tidy-images) by Simon-12.
