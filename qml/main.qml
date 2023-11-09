@@ -93,17 +93,19 @@ Window {
                 id: checkBox1
                 Layout.leftMargin: 20
                 text: qsTr("sans date")
-                // TODO : hint: "Liste des photos sans date"
+                // TODO : ToolTip: "Liste des photos sans date"
             }
             CheckBox {
                 id: checkBox2
                 Layout.leftMargin: 20
                 text: qsTr("sans localisation")
-                // TODO : hint: "Liste des photos sans localisation"
+                ToolTip.text: qsTr("Liste des photos sans localisation")
+                ToolTip.visible: hovered
+                ToolTip.delay: 500
                 checked: false
                 onClicked: {
                     // voir exemple https://github.com/KDAB/kdabtv/blob/master/qml-intro/sol-qmlqsortfilterproxymodel/main.qml
-                    _cppFilterProxyModel.gpsFilterEnabled = checked; // TODO : implementer un proxy model pour ce filtrage
+                    _unlocalizedProxyModel.filterEnabled = checked;
                 }
             }
 

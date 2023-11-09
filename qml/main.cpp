@@ -7,6 +7,7 @@
 #include "Models/SuggestionModel.h"
 #include "Models/OnTheMapProxyModel.h"
 #include "Models/SuggestionProxyModel.h"
+#include "Models/UnlocalizedProxyModel.h"
 #include "cpp/GeocodeWrapper.h"
 
 /** ********************************************************************************
@@ -29,6 +30,8 @@ int main(int argc, char *argv[])
     PhotoModel photoListModel;
     OnTheMapProxyModel onTheMapProxyModel;
     onTheMapProxyModel.setSourceModel(&photoListModel);
+    UnlocalizedProxyModel unlocalizedProxyModel;
+    unlocalizedProxyModel.setSourceModel(&photoListModel);
     SuggestionModel suggestionModel;
     SuggestionProxyModel suggestionProxyModel;
     suggestionProxyModel.setSourceModel(&suggestionModel);
@@ -52,6 +55,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("_photoListModel", &photoListModel);
     context->setContextProperty("_onTheMapProxyModel", &onTheMapProxyModel);
     context->setContextProperty("_suggestionProxyModel", &suggestionProxyModel);
+    context->setContextProperty("_unlocalizedProxyModel", &unlocalizedProxyModel);
 
     // Chargement du QMl. Au choix:
     const QUrl url(QStringLiteral("qrc:/main.qml"));

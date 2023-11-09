@@ -13,6 +13,7 @@ SOURCES += \
         Models/PhotoModel.cpp \
         Models/SuggestionModel.cpp \
         Models/SuggestionProxyModel.cpp \
+        Models/UnlocalizedProxyModel.cpp \
         cpp/ExifReadTask.cpp \
         cpp/ExifWriteTask.cpp \
         cpp/GeocodeWrapper.cpp \
@@ -43,6 +44,7 @@ HEADERS += \
     Models/PhotoModel.h \
     Models/SuggestionModel.h \
     Models/SuggestionProxyModel.h \
+    Models/UnlocalizedProxyModel.h \
     cpp/ExifReadTask.h \
     cpp/ExifWriteTask.h \
     cpp/GeocodeWrapper.h
