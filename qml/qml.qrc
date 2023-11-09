@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Components/ShadowButton.qml</file>
         <file>Dialogs/TiFolderDialog.qml</file>
         <file>Images/avatar.jpg</file>
         <file>qtquickcontrols2.conf</file>
@@ -67,5 +66,6 @@
         <file>Controllers/ZoneSuggestion.qml</file>
         <file>Components/SuggestionListView.qml</file>
         <file>Images/welcome.png</file>
+        <file>Components/TiTabButton.qml</file>
     </qresource>
 </RCC>

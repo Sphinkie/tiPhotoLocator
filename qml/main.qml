@@ -112,9 +112,9 @@ Window {
                 Layout.leftMargin: 120
                 Layout.fillWidth: true
                 Layout.rightMargin: 40
-                TabButton { text: qsTr("PREVIEW") }
-                TabButton { text: qsTr("CARTE")   }
-                TabButton { text: qsTr("EXIF/IPTC TAGS") }
+                TiTabButton { text: qsTr("PREVIEW") }
+                TiTabButton { text: qsTr("CARTE")   }
+                TiTabButton { text: qsTr("EXIF/IPTC TAGS")}
             }
         }
     }
