@@ -11,6 +11,7 @@ RowLayout {
         Layout.fillWidth: true       // Prend toute la largeur disponible
         Layout.fillHeight: true      // Occuper toute la hauteur disponible
         clip: true                   // Tronque l'image au cas où elle deborderait
+
         Image {
             id: previewImage
             source: tabbedPage.selectedData.imageUrl

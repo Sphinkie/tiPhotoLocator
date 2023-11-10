@@ -25,12 +25,12 @@ TiMapToolBarForm {
         bt_clear_coords.enabled = true;
         slider_radius.enabled = true;
     }
-
+/*
     bt_get_info.onClicked: {
-        // DEV: on recupere des infos à partir des coords GPS
+        // on recupere des infos à partir des coords GPS
         window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
     }
-
+*/
     bt_clear_coords.onClicked: {
         // On efface les coordonnées GPS des photos affichées
         window.setSelectedItemCoords(0,0);

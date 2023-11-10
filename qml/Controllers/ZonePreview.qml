@@ -11,7 +11,7 @@ ZonePreviewForm {
 
     // On determine le contenu des champs ici, mais ça marche aussi si on le fait dans la vue.
 
-    chipName.content: isphoto? tabbedPage.selectedData.filename: ""
+    chipName.content: isphoto? tabbedPage.selectedData.filename : ""
     chipSize.content: isphoto? tabbedPage.selectedData.imageWidth + " x " + tabbedPage.selectedData.imageHeight : ""
     chipDate.content: Utilities.toStandardDate(tabbedPage.selectedData.dateTimeOriginal)
     chipTime.content: Utilities.toStandardTime(tabbedPage.selectedData.dateTimeOriginal)

@@ -10,15 +10,14 @@ Clicked:  event is generated when a mouse button Pressed & Released.
 */
 Button {
     display: AbstractButton.TextBesideIcon   // IconOnly
-    //icon.width: 45
-    //icon.height: 45
-
+    property color color: TiStyle.buttonIdleColor
 
     background: Rectangle {
         implicitWidth: 86
         implicitHeight: 40
         color: {
-            parent.pressed ? TiStyle.buttonPressedColor : (parent.hovered ? TiStyle.buttonHoveredColor : TiStyle.buttonIdleColor);
+            // parent.pressed ? TiStyle.buttonPressedColor : (parent.hovered ? TiStyle.buttonHoveredColor : TiStyle.buttonIdleColor);
+            parent.pressed ?  Qt.darker(parent.color, 1.3) : (parent.hovered ? Qt.lighter(parent.color, 1.2) : parent.color);
         }
         radius: 6
     }

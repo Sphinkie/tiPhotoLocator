@@ -9,7 +9,7 @@ import Qt5Compat.GraphicalEffects
  * @see https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html
  */
 Rectangle {
-    // Les Chips doivent être dans un ColumLayout/ On peut ainsi les positionner tous de la même façon
+    // Les Chips doivent être dans un ColumLayout On peut ainsi les positionner tous de la même façon
     Layout.topMargin: 10
     Layout.leftMargin: 20
 

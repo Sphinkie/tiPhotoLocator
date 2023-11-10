@@ -14,6 +14,7 @@ ListView{
         Item{
             id: currrentItem
             width: parent.width
+
             height: 40
             // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
             required property string text
@@ -39,7 +40,6 @@ ListView{
                     window.removePhotoFrom(index)           // (index dans le proxyModel)
                     // On recharge les data pour forcer un refresh de la GeoZone
                     tabbedPage.selectedData = _photoListModel.get(tabbedPage.selectedData.row)
-
                 }
             }
 

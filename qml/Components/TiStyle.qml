@@ -1,21 +1,21 @@
 pragma Singleton
 import QtQuick
 
-/**
+/*!
  * Définition du Singleton de Style, où l'on définit les couleurs de l'application.
  *
  * On essaye de suivre quelques principes...
  * - Les roles des couleurs dans le MaterialDesign (Surface, Primary, Secondary, Tertiary):
- *   @see https://m3.material.io/styles/color/the-color-system/color-roles
+ *   \sa https://m3.material.io/styles/color/the-color-system/color-roles
  *
  * - Les noms des couleurs (keywords) définis dans la norme SVG.
  *   Ces noms sont utilisables en Python et en QMl notamment.
- *   @see https://johndecember.com/html/spec/colorsvg.html
- *   @see https://www.w3.org/wiki/CSS3/Color/Extended_color_keywords
+ *   \sa https://johndecember.com/html/spec/colorsvg.html
+ *   \sa https://www.w3.org/wiki/CSS3/Color/Extended_color_keywords
  *
  * - Choisir les couleurs de sa SystemPalette
  *   Le site suivant compare 9 différents outils de donstruction de palette
- *   @see https://www.webfx.com/blog/web-design/material-design-color-generators/
+ *   \sa https://www.webfx.com/blog/web-design/material-design-color-generators/
  *
  *   Le site le plus connu: https://materialPalette.com
  *

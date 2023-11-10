@@ -5,7 +5,10 @@ import "../Vues"
 ZoneSuggestionForm {
 
 
-
+    bt_actualiser.onClicked: {
+        // on recupere des infos à partir des coords GPS
+        window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
+    }
 
 }
 
