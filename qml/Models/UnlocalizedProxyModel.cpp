@@ -43,3 +43,14 @@ void UnlocalizedProxyModel::setFilterEnabled(bool enabled)
     invalidateFilter();
 }
 
+/*!
+ * \brief La fonction getSourceIndex renvoie l'indice de la Photo dans le modèle source.
+ * \param row : indice de la photo dans ce proxyModel.
+ * \return l'indice de la photo dans le sourceModel.
+ */
+int UnlocalizedProxyModel::getSourceIndex(int row)
+{
+    // On convertit l'indice proxyModel vers un indice sourceModel
+    QModelIndex sourceIndex = mapToSource(index(row,0));
+    return sourceIndex.row();
+}

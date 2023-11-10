@@ -91,18 +91,19 @@ ListView{
                 onClicked: {
                     console.log("MouseArea: clic sur " + index);
                     __lv.currentIndex = index             // Bouge le highlight dans la ListView
-                    _photoListModel.selectedRow = index   // Actualise le proxymodel
+                    var sourceindex = model.getSourceIndex(index)
+                    _photoListModel.selectedRow = sourceindex   // Actualise le proxymodel
 
                     // Envoie au parent les data de l'item selectionné du modèle.
                     // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
-                    tabbedPage.selectedData = _photoListModel.get(index)
+                    tabbedPage.selectedData = _photoListModel.get(sourceindex)
 
                     // On envoie les coordonnées pour centrer la carte sur le point selectionné
                     mapTab.photoLatitude = hasGPS? latitude : 0
                     mapTab.photoLongitude = hasGPS? longitude : 0
 
                     // On change le filtrage des suggestions
-                    window.setPhotoFilter(index)
+                    window.setPhotoFilter(sourceindex)
 
                     // On active (ou pas) le bouton "Save position"
                     mapTools.bt_save_pos.enabled = hasGPS;

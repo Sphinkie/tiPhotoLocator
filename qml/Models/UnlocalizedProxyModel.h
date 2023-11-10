@@ -14,6 +14,10 @@ class UnlocalizedProxyModel : public QSortFilterProxyModel
 public:
     explicit UnlocalizedProxyModel(QObject *parent = nullptr);
     bool filterEnabled() const;
+    // -----------------------------------------------------
+    // Méthodes pouvant être appelées depuis QML
+    // -----------------------------------------------------
+    Q_INVOKABLE int getSourceIndex(int row);
 
 public slots:
     void setFilterEnabled(bool enabled);

@@ -86,7 +86,7 @@ void SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)
 {
     qDebug() << "proxyRow" << proxyRow;
     if (proxyRow<0) return;
-    // On convertit l'indice proxyModel vers sourceModel
+    // On convertit l'indice proxyModel vers l'index sourceModel
     QModelIndex idx = mapToSource(index(proxyRow,0));
     // On retire la photo courante de la liste.
     auto source_model = dynamic_cast<SuggestionModel*>(this->sourceModel());
