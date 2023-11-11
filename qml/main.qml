@@ -89,12 +89,18 @@ Window {
         RowLayout{
             id: filtersAndTabslayout
             anchors {left: parent.left; right: parent.right;}
+
             CheckBox {
                 id: checkBox1
                 Layout.leftMargin: 20
                 text: qsTr("sans date")
-                // TODO : ToolTip: "Liste des photos sans date"
+                ToolTip.text: qsTr("Liste des photos sans date")
+                ToolTip.visible: hovered
+                ToolTip.delay: 500
+                checked: false
+                enabled: false  // TODO: Gestion du filtre "photos sans date"
             }
+
             CheckBox {
                 id: checkBox2
                 Layout.leftMargin: 20
@@ -104,7 +110,6 @@ Window {
                 ToolTip.delay: 500
                 checked: false
                 onClicked: {
-                    // voir exemple https://github.com/KDAB/kdabtv/blob/master/qml-intro/sol-qmlqsortfilterproxymodel/main.qml
                     _unlocalizedProxyModel.filterEnabled = checked;
                 }
             }
@@ -211,7 +216,7 @@ Window {
     // --------------------------------- Ligne 5
     // Barre de boutons en bas
     // ----------------------------------------------------------------
-    TiBottomToolBar {
+    ToolBarBottom {
         id: bottomToolBar
         anchors.bottom: parent.bottom
         width: parent.width

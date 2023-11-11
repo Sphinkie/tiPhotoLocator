@@ -2,7 +2,7 @@ import QtQuick
 import "../Vues"
 
 // Controlleur pour la barre de boutons du bas
-TiBottomToolBarForm {
+ToolBarBottomForm {
 
     // true en mode DEBUG
     // bt_dump.visible: reglages2.value("debugModeEnabled", false)

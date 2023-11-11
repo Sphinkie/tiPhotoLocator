@@ -1,19 +1,9 @@
 # TI PHOTO LOCATOR
 
-work in progress
-
-## Présentation
-
-When you have a GPX file, that you recorded during your trip, you can sync your photos with the GPX file.
-But, if you don't have recorded any GPX file, or if your photos are older than handheld GPS devices, the **TiPhotoLocator** application will help you to geotag easily your photos on a map, and add some description tags.
-
-## Tags
+## About Tags
 
 **TiPhotoLocator** manages the following EXIF and IPTC tags.
 
-
-
-Les données EXIF et les données IPTC sont deux types de métadonnées utilisées dans la photographie numérique. Les données EXIF sont générées automatiquement par l'appareil photo et contiennent des informations techniques sur la prise de vue, tandis que les données IPTC sont des métadonnées ajoutées manuellement par l'utilisateur et contenant des informations éditoriales, telles que le titre, la description, les droits d'auteur, etc.
 
 ### Exif tags
 
@@ -78,7 +68,7 @@ Location shown
 - WorldRegion
 
 
-### unused 
+### Unused tags
 
 
 * **Title**: A short verbal and human readable name for the image, (may be the file name).
@@ -88,30 +78,3 @@ Location shown
 * **Headline**: Un titre publiable
 
 
-
-
-## Compilation
-
-To compile the sources of this applciation, you need the Qt framework (Qt6).
-
-### Installation of the developpement environnement
-
-* Install the open-source Qt IDE (Qt Creator)
-* Check the following options:
-   * Qt 6.x
-      * MSVC 2019 64-bits compiler
-      * MinGW 64-bits compiler
-      * Qt5 Compatibility module *(for DropShadow)*
-      * Qt Installer framework
-      * Additional libraries:
-         * Qt Locator
-         * Qt Positionning
-   * OpenSSL *(binaries only)*
-
-
-## Cousin projects
-
-Application to geotag your photos with a .gpx file : [GPicSync](
-https://github.com/notfrancois/GPicSync)
-
-A photo gallery developed with Qt, exiv2 and OpenCV: [Tidy Images](https://github.com/Simon-12/tidy-images) by Simon-12.

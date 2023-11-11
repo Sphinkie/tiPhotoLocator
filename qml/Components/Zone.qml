@@ -24,7 +24,7 @@ Rectangle {
 
     // Texte explicatif (optionnel)
     Text{
-        color: Qt.darker(parent.color, 1.3)
+        color: Qt.darker(parent.color, 1.5)
         text: txtZone
         font.weight: Font.Thin
         font.pointSize: 16
