@@ -167,7 +167,7 @@ Window {
                 // M Z3
 
                 // Barre d'outils pour la carte (controleur)
-                TiMapToolBar {
+                ToolBarMap {
                     id: mapTools
                     Layout.columnSpan: 2  // Toute la largeur
                     Layout.fillWidth: true

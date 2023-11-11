@@ -33,7 +33,7 @@
         <file>Dialogs/RescanWarning.qml</file>
         <file>Components/TiImagettes.qml</file>
         <file>Components/TiPhotoTags.qml</file>
-        <file>Controllers/TiMapToolBar.qml</file>
+        <file>Controllers/ToolBarMap.qml</file>
         <file>Images/mappin-black.png</file>
         <file>Images/mappin-grey.png</file>
         <file>Images/mappin-strike.png</file>
@@ -45,7 +45,7 @@
         <file>Images/logo_TPL.png</file>
         <file>Vues/SettingsWindowForm.qml</file>
         <file>Vues/TiToolBarForm.ui.qml</file>
-        <file>Vues/TiMapToolBarForm.ui.qml</file>
+        <file>Vues/ToolBarMapForm.ui.qml</file>
         <file>Images/trashcan.png</file>
         <file>Images/suggestion.png</file>
         <file>Images/world.png</file>
@@ -67,5 +67,6 @@
         <file>Components/SuggestionListView.qml</file>
         <file>Images/welcome.png</file>
         <file>Components/TiTabButton.qml</file>
+        <file>Images/revert.png</file>
     </qresource>
 </RCC>

@@ -1,7 +1,7 @@
 import QtQuick
 import "../Vues"
 
-TiMapToolBarForm {
+ToolBarMapForm {
 
     bt_save_pos.onClicked: {
         // Après un clic sur Save Position,
@@ -25,12 +25,11 @@ TiMapToolBarForm {
         bt_clear_coords.enabled = true;
         slider_radius.enabled = true;
     }
-/*
-    bt_get_info.onClicked: {
-        // on recupere des infos à partir des coords GPS
-        window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
+
+    bt_reload.onClicked: {
+        // On recharge les infos à partir de la photo du disque
     }
-*/
+
     bt_clear_coords.onClicked: {
         // On efface les coordonnées GPS des photos affichées
         window.setSelectedItemCoords(0,0);

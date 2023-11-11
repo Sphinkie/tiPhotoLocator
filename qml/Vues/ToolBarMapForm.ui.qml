@@ -11,7 +11,7 @@ Item {
     property alias bt_apply_pos: bt_apply_pos
     property alias bt_clear_coords: bt_clear_pos
     property alias slider_radius: slider_radius
-//    property alias bt_get_info: bt_get_info
+    property alias bt_reload: bt_reload
 
     height: bt_save_pos.height + 20
 
@@ -61,15 +61,20 @@ Item {
         anchors.leftMargin: 20
         anchors.verticalCenter: parent.verticalCenter
     }
-/*
+
     TiButton {
-        id: bt_get_info
-        text: qsTr("Actualiser")
+        id: bt_reload
+        enabled: false
+        text: qsTr("Rétablir")
+        icon.source: "qrc:/Images/revert.png"
         anchors.left: slider_radius.right
         anchors.leftMargin: 20
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenter: parent.verticalCenter        
+        ToolTip.text: qsTr("Recharge les coordonnées initiales de l'image")
+        ToolTip.visible: hovered
+        ToolTip.delay: 500
     }
-*/
+
     TiButton {
         id: bt_clear_pos
         enabled: false

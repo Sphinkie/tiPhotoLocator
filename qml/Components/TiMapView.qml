@@ -74,6 +74,7 @@ Map {
                 // On active le bouton "Save position"
                 mapTools.bt_save_pos.enabled = true;
                 mapTools.bt_clear_coords.enabled = true;
+                mapTools.bt_reload.enabled = true;
                 mapTools.slider_radius.enabled = true;
             }
         }

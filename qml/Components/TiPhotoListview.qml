@@ -108,6 +108,7 @@ ListView{
                     // On active (ou pas) le bouton "Save position"
                     mapTools.bt_save_pos.enabled = hasGPS;
                     mapTools.bt_clear_coords.enabled = hasGPS;
+                    mapTools.bt_reload.enabled = false;
                     mapTools.slider_radius.enabled = hasGPS;
                 }
             }
