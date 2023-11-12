@@ -7,13 +7,13 @@ Zone{
     color: TiStyle.suggestionBackgroundColor
     iconZone: "qrc:/Images/suggestion.png"
     txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
-    property alias bt_actualiser: bt_actualiser
+    property alias bt_getinfo: bt_getinfo
 
     ColumnLayout {
         anchors.fill: parent
 
         TiButton {
-            id: bt_actualiser
+            id: bt_getinfo
             text: qsTr("Actualiser")
             color: "lightskyblue"
             icon.source: "qrc:/Images/suggestion.png"

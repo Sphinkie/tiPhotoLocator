@@ -5,9 +5,20 @@ import "../Vues"
 ZoneSuggestionForm {
 
 
-    bt_actualiser.onClicked: {
+    bt_getinfo.onClicked: {
         // on recupere des infos à partir des coords GPS
         window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
+    }
+
+
+
+    // Gestion du grisage des boutons
+    Connections{
+        target: tabbedPage
+        function onSelectedDataChanged()
+        {
+            bt_getinfo.enabled = tabbedPage.selectedData.hasGPS;
+        }
     }
 
 }

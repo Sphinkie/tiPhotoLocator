@@ -56,7 +56,7 @@ void ExifReadTask::run()
     // ---------------------------------------
     // Appel de ExifTool
     // ---------------------------------------
-    qDebug() << program << arguments;
+    // qDebug() << program << arguments;
     exifProcess.start(program, arguments);
     while(exifProcess.state() != QProcess::NotRunning)
     {

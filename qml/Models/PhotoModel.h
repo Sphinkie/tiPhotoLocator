@@ -139,7 +139,7 @@ public slots:
     // Slots
     // -----------------------------------------------------
     void append(const QString filename, const QString url);
-    void fetchExifMetadata();
+    void fetchExifMetadata(int row = -1);
     void saveMetadata();
     void setInCircleItemCoords(double lati, double longi);
     void appendSavedPosition(double lati, double longi);

@@ -26,16 +26,17 @@ Window {
     // ----------------------------------------------------------------
     // Les signaux
     // ----------------------------------------------------------------
-    signal append(string filename, string url)
-    signal setSelectedItemCoords(double lati, double longi)
-    signal savePosition(double lati, double longi)
-    signal clearSavedPosition()
-    signal applySavedPositionToCoords()
-    signal fetchExifMetadata()
+    signal append(string filename, string url)                  //! Ajoute une JPG au modèle
+    signal setSelectedItemCoords(double lati, double longi)     //! Ajoute des coords à une photo du modèle
+    signal savePosition(double lati, double longi)              //! Mémorise une position
+    signal clearSavedPosition()                                 //! Efface une position mémorisée
+    signal applySavedPositionToCoords()                         //! Affecte une position mémorisée
+    signal fetchExifMetadata()                                  //! Lit les metadata de toutes les JPG
+    signal fetchSingleExifMetadata(int row)                     //! Lit les metadata d'une JPG
     signal saveMetadata()
     signal hasPos()
     signal requestReverseGeocode(double lati, double longi)
-    signal setPhotoFilter(int row)
+    signal setSuggestionFilter(int row)
     signal setPhotoProperty(int index, string texte, string target)
     signal removePhotoFrom(int row)
 
@@ -70,7 +71,7 @@ Window {
     // Ligne 1 --------------------------------------------------------
     // Barre d'outils du folder: refresh / reload / rescan / foldername
     // ----------------------------------------------------------------
-    TiToolBar_ctrl {
+    ToolBarPrincipale {
         id: toolBar
         width: parent.width
         anchors {top: menuBar.bottom; left: parent.left}
@@ -147,6 +148,15 @@ Window {
             currentIndex: tabBar.currentIndex
             property var selectedData: _photoListModel.get(0)  // On l'initialise sur la photo Welcome (type = QVariantMap)
 
+            // TODO : Ca ne devrait pas etre utile d'avoir cette fonction
+            function refreshSelectedData()
+            {
+                console.log("refreshSelectedData");
+                var currentrow = selectedData.row;
+                selectedData = _photoListModel.get(currentrow);
+            }
+
+
             // ------------------ PREVIEW TAB --------------------------
             TiPhotoPreview { id: previewView; Layout.fillWidth: true}
 
@@ -186,6 +196,7 @@ Window {
                     Layout.fillHeight: true
                 }
                 ZoneSuggestion{
+                    id: zoneSuggestionGeo
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
                 }

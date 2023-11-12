@@ -69,17 +69,17 @@ bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sour
 
 
 /* ************************************************************************ */
-/**
- * @brief Le slot SelectedFilterProxyModel::setAllCoords affecte les coordonnées GPS fournies à toutes les photos
+/*!
+ * \brief Le slot SelectedFilterProxyModel::setAllCoords affecte les coordonnées GPS fournies à toutes les photos
  * du modèle filtré (hors saved position).
  * Ce slot appelé quand l'utilisateur change la position d'une photo sur la carte.
  * C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré.
- * @param lati; latitude au format GPS
- * @param longi: longitude au format GPS
+ * \param lati; latitude au format GPS
+ * \param longi: longitude au format GPS
  */
 void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 {
-    // On parcourt tous les items du modèle FILTRÉ (par leur index dans le modèle)
+    // On parcourt tous les items du modèle FILTRÉ (par leur index dans le proxy modèle)
     int row = 0;
     QModelIndex idx = this->index(row, 0);
     while (idx.isValid())
@@ -96,6 +96,8 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
             // On modifie l'item dans le proxy. (Nécessite l'implémentation de setData() dans le sourceModel).
             setData(idx, lat, PhotoModel::LatitudeRole);
             setData(idx, lon, PhotoModel::LongitudeRole);
+            //setData(idx, true, PhotoModel::HasGPSRole);
+            //emit dataChanged(idx,idx);
             // Vérification
             qDebug() << "ProxyModel: set coords" << idx.data(PhotoModel::LatitudeRole).toDouble() << "for" << idx.data(PhotoModel::FilenameRole).toString();
         }
@@ -105,10 +107,10 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 }
 
 /* ************************************************************************ */
-/**
- * @brief Le slot SelectedFilterProxyModel::setAllItemsSavedCoords applique les coordonnées GPS de la SavedPosition à toutes
+/*!
+ * \brief Le slot setAllItemsSavedCoords applique les coordonnées GPS de la SavedPosition à toutes
  * les photos du modèle filtré.
- * Ce slot appelé quand l'utilisateur appuye sur "Apply Saved Position".
+ * Ce slot est appelé quand l'utilisateur appuye sur "Apply Saved Position".
  */
 void OnTheMapProxyModel::setAllItemsSavedCoords()
 {
@@ -120,7 +122,7 @@ void OnTheMapProxyModel::setAllItemsSavedCoords()
     double savedLatitude  = markerIndex.data(PhotoModel::LatitudeRole).toDouble();
     double savedLongitude = markerIndex.data(PhotoModel::LongitudeRole).toDouble();
     // On les applique à toutes les photos du modèle filtré
-    emit setAllItemsCoords(savedLatitude, savedLongitude);
+    this->setAllItemsCoords(savedLatitude, savedLongitude);
 }
 
 

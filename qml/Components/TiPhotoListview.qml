@@ -103,13 +103,13 @@ ListView{
                     mapTab.photoLongitude = hasGPS? longitude : 0
 
                     // On change le filtrage des suggestions
-                    window.setPhotoFilter(sourceindex)
+                    window.setSuggestionFilter(sourceindex)
 
                     // On active (ou pas) le bouton "Save position"
-                    mapTools.bt_save_pos.enabled = hasGPS;
-                    mapTools.bt_clear_coords.enabled = hasGPS;
-                    mapTools.bt_reload.enabled = false;
-                    mapTools.slider_radius.enabled = hasGPS;
+                    // mapTools.bt_save_pos.enabled = hasGPS;
+                    // mapTools.bt_clear_coords.enabled = hasGPS;
+                    // mapTools.bt_revert.enabled = false;
+                    // mapTools.slider_radius.enabled = hasGPS;
                 }
             }
         }

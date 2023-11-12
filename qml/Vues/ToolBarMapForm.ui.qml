@@ -7,11 +7,11 @@ import "../Components"
 
 Item {
     property alias bt_save_pos: bt_save_pos
-    property alias bt_remove_pos: bt_remove_pos
-    property alias bt_apply_pos: bt_apply_pos
+    property alias bt_remove_savedpos: bt_remove_savedpos
+    property alias bt_apply_savedpos: bt_apply_savedpos
     property alias bt_clear_coords: bt_clear_pos
     property alias slider_radius: slider_radius
-    property alias bt_reload: bt_reload
+    property alias bt_revert: bt_revert
 
     height: bt_save_pos.height + 20
 
@@ -29,7 +29,7 @@ Item {
     }
 
     TiButton {
-        id: bt_remove_pos
+        id: bt_remove_savedpos
         enabled: false
         text: qsTr("Clear Saved Position")
         icon.source: "qrc:/Images/mappin-strike.png"
@@ -40,14 +40,14 @@ Item {
     }
 
     TiButton {
-        id: bt_apply_pos
+        id: bt_apply_savedpos
         enabled: false
         text: qsTr("Apply Saved Position")
         icon.source: "qrc:/Images/mappin-go.png"
         ToolTip.text: qsTr("Applique la position mémorisée à la photo courante")
         ToolTip.visible: hovered
         ToolTip.delay: 500
-        anchors.left: bt_remove_pos.right
+        anchors.left: bt_remove_savedpos.right
         anchors.leftMargin: 20
         anchors.verticalCenter: parent.verticalCenter
     }
@@ -57,13 +57,13 @@ Item {
         enabled: false
         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         to: 2000 // unité = 1 mètre
-        anchors.left: bt_apply_pos.right
+        anchors.left: bt_apply_savedpos.right
         anchors.leftMargin: 20
         anchors.verticalCenter: parent.verticalCenter
     }
 
     TiButton {
-        id: bt_reload
+        id: bt_revert
         enabled: false
         text: qsTr("Rétablir")
         icon.source: "qrc:/Images/revert.png"

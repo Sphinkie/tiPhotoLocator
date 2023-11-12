@@ -87,6 +87,7 @@ int main(int argc, char *argv[])
     // Connexions QML vers classe C++
     // --------------------------------------
     QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)),         &photoListModel, SLOT(append(QString,QString)));
+    QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),    &photoListModel, SLOT(fetchExifMetadata(int)));
     QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),             &photoListModel, SLOT(fetchExifMetadata()));
     QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                  &photoListModel, SLOT(saveMetadata()));
     QObject::connect(firstRootItem,   SIGNAL(savePosition(double,double)),     &photoListModel, SLOT(appendSavedPosition(double,double)));
@@ -96,7 +97,7 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &onTheMapProxyModel,   SLOT(setAllItemsCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel,   SLOT(setAllItemsSavedCoords()));
     QObject::connect(firstRootItem,   SIGNAL(removePhotoFrom(int)),                 &suggestionProxyModel, SLOT(removePhotoFromSuggestion(int)));
-    QObject::connect(firstRootItem,   SIGNAL(setPhotoFilter(int)),                  &suggestionProxyModel, SLOT(setFilterValue(int)));
+    QObject::connect(firstRootItem,   SIGNAL(setSuggestionFilter(int)),             &suggestionProxyModel, SLOT(setFilterValue(int)));
 
     QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper,       SLOT(requestReverseGeocode(double,double)));
 

@@ -17,13 +17,13 @@ Zone{
             id: chipLat
             editable: false
             deletable: true
-            visible: (mapTab.photoLatitude != 0)
+            // visible: (mapTab.photoLatitude != 0)
         }
         Chips {
             id: chipLong
             editable: false
             deletable: true
-            visible: (mapTab.photoLongitude != 0)
+            // visible: (mapTab.photoLongitude != 0)
         }
         Chips {
             id: chipCity

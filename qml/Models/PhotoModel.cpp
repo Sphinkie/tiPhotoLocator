@@ -285,6 +285,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 {
     if (index.isValid())
     {
+        qDebug() << "PhotoModel::setData" << roleNames().value(role);
         switch (role)
         {
         case LatitudeRole:
@@ -430,24 +431,33 @@ void PhotoModel::clear()
 }
 
 // -----------------------------------------------------------------------
-/**
- * @brief Le slot fetchExifMetadata() lit des données EXIF de toutes photos du répertoire.
+/*!
+ * \brief Le slot fetchExifMetadata() lit des données EXIF de toutes photos du répertoire.
+ * \param photo : l'indice de la photo (vide = toutes les photos du répertoire)
  */
-void PhotoModel::fetchExifMetadata()
+void PhotoModel::fetchExifMetadata(int photo)
 {
-    qDebug() << "fetchExifMetadata";
-    // Quantité maximum de threads = 3
-    QThreadPool::globalInstance()->setMaxThreadCount(2);
-    ExifReadTask::init(this);
-    //Instanciation et ajout de plusieurs tâches au pool de threads
-    for (int row = 0; row < m_data.count(); row++)
+    // qDebug() << "fetchExifMetadata";
+    if (photo > -1)
     {
-        ExifReadTask *task = new ExifReadTask(m_data[row].imageUrl);
-        QThreadPool::globalInstance()->start(task);
+        // On lit les tags d'une photo
+        ExifReadTask *task = new ExifReadTask(m_data[photo].imageUrl);
+        task->run();
     }
-
-    // On n'a pas besoin d'attendre de la fin de l'exécution des tâches du pool de threads.
-    // QThreadPool::globalInstance()->waitForDone();
+    else
+    {
+        // On lit les tags de toutes les photos
+        QThreadPool::globalInstance()->setMaxThreadCount(1);   // Quantité maximum de threads
+        ExifReadTask::init(this);
+        //Instanciation et ajout de plusieurs tâches au pool de threads
+        for (int row = 0; row < m_data.count(); row++)
+        {
+            ExifReadTask *task = new ExifReadTask(m_data[row].imageUrl);
+            QThreadPool::globalInstance()->start(task);
+        }
+        // On n'a pas besoin d'attendre de la fin de l'exécution des tâches du pool de threads.
+        // QThreadPool::globalInstance()->waitForDone();
+    }
 }
 
 
