@@ -2,44 +2,48 @@ import QtQuick
 import QtQuick.Layouts
 import "../Components"
 
-Item {
-    width: 400
-    height: 600
-    property alias chipName: chipName
-    property alias chipSize: chipSize
-    property alias chipDate: chipDate
-    property alias chipTime: chipTime
-    property alias chipMake: chipMake
-    property alias chipCamModel: chipCamModel
-    property string txtPreviewZone
+//Item {
+// height:
 
     Zone {
-        txtZone: txtPreviewZone
+
+       // width: 400
+        property alias chipName: chipName
+        property alias chipSize: chipSize
+        property alias chipDate: chipDate
+        property alias chipTime: chipTime
+        property alias chipMake: chipMake
+        property alias chipCamModel: chipCamModel
+        property alias chipCountry: chipCountry
+        property string welcomeText
+
+
+        txtZone: qsTr("Summary")
+        iconZone: "qrc:/Images/preview.png"
 
         ColumnLayout {
-            Text {
+           Text {
                 Layout.topMargin: 20
                 Layout.leftMargin: 10
-                text: qsTr("Photographie:")
+                text: welcomeText
+                font.pointSize: 14
+                wrapMode: Text.WordWrap
             }
             Chips {
                 id: chipName
                 Layout.leftMargin: 20
-                //content: tabbedPage.selectedData.filename
                 editable: false
                 deletable: false
             }
             Chips {
                 id: chipSize
                 Layout.leftMargin: 20
-                //content: imageWidth + " x " + imageHeight
                 editable: false
                 deletable: false
             }
             Chips {
                 id: chipDate
                 Layout.leftMargin: 20
-                //content: "DD/MM/YYYY"
                 editable: false
                 deletable: false
             }
@@ -50,24 +54,25 @@ Item {
                 editable: false
                 deletable: false
             }
-            Text {
-                Layout.leftMargin: 10
-                text: qsTr("Appareil photo:")
-            }
             Chips {
                 id: chipMake
+                Layout.topMargin: 30  // on laisse un espace
                 Layout.leftMargin: 20
-                //content: "make"
                 editable: false
                 deletable: false
             }
             Chips {
                 id: chipCamModel
                 Layout.leftMargin: 20
-                //content: camModel
+                editable: false
+                deletable: false
+            }
+            Chips {
+                id: chipCountry
+                Layout.leftMargin: 20
                 editable: false
                 deletable: false
             }
         }
     }
-}
+// }

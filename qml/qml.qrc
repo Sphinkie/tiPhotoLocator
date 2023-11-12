@@ -68,5 +68,6 @@
         <file>Images/welcome.png</file>
         <file>Components/TiTabButton.qml</file>
         <file>Images/revert.png</file>
+        <file>Images/preview.png</file>
     </qresource>
 </RCC>

@@ -2,14 +2,14 @@ import QtQuick
 import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
 
-/**
- * Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle.
+/*!
+ * \brief Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle.
  * A noter que le Rectangle contient un texte, mais ne s'adapte pas automatiquement à la longueur du texte.
  * C'est plutot le texte qui s'adapte au rectangle parent.
- * @see https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html
+ * \sa https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html
  */
 Rectangle {
-    // Les Chips doivent être dans un ColumLayout On peut ainsi les positionner tous de la même façon
+    // Les différents Chips doivent être dans un ColumLayout. On peut ainsi les aligner tous de la même façon.
     Layout.topMargin: 10
     Layout.leftMargin: 20
 

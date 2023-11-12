@@ -27,9 +27,10 @@ RowLayout {
 
     ZonePreview {
         id: zonePreview
+        Layout.fillHeight: true
         Layout.alignment: Qt.AlignRight
-        Layout.rightMargin: 30
-        Layout.topMargin: 30
+        // Layout.rightMargin: 30
+        Layout.margins: 30
     }
 
 }

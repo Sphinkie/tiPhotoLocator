@@ -7,7 +7,7 @@ ZonePreviewForm {
 
     readonly property bool isphoto : ! tabbedPage.selectedData.isWelcome
 
-    txtPreviewZone : isphoto ? qsTr("Photo") : qsTr("Bienvenue\n\nNote: Les données modifiées sont enregistrées dans les photos uniquement lors du clic sur le bouton 'Enregistrer'.")
+    welcomeText : isphoto ? "" : qsTr("Bienvenue\n\nNote: Les données modifiées sont enregistrées dans les photos uniquement lors du clic sur le bouton 'Enregistrer'.")
 
     // On determine le contenu des champs ici, mais ça marche aussi si on le fait dans la vue.
 
@@ -17,7 +17,7 @@ ZonePreviewForm {
     chipTime.content: Utilities.toStandardTime(tabbedPage.selectedData.dateTimeOriginal)
     chipMake.content: tabbedPage.selectedData.make
     chipCamModel.content: tabbedPage.selectedData.camModel
-
+    chipCountry.content: tabbedPage.selectedData.country
 }
 
 /*##^##
