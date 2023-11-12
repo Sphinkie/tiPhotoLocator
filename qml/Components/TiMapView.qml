@@ -64,25 +64,14 @@ Map {
                 // TODO utiliser une variable de type coordinate
                 var lati = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
                 var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
-                console.log('latitude  = ' + lati );
-                console.log('longitude = ' + longi);
+                // console.log('latitude  = ' + lati );
+                // console.log('longitude = ' + longi);
                 // On mémorise les coords du point cliqué dans les properties du parent
                 mapTab.photoLatitude = lati;
                 mapTab.photoLongitude= longi;
                 // On change les coordonnées dans l'item du modele
                 window.setSelectedItemCoords(lati, longi);
                 tabbedPage.refreshSelectedData();
-                /*
-                           tabbedPage.selectedData.latitude = lati; // TEST : on change directement => pas d'effet
-                           tabbedPage.selectedData.city= "test city"; // TEST : on change directement =>
-                           console.log(tabbedPage.selectedData.latitude); // TEST
-                           console.log(tabbedPage.selectedData.longitude); // TEST
-                 */
-                // On active quelques boutons
-                //mapTools.bt_save_pos.enabled = true;
-                //mapTools.bt_clear_coords.enabled = true;
-                //mapTools.bt_revert.enabled = true;
-                // mapTools.slider_radius.enabled = true;
             }
         }
     }

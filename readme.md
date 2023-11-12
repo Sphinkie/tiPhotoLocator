@@ -1,8 +1,10 @@
 # TI PHOTO LOCATOR
 
-work in progress
+![Screenshot](docs/screenshot-2023-11-11.png)   
 
-## Présentation
+**work in progress**
+
+## Presentation
 
 When you have a GPX file, that you recorded during your trip, you can sync your photos with the GPX file.
 But, if you don't have recorded any GPX file, or if your photos are older than handheld GPS devices, the **TiPhotoLocator** application will help you to geotag easily your photos on a map, and add some description tags.

@@ -27,11 +27,6 @@ ToolBarMapForm {
         // on recentre la carte
         // TODO A faire si la Saved Position est en dehors de la vue actuelle
         mapView.center = QtPositioning.coordinate(tabbedPage.selectedData.latitude, tabbedPage.selectedData.longitude)
-        // Dégrisage des boutons
-        // bt_revert.enabled = true;
-        // slider_radius.enabled = true;
-        //bt_clear_coords.enabled = true;
-        // zoneSuggestionGeo.bt_getinfo.enabled = true;
     }
 
 
@@ -46,11 +41,6 @@ ToolBarMapForm {
         // On efface les coordonnées GPS des photos affichées
         window.setSelectedItemCoords(0,0);
         tabbedPage.refreshSelectedData();
-        // On grise certains boutons
-        // bt_save_pos.enabled = false;
-        // bt_clear_coords.enabled = false;
-        // slider_radius.enabled = false;
-        // slider_radius.value = 0;
         // On efface la copie locale QML de ces coordonnées...
         mapTab.photoLatitude = 0;
         mapTab.photoLongitude = 0;
