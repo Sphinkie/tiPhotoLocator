@@ -24,15 +24,15 @@ ToolBarMapForm {
         window.applySavedPositionToCoords();
         // On raffraichit l'affichage des tags
         tabbedPage.refreshSelectedData();
-        // on recentre la carte
-        // TODO A faire si la Saved Position est en dehors de la vue actuelle
-        mapView.center = QtPositioning.coordinate(tabbedPage.selectedData.latitude, tabbedPage.selectedData.longitude)
+        // On recentre la carte, si la nouvelle Position est en dehors de la vue actuelle
+        var pos = QtPositioning.coordinate(tabbedPage.selectedData.latitude, tabbedPage.selectedData.longitude);
+        if (! mapView.visibleRegion.contains(pos))
+            mapView.center = pos;
     }
-
 
     bt_revert.onClicked: {
         // On recharge les infos à partir de la photo du disque
-        window.fetchSingleExifMetadata(tabbedPage.selectedData.row)
+        window.fetchSingleExifMetadata(tabbedPage.selectedData.row);
         // On raffraichit l'affichage des tags (coords et geotags)
         tabbedPage.refreshSelectedData();
     }
