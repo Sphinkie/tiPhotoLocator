@@ -15,11 +15,11 @@ Les données **EXIF** et les données **IPTC** sont deux types de métadonnées 
 
 Les données **EXIF** sont générées automatiquement par l'appareil photo et contiennent des informations techniques sur la prise de vue, tandis que les données **IPTC** sont des métadonnées ajoutées manuellement par l'utilisateur et contenant des informations éditoriales, telles que le titre, la description, les droits d'auteur, etc.
 
-Details concerning the tags used by the application are on [this page](docs/about_tag.md)
+Details concerning the tags used by the application are on [this page](docs/about_tags.md)
 
 ### Compilation
 
-The application is developped with the [Qt framework](https://www.qt.io).
+The application is developped with the [Qt framework](https://qt.io).
 
 Explanation concerning the compiler configuration are on [this page](docs/compilation.md)
 
