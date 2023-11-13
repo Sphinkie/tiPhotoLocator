@@ -14,21 +14,21 @@ Rectangle {
     Layout.leftMargin: 20
 
     radius: 16
+    color: TiStyle.chipBackgroundColor
     implicitHeight: 32
     implicitWidth: 240
-    layer.enabled: true
-    visible: content? true : false
-    color: TiStyle.chipBackgroundColor
     // Propriétés modifiables depuis les parents:
     property bool editable: true
     property bool deletable: true
     property string content
+    visible: content? true : false
+    layer.enabled: true
 
     Image{
         id: chipEdit
         anchors.left: parent.left
-        anchors.leftMargin: 5
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.leftMargin: 4
+        anchors.topMargin: 4
         height: 26
         width: 26
         source: "qrc:/Images/edit1-button.png"
@@ -39,7 +39,7 @@ Rectangle {
         anchors.fill: parent
         anchors.left: chipEdit.right
         anchors.leftMargin: 4
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.topMargin: 4
         text: content
         font.pixelSize: 14
         color: TiStyle.chipTextColor
@@ -52,8 +52,8 @@ Rectangle {
     Image{
         id: chipDel
         anchors.right: parent.right
-        anchors.rightMargin: 5
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.rightMargin: 2
+        anchors.topMargin: 4
         height: 26
         width: 26
         source: "qrc:/Images/suppr-button.png"
@@ -69,4 +69,3 @@ Rectangle {
     }
 
 }
-
