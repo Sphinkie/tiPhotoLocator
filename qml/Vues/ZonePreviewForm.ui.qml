@@ -15,7 +15,6 @@ Zone {
     property alias chipCountry: chipCountry
     property string welcomeText
 
-
     txtZone: qsTr("Summary")
     iconZone: "qrc:/Images/preview.png"
 

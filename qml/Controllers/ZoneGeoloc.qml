@@ -4,6 +4,36 @@ import "../Vues"
 // Controlleur
 ZoneGeolocForm {
 
+    chipLat.deleteArea.onClicked:
+    {
+        console.log("chipLat.deleteArea.onClicked");
+        chipLat.visible = false;
+        // TODO : modifier le modele
+        tabbedPage.refreshSelectedData();
+    }
+    chipLong.deleteArea.onClicked:
+    {
+        console.log("chipLong.deleteArea.onClicked");
+        chipLong.visible = false;
+        // TODO : modifier le modele
+        tabbedPage.refreshSelectedData();
+    }
+    chipCity.deleteArea.onClicked:
+    {
+        console.log("chipCity.deleteArea.onClicked");
+        chipCity.visible = false;
+        // TODO : modifier le modele
+        tabbedPage.refreshSelectedData();
+    }
+    chipCountry.deleteArea.onClicked:   // (mouse) =>
+    {
+        console.log("chipCountry.deleteArea.onClicked");
+        chipCountry.visible = false;
+        // TODO : modifier le modele
+        tabbedPage.refreshSelectedData();
+    }
+
+    // On raffraichit la zone si SelectedData est modifiée
     Connections{
         target: tabbedPage
         function onSelectedDataChanged()

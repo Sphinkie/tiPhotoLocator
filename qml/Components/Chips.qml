@@ -23,6 +23,7 @@ Rectangle {
     property bool editable: true
     property bool deletable: true
     property string content
+    property alias deleteArea:deleteArea
 
     Image{
         id: chipEdit
@@ -58,6 +59,12 @@ Rectangle {
         width: 26
         source: "qrc:/Images/suppr-button.png"
         visible: deletable
+        // Gestion du clic sur un item
+        MouseArea {
+            id: deleteArea
+            anchors.fill: parent
+        }
+
     }
     layer.effect: DropShadow {
         transparentBorder: true

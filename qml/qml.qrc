@@ -53,7 +53,7 @@
         <file>Vues/ZonePreviewForm.ui.qml</file>
         <file>Controllers/ZonePreview.qml</file>
         <file>Controllers/ToolBarBottom.qml</file>
-        <file>Vues/ToolBarBottomForm.qml</file>
+        <file>Vues/ToolBarBottomForm.ui.qml</file>
         <file>Vues/ZoneUserdataForm.ui.qml</file>
         <file>Controllers/ZoneUserdata.qml</file>
         <file>Vues/ZoneCameraForm.ui.qml</file>

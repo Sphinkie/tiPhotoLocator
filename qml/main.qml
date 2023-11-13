@@ -169,12 +169,11 @@ Window {
                 property double photoLatitude: 0
                 property double photoLongitude: 0
                 columnSpacing: 8
-                rows: 4     // toolbar et carte/zones
+                rows: 3     // toolbar et carte/zones
                 columns: 2  // carte et zone des tags
                 // T T
                 // M Z1
                 // M Z2
-                // M Z3
 
                 // Barre d'outils pour la carte (controleur)
                 ToolBarMap {
@@ -185,7 +184,7 @@ Window {
 
                 TiMapView {
                     id: mapView
-                    Layout.rowSpan: 3     // Haute comme 3 zones
+                    Layout.rowSpan: 2     // Haute comme 3 zones
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                 }
@@ -200,12 +199,12 @@ Window {
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
                 }
-                Zone{
-                    Layout.rightMargin: 40
-                    Layout.fillHeight: true
-                    color: TiStyle.trashcanBackgroundColor
-                    iconZone: "qrc:/Images/trashcan.png"
-                }
+//                Zone{
+//                  Layout.rightMargin: 40
+//                  Layout.fillHeight: true
+//                  color: TiStyle.trashcanBackgroundColor
+//                  iconZone: "qrc:/Images/trashcan.png"
+//                }
             }
 
             // ------------------ IPTC/EXIF TAGS TAB ----------------------------
