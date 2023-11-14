@@ -32,7 +32,7 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         height: 26
         width: 26
-        source: "qrc:/Images/edit1-button.png"
+        source: "qrc:/Images/chip-edit2.png"
         visible: editable
     }
     Text {
@@ -57,7 +57,7 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         height: 26
         width: 26
-        source: "qrc:/Images/suppr-button.png"
+        source: "qrc:/Images/chip-del.png"
         visible: deletable
         // Gestion du clic sur un item
         MouseArea {

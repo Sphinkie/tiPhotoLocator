@@ -13,9 +13,9 @@
         <file>Images/IMG_00000001.png</file>
         <file>Models/ModelFolderList.qml</file>
         <file>Components/TiMapView.qml</file>
-        <file>Images/refresh.png</file>
-        <file>Images/reload.png</file>
-        <file>Images/rescan.png</file>
+        <file>Images/bt-refresh.png</file>
+        <file>Images/bt-reload.png</file>
+        <file>Images/bt-rescan.png</file>
         <file>Components/TiMenuBar.qml</file>
         <file>Components/TiPhotoListview.qml</file>
         <file>Images/circle-red.png</file>
@@ -25,9 +25,9 @@
         <file>Dialogs/Credits.qml</file>
         <file>Dialogs/About.qml</file>
         <file>Components/Chips.qml</file>
-        <file>Images/edit1-button.png</file>
-        <file>Images/edit2-button.png</file>
-        <file>Images/suppr-button.png</file>
+        <file>Images/chip-edit1.png</file>
+        <file>Images/chip-edit2.png</file>
+        <file>Images/chip-del.png</file>
         <file>Components/Zone.qml</file>
         <file>Components/TiPhotoPreview.qml</file>
         <file>Dialogs/RescanWarning.qml</file>
@@ -36,11 +36,11 @@
         <file>Controllers/ToolBarMap.qml</file>
         <file>Images/mappin-black.png</file>
         <file>Images/mappin-grey.png</file>
-        <file>Images/mappin-strike.png</file>
+        <file>Images/bt-clear.png</file>
         <file>Controllers/ToolBarPrincipale.qml</file>
         <file>Javascript/TiUtilities.js</file>
         <file>Components/SimpleChip.qml</file>
-        <file>Images/mappin-go.png</file>
+        <file>Images/bt-apply.png</file>
         <file>Controllers/SettingsWindow.qml</file>
         <file>Images/logo_TPL.png</file>
         <file>Vues/SettingsWindowForm.qml</file>
@@ -49,7 +49,7 @@
         <file>Images/trashcan.png</file>
         <file>Images/suggestion.png</file>
         <file>Images/world.png</file>
-        <file>Images/suppr-icon.png</file>
+        <file>Images/bt-suppr.png</file>
         <file>Vues/ZonePreviewForm.ui.qml</file>
         <file>Controllers/ZonePreview.qml</file>
         <file>Controllers/ToolBarBottom.qml</file>
@@ -67,7 +67,7 @@
         <file>Components/SuggestionListView.qml</file>
         <file>Images/welcome.png</file>
         <file>Components/TiTabButton.qml</file>
-        <file>Images/revert.png</file>
+        <file>Images/bt-revert.png</file>
         <file>Images/preview.png</file>
     </qresource>
 </RCC>

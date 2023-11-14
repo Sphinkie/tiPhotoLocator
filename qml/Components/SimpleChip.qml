@@ -28,7 +28,7 @@ Label {
             anchors.topMargin: 4
             height: 26
             width: 26
-            source: "qrc:/Images/edit1-button.png"
+            source: "qrc:/Images/chip-edit1.png"
             visible: editable
         }
 */
@@ -49,7 +49,7 @@ Label {
             anchors.topMargin: 4
             height: 26
             width: 26
-            source: "qrc:/Images/suppr-button.png"
+            source: "qrc:/Images/chip-del.png"
             visible: deletable
         }
         */

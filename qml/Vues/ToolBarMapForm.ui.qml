@@ -32,18 +32,18 @@ Item {
         id: bt_remove_savedpos
         enabled: false
         text: qsTr("Clear Saved Position")
-        icon.source: "qrc:/Images/mappin-strike.png"
+        icon.source: "qrc:/Images/bt-clear.png"
         anchors.left: bt_save_pos.right
         anchors.leftMargin: 20
         anchors.verticalCenter: parent.verticalCenter
-        // TODO Attention au cas ou on a vide le modele (reload): il faut masquer ce bouton
+        // TODO Attention au cas ou on a vidé le modele (reload): il faut masquer ce bouton
     }
 
     TiButton {
         id: bt_apply_savedpos
         enabled: false
         text: qsTr("Apply Saved Position")
-        icon.source: "qrc:/Images/mappin-go.png"
+        icon.source: "qrc:/Images/bt-apply.png"
         ToolTip.text: qsTr("Applique la position mémorisée à la photo courante")
         ToolTip.visible: hovered
         ToolTip.delay: 500
@@ -66,7 +66,7 @@ Item {
         id: bt_revert
         enabled: false
         text: qsTr("Rétablir")
-        icon.source: "qrc:/Images/revert.png"
+        icon.source: "qrc:/Images/bt-revert.png"
         anchors.left: slider_radius.right
         anchors.leftMargin: 20
         anchors.verticalCenter: parent.verticalCenter        
@@ -79,7 +79,7 @@ Item {
         id: bt_clear_pos
         enabled: false
         text: qsTr("Clear GPS Coords")
-        icon.source: "qrc:/Images/suppr-icon.png"
+        icon.source: "qrc:/Images/bt-suppr.png"
         anchors.right: parent.right
         anchors.rightMargin: 40
         anchors.verticalCenter: parent.verticalCenter

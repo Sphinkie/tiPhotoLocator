@@ -27,14 +27,18 @@ FolderDialog {
         repeat: false
         onTriggered: {
             // On met à jour la photoListModel
-            console.log("Triggered refresh");
             _photoListModel.clear();
             // On ajoute les photos du dossier dans le modèle
             for (var i = 0; i < folderListModel.count; i++ ) {                
                 window.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
             }
-            // Puis on lance la récuperation des données EXIF (envoi signal)
-            window.fetchExifMetadata()
+            // Puis on lance la récupération des données EXIF (envoi signal)
+            Timer: {
+                interval: 1000;   // 1 sec
+                running: true;   // starts the timer
+                repeat: false;
+                onTriggered: window.fetchExifMetadata();
+            }
         }
     }
 }

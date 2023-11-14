@@ -17,7 +17,7 @@ Rectangle {
 
         TiButton {
             id: bt_reload
-            icon.source: "qrc:/Images/reload.png"
+            icon.source: "qrc:/Images/bt-reload.png"
             text: qsTr("Reload")
             ToolTip.text: qsTr("Recharge la liste des photos du répertoire")
             ToolTip.visible: hovered
@@ -28,7 +28,7 @@ Rectangle {
         }
         TiButton {
             id: bt_rescan
-            icon.source: "qrc:/Images/rescan.png"
+            icon.source: "qrc:/Images/bt-rescan.png"
             text: qsTr("Rescan")
             ToolTip.text: qsTr("Rescanne les tags EXIF des photos du répertoire")
             ToolTip.visible: hovered
