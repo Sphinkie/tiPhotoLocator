@@ -463,9 +463,9 @@ void PhotoModel::fetchExifMetadata(int photo)
 
 // -----------------------------------------------------------------------
 /*!
- * \brief Le slot saveMetadata() enregistre dans le fichiers JPG les metadonnées IPTC qui ont été modifiées.
- * Non modifiées: Make, Model,
- * EXIF modifiées: GPS, Artist
+ * \brief Le slot saveMetadata() enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
+ * Tags non-modifiés: Make, Model,
+ * Tags modifiés: coordds GPS, Artist
  */
 void PhotoModel::saveMetadata()
 {

@@ -6,30 +6,23 @@ ZoneGeolocForm {
 
     chipLat.deleteArea.onClicked:
     {
-        console.log("chipLat.deleteArea.onClicked");
-        chipLat.visible = false;
-        // TODO : modifier le modele
+        window.setPhotoProperty(tabbedPage.selectedData.row, 0, "latitude");
         tabbedPage.refreshSelectedData();
     }
     chipLong.deleteArea.onClicked:
     {
-        console.log("chipLong.deleteArea.onClicked");
-        chipLong.visible = false;
-        // TODO : modifier le modele
+        window.setPhotoProperty(tabbedPage.selectedData.row, 0, "longitude");
         tabbedPage.refreshSelectedData();
     }
     chipCity.deleteArea.onClicked:
     {
-        console.log("chipCity.deleteArea.onClicked");
-        chipCity.visible = false;
-        // TODO : modifier le modele
+        window.setPhotoProperty(tabbedPage.selectedData.row, "", "city");
         tabbedPage.refreshSelectedData();
     }
     chipCountry.deleteArea.onClicked:   // (mouse) =>
     {
-        console.log("chipCountry.deleteArea.onClicked");
-        chipCountry.visible = false;
-        // TODO : modifier le modele
+        // console.log("chipCountry.deleteArea.onClicked");
+        window.setPhotoProperty(tabbedPage.selectedData.row, "", "country");
         tabbedPage.refreshSelectedData();
     }
 
