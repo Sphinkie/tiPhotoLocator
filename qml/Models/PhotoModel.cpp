@@ -33,7 +33,7 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 // -----------------------------------------------------------------------
 /*!
  * \brief PhotoModel::rowCount returns the number of elements in the model. Implémentation obligatoire.
- * \param parent : parent of the model
+ * \param &parent : parent of the model
  * \return the number of elements in the model
  */
 int PhotoModel::rowCount(const QModelIndex& parent) const
@@ -125,7 +125,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 
 // -----------------------------------------------------------------------
 /*!
- * \brief The getUrl() method gives the full name (with absolute path) of the photo.
+ * \brief The PhotoModel::getUrl method gives the full name (with absolute path) of the photo.
  * This is an example of unitary getData method.
  * \param row : Indice de l'element à lire
  * \return a QVariant containing the image URL
@@ -142,8 +142,8 @@ QVariant PhotoModel::getUrl(int row)
 /*!
  * \brief This append() method adds a photo to the model, with just a name and a path (url).
  * Other data should be filled later, from exif metadata.
- * \param filename : filename of the photo
- * \param url : full path of the photo (in Qt format)
+ * \param filename filename of the photo
+ * \param url full path of the photo (in Qt format)
  */
 void PhotoModel::append(const QString filename, const QString url)
 {

@@ -37,7 +37,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     Components/PhotoPreview.qml \
-    images/clock.png
+    images/clock.png \
+    tiPhotoLocator.qdocconf
 
 HEADERS += \
     Models/OnTheMapProxyModel.h \

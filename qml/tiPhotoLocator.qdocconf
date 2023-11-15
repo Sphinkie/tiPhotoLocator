@@ -1,0 +1,51 @@
+# QDoc is a tool that constantly evolves and there may be compatibility issues
+# between old and new practices. For that reason, QDoc configuration files in
+# the Qt Project includes compat.qdocconf:
+#include(compat.qdocconf)
+
+# La commande C:\Qt\6.6.0\mingw_64\bin\qdoc tiPhotoLocator.qdocconf
+
+# Create a .qch file from your documentation.0
+#
+# For information on how to prepare your documentation and create a .qch file, see The Qt Help Framework: https://doc.qt.io/qt-6/qthelp-framework.html
+# To add the .qch file to Qt Creator, select Edit > Preferences > Help > Documentation > Add.
+# Building help files for the Qt help system assumes that the HTML documentation files already exist.
+#qhelpgenerator mydoc.qhp -o mydoc.qch
+
+
+# Give the documentation project a title:
+project = tiPhotoLocator
+description = The ultimate Photo Locator
+
+# Additional include paths to QDoc when parsing C++ code for documentation comments.
+includepaths += -I/cpp
+
+# QDoc needs a lists of file extensions to know which files to process in
+# different situations. Uncomment the following include statement to get
+# a pre-defined list of file extensions.
+#include(fileextensions.qdocconf)
+
+# You can also specify file extensions manually.
+headers.fileextensions  = "*.h *.hpp"
+sources.fileextensions  = "*.cpp *.qml *.qdoc"
+
+# The directory where QDoc places the generated documentation.
+outputdir   = ./doc/html
+
+# The directories that contain the header files associated with the .cpp source files used in the documentation.
+headerdirs  = ./cpp
+
+# The directories that contain the .cpp or .qdoc files used in the documentation.
+sourcedirs  = . ./cpp
+
+# The directories that contain the source code of the example files.
+exampledirs = ./doc/examples
+
+# The directories that contain images used in the documentation.
+imagedirs   = ./doc/images
+
+# Set a warning limit. QDoc will exit with a non-zero exit code if it generates
+# documentation warnings during the documentation build. Useful for tracking
+# down documentation issues.
+#warninglimit = 0
+#warninglimit.enabled = true
