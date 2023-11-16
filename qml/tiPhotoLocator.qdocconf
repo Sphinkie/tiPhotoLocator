@@ -1,7 +1,7 @@
 # QDoc is a tool that constantly evolves and there may be compatibility issues
 # between old and new practices. For that reason, QDoc configuration files in
 # the Qt Project includes compat.qdocconf:
-#include(compat.qdocconf)
+include(C:/Qt/Docs/Qt-6.6.0/global/compat.qdocconf)
 
 # La commande C:\Qt\6.6.0\mingw_64\bin\qdoc -debug tiPhotoLocator.qdocconf
 
@@ -12,18 +12,33 @@
 # Building help files for the Qt help system assumes that the HTML documentation files already exist.
 #qhelpgenerator mydoc.qhp -o mydoc.qch
 
+qt_install_docs = C:/Qt/Docs/Qt-6.6.0/
 
 # Give the documentation project a title:
 project = tiPhotoLocator
 description = The ultimate Photo Locator
 
 # Additional include paths to QDoc when parsing C++ code for documentation comments.
-includepaths += -I./cpp
+includepaths += -I ./cpp
+
+defines                += QT_GUI_LIB
 
 # QDoc needs a lists of file extensions to know which files to process in
 # different situations. Uncomment the following include statement to get
 # a pre-defined list of file extensions.
 #include(fileextensions.qdocconf)
+
+# voir pour le QML : https://forum.qt.io/topic/101832/linking-to-qt-offline-documentation-with-qdoc
+
+indexes += \
+    ${qt_install_docs}qtcore/qtcore.index \
+    C:/Qt/Docs/Qt-6.6.0/qtdoc/qtdoc.index \
+    C:/Qt/Docs/Qt-6.6.0/qtquick/qtquick.index \
+    C:/Qt/Docs/Qt-6.6.0/qtlocation/qtlocation.index
+
+
+#depends = *
+# depends = qtdoc qtcore qtquick qtlocation
 
 # You can also specify file extensions manually.
 headers.fileextensions  = "*.h *.hpp"

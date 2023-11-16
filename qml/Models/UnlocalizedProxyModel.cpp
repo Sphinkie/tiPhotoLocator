@@ -5,7 +5,7 @@
 #define QT_NO_DEBUG_OUTPUT
 
 /* ************************************************************************ */
-/*!
+/*
  * \brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.
  * \a parent : modèle source
  */
@@ -28,9 +28,9 @@ bool UnlocalizedProxyModel::filterEnabled() const
 
 
 /* ************************************************************************ */
-/*!
+/*
  * \brief Le slot setFilterEnabled active ou désactive le filtrage par le ProxyModel.
- * \a enabled : TRUE pour activer le filtrage
+ * \a enabled : \c true pour activer le filtrage
  */
 void UnlocalizedProxyModel::setFilterEnabled(bool enabled)
 {

@@ -66,8 +66,9 @@ struct Data
 
 
 // -----------------------------------------------------------------------
-/**
- * @brief The PhotoModel class manages a list of photo Data.
+/*!
+ * \class PhotoModel
+ * \brief The PhotoModel class manages a list of photo Data.
  */
 class PhotoModel : public QAbstractListModel
 {
@@ -113,7 +114,7 @@ public:
     // -----------------------------------------------------
     // Méthodes pouvant être appelées depuis QML
     // -----------------------------------------------------
-    Q_INVOKABLE QVariant getUrl(int index);
+    Q_INVOKABLE QVariant getUrl(int row);
     Q_INVOKABLE QVariantMap get(int row);
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
@@ -121,7 +122,7 @@ public:
     // -----------------------------------------------------
     // Methodes publiques
     // -----------------------------------------------------
-    void append(const QVariantMap data_dict);
+    void append(const QVariantMap data);
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // On surcharge car setData() est deja dans la surclasse
     void setData(const QVariantMap &value_list);
 

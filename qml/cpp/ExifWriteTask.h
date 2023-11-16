@@ -4,6 +4,10 @@
 #include <QRunnable>
 #include <QVariant>
 
+/*!
+ * \class ExifWriteTask
+ * \brief The ExifWriteTask class
+ */
 class ExifWriteTask : public QRunnable
 {
 public:

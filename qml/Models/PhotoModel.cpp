@@ -124,8 +124,8 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 }
 
 // -----------------------------------------------------------------------
-/*!
- * \brief The PhotoModel::getUrl method gives the full name (with absolute path) of the photo.
+/*
+ * \brief The method gives the full name (with absolute path) of the photo.
  * This is an example of unitary getData method.
  * Returns a QVariant containing the image URL
  * \a row : Indice de l'element à lire
@@ -139,7 +139,7 @@ QVariant PhotoModel::getUrl(int row)
 }
 
 // -----------------------------------------------------------------------
-/*!
+/*
  * \brief This append() method adds a photo to the model, with just a name and a path (url).
  * Other data should be filled later, from exif metadata.
  * \a filename : filename of the photo
@@ -574,7 +574,7 @@ void PhotoModel::duplicateData(int row)
 
 
 // -----------------------------------------------------------------------
-/*!
+/*
  * \brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
  * Usage dans QML: titre = myModel.get(1).title;
  * \a row : indice

@@ -5,7 +5,7 @@
 #define QT_NO_DEBUG_OUTPUT
 
 /* ************************************************************************ */
-/*!
+/*
  * \brief Contructeur.
  * \a parent : modèle source
  */
