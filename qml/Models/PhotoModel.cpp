@@ -13,7 +13,7 @@
 // -----------------------------------------------------------------------
 /*!
  * \brief Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose.
- * \param parent
+ * \a parent
  */
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
@@ -33,8 +33,8 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 // -----------------------------------------------------------------------
 /*!
  * \brief PhotoModel::rowCount returns the number of elements in the model. Implémentation obligatoire.
- * \param &parent : parent of the model
- * \return the number of elements in the model
+ * Returns the number of elements in the model.
+ * \a parent : parent of the model
  */
 int PhotoModel::rowCount(const QModelIndex& parent) const
 {
@@ -46,9 +46,9 @@ int PhotoModel::rowCount(const QModelIndex& parent) const
 // -----------------------------------------------------------------------
 /*!
  * \brief PhotoModel::data returns the requeted role value of an element of the model. Implémentation obligatoire.
- * \param index : index of the element of the model
- * \param role : the requested role (enum)
- * \return the value of the role for this element.
+ * Returns the value of the role for this element.
+ * \a index : index of the element of the model
+ * \a role : the requested role (enum)
  */
 QVariant PhotoModel::data(const QModelIndex &index, int role) const
 {
@@ -89,7 +89,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 }
 
 // -----------------------------------------------------------------------
-/*!
+/*
  * Table of Role names. Implémentation obligatoire.
  * C'est la correspondance entre le role C++ et le nom de la property dans QML
  */
@@ -127,8 +127,8 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 /*!
  * \brief The PhotoModel::getUrl method gives the full name (with absolute path) of the photo.
  * This is an example of unitary getData method.
- * \param row : Indice de l'element à lire
- * \return a QVariant containing the image URL
+ * Returns a QVariant containing the image URL
+ * \a row : Indice de l'element à lire
  */
 QVariant PhotoModel::getUrl(int row)
 {
@@ -142,8 +142,8 @@ QVariant PhotoModel::getUrl(int row)
 /*!
  * \brief This append() method adds a photo to the model, with just a name and a path (url).
  * Other data should be filled later, from exif metadata.
- * \param filename filename of the photo
- * \param url full path of the photo (in Qt format)
+ * \a filename : filename of the photo
+ * \a url : full path of the photo (in Qt format)
  */
 void PhotoModel::append(const QString filename, const QString url)
 {
@@ -157,11 +157,12 @@ void PhotoModel::append(const QString filename, const QString url)
 // -----------------------------------------------------------------------
 /*!
  * \brief This append() method adds an item to the model, from a dictionnary of metadata.
- * \param data: A dictionnary of key-value
- * \example
-    QVariantMap map;
-    map.insert("filename", QVariant(filename));
-    map.insert(roleNames().value(ImageUrlRole), QVariant(url));
+ * \a data : A dictionnary of key-value
+ * \code
+      QVariantMap map;
+      map.insert("filename", QVariant(filename));
+      map.insert(roleNames().value(ImageUrlRole), QVariant(url));
+   \endcode
  */
 void PhotoModel::append(const QVariantMap data)
 {
@@ -179,8 +180,8 @@ void PhotoModel::append(const QVariantMap data)
 /*!
  * \brief PhotoModel::appendSavedPosition ajoute une entrée spéciale dans le Modèle
  * correspondant à une position GPS mémorisée (marker jaune).
- * \param lati : latitude au format GPS
- * \param longi : longitude au format GPS
+ * \a lati : latitude au format GPS
+ * \a longi : longitude au format GPS
  */
 void PhotoModel::appendSavedPosition(double lati, double longi)
 {
@@ -214,8 +215,8 @@ void PhotoModel::removeSavedPosition()
 /*!
  * \brief PhotoModel::setInCircleItemCoords affecte les coordonnées GPS fournies à toutes les photos
  * géographiquement situées à l'interieur du cercle rouge.
- * \param lati : latitude au format GPS
- * \param longi : longitude au format GPS
+ * \a lati : latitude au format GPS
+ * \a longi : longitude au format GPS
  */
 void PhotoModel::setInCircleItemCoords(double lati, double longi)
 {
@@ -242,7 +243,7 @@ void PhotoModel::setInCircleItemCoords(double lati, double longi)
  * \brief PhotoModel::selectedRow mémorise la position fournie.
  * Met le flag "isSelected" du précédent item à False et le nouveau à True.
  * Met aussi le flag "insideCircle" du précédent item à False et le nouveau à True.
- * \param row : l'indice de l'item sélectionné dans la ListView.
+ * \a row : l'indice de l'item sélectionné dans la ListView.
  */
 void PhotoModel::selectedRow(int row)
 {
@@ -275,11 +276,11 @@ void PhotoModel::selectedRow(int row)
  * Cette fonction met à TRUE le flag "To Be Saved" car il s'agit d'une action opérateur.
  * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, etc.
  * Note: It is important to emit the dataChanged() signal after saving the changes.
- * \param index : l'index (au sens ModelIndex) de l'item à modifier
- * \param value : la nouvelle valeur
- * \param role : le role à modifier (LatitudeRole, LongitudeRole, ToBeSavedRole, city, country)
- * \return true si la modification a réussi. False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
- * \sa https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
+ * \a index : l'index (au sens ModelIndex) de l'item à modifier
+ * \a value : la nouvelle valeur
+ * \a role : le role à modifier (LatitudeRole, LongitudeRole, ToBeSavedRole, city, country)
+ * Returns \c true si la modification a réussi. \c False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
+ * \sa {https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass}
  */
 bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
@@ -323,10 +324,10 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 // -----------------------------------------------------------------------
 /*!
  * \brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
- * Roles non modifiables (ignorés): imageUrl; insideCircle.
+ * Roles non modifiables (ignorés): imageUrl, insideCircle.
  * Roles non modifiables (recalculés): hasGPS, toBeSaved.
  * Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales.
- * \param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
+ * \a value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
  */
 void PhotoModel::setData(const QVariantMap &value_list)
 {
@@ -378,9 +379,9 @@ void PhotoModel::setData(const QVariantMap &value_list)
 
 /*! ****************************************************************************
  * \brief Le slot setData() ajoute une propriété à une photo, par exemple si on clique sur une suggestion.
- * \param row : indice de la photo
- * \param value : valeur de la propriété
- * \param property : nom de la propriété
+ * \a row : indice de la photo
+ * \a value : valeur de la propriété
+ * \a property : nom de la propriété
  */
 void PhotoModel::setData(int row, QString value, QString property)
 {
@@ -394,7 +395,7 @@ void PhotoModel::setData(int row, QString value, QString property)
 // -----------------------------------------------------------------------
 /*!
  * \brief Unused getter.
- * \return the last selected row.
+ * Returns the last selected row.
  */
 int PhotoModel::getSelectedRow()
 {
@@ -433,7 +434,7 @@ void PhotoModel::clear()
 // -----------------------------------------------------------------------
 /*!
  * \brief Le slot fetchExifMetadata() lit des données EXIF de toutes photos du répertoire.
- * \param photo : l'indice de la photo (vide = toutes les photos du répertoire)
+ * \a photo : l'indice de la photo (vide = toutes les photos du répertoire)
  */
 void PhotoModel::fetchExifMetadata(int photo)
 {
@@ -541,7 +542,7 @@ void PhotoModel::addTestItem()
 // -----------------------------------------------------------------------
 /*!
  * \brief PhotoModel::removeData est une fonction typqique qui supprime l'item désigné du modèle
- * \param row : la position dans le vecteur de l'item à modifier.
+ * \a row : la position dans le vecteur de l'item à modifier.
  */
 void PhotoModel::removeData(int row)
 {
@@ -556,7 +557,7 @@ void PhotoModel::removeData(int row)
 // -----------------------------------------------------------------------
 /*!
  * \brief The method duplicateData duplicates an item of the model, and add it at the end of the vector.
- * \param row : item row
+ * \a row : item row
  */
 void PhotoModel::duplicateData(int row)
 {
@@ -576,8 +577,8 @@ void PhotoModel::duplicateData(int row)
 /*!
  * \brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
  * Usage dans QML: titre = myModel.get(1).title;
- * \param row : indice
- * \return une Map contenant toutes les propriétés de l'item. Continet auss une propriété "row".
+ * \a row : indice
+ * Returns une Map contenant toutes les propriétés de l'item. Continet auss une propriété "row".
  */
 QVariantMap PhotoModel::get(int row)
 {

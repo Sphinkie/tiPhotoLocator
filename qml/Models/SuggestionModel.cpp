@@ -116,7 +116,7 @@ void SuggestionModel::addCurrentPhotoToSuggestion(int row)
 
 /*! **********************************************************************************
  * \brief Le slot removePhoto() enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
- * \param index : l'index dans le Model de la suggestion à modifier
+ * \a index : l'index dans le Model de la suggestion à modifier
  */
 void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 {

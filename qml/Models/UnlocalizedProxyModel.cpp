@@ -7,7 +7,7 @@
 /* ************************************************************************ */
 /*!
  * \brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.
- * \param parent : modèle source
+ * \a parent : modèle source
  */
 UnlocalizedProxyModel::UnlocalizedProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -19,7 +19,7 @@ UnlocalizedProxyModel::UnlocalizedProxyModel(QObject *parent) : QSortFilterProxy
 /* ************************************************************************ */
 /*!
  * \brief filterEnabled indique si le filtre est actif ou non.
- * \return TRUE si le filtre est actif.
+ * Returns \c true si le filtre est actif.
  */
 bool UnlocalizedProxyModel::filterEnabled() const
 {
@@ -30,7 +30,7 @@ bool UnlocalizedProxyModel::filterEnabled() const
 /* ************************************************************************ */
 /*!
  * \brief Le slot setFilterEnabled active ou désactive le filtrage par le ProxyModel.
- * \param enabled : TRUE pour activer le filtrage
+ * \a enabled : TRUE pour activer le filtrage
  */
 void UnlocalizedProxyModel::setFilterEnabled(bool enabled)
 {
@@ -45,8 +45,8 @@ void UnlocalizedProxyModel::setFilterEnabled(bool enabled)
 
 /*!
  * \brief La fonction getSourceIndex renvoie l'indice de la Photo dans le modèle source.
- * \param row : indice de la photo dans ce proxyModel.
- * \return l'indice de la photo dans le sourceModel.
+ * \a row : indice de la photo dans ce proxyModel.
+ * Retourne l'indice de la photo dans le sourceModel.
  */
 int UnlocalizedProxyModel::getSourceIndex(int row)
 {

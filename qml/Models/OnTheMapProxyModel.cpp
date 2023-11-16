@@ -70,11 +70,12 @@ bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sour
 
 /* ************************************************************************ */
 /*!
+ * \fn void setAllItemsCoords(const double lat, const double lon)
  * \brief Le slot OnTheMapProxyModel::setAllItemsCoords affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position).
- * \param lat latitude au format GPS
- * \param long longitude au format GPS
  * Ce slot appelé quand l'utilisateur change la position d'une photo sur la carte.
  * C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré.
+ * \a lat : latitude au format GPS
+ * \a long : longitude au format GPS
  */
 void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 {
@@ -107,6 +108,7 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 
 /* ************************************************************************ */
 /*!
+ * \fn void setAllItemsSavedCoords()
  * \brief Le slot setAllItemsSavedCoords applique les coordonnées GPS de la SavedPosition à toutes
  * les photos du modèle filtré.
  * Ce slot est appelé quand l'utilisateur appuye sur "Apply Saved Position".

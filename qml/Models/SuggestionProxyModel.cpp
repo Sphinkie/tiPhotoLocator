@@ -7,7 +7,7 @@
 /* ************************************************************************ */
 /*!
  * \brief Contructeur.
- * \param parent : modèle source
+ * \a parent : modèle source
  */
 SuggestionProxyModel::SuggestionProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -80,7 +80,7 @@ void SuggestionProxyModel::setFilterValue(const int photoRow)
 /*! **********************************************************************************
  * \brief Le slot removePhoto() enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
  * On convertit l'indice du ProxyModel dans l'index du sourceModel.
- * \param row : l'indice dans le ProxyModel de la suggestion à modifier
+ * \a row : l'indice dans le ProxyModel de la suggestion à modifier
  */
 void SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)
 {

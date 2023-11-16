@@ -3,7 +3,7 @@
 # the Qt Project includes compat.qdocconf:
 #include(compat.qdocconf)
 
-# La commande C:\Qt\6.6.0\mingw_64\bin\qdoc tiPhotoLocator.qdocconf
+# La commande C:\Qt\6.6.0\mingw_64\bin\qdoc -debug tiPhotoLocator.qdocconf
 
 # Create a .qch file from your documentation.0
 #
@@ -18,7 +18,7 @@ project = tiPhotoLocator
 description = The ultimate Photo Locator
 
 # Additional include paths to QDoc when parsing C++ code for documentation comments.
-includepaths += -I/cpp
+includepaths += -I./cpp
 
 # QDoc needs a lists of file extensions to know which files to process in
 # different situations. Uncomment the following include statement to get
@@ -33,10 +33,10 @@ sources.fileextensions  = "*.cpp *.qml *.qdoc"
 outputdir   = ./doc/html
 
 # The directories that contain the header files associated with the .cpp source files used in the documentation.
-headerdirs  = ./cpp
+headerdirs  = .
 
 # The directories that contain the .cpp or .qdoc files used in the documentation.
-sourcedirs  = . ./cpp
+sourcedirs  = .
 
 # The directories that contain the source code of the example files.
 exampledirs = ./doc/examples

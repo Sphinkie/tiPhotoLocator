@@ -1,7 +1,7 @@
 pragma Singleton
 import QtQuick
 
-/*!
+/*
  * Définition du Singleton de Style, où l'on définit les couleurs de l'application.
  *
  * On essaye de suivre quelques principes...
