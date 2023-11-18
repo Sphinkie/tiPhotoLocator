@@ -3,9 +3,7 @@
 
 #include <QSortFilterProxyModel>
 
-/*!
- * \brief The UnlocalizedProxyModel class if a filter ProxyModel, that filters the Photo with/without GPS coordinates.
- */
+
 class UnlocalizedProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT

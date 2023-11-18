@@ -3,10 +3,7 @@
 
 #include <QSortFilterProxyModel>
 
-/*!
- * \class OnTheMapProxyModel
- * \brief The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s).
- */
+
 class OnTheMapProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT

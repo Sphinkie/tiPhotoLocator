@@ -3,9 +3,7 @@
 
 #include <QSortFilterProxyModel>
 
-/**
- * @brief The SuggestionProxyModel class if a filter ProxyModel, that filters the suggestions related to a given photo.
- */
+
 class SuggestionProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT

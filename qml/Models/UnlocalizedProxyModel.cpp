@@ -4,6 +4,14 @@
 
 #define QT_NO_DEBUG_OUTPUT
 
+
+/*!
+ * \class UnlocalizedProxyModel
+ * \inmodule TiPhotoLocator
+ * \brief The UnlocalizedProxyModel class if a filter ProxyModel, that filters the Photo with/without GPS coordinates.
+ */
+
+
 /* ************************************************************************ */
 /*
  * \brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.

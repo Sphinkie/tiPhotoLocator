@@ -10,6 +10,18 @@
 #include "Models/UnlocalizedProxyModel.h"
 #include "cpp/GeocodeWrapper.h"
 
+/*!
+    \module TiPhotoLocator
+
+    \title TiPhotoLocator
+
+    \brief The ultimate Photo Locator.
+
+    TiPhotoLocator est developpé en C++ et en QML (avec le framework Qt version 6). \br
+    Il lit et écrit les tags EXIF et IPTC des photos JPEG avec \l{https://exiftool.org}{exifTool}. \br
+    Il accède aux cartes géographiques via les modules QtLocation et QtPositioning.
+*/
+
 /** ********************************************************************************
  * Programme principal
  * *********************************************************************************/

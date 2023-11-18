@@ -1,6 +1,12 @@
 #include "SuggestionModel.h"
 
 
+/*!
+ * \class SuggestionModel
+ * \inmodule TiPhotoLocator
+ * \brief The SuggestionModel class manages a list of Suggestions.
+ */
+
 /* ********************************************************************************** */
 /**
  * @brief Contructor

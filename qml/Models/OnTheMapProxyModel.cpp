@@ -1,18 +1,20 @@
-/*************************************************************************
- *
- * Contraintes:
- * il faut inclure le .h du modèle
- * - donc ce n'est pas reutilisable contrairement à ce que dit Jepersen
- * - le modèle doit être forcement en c++ (et pas en Qml)
- * - donc il faut réimplementer les append(), get(), clear(), etc
- *
- *************************************************************************/
-
 #include<QDebug>
 #include "PhotoModel.h"
 #include "OnTheMapProxyModel.h"
 
 #define QT_NO_DEBUG_OUTPUT
+
+
+/* ************************************************************************ */
+/*!
+ * \class OnTheMapProxyModel
+ * \inmodule TiPhotoLocator
+ * \brief The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s).
+ * Dans ce ProxyModel on doit ré-implementer les méthodes append(), get(), clear(), etc.
+ *
+ */
+/* ************************************************************************ */
+
 
 /* *************************************************************************
  * Contructeur
@@ -24,9 +26,9 @@ OnTheMapProxyModel::OnTheMapProxyModel(QObject *parent) : QSortFilterProxyModel(
 
 
 /* ************************************************************************ */
-/**
- * @brief SelectedFilterProxyModel::selectedFilterEnabled indique si le filtre est actif ou non.
- * @return TRUE si le filtre est actif.
+/*!
+ * \brief Indique si le filtre est actif ou non.
+ * Returns \c true si le filtre est actif.
  */
 bool OnTheMapProxyModel::selectedFilterEnabled() const
 {
@@ -34,9 +36,9 @@ bool OnTheMapProxyModel::selectedFilterEnabled() const
 }
 
 /* ************************************************************************ */
-/**
- * @brief Le slot OnTheMapProxyModel::setSelectedFilterEnabled active ou désactive le filtrage par le ProxyModel.
- * @param enabled: TRUE pour activer le filtrage
+/*
+ * \brief Ce slot active ou désactive le filtrage par le ProxyModel.
+ * \a enabled : \c true pour activer le filtrage
  */
 void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
 {
@@ -48,12 +50,12 @@ void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
 }
 
 /* ************************************************************************ */
-/**
- * @brief SelectedFilterProxyModel::filterAcceptsRow effectue le filtrage (toutes les 10 secondes).
+/*!
+ * \brief Effectue le filtrage.
  * Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position".
- * @param sourceRow: Le numero d'une ligne du modèle parent (PhotoModel)
- * @param sourceParent: Le modèle parent (PhotoModel)
- * @return TRUE si la ligne est acceptée
+ * \a sourceRow : Le numero d'une ligne du modèle parent (PhotoModel).
+ * \a sourceParent : Le modèle parent (PhotoModel).
+ * Returns \c true si la ligne est acceptée
  */
 bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
@@ -70,12 +72,14 @@ bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sour
 
 /* ************************************************************************ */
 /*!
- * \fn void setAllItemsCoords(const double lat, const double lon)
- * \brief Le slot OnTheMapProxyModel::setAllItemsCoords affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position).
- * Ce slot appelé quand l'utilisateur change la position d'une photo sur la carte.
- * C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré.
- * \a lat : latitude au format GPS
- * \a long : longitude au format GPS
+ * \brief Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position).
+ * \details
+ *      Details: Ce slot est appelé quand l'utilisateur change la position d'une photo sur la carte.
+ *      C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du
+ *      modèle source, mais seulement celle du modèle filtré.
+ * \enddetails
+ * \a lat : latitude au format GPS.
+ * \a lon : longitude au format GPS.
  */
 void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 {
@@ -108,8 +112,7 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 
 /* ************************************************************************ */
 /*!
- * \fn void setAllItemsSavedCoords()
- * \brief Le slot setAllItemsSavedCoords applique les coordonnées GPS de la SavedPosition à toutes
+ * \brief Ce slot applique les coordonnées GPS de la SavedPosition à toutes
  * les photos du modèle filtré.
  * Ce slot est appelé quand l'utilisateur appuye sur "Apply Saved Position".
  */

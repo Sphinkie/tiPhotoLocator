@@ -36,9 +36,7 @@ struct Suggestion
 };
 
 
-/**
- * @brief The SuggestionModel class manages a list of Suggestions.
- */
+
 class SuggestionModel : public QAbstractListModel
 {
     Q_OBJECT

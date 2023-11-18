@@ -4,6 +4,13 @@
 
 #define QT_NO_DEBUG_OUTPUT
 
+
+/*!
+ * \class SuggestionProxyModel
+ * \inmodule TiPhotoLocator
+ * \brief The SuggestionProxyModel class if a filter ProxyModel, that filters the suggestions related to a given photo.
+ */
+
 /* ************************************************************************ */
 /*
  * \brief Contructeur.
@@ -77,10 +84,11 @@ void SuggestionProxyModel::setFilterValue(const int photoRow)
 }
 
 
-/*! **********************************************************************************
- * \brief Le slot removePhoto() enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
+/* ********************************************************************************** */
+/*!
+ * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
  * On convertit l'indice du ProxyModel dans l'index du sourceModel.
- * \a row : l'indice dans le ProxyModel de la suggestion à modifier
+ * \a proxyRow : l'indice dans le ProxyModel de la suggestion à modifier
  */
 void SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)
 {

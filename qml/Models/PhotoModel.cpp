@@ -8,12 +8,16 @@
 
 
 #define QT_NO_DEBUG_OUTPUT
-
+/*!
+ * \class PhotoModel
+ * \inmodule TiPhotoLocator
+ * \brief The PhotoModel class manages a list of photo Data.
+ */
 
 // -----------------------------------------------------------------------
 /*!
  * \brief Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose.
- * \a parent
+ * \a parent : paramètre classique pour les QAbstractListModel.
  */
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
@@ -32,8 +36,7 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::rowCount returns the number of elements in the model. Implémentation obligatoire.
- * Returns the number of elements in the model.
+ * \brief Returns the number of elements in the model. Implémentation obligatoire.
  * \a parent : parent of the model
  */
 int PhotoModel::rowCount(const QModelIndex& parent) const
@@ -45,10 +48,9 @@ int PhotoModel::rowCount(const QModelIndex& parent) const
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::data returns the requeted role value of an element of the model. Implémentation obligatoire.
- * Returns the value of the role for this element.
- * \a index : index of the element of the model
- * \a role : the requested role (enum)
+ * \brief Returns the requeted role value of an element of the model. Implémentation obligatoire.
+ * \a index : index of the element of the model.
+ * \a role : the requested role (enum).
  */
 QVariant PhotoModel::data(const QModelIndex &index, int role) const
 {
@@ -125,9 +127,8 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 
 // -----------------------------------------------------------------------
 /*
- * \brief The method gives the full name (with absolute path) of the photo.
- * This is an example of unitary getData method.
- * Returns a QVariant containing the image URL
+ * \brief Returns the full name (with absolute path) of the photo, in a QVariant
+ * containing the image URL. This is an example of unitary getData method.
  * \a row : Indice de l'element à lire
  */
 QVariant PhotoModel::getUrl(int row)
@@ -140,7 +141,7 @@ QVariant PhotoModel::getUrl(int row)
 
 // -----------------------------------------------------------------------
 /*
- * \brief This append() method adds a photo to the model, with just a name and a path (url).
+ * \brief Adds a photo to the model, with just a name and a path (url).
  * Other data should be filled later, from exif metadata.
  * \a filename : filename of the photo
  * \a url : full path of the photo (in Qt format)
@@ -156,7 +157,7 @@ void PhotoModel::append(const QString filename, const QString url)
 
 // -----------------------------------------------------------------------
 /*!
- * \brief This append() method adds an item to the model, from a dictionnary of metadata.
+ * \brief Adds an item to the model, from a dictionnary of metadata.
  * \a data : A dictionnary of key-value
  * \code
       QVariantMap map;
@@ -178,10 +179,11 @@ void PhotoModel::append(const QVariantMap data)
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::appendSavedPosition ajoute une entrée spéciale dans le Modèle
+ * \brief Ajoute une entrée spéciale dans le Modèle,
  * correspondant à une position GPS mémorisée (marker jaune).
- * \a lati : latitude au format GPS
- * \a longi : longitude au format GPS
+ *
+ * \a lati : latitude au format GPS.
+ * \a longi : longitude au format GPS.
  */
 void PhotoModel::appendSavedPosition(double lati, double longi)
 {
@@ -203,7 +205,7 @@ void PhotoModel::appendSavedPosition(double lati, double longi)
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::removeSavedPosition supprime du modèle l'item correspondant à la possition sauvegardée.
+ * \brief Supprime du modèle l'item correspondant à la position sauvegardée.
  */
 void PhotoModel::removeSavedPosition()
 {
@@ -213,10 +215,10 @@ void PhotoModel::removeSavedPosition()
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::setInCircleItemCoords affecte les coordonnées GPS fournies à toutes les photos
+ * \brief Affecte les coordonnées GPS fournies à toutes les photos
  * géographiquement situées à l'interieur du cercle rouge.
- * \a lati : latitude au format GPS
- * \a longi : longitude au format GPS
+ * \a lati : latitude au format GPS.
+ * \a longi : longitude au format GPS.
  */
 void PhotoModel::setInCircleItemCoords(double lati, double longi)
 {
@@ -240,9 +242,9 @@ void PhotoModel::setInCircleItemCoords(double lati, double longi)
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::selectedRow mémorise la position fournie.
- * Met le flag "isSelected" du précédent item à False et le nouveau à True.
- * Met aussi le flag "insideCircle" du précédent item à False et le nouveau à True.
+ * \brief Mémorise la position fournie.
+ * Met le flag \c "isSelected" du précédent item à \c False et le nouveau à \c True.
+ * Met aussi le flag \c "insideCircle" du précédent item à \c False et le nouveau à \c True.
  * \a row : l'indice de l'item sélectionné dans la ListView.
  */
 void PhotoModel::selectedRow(int row)
@@ -272,13 +274,13 @@ void PhotoModel::selectedRow(int row)
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::setData est une surcharge qui permet de modifier unitairement un role d'un item du modèle.
+ * \brief Surcharge qui permet de modifier unitairement un role d'un item du modèle.
  * Cette fonction met à TRUE le flag "To Be Saved" car il s'agit d'une action opérateur.
  * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, etc.
  * Note: It is important to emit the dataChanged() signal after saving the changes.
- * \a index : l'index (au sens ModelIndex) de l'item à modifier
- * \a value : la nouvelle valeur
- * \a role : le role à modifier (LatitudeRole, LongitudeRole, ToBeSavedRole, city, country)
+ * \a index : l'index (au sens ModelIndex) de l'item à modifier.
+ * \a value : la nouvelle valeur.
+ * \a role : le role à modifier (LatitudeRole, LongitudeRole, ToBeSavedRole, city, country).
  * Returns \c true si la modification a réussi. \c False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
  * \sa {https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass}
  */
@@ -323,7 +325,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::setData permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
+ * \brief Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
  * Roles non modifiables (ignorés): imageUrl, insideCircle.
  * Roles non modifiables (recalculés): hasGPS, toBeSaved.
  * Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales.
@@ -377,11 +379,13 @@ void PhotoModel::setData(const QVariantMap &value_list)
     emit dataChanged(changed_index, changed_index);
 }
 
-/*! ****************************************************************************
- * \brief Le slot setData() ajoute une propriété à une photo, par exemple si on clique sur une suggestion.
- * \a row : indice de la photo
- * \a value : valeur de la propriété
- * \a property : nom de la propriété
+
+/*!
+ * \brief Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion.
+ *
+ * \a row : indice de la photo.
+ * \a value : valeur de la propriété.
+ * \a property : nom de la propriété.
  */
 void PhotoModel::setData(int row, QString value, QString property)
 {
@@ -389,7 +393,6 @@ void PhotoModel::setData(int row, QString value, QString property)
     //QVariant val = value;
     int role = roleNames().key(property.toUtf8());
     this->setData(index, value, role);
-
 }
 
 // -----------------------------------------------------------------------
@@ -404,7 +407,7 @@ int PhotoModel::getSelectedRow()
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::dumpData is a debug function that print (in the console) one line of the model at every call.
+ * \brief Debug function that print (in the console) one line of the model at every call.
  */
 void PhotoModel::dumpData()
 {
@@ -421,7 +424,7 @@ void PhotoModel::dumpData()
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::clear deletes all the items of the Model.
+ * \brief Deletes all the items of the Model.
  */
 void PhotoModel::clear()
 {
@@ -433,8 +436,8 @@ void PhotoModel::clear()
 
 // -----------------------------------------------------------------------
 /*!
- * \brief Le slot fetchExifMetadata() lit des données EXIF de toutes photos du répertoire.
- * \a photo : l'indice de la photo (vide = toutes les photos du répertoire)
+ * \brief Ce slot lit des données EXIF de toutes photos du répertoire.
+ * \a photo : l'indice de la photo (vide ou -1 = toutes les photos du répertoire)
  */
 void PhotoModel::fetchExifMetadata(int photo)
 {
@@ -464,9 +467,9 @@ void PhotoModel::fetchExifMetadata(int photo)
 
 // -----------------------------------------------------------------------
 /*!
- * \brief Le slot saveMetadata() enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
+ * \brief Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
  * Tags non-modifiés: Make, Model,
- * Tags modifiés: coordds GPS, Artist
+ * Tags modifiés: coords GPS, Artist.
  */
 void PhotoModel::saveMetadata()
 {
@@ -514,7 +517,7 @@ void PhotoModel::saveMetadata()
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::addTestItem add a test item to the Model. (only if DebugMode is enabled)
+ * \brief Adds a test item to the PhotoModel. (only if \c DebugMode is enabled in the \e settings)
  * For testing purpose.
  */
 void PhotoModel::addTestItem()
@@ -541,7 +544,7 @@ void PhotoModel::addTestItem()
 
 // -----------------------------------------------------------------------
 /*!
- * \brief PhotoModel::removeData est une fonction typqique qui supprime l'item désigné du modèle
+ * \brief Fonction typique qui supprime l'item désigné du modèle.
  * \a row : la position dans le vecteur de l'item à modifier.
  */
 void PhotoModel::removeData(int row)
@@ -556,8 +559,8 @@ void PhotoModel::removeData(int row)
 
 // -----------------------------------------------------------------------
 /*!
- * \brief The method duplicateData duplicates an item of the model, and add it at the end of the vector.
- * \a row : item row
+ * \brief Duplicates an item of the model, and add it at the end of the vector.
+ * \a row : item row to be duplicated.
  */
 void PhotoModel::duplicateData(int row)
 {

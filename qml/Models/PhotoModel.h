@@ -66,10 +66,6 @@ struct Data
 
 
 // -----------------------------------------------------------------------
-/*!
- * \class PhotoModel
- * \brief The PhotoModel class manages a list of photo Data.
- */
 class PhotoModel : public QAbstractListModel
 {
     Q_OBJECT
