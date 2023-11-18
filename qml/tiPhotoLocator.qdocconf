@@ -1,51 +1,63 @@
-# QDoc is a tool that constantly evolves and there may be compatibility issues
-# between old and new practices. For that reason, QDoc configuration files in
-# the Qt Project includes compat.qdocconf:
+# --------------------------------------------------------------------------------------
+# Configuration pour la génération de la QDOC
+# --------------------------------------------------------------------------------------
+# For compatibility issues, include compat.qdocconf:
 include(C:/Qt/Docs/Qt-6.6.0/global/compat.qdocconf)
+# include(C:/Qt/Docs/Qt-6.6.0/global/config.qdocconf)
+# include(C:/Qt/Docs/Qt-6.6.0/global/macros.qdocconf)
+include(C:/Qt/Docs/Qt-6.6.0/global/qt-cpp-defines.qdocconf)
+include(C:/Qt/Docs/Qt-6.6.0/global/fileextensions.qdocconf)
+include(C:/Qt/Docs/Qt-6.6.0/global/qt-html-templates-offline.qdocconf)
 
-# La commande C:\Qt\6.6.0\mingw_64\bin\qdoc -debug tiPhotoLocator.qdocconf
-
-# Create a .qch file from your documentation.0
+# --------------------------------------------------------------------------------------
+# Commande de génération dans le terminal:
+# C:\Qt\6.6.0\mingw_64\bin\qdoc tiPhotoLocator.qdocconf
 #
-# For information on how to prepare your documentation and create a .qch file, see The Qt Help Framework: https://doc.qt.io/qt-6/qthelp-framework.html
-# To add the .qch file to Qt Creator, select Edit > Preferences > Help > Documentation > Add.
-# Building help files for the Qt help system assumes that the HTML documentation files already exist.
-#qhelpgenerator mydoc.qhp -o mydoc.qch
+# Commande de génération avec traces de debug:
+# C:\Qt\6.6.0\mingw_64\bin\qdoc -debug tiPhotoLocator.qdocconf
+#
+# Génération du fichier help ".qch":
+# La documentation HTML doit être générée au préalable.
+# Voir "The Qt Help Framework": https://doc.qt.io/qt-6/qthelp-framework.html
+# Ajout du fichier ".qch" dans Qt Creator : Menu Edit > Preferences > Help > Documentation > Add.
+#
+# qhelpgenerator mydoc.qhp -o mydoc.qch
+# --------------------------------------------------------------------------------------
 
-qt_install_docs = C:/Qt/Docs/Qt-6.6.0/
+# Variable globale: chemin des .index de Qt
+qt_install_docs = C:/Qt/Docs/Qt-6.6.0
 
-# Give the documentation project a title:
+
+# Titre de la documentation project:
 project = tiPhotoLocator
 description = The ultimate Photo Locator
 
 # Additional include paths to QDoc when parsing C++ code for documentation comments.
 includepaths += -I ./cpp
 
-defines                += QT_GUI_LIB
+# defines += QT_GUI_LIB
 
-# QDoc needs a lists of file extensions to know which files to process in
-# different situations. Uncomment the following include statement to get
-# a pre-defined list of file extensions.
-#include(fileextensions.qdocconf)
 
 # voir pour le QML : https://forum.qt.io/topic/101832/linking-to-qt-offline-documentation-with-qdoc
 
 indexes += \
-    ${qt_install_docs}qtcore/qtcore.index \
-    C:/Qt/Docs/Qt-6.6.0/qtdoc/qtdoc.index \
-    C:/Qt/Docs/Qt-6.6.0/qtquick/qtquick.index \
-    C:/Qt/Docs/Qt-6.6.0/qtlocation/qtlocation.index
+    ${qt_install_docs}/qtcore/qtcore.index \
+    ${qt_install_docs}/qtdoc/qtdoc.index \
+    ${qt_install_docs}/qtquick/qtquick.index \
+    ${qt_install_docs}/qtlocation/qtlocation.index \
+    ${qt_install_docs}/qtpositioning/qtpositioning.index
 
-
-#depends = *
+depends = *
 # depends = qtdoc qtcore qtquick qtlocation
 
-# You can also specify file extensions manually.
+# File extensions (Liste prédéfinie ou liste manuelle):
+#include(fileextensions.qdocconf)
 headers.fileextensions  = "*.h *.hpp"
 sources.fileextensions  = "*.cpp *.qml *.qdoc"
 
 # The directory where QDoc places the generated documentation.
 outputdir   = ./doc/html
+outputformats = HTML
 
 # The directories that contain the header files associated with the .cpp source files used in the documentation.
 headerdirs  = .
