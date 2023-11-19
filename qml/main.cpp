@@ -10,6 +10,19 @@
 #include "Models/UnlocalizedProxyModel.h"
 #include "cpp/GeocodeWrapper.h"
 
+
+/*!
+    \page index.html
+
+    \indexpage Index
+    \startpage TiPhotoLocator
+    \title Index
+
+    \list
+        \li \l{TiPhotoLocator}
+    \endlist
+*/
+
 /*!
     \module TiPhotoLocator
 
