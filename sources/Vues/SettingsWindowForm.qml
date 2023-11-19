@@ -178,7 +178,7 @@ Window {
             anchors.left: element3.left
             anchors.top: element3.bottom
             anchors.topMargin: 6
-            text: "Description (EXIF)"
+            text: "Description (IPTC)"
             enabled: false
             checked: true
         }

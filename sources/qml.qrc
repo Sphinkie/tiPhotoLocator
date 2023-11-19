@@ -70,5 +70,6 @@
         <file>Images/bt-revert.png</file>
         <file>Images/preview.png</file>
         <file>tiPhotoLocator.qch</file>
+        <file>Vues/MatadataDialog.ui</file>
     </qresource>
 </RCC>

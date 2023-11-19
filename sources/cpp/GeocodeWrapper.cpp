@@ -76,13 +76,22 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         QGeoLocation geolocation = reply->locations().value(0);
         const QGeoAddress adresse = geolocation.address();
         qDebug() << adresse.text();
+        // Il y a un bug dans Qt: county et district sont toujours vides. On va les chercher dans le texte.
+        QStringList fieldlist = adresse.text().split(", ", Qt::SkipEmptyParts);
         // On mémorise les suggestions
-        m_suggestionModel->append(adresse.street(), "city", "Geo");
-        m_suggestionModel->append(adresse.district(), "city", "Geo");
-        m_suggestionModel->append(adresse.city(), "city", "Geo");
-        m_suggestionModel->append(adresse.county(), "city", "Geo");
-        m_suggestionModel->append(adresse.state(), "country", "Geo");
-        m_suggestionModel->append(adresse.country(), "country", "Geo");
+        foreach (QString field, fieldlist) {
+            bool isInt;
+            field.toInt(&isInt);
+            // Si c'est un numérique (ex: code postal), on l'ignore.
+            if (!isInt)
+            {
+                QString target = "city";
+                // qDebug() << "compare" << field << adresse.country() << adresse.state();
+                if (field == adresse.country()) target = "country";
+                else if (field == adresse.state()) target = "country";
+                m_suggestionModel->append(field, target, "Geo");
+            }
+        }
     }
 }
 
