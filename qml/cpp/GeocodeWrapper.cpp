@@ -22,8 +22,8 @@
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Le contructeur initialise le \e  Provider OSM.
- **/
+ * \brief Le contructeur initialise le \e Provider OSM. Le paramètre \a suggestion_model permet de savoir quel objet SuggestionModel appeler une fois les résultat reçus.
+ */
 GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 {
     m_suggestionModel = suggestion_model;
@@ -34,6 +34,7 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 
     QGeoServiceProvider* geoProvider = new QGeoServiceProvider(providerName, parameters);
     m_geoManager = geoProvider->geocodingManager();
+// cet objet n'est crée qu'une fois, et sera détruit à la sortie de l'application.
     connect(m_geoManager, SIGNAL(finished(QGeoCodeReply*)), this, SLOT(geoCodeFinished(QGeoCodeReply*)));
 
     qDebug()
@@ -46,7 +47,7 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS: \a latitude et \a longitude. (exemple: 38.980 et  1.433) \l {https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{result}
+ * \brief Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS: \a latitude et \a longitude. (Exemple: 38.980 et  1.433) \l {https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{result}
  */
 void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
 {
@@ -61,10 +62,9 @@ void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
 
 
 /* ********************************************************************************************************** */
-/**
- * @brief Signal appelé lors de la réception de la réponse à la request
- * @param reply : le contenu de la réponse
- * @example "Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"
+/*!
+ * \brief Signal appelé lors de la réception de la réponse à la request. Le paramètre \a reply contient le contenu de la réponse.
+* \note: Exemple: "Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"
  */
 void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
 {
@@ -87,5 +87,3 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
 }
 
 
-/* ********************************************************************************************************** */
-//    delete geoProvider;
