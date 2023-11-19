@@ -11,7 +11,7 @@
 /*!
  * \class PhotoModel
  * \inmodule TiPhotoLocator
- * \brief The PhotoModel class manages a list of photo Data.
+ * \brief The PhotoModel class manages a list of photo data.
  */
 
 // -----------------------------------------------------------------------
@@ -158,6 +158,7 @@ void PhotoModel::append(const QString filename, const QString url)
 // -----------------------------------------------------------------------
 /*!
  * \brief Adds an item to the model, from a dictionnary of metadata.
+ *
  * \a data : A dictionnary of key-value
  * \code
       QVariantMap map;
@@ -272,17 +273,35 @@ void PhotoModel::selectedRow(int row)
     emit selectedRowChanged(row);
 }
 
+/*!
+ * \brief Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion.
+ *
+ * \a row : indice de la photo.
+ * \a value : valeur de la propriété.
+ * \a property : nom de la propriété.
+ */
+void PhotoModel::setData(int row, QString value, QString property)
+{
+    QModelIndex index = this->index(row, 0);
+    //QVariant val = value;
+    int role = roleNames().key(property.toUtf8());
+    this->setData(index, value, role);
+}
+
 // -----------------------------------------------------------------------
 /*!
+ * \overload setData()
  * \brief Surcharge qui permet de modifier unitairement un role d'un item du modèle.
- * Cette fonction met à TRUE le flag "To Be Saved" car il s'agit d'une action opérateur.
+ *
+ * Returns \c true si la modification a réussi. \c False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
+ * Cette fonction met aussi à \c TRUE le flag \c "To Be Saved" car il s'agit d'une action opérateur.
  * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, etc.
+ * \sa {https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass}
  * Note: It is important to emit the dataChanged() signal after saving the changes.
+ *
  * \a index : l'index (au sens ModelIndex) de l'item à modifier.
  * \a value : la nouvelle valeur.
  * \a role : le role à modifier (LatitudeRole, LongitudeRole, ToBeSavedRole, city, country).
- * Returns \c true si la modification a réussi. \c False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
- * \sa {https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass}
  */
 bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
@@ -325,6 +344,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 
 // -----------------------------------------------------------------------
 /*!
+ * \overload setData()
  * \brief Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
  * Roles non modifiables (ignorés): imageUrl, insideCircle.
  * Roles non modifiables (recalculés): hasGPS, toBeSaved.
@@ -379,21 +399,6 @@ void PhotoModel::setData(const QVariantMap &value_list)
     emit dataChanged(changed_index, changed_index);
 }
 
-
-/*!
- * \brief Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion.
- *
- * \a row : indice de la photo.
- * \a value : valeur de la propriété.
- * \a property : nom de la propriété.
- */
-void PhotoModel::setData(int row, QString value, QString property)
-{
-    QModelIndex index = this->index(row, 0);
-    //QVariant val = value;
-    int role = roleNames().key(property.toUtf8());
-    this->setData(index, value, role);
-}
 
 // -----------------------------------------------------------------------
 /*!

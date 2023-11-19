@@ -13,22 +13,21 @@
 
 /*!
     \page index.html
-
-    \indexpage Index
-    \startpage TiPhotoLocator
     \title Index
+    \startpage TiPhotoLocator
 
+    The ultimate Photo Locator.
     \list
-        \li \l{TiPhotoLocator}
+        \li \l{TiPhotoLocator}{Les classes C++}
     \endlist
+
+    indexpage Index
 */
 
 /*!
     \module TiPhotoLocator
-
     \title TiPhotoLocator
-
-    \brief The ultimate Photo Locator.
+    \brief Les classes C++.
 
     TiPhotoLocator est developpé en C++ et en QML (avec le framework Qt version 6). \br
     Il lit et écrit les tags EXIF et IPTC des photos JPEG avec \l{https://exiftool.org}{exifTool}. \br

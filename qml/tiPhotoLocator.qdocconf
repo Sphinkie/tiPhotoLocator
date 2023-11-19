@@ -10,8 +10,8 @@ include(C:/Qt/Docs/Qt-6.6.0/global/fileextensions.qdocconf)
 include(C:/Qt/Docs/Qt-6.6.0/global/qt-html-templates-offline.qdocconf)
 
 # --------------------------------------------------------------------------------------
-# Commande de génération dans le terminal:
-# C:\Qt\6.6.0\mingw_64\bin\qdoc tiPhotoLocator.qdocconf
+# Commande de génération dans le "command prompt avec evironneemnt de build":
+# qdoc tiPhotoLocator.qdocconf
 #
 # Commande de génération avec traces de debug:
 # C:\Qt\6.6.0\mingw_64\bin\qdoc -debug tiPhotoLocator.qdocconf
@@ -56,7 +56,7 @@ headers.fileextensions  = "*.h *.hpp"
 sources.fileextensions  = "*.cpp *.qml *.qdoc"
 
 # The directory where QDoc places the generated documentation.
-outputdir   = ./doc/html
+outputdir   = ../docs/qdoc/html
 outputformats = HTML
 
 # The directories that contain the header files associated with the .cpp source files used in the documentation.
@@ -66,7 +66,7 @@ headerdirs  = .
 sourcedirs  = .
 
 # The directories that contain the source code of the example files.
-exampledirs = ./doc/examples
+exampledirs = ./examples
 
 # The directories that contain images used in the documentation.
 imagedirs   = ./doc/images

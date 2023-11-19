@@ -5,10 +5,7 @@
 #include <QString>
 #include "Models/PhotoModel.h"
 
-/*!
- * \class ExifReadTask
- * \brief The ExifReadTask class
- */
+
 class ExifReadTask : public QRunnable
 {
 public:

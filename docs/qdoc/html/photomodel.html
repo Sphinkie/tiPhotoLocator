@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <!-- PhotoModel.cpp -->
-  <meta name="description" content="The PhotoModel class manages a list of photo Data.">
+  <meta name="description" content="The PhotoModel class manages a list of photo data.">
   <title>PhotoModel Class | tiPhotoLocator</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
@@ -45,7 +45,7 @@
 <div class="sidebar-content" id="sidebar-content"></div></div>
 <h1 class="title" translate="no">PhotoModel Class</h1>
 <!-- $$$PhotoModel-brief -->
-<p>The PhotoModel class manages a list of photo Data. <a href="#details">More...</a></p>
+<p>The PhotoModel class manages a list of photo data. <a href="#details">More...</a></p>
 <!-- @@@PhotoModel -->
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;PhotoModel&gt;</span></td></tr>
@@ -61,7 +61,7 @@
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="photomodel.html#removeData" translate="no">removeData</a></b>(int <i>row</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="photomodel.html#removeSavedPosition" translate="no">removeSavedPosition</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="photomodel.html#saveMetadata" translate="no">saveMetadata</a></b>()</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="photomodel.html#setData-2" translate="no">setData</a></b>(int <i>row</i>, int <i>value</i>, int <i>property</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="photomodel.html#setData" translate="no">setData</a></b>(int <i>row</i>, int <i>value</i>, int <i>property</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="photomodel.html#setInCircleItemCoords" translate="no">setInCircleItemCoords</a></b>(double <i>lati</i>, double <i>longi</i>)</td></tr>
 </table></div>
 <!-- $$$PhotoModel-description -->
@@ -96,8 +96,8 @@
 <h3 class="fn" translate="no" id="saveMetadata"><span class="type">void</span> PhotoModel::<span class="name">saveMetadata</span>()</h3>
 <p>Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. Tags non-modifiés: Make, Model, Tags modifiés: coords GPS, Artist.</p>
 <!-- @@@saveMetadata -->
-<!-- $$$setData$$$setDataintintint -->
-<h3 class="fn" translate="no" id="setData-2"><span class="type">void</span> PhotoModel::<span class="name">setData</span>(<span class="type">int</span> <i>row</i>, <span class="type">int</span> <i>value</i>, <span class="type">int</span> <i>property</i>)</h3>
+<!-- $$$setData[overload1]$$$setDataintintint -->
+<h3 class="fn" translate="no" id="setData"><span class="type">void</span> PhotoModel::<span class="name">setData</span>(<span class="type">int</span> <i>row</i>, <span class="type">int</span> <i>value</i>, <span class="type">int</span> <i>property</i>)</h3>
 <p>Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion.</p>
 <p><i translate="no">row</i> : indice de la photo. <i translate="no">value</i> : valeur de la propriété. <i translate="no">property</i> : nom de la propriété.</p>
 <!-- @@@setData -->

@@ -23,9 +23,8 @@ SuggestionProxyModel::SuggestionProxyModel(QObject *parent) : QSortFilterProxyMo
 
 
 /* ************************************************************************ */
-/**
- * @brief SuggestionProxyModel::filterEnabled indique si le filtre est actif ou non.
- * @return TRUE si le filtre est actif.
+/*!
+ * \brief Returns \c true if the filering is active.
  */
 bool SuggestionProxyModel::filterEnabled() const
 {
@@ -34,9 +33,9 @@ bool SuggestionProxyModel::filterEnabled() const
 
 
 /* ************************************************************************ */
-/**
- * @brief Le slot SuggestionProxyModel::setFilterEnabled active ou désactive le filtrage par le ProxyModel.
- * @param enabled : TRUE pour activer le filtrage
+/*
+ * \brief Active ou désactive le filtrage par le ProxyModel.
+ * \a enabled : Mettre \c true pour activer le filtrage.
  */
 void SuggestionProxyModel::setFilterEnabled(bool enabled)
 {
@@ -48,12 +47,12 @@ void SuggestionProxyModel::setFilterEnabled(bool enabled)
 }
 
 /* ************************************************************************ */
-/**
- * @brief La méthode filterAcceptsRow() effectue le filtrage.
- * Elle laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo de mandée.
- * @param sourceRow : Le numero d'une ligne du modèle parent (SuggestionModel)
- * @param sourceParent : Le modèle parent (SuggestionModel)
- * @return True si la ligne est acceptée
+/*!
+ * \brief Laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo demandée.
+ * Returns \c true si la ligne est acceptée.
+ *
+ * \a sourceRow : Le numéro d'une ligne du modèle parent \l{SuggestionModel}. \br
+ * \a sourceParent : Le modèle parent \l{SuggestionModel}.
  */
 bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
@@ -70,10 +69,11 @@ bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
 }
 
 /* ************************************************************************ */
-/**
- * @brief SuggestionProxyModel::setFilterValue memorise le filtre à appliquer.
- * (Note: On n'utilise pas les slots par défaut du ProxyModel, tels que setFilterRole() et SetFilterFixedValue()...)
- * @param photoRow : l'indice de la photo pour laquelle on veut des suggestions
+/*!
+ * \brief Mémorise le filtre à appliquer.
+ * \note: On n'utilise pas les slots par défaut du ProxyModel, tels que setFilterRole() et SetFilterFixedValue()...)
+ *
+ * \a photoRow : L'indice de la photo pour laquelle on veut des suggestions.
  */
 void SuggestionProxyModel::setFilterValue(const int photoRow)
 {
@@ -87,8 +87,10 @@ void SuggestionProxyModel::setFilterValue(const int photoRow)
 /* ********************************************************************************** */
 /*!
  * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
- * On convertit l'indice du ProxyModel dans l'index du sourceModel.
- * \a proxyRow : l'indice dans le ProxyModel de la suggestion à modifier
+ *
+ * On convertit l'indice du \e proxyModel dans l'index du \e sourceModel.
+ *
+ * \a proxyRow : Indice dans le \e ProxyModel de la suggestion à modifier.
  */
 void SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)
 {

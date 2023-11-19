@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- ExifReadTask.cpp -->
+  <meta name="description" content="Tache asynchrone pour lire les metadonnées d'une photo.">
+  <title>ExifReadTask Class | tiPhotoLocator</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="tiphotolocator-module.html" translate="no">TiPhotoLocator</a></li>
+<li>ExifReadTask</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">ExifReadTask Class</h1>
+<!-- $$$ExifReadTask-brief -->
+<p>Tache asynchrone pour lire les metadonnées d'une photo. <a href="#details">More...</a></p>
+<!-- @@@ExifReadTask -->
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;ExifReadTask&gt;</span></td></tr>
+</table></div>
+<ul>
+<li><a href="exifreadtask-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="exifreadtask.html#run" translate="no">run</a></b>()</td></tr>
+</table></div>
+<!-- $$$ExifReadTask-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>* * *</p>
+<details>
+<summary>Exiftool</summary>
+<p>Description of <b>JSON</b> options for <code translate="no">ExifTool</code>.</p>
+<blockquote><p>-j[[+]=*JSONFILE*] (-json) Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified). This option may be combined with: -g to organize the output into objects by group, or -G to add group names to each tag. -a option is implied when -json is used, but entries with identical JSON names are suppressed in the output. -G4 may be used to ensure that all tags have unique JSON names. -D or -H option changes tag values to JSON objects with &quot;val&quot; and &quot;id&quot; fields -l adds a &quot;desc&quot; field, and a &quot;num&quot; field if the numerical value is different from the converted &quot;val&quot;. -b option may be added to output binary data, encoded in base64 if necessary (indicated by ASCII &quot;base64:&quot; as the first 7 bytes of the value) -t may be added to include tag table information (see -t for details).</p>
+<p>List-type tags with multiple items are output as JSON arrays unless -sep is used. The JSON output is UTF-8 regardless of any -L or -charset option setting, but the UTF-8 validation is disabled if a character set other than UTF-8 is specified. By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings). Note that ExifTool quotes JSON values only if they don't look like numbers (regardless of the original storage format or the relevant metadata specification).</p>
+</blockquote>
+</details>
+</div>
+<!-- @@@ExifReadTask -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$run[overload1]$$$run -->
+<h3 class="fn" translate="no" id="run"><code translate="no">[virtual] </code><span class="type">void</span> ExifReadTask::<span class="name">run</span>()</h3>
+<p>: Lancement de la tache. On lance <b>exifTool</b> dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread <a href="https://doc.qt.io/qt/qrunnable.html" translate="no">QRunnable</a>.</p>
+<!-- @@@run -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2023 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of The Qt Company Ltd. in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+</div>
+</body>
+</html>

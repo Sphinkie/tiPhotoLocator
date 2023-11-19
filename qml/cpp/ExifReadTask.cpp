@@ -7,6 +7,34 @@
 #include <QFile>
 #include <QDebug>
 
+
+/*!
+ * \class ExifReadTask
+ * \inmodule TiPhotoLocator
+ * \brief Tache asynchrone pour lire les metadonnées d'une photo.
+   \details Exiftool
+   Description of \b JSON options for \c ExifTool.
+   \quotation
+  -j[[+]=*JSONFILE*] (-json)
+  Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified).
+  This option may be combined with:
+    -g to organize the output into objects by group,
+    or -G to add group names to each tag.
+    -a option is implied when -json is used, but entries with identical JSON names are suppressed in the output.
+    -G4 may be used to ensure that all tags have unique JSON names.
+    -D or -H option changes tag values to JSON objects with "val" and "id" fields
+    -l adds a "desc" field, and a "num" field if the numerical value is different from the converted "val".
+    -b option may be added to output binary data, encoded in base64 if necessary (indicated by ASCII "base64:" as the first 7 bytes of the value)
+    -t may be added to include tag table information (see -t for details).
+
+    List-type tags with multiple items are output as JSON arrays unless -sep is used.
+    The JSON output is UTF-8 regardless of any -L or -charset option setting, but the UTF-8 validation is disabled if a character set other than UTF-8 is specified.
+    By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings).
+    Note that ExifTool quotes JSON values only if they don't look like numbers (regardless of the original storage format or the relevant metadata specification).
+  \endquotation
+  \enddetails
+*/
+
 // ------------------------------------------
 // Membres statiques
 // ------------------------------------------
@@ -28,9 +56,9 @@ ExifReadTask::ExifReadTask(QString filePath)
 }
 
 /* ********************************************************************************************************** */
-/**
- * @brief: Lancement de la tache. On lance exifTool dans un process, et on analyse la réponse.
- * Cette tache est exécutée dans un Thread.
+/*!
+ * \brief: Lancement de la tache. On lance \b exifTool dans un process, et on analyse la réponse.
+ * Cette tache est exécutée dans un thread QRunnable.
  */
 void ExifReadTask::run()
 {
@@ -72,10 +100,10 @@ void ExifReadTask::run()
 
 
 /* ********************************************************************************************************** */
-/**
- * @brief La méthode processLine() est appelée répétitivement et analyse une partie du flux texte reçu de exifTool.
- * @param line : the received text
- * @example pour le flux d'une image:
+/*!
+ * \brief Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement. \br
+ * \a line : the received text
+ * \quotation pour le flux d'une image:
         "[{\r\n"
         "  \"SourceFile\": \"E:/TiPhotos/P8160449.JPG\",\r\n"
         "  \"FileName\": \"P8160449.JPG\",\r\n"
@@ -90,6 +118,7 @@ void ExifReadTask::run()
         "  \"GPSLongitude\": 14.0194248700017,\r\n"
         "  \"City\": \"Paris\"\r\n"
         "}]\r\n"
+    \endquotation
  */
 void ExifReadTask::processLine(QByteArray line)
 {
@@ -120,9 +149,9 @@ void ExifReadTask::processLine(QByteArray line)
 }
 
 /* ********************************************************************************************************** */
-/**
- * @brief A appeler lors de la première utilisation. Mémorise quelques infos statiques.
- * @param photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
+/*
+ * \brief A appeler lors de la première utilisation. Mémorise quelques infos statiques. \br
+ * \a photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
  */
 void ExifReadTask::init(PhotoModel* photoModel)
 {
@@ -132,13 +161,15 @@ void ExifReadTask::init(PhotoModel* photoModel)
 
 
 /* ********************************************************************************************************** */
-/**
- * @brief List the tags to be read in the JPG files, and put them in the Arguments file for ExifTool.
- * @return true if the file was successfully created.
+/*!
+ * \brief List the tags to be read in the JPG files, and put them in the Arguments file for \c ExifTool.
+ * Returns \c true if the file was successfully created. \br
  * To learn about the usage of IPTC tags:
- * @see https://iptc.org/std/photometadata/documentation/mappingguidelines/
- * @see https://www.carlseibert.com/guide-iptc-photo-metadata-fields/
- **/
+ * \list
+ *   \li \l {https://iptc.org/std/photometadata/documentation/mappingguidelines/}
+ *   \li \l {https://www.carlseibert.com/guide-iptc-photo-metadata-fields/}
+ * \endlist
+ */
 bool ExifReadTask::writeArgsFile()
 {
     ExifReadTask::m_argFile = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/exiftool.args";
@@ -184,26 +215,5 @@ bool ExifReadTask::writeArgsFile()
     return true;
 }
 
-
-/*
- * Description of JSON options for ExifTool
- *
--j[[+]=*JSONFILE*] (-json)
-  Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified).
-  This option may be combined with:
-    -g to organize the output into objects by group,
-    or -G to add group names to each tag.
-    -a option is implied when -json is used, but entries with identical JSON names are suppressed in the output.
-    -G4 may be used to ensure that all tags have unique JSON names.
-    -D or -H option changes tag values to JSON objects with "val" and "id" fields
-    -l adds a "desc" field, and a "num" field if the numerical value is different from the converted "val".
-    -b option may be added to output binary data, encoded in base64 if necessary (indicated by ASCII "base64:" as the first 7 bytes of the value)
-    -t may be added to include tag table information (see -t for details).
-
-    List-type tags with multiple items are output as JSON arrays unless -sep is used.
-    The JSON output is UTF-8 regardless of any -L or -charset option setting, but the UTF-8 validation is disabled if a character set other than UTF-8 is specified.
-    By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings).
-    Note that ExifTool quotes JSON values only if they don't look like numbers (regardless of the original storage format or the relevant metadata specification).
-*/
 
 

@@ -39,6 +39,7 @@
 <h3 id="toc">Contents</h3>
 <ul>
 <li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
 <li class="level1"><a href="#details">Detailed Description</a></li>
 </ul>
 </div>
@@ -56,6 +57,11 @@
 <h2 id="public-functions">Public Functions</h2>
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="suggestionproxymodel.html#removePhotoFromSuggestion" translate="no">removePhotoFromSuggestion</a></b>(const int <i>proxyRow</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="suggestionproxymodel.html#setFilterValue" translate="no">setFilterValue</a></b>(const int <i>photoRow</i>)</td></tr>
+</table></div>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="suggestionproxymodel.html#filterAcceptsRow" translate="no">filterAcceptsRow</a></b>(int <i>sourceRow</i>, const int &amp;<i>sourceParent</i>) const override</td></tr>
 </table></div>
 <!-- $$$SuggestionProxyModel-description -->
 <div class="descr">
@@ -64,10 +70,26 @@
 <!-- @@@SuggestionProxyModel -->
 <div class="func">
 <h2>Member Function Documentation</h2>
+<!-- $$$filterAcceptsRow[overload1]$$$filterAcceptsRowintconstint& -->
+<h3 class="fn" translate="no" id="filterAcceptsRow"><code translate="no">[protected] </code><span class="type">bool</span> SuggestionProxyModel::<span class="name">filterAcceptsRow</span>(<span class="type">int</span> <i>sourceRow</i>, const <span class="type">int</span> &amp;<i>sourceParent</i>) const</h3>
+<p>Laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo demandée. Returns <code translate="no">true</code> si la ligne est acceptée.</p>
+<p><i translate="no">sourceRow</i> : Le numéro d'une ligne du modèle parent <a href="suggestionmodel.html" translate="no">SuggestionModel</a>. <br />
+ <i translate="no">sourceParent</i> : Le modèle parent <a href="suggestionmodel.html" translate="no">SuggestionModel</a>.</p>
+<!-- @@@filterAcceptsRow -->
 <!-- $$$removePhotoFromSuggestion[overload1]$$$removePhotoFromSuggestionconstint -->
 <h3 class="fn" translate="no" id="removePhotoFromSuggestion"><span class="type">void</span> SuggestionProxyModel::<span class="name">removePhotoFromSuggestion</span>(const <span class="type">int</span> <i>proxyRow</i>)</h3>
-<p>Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. On convertit l'indice du ProxyModel dans l'index du sourceModel. <i translate="no">proxyRow</i> : l'indice dans le ProxyModel de la suggestion à modifier</p>
+<p>Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.</p>
+<p>On convertit l'indice du <i>proxyModel</i> dans l'index du <i>sourceModel</i>.</p>
+<p><i translate="no">proxyRow</i> : Indice dans le <i>ProxyModel</i> de la suggestion à modifier.</p>
 <!-- @@@removePhotoFromSuggestion -->
+<!-- $$$setFilterValue[overload1]$$$setFilterValueconstint -->
+<h3 class="fn" translate="no" id="setFilterValue"><span class="type">void</span> SuggestionProxyModel::<span class="name">setFilterValue</span>(const <span class="type">int</span> <i>photoRow</i>)</h3>
+<p>Mémorise le filtre à appliquer.</p>
+<div class="admonition note">
+<p><b>Note: </b>: On n'utilise pas les slots par défaut du ProxyModel, tels que setFilterRole() et SetFilterFixedValue()...)</p>
+</div>
+<p><i translate="no">photoRow</i> : L'indice de la photo pour laquelle on veut des suggestions.</p>
+<!-- @@@setFilterValue -->
 </div>
         </div>
        </div>
