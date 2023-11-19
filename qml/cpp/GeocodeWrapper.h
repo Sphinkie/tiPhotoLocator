@@ -5,10 +5,7 @@
 #include <QtLocation/QGeoCodingManager>
 #include "Models/SuggestionModel.h"
 
-/*!
- * \class GeocodeWrapper
- * \brief The GeocodeWrapper class
- */
+
 class GeocodeWrapper : public QObject
 {
     Q_OBJECT
