@@ -5,7 +5,6 @@ import "../Components"
 
 Zone {
 
-    // width: 400
     property alias chipName: chipName
     property alias chipSize: chipSize
     property alias chipDate: chipDate
@@ -18,16 +17,21 @@ Zone {
     txtZone: qsTr("Summary")
     iconZone: "qrc:/Images/preview.png"
 
+    Text {
+        width: zonePreview.width
+        text: welcomeText
+        font.pointSize: 14
+        wrapMode: Text.WordWrap
+        // anchors.centerIn: zonePreview // A mettre si on veut positionner le texte à mi-hauteur.
+        horizontalAlignment: Text.AlignHCenter
+        color : TiStyle.primaryTextColor
+        textFormat: Text.StyledText
+    }
+
     ColumnLayout {
-        Text {
-            Layout.topMargin: 20
-            Layout.leftMargin: 10
-            text: welcomeText
-            font.pointSize: 14
-            wrapMode: Text.WordWrap
-        }
         Chips {
             id: chipName
+            Layout.topMargin: 20
             Layout.leftMargin: 20
             editable: false
             deletable: false

@@ -6,8 +6,14 @@ import "../Javascript/TiUtilities.js" as Utilities
 ZonePreviewForm {
 
     readonly property bool isphoto : ! tabbedPage.selectedData.isWelcome
+    // Styled text
+    readonly property string bienvenue:  qsTr("Bienvenue !")
+    readonly property string brief:  qsTr("<b>TiPhotoLocator</b> vous aide à géolocaliser et tagger vos photos.")
+    readonly property string usage:  qsTr("Pour commencer, ouvrez le répertoire contenant les photos avec le menu <pre>Dossiers → Ouvrir...</pre><br>Puis naviguez dans les onglets pour renseigner les différents tags.")
+    readonly property string note:  qsTr("<u>Note:</u> Les données modifiées sont enregistrées dans les photos, uniquement lors du clic sur le bouton <pre>'Enregistrer'</pre>.")
+    readonly property string br:  "<br><br>"
 
-    welcomeText : isphoto ? "" : qsTr("Bienvenue\n\nNote: Les données modifiées sont enregistrées dans les photos uniquement lors du clic sur le bouton 'Enregistrer'.")
+    welcomeText : isphoto ? "" : br + bienvenue + br + brief + br + usage + br + note;
 
     // On determine le contenu des champs ici, mais ça marche aussi si on le fait dans la vue.
 
