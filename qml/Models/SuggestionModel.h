@@ -4,9 +4,9 @@
 #include <QAbstractListModel>
 
 
-/**
- * @brief A data structure containing a tag suggestion, for one or several photos.
- */
+/* **********************************************************************************
+   A data structure containing a tag suggestion, for one or several photos.
+ * ********************************************************************************** */
 struct Suggestion
 {
     // Default constructor
@@ -37,6 +37,8 @@ struct Suggestion
 
 
 
+/* ********************************************************************************** */
+/* ********************************************************************************** */
 class SuggestionModel : public QAbstractListModel
 {
     Q_OBJECT

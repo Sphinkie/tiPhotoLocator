@@ -93,8 +93,15 @@
                 <parameter type="const int" name="target" default=""/>
                 <parameter type="const int" name="category" default=""/>
             </function>
+            <function name="data" fullname="SuggestionModel::data" href="suggestionmodel.html#data" status="active" access="private" location="SuggestionModel.h" filepath="D:/Mes Programmes/Windows/tiPhotoLocator/qml/Models/SuggestionModel.h" lineno="58" documented="true" meta="plain" const="true" override="true" type="int" brief="Returns the requested role value of an element of the model" signature="int data(const int &amp;, int) const override">
+                <parameter type="const int &amp;" name="" default=""/>
+                <parameter type="int" name="" default=""/>
+            </function>
             <function name="removeCurrentPhotoFromSuggestion" fullname="SuggestionModel::removeCurrentPhotoFromSuggestion" href="suggestionmodel.html#removeCurrentPhotoFromSuggestion" status="active" access="private" location="SuggestionModel.h" filepath="D:/Mes Programmes/Windows/tiPhotoLocator/qml/Models/SuggestionModel.h" lineno="64" documented="true" meta="plain" type="void" brief="Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. Le paramètre index est l'index dans le Model de la suggestion à modifier" signature="void removeCurrentPhotoFromSuggestion(const int index)">
                 <parameter type="const int" name="index" default=""/>
+            </function>
+            <function name="rowCount" fullname="SuggestionModel::rowCount" href="suggestionmodel.html#rowCount" status="active" access="private" location="SuggestionModel.h" filepath="D:/Mes Programmes/Windows/tiPhotoLocator/qml/Models/SuggestionModel.h" lineno="57" documented="true" meta="plain" const="true" override="true" type="int" brief="Returns the number of elements in the model" signature="int rowCount(const int &amp;parent) const override">
+                <parameter type="const int &amp;" name="parent" default=""/>
             </function>
         </class>
         <class name="SuggestionProxyModel" href="suggestionproxymodel.html" status="active" access="public" location="SuggestionProxyModel.h" filepath="D:/Mes Programmes/Windows/tiPhotoLocator/qml/Models/SuggestionProxyModel.h" lineno="7" documented="true" module="TiPhotoLocator" brief="If a filter ProxyModel, that filters the suggestions related to a given photo">

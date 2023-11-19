@@ -31,11 +31,11 @@ int SuggestionModel::rowCount(const QModelIndex& parent) const
 
 
 /* ********************************************************************************** */
-/**
- * @brief The method data() returns the requeted role value of an element of the model. Implémentation obligatoire.
- * @param index: index of the element of the model
- * @param role: the requested role (enum)
- * @return the value of the role for this element.
+/*!
+ * \brief Returns the requested role value of an element of the model.
+ * \note: Implémentation obligatoire.
+ * \a index: index of the element of the model.
+ * \a role: the requested role (enum).
  */
 QVariant SuggestionModel::data(const QModelIndex &index, int role) const
 {
@@ -138,7 +138,7 @@ void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 
 
 /* ********************************************************************************** */
-/*!
+/*
  * \brief Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
  * \a row: La position dans PhotoModel de la photo active.
  */
