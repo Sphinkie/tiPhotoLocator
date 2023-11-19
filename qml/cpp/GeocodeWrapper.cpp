@@ -6,15 +6,23 @@
 
 #include "GeocodeWrapper.h"
 
-// Attention: Ajouter les lignes suivantes dans le fichier .pro
-// QT += positioning
-// QT += location
+/*!
+ * \class GeocodeWrapper
+ * \inmodule TiPhotoLocator 
+ * \brief The GeocodeWrapper class allows requests to OpenStreetMap for reverse geocoding.
+* 
+* \note: Ajouter les lignes suivantes dans le fichier \c .pro.
+* \code
+    QT += positioning
+    QT += location
+* \endcode
+*/
 
-// #define QT_NO_DEBUG_OUTPUT
+#define QT_NO_DEBUG_OUTPUT
 
 /* ********************************************************************************************************** */
-/**
- * @brief Contructeur.
+/*!
+ * \brief Le contructeur initialise le \e  Provider OSM.
  **/
 GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 {
@@ -37,16 +45,12 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 }
 
 /* ********************************************************************************************************** */
-/**
- * @brief Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS.
- * @param lati : latitude
- * @param longi : Longitude
- * @example: 38.980   1.433
- * @see https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway
- **/
-void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
+/*!
+ * \brief Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS: \a latitude et \a longitude. (exemple: 38.980 et  1.433) \l {https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{result}
+ */
+void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
 {
-    QGeoCoordinate coordinate = QGeoCoordinate(lati, longi);
+    QGeoCoordinate coordinate = QGeoCoordinate(latitude, longitude);
     QGeoCodeReply* geoReply = m_geoManager->reverseGeocode(coordinate);
 
     // On regarde s'il y a une erreur immédiate
