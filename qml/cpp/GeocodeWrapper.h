@@ -20,7 +20,7 @@ public slots:
     // -----------------------------------
     // Slots
     // -----------------------------------
-    void requestReverseGeocode(double lati, double longi);
+    void requestReverseGeocode(double latitude, double longitude);
 
 private slots:
     void geoCodeFinished(QGeoCodeReply* reply);
