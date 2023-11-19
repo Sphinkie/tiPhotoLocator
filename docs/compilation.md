@@ -15,6 +15,9 @@ To compile the sources of this application, you need the Qt framework (Qt6).
       * Qt Installer framework
       * Additional libraries:
          * Qt Locator
-         * Qt Positionning
+         * Qt Positioning
    * OpenSSL *(binaries only)*
 
+## Documentation
+
+The html documentation for the developers is available [here](github.io/sphinkie/TiPhotoLocator/docs/html/TiPhotoLocator-module.html).
