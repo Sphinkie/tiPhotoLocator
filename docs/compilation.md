@@ -20,4 +20,4 @@ To compile the sources of this application, you need the Qt framework (Qt6).
 
 ## Documentation
 
-The html documentation for the developers is available [here](github.io/sphinkie/TiPhotoLocator/docs/html/TiPhotoLocator-module.html).
+The html documentation for the developers is available [here](HTTPS://sphikie.github.io/TiPhotoLocator/docs/html/TiPhotoLocator-module.html).
