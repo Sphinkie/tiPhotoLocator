@@ -13,9 +13,11 @@ But, if you don't have recorded any GPX file, or if your photos are older than h
 
 ### Exif and IPTC tags
 
-Les données **EXIF** et les données **IPTC** sont deux types de métadonnées utilisées dans la photographie numérique.
+**EXIF** and **IPTC** metadata are two different types of metadata, used in digital photography.
 
-Les données **EXIF** sont générées automatiquement par l'appareil photo et contiennent des informations techniques sur la prise de vue, tandis que les données **IPTC** sont des métadonnées ajoutées manuellement par l'utilisateur et contenant des informations éditoriales, telles que le titre, la description, les droits d'auteur, etc.
+**EXIF** metadata are usually generated automatically by the digital camera and contain technical information about the shot.
+
+**IPTV** metadata are filled manually by humans and contain editorial information such as the *title*, the *description*, *copy rights*, etc.
 
 Details concerning the tags used by the application are on [this page](docs/about_tags.md)
 
