@@ -15,11 +15,12 @@
 SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
 {}
 
+
 /* ********************************************************************************** */
-/**
- * @brief rowCount returns the number of elements in the model. Implémentation obligatoire.
- * @param parent: parent of the model
- * @return the number of elements in the model
+/*!
+ * \brief Returns the number of elements in the model.
+ * \note: Implémentation obligatoire.
+ * \a parent: parent of the model
  */
 int SuggestionModel::rowCount(const QModelIndex& parent) const
 {
@@ -72,11 +73,11 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 
 
 /* ********************************************************************************** */
-/**
- * @brief This append() method adds a suggestion to the model.
- * @param text: text of the suggestion
- * @param target: the name of the Exif tag compatible with this suggestion
- * @param category: the category of the suggestion ("Geo", ... )
+/*!
+ * \brief Adds a suggestion to the model. \br
+ * \a text: text of the suggestion. \br
+ * \a target: the name of the Exif tag compatible with this suggestion. \br
+ * \a category: the category of the suggestion ("Geo", ... )
  */
 void SuggestionModel::append(const QString text, const QString target, const QString category)
 {
@@ -104,10 +105,10 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
 
 
 /* ********************************************************************************** */
-/**
- * @brief La méthode addCurrentPhotoToSuggestion() ajoute la photo actuellement sélectionnée
- * à la liste des photos ayant un "match" avec cette suggestion.
- * @param row: l'indice de la suggestion à modifier
+/*!
+ * \brief Ajoute la photo actuellement sélectionnée à la liste des photos ayant un
+ * "match" avec cette suggestion.
+ * Le paramètre \a row est l'indice de la suggestion à modifier.
  */
 void SuggestionModel::addCurrentPhotoToSuggestion(int row)
 {
@@ -120,9 +121,10 @@ void SuggestionModel::addCurrentPhotoToSuggestion(int row)
 }
 
 
-/*! **********************************************************************************
- * \brief Le slot removePhoto() enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
- * \a index : l'index dans le Model de la suggestion à modifier
+/* ********************************************************************************** */
+/*!
+ * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
+ * Le paramètre \a index est l'index dans le Model de la suggestion à modifier.
  */
 void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 {
@@ -136,9 +138,9 @@ void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 
 
 /* ********************************************************************************** */
-/**
- * @brief Le slot onSelectedPhotoChanged() reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
- * @param row: La position dans PhotoModel de la photo active
+/*!
+ * \brief Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
+ * \a row: La position dans PhotoModel de la photo active.
  */
 void SuggestionModel::onSelectedPhotoChanged(const int row)
 {

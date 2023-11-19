@@ -3,8 +3,8 @@
 # --------------------------------------------------------------------------------------
 # For compatibility issues, include compat.qdocconf:
 include(C:/Qt/Docs/Qt-6.6.0/global/compat.qdocconf)
-# include(C:/Qt/Docs/Qt-6.6.0/global/config.qdocconf)
-# include(C:/Qt/Docs/Qt-6.6.0/global/macros.qdocconf)
+#include(C:/Qt/Docs/Qt-6.6.0/global/config.qdocconf)
+#include(C:/Qt/Docs/Qt-6.6.0/global/macros.qdocconf)
 include(C:/Qt/Docs/Qt-6.6.0/global/qt-cpp-defines.qdocconf)
 include(C:/Qt/Docs/Qt-6.6.0/global/fileextensions.qdocconf)
 include(C:/Qt/Docs/Qt-6.6.0/global/qt-html-templates-offline.qdocconf)
@@ -21,7 +21,7 @@ include(C:/Qt/Docs/Qt-6.6.0/global/qt-html-templates-offline.qdocconf)
 # Voir "The Qt Help Framework": https://doc.qt.io/qt-6/qthelp-framework.html
 # Ajout du fichier ".qch" dans Qt Creator : Menu Edit > Preferences > Help > Documentation > Add.
 #
-# qhelpgenerator mydoc.qhp -o mydoc.qch
+# qhelpgenerator tiPhotoLocator.qhp -o tiPhotoLocator.qch
 # --------------------------------------------------------------------------------------
 
 # Variable globale: chemin des .index de Qt
@@ -33,7 +33,8 @@ project = tiPhotoLocator
 description = The ultimate Photo Locator
 
 # Additional include paths to QDoc when parsing C++ code for documentation comments.
-includepaths += -I ./cpp
+# Equivalent au -I de la ligne de commande
+includepaths += ./cpp
 
 # defines += QT_GUI_LIB
 

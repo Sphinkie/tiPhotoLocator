@@ -218,10 +218,10 @@ void PhotoModel::removeSavedPosition()
 /*!
  * \brief Affecte les coordonnées GPS fournies à toutes les photos
  * géographiquement situées à l'interieur du cercle rouge.
- * \a lati : latitude au format GPS.
- * \a longi : longitude au format GPS.
+ * \a latitude au format GPS.
+ * \a longitude au format GPS.
  */
-void PhotoModel::setInCircleItemCoords(double lati, double longi)
+void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
 {
     // On parcourt tous les items du modèle (par leur index dans le modèle)
     int row = 0;
@@ -232,8 +232,8 @@ void PhotoModel::setInCircleItemCoords(double lati, double longi)
         // Si la photo est dans le cercle, on modifie ses coords GPS
         if (idx.data(InsideCircleRole).toBool())
         {
-            setData(idx, lati, LatitudeRole);
-            setData(idx, longi, LongitudeRole);
+            setData(idx, latitude, LatitudeRole);
+            setData(idx, longitude, LongitudeRole);
             // Vérification
             qDebug() << "PhotoModel: set latitude" << idx.data(LatitudeRole).toDouble() << "for" << idx.data(FilenameRole).toString();
         }

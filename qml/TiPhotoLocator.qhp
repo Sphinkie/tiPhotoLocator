@@ -2,13 +2,13 @@
 <QtHelpProject version="1.0">
     <namespace>de-lorenzo.fr.tiphotolocator.1.0</namespace>
     <virtualFolder>doc</virtualFolder>
-    <customFilter name="TiPhotoLocator 1.0">
-        <filterAttribute>myapp</filterAttribute>
-        <filterAttribute>1.0</filterAttribute>
+    <customFilter name="TiPhotoLocator">
+        <filterAttribute>TiPhotoLocator</filterAttribute>
+        <!--filterAttribute>1.0</filterAttribute-->
     </customFilter>
     <filterSection>
-        <filterAttribute>myapp</filterAttribute>
-        <filterAttribute>1.0</filterAttribute>
+        <filterAttribute>TiPhotoLocator</filterAttribute>
+        <!--filterAttribute>1.0</filterAttribute-->
         <toc>
             <section title="TiPhotoLocator Manual" ref="index.html">
                 <section title="Chapter 1" ref="doc.html#chapter1"/>
@@ -22,8 +22,8 @@
             <keyword id="MyApplication::foobar" ref="doc.html#foobar"/>
         </keywords>
         <files>
-            <file>classic.css</file>
-            <file>*.html</file>
+            <file>../docs/qdoc/html/style/offline.css</file>
+            <file>../docs/qdoc/html/*.html</file>
         </files>
     </filterSection>
 </QtHelpProject>

@@ -69,5 +69,6 @@
         <file>Components/TiTabButton.qml</file>
         <file>Images/bt-revert.png</file>
         <file>Images/preview.png</file>
+        <file>tiPhotoLocator.qch</file>
     </qresource>
 </RCC>

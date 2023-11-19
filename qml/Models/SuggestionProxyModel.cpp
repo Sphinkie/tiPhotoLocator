@@ -11,7 +11,7 @@
  * \brief The SuggestionProxyModel class if a filter ProxyModel, that filters the suggestions related to a given photo.
  */
 
-/* ************************************************************************ */
+/* ********************************************************************************** */
 /*
  * \brief Contructeur.
  * \a parent : modèle source
@@ -22,7 +22,7 @@ SuggestionProxyModel::SuggestionProxyModel(QObject *parent) : QSortFilterProxyMo
 }
 
 
-/* ************************************************************************ */
+/* ********************************************************************************** */
 /*!
  * \brief Returns \c true if the filering is active.
  */
@@ -32,7 +32,7 @@ bool SuggestionProxyModel::filterEnabled() const
 }
 
 
-/* ************************************************************************ */
+/* ********************************************************************************** */
 /*
  * \brief Active ou désactive le filtrage par le ProxyModel.
  * \a enabled : Mettre \c true pour activer le filtrage.
@@ -46,7 +46,7 @@ void SuggestionProxyModel::setFilterEnabled(bool enabled)
     invalidateFilter();
 }
 
-/* ************************************************************************ */
+/* ********************************************************************************** */
 /*!
  * \brief Laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo demandée.
  * Returns \c true si la ligne est acceptée.
@@ -68,7 +68,7 @@ bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
     return (photo_ok);
 }
 
-/* ************************************************************************ */
+/* ********************************************************************************** */
 /*!
  * \brief Mémorise le filtre à appliquer.
  * \note: On n'utilise pas les slots par défaut du ProxyModel, tels que setFilterRole() et SetFilterFixedValue()...)

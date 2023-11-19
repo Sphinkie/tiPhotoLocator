@@ -11,10 +11,18 @@
 /*!
  * \class ExifReadTask
  * \inmodule TiPhotoLocator
- * \brief Tache asynchrone pour lire les metadonnées d'une photo.
+ * \brief La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo.
+
+ Méthode par utilisation de QThreadPool.
+
+ \note:
+    les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.\br
+    Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct.
+    Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données se fait par appel synchrone.
+
    \details Exiftool
    Description of \b JSON options for \c ExifTool.
-   \quotation
+   \code
   -j[[+]=*JSONFILE*] (-json)
   Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified).
   This option may be combined with:
@@ -31,7 +39,7 @@
     The JSON output is UTF-8 regardless of any -L or -charset option setting, but the UTF-8 validation is disabled if a character set other than UTF-8 is specified.
     By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings).
     Note that ExifTool quotes JSON values only if they don't look like numbers (regardless of the original storage format or the relevant metadata specification).
-  \endquotation
+  \endcode
   \enddetails
 */
 
