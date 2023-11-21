@@ -38,8 +38,7 @@ Window {
             anchors.bottom: element0.bottom
             anchors.bottomMargin: -10
             anchors.leftMargin: 10
-            width: 200
-            height: 40
+            width: 200; height: 30
             placeholderText: qsTr("Enter your name here")
         }
         Text {
@@ -71,7 +70,7 @@ Window {
             anchors.bottom: element4.bottom
             anchors.bottomMargin: -10
             anchors.leftMargin: 20
-            width: 90; height: 40;
+            width: 90; height: 30;
             placeholderText: qsTr("initiales")
         }
         Text {
@@ -102,7 +101,7 @@ Window {
             anchors.bottom: element6.bottom
             anchors.bottomMargin: -10
             anchors.leftMargin: 10
-            width: 200; height: 40;
+            width: 200; height: 30;
             text: "TiPhotoLocator"
             enabled: false
         }
@@ -217,6 +216,24 @@ Window {
             y: 0
             text: "Debug mode"
         }
+        Text {
+            id: element8
+            anchors.left: checkBoxDebug.right
+            // anchors.right: textFieldHomecity.left
+            anchors.margins: 10
+            anchors.verticalCenter: checkBoxDebug.verticalCenter
+            text: qsTr("Centrage carte:")
+            font.pixelSize: 12
+        }
+        TextField {
+            id: textFieldHomecity
+            anchors.left: element8.right
+            //anchors.right: groupBox3.right
+            anchors.verticalCenter: checkBoxDebug.verticalCenter
+            anchors.margins: 10
+            width: 200; height: 30;
+            placeholderText :qsTr("Votre ville la plus photographiée")
+        }
     }
 
     // ------------------------------------------------------------------
@@ -260,7 +277,8 @@ Window {
         //category: "configuration"
         property alias photographe: textFieldName.text
         property alias initiales: textFieldInitials.text
-        property alias software: textFieldSoftware.text
+        property alias software : textFieldSoftware.text
+        property alias homecity : textFieldHomecity.text
         property alias artistEnabled: checkBoxArtist.checked
         property alias captionEnabled: checkBoxCaption.checked
         property alias imgDescEnabled: checkBoxImgDesc.checked
