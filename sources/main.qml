@@ -3,7 +3,7 @@ import QtQml.Models
 import QtQuick.Window
 import QtQuick.Layouts
 import QtQuick.Controls
-import Qt.labs.settings
+import QtCore                       //  Qt.labs.settings
 
 import "./Dialogs"
 import "./Components"
@@ -36,6 +36,7 @@ Window {
     signal saveMetadata()
     signal hasPos()
     signal requestReverseGeocode(double lati, double longi)
+    signal requestCoords(string city)
     signal setSuggestionFilter(int row)
     signal setPhotoProperty(int index, string texte, string target)
     signal removePhotoFrom(int row)
@@ -154,6 +155,8 @@ Window {
                 console.log("refreshSelectedData");
                 var currentrow = selectedData.row;
                 selectedData = _photoListModel.get(currentrow);
+                //console.log(settings.homeCoords.x);
+                //console.log(settings.homeCoords.y);
             }
 
 
@@ -166,8 +169,8 @@ Window {
                 Layout.fillWidth: true
                 // Les coordonnées du point sélectionné
                 // Actualisé lors d'un clic sur la listView, ou sur la carte.
-                property double photoLatitude: 0
-                property double photoLongitude: 0
+                property double photoLatitude: settings.homeCoords.x
+                property double photoLongitude: settings.homeCoords.y
                 columnSpacing: 8
                 rows: 3     // toolbar et carte/zones
                 columns: 2  // carte et zone des tags
@@ -199,12 +202,12 @@ Window {
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
                 }
-//                Zone{
-//                  Layout.rightMargin: 40
-//                  Layout.fillHeight: true
-//                  color: TiStyle.trashcanBackgroundColor
-//                  iconZone: "qrc:/Images/trashcan.png"
-//                }
+                //                Zone{
+                //                  Layout.rightMargin: 40
+                //                  Layout.fillHeight: true
+                //                  color: TiStyle.trashcanBackgroundColor
+                //                  iconZone: "qrc:/Images/trashcan.png"
+                //                }
             }
 
             // ------------------ IPTC/EXIF TAGS TAB ----------------------------
@@ -233,8 +236,15 @@ Window {
     }
 
 
-}
+    // ----------------------------------------------------------------
+    // Lecture des settings
+    // ----------------------------------------------------------------
+    Settings {
+        id: settings
+        property point homeCoords
+    }
 
+}
 
 
 /*##^##

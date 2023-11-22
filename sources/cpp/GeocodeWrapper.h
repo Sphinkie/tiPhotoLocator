@@ -21,7 +21,7 @@ public slots:
     // Slots
     // -----------------------------------
     void requestReverseGeocode(double latitude, double longitude);
-    void requestCoordinates(QString location);
+    void requestCoordinates(QString city);
 
 private slots:
     void geoCodeFinished(QGeoCodeReply* reply);

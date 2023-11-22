@@ -58,7 +58,7 @@ Rectangle {
         }
     }
     // ----------------------------------------------------------------
-    // On mémorise la ckeckbox dans les settings
+    // On mémorise la ckeckbox dans les Settings
     // ----------------------------------------------------------------
     Settings {
         id: reglages2  // A enlever ?

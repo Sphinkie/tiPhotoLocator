@@ -7,7 +7,7 @@ import "../Components"
 Window {
     width: 560
     height: 720
-    property alias buttonOk: buttonOk
+    property alias buttonClose: buttonClose
 
     // ------------------------------------------------------------------
     // ---------------- Group Box 1 "Default values"
@@ -19,7 +19,7 @@ Window {
         anchors.leftMargin: 10
         anchors.topMargin: 20
         width: parent.width-20
-        height: 200
+        height: 160
         title: qsTr("Valeurs par défaut")
 
         // ------------------------------------------------------------------
@@ -30,7 +30,7 @@ Window {
             x: 0;
             y: 10;
             text: qsTr("Nom du photographe:")
-            font.pixelSize: 14
+            font.pixelSize: 12
         }
         TextField {
             id: textFieldName
@@ -48,7 +48,7 @@ Window {
             anchors.leftMargin: 10
             color: TiStyle.tertiaryTextColor
             text: "Creator (IPTC)"
-            font.pixelSize: 14
+            font.pixelSize: 12
             style: Text.Normal
         }
 
@@ -60,9 +60,9 @@ Window {
             // positionnement par rapport à Element0
             anchors.left: element0.left
             anchors.top: element0.bottom
-            anchors.topMargin: 30
+            anchors.topMargin: 20
             text: qsTr("Initiales du rédacteur des descriptions:")
-            font.pixelSize: 14
+            font.pixelSize: 12
         }
         TextField {
             id: textFieldInitials
@@ -80,7 +80,7 @@ Window {
             anchors.leftMargin: 10
             color: TiStyle.tertiaryTextColor
             text: "Description Writer (IPTC)"
-            font.pixelSize: 14
+            font.pixelSize: 12
             style: Text.Normal
         }
 
@@ -91,9 +91,9 @@ Window {
             id: element6
             anchors.left: element0.left
             anchors.top: element4.bottom
-            anchors.topMargin: 30
+            anchors.topMargin: 20
             text: qsTr("Signature application:")
-            font.pixelSize: 14
+            font.pixelSize: 12
         }
         TextField {
             id: textFieldSoftware
@@ -112,7 +112,7 @@ Window {
             anchors.leftMargin: 10
             color: TiStyle.tertiaryTextColor
             text: "Software (Exif)"
-            font.pixelSize: 14
+            font.pixelSize: 12
             style: Text.Normal
         }
     }
@@ -139,7 +139,7 @@ Window {
             x: 0
             y: 0
             text: qsTr("Tag utilisé pour enregistrer le nom du photographe:")
-            font.pixelSize: 14
+            font.pixelSize: 12
         }
         CheckBox {
             id: checkBoxCreator
@@ -168,9 +168,9 @@ Window {
             id: element3
             anchors.left: element2.left
             anchors.top: element2.bottom
-            anchors.topMargin: 60
+            anchors.topMargin: 40
             text: qsTr("Tag utilisé pour enregistrer la description de l'image:")
-            font.pixelSize: 14
+            font.pixelSize: 12
         }
         CheckBox {
             id: checkBoxDescription
@@ -207,7 +207,7 @@ Window {
         anchors.leftMargin: 10
         anchors.topMargin: 20
         width: parent.width - 20
-        height: 80
+        height: 120
         title: qsTr("Divers:")
 
         CheckBox {
@@ -234,6 +234,32 @@ Window {
             width: 200; height: 30;
             placeholderText :qsTr("Votre ville la plus photographiée")
         }
+        Text {
+            id: element10
+            anchors.left: textFieldHomecity.right
+            anchors.bottom: element8.bottom
+            anchors.leftMargin: 10
+            color: TiStyle.tertiaryTextColor
+            text: "(Needs restart)"
+            font.pixelSize: 12
+            style: Text.Normal
+        }
+
+        Text {
+            id: element9
+            anchors.left: checkBoxDebug.left
+            anchors.top: checkBoxDebug.bottom
+            anchors.margins: 10
+            text: qsTr("Langue des tags:")
+            font.pixelSize: 12
+        }
+        ComboBox{
+            id: tagLanguages
+            anchors.left: element9.right
+            anchors.verticalCenter: element9.verticalCenter
+            anchors.margins: 10
+            model: ["English", "System language"]
+        }
     }
 
     // ------------------------------------------------------------------
@@ -258,13 +284,15 @@ Window {
     // ---------------- Buttons
     // ------------------------------------------------------------------
     Button {
-        id: buttonOk
+        id: buttonClose
         anchors.top: groupBox4.bottom; anchors.topMargin: 20
         anchors.right: groupBox4.right; anchors.rightMargin: 60
         width: 100
         text: qsTr("Fermer")
         onClicked: {
-            close()
+        console.log("onClicked -> request coords " + reglages.homecity);
+        window.requestCoords(reglages.homecity);
+            close();
         }
     }
 
@@ -283,6 +311,7 @@ Window {
         property alias captionEnabled: checkBoxCaption.checked
         property alias imgDescEnabled: checkBoxImgDesc.checked
         property alias debugModeEnabled: checkBoxDebug.checked
+        property alias tagLanguage: tagLanguages.currentIndex
     }
 
 }

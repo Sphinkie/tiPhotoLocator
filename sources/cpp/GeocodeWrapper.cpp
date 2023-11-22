@@ -57,24 +57,31 @@ void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
 
     // On regarde s'il y a une erreur immédiate
     if (geoReply->isFinished())
+    {
         qWarning() << "requestReverseGeocode" << geoReply->error();
+        geoReply->deleteLater();
+    }
 }
 
 
 /* ********************************************************************************************************** */
 /*
  * \brief Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre \a location.
- * Exemple: "Marsa-el-Brega" => \l {https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{result}
+ * Exemple: "Marsa-el-Brega"
  */
-void GeocodeWrapper::requestCoordinates(QString location)
+void GeocodeWrapper::requestCoordinates(QString city)
 {
     QGeoAddress adresse = QGeoAddress();
-    adresse.setCity(location);
+    adresse.setCity(city);
     QGeoCodeReply* geoReply = m_geoManager->geocode(adresse);
+    geoReply->setProperty("coordOnly", true);
 
     // On regarde s'il y a une erreur immédiate
     if (geoReply->isFinished())
+    {
         qWarning() << "requestCoordinates" << geoReply->error();
+        geoReply->deleteLater();
+    }
 }
 
 
@@ -82,6 +89,8 @@ void GeocodeWrapper::requestCoordinates(QString location)
 /*
  * \brief Signal appelé lors de la réception de la réponse à la request. Le paramètre \a reply contient le contenu de la réponse.
  * \note: Exemple: "Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"
+ * En cas de réponse à une demande de coordonnées: on les mémorise dans le QSettings "homeCoords".
+ * En cas de réponse à une demande de reverse Localisation, on passe les réponses au SuggestionModel.
  */
 void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
 {
@@ -90,28 +99,39 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         qWarning() << reply->errorString();
     else if (reply->locations().count() >0)
     {
+        // On regarde quel type de requete était à l'origine de cette réponse
+        QVariant replyType = reply->property("coordOnly");
         QGeoLocation geolocation = reply->locations().value(0);
-        const QGeoAddress adresse = geolocation.address();
         // CAS 1 : On avait demandé des coords
-        // TODO
-        // On extrait les coords de la réponse
-        // On mémorise les coords dans un settings
-        // Cas 2 : On avait demandé des suggestions
-        qDebug() << adresse.text();
-        // Il y a un bug dans Qt: county et district sont toujours vides. On va les chercher dans le texte.
-        QStringList fieldlist = adresse.text().split(", ", Qt::SkipEmptyParts);
-        // On mémorise les suggestions
-        foreach (QString field, fieldlist) {
-            bool isInt;
-            field.toInt(&isInt);
-            // Si c'est un numérique (ex: code postal), on l'ignore.
-            if (!isInt)
-            {
-                QString target = "city";
-                // qDebug() << "compare" << field << adresse.country() << adresse.state();
-                if (field == adresse.country()) target = "country";
-                else if (field == adresse.state()) target = "country";
-                m_suggestionModel->append(field, target, "Geo");
+        if (replyType.isValid())
+        {
+            // On extrait les coords de la réponse
+            QGeoCoordinate coords = geolocation.coordinate();
+            // On mémorise les coords dans un settings
+            QSettings settings;
+            settings.setValue("homeCoords", QPointF(coords.latitude(), coords.longitude()));
+        }
+        else
+        {
+            // Cas 2 : On avait demandé des suggestions
+            const QGeoAddress adresse = geolocation.address();
+            qDebug() << adresse.text();
+            // Il y a un bug dans Qt: county et district sont toujours vides. On va les chercher dans le texte.
+            QStringList fieldlist = adresse.text().split(", ", Qt::SkipEmptyParts);
+            // On mémorise les suggestions
+            foreach (QString field, fieldlist) {
+                bool isInt;
+                field.toInt(&isInt);
+                // Si c'est un numérique (ex: code postal), on l'ignore.
+                if (!isInt)
+                {
+                    QString target;
+                    // qDebug() << "compare" << field << adresse.country() << adresse.state();
+                    if (field == adresse.country()) target = "country";
+                    else if (field == adresse.state()) target = "country";
+                    else target = "city";
+                    m_suggestionModel->append(field, target, "Geo");
+                }
             }
         }
     }

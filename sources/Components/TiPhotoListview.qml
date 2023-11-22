@@ -6,7 +6,6 @@ import QtQuick.Layouts
 ListView{
     anchors.fill: parent
     model: _unlocalizedProxyModel  // Activation de la checkbox "has GPS"
-//    model: _photoListModel
     delegate: listDelegate
     focus: true
     clip: true   // pour que les items restent à l'interieur de la listview
@@ -103,11 +102,12 @@ ListView{
                         mapTab.photoLatitude = latitude;
                         mapTab.photoLongitude = longitude;
                     }
+                    // sinon: la position de la carte reste inchangée
+
                     // On change le filtrage des suggestions
                     window.setSuggestionFilter(sourceindex);
                 }
             }
-
         }
     }
 }

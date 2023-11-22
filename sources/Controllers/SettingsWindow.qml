@@ -10,15 +10,11 @@ SettingsWindowForm {
         settingsWindow.show();
     }
 
-
- /*
-   buttonOk.onClicked: {
-        reglages.setValue("debugMode2", checkBoxDebug.checked);
-        console.log(reglages.value("debugMode2", false));
+/*
+   buttonClose.onClicked: {
         settingsWindow.close()
     }
 */
-
 
 
 

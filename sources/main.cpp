@@ -3,6 +3,8 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QQuickItem>
+#include <QSettings>
+
 #include "Models/PhotoModel.h"
 #include "Models/SuggestionModel.h"
 #include "Models/OnTheMapProxyModel.h"
@@ -101,6 +103,13 @@ int main(int argc, char *argv[])
     engine.load(url);
     //view.show();
 
+    QSettings settings;
+    QPointF homeCoords = settings.value("homeCoords", NULL).toPointF();
+    if (homeCoords.isNull())
+        settings.setValue("homeCoords", QPointF(48.853, 2.35));  // N-D de Pariss
+
+
+
     // --------------------------------------
     // Connexions
     // --------------------------------------
@@ -124,6 +133,7 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(setSuggestionFilter(int)),             &suggestionProxyModel, SLOT(setFilterValue(int)));
 
     QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper,       SLOT(requestReverseGeocode(double,double)));
+    QObject::connect(firstRootItem,   SIGNAL(requestCoords(QString)),               &geocodeWrapper,       SLOT(requestCoordinates(QString)));
 
     // --------------------------------------
     // Connexions entre classes C++
