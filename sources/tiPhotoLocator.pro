@@ -52,11 +52,6 @@ HEADERS += \
     cpp/GeocodeWrapper.h
 
 
-HEADERS += \
-    Models/OnTheMapProxyModel.h \
-    Models/PhotoModel.h \
-    cpp/GeocodeWrapper.h
-
 # QMAKE_POST_LINK += xcopy /F /Y '$$PWD/../bin/exiftool.exe' '$$OUT_PWD'
 
 CONFIG += file_copies

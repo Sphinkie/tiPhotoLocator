@@ -1,0 +1,1 @@
+Ordinateur\HKEY_CURRENT_USER\SOFTWARE\Sphinkie\TiPhotoLocator

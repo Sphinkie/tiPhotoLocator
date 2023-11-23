@@ -65,9 +65,9 @@ void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
 
 
 /* ********************************************************************************************************** */
-/*
- * \brief Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre \a location.
- * Exemple: "Marsa-el-Brega"
+/*!
+ * \brief Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre \a city.
+ * Exemple: "Marsa el Brega" => 30.4074, 19.5784
  */
 void GeocodeWrapper::requestCoordinates(QString city)
 {
