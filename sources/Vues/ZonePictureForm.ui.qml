@@ -2,22 +2,30 @@ import QtQuick
 import QtQuick.Layouts
 import "../Components"
 
+
+
 Item {
     width: 400
-    height: 500
-    property alias userDataZone: userDataZone
-    property alias chipArtist: chipArtist
+    property alias pictureZone: pictureZone
+    property alias chipDate: chipDate
+    property alias chipCreator: chipCreator
     property alias chipDescription: chipDescription
     property alias chipWriter: chipWriter
 
     Zone {
-        id: userDataZone
+        id: pictureZone
         anchors.fill: parent
-        txtZone: qsTr("Tags")
+        iconZone: "qrc:/Images/photo.png"
+        txtZone: qsTr("Photo")
 
         ColumnLayout {
             Chips {
-                id: chipArtist
+                id: chipDate
+                editable: true
+                deletable: false
+            }
+            Chips {
+                id: chipCreator
                 editable: true
                 deletable: true
             }
@@ -33,4 +41,7 @@ Item {
             }
         }
     }
+
 }
+
+

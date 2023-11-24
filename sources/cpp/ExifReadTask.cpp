@@ -8,19 +8,20 @@
 #include <QDebug>
 
 
+/* ********************************************************************************************************** */
 /*!
  * \class ExifReadTask
  * \inmodule TiPhotoLocator
- * \brief La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo.
+ * \brief La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo JPG sur le disque dur.
 
- Méthode par utilisation de QThreadPool.
+ Tache asynchrone par utilisation de QThreadPool.
 
  \note:
     les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.\br
-    Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct.
-    Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données se fait par appel synchrone.
+    Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct à une méthode du modèle.\br
+    Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.
 
-   \details Exiftool
+   \details Exiftool json options
    Description of \b JSON options for \c ExifTool.
    \code
   -j[[+]=*JSONFILE*] (-json)
@@ -42,6 +43,7 @@
   \endcode
   \enddetails
 */
+/* ********************************************************************************************************** */
 
 // ------------------------------------------
 // Membres statiques
@@ -50,11 +52,11 @@ PhotoModel* ExifReadTask::m_photoModel;
 QString     ExifReadTask::m_argFile;
 
 
-
 /* ********************************************************************************************************** */
-/**
- * @brief Constructeur. On enregistre les parmètres.
- * @param filePath: le nom du fichier JPG à lire
+/*!
+ * \brief Constructeur. On enregistre le paramètre \a filePath qui le chemin + nom du fichier JPG à lire.\br
+ *        A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier.
+ *        Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé.
  */
 ExifReadTask::ExifReadTask(QString filePath)
 {

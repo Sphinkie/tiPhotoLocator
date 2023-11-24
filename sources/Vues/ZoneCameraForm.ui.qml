@@ -15,7 +15,7 @@ Item {
         id: cameraZone
         anchors.fill: parent
         iconZone: "qrc:/Images/camera.png"
-        txtZone: qsTr("Tags générés par l'appareil photo au moment de la prise de vue.")
+        txtZone: qsTr("Tags générés par l'appareil<br>photo au moment de la prise de vue.")
 
         ColumnLayout {
             Chips {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <!-- ExifReadTask.cpp -->
-  <meta name="description" content="La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo.">
+  <meta name="description" content="La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo JPG sur le disque dur.">
   <title>ExifReadTask Class | tiPhotoLocator</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
@@ -45,7 +45,7 @@
 <div class="sidebar-content" id="sidebar-content"></div></div>
 <h1 class="title" translate="no">ExifReadTask Class</h1>
 <!-- $$$ExifReadTask-brief -->
-<p>La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo. <a href="#details">More...</a></p>
+<p>La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo JPG sur le disque dur. <a href="#details">More...</a></p>
 <!-- @@@ExifReadTask -->
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;ExifReadTask&gt;</span></td></tr>
@@ -55,20 +55,22 @@
 </ul>
 <h2 id="public-functions">Public Functions</h2>
 <div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="exifreadtask.html#ExifReadTask" translate="no">ExifReadTask</a></b>(int <i>filePath</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="exifreadtask.html#run" translate="no">run</a></b>()</td></tr>
 </table></div>
 <!-- $$$ExifReadTask-description -->
 <div class="descr">
 <h2 id="details">Detailed Description</h2>
 <p>* * *</p>
-<p>Méthode par utilisation de <a href="https://doc.qt.io/qt/qthreadpool.html" translate="no">QThreadPool</a>.</p>
+<p>Tache asynchrone par utilisation de <a href="https://doc.qt.io/qt/qthreadpool.html" translate="no">QThreadPool</a>.</p>
 <div class="admonition note">
 <p><b>Note: </b>: les <a href="https://doc.qt.io/qt/qrunnable.html" translate="no">QRunnable</a> n'héritent pas de <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.<br />
- Donc, à la fin du traitement, pour actualiser les données du <a href="photomodel.html" translate="no">PhotoModel</a>, il faut faire un appel direct. Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données se fait par appel synchrone.</p>
+ Donc, à la fin du traitement, pour actualiser les données du <a href="photomodel.html" translate="no">PhotoModel</a>, il faut faire un appel direct à une méthode du modèle.<br />
+ Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.</p>
 </div>
 <details>
 <summary>Exiftool</summary>
-<p>Description of <b>JSON</b> options for <code translate="no">ExifTool</code>.</p>
+<p>json options Description of <b>JSON</b> options for <code translate="no">ExifTool</code>.</p>
 <pre class="cpp" translate="no">
  <span class="operator">-</span>j<span class="operator">[</span><span class="operator">[</span><span class="operator">+</span><span class="operator">]</span><span class="operator">=</span><span class="operator">*</span>JSONFILE<span class="operator">*</span><span class="operator">]</span> (<span class="operator">-</span>json)
  Use JSON (JavaScript Object Notation) formatting <span class="keyword">for</span> console output (<span class="keyword">or</span> import a JSON file <span class="keyword">if</span> <span class="operator">*</span>JSONFILE<span class="operator">*</span> is specified)<span class="operator">.</span>
@@ -93,6 +95,11 @@
 <!-- @@@ExifReadTask -->
 <div class="func">
 <h2>Member Function Documentation</h2>
+<!-- $$$ExifReadTask[overload1]$$$ExifReadTaskint -->
+<h3 class="fn" translate="no" id="ExifReadTask"><code translate="no">[explicit] </code>ExifReadTask::<span class="name">ExifReadTask</span>(<span class="type">int</span> <i>filePath</i>)</h3>
+<p>Constructeur. On enregistre le paramètre <i translate="no">filePath</i> qui le chemin + nom du fichier JPG à lire.<br />
+ A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé.</p>
+<!-- @@@ExifReadTask -->
 <!-- $$$run[overload1]$$$run -->
 <h3 class="fn" translate="no" id="run"><code translate="no">[virtual] </code><span class="type">void</span> ExifReadTask::<span class="name">run</span>()</h3>
 <p>: Lancement de la tache. On lance <b>exifTool</b> dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread <a href="https://doc.qt.io/qt/qrunnable.html" translate="no">QRunnable</a>.</p>

@@ -72,5 +72,7 @@
         <file>tiPhotoLocator.qch</file>
         <file>Vues/MetadataWindowForm.ui.qml</file>
         <file>Controllers/MetadataWindow.qml</file>
+        <file>Controllers/ZonePicture.qml</file>
+        <file>Vues/ZonePictureForm.ui.qml</file>
     </qresource>
 </RCC>

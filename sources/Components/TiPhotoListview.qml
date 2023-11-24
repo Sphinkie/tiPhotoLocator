@@ -4,6 +4,7 @@ import QtQuick.Layouts
 // https://www.youtube.com/watch?v=ZArpJDRJxcI
 
 ListView{
+    id: photoListAndDelegate
     anchors.fill: parent
     model: _unlocalizedProxyModel  // Activation de la checkbox "has GPS"
     delegate: listDelegate
@@ -31,7 +32,7 @@ ListView{
         Item {
             id: wrapper
             height: 30
-            width: parent.width
+            width: photoListAndDelegate.width
             // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
             required property string filename
             required property string city

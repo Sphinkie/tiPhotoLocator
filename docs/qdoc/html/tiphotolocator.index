@@ -2,7 +2,10 @@
 <!DOCTYPE QDOCINDEX>
 <INDEX url="" title="The ultimate Photo Locator" version="" project="tiPhotoLocator">
     <namespace name="" status="active" access="public" module="tiphotolocator">
-        <class name="ExifReadTask" href="exifreadtask.html" status="active" access="public" location="ExifReadTask.h" filepath="D:/Mes Programmes/Windows/tiPhotoLocator/sources/cpp/ExifReadTask.h" lineno="9" documented="true" module="TiPhotoLocator" brief="La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo">
+        <class name="ExifReadTask" href="exifreadtask.html" status="active" access="public" location="ExifReadTask.h" filepath="D:/Mes Programmes/Windows/tiPhotoLocator/sources/cpp/ExifReadTask.h" lineno="9" documented="true" module="TiPhotoLocator" brief="La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo JPG sur le disque dur">
+            <function name="ExifReadTask" fullname="ExifReadTask::ExifReadTask" href="exifreadtask.html#ExifReadTask" status="active" access="public" location="ExifReadTask.h" filepath="D:/Mes Programmes/Windows/tiPhotoLocator/sources/cpp/ExifReadTask.h" lineno="12" documented="true" meta="constructor" explicit="true" brief="Constructeur. On enregistre le paramètre filePath qui le chemin + nom du fichier JPG à lire. A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé" signature="ExifReadTask(int filePath)">
+                <parameter type="int" name="filePath" default=""/>
+            </function>
             <function name="processLine" fullname="ExifReadTask::processLine" href="exifreadtask.html#processLine" status="active" access="private" location="ExifReadTask.h" filepath="D:/Mes Programmes/Windows/tiPhotoLocator/sources/cpp/ExifReadTask.h" lineno="17" documented="true" meta="plain" type="void" brief="Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.  * line : the received text *" signature="void processLine(int line)">
                 <parameter type="int" name="line" default=""/>
             </function>

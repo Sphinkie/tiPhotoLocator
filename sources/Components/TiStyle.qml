@@ -41,9 +41,9 @@ Item{
     readonly property color simplechipTextColor: "lightblue"        // Textes des SimpleChips
     readonly property color chipTextColor:       "#cdcdcd"          // gris très clair
 
-    // UNUSED
-    // readonly property color tertiaryForegroundColor: "#448aff"   // bleu soutenu
-    // readonly property color tertiaryBackgroundColor: "lightblue"
+    // Popups
+    readonly property color tertiaryForegroundColor: "#448aff"   // bleu soutenu
+    readonly property color tertiaryBackgroundColor: "lightblue"
 
     // Boutons
     readonly property color buttonIdleColor: primaryColor

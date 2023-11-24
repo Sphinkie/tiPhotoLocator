@@ -120,7 +120,8 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {CamModelRole,        "camModel"},
         {MakeRole,            "make"},
         // Userdata
-        {ArtistRole,          "artist"}
+        {ArtistRole,            "artist"},
+        {DescriptionWriterRole, "descriptionWriter"}
     };
     return mapping;
 }
@@ -181,7 +182,7 @@ void PhotoModel::append(const QVariantMap data)
 // -----------------------------------------------------------------------
 /*!
  * \brief Ajoute une entrée spéciale dans le Modèle,
- * correspondant à une position GPS mémorisée (marker jaune).
+ *        correspondant à une position GPS mémorisée (marker jaune).
  *
  * \a lati : latitude au format GPS.
  * \a longi : longitude au format GPS.
@@ -217,7 +218,7 @@ void PhotoModel::removeSavedPosition()
 // -----------------------------------------------------------------------
 /*!
  * \brief Affecte les coordonnées GPS fournies à toutes les photos
- * géographiquement situées à l'interieur du cercle rouge.
+ *        géographiquement situées à l'interieur du cercle rouge.
  * \a latitude au format GPS.
  * \a longitude au format GPS.
  */
@@ -481,7 +482,7 @@ void PhotoModel::saveMetadata()
     qDebug() << "saveMetadata";
     QSettings settings;
     bool backupsEnabled = settings.value("backupsEnabled", false).toBool();
-    bool artistEnabled = settings.value("artistEnabled", false).toBool();
+    bool preserveExif = settings.value("preserveExif", false).toBool();
     QString software = settings.value("software", "").toString();
 
     QThreadPool::globalInstance()->setMaxThreadCount(3);
@@ -501,7 +502,7 @@ void PhotoModel::saveMetadata()
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
             exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );           
             exifData.insert("Creator", idx.data(ArtistRole));
-            if (artistEnabled)  exifData.insert("Artist", idx.data(ArtistRole));
+            if (!preserveExif)  exifData.insert("Artist", idx.data(ArtistRole));
             exifData.insert("Software", software);
             exifData.insert("City", idx.data(CityRole));
             exifData.insert("Country", idx.data(CountryRole));

@@ -140,7 +140,7 @@ Window {
             Layout.fillHeight: true
             Layout.preferredHeight: 200
             Layout.preferredWidth: 380
-            TiPhotoListview { id: photoListAndDelegate }
+            TiPhotoListview {}
         }
 
         StackLayout {
@@ -187,7 +187,7 @@ Window {
 
                 TiMapView {
                     id: mapView
-                    Layout.rowSpan: 2     // Haute comme 3 zones
+                    Layout.rowSpan: 2     // Haute comme 2 zones
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                 }
@@ -212,7 +212,7 @@ Window {
 
             // ------------------ IPTC/EXIF TAGS TAB ----------------------------
             TiPhotoTags {
-                id: datesTab
+                id: photoTagsTab
             }
         }
     }

@@ -7,7 +7,6 @@ import "../Vues"
 SettingsWindowForm {
 
     Component.onCompleted: {
-        // settingsWindow.show();
         show();
     }
 
@@ -15,7 +14,7 @@ SettingsWindowForm {
    buttonClose.onClicked: {
        console.log("onClicked -> request coords " + reglages.homecity);
        window.requestCoords(reglages.homecity);
-       settingsWindow.close()
+       close()
     }
 
 
@@ -28,9 +27,7 @@ SettingsWindowForm {
         //reglages.category= "configuration";
         reglages.setValue("photographe", textFieldName.text);
         reglages.setValue("initiales", textFieldInitials.text);
-        reglages.setValue("creatorEnabled", checkBoxCreator.checked);
-        reglages.setValue("captionEnabled", checkBoxCaption.checked);
-        reglages.setValue("imgDescEnabled", checkBoxImgDesc.checked);
+        reglages.setValue("preserveExif", checkBoxExif.checked);
         reglages.setValue("debugModeEnabled", checkBoxDebug.checked);
     }
 }

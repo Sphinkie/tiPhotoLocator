@@ -12,12 +12,10 @@ GridLayout {
         Layout.margins: 10
     }
 
-    Zone {
+    ZonePicture {
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
-        iconZone: "qrc:/Images/photo.png"
-        txtZone: qsTr("Photo")
     }
 
     ZoneUserdata {
