@@ -18,9 +18,12 @@ MenuBar{
         title: qsTr("Réglages")
         MenuItem  { text: qsTr("Configuration");
             onClicked: {
-                var component = Qt.createComponent("../Vues/SettingsWindowForm.qml");
-                var settingsWindow    = component.createObject();
-                settingsWindow.show();
+                //var component = Qt.createComponent("qrc:/SettingsWindow.qml");
+                var component = Qt.createComponent("../Controllers/SettingsWindow.qml");
+                var settingsPopup = component.createObject(window);
+                //var settingsPopup = Qt.popupComponent.createObject(window);
+                // settingsWindow.show();
+                settingsPopup.open();
             }
         }
     }

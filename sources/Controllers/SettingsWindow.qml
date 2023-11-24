@@ -7,14 +7,17 @@ import "../Vues"
 SettingsWindowForm {
 
     Component.onCompleted: {
-        settingsWindow.show();
+        // settingsWindow.show();
+        show();
     }
 
-/*
+
    buttonClose.onClicked: {
-        settingsWindow.close()
+       console.log("onClicked -> request coords " + reglages.homecity);
+       window.requestCoords(reglages.homecity);
+       settingsWindow.close()
     }
-*/
+
 
 
 

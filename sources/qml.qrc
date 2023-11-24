@@ -43,7 +43,7 @@
         <file>Images/bt-apply.png</file>
         <file>Controllers/SettingsWindow.qml</file>
         <file>Images/logo_TPL.png</file>
-        <file>Vues/SettingsWindowForm.qml</file>
+        <file>Vues/SettingsWindowForm.ui.qml</file>
         <file>Vues/ToolBarPrincipaleForm.ui.qml</file>
         <file>Vues/ToolBarMapForm.ui.qml</file>
         <file>Images/trashcan.png</file>
@@ -70,5 +70,7 @@
         <file>Images/bt-revert.png</file>
         <file>Images/preview.png</file>
         <file>tiPhotoLocator.qch</file>
+        <file>Vues/MetadataWindowForm.ui.qml</file>
+        <file>Controllers/MetadataWindow.qml</file>
     </qresource>
 </RCC>

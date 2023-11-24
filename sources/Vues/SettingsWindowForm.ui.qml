@@ -1,25 +1,27 @@
-import QtQuick
-import QtQuick.Controls
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import QtQuick.Window
-import QtCore      // Qt.labs.settings
+import QtCore
 import "../Components"
 
-Window {
+Popup {
+    id: settingsWindow
     width: 560
     height: 720
     property alias buttonClose: buttonClose
+    anchors.centerIn: Overlay.overlay
 
     // ------------------------------------------------------------------
     // ---------------- Group Box 1 "Default values"
     // ------------------------------------------------------------------
     GroupBox {
         id: groupBox1
-        anchors.left: parent.left
-        anchors.top : parent.top
-        anchors.leftMargin: 10
+        width: settingsWindow.width - 20
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.rightMargin: 10
         anchors.topMargin: 20
-        width: parent.width-20
-        height: 160
+        height: 120
         title: qsTr("Valeurs par défaut")
 
         // ------------------------------------------------------------------
@@ -27,8 +29,8 @@ Window {
         // ------------------------------------------------------------------
         Text {
             id: element0
-            x: 0;
-            y: 10;
+            x: 0
+            y: 10
             text: qsTr("Nom du photographe:")
             font.pixelSize: 12
         }
@@ -38,7 +40,8 @@ Window {
             anchors.bottom: element0.bottom
             anchors.bottomMargin: -10
             anchors.leftMargin: 10
-            width: 200; height: 30
+            width: 200
+            height: 30
             placeholderText: qsTr("Enter your name here")
         }
         Text {
@@ -67,10 +70,12 @@ Window {
         TextField {
             id: textFieldInitials
             anchors.left: element4.right
+            anchors.right: textFieldName.right
             anchors.bottom: element4.bottom
+            anchors.rightMargin: 0
             anchors.bottomMargin: -10
             anchors.leftMargin: 20
-            width: 90; height: 30;
+            height: 30
             placeholderText: qsTr("initiales")
         }
         Text {
@@ -97,11 +102,12 @@ Window {
         }
         TextField {
             id: textFieldSoftware
-            anchors.left: element6.right
+            width: 200
+            anchors.right: textFieldName.right
             anchors.bottom: element6.bottom
+            anchors.rightMargin: 0
             anchors.bottomMargin: -10
-            anchors.leftMargin: 10
-            width: 200; height: 30;
+            height: 30
             text: "TiPhotoLocator"
             enabled: false
         }
@@ -117,18 +123,17 @@ Window {
         }
     }
 
-
     // ------------------------------------------------------------------
     // ---------------- Group Box 2 "Duplicated Tags"
     // ------------------------------------------------------------------
     GroupBox {
         id: groupBox2
         anchors.left: parent.left
-        anchors.top : groupBox1.bottom
+        anchors.top: groupBox1.bottom
         anchors.leftMargin: 10
         anchors.topMargin: 20
-        width: parent.width-20
-        height: 200
+        width: parent.width - 20
+        height: 120
         title: qsTr("Tags dupliqués:")
 
         // ------------------------------------------------------------------
@@ -169,7 +174,8 @@ Window {
             anchors.left: element2.left
             anchors.top: element2.bottom
             anchors.topMargin: 40
-            text: qsTr("Tag utilisé pour enregistrer la description de l'image:")
+            text: qsTr(
+                      "Tag utilisé pour enregistrer la description de l'image:")
             font.pixelSize: 12
         }
         CheckBox {
@@ -203,7 +209,7 @@ Window {
     GroupBox {
         id: groupBox3
         anchors.left: parent.left
-        anchors.top : groupBox2.bottom
+        anchors.top: groupBox2.bottom
         anchors.leftMargin: 10
         anchors.topMargin: 20
         width: parent.width - 20
@@ -218,21 +224,22 @@ Window {
         }
         Text {
             id: element8
-            anchors.left: checkBoxDebug.right
-            // anchors.right: textFieldHomecity.left
+            anchors.left: parent.left
+            anchors.top: checkBoxDebug.bottom
             anchors.margins: 10
-            anchors.verticalCenter: checkBoxDebug.verticalCenter
             text: qsTr("Centrage carte:")
             font.pixelSize: 12
+            anchors.topMargin: 10
+            anchors.leftMargin: 10
         }
         TextField {
             id: textFieldHomecity
             anchors.left: element8.right
-            //anchors.right: groupBox3.right
-            anchors.verticalCenter: checkBoxDebug.verticalCenter
+            anchors.verticalCenter: element8.verticalCenter
             anchors.margins: 10
-            width: 200; height: 30;
-            placeholderText :qsTr("Votre ville la plus photographiée")
+            width: 200
+            height: 30
+            placeholderText: qsTr("Votre ville la plus photographiée")
         }
         Text {
             id: element10
@@ -247,37 +254,24 @@ Window {
 
         Text {
             id: element9
-            anchors.left: checkBoxDebug.left
-            anchors.top: checkBoxDebug.bottom
+            anchors.left: parent.left
+            anchors.top: textFieldHomecity.bottom
             anchors.margins: 10
             text: qsTr("Langue des tags:")
             font.pixelSize: 12
+            anchors.topMargin: 12
+            anchors.leftMargin: 10
         }
-        ComboBox{
+        ComboBox {
             id: tagLanguages
-            anchors.left: element9.right
+            width: 180
+            height: 30
             anchors.verticalCenter: element9.verticalCenter
+            anchors.right: textFieldHomecity.right
             anchors.margins: 10
+            anchors.rightMargin: 0
             model: ["English", "System language"]
         }
-    }
-
-    // ------------------------------------------------------------------
-    // ---------------- "Descriptions"
-    // ------------------------------------------------------------------
-    Item {
-        id: groupBox4
-        anchors.left: parent.left
-        anchors.top : groupBox3.bottom
-        anchors.leftMargin: 10
-        anchors.topMargin: 20
-        width: parent.width-20
-        clip: true
-        height: 80
-        Text { y:0;  clip: true; text: qsTr("Les tags EXIF contiennent principalement des informations techniques (Modèle d'appareil, objectif...)") }
-        Text { y:20; clip: true; text: qsTr("Les données EXIF ne sont pas destinées à être modifiées.") }
-        Text { y:40; clip: true; text: qsTr("Elle sont définies (normalement) au moment de la prise de vue.") }
-        Text { y:60; clip: true; text: qsTr("Les tags IPTC contiennent principalement des informations éditoriales (Description de l'image...)    ") }
     }
 
     // ------------------------------------------------------------------
@@ -285,17 +279,22 @@ Window {
     // ------------------------------------------------------------------
     Button {
         id: buttonClose
-        anchors.top: groupBox4.bottom; anchors.topMargin: 20
-        anchors.right: groupBox4.right; anchors.rightMargin: 60
+        anchors.top: groupBox3.bottom
+        anchors.topMargin: 20
+        anchors.right: groupBox3.right
+        anchors.rightMargin: 60
         width: 100
         text: qsTr("Fermer")
+
+
+        /*
         onClicked: {
         console.log("onClicked -> request coords " + reglages.homecity);
         window.requestCoords(reglages.homecity);
             close();
         }
+        */
     }
-
 
     // ----------------------------------------------------------------
     // On mémorise la configuration dans les settings
@@ -305,13 +304,12 @@ Window {
         //category: "configuration"
         property alias photographe: textFieldName.text
         property alias initiales: textFieldInitials.text
-        property alias software : textFieldSoftware.text
-        property alias homecity : textFieldHomecity.text
+        property alias software: textFieldSoftware.text
+        property alias homecity: textFieldHomecity.text
         property alias artistEnabled: checkBoxArtist.checked
         property alias captionEnabled: checkBoxCaption.checked
         property alias imgDescEnabled: checkBoxImgDesc.checked
         property alias debugModeEnabled: checkBoxDebug.checked
         property alias tagLanguage: tagLanguages.currentIndex
     }
-
 }

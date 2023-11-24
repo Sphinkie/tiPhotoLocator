@@ -15,6 +15,8 @@ ZonePreviewForm {
 
     welcomeText : isphoto ? "" : br + bienvenue + br + brief + br + usage + br + note;
 
+    txtZone : isphoto ? qsTr("Summary") : "";
+
     // On determine le contenu des champs ici, mais ça marche aussi si on le fait dans la vue.
 
     chipName.content: isphoto? tabbedPage.selectedData.filename : ""

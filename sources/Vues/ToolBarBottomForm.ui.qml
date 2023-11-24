@@ -1,4 +1,4 @@
-import QtQuick
+import QtQuick 2.15
 import QtQuick.Layouts
 import QtQuick.Controls   // pour Checkbox
 import QtCore   // Qt.labs.settings
