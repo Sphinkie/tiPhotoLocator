@@ -2,20 +2,19 @@ import QtQuick
 import QtQuick.Layouts
 import "../Components"
 
-
-
 Item {
     width: 400
     property alias cameraZone: cameraZone
     property alias chipModel: chipModel
     property alias chipMaker: chipMaker
     property alias chipFocale: chipFocale
+    property alias chipSpeed: chipSpeed
 
     Zone {
         id: cameraZone
         anchors.fill: parent
         iconZone: "qrc:/Images/camera.png"
-        txtZone: qsTr("Tags générés par l'appareil<br>photo au moment de la prise de vue.")
+        txtZone: qsTr("Tags générés par l'appareil photo<br>au moment de la prise de vue.")
 
         ColumnLayout {
             Chips {
@@ -33,9 +32,11 @@ Item {
                 editable: false
                 deletable: false
             }
+            Chips {
+                id: chipSpeed
+                editable: false
+                deletable: false
+            }
         }
     }
-
 }
-
-

@@ -4,7 +4,7 @@ import "../Vues"
 
 
 // Controleur de la fenetre des Settings
-SettingsWindowForm {
+SettingsPopupForm {
 
     Component.onCompleted: {
         show();

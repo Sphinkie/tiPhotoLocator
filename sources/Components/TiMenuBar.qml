@@ -18,8 +18,6 @@ MenuBar{
         title: qsTr("Réglages")
         MenuItem  { text: qsTr("Configuration");
             onClicked: {
-                var component = Qt.createComponent("../Controllers/SettingsWindow.qml");
-                var settingsPopup = component.createObject(window);
                 settingsPopup.open();
             }
         }

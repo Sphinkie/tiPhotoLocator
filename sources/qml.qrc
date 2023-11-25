@@ -41,9 +41,9 @@
         <file>Javascript/TiUtilities.js</file>
         <file>Components/SimpleChip.qml</file>
         <file>Images/bt-apply.png</file>
-        <file>Controllers/SettingsWindow.qml</file>
+        <file>Controllers/SettingsPopup.qml</file>
         <file>Images/logo_TPL.png</file>
-        <file>Vues/SettingsWindowForm.ui.qml</file>
+        <file>Vues/SettingsPopupForm.ui.qml</file>
         <file>Vues/ToolBarPrincipaleForm.ui.qml</file>
         <file>Vues/ToolBarMapForm.ui.qml</file>
         <file>Images/trashcan.png</file>
@@ -74,5 +74,6 @@
         <file>Controllers/MetadataWindow.qml</file>
         <file>Controllers/ZonePicture.qml</file>
         <file>Vues/ZonePictureForm.ui.qml</file>
+        <file>Images/icon-tag.png</file>
     </qresource>
 </RCC>

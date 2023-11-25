@@ -51,6 +51,7 @@ Window {
     About { id: about }
     Credits { id: creditsPage}
     RescanWarning { id: rescanWarning}
+    SettingsPopup { id: settingsPopup}
     // ----------------------------------------------------------------
     // Modèles de données: Liste des fichiers du dossier
     // ----------------------------------------------------------------

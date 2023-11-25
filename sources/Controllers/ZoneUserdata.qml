@@ -1,14 +1,14 @@
 import QtQuick
 import "../Vues"
 
-// Controlleur
+// Controlleur pour la zone des keywords
 ZoneUserdataForm {
 
-    // On détermine le contenu des champs ici, mais ça marche aussi si on le fait dans la vue.
+    // On détermine le contenu des chips ici
 
-    chipArtist.content:      "tabbedPage.selectedData.artist"
-    chipDescription.content: "tabbedPage.selectedData.description"
-    chipWriter.content:      "tabbedPage.selectedData.descriptionWriter"
+    chipKeyword1.content: "keyword 1"
+    chipKeyword2.content: "keyword 2"
+    chipKeyword3.content: "keyword 3"
 
 }
 

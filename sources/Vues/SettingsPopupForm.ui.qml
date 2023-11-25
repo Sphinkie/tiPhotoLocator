@@ -6,7 +6,7 @@ import QtCore
 import "../Components"
 
 Popup {
-    id: settingsWindow
+    id: settingsForm
     width: 520
     height: 720
     property alias buttonClose: buttonClose
@@ -156,7 +156,7 @@ Popup {
                 }
                 ComboBox {
                     id: tagLanguages
-                    width: textFieldHomecity.width
+                    width: 200
                     height: 30
                     model: ["English", "System language"]
                 }
