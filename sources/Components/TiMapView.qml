@@ -72,6 +72,7 @@ Map {
                 // On change les coordonnées dans l'item du modele
                 window.setSelectedItemCoords(lati, longi);
                 tabbedPage.refreshSelectedData();
+                // console.log(mapView.supportedMapTypes);  // map.activeMapType = xxx
             }
         }
     }
@@ -109,12 +110,48 @@ Map {
         }
     }
 
+    /* supportedMapTypes
+        0 Street Map        (Street map view in daylight mode)
+        1 Cycle Map         (Cycle map view in daylight mode)
+        2 Transit Map       (Public transit map view in daylight mode)
+        3 Night Transit Map (Public transit map view in night mode)
+        4 Terrain Map       (Terrain map view)
+        5 Hiking Map        (Hiking map view)
+    */
+    activeMapType: supportedMapTypes[4]
+
     Plugin{
         id: mapPlugin
         name: "osm"
-        // parametres optionels
-        // PluginParameter{ name: "" ; value: ""}
-        // TODO : ajouter la KEY API
+        locales: ["fr_FR","en_US"]   // TODO : en fonction de la langue choisie
+        // parametres optionels : PluginParameter{ name: "" ; value: ""}
+        // PluginParameter { name: "osm.mapping.providersrepository.address"; value: "http://www.mywebsite.com/osm_repository" }
+        // PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey="+apikey}
+        // PluginParameter { name: "osm.mapping.custom.host"; value: "http://a.tile.thunderforest.com/cycle/%z/%x/%y.png?apikey="+apikey}
+        // PluginParameter { name: "osm.mapping.custom.host"; value: "https://tile.thunderforest.com/cycle/%z/%x/%y.png?apikey="+apikey}
+        // PluginParameter { name: "osm.mapping.custom.host"; value: "http://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey="+apikey}
+
+        PluginParameter { name: "osm.mapping.custom.host"; value: "https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey="+apikey}
+        //PluginParameter { name: "osm.mapping.highdpi_tiles"; value: "false" }
+        //PluginParameter { name: "osm.mapping.providersrepository.disabled"; value: "false" }
+
+        /* Matthas Rauter (nov-2023) Qt Company
+
+        https://bugreports.qt.io/browse/QTBUG-115742
+
+            So the only way I see to add this APIKEY parameter is to make it only work with Thunderforest
+            (by adding "apikey=" and whatever key the user entered to the URL) or to do some find-and-replace magic on the URL (by adding "apikey=%APIKEY" to the stored Thunderforest URL,
+            replacing %APIKEY with the respective key and removing everything after "?" entirely when no key is provided).
+            In my opinion both are worse than the current solution of providing a custom URL that includes the apikey.
+            Anyway, I agree that it is not documented properly, so I will add it to the documentation.
+        osm.mapping.custom.host
+            The url string of a custom tile server. This parameter should be set to a valid server url offering the correct OSM API.
+            The postfix "%z/%x/%y.png" will be added to the url. Since 6.5 the postfix will not be added if the url ends with ".png".
+            If the server requires an apikey, it has to be added to the url string.
+            To use this server, the Map::activeMapType parameter of the Map should be set to the supported map type whose type is \l{mapType::style}{MapType.CustomMap}.
+            This map type is only be available if this plugin parameter is set, in which case it is always {Map::supportedMapTypes}[supportedMapTypes.length - 1].
+            \note Setting the mapping.custom.host parameter to a new server renders the map tile cache useless for the old custommap style.
+        */
     }
 
 }

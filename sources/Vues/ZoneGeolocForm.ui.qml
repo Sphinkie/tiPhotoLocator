@@ -9,7 +9,7 @@ Zone{
     property alias chipCity: chipCity
     property alias chipCountry: chipCountry
 
-    iconZone: "qrc:/Images/world.png"
+    iconZone: "qrc:/Images/icon-world.png"
     txtZone: qsTr("Géolocalisation")
 
     ColumnLayout {

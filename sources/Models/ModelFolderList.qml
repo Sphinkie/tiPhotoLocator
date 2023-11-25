@@ -15,8 +15,5 @@ FolderListModel {
     onFolderChanged: {
         console.log("folder changed");
     }
-    onCountChanged: {
-        console.log("FolderListModel count changed:"+count);
-    }
 
 }

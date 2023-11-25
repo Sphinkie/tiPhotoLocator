@@ -5,7 +5,7 @@ import "../Components"
 Zone{
     id: suggestionZone
     color: TiStyle.suggestionBackgroundColor
-    iconZone: "qrc:/Images/suggestion.png"
+    iconZone: "qrc:/Images/icon-suggestion.png"
     txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
     property alias bt_getinfo: bt_getinfo
 
@@ -14,9 +14,9 @@ Zone{
 
         TiButton {
             id: bt_getinfo
-            text: qsTr("Actualiser")
+            text: qsTr("Chercher")
             color: "lightskyblue"
-            icon.source: "qrc:/Images/suggestion.png"
+            icon.source: "qrc:/Images/icon-suggestion.png"
             enabled: tabbedPage.selectedData.hasGPS
             Layout.alignment: Qt.AlignRight
             Layout.topMargin: 10

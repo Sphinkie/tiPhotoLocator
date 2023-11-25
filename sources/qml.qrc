@@ -22,8 +22,8 @@
         <file>Components/TiStyle.qml</file>
         <file>Components/TiButton.qml</file>
         <file>Components/qmldir</file>
-        <file>Dialogs/Credits.qml</file>
-        <file>Dialogs/About.qml</file>
+        <file>Dialogs/CreditsDialog.qml</file>
+        <file>Dialogs/AboutDialog.qml</file>
         <file>Components/Chips.qml</file>
         <file>Images/chip-edit1.png</file>
         <file>Images/chip-edit2.png</file>
@@ -47,8 +47,8 @@
         <file>Vues/ToolBarPrincipaleForm.ui.qml</file>
         <file>Vues/ToolBarMapForm.ui.qml</file>
         <file>Images/trashcan.png</file>
-        <file>Images/suggestion.png</file>
-        <file>Images/world.png</file>
+        <file>Images/icon-suggestion.png</file>
+        <file>Images/icon-world.png</file>
         <file>Images/bt-suppr.png</file>
         <file>Vues/ZonePreviewForm.ui.qml</file>
         <file>Controllers/ZonePreview.qml</file>
@@ -58,22 +58,23 @@
         <file>Controllers/ZoneUserdata.qml</file>
         <file>Vues/ZoneCameraForm.ui.qml</file>
         <file>Controllers/ZoneCamera.qml</file>
-        <file>Images/camera.png</file>
+        <file>Images/icon-camera.png</file>
         <file>Vues/ZoneGeolocForm.ui.qml</file>
         <file>Controllers/ZoneGeoloc.qml</file>
-        <file>Images/photo.png</file>
+        <file>Images/icon-photo.png</file>
         <file>Vues/ZoneSuggestionForm.ui.qml</file>
         <file>Controllers/ZoneSuggestion.qml</file>
         <file>Components/SuggestionListView.qml</file>
         <file>Images/welcome.png</file>
         <file>Components/TiTabButton.qml</file>
         <file>Images/bt-revert.png</file>
-        <file>Images/preview.png</file>
+        <file>Images/icon-preview.png</file>
         <file>tiPhotoLocator.qch</file>
-        <file>Vues/MetadataWindowForm.ui.qml</file>
-        <file>Controllers/MetadataWindow.qml</file>
+        <file>Vues/MetadataPopupForm.ui.qml</file>
+        <file>Controllers/MetadataPopup.qml</file>
         <file>Controllers/ZonePicture.qml</file>
         <file>Vues/ZonePictureForm.ui.qml</file>
         <file>Images/icon-tag.png</file>
+        <file>Dialogs/ApiDialog.qml</file>
     </qresource>
 </RCC>

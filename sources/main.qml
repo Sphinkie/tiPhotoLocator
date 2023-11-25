@@ -48,10 +48,12 @@ Window {
     // ----------------------------------------------------------------
     // Déclaration des popups  // TODO : est-ce le bon endroit ?
     // ----------------------------------------------------------------
-    About { id: about }
-    Credits { id: creditsPage}
+    AboutDialog { id: aboutPage }
+    CreditsDialog { id: creditsPage}
+    ApiDialog { id: apiPage}
     RescanWarning { id: rescanWarning}
     SettingsPopup { id: settingsPopup}
+    MetadataPopup { id: metadataPopup}
     // ----------------------------------------------------------------
     // Modèles de données: Liste des fichiers du dossier
     // ----------------------------------------------------------------

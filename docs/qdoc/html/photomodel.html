@@ -82,7 +82,7 @@
 <!-- @@@duplicateData -->
 <!-- $$$fetchExifMetadata[overload1]$$$fetchExifMetadataint -->
 <h3 class="fn" translate="no" id="fetchExifMetadata"><span class="type">void</span> PhotoModel::<span class="name">fetchExifMetadata</span>(<span class="type">int</span> <i>photo</i> = -1)</h3>
-<p>Ce slot lit des données EXIF de toutes photos du répertoire. <i translate="no">photo</i> : l'indice de la photo (vide ou -1 = toutes les photos du répertoire)</p>
+<p>Ce slot lit des données EXIF d'une (ou toutes) photos du répertoire. <i translate="no">photo</i> : l'indice de la photo (vide ou -1 = toutes les photos du répertoire)</p>
 <!-- @@@fetchExifMetadata -->
 <!-- $$$removeData[overload1]$$$removeDataint -->
 <h3 class="fn" translate="no" id="removeData"><span class="type">void</span> PhotoModel::<span class="name">removeData</span>(<span class="type">int</span> <i>row</i>)</h3>
@@ -94,7 +94,9 @@
 <!-- @@@removeSavedPosition -->
 <!-- $$$saveMetadata[overload1]$$$saveMetadata -->
 <h3 class="fn" translate="no" id="saveMetadata"><span class="type">void</span> PhotoModel::<span class="name">saveMetadata</span>()</h3>
-<p>Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. Tags non-modifiés: Make, Model, Tags modifiés: coords GPS, Artist.</p>
+<p>Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. <br />
+ Tags oblicatoire: imageUrl. <br />
+ Tags modifiés: coords GPS, Creator, City, Country.</p>
 <!-- @@@saveMetadata -->
 <!-- $$$setData[overload1]$$$setDataintintint -->
 <h3 class="fn" translate="no" id="setData"><span class="type">void</span> PhotoModel::<span class="name">setData</span>(<span class="type">int</span> <i>row</i>, <span class="type">int</span> <i>value</i>, <span class="type">int</span> <i>property</i>)</h3>

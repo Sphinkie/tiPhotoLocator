@@ -31,7 +31,7 @@ GridLayout {
         Layout.columnSpan: 3
         Layout.margins: 10
         color: "lightblue"
-        iconZone: "qrc:/Images/suggestion.png"
+        iconZone: "qrc:/Images/icon-suggestion.png"
         txtZone: qsTr("Suggestions")
     }
 

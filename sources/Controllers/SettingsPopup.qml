@@ -12,7 +12,7 @@ SettingsPopupForm {
 
 
    buttonClose.onClicked: {
-       console.log("onClicked -> request coords " + reglages.homecity);
+       console.log("Settings closed -> requesting coords for " + reglages.homecity);
        window.requestCoords(reglages.homecity);
        close()
     }

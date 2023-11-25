@@ -216,7 +216,6 @@ bool ExifReadTask::writeArgsFile()
     out << "-City"              << Qt::endl;
     out << "-Country"           << Qt::endl;
     out << "-Landmark"          << Qt::endl;
-    // TODO : Rendre les tags ci-dessous activables depuis le menu settings
     out << "-DescriptionWriter" << Qt::endl;    // (optional) Initials of the writer
     out << "-Headline"          << Qt::endl;    // (optional) Short description in 2 to 5 words
 

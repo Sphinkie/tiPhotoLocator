@@ -27,6 +27,7 @@ Popup {
 
     ColumnLayout {
         anchors.fill: parent
+        spacing: 10
 
         // ------------------------------------------------------------------
         // ---------------- TITRE
@@ -131,6 +132,17 @@ Popup {
             title: qsTr("Configuration:")
 
             ColumnLayout {
+                Text {
+                    text: qsTr("Langue de l'application:")
+                    font.pixelSize: 12
+                }
+                ComboBox {
+                    id: guiLanguages
+                    width: 200
+                    height: 30
+                    model: ["Français"]
+                }
+
                 CheckBox {
                     id: checkBoxExif
                     text: qsTr("Ne pas modifier les tags EXIF")
@@ -160,6 +172,16 @@ Popup {
                     height: 30
                     model: ["English", "System language"]
                 }
+                Text {
+                    text: qsTr("Clef API pour les cartes:")
+                    font.pixelSize: 12
+                }
+                TextField {
+                    id: textFieldMapApiKey
+                    width: 400
+                    height: 30
+                    placeholderText: qsTr("XXXXXXXXXXXXXXX")
+                }
             }
         }
         // ------------------------------------------------------------------
@@ -187,8 +209,10 @@ Popup {
         property alias initiales: textFieldInitials.text
         property alias software: textFieldSoftware.text
         property alias homecity: textFieldHomecity.text
+        property alias apikey: textFieldMapApiKey.text
         property alias preserveExif: checkBoxExif.checked
         property alias debugModeEnabled: checkBoxDebug.checked
         property alias tagLanguage: tagLanguages.currentIndex
+        property alias guiLanguage: guiLanguages.currentIndex
     }
 }

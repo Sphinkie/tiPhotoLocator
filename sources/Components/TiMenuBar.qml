@@ -16,17 +16,14 @@ MenuBar{
     Menu {
         id: settingsMenu
         title: qsTr("Réglages")
-        MenuItem  { text: qsTr("Configuration");
-            onClicked: {
-                settingsPopup.open();
-            }
-        }
+        MenuItem  { text: qsTr("Configuration"); onClicked: settingsPopup.open(); }
+        MenuItem  { text: qsTr("Metadata"); onClicked: metadataPopup.open(); }
     }
     Menu {
         id:helpMenu
         title: qsTr("Aide")
-        MenuItem  { text: qsTr("Obtenir une API KEY"); enabled: false; }
+        MenuItem  { text: qsTr("Obtenir une API KEY"); onTriggered: apiPage.open(); }
         MenuItem  { text: qsTr("Credits"); onTriggered: creditsPage.open(); }
-        MenuItem  { text: qsTr("A propos"); onTriggered: about.open(); }
+        MenuItem  { text: qsTr("A propos"); onTriggered: aboutPage.open(); }
     }
 }

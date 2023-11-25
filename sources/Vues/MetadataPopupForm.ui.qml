@@ -9,19 +9,29 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import "../Components"
 
-Item {
-    id: metadataWindow
-    width: 1024
-    height: 768
+Popup {
+    id: metadataForm
+    width: 520
+    height: 720
+    property alias buttonClose: buttonClose
+    modal: true
+    closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
+    background: Rectangle {
+        color: TiStyle.tertiaryBackgroundColor
+        border.color: TiStyle.tertiaryForegroundColor
+        border.width: 2
+    }
+    parent: Overlay.overlay
+    Overlay.modal: Rectangle {
+        color: "#80f3f9ec"
+    }
     anchors.centerIn: Overlay.overlay
 
-    property alias closeButton: button
-
-    Rectangle {
-        id: rectangle
-        width: metadataWindow.width
-        height: metadataWindow.height
-        color: TiStyle.surfaceContainerColor
+//    Rectangle {
+  //      id: rectangle
+    //    width: metadataForm.width
+      //  height: metadataForm.height
+        //color: TiStyle.surfaceContainerColor
 
         Text {
             id: desc1
@@ -36,7 +46,7 @@ Item {
         Grid {
             id: exifTable
             anchors.top: desc1.bottom
-            width: rectangle.border.width - 24
+            width: metadataForm.width - 24
             height: 460
             rightPadding: 12
             leftPadding: 12
@@ -109,13 +119,14 @@ Item {
                 text: qsTr("Les tags IPTC contiennent principalement des informations éditoriales (Description de l'image...)    ")
             }
         }
-    }
+//    }
 
     TiButton {
-        id: button
+        id: buttonClose
         text: qsTr("Fermer")
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: 38
+        color: TiStyle.tertiaryForegroundColor
     }
 }

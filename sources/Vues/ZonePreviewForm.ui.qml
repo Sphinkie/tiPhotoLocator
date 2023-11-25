@@ -15,7 +15,7 @@ Zone {
     property string welcomeText
 
     txtZone: qsTr("Summary")
-    iconZone: "qrc:/Images/preview.png"
+    iconZone: "qrc:/Images/icon-preview.png"
 
     Text {
         width: zonePreview.width
