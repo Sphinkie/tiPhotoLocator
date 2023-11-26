@@ -64,7 +64,7 @@ bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
     // const QList<QVariant> listePhotos = idx.data(SuggestionModel::PhotosRole).toList();  // (autre méthode)
     const QSet<int> listePhotosRow = idx.data(SuggestionModel::PhotosRole).value<QSet<int>>();
     // On effectue le test de filtrage
-    const bool photo_ok = listePhotosRow.contains(m_filterPhotoRow);
+    const bool photo_ok = (listePhotosRow.contains(m_filterPhotoRow) || listePhotosRow.contains(-1));
     return (photo_ok);
 }
 
@@ -94,7 +94,6 @@ void SuggestionProxyModel::setFilterValue(const int photoRow)
  */
 void SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)
 {
-    qDebug() << "proxyRow" << proxyRow;
     if (proxyRow<0) return;
     // On convertit l'indice proxyModel vers l'index sourceModel
     QModelIndex idx = mapToSource(index(proxyRow,0));

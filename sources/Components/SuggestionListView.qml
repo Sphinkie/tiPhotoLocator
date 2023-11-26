@@ -5,6 +5,7 @@ ListView{
     delegate: suggestionDelegate
     focus: true
     clip: true   // pour que les items restent à l'interieur de la listview
+    property string filterString: ""
 
 
     // le delegate pour afficher un item dans la ListView
@@ -26,7 +27,7 @@ ListView{
                 content: text + " (" + target + ")"
                 editable: false
                 deletable: false
-                visible: (category === "Geo") ? true : false   // strict comparison (no type-conversion)
+                visible: (category === filterString) ? true : false   // strict comparison (no type-conversion)
             }
 
             // Gestion du clic sur un item (Chip suggestion)
@@ -42,7 +43,6 @@ ListView{
                     tabbedPage.refreshSelectedData()
                 }
             }
-
         }
     }
 }

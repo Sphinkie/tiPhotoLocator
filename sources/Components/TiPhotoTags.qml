@@ -25,7 +25,7 @@ GridLayout {
     }
 
 
-    Zone {
+    ZoneSuggestedTags {
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.columnSpan: 3

@@ -132,10 +132,17 @@ Map {
         // PluginParameter { name: "osm.mapping.custom.host"; value: "http://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey="+apikey}
 
         PluginParameter {
-            readonly property url thunderurl : "https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png";
-            readonly property string thunderkey :  (settings.apikey ? "?apikey="+settings.apikey : "");
             name: "osm.mapping.custom.host";
-            value: thunderurl + thunderkey;
+            readonly property url thunderurl : "https://tile.thunderforest.com/cycle/%z/%x/%y.png";
+            readonly property string thunderkey :  (settings.apikey ? "?apikey="+settings.apikey : "");
+            value: thunderurl       // + thunderkey;
+        }
+
+        PluginParameter {   /* obsolete ? */
+            name: "osm.mapping.providersrepository.address";
+            readonly property url thunderurl : "https://tile.thunderforest.com/cycle/%z/%x/%y.png";
+            readonly property string thunderkey :  (settings.apikey ? "?apikey="+settings.apikey : "");
+            value: thunderurl       // + thunderkey;
         }
 
         //PluginParameter { name: "osm.mapping.highdpi_tiles"; value: "false" }

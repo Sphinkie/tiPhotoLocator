@@ -78,7 +78,7 @@ private:
     // Membres
     // -----------------------------------------------------
     QVector<Suggestion> m_suggestions;
-    int m_selectedPhotoRow = -1;
+    int m_selectedPhotoRow = -1;    // -1 : Suggestion valable pour toutes les photos
 
 };
 

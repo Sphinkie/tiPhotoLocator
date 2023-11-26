@@ -2,12 +2,11 @@ import QtQuick
 import "../Vues"
 
 // Controlleur
-ZoneSuggestionForm {
+ZoneSuggestedTagsForm {
 
 
     bt_getinfo.onClicked: {
-        // on recupere des infos à partir des coords GPS
-        window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
+        // on recupere des infos à partir des IA
     }
 
 

@@ -161,9 +161,8 @@ void PhotoModel::append(const QString filename, const QString url)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Adds an item to the model, from a dictionnary of metadata.
+ * \brief Adds an item to the model, from a 'key-value' dictionnary of metadata given in the \a data parameter.
  *
- * \a data : A dictionnary of key-value
  * \code
       QVariantMap map;
       map.insert("filename", QVariant(filename));
@@ -220,10 +219,8 @@ void PhotoModel::removeSavedPosition()
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Affecte les coordonnées GPS fournies à toutes les photos
+ * \brief Affecte les coordonnées GPS (\a latitude et \a longitude) fournies à toutes les photos
  *        géographiquement situées à l'interieur du cercle rouge.
- * \a latitude au format GPS.
- * \a longitude au format GPS.
  */
 void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
 {
@@ -463,7 +460,7 @@ void PhotoModel::fetchExifMetadata(int photo)
         // On lit les tags de toutes les photos
         QThreadPool::globalInstance()->setMaxThreadCount(4);   // Quantité maximum de threads
         // Mesures pour scanner 40 photos:
-        //  par 1:32sec - par 2:18sec - par 3:13sec - par 4:12sec - par 5:12sec
+        // 1 par 1 = 32sec - 2 par 2 = 18sec - 3 par 3 = 13sec - 4 par 4 = 12sec - 5 par 5 = 12sec
         ExifReadTask::init(this);
         //Instanciation et ajout de plusieurs tâches au pool de threads
         for (int row = 0; row < m_data.count(); row++)

@@ -1,3 +1,4 @@
+#include <QSettings>
 #include "SuggestionModel.h"
 
 
@@ -13,7 +14,13 @@
  * @param parent
  */
 SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
-{}
+{
+    // A l'init, m_selectedPhotoRow vaut -1 = Suggestion valable pour toutes les photos.
+    QSettings settings;
+    this->append(settings.value("photographe","").toString(), "artist", "photo");
+    this->append(settings.value("initiales","").toString(), "descriptionWriter", "photo");
+    this->append("12/01/1934", "dateTimeOriginal", "photo");
+}
 
 
 /* ********************************************************************************** */
@@ -152,8 +159,8 @@ void SuggestionModel::onSelectedPhotoChanged(const int row)
 /* ********************************************************************************** */
 /**
  * @brief La surcharge de l'operateur == permet d'utiliser la méthode contains().
- * @param data: second operande
- * @return TRUE si le "texte" des deux suggestions est identique
+ * @param data: second operande.
+ * @return TRUE si le "texte" des deux suggestions est identique.
  */
 bool Suggestion::operator== (const Suggestion &data) const
 {

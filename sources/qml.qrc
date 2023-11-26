@@ -76,5 +76,7 @@
         <file>Vues/ZonePictureForm.ui.qml</file>
         <file>Images/icon-tag.png</file>
         <file>Dialogs/ApiDialog.qml</file>
+        <file>Vues/ZoneSuggestedTagsForm.ui.qml</file>
+        <file>Controllers/ZoneSuggestedTags.qml</file>
     </qresource>
 </RCC>
