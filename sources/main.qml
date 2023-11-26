@@ -245,6 +245,7 @@ Window {
     Settings {
         id: settings
         property point homeCoords
+        property string apikey
     }
 
 }

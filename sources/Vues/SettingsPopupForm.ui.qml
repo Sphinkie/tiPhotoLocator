@@ -125,12 +125,12 @@ Popup {
         // ------------------------------------------------------------------
         // ---------------- Group Box 2 "Configuration"
         // ------------------------------------------------------------------
-        GroupBox {
+        Frame {
             id: groupBox2
             Layout.fillWidth: true
             Layout.margins: 10
-            title: qsTr("Configuration:")
 
+            // title: qsTr("Configuration:")
             ColumnLayout {
                 Text {
                     text: qsTr("Langue de l'application:")
@@ -140,7 +140,7 @@ Popup {
                     id: guiLanguages
                     width: 200
                     height: 30
-                    model: ["Français"]
+                    model: ["français"]
                 }
 
                 CheckBox {
@@ -170,7 +170,7 @@ Popup {
                     id: tagLanguages
                     width: 200
                     height: 30
-                    model: ["English", "System language"]
+                    model: ["english", sysLang + " (system)"]
                 }
                 Text {
                     text: qsTr("Clef API pour les cartes:")
@@ -191,8 +191,12 @@ Popup {
             id: buttonClose
             width: 100
             text: qsTr("Fermer")
+            Layout.topMargin: 0
+            Layout.bottomMargin: 0
+            Layout.rightMargin: 0
+            Layout.leftMargin: 0
             Layout.fillHeight: false
-            Layout.margins: 30
+            Layout.margins: 0
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             Layout.fillWidth: false
             color: TiStyle.tertiaryForegroundColor
@@ -212,7 +216,7 @@ Popup {
         property alias apikey: textFieldMapApiKey.text
         property alias preserveExif: checkBoxExif.checked
         property alias debugModeEnabled: checkBoxDebug.checked
-        property alias tagLanguage: tagLanguages.currentIndex
+        property alias tagLanguage: tagLanguages.currentIndex // 0: English, 1: Default
         property alias guiLanguage: guiLanguages.currentIndex
     }
 }

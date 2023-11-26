@@ -72,7 +72,7 @@ Map {
                 // On change les coordonnées dans l'item du modele
                 window.setSelectedItemCoords(lati, longi);
                 tabbedPage.refreshSelectedData();
-                // console.log(mapView.supportedMapTypes);  // map.activeMapType = xxx
+                console.log(mapView.supportedMapTypes);  // Debug : Affiche la lilste des cartes supportées
             }
         }
     }
@@ -131,7 +131,13 @@ Map {
         // PluginParameter { name: "osm.mapping.custom.host"; value: "https://tile.thunderforest.com/cycle/%z/%x/%y.png?apikey="+apikey}
         // PluginParameter { name: "osm.mapping.custom.host"; value: "http://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey="+apikey}
 
-        PluginParameter { name: "osm.mapping.custom.host"; value: "https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey="+apikey}
+        PluginParameter {
+            readonly property url thunderurl : "https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png";
+            readonly property string thunderkey :  (settings.apikey ? "?apikey="+settings.apikey : "");
+            name: "osm.mapping.custom.host";
+            value: thunderurl + thunderkey;
+        }
+
         //PluginParameter { name: "osm.mapping.highdpi_tiles"; value: "false" }
         //PluginParameter { name: "osm.mapping.providersrepository.disabled"; value: "false" }
 

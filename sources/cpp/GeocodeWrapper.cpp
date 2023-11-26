@@ -2,6 +2,7 @@
 #include <QtLocation/QGeoServiceProvider>
 #include <QtPositioning/QGeoCoordinate>
 #include <QSslSocket>                              // pour le plugin OSM
+#include <QSettings>
 #include <QDebug>
 
 #include "GeocodeWrapper.h"
@@ -52,6 +53,12 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
  */
 void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
 {
+    // Réglage de la langues des tags
+    QSettings settings;
+    int tagLanguage = settings.value("tagLanguage",0).toInt();   // 0: English, 1: default
+    if (tagLanguage==0)
+        m_geoManager->setLocale(QLocale("en"));
+    // Envoi de la requete
     QGeoCoordinate coordinate = QGeoCoordinate(latitude, longitude);
     QGeoCodeReply* geoReply = m_geoManager->reverseGeocode(coordinate);
 
