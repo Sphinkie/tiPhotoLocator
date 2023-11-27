@@ -80,8 +80,6 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         case ImageWidthRole:        return data.imageWidth;
         case ImageHeightRole:       return data.imageHeight;
         case ArtistRole:            return data.artist;
-        //case GPSLatitudeRefRole:    return data.gpsLatitude;
-        //case GPSLongitudeRefRole:   return data.gpsLongitude;
         case CityRole:              return data.city;
         case CountryRole:           return data.country;
         case DescriptionRole:       return data.description;
@@ -130,10 +128,10 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 }
 
 /* ********************************************************************************************************** */
-/*
- * \brief Returns the full name (with absolute path) of the photo, in a QVariant
+/**
+ * @brief Returns the full name (with absolute path) of the photo, in a QVariant
  * containing the image URL. This is an example of unitary getData method.
- * \a row : Indice de l'element à lire
+ * @param row : Indice de l'element à lire
  */
 QVariant PhotoModel::getUrl(int row)
 {
@@ -144,11 +142,11 @@ QVariant PhotoModel::getUrl(int row)
 }
 
 /* ********************************************************************************************************** */
-/*
- * \brief Adds a photo to the model, with just a name and a path (url).
+/**
+ * @brief Adds a photo to the model, with just a name and a path (url).
  * Other data should be filled later, from exif metadata.
- * \a filename : filename of the photo
- * \a url : full path of the photo (in Qt format)
+ * @param filename : filename of the photo
+ * @param url : full path of the photo (in Qt format)
  */
 void PhotoModel::append(const QString filename, const QString url)
 {
@@ -208,8 +206,8 @@ void PhotoModel::appendSavedPosition(double lati, double longi)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Supprime du modèle l'item correspondant à la position sauvegardée.
+/**
+ * @○brief Supprime du modèle l'item correspondant à la position sauvegardée.
  */
 void PhotoModel::removeSavedPosition()
 {
@@ -218,9 +216,11 @@ void PhotoModel::removeSavedPosition()
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Affecte les coordonnées GPS (\a latitude et \a longitude) fournies à toutes les photos
- *        géographiquement situées à l'interieur du cercle rouge.
+/**
+ * @brief Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur
+ *        du cercle rouge.
+ * @param latitude : latitude GPS à affecter aux photos
+ * @param longitude : longitude GPS à affecter aux photos
  */
 void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
 {
@@ -363,13 +363,18 @@ void PhotoModel::setData(const QVariantMap &value_list)
     if (m_data.count() == 0) return;    // The list of photo data is empty.
 
     int row;
+    // ----------------------------------
+    // On cherche la photo
+    // ----------------------------------
     for (row=0; row<m_data.count(); row++)
         if (m_data[row] == file_name) break;  // Possible grace à notre surcharge de l'opérateur ==   :-)
 
     // qDebug() << "found" << row ;
     if (row >= m_data.count()) return;        // Traitement du cas FileName not found
 
-    // On met à jour les data (apparement, ça passe même s'il n'y a pas de valeur)
+    // ----------------------------------
+    // On met à jour les data de la photo
+    // ----------------------------------
     m_data[row].gpsLatitude     = value_list["GPSLatitude"].toDouble();
     m_data[row].gpsLongitude    = value_list["GPSLongitude"].toDouble();
     // Les indicateurs calculés
@@ -395,6 +400,15 @@ void PhotoModel::setData(const QVariantMap &value_list)
         m_data[row].artist          = value_list["Creator"].toString();
     else
         m_data[row].artist          = value_list["Artist"].toString();
+    // -------------------------------------
+    // Certaines infos sont des suggestions
+    // -------------------------------------
+    QString modifyDate = value_list["ModifyDate"].toString().left(10);
+    if (!modifyDate.isEmpty()) {
+        // "2021:02:18 16:15:21"
+        QString suggestedDate = modifyDate.mid(8,2)+"/"+modifyDate.mid(5,2)+"/"+modifyDate.left(4);
+        emit sendSuggestion(suggestedDate, "dateTimeOriginal", "photo", row);
+    }
 
     // Envoi du signal dataChanged()
     QModelIndex changed_index = this->index(row, 0);
@@ -476,8 +490,8 @@ void PhotoModel::fetchExifMetadata(int photo)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. \br
- * Tags oblicatoire: imageUrl. \br
+ * \brief Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
+ * Tag obligatoire: imageUrl.
  * Tags modifiés: coords GPS, Creator, City, Country.
  */
 void PhotoModel::saveMetadata()

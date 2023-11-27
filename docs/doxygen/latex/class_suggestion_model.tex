@@ -1,0 +1,163 @@
+\doxysection{Suggestion\+Model Class Reference}
+\hypertarget{class_suggestion_model}{}\label{class_suggestion_model}\index{SuggestionModel@{SuggestionModel}}
+
+
+The \doxylink{class_suggestion_model}{Suggestion\+Model} class manages a list of \doxylink{struct_suggestion}{Suggestion}.  
+
+
+Inheritance diagram for Suggestion\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_suggestion_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19}\label{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19} 
+enum {\bfseries Roles} \{ {\bfseries Text\+Role} = Qt\+::User\+Role
+, {\bfseries Target\+Role}
+, {\bfseries Category\+Role}
+, {\bfseries Photos\+Role}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198}{on\+Selected\+Photo\+Changed}} (const int row)
+\begin{DoxyCompactList}\small\item\em Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la List\+View. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_suggestion_model_a80929cf6c308e4b444c9b9e0d754764b}{append}} (const QString text, const QString target, const QString category, const int photo\+\_\+row)
+\begin{DoxyCompactList}\small\item\em Adds a suggestion to the model, and link it to a photo. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QHash$<$ int, QByte\+Array $>$ \mbox{\hyperlink{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd}{role\+Names}} () const override
+\item 
+\mbox{\hyperlink{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0}{Suggestion\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Contructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}{row\+Count}} (const QModel\+Index \&parent) const override
+\begin{DoxyCompactList}\small\item\em Returns the number of elements in the model. \end{DoxyCompactList}\item 
+QVariant \mbox{\hyperlink{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c}{data}} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
+\begin{DoxyCompactList}\small\item\em Returns the requested role value of an element of the model. \end{DoxyCompactList}\item 
+\Hypertarget{class_suggestion_model_a63b0f6de951e30f5d8366f7e031aff93}\label{class_suggestion_model_a63b0f6de951e30f5d8366f7e031aff93} 
+void {\bfseries append} (const QString text, const QString target, const QString category)
+\item 
+void \mbox{\hyperlink{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f}{remove\+Current\+Photo\+From\+Suggestion}} (const QModel\+Index index)
+\begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_suggestion_model}{Suggestion\+Model} class manages a list of \doxylink{struct_suggestion}{Suggestion}. 
+
+\textbackslash{}inmodule Ti\+Photo\+Locator 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0}\label{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0} 
+\index{SuggestionModel@{SuggestionModel}!SuggestionModel@{SuggestionModel}}
+\index{SuggestionModel@{SuggestionModel}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{\texorpdfstring{SuggestionModel()}{SuggestionModel()}}
+{\footnotesize\ttfamily Suggestion\+Model\+::\+Suggestion\+Model (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Contructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_suggestion_model_a80929cf6c308e4b444c9b9e0d754764b}\label{class_suggestion_model_a80929cf6c308e4b444c9b9e0d754764b} 
+\index{SuggestionModel@{SuggestionModel}!append@{append}}
+\index{append@{append}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{\texorpdfstring{append}{append}}
+{\footnotesize\ttfamily void Suggestion\+Model\+::append (\begin{DoxyParamCaption}\item[{const QString}]{text,  }\item[{const QString}]{target,  }\item[{const QString}]{category,  }\item[{const int}]{photo\+\_\+row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Adds a suggestion to the model, and link it to a photo. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxylink{struct_suggestion}{Suggestion}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & text of the suggestion. \\
+\hline
+{\em target} & the name of the Exif tag compatible with this suggestion. \\
+\hline
+{\em category} & the category of the suggestion ("{}\+Geo"{}, ... ) \\
+\hline
+{\em photo} & l\textquotesingle{}indice de la photo à associée à cette suggestion (-\/1 = toutes) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c}\label{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c} 
+\index{SuggestionModel@{SuggestionModel}!data@{data}}
+\index{data@{data}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QVariant Suggestion\+Model\+::data (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Returns the requested role value of an element of the model. 
+
+\begin{DoxyNote}{Note}
+\+: Implémentation obligatoire. {\itshape index\+:} index of the element of the model. {\itshape role\+:} the requested role (enum). 
+\end{DoxyNote}
+\Hypertarget{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198}\label{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198} 
+\index{SuggestionModel@{SuggestionModel}!onSelectedPhotoChanged@{onSelectedPhotoChanged}}
+\index{onSelectedPhotoChanged@{onSelectedPhotoChanged}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{\texorpdfstring{onSelectedPhotoChanged}{onSelectedPhotoChanged}}
+{\footnotesize\ttfamily void Suggestion\+Model\+::on\+Selected\+Photo\+Changed (\begin{DoxyParamCaption}\item[{const int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la List\+View. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & La position dans \doxylink{class_photo_model}{Photo\+Model} de la photo active. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f}\label{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f} 
+\index{SuggestionModel@{SuggestionModel}!removeCurrentPhotoFromSuggestion@{removeCurrentPhotoFromSuggestion}}
+\index{removeCurrentPhotoFromSuggestion@{removeCurrentPhotoFromSuggestion}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{\texorpdfstring{removeCurrentPhotoFromSuggestion()}{removeCurrentPhotoFromSuggestion()}}
+{\footnotesize\ttfamily void Suggestion\+Model\+::remove\+Current\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const QModel\+Index}]{index }\end{DoxyParamCaption})}
+
+
+
+Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \+: l\textquotesingle{}index dans le Model de la suggestion à modifier. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd}\label{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd} 
+\index{SuggestionModel@{SuggestionModel}!roleNames@{roleNames}}
+\index{roleNames@{roleNames}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{\texorpdfstring{roleNames()}{roleNames()}}
+{\footnotesize\ttfamily QHash$<$ int, QByte\+Array $>$ Suggestion\+Model\+::role\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+Table of Role names. Implémentation obligatoire.
+
+C\textquotesingle{}est la correspondance entre le role C++ et le nom de la property dans QML. \Hypertarget{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}\label{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea} 
+\index{SuggestionModel@{SuggestionModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily int Suggestion\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Returns the number of elements in the model. 
+
+\begin{DoxyNote}{Note}
+\+: Implémentation obligatoire. {\itshape parent\+:} parent of the model 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Models/Suggestion\+Model.\+h\item 
+Models/Suggestion\+Model.\+cpp\end{DoxyCompactItemize}

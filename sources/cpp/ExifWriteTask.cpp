@@ -11,8 +11,8 @@
 
    Tache asynchrone par utilisation de QThreadPool.
 
-   \note: les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.\br
-          Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct.\br
+   \note: les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.
+          Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct.
           Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.
  */
 /* ********************************************************************************************************** */
@@ -20,8 +20,8 @@
 
 /* ********************************************************************************************************** */
 /*!
- \brief Constructeur. On enregistre les paramètres.\br
- \a exifData: la liste des metadata à écrire dans le fichier JPG.\br
+ \brief Constructeur. On enregistre les paramètres.
+ \a exifData: la liste des metadata à écrire dans le fichier JPG.
  \a generateBackup: \c true si un backup de l'image doit être généré avant sa modification.
  \code
      QVariantMap: QMap(
@@ -47,7 +47,7 @@ ExifWriteTask::ExifWriteTask(const QVariantMap exifData, bool generateBackup)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Lancement de la tache. On lance \b exifTool dans un QProcess, et on écrit les metadata dans l'image JPG. \br
+ * \brief Lancement de la tache. On lance \b exifTool dans un QProcess, et on écrit les metadata dans l'image JPG.
  * Cette tache est exécutée dans un thread QRunnable.
  */
 void ExifWriteTask::run()

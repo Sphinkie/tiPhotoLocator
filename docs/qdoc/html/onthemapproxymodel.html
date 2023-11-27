@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <!-- OnTheMapProxyModel.cpp -->
-  <meta name="description" content="The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s). Dans ce ProxyModel on doit ré-implementer les méthodes append(), get(), clear(), etc.">
+  <meta name="description" content="The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s).">
   <title>OnTheMapProxyModel Class | tiPhotoLocator</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
@@ -38,56 +38,25 @@
 <div class="toc">
 <h3 id="toc">Contents</h3>
 <ul>
-<li class="level1"><a href="#public-functions">Public Functions</a></li>
-<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
 <li class="level1"><a href="#details">Detailed Description</a></li>
 </ul>
 </div>
 <div class="sidebar-content" id="sidebar-content"></div></div>
 <h1 class="title" translate="no">OnTheMapProxyModel Class</h1>
 <!-- $$$OnTheMapProxyModel-brief -->
-<p>The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s). Dans ce ProxyModel on doit ré-implementer les méthodes append(), get(), clear(), etc. <a href="#details">More...</a></p>
+<p>The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s). <a href="#details">More...</a></p>
 <!-- @@@OnTheMapProxyModel -->
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;OnTheMapProxyModel&gt;</span></td></tr>
 </table></div>
-<ul>
-<li><a href="onthemapproxymodel-members.html">List of all members, including inherited members</a></li>
-</ul>
-<h2 id="public-functions">Public Functions</h2>
-<div class="table"><table class="alignedsummary" translate="no">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="onthemapproxymodel.html#setAllItemsCoords" translate="no">setAllItemsCoords</a></b>(const double <i>lat</i>, const double <i>lon</i>)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="onthemapproxymodel.html#setAllItemsSavedCoords" translate="no">setAllItemsSavedCoords</a></b>()</td></tr>
-</table></div>
-<h2 id="protected-functions">Protected Functions</h2>
-<div class="table"><table class="alignedsummary" translate="no">
-<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="onthemapproxymodel.html#filterAcceptsRow" translate="no">filterAcceptsRow</a></b>(int <i>sourceRow</i>, const int &amp;<i>sourceParent</i>) const override</td></tr>
-</table></div>
 <!-- $$$OnTheMapProxyModel-description -->
 <div class="descr">
 <h2 id="details">Detailed Description</h2>
+<div class="admonition note">
+<p><b>Note: </b>Dans ce ProxyModel on doit ré-implementer les méthodes append(), get(), clear(), etc.</p>
+</div>
 </div>
 <!-- @@@OnTheMapProxyModel -->
-<div class="func">
-<h2>Member Function Documentation</h2>
-<!-- $$$filterAcceptsRow[overload1]$$$filterAcceptsRowintconstint& -->
-<h3 class="fn" translate="no" id="filterAcceptsRow"><code translate="no">[protected] </code><span class="type">bool</span> OnTheMapProxyModel::<span class="name">filterAcceptsRow</span>(<span class="type">int</span> <i>sourceRow</i>, const <span class="type">int</span> &amp;<i>sourceParent</i>) const</h3>
-<p>Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad : photos &quot;selectionnée&quot; et le marqueur &quot;Saved Position&quot;. <i translate="no">sourceRow</i> : Le numero d'une ligne du modèle parent (<a href="photomodel.html" translate="no">PhotoModel</a>). <i translate="no">sourceParent</i> : Le modèle parent (<a href="photomodel.html" translate="no">PhotoModel</a>). Returns <code translate="no">true</code> si la ligne est acceptée</p>
-<!-- @@@filterAcceptsRow -->
-<!-- $$$setAllItemsCoords[overload1]$$$setAllItemsCoordsconstdoubleconstdouble -->
-<h3 class="fn" translate="no" id="setAllItemsCoords"><span class="type">void</span> OnTheMapProxyModel::<span class="name">setAllItemsCoords</span>(const <span class="type">double</span> <i>lat</i>, const <span class="type">double</span> <i>lon</i>)</h3>
-<p>Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position).</p>
-<details>
-<summary>Details</summary>
-<p>: Ce slot est appelé quand l'utilisateur change la position d'une photo sur la carte. C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré.</p>
-</details>
-<p><i translate="no">lat</i> : latitude au format GPS. <i translate="no">lon</i> : longitude au format GPS.</p>
-<!-- @@@setAllItemsCoords -->
-<!-- $$$setAllItemsSavedCoords[overload1]$$$setAllItemsSavedCoords -->
-<h3 class="fn" translate="no" id="setAllItemsSavedCoords"><span class="type">void</span> OnTheMapProxyModel::<span class="name">setAllItemsSavedCoords</span>()</h3>
-<p>Ce slot applique les coordonnées GPS de la SavedPosition à toutes les photos du modèle filtré. Ce slot est appelé quand l'utilisateur appuye sur &quot;Apply Saved Position&quot;.</p>
-<!-- @@@setAllItemsSavedCoords -->
-</div>
         </div>
        </div>
    </div>

@@ -1,0 +1,68 @@
+\doxysection{Exif\+Write\+Task Class Reference}
+\hypertarget{class_exif_write_task}{}\label{class_exif_write_task}\index{ExifWriteTask@{ExifWriteTask}}
+
+
+La classe \doxylink{class_exif_write_task}{Exif\+Write\+Task} permet d\textquotesingle{}écrire des metadata dans les photos JEG de façon asynchrone.  
+
+
+Inheritance diagram for Exif\+Write\+Task\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_exif_write_task}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_exif_write_task_a5182e345ea27ce1581cc6d28542bae97}{Exif\+Write\+Task}} (const QVariant\+Map exif\+Data, bool generate\+Backup=false)
+\begin{DoxyCompactList}\small\item\em Constructeur. On enregistre les paramètres. {\itshape exif\+Data\+:} la liste des metadata à écrire dans le fichier JPG. {\itshape generate\+Backup\+:} {\ttfamily true} si un backup de l\textquotesingle{}image doit être généré avant sa modification. \end{DoxyCompactList}\item 
+\Hypertarget{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df}\label{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df} 
+virtual void {\bfseries run} ()
+\begin{DoxyCompactList}\small\item\em Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un QProcess, et on écrit les metadata dans l\textquotesingle{}image JPG. Cette tache est exécutée dans un thread QRunnable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La classe \doxylink{class_exif_write_task}{Exif\+Write\+Task} permet d\textquotesingle{}écrire des metadata dans les photos JEG de façon asynchrone. 
+
+\textbackslash{}inmodule Ti\+Photo\+Locator 
+
+Tache asynchrone par utilisation de QThread\+Pool.
+
+\begin{DoxyNote}{Note}
+\+: les QRunnable n\textquotesingle{}héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l\textquotesingle{}aide de signaux. Donc, à la fin du traitement, pour actualiser les données du \doxylink{class_photo_model}{Photo\+Model}, il faut faire un appel direct. Cependant, cela n\textquotesingle{}est pas contraire aux recommandations\+: mettre à jour des données peut se faire par appel synchrone. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_exif_write_task_a5182e345ea27ce1581cc6d28542bae97}\label{class_exif_write_task_a5182e345ea27ce1581cc6d28542bae97} 
+\index{ExifWriteTask@{ExifWriteTask}!ExifWriteTask@{ExifWriteTask}}
+\index{ExifWriteTask@{ExifWriteTask}!ExifWriteTask@{ExifWriteTask}}
+\doxysubsubsection{\texorpdfstring{ExifWriteTask()}{ExifWriteTask()}}
+{\footnotesize\ttfamily Exif\+Write\+Task\+::\+Exif\+Write\+Task (\begin{DoxyParamCaption}\item[{const QVariant\+Map}]{exif\+Data,  }\item[{bool}]{generate\+Backup = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur. On enregistre les paramètres. {\itshape exif\+Data\+:} la liste des metadata à écrire dans le fichier JPG. {\itshape generate\+Backup\+:} {\ttfamily true} si un backup de l\textquotesingle{}image doit être généré avant sa modification. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{QVariantMap:\ QMap(}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}SourceFile"{}},\ \ \ \ \ \ \ QVariant(QString,\ \ \ \textcolor{stringliteral}{"{}E:/TiPhotos/P8160449.JPG"{}}))}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}FileName"{}},\ \ \ \ \ \ \ \ \ QVariant(QString,\ \ \ \textcolor{stringliteral}{"{}P8160449.JPG"{}}))}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}Artist"{}},\ \ \ \ \ \ \ \ \ \ \ QVariant(QString,\ \ \ \textcolor{stringliteral}{"{}Blemia\ Borowicz"{}}))}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}DateTimeOriginal"{}},\ QVariant(QString,\ \ \ \textcolor{stringliteral}{"{}2023:08:16\ 13:30:20"{}}))}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}GPSLatitude"{}},\ \ \ \ \ \ QVariant(\textcolor{keywordtype}{double},\ \ \ \ 48.7664))}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}GPSLatitudeRef"{}},\ \ \ QVariant(QString,\ \ \ \textcolor{stringliteral}{"{}N"{}}))}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}GPSLongitude"{}},\ \ \ \ \ QVariant(\textcolor{keywordtype}{double},\ \ \ \ 14.0194))}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}GPSLongitudeRef"{}},\ \ QVariant(QString,\ \ \ \textcolor{stringliteral}{"{}E"{}}))}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}Make"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ QVariant(QString,\ \ \ \textcolor{stringliteral}{"{}OLYMPUS\ CORPORATION"{}}))}
+\DoxyCodeLine{\ (\textcolor{stringliteral}{"{}Model"{}},\ \ \ \ \ \ \ \ \ \ \ \ QVariant(QString,\ \ \ \textcolor{stringliteral}{"{}E-\/M10MarkII"{}}))}
+\DoxyCodeLine{\ )}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/Exif\+Write\+Task.\+h\item 
+cpp/Exif\+Write\+Task.\+cpp\end{DoxyCompactItemize}

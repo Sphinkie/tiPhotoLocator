@@ -67,6 +67,7 @@ public:
 
 public slots:
     void onSelectedPhotoChanged(const int row);
+    void append(const QString text, const QString target, const QString category, const int photo_row);
 
 private:
     // -----------------------------------------------------

@@ -19,7 +19,7 @@ public slots:
     void setAllItemsSavedCoords();
 
 signals:
-    void selectedFilterEnabledChanged();
+    void selectedFilterEnabledChanged();  /// Not implemented
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;

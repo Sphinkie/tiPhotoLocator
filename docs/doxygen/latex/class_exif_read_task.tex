@@ -1,0 +1,100 @@
+\doxysection{Exif\+Read\+Task Class Reference}
+\hypertarget{class_exif_read_task}{}\label{class_exif_read_task}\index{ExifReadTask@{ExifReadTask}}
+
+
+La tache asynchrone \doxylink{class_exif_read_task}{Exif\+Read\+Task} permet de lire les metadonnées d\textquotesingle{}une photo JPG sur le disque dur.  
+
+
+Inheritance diagram for Exif\+Read\+Task\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_exif_read_task}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db}{Exif\+Read\+Task}} (QString file\+Path)
+\begin{DoxyCompactList}\small\item\em Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n\textquotesingle{}est pas optimisé. \end{DoxyCompactList}\item 
+\Hypertarget{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8}\label{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8} 
+virtual void {\bfseries run} ()
+\begin{DoxyCompactList}\small\item\em \+: Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultat dans \doxylink{class_photo_model}{Photo\+Model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4}{init}} (\mbox{\hyperlink{class_photo_model}{Photo\+Model}} \texorpdfstring{$\ast$}{*}photo\+Model)
+\begin{DoxyCompactList}\small\item\em A appeler lors de la première utilisation. Mémorise quelques infos statiques. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La tache asynchrone \doxylink{class_exif_read_task}{Exif\+Read\+Task} permet de lire les metadonnées d\textquotesingle{}une photo JPG sur le disque dur. 
+
+\textbackslash{}inmodule Ti\+Photo\+Locator 
+
+Tache asynchrone par utilisation de QThread\+Pool.
+
+\begin{DoxyNote}{Note}
+\+: les QRunnable n\textquotesingle{}héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l\textquotesingle{}aide de signaux. Donc, à la fin du traitement, pour actualiser les données du \doxylink{class_photo_model}{Photo\+Model}, il faut faire un appel direct à une méthode du modèle. Cependant, cela n\textquotesingle{}est pas contraire aux recommandations\+: mettre à jour des données peut se faire par appel synchrone.
+\end{DoxyNote}
+Exiftool json options Description of {\bfseries{JSON}} options for {\ttfamily Exif\+Tool}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/j[[+]=*JSONFILE*]\ (-\/json)}
+\DoxyCodeLine{Use\ JSON\ (JavaScript\ Object\ Notation)\ formatting\ \textcolor{keywordflow}{for}\ console\ output\ (or\ \textcolor{keyword}{import}\ a\ JSON\ file\ \textcolor{keywordflow}{if}\ *JSONFILE*\ is\ specified).}
+\DoxyCodeLine{This\ option\ may\ be\ combined\ with:}
+\DoxyCodeLine{\ \ -\/g\ to\ organize\ the\ output\ into\ objects\ by\ group,}
+\DoxyCodeLine{\ \ or\ -\/G\ to\ add\ group\ names\ to\ each\ tag.}
+\DoxyCodeLine{\ \ -\/a\ option\ is\ implied\ when\ -\/json\ is\ used,\ but\ entries\ with\ identical\ JSON\ names\ are\ suppressed\ in\ the\ output.}
+\DoxyCodeLine{\ \ -\/G4\ may\ be\ used\ to\ ensure\ that\ all\ tags\ have\ unique\ JSON\ names.}
+\DoxyCodeLine{\ \ -\/D\ or\ -\/H\ option\ changes\ tag\ values\ to\ JSON\ objects\ with\ \textcolor{stringliteral}{"{}val"{}}\ and\ \textcolor{stringliteral}{"{}id"{}}\ fields}
+\DoxyCodeLine{\ \ -\/l\ adds\ a\ \textcolor{stringliteral}{"{}desc"{}}\ field,\ and\ a\ \textcolor{stringliteral}{"{}num"{}}\ field\ \textcolor{keywordflow}{if}\ the\ numerical\ value\ is\ different\ from\ the\ converted\ \textcolor{stringliteral}{"{}val"{}}.}
+\DoxyCodeLine{\ \ -\/b\ option\ may\ be\ added\ to\ output\ binary\ data,\ encoded\ in\ base64\ \textcolor{keywordflow}{if}\ necessary\ (indicated\ by\ ASCII\ \textcolor{stringliteral}{"{}base64:"{}}\ as\ the\ first\ 7\ bytes\ of\ the\ value)}
+\DoxyCodeLine{\ \ -\/t\ may\ be\ added\ to\ include\ tag\ table\ information\ (see\ -\/t\ \textcolor{keywordflow}{for}\ details).}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ List-\/type\ tags\ with\ multiple\ items\ are\ output\ as\ JSON\ arrays\ unless\ -\/sep\ is\ used.}
+\DoxyCodeLine{\ \ The\ JSON\ output\ is\ UTF-\/8\ regardless\ of\ any\ -\/L\ or\ -\/charset\ option\ setting,\ but\ the\ UTF-\/8\ validation\ is\ disabled\ \textcolor{keywordflow}{if}\ a\ character\ set\ other\ than\ UTF-\/8\ is\ specified.}
+\DoxyCodeLine{\ \ By\ \textcolor{keywordflow}{default}\ XMP\ structures\ are\ flattened\ into\ individual\ tags\ in\ the\ JSON\ output,\ but\ the\ original\ structure\ may\ be\ preserved\ with\ the\ -\/\textcolor{keyword}{struct\ }option\ (this\ also\ causes\ all\ list-\/type\ XMP\ tags\ to\ be\ output\ as\ JSON\ arrays,\ otherwise\ single-\/item\ lists\ would\ be\ output\ as\ simple\ strings).}
+\DoxyCodeLine{\ \ Note\ that\ ExifTool\ quotes\ JSON\ values\ only\ if\ they\ don't\ look\ like\ numbers\ (regardless\ of\ the\ original\ storage\ format\ or\ the\ relevant\ metadata\ specification).}
+
+\end{DoxyCode}
+ \textbackslash{}enddetails 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db}\label{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db} 
+\index{ExifReadTask@{ExifReadTask}!ExifReadTask@{ExifReadTask}}
+\index{ExifReadTask@{ExifReadTask}!ExifReadTask@{ExifReadTask}}
+\doxysubsubsection{\texorpdfstring{ExifReadTask()}{ExifReadTask()}}
+{\footnotesize\ttfamily Exif\+Read\+Task\+::\+Exif\+Read\+Task (\begin{DoxyParamCaption}\item[{QString}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n\textquotesingle{}est pas optimisé. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & le chemin + nom du fichier JPG à lire. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4}\label{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4} 
+\index{ExifReadTask@{ExifReadTask}!init@{init}}
+\index{init@{init}!ExifReadTask@{ExifReadTask}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Exif\+Read\+Task\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_photo_model}{Photo\+Model}} \texorpdfstring{$\ast$}{*}}]{photo\+Model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A appeler lors de la première utilisation. Mémorise quelques infos statiques. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em photo\+Model} & \+: la classe appelante, à qui il faudra renvoyer les metadata lues. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/Exif\+Read\+Task.\+h\item 
+cpp/Exif\+Read\+Task.\+cpp\end{DoxyCompactItemize}

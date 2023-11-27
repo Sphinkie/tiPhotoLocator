@@ -1,0 +1,110 @@
+\doxysection{Data Struct Reference}
+\hypertarget{struct_data}{}\label{struct_data}\index{Data@{Data}}
+
+
+A data structure containing all the attributes for a photo picture\+: filename, GPS coordinates, etc.  
+
+
+
+
+{\ttfamily \#include $<$Photo\+Model.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_data_a64d299e9233486e7e2dec91b458aaf18}\label{struct_data_a64d299e9233486e7e2dec91b458aaf18} 
+enum {\bfseries Item\+Type} \{ {\bfseries photo}
+, {\bfseries marker}
+, {\bfseries welcome}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_data_a9f806b38e37df3d4c8db35527942897f}\label{struct_data_a9f806b38e37df3d4c8db35527942897f} 
+{\bfseries Data} (const QString \&file\+\_\+name, const QString \&image\+\_\+url, const bool is\+\_\+marker=false, const bool is\+\_\+welcome=false, bool is\+\_\+selected=false)
+\item 
+\Hypertarget{struct_data_a938e2a2d8c3366cbf92a62030982b6d6}\label{struct_data_a938e2a2d8c3366cbf92a62030982b6d6} 
+bool {\bfseries operator==} (const QString \&file\+\_\+name)
+\item 
+\Hypertarget{struct_data_a054c4165a75f9e9ba5dedaaceffad50a}\label{struct_data_a054c4165a75f9e9ba5dedaaceffad50a} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{struct_data}{Data}} \&data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_data_a29a3676b31e07d6e66cb44578d6f5d95}\label{struct_data_a29a3676b31e07d6e66cb44578d6f5d95} 
+QString {\bfseries filename}
+\item 
+\Hypertarget{struct_data_a73b37bb171ca36271feedfa425bf3456}\label{struct_data_a73b37bb171ca36271feedfa425bf3456} 
+QString {\bfseries image\+Url}
+\item 
+\Hypertarget{struct_data_a7f53eee55a5fc38c69252056f391dcc3}\label{struct_data_a7f53eee55a5fc38c69252056f391dcc3} 
+double {\bfseries gps\+Latitude} = 0
+\item 
+\Hypertarget{struct_data_a5c1d22a52e05fd7ff06b53d18eefa4a7}\label{struct_data_a5c1d22a52e05fd7ff06b53d18eefa4a7} 
+double {\bfseries gps\+Longitude} = 0
+\item 
+\Hypertarget{struct_data_a1fb09c7125717599522afcc3c0657e1a}\label{struct_data_a1fb09c7125717599522afcc3c0657e1a} 
+bool {\bfseries has\+GPS} = false
+\item 
+\Hypertarget{struct_data_a7f75d81668e9ac34debba8a136e31098}\label{struct_data_a7f75d81668e9ac34debba8a136e31098} 
+bool {\bfseries is\+Selected}
+\item 
+\Hypertarget{struct_data_a2dfc10e36bd34ab7198842183115c5f4}\label{struct_data_a2dfc10e36bd34ab7198842183115c5f4} 
+bool {\bfseries is\+Marker} = false
+\item 
+\Hypertarget{struct_data_af9ab59e082e2aeddec512b726b6976ee}\label{struct_data_af9ab59e082e2aeddec512b726b6976ee} 
+bool {\bfseries is\+Welcome} = false
+\item 
+\Hypertarget{struct_data_a0b6cb233f6fcd720cd118cc2c07f7282}\label{struct_data_a0b6cb233f6fcd720cd118cc2c07f7282} 
+bool {\bfseries inside\+Circle} = false
+\item 
+\Hypertarget{struct_data_a506cab8af5f1edc324f8804868cd03bf}\label{struct_data_a506cab8af5f1edc324f8804868cd03bf} 
+bool {\bfseries to\+Be\+Saved} = false
+\item 
+\Hypertarget{struct_data_adfe7981e705c1e9631159f79887900a0}\label{struct_data_adfe7981e705c1e9631159f79887900a0} 
+QString {\bfseries date\+Time\+Original}
+\item 
+\Hypertarget{struct_data_a024a5e91f8957b65883e50617f33808c}\label{struct_data_a024a5e91f8957b65883e50617f33808c} 
+QString {\bfseries cam\+Model}
+\item 
+\Hypertarget{struct_data_ab6f9430d1e0f2c4f3e1b373e4e73f167}\label{struct_data_ab6f9430d1e0f2c4f3e1b373e4e73f167} 
+QString {\bfseries make}
+\item 
+\Hypertarget{struct_data_ac7f83e16c285e89801d1701be8be72f4}\label{struct_data_ac7f83e16c285e89801d1701be8be72f4} 
+int {\bfseries image\+Width} = 0
+\item 
+\Hypertarget{struct_data_a8be3d1de2678a17dfa6260d96bd21a85}\label{struct_data_a8be3d1de2678a17dfa6260d96bd21a85} 
+int {\bfseries image\+Height} = 0
+\item 
+\Hypertarget{struct_data_a475ccdbcd7b9c4d67cb4c40e8e61a736}\label{struct_data_a475ccdbcd7b9c4d67cb4c40e8e61a736} 
+QString {\bfseries artist}
+\item 
+\Hypertarget{struct_data_a1a271ab763c9ec4752ba2de7adff0949}\label{struct_data_a1a271ab763c9ec4752ba2de7adff0949} 
+QString {\bfseries city}
+\item 
+\Hypertarget{struct_data_ad2ea6922bb04c319c3f9c8e66f317729}\label{struct_data_ad2ea6922bb04c319c3f9c8e66f317729} 
+QString {\bfseries country}
+\item 
+\Hypertarget{struct_data_a448c9017bebbe0e95bbeee2718a689f1}\label{struct_data_a448c9017bebbe0e95bbeee2718a689f1} 
+QString {\bfseries description}
+\item 
+\Hypertarget{struct_data_a6599c42551b650e304816464a5942959}\label{struct_data_a6599c42551b650e304816464a5942959} 
+QString {\bfseries description\+Writer}
+\item 
+\Hypertarget{struct_data_afaa45ccabe499739aade423e31216508}\label{struct_data_afaa45ccabe499739aade423e31216508} 
+QString {\bfseries headline}
+\item 
+\Hypertarget{struct_data_a019b41d6c2a50c4a01971407b36be135}\label{struct_data_a019b41d6c2a50c4a01971407b36be135} 
+QString {\bfseries keywords}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A data structure containing all the attributes for a photo picture\+: filename, GPS coordinates, etc. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Models/Photo\+Model.\+h\item 
+Models/Photo\+Model.\+cpp\end{DoxyCompactItemize}

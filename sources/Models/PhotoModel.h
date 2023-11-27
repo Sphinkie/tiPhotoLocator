@@ -151,6 +151,8 @@ signals:
     // Signaux émis
     // -----------------------------------------------------
     void selectedRowChanged(const int row);
+    void sendSuggestion(QString text, QString target, QString category, int row);
+
 
 
     // -----------------------------------------------------

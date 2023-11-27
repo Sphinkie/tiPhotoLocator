@@ -103,11 +103,12 @@ int main(int argc, char *argv[])
     engine.load(url);
     //view.show();
 
+    // FIXME
     QSettings settings;
-    QPointF homeCoords = settings.value("homeCoords", NULL).toPointF();
-    if (homeCoords.isNull())
+    QPointF homeCoords = settings.value("homeCoords", QPointF(48.853, 2.35)).toPointF();
+    qDebug() << homeCoords;
+    if (homeCoords == QPointF(0,0))
         settings.setValue("homeCoords", QPointF(48.853, 2.35));  // N-D de Pariss
-
 
 
     // --------------------------------------
@@ -138,7 +139,8 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // Connexions entre classes C++
     // --------------------------------------
-    QObject::connect(&photoListModel, SIGNAL(selectedRowChanged(int)),    &suggestionModel, SLOT(onSelectedPhotoChanged(int)));
+    QObject::connect(&photoListModel, SIGNAL(selectedRowChanged(int)),                     &suggestionModel, SLOT(onSelectedPhotoChanged(int)));
+    QObject::connect(&photoListModel, SIGNAL(sendSuggestion(QString,QString,QString,int)), &suggestionModel, SLOT(append(QString,QString,QString,int)));
 
     // --------------------------------------
     // Exécution de QML

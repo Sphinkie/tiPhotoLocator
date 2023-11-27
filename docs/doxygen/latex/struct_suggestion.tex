@@ -1,0 +1,52 @@
+\doxysection{Suggestion Struct Reference}
+\hypertarget{struct_suggestion}{}\label{struct_suggestion}\index{Suggestion@{Suggestion}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_suggestion_a7b7b80cdbe8f3980639fe23fae9960b6}\label{struct_suggestion_a7b7b80cdbe8f3980639fe23fae9960b6} 
+{\bfseries Suggestion} (const QString \&suggestion\+\_\+text, const QString \&suggestion\+\_\+target, const QString suggestion\+\_\+category, const int first\+\_\+photo)
+\item 
+bool \mbox{\hyperlink{struct_suggestion_a549354300dbe0ea3e0afac765a375653}{operator==}} (const \mbox{\hyperlink{struct_suggestion}{Suggestion}} \&data) const
+\begin{DoxyCompactList}\small\item\em La surcharge de l\textquotesingle{}operateur == permet d\textquotesingle{}utiliser la méthode contains(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_suggestion_aecac3e72672ace070a7c01823b4beac1}\label{struct_suggestion_aecac3e72672ace070a7c01823b4beac1} 
+QString {\bfseries text}
+\item 
+\Hypertarget{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e}\label{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e} 
+QString {\bfseries target}
+\item 
+\Hypertarget{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f}\label{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f} 
+QString {\bfseries category}
+\item 
+\Hypertarget{struct_suggestion_af319b358957378992fcbcd14022e2125}\label{struct_suggestion_af319b358957378992fcbcd14022e2125} 
+QSet$<$ int $>$ {\bfseries photos}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_suggestion_a549354300dbe0ea3e0afac765a375653}\label{struct_suggestion_a549354300dbe0ea3e0afac765a375653} 
+\index{Suggestion@{Suggestion}!operator==@{operator==}}
+\index{operator==@{operator==}!Suggestion@{Suggestion}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Suggestion\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_suggestion}{Suggestion}} \&}]{data }\end{DoxyParamCaption}) const}
+
+
+
+La surcharge de l\textquotesingle{}operateur == permet d\textquotesingle{}utiliser la méthode contains(). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & second operande. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE si le "{}texte"{} des deux suggestions est identique. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Models/Suggestion\+Model.\+h\item 
+Models/Suggestion\+Model.\+cpp\end{DoxyCompactItemize}

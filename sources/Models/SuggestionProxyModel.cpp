@@ -8,13 +8,13 @@
 /*!
  * \class SuggestionProxyModel
  * \inmodule TiPhotoLocator
- * \brief The SuggestionProxyModel class if a filter ProxyModel, that filters the suggestions related to a given photo.
+ * \brief The SuggestionProxyModel class is a filter ProxyModel, that filters the suggestions related to a given photo.
  */
 
 /* ********************************************************************************** */
-/*
- * \brief Contructeur.
- * \a parent : modèle source
+/**
+ * @brief Contructeur.
+ * @param parent : modèle source.
  */
 SuggestionProxyModel::SuggestionProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -23,8 +23,8 @@ SuggestionProxyModel::SuggestionProxyModel(QObject *parent) : QSortFilterProxyMo
 
 
 /* ********************************************************************************** */
-/*!
- * \brief Returns \c true if the filering is active.
+/**
+ * @brief Returns \c true if the filering is active.
  */
 bool SuggestionProxyModel::filterEnabled() const
 {
@@ -33,9 +33,9 @@ bool SuggestionProxyModel::filterEnabled() const
 
 
 /* ********************************************************************************** */
-/*
- * \brief Active ou désactive le filtrage par le ProxyModel.
- * \a enabled : Mettre \c true pour activer le filtrage.
+/**
+ * @brief Active ou désactive le filtrage par le ProxyModel.
+ * @param enabled : Mettre \c true pour activer le filtrage.
  */
 void SuggestionProxyModel::setFilterEnabled(bool enabled)
 {

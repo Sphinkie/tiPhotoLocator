@@ -1,0 +1,34 @@
+\doxysection{Unlocalized\+Proxy\+Model.\+h}
+\hypertarget{_unlocalized_proxy_model_8h_source}{}\label{_unlocalized_proxy_model_8h_source}\index{Models/UnlocalizedProxyModel.h@{Models/UnlocalizedProxyModel.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UNLOCALIZEDPROXYMODEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UNLOCALIZEDPROXYMODEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QSortFilterProxyModel>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_unlocalized_proxy_model}{UnlocalizedProxyModel}}\ :\ \textcolor{keyword}{public}\ QSortFilterProxyModel}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00010\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ filterEnabled\ READ\ filterEnabled\ WRITE\ setFilterEnabled\ NOTIFY\ filterEnabledChanged)}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_unlocalized_proxy_model}{UnlocalizedProxyModel}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ filterEnabled()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ pouvant\ être\ appelées\ depuis\ QML}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc}{getSourceIndex}}(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ setFilterEnabled(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ signals:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ filterEnabledChanged();\ \ \textcolor{comment}{//\ Non\ implémenté}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNLOCALIZEDPROXYMODEL\_H}}
+
+\end{DoxyCode}

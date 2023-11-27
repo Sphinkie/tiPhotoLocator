@@ -1,0 +1,276 @@
+\doxysection{Photo\+Model Class Reference}
+\hypertarget{class_photo_model}{}\label{class_photo_model}\index{PhotoModel@{PhotoModel}}
+
+
+The \doxylink{class_photo_model}{Photo\+Model} class manages a list of photo data.  
+
+
+Inheritance diagram for Photo\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_photo_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_photo_model_afae44c634ae6bf2b6b6c2e2a19269159}\label{class_photo_model_afae44c634ae6bf2b6b6c2e2a19269159} 
+enum {\bfseries Roles} \{ \newline
+{\bfseries Filename\+Role} = Qt\+::User\+Role
+, {\bfseries Image\+Url\+Role}
+, {\bfseries Latitude\+Role}
+, {\bfseries Longitude\+Role}
+, \newline
+{\bfseries Has\+GPSRole}
+, {\bfseries Is\+Selected\+Role}
+, {\bfseries Is\+Marker\+Role}
+, {\bfseries Is\+Welcome\+Role}
+, \newline
+{\bfseries Inside\+Circle\+Role}
+, {\bfseries To\+Be\+Saved\+Role}
+, {\bfseries Date\+Time\+Original\+Role}
+, {\bfseries Cam\+Model\+Role}
+, \newline
+{\bfseries Make\+Role}
+, {\bfseries Image\+Width\+Role}
+, {\bfseries Image\+Height\+Role}
+, {\bfseries Artist\+Role}
+, \newline
+{\bfseries GPSLatitude\+Ref\+Role}
+, {\bfseries GPSLongitude\+Ref\+Role}
+, {\bfseries City\+Role}
+, {\bfseries Country\+Role}
+, \newline
+{\bfseries Description\+Role}
+, {\bfseries Description\+Writer\+Role}
+, {\bfseries Headline\+Role}
+, {\bfseries Keywords\+Role}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_photo_model_a8a98d5f81789881189e179d6059c1586}{append}} (const QString filename, const QString url)
+\begin{DoxyCompactList}\small\item\em Adds a photo to the model, with just a name and a path (url). Other data should be filled later, from exif metadata. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a3cc8c0b5e6803970def517a8d57ae155}\label{class_photo_model_a3cc8c0b5e6803970def517a8d57ae155} 
+void {\bfseries fetch\+Exif\+Metadata} (int row=-\/1)
+\begin{DoxyCompactList}\small\item\em Ce slot lit des données EXIF d\textquotesingle{}une (ou toutes) photos du répertoire. {\itshape photo} \+: l\textquotesingle{}indice de la photo (vide ou -\/1 = toutes les photos du répertoire) \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_ac393e2839ea5993f199ec669973972ef}\label{class_photo_model_ac393e2839ea5993f199ec669973972ef} 
+void {\bfseries save\+Metadata} ()
+\begin{DoxyCompactList}\small\item\em Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. Tag obligatoire\+: image\+Url. Tags modifiés\+: coords GPS, Creator, City, Country. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_model_a834795331bc8b3f329e8f2a143839265}{set\+In\+Circle\+Item\+Coords}} (double latitude, double longitude)
+\begin{DoxyCompactList}\small\item\em Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_model_ae2afc1e23be1c91a8bfc5a8e16afa506}{append\+Saved\+Position}} (double lati, double longi)
+\begin{DoxyCompactList}\small\item\em Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}{remove\+Saved\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_photo_model_a5aef53c6395a6ccd579a019c62e472e0}{set\+Data}} (int row, QString value, QString property)
+\begin{DoxyCompactList}\small\item\em Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_aacde479b741e9f94c2077ad979e6b6a7}\label{class_photo_model_aacde479b741e9f94c2077ad979e6b6a7} 
+void {\bfseries duplicate\+Data} (int row)
+\begin{DoxyCompactList}\small\item\em Duplicates an item of the model, and add it at the end of the vector. {\itshape row} \+: item row to be duplicated. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a1e2f3f829e54ef445a5b1dea07ad2118}\label{class_photo_model_a1e2f3f829e54ef445a5b1dea07ad2118} 
+void {\bfseries remove\+Data} (int row)
+\begin{DoxyCompactList}\small\item\em Fonction typique qui supprime l\textquotesingle{}item désigné du modèle. {\itshape row} \+: la position dans le vecteur de l\textquotesingle{}item à modifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_photo_model_ac6f14df5683cb7c053c9d5c6982a3d2c}\label{class_photo_model_ac6f14df5683cb7c053c9d5c6982a3d2c} 
+void {\bfseries selected\+Row\+Changed} (const int row)
+\item 
+\Hypertarget{class_photo_model_ab8f7cb78c57128f6a6df184a4d89f2bf}\label{class_photo_model_ab8f7cb78c57128f6a6df184a4d89f2bf} 
+void {\bfseries send\+Suggestion} (QString text, QString target, QString category, int row)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_photo_model_aac3d5e1ae72e823b4e6091497c5cf27d}\label{class_photo_model_aac3d5e1ae72e823b4e6091497c5cf27d} 
+QHash$<$ int, QByte\+Array $>$ {\bfseries role\+Names} () const override
+\item 
+\Hypertarget{class_photo_model_a244f996eed49122ebe11c5369d63a0e2}\label{class_photo_model_a244f996eed49122ebe11c5369d63a0e2} 
+{\bfseries Photo\+Model} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose. {\itshape parent} \+: paramètre classique pour les QAbstract\+List\+Model. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57}\label{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57} 
+int {\bfseries row\+Count} (const QModel\+Index \&parent) const override
+\begin{DoxyCompactList}\small\item\em Returns the number of elements in the model. Implémentation obligatoire. {\itshape parent} \+: parent of the model. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}\label{class_photo_model_a3f09addf9a989e85b7ae5797156b270f} 
+QVariant {\bfseries data} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
+\begin{DoxyCompactList}\small\item\em Returns the requeted role value of an element of the model. Implémentation obligatoire. {\itshape index} \+: index of the element of the model. {\itshape role} \+: the requested role (enum). \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE QVariant \mbox{\hyperlink{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe}{get\+Url}} (int row)
+\begin{DoxyCompactList}\small\item\em Returns the full name (with absolute path) of the photo, in a QVariant containing the image URL. This is an example of unitary get\+Data method. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634}\label{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634} 
+Q\+\_\+\+INVOKABLE QVariant\+Map {\bfseries get} (int row)
+\item 
+\Hypertarget{class_photo_model_a822190ecc2081c7b49030c0f6a42317f}\label{class_photo_model_a822190ecc2081c7b49030c0f6a42317f} 
+Q\+\_\+\+INVOKABLE void {\bfseries dump\+Data} ()
+\begin{DoxyCompactList}\small\item\em Debug function that print (in the console) one line of the model at every call. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a1ff9f0f539d9b65e0521ebbaa498b21b}\label{class_photo_model_a1ff9f0f539d9b65e0521ebbaa498b21b} 
+Q\+\_\+\+INVOKABLE void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Deletes all the items of the Model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_model_a28933cf9451c4794c12325ac125f439f}{append}} (const QVariant\+Map \mbox{\hyperlink{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}{data}})
+\begin{DoxyCompactList}\small\item\em Adds an item to the model, from a \textquotesingle{}key-\/value\textquotesingle{} dictionnary of metadata given in the {\itshape data} parameter. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}\label{class_photo_model_ad7a5d45624200d819ee0ab429387baa0} 
+bool {\bfseries set\+Data} (const QModel\+Index \&index, const QVariant \&value, int role) override
+\item 
+\Hypertarget{class_photo_model_a606c1207c36cdf5e81f346ca82cec2d8}\label{class_photo_model_a606c1207c36cdf5e81f346ca82cec2d8} 
+void {\bfseries set\+Data} (const QVariant\+Map \&value\+\_\+list)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_photo_model_af32aed3a0a39738d782a1d69a14175f2}\label{class_photo_model_af32aed3a0a39738d782a1d69a14175f2} 
+QModel\+Index {\bfseries m\+\_\+marker\+Index} = QModel\+Index()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_photo_model_a6ff090266c5c666181a02469943d9512}\label{class_photo_model_a6ff090266c5c666181a02469943d9512} 
+int {\bfseries m\+\_\+marker\+Row} = -\/1
+\begin{DoxyCompactList}\small\item\em Index du marker Saved\+Position. Initialisé à une valeur invalide. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_photo_model_a6376872cafff59ccc887f405a2515ed9}\label{class_photo_model_a6376872cafff59ccc887f405a2515ed9} 
+int {\bfseries selected\+Row}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_photo_model_a7885f6ff2471a499f22a457da710a389}{set\+Data}}
+\begin{DoxyCompactList}\small\item\em Surcharge qui permet de modifier unitairement un role d\textquotesingle{}un item du modèle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_photo_model_a7885f6ff2471a499f22a457da710a389}{set\+Data}}
+\begin{DoxyCompactList}\small\item\em Cette méthode permet de modifier plusieurs roles d\textquotesingle{}un item du modèle, avec comme clef le role \textquotesingle{}Filename\+Role\textquotesingle{}. Roles non modifiables (ignorés)\+: image\+Url, inside\+Circle. Roles non modifiables (recalculés)\+: has\+GPS, to\+Be\+Saved. Cette fonction positionne le flag "{}\+To\+Be\+Saved"{} à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales. {\itshape value\+\_\+list} \+: la liste des données à modifier. Attention\+: les Keys sont les noms des balises EXIF. "{}\+File\+Name"{} est obligatoire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_photo_model}{Photo\+Model} class manages a list of photo data. 
+
+\textbackslash{}inmodule Ti\+Photo\+Locator 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_photo_model_a8a98d5f81789881189e179d6059c1586}\label{class_photo_model_a8a98d5f81789881189e179d6059c1586} 
+\index{PhotoModel@{PhotoModel}!append@{append}}
+\index{append@{append}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{append}{append}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Photo\+Model\+::append (\begin{DoxyParamCaption}\item[{const QString}]{filename,  }\item[{const QString}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Adds a photo to the model, with just a name and a path (url). Other data should be filled later, from exif metadata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \+: filename of the photo \\
+\hline
+{\em url} & \+: full path of the photo (in Qt format) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_photo_model_a28933cf9451c4794c12325ac125f439f}\label{class_photo_model_a28933cf9451c4794c12325ac125f439f} 
+\index{PhotoModel@{PhotoModel}!append@{append}}
+\index{append@{append}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Photo\+Model\+::append (\begin{DoxyParamCaption}\item[{const QVariant\+Map}]{data }\end{DoxyParamCaption})}
+
+
+
+Adds an item to the model, from a \textquotesingle{}key-\/value\textquotesingle{} dictionnary of metadata given in the {\itshape data} parameter. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{QVariantMap\ map;}
+\DoxyCodeLine{map.insert(\textcolor{stringliteral}{"{}filename"{}},\ QVariant(filename));}
+\DoxyCodeLine{map.insert(roleNames().value(ImageUrlRole),\ QVariant(url));}
+
+\end{DoxyCode}
+ \Hypertarget{class_photo_model_ae2afc1e23be1c91a8bfc5a8e16afa506}\label{class_photo_model_ae2afc1e23be1c91a8bfc5a8e16afa506} 
+\index{PhotoModel@{PhotoModel}!appendSavedPosition@{appendSavedPosition}}
+\index{appendSavedPosition@{appendSavedPosition}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{appendSavedPosition}{appendSavedPosition}}
+{\footnotesize\ttfamily void Photo\+Model\+::append\+Saved\+Position (\begin{DoxyParamCaption}\item[{double}]{lati,  }\item[{double}]{longi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune). 
+
+{\itshape lati} \+: latitude au format GPS. {\itshape longi} \+: longitude au format GPS. \Hypertarget{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe}\label{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe} 
+\index{PhotoModel@{PhotoModel}!getUrl@{getUrl}}
+\index{getUrl@{getUrl}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{getUrl()}{getUrl()}}
+{\footnotesize\ttfamily QVariant Photo\+Model\+::get\+Url (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})}
+
+
+
+Returns the full name (with absolute path) of the photo, in a QVariant containing the image URL. This is an example of unitary get\+Data method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \+: Indice de l\textquotesingle{}element à lire \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}\label{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f} 
+\index{PhotoModel@{PhotoModel}!removeSavedPosition@{removeSavedPosition}}
+\index{removeSavedPosition@{removeSavedPosition}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{removeSavedPosition}{removeSavedPosition}}
+{\footnotesize\ttfamily void Photo\+Model\+::remove\+Saved\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+@○brief Supprime du modèle l\textquotesingle{}item correspondant à la position sauvegardée. \Hypertarget{class_photo_model_a5aef53c6395a6ccd579a019c62e472e0}\label{class_photo_model_a5aef53c6395a6ccd579a019c62e472e0} 
+\index{PhotoModel@{PhotoModel}!setData@{setData}}
+\index{setData@{setData}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{setData}{setData}}
+{\footnotesize\ttfamily void Photo\+Model\+::set\+Data (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{QString}]{value,  }\item[{QString}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion. 
+
+{\itshape row} \+: indice de la photo. {\itshape value} \+: valeur de la propriété. {\itshape property} \+: nom de la propriété. \Hypertarget{class_photo_model_a834795331bc8b3f329e8f2a143839265}\label{class_photo_model_a834795331bc8b3f329e8f2a143839265} 
+\index{PhotoModel@{PhotoModel}!setInCircleItemCoords@{setInCircleItemCoords}}
+\index{setInCircleItemCoords@{setInCircleItemCoords}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{setInCircleItemCoords}{setInCircleItemCoords}}
+{\footnotesize\ttfamily void Photo\+Model\+::set\+In\+Circle\+Item\+Coords (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & \+: latitude GPS à affecter aux photos \\
+\hline
+{\em longitude} & \+: longitude GPS à affecter aux photos \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_photo_model_a7885f6ff2471a499f22a457da710a389}\label{class_photo_model_a7885f6ff2471a499f22a457da710a389} 
+\index{PhotoModel@{PhotoModel}!setData@{setData}}
+\index{setData@{setData}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily set\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Surcharge qui permet de modifier unitairement un role d\textquotesingle{}un item du modèle. 
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Returns {\ttfamily true} si la modification a réussi. {\ttfamily False} si l\textquotesingle{}index n\textquotesingle{}est pas valide, ou si la nouvelle valeur est identique à l\textquotesingle{}existante. Cette fonction met aussi à {\ttfamily TRUE} le flag {\ttfamily "{}\+To Be Saved"{}} car il s\textquotesingle{}agit d\textquotesingle{}une action opérateur. Certains roles ne sont pas modifiables\+: image\+Url, is\+Selected, has\+GPS, filename, etc. \begin{DoxySeeAlso}{See also}
+\{\href{https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html\#qabstractitemmodel-subclass}{\texttt{ https\+://doc.\+qt.\+io/qt-\/5/qtquick-\/modelviewsdata-\/cppmodels.\+html\#qabstractitemmodel-\/subclass}}\} Note\+: It is important to emit the data\+Changed() signal after saving the changes.
+\end{DoxySeeAlso}
+{\itshape index} \+: l\textquotesingle{}index (au sens Model\+Index) de l\textquotesingle{}item à modifier. {\itshape value} \+: la nouvelle valeur. {\itshape role} \+: le role à modifier (Latitude\+Role, Longitude\+Role, To\+Be\+Saved\+Role, city, country). \Hypertarget{class_photo_model_a7885f6ff2471a499f22a457da710a389}\label{class_photo_model_a7885f6ff2471a499f22a457da710a389} 
+\index{PhotoModel@{PhotoModel}!setData@{setData}}
+\index{setData@{setData}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily set\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Cette méthode permet de modifier plusieurs roles d\textquotesingle{}un item du modèle, avec comme clef le role \textquotesingle{}Filename\+Role\textquotesingle{}. Roles non modifiables (ignorés)\+: image\+Url, inside\+Circle. Roles non modifiables (recalculés)\+: has\+GPS, to\+Be\+Saved. Cette fonction positionne le flag "{}\+To\+Be\+Saved"{} à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales. {\itshape value\+\_\+list} \+: la liste des données à modifier. Attention\+: les Keys sont les noms des balises EXIF. "{}\+File\+Name"{} est obligatoire. 
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Models/Photo\+Model.\+h\item 
+Models/Photo\+Model.\+cpp\end{DoxyCompactItemize}

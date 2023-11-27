@@ -17,8 +17,8 @@
  Tache asynchrone par utilisation de QThreadPool.
 
  \note:
-    les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.\br
-    Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct à une méthode du modèle.\br
+    les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.
+    Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct à une méthode du modèle.
     Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.
 
    \details Exiftool json options
@@ -53,10 +53,11 @@ QString     ExifReadTask::m_argFile;
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Constructeur. On enregistre le paramètre \a filePath qui le chemin + nom du fichier JPG à lire.\br
+/**
+ * @brief Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.
  *        A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier.
  *        Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé.
+ * @param filePath: le chemin + nom du fichier JPG à lire.
  */
 ExifReadTask::ExifReadTask(QString filePath)
 {
@@ -66,9 +67,10 @@ ExifReadTask::ExifReadTask(QString filePath)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief: Lancement de la tache. On lance \b exifTool dans un process, et on analyse la réponse.
+/**
+ * @brief: Lancement de la tache. On lance \b exifTool dans un process, et on analyse la réponse.
  * Cette tache est exécutée dans un thread QRunnable.
+ * A la fin de la tache, on écrit les résultat dans PhotoModel.
  */
 void ExifReadTask::run()
 {
@@ -159,9 +161,9 @@ void ExifReadTask::processLine(QByteArray line)
 }
 
 /* ********************************************************************************************************** */
-/*
- * \brief A appeler lors de la première utilisation. Mémorise quelques infos statiques. \br
- * \a photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
+/**
+ * @brief A appeler lors de la première utilisation. Mémorise quelques infos statiques.
+ * @param photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
  */
 void ExifReadTask::init(PhotoModel* photoModel)
 {
@@ -171,9 +173,10 @@ void ExifReadTask::init(PhotoModel* photoModel)
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief List the tags to be read in the JPG files, and put them in the Arguments file for \c ExifTool.
- * Returns \c true if the file was successfully created. \br
+/**
+ * @brief List the tags to be read in the JPG files, and put them in the Arguments file for \c ExifTool.
+ * @returns \c true if the file was successfully created. \br
+ *
  * To learn about the usage of IPTC tags:
  * \list
  *   \li \l {https://iptc.org/std/photometadata/documentation/mappingguidelines/}
@@ -191,27 +194,25 @@ bool ExifReadTask::writeArgsFile()
 
     QTextStream out(&file);
     // Liste des tags Exif à extraire
-    out << "-FileName"          << Qt::endl;    // "P8180028.JPG"
-    //  out << "-FileCreateDate"    << Qt::endl;    // "2023:10:05 20:14:44+01:00" -- Date de copie du fichier sur le disque.
-    out << "-DateTimeOriginal"  << Qt::endl;    // "2017:08:25 08:03:16" -- Time of the shutter actuation (normally identical to CreateDate).
-    //  out << "-CreateDate"        << Qt::endl;    // "2017:08:25 08:03:16" -- Time that the file was written to the memory card.
-    //  out << "-ModifyDate"        << Qt::endl;    // "2021:02:18 16:15:21" -- Date of modification by Photoshop or other
-    out << "-Model"             << Qt::endl;    // "E-M10MarkII"         -- Camera model
-    out << "-Make"              << Qt::endl;    // "OLYMPUS"             -- Camera maker
-    out << "-ImageWidth"        << Qt::endl;    // 4608
-    out << "-ImageHeight"       << Qt::endl;    // 3072
+    out << "-FileName"          << Qt::endl;   // "P8180028.JPG"
+    //  out << "-FileCreateDate"<< Qt::endl;   // "2023:10:05 20:14:44+01:00" -- Date de copie du fichier sur le disque.
+    out << "-DateTimeOriginal"  << Qt::endl;   // "2017:08:25 08:03:16"       -- Time of the shutter actuation (normally identical to CreateDate).
+    //  out << "-CreateDate"    << Qt::endl;   // "2017:08:25 08:03:16"       -- Time that the file was written to the camera memory card.
+    out << "-ModifyDate"        << Qt::endl;   // "2021:02:18 16:15:21"       -- Date of modification by Photoshop or other
+    out << "-Model"             << Qt::endl;   // "E-M10MarkII"               -- Camera model
+    out << "-Make"              << Qt::endl;   // "OLYMPUS"                   -- Camera manufacturer
+    out << "-ImageWidth"        << Qt::endl;   // 4608
+    out << "-ImageHeight"       << Qt::endl;   // 3072
     // GPS coordinates
-    out << "-GPSLatitude"       << Qt::endl;    // 45.4325547675333
-    out << "-GPSLongitude"      << Qt::endl;    // 12.3374594498028
-    //  out << "-GPSLatitudeRef"    << Qt::endl;    // "N"
-    //  out << "-GPSLongitudeRef"   << Qt::endl;    // "E"
+    out << "-GPSLatitude"       << Qt::endl;   // 45.4325547675333
+    out << "-GPSLongitude"      << Qt::endl;   // 12.3374594498028
     // IPTC tags
-    out << "-Description"       << Qt::endl;    // Description du contenu de la photo (important)
-    out << "-ImageDescription"  << Qt::endl;    // Alternate tag label for "Description" (EXIF)
-    out << "-Caption"           << Qt::endl;    // Alternate tag label for "Description" (IPTC)
-    out << "-Keywords"          << Qt::endl;    // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
-    out << "-Artist"            << Qt::endl;    // Name of the photographer (EXIF tag label)
-    out << "-Creator"           << Qt::endl;    // Name of the photographer (IPTC tag label)
+    out << "-Description"       << Qt::endl;   // Description du contenu de la photo (important)
+    out << "-ImageDescription"  << Qt::endl;   // Alternate tag label for "Description" (EXIF)
+    out << "-Caption"           << Qt::endl;   // Alternate tag label for "Description" (IPTC)
+    out << "-Keywords"          << Qt::endl;   // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
+    out << "-Artist"            << Qt::endl;   // Name of the photographer (EXIF tag label)
+    out << "-Creator"           << Qt::endl;   // Name of the photographer (IPTC tag label)
     // Reverse Geocoding
     out << "-City"              << Qt::endl;
     out << "-Country"           << Qt::endl;

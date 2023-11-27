@@ -1,0 +1,38 @@
+\doxysection{Geocode\+Wrapper Class Reference}
+\hypertarget{class_geocode_wrapper}{}\label{class_geocode_wrapper}\index{GeocodeWrapper@{GeocodeWrapper}}
+Inheritance diagram for Geocode\+Wrapper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geocode_wrapper}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b}\label{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b} 
+void {\bfseries request\+Reverse\+Geocode} (double latitude, double longitude)
+\item 
+\Hypertarget{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23}\label{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23} 
+void {\bfseries request\+Coordinates} (QString city)
+\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre {\itshape city}. Exemple\+: "{}\+Marsa el Brega"{} =\texorpdfstring{$>$}{>} 30.\+4074, 19.\+5784. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453}\label{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453} 
+{\bfseries Geocode\+Wrapper} (\mbox{\hyperlink{class_suggestion_model}{Suggestion\+Model}} \texorpdfstring{$\ast$}{*}suggestion\+\_\+model)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\textbackslash{}inmodule Ti\+Photo\+Locator The \doxylink{class_geocode_wrapper}{Geocode\+Wrapper} class allows requests to Open\+Street\+Map for reverse geocoding. Ajouter les lignes suivantes dans le fichier {\ttfamily }.pro. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{QT\ +=\ positioning}
+\DoxyCodeLine{QT\ +=\ location}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/Geocode\+Wrapper.\+h\item 
+cpp/Geocode\+Wrapper.\+cpp\end{DoxyCompactItemize}
