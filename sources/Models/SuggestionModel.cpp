@@ -16,8 +16,8 @@
 SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
 {
     QSettings settings;
-    this->append(settings.value("photographe","").toString(), "artist", "photo", -1);
-    this->append(settings.value("initiales","").toString(), "descriptionWriter", "photo", -1);
+//    this->append(settings.value("photographe","").toString(), "artist", "photo", -1);
+//    this->append(settings.value("initiales","").toString(), "descriptionWriter", "photo", -1);
 }
 
 

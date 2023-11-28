@@ -5,7 +5,6 @@ import "../Vues"
 ToolBarBottomForm {
 
     // true en mode DEBUG
-    // bt_dump.visible: reglages2.value("debugModeEnabled", false)
     bt_dump.visible: true
 
 

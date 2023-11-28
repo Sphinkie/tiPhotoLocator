@@ -1,7 +1,7 @@
 import QtQuick
+import QtCore
 import QtLocation
 import QtPositioning
-
 
 // ----------------------------------------------------------------
 // Affichage d'une carte OpenStreetMap
@@ -58,22 +58,22 @@ Map {
         MouseArea {
             anchors.fill: parent
             onClicked: (mouse) => {
-                console.log("Click on the map.");
-                // On repositionne le cercle
-                mapCircle.center = mapView.toCoordinate(Qt.point(mouse.x,mouse.y))
-                // TODO utiliser une variable de type coordinate
-                var lati = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
-                var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
-                // console.log('latitude  = ' + lati );
-                // console.log('longitude = ' + longi);
-                // On mémorise les coords du point cliqué dans les properties du parent
-                mapTab.photoLatitude = lati;
-                mapTab.photoLongitude= longi;
-                // On change les coordonnées dans l'item du modele
-                window.setSelectedItemCoords(lati, longi);
-                tabbedPage.refreshSelectedData();
-                console.log(mapView.supportedMapTypes);  // Debug : Affiche la lilste des cartes supportées
-            }
+                           console.log("Click on the map.");
+                           // On repositionne le cercle
+                           mapCircle.center = mapView.toCoordinate(Qt.point(mouse.x,mouse.y))
+                           // TODO utiliser une variable de type coordinate
+                           var lati = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
+                           var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
+                           // console.log('latitude  = ' + lati );
+                           // console.log('longitude = ' + longi);
+                           // On mémorise les coords du point cliqué dans les properties du parent
+                           mapTab.photoLatitude = lati;
+                           mapTab.photoLongitude= longi;
+                           // On change les coordonnées dans l'item du modele
+                           window.setSelectedItemCoords(lati, longi);
+                           tabbedPage.refreshSelectedData();
+                           console.log(mapView.supportedMapTypes);  // Debug : Affiche la lilste des cartes supportées
+                       }
         }
     }
 
@@ -123,6 +123,8 @@ Map {
     Plugin{
         id: mapPlugin
         name: "osm"
+        property string apikey: "464654"
+
         locales: ["fr_FR","en_US"]   // TODO : en fonction de la langue choisie
         // parametres optionels : PluginParameter{ name: "" ; value: ""}
         // PluginParameter { name: "osm.mapping.providersrepository.address"; value: "http://www.mywebsite.com/osm_repository" }
@@ -134,14 +136,14 @@ Map {
         PluginParameter {
             name: "osm.mapping.custom.host";
             readonly property url thunderurl : "https://tile.thunderforest.com/cycle/%z/%x/%y.png";
-            readonly property string thunderkey :  (settings.apikey ? "?apikey="+settings.apikey : "");
+            readonly property string thunderkey :  (mapPlugin.apikey ? "?apikey="+mapPlugin.apikey : "");
             value: thunderurl       // + thunderkey;
         }
 
-        PluginParameter {   /* obsolete ? */
+        PluginParameter {   // obsolete ?
             name: "osm.mapping.providersrepository.address";
             readonly property url thunderurl : "https://tile.thunderforest.com/cycle/%z/%x/%y.png";
-            readonly property string thunderkey :  (settings.apikey ? "?apikey="+settings.apikey : "");
+            readonly property string thunderkey :  (mapPlugin.apikey ? "?apikey="+mapPlugin.apikey : "");
             value: thunderurl       // + thunderkey;
         }
 
@@ -167,4 +169,8 @@ Map {
         */
     }
 
+    Settings {
+        id: settings
+        property alias apikey: mapPlugin.apikey
+    }
 }

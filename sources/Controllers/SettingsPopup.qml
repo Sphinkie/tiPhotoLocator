@@ -13,8 +13,8 @@ SettingsPopupForm {
     }
 
    buttonClose.onClicked: {
-       console.log("Settings closed -> requesting coords for " + reglages.homecity);
-       window.requestCoords(reglages.homecity);
+       console.log("Settings closed -> requesting coords for " + settings.homecity);
+       window.requestCoords(settings.homecity);
        close();
     }
 
@@ -22,10 +22,10 @@ SettingsPopupForm {
     // Non utilisé
     function saveConfiguration()
     {
-        //reglages.category= "configuration";
-        reglages.setValue("photographe", textFieldName.text);
-        reglages.setValue("initiales", textFieldInitials.text);
-        reglages.setValue("preserveExif", checkBoxExif.checked);
-        reglages.setValue("debugModeEnabled", checkBoxDebug.checked);
+        //settings.category= "configuration";
+        settings.setValue("photographe", textFieldName.text);
+        settings.setValue("initiales", textFieldInitials.text);
+        settings.setValue("preserveExif", checkBoxExif.checked);
+        settings.setValue("debugModeEnabled", checkBoxDebug.checked);
     }
 }

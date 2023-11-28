@@ -10,7 +10,7 @@ Popup {
     width: 520
     height: 720
     property alias buttonClose: buttonClose
-    property alias reglages: reglages
+    property alias settings: settings
     modal: true
     focus: true
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
@@ -207,8 +207,7 @@ Popup {
     // On mémorise la configuration dans les settings
     // ----------------------------------------------------------------
     Settings {
-        id: reglages
-        //category: "configuration"
+        id: settings
         property alias photographe: textFieldName.text
         property alias initiales: textFieldInitials.text
         property alias software: textFieldSoftware.text

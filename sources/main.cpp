@@ -103,12 +103,17 @@ int main(int argc, char *argv[])
     engine.load(url);
     //view.show();
 
-    // FIXME
     QSettings settings;
-    QPointF homeCoords = settings.value("homeCoords", QPointF(48.853, 2.35)).toPointF();
+    QVariant homeCoords = settings.value("homeCoords", QVariant());
     qDebug() << homeCoords;
-    if (homeCoords == QPointF(0,0))
-        settings.setValue("homeCoords", QPointF(48.853, 2.35));  // N-D de Pariss
+    if (!homeCoords.isValid())
+    {
+        settings.setValue("homecity", "Notre-Dame de Paris");
+        settings.setValue("homeCoords", QPointF(double(48.8529), double(2.35005)));
+        settings.setValue("homeLat", double(48.8529));
+        settings.setValue("homeLong", double(2.35005));
+        qDebug() << settings.value("homeCoords", QVariant());
+    }
 
 
     // --------------------------------------

@@ -3,7 +3,7 @@ import QtQml.Models
 import QtQuick.Window
 import QtQuick.Layouts
 import QtQuick.Controls
-import QtCore                       //  Qt.labs.settings
+import QtCore
 
 import "./Dialogs"
 import "./Components"
@@ -172,8 +172,11 @@ Window {
                 Layout.fillWidth: true
                 // Les coordonnées du point sélectionné
                 // Actualisé lors d'un clic sur la listView, ou sur la carte.
-                property double photoLatitude: settings.homeCoords.x
-                property double photoLongitude: settings.homeCoords.y
+                property point homeCoords
+                //property double photoLatitude: settings.homeCoords.x
+                //property double photoLongitude: settings.homeCoords.y
+                property double photoLatitude: homeCoords.x
+                property double photoLongitude: homeCoords.y
                 columnSpacing: 8
                 rows: 3     // toolbar et carte/zones
                 columns: 2  // carte et zone des tags
@@ -244,9 +247,9 @@ Window {
     // ----------------------------------------------------------------
     Settings {
         id: settings
-        property point homeCoords
-        property string apikey
+        property alias homeCoords: mapTab.homeCoords
     }
+
 
 }
 

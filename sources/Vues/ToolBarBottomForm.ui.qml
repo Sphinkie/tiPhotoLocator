@@ -1,9 +1,10 @@
 import QtQuick 2.15
 import QtQuick.Layouts
-import QtQuick.Controls   // pour Checkbox
-import QtCore   // Qt.labs.settings
+import QtQuick.Controls
+// pour Checkbox
+import QtCore
+// Qt.labs.settings
 import "../Components"
-
 
 Rectangle {
     color: TiStyle.surfaceContainerColor
@@ -13,11 +14,11 @@ Rectangle {
     property alias cb_backups: cb_backups
     property alias bt_save: bt_save
     property alias bt_quit: bt_quit
-    property alias reglages2: reglages2
 
+    // property alias reglages2: reglages2
     RowLayout {
         id: bottomToolBarLayout
-        Layout.alignment: Qt.AlignRight  // on cale les boutons à droite
+        Layout.alignment: Qt.AlignRight // on cale les boutons à droite
         spacing: 20
 
         TiButton {
@@ -49,7 +50,7 @@ Rectangle {
         }
         TiButton {
             id: bt_quit
-            text: qsTr("Quitter")       
+            text: qsTr("Quitter")
             ToolTip.text: qsTr("Quitte l'application")
             ToolTip.visible: hovered
             ToolTip.delay: 500
@@ -61,8 +62,7 @@ Rectangle {
     // On mémorise la ckeckbox dans les Settings
     // ----------------------------------------------------------------
     Settings {
-        id: reglages2  // A enlever ?
-        //category: "configuration"
+        id: settings
         property alias backupsEnabled: cb_backups.checked
     }
 }

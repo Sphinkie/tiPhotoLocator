@@ -114,7 +114,7 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         {
             // On extrait les coords de la réponse
             QGeoCoordinate coords = geolocation.coordinate();
-            // On mémorise les coords dans un settings
+            // On les mémorise dans un settings
             QSettings settings;
             settings.setValue("homeCoords", QPointF(coords.latitude(), coords.longitude()));
         }
