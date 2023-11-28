@@ -169,7 +169,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>saveMetadata</b> ()</
 <tr class="memitem:ae2afc1e23be1c91a8bfc5a8e16afa506" id="r_ae2afc1e23be1c91a8bfc5a8e16afa506"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#ae2afc1e23be1c91a8bfc5a8e16afa506">appendSavedPosition</a> (double lati, double longi)</td></tr>
 <tr class="memdesc:ae2afc1e23be1c91a8bfc5a8e16afa506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune).  <br /></td></tr>
 <tr class="separator:ae2afc1e23be1c91a8bfc5a8e16afa506"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c2e4a731969e952993dfe4d38e5788f" id="r_a6c2e4a731969e952993dfe4d38e5788f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a6c2e4a731969e952993dfe4d38e5788f">removeSavedPosition</a> ()</td></tr>
+<tr class="memitem:a6c2e4a731969e952993dfe4d38e5788f" id="r_a6c2e4a731969e952993dfe4d38e5788f"><td class="memItemLeft" align="right" valign="top"><a id="a6c2e4a731969e952993dfe4d38e5788f" name="a6c2e4a731969e952993dfe4d38e5788f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeSavedPosition</b> ()</td></tr>
+<tr class="memdesc:a6c2e4a731969e952993dfe4d38e5788f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime du modèle l'item correspondant à la position sauvegardée. <br /></td></tr>
 <tr class="separator:a6c2e4a731969e952993dfe4d38e5788f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aef53c6395a6ccd579a019c62e472e0" id="r_a5aef53c6395a6ccd579a019c62e472e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a5aef53c6395a6ccd579a019c62e472e0">setData</a> (int row, QString value, QString property)</td></tr>
 <tr class="memdesc:a5aef53c6395a6ccd579a019c62e472e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion.  <br /></td></tr>
@@ -197,13 +199,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aac3d5e1ae72e823b4e6091497c5cf27d" id="r_aac3d5e1ae72e823b4e6091497c5cf27d"><td class="memItemLeft" align="right" valign="top"><a id="aac3d5e1ae72e823b4e6091497c5cf27d" name="aac3d5e1ae72e823b4e6091497c5cf27d"></a>
 QHash&lt; int, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>roleNames</b> () const override</td></tr>
 <tr class="separator:aac3d5e1ae72e823b4e6091497c5cf27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a244f996eed49122ebe11c5369d63a0e2" id="r_a244f996eed49122ebe11c5369d63a0e2"><td class="memItemLeft" align="right" valign="top"><a id="a244f996eed49122ebe11c5369d63a0e2" name="a244f996eed49122ebe11c5369d63a0e2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PhotoModel</b> (QObject *parent=nullptr)</td></tr>
-<tr class="memdesc:a244f996eed49122ebe11c5369d63a0e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose. <em>parent</em> : paramètre classique pour les QAbstractListModel. <br /></td></tr>
+<tr class="memitem:a244f996eed49122ebe11c5369d63a0e2" id="r_a244f996eed49122ebe11c5369d63a0e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a244f996eed49122ebe11c5369d63a0e2">PhotoModel</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a244f996eed49122ebe11c5369d63a0e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose.  <br /></td></tr>
 <tr class="separator:a244f996eed49122ebe11c5369d63a0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fdbd69a007a6bda5623cce8d5f3cd57" id="r_a0fdbd69a007a6bda5623cce8d5f3cd57"><td class="memItemLeft" align="right" valign="top"><a id="a0fdbd69a007a6bda5623cce8d5f3cd57" name="a0fdbd69a007a6bda5623cce8d5f3cd57"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>rowCount</b> (const QModelIndex &amp;parent) const override</td></tr>
-<tr class="memdesc:a0fdbd69a007a6bda5623cce8d5f3cd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the model. Implémentation obligatoire. <em>parent</em> : parent of the model. <br /></td></tr>
+<tr class="memitem:a0fdbd69a007a6bda5623cce8d5f3cd57" id="r_a0fdbd69a007a6bda5623cce8d5f3cd57"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a0fdbd69a007a6bda5623cce8d5f3cd57">rowCount</a> (const QModelIndex &amp;parent) const override</td></tr>
+<tr class="memdesc:a0fdbd69a007a6bda5623cce8d5f3cd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of items in the model.  <br /></td></tr>
 <tr class="separator:a0fdbd69a007a6bda5623cce8d5f3cd57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f09addf9a989e85b7ae5797156b270f" id="r_a3f09addf9a989e85b7ae5797156b270f"><td class="memItemLeft" align="right" valign="top"><a id="a3f09addf9a989e85b7ae5797156b270f" name="a3f09addf9a989e85b7ae5797156b270f"></a>
 QVariant&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> (const QModelIndex &amp;index, int role=Qt::DisplayRole) const override</td></tr>
@@ -266,7 +266,42 @@ Related Symbols</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a> class manages a list of photo data. </p>
 <p>\inmodule TiPhotoLocator </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a244f996eed49122ebe11c5369d63a0e2" name="a244f996eed49122ebe11c5369d63a0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a244f996eed49122ebe11c5369d63a0e2">&#9670;&#160;</a></span>PhotoModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PhotoModel::PhotoModel </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>: paramètre classique pour les QAbstractListModel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8a98d5f81789881189e179d6059c1586" name="a8a98d5f81789881189e179d6059c1586"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a98d5f81789881189e179d6059c1586">&#9670;&#160;</a></span>append <span class="overload">[1/2]</span></h2>
 
@@ -400,8 +435,8 @@ Related Symbols</h2></td></tr>
 
 </div>
 </div>
-<a id="a6c2e4a731969e952993dfe4d38e5788f" name="a6c2e4a731969e952993dfe4d38e5788f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c2e4a731969e952993dfe4d38e5788f">&#9670;&#160;</a></span>removeSavedPosition</h2>
+<a id="a0fdbd69a007a6bda5623cce8d5f3cd57" name="a0fdbd69a007a6bda5623cce8d5f3cd57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fdbd69a007a6bda5623cce8d5f3cd57">&#9670;&#160;</a></span>rowCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,19 +445,29 @@ Related Symbols</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void PhotoModel::removeSavedPosition </td>
+          <td class="memname">int PhotoModel::rowCount </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>@○brief Supprime du modèle l'item correspondant à la position sauvegardée. </p>
+
+<p>Returns the number of items in the model. </p>
+<dl class="section note"><dt>Note</dt><dd>Implémentation obligatoire. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>: parent of the model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of elements in the model. </dd></dl>
 
 </div>
 </div>

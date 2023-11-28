@@ -62,12 +62,12 @@ public:
     // -----------------------------------------------------
     // Methodes publiques
     // -----------------------------------------------------
-    void append(const QString text, const QString target, const QString category);
+//    void append(const QString text, const QString target, const QString category);
     void removeCurrentPhotoFromSuggestion(const QModelIndex index);
 
 public slots:
     void onSelectedPhotoChanged(const int row);
-    void append(const QString text, const QString target, const QString category, const int photo_row);
+    void append(const QString text, const QString target, const QString category, int photo_row = -2);
 
 private:
     // -----------------------------------------------------
@@ -79,7 +79,7 @@ private:
     // Membres
     // -----------------------------------------------------
     QVector<Suggestion> m_suggestions;
-    int m_selectedPhotoRow = -1;    // -1 : Suggestion valable pour toutes les photos
+    int m_selectedPhotoRow = -3;    // ne correspond à aucune photo
 
 };
 

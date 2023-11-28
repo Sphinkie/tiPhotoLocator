@@ -26,22 +26,19 @@ enum {\bfseries Roles} \{ {\bfseries Text\+Role} = Qt\+::User\+Role
 \item 
 void \mbox{\hyperlink{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198}{on\+Selected\+Photo\+Changed}} (const int row)
 \begin{DoxyCompactList}\small\item\em Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la List\+View. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_suggestion_model_a80929cf6c308e4b444c9b9e0d754764b}{append}} (const QString text, const QString target, const QString category, const int photo\+\_\+row)
-\begin{DoxyCompactList}\small\item\em Adds a suggestion to the model, and link it to a photo. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f}{append}} (const QString text, const QString target, const QString category, int photo\+\_\+row=-\/2)
+\begin{DoxyCompactList}\small\item\em Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 QHash$<$ int, QByte\+Array $>$ \mbox{\hyperlink{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd}{role\+Names}} () const override
-\item 
+\begin{DoxyCompactList}\small\item\em Table of Role names. Implémentation obligatoire. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0}{Suggestion\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Contructor. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}{row\+Count}} (const QModel\+Index \&parent) const override
 \begin{DoxyCompactList}\small\item\em Returns the number of elements in the model. \end{DoxyCompactList}\item 
 QVariant \mbox{\hyperlink{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c}{data}} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
 \begin{DoxyCompactList}\small\item\em Returns the requested role value of an element of the model. \end{DoxyCompactList}\item 
-\Hypertarget{class_suggestion_model_a63b0f6de951e30f5d8366f7e031aff93}\label{class_suggestion_model_a63b0f6de951e30f5d8366f7e031aff93} 
-void {\bfseries append} (const QString text, const QString target, const QString category)
-\item 
 void \mbox{\hyperlink{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f}{remove\+Current\+Photo\+From\+Suggestion}} (const QModel\+Index index)
 \begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -70,15 +67,15 @@ Contructor.
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_suggestion_model_a80929cf6c308e4b444c9b9e0d754764b}\label{class_suggestion_model_a80929cf6c308e4b444c9b9e0d754764b} 
+\Hypertarget{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f}\label{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f} 
 \index{SuggestionModel@{SuggestionModel}!append@{append}}
 \index{append@{append}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{\texorpdfstring{append}{append}}
-{\footnotesize\ttfamily void Suggestion\+Model\+::append (\begin{DoxyParamCaption}\item[{const QString}]{text,  }\item[{const QString}]{target,  }\item[{const QString}]{category,  }\item[{const int}]{photo\+\_\+row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily void Suggestion\+Model\+::append (\begin{DoxyParamCaption}\item[{const QString}]{text,  }\item[{const QString}]{target,  }\item[{const QString}]{category,  }\item[{int}]{photo\+\_\+row = {\ttfamily -\/2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-Adds a suggestion to the model, and link it to a photo. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxylink{struct_suggestion}{Suggestion}. 
+Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxylink{struct_suggestion}{Suggestion}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -88,7 +85,7 @@ Adds a suggestion to the model, and link it to a photo. Ce slot permet à n\text
 \hline
 {\em category} & the category of the suggestion ("{}\+Geo"{}, ... ) \\
 \hline
-{\em photo} & l\textquotesingle{}indice de la photo à associée à cette suggestion (-\/1 = toutes) \\
+{\em photo\+\_\+row} & l\textquotesingle{}indice de la photo à associée à cette suggestion. Valeurs spéciales\+: -\/1 = toutes les photos Valeurs spéciales\+: -\/2 = la photo sélectionée (valeur par défaut) \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c}\label{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c} 
@@ -140,7 +137,9 @@ Ce slot enlève la photo courante de la liste des photos correspondant à une su
 \doxysubsubsection{\texorpdfstring{roleNames()}{roleNames()}}
 {\footnotesize\ttfamily QHash$<$ int, QByte\+Array $>$ Suggestion\+Model\+::role\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
-Table of Role names. Implémentation obligatoire.
+
+
+Table of Role names. Implémentation obligatoire. 
 
 C\textquotesingle{}est la correspondance entre le role C++ et le nom de la property dans QML. \Hypertarget{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}\label{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea} 
 \index{SuggestionModel@{SuggestionModel}!rowCount@{rowCount}}

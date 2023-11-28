@@ -123,7 +123,7 @@ Map {
     Plugin{
         id: mapPlugin
         name: "osm"
-        property string apikey: "464654"
+        property string apikey
 
         locales: ["fr_FR","en_US"]   // TODO : en fonction de la langue choisie
         // parametres optionels : PluginParameter{ name: "" ; value: ""}

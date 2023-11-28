@@ -18,9 +18,9 @@
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose.
- * \a parent : paramètre classique pour les QAbstractListModel.
+/**
+ * @brief Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose.
+ * @param parent : paramètre classique pour les QAbstractListModel.
  */
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
@@ -38,9 +38,10 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Returns the number of elements in the model. Implémentation obligatoire.
- * \a parent : parent of the model
+/**
+ * @brief Returns the number of items in the model. @note Implémentation obligatoire.
+ * @param parent : parent of the model.
+ * @returns the number of elements in the model.
  */
 int PhotoModel::rowCount(const QModelIndex& parent) const
 {
@@ -50,10 +51,11 @@ int PhotoModel::rowCount(const QModelIndex& parent) const
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Returns the requeted role value of an element of the model. Implémentation obligatoire.
- * \a index : index of the element of the model.
- * \a role : the requested role (enum).
+/**
+ * @brief Returns the role value of an element of the model. @note Implémentation obligatoire.
+ * @param  index : index of the element of the model.
+ * @param  role : the requested role (enum).
+ * @returns the requested role value
  */
 QVariant PhotoModel::data(const QModelIndex &index, int role) const
 {
@@ -207,7 +209,7 @@ void PhotoModel::appendSavedPosition(double lati, double longi)
 
 /* ********************************************************************************************************** */
 /**
- * @○brief Supprime du modèle l'item correspondant à la position sauvegardée.
+ * @brief Supprime du modèle l'item correspondant à la position sauvegardée.
  */
 void PhotoModel::removeSavedPosition()
 {
@@ -243,11 +245,11 @@ void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Mémorise la position fournie.
- * Met le flag \c "isSelected" du précédent item à \c False et le nouveau à \c True.
- * Met aussi le flag \c "insideCircle" du précédent item à \c False et le nouveau à \c True.
- * \a row : l'indice de l'item sélectionné dans la ListView.
+/**
+ * @brief Mémorise la position fournie.
+ * Met le flag \b "isSelected" du précédent item à \b False et le nouveau à \b True.
+ * Met aussi le flag \b "insideCircle" du précédent item à \b False et le nouveau à \b True.
+ * @param row : l'indice de l'item sélectionné dans la ListView.
  */
 void PhotoModel::selectedRow(int row)
 {

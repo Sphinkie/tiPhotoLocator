@@ -105,14 +105,10 @@ int main(int argc, char *argv[])
 
     QSettings settings;
     QVariant homeCoords = settings.value("homeCoords", QVariant());
-    qDebug() << homeCoords;
     if (!homeCoords.isValid())
     {
         settings.setValue("homecity", "Notre-Dame de Paris");
         settings.setValue("homeCoords", QPointF(double(48.8529), double(2.35005)));
-        settings.setValue("homeLat", double(48.8529));
-        settings.setValue("homeLong", double(2.35005));
-        qDebug() << settings.value("homeCoords", QVariant());
     }
 
 

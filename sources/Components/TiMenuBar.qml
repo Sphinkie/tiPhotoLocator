@@ -19,9 +19,7 @@ MenuBar{
         MenuItem  { text: qsTr("Configuration"); onClicked: settingsPopup.open(); }
         MenuItem  { text: qsTr("Metadata"); onClicked:
             {
-                console.log(settings.homeCoords.x);
-                console.log(settings.homeCoords.y);
-                // metadataPopup.open();
+                metadataPopup.open();
             }
         }
     }

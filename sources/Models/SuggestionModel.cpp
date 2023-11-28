@@ -16,8 +16,10 @@
 SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
 {
     QSettings settings;
-//    this->append(settings.value("photographe","").toString(), "artist", "photo", -1);
-//    this->append(settings.value("initiales","").toString(), "descriptionWriter", "photo", -1);
+    QString photographe = settings.value("photographe","").toString();
+    QString initiales   = settings.value("initiales","").toString();
+    this->append(photographe, "artist", "photo", -1);
+    this->append(initiales, "descriptionWriter", "photo", -1);
 }
 
 
@@ -62,7 +64,7 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
 
 /* ********************************************************************************** */
 /**
- * Table of Role names. Implémentation obligatoire.
+ * @brief Table of Role names. Implémentation obligatoire.
  * @details C'est la correspondance entre le role C++ et le nom de la property dans QML.
  */
 QHash<int, QByteArray> SuggestionModel::roleNames() const
@@ -78,14 +80,17 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 
 
 /* ********************************************************************************** */
-/*/
+/**
  * @brief Adds a suggestion to the model.
- * Par défaut, cette suggestion n'est associée à aucune photo.
+ * Ce slot permet à n'importe qui d'ajouter une Suggestion.
  * @param text: text of the suggestion.
  * @param target: the name of the Exif tag compatible with this suggestion.
  * @param category: the category of the suggestion ("Geo", ... )
+ * @param photo_row: l'indice de la photo à associée à cette suggestion.
+ *  Valeurs spéciales: -1 = toutes les photos
+ *  Valeurs spéciales: -2 = la photo sélectionée (valeur par défaut)
  */
-void SuggestionModel::append(const QString text, const QString target, const QString category)
+void SuggestionModel::append(const QString text, const QString target, const QString category, int photo_row)
 {
     if (text.isEmpty()) return;
 
@@ -100,33 +105,18 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
         }
     }
     // A la fin de la boucle, on ne l'a pas trouvé: il s'agit donc d'un nouvelle suggestion
-    qDebug()<< "Adding" << category << "suggestion " << text << "for" << m_selectedPhotoRow;;
-    Suggestion* new_suggestion = new Suggestion(text, target, category, m_selectedPhotoRow);
+    if (photo_row == -2)
+    {
+        // si le numéro de la photo n'est pas fourni, on prend la photo sélectionnée dans la ListView.
+        photo_row = m_selectedPhotoRow;
+    }
+    qDebug()<< "Adding" << target << "suggestion " << text << "for" << photo_row;;
+    Suggestion* new_suggestion = new Suggestion(text, target, category, photo_row);
     const int rowOfInsert = m_suggestions.count();
     // On ajoute la suggestion à la liste
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_suggestions.insert(rowOfInsert, *new_suggestion);
     endInsertRows();
-}
-
-/* ********************************************************************************** */
-/**
- * @brief Adds a suggestion to the model, and link it to a photo.
- * Ce slot permet à n'importe qui d'ajouter une Suggestion.
- * @param text: text of the suggestion.
- * @param target: the name of the Exif tag compatible with this suggestion.
- * @param category: the category of the suggestion ("Geo", ... )
- * @param photo: l'indice de la photo à associée à cette suggestion (-1 = toutes)
- */
-void SuggestionModel::append(const QString text, const QString target, const QString category, const int photo_row)
-{
-    this->append(text, target, category);
-    // On ajoute la photo fournie dans la liste des photos associées à cette suggestion..
-    int row = m_suggestions.count()-1;
-    m_suggestions[row].photos << photo_row;
-    // Emit signal
-    QModelIndex index = this->index(row, 0);;
-    emit dataChanged(index, index, QVector<int>() << PhotosRole);
 }
 
 /* ********************************************************************************** */

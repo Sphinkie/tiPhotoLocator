@@ -66,12 +66,12 @@
 \DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Methodes\ publiques}}
 \DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ append(\textcolor{keyword}{const}\ QString\ text,\ \textcolor{keyword}{const}\ QString\ target,\ \textcolor{keyword}{const}\ QString\ category);}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ \ \ \ void\ append(const\ QString\ text,\ const\ QString\ target,\ const\ QString\ category);}}
 \DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f}{removeCurrentPhotoFromSuggestion}}(\textcolor{keyword}{const}\ QModelIndex\ index);}
 \DoxyCodeLine{00067\ }
 \DoxyCodeLine{00068\ \textcolor{keyword}{public}\ slots:}
 \DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198}{onSelectedPhotoChanged}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ append(\textcolor{keyword}{const}\ QString\ text,\ \textcolor{keyword}{const}\ QString\ target,\ \textcolor{keyword}{const}\ QString\ category,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ photo\_row);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f}{append}}(\textcolor{keyword}{const}\ QString\ text,\ \textcolor{keyword}{const}\ QString\ target,\ \textcolor{keyword}{const}\ QString\ category,\ \textcolor{keywordtype}{int}\ photo\_row\ =\ -\/2);}
 \DoxyCodeLine{00071\ }
 \DoxyCodeLine{00072\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
@@ -83,7 +83,7 @@
 \DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ Membres}}
 \DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{00081\ \ \ \ \ QVector<Suggestion>\ m\_suggestions;}
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_selectedPhotoRow\ =\ -\/1;\ \ \ \ \textcolor{comment}{//\ -\/1\ :\ Suggestion\ valable\ pour\ toutes\ les\ photos}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_selectedPhotoRow\ =\ -\/3;\ \ \ \ \textcolor{comment}{//\ ne\ correspond\ à\ aucune\ photo}}
 \DoxyCodeLine{00083\ }
 \DoxyCodeLine{00084\ \};}
 \DoxyCodeLine{00085\ }

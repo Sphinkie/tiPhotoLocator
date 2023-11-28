@@ -120,7 +120,7 @@ Public Slots</h2></td></tr>
 <tr class="memdesc:add1caa599574ee457caa9f63251e5252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mémorise le filtre à appliquer.  <br /></td></tr>
 <tr class="separator:add1caa599574ee457caa9f63251e5252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57f046aabf95036f87b02209f0174e10" id="r_a57f046aabf95036f87b02209f0174e10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_proxy_model.html#a57f046aabf95036f87b02209f0174e10">removePhotoFromSuggestion</a> (const int proxyRow)</td></tr>
-<tr class="memdesc:a57f046aabf95036f87b02209f0174e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.  <br /></td></tr>
+<tr class="memdesc:a57f046aabf95036f87b02209f0174e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. On convertit l'indice du ProxyModel dans l'index du sourceModel.  <br /></td></tr>
 <tr class="separator:a57f046aabf95036f87b02209f0174e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
@@ -134,15 +134,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af3e1807aac2879bcb22d656c4aead90b" id="r_af3e1807aac2879bcb22d656c4aead90b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_proxy_model.html#af3e1807aac2879bcb22d656c4aead90b">SuggestionProxyModel</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:af3e1807aac2879bcb22d656c4aead90b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructeur.  <br /></td></tr>
 <tr class="separator:af3e1807aac2879bcb22d656c4aead90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6047e86b0fba57062818fb856496a775" id="r_a6047e86b0fba57062818fb856496a775"><td class="memItemLeft" align="right" valign="top"><a id="a6047e86b0fba57062818fb856496a775" name="a6047e86b0fba57062818fb856496a775"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b> () const</td></tr>
-<tr class="memdesc:a6047e86b0fba57062818fb856496a775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if the filering is active. <br /></td></tr>
+<tr class="memitem:a6047e86b0fba57062818fb856496a775" id="r_a6047e86b0fba57062818fb856496a775"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_proxy_model.html#a6047e86b0fba57062818fb856496a775">filterEnabled</a> () const</td></tr>
+<tr class="memdesc:a6047e86b0fba57062818fb856496a775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the state of the filtering.  <br /></td></tr>
 <tr class="separator:a6047e86b0fba57062818fb856496a775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a189be5918036c550fd0093d566e716ae" id="r_a189be5918036c550fd0093d566e716ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_proxy_model.html#a189be5918036c550fd0093d566e716ae">filterAcceptsRow</a> (int sourceRow, const QModelIndex &amp;sourceParent) const override</td></tr>
-<tr class="memdesc:a189be5918036c550fd0093d566e716ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo demandée. Returns <code>true</code> si la ligne est acceptée.  <br /></td></tr>
+<tr class="memdesc:a189be5918036c550fd0093d566e716ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Laisse passer les lignes correspondant au filtrage, cad: les <a class="el" href="struct_suggestion.html">Suggestion</a> liées à la photo demandée.  <br /></td></tr>
 <tr class="separator:a189be5918036c550fd0093d566e716ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -224,8 +223,35 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td
 </table>
 </div><div class="memdoc">
 
-<p>Laisse passer les lignes correspondant au filtrage, cad: suggestion liée à la photo demandée. Returns <code>true</code> si la ligne est acceptée. </p>
-<p><em>sourceRow</em> : Le numéro d'une ligne du modèle parent \l{<a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a>}. \br <em>sourceParent</em> : Le modèle parent \l{<a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a>}. </p>
+<p>Laisse passer les lignes correspondant au filtrage, cad: les <a class="el" href="struct_suggestion.html">Suggestion</a> liées à la photo demandée. </p>
+<dl class="section return"><dt>Returns</dt><dd>true si la ligne est acceptée. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sourceRow</td><td>: Le numéro d'une ligne du modèle parent (<a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a>). </td></tr>
+    <tr><td class="paramname">sourceParent</td><td>: Le modèle parent (<a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6047e86b0fba57062818fb856496a775" name="a6047e86b0fba57062818fb856496a775"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6047e86b0fba57062818fb856496a775">&#9670;&#160;</a></span>filterEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SuggestionProxyModel::filterEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the state of the filtering. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the filter is active. </dd></dl>
 
 </div>
 </div>
@@ -253,9 +279,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td
 </table>
 </div><div class="memdoc">
 
-<p>Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. </p>
-<p>On convertit l'indice du <em>proxyModel</em> dans l'index du <em>sourceModel</em>.</p>
-<p><em>proxyRow</em> : Indice dans le <em>ProxyModel</em> de la suggestion à modifier. </p>
+<p>Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. On convertit l'indice du ProxyModel dans l'index du sourceModel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">proxyRow</td><td>: Indice dans le ProxyModel de la <a class="el" href="struct_suggestion.html">Suggestion</a> à modifier. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -286,7 +316,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td
 <p>Active ou désactive le filtrage par le ProxyModel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">enabled</td><td>: Mettre <code>true</code> pour activer le filtrage. </td></tr>
+    <tr><td class="paramname">enabled</td><td>: Mettre true pour activer le filtrage. </td></tr>
   </table>
   </dd>
 </dl>
@@ -318,8 +348,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td
 </div><div class="memdoc">
 
 <p>Mémorise le filtre à appliquer. </p>
-<dl class="section note"><dt>Note</dt><dd>: On n'utilise pas les slots par défaut du ProxyModel, tels que setFilterRole() et SetFilterFixedValue()...)</dd></dl>
-<p><em>photoRow</em> : L'indice de la photo pour laquelle on veut des suggestions. </p>
+<dl class="section note"><dt>Note</dt><dd>: On n'utilise pas les slots par défaut du ProxyModel, tels que setFilterRole() et SetFilterFixedValue()...) </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">photoRow</td><td>: L'indice de la photo pour laquelle on veut des suggestions. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

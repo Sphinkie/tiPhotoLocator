@@ -62,8 +62,9 @@ void \mbox{\hyperlink{class_photo_model_a834795331bc8b3f329e8f2a143839265}{set\+
 \begin{DoxyCompactList}\small\item\em Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_ae2afc1e23be1c91a8bfc5a8e16afa506}{append\+Saved\+Position}} (double lati, double longi)
 \begin{DoxyCompactList}\small\item\em Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune). \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}{remove\+Saved\+Position}} ()
-\item 
+\Hypertarget{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}\label{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f} 
+void {\bfseries remove\+Saved\+Position} ()
+\begin{DoxyCompactList}\small\item\em Supprime du modèle l\textquotesingle{}item correspondant à la position sauvegardée. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a5aef53c6395a6ccd579a019c62e472e0}{set\+Data}} (int row, QString value, QString property)
 \begin{DoxyCompactList}\small\item\em Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion. \end{DoxyCompactList}\item 
 \Hypertarget{class_photo_model_aacde479b741e9f94c2077ad979e6b6a7}\label{class_photo_model_aacde479b741e9f94c2077ad979e6b6a7} 
@@ -87,12 +88,10 @@ void {\bfseries send\+Suggestion} (QString text, QString target, QString categor
 \Hypertarget{class_photo_model_aac3d5e1ae72e823b4e6091497c5cf27d}\label{class_photo_model_aac3d5e1ae72e823b4e6091497c5cf27d} 
 QHash$<$ int, QByte\+Array $>$ {\bfseries role\+Names} () const override
 \item 
-\Hypertarget{class_photo_model_a244f996eed49122ebe11c5369d63a0e2}\label{class_photo_model_a244f996eed49122ebe11c5369d63a0e2} 
-{\bfseries Photo\+Model} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
-\begin{DoxyCompactList}\small\item\em Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose. {\itshape parent} \+: paramètre classique pour les QAbstract\+List\+Model. \end{DoxyCompactList}\item 
-\Hypertarget{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57}\label{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57} 
-int {\bfseries row\+Count} (const QModel\+Index \&parent) const override
-\begin{DoxyCompactList}\small\item\em Returns the number of elements in the model. Implémentation obligatoire. {\itshape parent} \+: parent of the model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_photo_model_a244f996eed49122ebe11c5369d63a0e2}{Photo\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57}{row\+Count}} (const QModel\+Index \&parent) const override
+\begin{DoxyCompactList}\small\item\em Returns the number of items in the model. \end{DoxyCompactList}\item 
 \Hypertarget{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}\label{class_photo_model_a3f09addf9a989e85b7ae5797156b270f} 
 QVariant {\bfseries data} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
 \begin{DoxyCompactList}\small\item\em Returns the requeted role value of an element of the model. Implémentation obligatoire. {\itshape index} \+: index of the element of the model. {\itshape role} \+: the requested role (enum). \end{DoxyCompactList}\item 
@@ -146,6 +145,24 @@ int {\bfseries selected\+Row}
 The \doxylink{class_photo_model}{Photo\+Model} class manages a list of photo data. 
 
 \textbackslash{}inmodule Ti\+Photo\+Locator 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_photo_model_a244f996eed49122ebe11c5369d63a0e2}\label{class_photo_model_a244f996eed49122ebe11c5369d63a0e2} 
+\index{PhotoModel@{PhotoModel}!PhotoModel@{PhotoModel}}
+\index{PhotoModel@{PhotoModel}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{PhotoModel()}{PhotoModel()}}
+{\footnotesize\ttfamily Photo\+Model\+::\+Photo\+Model (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \+: paramètre classique pour les QAbstract\+List\+Model. \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_photo_model_a8a98d5f81789881189e179d6059c1586}\label{class_photo_model_a8a98d5f81789881189e179d6059c1586} 
@@ -207,13 +224,28 @@ Returns the full name (with absolute path) of the photo, in a QVariant containin
 {\em row} & \+: Indice de l\textquotesingle{}element à lire \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}\label{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f} 
-\index{PhotoModel@{PhotoModel}!removeSavedPosition@{removeSavedPosition}}
-\index{removeSavedPosition@{removeSavedPosition}!PhotoModel@{PhotoModel}}
-\doxysubsubsection{\texorpdfstring{removeSavedPosition}{removeSavedPosition}}
-{\footnotesize\ttfamily void Photo\+Model\+::remove\+Saved\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+\Hypertarget{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57}\label{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57} 
+\index{PhotoModel@{PhotoModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily int Photo\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
-@○brief Supprime du modèle l\textquotesingle{}item correspondant à la position sauvegardée. \Hypertarget{class_photo_model_a5aef53c6395a6ccd579a019c62e472e0}\label{class_photo_model_a5aef53c6395a6ccd579a019c62e472e0} 
+
+
+Returns the number of items in the model. 
+
+\begin{DoxyNote}{Note}
+Implémentation obligatoire. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \+: parent of the model. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of elements in the model. 
+\end{DoxyReturn}
+\Hypertarget{class_photo_model_a5aef53c6395a6ccd579a019c62e472e0}\label{class_photo_model_a5aef53c6395a6ccd579a019c62e472e0} 
 \index{PhotoModel@{PhotoModel}!setData@{setData}}
 \index{setData@{setData}!PhotoModel@{PhotoModel}}
 \doxysubsubsection{\texorpdfstring{setData}{setData}}

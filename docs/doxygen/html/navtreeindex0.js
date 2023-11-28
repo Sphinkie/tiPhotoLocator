@@ -50,7 +50,7 @@ var NAVTREEINDEX0 =
 "class_suggestion_model.html#a403421fd09afc22273162b74e74b7d7c":[1,0,7,2],
 "class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd":[1,0,7,5],
 "class_suggestion_model.html#a5a28097cf78d3d5619e64a48c0b7d198":[1,0,7,3],
-"class_suggestion_model.html#a80929cf6c308e4b444c9b9e0d754764b":[1,0,7,1],
+"class_suggestion_model.html#ab7946b300734bc0e257f3e5a8904ec3f":[1,0,7,1],
 "class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f":[1,0,7,4],
 "class_suggestion_proxy_model.html":[1,0,8],
 "class_suggestion_proxy_model.html#a189be5918036c550fd0093d566e716ae":[1,0,8,1],

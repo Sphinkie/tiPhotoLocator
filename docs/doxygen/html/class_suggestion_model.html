@@ -123,13 +123,14 @@ Public Slots</h2></td></tr>
 <tr class="memitem:a5a28097cf78d3d5619e64a48c0b7d198" id="r_a5a28097cf78d3d5619e64a48c0b7d198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#a5a28097cf78d3d5619e64a48c0b7d198">onSelectedPhotoChanged</a> (const int row)</td></tr>
 <tr class="memdesc:a5a28097cf78d3d5619e64a48c0b7d198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.  <br /></td></tr>
 <tr class="separator:a5a28097cf78d3d5619e64a48c0b7d198"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80929cf6c308e4b444c9b9e0d754764b" id="r_a80929cf6c308e4b444c9b9e0d754764b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#a80929cf6c308e4b444c9b9e0d754764b">append</a> (const QString text, const QString target, const QString category, const int photo_row)</td></tr>
-<tr class="memdesc:a80929cf6c308e4b444c9b9e0d754764b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a suggestion to the model, and link it to a photo. Ce slot permet à n'importe qui d'ajouter une <a class="el" href="struct_suggestion.html">Suggestion</a>.  <br /></td></tr>
-<tr class="separator:a80929cf6c308e4b444c9b9e0d754764b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7946b300734bc0e257f3e5a8904ec3f" id="r_ab7946b300734bc0e257f3e5a8904ec3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#ab7946b300734bc0e257f3e5a8904ec3f">append</a> (const QString text, const QString target, const QString category, int photo_row=-2)</td></tr>
+<tr class="memdesc:ab7946b300734bc0e257f3e5a8904ec3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a suggestion to the model. Ce slot permet à n'importe qui d'ajouter une <a class="el" href="struct_suggestion.html">Suggestion</a>.  <br /></td></tr>
+<tr class="separator:ab7946b300734bc0e257f3e5a8904ec3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5153ff9a46757355350432e5e8a810cd" id="r_a5153ff9a46757355350432e5e8a810cd"><td class="memItemLeft" align="right" valign="top">QHash&lt; int, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd">roleNames</a> () const override</td></tr>
+<tr class="memdesc:a5153ff9a46757355350432e5e8a810cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table of Role names. Implémentation obligatoire.  <br /></td></tr>
 <tr class="separator:a5153ff9a46757355350432e5e8a810cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e304826f0095e36eecd9ce321ac4eb0" id="r_a0e304826f0095e36eecd9ce321ac4eb0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#a0e304826f0095e36eecd9ce321ac4eb0">SuggestionModel</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:a0e304826f0095e36eecd9ce321ac4eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructor.  <br /></td></tr>
@@ -140,9 +141,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a403421fd09afc22273162b74e74b7d7c" id="r_a403421fd09afc22273162b74e74b7d7c"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#a403421fd09afc22273162b74e74b7d7c">data</a> (const QModelIndex &amp;index, int role=Qt::DisplayRole) const override</td></tr>
 <tr class="memdesc:a403421fd09afc22273162b74e74b7d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the requested role value of an element of the model.  <br /></td></tr>
 <tr class="separator:a403421fd09afc22273162b74e74b7d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63b0f6de951e30f5d8366f7e031aff93" id="r_a63b0f6de951e30f5d8366f7e031aff93"><td class="memItemLeft" align="right" valign="top"><a id="a63b0f6de951e30f5d8366f7e031aff93" name="a63b0f6de951e30f5d8366f7e031aff93"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>append</b> (const QString text, const QString target, const QString category)</td></tr>
-<tr class="separator:a63b0f6de951e30f5d8366f7e031aff93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea38923e1af3b5faee8ba4caccc8281f" id="r_aea38923e1af3b5faee8ba4caccc8281f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f">removeCurrentPhotoFromSuggestion</a> (const QModelIndex index)</td></tr>
 <tr class="memdesc:aea38923e1af3b5faee8ba4caccc8281f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.  <br /></td></tr>
 <tr class="separator:aea38923e1af3b5faee8ba4caccc8281f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,8 +184,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>append</b> (const QSt
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a80929cf6c308e4b444c9b9e0d754764b" name="a80929cf6c308e4b444c9b9e0d754764b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80929cf6c308e4b444c9b9e0d754764b">&#9670;&#160;</a></span>append</h2>
+<a id="ab7946b300734bc0e257f3e5a8904ec3f" name="ab7946b300734bc0e257f3e5a8904ec3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7946b300734bc0e257f3e5a8904ec3f">&#9670;&#160;</a></span>append</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,8 +214,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>append</b> (const QSt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>photo_row</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>photo_row</em> = <code>-2</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -232,13 +230,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>append</b> (const QSt
 </table>
 </div><div class="memdoc">
 
-<p>Adds a suggestion to the model, and link it to a photo. Ce slot permet à n'importe qui d'ajouter une <a class="el" href="struct_suggestion.html">Suggestion</a>. </p>
+<p>Adds a suggestion to the model. Ce slot permet à n'importe qui d'ajouter une <a class="el" href="struct_suggestion.html">Suggestion</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>text of the suggestion. </td></tr>
     <tr><td class="paramname">target</td><td>the name of the Exif tag compatible with this suggestion. </td></tr>
     <tr><td class="paramname">category</td><td>the category of the suggestion ("Geo", ... ) </td></tr>
-    <tr><td class="paramname">photo</td><td>l'indice de la photo à associée à cette suggestion (-1 = toutes) </td></tr>
+    <tr><td class="paramname">photo_row</td><td>l'indice de la photo à associée à cette suggestion. Valeurs spéciales: -1 = toutes les photos Valeurs spéciales: -2 = la photo sélectionée (valeur par défaut) </td></tr>
   </table>
   </dd>
 </dl>
@@ -366,7 +364,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>append</b> (const QSt
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Table of Role names. Implémentation obligatoire.</p>
+
+<p>Table of Role names. Implémentation obligatoire. </p>
 <p>C'est la correspondance entre le role C++ et le nom de la property dans QML. </p>
 
 </div>
