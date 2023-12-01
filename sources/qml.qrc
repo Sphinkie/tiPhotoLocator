@@ -73,7 +73,7 @@
         <file>Vues/MetadataPopupForm.ui.qml</file>
         <file>Controllers/MetadataPopup.qml</file>
         <file>Controllers/ZonePicture.qml</file>
-        <file>Vues/ZonePictureForm.ui.qml</file>
+        <file>Vues/ZonePhotoForm.ui.qml</file>
         <file>Images/icon-tag.png</file>
         <file>Dialogs/ApiDialog.qml</file>
         <file>Vues/ZoneSuggestedTagsForm.ui.qml</file>

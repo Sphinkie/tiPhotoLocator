@@ -176,7 +176,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>removeSavedPosition</
 <tr class="memdesc:a6c2e4a731969e952993dfe4d38e5788f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime du modèle l'item correspondant à la position sauvegardée. <br /></td></tr>
 <tr class="separator:a6c2e4a731969e952993dfe4d38e5788f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aef53c6395a6ccd579a019c62e472e0" id="r_a5aef53c6395a6ccd579a019c62e472e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a5aef53c6395a6ccd579a019c62e472e0">setData</a> (int row, QString value, QString property)</td></tr>
-<tr class="memdesc:a5aef53c6395a6ccd579a019c62e472e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot ajoute une propriété à une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple si on clique sur une suggestion.  <br /></td></tr>
+<tr class="memdesc:a5aef53c6395a6ccd579a019c62e472e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot ajoute ou modifie une propriété d'une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple si on clique sur une suggestion.  <br /></td></tr>
 <tr class="separator:a5aef53c6395a6ccd579a019c62e472e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacde479b741e9f94c2077ad979e6b6a7" id="r_aacde479b741e9f94c2077ad979e6b6a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#aacde479b741e9f94c2077ad979e6b6a7">duplicateData</a> (int row)</td></tr>
 <tr class="memdesc:aacde479b741e9f94c2077ad979e6b6a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates an item of the model, and add it at the end of the vector.  <br /></td></tr>
@@ -251,6 +251,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_markerRow</b> = -1</
 Properties</h2></td></tr>
 <tr class="memitem:a6376872cafff59ccc887f405a2515ed9" id="r_a6376872cafff59ccc887f405a2515ed9"><td class="memItemLeft" align="right" valign="top"><a id="a6376872cafff59ccc887f405a2515ed9" name="a6376872cafff59ccc887f405a2515ed9"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></tr>
+<tr class="memdesc:a6376872cafff59ccc887f405a2515ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">selectedRow is the <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> row in the model corresponding to the selected photo in the ListView. <br /></td></tr>
 <tr class="separator:a6376872cafff59ccc887f405a2515ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="related" name="related"></a>
@@ -561,7 +562,7 @@ Related Symbols</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>une Map contenant toutes les propriétés de l'item. Contient aussi une propriété "row". </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>une Map contenant toutes les propriétés de l'item, dont la propriété spéciale: "row". </dd></dl>
 
 </div>
 </div>
@@ -728,7 +729,7 @@ Related Symbols</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Ce slot ajoute une propriété à une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple si on clique sur une suggestion. </p>
+<p>Ce slot ajoute ou modifie une propriété d'une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple si on clique sur une suggestion. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">row</td><td>: indice de la photo. </td></tr>

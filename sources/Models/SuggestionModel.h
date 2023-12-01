@@ -28,10 +28,10 @@ struct Suggestion
     }
 
     // Elements de la structure
-    QString text;              //!< Example: "COSTA RICA"
-    QString target;            //!< Example: "Country"
-    QString category;          //!< Example: "Geo", "Photo"
-    QSet<int> photos;          //!< List of Photo matching this Suggestion
+    QString text;              //!< Le contenu textuel de la suggestion. Example: "COSTA RICA".
+    QString target;            //!< Le nom de la métadata compatible avec ce texte. Example: "Country".
+    QString category;          //!< Permet aux zones d'afficher ou non la suggestion. Example: "Geo", "Photo"...
+    QSet<int> photos;          //!< List of Photo matching this suggestion.
 
     // Surcharges d'operateurs
     bool operator== (const Suggestion &suggestion) const;

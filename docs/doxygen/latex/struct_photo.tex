@@ -21,7 +21,7 @@ A data structure containing all the attributes for a photo picture\+: filename, 
 bool \mbox{\hyperlink{struct_photo_aadb7a083611feae65440c3bfc3887417}{operator==}} (const QString \&file\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur ==. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{struct_photo_aaf8c4dfdd916b811562d6d4e7f5e1489}{operator==}} (const \mbox{\hyperlink{struct_photo}{Photo}} \&photo)
-\begin{DoxyCompactList}\small\item\em Définition de l\textquotesingle{}opérateur ==. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Opérateur de comparaison standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -105,15 +105,15 @@ A data structure containing all the attributes for a photo picture\+: filename, 
 
 
 
-Définition de l\textquotesingle{}opérateur ==. 
+Opérateur de comparaison standard. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em photo} & \+: une photo \\
+{\em photo} & \+: Un autre objet photo \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true si les deux objets pointent sur les mêmes data. 
+True si les deux objets pointent sur les mêmes data. 
 \end{DoxyReturn}
 \Hypertarget{struct_photo_aadb7a083611feae65440c3bfc3887417}\label{struct_photo_aadb7a083611feae65440c3bfc3887417} 
 \index{Photo@{Photo}!operator==@{operator==}}
@@ -127,11 +127,11 @@ Surcharge de l\textquotesingle{}opérateur ==.
 
 
 \begin{DoxyParams}{Parameters}
-{\em file\+\_\+name} & texte à comparer \\
+{\em file\+\_\+name} & Le texte à comparer \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true si le filename de la photo correspond au texte passé en paramètre. 
+True si le {\bfseries{filename}} de la photo correspond au texte passé en paramètre. 
 \end{DoxyReturn}
 
 

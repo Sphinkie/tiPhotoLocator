@@ -17,6 +17,8 @@
 class UnlocalizedProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+
+    //! filterEnabled manages the status of the filtering.
     Q_PROPERTY(bool filterEnabled READ filterEnabled WRITE setFilterEnabled NOTIFY filterEnabledChanged)
 
 public:

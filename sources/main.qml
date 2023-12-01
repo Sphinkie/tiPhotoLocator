@@ -158,8 +158,6 @@ Window {
                 console.log("refreshSelectedData");
                 var currentrow = selectedData.row;
                 selectedData = _photoListModel.get(currentrow);
-                //console.log(settings.homeCoords.x);
-                //console.log(settings.homeCoords.y);
             }
 
 

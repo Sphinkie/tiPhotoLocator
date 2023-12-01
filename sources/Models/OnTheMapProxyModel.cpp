@@ -5,16 +5,6 @@
 #define QT_NO_DEBUG_OUTPUT
 
 
-/* ************************************************************************ */
-/*!
- * \class OnTheMapProxyModel
- * \inmodule TiPhotoLocator
- * \brief The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s).
- * \note Dans ce ProxyModel on doit ré-implementer les méthodes append(), get(), clear(), etc.
- *
- */
-/* ************************************************************************ */
-
 
 /* ************************************************************************* */
 /*!
@@ -22,31 +12,31 @@
  */
 OnTheMapProxyModel::OnTheMapProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
-    m_selectedFilterEnabled = true;
+    m_filterEnabled = true;
 }
 
 
 /* ************************************************************************ */
 /*!
  * \brief Indique si le filtre est actif ou non.
- * \returns \c true si le filtre est actif.
+ * \returns true si le filtre est actif.
  */
-bool OnTheMapProxyModel::selectedFilterEnabled() const
+bool OnTheMapProxyModel::filterEnabled() const
 {
-    return m_selectedFilterEnabled;
+    return m_filterEnabled;
 }
 
 /* ************************************************************************ */
 /*!
  * \brief Ce slot active ou désactive le filtrage par le ProxyModel.
- * \param enabled : \c true pour activer le filtrage
+ * \param enabled : true pour activer le filtrage
  */
-void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
+void OnTheMapProxyModel::setFilterEnabled(bool enabled)
 {
-    if (m_selectedFilterEnabled == enabled)
+    if (m_filterEnabled == enabled)
         return;
-    m_selectedFilterEnabled = enabled;
-    emit selectedFilterEnabledChanged();
+    m_filterEnabled = enabled;
+    emit filterEnabledChanged();
     invalidateFilter();
 }
 
@@ -56,11 +46,11 @@ void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
  * Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position".
  * \param sourceRow : Le numero d'une ligne du modèle parent (PhotoModel).
  * \param sourceParent : Le modèle parent (PhotoModel).
- * \returns \c true si la ligne est acceptée.
+ * \returns true si la ligne est acceptée.
  */
 bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
-    if (!m_selectedFilterEnabled) return true;
+    if (!m_filterEnabled) return true;
     // On récupère l'index de la ligne à accepter ou pas
     const QModelIndex idx = sourceModel()->index(sourceRow, 0, sourceParent);
     // On récupère les données de la ligne
@@ -78,10 +68,10 @@ bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sour
  *      Details: Ce slot est appelé quand l'utilisateur change la position d'une photo sur la carte.
  *      C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du
  *      modèle source, mais seulement celle du modèle filtré.
- * \param lat : latitude au format GPS.
- * \param lon : longitude au format GPS.
+ * \param latitude : latitude au format GPS.
+ * \param longitude : longitude au format GPS.
  */
-void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
+void OnTheMapProxyModel::setAllItemsCoords(const double latitude, const double longitude)
 {
     // On parcourt tous les items du modèle FILTRÉ (par leur index dans le proxy modèle)
     int row = 0;
@@ -94,12 +84,12 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
         {
             //const double old_lat = idx.data(PhotoModel::LatitudeRole).toDouble();
             //const double old_lon = idx.data(PhotoModel::LongitudeRole).toDouble();
-            //qDebug() << "changing lat coords from " << old_lat << "to" << lat ;
-            //qDebug() << "changing lon coords from " << old_lon << "to" << lon ;
+            //qDebug() << "changing lat coords from " << old_lat << "to" << latitude ;
+            //qDebug() << "changing lon coords from " << old_lon << "to" << longitude ;
 
             // On modifie l'item dans le proxy. (Nécessite l'implémentation de setData() dans le sourceModel).
-            setData(idx, lat, PhotoModel::LatitudeRole);
-            setData(idx, lon, PhotoModel::LongitudeRole);
+            setData(idx, latitude, PhotoModel::LatitudeRole);
+            setData(idx, longitude, PhotoModel::LongitudeRole);
             //setData(idx, true, PhotoModel::HasGPSRole);
             //emit dataChanged(idx,idx);
             // Vérification
@@ -113,7 +103,8 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 /* ************************************************************************ */
 /*!
  * \brief Ce slot applique les coordonnées GPS de la SavedPosition à toutes
- * les photos du modèle filtré.
+ *        les photos du modèle filtré.
+ *
  * Ce slot est appelé quand l'utilisateur appuye sur "Apply Saved Position".
  */
 void OnTheMapProxyModel::setAllItemsSavedCoords()

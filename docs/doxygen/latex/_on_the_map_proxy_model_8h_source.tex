@@ -7,31 +7,34 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QSortFilterProxyModel>}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_on_the_map_proxy_model}{OnTheMapProxyModel}}\ :\ \textcolor{keyword}{public}\ QSortFilterProxyModel}
-\DoxyCodeLine{00008\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00010\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ selectedFilterEnabled\ READ\ selectedFilterEnabled\ WRITE\ \mbox{\hyperlink{class_on_the_map_proxy_model_a805886f446204cd1aa626b492aff9734}{setSelectedFilterEnabled}}\ NOTIFY\ \mbox{\hyperlink{class_on_the_map_proxy_model_a1d2857380e73f64754fa81e44b9ae4f5}{selectedFilterEnabledChanged}})}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_on_the_map_proxy_model}{OnTheMapProxyModel}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ selectedFilterEnabled()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_on_the_map_proxy_model_a805886f446204cd1aa626b492aff9734}{setSelectedFilterEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_on_the_map_proxy_model_a64f01eb0c3e84e1796a1367ec541f22c}{setAllItemsCoords}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ lat,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ lon);}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141}{setAllItemsSavedCoords}}();}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ signals:}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_on_the_map_proxy_model_a1d2857380e73f64754fa81e44b9ae4f5}{selectedFilterEnabledChanged}}();\ \ }
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_on_the_map_proxy_model_ab1ac8a3c5b8f53a6cee9dbc0fbb38073}{filterAcceptsRow}}(\textcolor{keywordtype}{int}\ sourceRow,\ \textcolor{keyword}{const}\ QModelIndex\ \&sourceParent)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_selectedFilterEnabled;\ \ }
-\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ ************************************************************************\ */}}
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ ************************************************************************\ */}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_on_the_map_proxy_model}{OnTheMapProxyModel}}\ :\ \textcolor{keyword}{public}\ QSortFilterProxyModel}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_on_the_map_proxy_model_ab41c6f6de0761832ee25c3262d57743c}{filterEnabled}}\ READ\ \mbox{\hyperlink{class_on_the_map_proxy_model_ab41c6f6de0761832ee25c3262d57743c}{filterEnabled}}\ WRITE\ \mbox{\hyperlink{class_on_the_map_proxy_model_ad5397db53587218f59299d48696f1b99}{setFilterEnabled}}\ NOTIFY\ \mbox{\hyperlink{class_on_the_map_proxy_model_aa7c81a7a958b6a60d0e39b1d166f6829}{filterEnabledChanged}})}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_on_the_map_proxy_model}{OnTheMapProxyModel}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_on_the_map_proxy_model_ab41c6f6de0761832ee25c3262d57743c}{filterEnabled}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_on_the_map_proxy_model_ad5397db53587218f59299d48696f1b99}{setFilterEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_on_the_map_proxy_model_a8578bb0c25636337ba57681da049e4f1}{setAllItemsCoords}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ latitude,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141}{setAllItemsSavedCoords}}();}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ONTHEMAPPROXYMODEL\_H}}
+\DoxyCodeLine{00031\ signals:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_on_the_map_proxy_model_aa7c81a7a958b6a60d0e39b1d166f6829}{filterEnabledChanged}}();\ \ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_on_the_map_proxy_model_ab1ac8a3c5b8f53a6cee9dbc0fbb38073}{filterAcceptsRow}}(\textcolor{keywordtype}{int}\ sourceRow,\ \textcolor{keyword}{const}\ QModelIndex\ \&sourceParent)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_filterEnabled;\ \ }
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ONTHEMAPPROXYMODEL\_H}}
 
 \end{DoxyCode}

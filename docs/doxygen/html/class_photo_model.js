@@ -49,5 +49,6 @@ var class_photo_model =
     [ "setData", "class_photo_model.html#a7885f6ff2471a499f22a457da710a389", null ],
     [ "setData", "class_photo_model.html#a7885f6ff2471a499f22a457da710a389", null ],
     [ "m_markerIndex", "class_photo_model.html#af32aed3a0a39738d782a1d69a14175f2", null ],
-    [ "m_markerRow", "class_photo_model.html#a6ff090266c5c666181a02469943d9512", null ]
+    [ "m_markerRow", "class_photo_model.html#a6ff090266c5c666181a02469943d9512", null ],
+    [ "selectedRow", "class_photo_model.html#a6376872cafff59ccc887f405a2515ed9", null ]
 ];

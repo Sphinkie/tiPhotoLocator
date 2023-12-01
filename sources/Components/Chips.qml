@@ -59,7 +59,7 @@ Rectangle {
         width: 26
         source: "qrc:/Images/chip-del.png"
         visible: deletable
-        // Gestion du clic sur un item
+        // Clic sur l'icone DELETE: A gérer dans le controlleur de la Zone parente avec chipXXX.deleteArea.onClicked:{...}
         MouseArea {
             id: deleteArea
             anchors.fill: parent

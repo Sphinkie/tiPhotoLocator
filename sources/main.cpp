@@ -21,7 +21,6 @@
     The ultimate Photo Locator.
         \li \l{TiPhotoLocator}{Les classes C++}
         \li les scripts QML
-
 */
 
 /*!
@@ -119,12 +118,12 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // Connexions QML vers classe C++
     // --------------------------------------
-    QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)),         &photoListModel, SLOT(append(QString,QString)));
-    QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),    &photoListModel, SLOT(fetchExifMetadata(int)));
-    QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),             &photoListModel, SLOT(fetchExifMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                  &photoListModel, SLOT(saveMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(savePosition(double,double)),     &photoListModel, SLOT(appendSavedPosition(double,double)));
-    QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),            &photoListModel, SLOT(removeSavedPosition()));
+    QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)),          &photoListModel, SLOT(append(QString,QString)));
+    QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),     &photoListModel, SLOT(fetchExifMetadata(int)));
+    QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),              &photoListModel, SLOT(fetchExifMetadata()));
+    QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                   &photoListModel, SLOT(saveMetadata()));
+    QObject::connect(firstRootItem,   SIGNAL(savePosition(double,double)),      &photoListModel, SLOT(appendSavedPosition(double,double)));
+    QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),             &photoListModel, SLOT(removeSavedPosition()));
     QObject::connect(firstRootItem,   SIGNAL(setPhotoProperty(int,QString,QString)), &photoListModel, SLOT(setData(int,QString,QString)));
 
     QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &onTheMapProxyModel,   SLOT(setAllItemsCoords(double,double)));

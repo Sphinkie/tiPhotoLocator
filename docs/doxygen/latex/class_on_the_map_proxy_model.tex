@@ -5,6 +5,10 @@
 The \doxylink{class_on_the_map_proxy_model}{On\+The\+Map\+Proxy\+Model} class is a filter Proxy\+Model, to keep only the selected photo(s).  
 
 
+
+
+{\ttfamily \#include $<$On\+The\+Map\+Proxy\+Model.\+h$>$}
+
 Inheritance diagram for On\+The\+Map\+Proxy\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,18 +18,17 @@ Inheritance diagram for On\+The\+Map\+Proxy\+Model\+:\begin{figure}[H]
 \doxysubsubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_on_the_map_proxy_model_a805886f446204cd1aa626b492aff9734}{set\+Selected\+Filter\+Enabled}} (bool enabled)
+void \mbox{\hyperlink{class_on_the_map_proxy_model_ad5397db53587218f59299d48696f1b99}{set\+Filter\+Enabled}} (bool enabled)
 \begin{DoxyCompactList}\small\item\em Ce slot active ou désactive le filtrage par le Proxy\+Model. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_on_the_map_proxy_model_a64f01eb0c3e84e1796a1367ec541f22c}{set\+All\+Items\+Coords}} (const double lat, const double lon)
+void \mbox{\hyperlink{class_on_the_map_proxy_model_a8578bb0c25636337ba57681da049e4f1}{set\+All\+Items\+Coords}} (const double latitude, const double longitude)
 \begin{DoxyCompactList}\small\item\em Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position). \end{DoxyCompactList}\item 
-\Hypertarget{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141}\label{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141} 
-void {\bfseries set\+All\+Items\+Saved\+Coords} ()
-\begin{DoxyCompactList}\small\item\em Ce slot applique les coordonnées GPS de la Saved\+Position à toutes les photos du modèle filtré. Ce slot est appelé quand l\textquotesingle{}utilisateur appuye sur "{}\+Apply Saved Position"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141}{set\+All\+Items\+Saved\+Coords}} ()
+\begin{DoxyCompactList}\small\item\em Ce slot applique les coordonnées GPS de la Saved\+Position à toutes les photos du modèle filtré. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_on_the_map_proxy_model_a1d2857380e73f64754fa81e44b9ae4f5}\label{class_on_the_map_proxy_model_a1d2857380e73f64754fa81e44b9ae4f5} 
-void {\bfseries selected\+Filter\+Enabled\+Changed} ()
+\Hypertarget{class_on_the_map_proxy_model_aa7c81a7a958b6a60d0e39b1d166f6829}\label{class_on_the_map_proxy_model_aa7c81a7a958b6a60d0e39b1d166f6829} 
+void {\bfseries filter\+Enabled\+Changed} ()
 \begin{DoxyCompactList}\small\item\em Signal émis quand l\textquotesingle{}état du filtrage change. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -33,7 +36,7 @@ void {\bfseries selected\+Filter\+Enabled\+Changed} ()
 \Hypertarget{class_on_the_map_proxy_model_afb8170a7f9e508bfdc6238e649e957cf}\label{class_on_the_map_proxy_model_afb8170a7f9e508bfdc6238e649e957cf} 
 {\bfseries On\+The\+Map\+Proxy\+Model} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Contructeur. Par défaut, le filtre est actif. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_on_the_map_proxy_model_a4411e7b21dc2fe332733e70b8e0ab3b6}{selected\+Filter\+Enabled}} () const
+bool \mbox{\hyperlink{class_on_the_map_proxy_model_aea978750450595380acfab7c3d60ef12}{filter\+Enabled}} () const
 \begin{DoxyCompactList}\small\item\em Indique si le filtre est actif ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -43,9 +46,9 @@ bool \mbox{\hyperlink{class_on_the_map_proxy_model_ab1ac8a3c5b8f53a6cee9dbc0fbb3
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_on_the_map_proxy_model_a05901c4c4084be11f384d074c2d0592c}\label{class_on_the_map_proxy_model_a05901c4c4084be11f384d074c2d0592c} 
-bool {\bfseries selected\+Filter\+Enabled}
-\end{DoxyCompactItemize}
+\Hypertarget{class_on_the_map_proxy_model_ab41c6f6de0761832ee25c3262d57743c}\label{class_on_the_map_proxy_model_ab41c6f6de0761832ee25c3262d57743c} 
+bool {\bfseries filter\+Enabled}
+\begin{DoxyCompactList}\small\item\em filter\+Enabled manages the status of the filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -75,26 +78,26 @@ Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad \+
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-{\ttfamily true} si la ligne est acceptée. 
+true si la ligne est acceptée. 
 \end{DoxyReturn}
-\Hypertarget{class_on_the_map_proxy_model_a4411e7b21dc2fe332733e70b8e0ab3b6}\label{class_on_the_map_proxy_model_a4411e7b21dc2fe332733e70b8e0ab3b6} 
-\index{OnTheMapProxyModel@{OnTheMapProxyModel}!selectedFilterEnabled@{selectedFilterEnabled}}
-\index{selectedFilterEnabled@{selectedFilterEnabled}!OnTheMapProxyModel@{OnTheMapProxyModel}}
-\doxysubsubsection{\texorpdfstring{selectedFilterEnabled()}{selectedFilterEnabled()}}
-{\footnotesize\ttfamily bool On\+The\+Map\+Proxy\+Model\+::selected\+Filter\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\Hypertarget{class_on_the_map_proxy_model_aea978750450595380acfab7c3d60ef12}\label{class_on_the_map_proxy_model_aea978750450595380acfab7c3d60ef12} 
+\index{OnTheMapProxyModel@{OnTheMapProxyModel}!filterEnabled@{filterEnabled}}
+\index{filterEnabled@{filterEnabled}!OnTheMapProxyModel@{OnTheMapProxyModel}}
+\doxysubsubsection{\texorpdfstring{filterEnabled()}{filterEnabled()}}
+{\footnotesize\ttfamily bool On\+The\+Map\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
 Indique si le filtre est actif ou non. 
 
 \begin{DoxyReturn}{Returns}
-{\ttfamily true} si le filtre est actif. 
+true si le filtre est actif. 
 \end{DoxyReturn}
-\Hypertarget{class_on_the_map_proxy_model_a64f01eb0c3e84e1796a1367ec541f22c}\label{class_on_the_map_proxy_model_a64f01eb0c3e84e1796a1367ec541f22c} 
+\Hypertarget{class_on_the_map_proxy_model_a8578bb0c25636337ba57681da049e4f1}\label{class_on_the_map_proxy_model_a8578bb0c25636337ba57681da049e4f1} 
 \index{OnTheMapProxyModel@{OnTheMapProxyModel}!setAllItemsCoords@{setAllItemsCoords}}
 \index{setAllItemsCoords@{setAllItemsCoords}!OnTheMapProxyModel@{OnTheMapProxyModel}}
 \doxysubsubsection{\texorpdfstring{setAllItemsCoords}{setAllItemsCoords}}
-{\footnotesize\ttfamily void On\+The\+Map\+Proxy\+Model\+::set\+All\+Items\+Coords (\begin{DoxyParamCaption}\item[{const double}]{lat,  }\item[{const double}]{lon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily void On\+The\+Map\+Proxy\+Model\+::set\+All\+Items\+Coords (\begin{DoxyParamCaption}\item[{const double}]{latitude,  }\item[{const double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -102,16 +105,26 @@ Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle fi
 
 Details\+: Ce slot est appelé quand l\textquotesingle{}utilisateur change la position d\textquotesingle{}une photo sur la carte. C\textquotesingle{}est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré. 
 \begin{DoxyParams}{Parameters}
-{\em lat} & \+: latitude au format GPS. \\
+{\em latitude} & \+: latitude au format GPS. \\
 \hline
-{\em lon} & \+: longitude au format GPS. \\
+{\em longitude} & \+: longitude au format GPS. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_on_the_map_proxy_model_a805886f446204cd1aa626b492aff9734}\label{class_on_the_map_proxy_model_a805886f446204cd1aa626b492aff9734} 
-\index{OnTheMapProxyModel@{OnTheMapProxyModel}!setSelectedFilterEnabled@{setSelectedFilterEnabled}}
-\index{setSelectedFilterEnabled@{setSelectedFilterEnabled}!OnTheMapProxyModel@{OnTheMapProxyModel}}
-\doxysubsubsection{\texorpdfstring{setSelectedFilterEnabled}{setSelectedFilterEnabled}}
-{\footnotesize\ttfamily void On\+The\+Map\+Proxy\+Model\+::set\+Selected\+Filter\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+\Hypertarget{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141}\label{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141} 
+\index{OnTheMapProxyModel@{OnTheMapProxyModel}!setAllItemsSavedCoords@{setAllItemsSavedCoords}}
+\index{setAllItemsSavedCoords@{setAllItemsSavedCoords}!OnTheMapProxyModel@{OnTheMapProxyModel}}
+\doxysubsubsection{\texorpdfstring{setAllItemsSavedCoords}{setAllItemsSavedCoords}}
+{\footnotesize\ttfamily void On\+The\+Map\+Proxy\+Model\+::set\+All\+Items\+Saved\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ce slot applique les coordonnées GPS de la Saved\+Position à toutes les photos du modèle filtré. 
+
+Ce slot est appelé quand l\textquotesingle{}utilisateur appuye sur "{}\+Apply Saved Position"{}. \Hypertarget{class_on_the_map_proxy_model_ad5397db53587218f59299d48696f1b99}\label{class_on_the_map_proxy_model_ad5397db53587218f59299d48696f1b99} 
+\index{OnTheMapProxyModel@{OnTheMapProxyModel}!setFilterEnabled@{setFilterEnabled}}
+\index{setFilterEnabled@{setFilterEnabled}!OnTheMapProxyModel@{OnTheMapProxyModel}}
+\doxysubsubsection{\texorpdfstring{setFilterEnabled}{setFilterEnabled}}
+{\footnotesize\ttfamily void On\+The\+Map\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -119,7 +132,7 @@ Ce slot active ou désactive le filtrage par le Proxy\+Model.
 
 
 \begin{DoxyParams}{Parameters}
-{\em enabled} & \+: {\ttfamily true} pour activer le filtrage \\
+{\em enabled} & \+: true pour activer le filtrage \\
 \hline
 \end{DoxyParams}
 

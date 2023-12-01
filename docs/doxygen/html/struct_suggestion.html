@@ -115,26 +115,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7b7b80cdbe8f3980639fe23fae9960b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec valeurs. <br /></td></tr>
 <tr class="separator:a7b7b80cdbe8f3980639fe23fae9960b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a063449adc119af01b2ca07be053223f6" id="r_a063449adc119af01b2ca07be053223f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_suggestion.html#a063449adc119af01b2ca07be053223f6">operator==</a> (const <a class="el" href="struct_suggestion.html">Suggestion</a> &amp;suggestion) const</td></tr>
-<tr class="memdesc:a063449adc119af01b2ca07be053223f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">La surcharge de l'operateur == permet d'utiliser la méthode contains().  <br /></td></tr>
+<tr class="memdesc:a063449adc119af01b2ca07be053223f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operateur de comparaison.  <br /></td></tr>
 <tr class="separator:a063449adc119af01b2ca07be053223f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aecac3e72672ace070a7c01823b4beac1" id="r_aecac3e72672ace070a7c01823b4beac1"><td class="memItemLeft" align="right" valign="top"><a id="aecac3e72672ace070a7c01823b4beac1" name="aecac3e72672ace070a7c01823b4beac1"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>text</b></td></tr>
-<tr class="memdesc:aecac3e72672ace070a7c01823b4beac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Example: "COSTA RICA". <br /></td></tr>
+<tr class="memdesc:aecac3e72672ace070a7c01823b4beac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le contenu textuel de la suggestion. Example: "COSTA RICA". <br /></td></tr>
 <tr class="separator:aecac3e72672ace070a7c01823b4beac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3b42e1b81fb69adfb3ad0334b80fe1e" id="r_ac3b42e1b81fb69adfb3ad0334b80fe1e"><td class="memItemLeft" align="right" valign="top"><a id="ac3b42e1b81fb69adfb3ad0334b80fe1e" name="ac3b42e1b81fb69adfb3ad0334b80fe1e"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>target</b></td></tr>
-<tr class="memdesc:ac3b42e1b81fb69adfb3ad0334b80fe1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Example: "Country". <br /></td></tr>
+<tr class="memdesc:ac3b42e1b81fb69adfb3ad0334b80fe1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nom de la métadata compatible avec ce texte. Example: "Country". <br /></td></tr>
 <tr class="separator:ac3b42e1b81fb69adfb3ad0334b80fe1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdfdd0ed210feac3b5cd826c40d7643f" id="r_abdfdd0ed210feac3b5cd826c40d7643f"><td class="memItemLeft" align="right" valign="top"><a id="abdfdd0ed210feac3b5cd826c40d7643f" name="abdfdd0ed210feac3b5cd826c40d7643f"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>category</b></td></tr>
-<tr class="memdesc:abdfdd0ed210feac3b5cd826c40d7643f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Example: "Geo", "Photo". <br /></td></tr>
+<tr class="memdesc:abdfdd0ed210feac3b5cd826c40d7643f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet aux zones d'afficher ou non la suggestion. Example: "Geo", "Photo"... <br /></td></tr>
 <tr class="separator:abdfdd0ed210feac3b5cd826c40d7643f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af319b358957378992fcbcd14022e2125" id="r_af319b358957378992fcbcd14022e2125"><td class="memItemLeft" align="right" valign="top"><a id="af319b358957378992fcbcd14022e2125" name="af319b358957378992fcbcd14022e2125"></a>
 QSet&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>photos</b></td></tr>
-<tr class="memdesc:af319b358957378992fcbcd14022e2125"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> matching this <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. <br /></td></tr>
+<tr class="memdesc:af319b358957378992fcbcd14022e2125"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> matching this suggestion. <br /></td></tr>
 <tr class="separator:af319b358957378992fcbcd14022e2125"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -156,14 +156,15 @@ QSet&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>photos</
       </table>
 </div><div class="memdoc">
 
-<p>La surcharge de l'operateur == permet d'utiliser la méthode contains(). </p>
+<p>Operateur de comparaison. </p>
+<dl class="section note"><dt>Note</dt><dd>Cet operateur == permet d'utiliser la méthode Contains(). </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">suggestion</td><td>second operande. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>TRUE si le "texte" des deux suggestions est identique. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True si le <b>texte</b> des deux suggestions est identique. </dd></dl>
 
 </div>
 </div>

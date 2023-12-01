@@ -72,6 +72,8 @@ struct Photo
 class PhotoModel : public QAbstractListModel
 {
     Q_OBJECT
+
+    //! selectedRow is the Photo row in the model corresponding to the selected photo in the ListView.
     Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
 
 public:

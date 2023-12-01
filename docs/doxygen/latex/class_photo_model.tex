@@ -69,7 +69,7 @@ void \mbox{\hyperlink{class_photo_model_a297fef9ba3dd5d7c1c00593cefaf144e}{appen
 void {\bfseries remove\+Saved\+Position} ()
 \begin{DoxyCompactList}\small\item\em Supprime du modèle l\textquotesingle{}item correspondant à la position sauvegardée. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a5aef53c6395a6ccd579a019c62e472e0}{set\+Data}} (int row, QString value, QString property)
-\begin{DoxyCompactList}\small\item\em Ce slot ajoute une propriété à une \doxylink{struct_photo}{Photo}, par exemple si on clique sur une suggestion. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Ce slot ajoute ou modifie une propriété d\textquotesingle{}une \doxylink{struct_photo}{Photo}, par exemple si on clique sur une suggestion. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_aacde479b741e9f94c2077ad979e6b6a7}{duplicate\+Data}} (int row)
 \begin{DoxyCompactList}\small\item\em Duplicates an item of the model, and add it at the end of the vector. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a1e2f3f829e54ef445a5b1dea07ad2118}{remove\+Data}} (int row)
@@ -129,7 +129,7 @@ int {\bfseries m\+\_\+marker\+Row} = -\/1
 \item 
 \Hypertarget{class_photo_model_a6376872cafff59ccc887f405a2515ed9}\label{class_photo_model_a6376872cafff59ccc887f405a2515ed9} 
 int {\bfseries selected\+Row}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em selected\+Row is the \doxylink{struct_photo}{Photo} row in the model corresponding to the selected photo in the List\+View. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Related Symbols}
 (Note that these are not member symbols.) \begin{DoxyCompactItemize}
 \item 
@@ -292,7 +292,7 @@ La methode \doxylink{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634}{get()}
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-une Map contenant toutes les propriétés de l\textquotesingle{}item. Contient aussi une propriété "{}row"{}. 
+une Map contenant toutes les propriétés de l\textquotesingle{}item, dont la propriété spéciale\+: "{}row"{}. 
 \end{DoxyReturn}
 \Hypertarget{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe}\label{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe} 
 \index{PhotoModel@{PhotoModel}!getUrl@{getUrl}}
@@ -365,7 +365,7 @@ the number of elements in the model.
 
 
 
-Ce slot ajoute une propriété à une \doxylink{struct_photo}{Photo}, par exemple si on clique sur une suggestion. 
+Ce slot ajoute ou modifie une propriété d\textquotesingle{}une \doxylink{struct_photo}{Photo}, par exemple si on clique sur une suggestion. 
 
 
 \begin{DoxyParams}{Parameters}

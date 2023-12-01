@@ -83,12 +83,12 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
  * \brief Adds a suggestion to the model.
  *        Ce slot permet à n'importe qui d'ajouter une Suggestion.
  *
- * \param text: text of the Suggestion.
- * \param target: the name of the Exif tag compatible with this Suggestion.
- * \param category: the category of the Suggestion ("Geo", "photo" ... )
- * \param photo_row: l'indice de la Photo à associée à cette Suggestion.
- *                   Valeur spéciale: -1 signifie : toutes les photos
- *                   Valeur spéciale: -2 signifie : la Photo sélectionée (valeur par défaut)
+ * \param text: Text of the Suggestion.
+ * \param target: The name of the Exif tag compatible with this Suggestion.
+ * \param category: The category of the Suggestion ("Geo", "photo" ... )
+ * \param photo_row: L'indice de la Photo à associée à cette Suggestion.
+ *                   La valeur spéciale -1 signifie 'toutes les photos'.
+ *                   La valeur spéciale -2 signifie 'la Photo sélectionée' (valeur par défaut).
  */
 void SuggestionModel::append(const QString text, const QString target, const QString category, int photo_row)
 {
@@ -122,11 +122,11 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
 
 /* ********************************************************************************** */
 /*!
- * \brief Ajoute une Photo à la liste des photos ayant un "match" avec cette suggestion.
+ * \brief Ajoute une Photo à la liste des photos ayant un "match" avec cette Suggestion.
  * \param suggestion_row : l'indice de la Suggestion à modifier.
  * \param photo_row : l'indice de la Photo à ajouter à la Suggestion.
- *                   Valeur spéciale: -1 signifie : toutes les photos
- *                   Valeur spéciale: -2 signifie : la Photo sélectionée (valeur par défaut)
+ *                   La valeur spéciale -1 signifie 'toutes les photos'.
+ *                   La valeur spéciale -2 signifie 'la Photo sélectionée'.
  */
 void SuggestionModel::addPhotoToSuggestion(const int suggestion_row, int photo_row)
 {
@@ -173,9 +173,10 @@ void SuggestionModel::onSelectedPhotoChanged(const int row)
 
 /* ********************************************************************************** */
 /*!
- * \brief La surcharge de l'operateur == permet d'utiliser la méthode contains().
+ * \brief Operateur de comparaison.
+ * \note Cet operateur == permet d'utiliser la méthode Contains().
  * \param suggestion: second operande.
- * \return TRUE si le "texte" des deux suggestions est identique.
+ * \return True si le \b texte des deux suggestions est identique.
  */
 bool Suggestion::operator== (const Suggestion &suggestion) const
 {

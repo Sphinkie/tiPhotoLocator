@@ -19,22 +19,22 @@ A data structure containing a tag suggestion, for one or several \doxylink{struc
 {\bfseries Suggestion} (const QString \&suggestion\+\_\+text, const QString \&suggestion\+\_\+target, const QString suggestion\+\_\+category, const int first\+\_\+photo)
 \begin{DoxyCompactList}\small\item\em Constructeur avec valeurs. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{struct_suggestion_a063449adc119af01b2ca07be053223f6}{operator==}} (const \mbox{\hyperlink{struct_suggestion}{Suggestion}} \&suggestion) const
-\begin{DoxyCompactList}\small\item\em La surcharge de l\textquotesingle{}operateur == permet d\textquotesingle{}utiliser la méthode contains(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Operateur de comparaison. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{struct_suggestion_aecac3e72672ace070a7c01823b4beac1}\label{struct_suggestion_aecac3e72672ace070a7c01823b4beac1} 
 QString {\bfseries text}
-\begin{DoxyCompactList}\small\item\em Example\+: "{}\+COSTA RICA"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Le contenu textuel de la suggestion. Example\+: "{}\+COSTA RICA"{}. \end{DoxyCompactList}\item 
 \Hypertarget{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e}\label{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e} 
 QString {\bfseries target}
-\begin{DoxyCompactList}\small\item\em Example\+: "{}\+Country"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Le nom de la métadata compatible avec ce texte. Example\+: "{}\+Country"{}. \end{DoxyCompactList}\item 
 \Hypertarget{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f}\label{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f} 
 QString {\bfseries category}
-\begin{DoxyCompactList}\small\item\em Example\+: "{}\+Geo"{}, "{}\+Photo"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Permet aux zones d\textquotesingle{}afficher ou non la suggestion. Example\+: "{}\+Geo"{}, "{}\+Photo"{}... \end{DoxyCompactList}\item 
 \Hypertarget{struct_suggestion_af319b358957378992fcbcd14022e2125}\label{struct_suggestion_af319b358957378992fcbcd14022e2125} 
 QSet$<$ int $>$ {\bfseries photos}
-\begin{DoxyCompactList}\small\item\em List of \doxylink{struct_photo}{Photo} matching this \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em List of \doxylink{struct_photo}{Photo} matching this suggestion. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -49,15 +49,18 @@ A data structure containing a tag suggestion, for one or several \doxylink{struc
 
 
 
-La surcharge de l\textquotesingle{}operateur == permet d\textquotesingle{}utiliser la méthode contains(). 
+Operateur de comparaison. 
 
+\begin{DoxyNote}{Note}
+Cet operateur == permet d\textquotesingle{}utiliser la méthode Contains(). 
+\end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
 {\em suggestion} & second operande. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-TRUE si le "{}texte"{} des deux suggestions est identique. 
+True si le {\bfseries{texte}} des deux suggestions est identique. 
 \end{DoxyReturn}
 
 

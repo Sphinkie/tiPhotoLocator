@@ -272,7 +272,7 @@ void PhotoModel::selectedRow(int row)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Ce slot ajoute une propriété à une Photo, par exemple si on clique sur une suggestion.
+ * \brief Ce slot ajoute ou modifie une propriété d'une Photo, par exemple si on clique sur une suggestion.
  *
  * \param row : indice de la photo.
  * \param value : valeur de la propriété.
@@ -281,7 +281,6 @@ void PhotoModel::selectedRow(int row)
 void PhotoModel::setData(int row, QString value, QString property)
 {
     QModelIndex index = this->index(row, 0);
-    //QVariant val = value;
     int role = roleNames().key(property.toUtf8());
     this->setData(index, value, role);
 }
@@ -329,6 +328,21 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].country = value.toString();
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << CountryRole );
+            break;
+        case ArtistRole:
+            m_photos[index.row()].artist = value.toString();
+            m_photos[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << ArtistRole );
+            break;
+        case DescriptionRole:
+            m_photos[index.row()].description = value.toString();
+            m_photos[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << DescriptionRole );
+            break;
+        case DescriptionWriterRole:
+            m_photos[index.row()].descriptionWriter = value.toString();
+            m_photos[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << DescriptionWriterRole );
             break;
         case ToBeSavedRole:
             m_photos[index.row()].toBeSaved = value.toBool();
@@ -595,9 +609,9 @@ void PhotoModel::duplicateData(int row)
 /* ********************************************************************************************************** */
 /*!
  * \brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
- * Usage dans QML: titre = myModel.get(1).title;
+ *        Usage dans QML: titre = myModel.get(1).title;
  * \param row : indice
- * \returns une Map contenant toutes les propriétés de l'item. Contient aussi une propriété "row".
+ * \returns une Map contenant toutes les propriétés de l'item, dont la propriété spéciale: "row".
  */
 QVariantMap PhotoModel::get(int row)
 {
@@ -621,8 +635,8 @@ QVariantMap PhotoModel::get(int row)
 /* ********************************************************************************************************** */
 /*!
  * \brief Surcharge de l'opérateur ==.
- * \param file_name: texte à comparer
- * \return true si le filename de la photo correspond au texte passé en paramètre.
+ * \param file_name: Le texte à comparer
+ * \return True si le \b filename de la photo correspond au texte passé en paramètre.
  */
 bool Photo::operator == (const QString &file_name)
 {
@@ -633,9 +647,9 @@ bool Photo::operator == (const QString &file_name)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Définition de l'opérateur ==.
- * \param photo : une photo
- * \return true si les deux objets pointent sur les mêmes data.
+ * \brief Opérateur de comparaison standard.
+ * \param photo : Un autre objet photo
+ * \return True si les deux objets pointent sur les mêmes data.
  */
 bool Photo::operator == (const Photo &photo)
 {

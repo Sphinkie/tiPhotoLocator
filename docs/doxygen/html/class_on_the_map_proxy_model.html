@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('class_on_the_map_proxy_model.html','')
 
 <p>The <a class="el" href="class_on_the_map_proxy_model.html" title="The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s).">OnTheMapProxyModel</a> class is a filter ProxyModel, to keep only the selected photo(s).  
  <a href="class_on_the_map_proxy_model.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_on_the_map_proxy_model_8h_source.html">OnTheMapProxyModel.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for OnTheMapProxyModel:</div>
 <div class="dyncontent">
@@ -113,23 +115,22 @@ Inheritance diagram for OnTheMapProxyModel:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a805886f446204cd1aa626b492aff9734" id="r_a805886f446204cd1aa626b492aff9734"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_on_the_map_proxy_model.html#a805886f446204cd1aa626b492aff9734">setSelectedFilterEnabled</a> (bool enabled)</td></tr>
-<tr class="memdesc:a805886f446204cd1aa626b492aff9734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot active ou désactive le filtrage par le ProxyModel.  <br /></td></tr>
-<tr class="separator:a805886f446204cd1aa626b492aff9734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64f01eb0c3e84e1796a1367ec541f22c" id="r_a64f01eb0c3e84e1796a1367ec541f22c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_on_the_map_proxy_model.html#a64f01eb0c3e84e1796a1367ec541f22c">setAllItemsCoords</a> (const double lat, const double lon)</td></tr>
-<tr class="memdesc:a64f01eb0c3e84e1796a1367ec541f22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position).  <br /></td></tr>
-<tr class="separator:a64f01eb0c3e84e1796a1367ec541f22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebd8850a9093bc4166d6aed75d638141" id="r_aebd8850a9093bc4166d6aed75d638141"><td class="memItemLeft" align="right" valign="top"><a id="aebd8850a9093bc4166d6aed75d638141" name="aebd8850a9093bc4166d6aed75d638141"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setAllItemsSavedCoords</b> ()</td></tr>
-<tr class="memdesc:aebd8850a9093bc4166d6aed75d638141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot applique les coordonnées GPS de la SavedPosition à toutes les photos du modèle filtré. Ce slot est appelé quand l'utilisateur appuye sur "Apply Saved Position". <br /></td></tr>
+<tr class="memitem:ad5397db53587218f59299d48696f1b99" id="r_ad5397db53587218f59299d48696f1b99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_on_the_map_proxy_model.html#ad5397db53587218f59299d48696f1b99">setFilterEnabled</a> (bool enabled)</td></tr>
+<tr class="memdesc:ad5397db53587218f59299d48696f1b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot active ou désactive le filtrage par le ProxyModel.  <br /></td></tr>
+<tr class="separator:ad5397db53587218f59299d48696f1b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8578bb0c25636337ba57681da049e4f1" id="r_a8578bb0c25636337ba57681da049e4f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_on_the_map_proxy_model.html#a8578bb0c25636337ba57681da049e4f1">setAllItemsCoords</a> (const double latitude, const double longitude)</td></tr>
+<tr class="memdesc:a8578bb0c25636337ba57681da049e4f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position).  <br /></td></tr>
+<tr class="separator:a8578bb0c25636337ba57681da049e4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd8850a9093bc4166d6aed75d638141" id="r_aebd8850a9093bc4166d6aed75d638141"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_on_the_map_proxy_model.html#aebd8850a9093bc4166d6aed75d638141">setAllItemsSavedCoords</a> ()</td></tr>
+<tr class="memdesc:aebd8850a9093bc4166d6aed75d638141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot applique les coordonnées GPS de la SavedPosition à toutes les photos du modèle filtré.  <br /></td></tr>
 <tr class="separator:aebd8850a9093bc4166d6aed75d638141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a1d2857380e73f64754fa81e44b9ae4f5" id="r_a1d2857380e73f64754fa81e44b9ae4f5"><td class="memItemLeft" align="right" valign="top"><a id="a1d2857380e73f64754fa81e44b9ae4f5" name="a1d2857380e73f64754fa81e44b9ae4f5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabledChanged</b> ()</td></tr>
-<tr class="memdesc:a1d2857380e73f64754fa81e44b9ae4f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand l'état du filtrage change. <br /></td></tr>
-<tr class="separator:a1d2857380e73f64754fa81e44b9ae4f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c81a7a958b6a60d0e39b1d166f6829" id="r_aa7c81a7a958b6a60d0e39b1d166f6829"><td class="memItemLeft" align="right" valign="top"><a id="aa7c81a7a958b6a60d0e39b1d166f6829" name="aa7c81a7a958b6a60d0e39b1d166f6829"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabledChanged</b> ()</td></tr>
+<tr class="memdesc:aa7c81a7a958b6a60d0e39b1d166f6829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand l'état du filtrage change. <br /></td></tr>
+<tr class="separator:aa7c81a7a958b6a60d0e39b1d166f6829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -137,9 +138,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>OnTheMapProxyModel</b> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:afb8170a7f9e508bfdc6238e649e957cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructeur. Par défaut, le filtre est actif. <br /></td></tr>
 <tr class="separator:afb8170a7f9e508bfdc6238e649e957cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4411e7b21dc2fe332733e70b8e0ab3b6" id="r_a4411e7b21dc2fe332733e70b8e0ab3b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_on_the_map_proxy_model.html#a4411e7b21dc2fe332733e70b8e0ab3b6">selectedFilterEnabled</a> () const</td></tr>
-<tr class="memdesc:a4411e7b21dc2fe332733e70b8e0ab3b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le filtre est actif ou non.  <br /></td></tr>
-<tr class="separator:a4411e7b21dc2fe332733e70b8e0ab3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea978750450595380acfab7c3d60ef12" id="r_aea978750450595380acfab7c3d60ef12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_on_the_map_proxy_model.html#aea978750450595380acfab7c3d60ef12">filterEnabled</a> () const</td></tr>
+<tr class="memdesc:aea978750450595380acfab7c3d60ef12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le filtre est actif ou non.  <br /></td></tr>
+<tr class="separator:aea978750450595380acfab7c3d60ef12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -149,9 +150,10 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a05901c4c4084be11f384d074c2d0592c" id="r_a05901c4c4084be11f384d074c2d0592c"><td class="memItemLeft" align="right" valign="top"><a id="a05901c4c4084be11f384d074c2d0592c" name="a05901c4c4084be11f384d074c2d0592c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabled</b></td></tr>
-<tr class="separator:a05901c4c4084be11f384d074c2d0592c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab41c6f6de0761832ee25c3262d57743c" id="r_ab41c6f6de0761832ee25c3262d57743c"><td class="memItemLeft" align="right" valign="top"><a id="ab41c6f6de0761832ee25c3262d57743c" name="ab41c6f6de0761832ee25c3262d57743c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td></tr>
+<tr class="memdesc:ab41c6f6de0761832ee25c3262d57743c"><td class="mdescLeft">&#160;</td><td class="mdescRight">filterEnabled manages the status of the filtering. <br /></td></tr>
+<tr class="separator:ab41c6f6de0761832ee25c3262d57743c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_on_the_map_proxy_model.html" title="The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s).">OnTheMapProxyModel</a> class is a filter ProxyModel, to keep only the selected photo(s). </p>
@@ -199,18 +201,18 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabled
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> si la ligne est acceptée. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true si la ligne est acceptée. </dd></dl>
 
 </div>
 </div>
-<a id="a4411e7b21dc2fe332733e70b8e0ab3b6" name="a4411e7b21dc2fe332733e70b8e0ab3b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4411e7b21dc2fe332733e70b8e0ab3b6">&#9670;&#160;</a></span>selectedFilterEnabled()</h2>
+<a id="aea978750450595380acfab7c3d60ef12" name="aea978750450595380acfab7c3d60ef12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea978750450595380acfab7c3d60ef12">&#9670;&#160;</a></span>filterEnabled()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool OnTheMapProxyModel::selectedFilterEnabled </td>
+          <td class="memname">bool OnTheMapProxyModel::filterEnabled </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -219,12 +221,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabled
 </div><div class="memdoc">
 
 <p>Indique si le filtre est actif ou non. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> si le filtre est actif. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true si le filtre est actif. </dd></dl>
 
 </div>
 </div>
-<a id="a64f01eb0c3e84e1796a1367ec541f22c" name="a64f01eb0c3e84e1796a1367ec541f22c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64f01eb0c3e84e1796a1367ec541f22c">&#9670;&#160;</a></span>setAllItemsCoords</h2>
+<a id="a8578bb0c25636337ba57681da049e4f1" name="a8578bb0c25636337ba57681da049e4f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8578bb0c25636337ba57681da049e4f1">&#9670;&#160;</a></span>setAllItemsCoords</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,13 +238,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabled
           <td class="memname">void OnTheMapProxyModel::setAllItemsCoords </td>
           <td>(</td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>lat</em>, </td>
+          <td class="paramname"><em>latitude</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>lon</em>&#160;</td>
+          <td class="paramname"><em>longitude</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -260,16 +262,16 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabled
 <p>Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position). </p>
 <p>Details: Ce slot est appelé quand l'utilisateur change la position d'une photo sur la carte. C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lat</td><td>: latitude au format GPS. </td></tr>
-    <tr><td class="paramname">lon</td><td>: longitude au format GPS. </td></tr>
+    <tr><td class="paramname">latitude</td><td>: latitude au format GPS. </td></tr>
+    <tr><td class="paramname">longitude</td><td>: longitude au format GPS. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a805886f446204cd1aa626b492aff9734" name="a805886f446204cd1aa626b492aff9734"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a805886f446204cd1aa626b492aff9734">&#9670;&#160;</a></span>setSelectedFilterEnabled</h2>
+<a id="aebd8850a9093bc4166d6aed75d638141" name="aebd8850a9093bc4166d6aed75d638141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd8850a9093bc4166d6aed75d638141">&#9670;&#160;</a></span>setAllItemsSavedCoords</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,7 +280,35 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabled
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void OnTheMapProxyModel::setSelectedFilterEnabled </td>
+          <td class="memname">void OnTheMapProxyModel::setAllItemsSavedCoords </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ce slot applique les coordonnées GPS de la SavedPosition à toutes les photos du modèle filtré. </p>
+<p>Ce slot est appelé quand l'utilisateur appuye sur "Apply Saved Position". </p>
+
+</div>
+</div>
+<a id="ad5397db53587218f59299d48696f1b99" name="ad5397db53587218f59299d48696f1b99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5397db53587218f59299d48696f1b99">&#9670;&#160;</a></span>setFilterEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OnTheMapProxyModel::setFilterEnabled </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>enabled</em></td><td>)</td>
@@ -295,7 +325,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabled
 <p>Ce slot active ou désactive le filtrage par le ProxyModel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">enabled</td><td>: <code>true</code> pour activer le filtrage </td></tr>
+    <tr><td class="paramname">enabled</td><td>: true pour activer le filtrage </td></tr>
   </table>
   </dd>
 </dl>
