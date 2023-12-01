@@ -14,9 +14,8 @@ Inheritance diagram for Unlocalized\+Proxy\+Model\+:\begin{figure}[H]
 \doxysubsubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7}\label{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7} 
-void {\bfseries set\+Filter\+Enabled} (bool enabled)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7}{set\+Filter\+Enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Le slot set\+Filter\+Enabled active ou désactive le filtrage par le Proxy\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,15 +25,12 @@ void {\bfseries filter\+Enabled\+Changed} ()
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_unlocalized_proxy_model_aefca3127511e50cfd59f6a58a23da2b9}\label{class_unlocalized_proxy_model_aefca3127511e50cfd59f6a58a23da2b9} 
-{\bfseries Unlocalized\+Proxy\+Model} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
-\item 
-\Hypertarget{class_unlocalized_proxy_model_ab2e8701cd4689495b085d112425b7f8d}\label{class_unlocalized_proxy_model_ab2e8701cd4689495b085d112425b7f8d} 
-bool {\bfseries filter\+Enabled} () const
-\begin{DoxyCompactList}\small\item\em filter\+Enabled indique si le filtre est actif ou non. Returns {\ttfamily true} si le filtre est actif. \end{DoxyCompactList}\item 
-\Hypertarget{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc}\label{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc} 
-Q\+\_\+\+INVOKABLE int {\bfseries get\+Source\+Index} (int row)
-\begin{DoxyCompactList}\small\item\em La fonction get\+Source\+Index renvoie l\textquotesingle{}indice de la Photo dans le modèle source. {\itshape row} \+: indice de la photo dans ce proxy\+Model. Retourne l\textquotesingle{}indice de la photo dans le source\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_unlocalized_proxy_model_aefca3127511e50cfd59f6a58a23da2b9}{Unlocalized\+Proxy\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unlocalized_proxy_model_ab2e8701cd4689495b085d112425b7f8d}{filter\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em filter\+Enabled indique si le filtre est actif ou non. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE int \mbox{\hyperlink{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc}{get\+Source\+Index}} (int row)
+\begin{DoxyCompactList}\small\item\em La fonction get\+Source\+Index renvoie l\textquotesingle{}indice de la Photo dans le modèle source. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -47,6 +43,73 @@ bool {\bfseries filter\+Enabled}
 The \doxylink{class_unlocalized_proxy_model}{Unlocalized\+Proxy\+Model} class if a filter Proxy\+Model, that filters the Photo with/without GPS coordinates. 
 
 \textbackslash{}inmodule Ti\+Photo\+Locator 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_unlocalized_proxy_model_aefca3127511e50cfd59f6a58a23da2b9}\label{class_unlocalized_proxy_model_aefca3127511e50cfd59f6a58a23da2b9} 
+\index{UnlocalizedProxyModel@{UnlocalizedProxyModel}!UnlocalizedProxyModel@{UnlocalizedProxyModel}}
+\index{UnlocalizedProxyModel@{UnlocalizedProxyModel}!UnlocalizedProxyModel@{UnlocalizedProxyModel}}
+\doxysubsubsection{\texorpdfstring{UnlocalizedProxyModel()}{UnlocalizedProxyModel()}}
+{\footnotesize\ttfamily Unlocalized\+Proxy\+Model\+::\+Unlocalized\+Proxy\+Model (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \+: modèle source \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_unlocalized_proxy_model_ab2e8701cd4689495b085d112425b7f8d}\label{class_unlocalized_proxy_model_ab2e8701cd4689495b085d112425b7f8d} 
+\index{UnlocalizedProxyModel@{UnlocalizedProxyModel}!filterEnabled@{filterEnabled}}
+\index{filterEnabled@{filterEnabled}!UnlocalizedProxyModel@{UnlocalizedProxyModel}}
+\doxysubsubsection{\texorpdfstring{filterEnabled()}{filterEnabled()}}
+{\footnotesize\ttfamily bool Unlocalized\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+filter\+Enabled indique si le filtre est actif ou non. 
+
+\begin{DoxyReturn}{Returns}
+true si le filtre est actif. 
+\end{DoxyReturn}
+\Hypertarget{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc}\label{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc} 
+\index{UnlocalizedProxyModel@{UnlocalizedProxyModel}!getSourceIndex@{getSourceIndex}}
+\index{getSourceIndex@{getSourceIndex}!UnlocalizedProxyModel@{UnlocalizedProxyModel}}
+\doxysubsubsection{\texorpdfstring{getSourceIndex()}{getSourceIndex()}}
+{\footnotesize\ttfamily int Unlocalized\+Proxy\+Model\+::get\+Source\+Index (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})}
+
+
+
+La fonction get\+Source\+Index renvoie l\textquotesingle{}indice de la Photo dans le modèle source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \+: indice de la photo dans ce proxy\+Model. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}indice de la photo dans le source\+Model. 
+\end{DoxyReturn}
+\Hypertarget{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7}\label{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7} 
+\index{UnlocalizedProxyModel@{UnlocalizedProxyModel}!setFilterEnabled@{setFilterEnabled}}
+\index{setFilterEnabled@{setFilterEnabled}!UnlocalizedProxyModel@{UnlocalizedProxyModel}}
+\doxysubsubsection{\texorpdfstring{setFilterEnabled}{setFilterEnabled}}
+{\footnotesize\ttfamily void Unlocalized\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Le slot set\+Filter\+Enabled active ou désactive le filtrage par le Proxy\+Model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & \+: true pour activer le filtrage \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

@@ -139,7 +139,7 @@ public slots:
     void fetchExifMetadata(int row = -1);
     void saveMetadata();
     void setInCircleItemCoords(double latitude, double longitude);
-    void appendSavedPosition(double lati, double longi);
+    void appendSavedPosition(double latitude, double longitude);
     void removeSavedPosition();
     void setData(int row, QString value, QString property);
     void duplicateData(int row);

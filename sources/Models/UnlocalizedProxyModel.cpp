@@ -13,9 +13,9 @@
 
 
 /* ************************************************************************ */
-/*
- * \brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.
- * \a parent : modèle source
+/**
+ * @brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.
+ * @param parent : modèle source
  */
 UnlocalizedProxyModel::UnlocalizedProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -25,9 +25,9 @@ UnlocalizedProxyModel::UnlocalizedProxyModel(QObject *parent) : QSortFilterProxy
 
 
 /* ************************************************************************ */
-/*!
- * \brief filterEnabled indique si le filtre est actif ou non.
- * Returns \c true si le filtre est actif.
+/**
+ * @brief filterEnabled indique si le filtre est actif ou non.
+ * @returns true si le filtre est actif.
  */
 bool UnlocalizedProxyModel::filterEnabled() const
 {
@@ -36,9 +36,9 @@ bool UnlocalizedProxyModel::filterEnabled() const
 
 
 /* ************************************************************************ */
-/*
- * \brief Le slot setFilterEnabled active ou désactive le filtrage par le ProxyModel.
- * \a enabled : \c true pour activer le filtrage
+/**
+ * @brief Le slot setFilterEnabled active ou désactive le filtrage par le ProxyModel.
+ * @param enabled : true pour activer le filtrage
  */
 void UnlocalizedProxyModel::setFilterEnabled(bool enabled)
 {
@@ -51,10 +51,12 @@ void UnlocalizedProxyModel::setFilterEnabled(bool enabled)
     invalidateFilter();
 }
 
-/*!
- * \brief La fonction getSourceIndex renvoie l'indice de la Photo dans le modèle source.
- * \a row : indice de la photo dans ce proxyModel.
- * Retourne l'indice de la photo dans le sourceModel.
+
+/* ************************************************************************ */
+/**
+ * @brief La fonction getSourceIndex renvoie l'indice de la Photo dans le modèle source.
+ * @param  row : indice de la photo dans ce proxyModel.
+ * @return l'indice de la photo dans le sourceModel.
  */
 int UnlocalizedProxyModel::getSourceIndex(int row)
 {

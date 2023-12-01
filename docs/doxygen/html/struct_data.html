@@ -118,11 +118,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9f806b38e37df3d4c8db35527942897f" id="r_a9f806b38e37df3d4c8db35527942897f"><td class="memItemLeft" align="right" valign="top"><a id="a9f806b38e37df3d4c8db35527942897f" name="a9f806b38e37df3d4c8db35527942897f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Data</b> (const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, const bool is_welcome=false, bool is_selected=false)</td></tr>
 <tr class="separator:a9f806b38e37df3d4c8db35527942897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a938e2a2d8c3366cbf92a62030982b6d6" id="r_a938e2a2d8c3366cbf92a62030982b6d6"><td class="memItemLeft" align="right" valign="top"><a id="a938e2a2d8c3366cbf92a62030982b6d6" name="a938e2a2d8c3366cbf92a62030982b6d6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const QString &amp;file_name)</td></tr>
+<tr class="memitem:a938e2a2d8c3366cbf92a62030982b6d6" id="r_a938e2a2d8c3366cbf92a62030982b6d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_data.html#a938e2a2d8c3366cbf92a62030982b6d6">operator==</a> (const QString &amp;file_name)</td></tr>
+<tr class="memdesc:a938e2a2d8c3366cbf92a62030982b6d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'opérateur ==.  <br /></td></tr>
 <tr class="separator:a938e2a2d8c3366cbf92a62030982b6d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a054c4165a75f9e9ba5dedaaceffad50a" id="r_a054c4165a75f9e9ba5dedaaceffad50a"><td class="memItemLeft" align="right" valign="top"><a id="a054c4165a75f9e9ba5dedaaceffad50a" name="a054c4165a75f9e9ba5dedaaceffad50a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="struct_data.html">Data</a> &amp;data)</td></tr>
+<tr class="memitem:a054c4165a75f9e9ba5dedaaceffad50a" id="r_a054c4165a75f9e9ba5dedaaceffad50a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_data.html#a054c4165a75f9e9ba5dedaaceffad50a">operator==</a> (const <a class="el" href="struct_data.html">Data</a> &amp;data)</td></tr>
+<tr class="memdesc:a054c4165a75f9e9ba5dedaaceffad50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définition de l'opérateur ==.  <br /></td></tr>
 <tr class="separator:a054c4165a75f9e9ba5dedaaceffad50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -196,7 +196,62 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>keywords</b></td><
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc. </p>
-</div><hr/>The documentation for this struct was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a054c4165a75f9e9ba5dedaaceffad50a" name="a054c4165a75f9e9ba5dedaaceffad50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054c4165a75f9e9ba5dedaaceffad50a">&#9670;&#160;</a></span>operator==() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Data::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_data.html">Data</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition de l'opérateur ==. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>: une photo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true si les deux objets pointent sur les même data. </dd></dl>
+
+</div>
+</div>
+<a id="a938e2a2d8c3366cbf92a62030982b6d6" name="a938e2a2d8c3366cbf92a62030982b6d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a938e2a2d8c3366cbf92a62030982b6d6">&#9670;&#160;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Data::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>file_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Surcharge de l'opérateur ==. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_name</td><td>texte à comparer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true si le filename de la photo correspond au texte passé en paramètre. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>Models/<a class="el" href="_photo_model_8h_source.html">PhotoModel.h</a></li>
 <li>Models/<b>PhotoModel.cpp</b></li>
 </ul>

@@ -118,7 +118,7 @@ Map {
         4 Terrain Map       (Terrain map view)
         5 Hiking Map        (Hiking map view)
     */
-    activeMapType: supportedMapTypes[4]
+    activeMapType: supportedMapTypes[0]
 
     Plugin{
         id: mapPlugin

@@ -20,5 +20,4 @@ ToolBarPrincipaleForm {
 		}
  
         folderPath.text: Utilities.toStandardPath(folderDialog.folder)
-
 }

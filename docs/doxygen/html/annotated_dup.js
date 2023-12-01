@@ -1,6 +1,6 @@
 var annotated_dup =
 [
-    [ "Data", "struct_data.html", null ],
+    [ "Data", "struct_data.html", "struct_data" ],
     [ "ExifReadTask", "class_exif_read_task.html", "class_exif_read_task" ],
     [ "ExifWriteTask", "class_exif_write_task.html", "class_exif_write_task" ],
     [ "GeocodeWrapper", "class_geocode_wrapper.html", "class_geocode_wrapper" ],

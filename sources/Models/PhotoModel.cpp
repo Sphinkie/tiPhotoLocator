@@ -182,14 +182,12 @@ void PhotoModel::append(const QVariantMap data)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Ajoute une entrée spéciale dans le Modèle,
- *        correspondant à une position GPS mémorisée (marker jaune).
- *
- * \a lati : latitude au format GPS.
- * \a longi : longitude au format GPS.
+/**
+ * @brief Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune).
+ * @param latitude : latitude au format GPS.
+ * @param longitude : longitude au format GPS.
  */
-void PhotoModel::appendSavedPosition(double lati, double longi)
+void PhotoModel::appendSavedPosition(double latitude, double longitude)
 {
     // S'il n'y a pas encore de Saved Position, on insère à la fin
     if (!m_markerIndex.isValid())
@@ -203,8 +201,8 @@ void PhotoModel::appendSavedPosition(double lati, double longi)
         m_markerRow = rowOfInsert;
         m_markerIndex = index(rowOfInsert,0);
     }
-    this->setData(m_markerIndex, lati, LatitudeRole);
-    this->setData(m_markerIndex, longi, LongitudeRole);
+    this->setData(m_markerIndex, latitude, LatitudeRole);
+    this->setData(m_markerIndex, longitude, LongitudeRole);
 }
 
 /* ********************************************************************************************************** */
@@ -277,12 +275,12 @@ void PhotoModel::selectedRow(int row)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion.
+/**
+ * @brief Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion.
  *
- * \a row : indice de la photo.
- * \a value : valeur de la propriété.
- * \a property : nom de la propriété.
+ * @param row : indice de la photo.
+ * @param value : valeur de la propriété.
+ * @param property : nom de la propriété.
  */
 void PhotoModel::setData(int row, QString value, QString property)
 {
@@ -388,9 +386,6 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_data[row].make            = value_list["Make"].toString();
     m_data[row].imageWidth      = value_list["ImageWidth"].toInt();
     m_data[row].imageHeight     = value_list["ImageHeight"].toInt();
-    //m_data[row].gpsLatitudeRef  = value_list["GPSLatitudeRef"].toString();
-    //m_data[row].gpsLongitudeRef = value_list["GPSLongitudeRef"].toString();
-    // ImageDescription
     // Les metadata IPTC
     m_data[row].city            = value_list["City"].toString();
     m_data[row].country         = value_list["Country"].toString();
@@ -402,6 +397,10 @@ void PhotoModel::setData(const QVariantMap &value_list)
         m_data[row].artist          = value_list["Creator"].toString();
     else
         m_data[row].artist          = value_list["Artist"].toString();
+    // Envoi du signal dataChanged()
+    QModelIndex changed_index = this->index(row, 0);
+    emit dataChanged(changed_index, changed_index);
+
     // -------------------------------------
     // Certaines infos sont des suggestions
     // -------------------------------------
@@ -411,16 +410,12 @@ void PhotoModel::setData(const QVariantMap &value_list)
         QString suggestedDate = modifyDate.mid(8,2)+"/"+modifyDate.mid(5,2)+"/"+modifyDate.left(4);
         emit sendSuggestion(suggestedDate, "dateTimeOriginal", "photo", row);
     }
-
-    // Envoi du signal dataChanged()
-    QModelIndex changed_index = this->index(row, 0);
-    emit dataChanged(changed_index, changed_index);
 }
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Returns the last selected row.
+/**
+ * @brief Returns the last selected row.
  */
 int PhotoModel::getSelectedRow()
 {
@@ -428,8 +423,8 @@ int PhotoModel::getSelectedRow()
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Debug function that print (in the console) one line of the model at every call.
+/**
+ * @brief Debug function that print (in the console) one line of the model at every call.
  */
 void PhotoModel::dumpData()
 {
@@ -445,8 +440,8 @@ void PhotoModel::dumpData()
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Deletes all the items of the Model.
+/**
+ * @brief Deletes all the items of the Model.
  */
 void PhotoModel::clear()
 {
@@ -457,9 +452,9 @@ void PhotoModel::clear()
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Ce slot lit des données EXIF d'une (ou toutes) photos du répertoire.
- * \a photo : l'indice de la photo (vide ou -1 = toutes les photos du répertoire)
+/**
+ * @brief Ce slot lit des données EXIF d'une (ou toutes) photos du répertoire.
+ * @param photo : l'indice de la photo (vide ou -1 = toutes les photos du répertoire)
  */
 void PhotoModel::fetchExifMetadata(int photo)
 {
@@ -491,8 +486,8 @@ void PhotoModel::fetchExifMetadata(int photo)
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
+/**
+ * @brief Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
  * Tag obligatoire: imageUrl.
  * Tags modifiés: coords GPS, Creator, City, Country.
  */
@@ -540,9 +535,9 @@ void PhotoModel::saveMetadata()
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Adds a test item to the PhotoModel. (only if \c DebugMode is enabled in the \e settings)
- * \note For testing purpose.
+/**
+ * @brief Adds a test item to the PhotoModel. (only if \c DebugMode is enabled in the \e settings)
+ * @note For testing purpose.
  */
 void PhotoModel::addTestItem()
 {
@@ -567,9 +562,9 @@ void PhotoModel::addTestItem()
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Fonction typique qui supprime l'item désigné du modèle.
- * \a row : la position dans le vecteur de l'item à modifier.
+/**
+ * @brief Fonction typique qui supprime l'item désigné du modèle.
+ * @param row : la position dans le vecteur de l'item à modifier.
  */
 void PhotoModel::removeData(int row)
 {
@@ -582,9 +577,9 @@ void PhotoModel::removeData(int row)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Duplicates an item of the model, and add it at the end of the vector.
- * \a row : item row to be duplicated.
+/**
+ * @brief Duplicates an item of the model, and add it at the end of the vector.
+ * @param row : item row to be duplicated.
  */
 void PhotoModel::duplicateData(int row)
 {
@@ -601,11 +596,11 @@ void PhotoModel::duplicateData(int row)
 
 
 /* ********************************************************************************************************** */
-/*
- * \brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
+/**
+ * @brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
  * Usage dans QML: titre = myModel.get(1).title;
- * \a row : indice
- * Returns une Map contenant toutes les propriétés de l'item. Continet auss une propriété "row".
+ * @param row : indice
+ * @returns une Map contenant toutes les propriétés de l'item. Contient aussi une propriété "row".
  */
 QVariantMap PhotoModel::get(int row)
 {
@@ -627,8 +622,11 @@ QVariantMap PhotoModel::get(int row)
 
 
 /* ********************************************************************************************************** */
-// Surcharges d'operateurs
-/* ********************************************************************************************************** */
+/**
+ * @brief Surcharge de l'opérateur ==.
+ * @param file_name: texte à comparer
+ * @return true si le filename de la photo correspond au texte passé en paramètre.
+ */
 bool Data::operator == (const QString &file_name)
 {
    if (this->filename == file_name)
@@ -636,6 +634,12 @@ bool Data::operator == (const QString &file_name)
   return false;
 }
 
+/* ********************************************************************************************************** */
+/**
+ * @brief Définition de l'opérateur ==.
+ * @param data : une photo
+ * @return true si les deux objets pointent sur les même data.
+ */
 bool Data::operator == (const Data &data)
 {
    if (this->filename == data.filename)

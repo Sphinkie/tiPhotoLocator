@@ -3,8 +3,12 @@
 // ------------------------------------------
 
 
+
+
 /**
- * @brief Transforme un chemin du type "file:///C:/Users/David/Pictures" en "C:\Users\David\Pictures"
+ * @brief Transforme un chemin en format Windows "C:\Users\David\Pictures". Par exemple:
+ * file:///E:/TiPhotos
+ * file://nas/photo/1997/1997 Sicile
  * @param objet: un chemin au format "file:///C:/Users/David/Pictures"
  * @return un chemin au format "C:\Users\David\Pictures"
  */
@@ -13,8 +17,9 @@ function toStandardPath(objet)
     let texte = objet.toString();
     if (texte.length > 8)
     {
-        texte = texte.replace("file:///" , "");   // remplacement litéral
-        texte = texte.replace(/\//g, "\\");       // remplacement global des / par des \
+        texte = texte.replace("file:" , "");   // remplacement litéral
+        texte = texte.replace("///" , "");     // remplacement litéral
+        texte = texte.replace(/\//g, "\\");    // remplacement global des / par des \
     }
     // console.log(texte);
     return texte;
