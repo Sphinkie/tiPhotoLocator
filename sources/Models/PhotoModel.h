@@ -9,15 +9,12 @@
  */
 struct Photo
 {
-    enum ItemType {photo, marker, welcome};
-
-    //!< Default constructor
+    //! Default constructor
     Photo() {}
 
-    //!< Constructeur avec valeurs
+    //! Constructeur avec valeurs
     Photo( const QString &file_name,
           const QString &image_url,
-//        const Data::ItemType image_type = photo,
           const bool is_marker = false,
           const bool is_welcome = false,
           bool is_selected = false
@@ -50,8 +47,6 @@ struct Photo
     int imageHeight = 0;        //!< image height (no changes allowed in this app)
     // IPTC tags
     QString artist;             //!< can be: Artist or Creator
-    //QString gpsLatitudeRef;
-    //QString gpsLongitudeRef;
     QString city;               //!< City shown in the Photo
     QString country;            //!< Country where the Photo was taken
     QString description;        //!< can be: Description, ImageDescription or Caption;

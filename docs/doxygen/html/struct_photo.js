@@ -1,6 +1,7 @@
 var struct_photo =
 [
     [ "Photo", "struct_photo.html#a10ef03ede9235052eb9f7d5e950f85d3", null ],
+    [ "Photo", "struct_photo.html#a9bf87b3475256941dadccf1bba9e5650", null ],
     [ "operator==", "struct_photo.html#aaf8c4dfdd916b811562d6d4e7f5e1489", null ],
     [ "operator==", "struct_photo.html#aadb7a083611feae65440c3bfc3887417", null ],
     [ "artist", "struct_photo.html#ab5682d56db6f4676b1882bbc1a39b5fb", null ],

@@ -62,8 +62,9 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
 
 /* ********************************************************************************** */
 /*!
- * \brief Table of Role names. Implémentation obligatoire.
- * @details C'est la correspondance entre le role C++ et le nom de la property dans QML.
+ * \brief Table of Role names.
+ * \note Implémentation obligatoire.
+ * \details C'est la correspondance entre le role C++ et le nom de la property dans QML.
  */
 QHash<int, QByteArray> SuggestionModel::roleNames() const
 {
@@ -80,13 +81,14 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 /* ********************************************************************************** */
 /*!
  * \brief Adds a suggestion to the model.
- * Ce slot permet à n'importe qui d'ajouter une Suggestion.
- * \param text: text of the suggestion.
- * \param target: the name of the Exif tag compatible with this suggestion.
- * \param category: the category of the suggestion ("Geo", ... )
- * \param photo_row: l'indice de la photo à associée à cette suggestion.
- *  Valeurs spéciales: -1 = toutes les photos
- *  Valeurs spéciales: -2 = la photo sélectionée (valeur par défaut)
+ *        Ce slot permet à n'importe qui d'ajouter une Suggestion.
+ *
+ * \param text: text of the Suggestion.
+ * \param target: the name of the Exif tag compatible with this Suggestion.
+ * \param category: the category of the Suggestion ("Geo", "photo" ... )
+ * \param photo_row: l'indice de la Photo à associée à cette Suggestion.
+ *                   Valeur spéciale: -1 signifie : toutes les photos
+ *                   Valeur spéciale: -2 signifie : la Photo sélectionée (valeur par défaut)
  */
 void SuggestionModel::append(const QString text, const QString target, const QString category, int photo_row)
 {
@@ -98,7 +100,7 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
         {
             // Trouvé: la suggestion existe dejà
             qDebug() << "already contains" << text;
-            this->addCurrentPhotoToSuggestion(i);
+            this->addPhotoToSuggestion(i, photo_row);
             return;
         }
     }
@@ -108,6 +110,7 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
         // si le numéro de la photo n'est pas fourni, on prend la photo sélectionnée dans la ListView.
         photo_row = m_selectedPhotoRow;
     }
+    // On ajoute la photo à la suggestion
     qDebug()<< "Adding" << target << "suggestion " << text << "for" << photo_row;;
     Suggestion* new_suggestion = new Suggestion(text, target, category, photo_row);
     const int rowOfInsert = m_suggestions.count();
@@ -119,17 +122,23 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
 
 /* ********************************************************************************** */
 /*!
- * \brief Ajoute la photo actuellement sélectionnée à la liste des photos ayant un
- * "match" avec cette suggestion.
- * \param row : l'indice de la suggestion à modifier.
+ * \brief Ajoute une Photo à la liste des photos ayant un "match" avec cette suggestion.
+ * \param suggestion_row : l'indice de la Suggestion à modifier.
+ * \param photo_row : l'indice de la Photo à ajouter à la Suggestion.
+ *                   Valeur spéciale: -1 signifie : toutes les photos
+ *                   Valeur spéciale: -2 signifie : la Photo sélectionée (valeur par défaut)
  */
-void SuggestionModel::addCurrentPhotoToSuggestion(int row)
+void SuggestionModel::addPhotoToSuggestion(const int suggestion_row, int photo_row)
 {
-    if (row<0 || row>m_suggestions.count()) return;
+    if (suggestion_row<0 || suggestion_row>m_suggestions.count()) return;
+    if (photo_row == -2)
+    {
+        photo_row = m_selectedPhotoRow;
+    }
     // On ajoute la photo courante dans la liste.
-    m_suggestions[row].photos << m_selectedPhotoRow;
+    m_suggestions[suggestion_row].photos << photo_row;
     // Emit signal
-    QModelIndex index = this->index(row, 0);;
+    QModelIndex index = this->index(suggestion_row, 0);;
     emit dataChanged(index, index, QVector<int>() << PhotosRole);
 }
 

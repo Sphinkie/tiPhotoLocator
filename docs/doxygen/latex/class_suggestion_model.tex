@@ -36,7 +36,7 @@ void \mbox{\hyperlink{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f}{
 \begin{DoxyCompactItemize}
 \item 
 QHash$<$ int, QByte\+Array $>$ \mbox{\hyperlink{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd}{role\+Names}} () const override
-\begin{DoxyCompactList}\small\item\em Table of Role names. Implémentation obligatoire. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Table of Role names. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0}{Suggestion\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Contructor. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}{row\+Count}} (const QModel\+Index \&parent) const override
@@ -81,13 +81,13 @@ Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui
 
 
 \begin{DoxyParams}{Parameters}
-{\em text} & text of the suggestion. \\
+{\em text} & text of the \doxylink{struct_suggestion}{Suggestion}. \\
 \hline
-{\em target} & the name of the Exif tag compatible with this suggestion. \\
+{\em target} & the name of the Exif tag compatible with this \doxylink{struct_suggestion}{Suggestion}. \\
 \hline
-{\em category} & the category of the suggestion ("{}\+Geo"{}, ... ) \\
+{\em category} & the category of the \doxylink{struct_suggestion}{Suggestion} ("{}\+Geo"{}, "{}photo"{} ... ) \\
 \hline
-{\em photo\+\_\+row} & l\textquotesingle{}indice de la photo à associée à cette suggestion. Valeurs spéciales\+: -\/1 = toutes les photos Valeurs spéciales\+: -\/2 = la photo sélectionée (valeur par défaut) \\
+{\em photo\+\_\+row} & l\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} à associée à cette \doxylink{struct_suggestion}{Suggestion}. Valeur spéciale\+: -\/1 signifie \+: toutes les photos Valeur spéciale\+: -\/2 signifie \+: la \doxylink{struct_photo}{Photo} sélectionée (valeur par défaut) \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c}\label{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c} 
@@ -148,8 +148,11 @@ Ce slot enlève la photo courante de la liste des photos correspondant à une su
 
 
 
-Table of Role names. Implémentation obligatoire. 
+Table of Role names. 
 
+\begin{DoxyNote}{Note}
+Implémentation obligatoire.
+\end{DoxyNote}
 C\textquotesingle{}est la correspondance entre le role C++ et le nom de la property dans QML. \Hypertarget{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}\label{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea} 
 \index{SuggestionModel@{SuggestionModel}!rowCount@{rowCount}}
 \index{rowCount@{rowCount}!SuggestionModel@{SuggestionModel}}

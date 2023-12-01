@@ -82,7 +82,7 @@ private:
     // -----------------------------------------------------
     // Methodes privées
     // -----------------------------------------------------
-    void addCurrentPhotoToSuggestion(int row);
+    void addPhotoToSuggestion(const int suggestion_row, int photo_row);
 
     // -----------------------------------------------------
     // Membres

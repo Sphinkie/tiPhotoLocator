@@ -9,24 +9,15 @@ A data structure containing all the attributes for a photo picture\+: filename, 
 
 {\ttfamily \#include $<$Photo\+Model.\+h$>$}
 
-\doxysubsubsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-\Hypertarget{struct_photo_a93332f9552882d314d04a824baff7fa7}\label{struct_photo_a93332f9552882d314d04a824baff7fa7} 
-enum {\bfseries Item\+Type} \{ {\bfseries photo}
-, {\bfseries marker}
-, {\bfseries welcome}
- \}
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{struct_photo_a10ef03ede9235052eb9f7d5e950f85d3}\label{struct_photo_a10ef03ede9235052eb9f7d5e950f85d3} 
 {\bfseries Photo} ()
-\begin{DoxyCompactList}\small\item\em Constructeur avec valeurs. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \Hypertarget{struct_photo_a9bf87b3475256941dadccf1bba9e5650}\label{struct_photo_a9bf87b3475256941dadccf1bba9e5650} 
 {\bfseries Photo} (const QString \&file\+\_\+name, const QString \&image\+\_\+url, const bool is\+\_\+marker=false, const bool is\+\_\+welcome=false, bool is\+\_\+selected=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur avec valeurs. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{struct_photo_aadb7a083611feae65440c3bfc3887417}{operator==}} (const QString \&file\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur ==. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{struct_photo_aaf8c4dfdd916b811562d6d4e7f5e1489}{operator==}} (const \mbox{\hyperlink{struct_photo}{Photo}} \&photo)

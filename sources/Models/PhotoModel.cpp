@@ -188,7 +188,7 @@ void PhotoModel::appendSavedPosition(double latitude, double longitude)
     if (!m_markerIndex.isValid())
     {
         const int rowOfInsert = m_photos.count();
-        Photo* new_data = new Photo("Saved Position", "", Photo::marker);
+        Photo* new_data = new Photo("Saved Position", "", true);
         beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
         m_photos.insert(rowOfInsert, *new_data);
         endInsertRows();
@@ -342,8 +342,9 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 
 /* ********************************************************************************************************** */
 /*!
- * \overload setData()
  * \brief Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
+ * \overload setData()
+ *
  * Roles non modifiables (ignorés): imageUrl, insideCircle.
  * Roles non modifiables (recalculés): hasGPS, toBeSaved.
  * Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales.

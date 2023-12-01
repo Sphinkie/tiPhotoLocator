@@ -42,6 +42,7 @@ var class_photo_model =
     [ "roleNames", "class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d", null ],
     [ "rowCount", "class_photo_model.html#a0fdbd69a007a6bda5623cce8d5f3cd57", null ],
     [ "saveMetadata", "class_photo_model.html#ac393e2839ea5993f199ec669973972ef", null ],
+    [ "selectedRowChanged", "class_photo_model.html#ac6f14df5683cb7c053c9d5c6982a3d2c", null ],
     [ "sendSuggestion", "class_photo_model.html#ab8f7cb78c57128f6a6df184a4d89f2bf", null ],
     [ "setData", "class_photo_model.html#a5aef53c6395a6ccd579a019c62e472e0", null ],
     [ "setInCircleItemCoords", "class_photo_model.html#a834795331bc8b3f329e8f2a143839265", null ],
