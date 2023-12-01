@@ -18,17 +18,15 @@ Inheritance diagram for Geocode\+Wrapper\+:\begin{figure}[H]
 \doxysubsubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b}\label{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b} 
-void {\bfseries request\+Reverse\+Geocode} (double latitude, double longitude)
-\item 
-\Hypertarget{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23}\label{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23} 
-void {\bfseries request\+Coordinates} (QString city)
-\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre {\itshape city}. Exemple\+: "{}\+Marsa el Brega"{} =\texorpdfstring{$>$}{>} 30.\+4074, 19.\+5784. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b}{request\+Reverse\+Geocode}} (double latitude, double longitude)
+\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =\texorpdfstring{$>$}{>} \href{https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{\texttt{ Résultat}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23}{request\+Coordinates}} (QString city)
+\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453}{Geocode\+Wrapper}} (\mbox{\hyperlink{class_suggestion_model}{Suggestion\+Model}} \texorpdfstring{$\ast$}{*}suggestion\+\_\+model)
-\begin{DoxyCompactList}\small\item\em Le contructeur initialise le {\itshape Provider} OSM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Le contructeur initialise le provider "{}\+OSM"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -54,11 +52,46 @@ Nécessite d\textquotesingle{}ajouter les lignes suivantes dans le fichier .pro.
 
 
 
-Le contructeur initialise le {\itshape Provider} OSM. 
+Le contructeur initialise le provider "{}\+OSM"{}. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em suggestion\+\_\+model} & \+: permet de savoir quel objet \doxylink{class_suggestion_model}{Suggestion\+Model} appeler une fois les résultats reçus. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23}\label{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23} 
+\index{GeocodeWrapper@{GeocodeWrapper}!requestCoordinates@{requestCoordinates}}
+\index{requestCoordinates@{requestCoordinates}!GeocodeWrapper@{GeocodeWrapper}}
+\doxysubsubsection{\texorpdfstring{requestCoordinates}{requestCoordinates}}
+{\footnotesize\ttfamily void Geocode\+Wrapper\+::request\+Coordinates (\begin{DoxyParamCaption}\item[{QString}]{city }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & \+: un nom de lieu, par exemple "{}\+Marsa el Brega"{} =\texorpdfstring{$>$}{>} 30.\+4074, 19.\+5784 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b}\label{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b} 
+\index{GeocodeWrapper@{GeocodeWrapper}!requestReverseGeocode@{requestReverseGeocode}}
+\index{requestReverseGeocode@{requestReverseGeocode}!GeocodeWrapper@{GeocodeWrapper}}
+\doxysubsubsection{\texorpdfstring{requestReverseGeocode}{requestReverseGeocode}}
+{\footnotesize\ttfamily void Geocode\+Wrapper\+::request\+Reverse\+Geocode (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =\texorpdfstring{$>$}{>} \href{https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{\texttt{ Résultat}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & \+: coordonnées GPS \\
+\hline
+{\em longitude} & coordonnées GPS \\
 \hline
 \end{DoxyParams}
 

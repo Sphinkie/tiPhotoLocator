@@ -18,7 +18,7 @@
 
 /* ************************************************************************* */
 /*!
- * @brief Contructeur. Par défaut, le filtre est actif.
+ * \brief Contructeur. Par défaut, le filtre est actif.
  */
 OnTheMapProxyModel::OnTheMapProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -28,8 +28,8 @@ OnTheMapProxyModel::OnTheMapProxyModel(QObject *parent) : QSortFilterProxyModel(
 
 /* ************************************************************************ */
 /*!
- * @brief Indique si le filtre est actif ou non.
- * @returns \c true si le filtre est actif.
+ * \brief Indique si le filtre est actif ou non.
+ * \returns \c true si le filtre est actif.
  */
 bool OnTheMapProxyModel::selectedFilterEnabled() const
 {
@@ -38,8 +38,8 @@ bool OnTheMapProxyModel::selectedFilterEnabled() const
 
 /* ************************************************************************ */
 /*!
- * @brief Ce slot active ou désactive le filtrage par le ProxyModel.
- * @param enabled : \c true pour activer le filtrage
+ * \brief Ce slot active ou désactive le filtrage par le ProxyModel.
+ * \param enabled : \c true pour activer le filtrage
  */
 void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
 {
@@ -52,11 +52,11 @@ void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
 
 /* ************************************************************************ */
 /*!
- * @brief Effectue le filtrage.
+ * \brief Effectue le filtrage.
  * Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position".
- * @param sourceRow : Le numero d'une ligne du modèle parent (PhotoModel).
- * @param sourceParent : Le modèle parent (PhotoModel).
- * @returns \c true si la ligne est acceptée.
+ * \param sourceRow : Le numero d'une ligne du modèle parent (PhotoModel).
+ * \param sourceParent : Le modèle parent (PhotoModel).
+ * \returns \c true si la ligne est acceptée.
  */
 bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
@@ -73,14 +73,13 @@ bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sour
 
 /* ************************************************************************ */
 /*!
- * @brief Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position).
- * @details
+ * \brief Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position).
+ * \details
  *      Details: Ce slot est appelé quand l'utilisateur change la position d'une photo sur la carte.
  *      C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du
  *      modèle source, mais seulement celle du modèle filtré.
- * \enddetails
- * @param lat : latitude au format GPS.
- * @param lon : longitude au format GPS.
+ * \param lat : latitude au format GPS.
+ * \param lon : longitude au format GPS.
  */
 void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 {
@@ -113,7 +112,7 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 
 /* ************************************************************************ */
 /*!
- * @brief Ce slot applique les coordonnées GPS de la SavedPosition à toutes
+ * \brief Ce slot applique les coordonnées GPS de la SavedPosition à toutes
  * les photos du modèle filtré.
  * Ce slot est appelé quand l'utilisateur appuye sur "Apply Saved Position".
  */

@@ -1,11 +1,6 @@
 var searchData=
 [
-  ['removecurrentphotofromsuggestion_0',['removeCurrentPhotoFromSuggestion',['../class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f',1,'SuggestionModel']]],
-  ['removedata_1',['removeData',['../class_photo_model.html#a1e2f3f829e54ef445a5b1dea07ad2118',1,'PhotoModel']]],
-  ['removephotofromsuggestion_2',['removePhotoFromSuggestion',['../class_suggestion_proxy_model.html#a57f046aabf95036f87b02209f0174e10',1,'SuggestionProxyModel']]],
-  ['removesavedposition_3',['removeSavedPosition',['../class_photo_model.html#a6c2e4a731969e952993dfe4d38e5788f',1,'PhotoModel']]],
-  ['requestcoordinates_4',['requestCoordinates',['../class_geocode_wrapper.html#ab3c38ff6c5a53d2b6c04cf5c88763b23',1,'GeocodeWrapper']]],
-  ['rolenames_5',['roleNames',['../class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd',1,'SuggestionModel']]],
-  ['rowcount_6',['rowcount',['../class_photo_model.html#a0fdbd69a007a6bda5623cce8d5f3cd57',1,'PhotoModel::rowCount()'],['../class_suggestion_model.html#a0c1caffe345aeb30f636f3a1784e9cea',1,'SuggestionModel::rowCount()']]],
-  ['run_7',['run',['../class_exif_read_task.html#a1f0693a4aa7d57897f906d3db0fd77b8',1,'ExifReadTask::run()'],['../class_exif_write_task.html#a62fcca5c4d5077f086df4b98cac752df',1,'ExifWriteTask::run()']]]
+  ['onselectedphotochanged_0',['onSelectedPhotoChanged',['../class_suggestion_model.html#a5a28097cf78d3d5619e64a48c0b7d198',1,'SuggestionModel']]],
+  ['onthemapproxymodel_1',['onthemapproxymodel',['../class_on_the_map_proxy_model.html',1,'OnTheMapProxyModel'],['../class_on_the_map_proxy_model.html#afb8170a7f9e508bfdc6238e649e957cf',1,'OnTheMapProxyModel::OnTheMapProxyModel()']]],
+  ['operator_3d_3d_2',['operator==',['../struct_data.html#a938e2a2d8c3366cbf92a62030982b6d6',1,'Data::operator==(const QString &amp;file_name)'],['../struct_data.html#a054c4165a75f9e9ba5dedaaceffad50a',1,'Data::operator==(const Data &amp;data)'],['../struct_suggestion.html#a549354300dbe0ea3e0afac765a375653',1,'Suggestion::operator==()']]]
 ];

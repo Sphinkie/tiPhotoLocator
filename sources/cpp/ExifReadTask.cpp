@@ -16,19 +16,22 @@
 
  Tache asynchrone par utilisation de QThreadPool.
 
- \note:
+ \note
     les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.
     Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct à une méthode du modèle.
     Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.
 
-   \details Exiftool json options
+   \details
    Description of \b JSON options for \c ExifTool.
+
    \code
-  -j[[+]=*JSONFILE*] (-json)
-  Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified).
-  This option may be combined with:
-    -g to organize the output into objects by group,
-    or -G to add group names to each tag.
+   -j[[+]=*JSONFILE*] (-json)
+
+    Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified).
+
+    This option may be combined with:
+    -g to organize the output into objects by group, or
+    -G to add group names to each tag.
     -a option is implied when -json is used, but entries with identical JSON names are suppressed in the output.
     -G4 may be used to ensure that all tags have unique JSON names.
     -D or -H option changes tag values to JSON objects with "val" and "id" fields
@@ -41,7 +44,6 @@
     By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings).
     Note that ExifTool quotes JSON values only if they don't look like numbers (regardless of the original storage format or the relevant metadata specification).
   \endcode
-  \enddetails
 */
 /* ********************************************************************************************************** */
 
@@ -54,10 +56,11 @@ QString     ExifReadTask::m_argFile;
 
 /* ********************************************************************************************************** */
 /*!
- * @brief Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.
- *        A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier.
- *        Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé.
- * @param filePath: le chemin + nom du fichier JPG à lire.
+ * \brief Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.
+ *
+ * A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier.
+ * Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé.
+ * \param filePath: le chemin + nom du fichier JPG à lire.
  */
 ExifReadTask::ExifReadTask(QString filePath)
 {
@@ -68,7 +71,7 @@ ExifReadTask::ExifReadTask(QString filePath)
 
 /* ********************************************************************************************************** */
 /*!
- * @brief: Lancement de la tache. On lance \b exifTool dans un process, et on analyse la réponse.
+ * \brief: Lancement de la tache. On lance \b exifTool dans un process, et on analyse la réponse.
  * Cette tache est exécutée dans un thread QRunnable.
  * A la fin de la tache, on écrit les résultat dans PhotoModel.
  */
@@ -114,7 +117,7 @@ void ExifReadTask::run()
 /* ********************************************************************************************************** */
 /*!
  * \brief Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement. \br
- * \a line : the received text
+ * \param line : the received text
  * \quotation pour le flux d'une image:
         "[{\r\n"
         "  \"SourceFile\": \"E:/TiPhotos/P8160449.JPG\",\r\n"
@@ -162,8 +165,8 @@ void ExifReadTask::processLine(QByteArray line)
 
 /* ********************************************************************************************************** */
 /*!
- * @brief A appeler lors de la première utilisation. Mémorise quelques infos statiques.
- * @param photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
+ * \brief Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques.
+ * \param photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
  */
 void ExifReadTask::init(PhotoModel* photoModel)
 {
@@ -174,14 +177,12 @@ void ExifReadTask::init(PhotoModel* photoModel)
 
 /* ********************************************************************************************************** */
 /*!
- * @brief List the tags to be read in the JPG files, and put them in the Arguments file for \c ExifTool.
- * @returns \c true if the file was successfully created. \br
+ * \brief List the tags to be read in the JPG files, and put them in the Arguments file for \a ExifTool.
+ * \returns true if the file was successfully created.
  *
  * To learn about the usage of IPTC tags:
- * \list
- *   \li \l {https://iptc.org/std/photometadata/documentation/mappingguidelines/}
- *   \li \l {https://www.carlseibert.com/guide-iptc-photo-metadata-fields/}
- * \endlist
+ *   \li \see https://iptc.org/std/photometadata/documentation/mappingguidelines
+ *   \li \see https://www.carlseibert.com/guide-iptc-photo-metadata-fields
  */
 bool ExifReadTask::writeArgsFile()
 {

@@ -1,5 +1,27 @@
 var struct_data =
 [
     [ "operator==", "struct_data.html#a054c4165a75f9e9ba5dedaaceffad50a", null ],
-    [ "operator==", "struct_data.html#a938e2a2d8c3366cbf92a62030982b6d6", null ]
+    [ "operator==", "struct_data.html#a938e2a2d8c3366cbf92a62030982b6d6", null ],
+    [ "artist", "struct_data.html#a475ccdbcd7b9c4d67cb4c40e8e61a736", null ],
+    [ "camModel", "struct_data.html#a024a5e91f8957b65883e50617f33808c", null ],
+    [ "city", "struct_data.html#a1a271ab763c9ec4752ba2de7adff0949", null ],
+    [ "country", "struct_data.html#ad2ea6922bb04c319c3f9c8e66f317729", null ],
+    [ "dateTimeOriginal", "struct_data.html#adfe7981e705c1e9631159f79887900a0", null ],
+    [ "description", "struct_data.html#a448c9017bebbe0e95bbeee2718a689f1", null ],
+    [ "descriptionWriter", "struct_data.html#a6599c42551b650e304816464a5942959", null ],
+    [ "filename", "struct_data.html#a29a3676b31e07d6e66cb44578d6f5d95", null ],
+    [ "gpsLatitude", "struct_data.html#a7f53eee55a5fc38c69252056f391dcc3", null ],
+    [ "gpsLongitude", "struct_data.html#a5c1d22a52e05fd7ff06b53d18eefa4a7", null ],
+    [ "hasGPS", "struct_data.html#a1fb09c7125717599522afcc3c0657e1a", null ],
+    [ "headline", "struct_data.html#afaa45ccabe499739aade423e31216508", null ],
+    [ "imageHeight", "struct_data.html#a8be3d1de2678a17dfa6260d96bd21a85", null ],
+    [ "imageUrl", "struct_data.html#a73b37bb171ca36271feedfa425bf3456", null ],
+    [ "imageWidth", "struct_data.html#ac7f83e16c285e89801d1701be8be72f4", null ],
+    [ "insideCircle", "struct_data.html#a0b6cb233f6fcd720cd118cc2c07f7282", null ],
+    [ "isMarker", "struct_data.html#a2dfc10e36bd34ab7198842183115c5f4", null ],
+    [ "isSelected", "struct_data.html#a7f75d81668e9ac34debba8a136e31098", null ],
+    [ "isWelcome", "struct_data.html#af9ab59e082e2aeddec512b726b6976ee", null ],
+    [ "keywords", "struct_data.html#a019b41d6c2a50c4a01971407b36be135", null ],
+    [ "make", "struct_data.html#ab6f9430d1e0f2c4f3e1b373e4e73f167", null ],
+    [ "toBeSaved", "struct_data.html#a506cab8af5f1edc324f8804868cd03bf", null ]
 ];

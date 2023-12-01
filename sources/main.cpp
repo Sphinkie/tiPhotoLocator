@@ -19,11 +19,9 @@
     \startpage TiPhotoLocator
 
     The ultimate Photo Locator.
-    \list
         \li \l{TiPhotoLocator}{Les classes C++}
-    \endlist
+        \li les scripts QML
 
-    indexpage Index
 */
 
 /*!

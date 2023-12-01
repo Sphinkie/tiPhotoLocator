@@ -128,6 +128,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setAllItemsSavedCoord
 Signals</h2></td></tr>
 <tr class="memitem:a1d2857380e73f64754fa81e44b9ae4f5" id="r_a1d2857380e73f64754fa81e44b9ae4f5"><td class="memItemLeft" align="right" valign="top"><a id="a1d2857380e73f64754fa81e44b9ae4f5" name="a1d2857380e73f64754fa81e44b9ae4f5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabledChanged</b> ()</td></tr>
+<tr class="memdesc:a1d2857380e73f64754fa81e44b9ae4f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented. <br /></td></tr>
 <tr class="separator:a1d2857380e73f64754fa81e44b9ae4f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -143,7 +144,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ab1ac8a3c5b8f53a6cee9dbc0fbb38073" id="r_ab1ac8a3c5b8f53a6cee9dbc0fbb38073"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_on_the_map_proxy_model.html#ab1ac8a3c5b8f53a6cee9dbc0fbb38073">filterAcceptsRow</a> (int sourceRow, const QModelIndex &amp;sourceParent) const override</td></tr>
-<tr class="memdesc:ab1ac8a3c5b8f53a6cee9dbc0fbb38073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented.  <br /></td></tr>
+<tr class="memdesc:ab1ac8a3c5b8f53a6cee9dbc0fbb38073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position".  <br /></td></tr>
 <tr class="separator:ab1ac8a3c5b8f53a6cee9dbc0fbb38073"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -190,8 +191,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabled
 </table>
 </div><div class="memdoc">
 
-<p>Not implemented. </p>
-<p>Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position".</p>
+<p>Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position". </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sourceRow</td><td>: Le numero d'une ligne du modèle parent (<a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>). </td></tr>
@@ -258,7 +258,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>selectedFilterEnabled
 </div><div class="memdoc">
 
 <p>Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position). </p>
-<p>Details: Ce slot est appelé quand l'utilisateur change la position d'une photo sur la carte. C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré. \enddetails </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Details: Ce slot est appelé quand l'utilisateur change la position d'une photo sur la carte. C'est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lat</td><td>: latitude au format GPS. </td></tr>
     <tr><td class="paramname">lon</td><td>: longitude au format GPS. </td></tr>

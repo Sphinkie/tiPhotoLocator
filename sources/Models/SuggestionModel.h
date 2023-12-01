@@ -6,15 +6,15 @@
 
 /* ********************************************************************************** */
 /*!
-   @brief A data structure containing a tag suggestion, for one or several Photo.
+   \brief A data structure containing a tag suggestion, for one or several Photo.
 */
 /* ********************************************************************************** */
 struct Suggestion
 {
-    // Default constructor
+    //! Default constructor
     Suggestion() {}
 
-    // Constructeur avec valeurs
+    //! Constructeur avec valeurs
     Suggestion(const QString &suggestion_text,
                const QString &suggestion_target,
                const QString suggestion_category,
@@ -41,8 +41,8 @@ struct Suggestion
 
 /* ********************************************************************************** */
 /*!
- * @class SuggestionModel
- * @brief The SuggestionModel class manages a list of Suggestion.
+ * \class SuggestionModel
+ * \brief The SuggestionModel class manages a list of Suggestion.
  */
 /* ********************************************************************************** */
 class SuggestionModel : public QAbstractListModel

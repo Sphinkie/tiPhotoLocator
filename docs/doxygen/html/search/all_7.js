@@ -1,4 +1,12 @@
 var searchData=
 [
-  ['m_5fmarkerrow_0',['m_markerRow',['../class_photo_model.html#a6ff090266c5c666181a02469943d9512',1,'PhotoModel']]]
+  ['imageheight_0',['imageHeight',['../struct_data.html#a8be3d1de2678a17dfa6260d96bd21a85',1,'Data']]],
+  ['imageurl_1',['imageUrl',['../struct_data.html#a73b37bb171ca36271feedfa425bf3456',1,'Data']]],
+  ['imagewidth_2',['imageWidth',['../struct_data.html#ac7f83e16c285e89801d1701be8be72f4',1,'Data']]],
+  ['index_3',['index',['../index.html',1,'']]],
+  ['init_4',['init',['../class_exif_read_task.html#ae30b3d2ce698c12267cd51db35f4e3e4',1,'ExifReadTask']]],
+  ['insidecircle_5',['insideCircle',['../struct_data.html#a0b6cb233f6fcd720cd118cc2c07f7282',1,'Data']]],
+  ['ismarker_6',['isMarker',['../struct_data.html#a2dfc10e36bd34ab7198842183115c5f4',1,'Data']]],
+  ['isselected_7',['isSelected',['../struct_data.html#a7f75d81668e9ac34debba8a136e31098',1,'Data']]],
+  ['iswelcome_8',['isWelcome',['../struct_data.html#af9ab59e082e2aeddec512b726b6976ee',1,'Data']]]
 ];

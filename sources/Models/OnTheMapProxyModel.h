@@ -19,13 +19,13 @@ public slots:
     void setAllItemsSavedCoords();
 
 signals:
-    void selectedFilterEnabledChanged();  /// Not implemented
+    void selectedFilterEnabledChanged();  //!< Not implemented
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
 private:
-    bool m_selectedFilterEnabled;
+    bool m_selectedFilterEnabled;  //!< Indicates if the filter is ON or OFF
 };
 
 #endif // ONTHEMAPPROXYMODEL_H

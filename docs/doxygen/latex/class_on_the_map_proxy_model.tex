@@ -26,7 +26,7 @@ void {\bfseries set\+All\+Items\+Saved\+Coords} ()
 \item 
 \Hypertarget{class_on_the_map_proxy_model_a1d2857380e73f64754fa81e44b9ae4f5}\label{class_on_the_map_proxy_model_a1d2857380e73f64754fa81e44b9ae4f5} 
 void {\bfseries selected\+Filter\+Enabled\+Changed} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Not implemented. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,7 +39,7 @@ bool \mbox{\hyperlink{class_on_the_map_proxy_model_a4411e7b21dc2fe332733e70b8e0a
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_on_the_map_proxy_model_ab1ac8a3c5b8f53a6cee9dbc0fbb38073}{filter\+Accepts\+Row}} (int source\+Row, const QModel\+Index \&source\+Parent) const override
-\begin{DoxyCompactList}\small\item\em Not implemented. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad \+: photos "{}selectionnée"{} et le marqueur "{}\+Saved Position"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -65,9 +65,7 @@ Dans ce Proxy\+Model on doit ré-\/implementer les méthodes append(), get(), cl
 
 
 
-Not implemented. 
-
-Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad \+: photos "{}selectionnée"{} et le marqueur "{}\+Saved Position"{}.
+Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad \+: photos "{}selectionnée"{} et le marqueur "{}\+Saved Position"{}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -102,7 +100,7 @@ Indique si le filtre est actif ou non.
 
 Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position). 
 
-Details\+: Ce slot est appelé quand l\textquotesingle{}utilisateur change la position d\textquotesingle{}une photo sur la carte. C\textquotesingle{}est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré. \textbackslash{}enddetails 
+Details\+: Ce slot est appelé quand l\textquotesingle{}utilisateur change la position d\textquotesingle{}une photo sur la carte. C\textquotesingle{}est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré. 
 \begin{DoxyParams}{Parameters}
 {\em lat} & \+: latitude au format GPS. \\
 \hline

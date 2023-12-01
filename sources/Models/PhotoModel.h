@@ -5,7 +5,7 @@
 
 // -----------------------------------------------------------------------
 /*!
- * @brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.
+ * \brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.
  */
 struct Data
 {
@@ -30,33 +30,33 @@ struct Data
     }
 
     // Elements de la structure
-    QString filename;          // Example: "IMG_20230823_1234500.jpg"
-    QString imageUrl;          // Example: "qrc:///Images/ibiza.png"
-    double gpsLatitude = 0;    // Example: 38.980    // GPS coordinates
-    double gpsLongitude = 0;   // Example: 1.4333    // (Ibiza)
+    QString filename;           //!< Example: "IMG_20230823_1234500.jpg"
+    QString imageUrl;           //!< Example: "qrc:///Images/ibiza.png"
+    double gpsLatitude = 0;     //!< GPS coordinates. Example: 38.980 (Ibiza)
+    double gpsLongitude = 0;    //!< GPS coordinates. Example: 1.4333 (Ibiza)
     // Elements déterminés automatiquement
-    bool hasGPS = false;       // has GPS coordinates (latitude/longitude)
-    bool isSelected;           // Indique que cet item est sélectionné dans la ListView
-    bool isMarker = false;     // Exemple: une position sauvegardée sur la carte
-    bool isWelcome = false;    // Exemple: L'image de la page d'acceuil
-    bool insideCircle = false; // inside the radius of nearby photos
-    bool toBeSaved = false;    // true if one of the following fields has been modified
+    bool hasGPS = false;        //!< has GPS coordinates (latitude/longitude)
+    bool isSelected;            //!< Indique que cet item est sélectionné dans la ListView
+    bool isMarker = false;      //!< Exemple: une position sauvegardée sur la carte
+    bool isWelcome = false;     //!< Exemple: L'image de la page d'acceuil
+    bool insideCircle = false;  //!< inside the radius of nearby photos
+    bool toBeSaved = false;     //!< true if one of the following fields has been modified
     // EXIF tags
-    QString dateTimeOriginal;   // Time when the camera shutter was pressed (no changes allowed in this app)
-    QString camModel;           // camera model (no changes allowed in this app)
-    QString make;               // camera maker (no changes allowed in this app)
-    int imageWidth = 0;         // image width (no changes allowed in this app)
-    int imageHeight = 0;        // image height (no changes allowed in this app)
+    QString dateTimeOriginal;   //!< Time when the camera shutter was pressed (no changes allowed in this app)
+    QString camModel;           //!< camera model (no changes allowed in this app)
+    QString make;               //!< camera maker (no changes allowed in this app)
+    int imageWidth = 0;         //!< image width  (no changes allowed in this app)
+    int imageHeight = 0;        //!< image height (no changes allowed in this app)
     // IPTC tags
-    QString artist;             // can be: Artist or Creator
+    QString artist;             //!< can be: Artist or Creator
     //QString gpsLatitudeRef;
     //QString gpsLongitudeRef;
-    QString city;
-    QString country;
-    QString description;        // can be: Description, ImageDescription or Caption;
-    QString descriptionWriter;
-    QString headline;           // short description
-    QString keywords;           // this is a list of keywords
+    QString city;               //!< City shown in the Photo
+    QString country;            //!< Country where the Photo was taken
+    QString description;        //!< can be: Description, ImageDescription or Caption;
+    QString descriptionWriter;  //!< Initials of the description writer
+    QString headline;           //!< short description
+    QString keywords;           //!< this is a list of keywords
 
     // Surcharges d'operateurs
     bool operator == (const QString &file_name);
@@ -65,13 +65,23 @@ struct Data
 };
 
 
-// -----------------------------------------------------------------------
+/* ********************************************************************************************************** */
+/*!
+ * \class PhotoModel
+ * \inmodule TiPhotoLocator
+ * \brief The PhotoModel class manages a list of photo data.
+ */
+/* ********************************************************************************************************** */
+
 class PhotoModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
 
 public:
+    /*!
+     * \brief The Roles enum lists the roles associated to each attribute of a Photo
+     */
     enum Roles {
         FilenameRole  = Qt::UserRole,  // The first role that can be used for application-specific purposes.
         ImageUrlRole,
@@ -151,7 +161,7 @@ signals:
     // Signaux émis
     // -----------------------------------------------------
     void selectedRowChanged(const int row);
-    void sendSuggestion(QString text, QString target, QString category, int row);
+    void sendSuggestion(QString text, QString target, QString category, int row);  //!< Ce signal envoie une Suggestion au SuggestionModel
 
 
 
@@ -159,13 +169,13 @@ signals:
     // Membres
     // -----------------------------------------------------
 public:
-    QModelIndex m_markerIndex = QModelIndex();  /// Index du marker SavedPosition. Initialisé à une valeur invalide.
+    QModelIndex m_markerIndex = QModelIndex();  //!< Index du marker SavedPosition. Initialisé à une valeur invalide.
 protected:
-    int m_markerRow = -1;                       /// Position du marker SavedPosition
+    int m_markerRow = -1;                       //!< Position du marker SavedPosition
 private:
-    QVector<Data> m_data;                       /// La liste des photos
-    int m_lastSelectedRow = 0;                  /// L'indice de la précédente photo sélectionnée. (initilaisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
-    int m_dumpedRow = 0;                        /// Compteur pour le dump de debug
+    QVector<Data> m_data;                       //!< La liste des photos
+    int m_lastSelectedRow = 0;                  //!< L'indice de la précédente photo sélectionnée. (initilaisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
+    int m_dumpedRow = 0;                        //!< Compteur pour le dump de debug
 };
 
 #endif // PHOTOMODEL_H

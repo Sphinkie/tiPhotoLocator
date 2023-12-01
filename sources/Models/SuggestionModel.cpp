@@ -8,8 +8,8 @@
 
 /* ********************************************************************************** */
 /*!
- * @brief Contructor.
- * @param parent object.
+ * \brief Contructor.
+ * \param parent object.
  */
 SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
 {
@@ -25,7 +25,7 @@ SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
 /*!
  * \brief Returns the number of elements in the model.
  * \note: Implémentation obligatoire.
- * \a parent: parent of the model
+ * \param parent: parent of the model
  */
 int SuggestionModel::rowCount(const QModelIndex& parent) const
 {
@@ -39,8 +39,8 @@ int SuggestionModel::rowCount(const QModelIndex& parent) const
 /*!
  * \brief Returns the requested role value of an element of the model.
  * \note: Implémentation obligatoire.
- * \a index: index of the element of the model.
- * \a role: the requested role (enum).
+ * \param index: index of the element of the model.
+ * \param role: the requested role (enum).
  */
 QVariant SuggestionModel::data(const QModelIndex &index, int role) const
 {
@@ -62,7 +62,7 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
 
 /* ********************************************************************************** */
 /*!
- * @brief Table of Role names. Implémentation obligatoire.
+ * \brief Table of Role names. Implémentation obligatoire.
  * @details C'est la correspondance entre le role C++ et le nom de la property dans QML.
  */
 QHash<int, QByteArray> SuggestionModel::roleNames() const
@@ -79,12 +79,12 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 
 /* ********************************************************************************** */
 /*!
- * @brief Adds a suggestion to the model.
+ * \brief Adds a suggestion to the model.
  * Ce slot permet à n'importe qui d'ajouter une Suggestion.
- * @param text: text of the suggestion.
- * @param target: the name of the Exif tag compatible with this suggestion.
- * @param category: the category of the suggestion ("Geo", ... )
- * @param photo_row: l'indice de la photo à associée à cette suggestion.
+ * \param text: text of the suggestion.
+ * \param target: the name of the Exif tag compatible with this suggestion.
+ * \param category: the category of the suggestion ("Geo", ... )
+ * \param photo_row: l'indice de la photo à associée à cette suggestion.
  *  Valeurs spéciales: -1 = toutes les photos
  *  Valeurs spéciales: -2 = la photo sélectionée (valeur par défaut)
  */
@@ -119,9 +119,9 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
 
 /* ********************************************************************************** */
 /*!
- * @brief Ajoute la photo actuellement sélectionnée à la liste des photos ayant un
+ * \brief Ajoute la photo actuellement sélectionnée à la liste des photos ayant un
  * "match" avec cette suggestion.
- * @param row : l'indice de la suggestion à modifier.
+ * \param row : l'indice de la suggestion à modifier.
  */
 void SuggestionModel::addCurrentPhotoToSuggestion(int row)
 {
@@ -136,8 +136,8 @@ void SuggestionModel::addCurrentPhotoToSuggestion(int row)
 
 /* ********************************************************************************** */
 /*!
- * @brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
- * @param index : l'index dans le Model de la suggestion à modifier.
+ * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
+ * \param index : l'index dans le Model de la suggestion à modifier.
  */
 void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 {
@@ -152,8 +152,8 @@ void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 
 /* ********************************************************************************** */
 /*!
- * @brief Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
- * @param row: La position dans PhotoModel de la photo active.
+ * \brief Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
+ * \param row: La position dans PhotoModel de la photo active.
  */
 void SuggestionModel::onSelectedPhotoChanged(const int row)
 {
@@ -164,9 +164,9 @@ void SuggestionModel::onSelectedPhotoChanged(const int row)
 
 /* ********************************************************************************** */
 /*!
- * @brief La surcharge de l'operateur == permet d'utiliser la méthode contains().
- * @param data: second operande.
- * @return TRUE si le "texte" des deux suggestions est identique.
+ * \brief La surcharge de l'operateur == permet d'utiliser la méthode contains().
+ * \param data: second operande.
+ * \return TRUE si le "texte" des deux suggestions est identique.
  */
 bool Suggestion::operator== (const Suggestion &data) const
 {
