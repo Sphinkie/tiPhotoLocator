@@ -7,23 +7,13 @@
 
 #include "GeocodeWrapper.h"
 
-/*!
- * \class GeocodeWrapper
- * \inmodule TiPhotoLocator
-    The GeocodeWrapper class allows requests to OpenStreetMap for reverse geocoding.
-    Ajouter les lignes suivantes dans le fichier \c .pro.
-    \code
-        QT += positioning
-        QT += location
-    \endcode
-*/
 
 #define QT_NO_DEBUG_OUTPUT
 
 /* ********************************************************************************************************** */
-/*
- * \brief Le contructeur initialise le \e Provider OSM.
- * Le paramètre \a suggestion_model permet de savoir quel objet SuggestionModel appeler une fois les résultat reçus.
+/*!
+ * @brief Le contructeur initialise le \e Provider OSM.
+ * @param suggestion_model : permet de savoir quel objet SuggestionModel appeler une fois les résultats reçus.
  */
 GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 {

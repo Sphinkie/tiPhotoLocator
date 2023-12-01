@@ -1,5 +1,14 @@
 \doxysection{Geocode\+Wrapper Class Reference}
 \hypertarget{class_geocode_wrapper}{}\label{class_geocode_wrapper}\index{GeocodeWrapper@{GeocodeWrapper}}
+
+
+The \doxylink{class_geocode_wrapper}{Geocode\+Wrapper} class allows requests to Open\+Street\+Map for reverse geocoding.  
+
+
+
+
+{\ttfamily \#include $<$Geocode\+Wrapper.\+h$>$}
+
 Inheritance diagram for Geocode\+Wrapper\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,19 +27,41 @@ void {\bfseries request\+Coordinates} (QString city)
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453}\label{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453} 
-{\bfseries Geocode\+Wrapper} (\mbox{\hyperlink{class_suggestion_model}{Suggestion\+Model}} \texorpdfstring{$\ast$}{*}suggestion\+\_\+model)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453}{Geocode\+Wrapper}} (\mbox{\hyperlink{class_suggestion_model}{Suggestion\+Model}} \texorpdfstring{$\ast$}{*}suggestion\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Le contructeur initialise le {\itshape Provider} OSM. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\textbackslash{}inmodule Ti\+Photo\+Locator The \doxylink{class_geocode_wrapper}{Geocode\+Wrapper} class allows requests to Open\+Street\+Map for reverse geocoding. Ajouter les lignes suivantes dans le fichier {\ttfamily }.pro. 
+The \doxylink{class_geocode_wrapper}{Geocode\+Wrapper} class allows requests to Open\+Street\+Map for reverse geocoding. 
+
+\begin{DoxyNote}{Note}
+Nécessite d\textquotesingle{}ajouter les lignes suivantes dans le fichier .pro. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{QT\ +=\ positioning}
 \DoxyCodeLine{QT\ +=\ location}
 
 \end{DoxyCode}
  
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453}\label{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453} 
+\index{GeocodeWrapper@{GeocodeWrapper}!GeocodeWrapper@{GeocodeWrapper}}
+\index{GeocodeWrapper@{GeocodeWrapper}!GeocodeWrapper@{GeocodeWrapper}}
+\doxysubsubsection{\texorpdfstring{GeocodeWrapper()}{GeocodeWrapper()}}
+{\footnotesize\ttfamily Geocode\+Wrapper\+::\+Geocode\+Wrapper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_suggestion_model}{Suggestion\+Model}} \texorpdfstring{$\ast$}{*}}]{suggestion\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Le contructeur initialise le {\itshape Provider} OSM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em suggestion\+\_\+model} & \+: permet de savoir quel objet \doxylink{class_suggestion_model}{Suggestion\+Model} appeler une fois les résultats reçus. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

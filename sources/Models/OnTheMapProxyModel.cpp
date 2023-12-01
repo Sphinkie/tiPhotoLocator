@@ -17,7 +17,7 @@
 
 
 /* ************************************************************************* */
-/**
+/*!
  * @brief Contructeur. Par défaut, le filtre est actif.
  */
 OnTheMapProxyModel::OnTheMapProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
@@ -27,7 +27,7 @@ OnTheMapProxyModel::OnTheMapProxyModel(QObject *parent) : QSortFilterProxyModel(
 
 
 /* ************************************************************************ */
-/**
+/*!
  * @brief Indique si le filtre est actif ou non.
  * @returns \c true si le filtre est actif.
  */
@@ -37,7 +37,7 @@ bool OnTheMapProxyModel::selectedFilterEnabled() const
 }
 
 /* ************************************************************************ */
-/**
+/*!
  * @brief Ce slot active ou désactive le filtrage par le ProxyModel.
  * @param enabled : \c true pour activer le filtrage
  */
@@ -51,7 +51,7 @@ void OnTheMapProxyModel::setSelectedFilterEnabled(bool enabled)
 }
 
 /* ************************************************************************ */
-/**
+/*!
  * @brief Effectue le filtrage.
  * Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position".
  * @param sourceRow : Le numero d'une ligne du modèle parent (PhotoModel).
@@ -72,7 +72,7 @@ bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sour
 
 
 /* ************************************************************************ */
-/**
+/*!
  * @brief Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position).
  * @details
  *      Details: Ce slot est appelé quand l'utilisateur change la position d'une photo sur la carte.
@@ -112,7 +112,7 @@ void OnTheMapProxyModel::setAllItemsCoords(const double lat, const double lon)
 }
 
 /* ************************************************************************ */
-/**
+/*!
  * @brief Ce slot applique les coordonnées GPS de la SavedPosition à toutes
  * les photos du modèle filtré.
  * Ce slot est appelé quand l'utilisateur appuye sur "Apply Saved Position".

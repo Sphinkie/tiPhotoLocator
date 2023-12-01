@@ -4,6 +4,16 @@
 #include <QSortFilterProxyModel>
 
 
+
+/* ************************************************************************ */
+/*!
+ * @class UnlocalizedProxyModel
+ * @brief The UnlocalizedProxyModel class is a filter ProxyModel, that filters
+ *        Photo with/without GPS coordinates.
+ */
+/* ************************************************************************ */
+
+
 class UnlocalizedProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
@@ -21,7 +31,7 @@ public slots:
     void setFilterEnabled(bool enabled);
 
 signals:
-    void filterEnabledChanged();  // Non implémenté
+    void filterEnabledChanged();  /// Non implémenté
 
 };
 

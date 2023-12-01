@@ -18,7 +18,7 @@
 
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose.
  * @param parent : paramètre classique pour les QAbstractListModel.
  */
@@ -38,7 +38,7 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Returns the number of items in the model. @note Implémentation obligatoire.
  * @param parent : parent of the model.
  * @returns the number of elements in the model.
@@ -51,7 +51,7 @@ int PhotoModel::rowCount(const QModelIndex& parent) const
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Returns the role value of an element of the model. @note Implémentation obligatoire.
  * @param  index : index of the element of the model.
  * @param  role : the requested role (enum).
@@ -130,7 +130,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Returns the full name (with absolute path) of the photo, in a QVariant
  * containing the image URL. This is an example of unitary getData method.
  * @param row : Indice de l'element à lire
@@ -144,7 +144,7 @@ QVariant PhotoModel::getUrl(int row)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Adds a photo to the model, with just a name and a path (url).
  * Other data should be filled later, from exif metadata.
  * @param filename : filename of the photo
@@ -182,7 +182,7 @@ void PhotoModel::append(const QVariantMap data)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune).
  * @param latitude : latitude au format GPS.
  * @param longitude : longitude au format GPS.
@@ -206,7 +206,7 @@ void PhotoModel::appendSavedPosition(double latitude, double longitude)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Supprime du modèle l'item correspondant à la position sauvegardée.
  */
 void PhotoModel::removeSavedPosition()
@@ -216,7 +216,7 @@ void PhotoModel::removeSavedPosition()
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur
  *        du cercle rouge.
  * @param latitude : latitude GPS à affecter aux photos
@@ -243,7 +243,7 @@ void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Mémorise la position fournie.
  * Met le flag \b "isSelected" du précédent item à \b False et le nouveau à \b True.
  * Met aussi le flag \b "insideCircle" du précédent item à \b False et le nouveau à \b True.
@@ -275,7 +275,7 @@ void PhotoModel::selectedRow(int row)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Ce slot ajoute une propriété à une photo, par exemple si on clique sur une suggestion.
  *
  * @param row : indice de la photo.
@@ -414,7 +414,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
 
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Returns the last selected row.
  */
 int PhotoModel::getSelectedRow()
@@ -423,7 +423,7 @@ int PhotoModel::getSelectedRow()
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Debug function that print (in the console) one line of the model at every call.
  */
 void PhotoModel::dumpData()
@@ -440,7 +440,7 @@ void PhotoModel::dumpData()
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Deletes all the items of the Model.
  */
 void PhotoModel::clear()
@@ -452,7 +452,7 @@ void PhotoModel::clear()
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Ce slot lit des données EXIF d'une (ou toutes) photos du répertoire.
  * @param photo : l'indice de la photo (vide ou -1 = toutes les photos du répertoire)
  */
@@ -486,7 +486,7 @@ void PhotoModel::fetchExifMetadata(int photo)
 
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
  * Tag obligatoire: imageUrl.
  * Tags modifiés: coords GPS, Creator, City, Country.
@@ -535,7 +535,7 @@ void PhotoModel::saveMetadata()
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Adds a test item to the PhotoModel. (only if \c DebugMode is enabled in the \e settings)
  * @note For testing purpose.
  */
@@ -562,7 +562,7 @@ void PhotoModel::addTestItem()
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Fonction typique qui supprime l'item désigné du modèle.
  * @param row : la position dans le vecteur de l'item à modifier.
  */
@@ -577,7 +577,7 @@ void PhotoModel::removeData(int row)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Duplicates an item of the model, and add it at the end of the vector.
  * @param row : item row to be duplicated.
  */
@@ -596,7 +596,7 @@ void PhotoModel::duplicateData(int row)
 
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
  * Usage dans QML: titre = myModel.get(1).title;
  * @param row : indice
@@ -622,7 +622,7 @@ QVariantMap PhotoModel::get(int row)
 
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Surcharge de l'opérateur ==.
  * @param file_name: texte à comparer
  * @return true si le filename de la photo correspond au texte passé en paramètre.
@@ -635,7 +635,7 @@ bool Data::operator == (const QString &file_name)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Définition de l'opérateur ==.
  * @param data : une photo
  * @return true si les deux objets pointent sur les même data.

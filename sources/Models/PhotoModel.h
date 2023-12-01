@@ -4,7 +4,7 @@
 #include <QAbstractListModel>
 
 // -----------------------------------------------------------------------
-/**
+/*!
  * @brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.
  */
 struct Data

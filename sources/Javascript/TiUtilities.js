@@ -5,7 +5,7 @@
 
 
 
-/**
+/*!
  * @brief Transforme un chemin en format Windows "C:\Users\David\Pictures". Par exemple:
  * file:///E:/TiPhotos
  * file://nas/photo/1997/1997 Sicile
@@ -25,7 +25,7 @@ function toStandardPath(objet)
     return texte;
 }
 	
-/**
+/*!
  * @brief Transforme une date du type "YYYY-MM-DD HH:MM:SS" en "DD/MM/YYYY"
  * @param objet: une date du type "YYYY-MM-DD HH:MM:SS"
  * @param sep: (optionel) Le séparateur à utiliser dans le résultat
@@ -44,7 +44,7 @@ function toStandardDate(objet, sep="/")
     return texte;
 }
 
-/**
+/*!
  * @brief Transforme une date du type "YYYY-MM-DD HH:MM:SS" en "HH:MM"
  * @param objet: une date du type "YYYY-MM-DD HH:MM:SS"
  * @return une heure au format "HH:MM"

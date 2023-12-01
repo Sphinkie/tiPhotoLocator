@@ -5,14 +5,9 @@
 #define QT_NO_DEBUG_OUTPUT
 
 
-/*!
- * \class SuggestionProxyModel
- * \inmodule TiPhotoLocator
- * \brief The SuggestionProxyModel class is a filter ProxyModel, that filters the suggestions related to a given photo.
- */
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Contructeur.
  * @param parent : modèle source.
  */
@@ -23,7 +18,7 @@ SuggestionProxyModel::SuggestionProxyModel(QObject *parent) : QSortFilterProxyMo
 
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Returns the state of the filtering.
  * @returns true if the filter is active.
  */
@@ -34,7 +29,7 @@ bool SuggestionProxyModel::filterEnabled() const
 
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Active ou désactive le filtrage par le ProxyModel.
  * @param enabled : Mettre true pour activer le filtrage.
  */
@@ -48,7 +43,7 @@ void SuggestionProxyModel::setFilterEnabled(bool enabled)
 }
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Laisse passer les lignes correspondant au filtrage, cad: les Suggestion liées à la photo demandée.
  * @returns true si la ligne est acceptée.
  * @param sourceRow : Le numéro d'une ligne du modèle parent (SuggestionModel).
@@ -69,7 +64,7 @@ bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
 }
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Mémorise le filtre à appliquer.
  * @note: On n'utilise pas les slots par défaut du ProxyModel, tels que setFilterRole() et SetFilterFixedValue()...)
  * @param photoRow : L'indice de la photo pour laquelle on veut des suggestions.
@@ -84,7 +79,7 @@ void SuggestionProxyModel::setFilterValue(const int photoRow)
 
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
  * On convertit l'indice du ProxyModel dans l'index du sourceModel.
  * @param proxyRow : Indice dans le ProxyModel de la Suggestion à modifier.

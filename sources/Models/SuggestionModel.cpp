@@ -2,14 +2,12 @@
 #include "SuggestionModel.h"
 
 
-/*!
- * \class SuggestionModel
- * \inmodule TiPhotoLocator
- * \brief The SuggestionModel class manages a list of Suggestion.
- */
+
+
+
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Contructor.
  * @param parent object.
  */
@@ -63,7 +61,7 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
 }
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Table of Role names. Implémentation obligatoire.
  * @details C'est la correspondance entre le role C++ et le nom de la property dans QML.
  */
@@ -80,7 +78,7 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Adds a suggestion to the model.
  * Ce slot permet à n'importe qui d'ajouter une Suggestion.
  * @param text: text of the suggestion.
@@ -120,7 +118,7 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
 }
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Ajoute la photo actuellement sélectionnée à la liste des photos ayant un
  * "match" avec cette suggestion.
  * @param row : l'indice de la suggestion à modifier.
@@ -137,7 +135,7 @@ void SuggestionModel::addCurrentPhotoToSuggestion(int row)
 
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
  * @param index : l'index dans le Model de la suggestion à modifier.
  */
@@ -153,7 +151,7 @@ void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
  * @param row: La position dans PhotoModel de la photo active.
  */
@@ -165,7 +163,7 @@ void SuggestionModel::onSelectedPhotoChanged(const int row)
 }
 
 /* ********************************************************************************** */
-/**
+/*!
  * @brief La surcharge de l'operateur == permet d'utiliser la méthode contains().
  * @param data: second operande.
  * @return TRUE si le "texte" des deux suggestions est identique.

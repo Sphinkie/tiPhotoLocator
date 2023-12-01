@@ -20,9 +20,9 @@
 
 /* ********************************************************************************************************** */
 /*!
- \brief Constructeur. On enregistre les paramètres.
- \a exifData: la liste des metadata à écrire dans le fichier JPG.
- \a generateBackup: \c true si un backup de l'image doit être généré avant sa modification.
+ * \brief Constructeur. On enregistre les paramètres.
+ * \a exifData: la liste des metadata à écrire dans le fichier JPG.
+ * \a generateBackup: \c true si un backup de l'image doit être généré avant sa modification.
  \code
      QVariantMap: QMap(
       ("SourceFile",       QVariant(QString,   "E:/TiPhotos/P8160449.JPG"))

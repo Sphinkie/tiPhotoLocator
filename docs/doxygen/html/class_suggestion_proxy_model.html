@@ -102,8 +102,10 @@ $(document).ready(function(){initNavTree('class_suggestion_proxy_model.html','')
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_suggestion_proxy_model.html" title="The SuggestionProxyModel class is a filter ProxyModel, that filters the suggestions related to a give...">SuggestionProxyModel</a> class is a filter ProxyModel, that filters the suggestions related to a given photo.  
+<p>The <a class="el" href="class_suggestion_proxy_model.html" title="The SuggestionProxyModel class is a filter ProxyModel, that filters the Suggestion related to a given...">SuggestionProxyModel</a> class is a filter ProxyModel, that filters the <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> related to a given Photo.  
  <a href="class_suggestion_proxy_model.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_suggestion_proxy_model_8h_source.html">SuggestionProxyModel.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SuggestionProxyModel:</div>
 <div class="dyncontent">
@@ -141,7 +143,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a189be5918036c550fd0093d566e716ae" id="r_a189be5918036c550fd0093d566e716ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_proxy_model.html#a189be5918036c550fd0093d566e716ae">filterAcceptsRow</a> (int sourceRow, const QModelIndex &amp;sourceParent) const override</td></tr>
-<tr class="memdesc:a189be5918036c550fd0093d566e716ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Laisse passer les lignes correspondant au filtrage, cad: les <a class="el" href="struct_suggestion.html">Suggestion</a> liées à la photo demandée.  <br /></td></tr>
+<tr class="memdesc:a189be5918036c550fd0093d566e716ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Laisse passer les lignes correspondant au filtrage, cad: les <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> liées à la photo demandée.  <br /></td></tr>
 <tr class="separator:a189be5918036c550fd0093d566e716ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -151,8 +153,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td
 <tr class="separator:a886804bbb675e92fd9bc8d4f549375eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_suggestion_proxy_model.html" title="The SuggestionProxyModel class is a filter ProxyModel, that filters the suggestions related to a give...">SuggestionProxyModel</a> class is a filter ProxyModel, that filters the suggestions related to a given photo. </p>
-<p>\inmodule TiPhotoLocator </p>
+<div class="textblock"><p>The <a class="el" href="class_suggestion_proxy_model.html" title="The SuggestionProxyModel class is a filter ProxyModel, that filters the Suggestion related to a given...">SuggestionProxyModel</a> class is a filter ProxyModel, that filters the <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> related to a given Photo. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af3e1807aac2879bcb22d656c4aead90b" name="af3e1807aac2879bcb22d656c4aead90b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af3e1807aac2879bcb22d656c4aead90b">&#9670;&#160;</a></span>SuggestionProxyModel()</h2>
@@ -223,7 +224,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td
 </table>
 </div><div class="memdoc">
 
-<p>Laisse passer les lignes correspondant au filtrage, cad: les <a class="el" href="struct_suggestion.html">Suggestion</a> liées à la photo demandée. </p>
+<p>Laisse passer les lignes correspondant au filtrage, cad: les <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> liées à la photo demandée. </p>
 <dl class="section return"><dt>Returns</dt><dd>true si la ligne est acceptée. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -282,7 +283,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td
 <p>Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. On convertit l'indice du ProxyModel dans l'index du sourceModel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">proxyRow</td><td>: Indice dans le ProxyModel de la <a class="el" href="struct_suggestion.html">Suggestion</a> à modifier. </td></tr>
+    <tr><td class="paramname">proxyRow</td><td>: Indice dans le ProxyModel de la <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> à modifier. </td></tr>
   </table>
   </dd>
 </dl>

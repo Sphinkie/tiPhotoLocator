@@ -4,6 +4,16 @@
 #include <QSortFilterProxyModel>
 
 
+
+/* ********************************************************************************** */
+/*!
+ * @class SuggestionProxyModel
+ * @brief The SuggestionProxyModel class is a filter ProxyModel, that filters the
+ *        Suggestion related to a given Photo.
+ */
+/* ********************************************************************************** */
+
+
 class SuggestionProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT

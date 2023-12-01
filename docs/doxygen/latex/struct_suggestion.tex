@@ -1,5 +1,14 @@
 \doxysection{Suggestion Struct Reference}
 \hypertarget{struct_suggestion}{}\label{struct_suggestion}\index{Suggestion@{Suggestion}}
+
+
+A data structure containing a tag suggestion, for one or several Photo.  
+
+
+
+
+{\ttfamily \#include $<$Suggestion\+Model.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -13,17 +22,20 @@ bool \mbox{\hyperlink{struct_suggestion_a549354300dbe0ea3e0afac765a375653}{opera
 \item 
 \Hypertarget{struct_suggestion_aecac3e72672ace070a7c01823b4beac1}\label{struct_suggestion_aecac3e72672ace070a7c01823b4beac1} 
 QString {\bfseries text}
-\item 
+\begin{DoxyCompactList}\small\item\em Example\+: "{}\+COSTA RICA"{}. \end{DoxyCompactList}\item 
 \Hypertarget{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e}\label{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e} 
 QString {\bfseries target}
-\item 
+\begin{DoxyCompactList}\small\item\em Example\+: "{}\+Country"{}. \end{DoxyCompactList}\item 
 \Hypertarget{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f}\label{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f} 
 QString {\bfseries category}
-\item 
+\begin{DoxyCompactList}\small\item\em Example\+: "{}\+Geo"{}, "{}\+Photo"{}. \end{DoxyCompactList}\item 
 \Hypertarget{struct_suggestion_af319b358957378992fcbcd14022e2125}\label{struct_suggestion_af319b358957378992fcbcd14022e2125} 
 QSet$<$ int $>$ {\bfseries photos}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em List of Photo matching this \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A data structure containing a tag suggestion, for one or several Photo. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{struct_suggestion_a549354300dbe0ea3e0afac765a375653}\label{struct_suggestion_a549354300dbe0ea3e0afac765a375653} 

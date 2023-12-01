@@ -4,9 +4,11 @@
 #include <QAbstractListModel>
 
 
-/* **********************************************************************************
-   A data structure containing a tag suggestion, for one or several photos.
- * ********************************************************************************** */
+/* ********************************************************************************** */
+/*!
+   @brief A data structure containing a tag suggestion, for one or several Photo.
+*/
+/* ********************************************************************************** */
 struct Suggestion
 {
     // Default constructor
@@ -26,10 +28,10 @@ struct Suggestion
     }
 
     // Elements de la structure
-    QString text;              // Example: "COSTA RICA"
-    QString target;            // Example: "Country"
-    QString category;          // Example: "Geo"
-    QSet<int> photos;          // List of photos matching this suggestion
+    QString text;              //!< Example: "COSTA RICA"
+    QString target;            //!< Example: "Country"
+    QString category;          //!< Example: "Geo", "Photo"
+    QSet<int> photos;          //!< List of Photo matching this Suggestion
 
     // Surcharges d'operateurs
     bool operator== (const Suggestion &data) const;
@@ -38,6 +40,10 @@ struct Suggestion
 
 
 /* ********************************************************************************** */
+/*!
+ * @class SuggestionModel
+ * @brief The SuggestionModel class manages a list of Suggestion.
+ */
 /* ********************************************************************************** */
 class SuggestionModel : public QAbstractListModel
 {
@@ -79,7 +85,7 @@ private:
     // Membres
     // -----------------------------------------------------
     QVector<Suggestion> m_suggestions;
-    int m_selectedPhotoRow = -3;    // ne correspond à aucune photo
+    int m_selectedPhotoRow = -3;    // La valeur par defaut -3 ne correspond à aucune photo
 
 };
 

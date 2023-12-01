@@ -53,7 +53,7 @@ QString     ExifReadTask::m_argFile;
 
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.
  *        A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier.
  *        Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé.
@@ -67,7 +67,7 @@ ExifReadTask::ExifReadTask(QString filePath)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief: Lancement de la tache. On lance \b exifTool dans un process, et on analyse la réponse.
  * Cette tache est exécutée dans un thread QRunnable.
  * A la fin de la tache, on écrit les résultat dans PhotoModel.
@@ -161,7 +161,7 @@ void ExifReadTask::processLine(QByteArray line)
 }
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief A appeler lors de la première utilisation. Mémorise quelques infos statiques.
  * @param photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
  */
@@ -173,7 +173,7 @@ void ExifReadTask::init(PhotoModel* photoModel)
 
 
 /* ********************************************************************************************************** */
-/**
+/*!
  * @brief List the tags to be read in the JPG files, and put them in the Arguments file for \c ExifTool.
  * @returns \c true if the file was successfully created. \br
  *

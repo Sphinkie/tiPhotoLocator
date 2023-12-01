@@ -16,7 +16,8 @@ var NAVTREEINDEX0 =
 "class_exif_write_task.html#a5182e345ea27ce1581cc6d28542bae97":[1,0,2,0],
 "class_exif_write_task.html#a62fcca5c4d5077f086df4b98cac752df":[1,0,2,1],
 "class_geocode_wrapper.html":[1,0,3],
-"class_geocode_wrapper.html#ab3c38ff6c5a53d2b6c04cf5c88763b23":[1,0,3,0],
+"class_geocode_wrapper.html#a749d1015c9206b701b45e96d8c109453":[1,0,3,0],
+"class_geocode_wrapper.html#ab3c38ff6c5a53d2b6c04cf5c88763b23":[1,0,3,1],
 "class_on_the_map_proxy_model.html":[1,0,4],
 "class_on_the_map_proxy_model.html#a4411e7b21dc2fe332733e70b8e0ab3b6":[1,0,4,2],
 "class_on_the_map_proxy_model.html#a64f01eb0c3e84e1796a1367ec541f22c":[1,0,4,3],
@@ -38,8 +39,8 @@ var NAVTREEINDEX0 =
 "class_photo_model.html#a5aef53c6395a6ccd579a019c62e472e0":[1,0,5,15],
 "class_photo_model.html#a6c2e4a731969e952993dfe4d38e5788f":[1,0,5,12],
 "class_photo_model.html#a6ff090266c5c666181a02469943d9512":[1,0,5,19],
-"class_photo_model.html#a7885f6ff2471a499f22a457da710a389":[1,0,5,18],
 "class_photo_model.html#a7885f6ff2471a499f22a457da710a389":[1,0,5,17],
+"class_photo_model.html#a7885f6ff2471a499f22a457da710a389":[1,0,5,18],
 "class_photo_model.html#a822190ecc2081c7b49030c0f6a42317f":[1,0,5,6],
 "class_photo_model.html#a834795331bc8b3f329e8f2a143839265":[1,0,5,16],
 "class_photo_model.html#a8a98d5f81789881189e179d6059c1586":[1,0,5,1],
@@ -80,5 +81,9 @@ var NAVTREEINDEX0 =
 "struct_data.html#a054c4165a75f9e9ba5dedaaceffad50a":[1,0,0,0],
 "struct_data.html#a938e2a2d8c3366cbf92a62030982b6d6":[1,0,0,1],
 "struct_suggestion.html":[1,0,6],
-"struct_suggestion.html#a549354300dbe0ea3e0afac765a375653":[1,0,6,0]
+"struct_suggestion.html#a549354300dbe0ea3e0afac765a375653":[1,0,6,0],
+"struct_suggestion.html#abdfdd0ed210feac3b5cd826c40d7643f":[1,0,6,1],
+"struct_suggestion.html#ac3b42e1b81fb69adfb3ad0334b80fe1e":[1,0,6,3],
+"struct_suggestion.html#aecac3e72672ace070a7c01823b4beac1":[1,0,6,4],
+"struct_suggestion.html#af319b358957378992fcbcd14022e2125":[1,0,6,2]
 };
