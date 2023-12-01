@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['artist_0',['artist',['../struct_data.html#a475ccdbcd7b9c4d67cb4c40e8e61a736',1,'Data']]]
+  ['artist_0',['artist',['../struct_photo.html#ab5682d56db6f4676b1882bbc1a39b5fb',1,'Photo']]]
 ];

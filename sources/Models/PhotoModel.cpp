@@ -18,7 +18,7 @@
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
     // On met l'item Welcome dans la liste
-    m_data << Data("Select your photo folder", "qrc:Images/welcome.png", false, true, true);
+    m_photos << Photo("Select your photo folder", "qrc:Images/welcome.png", false, true, true);
 
     this->addTestItem();
 
@@ -40,7 +40,7 @@ int PhotoModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid())
         return 0;
-    return m_data.count();
+    return m_photos.count();
 }
 
 /* ********************************************************************************************************** */
@@ -55,32 +55,32 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
     if ( !index.isValid() )
         return QVariant();
 
-    const Data &data = m_data.at(index.row());
+    const Photo &photo = m_photos.at(index.row());
 
     switch(role)
     {
-        case FilenameRole:          return data.filename;
-        case ImageUrlRole:          return data.imageUrl;
-        case LatitudeRole:          return data.gpsLatitude;
-        case LongitudeRole:         return data.gpsLongitude;
-        case HasGPSRole:            return data.hasGPS;
-        case IsSelectedRole:        return data.isSelected;
-        case IsMarkerRole:          return data.isMarker;
-        case IsWelcomeRole:         return data.isWelcome;
-        case InsideCircleRole:      return data.insideCircle;
-        case ToBeSavedRole:         return data.toBeSaved;
-        case DateTimeOriginalRole:  return data.dateTimeOriginal;
-        case CamModelRole:          return data.camModel;
-        case MakeRole:              return data.make;
-        case ImageWidthRole:        return data.imageWidth;
-        case ImageHeightRole:       return data.imageHeight;
-        case ArtistRole:            return data.artist;
-        case CityRole:              return data.city;
-        case CountryRole:           return data.country;
-        case DescriptionRole:       return data.description;
-        case DescriptionWriterRole: return data.descriptionWriter;
-        case HeadlineRole:          return data.headline;
-        case KeywordsRole:          return data.keywords;
+        case FilenameRole:          return photo.filename;
+        case ImageUrlRole:          return photo.imageUrl;
+        case LatitudeRole:          return photo.gpsLatitude;
+        case LongitudeRole:         return photo.gpsLongitude;
+        case HasGPSRole:            return photo.hasGPS;
+        case IsSelectedRole:        return photo.isSelected;
+        case IsMarkerRole:          return photo.isMarker;
+        case IsWelcomeRole:         return photo.isWelcome;
+        case InsideCircleRole:      return photo.insideCircle;
+        case ToBeSavedRole:         return photo.toBeSaved;
+        case DateTimeOriginalRole:  return photo.dateTimeOriginal;
+        case CamModelRole:          return photo.camModel;
+        case MakeRole:              return photo.make;
+        case ImageWidthRole:        return photo.imageWidth;
+        case ImageHeightRole:       return photo.imageHeight;
+        case ArtistRole:            return photo.artist;
+        case CityRole:              return photo.city;
+        case CountryRole:           return photo.country;
+        case DescriptionRole:       return photo.description;
+        case DescriptionWriterRole: return photo.descriptionWriter;
+        case HeadlineRole:          return photo.headline;
+        case KeywordsRole:          return photo.keywords;
         default:
             return QVariant();
     }
@@ -131,33 +131,34 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
  */
 QVariant PhotoModel::getUrl(int row)
 {
-    if (row < 0 || row >= m_data.count())
+    if (row < 0 || row >= m_photos.count())
         return QVariant();
-    QVariant result = QVariant(m_data[row].imageUrl);
+    QVariant result = QVariant(m_photos[row].imageUrl);
     return result;
 }
 
 /* ********************************************************************************************************** */
 /*!
  * \brief Adds a photo to the model, with just a name and a path (url).
- * Other data should be filled later, from exif metadata.
+ *        Other data should be filled later, from exif metadata.
  * \param filename : filename of the photo
  * \param url : full path of the photo (in Qt format)
  */
 void PhotoModel::append(const QString filename, const QString url)
 {
-    const int rowOfInsert = m_data.count();
-    Data* new_data = new Data(filename, url);
+    const int rowOfInsert = m_photos.count();
+    Photo* new_photo = new Photo(filename, url);
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
-    m_data.insert(rowOfInsert, *new_data);
+    m_photos.insert(rowOfInsert, *new_photo);
     endInsertRows();
 }
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Adds an item to the model, from a 'key-value' dictionnary of metadata given in the \param data parameter.
+ * \brief Adds an item to the model, from a list of metadata.
+ * \param data : a 'key-value' dictionnary of metadata.
  *
- * \code
+   \code
       QVariantMap map;
       map.insert("filename", QVariant(filename));
       map.insert(roleNames().value(ImageUrlRole), QVariant(url));
@@ -166,11 +167,11 @@ void PhotoModel::append(const QString filename, const QString url)
 void PhotoModel::append(const QVariantMap data)
 {
     // qDebug() << "append QVariantMap:" << data;
-    const int rowOfInsert = m_data.count();
-    Data* new_data = new Data(data["filename"].toString(), data["imageUrl"].toString());
+    const int rowOfInsert = m_photos.count();
+    Photo* new_photo = new Photo(data["filename"].toString(), data["imageUrl"].toString());
     // TODO: il faudrait probablement ajouter aussi un setData()
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
-    m_data.insert(rowOfInsert, *new_data);
+    m_photos.insert(rowOfInsert, *new_photo);
     endInsertRows();
     qDebug() << "append" << data.value("filename").toString() << "to row" << rowOfInsert;
 }
@@ -186,10 +187,10 @@ void PhotoModel::appendSavedPosition(double latitude, double longitude)
     // S'il n'y a pas encore de Saved Position, on insère à la fin
     if (!m_markerIndex.isValid())
     {
-        const int rowOfInsert = m_data.count();
-        Data* new_data = new Data("Saved Position", "", Data::marker);
+        const int rowOfInsert = m_photos.count();
+        Photo* new_data = new Photo("Saved Position", "", Photo::marker);
         beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
-        m_data.insert(rowOfInsert, *new_data);
+        m_photos.insert(rowOfInsert, *new_data);
         endInsertRows();
         // On mémorise sa position
         m_markerRow = rowOfInsert;
@@ -246,24 +247,24 @@ void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
  */
 void PhotoModel::selectedRow(int row)
 {
-    qDebug() << "selectedRow " << row << "/" << m_data.count();
-    if (row < 0 || row >= m_data.count() || row == m_lastSelectedRow)
+    qDebug() << "selectedRow " << row << "/" << m_photos.count();
+    if (row < 0 || row >= m_photos.count() || row == m_lastSelectedRow)
         return;
     // On remet à False le précédent item sélectionné
     if (m_lastSelectedRow != -1)
     {
-        m_data[m_lastSelectedRow].isSelected = false;
-        m_data[m_lastSelectedRow].insideCircle = false;
+        m_photos[m_lastSelectedRow].isSelected = false;
+        m_photos[m_lastSelectedRow].insideCircle = false;
         QModelIndex previous_index = this->index(m_lastSelectedRow, 0);
         emit dataChanged(previous_index, previous_index, {IsSelectedRole, InsideCircleRole} );
-        qDebug() << m_data[m_lastSelectedRow].isSelected << m_data[m_lastSelectedRow].filename ;
+        qDebug() << m_photos[m_lastSelectedRow].isSelected << m_photos[m_lastSelectedRow].filename ;
     }
     // On remet à True le nouvel item sélectionné
-    m_data[row].isSelected = true;
-    m_data[row].insideCircle = true;
+    m_photos[row].isSelected = true;
+    m_photos[row].insideCircle = true;
     QModelIndex new_index = this->index(row, 0);
     emit dataChanged(new_index, new_index, {IsSelectedRole, InsideCircleRole} );
-    qDebug() << "PhotoModel: " << this << m_data[row].isSelected << m_data[row].filename  ;
+    qDebug() << "PhotoModel: " << this << m_photos[row].isSelected << m_photos[row].filename  ;
     m_lastSelectedRow = row;
     // On notifie les autres classes qui ont besoin de savoir quelle est photo sélectinée
     emit selectedRowChanged(row);
@@ -308,29 +309,29 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
         switch (role)
         {
         case LatitudeRole:
-            m_data[index.row()].gpsLatitude = value.toDouble();
-            m_data[index.row()].hasGPS = (value != 0);    // Pas hyper-rigoureux...
-            m_data[index.row()].toBeSaved = true;
+            m_photos[index.row()].gpsLatitude = value.toDouble();
+            m_photos[index.row()].hasGPS = (value != 0);    // Pas hyper-rigoureux...
+            m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << LatitudeRole << HasGPSRole);
             break;
         case LongitudeRole:
-            m_data[index.row()].gpsLongitude = value.toDouble();
-            m_data[index.row()].hasGPS = (value != 0);     // Théoriquement, il faudrait tester lat et long...
-            m_data[index.row()].toBeSaved = true;
+            m_photos[index.row()].gpsLongitude = value.toDouble();
+            m_photos[index.row()].hasGPS = (value != 0);     // Théoriquement, il faudrait tester lat et long...
+            m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << LongitudeRole << HasGPSRole);
             break;
         case CityRole:
-            m_data[index.row()].city = value.toString();
-            m_data[index.row()].toBeSaved = true;
+            m_photos[index.row()].city = value.toString();
+            m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << CityRole );
             break;
         case CountryRole:
-            m_data[index.row()].country = value.toString();
-            m_data[index.row()].toBeSaved = true;
+            m_photos[index.row()].country = value.toString();
+            m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << CountryRole );
             break;
         case ToBeSavedRole:
-            m_data[index.row()].toBeSaved = value.toBool();
+            m_photos[index.row()].toBeSaved = value.toBool();
             break;
         }
         emit dataChanged(index, index, QVector<int>() << ToBeSavedRole);
@@ -355,43 +356,43 @@ void PhotoModel::setData(const QVariantMap &value_list)
     const QString file_name = value_list.value("FileName").toString();
 
     if (file_name.isEmpty()) return;    // No "FileName" tag received
-    if (m_data.count() == 0) return;    // The list of photo data is empty.
+    if (m_photos.count() == 0) return;    // The list of photo data is empty.
 
     int row;
     // ----------------------------------
     // On cherche la photo
     // ----------------------------------
-    for (row=0; row<m_data.count(); row++)
-        if (m_data[row] == file_name) break;  // Possible grace à notre surcharge de l'opérateur ==   :-)
+    for (row=0; row<m_photos.count(); row++)
+        if (m_photos[row] == file_name) break;  // Possible grace à notre surcharge de l'opérateur ==   :-)
 
     // qDebug() << "found" << row ;
-    if (row >= m_data.count()) return;        // Traitement du cas FileName not found
+    if (row >= m_photos.count()) return;        // Traitement du cas FileName not found
 
     // ----------------------------------
     // On met à jour les data de la photo
     // ----------------------------------
-    m_data[row].gpsLatitude     = value_list["GPSLatitude"].toDouble();
-    m_data[row].gpsLongitude    = value_list["GPSLongitude"].toDouble();
+    m_photos[row].gpsLatitude     = value_list["GPSLatitude"].toDouble();
+    m_photos[row].gpsLongitude    = value_list["GPSLongitude"].toDouble();
     // Les indicateurs calculés
-    m_data[row].hasGPS          = ((m_data[row].gpsLatitude!=0) || ( m_data[row].gpsLongitude!=0));
-    m_data[row].toBeSaved       = false;  // Les tags sont rétablis à leur valeur originelle
+    m_photos[row].hasGPS          = ((m_photos[row].gpsLatitude!=0) || ( m_photos[row].gpsLongitude!=0));
+    m_photos[row].toBeSaved       = false;  // Les tags sont rétablis à leur valeur originelle
     // Les metadata EXIF
-    m_data[row].dateTimeOriginal= value_list["DateTimeOriginal"].toString();
-    m_data[row].camModel        = value_list["Model"].toString();
-    m_data[row].make            = value_list["Make"].toString();
-    m_data[row].imageWidth      = value_list["ImageWidth"].toInt();
-    m_data[row].imageHeight     = value_list["ImageHeight"].toInt();
+    m_photos[row].dateTimeOriginal= value_list["DateTimeOriginal"].toString();
+    m_photos[row].camModel        = value_list["Model"].toString();
+    m_photos[row].make            = value_list["Make"].toString();
+    m_photos[row].imageWidth      = value_list["ImageWidth"].toInt();
+    m_photos[row].imageHeight     = value_list["ImageHeight"].toInt();
     // Les metadata IPTC
-    m_data[row].city            = value_list["City"].toString();
-    m_data[row].country         = value_list["Country"].toString();
-    m_data[row].description     = value_list["Description"].toString();     // TODO : aka Caption
-    m_data[row].headline        = value_list["Headline"].toString();
-    m_data[row].keywords        = value_list["Keywords"].toString();        // TODO: this is a list of keywords
-    m_data[row].descriptionWriter = value_list["DescriptionWriter"].toString();
+    m_photos[row].city            = value_list["City"].toString();
+    m_photos[row].country         = value_list["Country"].toString();
+    m_photos[row].description     = value_list["Description"].toString();     // TODO : aka Caption
+    m_photos[row].headline        = value_list["Headline"].toString();
+    m_photos[row].keywords        = value_list["Keywords"].toString();        // TODO: this is a list of keywords
+    m_photos[row].descriptionWriter = value_list["DescriptionWriter"].toString();
     if (value_list["Artist"].isNull())
-        m_data[row].artist          = value_list["Creator"].toString();
+        m_photos[row].artist          = value_list["Creator"].toString();
     else
-        m_data[row].artist          = value_list["Artist"].toString();
+        m_photos[row].artist          = value_list["Artist"].toString();
     // Envoi du signal dataChanged()
     QModelIndex changed_index = this->index(row, 0);
     emit dataChanged(changed_index, changed_index);
@@ -423,14 +424,14 @@ int PhotoModel::getSelectedRow()
  */
 void PhotoModel::dumpData()
 {
-    if (m_dumpedRow>=m_data.count()) {
+    if (m_dumpedRow>=m_photos.count()) {
         qDebug() << "dump completed";
         m_dumpedRow = 0;
         return;
     }
-    qDebug() << m_data[m_dumpedRow].filename << m_data[m_dumpedRow].city << m_data[m_dumpedRow].gpsLatitude << m_data[m_dumpedRow].gpsLongitude
-             << m_data[m_dumpedRow].camModel << m_data[m_dumpedRow].make << "to be saved:" << m_data[m_dumpedRow].toBeSaved
-             << "dateTimeOriginal:" << m_data[m_dumpedRow].dateTimeOriginal  <<  "description:" << m_data[m_dumpedRow].description  <<  "artist:" << m_data[m_dumpedRow].artist ;
+    qDebug() << m_photos[m_dumpedRow].filename << m_photos[m_dumpedRow].city << m_photos[m_dumpedRow].gpsLatitude << m_photos[m_dumpedRow].gpsLongitude
+             << m_photos[m_dumpedRow].camModel << m_photos[m_dumpedRow].make << "to be saved:" << m_photos[m_dumpedRow].toBeSaved
+             << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal  <<  "description:" << m_photos[m_dumpedRow].description  <<  "artist:" << m_photos[m_dumpedRow].artist ;
     m_dumpedRow++;
 }
 
@@ -441,7 +442,7 @@ void PhotoModel::dumpData()
 void PhotoModel::clear()
 {
     beginResetModel();  // cette methode envoie un signal indiquant à tous que ce modèle va subir un changement radical
-    m_data.clear();
+    m_photos.clear();
     m_lastSelectedRow = 0;
     endResetModel();    // cette methode envoie un signal ModelReset
 }
@@ -458,7 +459,7 @@ void PhotoModel::fetchExifMetadata(int photo)
     if (photo > -1)
     {
         // On lit les tags d'une photo
-        ExifReadTask *task = new ExifReadTask(m_data[photo].imageUrl);
+        ExifReadTask *task = new ExifReadTask(m_photos[photo].imageUrl);
         task->run();
     }
     else
@@ -469,9 +470,9 @@ void PhotoModel::fetchExifMetadata(int photo)
         // 1 par 1 = 32sec - 2 par 2 = 18sec - 3 par 3 = 13sec - 4 par 4 = 12sec - 5 par 5 = 12sec
         ExifReadTask::init(this);
         //Instanciation et ajout de plusieurs tâches au pool de threads
-        for (int row = 0; row < m_data.count(); row++)
+        for (int row = 0; row < m_photos.count(); row++)
         {
-            ExifReadTask *task = new ExifReadTask(m_data[row].imageUrl);
+            ExifReadTask *task = new ExifReadTask(m_photos[row].imageUrl);
             QThreadPool::globalInstance()->start(task);
         }
         // On n'a pas besoin d'attendre de la fin de l'exécution des tâches du pool de threads.
@@ -540,7 +541,7 @@ void PhotoModel::addTestItem()
     bool debugMode = settings.value("debugModeEnabled", false).toBool();
     if (!debugMode) return;
 
-    this->m_data << Data("IMG_00000001", "qrc:///Images/IMG_00000001.png");
+    this->m_photos << Photo("IMG_00000001", "qrc:///Images/IMG_00000001.png");
     QVariantMap ibizaData;
     ibizaData.insert("FileName", "IMG_00000001");
     ibizaData.insert("DateTimeOriginal", "2023:08:25 01:03:16");
@@ -563,11 +564,11 @@ void PhotoModel::addTestItem()
  */
 void PhotoModel::removeData(int row)
 {
-    if (row < 0 || row >= m_data.count())
+    if (row < 0 || row >= m_photos.count())
         return;
 
     beginRemoveRows(QModelIndex(), row, row);
-    m_data.removeAt(row);
+    m_photos.removeAt(row);
     endRemoveRows();
 }
 
@@ -578,14 +579,14 @@ void PhotoModel::removeData(int row)
  */
 void PhotoModel::duplicateData(int row)
 {
-    if (row < 0 || row >= m_data.count())
+    if (row < 0 || row >= m_photos.count())
         return;
 
-    const Data data = m_data[row];
+    const Photo photo = m_photos[row];
     const int rowOfInsert = row + 1;
 
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
-    m_data.insert(rowOfInsert, data);
+    m_photos.insert(rowOfInsert, photo);
     endInsertRows();
 }
 
@@ -622,7 +623,7 @@ QVariantMap PhotoModel::get(int row)
  * \param file_name: texte à comparer
  * \return true si le filename de la photo correspond au texte passé en paramètre.
  */
-bool Data::operator == (const QString &file_name)
+bool Photo::operator == (const QString &file_name)
 {
    if (this->filename == file_name)
       return true;
@@ -632,12 +633,12 @@ bool Data::operator == (const QString &file_name)
 /* ********************************************************************************************************** */
 /*!
  * \brief Définition de l'opérateur ==.
- * \param data : une photo
- * \return true si les deux objets pointent sur les même data.
+ * \param photo : une photo
+ * \return true si les deux objets pointent sur les mêmes data.
  */
-bool Data::operator == (const Data &data)
+bool Photo::operator == (const Photo &photo)
 {
-   if (this->filename == data.filename)
+   if (this->filename == photo.filename)
       return true;
   return false;
 }

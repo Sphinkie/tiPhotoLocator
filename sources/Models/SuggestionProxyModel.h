@@ -29,7 +29,7 @@ public slots:
     void removePhotoFromSuggestion(const int proxyRow);
 
 signals:
-    void filterEnabledChanged();
+    void filterEnabledChanged();    //!<  Signal émis quand l'état du filtrage change.
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;

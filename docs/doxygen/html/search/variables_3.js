@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filename_0',['filename',['../struct_data.html#a29a3676b31e07d6e66cb44578d6f5d95',1,'Data']]]
+  ['filename_0',['filename',['../struct_photo.html#a74c2e37c247175676d801adab5d0251a',1,'Photo']]]
 ];

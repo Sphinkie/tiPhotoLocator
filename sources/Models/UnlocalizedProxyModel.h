@@ -31,7 +31,7 @@ public slots:
     void setFilterEnabled(bool enabled);
 
 signals:
-    void filterEnabledChanged();  /// Non implémenté
+    void filterEnabledChanged();  //!< Signal émis quand l'état du filtrage change.
 
 };
 

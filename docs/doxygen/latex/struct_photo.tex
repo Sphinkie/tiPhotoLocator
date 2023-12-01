@@ -1,0 +1,150 @@
+\doxysection{Photo Struct Reference}
+\hypertarget{struct_photo}{}\label{struct_photo}\index{Photo@{Photo}}
+
+
+A data structure containing all the attributes for a photo picture\+: filename, GPS coordinates, etc.  
+
+
+
+
+{\ttfamily \#include $<$Photo\+Model.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_photo_a93332f9552882d314d04a824baff7fa7}\label{struct_photo_a93332f9552882d314d04a824baff7fa7} 
+enum {\bfseries Item\+Type} \{ {\bfseries photo}
+, {\bfseries marker}
+, {\bfseries welcome}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_photo_a10ef03ede9235052eb9f7d5e950f85d3}\label{struct_photo_a10ef03ede9235052eb9f7d5e950f85d3} 
+{\bfseries Photo} ()
+\begin{DoxyCompactList}\small\item\em Constructeur avec valeurs. \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a9bf87b3475256941dadccf1bba9e5650}\label{struct_photo_a9bf87b3475256941dadccf1bba9e5650} 
+{\bfseries Photo} (const QString \&file\+\_\+name, const QString \&image\+\_\+url, const bool is\+\_\+marker=false, const bool is\+\_\+welcome=false, bool is\+\_\+selected=false)
+\item 
+bool \mbox{\hyperlink{struct_photo_aadb7a083611feae65440c3bfc3887417}{operator==}} (const QString \&file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur ==. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_photo_aaf8c4dfdd916b811562d6d4e7f5e1489}{operator==}} (const \mbox{\hyperlink{struct_photo}{Photo}} \&photo)
+\begin{DoxyCompactList}\small\item\em Définition de l\textquotesingle{}opérateur ==. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_photo_a74c2e37c247175676d801adab5d0251a}\label{struct_photo_a74c2e37c247175676d801adab5d0251a} 
+QString {\bfseries filename}
+\begin{DoxyCompactList}\small\item\em Example\+: "{}\+IMG\+\_\+20230823\+\_\+1234500.\+jpg"{}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a201e9224f059933d60838a7fe331646d}\label{struct_photo_a201e9224f059933d60838a7fe331646d} 
+QString {\bfseries image\+Url}
+\begin{DoxyCompactList}\small\item\em Example\+: "{}qrc\+:///\+Images/ibiza.\+png"{}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_aebc8cca52d5bbb81ca5726f221818839}\label{struct_photo_aebc8cca52d5bbb81ca5726f221818839} 
+double {\bfseries gps\+Latitude} = 0
+\begin{DoxyCompactList}\small\item\em GPS coordinates. Example\+: 38.\+980 (Ibiza) \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_ad76b83d8bbaae4a2e4bfefef2f268008}\label{struct_photo_ad76b83d8bbaae4a2e4bfefef2f268008} 
+double {\bfseries gps\+Longitude} = 0
+\begin{DoxyCompactList}\small\item\em GPS coordinates. Example\+: 1.\+4333 (Ibiza) \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_af2fe738cd3749de9263ff89bfa971ec9}\label{struct_photo_af2fe738cd3749de9263ff89bfa971ec9} 
+bool {\bfseries has\+GPS} = false
+\begin{DoxyCompactList}\small\item\em has GPS coordinates (latitude/longitude) \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a8e391469cda515a3aacb6edafa2a8254}\label{struct_photo_a8e391469cda515a3aacb6edafa2a8254} 
+bool {\bfseries is\+Selected}
+\begin{DoxyCompactList}\small\item\em Indique que cet item est sélectionné dans la List\+View. \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_accaf8898f12c82d9872c555309d563b1}\label{struct_photo_accaf8898f12c82d9872c555309d563b1} 
+bool {\bfseries is\+Marker} = false
+\begin{DoxyCompactList}\small\item\em Exemple\+: une position sauvegardée sur la carte. \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a46c9dbe9c662028eff1907e39d5941f2}\label{struct_photo_a46c9dbe9c662028eff1907e39d5941f2} 
+bool {\bfseries is\+Welcome} = false
+\begin{DoxyCompactList}\small\item\em Exemple\+: L\textquotesingle{}image de la page d\textquotesingle{}acceuil. \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a33f360a2eccf88cc843e3a469600b3d5}\label{struct_photo_a33f360a2eccf88cc843e3a469600b3d5} 
+bool {\bfseries inside\+Circle} = false
+\begin{DoxyCompactList}\small\item\em inside the radius of nearby photos \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a66c836579b45614de3f51edba11ea2fe}\label{struct_photo_a66c836579b45614de3f51edba11ea2fe} 
+bool {\bfseries to\+Be\+Saved} = false
+\begin{DoxyCompactList}\small\item\em true if one of the following fields has been modified \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a481cec4ea67fe90721b20510f55dee5a}\label{struct_photo_a481cec4ea67fe90721b20510f55dee5a} 
+QString {\bfseries date\+Time\+Original}
+\begin{DoxyCompactList}\small\item\em Time when the camera shutter was pressed (no changes allowed in this app) \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a3c5204d88a446d1df0ee95feee81a574}\label{struct_photo_a3c5204d88a446d1df0ee95feee81a574} 
+QString {\bfseries cam\+Model}
+\begin{DoxyCompactList}\small\item\em camera model (no changes allowed in this app) \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a3f6620eb0f021aec853b0390d66c4898}\label{struct_photo_a3f6620eb0f021aec853b0390d66c4898} 
+QString {\bfseries make}
+\begin{DoxyCompactList}\small\item\em camera maker (no changes allowed in this app) \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a47567d8ecc3f845ae1846903113d625b}\label{struct_photo_a47567d8ecc3f845ae1846903113d625b} 
+int {\bfseries image\+Width} = 0
+\begin{DoxyCompactList}\small\item\em image width (no changes allowed in this app) \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a4555e7bf8da94eb11398e0948ab6c3d2}\label{struct_photo_a4555e7bf8da94eb11398e0948ab6c3d2} 
+int {\bfseries image\+Height} = 0
+\begin{DoxyCompactList}\small\item\em image height (no changes allowed in this app) \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_ab5682d56db6f4676b1882bbc1a39b5fb}\label{struct_photo_ab5682d56db6f4676b1882bbc1a39b5fb} 
+QString {\bfseries artist}
+\begin{DoxyCompactList}\small\item\em can be\+: Artist or Creator \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_af69f56742ec76589b96b355cdc447149}\label{struct_photo_af69f56742ec76589b96b355cdc447149} 
+QString {\bfseries city}
+\begin{DoxyCompactList}\small\item\em City shown in the \doxylink{struct_photo}{Photo}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a9bf494760dfe13bc320c8395a1d8368f}\label{struct_photo_a9bf494760dfe13bc320c8395a1d8368f} 
+QString {\bfseries country}
+\begin{DoxyCompactList}\small\item\em Country where the \doxylink{struct_photo}{Photo} was taken. \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a6fe05dc549b7caf2ee3232476d41e760}\label{struct_photo_a6fe05dc549b7caf2ee3232476d41e760} 
+QString {\bfseries description}
+\begin{DoxyCompactList}\small\item\em can be\+: Description, Image\+Description or Caption; \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_acb90e7577e987fce17f38f399a110dcb}\label{struct_photo_acb90e7577e987fce17f38f399a110dcb} 
+QString {\bfseries description\+Writer}
+\begin{DoxyCompactList}\small\item\em Initials of the description writer. \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_adbd66f8c05a0be471f0fc17903c1ce97}\label{struct_photo_adbd66f8c05a0be471f0fc17903c1ce97} 
+QString {\bfseries headline}
+\begin{DoxyCompactList}\small\item\em short description \end{DoxyCompactList}\item 
+\Hypertarget{struct_photo_a4dc57713c257f4db2442fcf30a2a3fec}\label{struct_photo_a4dc57713c257f4db2442fcf30a2a3fec} 
+QString {\bfseries keywords}
+\begin{DoxyCompactList}\small\item\em this is a list of keywords \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A data structure containing all the attributes for a photo picture\+: filename, GPS coordinates, etc. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_photo_aaf8c4dfdd916b811562d6d4e7f5e1489}\label{struct_photo_aaf8c4dfdd916b811562d6d4e7f5e1489} 
+\index{Photo@{Photo}!operator==@{operator==}}
+\index{operator==@{operator==}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Photo\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_photo}{Photo}} \&}]{photo }\end{DoxyParamCaption})}
+
+
+
+Définition de l\textquotesingle{}opérateur ==. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em photo} & \+: une photo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si les deux objets pointent sur les mêmes data. 
+\end{DoxyReturn}
+\Hypertarget{struct_photo_aadb7a083611feae65440c3bfc3887417}\label{struct_photo_aadb7a083611feae65440c3bfc3887417} 
+\index{Photo@{Photo}!operator==@{operator==}}
+\index{operator==@{operator==}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Photo\+::operator== (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Surcharge de l\textquotesingle{}opérateur ==. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & texte à comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le filename de la photo correspond au texte passé en paramètre. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Models/Photo\+Model.\+h\item 
+Models/Photo\+Model.\+cpp\end{DoxyCompactItemize}

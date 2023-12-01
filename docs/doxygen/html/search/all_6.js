@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hasgps_0',['hasGPS',['../struct_data.html#a1fb09c7125717599522afcc3c0657e1a',1,'Data']]],
-  ['headline_1',['headline',['../struct_data.html#afaa45ccabe499739aade423e31216508',1,'Data']]]
+  ['hasgps_0',['hasGPS',['../struct_photo.html#af2fe738cd3749de9263ff89bfa971ec9',1,'Photo']]],
+  ['headline_1',['headline',['../struct_photo.html#adbd66f8c05a0be471f0fc17903c1ce97',1,'Photo']]]
 ];

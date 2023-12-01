@@ -47,14 +47,14 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
     if ( !index.isValid() )
         return QVariant();
 
-    const Suggestion &data = m_suggestions.at(index.row());
+    const Suggestion &suggestion = m_suggestions.at(index.row());
 
     switch(role)
     {
-    case TextRole:      return data.text;
-    case TargetRole:    return data.target;
-    case CategoryRole:  return data.category;
-    case PhotosRole:    return QVariant::fromValue(data.photos);   // returns a QVariant containing a copy of value.  (lecture: liste = variant.value<QList<int>>();)
+    case TextRole:      return suggestion.text;
+    case TargetRole:    return suggestion.target;
+    case CategoryRole:  return suggestion.category;
+    case PhotosRole:    return QVariant::fromValue(suggestion.photos);   // returns a QVariant containing a copy of value.  (lecture: liste = variant.value<QList<int>>();)
     default:
         return QVariant();
     }
@@ -165,12 +165,12 @@ void SuggestionModel::onSelectedPhotoChanged(const int row)
 /* ********************************************************************************** */
 /*!
  * \brief La surcharge de l'operateur == permet d'utiliser la méthode contains().
- * \param data: second operande.
+ * \param suggestion: second operande.
  * \return TRUE si le "texte" des deux suggestions est identique.
  */
-bool Suggestion::operator== (const Suggestion &data) const
+bool Suggestion::operator== (const Suggestion &suggestion) const
 {
     // As a member function, when binary operator is overloaded, the initial parameter required is a pointer to this.
     // Even though the signature defines operator== to take three arguments, it can only accommodate two.
-    return (this->text == data.text);
+    return (this->text == suggestion.text);
 }

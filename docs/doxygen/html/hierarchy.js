@@ -1,6 +1,6 @@
 var hierarchy =
 [
-    [ "Data", "struct_data.html", null ],
+    [ "Photo", "struct_photo.html", null ],
     [ "QAbstractListModel", null, [
       [ "PhotoModel", "class_photo_model.html", null ],
       [ "SuggestionModel", "class_suggestion_model.html", null ]

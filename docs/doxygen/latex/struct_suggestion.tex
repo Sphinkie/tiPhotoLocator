@@ -2,7 +2,7 @@
 \hypertarget{struct_suggestion}{}\label{struct_suggestion}\index{Suggestion@{Suggestion}}
 
 
-A data structure containing a tag suggestion, for one or several Photo.  
+A data structure containing a tag suggestion, for one or several \doxylink{struct_photo}{Photo}.  
 
 
 
@@ -18,7 +18,7 @@ A data structure containing a tag suggestion, for one or several Photo.
 \Hypertarget{struct_suggestion_a7b7b80cdbe8f3980639fe23fae9960b6}\label{struct_suggestion_a7b7b80cdbe8f3980639fe23fae9960b6} 
 {\bfseries Suggestion} (const QString \&suggestion\+\_\+text, const QString \&suggestion\+\_\+target, const QString suggestion\+\_\+category, const int first\+\_\+photo)
 \begin{DoxyCompactList}\small\item\em Constructeur avec valeurs. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{struct_suggestion_a549354300dbe0ea3e0afac765a375653}{operator==}} (const \mbox{\hyperlink{struct_suggestion}{Suggestion}} \&data) const
+bool \mbox{\hyperlink{struct_suggestion_a063449adc119af01b2ca07be053223f6}{operator==}} (const \mbox{\hyperlink{struct_suggestion}{Suggestion}} \&suggestion) const
 \begin{DoxyCompactList}\small\item\em La surcharge de l\textquotesingle{}operateur == permet d\textquotesingle{}utiliser la méthode contains(). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -34,18 +34,18 @@ QString {\bfseries category}
 \begin{DoxyCompactList}\small\item\em Example\+: "{}\+Geo"{}, "{}\+Photo"{}. \end{DoxyCompactList}\item 
 \Hypertarget{struct_suggestion_af319b358957378992fcbcd14022e2125}\label{struct_suggestion_af319b358957378992fcbcd14022e2125} 
 QSet$<$ int $>$ {\bfseries photos}
-\begin{DoxyCompactList}\small\item\em List of Photo matching this \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em List of \doxylink{struct_photo}{Photo} matching this \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A data structure containing a tag suggestion, for one or several Photo. 
+A data structure containing a tag suggestion, for one or several \doxylink{struct_photo}{Photo}. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{struct_suggestion_a549354300dbe0ea3e0afac765a375653}\label{struct_suggestion_a549354300dbe0ea3e0afac765a375653} 
+\Hypertarget{struct_suggestion_a063449adc119af01b2ca07be053223f6}\label{struct_suggestion_a063449adc119af01b2ca07be053223f6} 
 \index{Suggestion@{Suggestion}!operator==@{operator==}}
 \index{operator==@{operator==}!Suggestion@{Suggestion}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
-{\footnotesize\ttfamily bool Suggestion\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_suggestion}{Suggestion}} \&}]{data }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Suggestion\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_suggestion}{Suggestion}} \&}]{suggestion }\end{DoxyParamCaption}) const}
 
 
 
@@ -53,7 +53,7 @@ La surcharge de l\textquotesingle{}operateur == permet d\textquotesingle{}utilis
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & second operande. \\
+{\em suggestion} & second operande. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

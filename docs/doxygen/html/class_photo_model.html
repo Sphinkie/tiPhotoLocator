@@ -150,7 +150,7 @@ Public Types</h2></td></tr>
 , <b>KeywordsRole</b>
 <br />
  }</td></tr>
-<tr class="memdesc:afae44c634ae6bf2b6b6c2e2a19269159"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Roles enum lists the roles associated to each attribute of a Photo. <br /></td></tr>
+<tr class="memdesc:afae44c634ae6bf2b6b6c2e2a19269159"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Roles enum lists the roles associated to each attribute of a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>. <br /></td></tr>
 <tr class="separator:afae44c634ae6bf2b6b6c2e2a19269159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
@@ -176,7 +176,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>removeSavedPosition</
 <tr class="memdesc:a6c2e4a731969e952993dfe4d38e5788f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime du modèle l'item correspondant à la position sauvegardée. <br /></td></tr>
 <tr class="separator:a6c2e4a731969e952993dfe4d38e5788f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aef53c6395a6ccd579a019c62e472e0" id="r_a5aef53c6395a6ccd579a019c62e472e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a5aef53c6395a6ccd579a019c62e472e0">setData</a> (int row, QString value, QString property)</td></tr>
-<tr class="memdesc:a5aef53c6395a6ccd579a019c62e472e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot ajoute une propriété à une Photo, par exemple si on clique sur une suggestion.  <br /></td></tr>
+<tr class="memdesc:a5aef53c6395a6ccd579a019c62e472e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot ajoute une propriété à une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple si on clique sur une suggestion.  <br /></td></tr>
 <tr class="separator:a5aef53c6395a6ccd579a019c62e472e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacde479b741e9f94c2077ad979e6b6a7" id="r_aacde479b741e9f94c2077ad979e6b6a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#aacde479b741e9f94c2077ad979e6b6a7">duplicateData</a> (int row)</td></tr>
 <tr class="memdesc:aacde479b741e9f94c2077ad979e6b6a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates an item of the model, and add it at the end of the vector.  <br /></td></tr>
@@ -189,6 +189,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>removeSavedPosition</
 Signals</h2></td></tr>
 <tr class="memitem:ac6f14df5683cb7c053c9d5c6982a3d2c" id="r_ac6f14df5683cb7c053c9d5c6982a3d2c"><td class="memItemLeft" align="right" valign="top"><a id="ac6f14df5683cb7c053c9d5c6982a3d2c" name="ac6f14df5683cb7c053c9d5c6982a3d2c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRowChanged</b> (const int row)</td></tr>
+<tr class="memdesc:ac6f14df5683cb7c053c9d5c6982a3d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> sélectionnée change. <br /></td></tr>
 <tr class="separator:ac6f14df5683cb7c053c9d5c6982a3d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8f7cb78c57128f6a6df184a4d89f2bf" id="r_ab8f7cb78c57128f6a6df184a4d89f2bf"><td class="memItemLeft" align="right" valign="top"><a id="ab8f7cb78c57128f6a6df184a4d89f2bf" name="ab8f7cb78c57128f6a6df184a4d89f2bf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendSuggestion</b> (QString text, QString target, QString category, int row)</td></tr>
@@ -223,7 +224,7 @@ Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b>
 <tr class="memdesc:a1ff9f0f539d9b65e0521ebbaa498b21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all the items of the Model. <br /></td></tr>
 <tr class="separator:a1ff9f0f539d9b65e0521ebbaa498b21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28933cf9451c4794c12325ac125f439f" id="r_a28933cf9451c4794c12325ac125f439f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a28933cf9451c4794c12325ac125f439f">append</a> (const QVariantMap <a class="el" href="class_photo_model.html#a3f09addf9a989e85b7ae5797156b270f">data</a>)</td></tr>
-<tr class="memdesc:a28933cf9451c4794c12325ac125f439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the model, from a 'key-value' dictionnary of metadata given in the.  <br /></td></tr>
+<tr class="memdesc:a28933cf9451c4794c12325ac125f439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the model, from a list of metadata.  <br /></td></tr>
 <tr class="separator:a28933cf9451c4794c12325ac125f439f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7a5d45624200d819ee0ab429387baa0" id="r_ad7a5d45624200d819ee0ab429387baa0"><td class="memItemLeft" align="right" valign="top"><a id="ad7a5d45624200d819ee0ab429387baa0" name="ad7a5d45624200d819ee0ab429387baa0"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>setData</b> (const QModelIndex &amp;index, const QVariant &amp;value, int role) override</td></tr>
@@ -363,10 +364,10 @@ Related Symbols</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds an item to the model, from a 'key-value' dictionnary of metadata given in the. </p>
+<p>Adds an item to the model, from a list of metadata. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>parameter.</td></tr>
+    <tr><td class="paramname">data</td><td>: a 'key-value' dictionnary of metadata.</td></tr>
   </table>
   </dd>
 </dl>
@@ -727,7 +728,7 @@ Related Symbols</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Ce slot ajoute une propriété à une Photo, par exemple si on clique sur une suggestion. </p>
+<p>Ce slot ajoute une propriété à une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple si on clique sur une suggestion. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">row</td><td>: indice de la photo. </td></tr>

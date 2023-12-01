@@ -7,14 +7,15 @@
 /*!
  * \brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.
  */
-struct Data
+struct Photo
 {
     enum ItemType {photo, marker, welcome};
 
-    // Default constructor
-    Data() {}
-    // Constructeur avec valeurs
-    Data( const QString &file_name,
+    //!< Default constructor
+    Photo() {}
+
+    //!< Constructeur avec valeurs
+    Photo( const QString &file_name,
           const QString &image_url,
 //        const Data::ItemType image_type = photo,
           const bool is_marker = false,
@@ -60,7 +61,7 @@ struct Data
 
     // Surcharges d'operateurs
     bool operator == (const QString &file_name);
-    bool operator == (const Data &data);
+    bool operator == (const Photo &photo);
 
 };
 
@@ -160,7 +161,7 @@ signals:
     // -----------------------------------------------------
     // Signaux émis
     // -----------------------------------------------------
-    void selectedRowChanged(const int row);
+    void selectedRowChanged(const int row);                                        //!< Signal émis quand la Photo sélectionnée change
     void sendSuggestion(QString text, QString target, QString category, int row);  //!< Ce signal envoie une Suggestion au SuggestionModel
 
 
@@ -173,8 +174,8 @@ public:
 protected:
     int m_markerRow = -1;                       //!< Position du marker SavedPosition
 private:
-    QVector<Data> m_data;                       //!< La liste des photos
-    int m_lastSelectedRow = 0;                  //!< L'indice de la précédente photo sélectionnée. (initilaisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
+    QVector<Photo> m_photos;                    //!< La liste des Photo du modèle
+    int m_lastSelectedRow = 0;                  //!< L'indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
     int m_dumpedRow = 0;                        //!< Compteur pour le dump de debug
 };
 

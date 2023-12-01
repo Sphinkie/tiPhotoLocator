@@ -34,7 +34,7 @@ struct Suggestion
     QSet<int> photos;          //!< List of Photo matching this Suggestion
 
     // Surcharges d'operateurs
-    bool operator== (const Suggestion &data) const;
+    bool operator== (const Suggestion &suggestion) const;
 };
 
 
@@ -50,6 +50,9 @@ class SuggestionModel : public QAbstractListModel
     Q_OBJECT
 
 public:
+    /*!
+     * \brief The Roles enum lists the roles associated to each attribute of a Suggestion
+     */
     enum Roles {
         TextRole  = Qt::UserRole,  // The first role that can be used for application-specific purposes.
         TargetRole,

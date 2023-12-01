@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keywords_0',['keywords',['../struct_data.html#a019b41d6c2a50c4a01971407b36be135',1,'Data']]]
+  ['keywords_0',['keywords',['../struct_photo.html#a4dc57713c257f4db2442fcf30a2a3fec',1,'Photo']]]
 ];

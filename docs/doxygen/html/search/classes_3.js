@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['onthemapproxymodel_0',['OnTheMapProxyModel',['../class_on_the_map_proxy_model.html',1,'']]]
+  ['photo_0',['Photo',['../struct_photo.html',1,'']]],
+  ['photomodel_1',['PhotoModel',['../class_photo_model.html',1,'']]]
 ];
