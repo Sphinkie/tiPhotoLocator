@@ -55,7 +55,7 @@ enum \mbox{\hyperlink{class_photo_model_afae44c634ae6bf2b6b6c2e2a19269159}{Roles
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_photo_model_a8a98d5f81789881189e179d6059c1586}{append}} (const QString filename, const QString url)
-\begin{DoxyCompactList}\small\item\em Adds a photo to the model, with just a name and a path (url). Other data should be filled later, from exif metadata. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{struct_photo}{Photo} to the model, with just a name and a path (url). Other data should be filled later, from exif metadata. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a3cc8c0b5e6803970def517a8d57ae155}{fetch\+Exif\+Metadata}} (int row=-\/1)
 \begin{DoxyCompactList}\small\item\em Ce slot lit des données EXIF d\textquotesingle{}une (ou toutes) photos du répertoire. \end{DoxyCompactList}\item 
 \Hypertarget{class_photo_model_ac393e2839ea5993f199ec669973972ef}\label{class_photo_model_ac393e2839ea5993f199ec669973972ef} 
@@ -105,11 +105,11 @@ Q\+\_\+\+INVOKABLE void {\bfseries dump\+Data} ()
 Q\+\_\+\+INVOKABLE void {\bfseries clear} ()
 \begin{DoxyCompactList}\small\item\em Deletes all the items of the Model. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a28933cf9451c4794c12325ac125f439f}{append}} (const QVariant\+Map \mbox{\hyperlink{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}{data}})
-\begin{DoxyCompactList}\small\item\em Adds an item to the model, from a list of metadata. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{struct_photo}{Photo} item to the model, from a list of metadata. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}{set\+Data}} (const QModel\+Index \&index, const QVariant \&value, int role) override
-\begin{DoxyCompactList}\small\item\em Surcharge qui permet de modifier unitairement un Role d\textquotesingle{}un item du modèle. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Surcharge qui permet de modifier {\bfseries{unitairement}} un Role d\textquotesingle{}un item du modèle. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a606c1207c36cdf5e81f346ca82cec2d8}{set\+Data}} (const QVariant\+Map \&value\+\_\+list)
-\begin{DoxyCompactList}\small\item\em Cette méthode permet de modifier plusieurs roles d\textquotesingle{}un item du modèle, avec comme clef le role \textquotesingle{}Filename\+Role\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Cette méthode permet de modifier plusieurs roles d\textquotesingle{}un item du modèle, avec comme clef le role \textquotesingle{}Filename\+Role\textquotesingle{}. Elle est appelée lors de la lecture (ou relecture) globale des tags Exif des photos originales. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -162,7 +162,7 @@ Constructor. Just add the welcome item in the list. If the debug mode is active,
 
 
 
-Adds a photo to the model, with just a name and a path (url). Other data should be filled later, from exif metadata. 
+Adds a \doxylink{struct_photo}{Photo} to the model, with just a name and a path (url). Other data should be filled later, from exif metadata. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -179,7 +179,7 @@ Adds a photo to the model, with just a name and a path (url). Other data should 
 
 
 
-Adds an item to the model, from a list of metadata. 
+Adds a \doxylink{struct_photo}{Photo} item to the model, from a list of metadata. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -352,9 +352,9 @@ the number of elements in the model.
 
 
 
-Surcharge qui permet de modifier unitairement un Role d\textquotesingle{}un item du modèle. 
+Surcharge qui permet de modifier {\bfseries{unitairement}} un Role d\textquotesingle{}un item du modèle. 
 
-Cette fonction met aussi à {\ttfamily TRUE} le flag {\ttfamily "{}\+To Be Saved"{}} car il s\textquotesingle{}agit d\textquotesingle{}une action opérateur. Certains roles ne sont pas modifiables\+: image\+Url, is\+Selected, has\+GPS, filename, etc. \begin{DoxySeeAlso}{See also}
+Cette fonction met aussi à {\ttfamily TRUE} le flag {\ttfamily "{}\+To Be Saved"{}} car il s\textquotesingle{}agit d\textquotesingle{}une action opérateur. Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la \doxylink{struct_photo}{Photo}. Certains roles ne sont pas modifiables\+: image\+Url, is\+Selected, has\+GPS, filename, etc. \begin{DoxySeeAlso}{See also}
 \href{https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html\#qabstractitemmodel-subclass}{\texttt{ https\+://doc.\+qt.\+io/qt-\/5/qtquick-\/modelviewsdata-\/cppmodels.\+html\#qabstractitemmodel-\/subclass}} 
 \end{DoxySeeAlso}
 \begin{DoxyNote}{Note}
@@ -380,9 +380,9 @@ Cette fonction met aussi à {\ttfamily TRUE} le flag {\ttfamily "{}\+To Be Saved
 
 
 
-Cette méthode permet de modifier plusieurs roles d\textquotesingle{}un item du modèle, avec comme clef le role \textquotesingle{}Filename\+Role\textquotesingle{}. 
+Cette méthode permet de modifier plusieurs roles d\textquotesingle{}un item du modèle, avec comme clef le role \textquotesingle{}Filename\+Role\textquotesingle{}. Elle est appelée lors de la lecture (ou relecture) globale des tags Exif des photos originales. 
 
-Roles non modifiables (ignorés)\+: image\+Url, inside\+Circle. Roles non modifiables (recalculés)\+: has\+GPS, to\+Be\+Saved. Cette fonction positionne le flag "{}\+To\+Be\+Saved"{} à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales. 
+Roles non modifiables (ignorés)\+: image\+Url, inside\+Circle. Roles non modifiables (recalculés)\+: has\+GPS, to\+Be\+Saved. Cette fonction positionne le flag "{}\+To\+Be\+Saved"{} à FALSE. 
 \begin{DoxyParams}{Parameters}
 {\em value\+\_\+list} & \+: la liste des données à modifier. Attention\+: les Keys sont les noms des balises EXIF. "{}\+File\+Name"{} est obligatoire. \\
 \hline

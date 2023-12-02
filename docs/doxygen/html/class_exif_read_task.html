@@ -101,6 +101,8 @@ $(document).ready(function(){initNavTree('class_exif_read_task.html',''); initRe
 
 <p>La tache asynchrone <a class="el" href="class_exif_read_task.html" title="La tache asynchrone ExifReadTask permet de lire les metadonnées d&#39;une photo JPG sur le disque dur.">ExifReadTask</a> permet de lire les metadonnées d'une photo JPG sur le disque dur.  
  <a href="class_exif_read_task.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_exif_read_task_8h_source.html">ExifReadTask.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ExifReadTask:</div>
 <div class="dyncontent">
@@ -174,7 +176,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. </p>
-<p>A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé. </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="section note"><dt>Note</dt><dd>Si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filePath</td><td>le chemin + nom du fichier JPG à lire. </td></tr>
   </table>

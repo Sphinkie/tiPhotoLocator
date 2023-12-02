@@ -1,0 +1,66 @@
+\doxysection{Utilities Class Reference}
+\hypertarget{class_utilities}{}\label{class_utilities}\index{Utilities@{Utilities}}
+
+
+The \doxylink{class_utilities}{Utilities} class contains a set of usefull static functions.  
+
+
+
+
+{\ttfamily \#include $<$utilities.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}{to\+Exif\+Date}} (const QVariant value)
+\begin{DoxyCompactList}\small\item\em Convertit une chaine du type "{}25/08/2017 08\+:03"{} au format "{}2017\+:08\+:25 08\+:03\+:00"{}. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{class_utilities_a631df43ec7201eb2ed7ac18491564040}{to\+Readable\+Date}} (const QVariant value)
+\begin{DoxyCompactList}\small\item\em Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel "{}25/0582017 08\+:03"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_utilities}{Utilities} class contains a set of usefull static functions. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}\label{class_utilities_ad970fb1a077cf5d352faa2878ce410fc} 
+\index{Utilities@{Utilities}!toExifDate@{toExifDate}}
+\index{toExifDate@{toExifDate}!Utilities@{Utilities}}
+\doxysubsubsection{\texorpdfstring{toExifDate()}{toExifDate()}}
+{\footnotesize\ttfamily QString Utilities\+::to\+Exif\+Date (\begin{DoxyParamCaption}\item[{const QVariant}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convertit une chaine du type "{}25/08/2017 08\+:03"{} au format "{}2017\+:08\+:25 08\+:03\+:00"{}. 
+
+0123456789 
+\begin{DoxyParams}{Parameters}
+{\em value} & \+: Le QVariant contenant la date. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la date pouvant être écrite dans un tag Exif. 
+\end{DoxyReturn}
+\Hypertarget{class_utilities_a631df43ec7201eb2ed7ac18491564040}\label{class_utilities_a631df43ec7201eb2ed7ac18491564040} 
+\index{Utilities@{Utilities}!toReadableDate@{toReadableDate}}
+\index{toReadableDate@{toReadableDate}!Utilities@{Utilities}}
+\doxysubsubsection{\texorpdfstring{toReadableDate()}{toReadableDate()}}
+{\footnotesize\ttfamily QString Utilities\+::to\+Readable\+Date (\begin{DoxyParamCaption}\item[{const QVariant}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel "{}25/0582017 08\+:03"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \+: Le QVariant contenant la date issue d\textquotesingle{}un tag Exif. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la date pouvant être affichée dans un Chip. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/utilities.\+h\item 
+cpp/utilities.\+cpp\end{DoxyCompactItemize}

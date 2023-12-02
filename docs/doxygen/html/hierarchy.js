@@ -17,5 +17,6 @@ var hierarchy =
       [ "SuggestionProxyModel", "class_suggestion_proxy_model.html", null ],
       [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", null ]
     ] ],
-    [ "Suggestion", "struct_suggestion.html", null ]
+    [ "Suggestion", "struct_suggestion.html", null ],
+    [ "Utilities", "class_utilities.html", null ]
 ];

@@ -17,6 +17,7 @@ SOURCES += \
         cpp/ExifReadTask.cpp \
         cpp/ExifWriteTask.cpp \
         cpp/GeocodeWrapper.cpp \
+        cpp/utilities.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -50,7 +51,8 @@ HEADERS += \
     Models/UnlocalizedProxyModel.h \
     cpp/ExifReadTask.h \
     cpp/ExifWriteTask.h \
-    cpp/GeocodeWrapper.h
+    cpp/GeocodeWrapper.h \
+    cpp/utilities.h
 
 
 # QMAKE_POST_LINK += xcopy /F /Y '$$PWD/../bin/exiftool.exe' '$$OUT_PWD'

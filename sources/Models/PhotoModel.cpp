@@ -1,6 +1,7 @@
 #include "PhotoModel.h"
 #include "cpp/ExifReadTask.h"
 #include "cpp/ExifWriteTask.h"
+#include "cpp/utilities.h"
 
 #include <QThreadPool>
 #include <QSettings>
@@ -95,27 +96,27 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
-        {FilenameRole,        "filename"},
-        {ImageUrlRole,        "imageUrl"},
-        {ImageWidthRole,      "imageWidth"},
-        {ImageHeightRole,     "imageHeight"},
+        {FilenameRole,          "filename"},
+        {ImageUrlRole,          "imageUrl"},
+        {ImageWidthRole,        "imageWidth"},
+        {ImageHeightRole,       "imageHeight"},
         // flags
-        {HasGPSRole,          "hasGPS"},
-        {IsSelectedRole,      "isSelected"},
-        {IsMarkerRole,        "isMarker"},
-        {IsWelcomeRole,       "isWelcome"},
-        {InsideCircleRole,    "insideCircle"},
-        {ToBeSavedRole,       "toBeSaved"},
+        {HasGPSRole,            "hasGPS"},
+        {IsSelectedRole,        "isSelected"},
+        {IsMarkerRole,          "isMarker"},
+        {IsWelcomeRole,         "isWelcome"},
+        {InsideCircleRole,      "insideCircle"},
+        {ToBeSavedRole,         "toBeSaved"},
         // Geolocation
-        {LatitudeRole,        "latitude"},
-        {LongitudeRole,       "longitude"},
-        {CityRole,            "city"},
-        {CountryRole,         "country"},
+        {LatitudeRole,          "latitude"},
+        {LongitudeRole,         "longitude"},
+        {CityRole,              "city"},
+        {CountryRole,           "country"},
         // Photo
-        {DateTimeOriginalRole,"dateTimeOriginal"},
+        {DateTimeOriginalRole,  "dateTimeOriginal"},
         // Camera
-        {CamModelRole,         "camModel"},
-        {MakeRole,             "make"},
+        {CamModelRole,          "camModel"},
+        {MakeRole,              "make"},
         // Userdata
         {DescriptionRole,       "description"},
         {ArtistRole,            "artist"},
@@ -140,7 +141,7 @@ QVariant PhotoModel::getUrl(int row)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Adds a photo to the model, with just a name and a path (url).
+ * \brief Adds a Photo to the model, with just a name and a path (url).
  *        Other data should be filled later, from exif metadata.
  * \param filename : filename of the photo
  * \param url : full path of the photo (in Qt format)
@@ -156,7 +157,7 @@ void PhotoModel::append(const QString filename, const QString url)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Adds an item to the model, from a list of metadata.
+ * \brief Adds a Photo item to the model, from a list of metadata.
  * \param data : a 'key-value' dictionnary of metadata.
  *
    \code
@@ -288,11 +289,12 @@ void PhotoModel::setData(int row, QString value, QString property)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Surcharge qui permet de modifier unitairement un Role d'un item du modèle.
+ * \brief Surcharge qui permet de modifier \b unitairement un Role d'un item du modèle.
  *
  * Cette fonction met aussi à \c TRUE le flag \c "To Be Saved" car il s'agit d'une action opérateur.
+ * Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la Photo.
  * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, etc.
- * \sa https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
+ * \see https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
  * \note: It is important to emit the dataChanged() signal after saving the changes.
  *
  * \param index : l'index (au sens ModelIndex) de l'item à modifier.
@@ -334,6 +336,11 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << ArtistRole );
             break;
+        case DateTimeOriginalRole:
+            m_photos[index.row()].dateTimeOriginal = Utilities::toExifDate(value);
+            m_photos[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << DateTimeOriginalRole );
+            break;
         case DescriptionRole:
             m_photos[index.row()].description = value.toString();
             m_photos[index.row()].toBeSaved = true;
@@ -357,10 +364,11 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 /* ********************************************************************************************************** */
 /*!
  * \brief Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
+ *        Elle est appelée lors de la lecture (ou relecture) globale des tags Exif des photos originales.
  *
  * Roles non modifiables (ignorés): imageUrl, insideCircle.
  * Roles non modifiables (recalculés): hasGPS, toBeSaved.
- * Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales.
+ * Cette fonction positionne le flag "ToBeSaved" à FALSE.
  * \param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
  */
 void PhotoModel::setData(const QVariantMap &value_list)
@@ -414,12 +422,10 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // -------------------------------------
     // Certaines infos sont des suggestions
     // -------------------------------------
-    QString modifyDate = value_list["ModifyDate"].toString().left(10);
-    if (!modifyDate.isEmpty()) {
-        // "2021:02:18 16:15:21"
-        QString suggestedDate = modifyDate.mid(8,2)+"/"+modifyDate.mid(5,2)+"/"+modifyDate.left(4);
-        emit sendSuggestion(suggestedDate, "dateTimeOriginal", "photo", row);
-    }
+    QString createDate = Utilities::toReadableDate(value_list["CreateDate"]);
+    emit sendSuggestion(createDate, "dateTimeOriginal", "photo", row);
+
+
 }
 
 

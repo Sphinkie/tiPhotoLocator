@@ -17,7 +17,7 @@ ListView{
             width: parent.width
 
             height: 40
-            // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
+            // Avec les required properties dans un delegate, on utilise les roles du modèle
             required property string text
             required property string target
             required property string category

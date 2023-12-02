@@ -1,7 +1,7 @@
 pragma Singleton
 import QtQuick
 
-/*
+/*!
  * Définition du Singleton de Style, où l'on définit les couleurs de l'application.
  *
  * On essaye de suivre quelques principes...
@@ -16,6 +16,8 @@ import QtQuick
  * - Choisir les couleurs de sa SystemPalette
  *   Le site suivant compare 9 différents outils de donstruction de palette
  *   \sa https://www.webfx.com/blog/web-design/material-design-color-generators/
+ *
+ *   \see https://www.w3schools.com/colors/colors_picker.asp
  *
  *   Le site le plus connu: https://materialPalette.com
  *
@@ -39,7 +41,7 @@ Item{
     // Chips
     readonly property color chipBackgroundColor: "#689f38"          // darkgreen : fond des chips + simplechips
     readonly property color simplechipTextColor: "lightblue"        // Textes des SimpleChips
-    readonly property color chipTextColor:       "#ffe0b3"          // gris très clair
+    readonly property color chipTextColor:       "#ffe0b3"          // Textes des Chips
 
     // Popups
     readonly property color tertiaryForegroundColor: "#448aff"   // bleu soutenu

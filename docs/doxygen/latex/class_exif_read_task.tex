@@ -5,6 +5,10 @@
 La tache asynchrone \doxylink{class_exif_read_task}{Exif\+Read\+Task} permet de lire les metadonnées d\textquotesingle{}une photo JPG sur le disque dur.  
 
 
+
+
+{\ttfamily \#include $<$Exif\+Read\+Task.\+h$>$}
+
 Inheritance diagram for Exif\+Read\+Task\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -73,7 +77,10 @@ Description of {\bfseries{JSON}} options for {\ttfamily Exif\+Tool}.
 
 Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. 
 
-A noter que si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n\textquotesingle{}est pas optimisé. 
+\begin{DoxyNote}{Note}
+Si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n\textquotesingle{}est pas optimisé. 
+\end{DoxyNote}
+
 \begin{DoxyParams}{Parameters}
 {\em file\+Path} & le chemin + nom du fichier JPG à lire. \\
 \hline

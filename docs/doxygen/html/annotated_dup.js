@@ -9,5 +9,6 @@ var annotated_dup =
     [ "Suggestion", "struct_suggestion.html", "struct_suggestion" ],
     [ "SuggestionModel", "class_suggestion_model.html", "class_suggestion_model" ],
     [ "SuggestionProxyModel", "class_suggestion_proxy_model.html", "class_suggestion_proxy_model" ],
-    [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", "class_unlocalized_proxy_model" ]
+    [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", "class_unlocalized_proxy_model" ],
+    [ "Utilities", "class_utilities.html", null ]
 ];

@@ -16,7 +16,7 @@ ZoneSuggestedTagsForm {
         target: tabbedPage
         function onSelectedDataChanged()
         {
-            bt_getinfo.enabled = tabbedPage.selectedData.hasGPS;
+            bt_getinfo.enabled = true
         }
     }
 

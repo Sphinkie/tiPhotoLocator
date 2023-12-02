@@ -155,7 +155,7 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a8a98d5f81789881189e179d6059c1586" id="r_a8a98d5f81789881189e179d6059c1586"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a8a98d5f81789881189e179d6059c1586">append</a> (const QString filename, const QString url)</td></tr>
-<tr class="memdesc:a8a98d5f81789881189e179d6059c1586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a photo to the model, with just a name and a path (url). Other data should be filled later, from exif metadata.  <br /></td></tr>
+<tr class="memdesc:a8a98d5f81789881189e179d6059c1586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> to the model, with just a name and a path (url). Other data should be filled later, from exif metadata.  <br /></td></tr>
 <tr class="separator:a8a98d5f81789881189e179d6059c1586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cc8c0b5e6803970def517a8d57ae155" id="r_a3cc8c0b5e6803970def517a8d57ae155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a3cc8c0b5e6803970def517a8d57ae155">fetchExifMetadata</a> (int row=-1)</td></tr>
 <tr class="memdesc:a3cc8c0b5e6803970def517a8d57ae155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot lit des données EXIF d'une (ou toutes) photos du répertoire.  <br /></td></tr>
@@ -223,13 +223,13 @@ Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b>
 <tr class="memdesc:a1ff9f0f539d9b65e0521ebbaa498b21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all the items of the Model. <br /></td></tr>
 <tr class="separator:a1ff9f0f539d9b65e0521ebbaa498b21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28933cf9451c4794c12325ac125f439f" id="r_a28933cf9451c4794c12325ac125f439f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a28933cf9451c4794c12325ac125f439f">append</a> (const QVariantMap <a class="el" href="class_photo_model.html#a3f09addf9a989e85b7ae5797156b270f">data</a>)</td></tr>
-<tr class="memdesc:a28933cf9451c4794c12325ac125f439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the model, from a list of metadata.  <br /></td></tr>
+<tr class="memdesc:a28933cf9451c4794c12325ac125f439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> item to the model, from a list of metadata.  <br /></td></tr>
 <tr class="separator:a28933cf9451c4794c12325ac125f439f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7a5d45624200d819ee0ab429387baa0" id="r_ad7a5d45624200d819ee0ab429387baa0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#ad7a5d45624200d819ee0ab429387baa0">setData</a> (const QModelIndex &amp;index, const QVariant &amp;value, int role) override</td></tr>
-<tr class="memdesc:ad7a5d45624200d819ee0ab429387baa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge qui permet de modifier unitairement un Role d'un item du modèle.  <br /></td></tr>
+<tr class="memdesc:ad7a5d45624200d819ee0ab429387baa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge qui permet de modifier <b>unitairement</b> un Role d'un item du modèle.  <br /></td></tr>
 <tr class="separator:ad7a5d45624200d819ee0ab429387baa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a606c1207c36cdf5e81f346ca82cec2d8" id="r_a606c1207c36cdf5e81f346ca82cec2d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a606c1207c36cdf5e81f346ca82cec2d8">setData</a> (const QVariantMap &amp;value_list)</td></tr>
-<tr class="memdesc:a606c1207c36cdf5e81f346ca82cec2d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.  <br /></td></tr>
+<tr class="memdesc:a606c1207c36cdf5e81f346ca82cec2d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'. Elle est appelée lors de la lecture (ou relecture) globale des tags Exif des photos originales.  <br /></td></tr>
 <tr class="separator:a606c1207c36cdf5e81f346ca82cec2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -326,7 +326,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Adds a photo to the model, with just a name and a path (url). Other data should be filled later, from exif metadata. </p>
+<p>Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> to the model, with just a name and a path (url). Other data should be filled later, from exif metadata. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>: filename of the photo </td></tr>
@@ -353,7 +353,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
       </table>
 </div><div class="memdoc">
 
-<p>Adds an item to the model, from a list of metadata. </p>
+<p>Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> item to the model, from a list of metadata. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>: a 'key-value' dictionnary of metadata.</td></tr>
@@ -363,7 +363,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
 <div class="fragment"><div class="line">QVariantMap map;</div>
 <div class="line">map.insert(<span class="stringliteral">&quot;filename&quot;</span>, QVariant(filename));</div>
 <div class="line">map.insert(<a class="code hl_function" href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">roleNames</a>().value(ImageUrlRole), QVariant(url));</div>
-<div class="ttc" id="aclass_photo_model_html_aac3d5e1ae72e823b4e6091497c5cf27d"><div class="ttname"><a href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">PhotoModel::roleNames</a></div><div class="ttdeci">QHash&lt; int, QByteArray &gt; roleNames() const override</div><div class="ttdef"><b>Definition</b> PhotoModel.cpp:95</div></div>
+<div class="ttc" id="aclass_photo_model_html_aac3d5e1ae72e823b4e6091497c5cf27d"><div class="ttname"><a href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">PhotoModel::roleNames</a></div><div class="ttdeci">QHash&lt; int, QByteArray &gt; roleNames() const override</div><div class="ttdef"><b>Definition</b> PhotoModel.cpp:96</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -717,8 +717,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Surcharge qui permet de modifier unitairement un Role d'un item du modèle. </p>
-<p>Cette fonction met aussi à <code>TRUE</code> le flag <code>"To Be Saved"</code> car il s'agit d'une action opérateur. Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, etc. </p><dl class="section see"><dt>See also</dt><dd><a href="https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass">https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass</a> </dd></dl>
+<p>Surcharge qui permet de modifier <b>unitairement</b> un Role d'un item du modèle. </p>
+<p>Cette fonction met aussi à <code>TRUE</code> le flag <code>"To Be Saved"</code> car il s'agit d'une action opérateur. Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>. Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, etc. </p><dl class="section see"><dt>See also</dt><dd><a href="https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass">https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass</a> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>: It is important to emit the dataChanged() signal after saving the changes.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -748,8 +748,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
       </table>
 </div><div class="memdoc">
 
-<p>Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'. </p>
-<p>Roles non modifiables (ignorés): imageUrl, insideCircle. Roles non modifiables (recalculés): hasGPS, toBeSaved. Cette fonction positionne le flag "ToBeSaved" à FALSE. Elle convient à la lecture (ou relecture) globale des tags Exif des photos originales. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'. Elle est appelée lors de la lecture (ou relecture) globale des tags Exif des photos originales. </p>
+<p>Roles non modifiables (ignorés): imageUrl, insideCircle. Roles non modifiables (recalculés): hasGPS, toBeSaved. Cette fonction positionne le flag "ToBeSaved" à FALSE. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value_list</td><td>: la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire. </td></tr>
   </table>
