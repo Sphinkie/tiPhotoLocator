@@ -8,8 +8,8 @@ ZoneCameraForm {
 
     chipModel.content:  tabbedPage.selectedData.camModel
     chipMaker.content:  tabbedPage.selectedData.make
-    chipFocale.content: "f5.6"
-    chipSpeed.content: "1/100"
+    chipFocale.content: tabbedPage.selectedData.aperture
+    chipSpeed.content:  tabbedPage.selectedData.speed
 
 }
 

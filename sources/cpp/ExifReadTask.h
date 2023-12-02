@@ -22,7 +22,7 @@
    \details
    Description of \b JSON options for \c ExifTool.
 
-   \code
+   \code{.unparsed}
    -j[[+]=*JSONFILE*] (-json)
 
     Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified).

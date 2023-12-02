@@ -9,3 +9,4 @@ qml/*.pro.user.*
 /build*
 *.bak
 *.bkp
+*.VtlMvE

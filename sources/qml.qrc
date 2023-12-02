@@ -72,7 +72,7 @@
         <file>tiPhotoLocator.qch</file>
         <file>Vues/MetadataPopupForm.ui.qml</file>
         <file>Controllers/MetadataPopup.qml</file>
-        <file>Controllers/ZonePicture.qml</file>
+        <file>Controllers/ZonePhoto.qml</file>
         <file>Vues/ZonePhotoForm.ui.qml</file>
         <file>Images/icon-tag.png</file>
         <file>Dialogs/ApiDialog.qml</file>

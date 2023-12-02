@@ -12,7 +12,7 @@ GridLayout {
         Layout.margins: 10
     }
 
-    ZonePicture {
+    ZonePhoto {
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
@@ -22,19 +22,21 @@ GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
+        Layout.rightMargin: 40
     }
-
 
     ZoneSuggestedTags {
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.columnSpan: 3
         Layout.margins: 10
+        Layout.rightMargin: 40
         color: "lightblue"
         iconZone: "qrc:/Images/icon-suggestion.png"
         txtZone: qsTr("Suggestions")
     }
 
+    /*
     Zone {
         Layout.fillWidth: true
         Layout.fillHeight: true
@@ -44,5 +46,6 @@ GridLayout {
         iconZone: "qrc:/Images/trashcan.png"
         txtZone: qsTr("Corbeille")
     }
+*/
 }
 

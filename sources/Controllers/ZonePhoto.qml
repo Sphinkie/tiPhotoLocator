@@ -6,6 +6,13 @@ import "../Javascript/TiUtilities.js" as Utilities
 // Controlleur de la zone avec les informations sur la photo
 ZonePhotoForm {
 
+    chipDate.editArea.onClicked:
+    {
+        console.log("edition");
+        chipDate.content = " ";
+        // TODO : Saisir un texte
+    }
+
     chipCreator.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "artist");

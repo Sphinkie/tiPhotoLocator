@@ -23,6 +23,7 @@ Rectangle {
     property bool editable: true
     property bool deletable: true
     property string content
+    property alias editArea:editArea
     property alias deleteArea:deleteArea
 
     Image{
@@ -34,6 +35,11 @@ Rectangle {
         width: 26
         source: "qrc:/Images/chip-edit2.png"
         visible: editable
+        // Clic sur l'icone EDIT: A gérer dans le controlleur de la Zone parente avec chipXXX.editArea.onClicked:{...}
+        MouseArea {
+            id: editArea
+            anchors.fill: parent
+        }
     }
     Text {
         id: chipText
@@ -64,7 +70,6 @@ Rectangle {
             id: deleteArea
             anchors.fill: parent
         }
-
     }
     layer.effect: DropShadow {
         transparentBorder: true
