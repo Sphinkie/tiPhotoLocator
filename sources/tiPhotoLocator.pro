@@ -37,6 +37,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     Components/PhotoPreview.qml \
+    Doxyfile \
     TiPhotoLocator.qhp \
     images/clock.png \
     tiPhotoLocator.qdocconf

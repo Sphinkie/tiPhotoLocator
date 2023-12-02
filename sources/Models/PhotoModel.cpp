@@ -114,9 +114,10 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         // Photo
         {DateTimeOriginalRole,"dateTimeOriginal"},
         // Camera
-        {CamModelRole,        "camModel"},
-        {MakeRole,            "make"},
+        {CamModelRole,         "camModel"},
+        {MakeRole,             "make"},
         // Userdata
+        {DescriptionRole,       "description"},
         {ArtistRole,            "artist"},
         {DescriptionWriterRole, "descriptionWriter"}
     };
@@ -288,7 +289,6 @@ void PhotoModel::setData(int row, QString value, QString property)
 /* ********************************************************************************************************** */
 /*!
  * \brief Surcharge qui permet de modifier unitairement un Role d'un item du modèle.
- * \overload setData()
  *
  * Cette fonction met aussi à \c TRUE le flag \c "To Be Saved" car il s'agit d'une action opérateur.
  * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, etc.
@@ -357,7 +357,6 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 /* ********************************************************************************************************** */
 /*!
  * \brief Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
- * \overload setData()
  *
  * Roles non modifiables (ignorés): imageUrl, insideCircle.
  * Roles non modifiables (recalculés): hasGPS, toBeSaved.

@@ -25,7 +25,17 @@
 var NAVTREE =
 [
   [ "TiPhotoLocator", "index.html", [
-    [ "index", "index.html", null ],
+    [ "Ti PhotoLocator", "index.html", "index" ],
+    [ "About Tags", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags.html", [
+      [ "Exif tags", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags.html#autotoc_md7", null ],
+      [ "IPTC CORE tags", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags.html#autotoc_md8", null ],
+      [ "IPTC EXTENSION tags", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags.html#autotoc_md9", null ],
+      [ "Unused tags", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags.html#autotoc_md10", null ]
+    ] ],
+    [ "Compilation", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html", [
+      [ "Installation of the developpement environnement", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html#autotoc_md12", null ],
+      [ "Documentation", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html#autotoc_md13", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

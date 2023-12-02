@@ -1,8 +1,8 @@
-# TI PHOTO LOCATOR
+# Ti PhotoLocator
 
 ![Screenshot](docs/screenshot-2023-11-11.png)   
 
-**work in progress**
+**TiPhotoLocator** is a free and add-free application that allows you to geotag your favorites photos, and add other contextual tags.
 
 ## Presentation
 
@@ -30,8 +30,7 @@ Explanation concerning the compiler configuration are on [this page](docs/compil
 
 ## Cousin projects
 
-Application to geotag your photos with a .gpx file : [GPicSync](
-https://github.com/notfrancois/GPicSync)
+Application to geotag your photos with a .gpx file : [GPicSync](https://github.com/notfrancois/GPicSync)
 
 A photo gallery developed with Qt, exiv2 and OpenCV: [Tidy Images](https://github.com/Simon-12/tidy-images) by Simon-12.
 

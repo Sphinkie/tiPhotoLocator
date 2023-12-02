@@ -1,16 +1,13 @@
-# TI PHOTO LOCATOR
-
-## About Tags
+# About Tags
 
 **TiPhotoLocator** manages the following EXIF and IPTC tags.
 
 
-### Exif tags
+## Exif tags
 
 The **EXchangeable Image Fileformat** (EXIF) format is described on the [exiftool.org website](https://exiftool.org/TagNames/EXIF.html).
 It has no official description.   
 (IFD : Image File Directory)
-
 
 
 | Tag name    | Read |  Write | Id & group | Description | 
@@ -35,7 +32,8 @@ It has no official description.
 
 *When adding GPS information to an image, it is important to set all of the following tags: GPSLatitude, GPSLatitudeRef, GPSLongitude, GPSLongitudeRef.*
 
-### IPTC CORE tags
+
+## IPTC CORE tags
 
 The **International Press Telecommunications Council** forlmat (IPTC) is described in the [iptc.org website](https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata)
 
@@ -50,7 +48,8 @@ The **International Press Telecommunications Council** forlmat (IPTC) is describ
 | Caption     |  |  |  | 
 | Keywords    |  |  | List of keywords, terms or phrases used to express the subject matter in the image. | 
 
-### IPTC EXTENSION tags
+
+## IPTC EXTENSION tags
 
 | Tag name              | Read |  Write | Description | 
 | --------------------- | ---- |  ----- | ----------- | 
@@ -66,7 +65,7 @@ The **International Press Telecommunications Council** forlmat (IPTC) is describ
 
 
 
-### Unused tags
+## Unused tags
 
 
 * **Title**: A short verbal and human readable name for the image, (may be the file name).

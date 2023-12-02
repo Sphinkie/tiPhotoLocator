@@ -44,10 +44,10 @@ var class_photo_model =
     [ "saveMetadata", "class_photo_model.html#ac393e2839ea5993f199ec669973972ef", null ],
     [ "selectedRowChanged", "class_photo_model.html#ac6f14df5683cb7c053c9d5c6982a3d2c", null ],
     [ "sendSuggestion", "class_photo_model.html#ab8f7cb78c57128f6a6df184a4d89f2bf", null ],
+    [ "setData", "class_photo_model.html#ad7a5d45624200d819ee0ab429387baa0", null ],
+    [ "setData", "class_photo_model.html#a606c1207c36cdf5e81f346ca82cec2d8", null ],
     [ "setData", "class_photo_model.html#a5aef53c6395a6ccd579a019c62e472e0", null ],
     [ "setInCircleItemCoords", "class_photo_model.html#a834795331bc8b3f329e8f2a143839265", null ],
-    [ "setData", "class_photo_model.html#a7885f6ff2471a499f22a457da710a389", null ],
-    [ "setData", "class_photo_model.html#a7885f6ff2471a499f22a457da710a389", null ],
     [ "m_markerIndex", "class_photo_model.html#af32aed3a0a39738d782a1d69a14175f2", null ],
     [ "m_markerRow", "class_photo_model.html#a6ff090266c5c666181a02469943d9512", null ],
     [ "selectedRow", "class_photo_model.html#a6376872cafff59ccc887f405a2515ed9", null ]

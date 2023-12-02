@@ -13,17 +13,18 @@
 #include "cpp/GeocodeWrapper.h"
 
 
-/*!
+/* ********************************************************************************* */
+/* Entête pour la QDOC (désactivé, car non-compatible doxygen)                       */
+/* ********************************************************************************* */
+/*
     \page index.html
-    \title Index
+    \title QML Index page
     \startpage TiPhotoLocator
 
     The ultimate Photo Locator.
         \li \l{TiPhotoLocator}{Les classes C++}
         \li les scripts QML
-*/
 
-/*!
     \module TiPhotoLocator
     \title TiPhotoLocator
     \brief Les classes C++.
@@ -32,10 +33,16 @@
     Il lit et écrit les tags EXIF et IPTC des photos JPEG avec \l{https://exiftool.org}{exifTool}. \br
     Il accède aux cartes géographiques via les modules QtLocation et QtPositioning.
 */
+/* ********************************************************************************* */
 
-/* *********************************************************************************
- * Programme principal
- * *********************************************************************************/
+
+/* ********************************************************************************* */
+/*!
+ * \brief Programme principal
+ * \param argc
+ * \param argv
+ * \return
+ */
 int main(int argc, char *argv[])
 {
 //    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);

@@ -39,7 +39,7 @@ Item{
     // Chips
     readonly property color chipBackgroundColor: "#689f38"          // darkgreen : fond des chips + simplechips
     readonly property color simplechipTextColor: "lightblue"        // Textes des SimpleChips
-    readonly property color chipTextColor:       "#cdcdcd"          // gris très clair
+    readonly property color chipTextColor:       "#ffe0b3"          // gris très clair
 
     // Popups
     readonly property color tertiaryForegroundColor: "#448aff"   // bleu soutenu
