@@ -14,7 +14,7 @@ Zone {
         anchors.fill: parent
         rows: 5
         columns: 4
-        flow: GridLayout.TopToBottom
+        flow: GridLayout.LeftToRight
 
         TiButton {
             id: bt_getinfo

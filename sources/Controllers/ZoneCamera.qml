@@ -1,7 +1,7 @@
 import QtQuick
 import "../Vues"
 
-// Controlleur de la zone avec les informations sur l'appareil photo
+// Controlleur de la zone avec les informations sur l'appareil ayant fabrqué l'image (appareil photo ou scanner ou IA)
 ZoneCameraForm {
 
     // On determine le contenu des chips ici, mais ça marche aussi si on le fait dans la vue.
@@ -10,6 +10,7 @@ ZoneCameraForm {
     chipMaker.content:  tabbedPage.selectedData.make
     chipFocale.content: tabbedPage.selectedData.aperture
     chipSpeed.content:  tabbedPage.selectedData.speed
+    chipSoftware.content: tabbedPage.selectedData.software
 
 }
 

@@ -71,7 +71,7 @@ void ExifReadTask::run()
         // When a CRLF is receive, we process the line
         this->processLine(exifProcess.readLine());
     }
-    qDebug() << "Task finished" ;
+    // qDebug() << "Task finished" ;
 }
 
 
@@ -162,26 +162,30 @@ bool ExifReadTask::writeArgsFile()
     out << "-DateTimeOriginal"  << Qt::endl;   // "2017:08:25 08:03:16"       -- Time of the shutter actuation (normally identical to CreateDate).
     out << "-CreateDate"        << Qt::endl;   // "2017:08:25 08:03:16"       -- Time that the file was written to the disk. (scanned photos)
     // out << "-ModifyDate"     << Qt::endl;   // "2021:02:18 16:15:21"       -- Date of modification by Photoshop or other
+    // Camera
     out << "-Model"             << Qt::endl;   // "E-M10MarkII"               -- Camera model
     out << "-Make"              << Qt::endl;   // "OLYMPUS"                   -- Camera manufacturer
+    // Photo EXIF tags
     out << "-ImageWidth"        << Qt::endl;   // 4608
     out << "-ImageHeight"       << Qt::endl;   // 3072
+    out << "-ImageDescription"  << Qt::endl;   // Alternate tag label for "Description" (EXIF)
+    out << "-Artist"            << Qt::endl;   // Name of the photographer (EXIF tag label)
+    out << "-Software"          << Qt::endl;   // Logiciel de l'Appareil photo ou du Scanner
+    out << "-MetadataEditingSoftware" << Qt::endl;   // Logiciel ayant renseigné les métadonnées
+    // Photo IPTC tags
+    out << "-Creator"           << Qt::endl;   // Name of the photographer (IPTC tag label)
+    out << "-Description"       << Qt::endl;   // Description du contenu de la photo (important)
+    out << "-Caption"           << Qt::endl;   // Alternate tag label for "Description" (IPTC)
+    out << "-DescriptionWriter" << Qt::endl;    // (optional) Initials of the writer
+    // out << "-Headline"          << Qt::endl;    // (optional) Short description in 2 to 5 words
+    out << "-Keywords"          << Qt::endl;   // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
     // GPS coordinates
     out << "-GPSLatitude"       << Qt::endl;   // 45.4325547675333
     out << "-GPSLongitude"      << Qt::endl;   // 12.3374594498028
-    // IPTC tags
-    out << "-Description"       << Qt::endl;   // Description du contenu de la photo (important)
-    out << "-ImageDescription"  << Qt::endl;   // Alternate tag label for "Description" (EXIF)
-    out << "-Caption"           << Qt::endl;   // Alternate tag label for "Description" (IPTC)
-    out << "-Keywords"          << Qt::endl;   // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
-    out << "-Artist"            << Qt::endl;   // Name of the photographer (EXIF tag label)
-    out << "-Creator"           << Qt::endl;   // Name of the photographer (IPTC tag label)
     // Reverse Geocoding
     out << "-City"              << Qt::endl;
     out << "-Country"           << Qt::endl;
     out << "-Landmark"          << Qt::endl;
-    out << "-DescriptionWriter" << Qt::endl;    // (optional) Initials of the writer
-    out << "-Headline"          << Qt::endl;    // (optional) Short description in 2 to 5 words
 
     // Fermeture du fichier
     file.close();

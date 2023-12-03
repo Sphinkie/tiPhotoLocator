@@ -46,12 +46,12 @@ struct Photo
     int imageWidth = 0;         //!< image width  (no changes allowed in this app)
     int imageHeight = 0;        //!< image height (no changes allowed in this app)
     // IPTC tags
-    QString artist;             //!< can be: Artist or Creator
+    QString creator;             //!< can be: Artist or Creator
     QString city;               //!< City shown in the Photo
     QString country;            //!< Country where the Photo was taken
     QString description;        //!< can be: Description, ImageDescription or Caption;
     QString descriptionWriter;  //!< Initials of the description writer
-    QString headline;           //!< short description
+    QString software;           //!< Software of the camera or scanner device
     QString keywords;           //!< this is a list of keywords
 
     // Surcharges d'operateurs
@@ -96,14 +96,14 @@ public:
         MakeRole,
         ImageWidthRole,
         ImageHeightRole,
-        ArtistRole,
+        CreatorRole,
         GPSLatitudeRefRole,    // TODO A voir s'il faut le conserver
         GPSLongitudeRefRole,   // ou s'il n'y en a pas besoin
         CityRole,
         CountryRole,
         DescriptionRole,
         DescriptionWriterRole,
-        HeadlineRole,
+        SoftwareRole,
         KeywordsRole
     };
     QHash<int, QByteArray> roleNames() const override;

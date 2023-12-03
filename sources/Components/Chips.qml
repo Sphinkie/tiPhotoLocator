@@ -20,11 +20,14 @@ Rectangle {
     visible: content? true : false
     color: TiStyle.chipBackgroundColor
     // Propriétés modifiables depuis les parents:
-    property bool editable: true
-    property bool deletable: true
+    property bool canSave: false
+    property bool editable: false
+    property bool deletable: false
     property string content
     property alias editArea:editArea
+    property alias saveArea:saveArea
     property alias deleteArea:deleteArea
+    property alias chipText:chipText
 
     Image{
         id: chipEdit
@@ -33,27 +36,47 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         height: 26
         width: 26
-        source: "qrc:/Images/chip-edit2.png"
+        source: "../Images/chip-edit.png"
         visible: editable
-        // Clic sur l'icone EDIT: A gérer dans le controlleur de la Zone parente avec chipXXX.editArea.onClicked:{...}
+        // Clic sur l'icone EDIT: A gérer dans le controleur de la Zone parente avec chipXXX.editArea.onClicked:{...}
         MouseArea {
             id: editArea
             anchors.fill: parent
         }
     }
-    Text {
+    Image{
+        // Cette image se superpose à la précédente (Edit).
+        // Il faut dons faire attention à ce qu'elles ne soient pas à 'visible' en même temps.
+        id: chipSave
+        anchors.left: parent.left
+        anchors.leftMargin: 5
+        anchors.verticalCenter: parent.verticalCenter
+        height: 26
+        width: 26
+        source: "../Images/chip-save.png"
+        visible: canSave
+        // Clic sur l'icone SAVE: A gérer dans le controlleur de la Zone parente avec chipXXX.saveArea.onClicked:{...}
+        MouseArea {
+            id: saveArea
+            anchors.fill: parent
+        }
+    }
+    TextInput {
         id: chipText
-        anchors.fill: parent
+        anchors.right: chipDel.left
         anchors.left: chipEdit.right
         anchors.leftMargin: 4
+        anchors.rightMargin: 4
         anchors.verticalCenter: parent.verticalCenter
         text: content
+        readOnly: true
         font.pixelSize: 14
         color: TiStyle.chipTextColor
         // Positionnement du texte
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WordWrap  // Retour à la ligne si le texte est plus long que le Rectangle
+        // Retour à la ligne si le texte est plus long que le Rectangle
+        wrapMode: Text.WordWrap
         clip: false // Le texte n'est pas tronqué
     }
     Image{

@@ -75,12 +75,12 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         case MakeRole:              return photo.make;
         case ImageWidthRole:        return photo.imageWidth;
         case ImageHeightRole:       return photo.imageHeight;
-        case ArtistRole:            return photo.artist;
+        case CreatorRole:           return photo.creator;
         case CityRole:              return photo.city;
         case CountryRole:           return photo.country;
         case DescriptionRole:       return photo.description;
         case DescriptionWriterRole: return photo.descriptionWriter;
-        case HeadlineRole:          return photo.headline;
+        case SoftwareRole:          return photo.software;
         case KeywordsRole:          return photo.keywords;
         default:
             return QVariant();
@@ -114,12 +114,13 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {CountryRole,           "country"},
         // Photo
         {DateTimeOriginalRole,  "dateTimeOriginal"},
+        {SoftwareRole,          "software"},
         // Camera
         {CamModelRole,          "camModel"},
         {MakeRole,              "make"},
         // Userdata
         {DescriptionRole,       "description"},
-        {ArtistRole,            "artist"},
+        {CreatorRole,           "creator"},
         {DescriptionWriterRole, "descriptionWriter"}
     };
     return mapping;
@@ -331,10 +332,10 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << CountryRole );
             break;
-        case ArtistRole:
-            m_photos[index.row()].artist = value.toString();
+        case CreatorRole:
+            m_photos[index.row()].creator = value.toString();
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << ArtistRole );
+            emit dataChanged(index, index, QVector<int>() << CreatorRole );
             break;
         case DateTimeOriginalRole:
             m_photos[index.row()].dateTimeOriginal = Utilities::toExifDate(value);
@@ -408,13 +409,14 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_photos[row].city            = value_list["City"].toString();
     m_photos[row].country         = value_list["Country"].toString();
     m_photos[row].description     = value_list["Description"].toString();     // TODO : aka Caption
-    m_photos[row].headline        = value_list["Headline"].toString();
+    m_photos[row].software        = value_list["Software"].toString();
     m_photos[row].keywords        = value_list["Keywords"].toString();        // TODO: this is a list of keywords
     m_photos[row].descriptionWriter = value_list["DescriptionWriter"].toString();
+    // En priorité, on prend le tag Exif 'Artist'. Si vide, on prend le tag IPTC 'Creator'.
     if (value_list["Artist"].isNull())
-        m_photos[row].artist          = value_list["Creator"].toString();
+        m_photos[row].creator          = value_list["Creator"].toString();
     else
-        m_photos[row].artist          = value_list["Artist"].toString();
+        m_photos[row].creator          = value_list["Artist"].toString();
     // Envoi du signal dataChanged()
     QModelIndex changed_index = this->index(row, 0);
     emit dataChanged(changed_index, changed_index);
@@ -424,8 +426,6 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // -------------------------------------
     QString createDate = Utilities::toReadableDate(value_list["CreateDate"]);
     emit sendSuggestion(createDate, "dateTimeOriginal", "photo", row);
-
-
 }
 
 
@@ -451,7 +451,7 @@ void PhotoModel::dumpData()
     }
     qDebug() << m_photos[m_dumpedRow].filename << m_photos[m_dumpedRow].city << m_photos[m_dumpedRow].gpsLatitude << m_photos[m_dumpedRow].gpsLongitude
              << m_photos[m_dumpedRow].camModel << m_photos[m_dumpedRow].make << "to be saved:" << m_photos[m_dumpedRow].toBeSaved
-             << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal  <<  "description:" << m_photos[m_dumpedRow].description  <<  "artist:" << m_photos[m_dumpedRow].artist ;
+             << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal  <<  "description:" << m_photos[m_dumpedRow].description  <<  "creator:" << m_photos[m_dumpedRow].creator ;
     m_dumpedRow++;
 }
 
@@ -529,10 +529,10 @@ void PhotoModel::saveMetadata()
             exifData.insert("GPSLatitude", idx.data(LatitudeRole));
             exifData.insert("GPSLongitude", idx.data(LongitudeRole));
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
-            exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );           
-            exifData.insert("Creator", idx.data(ArtistRole));
-            if (!preserveExif)  exifData.insert("Artist", idx.data(ArtistRole));
-            exifData.insert("Software", software);
+            exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
+            exifData.insert("Creator", idx.data(CreatorRole));
+            if (!preserveExif)  exifData.insert("Artist", idx.data(CreatorRole));
+            exifData.insert("MetadataEditingSoftware", software);
             exifData.insert("City", idx.data(CityRole));
             exifData.insert("Country", idx.data(CountryRole));
 

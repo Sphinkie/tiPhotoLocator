@@ -7,6 +7,7 @@ Item {
     property alias cameraZone: cameraZone
     property alias chipModel: chipModel
     property alias chipMaker: chipMaker
+    property alias chipSoftware: chipSoftware
     property alias chipFocale: chipFocale
     property alias chipSpeed: chipSpeed
 
@@ -24,6 +25,11 @@ Item {
             }
             Chips {
                 id: chipMaker
+                editable: false
+                deletable: false
+            }
+            Chips {
+                id: chipSoftware
                 editable: false
                 deletable: false
             }

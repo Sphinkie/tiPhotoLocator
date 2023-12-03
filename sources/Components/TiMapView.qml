@@ -64,8 +64,8 @@ Map {
                            // TODO utiliser une variable de type coordinate
                            var lati = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
                            var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
-                           // console.log('latitude  = ' + lati );
-                           // console.log('longitude = ' + longi);
+                           // console.log("latitude  = " + lati );
+                           // console.log("longitude = " + longi);
                            // On mémorise les coords du point cliqué dans les properties du parent
                            mapTab.photoLatitude = lati;
                            mapTab.photoLongitude= longi;
