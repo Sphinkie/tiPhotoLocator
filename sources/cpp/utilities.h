@@ -12,6 +12,7 @@ class Utilities
 {
 public:
     Utilities();
+    //static QString toExifDate(const QVariant value, const QString old_value="");
     static QString toExifDate(const QVariant value);
     static QString toReadableDate(const QVariant value);
 

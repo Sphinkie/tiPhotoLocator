@@ -78,5 +78,6 @@
         <file>Controllers/ZoneSuggestedTags.qml</file>
         <file>Images/chip-edit.png</file>
         <file>Images/chip-save.png</file>
+        <file>Images/chip-revert.png</file>
     </qresource>
 </RCC>

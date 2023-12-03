@@ -21,6 +21,8 @@ ZonePhotoForm {
     }
     chipDate.saveArea.onClicked:
     {
+        var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text;
+        window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime , "dateTimeOriginal");
         chipDate.chipText.text = fixDate(chipDate)
         resetChipButtons(chipDate);
     }
@@ -37,6 +39,8 @@ ZonePhotoForm {
     }
     chipTime.saveArea.onClicked:
     {
+        var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text;
+        window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime , "dateTimeOriginal");
         chipTime.chipText.text = fixTime(chipTime)
         resetChipButtons(chipTime);
     }

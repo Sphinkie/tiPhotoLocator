@@ -275,7 +275,7 @@ void PhotoModel::selectedRow(int row)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Ce slot ajoute ou modifie une propriété d'une Photo, par exemple si on clique sur une suggestion.
+ * \brief Ce slot ajoute ou modifie une propriété d'une Photo, par exemple quand on clique sur une suggestion.
  *
  * \param row : indice de la photo.
  * \param value : valeur de la propriété.
@@ -505,7 +505,7 @@ void PhotoModel::fetchExifMetadata(int photo)
 /*!
  * \brief Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
  * Tag obligatoire: imageUrl.
- * Tags modifiés: coords GPS, Creator, City, Country.
+ * Tags modifiés: coords GPS, Creator, City, Country...
  */
 void PhotoModel::saveMetadata()
 {
@@ -535,6 +535,7 @@ void PhotoModel::saveMetadata()
             exifData.insert("MetadataEditingSoftware", software);
             exifData.insert("City", idx.data(CityRole));
             exifData.insert("Country", idx.data(CountryRole));
+            exifData.insert("dateTimeOriginal", idx.data(DateTimeOriginalRole));
 
             //Instanciation et ajout de la tâche au pool de threads
             ExifWriteTask *task = new ExifWriteTask(exifData, backupsEnabled);
