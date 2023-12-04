@@ -4,13 +4,11 @@ import "../Vues"
 // Controlleur
 ZoneSuggestedTagsForm {
 
-
     bt_getinfo.onClicked: {
         // on recupere des infos à partir des IA
     }
 
-
-
+/*
     // Gestion du grisage du bouton
     Connections{
         target: tabbedPage
@@ -19,6 +17,7 @@ ZoneSuggestedTagsForm {
             bt_getinfo.enabled = true
         }
     }
+*/
 
 }
 

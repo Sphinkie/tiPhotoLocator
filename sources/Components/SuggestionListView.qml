@@ -1,22 +1,21 @@
 import QtQuick
 
-ListView{
+Repeater{
     model: _suggestionProxyModel
     delegate: suggestionDelegate
-    focus: true
-    clip: true   // pour que les items restent à l'interieur de la listview
+    focus: false
+    clip: true   // pour que les items restent à l'interieur du Repeater
     property string filterString: ""
 
 
-    // le delegate pour afficher un item dans la ListView
+    // le delegate pour afficher un item dans le Flow
     Component{
         id: suggestionDelegate
 
         Item{
             id: currrentItem
-            width: parent.width
-
-            height: 40
+            width:  currrentChip.width
+            height:  currrentChip.height
             // Avec les required properties dans un delegate, on utilise les roles du modèle
             required property string text
             required property string target
@@ -24,6 +23,7 @@ ListView{
             required property string index  // property parculière = indice de la suggestion
 
             Chips {
+                id: currrentChip
                 content: text + " (" + target + ")"
                 editable: false
                 deletable: false

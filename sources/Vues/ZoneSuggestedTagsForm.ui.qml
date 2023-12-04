@@ -9,29 +9,30 @@ Zone {
     txtZone: qsTr("Suggestions")
     property alias bt_getinfo: bt_getinfo
 
-    GridLayout {
-        id: grille
-        anchors.fill: parent
-        rows: 5
-        columns: 4
-        flow: GridLayout.LeftToRight
+    Flickable {
+        contentWidth: parent.width
+        contentHeight: parent.height
+        //        contentHeight: grille.implicitHeight
+        Flow {
+            id: grille
+            width: parent.width
+            height: parent.height
+            padding: 10
+            spacing: 10
 
-        TiButton {
-            id: bt_getinfo
-            text: qsTr("Analyser")
-            color: "lightskyblue"
-            icon.source: "qrc:/Images/icon-suggestion.png"
-            // Layout.alignment: Qt.AlignRight
-            Layout.topMargin: 10
-            Layout.leftMargin: 20
-        }
 
-        SuggestionListView {
-            id: slv
-            filterString: "photo"
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.margins: 20
+            SuggestionListView {
+                id: slv
+                filterString: "photo"
+            }
+
+            TiButton {
+                 id: bt_getinfo
+                 text: qsTr("Autres tags...")
+                 color: "lightskyblue"
+                 icon.source: "qrc:/Images/icon-suggestion.png"
+             }
+
         }
     }
 }
