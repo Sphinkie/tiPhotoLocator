@@ -19,9 +19,9 @@ Inheritance diagram for Geocode\+Wrapper\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b}{request\+Reverse\+Geocode}} (double latitude, double longitude)
-\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =\texorpdfstring{$>$}{>} \href{https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{\texttt{ Résultat}} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =\texorpdfstring{$>$}{>} \href{https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{\texttt{ Résultat}} La réponse est traitée par geo\+Code\+Finished() \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23}{request\+Coordinates}} (QString city)
-\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par geo\+Code\+Finished() \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -70,7 +70,7 @@ Le contructeur initialise le provider "{}\+OSM"{}.
 
 
 
-Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. 
+Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par geo\+Code\+Finished() 
 
 
 \begin{DoxyParams}{Parameters}
@@ -85,7 +85,7 @@ Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu 
 
 
 
-Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =\texorpdfstring{$>$}{>} \href{https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{\texttt{ Résultat}} 
+Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =\texorpdfstring{$>$}{>} \href{https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{\texttt{ Résultat}} La réponse est traitée par geo\+Code\+Finished() 
 
 
 \begin{DoxyParams}{Parameters}

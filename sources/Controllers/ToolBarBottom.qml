@@ -5,11 +5,16 @@ import "../Vues"
 ToolBarBottomForm {
 
     // true en mode DEBUG
-    bt_dump.visible: true
+    bt_dump1.visible: true
+    bt_dump2.visible: true
 
 
-    bt_dump.onClicked: {
+    bt_dump1.onClicked: {
         _photoListModel.dumpData()
+    }
+
+    bt_dump2.onClicked: {
+        _suggestionModel.dumpData()
     }
 
     cb_backups.onCheckedChanged:  {

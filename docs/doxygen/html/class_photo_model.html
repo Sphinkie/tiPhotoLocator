@@ -136,7 +136,7 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>MakeRole</b>
 , <b>ImageWidthRole</b>
 , <b>ImageHeightRole</b>
-, <b>ArtistRole</b>
+, <b>CreatorRole</b>
 , <br />
 &#160;&#160;<b>GPSLatitudeRefRole</b>
 , <b>GPSLongitudeRefRole</b>
@@ -145,7 +145,7 @@ Public Types</h2></td></tr>
 , <br />
 &#160;&#160;<b>DescriptionRole</b>
 , <b>DescriptionWriterRole</b>
-, <b>HeadlineRole</b>
+, <b>SoftwareRole</b>
 , <b>KeywordsRole</b>
 <br />
  }</td></tr>
@@ -162,7 +162,7 @@ Public Slots</h2></td></tr>
 <tr class="separator:a3cc8c0b5e6803970def517a8d57ae155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac393e2839ea5993f199ec669973972ef" id="r_ac393e2839ea5993f199ec669973972ef"><td class="memItemLeft" align="right" valign="top"><a id="ac393e2839ea5993f199ec669973972ef" name="ac393e2839ea5993f199ec669973972ef"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>saveMetadata</b> ()</td></tr>
-<tr class="memdesc:ac393e2839ea5993f199ec669973972ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. Tag obligatoire: imageUrl. Tags modifiés: coords GPS, Creator, City, Country. <br /></td></tr>
+<tr class="memdesc:ac393e2839ea5993f199ec669973972ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. Tag obligatoire: imageUrl. Tags modifiés: coords GPS, Creator, City, Country... <br /></td></tr>
 <tr class="separator:ac393e2839ea5993f199ec669973972ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a834795331bc8b3f329e8f2a143839265" id="r_a834795331bc8b3f329e8f2a143839265"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a834795331bc8b3f329e8f2a143839265">setInCircleItemCoords</a> (double latitude, double longitude)</td></tr>
 <tr class="memdesc:a834795331bc8b3f329e8f2a143839265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur du cercle rouge.  <br /></td></tr>
@@ -175,7 +175,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>removeSavedPosition</
 <tr class="memdesc:a6c2e4a731969e952993dfe4d38e5788f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime du modèle l'item correspondant à la position sauvegardée. <br /></td></tr>
 <tr class="separator:a6c2e4a731969e952993dfe4d38e5788f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aef53c6395a6ccd579a019c62e472e0" id="r_a5aef53c6395a6ccd579a019c62e472e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a5aef53c6395a6ccd579a019c62e472e0">setData</a> (int row, QString value, QString property)</td></tr>
-<tr class="memdesc:a5aef53c6395a6ccd579a019c62e472e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot ajoute ou modifie une propriété d'une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple si on clique sur une suggestion.  <br /></td></tr>
+<tr class="memdesc:a5aef53c6395a6ccd579a019c62e472e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot ajoute ou modifie une propriété d'une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple quand on clique sur une suggestion.  <br /></td></tr>
 <tr class="separator:a5aef53c6395a6ccd579a019c62e472e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacde479b741e9f94c2077ad979e6b6a7" id="r_aacde479b741e9f94c2077ad979e6b6a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#aacde479b741e9f94c2077ad979e6b6a7">duplicateData</a> (int row)</td></tr>
 <tr class="memdesc:aacde479b741e9f94c2077ad979e6b6a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates an item of the model, and add it at the end of the vector.  <br /></td></tr>
@@ -798,7 +798,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Ce slot ajoute ou modifie une propriété d'une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple si on clique sur une suggestion. </p>
+<p>Ce slot ajoute ou modifie une propriété d'une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple quand on clique sur une suggestion. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">row</td><td>: indice de la photo. </td></tr>

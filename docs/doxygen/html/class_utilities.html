@@ -140,13 +140,18 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Convertit une chaine du type "25/08/2017 08:03" au format "2017:08:25 08:03:00". </p>
-<p>0123456789 </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>: Le QVariant contenant la date. </td></tr>
+    <tr><td class="paramname">value</td><td>: Le QVariant contenant la nouvelle date. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>la date pouvant être écrite dans un tag Exif. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>la date pouvant être écrite dans un tag Exif.</dd></dl>
+<p>La fonction est intelligente et reconnait s'il s'agit d'une Date, d'un Time ou d'un DateTime.</p><ul>
+<li>DateTime : "25/08/2017 08:03" -&gt; "2017:08:25 08:03:00" (convertion + ajout des secondes)</li>
+<li>Date : "25/08/2017" -&gt; "2017:08:25 02:15:45" (convertion + conservation du time)</li>
+<li>Time : "08:03" -&gt; "1934:01:10 08:03:00" (convertion + conservation de la date) </li>
+</ul>
 
 </div>
 </div>

@@ -19,7 +19,7 @@ Inheritance diagram for Unlocalized\+Proxy\+Model\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7}{set\+Filter\+Enabled}} (bool enabled)
-\begin{DoxyCompactList}\small\item\em Le slot \doxylink{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7}{set\+Filter\+Enabled()} active ou désactive le filtrage par le Proxy\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ce slot active ou désactive le filtrage par le proxy\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,11 +30,11 @@ void {\bfseries filter\+Enabled\+Changed} ()
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_unlocalized_proxy_model_aefca3127511e50cfd59f6a58a23da2b9}{Unlocalized\+Proxy\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
-\begin{DoxyCompactList}\small\item\em Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}has\+GPS"{}. Par défaut, le filtrage est inactif. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_unlocalized_proxy_model_ab2e8701cd4689495b085d112425b7f8d}{filter\+Enabled}} () const
 \begin{DoxyCompactList}\small\item\em Cette méthode indique si le filtrage est actif ou non. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE int \mbox{\hyperlink{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc}{get\+Source\+Index}} (int row)
-\begin{DoxyCompactList}\small\item\em La fonction \doxylink{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc}{get\+Source\+Index()} renvoie l\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} dans le modèle source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Cette fonction renvoie l\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} dans le modèle source. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -55,7 +55,7 @@ The \doxylink{class_unlocalized_proxy_model}{Unlocalized\+Proxy\+Model} class is
 
 
 
-Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. 
+Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}has\+GPS"{}. Par défaut, le filtrage est inactif. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -86,15 +86,15 @@ true si le filtre est actif.
 
 
 
-La fonction \doxylink{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc}{get\+Source\+Index()} renvoie l\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} dans le modèle source. 
+Cette fonction renvoie l\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} dans le modèle source. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em row} & \+: indice de la photo dans ce proxy\+Model. \\
+{\em row} & \+: L\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} dans ce {\bfseries{proxy\+Model}}. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-l\textquotesingle{}indice de la photo dans le source\+Model. 
+l\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} dans le {\bfseries{source\+Model}}. 
 \end{DoxyReturn}
 \Hypertarget{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7}\label{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7} 
 \index{UnlocalizedProxyModel@{UnlocalizedProxyModel}!setFilterEnabled@{setFilterEnabled}}
@@ -104,7 +104,7 @@ l\textquotesingle{}indice de la photo dans le source\+Model.
 
 
 
-Le slot \doxylink{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7}{set\+Filter\+Enabled()} active ou désactive le filtrage par le Proxy\+Model. 
+Ce slot active ou désactive le filtrage par le proxy\+Model. 
 
 
 \begin{DoxyParams}{Parameters}

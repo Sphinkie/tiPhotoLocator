@@ -7,5 +7,6 @@ var searchData=
   ['compilation_4',['compilation',['../md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html',1,'Compilation'],['../index.html#autotoc_md4',1,'Compilation']]],
   ['core_20tags_5',['IPTC CORE tags',['../md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags.html#autotoc_md8',1,'']]],
   ['country_6',['country',['../struct_photo.html#a9bf494760dfe13bc320c8395a1d8368f',1,'Photo']]],
-  ['cousin_20projects_7',['Cousin projects',['../index.html#autotoc_md5',1,'']]]
+  ['cousin_20projects_7',['Cousin projects',['../index.html#autotoc_md5',1,'']]],
+  ['creator_8',['creator',['../struct_photo.html#a8557579ced9c4e8587443564bfe659dd',1,'Photo']]]
 ];

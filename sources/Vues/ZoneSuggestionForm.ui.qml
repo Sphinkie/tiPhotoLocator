@@ -23,12 +23,13 @@ Zone{
             Layout.rightMargin: 20
         }
 
-        SuggestionListView {
-            id : slv
+        SuggestionRepeater {
+            id : suggestionRepeater
+            model: _suggestionGeoProxyModel
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.leftMargin: 20
-            filterString: "Geo"
+            // filterString: "geo"
         }
     }
 

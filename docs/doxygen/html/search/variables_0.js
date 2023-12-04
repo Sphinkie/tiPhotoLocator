@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['artist_0',['artist',['../struct_photo.html#ab5682d56db6f4676b1882bbc1a39b5fb',1,'Photo']]]
+  ['cammodel_0',['camModel',['../struct_photo.html#a3c5204d88a446d1df0ee95feee81a574',1,'Photo']]],
+  ['category_1',['category',['../struct_suggestion.html#abdfdd0ed210feac3b5cd826c40d7643f',1,'Suggestion']]],
+  ['city_2',['city',['../struct_photo.html#af69f56742ec76589b96b355cdc447149',1,'Photo']]],
+  ['country_3',['country',['../struct_photo.html#a9bf494760dfe13bc320c8395a1d8368f',1,'Photo']]],
+  ['creator_4',['creator',['../struct_photo.html#a8557579ced9c4e8587443564bfe659dd',1,'Photo']]]
 ];

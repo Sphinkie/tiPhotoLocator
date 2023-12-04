@@ -1,16 +1,15 @@
 import QtQuick 2.15
 import QtQuick.Layouts
 import QtQuick.Controls
-// pour Checkbox
 import QtCore
-// Qt.labs.settings
 import "../Components"
 
 Rectangle {
     color: TiStyle.surfaceContainerColor
     height: bottomToolBarLayout.height + 20
 
-    property alias bt_dump: bt_dump
+    property alias bt_dump1: bt_dump1
+    property alias bt_dump2: bt_dump2
     property alias cb_backups: cb_backups
     property alias bt_save: bt_save
     property alias bt_quit: bt_quit
@@ -22,8 +21,17 @@ Rectangle {
         spacing: 20
 
         TiButton {
-            id: bt_dump
-            text: qsTr("Dump model")
+            id: bt_dump1
+            text: qsTr("Dump PhotoModel")
+            ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
+            ToolTip.visible: hovered
+            ToolTip.delay: 500
+            Layout.leftMargin: 20
+            Layout.topMargin: 10
+        }
+        TiButton {
+            id: bt_dump2
+            text: qsTr("Dump SuggModel")
             ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
             ToolTip.visible: hovered
             ToolTip.delay: 500

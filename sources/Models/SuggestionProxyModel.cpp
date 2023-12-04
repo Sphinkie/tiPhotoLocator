@@ -81,7 +81,7 @@ void SuggestionProxyModel::setFilterValue(const int photoRow)
 /* ********************************************************************************** */
 /*!
  * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
- * On convertit l'indice du ProxyModel dans l'index du sourceModel.
+ * \note On convertit l'indice du ProxyModel dans l'index du sourceModel.
  * \param proxyRow : Indice dans le ProxyModel de la Suggestion à modifier.
  */
 void SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)

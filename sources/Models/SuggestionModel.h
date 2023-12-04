@@ -29,11 +29,11 @@ struct Suggestion
 
     // Elements de la structure
     QString text;              //!< Le contenu textuel de la suggestion. Example: "COSTA RICA".
-    QString target;            //!< Le nom de la métadata compatible avec ce texte. Example: "Country".
-    QString category;          //!< Permet aux zones d'afficher ou non la suggestion. Example: "Geo", "Photo"...
+    QString target;            //!< Le nom de la metadata compatible avec ce texte. Example: "Country".
+    QString category;          //!< Permet aux zones d'afficher ou non la suggestion. Example: "geo", "photo"...
     QSet<int> photos;          //!< List of Photo matching this suggestion.
 
-    // Surcharges d'operateurs
+    // Surcharges d'operateur
     bool operator== (const Suggestion &suggestion) const;
 };
 
@@ -71,8 +71,8 @@ public:
     // -----------------------------------------------------
     // Methodes publiques
     // -----------------------------------------------------
-//    void append(const QString text, const QString target, const QString category);
     void removeCurrentPhotoFromSuggestion(const QModelIndex index);
+    Q_INVOKABLE void dumpData();
 
 public slots:
     void onSelectedPhotoChanged(const int row);
@@ -89,6 +89,7 @@ private:
     // -----------------------------------------------------
     QVector<Suggestion> m_suggestions;
     int m_selectedPhotoRow = -3;    // La valeur par defaut -3 ne correspond à aucune photo
+    int m_dumpedRow;
 
 };
 

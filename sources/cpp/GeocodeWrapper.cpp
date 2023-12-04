@@ -40,6 +40,7 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 /*!
  * \brief Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS.
  *        Par exemple: 38.980 et 1.433 => <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway">Résultat</a>
+ *        La réponse est traitée par geoCodeFinished()
  * \param latitude : coordonnées GPS
  * \param longitude: coordonnées GPS
  */
@@ -66,6 +67,7 @@ void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
 /* ********************************************************************************************************** */
 /*!
  * \brief Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city.
+ *        La réponse est traitée par geoCodeFinished()
  * \param city : un nom de lieu, par exemple "Marsa el Brega" => 30.4074, 19.5784
  */
 void GeocodeWrapper::requestCoordinates(QString city)
@@ -131,7 +133,7 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
                     if (field == adresse.country()) target = "country";
                     else if (field == adresse.state()) target = "country";
                     else target = "city";
-                    m_suggestionModel->append(field, target, "Geo");
+                    m_suggestionModel->append(field, target, "geo");
                 }
             }
         }

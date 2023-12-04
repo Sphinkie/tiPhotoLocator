@@ -113,10 +113,10 @@ Inheritance diagram for GeocodeWrapper:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a4317ba9f8e11b9bf6b555df8a065b54b" id="r_a4317ba9f8e11b9bf6b555df8a065b54b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geocode_wrapper.html#a4317ba9f8e11b9bf6b555df8a065b54b">requestReverseGeocode</a> (double latitude, double longitude)</td></tr>
-<tr class="memdesc:a4317ba9f8e11b9bf6b555df8a065b54b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple: 38.980 et 1.433 =&gt; <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=313893003&amp;class=highway">Résultat</a>  <br /></td></tr>
+<tr class="memdesc:a4317ba9f8e11b9bf6b555df8a065b54b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple: 38.980 et 1.433 =&gt; <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=313893003&amp;class=highway">Résultat</a> La réponse est traitée par geoCodeFinished()  <br /></td></tr>
 <tr class="separator:a4317ba9f8e11b9bf6b555df8a065b54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3c38ff6c5a53d2b6c04cf5c88763b23" id="r_ab3c38ff6c5a53d2b6c04cf5c88763b23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geocode_wrapper.html#ab3c38ff6c5a53d2b6c04cf5c88763b23">requestCoordinates</a> (QString city)</td></tr>
-<tr class="memdesc:ab3c38ff6c5a53d2b6c04cf5c88763b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city.  <br /></td></tr>
+<tr class="memdesc:ab3c38ff6c5a53d2b6c04cf5c88763b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par geoCodeFinished()  <br /></td></tr>
 <tr class="separator:ab3c38ff6c5a53d2b6c04cf5c88763b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -190,7 +190,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. </p>
+<p>Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par geoCodeFinished() </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">city</td><td>: un nom de lieu, par exemple "Marsa el Brega" =&gt; 30.4074, 19.5784 </td></tr>
@@ -234,7 +234,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple: 38.980 et 1.433 =&gt; <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=313893003&amp;class=highway">Résultat</a> </p>
+<p>Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple: 38.980 et 1.433 =&gt; <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=313893003&amp;class=highway">Résultat</a> La réponse est traitée par geoCodeFinished() </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">latitude</td><td>: coordonnées GPS </td></tr>

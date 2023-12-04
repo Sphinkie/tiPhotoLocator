@@ -7,6 +7,7 @@ var annotated_dup =
     [ "Photo", "struct_photo.html", "struct_photo" ],
     [ "PhotoModel", "class_photo_model.html", "class_photo_model" ],
     [ "Suggestion", "struct_suggestion.html", "struct_suggestion" ],
+    [ "SuggestionGeoProxyModel", "class_suggestion_geo_proxy_model.html", "class_suggestion_geo_proxy_model" ],
     [ "SuggestionModel", "class_suggestion_model.html", "class_suggestion_model" ],
     [ "SuggestionProxyModel", "class_suggestion_proxy_model.html", "class_suggestion_proxy_model" ],
     [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", "class_unlocalized_proxy_model" ],

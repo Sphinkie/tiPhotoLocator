@@ -6,10 +6,11 @@
 #include <QSettings>
 
 #include "Models/PhotoModel.h"
-#include "Models/SuggestionModel.h"
 #include "Models/OnTheMapProxyModel.h"
-#include "Models/SuggestionProxyModel.h"
 #include "Models/UnlocalizedProxyModel.h"
+#include "Models/SuggestionModel.h"
+#include "Models/SuggestionProxyModel.h"
+#include "Models/SuggestionGeoProxyModel.h"
 #include "cpp/GeocodeWrapper.h"
 
 
@@ -62,9 +63,12 @@ int main(int argc, char *argv[])
     onTheMapProxyModel.setSourceModel(&photoListModel);
     UnlocalizedProxyModel unlocalizedProxyModel;
     unlocalizedProxyModel.setSourceModel(&photoListModel);
+
     SuggestionModel suggestionModel;
     SuggestionProxyModel suggestionProxyModel;
     suggestionProxyModel.setSourceModel(&suggestionModel);
+    SuggestionGeoProxyModel suggestionGeoProxyModel;
+    suggestionGeoProxyModel.setSourceModel(&suggestionProxyModel);
     // --------------------------------------
     // On initialise nos classes
     // --------------------------------------
@@ -80,11 +84,13 @@ int main(int argc, char *argv[])
 //    QQmlContext* context = view.rootContext();
 
     // --------------------------------------
-    // On ajoute au contexte les classes  qui ont des property QML
+    // On ajoute au contexte les classes qui ont des property QML
     // --------------------------------------
     context->setContextProperty("_photoListModel", &photoListModel);
     context->setContextProperty("_onTheMapProxyModel", &onTheMapProxyModel);
+    context->setContextProperty("_suggestionModel", &suggestionModel);  // Pour le dump de debug
     context->setContextProperty("_suggestionProxyModel", &suggestionProxyModel);
+    context->setContextProperty("_suggestionGeoProxyModel", &suggestionGeoProxyModel);
     context->setContextProperty("_unlocalizedProxyModel", &unlocalizedProxyModel);
 
     // Chargement du QMl. Au choix:

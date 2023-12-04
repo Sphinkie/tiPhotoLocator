@@ -32,15 +32,20 @@ The \doxylink{class_utilities}{Utilities} class contains a set of usefull static
 
 Convertit une chaine du type "{}25/08/2017 08\+:03"{} au format "{}2017\+:08\+:25 08\+:03\+:00"{}. 
 
-0123456789 
+
 \begin{DoxyParams}{Parameters}
-{\em value} & \+: Le QVariant contenant la date. \\
+{\em value} & \+: Le QVariant contenant la nouvelle date. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-la date pouvant être écrite dans un tag Exif. 
+la date pouvant être écrite dans un tag Exif.
 \end{DoxyReturn}
-\Hypertarget{class_utilities_a631df43ec7201eb2ed7ac18491564040}\label{class_utilities_a631df43ec7201eb2ed7ac18491564040} 
+La fonction est intelligente et reconnait s\textquotesingle{}il s\textquotesingle{}agit d\textquotesingle{}une Date, d\textquotesingle{}un Time ou d\textquotesingle{}un Date\+Time.
+\begin{DoxyItemize}
+\item Date\+Time \+: "{}25/08/2017 08\+:03"{} -\/\texorpdfstring{$>$}{>} "{}2017\+:08\+:25 08\+:03\+:00"{} (convertion + ajout des secondes)
+\item Date \+: "{}25/08/2017"{} -\/\texorpdfstring{$>$}{>} "{}2017\+:08\+:25 02\+:15\+:45"{} (convertion + conservation du time)
+\item Time \+: "{}08\+:03"{} -\/\texorpdfstring{$>$}{>} "{}1934\+:01\+:10 08\+:03\+:00"{} (convertion + conservation de la date) 
+\end{DoxyItemize}\Hypertarget{class_utilities_a631df43ec7201eb2ed7ac18491564040}\label{class_utilities_a631df43ec7201eb2ed7ac18491564040} 
 \index{Utilities@{Utilities}!toReadableDate@{toReadableDate}}
 \index{toReadableDate@{toReadableDate}!Utilities@{Utilities}}
 \doxysubsubsection{\texorpdfstring{toReadableDate()}{toReadableDate()}}

@@ -88,9 +88,9 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
  * \brief Adds a suggestion to the model.
  *        Ce slot permet à n'importe qui d'ajouter une Suggestion.
  *
- * \param text: Text of the Suggestion.
+ * \param text: The text of the Suggestion.
  * \param target: The name of the Exif tag compatible with this Suggestion.
- * \param category: The category of the Suggestion ("Geo", "photo" ... )
+ * \param category: The category of the Suggestion ("geo", "photo" ... )
  * \param photo_row: L'indice de la Photo à associée à cette Suggestion.
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
  *                   La valeur spéciale -2 signifie 'la Photo sélectionée' (valeur par défaut).
@@ -116,7 +116,7 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
         photo_row = m_selectedPhotoRow;
     }
     // On ajoute la photo à la suggestion
-    qDebug()<< "Adding" << target << "suggestion " << text << "for" << photo_row;;
+    qDebug()<< "Adding" << target <<  "(" << category << ") suggestion " << text << "for" << photo_row;
     Suggestion* new_suggestion = new Suggestion(text, target, category, photo_row);
     const int rowOfInsert = m_suggestions.count();
     // On ajoute la suggestion à la liste
@@ -176,6 +176,22 @@ void SuggestionModel::onSelectedPhotoChanged(const int row)
     m_selectedPhotoRow = row;
 }
 
+/* ********************************************************************************************************** */
+/*!
+ * \brief Debug function that print (in the console) one line of the model at every call.
+ */
+void SuggestionModel::dumpData()
+{
+    if (m_dumpedRow>=m_suggestions.count()) {
+        qDebug() << "dump completed";
+        m_dumpedRow = 0;
+        return;
+    }
+    qDebug() << m_suggestions[m_dumpedRow].category << m_suggestions[m_dumpedRow].target << m_suggestions[m_dumpedRow].text << m_suggestions[m_dumpedRow].photos;
+    m_dumpedRow++;
+}
+
+
 /* ********************************************************************************** */
 /*!
  * \brief Operateur de comparaison.
@@ -189,3 +205,5 @@ bool Suggestion::operator== (const Suggestion &suggestion) const
     // Even though the signature defines operator== to take three arguments, it can only accommodate two.
     return (this->text == suggestion.text);
 }
+
+

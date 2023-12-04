@@ -14,6 +14,7 @@ var hierarchy =
     ] ],
     [ "QSortFilterProxyModel", null, [
       [ "OnTheMapProxyModel", "class_on_the_map_proxy_model.html", null ],
+      [ "SuggestionGeoProxyModel", "class_suggestion_geo_proxy_model.html", null ],
       [ "SuggestionProxyModel", "class_suggestion_proxy_model.html", null ],
       [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", null ]
     ] ],

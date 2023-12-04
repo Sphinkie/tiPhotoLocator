@@ -147,6 +147,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aea38923e1af3b5faee8ba4caccc8281f" id="r_aea38923e1af3b5faee8ba4caccc8281f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f">removeCurrentPhotoFromSuggestion</a> (const QModelIndex index)</td></tr>
 <tr class="memdesc:aea38923e1af3b5faee8ba4caccc8281f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.  <br /></td></tr>
 <tr class="separator:aea38923e1af3b5faee8ba4caccc8281f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3345223f2aa9b5d563b9097271a1d20" id="r_af3345223f2aa9b5d563b9097271a1d20"><td class="memItemLeft" align="right" valign="top"><a id="af3345223f2aa9b5d563b9097271a1d20" name="af3345223f2aa9b5d563b9097271a1d20"></a>
+Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>dumpData</b> ()</td></tr>
+<tr class="memdesc:af3345223f2aa9b5d563b9097271a1d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug function that print (in the console) one line of the model at every call. <br /></td></tr>
+<tr class="separator:af3345223f2aa9b5d563b9097271a1d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a> class manages a list of <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. </p>
@@ -235,9 +239,9 @@ Public Member Functions</h2></td></tr>
 <p>Adds a suggestion to the model. Ce slot permet à n'importe qui d'ajouter une <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>Text of the <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. </td></tr>
+    <tr><td class="paramname">text</td><td>The text of the <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. </td></tr>
     <tr><td class="paramname">target</td><td>The name of the Exif tag compatible with this <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. </td></tr>
-    <tr><td class="paramname">category</td><td>The category of the <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> ("Geo", "photo" ... ) </td></tr>
+    <tr><td class="paramname">category</td><td>The category of the <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> ("geo", "photo" ... ) </td></tr>
     <tr><td class="paramname">photo_row</td><td>L'indice de la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> à associée à cette <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. La valeur spéciale -1 signifie 'toutes les photos'. La valeur spéciale -2 signifie 'la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> sélectionée' (valeur par défaut). </td></tr>
   </table>
   </dd>

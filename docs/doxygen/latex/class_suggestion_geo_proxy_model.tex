@@ -1,0 +1,119 @@
+\doxysection{Suggestion\+Geo\+Proxy\+Model Class Reference}
+\hypertarget{class_suggestion_geo_proxy_model}{}\label{class_suggestion_geo_proxy_model}\index{SuggestionGeoProxyModel@{SuggestionGeoProxyModel}}
+
+
+The \doxylink{class_suggestion_geo_proxy_model}{Suggestion\+Geo\+Proxy\+Model} class is a filter Proxy\+Model, that keeps only \doxylink{struct_suggestion}{Suggestion} with the "{}geo"{} category.  
+
+
+
+
+{\ttfamily \#include $<$Suggestion\+Geo\+Proxy\+Model.\+h$>$}
+
+Inheritance diagram for Suggestion\+Geo\+Proxy\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_suggestion_geo_proxy_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_suggestion_geo_proxy_model_a0ac9e6583c525596932ca001fc217152}{set\+Filter\+Enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Ce slot active ou désactive le filtrage par le proxy\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_suggestion_geo_proxy_model_a02cfab6546bfc88c171d8a9891e5b317}\label{class_suggestion_geo_proxy_model_a02cfab6546bfc88c171d8a9891e5b317} 
+void {\bfseries filter\+Enabled\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Signal émis quand l\textquotesingle{}état du filtrage change. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_suggestion_geo_proxy_model_accd7ef9b007d19ff9edb43d370c2d85a}{Suggestion\+Geo\+Proxy\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}category"{}. Par défaut, le filtrage est actif. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_suggestion_geo_proxy_model_a2255ccd81b2b067cbbf2a282e16743e2}{filter\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em Cette méthode indique si le filtrage est actif ou non. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE int \mbox{\hyperlink{class_suggestion_geo_proxy_model_a268ffb23a1cd5d6fff46cbde93054db1}{get\+Source\+Index}} (int row)
+\begin{DoxyCompactList}\small\item\em Cette fonction renvoie l\textquotesingle{}indice de la \doxylink{struct_suggestion}{Suggestion} dans le modèle source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_suggestion_geo_proxy_model_a41ed0bd8f4f1d756a72f76d979d3a8f2}\label{class_suggestion_geo_proxy_model_a41ed0bd8f4f1d756a72f76d979d3a8f2} 
+bool {\bfseries filter\+Enabled}
+\begin{DoxyCompactList}\small\item\em filter\+Enabled manages the status of the filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_suggestion_geo_proxy_model}{Suggestion\+Geo\+Proxy\+Model} class is a filter Proxy\+Model, that keeps only \doxylink{struct_suggestion}{Suggestion} with the "{}geo"{} category. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_suggestion_geo_proxy_model_accd7ef9b007d19ff9edb43d370c2d85a}\label{class_suggestion_geo_proxy_model_accd7ef9b007d19ff9edb43d370c2d85a} 
+\index{SuggestionGeoProxyModel@{SuggestionGeoProxyModel}!SuggestionGeoProxyModel@{SuggestionGeoProxyModel}}
+\index{SuggestionGeoProxyModel@{SuggestionGeoProxyModel}!SuggestionGeoProxyModel@{SuggestionGeoProxyModel}}
+\doxysubsubsection{\texorpdfstring{SuggestionGeoProxyModel()}{SuggestionGeoProxyModel()}}
+{\footnotesize\ttfamily Suggestion\+Geo\+Proxy\+Model\+::\+Suggestion\+Geo\+Proxy\+Model (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}category"{}. Par défaut, le filtrage est actif. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \+: modèle source \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_suggestion_geo_proxy_model_a2255ccd81b2b067cbbf2a282e16743e2}\label{class_suggestion_geo_proxy_model_a2255ccd81b2b067cbbf2a282e16743e2} 
+\index{SuggestionGeoProxyModel@{SuggestionGeoProxyModel}!filterEnabled@{filterEnabled}}
+\index{filterEnabled@{filterEnabled}!SuggestionGeoProxyModel@{SuggestionGeoProxyModel}}
+\doxysubsubsection{\texorpdfstring{filterEnabled()}{filterEnabled()}}
+{\footnotesize\ttfamily bool Suggestion\+Geo\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Cette méthode indique si le filtrage est actif ou non. 
+
+\begin{DoxyReturn}{Returns}
+true si le filtre est actif. 
+\end{DoxyReturn}
+\Hypertarget{class_suggestion_geo_proxy_model_a268ffb23a1cd5d6fff46cbde93054db1}\label{class_suggestion_geo_proxy_model_a268ffb23a1cd5d6fff46cbde93054db1} 
+\index{SuggestionGeoProxyModel@{SuggestionGeoProxyModel}!getSourceIndex@{getSourceIndex}}
+\index{getSourceIndex@{getSourceIndex}!SuggestionGeoProxyModel@{SuggestionGeoProxyModel}}
+\doxysubsubsection{\texorpdfstring{getSourceIndex()}{getSourceIndex()}}
+{\footnotesize\ttfamily int Suggestion\+Geo\+Proxy\+Model\+::get\+Source\+Index (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})}
+
+
+
+Cette fonction renvoie l\textquotesingle{}indice de la \doxylink{struct_suggestion}{Suggestion} dans le modèle source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \+: L\textquotesingle{}indice de la \doxylink{struct_suggestion}{Suggestion} dans ce {\bfseries{proxy\+Model}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}indice de la \doxylink{struct_suggestion}{Suggestion} dans le {\bfseries{source\+Model}}. 
+\end{DoxyReturn}
+\Hypertarget{class_suggestion_geo_proxy_model_a0ac9e6583c525596932ca001fc217152}\label{class_suggestion_geo_proxy_model_a0ac9e6583c525596932ca001fc217152} 
+\index{SuggestionGeoProxyModel@{SuggestionGeoProxyModel}!setFilterEnabled@{setFilterEnabled}}
+\index{setFilterEnabled@{setFilterEnabled}!SuggestionGeoProxyModel@{SuggestionGeoProxyModel}}
+\doxysubsubsection{\texorpdfstring{setFilterEnabled}{setFilterEnabled}}
+{\footnotesize\ttfamily void Suggestion\+Geo\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ce slot active ou désactive le filtrage par le proxy\+Model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & \+: true pour activer le filtrage \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Models/Suggestion\+Geo\+Proxy\+Model.\+h\item 
+Models/Suggestion\+Geo\+Proxy\+Model.\+cpp\end{DoxyCompactItemize}

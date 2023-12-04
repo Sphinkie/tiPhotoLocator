@@ -23,7 +23,7 @@ void \mbox{\hyperlink{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424
 void \mbox{\hyperlink{class_suggestion_proxy_model_add1caa599574ee457caa9f63251e5252}{set\+Filter\+Value}} (const int photo\+Row)
 \begin{DoxyCompactList}\small\item\em Mémorise le filtre à appliquer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10}{remove\+Photo\+From\+Suggestion}} (const int proxy\+Row)
-\begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -113,8 +113,11 @@ true if the filter is active.
 
 
 
-Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model. 
+Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
 
+\begin{DoxyNote}{Note}
+On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model. 
+\end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
 {\em proxy\+Row} & \+: Indice dans le Proxy\+Model de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\

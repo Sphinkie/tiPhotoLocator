@@ -20,19 +20,18 @@ Zone {
             padding: 10
             spacing: 10
 
-
-            SuggestionListView {
-                id: slv
-                filterString: "photo"
+            SuggestionRepeater {
+                id: suggestionRepeater
+                model: _suggestionProxyModel
+                // filterString: "photo"
             }
 
             TiButton {
-                 id: bt_getinfo
-                 text: qsTr("Autres tags...")
-                 color: "lightskyblue"
-                 icon.source: "qrc:/Images/icon-suggestion.png"
-             }
-
+                id: bt_getinfo
+                text: qsTr("Autres tags...")
+                color: "lightskyblue"
+                icon.source: "qrc:/Images/icon-suggestion.png"
+            }
         }
     }
 }

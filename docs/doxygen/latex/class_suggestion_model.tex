@@ -44,7 +44,10 @@ int \mbox{\hyperlink{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}{r
 QVariant \mbox{\hyperlink{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c}{data}} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
 \begin{DoxyCompactList}\small\item\em Returns the requested role value of an element of the model. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f}{remove\+Current\+Photo\+From\+Suggestion}} (const QModel\+Index index)
-\begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\item 
+\Hypertarget{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20}\label{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20} 
+Q\+\_\+\+INVOKABLE void {\bfseries dump\+Data} ()
+\begin{DoxyCompactList}\small\item\em Debug function that print (in the console) one line of the model at every call. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -81,11 +84,11 @@ Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui
 
 
 \begin{DoxyParams}{Parameters}
-{\em text} & Text of the \doxylink{struct_suggestion}{Suggestion}. \\
+{\em text} & The text of the \doxylink{struct_suggestion}{Suggestion}. \\
 \hline
 {\em target} & The name of the Exif tag compatible with this \doxylink{struct_suggestion}{Suggestion}. \\
 \hline
-{\em category} & The category of the \doxylink{struct_suggestion}{Suggestion} ("{}\+Geo"{}, "{}photo"{} ... ) \\
+{\em category} & The category of the \doxylink{struct_suggestion}{Suggestion} ("{}geo"{}, "{}photo"{} ... ) \\
 \hline
 {\em photo\+\_\+row} & L\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} à associée à cette \doxylink{struct_suggestion}{Suggestion}. La valeur spéciale -\/1 signifie \textquotesingle{}toutes les photos\textquotesingle{}. La valeur spéciale -\/2 signifie \textquotesingle{}la \doxylink{struct_photo}{Photo} sélectionée\textquotesingle{} (valeur par défaut). \\
 \hline

@@ -6,6 +6,6 @@ var searchData=
   ['descriptionwriter_3',['descriptionWriter',['../struct_photo.html#acb90e7577e987fce17f38f399a110dcb',1,'Photo']]],
   ['developpement_20environnement_4',['Installation of the developpement environnement',['../md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html#autotoc_md12',1,'']]],
   ['documentation_5',['Documentation',['../md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html#autotoc_md13',1,'']]],
-  ['dumpdata_6',['dumpData',['../class_photo_model.html#a822190ecc2081c7b49030c0f6a42317f',1,'PhotoModel']]],
+  ['dumpdata_6',['dumpdata',['../class_photo_model.html#a822190ecc2081c7b49030c0f6a42317f',1,'PhotoModel::dumpData()'],['../class_suggestion_model.html#af3345223f2aa9b5d563b9097271a1d20',1,'SuggestionModel::dumpData()']]],
   ['duplicatedata_7',['duplicateData',['../class_photo_model.html#aacde479b741e9f94c2077ad979e6b6a7',1,'PhotoModel']]]
 ];
