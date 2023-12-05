@@ -30,7 +30,7 @@ struct Suggestion
     // Elements de la structure
     QString text;              //!< Le contenu textuel de la suggestion. Example: "COSTA RICA".
     QString target;            //!< Le nom de la metadata compatible avec ce texte. Example: "Country".
-    QString category;          //!< Permet aux zones d'afficher ou non la suggestion. Example: "geo", "photo"...
+    QString category;          //!< Permet aux zones d'afficher ou non la suggestion. Example: "geo", "tag"...
     QSet<int> photos;          //!< List of Photo matching this suggestion.
 
     // Surcharges d'operateur

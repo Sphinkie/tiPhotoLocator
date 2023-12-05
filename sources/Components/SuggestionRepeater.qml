@@ -5,7 +5,6 @@ Repeater{
     delegate: suggestionDelegate
     focus: false
     clip: true   // pour que les items restent à l'interieur du Repeater
-    // property string filterString
 
 
     // le delegate pour afficher un item dans le Flow
@@ -27,14 +26,12 @@ Repeater{
                 content: text + " (" + target + ")"
                 editable: false
                 deletable: false
-                // visible: (category === filterString) ? true : false   // strict comparison (no type-conversion)
             }
 
             // Gestion du clic sur un item (Chip suggestion)
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-//                    console.log(filterString);
                     console.log("chipMouseArea:" + target + " for " + tabbedPage.selectedData.row);
                     // On affecte le texte de la suggestion à la target
                     window.setPhotoProperty(tabbedPage.selectedData.row, text, target);
@@ -44,8 +41,6 @@ Repeater{
                     tabbedPage.refreshSelectedData()
                 }
             }
-
-            Component.onCompleted: console.log(category + ":" + text);
         }
     }
 }

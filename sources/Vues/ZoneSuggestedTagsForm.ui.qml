@@ -22,8 +22,7 @@ Zone {
 
             SuggestionRepeater {
                 id: suggestionRepeater
-                model: _suggestionProxyModel
-                // filterString: "photo"
+                model: _suggestionTagProxyModel
             }
 
             TiButton {

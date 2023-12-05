@@ -16,13 +16,13 @@ SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
     QSettings settings;
     QString photographe = settings.value("photographe","").toString();
     QString initiales   = settings.value("initiales","").toString();
-    this->append(photographe, "creator", "photo", -1);
-    this->append(initiales, "descriptionWriter", "photo", -1);
-    this->append("paysage", "keywords", "photo", -1);
-    this->append("portrait", "keywords", "photo", -1);
-    this->append("urbanisme", "keywords", "photo", -1);
-    this->append("nature", "keywords", "photo", -1);
-    this->append("animaux", "keywords", "photo", -1);
+    this->append(photographe, "creator", "tag", -1);
+    this->append(initiales, "descriptionWriter", "tag", -1);
+    this->append("paysage", "keywords", "tag", -1);
+    this->append("portrait", "keywords", "tag", -1);
+    this->append("urbanisme", "keywords", "tag", -1);
+    this->append("nature", "keywords", "tag", -1);
+    this->append("animaux", "keywords", "tag", -1);
 }
 
 
@@ -90,7 +90,7 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
  *
  * \param text: The text of the Suggestion.
  * \param target: The name of the Exif tag compatible with this Suggestion.
- * \param category: The category of the Suggestion ("geo", "photo" ... )
+ * \param category: The category of the Suggestion ("geo", "tag" ... )
  * \param photo_row: L'indice de la Photo à associée à cette Suggestion.
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
  *                   La valeur spéciale -2 signifie 'la Photo sélectionée' (valeur par défaut).
@@ -101,10 +101,14 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
 
     for (int i=0; i<m_suggestions.count(); i++ )
     {
+        // TODO : si la catégorie est différente: à décider si on crée 2 suggestions,
+        // ou si on on gère une catégoryList (à la place de Category)
+        // ou un enum : "geo" , "tag", "all" ... (solution favorite ?)
         if (m_suggestions.at(i).text == text)
         {
             // Trouvé: la suggestion existe dejà
             qDebug() << "already contains" << text;
+            // On ajoute la photo à la liste
             this->addPhotoToSuggestion(i, photo_row);
             return;
         }

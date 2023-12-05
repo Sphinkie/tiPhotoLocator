@@ -425,7 +425,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // Certaines infos sont des suggestions
     // -------------------------------------
     QString createDate = Utilities::toReadableDate(value_list["CreateDate"]);
-    emit sendSuggestion(createDate, "dateTimeOriginal", "photo", row);
+    emit sendSuggestion(createDate, "dateTimeOriginal", "tag", row);
 }
 
 

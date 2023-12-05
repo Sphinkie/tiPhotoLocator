@@ -29,7 +29,6 @@ Zone{
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.leftMargin: 20
-            // filterString: "geo"
         }
     }
 

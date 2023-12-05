@@ -1,5 +1,5 @@
-#ifndef SUGGESTIONGEOPROXYMODEL_H
-#define SUGGESTIONGEOPROXYMODEL_H
+#ifndef SUGGESTIONTAGPROXYMODEL_H
+#define SUGGESTIONTAGPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
 
@@ -7,14 +7,14 @@
 
 /* ************************************************************************ */
 /*!
- * \class SuggestionGeoProxyModel
- * \brief The SuggestionGeoProxyModel class is a filter ProxyModel, that keeps
- *        only Suggestion with the "geo" category.
+ * \class SuggestionTagProxyModel
+ * \brief The SuggestionTagProxyModel class is a filter ProxyModel, that keeps
+ *        only Suggestion with the "tag" category.
  */
 /* ************************************************************************ */
 
 
-class SuggestionGeoProxyModel : public QSortFilterProxyModel
+class SuggestionTagProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
@@ -22,7 +22,7 @@ class SuggestionGeoProxyModel : public QSortFilterProxyModel
     Q_PROPERTY(bool filterEnabled READ filterEnabled WRITE setFilterEnabled NOTIFY filterEnabledChanged)
 
 public:
-    explicit SuggestionGeoProxyModel(QObject *parent = nullptr);
+    explicit SuggestionTagProxyModel(QObject *parent = nullptr);
     bool filterEnabled() const;
 
 public slots:
@@ -33,4 +33,4 @@ signals:
 
 };
 
-#endif // SUGGESTIONGEOPROXYMODEL_H
+#endif // SUGGESTIONTAGPROXYMODEL_H

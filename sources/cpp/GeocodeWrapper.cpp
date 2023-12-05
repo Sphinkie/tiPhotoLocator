@@ -136,6 +136,8 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
                     m_suggestionModel->append(field, target, "geo");
                 }
             }
+            // On ajoute aussi le premier field en tant que "tag"
+            m_suggestionModel->append(fieldlist.first(), "keyword", "tag");
         }
     }
     // The user is responsible for deleting the returned reply object.

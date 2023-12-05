@@ -11,6 +11,7 @@
 #include "Models/SuggestionModel.h"
 #include "Models/SuggestionProxyModel.h"
 #include "Models/SuggestionGeoProxyModel.h"
+#include "Models/SuggestionTagProxyModel.h"
 #include "cpp/GeocodeWrapper.h"
 
 
@@ -69,6 +70,8 @@ int main(int argc, char *argv[])
     suggestionProxyModel.setSourceModel(&suggestionModel);
     SuggestionGeoProxyModel suggestionGeoProxyModel;
     suggestionGeoProxyModel.setSourceModel(&suggestionProxyModel);
+    SuggestionTagProxyModel suggestionTagProxyModel;
+    suggestionTagProxyModel.setSourceModel(&suggestionProxyModel);
     // --------------------------------------
     // On initialise nos classes
     // --------------------------------------
@@ -91,6 +94,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("_suggestionModel", &suggestionModel);  // Pour le dump de debug
     context->setContextProperty("_suggestionProxyModel", &suggestionProxyModel);
     context->setContextProperty("_suggestionGeoProxyModel", &suggestionGeoProxyModel);
+    context->setContextProperty("_suggestionTagProxyModel", &suggestionTagProxyModel);
     context->setContextProperty("_unlocalizedProxyModel", &unlocalizedProxyModel);
 
     // Chargement du QMl. Au choix:
