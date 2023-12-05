@@ -22,7 +22,7 @@ Zone {
 
             SuggestionRepeater {
                 id: suggestionRepeater
-                model: _suggestionTagProxyModel
+                //model: _suggestionTagProxyModel
             }
 
             TiButton {

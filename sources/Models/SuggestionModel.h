@@ -12,7 +12,7 @@
 struct Suggestion
 {
     //! Default constructor
-    Suggestion() {}
+    Suggestion() {};
 
     //! Constructeur avec valeurs
     Suggestion(const QString &suggestion_text,
@@ -25,7 +25,7 @@ struct Suggestion
         target = suggestion_target;
         category = suggestion_category;
         photos << first_photo;
-    }
+    };
 
     // Elements de la structure
     QString text;              //!< Le contenu textuel de la suggestion. Example: "COSTA RICA".
@@ -83,6 +83,7 @@ private:
     // Methodes privées
     // -----------------------------------------------------
     void addPhotoToSuggestion(const int suggestion_row, int photo_row);
+    void addCategoryToSuggestion(const int suggestion_row, const QString category);
 
     // -----------------------------------------------------
     // Membres

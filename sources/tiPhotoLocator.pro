@@ -11,10 +11,10 @@ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs depr
 SOURCES += \
         Models/OnTheMapProxyModel.cpp \
         Models/PhotoModel.cpp \
+        Models/SuggestionCategoryProxyModel.cpp \
         Models/SuggestionGeoProxyModel.cpp \
         Models/SuggestionModel.cpp \
         Models/SuggestionProxyModel.cpp \
-        Models/SuggestionTagProxyModel.cpp \
         Models/UnlocalizedProxyModel.cpp \
         cpp/ExifReadTask.cpp \
         cpp/ExifWriteTask.cpp \
@@ -48,10 +48,10 @@ DISTFILES += \
 HEADERS += \
     Models/OnTheMapProxyModel.h \
     Models/PhotoModel.h \
+    Models/SuggestionCategoryProxyModel.h \
     Models/SuggestionGeoProxyModel.h \
     Models/SuggestionModel.h \
     Models/SuggestionProxyModel.h \
-    Models/SuggestionTagProxyModel.h \
     Models/UnlocalizedProxyModel.h \
     cpp/ExifReadTask.h \
     cpp/ExifWriteTask.h \

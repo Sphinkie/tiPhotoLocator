@@ -90,7 +90,7 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
  *
  * \param text: The text of the Suggestion.
  * \param target: The name of the Exif tag compatible with this Suggestion.
- * \param category: The category of the Suggestion ("geo", "tag" ... )
+ * \param category: The category of the Suggestion ("geo", "tag", "geo|tag")
  * \param photo_row: L'indice de la Photo à associée à cette Suggestion.
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
  *                   La valeur spéciale -2 signifie 'la Photo sélectionée' (valeur par défaut).
@@ -101,13 +101,12 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
 
     for (int i=0; i<m_suggestions.count(); i++ )
     {
-        // TODO : si la catégorie est différente: à décider si on crée 2 suggestions,
-        // ou si on on gère une catégoryList (à la place de Category)
-        // ou un enum : "geo" , "tag", "all" ... (solution favorite ?)
-        if (m_suggestions.at(i).text == text)
+        if ( (m_suggestions.at(i).text == text) && (m_suggestions.at(i).target == target))
         {
-            // Trouvé: la suggestion existe dejà
+            // Trouvé: la suggestion existe dejà (même texte et même target)
             qDebug() << "already contains" << text;
+            // On ajoute la categorie à la suggestion (au cas où elle est différente)
+            this->addCategoryToSuggestion(i, category);
             // On ajoute la photo à la liste
             this->addPhotoToSuggestion(i, photo_row);
             return;
@@ -132,8 +131,8 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
 /* ********************************************************************************** */
 /*!
  * \brief Ajoute une Photo à la liste des photos ayant un "match" avec cette Suggestion.
- * \param suggestion_row : l'indice de la Suggestion à modifier.
- * \param photo_row : l'indice de la Photo à ajouter à la Suggestion.
+ * \param suggestion_row : L'indice de la Suggestion à modifier.
+ * \param photo_row : L'indice de la Photo à ajouter à la Suggestion.
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
  *                   La valeur spéciale -2 signifie 'la Photo sélectionée'.
  */
@@ -151,11 +150,32 @@ void SuggestionModel::addPhotoToSuggestion(const int suggestion_row, int photo_r
     emit dataChanged(index, index, QVector<int>() << PhotosRole);
 }
 
+/* ********************************************************************************** */
+/*!
+ * \brief Ajoute une catégorie à la Suggestion.
+ * \param suggestion_row : L'indice de la Suggestion à modifier.
+ * \param category : La catégorie à ajouter à la Suggestion.
+ *
+ * Si on veut ajouter la catégorie déjà existante : on ne fait rien.
+ * Si on veut ajouter une autre catégorie : la catégorie devient "geo|tag" (les deux collés).
+ */
+void SuggestionModel::addCategoryToSuggestion(const int suggestion_row, const QString category)
+{
+    if (suggestion_row<0 || suggestion_row>m_suggestions.count()) return;
+
+    if (m_suggestions[suggestion_row].category != category)
+    {
+        m_suggestions[suggestion_row].category = "geo|tag";
+    }
+    // Emit signal
+    QModelIndex index = this->index(suggestion_row, 0);;
+    emit dataChanged(index, index, QVector<int>() << CategoryRole);
+}
 
 /* ********************************************************************************** */
 /*!
  * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
- * \param index : l'index dans le Model de la suggestion à modifier.
+ * \param index : L'index dans le Model de la suggestion à modifier.
  */
 void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 {
@@ -200,7 +220,7 @@ void SuggestionModel::dumpData()
 /*!
  * \brief Operateur de comparaison.
  * \note Cet operateur == permet d'utiliser la méthode Contains().
- * \param suggestion: second operande.
+ * \param suggestion: Second operande.
  * \return True si le \b texte des deux suggestions est identique.
  */
 bool Suggestion::operator== (const Suggestion &suggestion) const

@@ -11,7 +11,7 @@
 #include "Models/SuggestionModel.h"
 #include "Models/SuggestionProxyModel.h"
 #include "Models/SuggestionGeoProxyModel.h"
-#include "Models/SuggestionTagProxyModel.h"
+#include "Models/SuggestionCategoryProxyModel.h"
 #include "cpp/GeocodeWrapper.h"
 
 
@@ -70,8 +70,8 @@ int main(int argc, char *argv[])
     suggestionProxyModel.setSourceModel(&suggestionModel);
     SuggestionGeoProxyModel suggestionGeoProxyModel;
     suggestionGeoProxyModel.setSourceModel(&suggestionProxyModel);
-    SuggestionTagProxyModel suggestionTagProxyModel;
-    suggestionTagProxyModel.setSourceModel(&suggestionProxyModel);
+    SuggestionCategoryProxyModel suggestionCategoryProxyModel;
+    suggestionCategoryProxyModel.setSourceModel(&suggestionProxyModel);
     // --------------------------------------
     // On initialise nos classes
     // --------------------------------------
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("_suggestionModel", &suggestionModel);  // Pour le dump de debug
     context->setContextProperty("_suggestionProxyModel", &suggestionProxyModel);
     context->setContextProperty("_suggestionGeoProxyModel", &suggestionGeoProxyModel);
-    context->setContextProperty("_suggestionTagProxyModel", &suggestionTagProxyModel);
+    context->setContextProperty("_suggestionCategoryProxyModel", &suggestionCategoryProxyModel);
     context->setContextProperty("_unlocalizedProxyModel", &unlocalizedProxyModel);
 
     // Chargement du QMl. Au choix:
@@ -145,8 +145,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &onTheMapProxyModel,   SLOT(setAllItemsCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel,   SLOT(setAllItemsSavedCoords()));
-    QObject::connect(firstRootItem,   SIGNAL(removePhotoFrom(int)),                 &suggestionProxyModel, SLOT(removePhotoFromSuggestion(int)));
     QObject::connect(firstRootItem,   SIGNAL(setSuggestionFilter(int)),             &suggestionProxyModel, SLOT(setFilterValue(int)));
+    QObject::connect(firstRootItem,   SIGNAL(removePhotoFrom(int)),                 &suggestionCategoryProxyModel, SLOT(removePhotoFromSuggestion(int)));
 
     QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper,       SLOT(requestReverseGeocode(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(requestCoords(QString)),               &geocodeWrapper,       SLOT(requestCoordinates(QString)));

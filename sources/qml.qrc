@@ -64,7 +64,6 @@
         <file>Controllers/ZoneSuggestion.qml</file>
         <file>Components/SuggestionRepeater.qml</file>
         <file>Images/welcome.png</file>
-        <file>Components/TiTabButton.qml</file>
         <file>Images/bt-revert.png</file>
         <file>Images/icon-preview.png</file>
         <file>tiPhotoLocator.qch</file>
@@ -79,5 +78,7 @@
         <file>Images/chip-edit.png</file>
         <file>Images/chip-save.png</file>
         <file>Images/chip-revert.png</file>
+        <file>Controllers/TiTabButton.qml</file>
+        <file>Vues/TiTabButtonForm.ui.qml</file>
     </qresource>
 </RCC>

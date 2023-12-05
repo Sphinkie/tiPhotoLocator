@@ -1,7 +1,7 @@
 import QtQuick
 
 Repeater{
-    // model: _suggestionProxyModel
+    model: _suggestionCategoryProxyModel
     delegate: suggestionDelegate
     focus: false
     clip: true   // pour que les items restent à l'interieur du Repeater
@@ -36,9 +36,9 @@ Repeater{
                     // On affecte le texte de la suggestion à la target
                     window.setPhotoProperty(tabbedPage.selectedData.row, text, target);
                     // On enlève le Chip de la zone Suggestions
-                    window.removePhotoFrom(index)           // (index dans le proxyModel)
-                    // On recharge les data pour forcer un refresh de la GeoZone
-                    tabbedPage.refreshSelectedData()
+                    window.removePhotoFrom(index);      // Attn : c'est l'index dans le proxyModel.
+                    // On recharge les data pour forcer un refresh de la Zone
+                    tabbedPage.refreshSelectedData();
                 }
             }
         }

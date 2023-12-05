@@ -9,7 +9,7 @@
 /*!
  * \class SuggestionGeoProxyModel
  * \brief The SuggestionGeoProxyModel class is a filter ProxyModel, that keeps
- *        only Suggestion with the "geo" category.
+ *        only Suggestion with the "geo" (or "geo|tag") category.
  */
 /* ************************************************************************ */
 

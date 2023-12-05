@@ -38,9 +38,9 @@ bool SuggestionGeoProxyModel::filterEnabled() const
 void SuggestionGeoProxyModel::setFilterEnabled(bool enabled)
 {
     if (enabled)
-        this->setFilterFixedString("geo");   // accepte uniquement les Suggestion avec category = "geo"
+        this->setFilterFixedString("geo");   // accepte uniquement les Suggestions avec category = "geo" et "geo|tag"
     else
-        this->setFilterFixedString("");        // accept all
+        this->setFilterFixedString("");      // accept all
 
     emit filterEnabledChanged();
     invalidateFilter();

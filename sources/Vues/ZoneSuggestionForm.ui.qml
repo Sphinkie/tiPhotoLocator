@@ -25,7 +25,7 @@ Zone{
 
         SuggestionRepeater {
             id : suggestionRepeater
-            model: _suggestionGeoProxyModel
+            //model: _suggestionGeoProxyModel
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.leftMargin: 20

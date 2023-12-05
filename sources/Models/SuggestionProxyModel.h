@@ -29,6 +29,7 @@ public slots:
     void setFilterEnabled(bool enabled);
     void setFilterValue(const int photoRow);
     void removePhotoFromSuggestion(const int proxyRow);
+    void removePhotoFromSuggestion(const QModelIndex proxyIndex);
 
 signals:
     void filterEnabledChanged();    //!<  Signal émis quand l'état du filtrage change.

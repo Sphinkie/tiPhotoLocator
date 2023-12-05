@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import "../Components"
 
 TabButton {
     id: control
@@ -19,5 +20,4 @@ TabButton {
         color: control.checked ? TiStyle.chipBackgroundColor : TiStyle.zoneBackgroundColor
         radius: 3
     }
-
 }

@@ -81,7 +81,7 @@ void SuggestionProxyModel::setFilterValue(const int photoRow)
 /* ********************************************************************************** */
 /*!
  * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
- * \note On convertit l'indice du ProxyModel dans l'index du sourceModel.
+ * \note On convertit l'indice du ProxyModel dans l'index du sourceModel SuggestionModel.
  * \param proxyRow : Indice dans le ProxyModel de la Suggestion à modifier.
  */
 void SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)
@@ -93,6 +93,22 @@ void SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)
     auto source_model = dynamic_cast<SuggestionModel*>(this->sourceModel());
     source_model->removeCurrentPhotoFromSuggestion(idx);
 }
+
+/* ********************************************************************************** */
+/*!
+ * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
+ * \note On convertit l'index du ProxyModel dans l'index du sourceModel SuggestionModel.
+ * \param proxyIndex : Index dans le ProxyModel de la Suggestion à modifier.
+ */
+void SuggestionProxyModel::removePhotoFromSuggestion(const QModelIndex proxyIndex)
+{
+    if (!proxyIndex.isValid()) return;
+    // On retire la photo courante de la liste du modèle des données.
+    auto source_model = dynamic_cast<SuggestionModel*>(this->sourceModel());
+    source_model->removeCurrentPhotoFromSuggestion(mapToSource(proxyIndex));
+}
+
+
 
 
 

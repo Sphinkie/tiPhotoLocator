@@ -38,6 +38,7 @@ Window {
     signal requestReverseGeocode(double lati, double longi)
     signal requestCoords(string city)
     signal setSuggestionFilter(int row)
+    signal setCategoryFilter(string category)
     signal setPhotoProperty(int index, string texte, string target)
     signal removePhotoFrom(int row)
 
@@ -124,9 +125,9 @@ Window {
                 Layout.leftMargin: 120
                 Layout.fillWidth: true
                 Layout.rightMargin: 40
-                TiTabButton { text: qsTr("PREVIEW") }
-                TiTabButton { text: qsTr("CARTE")   }
-                TiTabButton { text: qsTr("EXIF/IPTC TAGS")}
+                TiTabButton { text: qsTr("PREVIEW"); }
+                TiTabButton { text: qsTr("CARTE");  filter: "geo" }
+                TiTabButton { text: qsTr("EXIF/IPTC TAGS"); filter: "tag"; }
             }
         }
     }

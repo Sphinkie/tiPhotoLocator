@@ -1,5 +1,5 @@
-#ifndef SUGGESTIONTAGPROXYMODEL_H
-#define SUGGESTIONTAGPROXYMODEL_H
+#ifndef SUGGESTIONCATEGORYPROXYMODEL_H
+#define SUGGESTIONCATEGORYPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
 
@@ -7,14 +7,14 @@
 
 /* ************************************************************************ */
 /*!
- * \class SuggestionTagProxyModel
- * \brief The SuggestionTagProxyModel class is a filter ProxyModel, that keeps
- *        only Suggestion with the "tag" category.
+ * \class SuggestionCategoryProxyModel
+ * \brief The SuggestionCategoryProxyModel class is a filter ProxyModel, that keeps
+ *        only Suggestion with a given category.
  */
 /* ************************************************************************ */
 
 
-class SuggestionTagProxyModel : public QSortFilterProxyModel
+class SuggestionCategoryProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
@@ -22,15 +22,19 @@ class SuggestionTagProxyModel : public QSortFilterProxyModel
     Q_PROPERTY(bool filterEnabled READ filterEnabled WRITE setFilterEnabled NOTIFY filterEnabledChanged)
 
 public:
-    explicit SuggestionTagProxyModel(QObject *parent = nullptr);
+    explicit SuggestionCategoryProxyModel(QObject *parent = nullptr);
     bool filterEnabled() const;
+    Q_INVOKABLE void setFilterValue(QString filter = "");
 
 public slots:
     void setFilterEnabled(bool enabled);
+    void removePhotoFromSuggestion(const int proxyRow);
 
 signals:
     void filterEnabledChanged();  //!< Signal émis quand l'état du filtrage change.
 
+private:
+    QString m_filter = "";
 };
 
-#endif // SUGGESTIONTAGPROXYMODEL_H
+#endif // SUGGESTIONCATEGORYPROXYMODEL_H
