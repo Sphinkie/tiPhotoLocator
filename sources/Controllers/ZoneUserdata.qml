@@ -6,9 +6,31 @@ ZoneUserdataForm {
 
     // On détermine le contenu des chips ici
 
-    chipKeyword1.content: "keyword 1"
-    chipKeyword2.content: "keyword 2"
-    chipKeyword3.content: "keyword 3"
+    chipKeyword1.content: ""
+    chipKeyword2.content: ""
+    chipKeyword3.content: ""
+    chipKeyword4.content: "Etonnant"
+
+
+    chipKeyword1.deleteArea.onClicked:
+    {
+        window.setPhotoProperty(tabbedPage.selectedData.row, "", "keywords");
+    }
+    chipKeyword2.deleteArea.onClicked:
+    {
+        window.setPhotoProperty(tabbedPage.selectedData.row, "", "keywords");
+    }
+    chipKeyword3.deleteArea.onClicked:
+    {
+        window.setPhotoProperty(tabbedPage.selectedData.row, "", "keywords");
+    }
+    chipKeyword4.deleteArea.onClicked:   // (mouse) =>
+    {
+        console.log("chipKeyword4.deleteArea.onClicked");
+        window.setPhotoProperty(tabbedPage.selectedData.row, "", "keywords");
+    }
+
+
 
 }
 

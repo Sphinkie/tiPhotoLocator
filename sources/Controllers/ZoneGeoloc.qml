@@ -7,23 +7,23 @@ ZoneGeolocForm {
     chipLat.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, 0, "latitude");
-        tabbedPage.refreshSelectedData();
+        // tabbedPage.refreshSelectedData();
     }
     chipLong.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, 0, "longitude");
-        tabbedPage.refreshSelectedData();
+        // tabbedPage.refreshSelectedData();
     }
     chipCity.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "city");
-        tabbedPage.refreshSelectedData();
+        // tabbedPage.refreshSelectedData();
     }
     chipCountry.deleteArea.onClicked:   // (mouse) =>
     {
         // console.log("chipCountry.deleteArea.onClicked");
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "country");
-        tabbedPage.refreshSelectedData();
+        // tabbedPage.refreshSelectedData();
     }
 
     // On raffraichit la zone si SelectedData est modifiée

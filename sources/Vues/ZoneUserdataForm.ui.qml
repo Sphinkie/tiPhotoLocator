@@ -9,6 +9,7 @@ Item {
     property alias chipKeyword1: chipKeyword1
     property alias chipKeyword2: chipKeyword2
     property alias chipKeyword3: chipKeyword3
+    property alias chipKeyword4: chipKeyword4
 
     Zone {
         id: userDataZone
@@ -29,6 +30,11 @@ Item {
             }
             Chips {
                 id: chipKeyword3
+                editable: true
+                deletable: true
+            }
+            Chips {
+                id: chipKeyword4
                 editable: true
                 deletable: true
             }

@@ -71,8 +71,8 @@ Map {
                            mapTab.photoLongitude= longi;
                            // On change les coordonnées dans l'item du modele
                            window.setSelectedItemCoords(lati, longi);
-                           tabbedPage.refreshSelectedData();
-                           console.log(mapView.supportedMapTypes);  // Debug : Affiche la lilste des cartes supportées
+                           // tabbedPage.refreshSelectedData();
+                           console.log(mapView.supportedMapTypes);  // Debug : Affiche la liste des cartes supportées
                        }
         }
     }

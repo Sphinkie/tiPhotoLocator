@@ -153,13 +153,23 @@ Window {
             currentIndex: tabBar.currentIndex
             property var selectedData: _photoListModel.get(0)  // On l'initialise sur la photo Welcome (type = QVariantMap)
 
-            // TODO : Ca ne devrait pas etre utile d'avoir cette fonction
             function refreshSelectedData()
             {
-                console.log("refreshSelectedData");
-                var currentrow = selectedData.row;
-                selectedData = _photoListModel.get(currentrow);
+//                console.log("refreshSelectedData");
+//                var currentrow = selectedData.row;
+//                selectedData = _photoListModel.get(currentrow);
             }
+
+            Connections{
+                target: _photoListModel
+                function onDataChanged() {
+                    console.log("PhotoModel Data changed !");
+                    var currentrow = tabbedPage.selectedData.row;
+                    tabbedPage.selectedData = _photoListModel.get(currentrow);
+
+                }
+            }
+
 
 
             // ------------------ PREVIEW TAB --------------------------

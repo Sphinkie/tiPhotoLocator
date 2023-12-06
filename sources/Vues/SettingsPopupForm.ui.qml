@@ -114,7 +114,7 @@ Popup {
                     }
                     Text {
                         color: TiStyle.tertiaryForegroundColor
-                        text: "Software (Exif)"
+                        text: "Metadata Software (Exif)"
                         font.pixelSize: 12
                         style: Text.Normal
                     }

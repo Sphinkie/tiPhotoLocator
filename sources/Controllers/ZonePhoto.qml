@@ -17,13 +17,13 @@ ZonePhotoForm {
         chipDate.chipText.inputMask = "99/99/9999";
         enableEdit(chipDate);
         // FIXME On ne peut sauver que si c'est au bon format
-        chipDate.canSave = chipDate.chipText.acceptableInput;
+        chipDate.canSave = true // chipDate.chipText.acceptableInput;
     }
     chipDate.saveArea.onClicked:
     {
         var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text;
         window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime , "dateTimeOriginal");
-        chipDate.chipText.text = fixDate(chipDate)
+        //chipDate.chipText.text = fixDate(chipDate)
         resetChipButtons(chipDate);
     }
 
@@ -41,7 +41,7 @@ ZonePhotoForm {
     {
         var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text;
         window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime , "dateTimeOriginal");
-        chipTime.chipText.text = fixTime(chipTime)
+        // chipTime.chipText.text = fixTime(chipTime)
         resetChipButtons(chipTime);
     }
 
@@ -56,13 +56,13 @@ ZonePhotoForm {
     chipCreator.saveArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, chipCreator.chipText.text, "creator");
-        tabbedPage.refreshSelectedData();
+        // tabbedPage.refreshSelectedData();
         resetChipButtons(chipCreator);
     }
     chipCreator.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "creator");
-        tabbedPage.refreshSelectedData();
+        // tabbedPage.refreshSelectedData();
         resetChipButtons(chipCreator);
     }
 
@@ -70,13 +70,13 @@ ZonePhotoForm {
     chipDescription.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "description");
-        tabbedPage.refreshSelectedData();
+        // tabbedPage.refreshSelectedData();
     }
 
     chipWriter.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "descriptionWriter");
-        tabbedPage.refreshSelectedData();
+        // tabbedPage.refreshSelectedData();
     }
 
     // -----------------------------------------------------------------------------------

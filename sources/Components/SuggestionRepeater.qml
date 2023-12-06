@@ -38,7 +38,7 @@ Repeater{
                     // On enlève le Chip de la zone Suggestions
                     window.removePhotoFrom(index);      // Attn : c'est l'index dans le proxyModel.
                     // On recharge les data pour forcer un refresh de la Zone
-                    tabbedPage.refreshSelectedData();
+                    // tabbedPage.refreshSelectedData();
                 }
             }
         }
