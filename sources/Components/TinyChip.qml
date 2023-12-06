@@ -16,7 +16,7 @@ Label {
     visible: content? true : false
     text: content
     font.pixelSize: 14
-    color: TiStyle.simplechipTextColor
+    color: TiStyle.tinychipTextColor
 
 
     background: Rectangle {

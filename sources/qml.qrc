@@ -37,7 +37,7 @@
         <file>Images/bt-clear.png</file>
         <file>Controllers/ToolBarPrincipale.qml</file>
         <file>Javascript/TiUtilities.js</file>
-        <file>Components/SimpleChip.qml</file>
+        <file>Components/TinyChip.qml</file>
         <file>Images/bt-apply.png</file>
         <file>Controllers/SettingsPopup.qml</file>
         <file>Images/logo_TPL.png</file>

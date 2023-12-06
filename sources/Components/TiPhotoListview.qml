@@ -75,7 +75,7 @@ ListView{
             }
 
             // Tag City
-            SimpleChip {
+            TinyChip {
                 id: cityText
                 anchors.left: nameText.right
                 anchors.leftMargin: 8

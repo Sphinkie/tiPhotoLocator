@@ -39,8 +39,8 @@ Item{
     readonly property color suggestionBackgroundColor: "lightblue"  // #add8e6 bleu pour les zones de suggestions (darker=#70b1c9)
 
     // Chips
-    readonly property color chipBackgroundColor: "#689f38"          // darkgreen : fond des chips + simplechips
-    readonly property color simplechipTextColor: "lightblue"        // Textes des SimpleChips
+    readonly property color chipBackgroundColor: "#689f38"          // darkgreen : fond des Chips et TinyChips
+    readonly property color tinychipTextColor: "lightblue"          // Textes des TinyChips
     readonly property color chipTextColor:       "#ffe0b3"          // Textes des Chips
 
     // Popups
