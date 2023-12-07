@@ -8,9 +8,10 @@
 #include "Models/PhotoModel.h"
 #include "Models/OnTheMapProxyModel.h"
 #include "Models/UnlocalizedProxyModel.h"
+#include "Models/UndatedPhotoProxyModel.h"
 #include "Models/SuggestionModel.h"
 #include "Models/SuggestionProxyModel.h"
-#include "Models/SuggestionGeoProxyModel.h"
+// #include "Models/SuggestionGeoProxyModel.h"
 #include "Models/SuggestionCategoryProxyModel.h"
 #include "cpp/GeocodeWrapper.h"
 
@@ -59,17 +60,19 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // On initialise nos Models
     // --------------------------------------
-    PhotoModel photoListModel;
+    PhotoModel photoModel;
     OnTheMapProxyModel onTheMapProxyModel;
-    onTheMapProxyModel.setSourceModel(&photoListModel);
+    onTheMapProxyModel.setSourceModel(&photoModel);
+    UndatedPhotoProxyModel undatedPhotoProxyModel;
+    undatedPhotoProxyModel.setSourceModel(&photoModel);
     UnlocalizedProxyModel unlocalizedProxyModel;
-    unlocalizedProxyModel.setSourceModel(&photoListModel);
+    unlocalizedProxyModel.setSourceModel(&undatedPhotoProxyModel);
 
     SuggestionModel suggestionModel;
     SuggestionProxyModel suggestionProxyModel;
     suggestionProxyModel.setSourceModel(&suggestionModel);
-    SuggestionGeoProxyModel suggestionGeoProxyModel;
-    suggestionGeoProxyModel.setSourceModel(&suggestionProxyModel);
+    // SuggestionGeoProxyModel suggestionGeoProxyModel;
+    // suggestionGeoProxyModel.setSourceModel(&suggestionProxyModel);
     SuggestionCategoryProxyModel suggestionCategoryProxyModel;
     suggestionCategoryProxyModel.setSourceModel(&suggestionProxyModel);
     // --------------------------------------
@@ -89,13 +92,14 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // On ajoute au contexte les classes qui ont des property QML
     // --------------------------------------
-    context->setContextProperty("_photoListModel", &photoListModel);
+    context->setContextProperty("_photoListModel", &photoModel);
     context->setContextProperty("_onTheMapProxyModel", &onTheMapProxyModel);
     context->setContextProperty("_suggestionModel", &suggestionModel);  // Pour le dump de debug
     context->setContextProperty("_suggestionProxyModel", &suggestionProxyModel);
-    context->setContextProperty("_suggestionGeoProxyModel", &suggestionGeoProxyModel);
+//    context->setContextProperty("_suggestionGeoProxyModel", &suggestionGeoProxyModel);
     context->setContextProperty("_suggestionCategoryProxyModel", &suggestionCategoryProxyModel);
     context->setContextProperty("_unlocalizedProxyModel", &unlocalizedProxyModel);
+    context->setContextProperty("_undatedPhotoProxyModel", &undatedPhotoProxyModel);
 
     // Chargement du QMl. Au choix:
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -135,13 +139,13 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // Connexions QML vers classe C++
     // --------------------------------------
-    QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)),          &photoListModel, SLOT(append(QString,QString)));
-    QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),     &photoListModel, SLOT(fetchExifMetadata(int)));
-    QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),              &photoListModel, SLOT(fetchExifMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                   &photoListModel, SLOT(saveMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(savePosition(double,double)),      &photoListModel, SLOT(appendSavedPosition(double,double)));
-    QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),             &photoListModel, SLOT(removeSavedPosition()));
-    QObject::connect(firstRootItem,   SIGNAL(setPhotoProperty(int,QString,QString)), &photoListModel, SLOT(setData(int,QString,QString)));
+    QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)),          &photoModel, SLOT(append(QString,QString)));
+    QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),     &photoModel, SLOT(fetchExifMetadata(int)));
+    QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),              &photoModel, SLOT(fetchExifMetadata()));
+    QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                   &photoModel, SLOT(saveMetadata()));
+    QObject::connect(firstRootItem,   SIGNAL(savePosition(double,double)),      &photoModel, SLOT(appendSavedPosition(double,double)));
+    QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),             &photoModel, SLOT(removeSavedPosition()));
+    QObject::connect(firstRootItem,   SIGNAL(setPhotoProperty(int,QString,QString)), &photoModel, SLOT(setData(int,QString,QString)));
 
     QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)), &onTheMapProxyModel,   SLOT(setAllItemsCoords(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel,   SLOT(setAllItemsSavedCoords()));
@@ -154,8 +158,8 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // Connexions entre classes C++
     // --------------------------------------
-    QObject::connect(&photoListModel, SIGNAL(selectedRowChanged(int)),                     &suggestionModel, SLOT(onSelectedPhotoChanged(int)));
-    QObject::connect(&photoListModel, SIGNAL(sendSuggestion(QString,QString,QString,int)), &suggestionModel, SLOT(append(QString,QString,QString,int)));
+    QObject::connect(&photoModel, SIGNAL(selectedRowChanged(int)),                     &suggestionModel, SLOT(onSelectedPhotoChanged(int)));
+    QObject::connect(&photoModel, SIGNAL(sendSuggestion(QString,QString,QString,int)), &suggestionModel, SLOT(append(QString,QString,QString,int)));
 
     // --------------------------------------
     // Exécution de QML

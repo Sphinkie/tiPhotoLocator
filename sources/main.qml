@@ -26,13 +26,13 @@ Window {
     // ----------------------------------------------------------------
     // Les signaux
     // ----------------------------------------------------------------
-    signal append(string filename, string url)                  //! Ajoute une JPG au modèle
-    signal setSelectedItemCoords(double lati, double longi)     //! Ajoute des coords à une photo du modèle
-    signal savePosition(double lati, double longi)              //! Mémorise une position
-    signal clearSavedPosition()                                 //! Efface une position mémorisée
-    signal applySavedPositionToCoords()                         //! Affecte une position mémorisée
-    signal fetchExifMetadata()                                  //! Lit les metadata de toutes les JPG
-    signal fetchSingleExifMetadata(int row)                     //! Lit les metadata d'une JPG
+    signal append(string filename, string url)                  //!< Ajoute une JPG au modèle
+    signal setSelectedItemCoords(double lati, double longi)     //!< Ajoute des coords à une photo du modèle
+    signal savePosition(double lati, double longi)              //!< Mémorise une position
+    signal clearSavedPosition()                                 //!< Efface une position mémorisée
+    signal applySavedPositionToCoords()                         //!< Affecte une position mémorisée
+    signal fetchExifMetadata()                                  //!< Lit les metadata de toutes les JPG
+    signal fetchSingleExifMetadata(int row)                     //!< Lit les metadata d'une JPG
     signal saveMetadata()
     signal hasPos()
     signal requestReverseGeocode(double lati, double longi)
@@ -104,7 +104,9 @@ Window {
                 ToolTip.visible: hovered
                 ToolTip.delay: 500
                 checked: false
-                enabled: false  // TODO: Gestion du filtre "photos sans date"
+                onClicked: {
+                    _undatedPhotoProxyModel.filterEnabled = checked;
+                }
             }
 
             CheckBox {
