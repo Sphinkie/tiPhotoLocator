@@ -128,6 +128,7 @@ Window {
                 TiTabButton { text: qsTr("PREVIEW"); }
                 TiTabButton { text: qsTr("CARTE");  filter: "geo" }
                 TiTabButton { text: qsTr("EXIF/IPTC TAGS"); filter: "tag"; }
+                TiTabButton { text: qsTr("GLOBAL"); }
             }
         }
     }
@@ -153,23 +154,14 @@ Window {
             currentIndex: tabBar.currentIndex
             property var selectedData: _photoListModel.get(0)  // On l'initialise sur la photo Welcome (type = QVariantMap)
 
-            function refreshSelectedData()
-            {
-//                console.log("refreshSelectedData");
-//                var currentrow = selectedData.row;
-//                selectedData = _photoListModel.get(currentrow);
-            }
-
             Connections{
                 target: _photoListModel
                 function onDataChanged() {
                     console.log("PhotoModel Data changed !");
                     var currentrow = tabbedPage.selectedData.row;
                     tabbedPage.selectedData = _photoListModel.get(currentrow);
-
                 }
             }
-
 
 
             // ------------------ PREVIEW TAB --------------------------

@@ -127,7 +127,7 @@ ZonePhotoForm {
         chip.chipText.focus = true;
     }
 
-
+}
 
 /*##^##
 Designer {

@@ -94,6 +94,21 @@ Rectangle {
             anchors.fill: parent
         }
     }
+    Image{
+        id: chipRevert
+        anchors.right: parent.right
+        anchors.rightMargin: 5
+        anchors.verticalCenter: parent.verticalCenter
+        height: 26
+        width: 26
+        source: "qrc:/Images/chip-revert.png"
+        visible: canSave
+        // Clic sur l'icone REVERT: A gérer dans le controlleur de la Zone parente avec chipXXX.revertArea.onClicked:{...}
+        MouseArea {
+            id: revertArea
+            anchors.fill: parent
+        }
+    }
     layer.effect: DropShadow {
         transparentBorder: true
         color: "#88000000"    // alpha
