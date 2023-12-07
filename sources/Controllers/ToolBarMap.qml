@@ -54,8 +54,8 @@ ToolBarMapForm {
         target: tabbedPage
         function onSelectedDataChanged()
         {
-            console.log("onSelectedDataChanged->ToolBarMap");
-            // console.log("hasGPS" + tabbedPage.selectedData.hasGPS);
+            // console.debug("onSelectedDataChanged->ToolBarMap");
+            // console.debug("hasGPS" + tabbedPage.selectedData.hasGPS);
             bt_clear_coords.enabled = tabbedPage.selectedData.hasGPS;
             bt_save_pos.enabled = tabbedPage.selectedData.hasGPS;
             bt_revert.enabled = tabbedPage.selectedData.toBeSaved;

@@ -15,6 +15,10 @@ public:
     //static QString toExifDate(const QVariant value, const QString old_value="");
     static QString toExifDate(const QVariant value);
     static QString toReadableDate(const QVariant value);
+    static QString toStandardDateTime(const QVariant value);
+
+    static QString fixYear(QString sYear, int defaultYear);
+    static QString fixDigits(QString sMonth, int defaultValue, int min, int max);
 
 };
 

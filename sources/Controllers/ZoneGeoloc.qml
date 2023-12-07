@@ -31,7 +31,7 @@ ZoneGeolocForm {
         target: tabbedPage
         function onSelectedDataChanged()
         {
-            console.log("onSelectedDataChanged->ZoneGeoloc");
+            // console.debug("onSelectedDataChanged->ZoneGeoloc");
             chipLat.visible = tabbedPage.selectedData.hasGPS;
             chipLong.visible= tabbedPage.selectedData.hasGPS;
             chipLat.content = tabbedPage.selectedData.latitude.toFixed(4) + " Lat "  + ((tabbedPage.selectedData.latitude>0) ? "N" : "S");

@@ -338,7 +338,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             emit dataChanged(index, index, QVector<int>() << CreatorRole );
             break;
         case DateTimeOriginalRole:
-            m_photos[index.row()].dateTimeOriginal = Utilities::toExifDate(value);
+            m_photos[index.row()].dateTimeOriginal = Utilities::toStandardDateTime(value);
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << DateTimeOriginalRole );
             break;
