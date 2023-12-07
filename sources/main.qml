@@ -127,7 +127,7 @@ Window {
                 Layout.rightMargin: 40
                 TiTabButton { text: qsTr("PREVIEW"); }
                 TiTabButton { text: qsTr("CARTE");  filter: "geo" }
-                TiTabButton { text: qsTr("EXIF/IPTC TAGS"); filter: "tag"; }
+                TiTabButton { text: qsTr("EXIF / IPTC TAGS"); filter: "tag"; }
                 TiTabButton { text: qsTr("GLOBAL"); }
             }
         }

@@ -14,15 +14,65 @@ The \doxylink{class_utilities}{Utilities} class contains a set of usefull static
 \item 
 static QString \mbox{\hyperlink{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}{to\+Exif\+Date}} (const QVariant value)
 \begin{DoxyCompactList}\small\item\em Convertit une chaine du type "{}25/08/2017 08\+:03"{} au format "{}2017\+:08\+:25 08\+:03\+:00"{}. \end{DoxyCompactList}\item 
-static QString \mbox{\hyperlink{class_utilities_a631df43ec7201eb2ed7ac18491564040}{to\+Readable\+Date}} (const QVariant value)
-\begin{DoxyCompactList}\small\item\em Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel "{}25/0582017 08\+:03"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static QString \mbox{\hyperlink{class_utilities_ae08d27f825de4f51f5523f6f014cf597}{to\+Readable\+Date\+Time}} (const QVariant value)
+\begin{DoxyCompactList}\small\item\em Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel "{}25/05/2017 08\+:03"{}. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{class_utilities_a11c06c3910d1553d791258b060d436d8}{to\+Standard\+Date\+Time}} (const QVariant value)
+\begin{DoxyCompactList}\small\item\em Convertit une date saisie manuellement en une date correctement formatée, compatible Exif. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{class_utilities_a40979a50f9670f01945d07c9e80e9a33}{fix\+Year}} (QString s\+Year, int default\+Year)
+\begin{DoxyCompactList}\small\item\em Reformate correctement l\textquotesingle{}année saisie par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{class_utilities_a1c31753eeb57b373d7a73c097e6766ee}{fix\+Digits}} (QString s\+Month, int default\+Value, int min, int max)
+\begin{DoxyCompactList}\small\item\em Reformate correctement des digits saisis par l\textquotesingle{}utilisateur (jour, mois, heure, minutes). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 The \doxylink{class_utilities}{Utilities} class contains a set of usefull static functions. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}\label{class_utilities_ad970fb1a077cf5d352faa2878ce410fc} 
+\Hypertarget{class_utilities_a1c31753eeb57b373d7a73c097e6766ee}\label{class_utilities_a1c31753eeb57b373d7a73c097e6766ee} 
+\index{Utilities@{Utilities}!fixDigits@{fixDigits}}
+\index{fixDigits@{fixDigits}!Utilities@{Utilities}}
+\doxysubsubsection{\texorpdfstring{fixDigits()}{fixDigits()}}
+{\footnotesize\ttfamily QString Utilities\+::fix\+Digits (\begin{DoxyParamCaption}\item[{QString}]{s\+Digits,  }\item[{int}]{default\+Value,  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reformate correctement des digits saisis par l\textquotesingle{}utilisateur (jour, mois, heure, minutes). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+Digits} & \+: La valeur à formater. \\
+\hline
+{\em default\+Value} & \+: La valeur par défaut, en cas de chaine vide ou non conforme. \\
+\hline
+{\em min} & \+: La valeur minimale autorisée. \\
+\hline
+{\em max} & \+: La valeur maximale autorisée. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+les deux digits au format "{}\+XX"{}. 
+\end{DoxyReturn}
+\Hypertarget{class_utilities_a40979a50f9670f01945d07c9e80e9a33}\label{class_utilities_a40979a50f9670f01945d07c9e80e9a33} 
+\index{Utilities@{Utilities}!fixYear@{fixYear}}
+\index{fixYear@{fixYear}!Utilities@{Utilities}}
+\doxysubsubsection{\texorpdfstring{fixYear()}{fixYear()}}
+{\footnotesize\ttfamily QString Utilities\+::fix\+Year (\begin{DoxyParamCaption}\item[{QString}]{s\+Year,  }\item[{int}]{default\+Year }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reformate correctement l\textquotesingle{}année saisie par l\textquotesingle{}utilisateur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+Year} & \+: L\textquotesingle{}année à corriger \\
+\hline
+{\em default\+Year} & \+: La valeur par défaut. Par exemple\+: l\textquotesingle{}année couurante. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}année au format "{}\+YYYY"{}
+\end{DoxyReturn}
+Si l\textquotesingle{}année reçue est sur 2 chiffres, on ajoute 2000. L\textquotesingle{}année minimale est 1800 (avant\+: pas de photos) L\textquotesingle{}année maximale est l\textquotesingle{}année courante (pas de photos du futur). \Hypertarget{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}\label{class_utilities_ad970fb1a077cf5d352faa2878ce410fc} 
 \index{Utilities@{Utilities}!toExifDate@{toExifDate}}
 \index{toExifDate@{toExifDate}!Utilities@{Utilities}}
 \doxysubsubsection{\texorpdfstring{toExifDate()}{toExifDate()}}
@@ -38,22 +88,17 @@ Convertit une chaine du type "{}25/08/2017 08\+:03"{} au format "{}2017\+:08\+:2
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-la date pouvant être écrite dans un tag Exif.
+la date pouvant être écrite dans un tag Exif. 
 \end{DoxyReturn}
-La fonction est intelligente et reconnait s\textquotesingle{}il s\textquotesingle{}agit d\textquotesingle{}une Date, d\textquotesingle{}un Time ou d\textquotesingle{}un Date\+Time.
-\begin{DoxyItemize}
-\item Date\+Time \+: "{}25/08/2017 08\+:03"{} -\/\texorpdfstring{$>$}{>} "{}2017\+:08\+:25 08\+:03\+:00"{} (convertion + ajout des secondes)
-\item Date \+: "{}25/08/2017"{} -\/\texorpdfstring{$>$}{>} "{}2017\+:08\+:25 02\+:15\+:45"{} (convertion + conservation du time)
-\item Time \+: "{}08\+:03"{} -\/\texorpdfstring{$>$}{>} "{}1934\+:01\+:10 08\+:03\+:00"{} (convertion + conservation de la date) 
-\end{DoxyItemize}\Hypertarget{class_utilities_a631df43ec7201eb2ed7ac18491564040}\label{class_utilities_a631df43ec7201eb2ed7ac18491564040} 
-\index{Utilities@{Utilities}!toReadableDate@{toReadableDate}}
-\index{toReadableDate@{toReadableDate}!Utilities@{Utilities}}
-\doxysubsubsection{\texorpdfstring{toReadableDate()}{toReadableDate()}}
-{\footnotesize\ttfamily QString Utilities\+::to\+Readable\+Date (\begin{DoxyParamCaption}\item[{const QVariant}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{class_utilities_ae08d27f825de4f51f5523f6f014cf597}\label{class_utilities_ae08d27f825de4f51f5523f6f014cf597} 
+\index{Utilities@{Utilities}!toReadableDateTime@{toReadableDateTime}}
+\index{toReadableDateTime@{toReadableDateTime}!Utilities@{Utilities}}
+\doxysubsubsection{\texorpdfstring{toReadableDateTime()}{toReadableDateTime()}}
+{\footnotesize\ttfamily QString Utilities\+::to\+Readable\+Date\+Time (\begin{DoxyParamCaption}\item[{const QVariant}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel "{}25/0582017 08\+:03"{}. 
+Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel "{}25/05/2017 08\+:03"{}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -63,7 +108,25 @@ Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel
 \begin{DoxyReturn}{Returns}
 la date pouvant être affichée dans un Chip. 
 \end{DoxyReturn}
+\Hypertarget{class_utilities_a11c06c3910d1553d791258b060d436d8}\label{class_utilities_a11c06c3910d1553d791258b060d436d8} 
+\index{Utilities@{Utilities}!toStandardDateTime@{toStandardDateTime}}
+\index{toStandardDateTime@{toStandardDateTime}!Utilities@{Utilities}}
+\doxysubsubsection{\texorpdfstring{toStandardDateTime()}{toStandardDateTime()}}
+{\footnotesize\ttfamily QString Utilities\+::to\+Standard\+Date\+Time (\begin{DoxyParamCaption}\item[{const QVariant}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Convertit une date saisie manuellement en une date correctement formatée, compatible Exif. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \+: Une string au format "{}..\textbackslash{}..\textbackslash{}.... ..\+:.."{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+une string au format "{}9999\+:99\+:99 99\+:99\+:00"{}
+\end{DoxyReturn}
+On est sûr de la présence des séparateurs / et \+: et ESP. Par contre, il peut y avoir 0 ou 1 ou 2 chiffres entre chaque. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

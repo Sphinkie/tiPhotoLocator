@@ -2,7 +2,7 @@ var searchData=
 [
   ['removecurrentphotofromsuggestion_0',['removeCurrentPhotoFromSuggestion',['../class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f',1,'SuggestionModel']]],
   ['removedata_1',['removeData',['../class_photo_model.html#a1e2f3f829e54ef445a5b1dea07ad2118',1,'PhotoModel']]],
-  ['removephotofromsuggestion_2',['removePhotoFromSuggestion',['../class_suggestion_proxy_model.html#a57f046aabf95036f87b02209f0174e10',1,'SuggestionProxyModel']]],
+  ['removephotofromsuggestion_2',['removephotofromsuggestion',['../class_suggestion_category_proxy_model.html#a29d65a3ef6bd9db53b99b8edaf8600bc',1,'SuggestionCategoryProxyModel::removePhotoFromSuggestion()'],['../class_suggestion_proxy_model.html#a57f046aabf95036f87b02209f0174e10',1,'SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)'],['../class_suggestion_proxy_model.html#ad0b9f7027dfc10c28e67fcf1edbeb66b',1,'SuggestionProxyModel::removePhotoFromSuggestion(const QModelIndex proxyIndex)']]],
   ['removesavedposition_3',['removeSavedPosition',['../class_photo_model.html#a6c2e4a731969e952993dfe4d38e5788f',1,'PhotoModel']]],
   ['requestcoordinates_4',['requestCoordinates',['../class_geocode_wrapper.html#ab3c38ff6c5a53d2b6c04cf5c88763b23',1,'GeocodeWrapper']]],
   ['requestreversegeocode_5',['requestReverseGeocode',['../class_geocode_wrapper.html#a4317ba9f8e11b9bf6b555df8a065b54b',1,'GeocodeWrapper']]],

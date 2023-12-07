@@ -12,7 +12,7 @@
 \DoxyCodeLine{00011\ \textcolor{comment}{/*\ **********************************************************************************\ */}}
 \DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_suggestion}{Suggestion}}}
 \DoxyCodeLine{00013\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{struct_suggestion_af2eddc6a6b273397e3455724a25c88ef}{Suggestion}}()\ \{\}}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{struct_suggestion_af2eddc6a6b273397e3455724a25c88ef}{Suggestion}}()\ \{\};}
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{struct_suggestion_a7b7b80cdbe8f3980639fe23fae9960b6}{Suggestion}}(\textcolor{keyword}{const}\ QString\ \&suggestion\_text,}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&suggestion\_target,}
@@ -24,7 +24,7 @@
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e}{target}}\ =\ suggestion\_target;}
 \DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f}{category}}\ =\ suggestion\_category;}
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_suggestion_af319b358957378992fcbcd14022e2125}{photos}}\ <<\ first\_photo;}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
 \DoxyCodeLine{00029\ }
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Elements\ de\ la\ structure}}
 \DoxyCodeLine{00031\ \ \ \ \ QString\ \mbox{\hyperlink{struct_suggestion_aecac3e72672ace070a7c01823b4beac1}{text}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
@@ -75,16 +75,17 @@
 \DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ Methodes\ privées}}
 \DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ addPhotoToSuggestion(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ suggestion\_row,\ \textcolor{keywordtype}{int}\ photo\_row);}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Membres}}
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00090\ \ \ \ \ QVector<Suggestion>\ m\_suggestions;}
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_selectedPhotoRow\ =\ -\/3;\ \ \ \ \textcolor{comment}{//\ La\ valeur\ par\ defaut\ -\/3\ ne\ correspond\ à\ aucune\ photo}}
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_dumpedRow;}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \};}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUGGESTIONMODEL\_H}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ addCategoryToSuggestion(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ suggestion\_row,\ \textcolor{keyword}{const}\ QString\ category);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Membres}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00091\ \ \ \ \ QVector<Suggestion>\ m\_suggestions;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_selectedPhotoRow\ =\ -\/3;\ \ \ \ \textcolor{comment}{//\ La\ valeur\ par\ defaut\ -\/3\ ne\ correspond\ à\ aucune\ photo}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_dumpedRow;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUGGESTIONMODEL\_H}}
 
 \end{DoxyCode}

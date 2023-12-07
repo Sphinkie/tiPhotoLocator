@@ -124,6 +124,9 @@ Public Slots</h2></td></tr>
 <tr class="memitem:a57f046aabf95036f87b02209f0174e10" id="r_a57f046aabf95036f87b02209f0174e10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_proxy_model.html#a57f046aabf95036f87b02209f0174e10">removePhotoFromSuggestion</a> (const int proxyRow)</td></tr>
 <tr class="memdesc:a57f046aabf95036f87b02209f0174e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.  <br /></td></tr>
 <tr class="separator:a57f046aabf95036f87b02209f0174e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b9f7027dfc10c28e67fcf1edbeb66b" id="r_ad0b9f7027dfc10c28e67fcf1edbeb66b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_proxy_model.html#ad0b9f7027dfc10c28e67fcf1edbeb66b">removePhotoFromSuggestion</a> (const QModelIndex proxyIndex)</td></tr>
+<tr class="memdesc:ad0b9f7027dfc10c28e67fcf1edbeb66b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.  <br /></td></tr>
+<tr class="separator:ad0b9f7027dfc10c28e67fcf1edbeb66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
@@ -259,7 +262,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td
 </div>
 </div>
 <a id="a57f046aabf95036f87b02209f0174e10" name="a57f046aabf95036f87b02209f0174e10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57f046aabf95036f87b02209f0174e10">&#9670;&#160;</a></span>removePhotoFromSuggestion</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a57f046aabf95036f87b02209f0174e10">&#9670;&#160;</a></span>removePhotoFromSuggestion <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,10 +286,45 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td
 </div><div class="memdoc">
 
 <p>Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. </p>
-<dl class="section note"><dt>Note</dt><dd>On convertit l'indice du ProxyModel dans l'index du sourceModel. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On convertit l'indice du ProxyModel dans l'index du sourceModel <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a>. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">proxyRow</td><td>: Indice dans le ProxyModel de la <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> à modifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad0b9f7027dfc10c28e67fcf1edbeb66b" name="ad0b9f7027dfc10c28e67fcf1edbeb66b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b9f7027dfc10c28e67fcf1edbeb66b">&#9670;&#160;</a></span>removePhotoFromSuggestion <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SuggestionProxyModel::removePhotoFromSuggestion </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex&#160;</td>
+          <td class="paramname"><em>proxyIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. </p>
+<dl class="section note"><dt>Note</dt><dd>On convertit l'index du ProxyModel dans l'index du sourceModel <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">proxyIndex</td><td>: Index dans le ProxyModel de la <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> à modifier. </td></tr>
   </table>
   </dd>
 </dl>

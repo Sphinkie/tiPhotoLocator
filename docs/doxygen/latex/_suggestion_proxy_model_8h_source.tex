@@ -27,19 +27,20 @@
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424b19c}{setFilterEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_proxy_model_add1caa599574ee457caa9f63251e5252}{setFilterValue}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ photoRow);}
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10}{removePhotoFromSuggestion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ proxyRow);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ signals:}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_proxy_model_a1b4ad3a4a83b4c7c959394a68871d349}{filterEnabledChanged}}();\ \ \ \ }
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_suggestion_proxy_model_a189be5918036c550fd0093d566e716ae}{filterAcceptsRow}}(\textcolor{keywordtype}{int}\ sourceRow,\ \textcolor{keyword}{const}\ QModelIndex\ \&sourceParent)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_filterEnabled;}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \ m\_filterPhotoRow;}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \};}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUGGESTIONPROXYMODEL\_H}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10}{removePhotoFromSuggestion}}(\textcolor{keyword}{const}\ QModelIndex\ proxyIndex);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ signals:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_suggestion_proxy_model_a1b4ad3a4a83b4c7c959394a68871d349}{filterEnabledChanged}}();\ \ \ \ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_suggestion_proxy_model_a189be5918036c550fd0093d566e716ae}{filterAcceptsRow}}(\textcolor{keywordtype}{int}\ sourceRow,\ \textcolor{keyword}{const}\ QModelIndex\ \&sourceParent)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_filterEnabled;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \ m\_filterPhotoRow;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUGGESTIONPROXYMODEL\_H}}
 
 \end{DoxyCode}

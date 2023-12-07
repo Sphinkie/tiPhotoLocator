@@ -8,5 +8,6 @@ var searchData=
   ['ti_20photolocator_5',['Ti PhotoLocator',['../index.html',1,'']]],
   ['tobesaved_6',['toBeSaved',['../struct_photo.html#a66c836579b45614de3f51edba11ea2fe',1,'Photo']]],
   ['toexifdate_7',['toExifDate',['../class_utilities.html#ad970fb1a077cf5d352faa2878ce410fc',1,'Utilities']]],
-  ['toreadabledate_8',['toReadableDate',['../class_utilities.html#a631df43ec7201eb2ed7ac18491564040',1,'Utilities']]]
+  ['toreadabledatetime_8',['toReadableDateTime',['../class_utilities.html#ae08d27f825de4f51f5523f6f014cf597',1,'Utilities']]],
+  ['tostandarddatetime_9',['toStandardDateTime',['../class_utilities.html#a11c06c3910d1553d791258b060d436d8',1,'Utilities']]]
 ];

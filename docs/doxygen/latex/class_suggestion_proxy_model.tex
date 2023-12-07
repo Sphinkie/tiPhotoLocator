@@ -23,6 +23,8 @@ void \mbox{\hyperlink{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424
 void \mbox{\hyperlink{class_suggestion_proxy_model_add1caa599574ee457caa9f63251e5252}{set\+Filter\+Value}} (const int photo\+Row)
 \begin{DoxyCompactList}\small\item\em Mémorise le filtre à appliquer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10}{remove\+Photo\+From\+Suggestion}} (const int proxy\+Row)
+\begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_suggestion_proxy_model_ad0b9f7027dfc10c28e67fcf1edbeb66b}{remove\+Photo\+From\+Suggestion}} (const QModel\+Index proxy\+Index)
 \begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
@@ -108,7 +110,7 @@ true if the filter is active.
 \Hypertarget{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10}\label{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!removePhotoFromSuggestion@{removePhotoFromSuggestion}}
 \index{removePhotoFromSuggestion@{removePhotoFromSuggestion}!SuggestionProxyModel@{SuggestionProxyModel}}
-\doxysubsubsection{\texorpdfstring{removePhotoFromSuggestion}{removePhotoFromSuggestion}}
+\doxysubsubsection{\texorpdfstring{removePhotoFromSuggestion}{removePhotoFromSuggestion}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{proxy\+Row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
@@ -116,11 +118,29 @@ true if the filter is active.
 Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
 
 \begin{DoxyNote}{Note}
-On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model. 
+On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxylink{class_suggestion_model}{Suggestion\+Model}. 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
 {\em proxy\+Row} & \+: Indice dans le Proxy\+Model de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_suggestion_proxy_model_ad0b9f7027dfc10c28e67fcf1edbeb66b}\label{class_suggestion_proxy_model_ad0b9f7027dfc10c28e67fcf1edbeb66b} 
+\index{SuggestionProxyModel@{SuggestionProxyModel}!removePhotoFromSuggestion@{removePhotoFromSuggestion}}
+\index{removePhotoFromSuggestion@{removePhotoFromSuggestion}!SuggestionProxyModel@{SuggestionProxyModel}}
+\doxysubsubsection{\texorpdfstring{removePhotoFromSuggestion}{removePhotoFromSuggestion}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const QModel\+Index}]{proxy\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
+
+\begin{DoxyNote}{Note}
+On convertit l\textquotesingle{}index du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxylink{class_suggestion_model}{Suggestion\+Model}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em proxy\+Index} & \+: Index dans le Proxy\+Model de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424b19c}\label{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424b19c} 

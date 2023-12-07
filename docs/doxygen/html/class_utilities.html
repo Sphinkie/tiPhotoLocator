@@ -108,13 +108,129 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad970fb1a077cf5d352faa2878ce410fc" id="r_ad970fb1a077cf5d352faa2878ce410fc"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#ad970fb1a077cf5d352faa2878ce410fc">toExifDate</a> (const QVariant value)</td></tr>
 <tr class="memdesc:ad970fb1a077cf5d352faa2878ce410fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une chaine du type "25/08/2017 08:03" au format "2017:08:25 08:03:00".  <br /></td></tr>
 <tr class="separator:ad970fb1a077cf5d352faa2878ce410fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a631df43ec7201eb2ed7ac18491564040" id="r_a631df43ec7201eb2ed7ac18491564040"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#a631df43ec7201eb2ed7ac18491564040">toReadableDate</a> (const QVariant value)</td></tr>
-<tr class="memdesc:a631df43ec7201eb2ed7ac18491564040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une chaine du type "2017:08:25 08:03:16" au format naturel "25/0582017 08:03".  <br /></td></tr>
-<tr class="separator:a631df43ec7201eb2ed7ac18491564040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08d27f825de4f51f5523f6f014cf597" id="r_ae08d27f825de4f51f5523f6f014cf597"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#ae08d27f825de4f51f5523f6f014cf597">toReadableDateTime</a> (const QVariant value)</td></tr>
+<tr class="memdesc:ae08d27f825de4f51f5523f6f014cf597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une chaine du type "2017:08:25 08:03:16" au format naturel "25/05/2017 08:03".  <br /></td></tr>
+<tr class="separator:ae08d27f825de4f51f5523f6f014cf597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11c06c3910d1553d791258b060d436d8" id="r_a11c06c3910d1553d791258b060d436d8"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#a11c06c3910d1553d791258b060d436d8">toStandardDateTime</a> (const QVariant value)</td></tr>
+<tr class="memdesc:a11c06c3910d1553d791258b060d436d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une date saisie manuellement en une date correctement formatée, compatible Exif.  <br /></td></tr>
+<tr class="separator:a11c06c3910d1553d791258b060d436d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40979a50f9670f01945d07c9e80e9a33" id="r_a40979a50f9670f01945d07c9e80e9a33"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#a40979a50f9670f01945d07c9e80e9a33">fixYear</a> (QString sYear, int defaultYear)</td></tr>
+<tr class="memdesc:a40979a50f9670f01945d07c9e80e9a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reformate correctement l'année saisie par l'utilisateur.  <br /></td></tr>
+<tr class="separator:a40979a50f9670f01945d07c9e80e9a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c31753eeb57b373d7a73c097e6766ee" id="r_a1c31753eeb57b373d7a73c097e6766ee"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#a1c31753eeb57b373d7a73c097e6766ee">fixDigits</a> (QString sMonth, int defaultValue, int min, int max)</td></tr>
+<tr class="memdesc:a1c31753eeb57b373d7a73c097e6766ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reformate correctement des digits saisis par l'utilisateur (jour, mois, heure, minutes).  <br /></td></tr>
+<tr class="separator:a1c31753eeb57b373d7a73c097e6766ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_utilities.html" title="The Utilities class contains a set of usefull static functions.">Utilities</a> class contains a set of usefull static functions. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1c31753eeb57b373d7a73c097e6766ee" name="a1c31753eeb57b373d7a73c097e6766ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c31753eeb57b373d7a73c097e6766ee">&#9670;&#160;</a></span>fixDigits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Utilities::fixDigits </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>sDigits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>defaultValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reformate correctement des digits saisis par l'utilisateur (jour, mois, heure, minutes). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sDigits</td><td>: La valeur à formater. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>: La valeur par défaut, en cas de chaine vide ou non conforme. </td></tr>
+    <tr><td class="paramname">min</td><td>: La valeur minimale autorisée. </td></tr>
+    <tr><td class="paramname">max</td><td>: La valeur maximale autorisée. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>les deux digits au format "XX". </dd></dl>
+
+</div>
+</div>
+<a id="a40979a50f9670f01945d07c9e80e9a33" name="a40979a50f9670f01945d07c9e80e9a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40979a50f9670f01945d07c9e80e9a33">&#9670;&#160;</a></span>fixYear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Utilities::fixYear </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>sYear</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>defaultYear</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reformate correctement l'année saisie par l'utilisateur. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sYear</td><td>: L'année à corriger </td></tr>
+    <tr><td class="paramname">defaultYear</td><td>: La valeur par défaut. Par exemple: l'année couurante. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>l'année au format "YYYY"</dd></dl>
+<p>Si l'année reçue est sur 2 chiffres, on ajoute 2000. L'année minimale est 1800 (avant: pas de photos) L'année maximale est l'année courante (pas de photos du futur). </p>
+
+</div>
+</div>
 <a id="ad970fb1a077cf5d352faa2878ce410fc" name="ad970fb1a077cf5d352faa2878ce410fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad970fb1a077cf5d352faa2878ce410fc">&#9670;&#160;</a></span>toExifDate()</h2>
 
@@ -146,17 +262,12 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>la date pouvant être écrite dans un tag Exif.</dd></dl>
-<p>La fonction est intelligente et reconnait s'il s'agit d'une Date, d'un Time ou d'un DateTime.</p><ul>
-<li>DateTime : "25/08/2017 08:03" -&gt; "2017:08:25 08:03:00" (convertion + ajout des secondes)</li>
-<li>Date : "25/08/2017" -&gt; "2017:08:25 02:15:45" (convertion + conservation du time)</li>
-<li>Time : "08:03" -&gt; "1934:01:10 08:03:00" (convertion + conservation de la date) </li>
-</ul>
+<dl class="section return"><dt>Returns</dt><dd>la date pouvant être écrite dans un tag Exif. </dd></dl>
 
 </div>
 </div>
-<a id="a631df43ec7201eb2ed7ac18491564040" name="a631df43ec7201eb2ed7ac18491564040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a631df43ec7201eb2ed7ac18491564040">&#9670;&#160;</a></span>toReadableDate()</h2>
+<a id="ae08d27f825de4f51f5523f6f014cf597" name="ae08d27f825de4f51f5523f6f014cf597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08d27f825de4f51f5523f6f014cf597">&#9670;&#160;</a></span>toReadableDateTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,7 +276,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QString Utilities::toReadableDate </td>
+          <td class="memname">QString Utilities::toReadableDateTime </td>
           <td>(</td>
           <td class="paramtype">const QVariant&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -179,7 +290,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convertit une chaine du type "2017:08:25 08:03:16" au format naturel "25/0582017 08:03". </p>
+<p>Convertit une chaine du type "2017:08:25 08:03:16" au format naturel "25/05/2017 08:03". </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>: Le QVariant contenant la date issue d'un tag Exif. </td></tr>
@@ -187,6 +298,42 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>la date pouvant être affichée dans un Chip. </dd></dl>
+
+</div>
+</div>
+<a id="a11c06c3910d1553d791258b060d436d8" name="a11c06c3910d1553d791258b060d436d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11c06c3910d1553d791258b060d436d8">&#9670;&#160;</a></span>toStandardDateTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Utilities::toStandardDateTime </td>
+          <td>(</td>
+          <td class="paramtype">const QVariant&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convertit une date saisie manuellement en une date correctement formatée, compatible Exif. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>: Une string au format "..\..\.... ..:.." </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>une string au format "9999:99:99 99:99:00"</dd></dl>
+<p>On est sûr de la présence des séparateurs / et : et ESP. Par contre, il peut y avoir 0 ou 1 ou 2 chiffres entre chaque. </p>
 
 </div>
 </div>

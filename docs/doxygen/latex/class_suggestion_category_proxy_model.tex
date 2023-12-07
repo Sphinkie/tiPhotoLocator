@@ -1,0 +1,136 @@
+\doxysection{Suggestion\+Category\+Proxy\+Model Class Reference}
+\hypertarget{class_suggestion_category_proxy_model}{}\label{class_suggestion_category_proxy_model}\index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
+
+
+The \doxylink{class_suggestion_category_proxy_model}{Suggestion\+Category\+Proxy\+Model} class is a filter Proxy\+Model, that keeps only \doxylink{struct_suggestion}{Suggestion} with a given category.  
+
+
+
+
+{\ttfamily \#include $<$Suggestion\+Category\+Proxy\+Model.\+h$>$}
+
+Inheritance diagram for Suggestion\+Category\+Proxy\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_suggestion_category_proxy_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_suggestion_category_proxy_model_a7ecc03f7eb5925bef1c0937221bcd469}{set\+Filter\+Enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Ce slot active ou désactive le filtrage par le proxy\+Model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_suggestion_category_proxy_model_a29d65a3ef6bd9db53b99b8edaf8600bc}{remove\+Photo\+From\+Suggestion}} (const int proxy\+Row)
+\begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_suggestion_category_proxy_model_acbcc572b70158e4c6b93a43494837c74}\label{class_suggestion_category_proxy_model_acbcc572b70158e4c6b93a43494837c74} 
+void {\bfseries filter\+Enabled\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Signal émis quand l\textquotesingle{}état du filtrage change. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_suggestion_category_proxy_model_a7f173be0c42da4ac2ddeef414d1d4247}{Suggestion\+Category\+Proxy\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}category"{}. Par défaut, le filtrage est inactif (tout passe). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_suggestion_category_proxy_model_aec23196b11c2801ba701656539a288d4}{filter\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em Cette méthode indique si le filtrage est actif ou non. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_suggestion_category_proxy_model_a4033c7903dcf1ae1254b3e6b8a21f005}{set\+Filter\+Value}} (QString filter="{}"{})
+\begin{DoxyCompactList}\small\item\em Cette méthode invocable par QML active ou désactive le filtrage par le proxy\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_suggestion_category_proxy_model_a32e202125b547edffe7900d9df77af86}\label{class_suggestion_category_proxy_model_a32e202125b547edffe7900d9df77af86} 
+bool {\bfseries filter\+Enabled}
+\begin{DoxyCompactList}\small\item\em The filter\+Enabled property manages the status of the filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_suggestion_category_proxy_model}{Suggestion\+Category\+Proxy\+Model} class is a filter Proxy\+Model, that keeps only \doxylink{struct_suggestion}{Suggestion} with a given category. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_suggestion_category_proxy_model_a7f173be0c42da4ac2ddeef414d1d4247}\label{class_suggestion_category_proxy_model_a7f173be0c42da4ac2ddeef414d1d4247} 
+\index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
+\index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
+\doxysubsubsection{\texorpdfstring{SuggestionCategoryProxyModel()}{SuggestionCategoryProxyModel()}}
+{\footnotesize\ttfamily Suggestion\+Category\+Proxy\+Model\+::\+Suggestion\+Category\+Proxy\+Model (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}category"{}. Par défaut, le filtrage est inactif (tout passe). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \+: modèle source. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_suggestion_category_proxy_model_aec23196b11c2801ba701656539a288d4}\label{class_suggestion_category_proxy_model_aec23196b11c2801ba701656539a288d4} 
+\index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!filterEnabled@{filterEnabled}}
+\index{filterEnabled@{filterEnabled}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
+\doxysubsubsection{\texorpdfstring{filterEnabled()}{filterEnabled()}}
+{\footnotesize\ttfamily bool Suggestion\+Category\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Cette méthode indique si le filtrage est actif ou non. 
+
+\begin{DoxyReturn}{Returns}
+true si le filtre est actif. 
+\end{DoxyReturn}
+\Hypertarget{class_suggestion_category_proxy_model_a29d65a3ef6bd9db53b99b8edaf8600bc}\label{class_suggestion_category_proxy_model_a29d65a3ef6bd9db53b99b8edaf8600bc} 
+\index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!removePhotoFromSuggestion@{removePhotoFromSuggestion}}
+\index{removePhotoFromSuggestion@{removePhotoFromSuggestion}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
+\doxysubsubsection{\texorpdfstring{removePhotoFromSuggestion}{removePhotoFromSuggestion}}
+{\footnotesize\ttfamily void Suggestion\+Category\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{proxy\+Row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
+
+\begin{DoxyNote}{Note}
+On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxylink{class_suggestion_proxy_model}{Suggestion\+Proxy\+Model}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em proxy\+Row} & \+: Indice dans le Proxy\+Model de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_suggestion_category_proxy_model_a7ecc03f7eb5925bef1c0937221bcd469}\label{class_suggestion_category_proxy_model_a7ecc03f7eb5925bef1c0937221bcd469} 
+\index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!setFilterEnabled@{setFilterEnabled}}
+\index{setFilterEnabled@{setFilterEnabled}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
+\doxysubsubsection{\texorpdfstring{setFilterEnabled}{setFilterEnabled}}
+{\footnotesize\ttfamily void Suggestion\+Category\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ce slot active ou désactive le filtrage par le proxy\+Model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & \+: true pour activer le filtrage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_suggestion_category_proxy_model_a4033c7903dcf1ae1254b3e6b8a21f005}\label{class_suggestion_category_proxy_model_a4033c7903dcf1ae1254b3e6b8a21f005} 
+\index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!setFilterValue@{setFilterValue}}
+\index{setFilterValue@{setFilterValue}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
+\doxysubsubsection{\texorpdfstring{setFilterValue()}{setFilterValue()}}
+{\footnotesize\ttfamily void Suggestion\+Category\+Proxy\+Model\+::set\+Filter\+Value (\begin{DoxyParamCaption}\item[{QString}]{filter = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Cette méthode invocable par QML active ou désactive le filtrage par le proxy\+Model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & \+: La chaine à garder pour le filtrage. (vide = Accept All)\\
+\hline
+\end{DoxyParams}
+Le filtrage se fait sur la base \+: \doxylink{struct_suggestion}{Suggestion} dont la catégorie contient le mot passé en paramètre. Par exemple, le filtre "{}tag"{} laissera passer les catégories "{}tag"{} et "{}geo\texorpdfstring{$\vert$}{|}tag"{}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Models/Suggestion\+Category\+Proxy\+Model.\+h\item 
+Models/Suggestion\+Category\+Proxy\+Model.\+cpp\end{DoxyCompactItemize}
