@@ -24,10 +24,11 @@ Rectangle {
     property bool editable: false
     property bool deletable: false
     property string content
-    property alias editArea:editArea
-    property alias saveArea:saveArea
-    property alias deleteArea:deleteArea
-    property alias chipText:chipText
+    property alias editArea: editArea
+    property alias saveArea: saveArea
+    property alias revertArea: revertArea
+    property alias deleteArea: deleteArea
+    property alias chipText: chipText
 
     Image{
         id: chipEdit

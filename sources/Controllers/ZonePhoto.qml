@@ -23,7 +23,12 @@ ZonePhotoForm {
     {
         var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text;
         window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime , "dateTimeOriginal");
-        //chipDate.chipText.text = fixDate(chipDate)
+        resetChipButtons(chipDate);
+    }
+
+    chipDate.revertArea.onClicked:
+    {
+        chipDate.chipText.text = chipDate.content;
         resetChipButtons(chipDate);
     }
 
@@ -35,13 +40,17 @@ ZonePhotoForm {
         chipTime.chipText.inputMask = "99:99";
         enableEdit(chipTime);
         // TODO: On ne peut sauver que si c'est au bon format
-        chipTime.canSave = true // chipTime.chipText.acceptableInput;
+        chipTime.canSave = true; // chipTime.chipText.acceptableInput;
     }
     chipTime.saveArea.onClicked:
     {
         var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text;
         window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime , "dateTimeOriginal");
-        // chipTime.chipText.text = fixTime(chipTime)
+        resetChipButtons(chipTime);
+    }
+    chipTime.revertArea.onClicked:
+    {
+        chipTime.chipText.text = chipTime.content;
         resetChipButtons(chipTime);
     }
 
@@ -56,27 +65,29 @@ ZonePhotoForm {
     chipCreator.saveArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, chipCreator.chipText.text, "creator");
-        // tabbedPage.refreshSelectedData();
         resetChipButtons(chipCreator);
     }
     chipCreator.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "creator");
-        // tabbedPage.refreshSelectedData();
         resetChipButtons(chipCreator);
     }
+    chipCreator.revertArea.onClicked:
+    {
+        chipCreator.chipText.text = chipCreator.content;
+        resetChipButtons(chipCreator);
+    }
+
 
     // ------------------------------- DESCRIPTION
     chipDescription.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "description");
-        // tabbedPage.refreshSelectedData();
     }
 
     chipWriter.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "descriptionWriter");
-        // tabbedPage.refreshSelectedData();
     }
 
     // -----------------------------------------------------------------------------------
@@ -87,7 +98,7 @@ ZonePhotoForm {
         target: tabbedPage
         function onSelectedDataChanged()
         {
-            // console.debug("onSelectedDataChanged->ZonePhoto");
+            console.debug("onSelectedDataChanged->ZonePhoto");
             chipDate.content = Utilities.toReadableDate(tabbedPage.selectedData.dateTimeOriginal)
             chipTime.content = Utilities.toReadableTime(tabbedPage.selectedData.dateTimeOriginal)
             chipCreator.content = tabbedPage.selectedData.creator

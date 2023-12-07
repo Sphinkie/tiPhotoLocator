@@ -39,26 +39,24 @@ QString Utilities::toStandardDateTime(const QVariant value)
 
     QRegularExpressionMatch match = regexDateTime.match(value.toString());
     if (match.hasMatch()) {
-        qDebug() << "matched";
+        // qDebug() << "matched";
         QString day = match.captured(1);
         QString month = match.captured(2);
         QString year = match.captured(3);
         QString hours = match.captured(4);
         QString minutes = match.captured(5);
-
-        qDebug() << day << "/" << month<< "/" << year << " T " << hours << ":" << minutes;
+        // qDebug() << day << "/" << month<< "/" << year << " T " << hours << ":" << minutes;
 
         day    = fixDigits(day, today.day(), 1, 31);
         month  = fixDigits(month, today.month(), 1, 12);
         year   = fixYear(year, today.year());
         hours  = fixDigits(hours,  0, 0, 23);
         minutes= fixDigits(minutes,  0, 0, 59);
-
         result = year + ":" + month + ":" + day + " " + hours + ":" + minutes + ":00";
         qDebug() << result;
     }
     else {
-        qDebug() << "no matched";
+        qDebug() << "datetime does not match the pattern";
         result = today.toString("yyyy:MM:dd") + " 12:00:00";
     }
     return (result);
@@ -93,7 +91,7 @@ QString Utilities::toReadableDateTime(const QVariant value)
  */
 QString Utilities::fixYear(QString sYear, int defaultYear)
 {
-    qDebug() << "fixYear[str,empty,null,len]" << sYear << sYear.isEmpty() << sYear.isNull() << sYear.length();
+    // qDebug() << "fixYear[str,empty,null,len]" << sYear << sYear.isEmpty() << sYear.isNull() << sYear.length();
     int nYear = sYear.toInt();
     if (sYear.isEmpty() || sYear.isNull()) nYear = defaultYear;
     else if (nYear < 100) nYear += 2000;
@@ -114,7 +112,7 @@ QString Utilities::fixYear(QString sYear, int defaultYear)
  */
 QString Utilities::fixDigits(QString sDigits, int defaultValue, int min, int max)
 {
-    qDebug() << "fixDigits[str,empty,null,len]" << sDigits << sDigits.isEmpty() << sDigits.isNull() << sDigits.length();
+    // qDebug() << "fixDigits[str,empty,null,len]" << sDigits << sDigits.isEmpty() << sDigits.isNull() << sDigits.length();
     int nDigits = sDigits.toInt();
     if (sDigits.isEmpty() || sDigits.isNull()) nDigits =defaultValue;
     else if (nDigits < min) nDigits = min;

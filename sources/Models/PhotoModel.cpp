@@ -314,49 +314,52 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].gpsLatitude = value.toDouble();
             m_photos[index.row()].hasGPS = (value != 0);    // Pas hyper-rigoureux...
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << LatitudeRole << HasGPSRole);
+            emit dataChanged(index, index, QVector<int>() << LatitudeRole << HasGPSRole << ToBeSavedRole);
             break;
         case LongitudeRole:
             m_photos[index.row()].gpsLongitude = value.toDouble();
             m_photos[index.row()].hasGPS = (value != 0);     // Théoriquement, il faudrait tester lat et long...
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << LongitudeRole << HasGPSRole);
+            emit dataChanged(index, index, QVector<int>() << LongitudeRole << HasGPSRole << ToBeSavedRole);
             break;
         case CityRole:
             m_photos[index.row()].city = value.toString();
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << CityRole );
+            emit dataChanged(index, index, QVector<int>() << CityRole << ToBeSavedRole);
             break;
         case CountryRole:
             m_photos[index.row()].country = value.toString();
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << CountryRole );
+            emit dataChanged(index, index, QVector<int>() << CountryRole << ToBeSavedRole);
             break;
         case CreatorRole:
             m_photos[index.row()].creator = value.toString();
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << CreatorRole );
+            emit dataChanged(index, index, QVector<int>() << CreatorRole << ToBeSavedRole);
             break;
         case DateTimeOriginalRole:
             m_photos[index.row()].dateTimeOriginal = Utilities::toStandardDateTime(value);
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << DateTimeOriginalRole );
+            emit dataChanged(index, index, QVector<int>() << DateTimeOriginalRole << ToBeSavedRole);
             break;
         case DescriptionRole:
             m_photos[index.row()].description = value.toString();
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << DescriptionRole );
+            emit dataChanged(index, index, QVector<int>() << DescriptionRole << ToBeSavedRole);
             break;
         case DescriptionWriterRole:
             m_photos[index.row()].descriptionWriter = value.toString();
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << DescriptionWriterRole );
+            emit dataChanged(index, index, QVector<int>() << DescriptionWriterRole << ToBeSavedRole);
             break;
         case ToBeSavedRole:
             m_photos[index.row()].toBeSaved = value.toBool();
+            emit dataChanged(index, index, QVector<int>() << ToBeSavedRole);
             break;
+        default:
+            // pas de role précis reconnu: refesh global
+            emit dataChanged(index, index);
         }
-        emit dataChanged(index, index, QVector<int>() << ToBeSavedRole);
         return true;
     }
     else return false;
