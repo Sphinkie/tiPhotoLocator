@@ -80,5 +80,6 @@
         <file>Images/chip-revert.png</file>
         <file>Controllers/TiTabButton.qml</file>
         <file>Vues/TiTabButtonForm.ui.qml</file>
+        <file>Components/ImagettesListView.qml</file>
     </qresource>
 </RCC>

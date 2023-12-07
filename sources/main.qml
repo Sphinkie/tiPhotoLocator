@@ -143,8 +143,9 @@ Window {
 
         Frame {
             id: listViewFrame
-            Layout.fillWidth: false
             Layout.fillHeight: true
+            Layout.fillWidth: false
+            Layout.margins: 4
             Layout.preferredHeight: 200
             Layout.preferredWidth: 380
             TiPhotoListview {}
