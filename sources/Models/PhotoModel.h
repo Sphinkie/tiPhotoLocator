@@ -45,6 +45,8 @@ struct Photo
     QString make;               //!< camera maker (no changes allowed in this app)
     int imageWidth = 0;         //!< image width  (no changes allowed in this app)
     int imageHeight = 0;        //!< image height (no changes allowed in this app)
+    float shutterSpeed = -1;    //!< Durée d'exposition (no changes allowed in this app)
+    float fNumber = -1;         //!< Ouverture (no changes allowed in this app)
     // IPTC tags
     QString creator;             //!< can be: Artist or Creator
     QString city;               //!< City shown in the Photo
@@ -97,8 +99,8 @@ public:
         ImageWidthRole,
         ImageHeightRole,
         CreatorRole,
-        GPSLatitudeRefRole,    // TODO A voir s'il faut le conserver
-        GPSLongitudeRefRole,   // ou s'il n'y en a pas besoin
+        ShutterSpeedRole,
+        FNumberRole,
         CityRole,
         CountryRole,
         DescriptionRole,

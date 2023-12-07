@@ -169,6 +169,8 @@ bool ExifReadTask::writeArgsFile()
     out << "-ImageWidth"        << Qt::endl;   // 4608
     out << "-ImageHeight"       << Qt::endl;   // 3072
     out << "-ImageDescription"  << Qt::endl;   // Alternate tag label for "Description" (EXIF)
+    out << "-ShutterSpeed"      << Qt::endl;   // 0.005
+    out << "-FNumber"           << Qt::endl;   // 2.8
     out << "-Artist"            << Qt::endl;   // Name of the photographer (EXIF tag label)
     out << "-Software"          << Qt::endl;   // Logiciel de l'Appareil photo ou du Scanner
     out << "-MetadataEditingSoftware" << Qt::endl;   // Logiciel ayant renseigné les métadonnées

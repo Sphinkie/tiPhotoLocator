@@ -75,6 +75,8 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
         case MakeRole:              return photo.make;
         case ImageWidthRole:        return photo.imageWidth;
         case ImageHeightRole:       return photo.imageHeight;
+        case ShutterSpeedRole:      return photo.shutterSpeed;
+        case FNumberRole:           return photo.fNumber;
         case CreatorRole:           return photo.creator;
         case CityRole:              return photo.city;
         case CountryRole:           return photo.country;
@@ -115,6 +117,8 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         // Photo
         {DateTimeOriginalRole,  "dateTimeOriginal"},
         {SoftwareRole,          "software"},
+        {ShutterSpeedRole,      "shutterSpeed"},
+        {FNumberRole,           "fNumber"},
         // Camera
         {CamModelRole,          "camModel"},
         {MakeRole,              "make"},
@@ -294,7 +298,7 @@ void PhotoModel::setData(int row, QString value, QString property)
  *
  * Cette fonction met aussi à \c TRUE le flag \c "To Be Saved" car il s'agit d'une action opérateur.
  * Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la Photo.
- * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, etc.
+ * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, shutterSpeed, F-number, etc.
  * \see https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
  * \note: It is important to emit the dataChanged() signal after saving the changes.
  *
@@ -394,9 +398,9 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // qDebug() << "found" << row ;
     if (row >= m_photos.count()) return;        // Traitement du cas FileName not found
 
-    // ----------------------------------
-    // On met à jour les data de la photo
-    // ----------------------------------
+    // -----------------------------------------------------
+    // On met à jour les data de la photo dans le modèle
+    // -----------------------------------------------------
     m_photos[row].gpsLatitude     = value_list["GPSLatitude"].toDouble();
     m_photos[row].gpsLongitude    = value_list["GPSLongitude"].toDouble();
     // Les indicateurs calculés
@@ -408,6 +412,8 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_photos[row].make            = value_list["Make"].toString();
     m_photos[row].imageWidth      = value_list["ImageWidth"].toInt();
     m_photos[row].imageHeight     = value_list["ImageHeight"].toInt();
+    m_photos[row].shutterSpeed    = value_list["ShutterSpeed"].toFloat();
+    m_photos[row].fNumber         = value_list["FNumber"].toFloat();
     // Les metadata IPTC
     m_photos[row].city            = value_list["City"].toString();
     m_photos[row].country         = value_list["Country"].toString();
@@ -452,7 +458,7 @@ void PhotoModel::dumpData()
         m_dumpedRow = 0;
         return;
     }
-    qDebug() << m_photos[m_dumpedRow].filename << m_photos[m_dumpedRow].city << m_photos[m_dumpedRow].gpsLatitude << m_photos[m_dumpedRow].gpsLongitude
+    qDebug() << m_photos[m_dumpedRow].filename << m_photos[m_dumpedRow].city << m_photos[m_dumpedRow].shutterSpeed << m_photos[m_dumpedRow].fNumber
              << m_photos[m_dumpedRow].camModel << m_photos[m_dumpedRow].make << "to be saved:" << m_photos[m_dumpedRow].toBeSaved
              << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal  <<  "description:" << m_photos[m_dumpedRow].description  <<  "creator:" << m_photos[m_dumpedRow].creator ;
     m_dumpedRow++;
@@ -578,6 +584,8 @@ void PhotoModel::addTestItem()
     ibizaData.insert("Creator", "Midjourney");
     ibizaData.insert("GPSLatitude", 38.980);
     ibizaData.insert("GPSLongitude", 1.433);
+    ibizaData.insert("ShutterSpeed", 0.008);  // 1/125e
+    ibizaData.insert("FNumber", 2.8);
     this->setData(ibizaData);
 }
 

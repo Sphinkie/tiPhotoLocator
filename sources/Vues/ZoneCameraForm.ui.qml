@@ -8,7 +8,7 @@ Item {
     property alias chipModel: chipModel
     property alias chipMaker: chipMaker
     property alias chipSoftware: chipSoftware
-    property alias chipFocale: chipFocale
+    property alias chipAperture: chipAperture
     property alias chipSpeed: chipSpeed
 
     Zone {
@@ -34,7 +34,7 @@ Item {
                 deletable: false
             }
             Chips {
-                id: chipFocale
+                id: chipAperture
                 editable: false
                 deletable: false
             }
