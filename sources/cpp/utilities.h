@@ -12,9 +12,8 @@ class Utilities
 {
 public:
     Utilities();
-    //static QString toExifDate(const QVariant value, const QString old_value="");
     static QString toExifDate(const QVariant value);
-    static QString toReadableDate(const QVariant value);
+    static QString toReadableDateTime(const QVariant value);
     static QString toStandardDateTime(const QVariant value);
 
     static QString fixYear(QString sYear, int defaultYear);

@@ -21,8 +21,8 @@ ZonePreviewForm {
 
     chipName.content: isphoto? tabbedPage.selectedData.filename : ""
     chipSize.content: isphoto? tabbedPage.selectedData.imageWidth + " x " + tabbedPage.selectedData.imageHeight : ""
-    chipDate.content: Utilities.toStandardDate(tabbedPage.selectedData.dateTimeOriginal)
-    chipTime.content: Utilities.toStandardTime(tabbedPage.selectedData.dateTimeOriginal)
+    chipDate.content: Utilities.toReadableDate(tabbedPage.selectedData.dateTimeOriginal)
+    chipTime.content: Utilities.toReadableTime(tabbedPage.selectedData.dateTimeOriginal)
     chipMake.content: tabbedPage.selectedData.make
     chipCamModel.content: tabbedPage.selectedData.camModel
     chipCountry.content: tabbedPage.selectedData.country

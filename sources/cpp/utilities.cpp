@@ -72,7 +72,7 @@ QString Utilities::toStandardDateTime(const QVariant value)
  * \param value : Le QVariant contenant la date issue d'un tag Exif.
  * \return la date pouvant être affichée dans un Chip.
  */
-QString Utilities::toReadableDate(const QVariant value)
+QString Utilities::toReadableDateTime(const QVariant value)
 {
     QString date = value.toString();
     QString result = date.mid(8,2) + '/' + date.mid(5,2) + '/' + date.left(4) + ' ' + date.mid(11,5);

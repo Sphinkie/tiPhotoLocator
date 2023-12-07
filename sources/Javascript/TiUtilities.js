@@ -31,7 +31,7 @@ function toStandardPath(objet)
  * \param sep: (optionel) Le séparateur à utiliser dans le résultat
  * @return une date au format "DD<sep>MM<sep>YYYY"
  */
-function toStandardDate(objet, sep="/")
+function toReadableDate(objet, sep="/")
 {
     let texte = objet.toString();
     if (texte.length > 10)
@@ -49,7 +49,7 @@ function toStandardDate(objet, sep="/")
  * \param objet: une date du type "YYYY-MM-DD HH:MM:SS"
  * @return une heure au format "HH:MM"
  */
-function toStandardTime(objet)
+function toReadableTime(objet)
 {
     let texte = objet.toString();
     if (texte.length > 16)
