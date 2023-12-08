@@ -18,11 +18,11 @@ Rectangle {
         }
 
         ImagettesListView{
-            width: 500   // TODO ajuster la largeur automatiquement
+            // width: 500
+            Layout.fillWidth: true
+            Layout.rightMargin: 20
             height: 104
 
-            // width: parent.width  // => les images n'apparaissent plus
-            // Layout.fillWidth: true
         }
 
         Rectangle {

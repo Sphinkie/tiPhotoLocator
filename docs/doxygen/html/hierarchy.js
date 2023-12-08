@@ -17,6 +17,7 @@ var hierarchy =
       [ "SuggestionCategoryProxyModel", "class_suggestion_category_proxy_model.html", null ],
       [ "SuggestionGeoProxyModel", "class_suggestion_geo_proxy_model.html", null ],
       [ "SuggestionProxyModel", "class_suggestion_proxy_model.html", null ],
+      [ "UndatedPhotoProxyModel", "class_undated_photo_proxy_model.html", null ],
       [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", null ]
     ] ],
     [ "Suggestion", "struct_suggestion.html", null ],

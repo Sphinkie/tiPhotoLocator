@@ -91,6 +91,7 @@ Map {
             required property double longitude
             required property bool hasGPS
             required property bool isMarker
+            required property bool isSelected
             // Position du marker
             coordinate: QtPositioning.coordinate(latitude, longitude)
             // Point d'ancrage de l'icone
@@ -102,9 +103,11 @@ Map {
                 Text { id: markerText; text: isMarker? " " : filename; font.bold: true } // pas vide, sinon hauteur_texte=0
                 Image {
                     id: markerIcon;
-                    source: isMarker ? "qrc:///Images/mappin-yellow.png" : "qrc:///Images/mappin-red.png";
-                    height: isMarker ? 42 : 48;
+                    height: isMarker ? 42 : 48;    // Le marker est un peu plus petit que les autres
                     width: height
+                    source: isMarker ? "qrc:///Images/mappin-yellow.png"              // le marker est jaune
+                                     : isSelected ? "qrc:///Images/mappin-red.png"    // la photo sélectionée en rouge
+                                                  : "qrc:///Images/mappin-grey.png";  // les autres en gris
                 }
             }
         }

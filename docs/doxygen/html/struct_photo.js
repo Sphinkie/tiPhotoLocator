@@ -12,6 +12,7 @@ var struct_photo =
     [ "description", "struct_photo.html#a6fe05dc549b7caf2ee3232476d41e760", null ],
     [ "descriptionWriter", "struct_photo.html#acb90e7577e987fce17f38f399a110dcb", null ],
     [ "filename", "struct_photo.html#a74c2e37c247175676d801adab5d0251a", null ],
+    [ "fNumber", "struct_photo.html#a52f8b3c14a9736e4a6f1a338987a4113", null ],
     [ "gpsLatitude", "struct_photo.html#aebc8cca52d5bbb81ca5726f221818839", null ],
     [ "gpsLongitude", "struct_photo.html#ad76b83d8bbaae4a2e4bfefef2f268008", null ],
     [ "hasGPS", "struct_photo.html#af2fe738cd3749de9263ff89bfa971ec9", null ],
@@ -24,6 +25,7 @@ var struct_photo =
     [ "isWelcome", "struct_photo.html#a46c9dbe9c662028eff1907e39d5941f2", null ],
     [ "keywords", "struct_photo.html#a4dc57713c257f4db2442fcf30a2a3fec", null ],
     [ "make", "struct_photo.html#a3f6620eb0f021aec853b0390d66c4898", null ],
+    [ "shutterSpeed", "struct_photo.html#aeaeadb764ea3e33efa012abc317676db", null ],
     [ "software", "struct_photo.html#a1e092e500b8cc02272e39b823f094180", null ],
     [ "toBeSaved", "struct_photo.html#a66c836579b45614de3f51edba11ea2fe", null ]
 ];

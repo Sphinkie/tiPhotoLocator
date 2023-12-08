@@ -210,6 +210,7 @@ void PhotoModel::appendSavedPosition(double latitude, double longitude)
 /* ********************************************************************************************************** */
 /*!
  * \brief Supprime du modèle l'item correspondant à la position sauvegardée.
+ * \details L'item **SavedPosition**, de type **isMarker** est supprimé du modèle.
  */
 void PhotoModel::removeSavedPosition()
 {
@@ -450,6 +451,7 @@ int PhotoModel::getSelectedRow()
 /* ********************************************************************************************************** */
 /*!
  * \brief Debug function that print (in the console) one line of the model at every call.
+ * \note Debug function.
  */
 void PhotoModel::dumpData()
 {
@@ -467,6 +469,7 @@ void PhotoModel::dumpData()
 /* ********************************************************************************************************** */
 /*!
  * \brief Deletes all the items of the Model.
+ * \details On utilise cette fonction quand on scanne un nouveau répertoire de photos.
  */
 void PhotoModel::clear()
 {
@@ -513,8 +516,9 @@ void PhotoModel::fetchExifMetadata(int photo)
 /* ********************************************************************************************************** */
 /*!
  * \brief Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
- * Tag obligatoire: imageUrl.
- * Tags modifiés: coords GPS, Creator, City, Country...
+ * \note Tag obligatoire: imageUrl.
+ * \note Tags modifiés: GPS coords, Creator, City, Country, DateTimeOriginal.
+ * \note Tags automatiques: GPS Ref, MetadataEditingSoftware.
  */
 void PhotoModel::saveMetadata()
 {
@@ -652,29 +656,24 @@ QVariantMap PhotoModel::get(int row)
 /* ********************************************************************************************************** */
 /*!
  * \brief Parcourt toutes les Photo du modèle, et flague celles qui sont à l'interieur du cercle demandé.
- *        Fonction avec mécanisme de Mutelle Exclusion (MUTEX).
- * \param circle_lat: Latitude du centre du cercle
- * \param circle_long: Longitude du centre du cercle
- * \param circle_radius: Rayon du cercle
+ *        Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).
+ * \param circle_radius: Le rayon du cercle (en mètres).
+ *
+ * On utilise les conversions: **1°lat = 111km**  et  **1°long = 111km x cos(lat)**.
  */
-void PhotoModel::findInCirclePhotos(double circle_lat, double circle_long, int circle_radius)
+void PhotoModel::findInCirclePhotos(int circle_radius)
 {
-
-    // On parcourt toutes les photos (avec hasGPS)
     // Le centre du cercle est la photo sélectionnée
-    circle_lat = m_photos[m_lastSelectedRow].gpsLatitude;
-    circle_long = m_photos[m_lastSelectedRow].gpsLongitude;
+    double circle_lat = m_photos[m_lastSelectedRow].gpsLatitude;
+    double circle_long = m_photos[m_lastSelectedRow].gpsLongitude;
+    //qDebug() << "findInCirclePhotos" << circle_lat << circle_long << circle_radius << "m";
 
-    qDebug() << "findInCirclePhotos" << circle_lat << circle_long << circle_radius << "m";
-    // On parcourt tous les items du modèle (par leur indice dans le vecteur)
+    double rayon_lat = double(circle_radius) / 111111;       // rayon_lat = circle_radius(km) / 111.11
+    double rayon_long = rayon_lat / cos(circle_lat);
+    // qDebug() << "constantes; Rlat" << rayon_lat << ", Rlon" << rayon_long;
+
+    // On parcourt tous les items du modèle (qui ont des coords GPS)
     int row = 0;
-    // 1°lat = 111km
-    // 1°long = 111km x cos(lat)
-    // rayon_lat = circle_radius(km) / 111
-    double rayon_lat = double(circle_radius) / 111111;
-    double cos_lat = cos(circle_lat);
-    double rayon_long = rayon_lat / cos_lat;
-    qDebug() << "constantes; Rlat" << rayon_lat << ", Rlon" << rayon_long;
     QModelIndex idx = this->index(row, 0);
     while (idx.isValid())
     {
@@ -689,40 +688,38 @@ void PhotoModel::findInCirclePhotos(double circle_lat, double circle_long, int c
         }
         idx = idx.siblingAtRow(++row);
     }
-    // On notifie en une seule fois l'ensemble des photos
+    // A la fin, on notifie en une seule fois l'ensemble des photos.
     emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
-
 
     // si la fonction est relancée une seconde fois alors que celle-ci n'est pas finie : on ignore
     // TODO : Mettre un Mutex
-
-
 }
 
 /*!
  * \brief Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R.
- * \param rLa : le rayon du cercle sur laxe des Latitudes (en degrés).
+ * \param pLa : Latitude du point à tester.
+ * \param pLo : Longitude du point à tester.
+ * \param oLa : Latitude de l'origine du cercle.
+ * \param oLo : Longitude de l'origine du cercle.
+ * \param rLa : le rayon du cercle sur l'axe des Latitudes N-S(en degrés).
+ * \param rLo : le rayon du cercle sur l'axe des Longitudes E-W (en degrés).
  * \note Pour être le plus rapide possible, le cercle est plutôt un carré.
- *       Sur l'axe des latitudes :
  */
 bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo)
 {
-    qDebug() << "  Comparaison avec: pLa" << pLa << "=> Ecart lat" << abs(pLa-oLa) << "vs" << rLa ;
+    // qDebug() << "  Comparaison avec: pLa:" << pLa << "=> Ecart lat" << abs(pLa-oLa) << "vs" << rLa ;
+    // qDebug() << "  Comparaison avec: pLo:" << pLo << "=> Ecart long" << abs(pLo-oLo) << "vs" << rLo ;
     if (abs(pLa - oLa) > rLa)
     {
-        qDebug() << "  Too far!";
         return false;
     }
-    else
-    {
-        qDebug() << "  Comparaison avec: pLo:" << pLo << "=> Ecart long" << abs(pLo-oLo) << "vs" << rLo ;
-        if (abs(pLo - oLo) > rLo)
+    else if (abs(pLo - oLo) > rLo)
         {
-            qDebug() << "Too far!";
             return false;
         }
-    }
-    return true;
+    else
+        // TODO : pour les points qui arrivent jusqu'ici, on peut faire un test plus précis
+        return true;
 }
 
 

@@ -32,7 +32,7 @@ ToolBarMapForm {
     slider_radius.onPressedChanged: {
         // Quand on relache le slider, il recherche les photos qui pourraient être dans le cercle.
         if (!slider_radius.pressed)
-            _photoListModel.findInCirclePhotos(0,0,slider_radius.value);
+            _photoListModel.findInCirclePhotos(slider_radius.value);
     }
 
 
