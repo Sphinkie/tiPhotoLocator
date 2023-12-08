@@ -85,7 +85,7 @@ ListView{
                 height: 20
             }
 
-            // Gestion du clic sur un item
+            // Gestion du clic sur un item de la liste
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -94,7 +94,7 @@ ListView{
                     var sourceindex = model.getSourceIndex(index);
                     _photoListModel.selectedRow = sourceindex;   // Actualise le proxymodel
 
-                    // Envoie au parent les data de l'item selectionné du modèle.
+                    // On mémorise dans selectedData les data de l'item selectionné du modèle.
                     // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
                     tabbedPage.selectedData = _photoListModel.get(sourceindex);
 
@@ -105,8 +105,11 @@ ListView{
                     }
                     // sinon: la position de la carte reste inchangée
 
-                    // On change le filtrage des suggestions
+                    // On change le filtrage des suggestions pour filtrer uniquement sur la photo active
                     window.setSuggestionFilter(sourceindex);
+
+                    // On remet le rayon du cercle rouge de la carte à zéro
+                    mapTools.slider_radius.value = 0;
                 }
             }
         }

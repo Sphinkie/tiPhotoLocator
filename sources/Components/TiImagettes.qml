@@ -10,7 +10,6 @@ Rectangle {
         anchors.leftMargin: listViewFrame.width
         anchors.topMargin: 8
 
-
         Rectangle {
             width: 15
             height: 104
@@ -18,19 +17,16 @@ Rectangle {
         }
 
         ImagettesListView{
-            // width: 500
             Layout.fillWidth: true
-            Layout.rightMargin: 20
             height: 104
-
         }
 
         Rectangle {
             width: 15
             height: 104
+            Layout.rightMargin: 20
             color: "green"
         }
-
 
     }
 

@@ -703,10 +703,12 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
  * \param oLo : Longitude de l'origine du cercle.
  * \param rLa : le rayon du cercle sur l'axe des Latitudes N-S(en degrés).
  * \param rLo : le rayon du cercle sur l'axe des Longitudes E-W (en degrés).
+ * \return true si le point est dans le cercle.
  * \note Pour être le plus rapide possible, le cercle est plutôt un carré.
  */
 bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo)
 {
+    if (rLa==0) return false;
     // qDebug() << "  Comparaison avec: pLa:" << pLa << "=> Ecart lat" << abs(pLa-oLa) << "vs" << rLa ;
     // qDebug() << "  Comparaison avec: pLo:" << pLo << "=> Ecart long" << abs(pLo-oLo) << "vs" << rLo ;
     if (abs(pLa - oLa) > rLa)
