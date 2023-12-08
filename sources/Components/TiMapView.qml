@@ -71,7 +71,6 @@ Map {
                            mapTab.photoLongitude= longi;
                            // On change les coordonnées dans l'item du modele
                            window.setSelectedItemCoords(lati, longi);
-                           // tabbedPage.refreshSelectedData();
                            console.log(mapView.supportedMapTypes);  // Debug : Affiche la liste des cartes supportées
                        }
         }
@@ -128,7 +127,7 @@ Map {
         name: "osm"
         property string apikey
 
-        locales: ["fr_FR","en_US"]   // TODO : en fonction de la langue choisie
+        locales: ["fr_FR","en_US"]
         // parametres optionels : PluginParameter{ name: "" ; value: ""}
         // PluginParameter { name: "osm.mapping.providersrepository.address"; value: "http://www.mywebsite.com/osm_repository" }
         // PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey="+apikey}

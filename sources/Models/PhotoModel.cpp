@@ -220,10 +220,24 @@ void PhotoModel::removeSavedPosition()
 
 /* ********************************************************************************************************** */
 /*!
+ * \brief Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée.
+ * \param latitude : Latitude GPS à affecter.
+ * \param longitude : Longitude GPS à affecter.
+ */
+void PhotoModel::setSelectedItemCoords(double latitude, double longitude)
+{
+    QModelIndex idx = this->index(m_lastSelectedRow, 0);
+    setData(idx, latitude, LatitudeRole);
+    setData(idx, longitude, LongitudeRole);
+    qDebug() << "GPS coords changed for " << m_lastSelectedRow;
+}
+
+/* ********************************************************************************************************** */
+/*!
  * \brief Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur
  *        du cercle rouge.
- * \param latitude : latitude GPS à affecter aux photos
- * \param longitude : longitude GPS à affecter aux photos
+ * \param latitude : Latitude GPS à affecter aux photos
+ * \param longitude : Longitude GPS à affecter aux photos
  */
 void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
 {

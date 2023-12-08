@@ -40,7 +40,7 @@ Window {
     signal setSuggestionFilter(int row)
     signal setCategoryFilter(string category)
     signal setPhotoProperty(int index, string texte, string target)
-    signal removePhotoFrom(int row)
+    signal removePhotoFromSuggestion(int row)
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier

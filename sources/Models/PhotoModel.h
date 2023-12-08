@@ -148,6 +148,7 @@ public slots:
     void append(const QString filename, const QString url);
     void fetchExifMetadata(int row = -1);
     void saveMetadata();
+    void setSelectedItemCoords(double latitude, double longitude);
     void setInCircleItemCoords(double latitude, double longitude);
     void findInCirclePhotos(int circle_radius);
     void appendSavedPosition(double latitude, double longitude);

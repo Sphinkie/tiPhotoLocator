@@ -24,7 +24,7 @@ Rectangle {
         Rectangle {
             width: 15
             height: 104
-            Layout.rightMargin: 20
+            Layout.rightMargin: 30
             color: "green"
         }
 
