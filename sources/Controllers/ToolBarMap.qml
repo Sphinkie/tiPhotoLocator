@@ -22,25 +22,28 @@ ToolBarMapForm {
     bt_apply_savedpos.onClicked: {
         // On applique les coordonnées du marker "SavedPosition" aux photos affichées
         window.applySavedPositionToCoords();
-        // On raffraichit l'affichage des tags
-        // tabbedPage.refreshSelectedData();
         // On recentre la carte, si la nouvelle Position est en dehors de la vue actuelle
         var pos = QtPositioning.coordinate(tabbedPage.selectedData.latitude, tabbedPage.selectedData.longitude);
         if (! mapView.visibleRegion.contains(pos))
             mapView.center = pos;
     }
 
+
+    slider_radius.onPressedChanged: {
+        // Quand on relache le slider, il recherche les photos qui pourraient être dans le cercle.
+        if (!slider_radius.pressed)
+            _photoListModel.findInCirclePhotos(0,0,slider_radius.value);
+    }
+
+
     bt_revert.onClicked: {
         // On recharge les infos à partir de la photo du disque
         window.fetchSingleExifMetadata(tabbedPage.selectedData.row);
-        // On raffraichit l'affichage des tags (coords et geotags)
-        // tabbedPage.refreshSelectedData();
     }
 
     bt_clear_coords.onClicked: {
         // On efface les coordonnées GPS des photos affichées
         window.setSelectedItemCoords(0,0);
-        // tabbedPage.refreshSelectedData();
         // On efface la copie locale QML de ces coordonnées...
         mapTab.photoLatitude = 0;
         mapTab.photoLongitude = 0;

@@ -56,8 +56,9 @@ bool OnTheMapProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sour
     // On récupère les données de la ligne
     const bool isSelected = idx.data(PhotoModel::IsSelectedRole).toBool();
     const bool isMarker = idx.data(PhotoModel::IsMarkerRole).toBool();
+    const bool isInsideCircle = idx.data(PhotoModel::InsideCircleRole).toBool();
     // qDebug() << "ProxyModel: " << sourceModel() << idx.row() << isMarker ;
-    return (isSelected || isMarker);
+    return (isSelected || isMarker || isInsideCircle);
 }
 
 

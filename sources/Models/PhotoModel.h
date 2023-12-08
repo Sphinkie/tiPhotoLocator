@@ -139,7 +139,7 @@ private:
     void addTestItem();
     void selectedRow(int row);
     int getSelectedRow();
-
+    bool belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo);
 
 public slots:
     // -----------------------------------------------------
@@ -149,6 +149,7 @@ public slots:
     void fetchExifMetadata(int row = -1);
     void saveMetadata();
     void setInCircleItemCoords(double latitude, double longitude);
+    void findInCirclePhotos(double circle_lat, double circle_long, int circle_radius);
     void appendSavedPosition(double latitude, double longitude);
     void removeSavedPosition();
     void setData(int row, QString value, QString property);

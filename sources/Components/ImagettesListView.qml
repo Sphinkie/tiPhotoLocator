@@ -1,20 +1,15 @@
 import QtQuick
+import QtQuick.Layouts
 
 ListView {
-    height: 120
-    anchors{
-        fill: parent
-        leftMargin: listViewFrame.width
-        topMargin: 10
-    }
+    spacing: 134
+
     orientation: Qt.Horizontal
     model: _onTheMapProxyModel
-    delegate: imgDelegate
     focus: false
 
     // le delegate pour afficher l'imagette dans la ListView
-    Component{
-        id: imgDelegate
+    delegate:
         Item {
             required property string imageUrl
 
@@ -24,7 +19,7 @@ ListView {
                 fillMode: Image.PreserveAspectFit
                 source: imageUrl
             }
+
         }
-    }
 
 }

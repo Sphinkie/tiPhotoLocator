@@ -60,32 +60,32 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 
     switch(role)
     {
-        case FilenameRole:          return photo.filename;
-        case ImageUrlRole:          return photo.imageUrl;
-        case LatitudeRole:          return photo.gpsLatitude;
-        case LongitudeRole:         return photo.gpsLongitude;
-        case HasGPSRole:            return photo.hasGPS;
-        case IsSelectedRole:        return photo.isSelected;
-        case IsMarkerRole:          return photo.isMarker;
-        case IsWelcomeRole:         return photo.isWelcome;
-        case InsideCircleRole:      return photo.insideCircle;
-        case ToBeSavedRole:         return photo.toBeSaved;
-        case DateTimeOriginalRole:  return photo.dateTimeOriginal;
-        case CamModelRole:          return photo.camModel;
-        case MakeRole:              return photo.make;
-        case ImageWidthRole:        return photo.imageWidth;
-        case ImageHeightRole:       return photo.imageHeight;
-        case ShutterSpeedRole:      return photo.shutterSpeed;
-        case FNumberRole:           return photo.fNumber;
-        case CreatorRole:           return photo.creator;
-        case CityRole:              return photo.city;
-        case CountryRole:           return photo.country;
-        case DescriptionRole:       return photo.description;
-        case DescriptionWriterRole: return photo.descriptionWriter;
-        case SoftwareRole:          return photo.software;
-        case KeywordsRole:          return photo.keywords;
-        default:
-            return QVariant();
+    case FilenameRole:          return photo.filename;
+    case ImageUrlRole:          return photo.imageUrl;
+    case LatitudeRole:          return photo.gpsLatitude;
+    case LongitudeRole:         return photo.gpsLongitude;
+    case HasGPSRole:            return photo.hasGPS;
+    case IsSelectedRole:        return photo.isSelected;
+    case IsMarkerRole:          return photo.isMarker;
+    case IsWelcomeRole:         return photo.isWelcome;
+    case InsideCircleRole:      return photo.insideCircle;
+    case ToBeSavedRole:         return photo.toBeSaved;
+    case DateTimeOriginalRole:  return photo.dateTimeOriginal;
+    case CamModelRole:          return photo.camModel;
+    case MakeRole:              return photo.make;
+    case ImageWidthRole:        return photo.imageWidth;
+    case ImageHeightRole:       return photo.imageHeight;
+    case ShutterSpeedRole:      return photo.shutterSpeed;
+    case FNumberRole:           return photo.fNumber;
+    case CreatorRole:           return photo.creator;
+    case CityRole:              return photo.city;
+    case CountryRole:           return photo.country;
+    case DescriptionRole:       return photo.description;
+    case DescriptionWriterRole: return photo.descriptionWriter;
+    case SoftwareRole:          return photo.software;
+    case KeywordsRole:          return photo.keywords;
+    default:
+        return QVariant();
     }
 }
 
@@ -553,9 +553,9 @@ void PhotoModel::saveMetadata()
             // On fait retomber le flag "toBeSaved"
             setData(idx, false, ToBeSavedRole);
             // ou:
-            // m_data[row].toBeSaved = false;
+            // m_photos[row].toBeSaved = false;
             // emit dataChanged(idx, idx, QVector<int>() << ToBeSavedRole);
-         }
+        }
         idx = idx.siblingAtRow(++row);
     }
 }
@@ -651,15 +651,93 @@ QVariantMap PhotoModel::get(int row)
 
 /* ********************************************************************************************************** */
 /*!
+ * \brief Parcourt toutes les Photo du modèle, et flague celles qui sont à l'interieur du cercle demandé.
+ *        Fonction avec mécanisme de Mutelle Exclusion (MUTEX).
+ * \param circle_lat: Latitude du centre du cercle
+ * \param circle_long: Longitude du centre du cercle
+ * \param circle_radius: Rayon du cercle
+ */
+void PhotoModel::findInCirclePhotos(double circle_lat, double circle_long, int circle_radius)
+{
+
+    // On parcourt toutes les photos (avec hasGPS)
+    // Le centre du cercle est la photo sélectionnée
+    circle_lat = m_photos[m_lastSelectedRow].gpsLatitude;
+    circle_long = m_photos[m_lastSelectedRow].gpsLongitude;
+
+    qDebug() << "findInCirclePhotos" << circle_lat << circle_long << circle_radius << "m";
+    // On parcourt tous les items du modèle (par leur indice dans le vecteur)
+    int row = 0;
+    // 1°lat = 111km
+    // 1°long = 111km x cos(lat)
+    // rayon_lat = circle_radius(km) / 111
+    double rayon_lat = double(circle_radius) / 111111;
+    double cos_lat = cos(circle_lat);
+    double rayon_long = rayon_lat / cos_lat;
+    qDebug() << "constantes; Rlat" << rayon_lat << ", Rlon" << rayon_long;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        if (idx.data(HasGPSRole).toBool())
+        {
+            // Si la Photo est dans le cercle : on positionne "insideCircle" à true.
+            if (belong(m_photos[row].gpsLatitude, m_photos[row].gpsLongitude, circle_lat, circle_long, rayon_lat, rayon_long) )
+                m_photos[row].insideCircle = true;
+            else
+                // Sinon on positionne "insideCircle" à false.
+                m_photos[row].insideCircle = false;
+        }
+        idx = idx.siblingAtRow(++row);
+    }
+    // On notifie en une seule fois l'ensemble des photos
+    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
+
+
+    // si la fonction est relancée une seconde fois alors que celle-ci n'est pas finie : on ignore
+    // TODO : Mettre un Mutex
+
+
+}
+
+/*!
+ * \brief Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R.
+ * \param rLa : le rayon du cercle sur laxe des Latitudes (en degrés).
+ * \note Pour être le plus rapide possible, le cercle est plutôt un carré.
+ *       Sur l'axe des latitudes :
+ */
+bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo)
+{
+    qDebug() << "  Comparaison avec: pLa" << pLa << "=> Ecart lat" << abs(pLa-oLa) << "vs" << rLa ;
+    if (abs(pLa - oLa) > rLa)
+    {
+        qDebug() << "  Too far!";
+        return false;
+    }
+    else
+    {
+        qDebug() << "  Comparaison avec: pLo:" << pLo << "=> Ecart long" << abs(pLo-oLo) << "vs" << rLo ;
+        if (abs(pLo - oLo) > rLo)
+        {
+            qDebug() << "Too far!";
+            return false;
+        }
+    }
+    return true;
+}
+
+
+
+/* ********************************************************************************************************** */
+/*!
  * \brief Surcharge de l'opérateur ==.
  * \param file_name: Le texte à comparer
  * \return True si le \b filename de la photo correspond au texte passé en paramètre.
  */
 bool Photo::operator == (const QString &file_name)
 {
-   if (this->filename == file_name)
-      return true;
-  return false;
+    if (this->filename == file_name)
+        return true;
+    return false;
 }
 
 /* ********************************************************************************************************** */
@@ -670,7 +748,7 @@ bool Photo::operator == (const QString &file_name)
  */
 bool Photo::operator == (const Photo &photo)
 {
-   if (this->filename == photo.filename)
-      return true;
-  return false;
+    if (this->filename == photo.filename)
+        return true;
+    return false;
 }

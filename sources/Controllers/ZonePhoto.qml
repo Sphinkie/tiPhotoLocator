@@ -98,7 +98,7 @@ ZonePhotoForm {
         target: tabbedPage
         function onSelectedDataChanged()
         {
-            console.debug("onSelectedDataChanged->ZonePhoto");
+            // console.debug("onSelectedDataChanged->ZonePhoto");
             chipDate.content = Utilities.toReadableDate(tabbedPage.selectedData.dateTimeOriginal)
             chipTime.content = Utilities.toReadableTime(tabbedPage.selectedData.dateTimeOriginal)
             chipCreator.content = tabbedPage.selectedData.creator
