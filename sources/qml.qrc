@@ -81,5 +81,7 @@
         <file>Controllers/TiTabButton.qml</file>
         <file>Vues/TiTabButtonForm.ui.qml</file>
         <file>Components/ImagettesListView.qml</file>
+        <file>Components/FatChip.qml</file>
+        <file>Images/icon-pen.png</file>
     </qresource>
 </RCC>

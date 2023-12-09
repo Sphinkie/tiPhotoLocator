@@ -15,7 +15,7 @@ ZonePhotoForm {
         // Gérer la saisie d'un texte de type DATE
         chipDate.chipText.inputMethodHints = Qt.ImhDate;
         chipDate.chipText.inputMask = "99/99/9999";
-        enableEdit(chipDate);
+        enableEdition(chipDate);
         // FIXME On ne peut sauver que si c'est au bon format
         chipDate.canSave = true // chipDate.chipText.acceptableInput;
     }
@@ -38,7 +38,7 @@ ZonePhotoForm {
         // Gérer la saisie d'un texte de type TIME
         chipTime.chipText.inputMethodHints = Qt.ImhTime;
         chipTime.chipText.inputMask = "99:99";
-        enableEdit(chipTime);
+        enableEdition(chipTime);
         // TODO: On ne peut sauver que si c'est au bon format
         chipTime.canSave = true; // chipTime.chipText.acceptableInput;
     }
@@ -58,7 +58,7 @@ ZonePhotoForm {
     // ------------------------------- CREATOR
     chipCreator.editArea.onClicked:
     {
-        enableEdit(chipCreator);
+        enableEdition(chipCreator);
         // On active le bouton SAVE
         chipCreator.canSave = true;
     }
@@ -80,11 +80,27 @@ ZonePhotoForm {
 
 
     // ------------------------------- DESCRIPTION
+    chipDescription.editArea.onClicked:
+    {
+        enableEdition(chipDescription);
+        chipDescription.canSave = true;
+    }
+    chipDescription.saveArea.onClicked:
+    {
+        window.setPhotoProperty(tabbedPage.selectedData.row, chipDescription.chipText.text, "description");
+        resetChipButtons(chipDescription);
+    }
     chipDescription.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "description");
     }
+    chipDescription.revertArea.onClicked:
+    {
+        chipDescription.chipText.text = chipDescription.content;
+        resetChipButtons(chipDescription);
+    }
 
+    // ------------------------------- DESCRIPTION WRITER
     chipWriter.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "descriptionWriter");
@@ -128,7 +144,7 @@ ZonePhotoForm {
     /*!
      * Active l'édition d'un chip
      */
-    function enableEdit(chip)
+    function enableEdition(chip)
     {
         // On désactive le bouton EDIT
         chip.editable = false;

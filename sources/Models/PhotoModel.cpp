@@ -613,6 +613,7 @@ void PhotoModel::addTestItem()
     ibizaData.insert("GPSLongitude", 1.4351);
     ibizaData.insert("ShutterSpeed", 0.008);  // 1/125e
     ibizaData.insert("FNumber", 2.8);
+    ibizaData.insert("Description", "Have fun ! ôOô ");
     this->setData(ibizaData);
 }
 

@@ -29,6 +29,7 @@ Rectangle {
     property alias saveArea: saveArea
     property alias revertArea: revertArea
     property alias deleteArea: deleteArea
+    // Pour le controle inviduel des items
     property alias chipText: chipText
 
     Image{
@@ -78,7 +79,7 @@ Rectangle {
     }
     TextInput {
         id: chipText
-        anchors.left: chipTarget.right
+        anchors.left: targetName? chipTarget.right : chipEdit.right
         anchors.right: chipDel.left
         anchors.leftMargin: 4
         anchors.rightMargin: 4
