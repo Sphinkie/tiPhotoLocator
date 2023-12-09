@@ -24,6 +24,7 @@ Rectangle {
     property bool editable: false
     property bool deletable: false
     property string content
+    property string targetName
     property alias editArea: editArea
     property alias saveArea: saveArea
     property alias revertArea: revertArea
@@ -62,10 +63,23 @@ Rectangle {
             anchors.fill: parent
         }
     }
+    Text {
+        id: chipTarget
+        anchors.left: parent.left  // Pas de bouton quand on affiche la target
+        anchors.leftMargin: 12
+        anchors.verticalCenter: parent.verticalCenter
+        text: targetName
+        font.pixelSize: 12
+        color: TiStyle.surfaceContainerColor
+        // Positionnement du texte
+        verticalAlignment: Text.AlignVCenter
+        wrapMode: Text.NoWrap
+        clip: true // Le texte peut être tronqué
+    }
     TextInput {
         id: chipText
+        anchors.left: chipTarget.right
         anchors.right: chipDel.left
-        anchors.left: chipEdit.right
         anchors.leftMargin: 4
         anchors.rightMargin: 4
         anchors.verticalCenter: parent.verticalCenter

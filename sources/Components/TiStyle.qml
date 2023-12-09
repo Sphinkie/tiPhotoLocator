@@ -44,7 +44,7 @@ Item{
     readonly property color chipTextColor:       "#ffe0b3"          // Textes des Chips
 
     // Popups
-    readonly property color tertiaryForegroundColor: "#448aff"   // bleu soutenu
+    readonly property color tertiaryForegroundColor: "#448aff"      // bleu soutenu
     readonly property color tertiaryBackgroundColor: "lightblue"
 
     // Boutons

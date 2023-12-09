@@ -23,9 +23,10 @@ Repeater{
 
             Chips {
                 id: currrentChip
-                content: text + " (" + target + ")"
+                content: text
                 editable: false
                 deletable: false
+                targetName: target + ":"
             }
 
             // Gestion du clic sur un item (Chip suggestion)
