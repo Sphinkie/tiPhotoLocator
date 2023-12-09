@@ -106,7 +106,7 @@ Map {
                     width: height
                     source: isMarker ? "qrc:///Images/mappin-yellow.png"              // le marker est jaune
                                      : isSelected ? "qrc:///Images/mappin-red.png"    // la photo sélectionée en rouge
-                                                  : "qrc:///Images/mappin-grey.png";  // les autres en gris
+                                                  : "qrc:///Images/mappin-black.png";  // les autres en gris
                 }
             }
         }

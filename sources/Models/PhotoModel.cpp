@@ -474,9 +474,18 @@ void PhotoModel::dumpData()
         m_dumpedRow = 0;
         return;
     }
+
+    QString flags = "flags:";
+    flags.append(m_photos[m_dumpedRow].toBeSaved ? "toBeSaved ":"");
+    flags.append(m_photos[m_dumpedRow].isSelected? "isSelected ":"");
+    flags.append(m_photos[m_dumpedRow].insideCircle? "insideCircle ":"");
+
     qDebug() << m_photos[m_dumpedRow].filename << m_photos[m_dumpedRow].city << m_photos[m_dumpedRow].shutterSpeed << m_photos[m_dumpedRow].fNumber
-             << m_photos[m_dumpedRow].camModel << m_photos[m_dumpedRow].make << "to be saved:" << m_photos[m_dumpedRow].toBeSaved
-             << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal  <<  "description:" << m_photos[m_dumpedRow].description  <<  "creator:" << m_photos[m_dumpedRow].creator ;
+             << m_photos[m_dumpedRow].camModel << m_photos[m_dumpedRow].make
+             << flags
+             << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal << "description:" << m_photos[m_dumpedRow].description
+             << "creator:" << m_photos[m_dumpedRow].creator ;
+
     m_dumpedRow++;
 }
 
@@ -600,8 +609,8 @@ void PhotoModel::addTestItem()
     ibizaData.insert("City", "Ibiza");
     ibizaData.insert("Country", "Baleares");
     ibizaData.insert("Creator", "Midjourney");
-    ibizaData.insert("GPSLatitude", 38.980);
-    ibizaData.insert("GPSLongitude", 1.433);
+    ibizaData.insert("GPSLatitude", 38.9148);
+    ibizaData.insert("GPSLongitude", 1.4351);
     ibizaData.insert("ShutterSpeed", 0.008);  // 1/125e
     ibizaData.insert("FNumber", 2.8);
     this->setData(ibizaData);
@@ -709,6 +718,8 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
     // TODO : Mettre un Mutex
 }
 
+
+/* ********************************************************************************************************** */
 /*!
  * \brief Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R.
  * \param pLa : Latitude du point à tester.
@@ -737,7 +748,6 @@ bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rL
         // TODO : pour les points qui arrivent jusqu'ici, on peut faire un test plus précis
         return true;
 }
-
 
 
 /* ********************************************************************************************************** */
