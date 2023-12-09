@@ -51,7 +51,7 @@ Window {
     // ----------------------------------------------------------------
     AboutDialog { id: aboutPage }
     CreditsDialog { id: creditsPage}
-    ApiDialog { id: apiPage}
+    ApikeyDialog { id: apiPage}
     RescanWarning { id: rescanWarning}
     SettingsPopup { id: settingsPopup}
     MetadataPopup { id: metadataPopup}
@@ -166,7 +166,6 @@ Window {
                 }
             }
 
-
             // ------------------ PREVIEW TAB --------------------------
             TiPhotoPreview { id: previewView; Layout.fillWidth: true}
 
@@ -221,9 +220,31 @@ Window {
             }
 
             // ------------------ IPTC/EXIF TAGS TAB ----------------------------
-            TiPhotoTags {
-                id: photoTagsTab
+            TiPhotoTags { id: photoTagsTab }
+
+            // ------------------ GLOBAL TAB ----------------------------
+            ColumnLayout {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                ExifTitle {
+                    Layout.fillWidth: true
+                    Layout.topMargin: 20
+                    Layout.rightMargin: 40
+                }
+                ExifGrid {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                }
+                IptcTitle {
+                    Layout.fillWidth: true
+                    Layout.rightMargin: 40
+                }
+                IptcGrid {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                }
             }
+
         }
     }
 

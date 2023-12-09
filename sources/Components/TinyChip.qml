@@ -1,5 +1,7 @@
 import QtQuick
 import QtQuick.Controls
+import "../Components"
+
 
 /*
  * Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt label.
@@ -8,22 +10,20 @@ import QtQuick.Controls
  * @see https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html
  */
 Label {
-    leftPadding: 20   // Positionnement du texte à l'intérieur du rectangle
+    leftPadding: 20 // Positionnement du texte à l'intérieur du rectangle
     rightPadding: 20
     property bool editable: true
     property bool deletable: true
     property string content
-    visible: content? true : false
+    visible: content ? true : false
     text: content
     font.pixelSize: 14
     color: TiStyle.tinychipTextColor
 
-
     background: Rectangle {
-        color: TiStyle.chipBackgroundColor;
+        color: TiStyle.chipBackgroundColor
         implicitHeight: 24
-        radius: 12;
+        radius: 12
         id: pastilleText
     }
-
 }

@@ -37,7 +37,6 @@
         <file>Images/bt-clear.png</file>
         <file>Controllers/ToolBarPrincipale.qml</file>
         <file>Javascript/TiUtilities.js</file>
-        <file>Components/TinyChip.qml</file>
         <file>Images/bt-apply.png</file>
         <file>Controllers/SettingsPopup.qml</file>
         <file>Images/logo_TPL.png</file>
@@ -72,7 +71,7 @@
         <file>Controllers/ZonePhoto.qml</file>
         <file>Vues/ZonePhotoForm.ui.qml</file>
         <file>Images/icon-tag.png</file>
-        <file>Dialogs/ApiDialog.qml</file>
+        <file>Dialogs/ApikeyDialog.qml</file>
         <file>Vues/ZoneSuggestedTagsForm.ui.qml</file>
         <file>Controllers/ZoneSuggestedTags.qml</file>
         <file>Images/chip-edit.png</file>
@@ -83,5 +82,13 @@
         <file>Components/ImagettesListView.qml</file>
         <file>Components/FatChip.qml</file>
         <file>Images/icon-pen.png</file>
+        <file>Components/ZoneTitle.qml</file>
+        <file>Vues/ExifGridForm.ui.qml</file>
+        <file>Components/TinyChip.qml</file>
+        <file>Controllers/ExifGrid.qml</file>
+        <file>Controllers/IptcGrid.qml</file>
+        <file>Vues/IptcGridForm.ui.qml</file>
+        <file>Components/ExifTitle.qml</file>
+        <file>Components/IptcTitle.qml</file>
     </qresource>
 </RCC>

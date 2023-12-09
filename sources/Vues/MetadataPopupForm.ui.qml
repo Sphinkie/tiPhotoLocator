@@ -36,8 +36,8 @@ Popup {
         Text {
             id: desc1
             clip: true
-            readonly property string t1: qsTr("Les tags EXIF contiennent principalement des informations techniques (Modèle d'appareil, objectif...)")
-            readonly property string t2: qsTr("Les données EXIF ne sont pas destinées à être modifiées.")
+            readonly property string t1: qsTr("...")
+            readonly property string t2: qsTr("")
             text: t1 + t2
             anchors.top: parent.top
             anchors.topMargin: 0
@@ -57,44 +57,44 @@ Popup {
 
             Text {
                 id: text01
-                text: qsTr("Text")
+                text: qsTr("..")
                 font.pixelSize: 12
             }
 
             Text {
                 id: text02
-                text: qsTr("Text")
+                text: qsTr("..")
                 font.pixelSize: 12
             }
 
             Text {
                 id: text03
-                text: qsTr("Text")
+                text: qsTr("..")
                 font.pixelSize: 12
             }
             Text {
                 id: text04
-                text: qsTr("Text")
+                text: qsTr("..")
                 font.pixelSize: 12
             }
             Text {
                 id: text10
-                text: qsTr("Text")
+                text: qsTr("..")
                 font.pixelSize: 12
             }
             Text {
                 id: text11
-                text: qsTr("Text")
+                text: qsTr("..")
                 font.pixelSize: 12
             }
             Text {
                 id: text12
-                text: qsTr("Text")
+                text: qsTr("..")
                 font.pixelSize: 12
             }
             Text {
                 id: text13
-                text: qsTr("Text")
+                text: qsTr("..")
                 font.pixelSize: 12
             }
         }
@@ -111,12 +111,12 @@ Popup {
             Text {
                 y: 40
                 clip: true
-                text: qsTr("Elle sont définies (normalement) au moment de la prise de vue.")
+                text: qsTr("...")
             }
             Text {
                 y: 60
                 clip: true
-                text: qsTr("Les tags IPTC contiennent principalement des informations éditoriales (Description de l'image...)    ")
+                text: qsTr("...")
             }
         }
 //    }

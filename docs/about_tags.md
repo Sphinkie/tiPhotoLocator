@@ -17,13 +17,14 @@ It has no official description.
 | ImageDescription | yes | no | 0x010e IDF0 | Image description (pure ASCII) | 
 | Make        | yes | no  | 0x010f IFD0 | Camera manufacturer | 
 | Model       | yes | no  | 0x0110 IFD0 | Camera model        | 
-| Software    | --  | yes | 0x0131 IFD0 | "TiPhotoLocator"    | 
+| Software    | yes  | no | 0x0131 IFD0 | Camera or Scanner software version    | 
 | Artist      | yes | opt | 0x013b IFD0 | Name of photographer | 
 | GPSLatitude      | yes | yes | 0x8825 IFD0 | Photo location |
 | GPSLongitude     | yes | yes | 0x8825 IFD0 | Photo location |
 | GPSLatitudeRef   | no  | yes | 0x8825 IFD0 | North or South | 
 | GPSLongitudeRef  | no  | yes | 0x8825 IFD0 | East or West   | 
 | DateTimeOriginal | yes | no  | 0x9003 ExifIFD | Date/time when the photo was taken | 
+| MetadataProcessingSoftware    | --  | yes |  | "TiPhotoLocator"    | 
 
 | Tag name    | Read |  Write | Id & group | Description | 
 | ----------- | ---- |  ----- | ---------- | ----------- | 
@@ -35,7 +36,7 @@ It has no official description.
 
 ## IPTC CORE tags
 
-The **International Press Telecommunications Council** forlmat (IPTC) is described in the [iptc.org website](https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata)
+The **International Press Telecommunications Council** format (IPTC) is described in the [iptc.org website](https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata)
 
 
 | Tag name    | Read |  Write | Description | 

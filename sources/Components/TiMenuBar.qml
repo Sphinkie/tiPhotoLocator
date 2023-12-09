@@ -17,11 +17,7 @@ MenuBar{
         id: settingsMenu
         title: qsTr("Réglages")
         MenuItem  { text: qsTr("Configuration"); onClicked: settingsPopup.open(); }
-        MenuItem  { text: qsTr("Metadata"); onClicked:
-            {
-                metadataPopup.open();
-            }
-        }
+        // MenuItem  { text: qsTr("Metadata"); onClicked: metadataPopup.open(); }
     }
     Menu {
         id:helpMenu
