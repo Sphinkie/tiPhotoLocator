@@ -78,9 +78,9 @@ function sendtoDeepAI(xhr)
     console.debug(url);
 
     var api_key = "quickstart-QUdJIGlzIGNvbWluZy4uLi4K";
-    var keywords = "Panasonic camera, DMC-TZ10 model, on a uniform light-green background";
+    var keywords = "sailing goelette on deep sea, at dusk, in the storm" // "Panasonic camera, DMC-TZ10 model, on a uniform light-green background";
     var params = JSON.stringify({text: keywords
-                                    //, grid_size: 1
+                                    , grid_size: "1"
                                 })
 
     console.debug(params);
@@ -97,26 +97,3 @@ function sendtoDeepAI(xhr)
 
 }
 
-
-
-/*
- * EXEMPLE DE REQUETE POST AVEC Qt
-
-QUrlQuery params;
-
-params.addQueryItem("key1", "value1");
-params.addQueryItem("key2", "value2");
-
-QUrl resource("http://server.com/form.php");
-QNetworkAccessManager* manager = new QNetworkAccessManager(this);
-
-connect(manager, SIGNAL(finished(QNetworkReply*)), this,
-SLOT(handleEndOfRequest(QNetworkReply*)));
-
-QNetworkRequest request(resource);
-//Force Content-Type header
-request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-
-manager->post(request, params.query(QUrl::FullyEncoded).toUtf8());
-
-*/

@@ -12,6 +12,7 @@
 #include "Models/SuggestionModel.h"
 #include "Models/SuggestionProxyModel.h"
 #include "Models/SuggestionCategoryProxyModel.h"
+#include "Models/CameraSet.h"
 #include "cpp/GeocodeWrapper.h"
 
 
@@ -76,6 +77,7 @@ int main(int argc, char *argv[])
     // On initialise nos classes
     // --------------------------------------
     GeocodeWrapper geocodeWrapper(&suggestionModel); // on lui passe le modèle qui mémorisera les suggestions
+    CameraSet cameraSet;
 
     // --------------------------------------
     // Initialisation du moteur:
@@ -96,6 +98,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("_suggestionCategoryProxyModel", &suggestionCategoryProxyModel);
     context->setContextProperty("_unlocalizedProxyModel", &unlocalizedProxyModel);
     context->setContextProperty("_undatedPhotoProxyModel", &undatedPhotoProxyModel);
+    context->setContextProperty("_cameraSet", &cameraSet);
 
     // Chargement du QMl. Au choix:
     const QUrl url(QStringLiteral("qrc:/main.qml"));

@@ -12,12 +12,13 @@ ToolBarBottomForm {
 
 
     bt_dump1.onClicked: {
-        _photoListModel.dumpData()        
+        _photoListModel.dumpData()
+        _cameraSet.append("TZ80")
     }
 
     bt_dump2.onClicked: {
         _suggestionModel.dumpData()
-        Netwk.request();
+        Netwk.requestAPI();
     }
 
     cb_backups.onCheckedChanged:  {

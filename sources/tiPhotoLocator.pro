@@ -1,6 +1,7 @@
 QT += quick
 QT += positioning
 QT += location
+QT += network
 
 CONFIG += c++11
 
@@ -9,6 +10,7 @@ CONFIG += c++11
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        Models/CameraSet.cpp \
         Models/OnTheMapProxyModel.cpp \
         Models/PhotoModel.cpp \
         Models/SuggestionCategoryProxyModel.cpp \
@@ -17,6 +19,7 @@ SOURCES += \
         Models/SuggestionProxyModel.cpp \
         Models/UndatedPhotoProxyModel.cpp \
         Models/UnlocalizedProxyModel.cpp \
+        Models/cameramodel.cpp \
         cpp/ExifReadTask.cpp \
         cpp/ExifWriteTask.cpp \
         cpp/GeocodeWrapper.cpp \
@@ -47,6 +50,8 @@ DISTFILES += \
     tiPhotoLocator.qdocconf
 
 HEADERS += \
+    Models/Camera.h \
+    Models/CameraSet.h \
     Models/OnTheMapProxyModel.h \
     Models/PhotoModel.h \
     Models/SuggestionCategoryProxyModel.h \
@@ -55,6 +60,7 @@ HEADERS += \
     Models/SuggestionProxyModel.h \
     Models/UndatedPhotoProxyModel.h \
     Models/UnlocalizedProxyModel.h \
+    Models/cameramodel.h \
     cpp/ExifReadTask.h \
     cpp/ExifWriteTask.h \
     cpp/GeocodeWrapper.h \
