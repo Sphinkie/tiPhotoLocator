@@ -602,8 +602,8 @@ void PhotoModel::addTestItem()
     QVariantMap ibizaData;
     ibizaData.insert("FileName", "IMG_00000001");
     ibizaData.insert("DateTimeOriginal", "2023:08:25 01:03:16");
-    ibizaData.insert("Model", "Generative AI");
-    ibizaData.insert("Make", "Midjourney");
+    ibizaData.insert("Make", "Generative AI");
+    ibizaData.insert("Model", "Midjourney");
     ibizaData.insert("ImageHeight", 603);
     ibizaData.insert("ImageWidth", 603);
     ibizaData.insert("City", "Ibiza");

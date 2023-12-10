@@ -1,5 +1,7 @@
 import QtQuick
 import "../Vues"
+import "../Javascript/Networking.js" as Netwk
+
 
 // Controlleur pour la barre de boutons du bas
 ToolBarBottomForm {
@@ -10,11 +12,12 @@ ToolBarBottomForm {
 
 
     bt_dump1.onClicked: {
-        _photoListModel.dumpData()
+        _photoListModel.dumpData()        
     }
 
     bt_dump2.onClicked: {
         _suggestionModel.dumpData()
+        Netwk.request();
     }
 
     cb_backups.onCheckedChanged:  {

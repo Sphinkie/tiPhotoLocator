@@ -1,3 +1,5 @@
+.pragma library
+
 // ------------------------------------------
 // Misc javascript utilities usable in QML
 // ------------------------------------------

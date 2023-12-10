@@ -16,9 +16,13 @@ ZoneCameraForm {
     chipAperture.visible: (tabbedPage.selectedData.fNumber > 0)
 
 
+    // var camModel = tabbedPage.selectedData.camModel
+    camThumb.source: tabbedPage.selectedData.camModel ? "../Cameras/"+tabbedPage.selectedData.camModel+".png" : "";
+
+
     // Pour la vitesse, on veut une valeur plus lisible.
     // Au lieu de 1/714s, on veut 1/700s
-    // Au lieu de 1/1520s, on veut 1/1500s
+    // Au lieu de 1/1526s, on veut 1/1500s
     function arrondir (valeur)
     {
         if (valeur > 1)

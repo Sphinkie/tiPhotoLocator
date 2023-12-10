@@ -90,5 +90,12 @@
         <file>Vues/IptcGridForm.ui.qml</file>
         <file>Components/ExifTitle.qml</file>
         <file>Components/IptcTitle.qml</file>
+        <file>Javascript/Networking.js</file>
+        <file>Cameras/Canon.png</file>
+        <file>Cameras/DMC-TZ10.png</file>
+        <file>Cameras/E-M10MarkII.png</file>
+        <file>Cameras/default.png</file>
+        <file>Cameras/Midjourney.png</file>
+        <file>Cameras/OpticFilm 7200.png</file>
     </qresource>
 </RCC>

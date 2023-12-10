@@ -12,6 +12,7 @@ ZonePhotoForm {
     {
         // Avec mask  : on peut saisir 99/99/9999 : pas de controle sur les chiffres mais les / sont imposés
         // Avec RegEx : les chiffres sont controlés, on ne peut pas saisir n'importe quoi, mais les / ne sont pas là pour aider
+        // attention aux ;0
         // Gérer la saisie d'un texte de type DATE
         chipDate.chipText.inputMethodHints = Qt.ImhDate;
         chipDate.chipText.inputMask = "99/99/9999";

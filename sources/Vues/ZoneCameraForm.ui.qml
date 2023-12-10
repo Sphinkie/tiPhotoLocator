@@ -10,6 +10,7 @@ Item {
     property alias chipSoftware: chipSoftware
     property alias chipAperture: chipAperture
     property alias chipSpeed: chipSpeed
+    property alias camThumb: camThumb
 
     Zone {
         id: cameraZone
@@ -42,6 +43,18 @@ Item {
                 id: chipSpeed
                 editable: false
                 deletable: false
+            }
+            Item{
+                width: 128
+                height: 128
+                Layout.alignment: Qt.AlignHCenter
+                Layout.bottomMargin: 10
+                Image {
+                    id: camThumb
+                    height: 128
+                    source: "../Cameras/default.png"
+                    fillMode: Image.PreserveAspectFit
+                }
             }
         }
     }
