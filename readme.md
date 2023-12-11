@@ -33,4 +33,3 @@ Application to geotag your photos with a .gpx file : [GPicSync](https://github.c
 
 A photo gallery developed with Qt, exiv2 and OpenCV: [Tidy Images](https://github.com/Simon-12/tidy-images) by Simon-12.
 
-Voir des exemples sur [QML online](https://qmlonline.kde.org/)
