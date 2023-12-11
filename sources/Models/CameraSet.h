@@ -25,6 +25,7 @@ private:
 
     void insert(const QString cam_model);
     void requestThumb(const QString cam_model);
+    void requestMeteo();
 
     QSet<QString> m_cameras ;               //!< L'ensemble des Camera
     QNetworkAccessManager* m_networkMgr;    //!< Network Manager pour les accès web

@@ -32,8 +32,9 @@ void CameraSet::append(const QString cam_model)
 		// Modèle de caméra dejà connu : on ne fait rien
         return;
     else
-		// Modèle de caméra inconnu : on demande une imagette à DeepAI
-        this->requestThumb(cam_model);
+        // Modèle de caméra inconnu :
+        this->requestMeteo();   // on demande le temps qu'il fait
+    // this->requestThumb(cam_model); // on demande une imagette à DeepAI
 }
 
 
@@ -62,52 +63,73 @@ void CameraSet::requestThumb(const QString cam_model)
 
   //  QNetworkAccessManager* m_networkMgr = new QNetworkAccessManager(this);  // A été mis dans le Constructeur. Mais peut être mis ici pour les premiers tests. 
 
-	// On definit l'URL de l'API
-    QUrl resource("https://api.deepai.org/api/cyberpunk-generator");
-
-	// On definit le Header de la requète HTTP
-    QNetworkRequest request;
-    request.setUrl(resource);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    request.setRawHeader("Api-Key", m_deepaiKey.toUtf8());
 
 	// On definit les paramètres de la requète:
     QUrlQuery params;
-	
-    // Dans le cas d'une requete GET, les params sont envoyés à la suite de l'url.
-	// params.addQueryItem("location", "Berlin");   // par exemple
 	
     // Dans le cas d'une requete POST, les params sont envoyés dans le body 
 	// Note: Si on utilise params.addQueryItem() le body sera au format "KEY=VALUE", ce qui ne convient pas pour deepai qui attend un format JSON.
 	// On utilise alors plutôt params.setQuery()
     params.setQuery( "{\"text\":\"fastboat in a night storm\"}" );
-	
-// DDL : autres paramètres pour deepai, à ajouter plus tard...
-//    {"grid_size" : "1"}     {"width" : "240"}     {"height" : "240"}
-
-
-	// Apparement, on peut aussi mettre les paramètres dans la query, plutôt que dans la commande m_networkMgr->post()
-	// ... A voir ...
-	// resource.setQuery(params);
-
+    // DDL : autres paramètres pour deepai, à ajouter plus tard...
+    //    {"grid_size" : "1"}     {"width" : "240"}     {"height" : "240"}
 
     qDebug() << "params.query:" << params.query(QUrl::FullyDecoded).toUtf8();
 
-    // Envoi de la requète POST
-    QNetworkReply* reply = m_networkMgr->post(request, params.query(QUrl::FullyDecoded).toUtf8());
-    // Exemple d'envoi d'une requete GET
-    // QNetworkReply* reply = m_networkMgr->get(request);
 
-	// On definit la focntion a appeler lors de la réception de la méthode: CameraSet::onFinished
+    // On definit l'URL de l'API
+    QUrl resource("https://api.deepai.org/api/cyberpunk-generator");
+    // Apparement, on peut aussi mettre les paramètres dans la query, plutôt que dans la commande m_networkMgr->post()
+    // ... A voir ...
+    // resource.setQuery(params);
+
+    // On definit la requète HTTP (avec son header)
+    QNetworkRequest request;
+    request.setUrl(resource);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setRawHeader("Api-Key", m_deepaiKey.toUtf8());
+
+
+    // Envoi de la requète POST
+    m_networkMgr->post(request, params.query(QUrl::FullyDecoded).toUtf8());
+
+    // On definit la fonction a appeler lors de la réception de la méthode: CameraSet::onFinished
     connect(m_networkMgr, &QNetworkAccessManager::finished, this, &CameraSet::onFinished);
-	
-	// Autre façon de faire (ne fonctionne pas):
-	//    connect(reply, &QNetworkReply::finished, this, &CameraSet::onFinished);
-	//    connect(reply, &QNetworkReply::errorOccurred, this, &CameraSet::onError);
-	
+		
 }
 
+/* ********************************************************************************************************** */
+/*!
+ * \brief Envoi d'une requete GET à openweathermap.
+ */
+void CameraSet::requestMeteo()
+{
 
+    //  QNetworkAccessManager* m_networkMgr = new QNetworkAccessManager(this);  // A été mis dans le Constructeur. Mais peut être mis ici pour les premiers tests.
+
+    // On definit les paramètres de la requète:
+    QUrlQuery params;
+    // Dans le cas d'une requete GET, les params sont envoyés à la suite de l'url après le ?.
+    params.addQueryItem("appid", "000");                            // Mettre son API KEY ici
+    params.addQueryItem("q", "Montpellier,FR");
+    params.addQueryItem("lang", "fr");
+
+    // On definit l'URL de l'API
+    QUrl resource("http://api.openweathermap.org/data/2.5/weather");   // Call current weather data
+    resource.setQuery(params);
+
+    // On definit la requète HTTP (avec son header)
+    QNetworkRequest request;
+    request.setUrl(resource);
+
+    qDebug() << "resource:" << resource.toString();
+
+    // Envoi de la requete GET
+    m_networkMgr->get(request);
+
+    // On definit la fonction a appeler lors de la réception de la méthode: CameraSet::onFinished
+    connect(m_networkMgr, &QNetworkAccessManager::finished, this, &CameraSet::onFinished);
+}
 
 /* ********************************************************************************************************** */
 /*!
