@@ -613,7 +613,7 @@ void PhotoModel::addTestItem()
     ibizaData.insert("GPSLongitude", 1.4351);
     ibizaData.insert("ShutterSpeed", 0.008);  // 1/125e
     ibizaData.insert("FNumber", 2.8);
-    ibizaData.insert("Description", "Have fun ! ôOô ");
+    ibizaData.insert("Description", "Have fun !");
     this->setData(ibizaData);
 }
 
@@ -748,6 +748,30 @@ bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rL
     else
         // TODO : pour les points qui arrivent jusqu'ici, on peut faire un test plus précis
         return true;
+}
+
+
+/* ********************************************************************************************************** */
+/*!
+ * \brief Applique le Settings "photographe" (le nom du photographe configuré) à toutes les photos du modèle.
+ */
+void PhotoModel::applyCreatorToAll()
+{
+    QSettings settings;
+    QString photographe = settings.value("photographe", "").toString();
+    if (photographe.isEmpty()) return;
+
+    // On parcourt tous les items du modèle
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        m_photos[row].creator = photographe;
+        m_photos[row].toBeSaved = true;
+        idx = idx.siblingAtRow(++row);
+    }
+    // A la fin, on notifie en une seule fois l'ensemble des photos.
+    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << CreatorRole << ToBeSavedRole);
 }
 
 

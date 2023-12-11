@@ -144,9 +144,9 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                   &photoModel, SLOT(saveMetadata()));
     QObject::connect(firstRootItem,   SIGNAL(savePosition(double,double)),      &photoModel, SLOT(appendSavedPosition(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),             &photoModel, SLOT(removeSavedPosition()));
+    QObject::connect(firstRootItem,   SIGNAL(applyCreatorToAll()),              &photoModel, SLOT(applyCreatorToAll()));
     QObject::connect(firstRootItem,   SIGNAL(setPhotoProperty(int,QString,QString)), &photoModel, SLOT(setData(int,QString,QString)));
     QObject::connect(firstRootItem,   SIGNAL(setSelectedItemCoords(double,double)),  &photoModel, SLOT(setSelectedItemCoords(double,double)));
-
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel,   SLOT(setAllItemsSavedCoords()));
     QObject::connect(firstRootItem,   SIGNAL(setSuggestionFilter(int)),             &suggestionProxyModel, SLOT(setFilterValue(int)));
     QObject::connect(firstRootItem,   SIGNAL(removePhotoFromSuggestion(int)),       &suggestionCategoryProxyModel, SLOT(removePhotoFromSuggestion(int)));

@@ -4,6 +4,7 @@ import QtQuick.Controls
 import "../Components"
 
 GridLayout {
+    property alias bt_applyCreator: bt_applyCreator
     uniformCellHeights: true
     rowSpacing: 10
     columns: 3
@@ -13,10 +14,11 @@ GridLayout {
         content: "Creator"
     }
     TiButton {
+        id: bt_applyCreator
         text: qsTr("Appliquer à tous")
     }
     Text {
-        text: qsTr("Le nom du photographe (Settings).")
+        text: qsTr("Le nom du photographe. Configuré à: ") + creator
         font.pixelSize: 14
         color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter
@@ -65,14 +67,14 @@ GridLayout {
     }
 
     TinyChip {
-        content: "DescriptionWriter"
+        content: "Description Writer"
     }
     CheckBox {
         checked: true
         enabled: false
     }
     Text {
-        text: qsTr("Les initiales de la personne ayant rédigé la description (Settings)")
+        text: qsTr("Les initiales de la personne ayant rédigé la description. Configuré à: ") + writer
         font.pixelSize: 14
         color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter

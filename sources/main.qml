@@ -24,23 +24,31 @@ Window {
     color: TiStyle.surfaceBackgroundColor
 
     // ----------------------------------------------------------------
-    // Les signaux
+    // Les signaux vers PhotoModel
     // ----------------------------------------------------------------
-    signal append(string filename, string url)                  //!< Ajoute une JPG au modèle
-    signal setSelectedItemCoords(double lati, double longi)     //!< Ajoute des coords à une photo du modèle
-    signal savePosition(double lati, double longi)              //!< Mémorise une position
-    signal clearSavedPosition()                                 //!< Efface une position mémorisée
-    signal applySavedPositionToCoords()                         //!< Affecte une position mémorisée
-    signal fetchExifMetadata()                                  //!< Lit les metadata de toutes les JPG
-    signal fetchSingleExifMetadata(int row)                     //!< Lit les metadata d'une JPG
+    signal append(string filename, string url)                  // Ajoute une JPG au modèle
+    signal setSelectedItemCoords(double lati, double longi)     // Ajoute des coords à une photo du modèle
+    signal savePosition(double lati, double longi)              // Mémorise une position
+    signal clearSavedPosition()                                 // Efface une position mémorisée
+    signal applySavedPositionToCoords()                         // Affecte une position mémorisée
+    signal fetchExifMetadata()                                  // Lit les metadata de toutes les JPG
+    signal fetchSingleExifMetadata(int row)                     // Lit les metadata d'une JPG
+    signal applyCreatorToAll()                                  // Applique le Creator (des settings) à toutes les photos du modèle
     signal saveMetadata()
     signal hasPos()
-    signal requestReverseGeocode(double lati, double longi)
-    signal requestCoords(string city)
+    // ----------------------------------------------------------------
+    // Les signaux vers SuggestionModel
+    // ----------------------------------------------------------------
     signal setSuggestionFilter(int row)
     signal setCategoryFilter(string category)
     signal setPhotoProperty(int index, string texte, string target)
-    signal removePhotoFromSuggestion(int row)
+    signal removePhotoFromSuggestion(int row)                   // Retire la photo courante de la Suggestion passée en paramètre
+    // ----------------------------------------------------------------
+    // Autres signaux
+    // ----------------------------------------------------------------
+    signal requestReverseGeocode(double lati, double longi)
+    signal requestCoords(string city)
+
 
     // ----------------------------------------------------------------
     // Fenetre de dialogue pour selectionner le dossier

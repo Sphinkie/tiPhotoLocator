@@ -151,6 +151,7 @@ public slots:
     void setSelectedItemCoords(double latitude, double longitude);
     void setInCircleItemCoords(double latitude, double longitude);
     void findInCirclePhotos(int circle_radius);
+    void applyCreatorToAll();
     void appendSavedPosition(double latitude, double longitude);
     void removeSavedPosition();
     void setData(int row, QString value, QString property);
