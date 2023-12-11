@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['onthemapproxymodel_0',['OnTheMapProxyModel',['../class_on_the_map_proxy_model.html',1,'']]]
+  ['geocodewrapper_0',['GeocodeWrapper',['../class_geocode_wrapper.html',1,'']]]
 ];

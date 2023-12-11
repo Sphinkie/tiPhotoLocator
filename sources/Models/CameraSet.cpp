@@ -134,9 +134,9 @@ void CameraSet::requestMeteo()
 /* ********************************************************************************************************** */
 /*!
  * \brief Appelé lors de la réception d'une réponse à une requete deepai.
- * \param Le contenu de la réponse de deepai.
+ * \param reply : Le contenu de la réponse.
  */
-void CameraSet::onFinished(QNetworkReply *reply)
+void CameraSet::onFinished(QNetworkReply* reply)
 {
 	// Pour l'instant, on ne fait juste qu'afficher le contenu de la réponse 	
 

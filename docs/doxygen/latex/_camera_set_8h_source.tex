@@ -1,0 +1,41 @@
+\doxysection{Camera\+Set.\+h}
+\hypertarget{_camera_set_8h_source}{}\label{_camera_set_8h_source}\index{Models/CameraSet.h@{Models/CameraSet.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CAMERASET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CAMERASET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QNetworkAccessManager>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QSet>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_camera_set}{CameraSet}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ Q\_OBJECT}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_camera_set}{CameraSet}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_set_a89e8ab28a0d3873016954386591b3aca}{append}}(\textcolor{keyword}{const}\ QString\ cam\_model);}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{bool}\ contains(\textcolor{keyword}{const}\ QString\ cam\_model);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_set_ae521eda047c7409a02da364ba8d60db1}{onFinished}}(QNetworkReply*\ reply);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ onError();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ insert(\textcolor{keyword}{const}\ QString\ cam\_model);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ requestThumb(\textcolor{keyword}{const}\ QString\ cam\_model);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ requestMeteo();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ QSet<QString>\ m\_cameras\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ QNetworkAccessManager*\ m\_networkMgr;\ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ QString\ m\_deepaiKey;}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CAMERASET\_H}}
+
+\end{DoxyCode}

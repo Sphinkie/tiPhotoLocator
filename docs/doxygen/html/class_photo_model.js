@@ -30,6 +30,7 @@ var class_photo_model =
     [ "append", "class_photo_model.html#a8a98d5f81789881189e179d6059c1586", null ],
     [ "append", "class_photo_model.html#a28933cf9451c4794c12325ac125f439f", null ],
     [ "appendSavedPosition", "class_photo_model.html#a297fef9ba3dd5d7c1c00593cefaf144e", null ],
+    [ "applyCreatorToAll", "class_photo_model.html#a536c2a2381b3ce827257068f5bf43933", null ],
     [ "clear", "class_photo_model.html#a1ff9f0f539d9b65e0521ebbaa498b21b", null ],
     [ "data", "class_photo_model.html#a3f09addf9a989e85b7ae5797156b270f", null ],
     [ "dumpData", "class_photo_model.html#a822190ecc2081c7b49030c0f6a42317f", null ],
@@ -49,6 +50,7 @@ var class_photo_model =
     [ "setData", "class_photo_model.html#a606c1207c36cdf5e81f346ca82cec2d8", null ],
     [ "setData", "class_photo_model.html#a5aef53c6395a6ccd579a019c62e472e0", null ],
     [ "setInCircleItemCoords", "class_photo_model.html#a834795331bc8b3f329e8f2a143839265", null ],
+    [ "setSelectedItemCoords", "class_photo_model.html#a3dc7e36064651fe29ab6685d8eed1dd6", null ],
     [ "m_markerIndex", "class_photo_model.html#af32aed3a0a39738d782a1d69a14175f2", null ],
     [ "m_markerRow", "class_photo_model.html#a6ff090266c5c666181a02469943d9512", null ],
     [ "selectedRow", "class_photo_model.html#a6376872cafff59ccc887f405a2515ed9", null ]

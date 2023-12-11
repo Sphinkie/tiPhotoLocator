@@ -6,7 +6,7 @@ var searchData=
   ['removesavedposition_3',['removeSavedPosition',['../class_photo_model.html#a6c2e4a731969e952993dfe4d38e5788f',1,'PhotoModel']]],
   ['requestcoordinates_4',['requestCoordinates',['../class_geocode_wrapper.html#ab3c38ff6c5a53d2b6c04cf5c88763b23',1,'GeocodeWrapper']]],
   ['requestreversegeocode_5',['requestReverseGeocode',['../class_geocode_wrapper.html#a4317ba9f8e11b9bf6b555df8a065b54b',1,'GeocodeWrapper']]],
-  ['rolenames_6',['rolenames',['../class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d',1,'PhotoModel::roleNames()'],['../class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd',1,'SuggestionModel::roleNames()']]],
-  ['rowcount_7',['rowcount',['../class_photo_model.html#a0fdbd69a007a6bda5623cce8d5f3cd57',1,'PhotoModel::rowCount()'],['../class_suggestion_model.html#a0c1caffe345aeb30f636f3a1784e9cea',1,'SuggestionModel::rowCount()']]],
+  ['rolenames_6',['rolenames',['../class_camera_model.html#a1d7e57153e26d639dad89e3de65be928',1,'CameraModel::roleNames()'],['../class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d',1,'PhotoModel::roleNames()'],['../class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd',1,'SuggestionModel::roleNames()']]],
+  ['rowcount_7',['rowcount',['../class_camera_model.html#aebf4a271c779114f5511c67a6dbcb2d6',1,'CameraModel::rowCount()'],['../class_photo_model.html#a0fdbd69a007a6bda5623cce8d5f3cd57',1,'PhotoModel::rowCount()'],['../class_suggestion_model.html#a0c1caffe345aeb30f636f3a1784e9cea',1,'SuggestionModel::rowCount()']]],
   ['run_8',['run',['../class_exif_read_task.html#a1f0693a4aa7d57897f906d3db0fd77b8',1,'ExifReadTask::run()'],['../class_exif_write_task.html#a62fcca5c4d5077f086df4b98cac752df',1,'ExifWriteTask::run()']]]
 ];

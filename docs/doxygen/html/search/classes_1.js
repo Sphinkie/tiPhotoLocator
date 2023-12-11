@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['geocodewrapper_0',['GeocodeWrapper',['../class_geocode_wrapper.html',1,'']]]
+  ['exifreadtask_0',['ExifReadTask',['../class_exif_read_task.html',1,'']]],
+  ['exifwritetask_1',['ExifWriteTask',['../class_exif_write_task.html',1,'']]]
 ];

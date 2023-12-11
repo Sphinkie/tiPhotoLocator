@@ -98,22 +98,22 @@ $(document).ready(function(){initNavTree('md__d_1_2_mes_01_programmes_2_windows_
 <h1><a class="anchor" id="autotoc_md7"></a>
 Exif tags</h1>
 <p>The <b>EXchangeable Image Fileformat</b> (EXIF) format is described on the <a href="https://exiftool.org/TagNames/EXIF.html">exiftool.org website</a>. It has no official description. <br  />
- (IFD : Image File Directory)</p>
+ (<code>IFD</code> : Image File Directory)</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Tag name   </th><th class="markdownTableHeadNone">Read   </th><th class="markdownTableHeadNone">Write   </th><th class="markdownTableHeadNone">Id &amp; group   </th><th class="markdownTableHeadNone">Description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ImageWidth   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">no   </td><td class="markdownTableBodyNone">0x0100 IFD0   </td><td class="markdownTableBodyNone">Image width    </td></tr>
+<td class="markdownTableBodyNone">ImageWidth   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">0x0100 IFD0   </td><td class="markdownTableBodyNone">Image width    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">ImageHeight   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">no   </td><td class="markdownTableBodyNone">0x0101 IFD0   </td><td class="markdownTableBodyNone">Image height    </td></tr>
+<td class="markdownTableBodyNone">ImageHeight   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">0x0101 IFD0   </td><td class="markdownTableBodyNone">Image height    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ImageDescription   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">no   </td><td class="markdownTableBodyNone">0x010e IDF0   </td><td class="markdownTableBodyNone">Image description (pure ASCII)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Make   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">no   </td><td class="markdownTableBodyNone">0x010f IFD0   </td><td class="markdownTableBodyNone">Camera manufacturer    </td></tr>
+<td class="markdownTableBodyNone">Make   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">0x010f IFD0   </td><td class="markdownTableBodyNone"><a class="el" href="struct_camera.html" title="A data structure containing the attributes of a camera picture: Camera Model , camera thumbnail.">Camera</a> manufacturer    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Model   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">no   </td><td class="markdownTableBodyNone">0x0110 IFD0   </td><td class="markdownTableBodyNone">Camera model    </td></tr>
+<td class="markdownTableBodyNone">Model   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">0x0110 IFD0   </td><td class="markdownTableBodyNone"><a class="el" href="struct_camera.html" title="A data structure containing the attributes of a camera picture: Camera Model , camera thumbnail.">Camera</a> model    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Software   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">0x0131 IFD0   </td><td class="markdownTableBodyNone">"TiPhotoLocator"    </td></tr>
+<td class="markdownTableBodyNone">Software   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">0x0131 IFD0   </td><td class="markdownTableBodyNone"><a class="el" href="struct_camera.html" title="A data structure containing the attributes of a camera picture: Camera Model , camera thumbnail.">Camera</a> or Scanner software version    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Artist   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">opt   </td><td class="markdownTableBodyNone">0x013b IFD0   </td><td class="markdownTableBodyNone">Name of photographer    </td></tr>
 <tr class="markdownTableRowEven">
@@ -121,11 +121,13 @@ Exif tags</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">GPSLongitude   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">0x8825 IFD0   </td><td class="markdownTableBodyNone"><a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> location    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">GPSLatitudeRef   </td><td class="markdownTableBodyNone">no   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">0x8825 IFD0   </td><td class="markdownTableBodyNone">North or South    </td></tr>
+<td class="markdownTableBodyNone">GPSLatitudeRef   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">0x8825 IFD0   </td><td class="markdownTableBodyNone">North or South    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">GPSLongitudeRef   </td><td class="markdownTableBodyNone">no   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">0x8825 IFD0   </td><td class="markdownTableBodyNone">East or West    </td></tr>
+<td class="markdownTableBodyNone">GPSLongitudeRef   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">0x8825 IFD0   </td><td class="markdownTableBodyNone">East or West    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">DateTimeOriginal   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">no   </td><td class="markdownTableBodyNone">0x9003 ExifIFD   </td><td class="markdownTableBodyNone">Date/time when the photo was taken   </td></tr>
+<td class="markdownTableBodyNone">DateTimeOriginal   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">0x9003 ExifIFD   </td><td class="markdownTableBodyNone">Date/time when the photo was taken    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">MetadataProcessingSoftware   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">"TiPhotoLocator"   </td></tr>
 </table>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -136,7 +138,7 @@ Exif tags</h1>
 <p><em>When adding GPS information to an image, it is important to set all of the following tags: GPSLatitude, GPSLatitudeRef, GPSLongitude, GPSLongitudeRef.</em></p>
 <h1><a class="anchor" id="autotoc_md8"></a>
 IPTC CORE tags</h1>
-<p>The <b>International Press Telecommunications Council</b> forlmat (IPTC) is described in the <a href="https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata">iptc.org website</a></p>
+<p>The <b>International Press Telecommunications Council</b> format (IPTC) is described in the <a href="https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata">iptc.org website</a></p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Tag name   </th><th class="markdownTableHeadNone">Read   </th><th class="markdownTableHeadNone">Write   </th><th class="markdownTableHeadNone">Description    </th></tr>
@@ -183,8 +185,8 @@ IPTC EXTENSION tags</h1>
 Unused tags</h1>
 <ul>
 <li><b>Title</b>: A short verbal and human readable name for the image, (may be the file name).</li>
-<li><b>dateCreated</b> : Creation date of the <em>subject</em> of the image.</li>
-<li><b>Headline</b>: Un titre publiable </li>
+<li><b>DateCreated</b> : Creation date of the <em>subject</em> of the image (<em>La Joconde: 1516</em>).</li>
+<li><b>Headline</b>: A publishable title. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

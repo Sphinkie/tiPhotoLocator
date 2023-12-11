@@ -163,12 +163,19 @@ Public Slots</h2></td></tr>
 <tr class="memitem:ac393e2839ea5993f199ec669973972ef" id="r_ac393e2839ea5993f199ec669973972ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#ac393e2839ea5993f199ec669973972ef">saveMetadata</a> ()</td></tr>
 <tr class="memdesc:ac393e2839ea5993f199ec669973972ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.  <br /></td></tr>
 <tr class="separator:ac393e2839ea5993f199ec669973972ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dc7e36064651fe29ab6685d8eed1dd6" id="r_a3dc7e36064651fe29ab6685d8eed1dd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a3dc7e36064651fe29ab6685d8eed1dd6">setSelectedItemCoords</a> (double latitude, double longitude)</td></tr>
+<tr class="memdesc:a3dc7e36064651fe29ab6685d8eed1dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée.  <br /></td></tr>
+<tr class="separator:a3dc7e36064651fe29ab6685d8eed1dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a834795331bc8b3f329e8f2a143839265" id="r_a834795331bc8b3f329e8f2a143839265"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a834795331bc8b3f329e8f2a143839265">setInCircleItemCoords</a> (double latitude, double longitude)</td></tr>
 <tr class="memdesc:a834795331bc8b3f329e8f2a143839265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur du cercle rouge.  <br /></td></tr>
 <tr class="separator:a834795331bc8b3f329e8f2a143839265"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cd1ac5560f3897892474271c5206106" id="r_a8cd1ac5560f3897892474271c5206106"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a8cd1ac5560f3897892474271c5206106">findInCirclePhotos</a> (int circle_radius)</td></tr>
 <tr class="memdesc:a8cd1ac5560f3897892474271c5206106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parcourt toutes les <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> du modèle, et flague celles qui sont à l'interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).  <br /></td></tr>
 <tr class="separator:a8cd1ac5560f3897892474271c5206106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a536c2a2381b3ce827257068f5bf43933" id="r_a536c2a2381b3ce827257068f5bf43933"><td class="memItemLeft" align="right" valign="top"><a id="a536c2a2381b3ce827257068f5bf43933" name="a536c2a2381b3ce827257068f5bf43933"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>applyCreatorToAll</b> ()</td></tr>
+<tr class="memdesc:a536c2a2381b3ce827257068f5bf43933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique le Settings "photographe" (le nom du photographe configuré) à toutes les photos du modèle. <br /></td></tr>
+<tr class="separator:a536c2a2381b3ce827257068f5bf43933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a297fef9ba3dd5d7c1c00593cefaf144e" id="r_a297fef9ba3dd5d7c1c00593cefaf144e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a297fef9ba3dd5d7c1c00593cefaf144e">appendSavedPosition</a> (double latitude, double longitude)</td></tr>
 <tr class="memdesc:a297fef9ba3dd5d7c1c00593cefaf144e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune).  <br /></td></tr>
 <tr class="separator:a297fef9ba3dd5d7c1c00593cefaf144e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -981,8 +988,53 @@ Tags automatiques: GPS Ref, MetadataEditingSoftware. </dd></dl>
 <p>Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur du cercle rouge. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">latitude</td><td>: latitude GPS à affecter aux photos </td></tr>
-    <tr><td class="paramname">longitude</td><td>: longitude GPS à affecter aux photos </td></tr>
+    <tr><td class="paramname">latitude</td><td>: Latitude GPS à affecter aux photos </td></tr>
+    <tr><td class="paramname">longitude</td><td>: Longitude GPS à affecter aux photos </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3dc7e36064651fe29ab6685d8eed1dd6" name="a3dc7e36064651fe29ab6685d8eed1dd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc7e36064651fe29ab6685d8eed1dd6">&#9670;&#160;</a></span>setSelectedItemCoords</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::setSelectedItemCoords </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>latitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>longitude</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">latitude</td><td>: Latitude GPS à affecter. </td></tr>
+    <tr><td class="paramname">longitude</td><td>: Longitude GPS à affecter. </td></tr>
   </table>
   </dd>
 </dl>

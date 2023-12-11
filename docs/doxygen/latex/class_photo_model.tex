@@ -60,10 +60,15 @@ void \mbox{\hyperlink{class_photo_model_a3cc8c0b5e6803970def517a8d57ae155}{fetch
 \begin{DoxyCompactList}\small\item\em Ce slot lit des données EXIF d\textquotesingle{}une (ou toutes) photos du répertoire. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_ac393e2839ea5993f199ec669973972ef}{save\+Metadata}} ()
 \begin{DoxyCompactList}\small\item\em Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_model_a3dc7e36064651fe29ab6685d8eed1dd6}{set\+Selected\+Item\+Coords}} (double latitude, double longitude)
+\begin{DoxyCompactList}\small\item\em Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a834795331bc8b3f329e8f2a143839265}{set\+In\+Circle\+Item\+Coords}} (double latitude, double longitude)
 \begin{DoxyCompactList}\small\item\em Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a8cd1ac5560f3897892474271c5206106}{find\+In\+Circle\+Photos}} (int circle\+\_\+radius)
 \begin{DoxyCompactList}\small\item\em Parcourt toutes les \doxylink{struct_photo}{Photo} du modèle, et flague celles qui sont à l\textquotesingle{}interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX). \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a536c2a2381b3ce827257068f5bf43933}\label{class_photo_model_a536c2a2381b3ce827257068f5bf43933} 
+void {\bfseries apply\+Creator\+To\+All} ()
+\begin{DoxyCompactList}\small\item\em Applique le Settings "{}photographe"{} (le nom du photographe configuré) à toutes les photos du modèle. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a297fef9ba3dd5d7c1c00593cefaf144e}{append\+Saved\+Position}} (double latitude, double longitude)
 \begin{DoxyCompactList}\small\item\em Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}{remove\+Saved\+Position}} ()
@@ -481,9 +486,26 @@ Affecte les coordonnées GPS fournies à toutes les photos géographiquement sit
 
 
 \begin{DoxyParams}{Parameters}
-{\em latitude} & \+: latitude GPS à affecter aux photos \\
+{\em latitude} & \+: Latitude GPS à affecter aux photos \\
 \hline
-{\em longitude} & \+: longitude GPS à affecter aux photos \\
+{\em longitude} & \+: Longitude GPS à affecter aux photos \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_photo_model_a3dc7e36064651fe29ab6685d8eed1dd6}\label{class_photo_model_a3dc7e36064651fe29ab6685d8eed1dd6} 
+\index{PhotoModel@{PhotoModel}!setSelectedItemCoords@{setSelectedItemCoords}}
+\index{setSelectedItemCoords@{setSelectedItemCoords}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{setSelectedItemCoords}{setSelectedItemCoords}}
+{\footnotesize\ttfamily void Photo\+Model\+::set\+Selected\+Item\+Coords (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & \+: Latitude GPS à affecter. \\
+\hline
+{\em longitude} & \+: Longitude GPS à affecter. \\
 \hline
 \end{DoxyParams}
 

@@ -7,29 +7,30 @@
 
 The **EXchangeable Image Fileformat** (EXIF) format is described on the [exiftool.org website](https://exiftool.org/TagNames/EXIF.html).
 It has no official description.   
-(IFD : Image File Directory)
+(`IFD` : Image File Directory)
 
 
 | Tag name    | Read |  Write | Id & group | Description | 
 | ----------- | ---- |  ----- | ---------- | ----------- | 
-| ImageWidth  | yes | no | 0x0100 IFD0 | Image width  | 
-| ImageHeight | yes | no | 0x0101 IFD0 | Image height | 
-| ImageDescription | yes | no | 0x010e IDF0 | Image description (pure ASCII) | 
-| Make        | yes | no  | 0x010f IFD0 | Camera manufacturer | 
-| Model       | yes | no  | 0x0110 IFD0 | Camera model        | 
-| Software    | yes  | no | 0x0131 IFD0 | Camera or Scanner software version    | 
+| ImageWidth  | yes | -- | 0x0100 IFD0 | Image width  | 
+| ImageHeight | yes | -- | 0x0101 IFD0 | Image height | 
+| ImageDescription | yes | opt | 0x010e IDF0 | Image description (pure ASCII) | 
+| Make        | yes | --  | 0x010f IFD0 | Camera manufacturer | 
+| Model       | yes | --  | 0x0110 IFD0 | Camera model        | 
+| Software    | yes  | -- | 0x0131 IFD0 | Camera or Scanner software version    | 
 | Artist      | yes | opt | 0x013b IFD0 | Name of photographer | 
 | GPSLatitude      | yes | yes | 0x8825 IFD0 | Photo location |
 | GPSLongitude     | yes | yes | 0x8825 IFD0 | Photo location |
-| GPSLatitudeRef   | no  | yes | 0x8825 IFD0 | North or South | 
-| GPSLongitudeRef  | no  | yes | 0x8825 IFD0 | East or West   | 
-| DateTimeOriginal | yes | no  | 0x9003 ExifIFD | Date/time when the photo was taken | 
+| GPSLatitudeRef   | --  | yes | 0x8825 IFD0 | North or South | 
+| GPSLongitudeRef  | --  | yes | 0x8825 IFD0 | East or West   | 
+| DateTimeOriginal | yes | yes  | 0x9003 ExifIFD | Date/time when the photo was taken | 
 | MetadataProcessingSoftware    | --  | yes |  | "TiPhotoLocator"    | 
 
 | Tag name    | Read |  Write | Id & group | Description | 
 | ----------- | ---- |  ----- | ---------- | ----------- | 
 | Landmark    |      |        | Sony:Note Fabricant | |
 
+`opt`: can optionnnaly be activated in configuration.
 
 *When adding GPS information to an image, it is important to set all of the following tags: GPSLatitude, GPSLatitudeRef, GPSLongitude, GPSLongitudeRef.*
 
@@ -44,10 +45,10 @@ The **International Press Telecommunications Council** format (IPTC) is describe
 | Creator     | yes  | yes | Name of photographer. | 
 | City        | yes  | yes | obsolete - Name of the city of the location shown in the image.| 
 | Country     | yes  | yes | obsolete - Full name of the country of the location shown in the image.| 
-| Description |      |     | Description of the who, what, and why of what is happening in this image. | 
-| DescriptionWriter |  |  | Name of the person involved in writing the Description, | 
+| Description |      | yes | Description of the who, what, and why of what is happening in this image. | 
+| DescriptionWriter |  | yes | Name of the person involved in writing the Description, | 
 | Caption     |  |  |  | 
-| Keywords    |  |  | List of keywords, terms or phrases used to express the subject matter in the image. | 
+| Keywords    |  | yes | List of keywords, terms or phrases used to express the subject matter in the image. | 
 
 
 ## IPTC EXTENSION tags
@@ -71,8 +72,8 @@ The **International Press Telecommunications Council** format (IPTC) is describe
 
 * **Title**: A short verbal and human readable name for the image, (may be the file name).
 
-* **dateCreated** : Creation date of the *subject* of the image. 
+* **DateCreated** : Creation date of the *subject* of the image (*La Joconde: 1516*). 
 
-* **Headline**: Un titre publiable
+* **Headline**: A publishable title.
 
 

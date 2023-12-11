@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "Camera", "struct_camera.html", "struct_camera" ],
+    [ "CameraModel", "class_camera_model.html", "class_camera_model" ],
+    [ "CameraSet", "class_camera_set.html", "class_camera_set" ],
     [ "ExifReadTask", "class_exif_read_task.html", "class_exif_read_task" ],
     [ "ExifWriteTask", "class_exif_write_task.html", "class_exif_write_task" ],
     [ "GeocodeWrapper", "class_geocode_wrapper.html", "class_geocode_wrapper" ],

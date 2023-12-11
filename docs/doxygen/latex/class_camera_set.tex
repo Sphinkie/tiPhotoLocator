@@ -1,0 +1,66 @@
+\doxysection{Camera\+Set Class Reference}
+\hypertarget{class_camera_set}{}\label{class_camera_set}\index{CameraSet@{CameraSet}}
+Inheritance diagram for Camera\+Set\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_camera_set}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_camera_set_ae521eda047c7409a02da364ba8d60db1}{on\+Finished}} (QNetwork\+Reply \texorpdfstring{$\ast$}{*}reply)
+\begin{DoxyCompactList}\small\item\em Appelé lors de la réception d\textquotesingle{}une réponse à une requete deepai. \end{DoxyCompactList}\item 
+\Hypertarget{class_camera_set_a77e050b451359a66ab6d161477597b44}\label{class_camera_set_a77e050b451359a66ab6d161477597b44} 
+void {\bfseries on\+Error} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_camera_set_a56a4c781a3334d0fcce5bbd955a373c6}\label{class_camera_set_a56a4c781a3334d0fcce5bbd955a373c6} 
+{\bfseries Camera\+Set} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_camera_set_a89e8ab28a0d3873016954386591b3aca}{append}} (const QString cam\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un modèle de caméra dans la liste. S\textquotesingle{}il n\textquotesingle{}y est pas, on demande à deep\+AI de générer une imagette. \end{DoxyCompactList}\item 
+\Hypertarget{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22}\label{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22} 
+Q\+\_\+\+INVOKABLE bool {\bfseries contains} (const QString cam\+\_\+model)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_camera_set_a89e8ab28a0d3873016954386591b3aca}\label{class_camera_set_a89e8ab28a0d3873016954386591b3aca} 
+\index{CameraSet@{CameraSet}!append@{append}}
+\index{append@{append}!CameraSet@{CameraSet}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily void Camera\+Set\+::append (\begin{DoxyParamCaption}\item[{const QString}]{cam\+\_\+model }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un modèle de caméra dans la liste. S\textquotesingle{}il n\textquotesingle{}y est pas, on demande à deep\+AI de générer une imagette. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam\+\_\+model} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_camera_set_ae521eda047c7409a02da364ba8d60db1}\label{class_camera_set_ae521eda047c7409a02da364ba8d60db1} 
+\index{CameraSet@{CameraSet}!onFinished@{onFinished}}
+\index{onFinished@{onFinished}!CameraSet@{CameraSet}}
+\doxysubsubsection{\texorpdfstring{onFinished}{onFinished}}
+{\footnotesize\ttfamily void Camera\+Set\+::on\+Finished (\begin{DoxyParamCaption}\item[{QNetwork\+Reply \texorpdfstring{$\ast$}{*}}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Appelé lors de la réception d\textquotesingle{}une réponse à une requete deepai. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Le} & contenu de la réponse de deepai. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Models/Camera\+Set.\+h\item 
+Models/Camera\+Set.\+cpp\end{DoxyCompactItemize}

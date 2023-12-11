@@ -1,11 +1,14 @@
 var hierarchy =
 [
+    [ "Camera", "struct_camera.html", null ],
     [ "Photo", "struct_photo.html", null ],
     [ "QAbstractListModel", null, [
+      [ "CameraModel", "class_camera_model.html", null ],
       [ "PhotoModel", "class_photo_model.html", null ],
       [ "SuggestionModel", "class_suggestion_model.html", null ]
     ] ],
     [ "QObject", null, [
+      [ "CameraSet", "class_camera_set.html", null ],
       [ "GeocodeWrapper", "class_geocode_wrapper.html", null ]
     ] ],
     [ "QRunnable", null, [
