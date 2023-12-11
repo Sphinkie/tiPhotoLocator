@@ -2,11 +2,11 @@
 *.xml
 *.user
 *.pro.user
-qml/*.pro.user
-qml/*.pro.user.*
-/build
-/build-tiPhotoLocator-Desktop*
+*.pro.user.*
+sources/*.pro.user
+sources/*.pro.user.*
 /build*
+/build-tiPhotoLocator-Desktop*
 *.bak
 *.bkp
-*.VtlMvE
+*.psd
