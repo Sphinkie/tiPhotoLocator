@@ -27,7 +27,6 @@ The application is developped with the [Qt framework](https://qt.io).
 
 Explanation concerning the compiler configuration are on [this page](docs/compilation.md)
 
-
 ## Cousin projects
 
 Application to geotag your photos with a .gpx file : [GPicSync](https://github.com/notfrancois/GPicSync)
