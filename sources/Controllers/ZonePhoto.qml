@@ -10,15 +10,11 @@ ZonePhotoForm {
     // ------------------------------- DATE
     chipDate.editArea.onClicked:
     {
-        // Avec mask  : on peut saisir 99/99/9999 : pas de controle sur les chiffres mais les / sont imposés
-        // Avec RegEx : les chiffres sont controlés, on ne peut pas saisir n'importe quoi, mais les / ne sont pas là pour aider
-        // attention aux ;0
         // Gérer la saisie d'un texte de type DATE
         chipDate.chipText.inputMethodHints = Qt.ImhDate;
         chipDate.chipText.inputMask = "99/99/9999";
         enableEdition(chipDate);
-        // FIXME On ne peut sauver que si c'est au bon format
-        chipDate.canSave = true // chipDate.chipText.acceptableInput;
+        chipDate.canSave = true;
     }
     chipDate.saveArea.onClicked:
     {
@@ -40,8 +36,7 @@ ZonePhotoForm {
         chipTime.chipText.inputMethodHints = Qt.ImhTime;
         chipTime.chipText.inputMask = "99:99";
         enableEdition(chipTime);
-        // TODO: On ne peut sauver que si c'est au bon format
-        chipTime.canSave = true; // chipTime.chipText.acceptableInput;
+        chipTime.canSave = true;
     }
     chipTime.saveArea.onClicked:
     {
