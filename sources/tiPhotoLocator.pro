@@ -19,7 +19,6 @@ SOURCES += \
         Models/SuggestionProxyModel.cpp \
         Models/UndatedPhotoProxyModel.cpp \
         Models/UnlocalizedProxyModel.cpp \
-        Models/cameramodel.cpp \
         cpp/ExifReadTask.cpp \
         cpp/ExifWriteTask.cpp \
         cpp/GeocodeWrapper.cpp \
@@ -50,7 +49,6 @@ DISTFILES += \
     tiPhotoLocator.qdocconf
 
 HEADERS += \
-    Models/Camera.h \
     Models/CameraSet.h \
     Models/OnTheMapProxyModel.h \
     Models/PhotoModel.h \
@@ -60,7 +58,6 @@ HEADERS += \
     Models/SuggestionProxyModel.h \
     Models/UndatedPhotoProxyModel.h \
     Models/UnlocalizedProxyModel.h \
-    Models/cameramodel.h \
     cpp/ExifReadTask.h \
     cpp/ExifWriteTask.h \
     cpp/GeocodeWrapper.h \
