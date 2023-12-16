@@ -14,7 +14,6 @@ SOURCES += \
         Models/OnTheMapProxyModel.cpp \
         Models/PhotoModel.cpp \
         Models/SuggestionCategoryProxyModel.cpp \
-        Models/SuggestionGeoProxyModel.cpp \
         Models/SuggestionModel.cpp \
         Models/SuggestionProxyModel.cpp \
         Models/UndatedPhotoProxyModel.cpp \
@@ -53,7 +52,6 @@ HEADERS += \
     Models/OnTheMapProxyModel.h \
     Models/PhotoModel.h \
     Models/SuggestionCategoryProxyModel.h \
-    Models/SuggestionGeoProxyModel.h \
     Models/SuggestionModel.h \
     Models/SuggestionProxyModel.h \
     Models/UndatedPhotoProxyModel.h \

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['m_5fargfile_0',['m_argFile',['../class_exif_read_task.html#aab7c30ee91f00ce2cde757814472285c',1,'ExifReadTask']]],
-  ['m_5fcameras_1',['m_cameras',['../class_camera_model.html#a8e4d18aa3c5c2e7d65e378af1ed2ec09',1,'CameraModel::m_cameras'],['../class_camera_set.html#aaae5cd5c7f4c1db3d1c7b11bb0786f34',1,'CameraSet::m_cameras']]],
+  ['m_5fcameras_1',['m_cameras',['../class_camera_set.html#aaae5cd5c7f4c1db3d1c7b11bb0786f34',1,'CameraSet']]],
   ['m_5fdeepaikey_2',['m_deepaiKey',['../class_camera_set.html#a4dbd8817b6336dde9a92ecc822f1f354',1,'CameraSet']]],
   ['m_5fdumpedrow_3',['m_dumpedrow',['../class_photo_model.html#a844160211f6ff9d747dcc59310d2fc22',1,'PhotoModel::m_dumpedRow'],['../class_suggestion_model.html#a71e147fc8f25a5f6ff2f24ebc256acc6',1,'SuggestionModel::m_dumpedRow']]],
   ['m_5fexifdata_4',['m_exifData',['../class_exif_write_task.html#a30f450a4be6abe483b77c9445689725e',1,'ExifWriteTask']]],

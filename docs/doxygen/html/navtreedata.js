@@ -56,8 +56,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_camera_8h_source.html",
-"utilities_8h_source.html"
+"_camera_set_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

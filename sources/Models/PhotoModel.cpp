@@ -93,9 +93,9 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 /*!
  * Table of Role names.
  * C'est la correspondance entre le role C++ et le nom de la property dans QML.
- * \note Implémentation obligatoire. <br>
- * Un appel à `roleNames().value(role);` renvoie la property (string) correspondant au role demandé. <br>
- * Un appel à `roleNames().key(property.toUtf8());` renvoie le role (int) correspondant à la property demandée. <br>
+ * \note Implémentation obligatoire.
+ * \note Un appel à `roleNames().value(role);` renvoie la property (string) correspondant au role demandé.
+ * \note Un appel à `roleNames().key(property.toUtf8());` renvoie le role (int) correspondant à la property demandée.
  */
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
@@ -135,8 +135,8 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Returns the full name of the photo. This is an example of unitary getData method.
- * \param row : Indice de l'element à lire
+ * \brief Returns the full name of the photo. This is an example of unitary getter method.
+ * \param row : Indice de l'élément à lire.
  * \returns a QVariant containing the absolute path and full name (image URL) of the photo.
  */
 QVariant PhotoModel::getUrl(int row)
@@ -320,8 +320,8 @@ void PhotoModel::setPhotoProperty(const int photo, const QString value, const QS
 /*!
  * \brief Mémorise la position fournie.
  *
- * Met le flag \b "isSelected" du précédent item à \b False et le nouveau à \b True.
- * Met aussi le flag \b "insideCircle" du précédent item à \b False et le nouveau à \b True.
+ * Met le flag **isSelected** du précédent item à *False* et le nouveau à *True*. <br>
+ * Met aussi le flag **insideCircle** du précédent item à *False* et le nouveau à *True*.
  * \param row : l'indice de l'item sélectionné dans la ListView.
  */
 void PhotoModel::selectedRow(int row)
@@ -366,18 +366,18 @@ void PhotoModel::setData(int row, QString value, QString property)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Surcharge qui permet de modifier \b unitairement un Role d'un item du modèle.
+ * \brief Surcharge qui permet de modifier **unitairement** un Role d'un item du modèle.
  *
- * Cette fonction met aussi à \c TRUE le flag \c "To Be Saved" car il s'agit d'une action opérateur.
+ * Cette fonction met aussi à *True* le flag **To Be Saved** car il s'agit d'une action opérateur.
  * Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la Photo.
- * Certains roles ne sont pas modifiables: imageUrl, isSelected, hasGPS, filename, shutterSpeed, F-number, etc.
+ * Certains roles ne sont pas modifiables: `imageUrl, isSelected, hasGPS, filename, shutterSpeed, F-number`, etc.
  * \see https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
- * \note: It is important to emit the dataChanged() signal after saving the changes.
+ * \note: It is important to emit the `dataChanged()` signal after saving the changes.
  *
- * \param index : l'index (au sens ModelIndex) de l'item à modifier.
+ * \param index : l'index (au sens QModelIndex) de l'item à modifier.
  * \param value : la nouvelle valeur.
- * \param role : le Role à modifier (LatitudeRole, LongitudeRole, ToBeSavedRole, city, country).
- * \returns \c true si la modification a réussi. \c False si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
+ * \param role : le Role à modifier (`LatitudeRole, LongitudeRole, ToBeSavedRole, city, country`).
+ * \returns *true* si la modification a réussi. *False* si l'index n'est pas valide, ou si la nouvelle valeur est identique à l'existante.
  */
 bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
@@ -446,10 +446,10 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
  * \brief Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
  *        Elle est appelée lors de la lecture (ou relecture) globale des tags Exif des photos originales.
  *
- * Roles non modifiables (ignorés): imageUrl, insideCircle.
- * Roles non modifiables (recalculés): hasGPS, toBeSaved.
- * Cette fonction positionne le flag "ToBeSaved" à FALSE.
- * \param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. "FileName" est obligatoire.
+ * Roles non modifiables (ignorés): `imageUrl, insideCircle`.
+ * Roles non modifiables (recalculés): `hasGPS, toBeSaved`.
+ * Cette fonction positionne le flag **ToBeSaved** à *False*.
+ * \param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. `FileName` est obligatoire.
  */
 void PhotoModel::setData(const QVariantMap &value_list)
 {
@@ -596,9 +596,9 @@ void PhotoModel::fetchExifMetadata(int photo)
 /* ********************************************************************************************************** */
 /*!
  * \brief Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées.
- * \note Tag obligatoire: imageUrl.
- * \note Tags modifiés: GPS coords, Creator, City, Country, DateTimeOriginal.
- * \note Tags automatiques: GPS Ref, MetadataEditingSoftware.
+ * \note Tag obligatoire: `imageUrl`.
+ * \note Tags modifiés: `GPS coords, Creator, City, Country, DateTimeOriginal`.
+ * \note Tags automatiques: `GPS Ref, MetadataEditingSoftware`.
  */
 void PhotoModel::saveMetadata()
 {
@@ -646,7 +646,7 @@ void PhotoModel::saveMetadata()
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Adds a test item to the PhotoModel. (only if \c DebugMode is enabled in the \e settings)
+ * \brief Adds a test item to the PhotoModel. (only if **DebugMode** is enabled in the *Settingss)
  * \note For testing purpose.
  */
 void PhotoModel::addTestItem()
@@ -712,7 +712,7 @@ void PhotoModel::duplicateData(int row)
 /*!
  * \brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
  *        Usage dans QML: `titre = myModel.get(1).title;`
- * \param row : indice
+ * \param row : indice.
  * \returns une Map contenant toutes les propriétés de l'item, dont la propriété spéciale: "row".
  */
 QVariantMap PhotoModel::get(int row)

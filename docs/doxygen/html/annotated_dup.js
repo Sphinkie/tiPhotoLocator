@@ -1,7 +1,5 @@
 var annotated_dup =
 [
-    [ "Camera", "struct_camera.html", "struct_camera" ],
-    [ "CameraModel", "class_camera_model.html", "class_camera_model" ],
     [ "CameraSet", "class_camera_set.html", "class_camera_set" ],
     [ "ExifReadTask", "class_exif_read_task.html", "class_exif_read_task" ],
     [ "ExifWriteTask", "class_exif_write_task.html", "class_exif_write_task" ],
@@ -11,7 +9,6 @@ var annotated_dup =
     [ "PhotoModel", "class_photo_model.html", "class_photo_model" ],
     [ "Suggestion", "struct_suggestion.html", "struct_suggestion" ],
     [ "SuggestionCategoryProxyModel", "class_suggestion_category_proxy_model.html", "class_suggestion_category_proxy_model" ],
-    [ "SuggestionGeoProxyModel", "class_suggestion_geo_proxy_model.html", "class_suggestion_geo_proxy_model" ],
     [ "SuggestionModel", "class_suggestion_model.html", "class_suggestion_model" ],
     [ "SuggestionProxyModel", "class_suggestion_proxy_model.html", "class_suggestion_proxy_model" ],
     [ "UndatedPhotoProxyModel", "class_undated_photo_proxy_model.html", "class_undated_photo_proxy_model" ],
