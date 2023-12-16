@@ -29,7 +29,7 @@ Window {
     // sur une photo unitaire:
     signal append(string filename, string url)                      // Ajoute une JPG au modèle
     signal fetchSingleExifMetadata(int row)                         // Lit les metadata d'une JPG
-    signal setPhotoProperty(int index, string texte, string target) // Fait un setData pour affecter un role du Model
+    signal setPhotoProperty(int photo, string texte, string target) // Fait un setData pour affecter un role du Model
     signal setSelectedPhotoCoords(double lati, double longi)         // Positionne les coords de la photo séléctionnée
     // sur plusieurs photos:
     signal fetchExifMetadata()                                      // Lit les metadata de toutes les JPG

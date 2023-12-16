@@ -5,6 +5,8 @@ import "../Components"
 
 GridLayout {
     property alias bt_applyCreator: bt_applyCreator
+    property alias bt_applyCountry: bt_applyCountry
+    property alias bt_applyCity: bt_applyCity
     uniformCellHeights: true
     rowSpacing: 10
     columns: 3
@@ -18,7 +20,8 @@ GridLayout {
         text: qsTr("Appliquer à tous")
     }
     Text {
-        text: qsTr("Le nom du photographe. Configuré à: ") + creator
+        property string creatorText: creator? "(Configuré à: <b>" + creator + "</b> )" : ""
+        text: qsTr("Le nom du photographe. ") + creatorText
         font.pixelSize: 14
         color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter
@@ -30,9 +33,16 @@ GridLayout {
     CheckBox {
         checked: true
         enabled: false
+        visible: !city
+    }
+    TiButton {
+        id: bt_applyCity
+        text: qsTr("Appliquer à tous")
+        visible: city
     }
     Text {
-        text: qsTr("Le nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.")
+        property string cityText: city? "( <b>" + city + "</b> )" : ""
+        text: qsTr("Le nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié. ") + cityText
         font.pixelSize: 14
         color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter
@@ -44,9 +54,16 @@ GridLayout {
     CheckBox {
         checked: true
         enabled: false
+        visible: !country
+    }
+    TiButton {
+        id: bt_applyCountry
+        text: qsTr("Appliquer à tous")
+        visible: country
     }
     Text {
-        text: qsTr("Le pays où a été pris la photo.")
+        property string countryText: country? "( <b>" + country + " </b> )" : ""
+        text: qsTr("Le pays où a été pris la photo. ") + countryText
         font.pixelSize: 14
         color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter
@@ -72,9 +89,11 @@ GridLayout {
     CheckBox {
         checked: true
         enabled: false
+
     }
     Text {
-        text: qsTr("Les initiales de la personne ayant rédigé la description. Configuré à: ") + writer
+        property string writerText: writer? "(Configuré à: <b>" + writer + " </b> )" : ""
+        text: qsTr("Les initiales de la personne ayant rédigé la description. ") + writerText
         font.pixelSize: 14
         color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter

@@ -269,7 +269,7 @@ void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
  * \param photo : l'indice de la Photo à modifier. Voir la note pour les valeurs particulières.
  * \param value : la valeur
  * \param property : le nom de la property correspondant au Role
- * \note Valeurs particulières:
+ * \note Valeurs particulières du paramètre `photo`:
  *       \li La valeur spéciale -1 signifie **toutes les photos**.
  *       \li La valeur spéciale -2 signifie **la photo sélectionée**.
  *       \li La valeur spéciale -3 signifie **les photos du cercle**.
@@ -443,13 +443,13 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role 'FilenameRole'.
+ * \brief Cette méthode permet de modifier plusieurs roles d'un item du modèle, avec comme clef le role **FilenameRole**.
  *        Elle est appelée lors de la lecture (ou relecture) globale des tags Exif des photos originales.
  *
- * Roles non modifiables (ignorés): `imageUrl, insideCircle`.
- * Roles non modifiables (recalculés): `hasGPS, toBeSaved`.
- * Cette fonction positionne le flag **ToBeSaved** à *False*.
- * \param value_list : la liste des données à modifier. Attention: les Keys sont les noms des balises EXIF. `FileName` est obligatoire.
+ * Roles non modifiables (ignorés): `imageUrl, insideCircle`.<br>
+ * Roles non modifiables (recalculés): `hasGPS, toBeSaved`.<br>
+ * Cette fonction positionne le flag **ToBeSaved** à *False*.<br>
+ * \param value_list : la liste des données à modifier. Attention: les keys sont les noms des balises EXIF. `FileName` est obligatoire.
  */
 void PhotoModel::setData(const QVariantMap &value_list)
 {
