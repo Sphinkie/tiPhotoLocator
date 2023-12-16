@@ -1,5 +1,9 @@
 import QtQuick
 
+/*!
+ * Ce Repeater contient la suggestions fournies par le ProxyModel.
+ * Le ProxyModel doit être configuré pour filter soit les suggestions "geo", soit les suggestions "tag".
+ */
 Repeater{
     model: _suggestionCategoryProxyModel
     delegate: suggestionDelegate
@@ -7,7 +11,7 @@ Repeater{
     clip: true   // pour que les items restent à l'interieur du Repeater
 
 
-    // le delegate pour afficher un item dans le Flow
+    // Le delegate pour afficher un item dans le Flow
     Component{
         id: suggestionDelegate
 
@@ -35,7 +39,8 @@ Repeater{
                 onClicked: {
                     console.log("chipMouseArea:" + target + " for " + tabbedPage.selectedData.row);
                     // On affecte le texte de la suggestion à la target
-                    window.setPhotoProperty(tabbedPage.selectedData.row, text, target);
+                    //window.setPhotoProperty(tabbedPage.selectedData.row, text, target);
+                    window.setPhotoProperty(-3, text, target);  // -3 = photos du cercle
                     // On enlève le Chip de la zone Suggestions
                     window.removePhotoFromSuggestion(index);      // Attn : c'est l'index dans le proxyModel.
                 }

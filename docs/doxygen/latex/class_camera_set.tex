@@ -25,6 +25,29 @@ Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_camera_set_a89e8ab28a0d3873016954
 \Hypertarget{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22}\label{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22} 
 Q\+\_\+\+INVOKABLE bool {\bfseries contains} (const QString cam\+\_\+model)
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_camera_set_aad47572ed65bafd4d146a513d641a80e}\label{class_camera_set_aad47572ed65bafd4d146a513d641a80e} 
+void {\bfseries insert} (const QString cam\+\_\+model)
+\item 
+void \mbox{\hyperlink{class_camera_set_a69c54b2309d3d34b2c58305a939327bd}{request\+Thumb}} (const QString cam\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Envoi d\textquotesingle{}une requete POST à deepai. \end{DoxyCompactList}\item 
+\Hypertarget{class_camera_set_adfa00deb84c361446cafb946443c1997}\label{class_camera_set_adfa00deb84c361446cafb946443c1997} 
+void {\bfseries request\+Meteo} ()
+\begin{DoxyCompactList}\small\item\em Envoi d\textquotesingle{}une requete GET à openweathermap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_camera_set_aaae5cd5c7f4c1db3d1c7b11bb0786f34}\label{class_camera_set_aaae5cd5c7f4c1db3d1c7b11bb0786f34} 
+QSet$<$ QString $>$ {\bfseries m\+\_\+cameras}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}ensemble des \doxylink{struct_camera}{Camera}. \end{DoxyCompactList}\item 
+\Hypertarget{class_camera_set_a9bcc216de40d580d73b9511d983bf628}\label{class_camera_set_a9bcc216de40d580d73b9511d983bf628} 
+QNetwork\+Access\+Manager \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+network\+Mgr}
+\begin{DoxyCompactList}\small\item\em Network Manager pour les accès web. \end{DoxyCompactList}\item 
+\Hypertarget{class_camera_set_a4dbd8817b6336dde9a92ecc822f1f354}\label{class_camera_set_a4dbd8817b6336dde9a92ecc822f1f354} 
+QString {\bfseries m\+\_\+deepai\+Key}
+\begin{DoxyCompactList}\small\item\em API key pour les requètes deep\+AI. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
@@ -56,6 +79,21 @@ Appelé lors de la réception d\textquotesingle{}une réponse à une requete dee
 
 \begin{DoxyParams}{Parameters}
 {\em reply} & \+: Le contenu de la réponse. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_camera_set_a69c54b2309d3d34b2c58305a939327bd}\label{class_camera_set_a69c54b2309d3d34b2c58305a939327bd} 
+\index{CameraSet@{CameraSet}!requestThumb@{requestThumb}}
+\index{requestThumb@{requestThumb}!CameraSet@{CameraSet}}
+\doxysubsubsection{\texorpdfstring{requestThumb()}{requestThumb()}}
+{\footnotesize\ttfamily void Camera\+Set\+::request\+Thumb (\begin{DoxyParamCaption}\item[{const QString}]{cam\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Envoi d\textquotesingle{}une requete POST à deepai. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam\+\_\+model} & \+: non utilisé pour l\textquotesingle{}instant \\
 \hline
 \end{DoxyParams}
 

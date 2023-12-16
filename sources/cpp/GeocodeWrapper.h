@@ -42,8 +42,8 @@ private:
     // -----------------------------------
     // Membres
     // -----------------------------------
-    QGeoCodingManager* m_geoManager;
-    SuggestionModel* m_suggestionModel;
+    QGeoCodingManager* m_geoManager;       //!< Geocoding Manager pour les requètes REST
+    SuggestionModel* m_suggestionModel;    //!< Le SuggestionModel qui stockera les reponses.
 
 };
 

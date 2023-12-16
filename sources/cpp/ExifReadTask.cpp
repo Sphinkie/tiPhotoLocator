@@ -78,9 +78,9 @@ void ExifReadTask::run()
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement. \br
+ * \brief Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.
  * \param line : the received text
- * \quotation pour le flux d'une image:
+ * \code pour le flux d'une image:
         "[{\r\n"
         "  \"SourceFile\": \"E:/TiPhotos/P8160449.JPG\",\r\n"
         "  \"FileName\": \"P8160449.JPG\",\r\n"
@@ -95,7 +95,7 @@ void ExifReadTask::run()
         "  \"GPSLongitude\": 14.0194248700017,\r\n"
         "  \"City\": \"Paris\"\r\n"
         "}]\r\n"
-    \endquotation
+    \endcode
  */
 void ExifReadTask::processLine(QByteArray line)
 {

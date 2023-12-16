@@ -19,6 +19,15 @@ Inheritance diagram for Exif\+Write\+Task\+:\begin{figure}[H]
 \Hypertarget{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df}\label{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df} 
 virtual void {\bfseries run} ()
 \begin{DoxyCompactList}\small\item\em Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un QProcess, et on écrit les metadata dans l\textquotesingle{}image JPG. Cette tache est exécutée dans un thread QRunnable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_exif_write_task_a30f450a4be6abe483b77c9445689725e}\label{class_exif_write_task_a30f450a4be6abe483b77c9445689725e} 
+QVariant\+Map {\bfseries m\+\_\+exif\+Data}
+\begin{DoxyCompactList}\small\item\em Liste des metadata à ecrire. \end{DoxyCompactList}\item 
+\Hypertarget{class_exif_write_task_a09a5dc832fd4d41b1ee9fbb9f55623f7}\label{class_exif_write_task_a09a5dc832fd4d41b1ee9fbb9f55623f7} 
+bool {\bfseries m\+\_\+generate\+Backup}
+\begin{DoxyCompactList}\small\item\em True si un backup de l\textquotesingle{}image doit être généré. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

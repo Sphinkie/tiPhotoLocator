@@ -59,16 +59,17 @@ void \mbox{\hyperlink{class_photo_model_a8a98d5f81789881189e179d6059c1586}{appen
 void \mbox{\hyperlink{class_photo_model_a3cc8c0b5e6803970def517a8d57ae155}{fetch\+Exif\+Metadata}} (int row=-\/1)
 \begin{DoxyCompactList}\small\item\em Ce slot lit des données EXIF d\textquotesingle{}une (ou toutes) photos du répertoire. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_ac393e2839ea5993f199ec669973972ef}{save\+Metadata}} ()
-\begin{DoxyCompactList}\small\item\em Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a3dc7e36064651fe29ab6685d8eed1dd6}{set\+Selected\+Item\+Coords}} (double latitude, double longitude)
 \begin{DoxyCompactList}\small\item\em Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a834795331bc8b3f329e8f2a143839265}{set\+In\+Circle\+Item\+Coords}} (double latitude, double longitude)
-\begin{DoxyCompactList}\small\item\em Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_model_a50dc093e369a2741b62aa03556df061c}{set\+Photo\+Property}} (const int photo, const QString value, const QString property)
+\begin{DoxyCompactList}\small\item\em Ce slot affecte le role fourni à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a8cd1ac5560f3897892474271c5206106}{find\+In\+Circle\+Photos}} (int circle\+\_\+radius)
 \begin{DoxyCompactList}\small\item\em Parcourt toutes les \doxylink{struct_photo}{Photo} du modèle, et flague celles qui sont à l\textquotesingle{}interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX). \end{DoxyCompactList}\item 
-\Hypertarget{class_photo_model_a536c2a2381b3ce827257068f5bf43933}\label{class_photo_model_a536c2a2381b3ce827257068f5bf43933} 
-void {\bfseries apply\+Creator\+To\+All} ()
-\begin{DoxyCompactList}\small\item\em Applique le Settings "{}photographe"{} (le nom du photographe configuré) à toutes les photos du modèle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_model_a536c2a2381b3ce827257068f5bf43933}{apply\+Creator\+To\+All}} ()
+\begin{DoxyCompactList}\small\item\em Applique le "{}photographe"{} à toutes les photos du modèle. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a297fef9ba3dd5d7c1c00593cefaf144e}{append\+Saved\+Position}} (double latitude, double longitude)
 \begin{DoxyCompactList}\small\item\em Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}{remove\+Saved\+Position}} ()
@@ -102,7 +103,7 @@ QVariant \mbox{\hyperlink{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}{d
 Q\+\_\+\+INVOKABLE QVariant \mbox{\hyperlink{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe}{get\+Url}} (int row)
 \begin{DoxyCompactList}\small\item\em Returns the full name of the photo. This is an example of unitary get\+Data method. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE QVariant\+Map \mbox{\hyperlink{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634}{get}} (int row)
-\begin{DoxyCompactList}\small\item\em La methode \doxylink{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634}{get()} (invocable par QML) renvoie les données de la photo demandée. Usage dans QML\+: titre = my\+Model.\+get(1).title;. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em La methode \doxylink{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634}{get()} (invocable par QML) renvoie les données de la photo demandée. Usage dans QML\+: {\ttfamily titre = my\+Model.\+get(1).title;} \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_photo_model_a822190ecc2081c7b49030c0f6a42317f}{dump\+Data}} ()
 \begin{DoxyCompactList}\small\item\em Debug function that print (in the console) one line of the model at every call. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_photo_model_a1ff9f0f539d9b65e0521ebbaa498b21b}{clear}} ()
@@ -131,6 +132,30 @@ int {\bfseries m\+\_\+marker\+Row} = -\/1
 \Hypertarget{class_photo_model_a6376872cafff59ccc887f405a2515ed9}\label{class_photo_model_a6376872cafff59ccc887f405a2515ed9} 
 int {\bfseries selected\+Row}
 \begin{DoxyCompactList}\small\item\em selected\+Row is the \doxylink{struct_photo}{Photo} row in the model corresponding to the selected photo in the List\+View. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_photo_model_af43bef19e91b11bf4e79c55fe458d0a1}{add\+Test\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Adds a test item to the \doxylink{class_photo_model}{Photo\+Model}. (only if {\ttfamily Debug\+Mode} is enabled in the {\itshape settings}) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_model_aee33ef1753815d48baa8d8ab8716782c}{selected\+Row}} (int row)
+\begin{DoxyCompactList}\small\item\em Mémorise la position fournie. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_ae3dd8e3599f33e699cd474c5fca7d0b2}\label{class_photo_model_ae3dd8e3599f33e699cd474c5fca7d0b2} 
+int {\bfseries get\+Selected\+Row} ()
+\begin{DoxyCompactList}\small\item\em Returns the last selected row. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_photo_model_aa63d16a07716d0ad5aff2ff1be183198}{belong}} (double p\+La, double p\+Lo, double o\+La, double o\+Lo, float r\+La, float r\+Lo)
+\begin{DoxyCompactList}\small\item\em Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_photo_model_a6652f17b0436c7927b0924ddcd3ba98b}\label{class_photo_model_a6652f17b0436c7927b0924ddcd3ba98b} 
+QVector$<$ \mbox{\hyperlink{struct_photo}{Photo}} $>$ {\bfseries m\+\_\+photos}
+\begin{DoxyCompactList}\small\item\em La liste des \doxylink{struct_photo}{Photo} du modèle. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a08f7d839ea11f7c0190afa716ac5bb7a}\label{class_photo_model_a08f7d839ea11f7c0190afa716ac5bb7a} 
+int {\bfseries m\+\_\+last\+Selected\+Row} = 0
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item\+: le Welcome Rolleyflex) \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a844160211f6ff9d747dcc59310d2fc22}\label{class_photo_model_a844160211f6ff9d747dcc59310d2fc22} 
+int {\bfseries m\+\_\+dumped\+Row} = 0
+\begin{DoxyCompactList}\small\item\em Compteur pour le dump de debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -157,6 +182,19 @@ Constructor. Just add the welcome item in the list. If the debug mode is active,
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_photo_model_af43bef19e91b11bf4e79c55fe458d0a1}\label{class_photo_model_af43bef19e91b11bf4e79c55fe458d0a1} 
+\index{PhotoModel@{PhotoModel}!addTestItem@{addTestItem}}
+\index{addTestItem@{addTestItem}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{addTestItem()}{addTestItem()}}
+{\footnotesize\ttfamily void Photo\+Model\+::add\+Test\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds a test item to the \doxylink{class_photo_model}{Photo\+Model}. (only if {\ttfamily Debug\+Mode} is enabled in the {\itshape settings}) 
+
+\begin{DoxyNote}{Note}
+For testing purpose. 
+\end{DoxyNote}
 \Hypertarget{class_photo_model_a8a98d5f81789881189e179d6059c1586}\label{class_photo_model_a8a98d5f81789881189e179d6059c1586} 
 \index{PhotoModel@{PhotoModel}!append@{append}}
 \index{append@{append}!PhotoModel@{PhotoModel}}
@@ -213,6 +251,47 @@ Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS 
 {\em longitude} & \+: longitude au format GPS. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_photo_model_a536c2a2381b3ce827257068f5bf43933}\label{class_photo_model_a536c2a2381b3ce827257068f5bf43933} 
+\index{PhotoModel@{PhotoModel}!applyCreatorToAll@{applyCreatorToAll}}
+\index{applyCreatorToAll@{applyCreatorToAll}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{applyCreatorToAll}{applyCreatorToAll}}
+{\footnotesize\ttfamily void Photo\+Model\+::apply\+Creator\+To\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Applique le "{}photographe"{} à toutes les photos du modèle. 
+
+Le nom du photographe est configuré dans les Settings. \Hypertarget{class_photo_model_aa63d16a07716d0ad5aff2ff1be183198}\label{class_photo_model_aa63d16a07716d0ad5aff2ff1be183198} 
+\index{PhotoModel@{PhotoModel}!belong@{belong}}
+\index{belong@{belong}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{belong()}{belong()}}
+{\footnotesize\ttfamily bool Photo\+Model\+::belong (\begin{DoxyParamCaption}\item[{double}]{p\+La,  }\item[{double}]{p\+Lo,  }\item[{double}]{o\+La,  }\item[{double}]{o\+Lo,  }\item[{float}]{r\+La,  }\item[{float}]{r\+Lo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+La} & \+: Latitude du point à tester. \\
+\hline
+{\em p\+Lo} & \+: Longitude du point à tester. \\
+\hline
+{\em o\+La} & \+: Latitude de l\textquotesingle{}origine du cercle. \\
+\hline
+{\em o\+Lo} & \+: Longitude de l\textquotesingle{}origine du cercle. \\
+\hline
+{\em r\+La} & \+: le rayon du cercle sur l\textquotesingle{}axe des Latitudes N-\/S(en degrés). \\
+\hline
+{\em r\+Lo} & \+: le rayon du cercle sur l\textquotesingle{}axe des Longitudes E-\/W (en degrés). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le point est dans le cercle. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Pour être le plus rapide possible, le cercle est plutôt un carré. 
+\end{DoxyNote}
 \Hypertarget{class_photo_model_a1ff9f0f539d9b65e0521ebbaa498b21b}\label{class_photo_model_a1ff9f0f539d9b65e0521ebbaa498b21b} 
 \index{PhotoModel@{PhotoModel}!clear@{clear}}
 \index{clear@{clear}!PhotoModel@{PhotoModel}}
@@ -312,7 +391,7 @@ On utilise les conversions\+: {\bfseries{1°lat = 111km}} et {\bfseries{1°long 
 
 
 
-La methode \doxylink{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634}{get()} (invocable par QML) renvoie les données de la photo demandée. Usage dans QML\+: titre = my\+Model.\+get(1).title;. 
+La methode \doxylink{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634}{get()} (invocable par QML) renvoie les données de la photo demandée. Usage dans QML\+: {\ttfamily titre = my\+Model.\+get(1).title;} 
 
 
 \begin{DoxyParams}{Parameters}
@@ -352,7 +431,7 @@ Fonction typique qui supprime l\textquotesingle{}item désigné du modèle.
 
 
 \begin{DoxyParams}{Parameters}
-{\em row} & \+: la position dans le vecteur de l\textquotesingle{}item à modifier. \\
+{\em row} & \+: la position dans le vecteur de l\textquotesingle{}item à supprimer. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}\label{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f} 
@@ -372,7 +451,10 @@ L\textquotesingle{}item {\bfseries{Saved\+Position}}, de type {\bfseries{is\+Mar
 {\footnotesize\ttfamily QHash$<$ int, QByte\+Array $>$ Photo\+Model\+::role\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
 Table of Role names. C\textquotesingle{}est la correspondance entre le role C++ et le nom de la property dans QML. \begin{DoxyNote}{Note}
-Implémentation obligatoire. 
+Implémentation obligatoire. ~\newline
+ Un appel à {\ttfamily \doxylink{class_photo_model_aac3d5e1ae72e823b4e6091497c5cf27d}{role\+Names()}.value(role);} renvoie la property (string) correspondant au role demandé. ~\newline
+ Un appel à {\ttfamily \doxylink{class_photo_model_aac3d5e1ae72e823b4e6091497c5cf27d}{role\+Names()}.key(property.\+to\+Utf8());} renvoie le role (int) correspondant à la property demandée. ~\newline
+ 
 \end{DoxyNote}
 \Hypertarget{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57}\label{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57} 
 \index{PhotoModel@{PhotoModel}!rowCount@{rowCount}}
@@ -403,7 +485,7 @@ the number of elements in the model.
 
 
 
-Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. 
+Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées. 
 
 \begin{DoxyNote}{Note}
 Tag obligatoire\+: image\+Url. 
@@ -412,6 +494,21 @@ Tags modifiés\+: GPS coords, Creator, City, Country, Date\+Time\+Original.
 
 Tags automatiques\+: GPS Ref, Metadata\+Editing\+Software. 
 \end{DoxyNote}
+\Hypertarget{class_photo_model_aee33ef1753815d48baa8d8ab8716782c}\label{class_photo_model_aee33ef1753815d48baa8d8ab8716782c} 
+\index{PhotoModel@{PhotoModel}!selectedRow@{selectedRow}}
+\index{selectedRow@{selectedRow}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{selectedRow()}{selectedRow()}}
+{\footnotesize\ttfamily void Photo\+Model\+::selected\+Row (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mémorise la position fournie. 
+
+Met le flag {\bfseries{"{}is\+Selected"{}}} du précédent item à {\bfseries{False}} et le nouveau à {\bfseries{True}}. Met aussi le flag {\bfseries{"{}inside\+Circle"{}}} du précédent item à {\bfseries{False}} et le nouveau à {\bfseries{True}}. 
+\begin{DoxyParams}{Parameters}
+{\em row} & \+: l\textquotesingle{}indice de l\textquotesingle{}item sélectionné dans la List\+View. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}\label{class_photo_model_ad7a5d45624200d819ee0ab429387baa0} 
 \index{PhotoModel@{PhotoModel}!setData@{setData}}
 \index{setData@{setData}!PhotoModel@{PhotoModel}}
@@ -482,7 +579,7 @@ Ce slot ajoute ou modifie une propriété d\textquotesingle{}une \doxylink{struc
 
 
 
-Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. 
+Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -491,6 +588,30 @@ Affecte les coordonnées GPS fournies à toutes les photos géographiquement sit
 {\em longitude} & \+: Longitude GPS à affecter aux photos \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_photo_model_a50dc093e369a2741b62aa03556df061c}\label{class_photo_model_a50dc093e369a2741b62aa03556df061c} 
+\index{PhotoModel@{PhotoModel}!setPhotoProperty@{setPhotoProperty}}
+\index{setPhotoProperty@{setPhotoProperty}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{setPhotoProperty}{setPhotoProperty}}
+{\footnotesize\ttfamily void Photo\+Model\+::set\+Photo\+Property (\begin{DoxyParamCaption}\item[{const int}]{photo,  }\item[{const QString}]{value,  }\item[{const QString}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ce slot affecte le role fourni à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em photo} & \+: l\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} à modifier. Voir la note pour les valeurs particulières. \\
+\hline
+{\em value} & \+: la valeur \\
+\hline
+{\em property} & \+: le nom de la property correspondant au Role \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Valeurs particulières\+: \begin{DoxyItemize}
+\item La valeur spéciale -\/1 signifie {\bfseries{toutes les photos}}. \item La valeur spéciale -\/2 signifie {\bfseries{la photo sélectionée}}. \item La valeur spéciale -\/3 signifie {\bfseries{les photos du cercle}}. \end{DoxyItemize}
+
+\end{DoxyNote}
 \Hypertarget{class_photo_model_a3dc7e36064651fe29ab6685d8eed1dd6}\label{class_photo_model_a3dc7e36064651fe29ab6685d8eed1dd6} 
 \index{PhotoModel@{PhotoModel}!setSelectedItemCoords@{setSelectedItemCoords}}
 \index{setSelectedItemCoords@{setSelectedItemCoords}!PhotoModel@{PhotoModel}}

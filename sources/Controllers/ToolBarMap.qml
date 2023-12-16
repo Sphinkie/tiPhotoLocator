@@ -43,7 +43,7 @@ ToolBarMapForm {
 
     bt_clear_coords.onClicked: {
         // On efface les coordonnées GPS des photos affichées
-        window.setSelectedItemCoords(0,0);
+        window.setSelectedPhotoCoords(0,0);
         // On efface la copie locale QML de ces coordonnées...
         mapTab.photoLatitude = 0;
         mapTab.photoLongitude = 0;

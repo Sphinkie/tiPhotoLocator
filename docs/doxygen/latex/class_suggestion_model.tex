@@ -44,10 +44,29 @@ int \mbox{\hyperlink{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}{r
 QVariant \mbox{\hyperlink{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c}{data}} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
 \begin{DoxyCompactList}\small\item\em Returns the requested role value of an element of the model. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f}{remove\+Current\+Photo\+From\+Suggestion}} (const QModel\+Index index)
-\begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Ce slot enlève la \doxylink{struct_photo}{Photo} courante de la liste des photos correspondant à une \doxylink{struct_suggestion}{Suggestion} donnée. \end{DoxyCompactList}\item 
 \Hypertarget{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20}\label{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20} 
 Q\+\_\+\+INVOKABLE void {\bfseries dump\+Data} ()
 \begin{DoxyCompactList}\small\item\em Debug function that print (in the console) one line of the model at every call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_suggestion_model_a0de02decfdbfe787caf63895eca58cb6}{add\+Photo\+To\+Suggestion}} (const int suggestion\+\_\+row, int photo\+\_\+row)
+\begin{DoxyCompactList}\small\item\em Ajoute une \doxylink{struct_photo}{Photo} à la liste des photos ayant un "{}match"{} avec cette \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997}{add\+Category\+To\+Suggestion}} (const int suggestion\+\_\+row, const QString category)
+\begin{DoxyCompactList}\small\item\em Ajoute une catégorie à la \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_suggestion_model_ae89572184f274b27c827e5f419a0df8f}\label{class_suggestion_model_ae89572184f274b27c827e5f419a0df8f} 
+QVector$<$ \mbox{\hyperlink{struct_suggestion}{Suggestion}} $>$ {\bfseries m\+\_\+suggestions}
+\begin{DoxyCompactList}\small\item\em La liste des \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\item 
+\Hypertarget{class_suggestion_model_aa7612d5b8d5e5c63f265b25693d95524}\label{class_suggestion_model_aa7612d5b8d5e5c63f265b25693d95524} 
+int {\bfseries m\+\_\+selected\+Photo\+Row} = -\/4
+\begin{DoxyCompactList}\small\item\em La valeur par defaut -\/4 ne correspond à aucune photo. \end{DoxyCompactList}\item 
+\Hypertarget{class_suggestion_model_a71e147fc8f25a5f6ff2f24ebc256acc6}\label{class_suggestion_model_a71e147fc8f25a5f6ff2f24ebc256acc6} 
+int {\bfseries m\+\_\+dumped\+Row}
+\begin{DoxyCompactList}\small\item\em La dernière ligne affichée dans le dump de debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -72,6 +91,40 @@ Contructor.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997}\label{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997} 
+\index{SuggestionModel@{SuggestionModel}!addCategoryToSuggestion@{addCategoryToSuggestion}}
+\index{addCategoryToSuggestion@{addCategoryToSuggestion}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{\texorpdfstring{addCategoryToSuggestion()}{addCategoryToSuggestion()}}
+{\footnotesize\ttfamily void Suggestion\+Model\+::add\+Category\+To\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{suggestion\+\_\+row,  }\item[{const QString}]{category }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ajoute une catégorie à la \doxylink{struct_suggestion}{Suggestion}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\
+\hline
+{\em category} & \+: La catégorie à ajouter à la \doxylink{struct_suggestion}{Suggestion}\+: "{}geo"{} ou "{}tag"{}.\\
+\hline
+\end{DoxyParams}
+Si on veut ajouter la catégorie déjà existante \+: on ne fait rien. Si on veut ajouter une autre catégorie \+: la catégorie devient "{}geo\texorpdfstring{$\vert$}{|}tag"{} (les deux). \Hypertarget{class_suggestion_model_a0de02decfdbfe787caf63895eca58cb6}\label{class_suggestion_model_a0de02decfdbfe787caf63895eca58cb6} 
+\index{SuggestionModel@{SuggestionModel}!addPhotoToSuggestion@{addPhotoToSuggestion}}
+\index{addPhotoToSuggestion@{addPhotoToSuggestion}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{\texorpdfstring{addPhotoToSuggestion()}{addPhotoToSuggestion()}}
+{\footnotesize\ttfamily void Suggestion\+Model\+::add\+Photo\+To\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{suggestion\+\_\+row,  }\item[{int}]{photo\+\_\+row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ajoute une \doxylink{struct_photo}{Photo} à la liste des photos ayant un "{}match"{} avec cette \doxylink{struct_suggestion}{Suggestion}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\
+\hline
+{\em photo\+\_\+row} & \+: L\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} à ajouter à la \doxylink{struct_suggestion}{Suggestion}. La valeur spéciale -\/1 signifie \textquotesingle{}toutes les photos\textquotesingle{}. La valeur spéciale -\/2 signifie \textquotesingle{}la \doxylink{struct_photo}{Photo} sélectionée\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f}\label{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f} 
 \index{SuggestionModel@{SuggestionModel}!append@{append}}
 \index{append@{append}!SuggestionModel@{SuggestionModel}}
@@ -136,7 +189,7 @@ Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionn
 
 
 
-Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
+Ce slot enlève la \doxylink{struct_photo}{Photo} courante de la liste des photos correspondant à une \doxylink{struct_suggestion}{Suggestion} donnée. 
 
 
 \begin{DoxyParams}{Parameters}

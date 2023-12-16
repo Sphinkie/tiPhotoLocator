@@ -99,6 +99,8 @@ $(document).ready(function(){initNavTree('class_photo_model.html',''); initResiz
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_photo_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PhotoModel Class Reference</div></div>
 </div><!--header-->
@@ -161,20 +163,22 @@ Public Slots</h2></td></tr>
 <tr class="memdesc:a3cc8c0b5e6803970def517a8d57ae155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot lit des données EXIF d'une (ou toutes) photos du répertoire.  <br /></td></tr>
 <tr class="separator:a3cc8c0b5e6803970def517a8d57ae155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac393e2839ea5993f199ec669973972ef" id="r_ac393e2839ea5993f199ec669973972ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#ac393e2839ea5993f199ec669973972ef">saveMetadata</a> ()</td></tr>
-<tr class="memdesc:ac393e2839ea5993f199ec669973972ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.  <br /></td></tr>
+<tr class="memdesc:ac393e2839ea5993f199ec669973972ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées.  <br /></td></tr>
 <tr class="separator:ac393e2839ea5993f199ec669973972ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dc7e36064651fe29ab6685d8eed1dd6" id="r_a3dc7e36064651fe29ab6685d8eed1dd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a3dc7e36064651fe29ab6685d8eed1dd6">setSelectedItemCoords</a> (double latitude, double longitude)</td></tr>
 <tr class="memdesc:a3dc7e36064651fe29ab6685d8eed1dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée.  <br /></td></tr>
 <tr class="separator:a3dc7e36064651fe29ab6685d8eed1dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a834795331bc8b3f329e8f2a143839265" id="r_a834795331bc8b3f329e8f2a143839265"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a834795331bc8b3f329e8f2a143839265">setInCircleItemCoords</a> (double latitude, double longitude)</td></tr>
-<tr class="memdesc:a834795331bc8b3f329e8f2a143839265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur du cercle rouge.  <br /></td></tr>
+<tr class="memdesc:a834795331bc8b3f329e8f2a143839265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur du cercle rouge.  <br /></td></tr>
 <tr class="separator:a834795331bc8b3f329e8f2a143839265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50dc093e369a2741b62aa03556df061c" id="r_a50dc093e369a2741b62aa03556df061c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a50dc093e369a2741b62aa03556df061c">setPhotoProperty</a> (const int photo, const QString value, const QString property)</td></tr>
+<tr class="memdesc:a50dc093e369a2741b62aa03556df061c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot affecte le role fourni à toutes les photos géographiquement situées à l'interieur du cercle rouge.  <br /></td></tr>
+<tr class="separator:a50dc093e369a2741b62aa03556df061c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cd1ac5560f3897892474271c5206106" id="r_a8cd1ac5560f3897892474271c5206106"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a8cd1ac5560f3897892474271c5206106">findInCirclePhotos</a> (int circle_radius)</td></tr>
 <tr class="memdesc:a8cd1ac5560f3897892474271c5206106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parcourt toutes les <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> du modèle, et flague celles qui sont à l'interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).  <br /></td></tr>
 <tr class="separator:a8cd1ac5560f3897892474271c5206106"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a536c2a2381b3ce827257068f5bf43933" id="r_a536c2a2381b3ce827257068f5bf43933"><td class="memItemLeft" align="right" valign="top"><a id="a536c2a2381b3ce827257068f5bf43933" name="a536c2a2381b3ce827257068f5bf43933"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>applyCreatorToAll</b> ()</td></tr>
-<tr class="memdesc:a536c2a2381b3ce827257068f5bf43933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique le Settings "photographe" (le nom du photographe configuré) à toutes les photos du modèle. <br /></td></tr>
+<tr class="memitem:a536c2a2381b3ce827257068f5bf43933" id="r_a536c2a2381b3ce827257068f5bf43933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a536c2a2381b3ce827257068f5bf43933">applyCreatorToAll</a> ()</td></tr>
+<tr class="memdesc:a536c2a2381b3ce827257068f5bf43933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique le "photographe" à toutes les photos du modèle.  <br /></td></tr>
 <tr class="separator:a536c2a2381b3ce827257068f5bf43933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a297fef9ba3dd5d7c1c00593cefaf144e" id="r_a297fef9ba3dd5d7c1c00593cefaf144e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a297fef9ba3dd5d7c1c00593cefaf144e">appendSavedPosition</a> (double latitude, double longitude)</td></tr>
 <tr class="memdesc:a297fef9ba3dd5d7c1c00593cefaf144e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune).  <br /></td></tr>
@@ -220,7 +224,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1d2159990dbea68afefa28bfdd6804fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the full name of the photo. This is an example of unitary getData method.  <br /></td></tr>
 <tr class="separator:a1d2159990dbea68afefa28bfdd6804fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18fb19d062f2f7d7d79585d2e62c9634" id="r_a18fb19d062f2f7d7d79585d2e62c9634"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QVariantMap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a18fb19d062f2f7d7d79585d2e62c9634">get</a> (int row)</td></tr>
-<tr class="memdesc:a18fb19d062f2f7d7d79585d2e62c9634"><td class="mdescLeft">&#160;</td><td class="mdescRight">La methode <a class="el" href="class_photo_model.html#a18fb19d062f2f7d7d79585d2e62c9634" title="La methode get() (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: titre ...">get()</a> (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: titre = myModel.get(1).title;.  <br /></td></tr>
+<tr class="memdesc:a18fb19d062f2f7d7d79585d2e62c9634"><td class="mdescLeft">&#160;</td><td class="mdescRight">La methode <a class="el" href="class_photo_model.html#a18fb19d062f2f7d7d79585d2e62c9634" title="La methode get() (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: titre ...">get()</a> (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: <code>titre = myModel.get(1).title;</code>  <br /></td></tr>
 <tr class="separator:a18fb19d062f2f7d7d79585d2e62c9634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a822190ecc2081c7b49030c0f6a42317f" id="r_a822190ecc2081c7b49030c0f6a42317f"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a822190ecc2081c7b49030c0f6a42317f">dumpData</a> ()</td></tr>
 <tr class="memdesc:a822190ecc2081c7b49030c0f6a42317f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug function that print (in the console) one line of the model at every call.  <br /></td></tr>
@@ -258,6 +262,37 @@ Properties</h2></td></tr>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></tr>
 <tr class="memdesc:a6376872cafff59ccc887f405a2515ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">selectedRow is the <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> row in the model corresponding to the selected photo in the ListView. <br /></td></tr>
 <tr class="separator:a6376872cafff59ccc887f405a2515ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af43bef19e91b11bf4e79c55fe458d0a1" id="r_af43bef19e91b11bf4e79c55fe458d0a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#af43bef19e91b11bf4e79c55fe458d0a1">addTestItem</a> ()</td></tr>
+<tr class="memdesc:af43bef19e91b11bf4e79c55fe458d0a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a test item to the <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. (only if <code>DebugMode</code> is enabled in the <em>settings</em>)  <br /></td></tr>
+<tr class="separator:af43bef19e91b11bf4e79c55fe458d0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee33ef1753815d48baa8d8ab8716782c" id="r_aee33ef1753815d48baa8d8ab8716782c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#aee33ef1753815d48baa8d8ab8716782c">selectedRow</a> (int row)</td></tr>
+<tr class="memdesc:aee33ef1753815d48baa8d8ab8716782c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mémorise la position fournie.  <br /></td></tr>
+<tr class="separator:aee33ef1753815d48baa8d8ab8716782c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3dd8e3599f33e699cd474c5fca7d0b2" id="r_ae3dd8e3599f33e699cd474c5fca7d0b2"><td class="memItemLeft" align="right" valign="top"><a id="ae3dd8e3599f33e699cd474c5fca7d0b2" name="ae3dd8e3599f33e699cd474c5fca7d0b2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getSelectedRow</b> ()</td></tr>
+<tr class="memdesc:ae3dd8e3599f33e699cd474c5fca7d0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last selected row. <br /></td></tr>
+<tr class="separator:ae3dd8e3599f33e699cd474c5fca7d0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63d16a07716d0ad5aff2ff1be183198" id="r_aa63d16a07716d0ad5aff2ff1be183198"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#aa63d16a07716d0ad5aff2ff1be183198">belong</a> (double pLa, double pLo, double oLa, double oLo, float rLa, float rLo)</td></tr>
+<tr class="memdesc:aa63d16a07716d0ad5aff2ff1be183198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R.  <br /></td></tr>
+<tr class="separator:aa63d16a07716d0ad5aff2ff1be183198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6652f17b0436c7927b0924ddcd3ba98b" id="r_a6652f17b0436c7927b0924ddcd3ba98b"><td class="memItemLeft" align="right" valign="top"><a id="a6652f17b0436c7927b0924ddcd3ba98b" name="a6652f17b0436c7927b0924ddcd3ba98b"></a>
+QVector&lt; <a class="el" href="struct_photo.html">Photo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_photos</b></td></tr>
+<tr class="memdesc:a6652f17b0436c7927b0924ddcd3ba98b"><td class="mdescLeft">&#160;</td><td class="mdescRight">La liste des <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> du modèle. <br /></td></tr>
+<tr class="separator:a6652f17b0436c7927b0924ddcd3ba98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f7d839ea11f7c0190afa716ac5bb7a" id="r_a08f7d839ea11f7c0190afa716ac5bb7a"><td class="memItemLeft" align="right" valign="top"><a id="a08f7d839ea11f7c0190afa716ac5bb7a" name="a08f7d839ea11f7c0190afa716ac5bb7a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_lastSelectedRow</b> = 0</td></tr>
+<tr class="memdesc:a08f7d839ea11f7c0190afa716ac5bb7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item: le Welcome Rolleyflex) <br /></td></tr>
+<tr class="separator:a08f7d839ea11f7c0190afa716ac5bb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844160211f6ff9d747dcc59310d2fc22" id="r_a844160211f6ff9d747dcc59310d2fc22"><td class="memItemLeft" align="right" valign="top"><a id="a844160211f6ff9d747dcc59310d2fc22" name="a844160211f6ff9d747dcc59310d2fc22"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b> = 0</td></tr>
+<tr class="memdesc:a844160211f6ff9d747dcc59310d2fc22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compteur pour le dump de debug. <br /></td></tr>
+<tr class="separator:a844160211f6ff9d747dcc59310d2fc22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a> class manages a list of photo data. </p>
@@ -298,6 +333,34 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af43bef19e91b11bf4e79c55fe458d0a1" name="af43bef19e91b11bf4e79c55fe458d0a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af43bef19e91b11bf4e79c55fe458d0a1">&#9670;&#160;</a></span>addTestItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::addTestItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a test item to the <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. (only if <code>DebugMode</code> is enabled in the <em>settings</em>) </p>
+<dl class="section note"><dt>Note</dt><dd>For testing purpose. </dd></dl>
+
+</div>
+</div>
 <a id="a8a98d5f81789881189e179d6059c1586" name="a8a98d5f81789881189e179d6059c1586"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a98d5f81789881189e179d6059c1586">&#9670;&#160;</a></span>append <span class="overload">[1/2]</span></h2>
 
@@ -369,7 +432,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
 <div class="fragment"><div class="line">QVariantMap map;</div>
 <div class="line">map.insert(<span class="stringliteral">&quot;filename&quot;</span>, QVariant(filename));</div>
 <div class="line">map.insert(<a class="code hl_function" href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">roleNames</a>().value(ImageUrlRole), QVariant(url));</div>
-<div class="ttc" id="aclass_photo_model_html_aac3d5e1ae72e823b4e6091497c5cf27d"><div class="ttname"><a href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">PhotoModel::roleNames</a></div><div class="ttdeci">QHash&lt; int, QByteArray &gt; roleNames() const override</div><div class="ttdef"><b>Definition</b> PhotoModel.cpp:98</div></div>
+<div class="ttc" id="aclass_photo_model_html_aac3d5e1ae72e823b4e6091497c5cf27d"><div class="ttname"><a href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">PhotoModel::roleNames</a></div><div class="ttdeci">QHash&lt; int, QByteArray &gt; roleNames() const override</div><div class="ttdef"><b>Definition</b> PhotoModel.cpp:100</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -415,6 +478,109 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a536c2a2381b3ce827257068f5bf43933" name="a536c2a2381b3ce827257068f5bf43933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a536c2a2381b3ce827257068f5bf43933">&#9670;&#160;</a></span>applyCreatorToAll</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::applyCreatorToAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applique le "photographe" à toutes les photos du modèle. </p>
+<p>Le nom du photographe est configuré dans les Settings. </p>
+
+</div>
+</div>
+<a id="aa63d16a07716d0ad5aff2ff1be183198" name="aa63d16a07716d0ad5aff2ff1be183198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa63d16a07716d0ad5aff2ff1be183198">&#9670;&#160;</a></span>belong()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PhotoModel::belong </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pLa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pLo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>oLa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>oLo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rLa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rLo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pLa</td><td>: Latitude du point à tester. </td></tr>
+    <tr><td class="paramname">pLo</td><td>: Longitude du point à tester. </td></tr>
+    <tr><td class="paramname">oLa</td><td>: Latitude de l'origine du cercle. </td></tr>
+    <tr><td class="paramname">oLo</td><td>: Longitude de l'origine du cercle. </td></tr>
+    <tr><td class="paramname">rLa</td><td>: le rayon du cercle sur l'axe des Latitudes N-S(en degrés). </td></tr>
+    <tr><td class="paramname">rLo</td><td>: le rayon du cercle sur l'axe des Longitudes E-W (en degrés). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true si le point est dans le cercle. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Pour être le plus rapide possible, le cercle est plutôt un carré. </dd></dl>
 
 </div>
 </div>
@@ -624,7 +790,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
       </table>
 </div><div class="memdoc">
 
-<p>La methode <a class="el" href="class_photo_model.html#a18fb19d062f2f7d7d79585d2e62c9634" title="La methode get() (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: titre ...">get()</a> (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: titre = myModel.get(1).title;. </p>
+<p>La methode <a class="el" href="class_photo_model.html#a18fb19d062f2f7d7d79585d2e62c9634" title="La methode get() (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: titre ...">get()</a> (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: <code>titre = myModel.get(1).title;</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">row</td><td>: indice </td></tr>
@@ -689,7 +855,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
 <p>Fonction typique qui supprime l'item désigné du modèle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">row</td><td>: la position dans le vecteur de l'item à modifier. </td></tr>
+    <tr><td class="paramname">row</td><td>: la position dans le vecteur de l'item à supprimer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -746,7 +912,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Table of Role names. C'est la correspondance entre le role C++ et le nom de la property dans QML. </p><dl class="section note"><dt>Note</dt><dd>Implémentation obligatoire. </dd></dl>
+<p>Table of Role names. C'est la correspondance entre le role C++ et le nom de la property dans QML. </p><dl class="section note"><dt>Note</dt><dd>Implémentation obligatoire. <br  />
+ Un appel à <code><a class="el" href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">roleNames()</a>.value(role);</code> renvoie la property (string) correspondant au role demandé. <br  />
+ Un appel à <code><a class="el" href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">roleNames()</a>.key(property.toUtf8());</code> renvoie le role (int) correspondant à la property demandée. <br  />
+ </dd></dl>
 
 </div>
 </div>
@@ -809,12 +978,46 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRow</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées. </p>
+<p>Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées. </p>
 <dl class="section note"><dt>Note</dt><dd>Tag obligatoire: imageUrl. </dd>
 <dd>
 Tags modifiés: GPS coords, Creator, City, Country, DateTimeOriginal. </dd>
 <dd>
 Tags automatiques: GPS Ref, MetadataEditingSoftware. </dd></dl>
+
+</div>
+</div>
+<a id="aee33ef1753815d48baa8d8ab8716782c" name="aee33ef1753815d48baa8d8ab8716782c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee33ef1753815d48baa8d8ab8716782c">&#9670;&#160;</a></span>selectedRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::selectedRow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mémorise la position fournie. </p>
+<p>Met le flag <b>"isSelected"</b> du précédent item à <b>False</b> et le nouveau à <b>True</b>. Met aussi le flag <b>"insideCircle"</b> du précédent item à <b>False</b> et le nouveau à <b>True</b>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>: l'indice de l'item sélectionné dans la ListView. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -985,7 +1188,7 @@ Tags automatiques: GPS Ref, MetadataEditingSoftware. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur du cercle rouge. </p>
+<p>Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur du cercle rouge. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">latitude</td><td>: Latitude GPS à affecter aux photos </td></tr>
@@ -993,6 +1196,64 @@ Tags automatiques: GPS Ref, MetadataEditingSoftware. </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a50dc093e369a2741b62aa03556df061c" name="a50dc093e369a2741b62aa03556df061c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50dc093e369a2741b62aa03556df061c">&#9670;&#160;</a></span>setPhotoProperty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::setPhotoProperty </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>photo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>property</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ce slot affecte le role fourni à toutes les photos géographiquement situées à l'interieur du cercle rouge. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">photo</td><td>: l'indice de la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> à modifier. Voir la note pour les valeurs particulières. </td></tr>
+    <tr><td class="paramname">value</td><td>: la valeur </td></tr>
+    <tr><td class="paramname">property</td><td>: le nom de la property correspondant au Role </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Valeurs particulières: <ul>
+<li>La valeur spéciale -1 signifie <b>toutes les photos</b>. </li>
+<li>La valeur spéciale -2 signifie <b>la photo sélectionée</b>. </li>
+<li>La valeur spéciale -3 signifie <b>les photos du cercle</b>. </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>

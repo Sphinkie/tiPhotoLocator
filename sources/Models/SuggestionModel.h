@@ -88,9 +88,9 @@ private:
     // -----------------------------------------------------
     // Membres
     // -----------------------------------------------------
-    QVector<Suggestion> m_suggestions;
-    int m_selectedPhotoRow = -3;    // La valeur par defaut -3 ne correspond à aucune photo
-    int m_dumpedRow;
+    QVector<Suggestion> m_suggestions;  //!< La liste des Suggestion
+    int m_selectedPhotoRow = -4;        //!< La valeur par defaut -4 ne correspond à aucune photo
+    int m_dumpedRow;                    //!< La dernière ligne affichée dans le dump de debug.
 
 };
 

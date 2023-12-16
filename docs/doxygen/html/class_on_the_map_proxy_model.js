@@ -7,5 +7,6 @@ var class_on_the_map_proxy_model =
     [ "setAllItemsCoords", "class_on_the_map_proxy_model.html#a8578bb0c25636337ba57681da049e4f1", null ],
     [ "setAllItemsSavedCoords", "class_on_the_map_proxy_model.html#aebd8850a9093bc4166d6aed75d638141", null ],
     [ "setFilterEnabled", "class_on_the_map_proxy_model.html#ad5397db53587218f59299d48696f1b99", null ],
+    [ "m_filterEnabled", "class_on_the_map_proxy_model.html#af83d556dce60b764e65082d856e2fc0f", null ],
     [ "filterEnabled", "class_on_the_map_proxy_model.html#ab41c6f6de0761832ee25c3262d57743c", null ]
 ];

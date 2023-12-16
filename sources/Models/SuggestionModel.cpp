@@ -4,8 +4,6 @@
 
 
 
-
-
 /* ********************************************************************************** */
 /*!
  * \brief Contructor.
@@ -19,11 +17,11 @@ SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
     this->append(photographe, "creator", "tag", -1);
     this->append(" ", "description", "tag", -1);
     this->append(initiales, "descriptionWriter", "tag", -1);
-    this->append("paysage", "keywords", "tag", -1);
-    this->append("portrait", "keywords", "tag", -1);
+    this->append("paysage",   "keywords", "tag", -1);
+    this->append("portrait",  "keywords", "tag", -1);
     this->append("urbanisme", "keywords", "tag", -1);
-    this->append("nature", "keywords", "tag", -1);
-    this->append("animaux", "keywords", "tag", -1);
+    this->append("nature",    "keywords", "tag", -1);
+    this->append("animaux",   "keywords", "tag", -1);
 }
 
 
@@ -106,7 +104,7 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
         {
             // Trouvé: la suggestion existe dejà (même texte et même target)
             qDebug() << "already contains" << text;
-            // On ajoute la categorie à la suggestion (au cas où elle est différente)
+            // On ajoute la categorie à la suggestion (au cas où elle serait différente)
             this->addCategoryToSuggestion(i, category);
             // On ajoute la photo à la liste
             this->addPhotoToSuggestion(i, photo_row);
@@ -155,10 +153,10 @@ void SuggestionModel::addPhotoToSuggestion(const int suggestion_row, int photo_r
 /*!
  * \brief Ajoute une catégorie à la Suggestion.
  * \param suggestion_row : L'indice de la Suggestion à modifier.
- * \param category : La catégorie à ajouter à la Suggestion.
+ * \param category : La catégorie à ajouter à la Suggestion: "geo" ou "tag".
  *
  * Si on veut ajouter la catégorie déjà existante : on ne fait rien.
- * Si on veut ajouter une autre catégorie : la catégorie devient "geo|tag" (les deux collés).
+ * Si on veut ajouter une autre catégorie : la catégorie devient "geo|tag" (les deux).
  */
 void SuggestionModel::addCategoryToSuggestion(const int suggestion_row, const QString category)
 {
@@ -175,7 +173,7 @@ void SuggestionModel::addCategoryToSuggestion(const int suggestion_row, const QS
 
 /* ********************************************************************************** */
 /*!
- * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
+ * \brief Ce slot enlève la Photo courante de la liste des photos correspondant à une Suggestion donnée.
  * \param index : L'index dans le Model de la suggestion à modifier.
  */
 void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)

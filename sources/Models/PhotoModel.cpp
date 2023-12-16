@@ -93,11 +93,14 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 /*!
  * Table of Role names.
  * C'est la correspondance entre le role C++ et le nom de la property dans QML.
- * \note Implémentation obligatoire.
+ * \note Implémentation obligatoire. <br>
+ * Un appel à `roleNames().value(role);` renvoie la property (string) correspondant au role demandé. <br>
+ * Un appel à `roleNames().key(property.toUtf8());` renvoie le role (int) correspondant à la property demandée. <br>
  */
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
+        // ROLE                 PROPËRTY
         {FilenameRole,          "filename"},
         {ImageUrlRole,          "imageUrl"},
         {ImageWidthRole,        "imageWidth"},
@@ -234,8 +237,8 @@ void PhotoModel::setSelectedItemCoords(double latitude, double longitude)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur
- *        du cercle rouge.
+ * \brief Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à
+ *        l'interieur du cercle rouge.
  * \param latitude : Latitude GPS à affecter aux photos
  * \param longitude : Longitude GPS à affecter aux photos
  */
@@ -256,6 +259,60 @@ void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
             qDebug() << "PhotoModel: set latitude" << idx.data(LatitudeRole).toDouble() << "for" << idx.data(FilenameRole).toString();
         }
         idx = idx.siblingAtRow(++row);
+    }
+}
+
+/* ********************************************************************************************************** */
+/*!
+ * \brief Ce slot affecte le role fourni à toutes les photos géographiquement situées à l'interieur
+ *        du cercle rouge.
+ * \param photo : l'indice de la Photo à modifier. Voir la note pour les valeurs particulières.
+ * \param value : la valeur
+ * \param property : le nom de la property correspondant au Role
+ * \note Valeurs particulières:
+ *       \li La valeur spéciale -1 signifie **toutes les photos**.
+ *       \li La valeur spéciale -2 signifie **la photo sélectionée**.
+ *       \li La valeur spéciale -3 signifie **les photos du cercle**.
+ */
+void PhotoModel::setPhotoProperty(const int photo, const QString value, const QString property)
+{
+    switch (photo) {
+    case -1:
+        // On affecte toutes photos
+        {
+            int row = 0;
+            QModelIndex idx = this->index(row, 0);
+            while (idx.isValid())
+            {
+                setData(idx, value, roleNames().key(property.toUtf8()));
+                idx = idx.siblingAtRow(++row);
+            }
+            break;
+        }
+    case -2:
+        // On affecte la photo sélectionnée
+        setData(m_lastSelectedRow, value, property);
+        break;
+    case -3:
+        // On affecte les photos du Cercle
+        {
+            int row = 0;
+            QModelIndex idx = this->index(row, 0);
+            while (idx.isValid())
+            {
+                // Si la photo est dans le cercle, on modifie ses données
+                if (idx.data(InsideCircleRole).toBool())
+                {
+                    setData(idx, value, roleNames().key(property.toUtf8()));
+                }
+                idx = idx.siblingAtRow(++row);
+            }
+            break;
+        }
+    default:
+        // Autres cas: on a reçu un numéro de Photo
+        setData(photo, value, property);
+        break;
     }
 }
 
@@ -538,7 +595,7 @@ void PhotoModel::fetchExifMetadata(int photo)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Ce slot enregistre dans le fichier JPG les metadonnées IPTC qui ont été modifiées.
+ * \brief Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées.
  * \note Tag obligatoire: imageUrl.
  * \note Tags modifiés: GPS coords, Creator, City, Country, DateTimeOriginal.
  * \note Tags automatiques: GPS Ref, MetadataEditingSoftware.
@@ -620,7 +677,7 @@ void PhotoModel::addTestItem()
 /* ********************************************************************************************************** */
 /*!
  * \brief Fonction typique qui supprime l'item désigné du modèle.
- * \param row : la position dans le vecteur de l'item à modifier.
+ * \param row : la position dans le vecteur de l'item à supprimer.
  */
 void PhotoModel::removeData(int row)
 {
@@ -654,7 +711,7 @@ void PhotoModel::duplicateData(int row)
 /* ********************************************************************************************************** */
 /*!
  * \brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
- *        Usage dans QML: titre = myModel.get(1).title;
+ *        Usage dans QML: `titre = myModel.get(1).title;`
  * \param row : indice
  * \returns une Map contenant toutes les propriétés de l'item, dont la propriété spéciale: "row".
  */
@@ -742,9 +799,9 @@ bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rL
         return false;
     }
     else if (abs(pLo - oLo) > rLo)
-        {
-            return false;
-        }
+    {
+        return false;
+    }
     else
         // TODO : pour les points qui arrivent jusqu'ici, on peut faire un test plus précis
         return true;
@@ -753,7 +810,8 @@ bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rL
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Applique le Settings "photographe" (le nom du photographe configuré) à toutes les photos du modèle.
+ * \brief Applique le "photographe" à toutes les photos du modèle.
+ * \details Le nom du photographe est configuré dans les Settings.
  */
 void PhotoModel::applyCreatorToAll()
 {
@@ -779,7 +837,7 @@ void PhotoModel::applyCreatorToAll()
 /*!
  * \brief Surcharge de l'opérateur ==.
  * \param file_name: Le texte à comparer
- * \return True si le \b filename de la photo correspond au texte passé en paramètre.
+ * \return True si le **filename** de la photo correspond au texte passé en paramètre.
  */
 bool Photo::operator == (const QString &file_name)
 {

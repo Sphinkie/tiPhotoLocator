@@ -26,23 +26,25 @@ Window {
     // ----------------------------------------------------------------
     // Les signaux vers PhotoModel
     // ----------------------------------------------------------------
-    signal append(string filename, string url)                  // Ajoute une JPG au modèle
-    signal setSelectedItemCoords(double lati, double longi)     // Ajoute des coords à une photo du modèle
-    signal savePosition(double lati, double longi)              // Mémorise une position
-    signal clearSavedPosition()                                 // Efface une position mémorisée
-    signal applySavedPositionToCoords()                         // Affecte une position mémorisée
-    signal fetchExifMetadata()                                  // Lit les metadata de toutes les JPG
-    signal fetchSingleExifMetadata(int row)                     // Lit les metadata d'une JPG
-    signal applyCreatorToAll()                                  // Applique le Creator (des settings) à toutes les photos du modèle
-    signal saveMetadata()
-    signal hasPos()
+    // sur une photo unitaire:
+    signal append(string filename, string url)                      // Ajoute une JPG au modèle
+    signal fetchSingleExifMetadata(int row)                         // Lit les metadata d'une JPG
+    signal setPhotoProperty(int index, string texte, string target) // Fait un setData pour affecter un role du Model
+    signal setSelectedPhotoCoords(double lati, double longi)         // Positionne les coords de la photo séléctionnée
+    // sur plusieurs photos:
+    signal fetchExifMetadata()                                      // Lit les metadata de toutes les JPG
+    signal saveMetadata()                                           // Ecrit les metadata sur le disque
+    signal applyCreatorToAll()                                      // Applique le Creator (des settings) à toutes les photos du modèle
+    signal applySavedPositionToCoords()                             // Affecte la position mémorisée à toutes les photos du cercle
+    // Gestion de la SavedPosition
+    signal savePosition(double lati, double longi)                  // Mémorise une position
+    signal clearSavedPosition()                                     // Efface une position mémorisée
     // ----------------------------------------------------------------
     // Les signaux vers SuggestionModel
     // ----------------------------------------------------------------
     signal setSuggestionFilter(int row)
     signal setCategoryFilter(string category)
-    signal setPhotoProperty(int index, string texte, string target)
-    signal removePhotoFromSuggestion(int row)                   // Retire la photo courante de la Suggestion passée en paramètre
+    signal removePhotoFromSuggestion(int row)       // Retire la photo courante de la Suggestion passée en paramètre
     // ----------------------------------------------------------------
     // Autres signaux
     // ----------------------------------------------------------------

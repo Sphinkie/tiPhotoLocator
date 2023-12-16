@@ -14,8 +14,8 @@ private:
     // ------------------------------
     // Membres
     // ------------------------------
-    QVariantMap m_exifData;          //! Liste des metadata à ecrire
-    bool m_generateBackup;           //! True si un backup de l'image doit être généré.
+    QVariantMap m_exifData;          //!< Liste des metadata à ecrire
+    bool m_generateBackup;           //!< True si un backup de l'image doit être généré.
 
 };
 

@@ -95,6 +95,8 @@ $(document).ready(function(){initNavTree('class_suggestion_model.html',''); init
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_suggestion_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">SuggestionModel Class Reference</div></div>
 </div><!--header-->
@@ -145,12 +147,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a403421fd09afc22273162b74e74b7d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the requested role value of an element of the model.  <br /></td></tr>
 <tr class="separator:a403421fd09afc22273162b74e74b7d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea38923e1af3b5faee8ba4caccc8281f" id="r_aea38923e1af3b5faee8ba4caccc8281f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f">removeCurrentPhotoFromSuggestion</a> (const QModelIndex index)</td></tr>
-<tr class="memdesc:aea38923e1af3b5faee8ba4caccc8281f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.  <br /></td></tr>
+<tr class="memdesc:aea38923e1af3b5faee8ba4caccc8281f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> courante de la liste des photos correspondant à une <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> donnée.  <br /></td></tr>
 <tr class="separator:aea38923e1af3b5faee8ba4caccc8281f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3345223f2aa9b5d563b9097271a1d20" id="r_af3345223f2aa9b5d563b9097271a1d20"><td class="memItemLeft" align="right" valign="top"><a id="af3345223f2aa9b5d563b9097271a1d20" name="af3345223f2aa9b5d563b9097271a1d20"></a>
 Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>dumpData</b> ()</td></tr>
 <tr class="memdesc:af3345223f2aa9b5d563b9097271a1d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug function that print (in the console) one line of the model at every call. <br /></td></tr>
 <tr class="separator:af3345223f2aa9b5d563b9097271a1d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0de02decfdbfe787caf63895eca58cb6" id="r_a0de02decfdbfe787caf63895eca58cb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#a0de02decfdbfe787caf63895eca58cb6">addPhotoToSuggestion</a> (const int suggestion_row, int photo_row)</td></tr>
+<tr class="memdesc:a0de02decfdbfe787caf63895eca58cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> à la liste des photos ayant un "match" avec cette <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>.  <br /></td></tr>
+<tr class="separator:a0de02decfdbfe787caf63895eca58cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd4ef6320e2a644e8dbd9c40f9ff3997" id="r_afd4ef6320e2a644e8dbd9c40f9ff3997"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_model.html#afd4ef6320e2a644e8dbd9c40f9ff3997">addCategoryToSuggestion</a> (const int suggestion_row, const QString category)</td></tr>
+<tr class="memdesc:afd4ef6320e2a644e8dbd9c40f9ff3997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une catégorie à la <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>.  <br /></td></tr>
+<tr class="separator:afd4ef6320e2a644e8dbd9c40f9ff3997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae89572184f274b27c827e5f419a0df8f" id="r_ae89572184f274b27c827e5f419a0df8f"><td class="memItemLeft" align="right" valign="top"><a id="ae89572184f274b27c827e5f419a0df8f" name="ae89572184f274b27c827e5f419a0df8f"></a>
+QVector&lt; <a class="el" href="struct_suggestion.html">Suggestion</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_suggestions</b></td></tr>
+<tr class="memdesc:ae89572184f274b27c827e5f419a0df8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">La liste des <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. <br /></td></tr>
+<tr class="separator:ae89572184f274b27c827e5f419a0df8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7612d5b8d5e5c63f265b25693d95524" id="r_aa7612d5b8d5e5c63f265b25693d95524"><td class="memItemLeft" align="right" valign="top"><a id="aa7612d5b8d5e5c63f265b25693d95524" name="aa7612d5b8d5e5c63f265b25693d95524"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectedPhotoRow</b> = -4</td></tr>
+<tr class="memdesc:aa7612d5b8d5e5c63f265b25693d95524"><td class="mdescLeft">&#160;</td><td class="mdescRight">La valeur par defaut -4 ne correspond à aucune photo. <br /></td></tr>
+<tr class="separator:aa7612d5b8d5e5c63f265b25693d95524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e147fc8f25a5f6ff2f24ebc256acc6" id="r_a71e147fc8f25a5f6ff2f24ebc256acc6"><td class="memItemLeft" align="right" valign="top"><a id="a71e147fc8f25a5f6ff2f24ebc256acc6" name="a71e147fc8f25a5f6ff2f24ebc256acc6"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b></td></tr>
+<tr class="memdesc:a71e147fc8f25a5f6ff2f24ebc256acc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">La dernière ligne affichée dans le dump de debug. <br /></td></tr>
+<tr class="separator:a71e147fc8f25a5f6ff2f24ebc256acc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a> class manages a list of <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. </p>
@@ -190,6 +216,97 @@ Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>dumpData<
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="afd4ef6320e2a644e8dbd9c40f9ff3997" name="afd4ef6320e2a644e8dbd9c40f9ff3997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd4ef6320e2a644e8dbd9c40f9ff3997">&#9670;&#160;</a></span>addCategoryToSuggestion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SuggestionModel::addCategoryToSuggestion </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>suggestion_row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>category</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ajoute une catégorie à la <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suggestion_row</td><td>: L'indice de la <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> à modifier. </td></tr>
+    <tr><td class="paramname">category</td><td>: La catégorie à ajouter à la <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>: "geo" ou "tag".</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Si on veut ajouter la catégorie déjà existante : on ne fait rien. Si on veut ajouter une autre catégorie : la catégorie devient "geo|tag" (les deux). </p>
+
+</div>
+</div>
+<a id="a0de02decfdbfe787caf63895eca58cb6" name="a0de02decfdbfe787caf63895eca58cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de02decfdbfe787caf63895eca58cb6">&#9670;&#160;</a></span>addPhotoToSuggestion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SuggestionModel::addPhotoToSuggestion </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>suggestion_row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>photo_row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ajoute une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> à la liste des photos ayant un "match" avec cette <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suggestion_row</td><td>: L'indice de la <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> à modifier. </td></tr>
+    <tr><td class="paramname">photo_row</td><td>: L'indice de la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> à ajouter à la <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. La valeur spéciale -1 signifie 'toutes les photos'. La valeur spéciale -2 signifie 'la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> sélectionée'. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab7946b300734bc0e257f3e5a8904ec3f" name="ab7946b300734bc0e257f3e5a8904ec3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7946b300734bc0e257f3e5a8904ec3f">&#9670;&#160;</a></span>append</h2>
 
@@ -345,7 +462,7 @@ Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>dumpData<
       </table>
 </div><div class="memdoc">
 
-<p>Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. </p>
+<p>Ce slot enlève la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> courante de la liste des photos correspondant à une <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> donnée. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>: L'index dans le Model de la suggestion à modifier. </td></tr>

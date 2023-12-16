@@ -94,6 +94,8 @@ $(document).ready(function(){initNavTree('class_camera_set.html',''); initResiza
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_camera_set-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CameraSet Class Reference</div></div>
 </div><!--header-->
@@ -125,6 +127,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ca6f095743d702ae18cb6c9afb5cb22" id="r_a2ca6f095743d702ae18cb6c9afb5cb22"><td class="memItemLeft" align="right" valign="top"><a id="a2ca6f095743d702ae18cb6c9afb5cb22" name="a2ca6f095743d702ae18cb6c9afb5cb22"></a>
 Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (const QString cam_model)</td></tr>
 <tr class="separator:a2ca6f095743d702ae18cb6c9afb5cb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aad47572ed65bafd4d146a513d641a80e" id="r_aad47572ed65bafd4d146a513d641a80e"><td class="memItemLeft" align="right" valign="top"><a id="aad47572ed65bafd4d146a513d641a80e" name="aad47572ed65bafd4d146a513d641a80e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (const QString cam_model)</td></tr>
+<tr class="separator:aad47572ed65bafd4d146a513d641a80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69c54b2309d3d34b2c58305a939327bd" id="r_a69c54b2309d3d34b2c58305a939327bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_set.html#a69c54b2309d3d34b2c58305a939327bd">requestThumb</a> (const QString cam_model)</td></tr>
+<tr class="memdesc:a69c54b2309d3d34b2c58305a939327bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoi d'une requete POST à deepai.  <br /></td></tr>
+<tr class="separator:a69c54b2309d3d34b2c58305a939327bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa00deb84c361446cafb946443c1997" id="r_adfa00deb84c361446cafb946443c1997"><td class="memItemLeft" align="right" valign="top"><a id="adfa00deb84c361446cafb946443c1997" name="adfa00deb84c361446cafb946443c1997"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>requestMeteo</b> ()</td></tr>
+<tr class="memdesc:adfa00deb84c361446cafb946443c1997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoi d'une requete GET à openweathermap. <br /></td></tr>
+<tr class="separator:adfa00deb84c361446cafb946443c1997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aaae5cd5c7f4c1db3d1c7b11bb0786f34" id="r_aaae5cd5c7f4c1db3d1c7b11bb0786f34"><td class="memItemLeft" align="right" valign="top"><a id="aaae5cd5c7f4c1db3d1c7b11bb0786f34" name="aaae5cd5c7f4c1db3d1c7b11bb0786f34"></a>
+QSet&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_cameras</b></td></tr>
+<tr class="memdesc:aaae5cd5c7f4c1db3d1c7b11bb0786f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'ensemble des <a class="el" href="struct_camera.html" title="A data structure containing the attributes of a camera picture: Camera Model , camera thumbnail.">Camera</a>. <br /></td></tr>
+<tr class="separator:aaae5cd5c7f4c1db3d1c7b11bb0786f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bcc216de40d580d73b9511d983bf628" id="r_a9bcc216de40d580d73b9511d983bf628"><td class="memItemLeft" align="right" valign="top"><a id="a9bcc216de40d580d73b9511d983bf628" name="a9bcc216de40d580d73b9511d983bf628"></a>
+QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_networkMgr</b></td></tr>
+<tr class="memdesc:a9bcc216de40d580d73b9511d983bf628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Network Manager pour les accès web. <br /></td></tr>
+<tr class="separator:a9bcc216de40d580d73b9511d983bf628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dbd8817b6336dde9a92ecc822f1f354" id="r_a4dbd8817b6336dde9a92ecc822f1f354"><td class="memItemLeft" align="right" valign="top"><a id="a4dbd8817b6336dde9a92ecc822f1f354" name="a4dbd8817b6336dde9a92ecc822f1f354"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></td></tr>
+<tr class="memdesc:a4dbd8817b6336dde9a92ecc822f1f354"><td class="mdescLeft">&#160;</td><td class="mdescRight">API key pour les requètes deepAI. <br /></td></tr>
+<tr class="separator:a4dbd8817b6336dde9a92ecc822f1f354"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a89e8ab28a0d3873016954386591b3aca" name="a89e8ab28a0d3873016954386591b3aca"></a>
@@ -181,6 +211,40 @@ Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">reply</td><td>: Le contenu de la réponse. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a69c54b2309d3d34b2c58305a939327bd" name="a69c54b2309d3d34b2c58305a939327bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69c54b2309d3d34b2c58305a939327bd">&#9670;&#160;</a></span>requestThumb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraSet::requestThumb </td>
+          <td>(</td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>cam_model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Envoi d'une requete POST à deepai. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam_model</td><td>: non utilisé pour l'instant </td></tr>
   </table>
   </dd>
 </dl>

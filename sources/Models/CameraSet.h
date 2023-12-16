@@ -29,7 +29,7 @@ private:
 
     QSet<QString> m_cameras ;               //!< L'ensemble des Camera
     QNetworkAccessManager* m_networkMgr;    //!< Network Manager pour les accès web
-    QString m_deepaiKey;
+    QString m_deepaiKey;                    //!< API key pour les requètes deepAI
 };
 
 #endif // CAMERASET_H

@@ -34,7 +34,7 @@ signals:
     void filterEnabledChanged();  //!< Signal émis quand l'état du filtrage change.
 
 private:
-    QString m_filter = "";
+    QString m_filter = "";        //!< Chaine de caractères contenant le filtre.
 };
 
 #endif // SUGGESTIONCATEGORYPROXYMODEL_H

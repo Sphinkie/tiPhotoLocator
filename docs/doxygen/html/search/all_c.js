@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['photo_0',['photo',['../struct_photo.html',1,'Photo'],['../struct_photo.html#a10ef03ede9235052eb9f7d5e950f85d3',1,'Photo::Photo()'],['../struct_photo.html#a9bf87b3475256941dadccf1bba9e5650',1,'Photo::Photo(const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, const bool is_welcome=false, bool is_selected=false)']]],
-  ['photolocator_1',['Ti PhotoLocator',['../index.html',1,'']]],
-  ['photomodel_2',['photomodel',['../class_photo_model.html',1,'PhotoModel'],['../class_photo_model.html#a244f996eed49122ebe11c5369d63a0e2',1,'PhotoModel::PhotoModel()']]],
-  ['photos_3',['photos',['../struct_suggestion.html#af319b358957378992fcbcd14022e2125',1,'Suggestion']]],
-  ['presentation_4',['Presentation',['../index.html#autotoc_md1',1,'']]],
-  ['projects_5',['Cousin projects',['../index.html#autotoc_md5',1,'']]]
+  ['of_20the_20developpement_20environnement_0',['Installation of the developpement environnement',['../md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html#autotoc_md12',1,'']]],
+  ['onfinished_1',['onFinished',['../class_camera_set.html#ae521eda047c7409a02da364ba8d60db1',1,'CameraSet']]],
+  ['onselectedphotochanged_2',['onSelectedPhotoChanged',['../class_suggestion_model.html#a5a28097cf78d3d5619e64a48c0b7d198',1,'SuggestionModel']]],
+  ['onthemapproxymodel_3',['onthemapproxymodel',['../class_on_the_map_proxy_model.html',1,'OnTheMapProxyModel'],['../class_on_the_map_proxy_model.html#afb8170a7f9e508bfdc6238e649e957cf',1,'OnTheMapProxyModel::OnTheMapProxyModel()']]],
+  ['operator_3d_3d_4',['operator==',['../struct_photo.html#aadb7a083611feae65440c3bfc3887417',1,'Photo::operator==(const QString &amp;file_name)'],['../struct_photo.html#aaf8c4dfdd916b811562d6d4e7f5e1489',1,'Photo::operator==(const Photo &amp;photo)'],['../struct_suggestion.html#a063449adc119af01b2ca07be053223f6',1,'Suggestion::operator==()']]]
 ];

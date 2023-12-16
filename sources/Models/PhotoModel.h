@@ -150,6 +150,7 @@ public slots:
     void saveMetadata();
     void setSelectedItemCoords(double latitude, double longitude);
     void setInCircleItemCoords(double latitude, double longitude);
+    void setPhotoProperty(const int photo, const QString value, const QString property);
     void findInCirclePhotos(int circle_radius);
     void applyCreatorToAll();
     void appendSavedPosition(double latitude, double longitude);

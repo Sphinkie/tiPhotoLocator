@@ -38,8 +38,8 @@ protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
 private:
-    bool m_filterEnabled;
-    int  m_filterPhotoRow;
+    bool m_filterEnabled;          //!< True su le filtrage st actif.
+    int  m_filterPhotoRow;         //!< Le numero de la Photo sur lequel doit se faire le filtrage.
 
 };
 

@@ -60,10 +60,10 @@ private:
     // ------------------------------
     // Membres
     // ------------------------------
-    QString m_filePath;                //! Nom du fichier contenant les arguments de ExifTool
-    QByteArray m_rxLine;               //! Données ExifTool en cours de réception
-    static QString m_argFile;          //! A renseigner lors du premier appel.
-    static PhotoModel* m_photoModel;   //! Modèle contenant les photos et leurs tags
+    QString m_filePath;                //!< Nom du fichier contenant les arguments de ExifTool
+    QByteArray m_rxLine;               //!< Données ExifTool en cours de réception
+    static QString m_argFile;          //!< A renseigner lors du premier appel.
+    static PhotoModel* m_photoModel;   //!< Modèle contenant les photos et leurs tags
 
 };
 

@@ -70,7 +70,7 @@ Map {
                            mapTab.photoLatitude = lati;
                            mapTab.photoLongitude= longi;
                            // On change les coordonnées dans l'item du modele
-                           window.setSelectedItemCoords(lati, longi);
+                           window.setSelectedPhotoCoords(lati, longi);
                            console.log(mapView.supportedMapTypes);  // Debug : Affiche la liste des cartes supportées
                        }
         }

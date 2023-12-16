@@ -94,6 +94,10 @@ $(document).ready(function(){initNavTree('class_exif_read_task.html',''); initRe
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_exif_read_task-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ExifReadTask Class Reference</div></div>
 </div><!--header-->
@@ -125,6 +129,40 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae30b3d2ce698c12267cd51db35f4e3e4" id="r_ae30b3d2ce698c12267cd51db35f4e3e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_read_task.html#ae30b3d2ce698c12267cd51db35f4e3e4">init</a> (<a class="el" href="class_photo_model.html">PhotoModel</a> *photoModel)</td></tr>
 <tr class="memdesc:ae30b3d2ce698c12267cd51db35f4e3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques.  <br /></td></tr>
 <tr class="separator:ae30b3d2ce698c12267cd51db35f4e3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a425555d73b1bc4ba915e2a9f9a0884c6" id="r_a425555d73b1bc4ba915e2a9f9a0884c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_read_task.html#a425555d73b1bc4ba915e2a9f9a0884c6">processLine</a> (QByteArray line)</td></tr>
+<tr class="memdesc:a425555d73b1bc4ba915e2a9f9a0884c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.  <br /></td></tr>
+<tr class="separator:a425555d73b1bc4ba915e2a9f9a0884c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a209baeebef9ede8dafc98844324bbaa9" id="r_a209baeebef9ede8dafc98844324bbaa9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_read_task.html#a209baeebef9ede8dafc98844324bbaa9">writeArgsFile</a> ()</td></tr>
+<tr class="memdesc:a209baeebef9ede8dafc98844324bbaa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">List the tags to be read in the JPG files, and put them in the Arguments file for <em>ExifTool</em>.  <br /></td></tr>
+<tr class="separator:a209baeebef9ede8dafc98844324bbaa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:adee848da5859f1e0a5ef3ea8b5fd155d" id="r_adee848da5859f1e0a5ef3ea8b5fd155d"><td class="memItemLeft" align="right" valign="top"><a id="adee848da5859f1e0a5ef3ea8b5fd155d" name="adee848da5859f1e0a5ef3ea8b5fd155d"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filePath</b></td></tr>
+<tr class="memdesc:adee848da5859f1e0a5ef3ea8b5fd155d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom du fichier contenant les arguments de ExifTool. <br /></td></tr>
+<tr class="separator:adee848da5859f1e0a5ef3ea8b5fd155d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4eef780350cedaf18f03690daf6c8d2" id="r_ab4eef780350cedaf18f03690daf6c8d2"><td class="memItemLeft" align="right" valign="top"><a id="ab4eef780350cedaf18f03690daf6c8d2" name="ab4eef780350cedaf18f03690daf6c8d2"></a>
+QByteArray&#160;</td><td class="memItemRight" valign="bottom"><b>m_rxLine</b></td></tr>
+<tr class="memdesc:ab4eef780350cedaf18f03690daf6c8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Données ExifTool en cours de réception. <br /></td></tr>
+<tr class="separator:ab4eef780350cedaf18f03690daf6c8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:aab7c30ee91f00ce2cde757814472285c" id="r_aab7c30ee91f00ce2cde757814472285c"><td class="memItemLeft" align="right" valign="top"><a id="aab7c30ee91f00ce2cde757814472285c" name="aab7c30ee91f00ce2cde757814472285c"></a>
+static QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_argFile</b></td></tr>
+<tr class="memdesc:aab7c30ee91f00ce2cde757814472285c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A renseigner lors du premier appel. <br /></td></tr>
+<tr class="separator:aab7c30ee91f00ce2cde757814472285c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa742802b2db821ed9a737a2300ae09ef" id="r_aa742802b2db821ed9a737a2300ae09ef"><td class="memItemLeft" align="right" valign="top"><a id="aa742802b2db821ed9a737a2300ae09ef" name="aa742802b2db821ed9a737a2300ae09ef"></a>
+static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_photoModel</b></td></tr>
+<tr class="memdesc:aa742802b2db821ed9a737a2300ae09ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modèle contenant les photos et leurs tags. <br /></td></tr>
+<tr class="separator:aa742802b2db821ed9a737a2300ae09ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>La tache asynchrone <a class="el" href="class_exif_read_task.html" title="La tache asynchrone ExifReadTask permet de lire les metadonnées d&#39;une photo JPG sur le disque dur.">ExifReadTask</a> permet de lire les metadonnées d'une photo JPG sur le disque dur. </p>
@@ -218,6 +256,89 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a425555d73b1bc4ba915e2a9f9a0884c6" name="a425555d73b1bc4ba915e2a9f9a0884c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a425555d73b1bc4ba915e2a9f9a0884c6">&#9670;&#160;</a></span>processLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExifReadTask::processLine </td>
+          <td>(</td>
+          <td class="paramtype">QByteArray&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>: the received text <div class="fragment"><div class="line">pour le flux d<span class="stringliteral">&#39;une image:</span></div>
+<div class="line"><span class="stringliteral">    &quot;[{\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;SourceFile\&quot;: \&quot;E:/TiPhotos/P8160449.JPG\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;FileName\&quot;: \&quot;P8160449.JPG\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;DateTimeOriginal\&quot;: \&quot;2023:08:16 13:30:20\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;Model\&quot;: \&quot;E-M10MarkII\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;Make\&quot;: \&quot;OLYMPUS CORPORATION\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;ImageWidth\&quot;: 4608,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;ImageHeight\&quot;: 3072,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;Artist\&quot;: \&quot;\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;ImageDescription\&quot;: \&quot;OLYMPUS DIGITAL CAMERA\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;GPSLatitude\&quot;: 48.7664165199528,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;GPSLongitude\&quot;: 14.0194248700017,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;  \&quot;City\&quot;: \&quot;Paris\&quot;\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">    &quot;}]\r\n&quot;</span></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a209baeebef9ede8dafc98844324bbaa9" name="a209baeebef9ede8dafc98844324bbaa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a209baeebef9ede8dafc98844324bbaa9">&#9670;&#160;</a></span>writeArgsFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ExifReadTask::writeArgsFile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>List the tags to be read in the JPG files, and put them in the Arguments file for <em>ExifTool</em>. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the file was successfully created.</dd></dl>
+<p>To learn about the usage of IPTC tags: </p><ul>
+<li><dl class="section see"><dt>See also</dt><dd><a href="https://iptc.org/std/photometadata/documentation/mappingguidelines">https://iptc.org/std/photometadata/documentation/mappingguidelines</a> </dd></dl>
+</li>
+<li><dl class="section see"><dt>See also</dt><dd><a href="https://www.carlseibert.com/guide-iptc-photo-metadata-fields">https://www.carlseibert.com/guide-iptc-photo-metadata-fields</a> </dd></dl>
+</li>
+</ul>
 
 </div>
 </div>

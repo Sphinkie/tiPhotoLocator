@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('class_exif_write_task.html',''); initR
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_exif_write_task-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ExifWriteTask Class Reference</div></div>
 </div><!--header-->
@@ -116,6 +117,17 @@ Public Member Functions</h2></td></tr>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
 <tr class="memdesc:a62fcca5c4d5077f086df4b98cac752df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lancement de la tache. On lance <b>exifTool</b> dans un QProcess, et on écrit les metadata dans l'image JPG. Cette tache est exécutée dans un thread QRunnable. <br /></td></tr>
 <tr class="separator:a62fcca5c4d5077f086df4b98cac752df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a30f450a4be6abe483b77c9445689725e" id="r_a30f450a4be6abe483b77c9445689725e"><td class="memItemLeft" align="right" valign="top"><a id="a30f450a4be6abe483b77c9445689725e" name="a30f450a4be6abe483b77c9445689725e"></a>
+QVariantMap&#160;</td><td class="memItemRight" valign="bottom"><b>m_exifData</b></td></tr>
+<tr class="memdesc:a30f450a4be6abe483b77c9445689725e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des metadata à ecrire. <br /></td></tr>
+<tr class="separator:a30f450a4be6abe483b77c9445689725e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a5dc832fd4d41b1ee9fbb9f55623f7" id="r_a09a5dc832fd4d41b1ee9fbb9f55623f7"><td class="memItemLeft" align="right" valign="top"><a id="a09a5dc832fd4d41b1ee9fbb9f55623f7" name="a09a5dc832fd4d41b1ee9fbb9f55623f7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_generateBackup</b></td></tr>
+<tr class="memdesc:a09a5dc832fd4d41b1ee9fbb9f55623f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">True si un backup de l'image doit être généré. <br /></td></tr>
+<tr class="separator:a09a5dc832fd4d41b1ee9fbb9f55623f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_exif_write_task.html" title="La classe ExifWriteTask permet d&#39;écrire des metadata dans les photos JEG de façon asynchrone.">ExifWriteTask</a> permet d'écrire des metadata dans les photos JEG de façon asynchrone. </p>

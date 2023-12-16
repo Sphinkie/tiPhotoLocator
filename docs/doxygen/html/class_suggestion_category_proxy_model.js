@@ -6,5 +6,6 @@ var class_suggestion_category_proxy_model =
     [ "removePhotoFromSuggestion", "class_suggestion_category_proxy_model.html#a29d65a3ef6bd9db53b99b8edaf8600bc", null ],
     [ "setFilterEnabled", "class_suggestion_category_proxy_model.html#a7ecc03f7eb5925bef1c0937221bcd469", null ],
     [ "setFilterValue", "class_suggestion_category_proxy_model.html#a4033c7903dcf1ae1254b3e6b8a21f005", null ],
+    [ "m_filter", "class_suggestion_category_proxy_model.html#a15cde010b373ec1cfe3475a6b01dc05a", null ],
     [ "filterEnabled", "class_suggestion_category_proxy_model.html#a32e202125b547edffe7900d9df77af86", null ]
 ];
