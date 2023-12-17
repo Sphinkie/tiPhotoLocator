@@ -13,7 +13,7 @@ ToolBarBottomForm {
 
     bt_dump1.onClicked: {
         _photoModel.dumpData()
-      //  _cameraSet.append("TZ80")
+      //  _cameraSet.append("TZ80")         // Ajouté pour les tests d'API de Lisa
     }
 
     bt_dump2.onClicked: {

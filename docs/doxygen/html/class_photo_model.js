@@ -43,6 +43,7 @@ var class_photo_model =
     [ "getSelectedRow", "class_photo_model.html#ae3dd8e3599f33e699cd474c5fca7d0b2", null ],
     [ "getUrl", "class_photo_model.html#a1d2159990dbea68afefa28bfdd6804fe", null ],
     [ "removeData", "class_photo_model.html#a1e2f3f829e54ef445a5b1dea07ad2118", null ],
+    [ "removePhotoKeyword", "class_photo_model.html#a77dea7e487119a062064faa3c60ed2d6", null ],
     [ "removeSavedPosition", "class_photo_model.html#a6c2e4a731969e952993dfe4d38e5788f", null ],
     [ "roleNames", "class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d", null ],
     [ "rowCount", "class_photo_model.html#a0fdbd69a007a6bda5623cce8d5f3cd57", null ],

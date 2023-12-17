@@ -4,7 +4,7 @@
 #include <QObject>
 
 /*!
- * \class La classe PhotoModelWrapper propose des fonctions de plus haut nuveau pour s'interfacer avec le PhotoModel.
+ * \class La classe PhotoModelWrapper propose des fonctions de plus haut niveau pour s'interfacer avec le PhotoModel.
  */
 
 

@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "Cette", "class_cette.html", null ],
     [ "Photo", "struct_photo.html", null ],
     [ "QAbstractListModel", null, [
       [ "PhotoModel", "class_photo_model.html", null ],
@@ -7,7 +8,8 @@ var hierarchy =
     ] ],
     [ "QObject", null, [
       [ "CameraSet", "class_camera_set.html", null ],
-      [ "GeocodeWrapper", "class_geocode_wrapper.html", null ]
+      [ "GeocodeWrapper", "class_geocode_wrapper.html", null ],
+      [ "PhotoModelWrapper", "class_photo_model_wrapper.html", null ]
     ] ],
     [ "QRunnable", null, [
       [ "ExifReadTask", "class_exif_read_task.html", null ],

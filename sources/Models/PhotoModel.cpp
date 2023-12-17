@@ -844,15 +844,15 @@ void PhotoModel::applyCreatorToAll()
 
 /* ********************************************************************************************************** */
 /*!
- * \brief PhotoModelWrapper::removePhotoKeyword
- * \param keyword
+ * \brief Enlève un des mots-clef descriptif de la photo.
+ * \param keyword : le mot-clef à retirer de la liste.
  * \note Cette méthode modifie la Photo actuellement sélectionée.
  */
 void PhotoModel::removePhotoKeyword(QString keyword)
 {
     if (m_photos[m_lastSelectedRow].keywords.contains(keyword))
     {
-        qDebug() << "Remove" <<keyword << "keyword";
+        qDebug() << "Remove" << keyword << "keyword";
         m_photos[m_lastSelectedRow].keywords.removeOne(keyword);
         m_photos[m_lastSelectedRow].toBeSaved = true;
         QModelIndex idx = this->index(m_lastSelectedRow, 0);

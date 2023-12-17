@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac76e0c8b20e09ce264693b434edce9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f0693a4aa7d57897f906d3db0fd77b8" id="r_a1f0693a4aa7d57897f906d3db0fd77b8"><td class="memItemLeft" align="right" valign="top"><a id="a1f0693a4aa7d57897f906d3db0fd77b8" name="a1f0693a4aa7d57897f906d3db0fd77b8"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
-<tr class="memdesc:a1f0693a4aa7d57897f906d3db0fd77b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Lancement de la tache. On lance <b>exifTool</b> dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultat dans <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. <br /></td></tr>
+<tr class="memdesc:a1f0693a4aa7d57897f906d3db0fd77b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Lancement de la tache. On lance <b>exifTool</b> dans un process, et on analyse la réponse. <a class="el" href="class_cette.html">Cette</a> tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultat dans <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. <br /></td></tr>
 <tr class="separator:a1f0693a4aa7d57897f906d3db0fd77b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -133,7 +133,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a425555d73b1bc4ba915e2a9f9a0884c6" id="r_a425555d73b1bc4ba915e2a9f9a0884c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_read_task.html#a425555d73b1bc4ba915e2a9f9a0884c6">processLine</a> (QByteArray line)</td></tr>
-<tr class="memdesc:a425555d73b1bc4ba915e2a9f9a0884c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.  <br /></td></tr>
+<tr class="memdesc:a425555d73b1bc4ba915e2a9f9a0884c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse une partie du flux texte reçu de exifTool. <a class="el" href="class_cette.html">Cette</a> méthode est appelée répétitivement.  <br /></td></tr>
 <tr class="separator:a425555d73b1bc4ba915e2a9f9a0884c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
@@ -283,24 +283,23 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 </table>
 </div><div class="memdoc">
 
-<p>Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement. </p>
+<p>Analyse une partie du flux texte reçu de exifTool. <a class="el" href="class_cette.html">Cette</a> méthode est appelée répétitivement. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">line</td><td>: the received text <div class="fragment"><div class="line">pour le flux d<span class="stringliteral">&#39;une image:</span></div>
-<div class="line"><span class="stringliteral">    &quot;[{\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;SourceFile\&quot;: \&quot;E:/TiPhotos/P8160449.JPG\&quot;,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;FileName\&quot;: \&quot;P8160449.JPG\&quot;,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;DateTimeOriginal\&quot;: \&quot;2023:08:16 13:30:20\&quot;,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;Model\&quot;: \&quot;E-M10MarkII\&quot;,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;Make\&quot;: \&quot;OLYMPUS CORPORATION\&quot;,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;ImageWidth\&quot;: 4608,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;ImageHeight\&quot;: 3072,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;Artist\&quot;: \&quot;\&quot;,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;ImageDescription\&quot;: \&quot;OLYMPUS DIGITAL CAMERA\&quot;,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;GPSLatitude\&quot;: 48.7664165199528,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;GPSLongitude\&quot;: 14.0194248700017,\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;  \&quot;City\&quot;: \&quot;Paris\&quot;\r\n&quot;</span></div>
-<div class="line"><span class="stringliteral">    &quot;}]\r\n&quot;</span></div>
+    <tr><td class="paramname">line</td><td>: the received text Flux reçu pour une image: <div class="fragment"><div class="line"><span class="stringliteral">&quot;[{\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;SourceFile\&quot;: \&quot;E:/TiPhotos/P8160449.JPG\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;FileName\&quot;: \&quot;P8160449.JPG\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;DateTimeOriginal\&quot;: \&quot;2023:08:16 13:30:20\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;Model\&quot;: \&quot;E-M10MarkII\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;Make\&quot;: \&quot;OLYMPUS CORPORATION\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;ImageWidth\&quot;: 4608,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;ImageHeight\&quot;: 3072,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;Artist\&quot;: \&quot;\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;ImageDescription\&quot;: \&quot;OLYMPUS DIGITAL CAMERA\&quot;,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;GPSLatitude\&quot;: 48.7664165199528,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;GPSLongitude\&quot;: 14.0194248700017,\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;  \&quot;City\&quot;: \&quot;Paris\&quot;\r\n&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;}]\r\n&quot;</span></div>
 </div><!-- fragment --> </td></tr>
   </table>
   </dd>

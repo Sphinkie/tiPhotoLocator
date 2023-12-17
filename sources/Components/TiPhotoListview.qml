@@ -90,9 +90,9 @@ ListView{
                 anchors.fill: parent
                 onClicked: {
                     console.log("MouseArea: clic sur " + index);
-                    __lv.currentIndex = index;             // Bouge le highlight dans la ListView
+                    __lv.currentIndex = index;              // Bouge le highlight dans la ListView
                     var sourceindex = model.getSourceIndex(index);
-                    _photoModel.selectedRow = sourceindex;   // Actualise le proxymodel
+                    _photoModel.selectedRow = sourceindex;  // Actualise le PhotoModel
 
                     // On mémorise dans selectedData les data de l'item selectionné du modèle.
                     // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.

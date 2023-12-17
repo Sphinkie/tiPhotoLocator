@@ -104,9 +104,9 @@ Map {
                     id: markerIcon;
                     height: isMarker ? 42 : 48;    // Le marker est un peu plus petit que les autres
                     width: height
-                    source: isMarker ? "qrc:///Images/mappin-yellow.png"              // le marker est jaune
-                                     : isSelected ? "qrc:///Images/mappin-red.png"    // la photo sélectionée en rouge
-                                                  : "qrc:///Images/mappin-black.png";  // les autres en gris
+                    source: isMarker ? "qrc:///Images/mappin-yellow.png"               // le marker est jaune
+                                     : isSelected ? "qrc:///Images/mappin-red.png"     // la photo sélectionée est rouge
+                                                  : "qrc:///Images/mappin-black.png";  // les autres sont en gris
                 }
             }
         }
@@ -152,7 +152,7 @@ Map {
         //PluginParameter { name: "osm.mapping.highdpi_tiles"; value: "false" }
         //PluginParameter { name: "osm.mapping.providersrepository.disabled"; value: "false" }
 
-        /* Matthas Rauter (nov-2023) Qt Company
+        /* Matthas Rauter (nov-2023) Qt Company - Fixed in Qt 6.7
 
         https://bugreports.qt.io/browse/QTBUG-115742
 
@@ -161,6 +161,7 @@ Map {
             replacing %APIKEY with the respective key and removing everything after "?" entirely when no key is provided).
             In my opinion both are worse than the current solution of providing a custom URL that includes the apikey.
             Anyway, I agree that it is not documented properly, so I will add it to the documentation.
+
         osm.mapping.custom.host
             The url string of a custom tile server. This parameter should be set to a valid server url offering the correct OSM API.
             The postfix "%z/%x/%y.png" will be added to the url. Since 6.5 the postfix will not be added if the url ends with ".png".
