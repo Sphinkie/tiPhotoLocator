@@ -2349,8 +2349,7 @@ WRITING EXAMPLES
          writing the modified images to a new directory.
 
     exiftool -keywords=EXIF -keywords=editor dst.jpg
-         Replace existing keyword list with two new keywords ("EXIF" and
-         "editor").
+         Replace existing keyword list with two new keywords ("EXIF" and "editor").
 
     exiftool -Keywords+=word -o newfile.jpg src.jpg
          Copy a source image to a new file, and add a keyword ("word") to

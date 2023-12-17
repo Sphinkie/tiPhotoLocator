@@ -47,8 +47,15 @@ ExifWriteTask::ExifWriteTask(const QVariantMap exifData, bool generateBackup)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Lancement de la tache. On lance \b exifTool dans un QProcess, et on écrit les metadata dans l'image JPG.
+ * \brief Lancement de la tache. On lance **exifTool** dans un QProcess, et on écrit les metadata dans l'image JPG.
  *        Cette tache est exécutée dans un thread QRunnable.
+ * \note Le mode MWG de ExifTool permet d'ecrire en une fois dans les différents tags équivalents (ex: Artist et Creator,
+ *       ou bien EXIF:City et IptcExt:City, etc). Le Metadata Working Group recommande de garder ces tags EXIF et IPTC
+ *       synchronisés.
+ * \note Pour vérifier les tags écrits: `exiftool -G1 -a -s -XMP-iptcCore:All -XMP-iptcExt:All mypicture.jpg`
+ *       (-G1 = Group 1 = "Location")
+ *       (-s = shows tag names instead of description)
+ * \sa https://exiftool.org/TagNames/MWG.html
  */
 void ExifWriteTask::run()
 {
@@ -60,22 +67,31 @@ void ExifWriteTask::run()
     QProcess exifProcess;
     QString program = "exifTool";
     QStringList arguments;
-    arguments.append("-preserve");             // Preserve file modification date/time
-    //    arguments.append("-dateFormat");         // datetime format
-    //    arguments.append("'%d-%m-%Y'");          // DD-MM-YYYY
-    arguments.append("-ext");                  // Filtre sur les extensions
-    arguments.append("JPG");
-    arguments.append("-ext");                  // Filtre sur les extensions
-    arguments.append("JPEG");
-    // Genere un backup (si demandé)
-    if (!m_generateBackup) arguments.append("-overwrite_original");
+    arguments << "-preserve";           // Preserve file modification date/time
+    //arguments << "-dateFormat" << "'%d-%m-%Y'";   // datetime format DD-MM-YYYY
+    arguments << "-ext" << "JPG";       // Filtre sur les extensions
+    arguments << "-ext" << "JPEG";      // Filtre sur les extensions
+    arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
+    //arguments.append("-ext"); arguments.append("JPG");    // Filtre sur les extensions
+    //arguments.append("-ext"); arguments.append("JPEG");   // Filtre sur les extensions
+    //arguments.append("-use"); arguments.append("MWG");    // Use MetadataWorkingGroup recommendations
+    if (!m_generateBackup) arguments.append("-overwrite_original");     // Genere un backup si demandé
     // Liste des tags à écrire
     QMapIterator<QString, QVariant> itr(m_exifData);
     while (itr.hasNext()) {
         itr.next();
-        arguments.append("-" + itr.key() + "=" + itr.value().toString().toUtf8());
+        if (itr.key() == "Keywords")
+        {
+            // La valeur est une liste de mot-clefs
+            foreach (QString keyword, itr.value().toStringList())
+            {
+                arguments.append("-Keywords=" + keyword.toUtf8());
+            }
+        }
+        else
+            arguments.append("-" + itr.key() + "=" + itr.value().toString().toUtf8());
     }
-    // Le fichier à modifier
+    // Le fichier JPG à modifier
     arguments.append(filePath);
     // ---------------------------------------
     // Appel de ExifTool

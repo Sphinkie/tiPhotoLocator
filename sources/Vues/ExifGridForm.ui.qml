@@ -8,13 +8,12 @@ GridLayout {
     rowSpacing: 10
     columns: 3
     rows: 5
-	
 
     TinyChip {
         content: "Make"
     }
     CheckBox {
-        checked: true
+        checked: false
         enabled: false
     }
     Text {
@@ -28,7 +27,7 @@ GridLayout {
         content: "Model"
     }
     CheckBox {
-        checked: true
+        checked: false
         enabled: false
     }
     Text {
@@ -39,14 +38,14 @@ GridLayout {
     }
 
     TinyChip {
-        content: "Software"
+        content: "Speed & Fnumber"
     }
     CheckBox {
-        checked: true
+        checked: false
         enabled: false
     }
     Text {
-        text: qsTr("Logiciel de l'appareil photo ou du scanner")
+        text: qsTr("Camera Aperture and Speed of the shot")
         font.pixelSize: 14
         color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter

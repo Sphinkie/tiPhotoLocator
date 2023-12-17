@@ -463,7 +463,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // On trouve l'index correspondant au "filename"
     const QString file_name = value_list.value("FileName").toString();
 
-    if (file_name.isEmpty()) return;    // No "FileName" tag received
+    if (file_name.isEmpty()) return;      // No "FileName" tag received
     if (m_photos.count() == 0) return;    // The list of photo data is empty.
 
     int row;
@@ -500,13 +500,14 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_photos[row].keywords        = value_list["Keywords"].toStringList();
     m_photos[row].descriptionWriter = value_list["DescriptionWriter"].toString();
     // En priorité, on prend le tag Exif 'Artist'. Si vide, on prend le tag IPTC 'Creator'.
+    // Ce tag peut être une String  ou une StringList, selon le nombre d'artistes...
     if (value_list["Artist"].isNull())
-        m_photos[row].creator          = value_list["Creator"].toString();
+        m_photos[row].creator       = value_list["Creator"].toStringList().value(0);
     else
-        m_photos[row].creator          = value_list["Artist"].toString();
+        m_photos[row].creator       = value_list["Artist"].toStringList().value(0);
     // Envoi du signal dataChanged()
-    QModelIndex changed_index = this->index(row, 0);
-    emit dataChanged(changed_index, changed_index);
+    QModelIndex photo_index = this->index(row, 0);
+    emit dataChanged(photo_index, photo_index);
 
     // -------------------------------------
     // Certaines infos sont des suggestions
@@ -633,12 +634,13 @@ void PhotoModel::saveMetadata()
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
             exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
             exifData.insert("Creator", idx.data(CreatorRole));
-            if (!preserveExif)  exifData.insert("Artist", idx.data(CreatorRole));
+//            if (!preserveExif)  exifData.insert("Artist", idx.data(CreatorRole));
             exifData.insert("MetadataEditingSoftware", software);
             exifData.insert("City", idx.data(CityRole));
-            exifData.insert("Country", idx.data(CountryRole));
-            exifData.insert("dateTimeOriginal", idx.data(DateTimeOriginalRole));
-
+            exifData.insert("Country", idx.data(CountryRole).toString().toUtf8());
+            exifData.insert("DateTimeOriginal", idx.data(DateTimeOriginalRole));
+            // Ajout de la liste des keywords
+            exifData.insert("Keywords", idx.data(KeywordsRole));
             //Instanciation et ajout de la tâche au pool de threads
             ExifWriteTask *task = new ExifWriteTask(exifData, backupsEnabled);
             QThreadPool::globalInstance()->start(task);

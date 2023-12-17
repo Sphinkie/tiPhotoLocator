@@ -46,13 +46,15 @@ void ExifReadTask::run()
     QString program = "exifTool";
     QStringList arguments;
     // Formattage du flux de sortie de ExifTool
-    arguments.append("-json");                 // output in JSON format
-    arguments.append("--printConv");           // no print conversion (do not use human-readable tag names)
-    arguments.append("-veryShort");            // very short output format  (-S)
-    arguments.append("-ext");                  // Filtre sur les extensions
-    arguments.append("JPG");
-    arguments.append("-ext");                  // Filtre sur les extensions
-    arguments.append("JPEG");
+    arguments.append("-json");          // output in JSON format
+    arguments.append("--printConv");    // no print conversion (do not use human-readable tag names)
+    arguments.append("-veryShort");     // very short output format  (-S)
+    arguments << "-ext" << "JPG";       // Filtre sur les extensions
+    arguments << "-ext" << "JPEG";      // Filtre sur les extensions
+    arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
+    // arguments.append("-ext"); arguments.append("JPG");   // Filtre sur les extensions
+    // arguments.append("-use"); arguments.append("MWG");    // Use MetadataWorkingGroup recommendations
+
     // Liste des tags à lire
     arguments.append("-@");
     arguments.append(m_argFile);
@@ -90,8 +92,10 @@ void ExifReadTask::run()
         "  \"Make\": \"OLYMPUS CORPORATION\",\r\n"
         "  \"ImageWidth\": 4608,\r\n"
         "  \"ImageHeight\": 3072,\r\n"
-        "  \"Artist\": \"\",\r\n"
-        "  \"ImageDescription\": \"OLYMPUS DIGITAL CAMERA\",\r\n"
+        "  \"Artist\": \"Merlin\",\r\n"
+        "  \"Creator\": [\"Yves\",\"Simone\"],\r\n"
+        "  \"ImageDescription\": \"A busy street.\",\r\n"
+        "  \"Keywords\": [\"XIXs\",\"crowd\"],\r\n"
         "  \"GPSLatitude\": 48.7664165199528,\r\n"
         "  \"GPSLongitude\": 14.0194248700017,\r\n"
         "  \"City\": \"Paris\"\r\n"
@@ -100,7 +104,7 @@ void ExifReadTask::run()
  */
 void ExifReadTask::processLine(QByteArray line)
 {
-    // qDebug() << line;
+     qDebug() << line;
     if (line.startsWith("{"))
     {
         // Première ligne
