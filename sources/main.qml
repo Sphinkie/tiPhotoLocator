@@ -165,14 +165,14 @@ Window {
             id: tabbedPage
             Layout.fillWidth: true
             currentIndex: tabBar.currentIndex
-            property var selectedData: _photoListModel.get(0)  // On l'initialise sur la photo Welcome (type = QVariantMap)
+            property var selectedData: _photoModel.get(0)  // On l'initialise sur la photo Welcome (type = QVariantMap)
 
             Connections{
-                target: _photoListModel
+                target: _photoModel
                 function onDataChanged() {
                     console.log("PhotoModel Data changed !");
                     var currentrow = tabbedPage.selectedData.row;
-                    tabbedPage.selectedData = _photoListModel.get(currentrow);
+                    tabbedPage.selectedData = _photoModel.get(currentrow);
                 }
             }
 

@@ -12,8 +12,8 @@ ToolBarBottomForm {
 
 
     bt_dump1.onClicked: {
-        _photoListModel.dumpData()
-        _cameraSet.append("TZ80")
+        _photoModel.dumpData()
+      //  _cameraSet.append("TZ80")
     }
 
     bt_dump2.onClicked: {

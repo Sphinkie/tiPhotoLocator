@@ -124,6 +124,7 @@ public:
     Q_INVOKABLE QVariantMap get(int row);
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
+    Q_INVOKABLE void removePhotoKeyword(QString keyword);
 
     // -----------------------------------------------------
     // Methodes publiques

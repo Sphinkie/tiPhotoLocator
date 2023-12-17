@@ -844,6 +844,25 @@ void PhotoModel::applyCreatorToAll()
 
 /* ********************************************************************************************************** */
 /*!
+ * \brief PhotoModelWrapper::removePhotoKeyword
+ * \param keyword
+ * \note Cette méthode modifie la Photo actuellement sélectionée.
+ */
+void PhotoModel::removePhotoKeyword(QString keyword)
+{
+    if (m_photos[m_lastSelectedRow].keywords.contains(keyword))
+    {
+        qDebug() << "Remove" <<keyword << "keyword";
+        m_photos[m_lastSelectedRow].keywords.removeOne(keyword);
+        m_photos[m_lastSelectedRow].toBeSaved = true;
+        QModelIndex idx = this->index(m_lastSelectedRow, 0);
+        emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
+    }
+}
+
+
+/* ********************************************************************************************************** */
+/*!
  * \brief Surcharge de l'opérateur ==.
  * \param file_name: Le texte à comparer
  * \return True si le **filename** de la photo correspond au texte passé en paramètre.

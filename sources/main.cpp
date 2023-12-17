@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // On ajoute au contexte les classes qui ont des property QML
     // --------------------------------------
-    context->setContextProperty("_photoListModel", &photoModel);
+    context->setContextProperty("_photoModel", &photoModel);
     context->setContextProperty("_onTheMapProxyModel", &onTheMapProxyModel);
     context->setContextProperty("_suggestionModel", &suggestionModel);  // Pour le dump de debug
     context->setContextProperty("_suggestionProxyModel", &suggestionProxyModel);

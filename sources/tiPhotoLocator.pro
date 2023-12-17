@@ -21,6 +21,7 @@ SOURCES += \
         cpp/ExifReadTask.cpp \
         cpp/ExifWriteTask.cpp \
         cpp/GeocodeWrapper.cpp \
+        cpp/PhotoModelWrapper.cpp \
         cpp/utilities.cpp \
         main.cpp
 
@@ -59,6 +60,7 @@ HEADERS += \
     cpp/ExifReadTask.h \
     cpp/ExifWriteTask.h \
     cpp/GeocodeWrapper.h \
+    cpp/PhotoModelWrapper.h \
     cpp/utilities.h
 
 

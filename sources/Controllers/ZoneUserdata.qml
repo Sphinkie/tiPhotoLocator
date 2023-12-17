@@ -5,25 +5,19 @@ import "../Vues"
 ZoneUserdataForm {
 
 
-    chipKeyword1.deleteArea.onClicked:   // (mouse) =>
+    chipKeyword0.deleteArea.onClicked:   // (mouse) =>
     {
-        console.log("chipKeyword4.deleteArea.onClicked");
-        // TODO : Il faut supprimer un seul keyword dans la liste
-        window.removePhotoKeyword(chipKeyword1.text, "keywords");
+        // console.log("chipKeyword0.deleteArea.onClicked");
+        // On supprime un seul keyword dans la liste
+        _photoModel.removePhotoKeyword(chipKeyword0.content);
     }
-    chipKeyword2.deleteArea.onClicked:
-    {
-
-    }
-    chipKeyword3.deleteArea.onClicked:
-    {
-
-    }
-    chipKeyword4.deleteArea.onClicked:
-    {
-    }
-
-
+    chipKeyword1.deleteArea.onClicked: _photoModel.removePhotoKeyword(chipKeyword1.content);
+    chipKeyword2.deleteArea.onClicked: _photoModel.removePhotoKeyword(chipKeyword2.content);
+    chipKeyword3.deleteArea.onClicked: _photoModel.removePhotoKeyword(chipKeyword3.content);
+    chipKeyword4.deleteArea.onClicked: _photoModel.removePhotoKeyword(chipKeyword4.content);
+    chipKeyword5.deleteArea.onClicked: _photoModel.removePhotoKeyword(chipKeyword5.content);
+    chipKeyword6.deleteArea.onClicked: _photoModel.removePhotoKeyword(chipKeyword6.content);
+    chipKeyword7.deleteArea.onClicked: _photoModel.removePhotoKeyword(chipKeyword7.content);
 
     // -----------------------------------------------------------------------------------
     // Connexions

@@ -26,8 +26,8 @@ FolderDialog {
         running: false;
         repeat: false
         onTriggered: {
-            // On met à jour la photoListModel
-            _photoListModel.clear();
+            // On met à jour le photoModel
+            _photoModel.clear();
             // On ajoute les photos du dossier dans le modèle
             for (var i = 0; i < folderListModel.count; i++ ) {                
                 window.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )

@@ -92,11 +92,11 @@ ListView{
                     console.log("MouseArea: clic sur " + index);
                     __lv.currentIndex = index;             // Bouge le highlight dans la ListView
                     var sourceindex = model.getSourceIndex(index);
-                    _photoListModel.selectedRow = sourceindex;   // Actualise le proxymodel
+                    _photoModel.selectedRow = sourceindex;   // Actualise le proxymodel
 
                     // On mémorise dans selectedData les data de l'item selectionné du modèle.
                     // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
-                    tabbedPage.selectedData = _photoListModel.get(sourceindex);
+                    tabbedPage.selectedData = _photoModel.get(sourceindex);
 
                     // On envoie les coordonnées pour centrer la carte sur le point selectionné
                     if (hasGPS) {
