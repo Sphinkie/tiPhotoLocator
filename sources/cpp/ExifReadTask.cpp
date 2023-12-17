@@ -80,7 +80,8 @@ void ExifReadTask::run()
 /*!
  * \brief Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.
  * \param line : the received text
- * \code pour le flux d'une image:
+ * Flux reçu pour une image:
+ * \code
         "[{\r\n"
         "  \"SourceFile\": \"E:/TiPhotos/P8160449.JPG\",\r\n"
         "  \"FileName\": \"P8160449.JPG\",\r\n"

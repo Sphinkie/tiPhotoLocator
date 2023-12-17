@@ -126,8 +126,9 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {CamModelRole,          "camModel"},
         {MakeRole,              "make"},
         // Userdata
-        {DescriptionRole,       "description"},
         {CreatorRole,           "creator"},
+        {KeywordsRole,          "keywords"},
+        {DescriptionRole,       "description"},
         {DescriptionWriterRole, "descriptionWriter"}
     };
     return mapping;
@@ -428,6 +429,11 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << DescriptionWriterRole << ToBeSavedRole);
             break;
+        case KeywordsRole:
+            m_photos[index.row()].keywords << value.toString();
+            m_photos[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << KeywordsRole << ToBeSavedRole);
+            break;
         case ToBeSavedRole:
             m_photos[index.row()].toBeSaved = value.toBool();
             emit dataChanged(index, index, QVector<int>() << ToBeSavedRole);
@@ -491,7 +497,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_photos[row].country         = value_list["Country"].toString();
     m_photos[row].description     = value_list["Description"].toString();     // TODO : aka Caption
     m_photos[row].software        = value_list["Software"].toString();
-    m_photos[row].keywords        = value_list["Keywords"].toString();        // TODO: this is a list of keywords
+    m_photos[row].keywords        = value_list["Keywords"].toStringList();
     m_photos[row].descriptionWriter = value_list["DescriptionWriter"].toString();
     // En priorité, on prend le tag Exif 'Artist'. Si vide, on prend le tag IPTC 'Creator'.
     if (value_list["Artist"].isNull())
@@ -533,15 +539,18 @@ void PhotoModel::dumpData()
     }
 
     QString flags = "flags:";
-    flags.append(m_photos[m_dumpedRow].toBeSaved ? "toBeSaved ":"");
-    flags.append(m_photos[m_dumpedRow].isSelected? "isSelected ":"");
-    flags.append(m_photos[m_dumpedRow].insideCircle? "insideCircle ":"");
+    flags.append(m_photos[m_dumpedRow].toBeSaved ? " toBeSaved":"");
+    flags.append(m_photos[m_dumpedRow].isSelected? " isSelected":"");
+    flags.append(m_photos[m_dumpedRow].insideCircle? " insideCircle":"");
 
-    qDebug() << m_photos[m_dumpedRow].filename << m_photos[m_dumpedRow].city << m_photos[m_dumpedRow].shutterSpeed << m_photos[m_dumpedRow].fNumber
+    qDebug() << m_photos[m_dumpedRow].filename << m_photos[m_dumpedRow].city
+             << m_photos[m_dumpedRow].shutterSpeed << m_photos[m_dumpedRow].fNumber
              << m_photos[m_dumpedRow].camModel << m_photos[m_dumpedRow].make
              << flags
-             << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal << "description:" << m_photos[m_dumpedRow].description
-             << "creator:" << m_photos[m_dumpedRow].creator ;
+             << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal
+             << "description:" << m_photos[m_dumpedRow].description
+             << "creator:" << m_photos[m_dumpedRow].creator
+             << "keywords:" << m_photos[m_dumpedRow].keywords ;
 
     m_dumpedRow++;
 }

@@ -1,7 +1,10 @@
 import QtQuick
 import "../Vues"
 
-// Controlleur
+/*!
+ * Controlleur pour la zone des suggestions de l'onglet TAGS.
+ * Les Chips suggestions sont affichées par SuggestionRepeater dans un Flow.
+ */
 ZoneSuggestedTagsForm {
 
     bt_getinfo.onClicked: {

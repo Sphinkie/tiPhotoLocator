@@ -122,6 +122,7 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
             // Il y a un bug dans Qt: county et district sont toujours vides. On va les chercher dans le texte.
             QStringList fieldlist = adresse.text().split(", ", Qt::SkipEmptyParts);
             // On mémorise les suggestions
+            bool first = true;
             foreach (QString field, fieldlist) {
                 bool isInt;
                 field.toInt(&isInt);
@@ -134,10 +135,12 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
                     else if (field == adresse.state()) target = "country";
                     else target = "city";
                     m_suggestionModel->append(field, target, "geo");
+                    // On ajoute aussi le premier field (non-numérique) en tant que "tag"
+                    if (first)
+                        m_suggestionModel->append(field, "keywords", "tag");
+                    first=false;
                 }
             }
-            // On ajoute aussi le premier field en tant que "tag"
-            m_suggestionModel->append(fieldlist.first(), "keywords", "tag");
         }
     }
     // The user is responsible for deleting the returned reply object.

@@ -1,7 +1,7 @@
 import QtQuick
 import "../Vues"
 
-// Controlleur de la zone avec les informations sur l'appareil ayant fabrqué l'image (appareil photo ou scanner ou IA)
+// Controlleur de la zone avec les informations sur l'appareil ayant fabriqué l'image (appareil photo ou scanner ou IA)
 ZoneCameraForm {
 
     // On determine le contenu des chips ici, mais ça marche aussi si on le fait dans la vue.

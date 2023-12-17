@@ -41,20 +41,20 @@ struct Photo
     bool toBeSaved = false;     //!< true if one of the following fields has been modified
     // EXIF tags
     QString dateTimeOriginal;   //!< Time when the camera shutter was pressed (no changes allowed in this app)
-    QString camModel;           //!< camera model (no changes allowed in this app)
-    QString make;               //!< camera maker (no changes allowed in this app)
-    int imageWidth = 0;         //!< image width  (no changes allowed in this app)
-    int imageHeight = 0;        //!< image height (no changes allowed in this app)
+    QString camModel;           //!< Camera model (no changes allowed in this app)
+    QString make;               //!< Camera manifacturer (no changes allowed in this app)
+    int imageWidth = 0;         //!< Image width  (no changes allowed in this app)
+    int imageHeight = 0;        //!< Image height (no changes allowed in this app)
     float shutterSpeed = -1;    //!< Durée d'exposition (no changes allowed in this app)
     float fNumber = -1;         //!< Ouverture (no changes allowed in this app)
     // IPTC tags
-    QString creator;             //!< can be: Artist or Creator
+    QString creator;            //!< Name of the photographer
     QString city;               //!< City shown in the Photo
     QString country;            //!< Country where the Photo was taken
     QString description;        //!< can be: Description, ImageDescription or Caption;
     QString descriptionWriter;  //!< Initials of the description writer
     QString software;           //!< Software of the camera or scanner device
-    QString keywords;           //!< this is a list of keywords
+    QStringList keywords;       //!< this is a list of keywords
 
     // Surcharges d'operateurs
     bool operator == (const QString &file_name);
