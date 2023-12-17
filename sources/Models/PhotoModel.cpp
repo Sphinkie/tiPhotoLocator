@@ -633,14 +633,17 @@ void PhotoModel::saveMetadata()
             exifData.insert("GPSLongitude", idx.data(LongitudeRole));
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
             exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
-            exifData.insert("Creator", idx.data(CreatorRole));
+            exifData.insert("Creator", idx.data(CreatorRole));      // MWG écrit aussi dans Artist
 //            if (!preserveExif)  exifData.insert("Artist", idx.data(CreatorRole));
             exifData.insert("MetadataEditingSoftware", software);
             exifData.insert("City", idx.data(CityRole));
             exifData.insert("Country", idx.data(CountryRole).toString().toUtf8());
             exifData.insert("DateTimeOriginal", idx.data(DateTimeOriginalRole));
+            exifData.insert("Description", idx.data(DescriptionRole));  // MWG écrit aussi dans ImageDescription
+            exifData.insert("CaptionWriter", idx.data(DescriptionWriterRole));
             // Ajout de la liste des keywords
             exifData.insert("Keywords", idx.data(KeywordsRole));
+
             //Instanciation et ajout de la tâche au pool de threads
             ExifWriteTask *task = new ExifWriteTask(exifData, backupsEnabled);
             QThreadPool::globalInstance()->start(task);

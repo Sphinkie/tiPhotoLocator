@@ -14,11 +14,11 @@ It has no official description.
 | ----------- | ---- |  ----- | ---------- | ----------- | 
 | ImageWidth  | yes | -- | 0x0100 IFD0 | Image width  | 
 | ImageHeight | yes | -- | 0x0101 IFD0 | Image height | 
-| ImageDescription | yes | opt | 0x010e IDF0 | Image description (pure ASCII) | 
+| ImageDescription | MWG | MWG | 0x010e IDF0 | Image description (pure ASCII) | 
 | Make        | yes | --  | 0x010f IFD0 | Camera manufacturer | 
 | Model       | yes | --  | 0x0110 IFD0 | Camera model        | 
 | Software    | yes  | -- | 0x0131 IFD0 | Camera or Scanner software version    | 
-| Artist      | yes | opt | 0x013b IFD0 | Name of photographer | 
+| Artist      | yes | MWG | 0x013b IFD0 | Name of photographer | 
 | GPSLatitude      | yes | yes | 0x8825 IFD0 | Photo location |
 | GPSLongitude     | yes | yes | 0x8825 IFD0 | Photo location |
 | GPSLatitudeRef   | --  | yes | 0x8825 IFD0 | North or South | 
@@ -30,7 +30,8 @@ It has no official description.
 | ----------- | ---- |  ----- | ---------- | ----------- | 
 | Landmark    |      |        | Sony:Note Fabricant | |
 
-`opt`: can optionnnaly be activated in configuration.
+`opt`: can optionnnaly be activated in configuration.  
+`MWG`: Managed according to the Metadata Working Group recommandations.  
 
 *When adding GPS information to an image, it is important to set all of the following tags: GPSLatitude, GPSLatitudeRef, GPSLongitude, GPSLongitudeRef.*
 
@@ -45,19 +46,19 @@ The **International Press Telecommunications Council** format (IPTC) is describe
 | Creator     | yes  | yes | Name of photographer. | 
 | City        | yes  | yes | obsolete - Name of the city of the location shown in the image.| 
 | Country     | yes  | yes | obsolete - Full name of the country of the location shown in the image.| 
-| Description |      | yes | Description of the who, what, and why of what is happening in this image. | 
+| Description | yes  | yes | Description of the who, what, and why of what is happening in this image. | 
 | DescriptionWriter |  | yes | Name of the person involved in writing the Description, | 
 | Caption     |  |  |  | 
-| Keywords    |  | yes | List of keywords, terms or phrases used to express the subject matter in the image. | 
+| Keywords    | yes | yes | List of keywords, terms or phrases used to express the subject matter in the image. | 
 
 
 ## IPTC EXTENSION tags
 
 | Tag name              | Read |  Write | Description | 
 | --------------------- | ---- |  ----- | ----------- | 
-| Location shown        | ↓ | ↓ | IPTC Extension | 
-| Location/City         |   |  |  | 
-| Location/Country      |   |  | Country name | 
+| Location shown        |  ↓   |  ↓  | IPTC Extension | 
+| Location/City         | MWG  | MWG |  | 
+| Location/Country      | MWG  | MWG | Country name | 
 | Location/latitude     |   |  |  | 
 | Location/longitude    |   |  |  | 
 | Location/location name|   |  | location name | 

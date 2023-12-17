@@ -94,7 +94,7 @@ void ExifReadTask::run()
         "  \"ImageHeight\": 3072,\r\n"
         "  \"Artist\": \"Merlin\",\r\n"
         "  \"Creator\": [\"Yves\",\"Simone\"],\r\n"
-        "  \"ImageDescription\": \"A busy street.\",\r\n"
+        "  \"Description\": \"A busy street.\",\r\n"
         "  \"Keywords\": [\"XIXs\",\"crowd\"],\r\n"
         "  \"GPSLatitude\": 48.7664165199528,\r\n"
         "  \"GPSLongitude\": 14.0194248700017,\r\n"
@@ -104,7 +104,7 @@ void ExifReadTask::run()
  */
 void ExifReadTask::processLine(QByteArray line)
 {
-     qDebug() << line;
+    // qDebug() << line;
     if (line.startsWith("{"))
     {
         // Première ligne
@@ -173,7 +173,7 @@ bool ExifReadTask::writeArgsFile()
     // Photo EXIF tags
     out << "-ImageWidth"        << Qt::endl;   // 4608
     out << "-ImageHeight"       << Qt::endl;   // 3072
-    out << "-ImageDescription"  << Qt::endl;   // Alternate tag label for "Description" (EXIF)
+    // out << "-ImageDescription"  << Qt::endl;   // Alternate tag label for "Description" (EXIF)
     out << "-ShutterSpeed"      << Qt::endl;   // 0.005
     out << "-FNumber"           << Qt::endl;   // 2.8
     out << "-Artist"            << Qt::endl;   // Name of the photographer (EXIF tag label)
@@ -182,9 +182,9 @@ bool ExifReadTask::writeArgsFile()
     // Photo IPTC tags
     out << "-Creator"           << Qt::endl;   // Name of the photographer (IPTC tag label)
     out << "-Description"       << Qt::endl;   // Description du contenu de la photo (important)
-    out << "-Caption"           << Qt::endl;   // Alternate tag label for "Description" (IPTC)
-    out << "-DescriptionWriter" << Qt::endl;    // (optional) Initials of the writer
-    // out << "-Headline"          << Qt::endl;    // (optional) Short description in 2 to 5 words
+    //out << "-Caption"         << Qt::endl;   // Alternate tag label for "Description" (IPTC)
+    out << "-CaptionWriter"     << Qt::endl;   // Initials of the writer of the description
+    // out << "-Headline"       << Qt::endl;   // (optional) Short description in 2 to 5 words
     out << "-Keywords"          << Qt::endl;   // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
     // GPS coordinates
     out << "-GPSLatitude"       << Qt::endl;   // 45.4325547675333
