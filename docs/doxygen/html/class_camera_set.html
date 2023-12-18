@@ -100,6 +100,11 @@ $(document).ready(function(){initNavTree('class_camera_set.html',''); initResiza
   <div class="headertitle"><div class="title">CameraSet Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>La classe <a class="el" href="class_camera_set.html" title="La classe CameraSet gère un ensemble de vignette, correspondant chacune à un modèle d&#39;appareil photo.">CameraSet</a> gère un ensemble de vignette, correspondant chacune à un modèle d'appareil photo.  
+ <a href="class_camera_set.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_camera_set_8h_source.html">CameraSet.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CameraSet:</div>
 <div class="dyncontent">
@@ -114,24 +119,25 @@ Public Slots</h2></td></tr>
 <tr class="separator:ae521eda047c7409a02da364ba8d60db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77e050b451359a66ab6d161477597b44" id="r_a77e050b451359a66ab6d161477597b44"><td class="memItemLeft" align="right" valign="top"><a id="a77e050b451359a66ab6d161477597b44" name="a77e050b451359a66ab6d161477597b44"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onError</b> ()</td></tr>
+<tr class="memdesc:a77e050b451359a66ab6d161477597b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appelée en cas d'erreur de la demande Rest. A voir si on met quelque chose d'utile ici. <br /></td></tr>
 <tr class="separator:a77e050b451359a66ab6d161477597b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a56a4c781a3334d0fcce5bbd955a373c6" id="r_a56a4c781a3334d0fcce5bbd955a373c6"><td class="memItemLeft" align="right" valign="top"><a id="a56a4c781a3334d0fcce5bbd955a373c6" name="a56a4c781a3334d0fcce5bbd955a373c6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CameraSet</b> (QObject *parent=nullptr)</td></tr>
+<tr class="memitem:a56a4c781a3334d0fcce5bbd955a373c6" id="r_a56a4c781a3334d0fcce5bbd955a373c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_set.html#a56a4c781a3334d0fcce5bbd955a373c6">CameraSet</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a56a4c781a3334d0fcce5bbd955a373c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce Constructeur instancie le Network Manager utilisé pour les requètes REST.  <br /></td></tr>
 <tr class="separator:a56a4c781a3334d0fcce5bbd955a373c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89e8ab28a0d3873016954386591b3aca" id="r_a89e8ab28a0d3873016954386591b3aca"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_set.html#a89e8ab28a0d3873016954386591b3aca">append</a> (const QString cam_model)</td></tr>
 <tr class="memdesc:a89e8ab28a0d3873016954386591b3aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'un modèle de caméra dans la liste. S'il n'y est pas, on demande à deepAI de générer une imagette.  <br /></td></tr>
 <tr class="separator:a89e8ab28a0d3873016954386591b3aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ca6f095743d702ae18cb6c9afb5cb22" id="r_a2ca6f095743d702ae18cb6c9afb5cb22"><td class="memItemLeft" align="right" valign="top"><a id="a2ca6f095743d702ae18cb6c9afb5cb22" name="a2ca6f095743d702ae18cb6c9afb5cb22"></a>
-Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (const QString cam_model)</td></tr>
+<tr class="memitem:a2ca6f095743d702ae18cb6c9afb5cb22" id="r_a2ca6f095743d702ae18cb6c9afb5cb22"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_set.html#a2ca6f095743d702ae18cb6c9afb5cb22">contains</a> (const QString cam_model)</td></tr>
+<tr class="memdesc:a2ca6f095743d702ae18cb6c9afb5cb22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le modèle d'appareil photo demandé est déjà référencé. Si oui, il possède alors déjà une vignette.  <br /></td></tr>
 <tr class="separator:a2ca6f095743d702ae18cb6c9afb5cb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aad47572ed65bafd4d146a513d641a80e" id="r_aad47572ed65bafd4d146a513d641a80e"><td class="memItemLeft" align="right" valign="top"><a id="aad47572ed65bafd4d146a513d641a80e" name="aad47572ed65bafd4d146a513d641a80e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (const QString cam_model)</td></tr>
+<tr class="memitem:aad47572ed65bafd4d146a513d641a80e" id="r_aad47572ed65bafd4d146a513d641a80e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_set.html#aad47572ed65bafd4d146a513d641a80e">insert</a> (const QString cam_model)</td></tr>
+<tr class="memdesc:aad47572ed65bafd4d146a513d641a80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un modèle d'appareil photo dans le Set. On lui fabrique alors une vignette.  <br /></td></tr>
 <tr class="separator:aad47572ed65bafd4d146a513d641a80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69c54b2309d3d34b2c58305a939327bd" id="r_a69c54b2309d3d34b2c58305a939327bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_set.html#a69c54b2309d3d34b2c58305a939327bd">requestThumb</a> (const QString cam_model)</td></tr>
 <tr class="memdesc:a69c54b2309d3d34b2c58305a939327bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoi d'une requete POST à deepai.  <br /></td></tr>
@@ -156,6 +162,44 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></t
 <tr class="memdesc:a4dbd8817b6336dde9a92ecc822f1f354"><td class="mdescLeft">&#160;</td><td class="mdescRight">API key pour les requètes deepAI. <br /></td></tr>
 <tr class="separator:a4dbd8817b6336dde9a92ecc822f1f354"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>La classe <a class="el" href="class_camera_set.html" title="La classe CameraSet gère un ensemble de vignette, correspondant chacune à un modèle d&#39;appareil photo.">CameraSet</a> gère un ensemble de vignette, correspondant chacune à un modèle d'appareil photo. </p>
+<p>\inmodule TiPhotoLocator </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a56a4c781a3334d0fcce5bbd955a373c6" name="a56a4c781a3334d0fcce5bbd955a373c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56a4c781a3334d0fcce5bbd955a373c6">&#9670;&#160;</a></span>CameraSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CameraSet::CameraSet </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ce Constructeur instancie le Network Manager utilisé pour les requètes REST. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>l'objet parent. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a89e8ab28a0d3873016954386591b3aca" name="a89e8ab28a0d3873016954386591b3aca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89e8ab28a0d3873016954386591b3aca">&#9670;&#160;</a></span>append()</h2>
@@ -177,6 +221,67 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></t
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cam_model</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2ca6f095743d702ae18cb6c9afb5cb22" name="a2ca6f095743d702ae18cb6c9afb5cb22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca6f095743d702ae18cb6c9afb5cb22">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CameraSet::contains </td>
+          <td>(</td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>cam_model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si le modèle d'appareil photo demandé est déjà référencé. Si oui, il possède alors déjà une vignette. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam_model</td><td>: le nom d'un modèle d'appareil photo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true si ce modèle existe déja dans le Set. </dd></dl>
+
+</div>
+</div>
+<a id="aad47572ed65bafd4d146a513d641a80e" name="aad47572ed65bafd4d146a513d641a80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad47572ed65bafd4d146a513d641a80e">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraSet::insert </td>
+          <td>(</td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>cam_model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ajoute un modèle d'appareil photo dans le Set. On lui fabrique alors une vignette. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam_model</td><td>: le nom d'un modèle d'appareil photo. </td></tr>
   </table>
   </dd>
 </dl>

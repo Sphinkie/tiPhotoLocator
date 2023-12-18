@@ -1,5 +1,14 @@
 \doxysection{Camera\+Set Class Reference}
 \hypertarget{class_camera_set}{}\label{class_camera_set}\index{CameraSet@{CameraSet}}
+
+
+La classe \doxylink{class_camera_set}{Camera\+Set} gère un ensemble de vignette, correspondant chacune à un modèle d\textquotesingle{}appareil photo.  
+
+
+
+
+{\ttfamily \#include $<$Camera\+Set.\+h$>$}
+
 Inheritance diagram for Camera\+Set\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,24 +22,21 @@ void \mbox{\hyperlink{class_camera_set_ae521eda047c7409a02da364ba8d60db1}{on\+Fi
 \begin{DoxyCompactList}\small\item\em Appelé lors de la réception d\textquotesingle{}une réponse à une requete deepai. \end{DoxyCompactList}\item 
 \Hypertarget{class_camera_set_a77e050b451359a66ab6d161477597b44}\label{class_camera_set_a77e050b451359a66ab6d161477597b44} 
 void {\bfseries on\+Error} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction appelée en cas d\textquotesingle{}erreur de la demande Rest. A voir si on met quelque chose d\textquotesingle{}utile ici. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_camera_set_a56a4c781a3334d0fcce5bbd955a373c6}\label{class_camera_set_a56a4c781a3334d0fcce5bbd955a373c6} 
-{\bfseries Camera\+Set} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
-\item 
+\mbox{\hyperlink{class_camera_set_a56a4c781a3334d0fcce5bbd955a373c6}{Camera\+Set}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Ce Constructeur instancie le Network Manager utilisé pour les requètes REST. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_camera_set_a89e8ab28a0d3873016954386591b3aca}{append}} (const QString cam\+\_\+model)
 \begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un modèle de caméra dans la liste. S\textquotesingle{}il n\textquotesingle{}y est pas, on demande à deep\+AI de générer une imagette. \end{DoxyCompactList}\item 
-\Hypertarget{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22}\label{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22} 
-Q\+\_\+\+INVOKABLE bool {\bfseries contains} (const QString cam\+\_\+model)
-\end{DoxyCompactItemize}
+Q\+\_\+\+INVOKABLE bool \mbox{\hyperlink{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22}{contains}} (const QString cam\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Indique si le modèle d\textquotesingle{}appareil photo demandé est déjà référencé. Si oui, il possède alors déjà une vignette. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_camera_set_aad47572ed65bafd4d146a513d641a80e}\label{class_camera_set_aad47572ed65bafd4d146a513d641a80e} 
-void {\bfseries insert} (const QString cam\+\_\+model)
-\item 
+void \mbox{\hyperlink{class_camera_set_aad47572ed65bafd4d146a513d641a80e}{insert}} (const QString cam\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Ajoute un modèle d\textquotesingle{}appareil photo dans le Set. On lui fabrique alors une vignette. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_camera_set_a69c54b2309d3d34b2c58305a939327bd}{request\+Thumb}} (const QString cam\+\_\+model)
 \begin{DoxyCompactList}\small\item\em Envoi d\textquotesingle{}une requete POST à deepai. \end{DoxyCompactList}\item 
 \Hypertarget{class_camera_set_adfa00deb84c361446cafb946443c1997}\label{class_camera_set_adfa00deb84c361446cafb946443c1997} 
@@ -50,6 +56,29 @@ QString {\bfseries m\+\_\+deepai\+Key}
 \begin{DoxyCompactList}\small\item\em API key pour les requètes deep\+AI. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+La classe \doxylink{class_camera_set}{Camera\+Set} gère un ensemble de vignette, correspondant chacune à un modèle d\textquotesingle{}appareil photo. 
+
+\textbackslash{}inmodule Ti\+Photo\+Locator 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_camera_set_a56a4c781a3334d0fcce5bbd955a373c6}\label{class_camera_set_a56a4c781a3334d0fcce5bbd955a373c6} 
+\index{CameraSet@{CameraSet}!CameraSet@{CameraSet}}
+\index{CameraSet@{CameraSet}!CameraSet@{CameraSet}}
+\doxysubsubsection{\texorpdfstring{CameraSet()}{CameraSet()}}
+{\footnotesize\ttfamily Camera\+Set\+::\+Camera\+Set (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Ce Constructeur instancie le Network Manager utilisé pour les requètes REST. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & l\textquotesingle{}objet parent. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_camera_set_a89e8ab28a0d3873016954386591b3aca}\label{class_camera_set_a89e8ab28a0d3873016954386591b3aca} 
 \index{CameraSet@{CameraSet}!append@{append}}
@@ -64,6 +93,39 @@ Ajout d\textquotesingle{}un modèle de caméra dans la liste. S\textquotesingle{
 
 \begin{DoxyParams}{Parameters}
 {\em cam\+\_\+model} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22}\label{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22} 
+\index{CameraSet@{CameraSet}!contains@{contains}}
+\index{contains@{contains}!CameraSet@{CameraSet}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Camera\+Set\+::contains (\begin{DoxyParamCaption}\item[{const QString}]{cam\+\_\+model }\end{DoxyParamCaption})}
+
+
+
+Indique si le modèle d\textquotesingle{}appareil photo demandé est déjà référencé. Si oui, il possède alors déjà une vignette. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam\+\_\+model} & \+: le nom d\textquotesingle{}un modèle d\textquotesingle{}appareil photo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si ce modèle existe déja dans le Set. 
+\end{DoxyReturn}
+\Hypertarget{class_camera_set_aad47572ed65bafd4d146a513d641a80e}\label{class_camera_set_aad47572ed65bafd4d146a513d641a80e} 
+\index{CameraSet@{CameraSet}!insert@{insert}}
+\index{insert@{insert}!CameraSet@{CameraSet}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Camera\+Set\+::insert (\begin{DoxyParamCaption}\item[{const QString}]{cam\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ajoute un modèle d\textquotesingle{}appareil photo dans le Set. On lui fabrique alors une vignette. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam\+\_\+model} & \+: le nom d\textquotesingle{}un modèle d\textquotesingle{}appareil photo. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_camera_set_ae521eda047c7409a02da364ba8d60db1}\label{class_camera_set_ae521eda047c7409a02da364ba8d60db1} 

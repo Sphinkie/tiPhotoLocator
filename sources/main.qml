@@ -53,15 +53,15 @@ Window {
 
 
     // ----------------------------------------------------------------
-    // Fenetre de dialogue pour selectionner le dossier
+    // Fenêtre de dialogue pour selectionner le dossier
     // ----------------------------------------------------------------
     TiFolderDialog { id: folderDialog }
     // ----------------------------------------------------------------
-    // Déclaration des popups  // TODO : est-ce le bon endroit ?
+    // Déclaration des popups
     // ----------------------------------------------------------------
-    AboutDialog { id: aboutPage }
+    AboutDialog   { id: aboutPage }
     CreditsDialog { id: creditsPage}
-    ApikeyDialog { id: apiPage}
+    ApikeyDialog  { id: apiPage}
     RescanWarning { id: rescanWarning}
     SettingsPopup { id: settingsPopup}
     MetadataPopup { id: metadataPopup}

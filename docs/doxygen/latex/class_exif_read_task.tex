@@ -22,7 +22,7 @@ Inheritance diagram for Exif\+Read\+Task\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. \end{DoxyCompactList}\item 
 \Hypertarget{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8}\label{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8} 
 virtual void {\bfseries run} ()
-\begin{DoxyCompactList}\small\item\em \+: Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un process, et on analyse la réponse. \doxylink{class_cette}{Cette} tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultat dans \doxylink{class_photo_model}{Photo\+Model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \+: Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultat dans \doxylink{class_photo_model}{Photo\+Model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,7 +32,7 @@ static void \mbox{\hyperlink{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_exif_read_task_a425555d73b1bc4ba915e2a9f9a0884c6}{process\+Line}} (QByte\+Array line)
-\begin{DoxyCompactList}\small\item\em Analyse une partie du flux texte reçu de exif\+Tool. \doxylink{class_cette}{Cette} méthode est appelée répétitivement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelée répétitivement. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -139,7 +139,7 @@ Méthode à appeler lors de la première utilisation. Mémorise quelques infos s
 
 
 
-Analyse une partie du flux texte reçu de exif\+Tool. \doxylink{class_cette}{Cette} méthode est appelée répétitivement. 
+Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelée répétitivement. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -153,8 +153,10 @@ Analyse une partie du flux texte reçu de exif\+Tool. \doxylink{class_cette}{Cet
 \DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Make\(\backslash\)"{}:\ \(\backslash\)"{}OLYMPUS\ CORPORATION\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
 \DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}ImageWidth\(\backslash\)"{}:\ 4608,\(\backslash\)r\(\backslash\)n"{}}}
 \DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}ImageHeight\(\backslash\)"{}:\ 3072,\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Artist\(\backslash\)"{}:\ \(\backslash\)"{}\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}ImageDescription\(\backslash\)"{}:\ \(\backslash\)"{}OLYMPUS\ DIGITAL\ CAMERA\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Artist\(\backslash\)"{}:\ \(\backslash\)"{}Merlin\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Creator\(\backslash\)"{}:\ [\(\backslash\)"{}Yves\(\backslash\)"{},\(\backslash\)"{}Simone\(\backslash\)"{}],\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Description\(\backslash\)"{}:\ \(\backslash\)"{}A\ busy\ street.\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Keywords\(\backslash\)"{}:\ [\(\backslash\)"{}XIXs\(\backslash\)"{},\(\backslash\)"{}crowd\(\backslash\)"{}],\(\backslash\)r\(\backslash\)n"{}}}
 \DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}GPSLatitude\(\backslash\)"{}:\ 48.7664165199528,\(\backslash\)r\(\backslash\)n"{}}}
 \DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}GPSLongitude\(\backslash\)"{}:\ 14.0194248700017,\(\backslash\)r\(\backslash\)n"{}}}
 \DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}City\(\backslash\)"{}:\ \(\backslash\)"{}Paris\(\backslash\)"{}\(\backslash\)r\(\backslash\)n"{}}}

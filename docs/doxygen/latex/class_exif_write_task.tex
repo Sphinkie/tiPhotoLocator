@@ -16,9 +16,8 @@ Inheritance diagram for Exif\+Write\+Task\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_exif_write_task_a5182e345ea27ce1581cc6d28542bae97}{Exif\+Write\+Task}} (const QVariant\+Map exif\+Data, bool generate\+Backup=false)
 \begin{DoxyCompactList}\small\item\em Constructeur. On enregistre les paramètres. \end{DoxyCompactList}\item 
-\Hypertarget{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df}\label{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df} 
-virtual void {\bfseries run} ()
-\begin{DoxyCompactList}\small\item\em Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un QProcess, et on écrit les metadata dans l\textquotesingle{}image JPG. \doxylink{class_cette}{Cette} tache est exécutée dans un thread QRunnable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df}{run}} ()
+\begin{DoxyCompactList}\small\item\em Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un QProcess, et on écrit les metadata dans l\textquotesingle{}image JPG. Cette tache est exécutée dans un thread QRunnable. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,6 +75,27 @@ Constructeur. On enregistre les paramètres.
  \\
 \hline
 \end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df}\label{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df} 
+\index{ExifWriteTask@{ExifWriteTask}!run@{run}}
+\index{run@{run}!ExifWriteTask@{ExifWriteTask}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Exif\+Write\+Task\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un QProcess, et on écrit les metadata dans l\textquotesingle{}image JPG. Cette tache est exécutée dans un thread QRunnable. 
+
+\begin{DoxyNote}{Note}
+Le mode MWG de Exif\+Tool permet d\textquotesingle{}ecrire en une fois dans les différents tags équivalents (ex\+: Artist et Creator, ou bien EXIF\+:City et Iptc\+Ext\+:City, etc). Le Metadata Working Group recommande de garder ces tags EXIF et IPTC synchronisés. 
+
+Pour vérifier les tags écrits\+: {\ttfamily exiftool -\/G1 -\/a -\/s -\/XMP-\/iptc\+Core\+:All -\/XMP-\/iptc\+Ext\+:All mypicture.\+jpg} (-\/G1 = Group 1 = "{}\+Location"{}) (-\/s = shows tag names instead of description) 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\href{https://exiftool.org/TagNames/MWG.html}{\texttt{ https\+://exiftool.\+org/\+Tag\+Names/\+MWG.\+html}} 
+\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

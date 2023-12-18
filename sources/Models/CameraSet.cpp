@@ -10,6 +10,10 @@
 
 
 /* ********************************************************************************************************** */
+/*!
+ * \brief Ce Constructeur instancie le Network Manager utilisé pour les requètes REST.
+ * \param parent: l'objet parent.
+ */
 CameraSet::CameraSet(QObject *parent) : QObject(parent)
 {
 	// pour deepAI, la clef-Api est dans les Settings, de façon à ne pas apparaitre en clair dans le code.
@@ -40,6 +44,12 @@ void CameraSet::append(const QString cam_model)
 
 
 /* ********************************************************************************************************** */
+/*!
+ * \brief Indique si le modèle d'appareil photo demandé est déjà référencé.
+ *        Si oui, il possède alors déjà une vignette.
+ * \param cam_model : le nom d'un modèle d'appareil photo.
+ * \return true si ce modèle existe déja dans le Set.
+ */
 bool CameraSet::contains(const QString cam_model)
 {
     return  m_cameras.contains(cam_model);
@@ -47,6 +57,10 @@ bool CameraSet::contains(const QString cam_model)
 
 
 /* ********************************************************************************************************** */
+/*!
+ * \brief Ajoute un modèle d'appareil photo dans le Set. On lui fabrique alors une vignette.
+ * \param cam_model : le nom d'un modèle d'appareil photo.
+ */
 void CameraSet::insert(const QString cam_model)
 {
     m_cameras.insert(cam_model);
@@ -159,8 +173,12 @@ void CameraSet::onFinished(QNetworkReply* reply)
 
 
 /* ********************************************************************************************************** */
+/*!
+ * \brief Fonction appelée en cas d'erreur de la demande Rest.
+ *        A voir si on met quelque chose d'utile ici.
+ */
 void CameraSet::onError()
 {
-	// A voir si on met quelque chose d'utile ici.
+
 }
 

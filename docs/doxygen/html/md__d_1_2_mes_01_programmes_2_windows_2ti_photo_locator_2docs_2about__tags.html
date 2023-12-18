@@ -107,7 +107,7 @@ Exif tags</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ImageHeight   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">0x0101 IFD0   </td><td class="markdownTableBodyNone">Image height    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ImageDescription   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">opt   </td><td class="markdownTableBodyNone">0x010e IDF0   </td><td class="markdownTableBodyNone">Image description (pure ASCII)    </td></tr>
+<td class="markdownTableBodyNone">ImageDescription   </td><td class="markdownTableBodyNone">MWG   </td><td class="markdownTableBodyNone">MWG   </td><td class="markdownTableBodyNone">0x010e IDF0   </td><td class="markdownTableBodyNone">Image description (pure ASCII)    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Make   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">0x010f IFD0   </td><td class="markdownTableBodyNone">Camera manufacturer    </td></tr>
 <tr class="markdownTableRowOdd">
@@ -115,7 +115,7 @@ Exif tags</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Software   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">&ndash;   </td><td class="markdownTableBodyNone">0x0131 IFD0   </td><td class="markdownTableBodyNone">Camera or Scanner software version    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Artist   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">opt   </td><td class="markdownTableBodyNone">0x013b IFD0   </td><td class="markdownTableBodyNone">Name of photographer    </td></tr>
+<td class="markdownTableBodyNone">Artist   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">MWG   </td><td class="markdownTableBodyNone">0x013b IFD0   </td><td class="markdownTableBodyNone">Name of photographer    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">GPSLatitude   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">0x8825 IFD0   </td><td class="markdownTableBodyNone"><a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> location    </td></tr>
 <tr class="markdownTableRowOdd">
@@ -135,7 +135,9 @@ Exif tags</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Landmark   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">Sony:Note Fabricant   </td><td class="markdownTableBodyNone"></td></tr>
 </table>
-<p><code>opt</code>: can optionnnaly be activated in configuration.</p>
+<p><code>opt</code>: can optionnnaly be activated in configuration. <br  />
+ <code>MWG</code>: Managed according to the Metadata Working Group recommandations. <br  />
+</p>
 <p><em>When adding GPS information to an image, it is important to set all of the following tags: GPSLatitude, GPSLatitudeRef, GPSLongitude, GPSLongitudeRef.</em></p>
 <h1><a class="anchor" id="autotoc_md8"></a>
 IPTC CORE tags</h1>
@@ -150,13 +152,13 @@ IPTC CORE tags</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Country   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">obsolete - Full name of the country of the location shown in the image.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Description   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">Description of the who, what, and why of what is happening in this image.    </td></tr>
+<td class="markdownTableBodyNone">Description   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">Description of the who, what, and why of what is happening in this image.    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">DescriptionWriter   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">Name of the person involved in writing the Description,    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Caption   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Keywords   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">List of keywords, terms or phrases used to express the subject matter in the image.   </td></tr>
+<td class="markdownTableBodyNone">Keywords   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">List of keywords, terms or phrases used to express the subject matter in the image.   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md9"></a>
 IPTC EXTENSION tags</h1>
@@ -166,9 +168,9 @@ IPTC EXTENSION tags</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Location shown   </td><td class="markdownTableBodyNone">↓   </td><td class="markdownTableBodyNone">↓   </td><td class="markdownTableBodyNone">IPTC Extension    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Location/City   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone">Location/City   </td><td class="markdownTableBodyNone">MWG   </td><td class="markdownTableBodyNone">MWG   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Location/Country   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">Country name    </td></tr>
+<td class="markdownTableBodyNone">Location/Country   </td><td class="markdownTableBodyNone">MWG   </td><td class="markdownTableBodyNone">MWG   </td><td class="markdownTableBodyNone">Country name    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Location/latitude   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">

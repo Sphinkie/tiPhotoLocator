@@ -113,9 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5182e345ea27ce1581cc6d28542bae97" id="r_a5182e345ea27ce1581cc6d28542bae97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_write_task.html#a5182e345ea27ce1581cc6d28542bae97">ExifWriteTask</a> (const QVariantMap exifData, bool generateBackup=false)</td></tr>
 <tr class="memdesc:a5182e345ea27ce1581cc6d28542bae97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur. On enregistre les paramètres.  <br /></td></tr>
 <tr class="separator:a5182e345ea27ce1581cc6d28542bae97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62fcca5c4d5077f086df4b98cac752df" id="r_a62fcca5c4d5077f086df4b98cac752df"><td class="memItemLeft" align="right" valign="top"><a id="a62fcca5c4d5077f086df4b98cac752df" name="a62fcca5c4d5077f086df4b98cac752df"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
-<tr class="memdesc:a62fcca5c4d5077f086df4b98cac752df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lancement de la tache. On lance <b>exifTool</b> dans un QProcess, et on écrit les metadata dans l'image JPG. <a class="el" href="class_cette.html">Cette</a> tache est exécutée dans un thread QRunnable. <br /></td></tr>
+<tr class="memitem:a62fcca5c4d5077f086df4b98cac752df" id="r_a62fcca5c4d5077f086df4b98cac752df"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_write_task.html#a62fcca5c4d5077f086df4b98cac752df">run</a> ()</td></tr>
+<tr class="memdesc:a62fcca5c4d5077f086df4b98cac752df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lancement de la tache. On lance <b>exifTool</b> dans un QProcess, et on écrit les metadata dans l'image JPG. Cette tache est exécutée dans un thread QRunnable.  <br /></td></tr>
 <tr class="separator:a62fcca5c4d5077f086df4b98cac752df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -189,6 +188,38 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_generateBackup</b><
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a62fcca5c4d5077f086df4b98cac752df" name="a62fcca5c4d5077f086df4b98cac752df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62fcca5c4d5077f086df4b98cac752df">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExifWriteTask::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lancement de la tache. On lance <b>exifTool</b> dans un QProcess, et on écrit les metadata dans l'image JPG. Cette tache est exécutée dans un thread QRunnable. </p>
+<dl class="section note"><dt>Note</dt><dd>Le mode MWG de ExifTool permet d'ecrire en une fois dans les différents tags équivalents (ex: Artist et Creator, ou bien EXIF:City et IptcExt:City, etc). Le Metadata Working Group recommande de garder ces tags EXIF et IPTC synchronisés. </dd>
+<dd>
+Pour vérifier les tags écrits: <code>exiftool -G1 -a -s -XMP-iptcCore:All -XMP-iptcExt:All mypicture.jpg</code> (-G1 = Group 1 = "Location") (-s = shows tag names instead of description) </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://exiftool.org/TagNames/MWG.html">https://exiftool.org/TagNames/MWG.html</a> </dd></dl>
 
 </div>
 </div>

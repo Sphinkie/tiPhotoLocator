@@ -6,6 +6,15 @@
 #include <QString>
 #include <QSet>
 
+/* ********************************************************************************************************** */
+/*!
+ * \class CameraSet
+ * \inmodule TiPhotoLocator
+ * \brief La classe CameraSet gère un ensemble de vignette, correspondant chacune à un modèle d'appareil photo.
+ */
+/* ********************************************************************************************************** */
+
+
 class CameraSet : public QObject
 {
 Q_OBJECT

@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "Cette", "class_cette.html", null ],
     [ "Photo", "struct_photo.html", null ],
     [ "QAbstractListModel", null, [
       [ "PhotoModel", "class_photo_model.html", null ],

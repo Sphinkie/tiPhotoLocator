@@ -18,11 +18,11 @@ The {\bfseries{EXchangeable Image Fileformat}} (EXIF) format is described on the
 \endhead
 Image\+Width   &yes   &--   &0x0100 IFD0   &Image width    \\\cline{1-5}
 Image\+Height   &yes   &--   &0x0101 IFD0   &Image height    \\\cline{1-5}
-Image\+Description   &yes   &opt   &0x010e IDF0   &Image description (pure ASCII)    \\\cline{1-5}
+Image\+Description   &MWG   &MWG   &0x010e IDF0   &Image description (pure ASCII)    \\\cline{1-5}
 Make   &yes   &--   &0x010f IFD0   &Camera manufacturer    \\\cline{1-5}
 Model   &yes   &--   &0x0110 IFD0   &Camera model    \\\cline{1-5}
 Software   &yes   &--   &0x0131 IFD0   &Camera or Scanner software version    \\\cline{1-5}
-Artist   &yes   &opt   &0x013b IFD0   &Name of photographer    \\\cline{1-5}
+Artist   &yes   &MWG   &0x013b IFD0   &Name of photographer    \\\cline{1-5}
 GPSLatitude   &yes   &yes   &0x8825 IFD0   &\doxylink{struct_photo}{Photo} location    \\\cline{1-5}
 GPSLongitude   &yes   &yes   &0x8825 IFD0   &\doxylink{struct_photo}{Photo} location    \\\cline{1-5}
 GPSLatitude\+Ref   &--   &yes   &0x8825 IFD0   &North or South    \\\cline{1-5}
@@ -46,7 +46,9 @@ Landmark   &&&Sony\+:Note Fabricant   &\\\cline{1-5}
 \end{longtabu}
 
 
-{\ttfamily opt}\+: can optionnnaly be activated in configuration.
+{\ttfamily opt}\+: can optionnnaly be activated in configuration. ~\newline
+ {\ttfamily MWG}\+: Managed according to the Metadata Working Group recommandations. ~\newline
+
 
 {\itshape When adding GPS information to an image, it is important to set all of the following tags\+: GPSLatitude, GPSLatitude\+Ref, GPSLongitude, GPSLongitude\+Ref.}\hypertarget{md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags_autotoc_md8}{}\doxysection{\texorpdfstring{IPTC CORE tags}{IPTC CORE tags}}\label{md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags_autotoc_md8}
 The {\bfseries{International Press Telecommunications Council}} format (IPTC) is described in the \href{https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata}{\texttt{ iptc.\+org website}}
@@ -64,10 +66,10 @@ The {\bfseries{International Press Telecommunications Council}} format (IPTC) is
 Creator   &yes   &yes   &Name of photographer.    \\\cline{1-4}
 City   &yes   &yes   &obsolete -\/ Name of the city of the location shown in the image.    \\\cline{1-4}
 Country   &yes   &yes   &obsolete -\/ Full name of the country of the location shown in the image.    \\\cline{1-4}
-Description   &&yes   &Description of the who, what, and why of what is happening in this image.    \\\cline{1-4}
+Description   &yes   &yes   &Description of the who, what, and why of what is happening in this image.    \\\cline{1-4}
 Description\+Writer   &&yes   &Name of the person involved in writing the Description,    \\\cline{1-4}
 Caption   &&&\\\cline{1-4}
-Keywords   &&yes   &List of keywords, terms or phrases used to express the subject matter in the image.   \\\cline{1-4}
+Keywords   &yes   &yes   &List of keywords, terms or phrases used to express the subject matter in the image.   \\\cline{1-4}
 \end{longtabu}
 \hypertarget{md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags_autotoc_md9}{}\doxysection{\texorpdfstring{IPTC EXTENSION tags}{IPTC EXTENSION tags}}\label{md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags_autotoc_md9}
 \tabulinesep=1mm
@@ -81,8 +83,8 @@ Keywords   &&yes   &List of keywords, terms or phrases used to express the subje
 \PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tag name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Read   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Write   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-4}
 \endhead
 Location shown   &↓   &↓   &IPTC Extension    \\\cline{1-4}
-Location/\+City   &&&\\\cline{1-4}
-Location/\+Country   &&&Country name    \\\cline{1-4}
+Location/\+City   &MWG   &MWG   &\\\cline{1-4}
+Location/\+Country   &MWG   &MWG   &Country name    \\\cline{1-4}
 Location/latitude   &&&\\\cline{1-4}
 Location/longitude   &&&\\\cline{1-4}
 Location/location name   &&&location name    \\\cline{1-4}

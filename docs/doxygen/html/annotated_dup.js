@@ -1,7 +1,6 @@
 var annotated_dup =
 [
     [ "CameraSet", "class_camera_set.html", "class_camera_set" ],
-    [ "Cette", "class_cette.html", null ],
     [ "ExifReadTask", "class_exif_read_task.html", "class_exif_read_task" ],
     [ "ExifWriteTask", "class_exif_write_task.html", "class_exif_write_task" ],
     [ "GeocodeWrapper", "class_geocode_wrapper.html", "class_geocode_wrapper" ],

@@ -3,9 +3,13 @@
 
 #include <QObject>
 
+/* ********************************************************************************************************** */
 /*!
- * \class La classe PhotoModelWrapper propose des fonctions de plus haut niveau pour s'interfacer avec le PhotoModel.
+ * \class PhotoModelWrapper
+ * \brief Cette classe propose des fonctions de plus haut niveau pour s'interfacer avec le PhotoModel.
+ * \note  Non utilisée pour l'instant.
  */
+/* ********************************************************************************************************** */
 
 
 
