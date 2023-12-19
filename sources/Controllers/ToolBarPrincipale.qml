@@ -2,8 +2,11 @@ import QtQuick
 import "../Vues"
 import "../Javascript/TiUtilities.js" as Utilities
 
-ToolBarPrincipaleForm {
 
+/*! *****************************************************************
+ *  Toolbar principale: boutons du haut: Reload - Rescan.
+ * ***************************************************************** */
+ToolBarPrincipaleForm {
 
         bt_reload.onClicked: {
             console.log("Manual Reload");

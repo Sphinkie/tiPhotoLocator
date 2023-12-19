@@ -25,6 +25,18 @@ ListView{
         color: TiStyle.highlightBackgroundColor
     }
 
+    Timer {
+        id: geoTimer
+        interval: 5000;   // 5 sec
+        running: false;
+        repeat: false;
+        // Envoie une request pour récupérer des infos à partir des coords GPS
+        onTriggered: {
+            console.debug(">>>>> timer triggered");
+            window.requestReverseGeocode(latitude, longitude);
+        }
+    }
+
 
     // le delegate pour afficher la ListModel dans la ListView
     Component{
@@ -85,6 +97,7 @@ ListView{
                 height: 20
             }
 
+
             // Gestion du clic sur un item de la liste
             MouseArea {
                 anchors.fill: parent
@@ -110,6 +123,10 @@ ListView{
 
                     // On remet le rayon du cercle rouge de la carte à zéro
                     mapTools.slider_radius.value = 0;
+
+                    // On relance une demande d'infos ReverseGeo (stop/start)
+                    console.debug(">>>> restart timer");
+                    geoTimer.restart();
                 }
             }
         }

@@ -21,14 +21,7 @@ PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
     // On met l'item Welcome dans la liste
     m_photos << Photo("Select your photo folder", "qrc:Images/welcome.png", false, true, true);
 
-    this->addTestItem();
-
-    // Bout de code d'exemple de timer
-    /*
-    QTimer *growthTimer = new QTimer(this);
-    connect(growthTimer, &QTimer::timeout, this, &PhotoModel::growPopulation);
-    growthTimer->start(10000);
-    */
+    this->addTestItem();    
 }
 
 /* ********************************************************************************************************** */

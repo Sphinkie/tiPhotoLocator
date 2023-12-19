@@ -2,6 +2,9 @@ import QtQuick
 import QtPositioning
 import "../Vues"
 
+/*! *****************************************************************
+ *  Controlleur pour la barre de boutons au dessus de la carte.
+ * ***************************************************************** */
 ToolBarMapForm {
 
     property bool savedPositionExists: false

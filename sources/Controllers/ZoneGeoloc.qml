@@ -1,7 +1,10 @@
 import QtQuick
 import "../Vues"
 
-// Controlleur
+
+/*! *****************************************************************
+ *  Controlleur de la zone d'affichage des données geographiques.
+ * ***************************************************************** */
 ZoneGeolocForm {
 
     chipLat.deleteArea.onClicked:

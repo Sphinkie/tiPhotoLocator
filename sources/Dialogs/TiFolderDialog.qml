@@ -2,10 +2,10 @@ import QtQuick
 import Qt.labs.platform
 
 
-// ----------------------------------------------------------------
-// Fenetre de dialogue pour selectionner le dossier
-// example folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
-// ----------------------------------------------------------------
+/*! *****************************************************************
+ *  Fenetre de dialogue pour selectionner le dossier.
+ *  Example folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
+ * ***************************************************************** */
 FolderDialog {
     currentFolder: "file:///C:"
     // URL du dossier de départ
@@ -35,7 +35,7 @@ FolderDialog {
             // Puis on lance la récupération des données EXIF (envoi signal)
             Timer: {
                 interval: 1000;   // 1 sec
-                running: true;   // starts the timer
+                running: true;    // starts the timer
                 repeat: false;
                 onTriggered: window.fetchExifMetadata();
             }

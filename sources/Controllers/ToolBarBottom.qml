@@ -2,8 +2,9 @@ import QtQuick
 import "../Vues"
 import "../Javascript/Networking.js" as Netwk
 
-
-// Controlleur pour la barre de boutons du bas
+/*! *****************************************************************
+ *  Controlleur pour la barre de boutons du bas.
+ * ***************************************************************** */
 ToolBarBottomForm {
 
     // true en mode DEBUG

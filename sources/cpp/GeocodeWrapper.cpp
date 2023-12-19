@@ -105,9 +105,10 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         // On regarde quel type de requete était à l'origine de cette réponse
         QVariant replyType = reply->property("coordOnly");
         QGeoLocation geolocation = reply->locations().value(0);
-        // CAS 1 : On avait demandé des coords
+
         if (replyType.isValid())
         {
+            // Cas 1 : On avait demandé des coords
             // On extrait les coords de la réponse
             QGeoCoordinate coords = geolocation.coordinate();
             // On les mémorise dans un settings
@@ -122,7 +123,7 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
             // Il y a un bug dans Qt: county et district sont toujours vides. On va les chercher dans le texte.
             QStringList fieldlist = adresse.text().split(", ", Qt::SkipEmptyParts);
             // On mémorise les suggestions
-            bool first = true;
+            int nb_kw = 2;
             foreach (QString field, fieldlist) {
                 bool isInt;
                 field.toInt(&isInt);
@@ -135,10 +136,9 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
                     else if (field == adresse.state()) target = "country";
                     else target = "city";
                     m_suggestionModel->append(field, target, "geo");
-                    // On ajoute aussi le premier field (non-numérique) en tant que "tag"
-                    if (first)
+                    // On ajoute aussi N fields (non-numériques) en tant que "tag"
+                    if (nb_kw-- >0)
                         m_suggestionModel->append(field, "keywords", "tag");
-                    first=false;
                 }
             }
         }
