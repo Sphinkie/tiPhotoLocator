@@ -33,7 +33,7 @@ ListView{
         // Envoie une request pour récupérer des infos à partir des coords GPS
         onTriggered: {
             console.debug(">>>>> timer triggered");
-            window.requestReverseGeocode(latitude, longitude);
+            window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
         }
     }
 

@@ -96,10 +96,10 @@ ZonePhotoForm {
         resetChipButtons(chipDescription);
     }
 
-    // ------------------------------- DESCRIPTION WRITER
+    // ------------------------------- CAPTION WRITER
     chipWriter.deleteArea.onClicked:
     {
-        window.setPhotoProperty(tabbedPage.selectedData.row, "", "descriptionWriter");
+        window.setPhotoProperty(tabbedPage.selectedData.row, "", "captionWriter");
     }
 
     // -----------------------------------------------------------------------------------
@@ -115,7 +115,7 @@ ZonePhotoForm {
             chipTime.content = Utilities.toReadableTime(tabbedPage.selectedData.dateTimeOriginal)
             chipCreator.content = tabbedPage.selectedData.creator
             chipDescription.content = tabbedPage.selectedData.description
-            chipWriter.content = tabbedPage.selectedData.descriptionWriter
+            chipWriter.content = tabbedPage.selectedData.captionWriter
         }
     }
 

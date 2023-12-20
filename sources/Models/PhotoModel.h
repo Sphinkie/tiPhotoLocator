@@ -52,9 +52,9 @@ struct Photo
     QString city;               //!< City shown in the Photo
     QString country;            //!< Country where the Photo was taken
     QString description;        //!< can be: Description, ImageDescription or Caption;
-    QString descriptionWriter;  //!< Initials of the description writer
+    QString captionWriter;      //!< Initials of the description writer
     QString software;           //!< Software of the camera or scanner device
-    QStringList keywords;       //!< this is a list of keywords
+    QStringList keywords;       //!< This is a list of keywords describing the image
 
     // Surcharges d'operateurs
     bool operator == (const QString &file_name);
@@ -104,7 +104,7 @@ public:
         CityRole,
         CountryRole,
         DescriptionRole,
-        DescriptionWriterRole,
+        CaptionWriterRole,
         SoftwareRole,
         KeywordsRole
     };

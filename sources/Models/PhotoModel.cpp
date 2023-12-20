@@ -74,7 +74,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
     case CityRole:              return photo.city;
     case CountryRole:           return photo.country;
     case DescriptionRole:       return photo.description;
-    case DescriptionWriterRole: return photo.descriptionWriter;
+    case CaptionWriterRole:     return photo.captionWriter;
     case SoftwareRole:          return photo.software;
     case KeywordsRole:          return photo.keywords;
     default:
@@ -122,7 +122,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {CreatorRole,           "creator"},
         {KeywordsRole,          "keywords"},
         {DescriptionRole,       "description"},
-        {DescriptionWriterRole, "descriptionWriter"}
+        {CaptionWriterRole,     "captionWriter"}
     };
     return mapping;
 }
@@ -417,10 +417,10 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << DescriptionRole << ToBeSavedRole);
             break;
-        case DescriptionWriterRole:
-            m_photos[index.row()].descriptionWriter = value.toString();
+        case CaptionWriterRole:
+            m_photos[index.row()].captionWriter = value.toString();
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << DescriptionWriterRole << ToBeSavedRole);
+            emit dataChanged(index, index, QVector<int>() << CaptionWriterRole << ToBeSavedRole);
             break;
         case KeywordsRole:
             m_photos[index.row()].keywords << value.toString();
@@ -491,7 +491,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_photos[row].description     = value_list["Description"].toString();     // TODO : aka Caption
     m_photos[row].software        = value_list["Software"].toString();
     m_photos[row].keywords        = value_list["Keywords"].toStringList();
-    m_photos[row].descriptionWriter = value_list["DescriptionWriter"].toString();
+    m_photos[row].captionWriter = value_list["CaptionWriter"].toString();
     // En priorité, on prend le tag Exif 'Artist'. Si vide, on prend le tag IPTC 'Creator'.
     // Ce tag peut être une String  ou une StringList, selon le nombre d'artistes...
     if (value_list["Artist"].isNull())
@@ -617,6 +617,7 @@ void PhotoModel::saveMetadata()
     QModelIndex idx = this->index(row, 0);
     while (idx.isValid())
     {
+        // On teste si cette photo a été modifiée et doit être enregistrée
         if (idx.data(ToBeSavedRole).toBool() && !idx.data(IsMarkerRole).toBool() && !idx.data(IsWelcomeRole).toBool())
         {
             // On ecrit les metadonnées dans le fichier JPG
@@ -626,16 +627,14 @@ void PhotoModel::saveMetadata()
             exifData.insert("GPSLongitude", idx.data(LongitudeRole));
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
             exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
-            exifData.insert("Creator", idx.data(CreatorRole));      // MWG écrit aussi dans Artist
-//            if (!preserveExif)  exifData.insert("Artist", idx.data(CreatorRole));
-            exifData.insert("MetadataEditingSoftware", software);
-            exifData.insert("City", idx.data(CityRole));
-            exifData.insert("Country", idx.data(CountryRole).toString().toUtf8());
             exifData.insert("DateTimeOriginal", idx.data(DateTimeOriginalRole));
+            exifData.insert("MetadataEditingSoftware", software);
+            exifData.insert("Creator", idx.data(CreatorRole));          // MWG écrit aussi dans Artist
+            exifData.insert("City", idx.data(CityRole));                // MWG écrit dans EXIF et dans IptcExt
+            exifData.insert("Country", idx.data(CountryRole));          // MWG écrit dans EXIF et dans IptcExt
             exifData.insert("Description", idx.data(DescriptionRole));  // MWG écrit aussi dans ImageDescription
-            exifData.insert("CaptionWriter", idx.data(DescriptionWriterRole));
-            // Ajout de la liste des keywords
-            exifData.insert("Keywords", idx.data(KeywordsRole));
+            exifData.insert("CaptionWriter", idx.data(CaptionWriterRole));
+            exifData.insert("Keywords", idx.data(KeywordsRole));        // Ajout de la liste des keywords
 
             //Instanciation et ajout de la tâche au pool de threads
             ExifWriteTask *task = new ExifWriteTask(exifData, backupsEnabled);

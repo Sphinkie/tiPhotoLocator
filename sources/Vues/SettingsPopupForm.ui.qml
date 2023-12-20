@@ -74,7 +74,7 @@ Popup {
                     }
                 }
                 // ------------------------------------------------------------------
-                // Valeur par défaut pour DESCRIPTION WRITER
+                // Valeur par défaut pour CAPTION WRITER
                 // ------------------------------------------------------------------
                 RowLayout {
                     Text {
@@ -92,7 +92,7 @@ Popup {
                     }
                     Text {
                         color: TiStyle.tertiaryForegroundColor
-                        text: "Description Writer (IPTC)"
+                        text: "Caption Writer (IPTC)"
                         font.pixelSize: 12
                         style: Text.Normal
                     }

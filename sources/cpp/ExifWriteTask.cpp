@@ -1,4 +1,5 @@
 #include "ExifWriteTask.h"
+#include "utilities.h"
 #include <QProcess>
 #include <QDebug>
 
@@ -68,10 +69,10 @@ void ExifWriteTask::run()
     QString program = "exifTool";
     QStringList arguments;
     arguments << "-preserve";           // Preserve file modification date/time
-    //arguments << "-dateFormat" << "'%d-%m-%Y'";   // datetime format DD-MM-YYYY
     arguments << "-ext" << "JPG";       // Filtre sur les extensions
     arguments << "-ext" << "JPEG";      // Filtre sur les extensions
     arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
+    //arguments << "-dateFormat" << "'%d-%m-%Y'";   // datetime format DD-MM-YYYY
     //arguments.append("-ext"); arguments.append("JPG");    // Filtre sur les extensions
     //arguments.append("-ext"); arguments.append("JPEG");   // Filtre sur les extensions
     //arguments.append("-use"); arguments.append("MWG");    // Use MetadataWorkingGroup recommendations
@@ -89,7 +90,10 @@ void ExifWriteTask::run()
             }
         }
         else
-            arguments.append("-" + itr.key() + "=" + itr.value().toString().toUtf8());
+        {
+            // On normalise la String en pur ASCII
+            arguments.append("-" + itr.key() + "=" + Utilities::normalise(itr.value().toString()));
+        }
     }
     // Le fichier JPG à modifier
     arguments.append(filePath);

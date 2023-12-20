@@ -16,7 +16,7 @@ SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
     QString initiales   = settings.value("initiales","").toString();
     this->append(photographe, "creator", "tag", -1);
     this->append(" ", "description", "tag", -1);
-    this->append(initiales, "descriptionWriter", "tag", -1);
+    this->append(initiales,   "captionWriter", "tag", -1);
     this->append("paysage",   "keywords", "tag", -1);
     this->append("portrait",  "keywords", "tag", -1);
     this->append("urbanisme", "keywords", "tag", -1);

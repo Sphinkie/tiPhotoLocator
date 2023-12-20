@@ -4,7 +4,11 @@
 
 
 /* ********************************************************************************************************** */
-Utilities::Utilities() {}
+Utilities::Utilities() {
+
+//    Utilities::normalizedLetters << "S"<<"OE"<<"Z"<<"s"<<"oe"<<"z"<<"Y"<<"Y"<<"u"<<"A"<<"A"<<"A"<<"A"<<"A"<<"A"<<"AE"<<"C"<<"E"<<"E"<<"E"<<"E"<<"I"<<"I"<<"I"<<"I"<<"D"<<"N"<<"O"<<"O"<<"O"<<"O"<<"O"<<"O"<<"U"<<"U"<<"U"<<"U"<<"Y"<<"s"<<"a"<<"a"<<"a"<<"a"<<"a"<<"a"<<"ae"<<"c"<<"e"<<"e"<<"e"<<"e"<<"i"<<"i"<<"i"<<"i"<<"o"<<"n"<<"o"<<"o"<<"o"<<"o"<<"o"<<"o"<<"u"<<"u"<<"u"<<"u"<<"y"<<"y";
+//     Utilities::diacriticLetters = QString::fromUtf8("ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ");
+}
 
 
 /* ********************************************************************************************************** */
@@ -120,3 +124,35 @@ QString Utilities::fixDigits(QString sDigits, int defaultValue, int min, int max
     return QString("%1").arg(nDigits, 2, 10, QLatin1Char('0'));
 }
 
+
+/* ********************************************************************************************************** */
+/*!
+ * \brief Remplace les éventuelles lettres diacritiques d'un texte par leur équivalent normalisé.
+ *        Par exemple, on remplace 'à' par 'a'.
+ * \param texte: le texte à scanner.
+ * \return le texte normalisé.
+ */
+QString Utilities::normalise(QString texte)
+{
+    QString output = "";
+
+    for (int i=0; i<texte.length(); i++)
+    {
+        QChar lettre = texte[i];
+        int diaIndex = Utilities::diacriticLetters.indexOf(lettre);
+
+        if (diaIndex < 0)
+        {
+            // lettre normale
+            output.append(lettre);
+        }
+        else
+        {
+            // lettre diacritique
+            QString replacement = Utilities::normalizedLetters[diaIndex];
+            output.append(replacement);
+        }
+    }
+
+    return output;
+}
