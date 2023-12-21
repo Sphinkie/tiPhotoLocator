@@ -1,9 +1,81 @@
 import QtQuick
 import "../Vues"
+import "../Javascript/Chips.js" as Chips
 
-// Controlleur pour la zone des keywords
+// Controleur pour la zone des keywords
 ZoneUserdataForm {
 
+    // -----------------------------------------------------------------------------------
+    // EDIT BUTTON
+    // -----------------------------------------------------------------------------------
+    chipKeyword0.editArea.onClicked: Chips.enableEdition(chipKeyword0);
+    chipKeyword1.editArea.onClicked: Chips.enableEdition(chipKeyword1);
+    chipKeyword2.editArea.onClicked: Chips.enableEdition(chipKeyword2);
+    chipKeyword3.editArea.onClicked: Chips.enableEdition(chipKeyword3);
+    chipKeyword4.editArea.onClicked: Chips.enableEdition(chipKeyword4);
+    chipKeyword5.editArea.onClicked: Chips.enableEdition(chipKeyword5);
+    chipKeyword6.editArea.onClicked: Chips.enableEdition(chipKeyword6);
+    chipKeyword7.editArea.onClicked: Chips.enableEdition(chipKeyword7);
+
+    // -----------------------------------------------------------------------------------
+    // SAVE BUTTON
+    // -----------------------------------------------------------------------------------
+    chipKeyword0.saveArea.onClicked:
+    {
+        _photoModel.updatePhotoKeyword(chipKeyword0.chipText.text, 0);
+        Chips.resetChipButtons(chipKeyword0);
+    }
+    chipKeyword1.saveArea.onClicked:
+    {
+        _photoModel.updatePhotoKeyword(chipKeyword1.chipText.text, 1);
+        Chips.resetChipButtons(chipKeyword1);
+    }
+    chipKeyword2.saveArea.onClicked:
+    {
+        _photoModel.updatePhotoKeyword(chipKeyword2.chipText.text, 2);
+        Chips.resetChipButtons(chipKeyword2);
+    }
+    chipKeyword3.saveArea.onClicked:
+    {
+        _photoModel.updatePhotoKeyword(chipKeyword3.chipText.text, 3);
+        Chips.resetChipButtons(chipKeyword3);
+    }
+    chipKeyword4.saveArea.onClicked:
+    {
+        _photoModel.updatePhotoKeyword(chipKeyword4.chipText.text, 4);
+        Chips.resetChipButtons(chipKeyword4);
+    }
+    chipKeyword5.saveArea.onClicked:
+    {
+        _photoModel.updatePhotoKeyword(chipKeyword5.chipText.text, 5);
+        Chips.resetChipButtons(chipKeyword5);
+    }
+    chipKeyword6.saveArea.onClicked:
+    {
+        _photoModel.updatePhotoKeyword(chipKeyword6.chipText.text, 6);
+        Chips.resetChipButtons(chipKeyword6);
+    }
+    chipKeyword7.saveArea.onClicked:
+    {
+        _photoModel.updatePhotoKeyword(chipKeyword7.chipText.text, 7);
+        Chips.resetChipButtons(chipKeyword7);
+    }
+
+    // -----------------------------------------------------------------------------------
+    // REVERT BUTTON
+    // -----------------------------------------------------------------------------------
+    chipKeyword0.revertArea.onClicked:  Chips.revertEdition(chipKeyword0);
+    chipKeyword1.revertArea.onClicked:  Chips.revertEdition(chipKeyword1);
+    chipKeyword2.revertArea.onClicked:  Chips.revertEdition(chipKeyword2);
+    chipKeyword3.revertArea.onClicked:  Chips.revertEdition(chipKeyword3);
+    chipKeyword4.revertArea.onClicked:  Chips.revertEdition(chipKeyword4);
+    chipKeyword5.revertArea.onClicked:  Chips.revertEdition(chipKeyword5);
+    chipKeyword6.revertArea.onClicked:  Chips.revertEdition(chipKeyword6);
+    chipKeyword7.revertArea.onClicked:  Chips.revertEdition(chipKeyword7);
+
+    // -----------------------------------------------------------------------------------
+    // DELETE BUTTON
+    // -----------------------------------------------------------------------------------
 
     chipKeyword0.deleteArea.onClicked:   // (mouse) =>
     {
@@ -27,12 +99,12 @@ ZoneUserdataForm {
         target: tabbedPage
         function onSelectedDataChanged()
         {
-            // console.debug("onSelectedDataChanged->ZoneUserData");
+            console.debug("onSelectedDataChanged->ZoneUserData");
 
             // On détermine le contenu des chips ici
             var photoKeywords = tabbedPage.selectedData.keywords;
 
-            // console.debug("photoKeywords[0]" + photoKeywords[0]);
+            console.debug("photoKeywords[0]:" + photoKeywords[0]);
             chipKeyword0.content= photoKeywords[0]? photoKeywords[0] : ""
             chipKeyword1.content= photoKeywords[1]? photoKeywords[1] : ""
             chipKeyword2.content= photoKeywords[2]? photoKeywords[2] : ""

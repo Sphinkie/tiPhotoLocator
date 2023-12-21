@@ -857,6 +857,24 @@ void PhotoModel::removePhotoKeyword(QString keyword)
     }
 }
 
+/* ********************************************************************************************************** */
+/*!
+ * \brief Modifie un des mots-clef descriptif de la photo.
+ * \param keyword : la nouvelle valeur du mot-clef.
+ * \param index : la position du mot-clef dans la liste.
+ * \note Cette méthode modifie la Photo actuellement sélectionée.
+ */
+void PhotoModel::updatePhotoKeyword(QString keyword, int index)
+{
+    if (index<0 || index >= m_photos[m_lastSelectedRow].keywords.count()) return;
+
+    qDebug() << "update" << keyword << "keyword";
+    m_photos[m_lastSelectedRow].keywords[index] = keyword;
+    m_photos[m_lastSelectedRow].toBeSaved = true;
+    QModelIndex idx = this->index(m_lastSelectedRow, 0);
+    emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
+}
+
 
 /* ********************************************************************************************************** */
 /*!

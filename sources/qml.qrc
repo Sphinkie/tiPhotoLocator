@@ -97,5 +97,6 @@
         <file>Cameras/default.png</file>
         <file>Cameras/Midjourney.png</file>
         <file>Cameras/OpticFilm 7200.png</file>
+        <file>Javascript/Chips.js</file>
     </qresource>
 </RCC>

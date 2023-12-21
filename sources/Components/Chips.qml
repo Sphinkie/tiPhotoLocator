@@ -87,7 +87,7 @@ Rectangle {
         text: content
         readOnly: true
         font.pixelSize: 14
-        color: TiStyle.chipTextColor
+        color: canSave? "white" : TiStyle.chipTextColor
         // Positionnement du texte
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter

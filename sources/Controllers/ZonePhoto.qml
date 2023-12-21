@@ -2,89 +2,87 @@ import QtQuick
 import "../Components"
 import "../Vues"
 import "../Javascript/TiUtilities.js" as Utilities
+import "../Javascript/Chips.js" as Chips
 
-
-// Controlleur de la zone avec les informations sur la photo
+// Controleur de la zone avec les informations sur la photo
 ZonePhotoForm {
 
+    // -----------------------------------------------------------------------------------
     // ------------------------------- DATE
+    // -----------------------------------------------------------------------------------
     chipDate.editArea.onClicked:
     {
         // Gérer la saisie d'un texte de type DATE
         chipDate.chipText.inputMethodHints = Qt.ImhDate;
         chipDate.chipText.inputMask = "99/99/9999";
-        enableEdition(chipDate);
-        chipDate.canSave = true;
+        Chips.enableEdition(chipDate);
     }
     chipDate.saveArea.onClicked:
     {
         var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text;
         window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime , "dateTimeOriginal");
-        resetChipButtons(chipDate);
+        Chips.resetChipButtons(chipDate);
     }
 
     chipDate.revertArea.onClicked:
     {
-        chipDate.chipText.text = chipDate.content;
-        resetChipButtons(chipDate);
+        Chips.revertEdition(chipDate);
     }
 
+    // -----------------------------------------------------------------------------------
     // ------------------------------- TIME
+    // -----------------------------------------------------------------------------------
     chipTime.editArea.onClicked:
     {
         // Gérer la saisie d'un texte de type TIME
         chipTime.chipText.inputMethodHints = Qt.ImhTime;
         chipTime.chipText.inputMask = "99:99";
-        enableEdition(chipTime);
-        chipTime.canSave = true;
+        Chips.enableEdition(chipTime);
     }
     chipTime.saveArea.onClicked:
     {
         var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text;
         window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime , "dateTimeOriginal");
-        resetChipButtons(chipTime);
+        Chips.resetChipButtons(chipTime);
     }
     chipTime.revertArea.onClicked:
     {
-        chipTime.chipText.text = chipTime.content;
-        resetChipButtons(chipTime);
+        Chips.revertEdition(chipTime);
     }
 
-
+    // -----------------------------------------------------------------------------------
     // ------------------------------- CREATOR
+    // -----------------------------------------------------------------------------------
     chipCreator.editArea.onClicked:
     {
-        enableEdition(chipCreator);
-        // On active le bouton SAVE
-        chipCreator.canSave = true;
+        Chips.enableEdition(chipCreator);
     }
     chipCreator.saveArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, chipCreator.chipText.text, "creator");
-        resetChipButtons(chipCreator);
+        Chips.resetChipButtons(chipCreator);
     }
     chipCreator.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "creator");
-        resetChipButtons(chipCreator);
+        Chips.resetChipButtons(chipCreator);
     }
     chipCreator.revertArea.onClicked:
     {
-        chipCreator.chipText.text = chipCreator.content;
-        resetChipButtons(chipCreator);
+        Chips.revertEdition(chipCreator);
     }
 
-
+    // -----------------------------------------------------------------------------------
     // ------------------------------- DESCRIPTION
+    // -----------------------------------------------------------------------------------
     chipDescription.editArea.onClicked:
     {
-        enableEdition(chipDescription);
-        chipDescription.canSave = true;
+        Chips.enableEdition(chipDescription);
     }
     chipDescription.saveArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, chipDescription.chipText.text, "description");
-        resetChipButtons(chipDescription);
+        Chips.resetChipButtons(chipDescription);
     }
     chipDescription.deleteArea.onClicked:
     {
@@ -92,11 +90,12 @@ ZonePhotoForm {
     }
     chipDescription.revertArea.onClicked:
     {
-        chipDescription.chipText.text = chipDescription.content;
-        resetChipButtons(chipDescription);
+        Chips.revertEdition(chipDescription);
     }
 
+    // -----------------------------------------------------------------------------------
     // ------------------------------- CAPTION WRITER
+    // -----------------------------------------------------------------------------------
     chipWriter.deleteArea.onClicked:
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "captionWriter");
@@ -118,38 +117,6 @@ ZonePhotoForm {
             chipWriter.content = tabbedPage.selectedData.captionWriter
         }
     }
-
-    // -----------------------------------------------------------------------------------
-    // Fonctions
-    // -----------------------------------------------------------------------------------
-    /*!
-     * Réactive le bouton Edit (en cas d'édition interrompue par un SUPPR).
-     */
-    function resetChipButtons(chip)
-    {
-        // On résactive le bouton EDIT
-        chip.editable = true;
-        // On désactive le bouton SAVE
-        chip.canSave = false;
-        // Terminer la saisie du texte
-        chip.chipText.readOnly = true;
-        chip.chipText.color = TiStyle.chipTextColor;
-        chip.chipText.focus = false;
-    }
-
-    /*!
-     * Active l'édition d'un chip
-     */
-    function enableEdition(chip)
-    {
-        // On désactive le bouton EDIT
-        chip.editable = false;
-        // On gère la saisie d'un texte
-        chip.chipText.readOnly = false;
-        chip.chipText.color = "white";
-        chip.chipText.focus = true;
-    }
-
 }
 
 /*##^##
