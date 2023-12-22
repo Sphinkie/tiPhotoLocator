@@ -45,7 +45,6 @@ DISTFILES += \
     Components/PhotoPreview.qml \
     Doxyfile \
     TiPhotoLocator.qhp \
-    images/clock.png \
     tiPhotoLocator.qdocconf
 
 HEADERS += \
@@ -71,7 +70,7 @@ CONFIG += file_copies
 COPIES += myFiles
 myFiles.files = $$files(../bin/exiftool.exe)
 myFiles.path = $$OUT_PWD/debug
-# myFiles.path += $$OUT_PWD/release
+myFiles.path += $$OUT_PWD/release
 # myFiles.base = $$PWD/
 
 
