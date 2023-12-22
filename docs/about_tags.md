@@ -17,8 +17,8 @@ It has no official description.
 | ImageDescription | MWG | MWG | 0x010e IDF0 | Image description (pure ASCII) | 
 | Make        | yes | --  | 0x010f IFD0 | Camera manufacturer | 
 | Model       | yes | --  | 0x0110 IFD0 | Camera model        | 
-| ShutterSpeedValue    | yes  | -- | 0x9201 IFD0 | Shutter Speed in seconds | 
-| Fnumber   | yes  | -- | 0x829D IFD0 | focal stop-number    | 
+| ShutterSpeedValue    | yes  | -- | 0x9201 IFD0 | Shutter speed in seconds | 
+| FNumber   | yes  | -- | 0x829D IFD0 | Focal stop-number    | 
 | Software    | yes  | -- | 0x0131 IFD0 | Camera or Scanner software version    | 
 | Artist      | yes | MWG | 0x013b IFD0 | Name of photographer | 
 | GPSLatitude      | yes | yes | 0x8825 IFD0 | Photo location |
