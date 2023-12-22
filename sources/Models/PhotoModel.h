@@ -45,6 +45,7 @@ struct Photo
     QString make;               //!< Camera manifacturer (no changes allowed in this app)
     int imageWidth = 0;         //!< Image width  (no changes allowed in this app)
     int imageHeight = 0;        //!< Image height (no changes allowed in this app)
+    int orientation = 1;        //!< 1 = Horizontal
     float shutterSpeed = -1;    //!< Durée d'exposition (no changes allowed in this app)
     float fNumber = -1;         //!< Ouverture (no changes allowed in this app)
     // IPTC tags
@@ -98,9 +99,10 @@ public:
         MakeRole,
         ImageWidthRole,
         ImageHeightRole,
-        CreatorRole,
+        OrientationRole,
         ShutterSpeedRole,
         FNumberRole,
+        CreatorRole,
         CityRole,
         CountryRole,
         DescriptionRole,

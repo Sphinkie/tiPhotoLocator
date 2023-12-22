@@ -68,6 +68,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
     case MakeRole:              return photo.make;
     case ImageWidthRole:        return photo.imageWidth;
     case ImageHeightRole:       return photo.imageHeight;
+    case OrientationRole:       return photo.orientation;
     case ShutterSpeedRole:      return photo.shutterSpeed;
     case FNumberRole:           return photo.fNumber;
     case CreatorRole:           return photo.creator;
@@ -113,6 +114,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         // Photo
         {DateTimeOriginalRole,  "dateTimeOriginal"},
         {SoftwareRole,          "software"},
+        {OrientationRole,       "orientation"},
         {ShutterSpeedRole,      "shutterSpeed"},
         {FNumberRole,           "fNumber"},
         // Camera
@@ -483,6 +485,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_photos[row].make            = value_list["Make"].toString();
     m_photos[row].imageWidth      = value_list["ImageWidth"].toInt();
     m_photos[row].imageHeight     = value_list["ImageHeight"].toInt();
+    m_photos[row].orientation     = value_list["Orientation"].toInt();
     m_photos[row].shutterSpeed    = value_list["ShutterSpeed"].toFloat();
     m_photos[row].fNumber         = value_list["FNumber"].toFloat();
     // Les metadata IPTC
@@ -538,7 +541,7 @@ void PhotoModel::dumpData()
     flags.append(m_photos[m_dumpedRow].insideCircle? " insideCircle":"");
 
     qDebug() << m_photos[m_dumpedRow].filename << m_photos[m_dumpedRow].city
-             << m_photos[m_dumpedRow].shutterSpeed << m_photos[m_dumpedRow].fNumber
+             << m_photos[m_dumpedRow].shutterSpeed << m_photos[m_dumpedRow].fNumber << m_photos[m_dumpedRow].orientation
              << m_photos[m_dumpedRow].camModel << m_photos[m_dumpedRow].make
              << flags
              << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal

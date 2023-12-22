@@ -12,7 +12,6 @@ It has no official description.
 | -------------------------- | ---- | ----- | -------------- | ------------------ |
 | ImageWidth                 | yes  | --    | 0x0100 IFD0    | Image width        |
 | ImageHeight                | yes  | --    | 0x0101 IFD0    | Image height       |
-| ImageDescription           | MWG  | MWG   | 0x010e IDF0    | Image description  |
 | Make                       | yes  | --    | 0x010f IFD0    | Camera manufacturer|
 | Model                      | yes  | --    | 0x0110 IFD0    | Camera model       |
 | Orientation                | yes  | --    | 0x0112 IFD0    | Camera orientation |
@@ -20,6 +19,7 @@ It has no official description.
 | FNumber                    | yes  | --    | 0x829D IFD0    | Focal stop-number  |
 | Software                   | yes  | --    | 0x0131 IFD0    | Camera or Scanner software version |
 | Artist                     | yes  | MWG   | 0x013b IFD0    | Name of photographer               |
+| ImageDescription           | MWG  | MWG   | 0x010e IDF0    | Image description  |
 | GPSLatitude                | yes  | yes   | 0x8825 IFD0    | Photo location     |
 | GPSLongitude               | yes  | yes   | 0x8825 IFD0    | Photo location     |
 | GPSLatitudeRef             | --   | yes   | 0x8825 IFD0    | North or South     |
@@ -39,26 +39,23 @@ It has no official description.
 
 The **International Press Telecommunications Council** format (IPTC) is described in the [iptc.org website](https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata)
 
-| Tag name      | Read | Write | Description                                                                        |
-| ------------- | ---- | ----- | --------------------------------------------------------------------------------- |
-| Creator       | yes  | yes   | Name of photographer.                                                              |
-| City          | yes  | yes   | Obsolete - Name of the city of the location shown in the image.                  |
-| Country       | yes  | yes   | Obsolete - Name of the country of the location shown in the image.            |
-| Description   | yes  | yes   | Description of the who, what, and why of what is happening in this image.       |
-| CaptionWriter | yes  | yes   | Name of the person involved in writing the Description,                   |
-| Keywords      | yes  | yes   | List of keywords used to express the subject matter in the image.                  |
+| Tag name      | Read | Write | Description                                                               |
+| ------------- | ---- | ----- | ------------------------------------------------------------------------- |
+| Creator       | yes  | yes   | Name of photographer.                                                     |
+| City          | yes  | yes   | Obsolete - Name of the city of the location shown in the image.           |
+| Country       | yes  | yes   | Obsolete - Name of the country of the location shown in the image.        |
+| Description   | yes  | yes   | Description of the who, what, and why of what is happening in this image. |
+| CaptionWriter | yes  | yes   | Name of the person involved in writing the Description.                   |
+| Keywords      | yes  | yes   | List of keywords used to express the subject matter in the image.         |
 
 `MWG`: Managed according to the Metadata Working Group recommandations.  
 
 ## IPTC EXTENSION tags
 
-| Tag name               | Read | Write | Description                |
-| ---------------------- | ---- | ----- | -------------------------- |
-| Location shown         | ↓    | ↓     | IPTC Extension             |
-| Location/City          | MWG  | MWG   |                            |
-| Location/Country       | MWG  | MWG   | Country name               |
-| Location/latitude      |      |       |                            |
-| Location/longitude     |      |       |                            |
+| Tag name                  | Read | Write | Description                |
+| ------------------------- | ---- | ----- | -------------------------- |
+| LocationShown/City        | MWG  | MWG   |                            |
+| LocationShown/CountryName | MWG  | MWG   | Country name               |
 | Location/location name |      |       | Location name              |
 | Location/state         |      |       | Province or state          |
 | Location/sublocation   |      |       | Name of a sublocation to a city or the name of a well known location or (natural) monument outside a city |

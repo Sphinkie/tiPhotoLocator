@@ -176,6 +176,7 @@ bool ExifReadTask::writeArgsFile()
     // out << "-ImageDescription"  << Qt::endl;   // Alternate tag label for "Description" (EXIF)
     out << "-ShutterSpeed"      << Qt::endl;   // 0.005
     out << "-FNumber"           << Qt::endl;   // 2.8
+    out << "-Orientation"       << Qt::endl;   // 1 (see below for code values)
     out << "-Artist"            << Qt::endl;   // Name of the photographer (EXIF tag label)
     out << "-Software"          << Qt::endl;   // Logiciel de l'Appareil photo ou du Scanner
     out << "-MetadataEditingSoftware" << Qt::endl;   // Logiciel ayant renseigné les métadonnées
@@ -199,5 +200,16 @@ bool ExifReadTask::writeArgsFile()
     return true;
 }
 
-
+/*
+ * Orientation:
+0 = Ne sait pas
+1 = Horizontal (normal)
+2 =   Mirror horizontal
+3 = Horizontal (Rotate 180)
+4 =   Mirror vertical
+5 =   Mirror horizontal and rotate 270 CW
+6 = Vertical (Rotate 90 CW)
+7 =   Mirror horizontal and rotate 90 CW
+8 = Vertical (Rotate 270 CW)
+*/
 
