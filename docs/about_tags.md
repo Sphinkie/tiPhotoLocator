@@ -17,6 +17,8 @@ It has no official description.
 | ImageDescription | MWG | MWG | 0x010e IDF0 | Image description (pure ASCII) | 
 | Make        | yes | --  | 0x010f IFD0 | Camera manufacturer | 
 | Model       | yes | --  | 0x0110 IFD0 | Camera model        | 
+| ShutterSpeedValue    | yes  | -- | 0x9201 IFD0 | Shutter Speed in seconds | 
+| Fnumber   | yes  | -- | 0x829D IFD0 | focal stop-number    | 
 | Software    | yes  | -- | 0x0131 IFD0 | Camera or Scanner software version    | 
 | Artist      | yes | MWG | 0x013b IFD0 | Name of photographer | 
 | GPSLatitude      | yes | yes | 0x8825 IFD0 | Photo location |
@@ -47,7 +49,7 @@ The **International Press Telecommunications Council** format (IPTC) is describe
 | City        | yes  | yes | obsolete - Name of the city of the location shown in the image.| 
 | Country     | yes  | yes | obsolete - Full name of the country of the location shown in the image.| 
 | Description | yes  | yes | Description of the who, what, and why of what is happening in this image. | 
-| DescriptionWriter |  | yes | Name of the person involved in writing the Description, | 
+| CaptionWriter | yes | yes | Name of the person involved in writing the Description, | 
 | Caption     |  |  |  | 
 | Keywords    | yes | yes | List of keywords, terms or phrases used to express the subject matter in the image. | 
 
