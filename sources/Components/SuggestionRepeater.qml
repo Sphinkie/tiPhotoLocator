@@ -43,7 +43,10 @@ Repeater{
 
                     // Si onglet CARTE : on applique la suggestion à toutes les photos du cercle
                     if (tabbedPage.currentIndex === 1)
+                    {
+                        window.setPhotoProperty(-2, text, target);  // -2 = photo sélectionnée
                         window.setPhotoProperty(-3, text, target);  // -3 = photos du cercle
+                    }
 
                     // Si onglet TAG : on applique la suggestion à la seule photo sélectionnée
                     if (tabbedPage.currentIndex === 2)

@@ -286,11 +286,11 @@ void PhotoModel::setPhotoProperty(const int photo, const QString value, const QS
             break;
         }
     case -2:
-        // On affecte la photo sélectionnée
+        // On affecte la photo sélectionnée.
         setData(m_lastSelectedRow, value, property);
         break;
     case -3:
-        // On affecte les photos du Cercle
+        // Et on affecte les photos du cercle.
         {
             int row = 0;
             QModelIndex idx = this->index(row, 0);
@@ -522,6 +522,7 @@ int PhotoModel::getSelectedRow()
     return m_lastSelectedRow;
 }
 
+
 /* ********************************************************************************************************** */
 /*!
  * \brief Debug function that print (in the console) one line of the model at every call.
@@ -611,7 +612,6 @@ void PhotoModel::saveMetadata()
     qDebug() << "saveMetadata";
     QSettings settings;
     bool backupsEnabled = settings.value("backupsEnabled", false).toBool();
-    bool preserveExif = settings.value("preserveExif", false).toBool();
     QString software = settings.value("software", "").toString();
 
     QThreadPool::globalInstance()->setMaxThreadCount(3);
@@ -753,6 +753,8 @@ QVariantMap PhotoModel::get(int row)
  */
 void PhotoModel::findInCirclePhotos(int circle_radius)
 {
+    if (circle_radius==0)
+        resetCircle();
     // Le centre du cercle est la photo sélectionnée
     double circle_lat = m_photos[m_lastSelectedRow].gpsLatitude;
     double circle_long = m_photos[m_lastSelectedRow].gpsLongitude;
@@ -784,6 +786,26 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
     // si la fonction est relancée une seconde fois alors que celle-ci n'est pas finie : on ignore
     // TODO : Mettre un Mutex
 }
+
+
+/* ********************************************************************************************************** */
+/*!
+ * \brief Enleve le flag "insideCircle" à toutes les photos.
+ */
+void PhotoModel::resetCircle()
+{
+    // On parcourt tous les items du modèle
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        m_photos[row].insideCircle = false;
+        idx = idx.siblingAtRow(++row);
+    }
+    // A la fin, on notifie en une seule fois l'ensemble des photos.
+    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
+}
+
 
 
 /* ********************************************************************************************************** */

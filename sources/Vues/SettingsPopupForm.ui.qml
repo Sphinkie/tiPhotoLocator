@@ -142,15 +142,16 @@ Popup {
                     height: 30
                     model: ["français"]
                 }
-
                 CheckBox {
                     id: checkBoxExif
                     text: qsTr("Ne pas modifier les tags EXIF")
+                    visible: false
                     checked: false
                 }
                 CheckBox {
                     id: checkBoxDebug
                     text: "Debug mode"
+                    visible: false
                 }
                 Text {
                     text: qsTr("Centrage carte (redémarrage nécessaire):")
@@ -175,12 +176,26 @@ Popup {
                 Text {
                     text: qsTr("Clef API pour les cartes:")
                     font.pixelSize: 12
+                    visible: false
                 }
                 TextField {
                     id: textFieldMapApiKey
                     width: 400
                     height: 30
                     placeholderText: qsTr("XXXXXXXXXXXXXXX")
+                    visible: false
+                }
+                Text {
+                    text: qsTr("Clef API pour la météo:")
+                    font.pixelSize: 12
+                    visible: false
+                }
+                TextField {
+                    id: textFieldWeatherApiKey
+                    width: 400
+                    height: 30
+                    placeholderText: qsTr("XXXXXXXXXXXXXXX")
+                    visible: false
                 }
             }
         }
@@ -204,7 +219,7 @@ Popup {
     }
 
     // ----------------------------------------------------------------
-    // On mémorise la configuration dans les settings
+    // On mémorise la configuration dans les Settings
     // ----------------------------------------------------------------
     Settings {
         id: settings
@@ -212,7 +227,8 @@ Popup {
         property alias initiales: textFieldInitials.text
         property alias software: textFieldSoftware.text
         property alias homecity: textFieldHomecity.text
-        property alias apikey: textFieldMapApiKey.text
+        property alias mapApikey: textFieldMapApiKey.text
+        property alias weatherApikey: textFieldWeatherApiKey.text
         property alias preserveExif: checkBoxExif.checked
         property alias debugModeEnabled: checkBoxDebug.checked
         property alias tagLanguage: tagLanguages.currentIndex // 0: English, 1: Default

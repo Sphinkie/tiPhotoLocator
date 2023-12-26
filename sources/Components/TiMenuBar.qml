@@ -9,7 +9,7 @@ MenuBar{
         id: fileMenu
         title: qsTr("Dossiers")
         MenuItem  { text: qsTr("Ouvrir..."); onTriggered: folderDialog.open(); }
-        MenuItem  { text: qsTr("Recents..."); enabled: false; }
+        // MenuItem  { text: qsTr("Recents..."); enabled: false; }
         MenuSeparator {}
         MenuItem  { text: qsTr("Quitter"); onTriggered: Qt.quit(); }
     }

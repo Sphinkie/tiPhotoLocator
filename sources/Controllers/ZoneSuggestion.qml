@@ -9,7 +9,7 @@ ZoneSuggestionForm {
 
 
     bt_getinfo.onClicked: {
-        // on envoir une request pour récupérer des infos à partir des coords GPS
+        // on envoie une request pour récupérer des infos à partir des coords GPS
         window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
     }
 

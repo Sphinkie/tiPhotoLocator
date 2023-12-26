@@ -1,10 +1,11 @@
-import QtQuick 2.15
+import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtCore
 import "../Components"
 
 Rectangle {
+    id: bottomRect
     color: TiStyle.surfaceContainerColor
     height: bottomToolBarLayout.height + 20
 
@@ -13,6 +14,7 @@ Rectangle {
     property alias cb_backups: cb_backups
     property alias bt_save: bt_save
     property alias bt_quit: bt_quit
+    property bool useDebug
 
     // property alias reglages2: reglages2
     RowLayout {
@@ -23,6 +25,7 @@ Rectangle {
         TiButton {
             id: bt_dump1
             text: qsTr("Dump PhotoModel")
+            visible: bottomRect.useDebug
             ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
             ToolTip.visible: hovered
             ToolTip.delay: 500
@@ -32,6 +35,7 @@ Rectangle {
         TiButton {
             id: bt_dump2
             text: qsTr("Dump SuggModel")
+            visible: bottomRect.useDebug
             ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
             ToolTip.visible: hovered
             ToolTip.delay: 500
@@ -72,5 +76,6 @@ Rectangle {
     Settings {
         id: settings
         property alias backupsEnabled: cb_backups.checked
+        property alias debugModeEnabled: bottomRect.useDebug
     }
 }

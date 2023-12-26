@@ -7,11 +7,6 @@ import "../Javascript/Networking.js" as Netwk
  * ***************************************************************** */
 ToolBarBottomForm {
 
-    // true en mode DEBUG
-    bt_dump1.visible: true
-    bt_dump2.visible: true
-
-
     bt_dump1.onClicked: {
         _photoModel.dumpData()
       //  _cameraSet.append("TZ80")         // Ajouté pour les tests d'API de Lisa

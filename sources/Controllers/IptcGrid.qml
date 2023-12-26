@@ -21,6 +21,9 @@ IptcGridForm {
         window.setPhotoProperty(-1, city, "city");       // -1 = all
     }
 
+    // ----------------------------------------------------------------
+    // Lecture des Settings
+    // ----------------------------------------------------------------
     Settings {
         id: settings
         property alias photographe: iptcGrid.creator

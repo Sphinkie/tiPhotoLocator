@@ -172,8 +172,11 @@ Map {
         */
     }
 
+    // ----------------------------------------------------------------
+    // Lecture des Settings
+    // ----------------------------------------------------------------
     Settings {
         id: settings
-        property alias apikey: mapPlugin.apikey
+        property alias mapApikey: mapPlugin.apikey
     }
 }

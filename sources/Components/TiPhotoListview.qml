@@ -30,8 +30,8 @@ ListView{
         interval: 5000;   // 5 sec
         running: false;
         repeat: false;
-        // Envoie une request pour récupérer des infos à partir des coords GPS
         onTriggered: {
+            // Envoie une request pour récupérer des infos à partir des coords GPS
             console.debug(">>>>> timer triggered");
             window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
         }
@@ -122,11 +122,19 @@ ListView{
                     window.setSuggestionFilter(sourceindex);
 
                     // On remet le rayon du cercle rouge de la carte à zéro
-                    mapTools.slider_radius.value = 0;
+                    // mapTools.slider_radius.value = 0;
+                    // On réactualise le contenu du cercle rouge
+                    _photoModel.findInCirclePhotos(mapTools.slider_radius.value);
 
-                    // On relance une demande d'infos ReverseGeo (stop/start)
-                    console.debug(">>>> restart timer");
-                    geoTimer.restart();
+                    // On relance une demande d'infos ReverseGeo
+                    if ( (tabbedPage.currentIndex === 1) && hasGPS) {
+                        // Si onglet CARTE et COORDS GPS:
+                        console.debug(">>>> restart timer");
+                        geoTimer.restart();
+                    }
+                    else
+                        geoTimer.stop();
+
                 }
             }
         }

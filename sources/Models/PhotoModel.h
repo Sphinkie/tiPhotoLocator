@@ -128,6 +128,7 @@ public:
     Q_INVOKABLE void clear();
     Q_INVOKABLE void removePhotoKeyword(QString keyword);
     Q_INVOKABLE void updatePhotoKeyword(QString keyword, int index);
+    Q_INVOKABLE void findInCirclePhotos(int circle_radius);
 
     // -----------------------------------------------------
     // Methodes publiques
@@ -143,6 +144,7 @@ private:
     void addTestItem();
     void selectedRow(int row);
     int getSelectedRow();
+    void resetCircle();
     bool belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo);
 
 public slots:
@@ -155,7 +157,6 @@ public slots:
     void setSelectedItemCoords(double latitude, double longitude);
     void setInCircleItemCoords(double latitude, double longitude);
     void setPhotoProperty(const int photo, const QString value, const QString property);
-    void findInCirclePhotos(int circle_radius);
     void applyCreatorToAll();
     void appendSavedPosition(double latitude, double longitude);
     void removeSavedPosition();
