@@ -52,14 +52,14 @@ The **International Press Telecommunications Council** format (IPTC) is describe
 
 ## IPTC EXTENSION tags
 
-| Tag name                  | Read | Write | Description                |
-| ------------------------- | ---- | ----- | -------------------------- |
-| LocationShown/City        | MWG  | MWG   |                            |
-| LocationShown/CountryName | MWG  | MWG   | Country name               |
-| Location/location name |      |       | Location name              |
-| Location/state         |      |       | Province or state          |
-| Location/sublocation   |      |       | Name of a sublocation to a city or the name of a well known location or (natural) monument outside a city |
-| Location/WorldRegion   |      |       | World Region               |
+| Tag name                  | Read | Write | Description                    |
+| ------------------------- | ---- | ----- | ------------------------------ |
+| LocationShown/City        | MWG  | MWG   | Name of city shown on the photo|
+| LocationShown/CountryName | MWG  | MWG   | Country name                   |
+| Location/location name    | --   | --    | Location name                  |
+| Location/state            | --   | --    | Province or state              |
+| Location/sublocation      | --   | --    | Name of a city sublocation or of a well-known location or of a (natural) monument outside a city |
+| Location/WorldRegion      | --   | --    | World Region                   |
 
 ## Unused tags
 

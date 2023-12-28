@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
     app.setApplicationName("TiPhotoLocator");
     app.setOrganizationName("Sphinkie");
     app.setOrganizationDomain("de-lorenzo.fr");
-    app.setWindowIcon(QIcon(":Images/logo_TPL.png"));
+    app.setWindowIcon(QIcon(":Images/logo_TPL.ico")); // Icon typically displayed in the top-left corner of the application's top-level window.
 
     // --------------------------------------
     // On initialise nos Models

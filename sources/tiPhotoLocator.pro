@@ -42,7 +42,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    Components/PhotoPreview.qml \
+#    Components/PhotoPreview.qml \
     Doxyfile \
     TiPhotoLocator.qhp \
     tiPhotoLocator.qdocconf
@@ -62,8 +62,7 @@ HEADERS += \
     cpp/PhotoModelWrapper.h \
     cpp/utilities.h
 
-
-# QMAKE_POST_LINK += xcopy /F /Y '$$PWD/../bin/exiftool.exe' '$$OUT_PWD'
+RC_ICONS = Images/logo_TPL.ico
 
 CONFIG += file_copies
 
@@ -71,6 +70,4 @@ COPIES += myFiles
 myFiles.files = $$files(../bin/exiftool.exe)
 myFiles.path = $$OUT_PWD/debug
 myFiles.path += $$OUT_PWD/release
-# myFiles.base = $$PWD/
-
 
