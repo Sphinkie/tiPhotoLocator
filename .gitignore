@@ -12,3 +12,4 @@ sources/*.pro.user.*
 *.psd
 /installeur/packages/com.sphinkie.tiphotolocator/data*
 /installeur/*.exe
+/installeur/*.zip

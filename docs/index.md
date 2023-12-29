@@ -21,14 +21,14 @@ With TiPhotoLocator, you can:
 
 ## Installation
 
-Get the latest release of the software by clicking on the **▼.ZIP** button, at the top of this page, or [here: "latest release"](https://github.com/Sphinkie/TiPhotoLocator/releases/latest).
+Get the latest release of the software by clicking on the **▼.ZIP** button, at the top of this page, or [here: "latest release"](https://github.com/Sphinkie/tiPhotoLocator/releases/latest).
 
 Download the **TiPhotoLocatorSetup.zip** file, and unzip it in a folder on your computer.
 Then, just run the **TiPhotoLocatorSetup.exe** to install the program.
 
 ## Developper corner
 
-Developpers can access to doxygen documentation [here](https://sphinkie.github.io/TiPhotoLocator/doxygen/html/index.html).
+Developpers can access to doxygen documentation [here](https://sphinkie.github.io/tiPhotoLocator/doxygen/html/index.html).
 
 ## About me
 

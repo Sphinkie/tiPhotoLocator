@@ -18,7 +18,7 @@ To compile the sources of this application, you need the Qt 6 framework, [from t
 
 ## Documentation
 
-The project **doxygen* documentation for the developers is available [here](https://sphinkie.github.io/TiPhotoLocator/doxygen/html/index.html).
+The project **doxygen** documentation for the developers is available [here](https://sphinkie.github.io/tiPhotoLocator/doxygen/html/index.html).
 
 
 

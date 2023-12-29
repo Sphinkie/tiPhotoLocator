@@ -1,9 +1,9 @@
 theme: jekyll-theme-slate
-title: Ti Photo Locator
+title: ti Photo Locator
 description: A desktop application to easily geotag your photos.
 show_downloads: true
 
 github:
-  zip_url: https://github.com/Sphinkie/TiPhotoLocator/releases/latest/download/TiPhotoLocatorSetup.zip
+  zip_url: https://github.com/Sphinkie/tiPhotoLocator/releases/latest/download/TiPhotoLocatorSetup.zip
   owner_name: David de Lorenzo
   owner_url: https://sphinkie.github.io/
