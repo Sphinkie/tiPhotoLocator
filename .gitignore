@@ -10,4 +10,5 @@ sources/*.pro.user.*
 *.bak
 *.bkp
 *.psd
-/installeur/packages/com.sphinkie.tiphotolocator/data
+/installeur/packages/com.sphinkie.tiphotolocator/data*
+/installeur/*.exe

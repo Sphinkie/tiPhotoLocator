@@ -9,7 +9,7 @@ MenuBar{
         id: fileMenu
         title: qsTr("Dossiers")
         MenuItem  { text: qsTr("Ouvrir..."); onTriggered: folderDialog.open(); }
-        // MenuItem  { text: qsTr("Recents..."); enabled: false; }
+        // TODO: MenuItem  { text: qsTr("Recents..."); enabled: false; }
         MenuSeparator {}
         MenuItem  { text: qsTr("Quitter"); onTriggered: Qt.quit(); }
     }
@@ -22,7 +22,7 @@ MenuBar{
     Menu {
         id:helpMenu
         title: qsTr("Aide")
-        MenuItem  { text: qsTr("Obtenir une API KEY"); onTriggered: apiPage.open(); }
+        // TODO: MenuItem  { text: qsTr("Obtenir une API KEY"); onTriggered: apiPage.open(); }
         MenuItem  { text: qsTr("Credits"); onTriggered: creditsPage.open(); }
         MenuItem  { text: qsTr("A propos"); onTriggered: aboutPage.open(); }
     }

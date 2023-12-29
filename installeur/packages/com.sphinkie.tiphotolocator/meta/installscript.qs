@@ -64,6 +64,6 @@ Component.prototype.dynamicPageEntered = function ()
     var pageWidget = gui.pageWidgetByObjectName("DynamicPage");
     if (pageWidget != null) {
         console.log("Setting the widgets label text.")
-        pageWidget.m_pageLabel.text = "This is a dynamically created page.";
+        pageWidget.m_pageLabel.text = "<b>TiPhotoLocator</b> is a desktop application for Windows, which help to easily geotag your photos, and manage additionnals tags, such as city, country, creator, description, keywords...";
     }
 }

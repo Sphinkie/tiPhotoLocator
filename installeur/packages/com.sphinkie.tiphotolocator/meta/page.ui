@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dynamic page example</string>
+   <string>Presentation</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
