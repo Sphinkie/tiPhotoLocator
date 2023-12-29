@@ -44,135 +44,139 @@
 \DoxyCodeLine{00045\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a3f6620eb0f021aec853b0390d66c4898}{make}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_photo_a47567d8ecc3f845ae1846903113d625b}{imageWidth}}\ =\ 0;\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_photo_a4555e7bf8da94eb11398e0948ab6c3d2}{imageHeight}}\ =\ 0;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_photo_aeaeadb764ea3e33efa012abc317676db}{shutterSpeed}}\ =\ -\/1;\ \ \ \ }
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_photo_a52f8b3c14a9736e4a6f1a338987a4113}{fNumber}}\ =\ -\/1;\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ IPTC\ tags}}
-\DoxyCodeLine{00051\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a8557579ced9c4e8587443564bfe659dd}{creator}};\ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00052\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_af69f56742ec76589b96b355cdc447149}{city}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00053\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a9bf494760dfe13bc320c8395a1d8368f}{country}};\ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00054\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a6fe05dc549b7caf2ee3232476d41e760}{description}};\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00055\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_acb90e7577e987fce17f38f399a110dcb}{descriptionWriter}};\ \ }
-\DoxyCodeLine{00056\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a1e092e500b8cc02272e39b823f094180}{software}};\ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00057\ \ \ \ \ QStringList\ \mbox{\hyperlink{struct_photo_a76af2f2ab2fa057b17b00e796fcfe2b5}{keywords}};\ \ \ \ \ \ \ }
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ Surcharges\ d'operateurs}}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_photo_aadb7a083611feae65440c3bfc3887417}{operator\ ==\ }}(\textcolor{keyword}{const}\ QString\ \&file\_name);}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_photo_aadb7a083611feae65440c3bfc3887417}{operator\ ==\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_photo}{Photo}}\ \&photo);}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \};}
-\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_photo_a0f11a71d79268e835723f1db0f4acffa}{orientation}}\ =\ 1;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_photo_aeaeadb764ea3e33efa012abc317676db}{shutterSpeed}}\ =\ -\/1;\ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_photo_a52f8b3c14a9736e4a6f1a338987a4113}{fNumber}}\ =\ -\/1;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ IPTC\ tags}}
+\DoxyCodeLine{00052\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a8557579ced9c4e8587443564bfe659dd}{creator}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_af69f56742ec76589b96b355cdc447149}{city}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a9bf494760dfe13bc320c8395a1d8368f}{country}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a6fe05dc549b7caf2ee3232476d41e760}{description}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a1b1dde1eb075006ff85b5539eed40f94}{captionWriter}};\ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ QString\ \mbox{\hyperlink{struct_photo_a1e092e500b8cc02272e39b823f094180}{software}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ QStringList\ \mbox{\hyperlink{struct_photo_a76af2f2ab2fa057b17b00e796fcfe2b5}{keywords}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Surcharges\ d'operateurs}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_photo_aadb7a083611feae65440c3bfc3887417}{operator\ ==\ }}(\textcolor{keyword}{const}\ QString\ \&file\_name);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_photo_aadb7a083611feae65440c3bfc3887417}{operator\ ==\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_photo}{Photo}}\ \&photo);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \};}
 \DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \textcolor{comment}{/*\ **********************************************************************************************************\ */}}
-\DoxyCodeLine{00072\ \textcolor{comment}{/*\ **********************************************************************************************************\ */}}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_photo_model}{PhotoModel}}\ :\ \textcolor{keyword}{public}\ QAbstractListModel}
-\DoxyCodeLine{00075\ \{}
-\DoxyCodeLine{00076\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00079\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_a6376872cafff59ccc887f405a2515ed9}{selectedRow}}\ READ\ \mbox{\hyperlink{class_photo_model_ae3dd8e3599f33e699cd474c5fca7d0b2}{getSelectedRow}}\ WRITE\ \mbox{\hyperlink{class_photo_model_a6376872cafff59ccc887f405a2515ed9}{selectedRow}}\ NOTIFY\ \mbox{\hyperlink{class_photo_model_ac6f14df5683cb7c053c9d5c6982a3d2c}{selectedRowChanged}})}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_photo_model_afae44c634ae6bf2b6b6c2e2a19269159}{Roles}}\ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ FilenameRole\ \ =\ Qt::UserRole,\ \ \textcolor{comment}{//\ The\ first\ role\ that\ can\ be\ used\ for\ application-\/specific\ purposes.}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ ImageUrlRole,}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ LatitudeRole,}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ LongitudeRole,}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ HasGPSRole,}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ IsSelectedRole,}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ IsMarkerRole,}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ IsWelcomeRole,}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ InsideCircleRole,}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ ToBeSavedRole,}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ DateTimeOriginalRole,}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ CamModelRole,}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ MakeRole,}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ ImageWidthRole,}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ ImageHeightRole,}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ CreatorRole,}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ ShutterSpeedRole,}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ FNumberRole,}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ CityRole,}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ CountryRole,}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ DescriptionRole,}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ DescriptionWriterRole,}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ SoftwareRole,}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ KeywordsRole}
-\DoxyCodeLine{00110\ \ \ \ \ \};}
-\DoxyCodeLine{00111\ \ \ \ \ QHash<int,\ QByteArray>\ \mbox{\hyperlink{class_photo_model_aac3d5e1ae72e823b4e6091497c5cf27d}{roleNames}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\ Surcharges\ obligatoires}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{/*\ **********************************************************************************************************\ */}}
+\DoxyCodeLine{00073\ \textcolor{comment}{/*\ **********************************************************************************************************\ */}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_photo_model}{PhotoModel}}\ :\ \textcolor{keyword}{public}\ QAbstractListModel}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_a6376872cafff59ccc887f405a2515ed9}{selectedRow}}\ READ\ \mbox{\hyperlink{class_photo_model_ae3dd8e3599f33e699cd474c5fca7d0b2}{getSelectedRow}}\ WRITE\ \mbox{\hyperlink{class_photo_model_a6376872cafff59ccc887f405a2515ed9}{selectedRow}}\ NOTIFY\ \mbox{\hyperlink{class_photo_model_ac6f14df5683cb7c053c9d5c6982a3d2c}{selectedRowChanged}})}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_photo_model_afae44c634ae6bf2b6b6c2e2a19269159}{Roles}}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ FilenameRole\ \ =\ Qt::UserRole,\ \ \textcolor{comment}{//\ The\ first\ role\ that\ can\ be\ used\ for\ application-\/specific\ purposes.}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ ImageUrlRole,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ LatitudeRole,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ LongitudeRole,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ HasGPSRole,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ IsSelectedRole,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ IsMarkerRole,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ IsWelcomeRole,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ InsideCircleRole,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ ToBeSavedRole,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ DateTimeOriginalRole,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ CamModelRole,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ MakeRole,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ ImageWidthRole,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ ImageHeightRole,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ OrientationRole,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ ShutterSpeedRole,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ FNumberRole,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ CreatorRole,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ CityRole,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ CountryRole,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ DescriptionRole,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ CaptionWriterRole,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ SoftwareRole,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ KeywordsRole}
+\DoxyCodeLine{00112\ \ \ \ \ \};}
+\DoxyCodeLine{00113\ \ \ \ \ QHash<int,\ QByteArray>\ \mbox{\hyperlink{class_photo_model_aac3d5e1ae72e823b4e6091497c5cf27d}{roleNames}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00114\ }
 \DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_photo_model}{PhotoModel}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57}{rowCount}}(\textcolor{keyword}{const}\ QModelIndex\&\ parent)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00118\ \ \ \ \ QVariant\ \mbox{\hyperlink{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}{data}}(\textcolor{keyword}{const}\ QModelIndex\&\ index,\ \textcolor{keywordtype}{int}\ role\ =\ Qt::DisplayRole)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ pouvant\ être\ appelées\ depuis\ QML}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ Surcharges\ obligatoires}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_photo_model}{PhotoModel}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{class_photo_model_a0fdbd69a007a6bda5623cce8d5f3cd57}{rowCount}}(\textcolor{keyword}{const}\ QModelIndex\&\ parent)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00120\ \ \ \ \ QVariant\ \mbox{\hyperlink{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}{data}}(\textcolor{keyword}{const}\ QModelIndex\&\ index,\ \textcolor{keywordtype}{int}\ role\ =\ Qt::DisplayRole)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00121\ }
 \DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00123\ \ \ \ \ Q\_INVOKABLE\ QVariant\ \mbox{\hyperlink{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe}{getUrl}}(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00124\ \ \ \ \ Q\_INVOKABLE\ QVariantMap\ \mbox{\hyperlink{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634}{get}}(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00125\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a822190ecc2081c7b49030c0f6a42317f}{dumpData}}();}
-\DoxyCodeLine{00126\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a1ff9f0f539d9b65e0521ebbaa498b21b}{clear}}();}
-\DoxyCodeLine{00127\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a77dea7e487119a062064faa3c60ed2d6}{removePhotoKeyword}}(QString\ keyword);}
-\DoxyCodeLine{00128\ }
-\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//\ Methodes\ publiques}}
-\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a28933cf9451c4794c12325ac125f439f}{append}}(\textcolor{keyword}{const}\ QVariantMap\ \mbox{\hyperlink{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}{data}});}
-\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}{setData}}(\textcolor{keyword}{const}\ QModelIndex\ \&index,\ \textcolor{keyword}{const}\ QVariant\ \&value,\ \textcolor{keywordtype}{int}\ role)\ \textcolor{keyword}{override};\ \ \textcolor{comment}{//\ On\ surcharge\ car\ setData()\ est\ deja\ dans\ la\ surclasse}}
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}{setData}}(\textcolor{keyword}{const}\ QVariantMap\ \&value\_list);}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00136\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ privées}}
-\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_af43bef19e91b11bf4e79c55fe458d0a1}{addTestItem}}();}
-\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a6376872cafff59ccc887f405a2515ed9}{selectedRow}}(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_ae3dd8e3599f33e699cd474c5fca7d0b2}{getSelectedRow}}();}
-\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_photo_model_aa63d16a07716d0ad5aff2ff1be183198}{belong}}(\textcolor{keywordtype}{double}\ pLa,\ \textcolor{keywordtype}{double}\ pLo,\ \textcolor{keywordtype}{double}\ oLa,\ \textcolor{keywordtype}{double}\ oLo,\ \textcolor{keywordtype}{float}\ rLa,\ \textcolor{keywordtype}{float}\ rLo);}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00145\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00146\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{//\ Slots}}
-\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a28933cf9451c4794c12325ac125f439f}{append}}(\textcolor{keyword}{const}\ QString\ filename,\ \textcolor{keyword}{const}\ QString\ url);}
-\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a3cc8c0b5e6803970def517a8d57ae155}{fetchExifMetadata}}(\textcolor{keywordtype}{int}\ row\ =\ -\/1);}
-\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ac393e2839ea5993f199ec669973972ef}{saveMetadata}}();}
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a3dc7e36064651fe29ab6685d8eed1dd6}{setSelectedItemCoords}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
-\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a834795331bc8b3f329e8f2a143839265}{setInCircleItemCoords}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
-\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a50dc093e369a2741b62aa03556df061c}{setPhotoProperty}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ photo,\ \textcolor{keyword}{const}\ QString\ value,\ \textcolor{keyword}{const}\ QString\ property);}
-\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a8cd1ac5560f3897892474271c5206106}{findInCirclePhotos}}(\textcolor{keywordtype}{int}\ circle\_radius);}
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a536c2a2381b3ce827257068f5bf43933}{applyCreatorToAll}}();}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a297fef9ba3dd5d7c1c00593cefaf144e}{appendSavedPosition}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
-\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}{removeSavedPosition}}();}
-\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}{setData}}(\textcolor{keywordtype}{int}\ row,\ QString\ value,\ QString\ property);}
-\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_aacde479b741e9f94c2077ad979e6b6a7}{duplicateData}}(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a1e2f3f829e54ef445a5b1dea07ad2118}{removeData}}(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00162\ }
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00164\ signals:}
-\DoxyCodeLine{00165\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{//\ Signaux\ émis}}
-\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ac6f14df5683cb7c053c9d5c6982a3d2c}{selectedRowChanged}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ row);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ab8f7cb78c57128f6a6df184a4d89f2bf}{sendSuggestion}}(QString\ text,\ QString\ target,\ QString\ category,\ \textcolor{keywordtype}{int}\ row);\ \ }
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{comment}{//\ Membres}}
-\DoxyCodeLine{00175\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00176\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00177\ \ \ \ \ QModelIndex\ \mbox{\hyperlink{class_photo_model_af32aed3a0a39738d782a1d69a14175f2}{m\_markerIndex}}\ =\ QModelIndex();\ \ }
-\DoxyCodeLine{00178\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_a6ff090266c5c666181a02469943d9512}{m\_markerRow}}\ =\ -\/1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00180\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00181\ \ \ \ \ QVector<Photo>\ \mbox{\hyperlink{class_photo_model_a6652f17b0436c7927b0924ddcd3ba98b}{m\_photos}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_a08f7d839ea11f7c0190afa716ac5bb7a}{m\_lastSelectedRow}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_a844160211f6ff9d747dcc59310d2fc22}{m\_dumpedRow}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00184\ \};}
-\DoxyCodeLine{00185\ }
-\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PHOTOMODEL\_H}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ pouvant\ être\ appelées\ depuis\ QML}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00125\ \ \ \ \ Q\_INVOKABLE\ QVariant\ \mbox{\hyperlink{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe}{getUrl}}(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00126\ \ \ \ \ Q\_INVOKABLE\ QVariantMap\ \mbox{\hyperlink{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634}{get}}(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00127\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a822190ecc2081c7b49030c0f6a42317f}{dumpData}}();}
+\DoxyCodeLine{00128\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a1ff9f0f539d9b65e0521ebbaa498b21b}{clear}}();}
+\DoxyCodeLine{00129\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a77dea7e487119a062064faa3c60ed2d6}{removePhotoKeyword}}(QString\ keyword);}
+\DoxyCodeLine{00130\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a3260014636b9e9ae523391a753be104c}{updatePhotoKeyword}}(QString\ keyword,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00131\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a8cd1ac5560f3897892474271c5206106}{findInCirclePhotos}}(\textcolor{keywordtype}{int}\ circle\_radius);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ Methodes\ publiques}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a28933cf9451c4794c12325ac125f439f}{append}}(\textcolor{keyword}{const}\ QVariantMap\ \mbox{\hyperlink{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}{data}});}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}{setData}}(\textcolor{keyword}{const}\ QModelIndex\ \&index,\ \textcolor{keyword}{const}\ QVariant\ \&value,\ \textcolor{keywordtype}{int}\ role)\ \textcolor{keyword}{override};\ \ \textcolor{comment}{//\ On\ surcharge\ car\ setData()\ est\ deja\ dans\ la\ surclasse}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}{setData}}(\textcolor{keyword}{const}\ QVariantMap\ \&value\_list);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ privées}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_af43bef19e91b11bf4e79c55fe458d0a1}{addTestItem}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a6376872cafff59ccc887f405a2515ed9}{selectedRow}}(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_ae3dd8e3599f33e699cd474c5fca7d0b2}{getSelectedRow}}();}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a8b4c0daf563670d61c87102a19bead12}{resetCircle}}();}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_photo_model_aa63d16a07716d0ad5aff2ff1be183198}{belong}}(\textcolor{keywordtype}{double}\ pLa,\ \textcolor{keywordtype}{double}\ pLo,\ \textcolor{keywordtype}{double}\ oLa,\ \textcolor{keywordtype}{double}\ oLo,\ \textcolor{keywordtype}{float}\ rLa,\ \textcolor{keywordtype}{float}\ rLo);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Slots}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a28933cf9451c4794c12325ac125f439f}{append}}(\textcolor{keyword}{const}\ QString\ filename,\ \textcolor{keyword}{const}\ QString\ url);}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a3cc8c0b5e6803970def517a8d57ae155}{fetchExifMetadata}}(\textcolor{keywordtype}{int}\ row\ =\ -\/1);}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ac393e2839ea5993f199ec669973972ef}{saveMetadata}}();}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a3dc7e36064651fe29ab6685d8eed1dd6}{setSelectedItemCoords}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a834795331bc8b3f329e8f2a143839265}{setInCircleItemCoords}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a50dc093e369a2741b62aa03556df061c}{setPhotoProperty}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ photo,\ \textcolor{keyword}{const}\ QString\ value,\ \textcolor{keyword}{const}\ QString\ property);}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a536c2a2381b3ce827257068f5bf43933}{applyCreatorToAll}}();}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a297fef9ba3dd5d7c1c00593cefaf144e}{appendSavedPosition}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a6c2e4a731969e952993dfe4d38e5788f}{removeSavedPosition}}();}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}{setData}}(\textcolor{keywordtype}{int}\ row,\ QString\ value,\ QString\ property);}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_aacde479b741e9f94c2077ad979e6b6a7}{duplicateData}}(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_a1e2f3f829e54ef445a5b1dea07ad2118}{removeData}}(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ signals:}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//\ Signaux\ émis}}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ac6f14df5683cb7c053c9d5c6982a3d2c}{selectedRowChanged}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ row);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_model_ab8f7cb78c57128f6a6df184a4d89f2bf}{sendSuggestion}}(QString\ text,\ QString\ target,\ QString\ category,\ \textcolor{keywordtype}{int}\ row);\ \ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//\ Membres}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00180\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00181\ \ \ \ \ QModelIndex\ \mbox{\hyperlink{class_photo_model_af32aed3a0a39738d782a1d69a14175f2}{m\_markerIndex}}\ =\ QModelIndex();\ \ }
+\DoxyCodeLine{00182\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_a6ff090266c5c666181a02469943d9512}{m\_markerRow}}\ =\ -\/1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00184\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00185\ \ \ \ \ QVector<Photo>\ \mbox{\hyperlink{class_photo_model_a6652f17b0436c7927b0924ddcd3ba98b}{m\_photos}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_a08f7d839ea11f7c0190afa716ac5bb7a}{m\_lastSelectedRow}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_photo_model_a844160211f6ff9d747dcc59310d2fc22}{m\_dumpedRow}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PHOTOMODEL\_H}}
 
 \end{DoxyCode}

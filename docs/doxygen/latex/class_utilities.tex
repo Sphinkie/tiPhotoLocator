@@ -21,7 +21,17 @@ static QString \mbox{\hyperlink{class_utilities_a11c06c3910d1553d791258b060d436d
 static QString \mbox{\hyperlink{class_utilities_a40979a50f9670f01945d07c9e80e9a33}{fix\+Year}} (QString s\+Year, int default\+Year)
 \begin{DoxyCompactList}\small\item\em Reformate correctement l\textquotesingle{}année saisie par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
 static QString \mbox{\hyperlink{class_utilities_a1c31753eeb57b373d7a73c097e6766ee}{fix\+Digits}} (QString s\+Month, int default\+Value, int min, int max)
-\begin{DoxyCompactList}\small\item\em Reformate correctement des digits saisis par l\textquotesingle{}utilisateur (jour, mois, heure, minutes). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reformate correctement des digits saisis par l\textquotesingle{}utilisateur (jour, mois, heure, minutes). \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{class_utilities_afdd3b18e7db7c7b7d397fd7b3c7201ab}{normalise}} (QString texte)
+\begin{DoxyCompactList}\small\item\em Remplace les éventuelles lettres diacritiques d\textquotesingle{}un texte par leur équivalent normalisé. Par exemple, on remplace \textquotesingle{}à\textquotesingle{} par \textquotesingle{}a\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_utilities_a7e1e10ee30627aedf30eb97d8cf7d52a}\label{class_utilities_a7e1e10ee30627aedf30eb97d8cf7d52a} 
+static const QString {\bfseries diacritic\+Letters} = QString\+::from\+Utf8("{}ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ"{})
+\item 
+static const QString\+List \mbox{\hyperlink{class_utilities_ab3ca40153c4e52be4bb47cd5bf48e97b}{normalized\+Letters}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -72,7 +82,25 @@ Reformate correctement l\textquotesingle{}année saisie par l\textquotesingle{}u
 \begin{DoxyReturn}{Returns}
 l\textquotesingle{}année au format "{}\+YYYY"{}
 \end{DoxyReturn}
-Si l\textquotesingle{}année reçue est sur 2 chiffres, on ajoute 2000. L\textquotesingle{}année minimale est 1800 (avant\+: pas de photos) L\textquotesingle{}année maximale est l\textquotesingle{}année courante (pas de photos du futur). \Hypertarget{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}\label{class_utilities_ad970fb1a077cf5d352faa2878ce410fc} 
+Si l\textquotesingle{}année reçue est sur 2 chiffres, on ajoute 2000. L\textquotesingle{}année minimale est 1800 (avant\+: pas de photos) L\textquotesingle{}année maximale est l\textquotesingle{}année courante (pas de photos du futur). \Hypertarget{class_utilities_afdd3b18e7db7c7b7d397fd7b3c7201ab}\label{class_utilities_afdd3b18e7db7c7b7d397fd7b3c7201ab} 
+\index{Utilities@{Utilities}!normalise@{normalise}}
+\index{normalise@{normalise}!Utilities@{Utilities}}
+\doxysubsubsection{\texorpdfstring{normalise()}{normalise()}}
+{\footnotesize\ttfamily QString Utilities\+::normalise (\begin{DoxyParamCaption}\item[{QString}]{texte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remplace les éventuelles lettres diacritiques d\textquotesingle{}un texte par leur équivalent normalisé. Par exemple, on remplace \textquotesingle{}à\textquotesingle{} par \textquotesingle{}a\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texte} & le texte à scanner. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le texte normalisé. 
+\end{DoxyReturn}
+\Hypertarget{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}\label{class_utilities_ad970fb1a077cf5d352faa2878ce410fc} 
 \index{Utilities@{Utilities}!toExifDate@{toExifDate}}
 \index{toExifDate@{toExifDate}!Utilities@{Utilities}}
 \doxysubsubsection{\texorpdfstring{toExifDate()}{toExifDate()}}
@@ -127,6 +155,23 @@ Convertit une date saisie manuellement en une date correctement formatée, compa
 une string au format "{}9999\+:99\+:99 99\+:99\+:00"{}
 \end{DoxyReturn}
 On est sûr de la présence des séparateurs / et \+: et ESP. Par contre, il peut y avoir 0 ou 1 ou 2 chiffres entre chaque. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_utilities_ab3ca40153c4e52be4bb47cd5bf48e97b}\label{class_utilities_ab3ca40153c4e52be4bb47cd5bf48e97b} 
+\index{Utilities@{Utilities}!normalizedLetters@{normalizedLetters}}
+\index{normalizedLetters@{normalizedLetters}!Utilities@{Utilities}}
+\doxysubsubsection{\texorpdfstring{normalizedLetters}{normalizedLetters}}
+{\footnotesize\ttfamily const QString\+List Utilities\+::normalized\+Letters\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\textcolor{stringliteral}{"{}S"{}},\ \textcolor{stringliteral}{"{}OE"{}},\ \textcolor{stringliteral}{"{}Z"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}oe"{}},\textcolor{stringliteral}{"{}z"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}AE"{}},\textcolor{stringliteral}{"{}C"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}D"{}},\textcolor{stringliteral}{"{}N"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}ae"{}},\textcolor{stringliteral}{"{}c"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}u"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}y"{}},\textcolor{stringliteral}{"{}y"{}}\}}
+
+\end{DoxyCode}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

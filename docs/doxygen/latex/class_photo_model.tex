@@ -38,17 +38,19 @@ enum \mbox{\hyperlink{class_photo_model_afae44c634ae6bf2b6b6c2e2a19269159}{Roles
 {\bfseries Make\+Role}
 , {\bfseries Image\+Width\+Role}
 , {\bfseries Image\+Height\+Role}
-, {\bfseries Creator\+Role}
+, {\bfseries Orientation\+Role}
 , \newline
 {\bfseries Shutter\+Speed\+Role}
 , {\bfseries FNumber\+Role}
+, {\bfseries Creator\+Role}
 , {\bfseries City\+Role}
-, {\bfseries Country\+Role}
 , \newline
-{\bfseries Description\+Role}
-, {\bfseries Description\+Writer\+Role}
+{\bfseries Country\+Role}
+, {\bfseries Description\+Role}
+, {\bfseries Caption\+Writer\+Role}
 , {\bfseries Software\+Role}
-, {\bfseries Keywords\+Role}
+, \newline
+{\bfseries Keywords\+Role}
  \}
 \begin{DoxyCompactList}\small\item\em The Roles enum lists the roles associated to each attribute of a \doxylink{struct_photo}{Photo}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Slots}
@@ -66,8 +68,6 @@ void \mbox{\hyperlink{class_photo_model_a834795331bc8b3f329e8f2a143839265}{set\+
 \begin{DoxyCompactList}\small\item\em Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a50dc093e369a2741b62aa03556df061c}{set\+Photo\+Property}} (const int photo, const QString value, const QString property)
 \begin{DoxyCompactList}\small\item\em Ce slot affecte le role fourni à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_photo_model_a8cd1ac5560f3897892474271c5206106}{find\+In\+Circle\+Photos}} (int circle\+\_\+radius)
-\begin{DoxyCompactList}\small\item\em Parcourt toutes les \doxylink{struct_photo}{Photo} du modèle, et flague celles qui sont à l\textquotesingle{}interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a536c2a2381b3ce827257068f5bf43933}{apply\+Creator\+To\+All}} ()
 \begin{DoxyCompactList}\small\item\em Applique le "{}photographe"{} à toutes les photos du modèle. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a297fef9ba3dd5d7c1c00593cefaf144e}{append\+Saved\+Position}} (double latitude, double longitude)
@@ -110,6 +110,10 @@ Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_photo_model_a1ff9f0f539d9b65e0521
 \begin{DoxyCompactList}\small\item\em Deletes all the items of the Model. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_photo_model_a77dea7e487119a062064faa3c60ed2d6}{remove\+Photo\+Keyword}} (QString keyword)
 \begin{DoxyCompactList}\small\item\em Enlève un des mots-\/clef descriptif de la photo. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_photo_model_a3260014636b9e9ae523391a753be104c}{update\+Photo\+Keyword}} (QString keyword, int index)
+\begin{DoxyCompactList}\small\item\em Modifie un des mots-\/clef descriptif de la photo. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_photo_model_a8cd1ac5560f3897892474271c5206106}{find\+In\+Circle\+Photos}} (int circle\+\_\+radius)
+\begin{DoxyCompactList}\small\item\em Parcourt toutes les \doxylink{struct_photo}{Photo} du modèle, et flague celles qui sont à l\textquotesingle{}interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_photo_model_a28933cf9451c4794c12325ac125f439f}{append}} (const QVariant\+Map \mbox{\hyperlink{class_photo_model_a3f09addf9a989e85b7ae5797156b270f}{data}})
 \begin{DoxyCompactList}\small\item\em Adds a \doxylink{struct_photo}{Photo} item to the model, from a list of metadata. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_photo_model_ad7a5d45624200d819ee0ab429387baa0}{set\+Data}} (const QModel\+Index \&index, const QVariant \&value, int role) override
@@ -144,6 +148,9 @@ void \mbox{\hyperlink{class_photo_model_aee33ef1753815d48baa8d8ab8716782c}{selec
 \Hypertarget{class_photo_model_ae3dd8e3599f33e699cd474c5fca7d0b2}\label{class_photo_model_ae3dd8e3599f33e699cd474c5fca7d0b2} 
 int {\bfseries get\+Selected\+Row} ()
 \begin{DoxyCompactList}\small\item\em Returns the last selected row. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_model_a8b4c0daf563670d61c87102a19bead12}\label{class_photo_model_a8b4c0daf563670d61c87102a19bead12} 
+void {\bfseries reset\+Circle} ()
+\begin{DoxyCompactList}\small\item\em Enleve le flag "{}inside\+Circle"{} à toutes les photos. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_photo_model_aa63d16a07716d0ad5aff2ff1be183198}{belong}} (double p\+La, double p\+Lo, double o\+La, double o\+Lo, float r\+La, float r\+Lo)
 \begin{DoxyCompactList}\small\item\em Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
@@ -373,8 +380,8 @@ Ce slot lit des données EXIF d\textquotesingle{}une (ou toutes) photos du répe
 \Hypertarget{class_photo_model_a8cd1ac5560f3897892474271c5206106}\label{class_photo_model_a8cd1ac5560f3897892474271c5206106} 
 \index{PhotoModel@{PhotoModel}!findInCirclePhotos@{findInCirclePhotos}}
 \index{findInCirclePhotos@{findInCirclePhotos}!PhotoModel@{PhotoModel}}
-\doxysubsubsection{\texorpdfstring{findInCirclePhotos}{findInCirclePhotos}}
-{\footnotesize\ttfamily void Photo\+Model\+::find\+In\+Circle\+Photos (\begin{DoxyParamCaption}\item[{int}]{circle\+\_\+radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+\doxysubsubsection{\texorpdfstring{findInCirclePhotos()}{findInCirclePhotos()}}
+{\footnotesize\ttfamily void Photo\+Model\+::find\+In\+Circle\+Photos (\begin{DoxyParamCaption}\item[{int}]{circle\+\_\+radius }\end{DoxyParamCaption})}
 
 
 
@@ -654,6 +661,26 @@ Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée.
 {\em longitude} & \+: Longitude GPS à affecter. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_photo_model_a3260014636b9e9ae523391a753be104c}\label{class_photo_model_a3260014636b9e9ae523391a753be104c} 
+\index{PhotoModel@{PhotoModel}!updatePhotoKeyword@{updatePhotoKeyword}}
+\index{updatePhotoKeyword@{updatePhotoKeyword}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{\texorpdfstring{updatePhotoKeyword()}{updatePhotoKeyword()}}
+{\footnotesize\ttfamily void Photo\+Model\+::update\+Photo\+Keyword (\begin{DoxyParamCaption}\item[{QString}]{keyword,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Modifie un des mots-\/clef descriptif de la photo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keyword} & \+: la nouvelle valeur du mot-\/clef. \\
+\hline
+{\em index} & \+: la position du mot-\/clef dans la liste. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Cette méthode modifie la \doxylink{struct_photo}{Photo} actuellement sélectionée. 
+\end{DoxyNote}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

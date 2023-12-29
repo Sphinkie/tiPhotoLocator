@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">The ultimate Photo Locator</div>
+   <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
  </tr>
  </tbody>
@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('class_utilities.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_utilities-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Utilities Class Reference</div></div>
 </div><!--header-->
@@ -120,6 +121,17 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1c31753eeb57b373d7a73c097e6766ee" id="r_a1c31753eeb57b373d7a73c097e6766ee"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#a1c31753eeb57b373d7a73c097e6766ee">fixDigits</a> (QString sMonth, int defaultValue, int min, int max)</td></tr>
 <tr class="memdesc:a1c31753eeb57b373d7a73c097e6766ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reformate correctement des digits saisis par l'utilisateur (jour, mois, heure, minutes).  <br /></td></tr>
 <tr class="separator:a1c31753eeb57b373d7a73c097e6766ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdd3b18e7db7c7b7d397fd7b3c7201ab" id="r_afdd3b18e7db7c7b7d397fd7b3c7201ab"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#afdd3b18e7db7c7b7d397fd7b3c7201ab">normalise</a> (QString texte)</td></tr>
+<tr class="memdesc:afdd3b18e7db7c7b7d397fd7b3c7201ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remplace les éventuelles lettres diacritiques d'un texte par leur équivalent normalisé. Par exemple, on remplace 'à' par 'a'.  <br /></td></tr>
+<tr class="separator:afdd3b18e7db7c7b7d397fd7b3c7201ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a7e1e10ee30627aedf30eb97d8cf7d52a" id="r_a7e1e10ee30627aedf30eb97d8cf7d52a"><td class="memItemLeft" align="right" valign="top"><a id="a7e1e10ee30627aedf30eb97d8cf7d52a" name="a7e1e10ee30627aedf30eb97d8cf7d52a"></a>
+static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacriticLetters</b> = QString::fromUtf8(&quot;ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ&quot;)</td></tr>
+<tr class="separator:a7e1e10ee30627aedf30eb97d8cf7d52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ca40153c4e52be4bb47cd5bf48e97b" id="r_ab3ca40153c4e52be4bb47cd5bf48e97b"><td class="memItemLeft" align="right" valign="top">static const QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#ab3ca40153c4e52be4bb47cd5bf48e97b">normalizedLetters</a></td></tr>
+<tr class="separator:ab3ca40153c4e52be4bb47cd5bf48e97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_utilities.html" title="The Utilities class contains a set of usefull static functions.">Utilities</a> class contains a set of usefull static functions. </p>
@@ -231,6 +243,41 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="afdd3b18e7db7c7b7d397fd7b3c7201ab" name="afdd3b18e7db7c7b7d397fd7b3c7201ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdd3b18e7db7c7b7d397fd7b3c7201ab">&#9670;&#160;</a></span>normalise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Utilities::normalise </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>texte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remplace les éventuelles lettres diacritiques d'un texte par leur équivalent normalisé. Par exemple, on remplace 'à' par 'a'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texte</td><td>le texte à scanner. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>le texte normalisé. </dd></dl>
+
+</div>
+</div>
 <a id="ad970fb1a077cf5d352faa2878ce410fc" name="ad970fb1a077cf5d352faa2878ce410fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad970fb1a077cf5d352faa2878ce410fc">&#9670;&#160;</a></span>toExifDate()</h2>
 
@@ -335,6 +382,33 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>une string au format "9999:99:99 99:99:00"</dd></dl>
 <p>On est sûr de la présence des séparateurs / et : et ESP. Par contre, il peut y avoir 0 ou 1 ou 2 chiffres entre chaque. </p>
 
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab3ca40153c4e52be4bb47cd5bf48e97b" name="ab3ca40153c4e52be4bb47cd5bf48e97b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3ca40153c4e52be4bb47cd5bf48e97b">&#9670;&#160;</a></span>normalizedLetters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QStringList Utilities::normalizedLetters</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {<span class="stringliteral">&quot;S&quot;</span>, <span class="stringliteral">&quot;OE&quot;</span>, <span class="stringliteral">&quot;Z&quot;</span>,<span class="stringliteral">&quot;s&quot;</span>,<span class="stringliteral">&quot;oe&quot;</span>,<span class="stringliteral">&quot;z&quot;</span>,<span class="stringliteral">&quot;Y&quot;</span>,<span class="stringliteral">&quot;Y&quot;</span>,<span class="stringliteral">&quot;u&quot;</span>,<span class="stringliteral">&quot;A&quot;</span>,<span class="stringliteral">&quot;A&quot;</span>,<span class="stringliteral">&quot;A&quot;</span>,<span class="stringliteral">&quot;A&quot;</span>,<span class="stringliteral">&quot;A&quot;</span>,<span class="stringliteral">&quot;A&quot;</span>,<span class="stringliteral">&quot;AE&quot;</span>,<span class="stringliteral">&quot;C&quot;</span>,<span class="stringliteral">&quot;E&quot;</span>,<span class="stringliteral">&quot;E&quot;</span>,<span class="stringliteral">&quot;E&quot;</span>,<span class="stringliteral">&quot;E&quot;</span>,</div>
+<div class="line">                                                         <span class="stringliteral">&quot;I&quot;</span>,<span class="stringliteral">&quot;I&quot;</span>,<span class="stringliteral">&quot;I&quot;</span>,<span class="stringliteral">&quot;I&quot;</span>,<span class="stringliteral">&quot;D&quot;</span>,<span class="stringliteral">&quot;N&quot;</span>,<span class="stringliteral">&quot;O&quot;</span>,<span class="stringliteral">&quot;O&quot;</span>,<span class="stringliteral">&quot;O&quot;</span>,<span class="stringliteral">&quot;O&quot;</span>,<span class="stringliteral">&quot;O&quot;</span>,<span class="stringliteral">&quot;O&quot;</span>,<span class="stringliteral">&quot;U&quot;</span>,<span class="stringliteral">&quot;U&quot;</span>,<span class="stringliteral">&quot;U&quot;</span>,<span class="stringliteral">&quot;U&quot;</span>,<span class="stringliteral">&quot;Y&quot;</span>,<span class="stringliteral">&quot;s&quot;</span>,<span class="stringliteral">&quot;a&quot;</span>,<span class="stringliteral">&quot;a&quot;</span>,<span class="stringliteral">&quot;a&quot;</span>,<span class="stringliteral">&quot;a&quot;</span>,</div>
+<div class="line">                                                         <span class="stringliteral">&quot;a&quot;</span>,<span class="stringliteral">&quot;a&quot;</span>,<span class="stringliteral">&quot;ae&quot;</span>,<span class="stringliteral">&quot;c&quot;</span>,<span class="stringliteral">&quot;e&quot;</span>,<span class="stringliteral">&quot;e&quot;</span>,<span class="stringliteral">&quot;e&quot;</span>,<span class="stringliteral">&quot;e&quot;</span>,<span class="stringliteral">&quot;i&quot;</span>,<span class="stringliteral">&quot;i&quot;</span>,<span class="stringliteral">&quot;i&quot;</span>,<span class="stringliteral">&quot;i&quot;</span>,<span class="stringliteral">&quot;o&quot;</span>,<span class="stringliteral">&quot;n&quot;</span>,<span class="stringliteral">&quot;o&quot;</span>,<span class="stringliteral">&quot;o&quot;</span>,<span class="stringliteral">&quot;o&quot;</span>,<span class="stringliteral">&quot;o&quot;</span>,<span class="stringliteral">&quot;o&quot;</span>,<span class="stringliteral">&quot;o&quot;</span>,<span class="stringliteral">&quot;u&quot;</span>,<span class="stringliteral">&quot;u&quot;</span>,</div>
+<div class="line">                                                         <span class="stringliteral">&quot;u&quot;</span>,<span class="stringliteral">&quot;u&quot;</span>,<span class="stringliteral">&quot;y&quot;</span>,<span class="stringliteral">&quot;y&quot;</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
