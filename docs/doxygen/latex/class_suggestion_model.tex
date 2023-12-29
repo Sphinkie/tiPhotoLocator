@@ -1,8 +1,8 @@
 \doxysection{Suggestion\+Model Class Reference}
-\hypertarget{class_suggestion_model}{}\label{class_suggestion_model}\index{SuggestionModel@{SuggestionModel}}
+\label{class_suggestion_model}\index{SuggestionModel@{SuggestionModel}}
 
 
-The \doxylink{class_suggestion_model}{Suggestion\+Model} class manages a list of \doxylink{struct_suggestion}{Suggestion}.  
+The \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} class manages a list of \doxyref{Suggestion}{p.}{struct_suggestion}.  
 
 
 
@@ -18,66 +18,66 @@ Inheritance diagram for Suggestion\+Model\+:\begin{figure}[H]
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19}\label{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19} 
-enum \mbox{\hyperlink{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19}{Roles}} \{ {\bfseries Text\+Role} = Qt\+::User\+Role
+\label{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19} 
+enum \textbf{ Roles} \{ {\bfseries Text\+Role} = Qt\+::User\+Role
 , {\bfseries Target\+Role}
 , {\bfseries Category\+Role}
 , {\bfseries Photos\+Role}
  \}
-\begin{DoxyCompactList}\small\item\em The Roles enum lists the roles associated to each attribute of a \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The Roles enum lists the roles associated to each attribute of a \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198}{on\+Selected\+Photo\+Changed}} (const int row)
+void \textbf{ on\+Selected\+Photo\+Changed} (const int row)
 \begin{DoxyCompactList}\small\item\em Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la List\+View. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f}{append}} (const QString text, const QString target, const QString category, int photo\+\_\+row=-\/2)
-\begin{DoxyCompactList}\small\item\em Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \textbf{ append} (const QString text, const QString target, const QString category, int photo\+\_\+row=-\/2)
+\begin{DoxyCompactList}\small\item\em Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-QHash$<$ int, QByte\+Array $>$ \mbox{\hyperlink{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd}{role\+Names}} () const override
+QHash$<$ int, QByte\+Array $>$ \textbf{ role\+Names} () const override
 \begin{DoxyCompactList}\small\item\em Table of Role names. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0}{Suggestion\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\textbf{ Suggestion\+Model} (QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Contructor. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}{row\+Count}} (const QModel\+Index \&parent) const override
+int \textbf{ row\+Count} (const QModel\+Index \&parent) const override
 \begin{DoxyCompactList}\small\item\em Returns the number of elements in the model. \end{DoxyCompactList}\item 
-QVariant \mbox{\hyperlink{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c}{data}} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
+QVariant \textbf{ data} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
 \begin{DoxyCompactList}\small\item\em Returns the requested role value of an element of the model. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f}{remove\+Current\+Photo\+From\+Suggestion}} (const QModel\+Index index)
-\begin{DoxyCompactList}\small\item\em Ce slot enlève la \doxylink{struct_photo}{Photo} courante de la liste des photos correspondant à une \doxylink{struct_suggestion}{Suggestion} donnée. \end{DoxyCompactList}\item 
-\Hypertarget{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20}\label{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20} 
+void \textbf{ remove\+Current\+Photo\+From\+Suggestion} (const QModel\+Index index)
+\begin{DoxyCompactList}\small\item\em Ce slot enlève la \doxyref{Photo}{p.}{struct_photo} courante de la liste des photos correspondant à une \doxyref{Suggestion}{p.}{struct_suggestion} donnée. \end{DoxyCompactList}\item 
+\label{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20} 
 Q\+\_\+\+INVOKABLE void {\bfseries dump\+Data} ()
 \begin{DoxyCompactList}\small\item\em Debug function that print (in the console) one line of the model at every call. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_suggestion_model_a0de02decfdbfe787caf63895eca58cb6}{add\+Photo\+To\+Suggestion}} (const int suggestion\+\_\+row, int photo\+\_\+row)
-\begin{DoxyCompactList}\small\item\em Ajoute une \doxylink{struct_photo}{Photo} à la liste des photos ayant un "{}match"{} avec cette \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997}{add\+Category\+To\+Suggestion}} (const int suggestion\+\_\+row, const QString category)
-\begin{DoxyCompactList}\small\item\em Ajoute une catégorie à la \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \textbf{ add\+Photo\+To\+Suggestion} (const int suggestion\+\_\+row, int photo\+\_\+row)
+\begin{DoxyCompactList}\small\item\em Ajoute une \doxyref{Photo}{p.}{struct_photo} à la liste des photos ayant un "{}match"{} avec cette \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\item 
+void \textbf{ add\+Category\+To\+Suggestion} (const int suggestion\+\_\+row, const QString category)
+\begin{DoxyCompactList}\small\item\em Ajoute une catégorie à la \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_suggestion_model_ae89572184f274b27c827e5f419a0df8f}\label{class_suggestion_model_ae89572184f274b27c827e5f419a0df8f} 
-QVector$<$ \mbox{\hyperlink{struct_suggestion}{Suggestion}} $>$ {\bfseries m\+\_\+suggestions}
-\begin{DoxyCompactList}\small\item\em La liste des \doxylink{struct_suggestion}{Suggestion}. \end{DoxyCompactList}\item 
-\Hypertarget{class_suggestion_model_aa7612d5b8d5e5c63f265b25693d95524}\label{class_suggestion_model_aa7612d5b8d5e5c63f265b25693d95524} 
+\label{class_suggestion_model_ae89572184f274b27c827e5f419a0df8f} 
+QVector$<$ \textbf{ Suggestion} $>$ {\bfseries m\+\_\+suggestions}
+\begin{DoxyCompactList}\small\item\em La liste des \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\item 
+\label{class_suggestion_model_aa7612d5b8d5e5c63f265b25693d95524} 
 int {\bfseries m\+\_\+selected\+Photo\+Row} = -\/4
 \begin{DoxyCompactList}\small\item\em La valeur par defaut -\/4 ne correspond à aucune photo. \end{DoxyCompactList}\item 
-\Hypertarget{class_suggestion_model_a71e147fc8f25a5f6ff2f24ebc256acc6}\label{class_suggestion_model_a71e147fc8f25a5f6ff2f24ebc256acc6} 
+\label{class_suggestion_model_a71e147fc8f25a5f6ff2f24ebc256acc6} 
 int {\bfseries m\+\_\+dumped\+Row}
 \begin{DoxyCompactList}\small\item\em La dernière ligne affichée dans le dump de debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-The \doxylink{class_suggestion_model}{Suggestion\+Model} class manages a list of \doxylink{struct_suggestion}{Suggestion}. 
+The \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} class manages a list of \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0}\label{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0} 
+\label{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0} 
 \index{SuggestionModel@{SuggestionModel}!SuggestionModel@{SuggestionModel}}
 \index{SuggestionModel@{SuggestionModel}!SuggestionModel@{SuggestionModel}}
-\doxysubsubsection{\texorpdfstring{SuggestionModel()}{SuggestionModel()}}
-{\footnotesize\ttfamily Suggestion\+Model\+::\+Suggestion\+Model (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+\doxysubsubsection{SuggestionModel()}
+{\footnotesize\ttfamily Suggestion\+Model\+::\+Suggestion\+Model (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -91,65 +91,65 @@ Contructor.
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997}\label{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997} 
+\label{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997} 
 \index{SuggestionModel@{SuggestionModel}!addCategoryToSuggestion@{addCategoryToSuggestion}}
 \index{addCategoryToSuggestion@{addCategoryToSuggestion}!SuggestionModel@{SuggestionModel}}
-\doxysubsubsection{\texorpdfstring{addCategoryToSuggestion()}{addCategoryToSuggestion()}}
+\doxysubsubsection{addCategoryToSuggestion()}
 {\footnotesize\ttfamily void Suggestion\+Model\+::add\+Category\+To\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{suggestion\+\_\+row,  }\item[{const QString}]{category }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Ajoute une catégorie à la \doxylink{struct_suggestion}{Suggestion}. 
+Ajoute une catégorie à la \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\
+{\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
-{\em category} & \+: La catégorie à ajouter à la \doxylink{struct_suggestion}{Suggestion}\+: "{}geo"{} ou "{}tag"{}.\\
+{\em category} & \+: La catégorie à ajouter à la \doxyref{Suggestion}{p.}{struct_suggestion}\+: "{}geo"{} ou "{}tag"{}.\\
 \hline
 \end{DoxyParams}
-Si on veut ajouter la catégorie déjà existante \+: on ne fait rien. Si on veut ajouter une autre catégorie \+: la catégorie devient "{}geo\texorpdfstring{$\vert$}{|}tag"{} (les deux). \Hypertarget{class_suggestion_model_a0de02decfdbfe787caf63895eca58cb6}\label{class_suggestion_model_a0de02decfdbfe787caf63895eca58cb6} 
+Si on veut ajouter la catégorie déjà existante \+: on ne fait rien. Si on veut ajouter une autre catégorie \+: la catégorie devient "{}geo$\vert$tag"{} (les deux). \label{class_suggestion_model_a0de02decfdbfe787caf63895eca58cb6} 
 \index{SuggestionModel@{SuggestionModel}!addPhotoToSuggestion@{addPhotoToSuggestion}}
 \index{addPhotoToSuggestion@{addPhotoToSuggestion}!SuggestionModel@{SuggestionModel}}
-\doxysubsubsection{\texorpdfstring{addPhotoToSuggestion()}{addPhotoToSuggestion()}}
+\doxysubsubsection{addPhotoToSuggestion()}
 {\footnotesize\ttfamily void Suggestion\+Model\+::add\+Photo\+To\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{suggestion\+\_\+row,  }\item[{int}]{photo\+\_\+row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Ajoute une \doxylink{struct_photo}{Photo} à la liste des photos ayant un "{}match"{} avec cette \doxylink{struct_suggestion}{Suggestion}. 
+Ajoute une \doxyref{Photo}{p.}{struct_photo} à la liste des photos ayant un "{}match"{} avec cette \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\
+{\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
-{\em photo\+\_\+row} & \+: L\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} à ajouter à la \doxylink{struct_suggestion}{Suggestion}. La valeur spéciale -\/1 signifie \textquotesingle{}toutes les photos\textquotesingle{}. La valeur spéciale -\/2 signifie \textquotesingle{}la \doxylink{struct_photo}{Photo} sélectionée\textquotesingle{}. \\
+{\em photo\+\_\+row} & \+: L\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} à ajouter à la \doxyref{Suggestion}{p.}{struct_suggestion}. La valeur spéciale -\/1 signifie \textquotesingle{}toutes les photos\textquotesingle{}. La valeur spéciale -\/2 signifie \textquotesingle{}la \doxyref{Photo}{p.}{struct_photo} sélectionée\textquotesingle{}. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f}\label{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f} 
+\label{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f} 
 \index{SuggestionModel@{SuggestionModel}!append@{append}}
 \index{append@{append}!SuggestionModel@{SuggestionModel}}
-\doxysubsubsection{\texorpdfstring{append}{append}}
+\doxysubsubsection{append}
 {\footnotesize\ttfamily void Suggestion\+Model\+::append (\begin{DoxyParamCaption}\item[{const QString}]{text,  }\item[{const QString}]{target,  }\item[{const QString}]{category,  }\item[{int}]{photo\+\_\+row = {\ttfamily -\/2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxylink{struct_suggestion}{Suggestion}. 
+Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em text} & The text of the \doxylink{struct_suggestion}{Suggestion}. \\
+{\em text} & The text of the \doxyref{Suggestion}{p.}{struct_suggestion}. \\
 \hline
-{\em target} & The name of the Exif tag compatible with this \doxylink{struct_suggestion}{Suggestion}. \\
+{\em target} & The name of the Exif tag compatible with this \doxyref{Suggestion}{p.}{struct_suggestion}. \\
 \hline
-{\em category} & The category of the \doxylink{struct_suggestion}{Suggestion} ("{}geo"{}, "{}tag"{}, "{}geo\texorpdfstring{$\vert$}{|}tag"{}) \\
+{\em category} & The category of the \doxyref{Suggestion}{p.}{struct_suggestion} ("{}geo"{}, "{}tag"{}, "{}geo$\vert$tag"{}) \\
 \hline
-{\em photo\+\_\+row} & L\textquotesingle{}indice de la \doxylink{struct_photo}{Photo} à associée à cette \doxylink{struct_suggestion}{Suggestion}. La valeur spéciale -\/1 signifie \textquotesingle{}toutes les photos\textquotesingle{}. La valeur spéciale -\/2 signifie \textquotesingle{}la \doxylink{struct_photo}{Photo} sélectionée\textquotesingle{} (valeur par défaut). \\
+{\em photo\+\_\+row} & L\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} à associée à cette \doxyref{Suggestion}{p.}{struct_suggestion}. La valeur spéciale -\/1 signifie \textquotesingle{}toutes les photos\textquotesingle{}. La valeur spéciale -\/2 signifie \textquotesingle{}la \doxyref{Photo}{p.}{struct_photo} sélectionée\textquotesingle{} (valeur par défaut). \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c}\label{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c} 
+\label{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c} 
 \index{SuggestionModel@{SuggestionModel}!data@{data}}
 \index{data@{data}!SuggestionModel@{SuggestionModel}}
-\doxysubsubsection{\texorpdfstring{data()}{data()}}
+\doxysubsubsection{data()}
 {\footnotesize\ttfamily QVariant Suggestion\+Model\+::data (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
 
@@ -166,10 +166,10 @@ Returns the requested role value of an element of the model.
 {\em role} & the requested role (enum). \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198}\label{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198} 
+\label{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198} 
 \index{SuggestionModel@{SuggestionModel}!onSelectedPhotoChanged@{onSelectedPhotoChanged}}
 \index{onSelectedPhotoChanged@{onSelectedPhotoChanged}!SuggestionModel@{SuggestionModel}}
-\doxysubsubsection{\texorpdfstring{onSelectedPhotoChanged}{onSelectedPhotoChanged}}
+\doxysubsubsection{onSelectedPhotoChanged}
 {\footnotesize\ttfamily void Suggestion\+Model\+::on\+Selected\+Photo\+Changed (\begin{DoxyParamCaption}\item[{const int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
@@ -178,28 +178,28 @@ Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionn
 
 
 \begin{DoxyParams}{Parameters}
-{\em row} & La position dans \doxylink{class_photo_model}{Photo\+Model} de la photo active. \\
+{\em row} & La position dans \doxyref{Photo\+Model}{p.}{class_photo_model} de la photo active. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f}\label{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f} 
+\label{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f} 
 \index{SuggestionModel@{SuggestionModel}!removeCurrentPhotoFromSuggestion@{removeCurrentPhotoFromSuggestion}}
 \index{removeCurrentPhotoFromSuggestion@{removeCurrentPhotoFromSuggestion}!SuggestionModel@{SuggestionModel}}
-\doxysubsubsection{\texorpdfstring{removeCurrentPhotoFromSuggestion()}{removeCurrentPhotoFromSuggestion()}}
+\doxysubsubsection{removeCurrentPhotoFromSuggestion()}
 {\footnotesize\ttfamily void Suggestion\+Model\+::remove\+Current\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const QModel\+Index}]{index }\end{DoxyParamCaption})}
 
 
 
-Ce slot enlève la \doxylink{struct_photo}{Photo} courante de la liste des photos correspondant à une \doxylink{struct_suggestion}{Suggestion} donnée. 
+Ce slot enlève la \doxyref{Photo}{p.}{struct_photo} courante de la liste des photos correspondant à une \doxyref{Suggestion}{p.}{struct_suggestion} donnée. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em index} & \+: L\textquotesingle{}index dans le Model de la suggestion à modifier. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd}\label{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd} 
+\label{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd} 
 \index{SuggestionModel@{SuggestionModel}!roleNames@{roleNames}}
 \index{roleNames@{roleNames}!SuggestionModel@{SuggestionModel}}
-\doxysubsubsection{\texorpdfstring{roleNames()}{roleNames()}}
+\doxysubsubsection{roleNames()}
 {\footnotesize\ttfamily QHash$<$ int, QByte\+Array $>$ Suggestion\+Model\+::role\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
 
@@ -209,10 +209,10 @@ Table of Role names.
 \begin{DoxyNote}{Note}
 Implémentation obligatoire.
 \end{DoxyNote}
-C\textquotesingle{}est la correspondance entre le role C++ et le nom de la property dans QML. \Hypertarget{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea}\label{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea} 
+C\textquotesingle{}est la correspondance entre le role C++ et le nom de la property dans QML. \label{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea} 
 \index{SuggestionModel@{SuggestionModel}!rowCount@{rowCount}}
 \index{rowCount@{rowCount}!SuggestionModel@{SuggestionModel}}
-\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+\doxysubsubsection{rowCount()}
 {\footnotesize\ttfamily int Suggestion\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
 

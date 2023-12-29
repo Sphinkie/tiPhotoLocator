@@ -1,5 +1,5 @@
 \doxysection{utilities.\+h}
-\hypertarget{utilities_8h_source}{}\label{utilities_8h_source}\index{cpp/utilities.h@{cpp/utilities.h}}
+\label{utilities_8h_source}\index{cpp/utilities.h@{cpp/utilities.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UTILITIES\_H}}
@@ -9,29 +9,29 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVariant>}}
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_utilities}{Utilities}}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }Utilities}
 \DoxyCodeLine{00012\ \{}
 \DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_utilities}{Utilities}}();}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}{toExifDate}}(\textcolor{keyword}{const}\ QVariant\ value);}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_utilities_ae08d27f825de4f51f5523f6f014cf597}{toReadableDateTime}}(\textcolor{keyword}{const}\ QVariant\ value);}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_utilities_a11c06c3910d1553d791258b060d436d8}{toStandardDateTime}}(\textcolor{keyword}{const}\ QVariant\ value);}
+\DoxyCodeLine{00015\ \ \ \ \ Utilities();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ QString\ toExifDate(\textcolor{keyword}{const}\ QVariant\ value);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ QString\ toReadableDateTime(\textcolor{keyword}{const}\ QVariant\ value);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ QString\ toStandardDateTime(\textcolor{keyword}{const}\ QVariant\ value);}
 \DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_utilities_a40979a50f9670f01945d07c9e80e9a33}{fixYear}}(QString\ sYear,\ \textcolor{keywordtype}{int}\ defaultYear);}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_utilities_a1c31753eeb57b373d7a73c097e6766ee}{fixDigits}}(QString\ sMonth,\ \textcolor{keywordtype}{int}\ defaultValue,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ QString\ fixYear(QString\ sYear,\ \textcolor{keywordtype}{int}\ defaultYear);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ QString\ fixDigits(QString\ sMonth,\ \textcolor{keywordtype}{int}\ defaultValue,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max);}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_utilities_afdd3b18e7db7c7b7d397fd7b3c7201ab}{normalise}}(QString\ texte);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ QString\ normalise(QString\ texte);}
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QString\ diacriticLetters\ =\ QString::fromUtf8(\textcolor{stringliteral}{"{}ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ"{}});}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QStringList\ normalizedLetters\ =\ \{\textcolor{stringliteral}{"{}S"{}},\ \textcolor{stringliteral}{"{}OE"{}},\ \textcolor{stringliteral}{"{}Z"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}oe"{}},\textcolor{stringliteral}{"{}z"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}AE"{}},\textcolor{stringliteral}{"{}C"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}D"{}},\textcolor{stringliteral}{"{}N"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}ae"{}},\textcolor{stringliteral}{"{}c"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}u"{}},}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}y"{}},\textcolor{stringliteral}{"{}y"{}}\};}
-\DoxyCodeLine{00032\ \};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UTILITIES\_H}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QString\ diacriticLetters\ =\ QString::fromUtf8(\textcolor{stringliteral}{"{}ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ"{}});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QStringList\ normalizedLetters\ =\ \{\textcolor{stringliteral}{"{}S"{}},\ \textcolor{stringliteral}{"{}OE"{}},\ \textcolor{stringliteral}{"{}Z"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}oe"{}},\textcolor{stringliteral}{"{}z"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}AE"{}},\textcolor{stringliteral}{"{}C"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}D"{}},\textcolor{stringliteral}{"{}N"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}ae"{}},\textcolor{stringliteral}{"{}c"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}u"{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}y"{}},\textcolor{stringliteral}{"{}y"{}}\};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UTILITIES\_H}}
 
 \end{DoxyCode}

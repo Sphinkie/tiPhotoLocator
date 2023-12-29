@@ -1,8 +1,8 @@
 \doxysection{Suggestion Struct Reference}
-\hypertarget{struct_suggestion}{}\label{struct_suggestion}\index{Suggestion@{Suggestion}}
+\label{struct_suggestion}\index{Suggestion@{Suggestion}}
 
 
-A data structure containing a tag suggestion, for one or several \doxylink{struct_photo}{Photo}.  
+A data structure containing a tag suggestion, for one or several \doxyref{Photo}{p.}{struct_photo}.  
 
 
 
@@ -12,40 +12,40 @@ A data structure containing a tag suggestion, for one or several \doxylink{struc
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{struct_suggestion_af2eddc6a6b273397e3455724a25c88ef}\label{struct_suggestion_af2eddc6a6b273397e3455724a25c88ef} 
+\label{struct_suggestion_af2eddc6a6b273397e3455724a25c88ef} 
 {\bfseries Suggestion} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\Hypertarget{struct_suggestion_a7b7b80cdbe8f3980639fe23fae9960b6}\label{struct_suggestion_a7b7b80cdbe8f3980639fe23fae9960b6} 
+\label{struct_suggestion_a7b7b80cdbe8f3980639fe23fae9960b6} 
 {\bfseries Suggestion} (const QString \&suggestion\+\_\+text, const QString \&suggestion\+\_\+target, const QString suggestion\+\_\+category, const int first\+\_\+photo)
 \begin{DoxyCompactList}\small\item\em Constructeur avec valeurs. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{struct_suggestion_a063449adc119af01b2ca07be053223f6}{operator==}} (const \mbox{\hyperlink{struct_suggestion}{Suggestion}} \&suggestion) const
+bool \textbf{ operator==} (const \textbf{ Suggestion} \&suggestion) const
 \begin{DoxyCompactList}\small\item\em Operateur de comparaison. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{struct_suggestion_aecac3e72672ace070a7c01823b4beac1}\label{struct_suggestion_aecac3e72672ace070a7c01823b4beac1} 
+\label{struct_suggestion_aecac3e72672ace070a7c01823b4beac1} 
 QString {\bfseries text}
 \begin{DoxyCompactList}\small\item\em Le contenu textuel de la suggestion. Example\+: "{}\+COSTA RICA"{}. \end{DoxyCompactList}\item 
-\Hypertarget{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e}\label{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e} 
+\label{struct_suggestion_ac3b42e1b81fb69adfb3ad0334b80fe1e} 
 QString {\bfseries target}
 \begin{DoxyCompactList}\small\item\em Le nom de la metadata compatible avec ce texte. Example\+: "{}\+Country"{}. \end{DoxyCompactList}\item 
-\Hypertarget{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f}\label{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f} 
+\label{struct_suggestion_abdfdd0ed210feac3b5cd826c40d7643f} 
 QString {\bfseries category}
 \begin{DoxyCompactList}\small\item\em Permet aux zones d\textquotesingle{}afficher ou non la suggestion. Example\+: "{}geo"{}, "{}tag"{}... \end{DoxyCompactList}\item 
-\Hypertarget{struct_suggestion_af319b358957378992fcbcd14022e2125}\label{struct_suggestion_af319b358957378992fcbcd14022e2125} 
+\label{struct_suggestion_af319b358957378992fcbcd14022e2125} 
 QSet$<$ int $>$ {\bfseries photos}
-\begin{DoxyCompactList}\small\item\em List of \doxylink{struct_photo}{Photo} matching this suggestion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em List of \doxyref{Photo}{p.}{struct_photo} matching this suggestion. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A data structure containing a tag suggestion, for one or several \doxylink{struct_photo}{Photo}. 
+A data structure containing a tag suggestion, for one or several \doxyref{Photo}{p.}{struct_photo}. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{struct_suggestion_a063449adc119af01b2ca07be053223f6}\label{struct_suggestion_a063449adc119af01b2ca07be053223f6} 
+\label{struct_suggestion_a063449adc119af01b2ca07be053223f6} 
 \index{Suggestion@{Suggestion}!operator==@{operator==}}
 \index{operator==@{operator==}!Suggestion@{Suggestion}}
-\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
-{\footnotesize\ttfamily bool Suggestion\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_suggestion}{Suggestion}} \&}]{suggestion }\end{DoxyParamCaption}) const}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily bool Suggestion\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Suggestion} \&}]{suggestion }\end{DoxyParamCaption}) const}
 
 
 

@@ -1,2 +1,3 @@
-"C:\Program Files\doxygen\bin\doxygen" ..\Sources\Doxyfile
+cd ..\Sources\
+"C:\Program Files\doxygen\bin\doxygen" Doxyfile
 pause

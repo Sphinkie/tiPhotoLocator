@@ -1,5 +1,5 @@
 \doxysection{Unlocalized\+Proxy\+Model.\+h}
-\hypertarget{_unlocalized_proxy_model_8h_source}{}\label{_unlocalized_proxy_model_8h_source}\index{Models/UnlocalizedProxyModel.h@{Models/UnlocalizedProxyModel.h}}
+\label{_unlocalized_proxy_model_8h_source}\index{Models/UnlocalizedProxyModel.h@{Models/UnlocalizedProxyModel.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UNLOCALIZEDPROXYMODEL\_H}}
@@ -13,25 +13,25 @@
 \DoxyCodeLine{00014\ \textcolor{comment}{/*\ ************************************************************************\ */}}
 \DoxyCodeLine{00015\ }
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_unlocalized_proxy_model}{UnlocalizedProxyModel}}\ :\ \textcolor{keyword}{public}\ QSortFilterProxyModel}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }UnlocalizedProxyModel\ :\ \textcolor{keyword}{public}\ QSortFilterProxyModel}
 \DoxyCodeLine{00018\ \{}
 \DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
 \DoxyCodeLine{00020\ }
-\DoxyCodeLine{00022\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unlocalized_proxy_model_a523656010d6711d9b1186dc75f7745eb}{filterEnabled}}\ READ\ \mbox{\hyperlink{class_unlocalized_proxy_model_a523656010d6711d9b1186dc75f7745eb}{filterEnabled}}\ WRITE\ \mbox{\hyperlink{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7}{setFilterEnabled}}\ NOTIFY\ \mbox{\hyperlink{class_unlocalized_proxy_model_adafd6e77a8a751a6b38936b59ce0619a}{filterEnabledChanged}})}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ filterEnabled\ READ\ filterEnabled\ WRITE\ setFilterEnabled\ NOTIFY\ filterEnabledChanged)}
 \DoxyCodeLine{00023\ }
 \DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_unlocalized_proxy_model}{UnlocalizedProxyModel}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unlocalized_proxy_model_a523656010d6711d9b1186dc75f7745eb}{filterEnabled}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ UnlocalizedProxyModel(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ filterEnabled()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ pouvant\ être\ appelées\ depuis\ QML}}
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00030\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc}{getSourceIndex}}(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00030\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{int}\ getSourceIndex(\textcolor{keywordtype}{int}\ row);}
 \DoxyCodeLine{00031\ }
 \DoxyCodeLine{00032\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7}{setFilterEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ setFilterEnabled(\textcolor{keywordtype}{bool}\ enabled);}
 \DoxyCodeLine{00034\ }
 \DoxyCodeLine{00035\ signals:}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_unlocalized_proxy_model_adafd6e77a8a751a6b38936b59ce0619a}{filterEnabledChanged}}();\ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ filterEnabledChanged();\ \ }
 \DoxyCodeLine{00037\ }
 \DoxyCodeLine{00038\ \};}
 \DoxyCodeLine{00039\ }

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['target_0',['target',['../struct_suggestion.html#ac3b42e1b81fb69adfb3ad0334b80fe1e',1,'Suggestion']]],
-  ['text_1',['text',['../struct_suggestion.html#aecac3e72672ace070a7c01823b4beac1',1,'Suggestion']]],
-  ['tobesaved_2',['toBeSaved',['../struct_photo.html#a66c836579b45614de3f51edba11ea2fe',1,'Photo']]]
+  ['shutterspeed_0',['shutterSpeed',['../struct_photo.html#aeaeadb764ea3e33efa012abc317676db',1,'Photo']]],
+  ['software_1',['software',['../struct_photo.html#a1e092e500b8cc02272e39b823f094180',1,'Photo']]]
 ];

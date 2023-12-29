@@ -1,8 +1,8 @@
 \doxysection{Suggestion\+Proxy\+Model Class Reference}
-\hypertarget{class_suggestion_proxy_model}{}\label{class_suggestion_proxy_model}\index{SuggestionProxyModel@{SuggestionProxyModel}}
+\label{class_suggestion_proxy_model}\index{SuggestionProxyModel@{SuggestionProxyModel}}
 
 
-The \doxylink{class_suggestion_proxy_model}{Suggestion\+Proxy\+Model} class is a filter Proxy\+Model, that filters the \doxylink{struct_suggestion}{Suggestion} related to a given \doxylink{struct_photo}{Photo}.  
+The \doxyref{Suggestion\+Proxy\+Model}{p.}{class_suggestion_proxy_model} class is a filter Proxy\+Model, that filters the \doxyref{Suggestion}{p.}{struct_suggestion} related to a given \doxyref{Photo}{p.}{struct_photo}.  
 
 
 
@@ -18,58 +18,58 @@ Inheritance diagram for Suggestion\+Proxy\+Model\+:\begin{figure}[H]
 \doxysubsubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424b19c}{set\+Filter\+Enabled}} (bool enabled)
+void \textbf{ set\+Filter\+Enabled} (bool enabled)
 \begin{DoxyCompactList}\small\item\em Active ou désactive le filtrage par le Proxy\+Model. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_suggestion_proxy_model_add1caa599574ee457caa9f63251e5252}{set\+Filter\+Value}} (const int photo\+Row)
+void \textbf{ set\+Filter\+Value} (const int photo\+Row)
 \begin{DoxyCompactList}\small\item\em Mémorise le filtre à appliquer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10}{remove\+Photo\+From\+Suggestion}} (const int proxy\+Row)
+void \textbf{ remove\+Photo\+From\+Suggestion} (const int proxy\+Row)
 \begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_suggestion_proxy_model_ad0b9f7027dfc10c28e67fcf1edbeb66b}{remove\+Photo\+From\+Suggestion}} (const QModel\+Index proxy\+Index)
+void \textbf{ remove\+Photo\+From\+Suggestion} (const QModel\+Index proxy\+Index)
 \begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_suggestion_proxy_model_a1b4ad3a4a83b4c7c959394a68871d349}\label{class_suggestion_proxy_model_a1b4ad3a4a83b4c7c959394a68871d349} 
+\label{class_suggestion_proxy_model_a1b4ad3a4a83b4c7c959394a68871d349} 
 void {\bfseries filter\+Enabled\+Changed} ()
 \begin{DoxyCompactList}\small\item\em Signal émis quand l\textquotesingle{}état du filtrage change. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_suggestion_proxy_model_af3e1807aac2879bcb22d656c4aead90b}{Suggestion\+Proxy\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\textbf{ Suggestion\+Proxy\+Model} (QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Contructeur. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_suggestion_proxy_model_a6047e86b0fba57062818fb856496a775}{filter\+Enabled}} () const
+bool \textbf{ filter\+Enabled} () const
 \begin{DoxyCompactList}\small\item\em Returns the state of the filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_suggestion_proxy_model_a189be5918036c550fd0093d566e716ae}{filter\+Accepts\+Row}} (int source\+Row, const QModel\+Index \&source\+Parent) const override
-\begin{DoxyCompactList}\small\item\em Laisse passer les lignes correspondant au filtrage, cad\+: les \doxylink{struct_suggestion}{Suggestion} liées à la photo demandée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \textbf{ filter\+Accepts\+Row} (int source\+Row, const QModel\+Index \&source\+Parent) const override
+\begin{DoxyCompactList}\small\item\em Laisse passer les lignes correspondant au filtrage, cad\+: les \doxyref{Suggestion}{p.}{struct_suggestion} liées à la photo demandée. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_suggestion_proxy_model_a886804bbb675e92fd9bc8d4f549375eb}\label{class_suggestion_proxy_model_a886804bbb675e92fd9bc8d4f549375eb} 
+\label{class_suggestion_proxy_model_a886804bbb675e92fd9bc8d4f549375eb} 
 bool {\bfseries filter\+Enabled}
 \begin{DoxyCompactList}\small\item\em filter\+Enabled manages the status of the filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_suggestion_proxy_model_ad1295d961a6634c58ff34981bc1b6df1}\label{class_suggestion_proxy_model_ad1295d961a6634c58ff34981bc1b6df1} 
+\label{class_suggestion_proxy_model_ad1295d961a6634c58ff34981bc1b6df1} 
 bool {\bfseries m\+\_\+filter\+Enabled}
 \begin{DoxyCompactList}\small\item\em True su le filtrage st actif. \end{DoxyCompactList}\item 
-\Hypertarget{class_suggestion_proxy_model_a549876b1f6cec3fb6a37d6fd28439450}\label{class_suggestion_proxy_model_a549876b1f6cec3fb6a37d6fd28439450} 
+\label{class_suggestion_proxy_model_a549876b1f6cec3fb6a37d6fd28439450} 
 int {\bfseries m\+\_\+filter\+Photo\+Row}
-\begin{DoxyCompactList}\small\item\em Le numero de la \doxylink{struct_photo}{Photo} sur lequel doit se faire le filtrage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Le numero de la \doxyref{Photo}{p.}{struct_photo} sur lequel doit se faire le filtrage. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-The \doxylink{class_suggestion_proxy_model}{Suggestion\+Proxy\+Model} class is a filter Proxy\+Model, that filters the \doxylink{struct_suggestion}{Suggestion} related to a given \doxylink{struct_photo}{Photo}. 
+The \doxyref{Suggestion\+Proxy\+Model}{p.}{class_suggestion_proxy_model} class is a filter Proxy\+Model, that filters the \doxyref{Suggestion}{p.}{struct_suggestion} related to a given \doxyref{Photo}{p.}{struct_photo}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_suggestion_proxy_model_af3e1807aac2879bcb22d656c4aead90b}\label{class_suggestion_proxy_model_af3e1807aac2879bcb22d656c4aead90b} 
+\label{class_suggestion_proxy_model_af3e1807aac2879bcb22d656c4aead90b} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!SuggestionProxyModel@{SuggestionProxyModel}}
 \index{SuggestionProxyModel@{SuggestionProxyModel}!SuggestionProxyModel@{SuggestionProxyModel}}
-\doxysubsubsection{\texorpdfstring{SuggestionProxyModel()}{SuggestionProxyModel()}}
-{\footnotesize\ttfamily Suggestion\+Proxy\+Model\+::\+Suggestion\+Proxy\+Model (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+\doxysubsubsection{SuggestionProxyModel()}
+{\footnotesize\ttfamily Suggestion\+Proxy\+Model\+::\+Suggestion\+Proxy\+Model (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -83,30 +83,30 @@ Contructeur.
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_suggestion_proxy_model_a189be5918036c550fd0093d566e716ae}\label{class_suggestion_proxy_model_a189be5918036c550fd0093d566e716ae} 
+\label{class_suggestion_proxy_model_a189be5918036c550fd0093d566e716ae} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!filterAcceptsRow@{filterAcceptsRow}}
 \index{filterAcceptsRow@{filterAcceptsRow}!SuggestionProxyModel@{SuggestionProxyModel}}
-\doxysubsubsection{\texorpdfstring{filterAcceptsRow()}{filterAcceptsRow()}}
+\doxysubsubsection{filterAcceptsRow()}
 {\footnotesize\ttfamily bool Suggestion\+Proxy\+Model\+::filter\+Accepts\+Row (\begin{DoxyParamCaption}\item[{int}]{source\+Row,  }\item[{const QModel\+Index \&}]{source\+Parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
 
 
-Laisse passer les lignes correspondant au filtrage, cad\+: les \doxylink{struct_suggestion}{Suggestion} liées à la photo demandée. 
+Laisse passer les lignes correspondant au filtrage, cad\+: les \doxyref{Suggestion}{p.}{struct_suggestion} liées à la photo demandée. 
 
 \begin{DoxyReturn}{Returns}
 true si la ligne est acceptée. 
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-{\em source\+Row} & \+: Le numéro d\textquotesingle{}une ligne du modèle parent (\doxylink{class_suggestion_model}{Suggestion\+Model}). \\
+{\em source\+Row} & \+: Le numéro d\textquotesingle{}une ligne du modèle parent (\doxyref{Suggestion\+Model}{p.}{class_suggestion_model}). \\
 \hline
-{\em source\+Parent} & \+: Le modèle parent (\doxylink{class_suggestion_model}{Suggestion\+Model}). \\
+{\em source\+Parent} & \+: Le modèle parent (\doxyref{Suggestion\+Model}{p.}{class_suggestion_model}). \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_suggestion_proxy_model_a6047e86b0fba57062818fb856496a775}\label{class_suggestion_proxy_model_a6047e86b0fba57062818fb856496a775} 
+\label{class_suggestion_proxy_model_a6047e86b0fba57062818fb856496a775} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!filterEnabled@{filterEnabled}}
 \index{filterEnabled@{filterEnabled}!SuggestionProxyModel@{SuggestionProxyModel}}
-\doxysubsubsection{\texorpdfstring{filterEnabled()}{filterEnabled()}}
+\doxysubsubsection{filterEnabled()}
 {\footnotesize\ttfamily bool Suggestion\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
@@ -116,10 +116,10 @@ Returns the state of the filtering.
 \begin{DoxyReturn}{Returns}
 true if the filter is active. 
 \end{DoxyReturn}
-\Hypertarget{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10}\label{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10} 
+\label{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!removePhotoFromSuggestion@{removePhotoFromSuggestion}}
 \index{removePhotoFromSuggestion@{removePhotoFromSuggestion}!SuggestionProxyModel@{SuggestionProxyModel}}
-\doxysubsubsection{\texorpdfstring{removePhotoFromSuggestion}{removePhotoFromSuggestion}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{removePhotoFromSuggestion\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{proxy\+Row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
@@ -127,17 +127,17 @@ true if the filter is active.
 Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
 
 \begin{DoxyNote}{Note}
-On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxylink{class_suggestion_model}{Suggestion\+Model}. 
+On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxyref{Suggestion\+Model}{p.}{class_suggestion_model}. 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
-{\em proxy\+Row} & \+: Indice dans le Proxy\+Model de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\
+{\em proxy\+Row} & \+: Indice dans le Proxy\+Model de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_suggestion_proxy_model_ad0b9f7027dfc10c28e67fcf1edbeb66b}\label{class_suggestion_proxy_model_ad0b9f7027dfc10c28e67fcf1edbeb66b} 
+\label{class_suggestion_proxy_model_ad0b9f7027dfc10c28e67fcf1edbeb66b} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!removePhotoFromSuggestion@{removePhotoFromSuggestion}}
 \index{removePhotoFromSuggestion@{removePhotoFromSuggestion}!SuggestionProxyModel@{SuggestionProxyModel}}
-\doxysubsubsection{\texorpdfstring{removePhotoFromSuggestion}{removePhotoFromSuggestion}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{removePhotoFromSuggestion\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const QModel\+Index}]{proxy\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
@@ -145,17 +145,17 @@ On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}i
 Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
 
 \begin{DoxyNote}{Note}
-On convertit l\textquotesingle{}index du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxylink{class_suggestion_model}{Suggestion\+Model}. 
+On convertit l\textquotesingle{}index du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxyref{Suggestion\+Model}{p.}{class_suggestion_model}. 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
-{\em proxy\+Index} & \+: Index dans le Proxy\+Model de la \doxylink{struct_suggestion}{Suggestion} à modifier. \\
+{\em proxy\+Index} & \+: Index dans le Proxy\+Model de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424b19c}\label{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424b19c} 
+\label{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424b19c} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!setFilterEnabled@{setFilterEnabled}}
 \index{setFilterEnabled@{setFilterEnabled}!SuggestionProxyModel@{SuggestionProxyModel}}
-\doxysubsubsection{\texorpdfstring{setFilterEnabled}{setFilterEnabled}}
+\doxysubsubsection{setFilterEnabled}
 {\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
@@ -167,10 +167,10 @@ Active ou désactive le filtrage par le Proxy\+Model.
 {\em enabled} & \+: Mettre true pour activer le filtrage. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_suggestion_proxy_model_add1caa599574ee457caa9f63251e5252}\label{class_suggestion_proxy_model_add1caa599574ee457caa9f63251e5252} 
+\label{class_suggestion_proxy_model_add1caa599574ee457caa9f63251e5252} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!setFilterValue@{setFilterValue}}
 \index{setFilterValue@{setFilterValue}!SuggestionProxyModel@{SuggestionProxyModel}}
-\doxysubsubsection{\texorpdfstring{setFilterValue}{setFilterValue}}
+\doxysubsubsection{setFilterValue}
 {\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::set\+Filter\+Value (\begin{DoxyParamCaption}\item[{const int}]{photo\+Row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 

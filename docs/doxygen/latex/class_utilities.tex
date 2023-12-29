@@ -1,8 +1,8 @@
 \doxysection{Utilities Class Reference}
-\hypertarget{class_utilities}{}\label{class_utilities}\index{Utilities@{Utilities}}
+\label{class_utilities}\index{Utilities@{Utilities}}
 
 
-The \doxylink{class_utilities}{Utilities} class contains a set of usefull static functions.  
+The \doxyref{Utilities}{p.}{class_utilities} class contains a set of usefull static functions.  
 
 
 
@@ -12,36 +12,36 @@ The \doxylink{class_utilities}{Utilities} class contains a set of usefull static
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static QString \mbox{\hyperlink{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}{to\+Exif\+Date}} (const QVariant value)
+static QString \textbf{ to\+Exif\+Date} (const QVariant value)
 \begin{DoxyCompactList}\small\item\em Convertit une chaine du type "{}25/08/2017 08\+:03"{} au format "{}2017\+:08\+:25 08\+:03\+:00"{}. \end{DoxyCompactList}\item 
-static QString \mbox{\hyperlink{class_utilities_ae08d27f825de4f51f5523f6f014cf597}{to\+Readable\+Date\+Time}} (const QVariant value)
+static QString \textbf{ to\+Readable\+Date\+Time} (const QVariant value)
 \begin{DoxyCompactList}\small\item\em Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel "{}25/05/2017 08\+:03"{}. \end{DoxyCompactList}\item 
-static QString \mbox{\hyperlink{class_utilities_a11c06c3910d1553d791258b060d436d8}{to\+Standard\+Date\+Time}} (const QVariant value)
+static QString \textbf{ to\+Standard\+Date\+Time} (const QVariant value)
 \begin{DoxyCompactList}\small\item\em Convertit une date saisie manuellement en une date correctement formatée, compatible Exif. \end{DoxyCompactList}\item 
-static QString \mbox{\hyperlink{class_utilities_a40979a50f9670f01945d07c9e80e9a33}{fix\+Year}} (QString s\+Year, int default\+Year)
+static QString \textbf{ fix\+Year} (QString s\+Year, int default\+Year)
 \begin{DoxyCompactList}\small\item\em Reformate correctement l\textquotesingle{}année saisie par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
-static QString \mbox{\hyperlink{class_utilities_a1c31753eeb57b373d7a73c097e6766ee}{fix\+Digits}} (QString s\+Month, int default\+Value, int min, int max)
+static QString \textbf{ fix\+Digits} (QString s\+Month, int default\+Value, int min, int max)
 \begin{DoxyCompactList}\small\item\em Reformate correctement des digits saisis par l\textquotesingle{}utilisateur (jour, mois, heure, minutes). \end{DoxyCompactList}\item 
-static QString \mbox{\hyperlink{class_utilities_afdd3b18e7db7c7b7d397fd7b3c7201ab}{normalise}} (QString texte)
+static QString \textbf{ normalise} (QString texte)
 \begin{DoxyCompactList}\small\item\em Remplace les éventuelles lettres diacritiques d\textquotesingle{}un texte par leur équivalent normalisé. Par exemple, on remplace \textquotesingle{}à\textquotesingle{} par \textquotesingle{}a\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_utilities_a7e1e10ee30627aedf30eb97d8cf7d52a}\label{class_utilities_a7e1e10ee30627aedf30eb97d8cf7d52a} 
+\label{class_utilities_a7e1e10ee30627aedf30eb97d8cf7d52a} 
 static const QString {\bfseries diacritic\+Letters} = QString\+::from\+Utf8("{}ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ"{})
-\item 
-static const QString\+List \mbox{\hyperlink{class_utilities_ab3ca40153c4e52be4bb47cd5bf48e97b}{normalized\+Letters}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Liste des lettres diacritiques (accentuées) d\textquotesingle{}Europe. \end{DoxyCompactList}\item 
+static const QString\+List \textbf{ normalized\+Letters}
+\begin{DoxyCompactList}\small\item\em Liste des lettres normalisées équivalentes aux lettres diacritiques (dans le même ordre). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-The \doxylink{class_utilities}{Utilities} class contains a set of usefull static functions. 
+The \doxyref{Utilities}{p.}{class_utilities} class contains a set of usefull static functions. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_utilities_a1c31753eeb57b373d7a73c097e6766ee}\label{class_utilities_a1c31753eeb57b373d7a73c097e6766ee} 
+\label{class_utilities_a1c31753eeb57b373d7a73c097e6766ee} 
 \index{Utilities@{Utilities}!fixDigits@{fixDigits}}
 \index{fixDigits@{fixDigits}!Utilities@{Utilities}}
-\doxysubsubsection{\texorpdfstring{fixDigits()}{fixDigits()}}
+\doxysubsubsection{fixDigits()}
 {\footnotesize\ttfamily QString Utilities\+::fix\+Digits (\begin{DoxyParamCaption}\item[{QString}]{s\+Digits,  }\item[{int}]{default\+Value,  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -62,10 +62,10 @@ Reformate correctement des digits saisis par l\textquotesingle{}utilisateur (jou
 \begin{DoxyReturn}{Returns}
 les deux digits au format "{}\+XX"{}. 
 \end{DoxyReturn}
-\Hypertarget{class_utilities_a40979a50f9670f01945d07c9e80e9a33}\label{class_utilities_a40979a50f9670f01945d07c9e80e9a33} 
+\label{class_utilities_a40979a50f9670f01945d07c9e80e9a33} 
 \index{Utilities@{Utilities}!fixYear@{fixYear}}
 \index{fixYear@{fixYear}!Utilities@{Utilities}}
-\doxysubsubsection{\texorpdfstring{fixYear()}{fixYear()}}
+\doxysubsubsection{fixYear()}
 {\footnotesize\ttfamily QString Utilities\+::fix\+Year (\begin{DoxyParamCaption}\item[{QString}]{s\+Year,  }\item[{int}]{default\+Year }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -82,10 +82,10 @@ Reformate correctement l\textquotesingle{}année saisie par l\textquotesingle{}u
 \begin{DoxyReturn}{Returns}
 l\textquotesingle{}année au format "{}\+YYYY"{}
 \end{DoxyReturn}
-Si l\textquotesingle{}année reçue est sur 2 chiffres, on ajoute 2000. L\textquotesingle{}année minimale est 1800 (avant\+: pas de photos) L\textquotesingle{}année maximale est l\textquotesingle{}année courante (pas de photos du futur). \Hypertarget{class_utilities_afdd3b18e7db7c7b7d397fd7b3c7201ab}\label{class_utilities_afdd3b18e7db7c7b7d397fd7b3c7201ab} 
+Si l\textquotesingle{}année reçue est sur 2 chiffres, on ajoute 2000. L\textquotesingle{}année minimale est 1800 (avant\+: pas de photos) L\textquotesingle{}année maximale est l\textquotesingle{}année courante (pas de photos du futur). \label{class_utilities_afdd3b18e7db7c7b7d397fd7b3c7201ab} 
 \index{Utilities@{Utilities}!normalise@{normalise}}
 \index{normalise@{normalise}!Utilities@{Utilities}}
-\doxysubsubsection{\texorpdfstring{normalise()}{normalise()}}
+\doxysubsubsection{normalise()}
 {\footnotesize\ttfamily QString Utilities\+::normalise (\begin{DoxyParamCaption}\item[{QString}]{texte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -100,10 +100,10 @@ Remplace les éventuelles lettres diacritiques d\textquotesingle{}un texte par l
 \begin{DoxyReturn}{Returns}
 le texte normalisé. 
 \end{DoxyReturn}
-\Hypertarget{class_utilities_ad970fb1a077cf5d352faa2878ce410fc}\label{class_utilities_ad970fb1a077cf5d352faa2878ce410fc} 
+\label{class_utilities_ad970fb1a077cf5d352faa2878ce410fc} 
 \index{Utilities@{Utilities}!toExifDate@{toExifDate}}
 \index{toExifDate@{toExifDate}!Utilities@{Utilities}}
-\doxysubsubsection{\texorpdfstring{toExifDate()}{toExifDate()}}
+\doxysubsubsection{toExifDate()}
 {\footnotesize\ttfamily QString Utilities\+::to\+Exif\+Date (\begin{DoxyParamCaption}\item[{const QVariant}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -118,10 +118,10 @@ Convertit une chaine du type "{}25/08/2017 08\+:03"{} au format "{}2017\+:08\+:2
 \begin{DoxyReturn}{Returns}
 la date pouvant être écrite dans un tag Exif. 
 \end{DoxyReturn}
-\Hypertarget{class_utilities_ae08d27f825de4f51f5523f6f014cf597}\label{class_utilities_ae08d27f825de4f51f5523f6f014cf597} 
+\label{class_utilities_ae08d27f825de4f51f5523f6f014cf597} 
 \index{Utilities@{Utilities}!toReadableDateTime@{toReadableDateTime}}
 \index{toReadableDateTime@{toReadableDateTime}!Utilities@{Utilities}}
-\doxysubsubsection{\texorpdfstring{toReadableDateTime()}{toReadableDateTime()}}
+\doxysubsubsection{toReadableDateTime()}
 {\footnotesize\ttfamily QString Utilities\+::to\+Readable\+Date\+Time (\begin{DoxyParamCaption}\item[{const QVariant}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -136,10 +136,10 @@ Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel
 \begin{DoxyReturn}{Returns}
 la date pouvant être affichée dans un Chip. 
 \end{DoxyReturn}
-\Hypertarget{class_utilities_a11c06c3910d1553d791258b060d436d8}\label{class_utilities_a11c06c3910d1553d791258b060d436d8} 
+\label{class_utilities_a11c06c3910d1553d791258b060d436d8} 
 \index{Utilities@{Utilities}!toStandardDateTime@{toStandardDateTime}}
 \index{toStandardDateTime@{toStandardDateTime}!Utilities@{Utilities}}
-\doxysubsubsection{\texorpdfstring{toStandardDateTime()}{toStandardDateTime()}}
+\doxysubsubsection{toStandardDateTime()}
 {\footnotesize\ttfamily QString Utilities\+::to\+Standard\+Date\+Time (\begin{DoxyParamCaption}\item[{const QVariant}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -157,10 +157,10 @@ une string au format "{}9999\+:99\+:99 99\+:99\+:00"{}
 On est sûr de la présence des séparateurs / et \+: et ESP. Par contre, il peut y avoir 0 ou 1 ou 2 chiffres entre chaque. 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{class_utilities_ab3ca40153c4e52be4bb47cd5bf48e97b}\label{class_utilities_ab3ca40153c4e52be4bb47cd5bf48e97b} 
+\label{class_utilities_ab3ca40153c4e52be4bb47cd5bf48e97b} 
 \index{Utilities@{Utilities}!normalizedLetters@{normalizedLetters}}
 \index{normalizedLetters@{normalizedLetters}!Utilities@{Utilities}}
-\doxysubsubsection{\texorpdfstring{normalizedLetters}{normalizedLetters}}
+\doxysubsubsection{normalizedLetters}
 {\footnotesize\ttfamily const QString\+List Utilities\+::normalized\+Letters\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 {\bfseries Initial value\+:}
@@ -171,6 +171,10 @@ On est sûr de la présence des séparateurs / et \+: et ESP. Par contre, il peu
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}y"{}},\textcolor{stringliteral}{"{}y"{}}\}}
 
 \end{DoxyCode}
+
+
+Liste des lettres normalisées équivalentes aux lettres diacritiques (dans le même ordre). 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

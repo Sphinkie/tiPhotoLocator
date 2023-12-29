@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['photos_0',['photos',['../struct_suggestion.html#af319b358957378992fcbcd14022e2125',1,'Suggestion']]]
+  ['orientation_0',['orientation',['../struct_photo.html#a0f11a71d79268e835723f1db0f4acffa',1,'Photo']]]
 ];

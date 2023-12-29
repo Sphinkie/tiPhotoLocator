@@ -1,8 +1,8 @@
 # Ti PhotoLocator
 
-![Screenshot](docs/screenshot-2023-12-29.png)   
+![Screenshot](docs/images/screenshot-2023-12-29.png)   
 
-**TiPhotoLocator** is a free and add-free application that allows you to geotag your favorites photos, and add other contextual tags.
+**TiPhotoLocator** is a free and Ad-free application that allows you to geotag your favorites photos, and add other contextual tags.
 
 ## Presentation
 

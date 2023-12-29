@@ -1,8 +1,8 @@
 \doxysection{Geocode\+Wrapper Class Reference}
-\hypertarget{class_geocode_wrapper}{}\label{class_geocode_wrapper}\index{GeocodeWrapper@{GeocodeWrapper}}
+\label{class_geocode_wrapper}\index{GeocodeWrapper@{GeocodeWrapper}}
 
 
-The \doxylink{class_geocode_wrapper}{Geocode\+Wrapper} class allows requests to Open\+Street\+Map for reverse geocoding.  
+The \doxyref{Geocode\+Wrapper}{p.}{class_geocode_wrapper} class allows requests to Open\+Street\+Map for reverse geocoding.  
 
 
 
@@ -18,33 +18,33 @@ Inheritance diagram for Geocode\+Wrapper\+:\begin{figure}[H]
 \doxysubsubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b}{request\+Reverse\+Geocode}} (double latitude, double longitude)
-\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =\texorpdfstring{$>$}{>} \href{https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{\texttt{ Résultat}} La réponse est traitée par \doxylink{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4}{geo\+Code\+Finished()} \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23}{request\+Coordinates}} (QString city)
-\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par \doxylink{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4}{geo\+Code\+Finished()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \textbf{ request\+Reverse\+Geocode} (double latitude, double longitude)
+\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =$>$ {\texttt{ Résultat}} La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} \end{DoxyCompactList}\item 
+void \textbf{ request\+Coordinates} (QString city)
+\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453}{Geocode\+Wrapper}} (\mbox{\hyperlink{class_suggestion_model}{Suggestion\+Model}} \texorpdfstring{$\ast$}{*}suggestion\+\_\+model)
+\textbf{ Geocode\+Wrapper} (\textbf{ Suggestion\+Model} $\ast$suggestion\+\_\+model)
 \begin{DoxyCompactList}\small\item\em Le contructeur initialise le provider "{}\+OSM"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4}{geo\+Code\+Finished}} (QGeo\+Code\+Reply \texorpdfstring{$\ast$}{*}reply)
+void \textbf{ geo\+Code\+Finished} (QGeo\+Code\+Reply $\ast$reply)
 \begin{DoxyCompactList}\small\item\em Signal appelé lors de la réception de la réponse à la request. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_geocode_wrapper_adf339348abe1776e01f8345364dac1d1}\label{class_geocode_wrapper_adf339348abe1776e01f8345364dac1d1} 
-QGeo\+Coding\+Manager \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+geo\+Manager}
+\label{class_geocode_wrapper_adf339348abe1776e01f8345364dac1d1} 
+QGeo\+Coding\+Manager $\ast$ {\bfseries m\+\_\+geo\+Manager}
 \begin{DoxyCompactList}\small\item\em Geocoding Manager pour les requètes REST. \end{DoxyCompactList}\item 
-\Hypertarget{class_geocode_wrapper_a859c70420ef396ad48626c65dacd61f7}\label{class_geocode_wrapper_a859c70420ef396ad48626c65dacd61f7} 
-\mbox{\hyperlink{class_suggestion_model}{Suggestion\+Model}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+suggestion\+Model}
-\begin{DoxyCompactList}\small\item\em Le \doxylink{class_suggestion_model}{Suggestion\+Model} qui stockera les reponses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\label{class_geocode_wrapper_a859c70420ef396ad48626c65dacd61f7} 
+\textbf{ Suggestion\+Model} $\ast$ {\bfseries m\+\_\+suggestion\+Model}
+\begin{DoxyCompactList}\small\item\em Le \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} qui stockera les reponses. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-The \doxylink{class_geocode_wrapper}{Geocode\+Wrapper} class allows requests to Open\+Street\+Map for reverse geocoding. 
+The \doxyref{Geocode\+Wrapper}{p.}{class_geocode_wrapper} class allows requests to Open\+Street\+Map for reverse geocoding. 
 
 \begin{DoxyNote}{Note}
 Nécessite d\textquotesingle{}ajouter les lignes suivantes dans le fichier .pro. 
@@ -58,11 +58,11 @@ Nécessite d\textquotesingle{}ajouter les lignes suivantes dans le fichier .pro.
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453}\label{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453} 
+\label{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453} 
 \index{GeocodeWrapper@{GeocodeWrapper}!GeocodeWrapper@{GeocodeWrapper}}
 \index{GeocodeWrapper@{GeocodeWrapper}!GeocodeWrapper@{GeocodeWrapper}}
-\doxysubsubsection{\texorpdfstring{GeocodeWrapper()}{GeocodeWrapper()}}
-{\footnotesize\ttfamily Geocode\+Wrapper\+::\+Geocode\+Wrapper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_suggestion_model}{Suggestion\+Model}} \texorpdfstring{$\ast$}{*}}]{suggestion\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+\doxysubsubsection{GeocodeWrapper()}
+{\footnotesize\ttfamily Geocode\+Wrapper\+::\+Geocode\+Wrapper (\begin{DoxyParamCaption}\item[{\textbf{ Suggestion\+Model} $\ast$}]{suggestion\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -70,17 +70,17 @@ Le contructeur initialise le provider "{}\+OSM"{}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em suggestion\+\_\+model} & \+: permet de savoir quel objet \doxylink{class_suggestion_model}{Suggestion\+Model} appeler une fois les résultats reçus. \\
+{\em suggestion\+\_\+model} & \+: permet de savoir quel objet \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} appeler une fois les résultats reçus. \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4}\label{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
+\label{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 \index{GeocodeWrapper@{GeocodeWrapper}!geoCodeFinished@{geoCodeFinished}}
 \index{geoCodeFinished@{geoCodeFinished}!GeocodeWrapper@{GeocodeWrapper}}
-\doxysubsubsection{\texorpdfstring{geoCodeFinished}{geoCodeFinished}}
-{\footnotesize\ttfamily void Geocode\+Wrapper\+::geo\+Code\+Finished (\begin{DoxyParamCaption}\item[{QGeo\+Code\+Reply \texorpdfstring{$\ast$}{*}}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+\doxysubsubsection{geoCodeFinished}
+{\footnotesize\ttfamily void Geocode\+Wrapper\+::geo\+Code\+Finished (\begin{DoxyParamCaption}\item[{QGeo\+Code\+Reply $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
 
 
@@ -94,30 +94,30 @@ Signal appelé lors de la réception de la réponse à la request.
 \begin{DoxyNote}{Note}
 \+: Exemple\+: "{}\+Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"{}
 \end{DoxyNote}
-En cas de réponse à une demande de coordonnées\+: on les mémorise dans le QSettings "{}home\+Coords"{}. En cas de réponse à une demande de reverse Localisation, on passe les réponses au \doxylink{class_suggestion_model}{Suggestion\+Model}. \Hypertarget{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23}\label{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23} 
+En cas de réponse à une demande de coordonnées\+: on les mémorise dans le QSettings "{}home\+Coords"{}. En cas de réponse à une demande de reverse Localisation, on passe les réponses au \doxyref{Suggestion\+Model}{p.}{class_suggestion_model}. \label{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23} 
 \index{GeocodeWrapper@{GeocodeWrapper}!requestCoordinates@{requestCoordinates}}
 \index{requestCoordinates@{requestCoordinates}!GeocodeWrapper@{GeocodeWrapper}}
-\doxysubsubsection{\texorpdfstring{requestCoordinates}{requestCoordinates}}
+\doxysubsubsection{requestCoordinates}
 {\footnotesize\ttfamily void Geocode\+Wrapper\+::request\+Coordinates (\begin{DoxyParamCaption}\item[{QString}]{city }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par \doxylink{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4}{geo\+Code\+Finished()} 
+Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 
 
 \begin{DoxyParams}{Parameters}
-{\em city} & \+: un nom de lieu, par exemple "{}\+Marsa el Brega"{} =\texorpdfstring{$>$}{>} 30.\+4074, 19.\+5784 \\
+{\em city} & \+: un nom de lieu, par exemple "{}\+Marsa el Brega"{} =$>$ 30.\+4074, 19.\+5784 \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b}\label{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b} 
+\label{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b} 
 \index{GeocodeWrapper@{GeocodeWrapper}!requestReverseGeocode@{requestReverseGeocode}}
 \index{requestReverseGeocode@{requestReverseGeocode}!GeocodeWrapper@{GeocodeWrapper}}
-\doxysubsubsection{\texorpdfstring{requestReverseGeocode}{requestReverseGeocode}}
+\doxysubsubsection{requestReverseGeocode}
 {\footnotesize\ttfamily void Geocode\+Wrapper\+::request\+Reverse\+Geocode (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =\texorpdfstring{$>$}{>} \href{https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway}{\texttt{ Résultat}} La réponse est traitée par \doxylink{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4}{geo\+Code\+Finished()} 
+Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =$>$ {\texttt{ Résultat}} La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 
 
 \begin{DoxyParams}{Parameters}

@@ -1,8 +1,8 @@
 \doxysection{On\+The\+Map\+Proxy\+Model Class Reference}
-\hypertarget{class_on_the_map_proxy_model}{}\label{class_on_the_map_proxy_model}\index{OnTheMapProxyModel@{OnTheMapProxyModel}}
+\label{class_on_the_map_proxy_model}\index{OnTheMapProxyModel@{OnTheMapProxyModel}}
 
 
-The \doxylink{class_on_the_map_proxy_model}{On\+The\+Map\+Proxy\+Model} class is a filter Proxy\+Model, to keep only the selected photo(s).  
+The \doxyref{On\+The\+Map\+Proxy\+Model}{p.}{class_on_the_map_proxy_model} class is a filter Proxy\+Model, to keep only the selected photo(s).  
 
 
 
@@ -18,47 +18,47 @@ Inheritance diagram for On\+The\+Map\+Proxy\+Model\+:\begin{figure}[H]
 \doxysubsubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_on_the_map_proxy_model_ad5397db53587218f59299d48696f1b99}{set\+Filter\+Enabled}} (bool enabled)
+void \textbf{ set\+Filter\+Enabled} (bool enabled)
 \begin{DoxyCompactList}\small\item\em Ce slot active ou désactive le filtrage par le Proxy\+Model. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_on_the_map_proxy_model_a8578bb0c25636337ba57681da049e4f1}{set\+All\+Items\+Coords}} (const double latitude, const double longitude)
+void \textbf{ set\+All\+Items\+Coords} (const double latitude, const double longitude)
 \begin{DoxyCompactList}\small\item\em Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position). \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141}{set\+All\+Items\+Saved\+Coords}} ()
+void \textbf{ set\+All\+Items\+Saved\+Coords} ()
 \begin{DoxyCompactList}\small\item\em Ce slot applique les coordonnées GPS de la Saved\+Position à toutes les photos du modèle filtré. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_on_the_map_proxy_model_aa7c81a7a958b6a60d0e39b1d166f6829}\label{class_on_the_map_proxy_model_aa7c81a7a958b6a60d0e39b1d166f6829} 
+\label{class_on_the_map_proxy_model_aa7c81a7a958b6a60d0e39b1d166f6829} 
 void {\bfseries filter\+Enabled\+Changed} ()
 \begin{DoxyCompactList}\small\item\em Signal émis quand l\textquotesingle{}état du filtrage change. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_on_the_map_proxy_model_afb8170a7f9e508bfdc6238e649e957cf}\label{class_on_the_map_proxy_model_afb8170a7f9e508bfdc6238e649e957cf} 
-{\bfseries On\+The\+Map\+Proxy\+Model} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\label{class_on_the_map_proxy_model_afb8170a7f9e508bfdc6238e649e957cf} 
+{\bfseries On\+The\+Map\+Proxy\+Model} (QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Contructeur. Par défaut, le filtre est actif. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_on_the_map_proxy_model_aea978750450595380acfab7c3d60ef12}{filter\+Enabled}} () const
+bool \textbf{ filter\+Enabled} () const
 \begin{DoxyCompactList}\small\item\em Indique si le filtre est actif ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_on_the_map_proxy_model_ab1ac8a3c5b8f53a6cee9dbc0fbb38073}{filter\+Accepts\+Row}} (int source\+Row, const QModel\+Index \&source\+Parent) const override
+bool \textbf{ filter\+Accepts\+Row} (int source\+Row, const QModel\+Index \&source\+Parent) const override
 \begin{DoxyCompactList}\small\item\em Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad \+: photos "{}selectionnée"{} et le marqueur "{}\+Saved Position"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_on_the_map_proxy_model_ab41c6f6de0761832ee25c3262d57743c}\label{class_on_the_map_proxy_model_ab41c6f6de0761832ee25c3262d57743c} 
+\label{class_on_the_map_proxy_model_ab41c6f6de0761832ee25c3262d57743c} 
 bool {\bfseries filter\+Enabled}
 \begin{DoxyCompactList}\small\item\em filter\+Enabled manages the status of the filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_on_the_map_proxy_model_af83d556dce60b764e65082d856e2fc0f}\label{class_on_the_map_proxy_model_af83d556dce60b764e65082d856e2fc0f} 
+\label{class_on_the_map_proxy_model_af83d556dce60b764e65082d856e2fc0f} 
 bool {\bfseries m\+\_\+filter\+Enabled}
 \begin{DoxyCompactList}\small\item\em Indicates if the filter is ON or OFF. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-The \doxylink{class_on_the_map_proxy_model}{On\+The\+Map\+Proxy\+Model} class is a filter Proxy\+Model, to keep only the selected photo(s). 
+The \doxyref{On\+The\+Map\+Proxy\+Model}{p.}{class_on_the_map_proxy_model} class is a filter Proxy\+Model, to keep only the selected photo(s). 
 
 \textbackslash{}inmodule Ti\+Photo\+Locator \begin{DoxyNote}{Note}
 Dans ce Proxy\+Model on doit ré-\/implementer les méthodes append(), get(), clear(), etc. 
@@ -66,10 +66,10 @@ Dans ce Proxy\+Model on doit ré-\/implementer les méthodes append(), get(), cl
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_on_the_map_proxy_model_ab1ac8a3c5b8f53a6cee9dbc0fbb38073}\label{class_on_the_map_proxy_model_ab1ac8a3c5b8f53a6cee9dbc0fbb38073} 
+\label{class_on_the_map_proxy_model_ab1ac8a3c5b8f53a6cee9dbc0fbb38073} 
 \index{OnTheMapProxyModel@{OnTheMapProxyModel}!filterAcceptsRow@{filterAcceptsRow}}
 \index{filterAcceptsRow@{filterAcceptsRow}!OnTheMapProxyModel@{OnTheMapProxyModel}}
-\doxysubsubsection{\texorpdfstring{filterAcceptsRow()}{filterAcceptsRow()}}
+\doxysubsubsection{filterAcceptsRow()}
 {\footnotesize\ttfamily bool On\+The\+Map\+Proxy\+Model\+::filter\+Accepts\+Row (\begin{DoxyParamCaption}\item[{int}]{source\+Row,  }\item[{const QModel\+Index \&}]{source\+Parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
 
@@ -78,18 +78,18 @@ Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad \+
 
 
 \begin{DoxyParams}{Parameters}
-{\em source\+Row} & \+: Le numero d\textquotesingle{}une ligne du modèle parent (\doxylink{class_photo_model}{Photo\+Model}). \\
+{\em source\+Row} & \+: Le numero d\textquotesingle{}une ligne du modèle parent (\doxyref{Photo\+Model}{p.}{class_photo_model}). \\
 \hline
-{\em source\+Parent} & \+: Le modèle parent (\doxylink{class_photo_model}{Photo\+Model}). \\
+{\em source\+Parent} & \+: Le modèle parent (\doxyref{Photo\+Model}{p.}{class_photo_model}). \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true si la ligne est acceptée. 
 \end{DoxyReturn}
-\Hypertarget{class_on_the_map_proxy_model_aea978750450595380acfab7c3d60ef12}\label{class_on_the_map_proxy_model_aea978750450595380acfab7c3d60ef12} 
+\label{class_on_the_map_proxy_model_aea978750450595380acfab7c3d60ef12} 
 \index{OnTheMapProxyModel@{OnTheMapProxyModel}!filterEnabled@{filterEnabled}}
 \index{filterEnabled@{filterEnabled}!OnTheMapProxyModel@{OnTheMapProxyModel}}
-\doxysubsubsection{\texorpdfstring{filterEnabled()}{filterEnabled()}}
+\doxysubsubsection{filterEnabled()}
 {\footnotesize\ttfamily bool On\+The\+Map\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
@@ -99,10 +99,10 @@ Indique si le filtre est actif ou non.
 \begin{DoxyReturn}{Returns}
 true si le filtre est actif. 
 \end{DoxyReturn}
-\Hypertarget{class_on_the_map_proxy_model_a8578bb0c25636337ba57681da049e4f1}\label{class_on_the_map_proxy_model_a8578bb0c25636337ba57681da049e4f1} 
+\label{class_on_the_map_proxy_model_a8578bb0c25636337ba57681da049e4f1} 
 \index{OnTheMapProxyModel@{OnTheMapProxyModel}!setAllItemsCoords@{setAllItemsCoords}}
 \index{setAllItemsCoords@{setAllItemsCoords}!OnTheMapProxyModel@{OnTheMapProxyModel}}
-\doxysubsubsection{\texorpdfstring{setAllItemsCoords}{setAllItemsCoords}}
+\doxysubsubsection{setAllItemsCoords}
 {\footnotesize\ttfamily void On\+The\+Map\+Proxy\+Model\+::set\+All\+Items\+Coords (\begin{DoxyParamCaption}\item[{const double}]{latitude,  }\item[{const double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
@@ -116,20 +116,20 @@ Details\+: Ce slot est appelé quand l\textquotesingle{}utilisateur change la po
 {\em longitude} & \+: longitude au format GPS. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141}\label{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141} 
+\label{class_on_the_map_proxy_model_aebd8850a9093bc4166d6aed75d638141} 
 \index{OnTheMapProxyModel@{OnTheMapProxyModel}!setAllItemsSavedCoords@{setAllItemsSavedCoords}}
 \index{setAllItemsSavedCoords@{setAllItemsSavedCoords}!OnTheMapProxyModel@{OnTheMapProxyModel}}
-\doxysubsubsection{\texorpdfstring{setAllItemsSavedCoords}{setAllItemsSavedCoords}}
+\doxysubsubsection{setAllItemsSavedCoords}
 {\footnotesize\ttfamily void On\+The\+Map\+Proxy\+Model\+::set\+All\+Items\+Saved\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
 Ce slot applique les coordonnées GPS de la Saved\+Position à toutes les photos du modèle filtré. 
 
-Ce slot est appelé quand l\textquotesingle{}utilisateur appuye sur "{}\+Apply Saved Position"{}. \Hypertarget{class_on_the_map_proxy_model_ad5397db53587218f59299d48696f1b99}\label{class_on_the_map_proxy_model_ad5397db53587218f59299d48696f1b99} 
+Ce slot est appelé quand l\textquotesingle{}utilisateur appuye sur "{}\+Apply Saved Position"{}. \label{class_on_the_map_proxy_model_ad5397db53587218f59299d48696f1b99} 
 \index{OnTheMapProxyModel@{OnTheMapProxyModel}!setFilterEnabled@{setFilterEnabled}}
 \index{setFilterEnabled@{setFilterEnabled}!OnTheMapProxyModel@{OnTheMapProxyModel}}
-\doxysubsubsection{\texorpdfstring{setFilterEnabled}{setFilterEnabled}}
+\doxysubsubsection{setFilterEnabled}
 {\footnotesize\ttfamily void On\+The\+Map\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 

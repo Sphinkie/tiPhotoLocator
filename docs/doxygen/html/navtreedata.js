@@ -35,13 +35,28 @@ var NAVTREE =
     [ "Compilation", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html", [
       [ "Installation of the developpement environnement", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html#autotoc_md12", null ],
       [ "Documentation", "md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2compilation.html#autotoc_md13", null ]
+    ] ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Properties", "functions_prop.html", null ]
+      ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"_camera_set_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

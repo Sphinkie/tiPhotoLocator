@@ -1,8 +1,8 @@
 \doxysection{Exif\+Read\+Task Class Reference}
-\hypertarget{class_exif_read_task}{}\label{class_exif_read_task}\index{ExifReadTask@{ExifReadTask}}
+\label{class_exif_read_task}\index{ExifReadTask@{ExifReadTask}}
 
 
-La tache asynchrone \doxylink{class_exif_read_task}{Exif\+Read\+Task} permet de lire les metadonnées d\textquotesingle{}une photo JPG sur le disque dur.  
+La tache asynchrone \doxyref{Exif\+Read\+Task}{p.}{class_exif_read_task} permet de lire les metadonnées d\textquotesingle{}une photo JPG sur le disque dur.  
 
 
 
@@ -18,55 +18,55 @@ Inheritance diagram for Exif\+Read\+Task\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db}{Exif\+Read\+Task}} (QString file\+Path)
+\textbf{ Exif\+Read\+Task} (QString file\+Path)
 \begin{DoxyCompactList}\small\item\em Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. \end{DoxyCompactList}\item 
-\Hypertarget{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8}\label{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8} 
+\label{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8} 
 virtual void {\bfseries run} ()
-\begin{DoxyCompactList}\small\item\em \+: Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultat dans \doxylink{class_photo_model}{Photo\+Model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \+: Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultat dans \doxyref{Photo\+Model}{p.}{class_photo_model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4}{init}} (\mbox{\hyperlink{class_photo_model}{Photo\+Model}} \texorpdfstring{$\ast$}{*}photo\+Model)
+static void \textbf{ init} (\textbf{ Photo\+Model} $\ast$photo\+Model)
 \begin{DoxyCompactList}\small\item\em Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_exif_read_task_a425555d73b1bc4ba915e2a9f9a0884c6}{process\+Line}} (QByte\+Array line)
+void \textbf{ process\+Line} (QByte\+Array line)
 \begin{DoxyCompactList}\small\item\em Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelée répétitivement. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static bool \mbox{\hyperlink{class_exif_read_task_a209baeebef9ede8dafc98844324bbaa9}{write\+Args\+File}} ()
+static bool \textbf{ write\+Args\+File} ()
 \begin{DoxyCompactList}\small\item\em List the tags to be read in the JPG files, and put them in the Arguments file for {\itshape Exif\+Tool}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_exif_read_task_adee848da5859f1e0a5ef3ea8b5fd155d}\label{class_exif_read_task_adee848da5859f1e0a5ef3ea8b5fd155d} 
+\label{class_exif_read_task_adee848da5859f1e0a5ef3ea8b5fd155d} 
 QString {\bfseries m\+\_\+file\+Path}
 \begin{DoxyCompactList}\small\item\em Nom du fichier contenant les arguments de Exif\+Tool. \end{DoxyCompactList}\item 
-\Hypertarget{class_exif_read_task_ab4eef780350cedaf18f03690daf6c8d2}\label{class_exif_read_task_ab4eef780350cedaf18f03690daf6c8d2} 
+\label{class_exif_read_task_ab4eef780350cedaf18f03690daf6c8d2} 
 QByte\+Array {\bfseries m\+\_\+rx\+Line}
 \begin{DoxyCompactList}\small\item\em Données Exif\+Tool en cours de réception. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_exif_read_task_aab7c30ee91f00ce2cde757814472285c}\label{class_exif_read_task_aab7c30ee91f00ce2cde757814472285c} 
+\label{class_exif_read_task_aab7c30ee91f00ce2cde757814472285c} 
 static QString {\bfseries m\+\_\+arg\+File}
 \begin{DoxyCompactList}\small\item\em A renseigner lors du premier appel. \end{DoxyCompactList}\item 
-\Hypertarget{class_exif_read_task_aa742802b2db821ed9a737a2300ae09ef}\label{class_exif_read_task_aa742802b2db821ed9a737a2300ae09ef} 
-static \mbox{\hyperlink{class_photo_model}{Photo\+Model}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+photo\+Model}
+\label{class_exif_read_task_aa742802b2db821ed9a737a2300ae09ef} 
+static \textbf{ Photo\+Model} $\ast$ {\bfseries m\+\_\+photo\+Model}
 \begin{DoxyCompactList}\small\item\em Modèle contenant les photos et leurs tags. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-La tache asynchrone \doxylink{class_exif_read_task}{Exif\+Read\+Task} permet de lire les metadonnées d\textquotesingle{}une photo JPG sur le disque dur. 
+La tache asynchrone \doxyref{Exif\+Read\+Task}{p.}{class_exif_read_task} permet de lire les metadonnées d\textquotesingle{}une photo JPG sur le disque dur. 
 
 \textbackslash{}inmodule Ti\+Photo\+Locator 
 
 Tache asynchrone par utilisation de QThread\+Pool.
 
 \begin{DoxyNote}{Note}
-les QRunnable n\textquotesingle{}héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l\textquotesingle{}aide de signaux. Donc, à la fin du traitement, pour actualiser les données du \doxylink{class_photo_model}{Photo\+Model}, il faut faire un appel direct à une méthode du modèle. Cependant, cela n\textquotesingle{}est pas contraire aux recommandations\+: mettre à jour des données peut se faire par appel synchrone.
+les QRunnable n\textquotesingle{}héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l\textquotesingle{}aide de signaux. Donc, à la fin du traitement, pour actualiser les données du \doxyref{Photo\+Model}{p.}{class_photo_model}, il faut faire un appel direct à une méthode du modèle. Cependant, cela n\textquotesingle{}est pas contraire aux recommandations\+: mettre à jour des données peut se faire par appel synchrone.
 \end{DoxyNote}
 Description of {\bfseries{JSON}} options for {\ttfamily Exif\+Tool}.
 
@@ -95,10 +95,10 @@ Description of {\bfseries{JSON}} options for {\ttfamily Exif\+Tool}.
  
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db}\label{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db} 
+\label{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db} 
 \index{ExifReadTask@{ExifReadTask}!ExifReadTask@{ExifReadTask}}
 \index{ExifReadTask@{ExifReadTask}!ExifReadTask@{ExifReadTask}}
-\doxysubsubsection{\texorpdfstring{ExifReadTask()}{ExifReadTask()}}
+\doxysubsubsection{ExifReadTask()}
 {\footnotesize\ttfamily Exif\+Read\+Task\+::\+Exif\+Read\+Task (\begin{DoxyParamCaption}\item[{QString}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
@@ -116,11 +116,11 @@ Si on passe un nom de chemin, le process va traiter toutes les images du dossier
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4}\label{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4} 
+\label{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4} 
 \index{ExifReadTask@{ExifReadTask}!init@{init}}
 \index{init@{init}!ExifReadTask@{ExifReadTask}}
-\doxysubsubsection{\texorpdfstring{init()}{init()}}
-{\footnotesize\ttfamily void Exif\+Read\+Task\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_photo_model}{Photo\+Model}} \texorpdfstring{$\ast$}{*}}]{photo\+Model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{init()}
+{\footnotesize\ttfamily void Exif\+Read\+Task\+::init (\begin{DoxyParamCaption}\item[{\textbf{ Photo\+Model} $\ast$}]{photo\+Model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -131,10 +131,10 @@ Méthode à appeler lors de la première utilisation. Mémorise quelques infos s
 {\em photo\+Model} & \+: la classe appelante, à qui il faudra renvoyer les metadata lues. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_exif_read_task_a425555d73b1bc4ba915e2a9f9a0884c6}\label{class_exif_read_task_a425555d73b1bc4ba915e2a9f9a0884c6} 
+\label{class_exif_read_task_a425555d73b1bc4ba915e2a9f9a0884c6} 
 \index{ExifReadTask@{ExifReadTask}!processLine@{processLine}}
 \index{processLine@{processLine}!ExifReadTask@{ExifReadTask}}
-\doxysubsubsection{\texorpdfstring{processLine()}{processLine()}}
+\doxysubsubsection{processLine()}
 {\footnotesize\ttfamily void Exif\+Read\+Task\+::process\+Line (\begin{DoxyParamCaption}\item[{QByte\+Array}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -166,10 +166,10 @@ Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelé
  \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_exif_read_task_a209baeebef9ede8dafc98844324bbaa9}\label{class_exif_read_task_a209baeebef9ede8dafc98844324bbaa9} 
+\label{class_exif_read_task_a209baeebef9ede8dafc98844324bbaa9} 
 \index{ExifReadTask@{ExifReadTask}!writeArgsFile@{writeArgsFile}}
 \index{writeArgsFile@{writeArgsFile}!ExifReadTask@{ExifReadTask}}
-\doxysubsubsection{\texorpdfstring{writeArgsFile()}{writeArgsFile()}}
+\doxysubsubsection{writeArgsFile()}
 {\footnotesize\ttfamily bool Exif\+Read\+Task\+::write\+Args\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
@@ -181,10 +181,10 @@ true if the file was successfully created.
 \end{DoxyReturn}
 To learn about the usage of IPTC tags\+: \begin{DoxyItemize}
 \item \begin{DoxySeeAlso}{See also}
-\href{https://iptc.org/std/photometadata/documentation/mappingguidelines}{\texttt{ https\+://iptc.\+org/std/photometadata/documentation/mappingguidelines}} 
+{\texttt{ https\+://iptc.\+org/std/photometadata/documentation/mappingguidelines}} 
 \end{DoxySeeAlso}
 \item \begin{DoxySeeAlso}{See also}
-\href{https://www.carlseibert.com/guide-iptc-photo-metadata-fields}{\texttt{ https\+://www.\+carlseibert.\+com/guide-\/iptc-\/photo-\/metadata-\/fields}} 
+{\texttt{ https\+://www.\+carlseibert.\+com/guide-\/iptc-\/photo-\/metadata-\/fields}} 
 \end{DoxySeeAlso}
 \end{DoxyItemize}
 

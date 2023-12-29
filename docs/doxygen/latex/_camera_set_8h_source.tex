@@ -1,5 +1,5 @@
 \doxysection{Camera\+Set.\+h}
-\hypertarget{_camera_set_8h_source}{}\label{_camera_set_8h_source}\index{Models/CameraSet.h@{Models/CameraSet.h}}
+\label{_camera_set_8h_source}\index{Models/CameraSet.h@{Models/CameraSet.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CAMERASET\_H}}
@@ -14,30 +14,30 @@
 \DoxyCodeLine{00015\ \textcolor{comment}{/*\ **********************************************************************************************************\ */}}
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_camera_set}{CameraSet}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }CameraSet\ :\ \textcolor{keyword}{public}\ QObject}
 \DoxyCodeLine{00019\ \{}
 \DoxyCodeLine{00020\ Q\_OBJECT}
 \DoxyCodeLine{00021\ }
 \DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_camera_set}{CameraSet}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{explicit}\ CameraSet(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_set_a89e8ab28a0d3873016954386591b3aca}{append}}(\textcolor{keyword}{const}\ QString\ cam\_model);}
-\DoxyCodeLine{00026\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_camera_set_a2ca6f095743d702ae18cb6c9afb5cb22}{contains}}(\textcolor{keyword}{const}\ QString\ cam\_model);}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ append(\textcolor{keyword}{const}\ QString\ cam\_model);}
+\DoxyCodeLine{00026\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{bool}\ contains(\textcolor{keyword}{const}\ QString\ cam\_model);}
 \DoxyCodeLine{00027\ }
 \DoxyCodeLine{00028\ \textcolor{keyword}{public}\ slots:}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_set_ae521eda047c7409a02da364ba8d60db1}{onFinished}}(QNetworkReply*\ reply);}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_set_a77e050b451359a66ab6d161477597b44}{onError}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ onFinished(QNetworkReply*\ reply);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ onError();}
 \DoxyCodeLine{00032\ }
 \DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_set_aad47572ed65bafd4d146a513d641a80e}{insert}}(\textcolor{keyword}{const}\ QString\ cam\_model);}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_set_a69c54b2309d3d34b2c58305a939327bd}{requestThumb}}(\textcolor{keyword}{const}\ QString\ cam\_model);}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_set_adfa00deb84c361446cafb946443c1997}{requestMeteo}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ insert(\textcolor{keyword}{const}\ QString\ cam\_model);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ requestThumb(\textcolor{keyword}{const}\ QString\ cam\_model);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ requestMeteo();}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ QSet<QString>\ \mbox{\hyperlink{class_camera_set_aaae5cd5c7f4c1db3d1c7b11bb0786f34}{m\_cameras}}\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00040\ \ \ \ \ QNetworkAccessManager*\ \mbox{\hyperlink{class_camera_set_a9bcc216de40d580d73b9511d983bf628}{m\_networkMgr}};\ \ \ \ }
-\DoxyCodeLine{00041\ \ \ \ \ QString\ \mbox{\hyperlink{class_camera_set_a4dbd8817b6336dde9a92ecc822f1f354}{m\_deepaiKey}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ QSet<QString>\ m\_cameras\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ QNetworkAccessManager*\ m\_networkMgr;\ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ QString\ m\_deepaiKey;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00042\ \};}
 \DoxyCodeLine{00043\ }
 \DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CAMERASET\_H}}

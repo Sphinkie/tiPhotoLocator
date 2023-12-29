@@ -1,5 +1,5 @@
 \doxysection{Exif\+Write\+Task.\+h}
-\hypertarget{_exif_write_task_8h_source}{}\label{_exif_write_task_8h_source}\index{cpp/ExifWriteTask.h@{cpp/ExifWriteTask.h}}
+\label{_exif_write_task_8h_source}\index{cpp/ExifWriteTask.h@{cpp/ExifWriteTask.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EXIFWRITETASK\_H}}
@@ -8,18 +8,18 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QRunnable>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVariant>}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_exif_write_task}{ExifWriteTask}}\ :\ \textcolor{keyword}{public}\ QRunnable}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }ExifWriteTask\ :\ \textcolor{keyword}{public}\ QRunnable}
 \DoxyCodeLine{00008\ \{}
 \DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_exif_write_task}{ExifWriteTask}}(\textcolor{keyword}{const}\ QVariantMap\ exifData,\ \textcolor{keywordtype}{bool}\ generateBackup=\textcolor{keyword}{false});}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df}{run}}();}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{explicit}\ ExifWriteTask(\textcolor{keyword}{const}\ QVariantMap\ exifData,\ \textcolor{keywordtype}{bool}\ generateBackup=\textcolor{keyword}{false});}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ run();}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Membres}}
 \DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00017\ \ \ \ \ QVariantMap\ \mbox{\hyperlink{class_exif_write_task_a30f450a4be6abe483b77c9445689725e}{m\_exifData}};\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_exif_write_task_a09a5dc832fd4d41b1ee9fbb9f55623f7}{m\_generateBackup}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ QVariantMap\ m\_exifData;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_generateBackup;\ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00019\ }
 \DoxyCodeLine{00020\ \};}
 \DoxyCodeLine{00021\ }
