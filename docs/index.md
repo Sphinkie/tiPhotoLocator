@@ -12,6 +12,8 @@
 
 ![Screenshot](images/TPL-carte.png)
 
+Supported languages: French.
+
 ## Features
 
 With TiPhotoLocator, you can:
@@ -24,7 +26,7 @@ With TiPhotoLocator, you can:
 
 ## Installation
 
-Get the latest release of the software by clicking [here: "latest release"](https://github.com/Sphinkie/tiPhotoLocator/releases/latest).
+Get the latest release of the software by clicking [here: "latest release"](https://github.com/Sphinkie/tiPhotoLocator/releases/latest/download/TiPhotoLocatorSetup.zip)
 
 Download the **TiPhotoLocatorSetup.zip** file, and unzip it in a folder on your computer.
 Then, just run the **TiPhotoLocatorSetup.exe** to install the program.
