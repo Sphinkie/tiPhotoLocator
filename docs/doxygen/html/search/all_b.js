@@ -1,5 +1,25 @@
 var searchData=
 [
-  ['normalise_0',['normalise',['../class_utilities.html#afdd3b18e7db7c7b7d397fd7b3c7201ab',1,'Utilities']]],
-  ['normalizedletters_1',['normalizedLetters',['../class_utilities.html#ab3ca40153c4e52be4bb47cd5bf48e97b',1,'Utilities']]]
+  ['m_5fargfile_0',['m_argFile',['../class_exif_read_task.html#aab7c30ee91f00ce2cde757814472285c',1,'ExifReadTask']]],
+  ['m_5fcameras_1',['m_cameras',['../class_camera_set.html#aaae5cd5c7f4c1db3d1c7b11bb0786f34',1,'CameraSet']]],
+  ['m_5fdeepaikey_2',['m_deepaiKey',['../class_camera_set.html#a4dbd8817b6336dde9a92ecc822f1f354',1,'CameraSet']]],
+  ['m_5fdumpedrow_3',['m_dumpedrow',['../class_photo_model.html#a844160211f6ff9d747dcc59310d2fc22',1,'PhotoModel::m_dumpedRow'],['../class_suggestion_model.html#a71e147fc8f25a5f6ff2f24ebc256acc6',1,'SuggestionModel::m_dumpedRow']]],
+  ['m_5fexifdata_4',['m_exifData',['../class_exif_write_task.html#a30f450a4be6abe483b77c9445689725e',1,'ExifWriteTask']]],
+  ['m_5ffilepath_5',['m_filePath',['../class_exif_read_task.html#adee848da5859f1e0a5ef3ea8b5fd155d',1,'ExifReadTask']]],
+  ['m_5ffilter_6',['m_filter',['../class_suggestion_category_proxy_model.html#a15cde010b373ec1cfe3475a6b01dc05a',1,'SuggestionCategoryProxyModel']]],
+  ['m_5ffilterenabled_7',['m_filterenabled',['../class_on_the_map_proxy_model.html#af83d556dce60b764e65082d856e2fc0f',1,'OnTheMapProxyModel::m_filterEnabled'],['../class_suggestion_proxy_model.html#ad1295d961a6634c58ff34981bc1b6df1',1,'SuggestionProxyModel::m_filterEnabled']]],
+  ['m_5ffilterphotorow_8',['m_filterPhotoRow',['../class_suggestion_proxy_model.html#a549876b1f6cec3fb6a37d6fd28439450',1,'SuggestionProxyModel']]],
+  ['m_5fgeneratebackup_9',['m_generateBackup',['../class_exif_write_task.html#a09a5dc832fd4d41b1ee9fbb9f55623f7',1,'ExifWriteTask']]],
+  ['m_5fgeomanager_10',['m_geoManager',['../class_geocode_wrapper.html#adf339348abe1776e01f8345364dac1d1',1,'GeocodeWrapper']]],
+  ['m_5flastselectedrow_11',['m_lastSelectedRow',['../class_photo_model.html#a08f7d839ea11f7c0190afa716ac5bb7a',1,'PhotoModel']]],
+  ['m_5fmarkerindex_12',['m_markerIndex',['../class_photo_model.html#af32aed3a0a39738d782a1d69a14175f2',1,'PhotoModel']]],
+  ['m_5fmarkerrow_13',['m_markerRow',['../class_photo_model.html#a6ff090266c5c666181a02469943d9512',1,'PhotoModel']]],
+  ['m_5fnetworkmgr_14',['m_networkMgr',['../class_camera_set.html#a9bcc216de40d580d73b9511d983bf628',1,'CameraSet']]],
+  ['m_5fphotomodel_15',['m_photoModel',['../class_exif_read_task.html#aa742802b2db821ed9a737a2300ae09ef',1,'ExifReadTask']]],
+  ['m_5fphotos_16',['m_photos',['../class_photo_model.html#a6652f17b0436c7927b0924ddcd3ba98b',1,'PhotoModel']]],
+  ['m_5frxline_17',['m_rxLine',['../class_exif_read_task.html#ab4eef780350cedaf18f03690daf6c8d2',1,'ExifReadTask']]],
+  ['m_5fselectedphotorow_18',['m_selectedPhotoRow',['../class_suggestion_model.html#aa7612d5b8d5e5c63f265b25693d95524',1,'SuggestionModel']]],
+  ['m_5fsuggestionmodel_19',['m_suggestionModel',['../class_geocode_wrapper.html#a859c70420ef396ad48626c65dacd61f7',1,'GeocodeWrapper']]],
+  ['m_5fsuggestions_20',['m_suggestions',['../class_suggestion_model.html#ae89572184f274b27c827e5f419a0df8f',1,'SuggestionModel']]],
+  ['make_21',['make',['../struct_photo.html#a3f6620eb0f021aec853b0390d66c4898',1,'Photo']]]
 ];

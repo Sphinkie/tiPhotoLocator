@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['photolocator_0',['Ti PhotoLocator',['../index.html',1,'']]]
+  ['locator_0',['Ti Photo Locator',['../index.html',1,'']]]
 ];
