@@ -8,6 +8,9 @@
 
 ## Presentation
 
+**TiPhotoLocator** proposes several pages to manage the photos: a *preview page* of the picture and the main matadata, a *map page* for geographical metadata and a *tag page* for other EXIF and IPTC tags management.
+
+![Screenshot](images/TPL-carte.png)
 
 ## Features
 

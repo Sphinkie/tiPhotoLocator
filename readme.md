@@ -25,9 +25,13 @@ The application is developped with the [Qt framework](https://qt.io) and uses th
 
 Explanation concerning the compiler configuration are on [this page](docs/compilation.md)
 
-## Cousin projects
+## Inspiration
 
-An application to geotag your photos with a `.gpx` file : [GPicSync](https://github.com/notfrancois/GPicSync)
+Other projets on the same theme:
+
+An other application to geotag your photos: [GeoSetter](https://geosetter.de) by Friedemann Schmidt
+
+An application to geotag your photos with a `.gpx` file: [GPicSync](https://github.com/notfrancois/GPicSync)
 
 A photo gallery developed with Qt, exiv2 and OpenCV: [Tidy Images](https://github.com/Simon-12/tidy-images) by Simon-12.
 
