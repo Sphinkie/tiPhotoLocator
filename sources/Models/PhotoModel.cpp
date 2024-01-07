@@ -902,6 +902,15 @@ void PhotoModel::updatePhotoKeyword(QString keyword, int index)
 
 
 /* ********************************************************************************************************** */
+Qt::ItemFlags PhotoModel::flags(const QModelIndex &index) const
+{
+    if (!index.isValid())
+        return Qt::NoItemFlags;
+
+    return (Qt::ItemIsEditable | Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+}
+
+/* ********************************************************************************************************** */
 /*!
  * \brief Surcharge de l'opérateur ==.
  * \param file_name: Le texte à comparer
@@ -926,3 +935,4 @@ bool Photo::operator == (const Photo &photo)
         return true;
     return false;
 }
+

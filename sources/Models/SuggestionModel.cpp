@@ -82,6 +82,15 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 }
 
 
+/* ********************************************************************************************************** */
+Qt::ItemFlags SuggestionModel::flags(const QModelIndex &index) const
+{
+    if (!index.isValid())
+        return Qt::NoItemFlags;
+
+    return (Qt::ItemIsEditable | Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+}
+
 /* ********************************************************************************** */
 /*!
  * \brief Adds a suggestion to the model.

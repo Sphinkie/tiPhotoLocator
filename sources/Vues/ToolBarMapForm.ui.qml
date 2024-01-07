@@ -23,9 +23,7 @@ Item {
         ToolTip.text: qsTr("Mémorise la position de la photo courante")
         ToolTip.visible: hovered
         ToolTip.delay: 500
-        anchors.left: parent.left
-        anchors.leftMargin: 30
-        anchors.verticalCenter: parent.verticalCenter
+        anchors {left: parent.left; leftMargin: 30; verticalCenter: parent.verticalCenter}
     }
 
     TiButton {
@@ -33,9 +31,7 @@ Item {
         enabled: false
         text: qsTr("Clear Saved Position")
         icon.source: "qrc:/Images/bt-clear.png"
-        anchors.left: bt_save_pos.right
-        anchors.leftMargin: 20
-        anchors.verticalCenter: parent.verticalCenter
+        anchors {left: bt_save_pos.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
         // TODO Attention au cas ou on a vidé le modele (reload): il faut masquer ce bouton
     }
 
@@ -47,19 +43,20 @@ Item {
         ToolTip.text: qsTr("Applique la position mémorisée à la photo courante")
         ToolTip.visible: hovered
         ToolTip.delay: 500
-        anchors.left: bt_remove_savedpos.right
-        anchors.leftMargin: 20
-        anchors.verticalCenter: parent.verticalCenter
+        anchors {left: bt_remove_savedpos.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
     }
 
     Slider {
         id: slider_radius
         enabled: false
         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-        to: 2000 // unité = 1 mètre
-        anchors.left: bt_apply_savedpos.right
-        anchors.leftMargin: 20
-        anchors.verticalCenter: parent.verticalCenter
+        to: 3000 // unité = 1 mètre
+        onMoved: slider_label.text = Math.round(slider_radius.value/10)/100 + " km"
+        anchors { left: bt_apply_savedpos.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
+    }
+    Label{
+        id: slider_label
+        anchors {left: slider_radius.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
     }
 
     TiButton {
@@ -67,9 +64,7 @@ Item {
         enabled: false
         text: qsTr("Rétablir")
         icon.source: "qrc:/Images/bt-revert.png"
-        anchors.left: slider_radius.right
-        anchors.leftMargin: 20
-        anchors.verticalCenter: parent.verticalCenter        
+        anchors {left: slider_label.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
         ToolTip.text: qsTr("Recharge les coordonnées initiales de l'image")
         ToolTip.visible: hovered
         ToolTip.delay: 500
@@ -80,9 +75,7 @@ Item {
         enabled: false
         text: qsTr("Clear GPS Coords")
         icon.source: "qrc:/Images/bt-suppr.png"
-        anchors.right: parent.right
-        anchors.rightMargin: 40
-        anchors.verticalCenter: parent.verticalCenter
+        anchors {right: parent.right; rightMargin: 40; verticalCenter: parent.verticalCenter}
         ToolTip.text: qsTr("Efface les coordonnées GPS de la photo (si besoin de confidentialité)")
         ToolTip.visible: hovered
         ToolTip.delay: 500

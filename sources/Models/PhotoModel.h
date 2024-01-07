@@ -110,7 +110,6 @@ public:
         SoftwareRole,
         KeywordsRole
     };
-    QHash<int, QByteArray> roleNames() const override;
 
     // -----------------------------------------------------
     // Surcharges obligatoires
@@ -118,6 +117,8 @@ public:
     explicit PhotoModel(QObject *parent = nullptr);
     int      rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
     // -----------------------------------------------------
     // Méthodes pouvant être appelées depuis QML
@@ -134,7 +135,7 @@ public:
     // Methodes publiques
     // -----------------------------------------------------
     void append(const QVariantMap data);
-    bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // On surcharge car setData() est deja dans la surclasse
+    bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // Surcharge
     void setData(const QVariantMap &value_list);
 
 private:

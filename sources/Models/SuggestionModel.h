@@ -59,7 +59,6 @@ public:
         CategoryRole,
         PhotosRole
     };
-    QHash<int, QByteArray> roleNames() const override;
 
     // -----------------------------------------------------
     // Surcharges obligatoires
@@ -67,6 +66,8 @@ public:
     explicit SuggestionModel(QObject *parent = nullptr);
     int      rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
     // -----------------------------------------------------
     // Methodes publiques
