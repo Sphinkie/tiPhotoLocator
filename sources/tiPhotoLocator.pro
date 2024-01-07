@@ -18,11 +18,11 @@ SOURCES += \
         Models/SuggestionProxyModel.cpp \
         Models/UndatedPhotoProxyModel.cpp \
         Models/UnlocalizedProxyModel.cpp \
-        cpp/ExifReadTask.cpp \
-        cpp/ExifWriteTask.cpp \
-        cpp/GeocodeWrapper.cpp \
-        cpp/PhotoModelWrapper.cpp \
-        cpp/utilities.cpp \
+        Cpp/ExifReadTask.cpp \
+        Cpp/ExifWriteTask.cpp \
+        Cpp/GeocodeWrapper.cpp \
+        Cpp/PhotoModelWrapper.cpp \
+        Cpp/Utilities.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -42,7 +42,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-#    Components/PhotoPreview.qml \
     Doxyfile \
     TiPhotoLocator.qhp \
     tiPhotoLocator.qdocconf
@@ -56,11 +55,11 @@ HEADERS += \
     Models/SuggestionProxyModel.h \
     Models/UndatedPhotoProxyModel.h \
     Models/UnlocalizedProxyModel.h \
-    cpp/ExifReadTask.h \
-    cpp/ExifWriteTask.h \
-    cpp/GeocodeWrapper.h \
-    cpp/PhotoModelWrapper.h \
-    cpp/utilities.h
+    Cpp/ExifReadTask.h \
+    Cpp/ExifWriteTask.h \
+    Cpp/GeocodeWrapper.h \
+    Cpp/PhotoModelWrapper.h \
+    Cpp/Utilities.h
 
 RC_ICONS = Images/logo_TPL.ico
 
@@ -69,5 +68,8 @@ CONFIG += file_copies
 COPIES += myFiles
 myFiles.files = $$files(../bin/exiftool.exe)
 myFiles.path = $$OUT_PWD/debug
-myFiles.path += $$OUT_PWD/release
+
+COPIES += myFilesForRelease
+myFilesForRelease.files = $$files(../bin/exiftool.exe)
+myFilesForRelease.path += $$OUT_PWD/release
 

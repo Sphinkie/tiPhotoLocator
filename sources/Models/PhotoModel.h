@@ -123,6 +123,7 @@ public:
     // -----------------------------------------------------
     // Méthodes pouvant être appelées depuis QML
     // -----------------------------------------------------
+    Q_INVOKABLE QString getRoleName(int role);
     Q_INVOKABLE QVariant getUrl(int row);
     Q_INVOKABLE QVariantMap get(int row);
     Q_INVOKABLE void dumpData();
@@ -170,9 +171,9 @@ signals:
     // -----------------------------------------------------
     // Signaux émis
     // -----------------------------------------------------
-    void selectedRowChanged(const int row);                                        //!< Signal émis quand la Photo sélectionnée change
-    void sendSuggestion(QString text, QString target, QString category, int row);  //!< Ce signal envoie une Suggestion au SuggestionModel
-
+    void selectedRowChanged(const int row);                                        //!< Signal émis quand la Photo sélectionnée change.
+    void sendSuggestion(QString text, QString target, QString category, int row);  //!< Ce signal envoie une Suggestion au SuggestionModel.
+    void dataCleared();
 
 
     // -----------------------------------------------------

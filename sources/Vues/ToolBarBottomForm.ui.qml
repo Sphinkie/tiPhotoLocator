@@ -82,10 +82,16 @@ Rectangle {
       {
           // console.log("dataChanged", roles.length, " roles: ", roles);
           roles.forEach(function(role){
-            // toBeSaved est le role 265
-            if (role === 265) shouldSave = true;
+            // console.log(_photoModel.getRoleName(role));
+            if (_photoModel.getRoleName(role) === "toBeSaved") shouldSave = true;
           });
       }
+      function onDataCleared()
+      {
+          console.log("onDataCleared");
+          shouldSave = false;
+      }
+
     }
 
     // ----------------------------------------------------------------

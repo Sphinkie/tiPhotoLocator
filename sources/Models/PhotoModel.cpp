@@ -131,6 +131,17 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 
 /* ********************************************************************************************************** */
 /*!
+ * \brief Retourne le nom du role dans le modèle.
+ * \param role: la valeur numérique du role.
+ * \return la valeur texte du role.
+ */
+QString PhotoModel::getRoleName(int role)
+{
+    return roleNames().value(role);
+}
+
+/* ********************************************************************************************************** */
+/*!
  * \brief Returns the full name of the photo. This is an example of unitary getter method.
  * \param row : Indice de l'élément à lire.
  * \returns a QVariant containing the absolute path and full name (image URL) of the photo.
@@ -163,6 +174,7 @@ void PhotoModel::append(const QString filename, const QString url)
 /*!
  * \brief Adds a Photo item to the model, from a list of metadata.
  * \param data : a 'key-value' dictionnary of metadata.
+ * \note Accepts only 2 keys: filename and imageUrl.
  *
    \code
       QVariantMap map;
@@ -175,7 +187,6 @@ void PhotoModel::append(const QVariantMap data)
     // qDebug() << "append QVariantMap:" << data;
     const int rowOfInsert = m_photos.count();
     Photo* new_photo = new Photo(data["filename"].toString(), data["imageUrl"].toString());
-    // TODO: il faudrait probablement ajouter aussi un setData()
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_photos.insert(rowOfInsert, *new_photo);
     endInsertRows();
@@ -458,8 +469,8 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // On trouve l'index correspondant au "filename"
     const QString file_name = value_list.value("FileName").toString();
 
-    if (file_name.isEmpty()) return;      // No "FileName" tag received
-    if (m_photos.count() == 0) return;    // The list of photo data is empty.
+    if (file_name.isEmpty()) return;      // If no "FileName" tag is received.
+    if (m_photos.count() == 0) return;    // If the list of photo data is empty.
 
     int row;
     // ----------------------------------
@@ -469,7 +480,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
         if (m_photos[row] == file_name) break;  // Possible grace à notre surcharge de l'opérateur ==   :-)
 
     // qDebug() << "found" << row ;
-    if (row >= m_photos.count()) return;        // Traitement du cas FileName not found
+    if (row >= m_photos.count()) return;        // Traitement du cas 'FileName not found'.
 
     // -----------------------------------------------------
     // On met à jour les data de la photo dans le modèle
@@ -504,6 +515,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // Envoi du signal dataChanged()
     QModelIndex photo_index = this->index(row, 0);
     emit dataChanged(photo_index, photo_index);
+    emit dataCleared();
 
     // -------------------------------------
     // Certaines infos sont des suggestions
