@@ -15,6 +15,7 @@ Rectangle {
     property alias bt_save: bt_save
     property alias bt_quit: bt_quit
     property bool useDebug
+    property bool shouldSave
 
     // property alias reglages2: reglages2
     RowLayout {
@@ -56,6 +57,7 @@ Rectangle {
             id: bt_save
             text: qsTr("Enregistrer")
             Layout.topMargin: 10
+            color: shouldSave ? TiStyle.buttonAccentColor : TiStyle.buttonIdleColor
             ToolTip.text: qsTr("Enregistre les tags EXIF des photos modifiées")
             ToolTip.visible: hovered
             ToolTip.delay: 500
@@ -70,6 +72,22 @@ Rectangle {
             Layout.topMargin: 10
         }
     }
+
+    // ----------------------------------------------------------------
+    // Dès qu'un item change, on active le bouton
+    // ----------------------------------------------------------------
+    Connections{
+      target: _photoModel
+      function onDataChanged(topLeft, bottomRight, roles)
+      {
+          // console.log("dataChanged", roles.length, " roles: ", roles);
+          roles.forEach(function(role){
+            // toBeSaved est le role 265
+            if (role === 265) shouldSave = true;
+          });
+      }
+    }
+
     // ----------------------------------------------------------------
     // On mémorise la ckeckbox dans les Settings
     // ----------------------------------------------------------------

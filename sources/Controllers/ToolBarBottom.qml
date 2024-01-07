@@ -8,12 +8,12 @@ import "../Javascript/Networking.js" as Netwk
 ToolBarBottomForm {
 
     bt_dump1.onClicked: {
-        _photoModel.dumpData()
+        _photoModel.dumpData();
       //  _cameraSet.append("TZ80")         // Ajouté pour les tests d'API de Lisa
     }
 
     bt_dump2.onClicked: {
-        _suggestionModel.dumpData()
+        _suggestionModel.dumpData();
         Netwk.requestAPI();
     }
 
@@ -23,11 +23,12 @@ ToolBarBottomForm {
 
     bt_save.onClicked: {
         // On lance l'écriture des données EXIF et IPTC (envoi signal)
-        window.saveMetadata()
+        window.saveMetadata();
+        shouldSave = false;
     }
 
     bt_quit.onClicked: {
-        Qt.quit()
+        Qt.quit();
     }
 
 }

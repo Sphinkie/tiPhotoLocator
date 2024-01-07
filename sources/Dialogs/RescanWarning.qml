@@ -12,6 +12,6 @@ MessageDialog {
     Component.onCompleted: visible=false
     onAccepted: {
         console.log("Manual Rescan");
-        window.fetchExifMetadata()       // envoi signal
+        window.fetchExifMetadata();       // envoi signal
     }
 }

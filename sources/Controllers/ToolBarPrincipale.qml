@@ -4,7 +4,7 @@ import "../Javascript/TiUtilities.js" as Utilities
 
 
 /*! *****************************************************************
- *  Toolbar principale: boutons du haut: Reload - Rescan.
+ *  Toolbar principale: boutons du haut: Reload - Rescan - Dossier
  * ***************************************************************** */
 ToolBarPrincipaleForm {
 
@@ -17,7 +17,6 @@ ToolBarPrincipaleForm {
             }
         }
     
-
         bt_rescan.onClicked: {
             rescanWarning.open()
 		}
