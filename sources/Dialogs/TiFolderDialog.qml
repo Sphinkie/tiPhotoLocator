@@ -18,7 +18,7 @@ FolderDialog {
         // Todo: ajouter le folder dans les Settings "Récents"
         console.log(folderListModel.folder);
         // Il faut attendre que le FolderModel soit à jour (timer 1 seconde),
-        // puis on met à jour la PhotoListModel (fileName et fileUrl )
+        // puis on met à jour la liste du PhotoModel (fileName et fileUrl )
         folderTimer.start();
     }
 
@@ -43,4 +43,14 @@ FolderDialog {
             }
         }
     }
+
+    // --------------------------------------
+    // On mémorise le chemin dans les Settings
+    // --------------------------------------
+    Settings {
+        id: settings
+        property alias recent: folderListModel.folder
+    }
+
+
 }
