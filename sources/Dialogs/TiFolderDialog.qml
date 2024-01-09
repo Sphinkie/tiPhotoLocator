@@ -1,4 +1,5 @@
 import QtQuick
+import QtCore
 import Qt.labs.platform
 
 
@@ -13,7 +14,8 @@ FolderDialog {
     onAccepted: {
         // On passe par ici quand on clique sur OK, donc, même si on reselectionne le même folder
         folderListModel.folder = folder;
-        console.log("Accepted");
+        // console.log("Accepted");
+        // Todo: ajouter le folder dans les Settings "Récents"
         console.log(folderListModel.folder);
         // Il faut attendre que le FolderModel soit à jour (timer 1 seconde),
         // puis on met à jour la PhotoListModel (fileName et fileUrl )
