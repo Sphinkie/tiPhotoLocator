@@ -15,8 +15,8 @@ FolderDialog {
         // On passe par ici quand on clique sur OK, donc, même si on reselectionne le même folder
         folderListModel.folder = folder;
         // console.log("Accepted");
-        // Todo: ajouter le folder dans les Settings "Récents"
-        console.log(folderListModel.folder);
+        // ajout du folder dans les Settings "Récents"
+        addRecentFolder (folderListModel.folder);
         // Il faut attendre que le FolderModel soit à jour (timer 1 seconde),
         // puis on met à jour la liste du PhotoModel (fileName et fileUrl )
         folderTimer.start();
@@ -44,12 +44,25 @@ FolderDialog {
         }
     }
 
+    function addRecentFolder(string foldername)
+{
+   var folderList = settings.recents;
+   int posFolder = settings.lastFolder + 1; 
+   console.log(foldername);
+   folderList[posFolder] = foldername;
+   settings.recents = folderList;
+   settings.lastFolder = posFolder
+   // TODO : gérer un maximum de 5
+}
+
     // --------------------------------------
     // On mémorise le chemin dans les Settings
     // --------------------------------------
     Settings {
         id: settings
-        property alias recent: folderListModel.folder
+        category: recentFolders
+        property alias recents: ""
+        property alias lastFolder: -1
     }
 
 
