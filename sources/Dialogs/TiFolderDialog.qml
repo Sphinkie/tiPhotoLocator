@@ -11,6 +11,7 @@ FolderDialog {
     currentFolder: "file:///C:"
     // URL du dossier de départ
     folder: ""
+    property int lastFolder: -1
     onAccepted: {
         // On passe par ici quand on clique sur OK, donc, même si on reselectionne le même folder
         folderListModel.folder = folder;
@@ -62,7 +63,7 @@ FolderDialog {
         id: settings
         category: recentFolders
         property alias recents: ""
-        property alias lastFolder: -1
+        property alias lastFolder: lastFolder
     }
 
 
