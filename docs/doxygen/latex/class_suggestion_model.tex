@@ -35,14 +35,17 @@ void \textbf{ append} (const QString text, const QString target, const QString c
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-QHash$<$ int, QByte\+Array $>$ \textbf{ role\+Names} () const override
-\begin{DoxyCompactList}\small\item\em Table of Role names. \end{DoxyCompactList}\item 
 \textbf{ Suggestion\+Model} (QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Contructor. \end{DoxyCompactList}\item 
 int \textbf{ row\+Count} (const QModel\+Index \&parent) const override
 \begin{DoxyCompactList}\small\item\em Returns the number of elements in the model. \end{DoxyCompactList}\item 
 QVariant \textbf{ data} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
 \begin{DoxyCompactList}\small\item\em Returns the requested role value of an element of the model. \end{DoxyCompactList}\item 
+\label{class_suggestion_model_ae3b26fa49dff5a4c7f1a79e061dd9970} 
+Qt\+::\+Item\+Flags {\bfseries flags} (const QModel\+Index \&index) const override
+\item 
+QHash$<$ int, QByte\+Array $>$ \textbf{ role\+Names} () const override
+\begin{DoxyCompactList}\small\item\em Table of Role names. \end{DoxyCompactList}\item 
 void \textbf{ remove\+Current\+Photo\+From\+Suggestion} (const QModel\+Index index)
 \begin{DoxyCompactList}\small\item\em Ce slot enlève la \doxyref{Photo}{p.}{struct_photo} courante de la liste des photos correspondant à une \doxyref{Suggestion}{p.}{struct_suggestion} donnée. \end{DoxyCompactList}\item 
 \label{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20} 

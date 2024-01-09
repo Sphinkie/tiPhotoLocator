@@ -1,0 +1,37 @@
+\doxysection{Utilities.\+h}
+\label{_utilities_8h_source}\index{Cpp/Utilities.h@{Cpp/Utilities.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UTILITIES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UTILITIES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVariant>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }Utilities}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ Utilities();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ QString\ toExifDate(\textcolor{keyword}{const}\ QVariant\ value);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ QString\ toReadableDateTime(\textcolor{keyword}{const}\ QVariant\ value);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ QString\ toStandardDateTime(\textcolor{keyword}{const}\ QVariant\ value);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ QString\ fixYear(QString\ sYear,\ \textcolor{keywordtype}{int}\ defaultYear);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ QString\ fixDigits(QString\ sMonth,\ \textcolor{keywordtype}{int}\ defaultValue,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ QString\ normalise(QString\ texte);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QString\ diacriticLetters\ =\ QString::fromUtf8(\textcolor{stringliteral}{"{}ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ"{}});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QStringList\ normalizedLetters\ =\ \{\textcolor{stringliteral}{"{}S"{}},\ \textcolor{stringliteral}{"{}OE"{}},\ \textcolor{stringliteral}{"{}Z"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}oe"{}},\textcolor{stringliteral}{"{}z"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}A"{}},\textcolor{stringliteral}{"{}AE"{}},\textcolor{stringliteral}{"{}C"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}E"{}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}I"{}},\textcolor{stringliteral}{"{}D"{}},\textcolor{stringliteral}{"{}N"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}O"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}U"{}},\textcolor{stringliteral}{"{}Y"{}},\textcolor{stringliteral}{"{}s"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}a"{}},\textcolor{stringliteral}{"{}ae"{}},\textcolor{stringliteral}{"{}c"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}e"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}i"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}n"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}o"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}u"{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}u"{}},\textcolor{stringliteral}{"{}y"{}},\textcolor{stringliteral}{"{}y"{}}\};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UTILITIES\_H}}
+
+\end{DoxyCode}

@@ -502,7 +502,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // Les metadata IPTC
     m_photos[row].city            = value_list["City"].toString();
     m_photos[row].country         = value_list["Country"].toString();
-    m_photos[row].description     = value_list["Description"].toString();     // TODO : aka Caption
+    m_photos[row].description     = value_list["Description"].toString();
     m_photos[row].software        = value_list["Software"].toString();
     m_photos[row].keywords        = value_list["Keywords"].toStringList();
     m_photos[row].captionWriter = value_list["CaptionWriter"].toString();
@@ -515,7 +515,6 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // Envoi du signal dataChanged()
     QModelIndex photo_index = this->index(row, 0);
     emit dataChanged(photo_index, photo_index);
-    emit dataCleared();
 
     // -------------------------------------
     // Certaines infos sont des suggestions
@@ -576,6 +575,7 @@ void PhotoModel::clear()
     m_photos.clear();
     m_lastSelectedRow = 0;
     endResetModel();    // cette methode envoie un signal ModelReset
+    emit dataCleared();
 }
 
 /* ********************************************************************************************************** */

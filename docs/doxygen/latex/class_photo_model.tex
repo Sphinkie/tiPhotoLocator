@@ -88,11 +88,12 @@ void {\bfseries selected\+Row\+Changed} (const int row)
 \begin{DoxyCompactList}\small\item\em Signal émis quand la \doxyref{Photo}{p.}{struct_photo} sélectionnée change. \end{DoxyCompactList}\item 
 \label{class_photo_model_ab8f7cb78c57128f6a6df184a4d89f2bf} 
 void {\bfseries send\+Suggestion} (QString text, QString target, QString category, int row)
-\begin{DoxyCompactList}\small\item\em Ce signal envoie une \doxyref{Suggestion}{p.}{struct_suggestion} au \doxyref{Suggestion\+Model}{p.}{class_suggestion_model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ce signal envoie une \doxyref{Suggestion}{p.}{struct_suggestion} au \doxyref{Suggestion\+Model}{p.}{class_suggestion_model}. \end{DoxyCompactList}\item 
+\label{class_photo_model_abdede59b31ccb60a9c2d3ad0838661c3} 
+void {\bfseries data\+Cleared} ()
+\begin{DoxyCompactList}\small\item\em Signal émis quand le modèle a été vidé. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-QHash$<$ int, QByte\+Array $>$ \textbf{ role\+Names} () const override
 \item 
 \textbf{ Photo\+Model} (QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose. \end{DoxyCompactList}\item 
@@ -100,6 +101,13 @@ int \textbf{ row\+Count} (const QModel\+Index \&parent) const override
 \begin{DoxyCompactList}\small\item\em Returns the number of items in the model. \end{DoxyCompactList}\item 
 QVariant \textbf{ data} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
 \begin{DoxyCompactList}\small\item\em Returns the role value of an element of the model. \end{DoxyCompactList}\item 
+\label{class_photo_model_a1304d28519eb274764ef65afffec6c96} 
+Qt\+::\+Item\+Flags {\bfseries flags} (const QModel\+Index \&index) const override
+\item 
+QHash$<$ int, QByte\+Array $>$ \textbf{ role\+Names} () const override
+\item 
+Q\+\_\+\+INVOKABLE QString \textbf{ get\+Role\+Name} (int role)
+\begin{DoxyCompactList}\small\item\em Retourne le nom du role dans le modèle. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE QVariant \textbf{ get\+Url} (int row)
 \begin{DoxyCompactList}\small\item\em Returns the full name of the photo. This is an example of unitary getter method. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE QVariant\+Map \textbf{ get} (int row)
@@ -233,9 +241,12 @@ Adds a \doxyref{Photo}{p.}{struct_photo} item to the model, from a list of metad
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & \+: a \textquotesingle{}key-\/value\textquotesingle{} dictionnary of metadata.\\
+{\em data} & \+: a \textquotesingle{}key-\/value\textquotesingle{} dictionnary of metadata. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyNote}{Note}
+Accepts only 2 keys\+: filename and image\+Url.
+\end{DoxyNote}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{QVariantMap\ map;}
@@ -409,6 +420,24 @@ La methode \doxyref{get()}{p.}{class_photo_model_a18fb19d062f2f7d7d79585d2e62c96
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 une Map contenant toutes les propriétés de l\textquotesingle{}item, dont la propriété spéciale\+: "{}row"{}. 
+\end{DoxyReturn}
+\label{class_photo_model_a3c8036e57376630243dfa6841d7f2251} 
+\index{PhotoModel@{PhotoModel}!getRoleName@{getRoleName}}
+\index{getRoleName@{getRoleName}!PhotoModel@{PhotoModel}}
+\doxysubsubsection{getRoleName()}
+{\footnotesize\ttfamily QString Photo\+Model\+::get\+Role\+Name (\begin{DoxyParamCaption}\item[{int}]{role }\end{DoxyParamCaption})}
+
+
+
+Retourne le nom du role dans le modèle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em role} & la valeur numérique du role. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la valeur texte du role. 
 \end{DoxyReturn}
 \label{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe} 
 \index{PhotoModel@{PhotoModel}!getUrl@{getUrl}}

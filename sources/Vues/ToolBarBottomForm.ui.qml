@@ -74,10 +74,15 @@ Rectangle {
     }
 
     // ----------------------------------------------------------------
-    // Dès qu'un item change, on active le bouton
+    // Dès qu'un item change, on colorie le bouton
     // ----------------------------------------------------------------
     Connections{
       target: _photoModel
+      function onDataCleared()
+      {
+          console.log("onDataCleared");
+          shouldSave = false;
+      }
       function onDataChanged(topLeft, bottomRight, roles)
       {
           // console.log("dataChanged", roles.length, " roles: ", roles);
@@ -86,12 +91,6 @@ Rectangle {
             if (_photoModel.getRoleName(role) === "toBeSaved") shouldSave = true;
           });
       }
-      function onDataCleared()
-      {
-          console.log("onDataCleared");
-          shouldSave = false;
-      }
-
     }
 
     // ----------------------------------------------------------------

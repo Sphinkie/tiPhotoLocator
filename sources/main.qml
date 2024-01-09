@@ -170,7 +170,7 @@ Window {
             Connections{
                 target: _photoModel
                 function onDataChanged() {
-                    console.log("PhotoModel Data changed !");
+                    // console.log("PhotoModel Data changed !");
                     var currentrow = tabbedPage.selectedData.row;
                     tabbedPage.selectedData = _photoModel.get(currentrow);
                 }

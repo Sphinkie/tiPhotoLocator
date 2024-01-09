@@ -33,9 +33,9 @@ ExifReadTask::ExifReadTask(QString filePath)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief: Lancement de la tache. On lance \b exifTool dans un process, et on analyse la réponse.
+ * \brief: Lancement de la tache. On lance **exifTool** dans un process, et on analyse la réponse.
  * Cette tache est exécutée dans un thread QRunnable.
- * A la fin de la tache, on écrit les résultat dans PhotoModel.
+ * A la fin de la tache, on écrit les résultats dans PhotoModel.
  */
 void ExifReadTask::run()
 {
@@ -52,8 +52,6 @@ void ExifReadTask::run()
     arguments << "-ext" << "JPG";       // Filtre sur les extensions
     arguments << "-ext" << "JPEG";      // Filtre sur les extensions
     arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
-    // arguments.append("-ext"); arguments.append("JPG");   // Filtre sur les extensions
-    // arguments.append("-use"); arguments.append("MWG");    // Use MetadataWorkingGroup recommendations
 
     // Liste des tags à lire
     arguments.append("-@");

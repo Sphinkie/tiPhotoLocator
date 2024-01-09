@@ -100,83 +100,85 @@
 \DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ SoftwareRole,}
 \DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ KeywordsRole}
 \DoxyCodeLine{00112\ \ \ \ \ \};}
-\DoxyCodeLine{00113\ \ \ \ \ QHash<int,\ QByteArray>\ roleNames()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ Surcharges\ obligatoires}}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{explicit}\ PhotoModel(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ rowCount(\textcolor{keyword}{const}\ QModelIndex\&\ parent)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00120\ \ \ \ \ QVariant\ data(\textcolor{keyword}{const}\ QModelIndex\&\ index,\ \textcolor{keywordtype}{int}\ role\ =\ Qt::DisplayRole)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ pouvant\ être\ appelées\ depuis\ QML}}
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00125\ \ \ \ \ Q\_INVOKABLE\ QVariant\ getUrl(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00126\ \ \ \ \ Q\_INVOKABLE\ QVariantMap\ get(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00127\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ dumpData();}
-\DoxyCodeLine{00128\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ clear();}
-\DoxyCodeLine{00129\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ removePhotoKeyword(QString\ keyword);}
-\DoxyCodeLine{00130\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ updatePhotoKeyword(QString\ keyword,\ \textcolor{keywordtype}{int}\ index);}
-\DoxyCodeLine{00131\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ findInCirclePhotos(\textcolor{keywordtype}{int}\ circle\_radius);}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ Methodes\ publiques}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ Surcharges\ obligatoires}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{explicit}\ PhotoModel(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ rowCount(\textcolor{keyword}{const}\ QModelIndex\&\ parent)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00119\ \ \ \ \ QVariant\ data(\textcolor{keyword}{const}\ QModelIndex\&\ index,\ \textcolor{keywordtype}{int}\ role\ =\ Qt::DisplayRole)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00120\ \ \ \ \ Qt::ItemFlags\ flags(\textcolor{keyword}{const}\ QModelIndex\ \&index)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00121\ \ \ \ \ QHash<int,\ QByteArray>\ roleNames()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ pouvant\ être\ appelées\ depuis\ QML}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00126\ \ \ \ \ Q\_INVOKABLE\ QString\ getRoleName(\textcolor{keywordtype}{int}\ role);}
+\DoxyCodeLine{00127\ \ \ \ \ Q\_INVOKABLE\ QVariant\ getUrl(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00128\ \ \ \ \ Q\_INVOKABLE\ QVariantMap\ get(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00129\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ dumpData();}
+\DoxyCodeLine{00130\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00131\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ removePhotoKeyword(QString\ keyword);}
+\DoxyCodeLine{00132\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ updatePhotoKeyword(QString\ keyword,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00133\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ findInCirclePhotos(\textcolor{keywordtype}{int}\ circle\_radius);}
+\DoxyCodeLine{00134\ }
 \DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ append(\textcolor{keyword}{const}\ QVariantMap\ data);}
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{bool}\ setData(\textcolor{keyword}{const}\ QModelIndex\ \&index,\ \textcolor{keyword}{const}\ QVariant\ \&value,\ \textcolor{keywordtype}{int}\ role)\ \textcolor{keyword}{override};\ \ \textcolor{comment}{//\ On\ surcharge\ car\ setData()\ est\ deja\ dans\ la\ surclasse}}
-\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ setData(\textcolor{keyword}{const}\ QVariantMap\ \&value\_list);}
-\DoxyCodeLine{00139\ }
-\DoxyCodeLine{00140\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ privées}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{comment}{//\ Methodes\ publiques}}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ append(\textcolor{keyword}{const}\ QVariantMap\ data);}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{bool}\ setData(\textcolor{keyword}{const}\ QModelIndex\ \&index,\ \textcolor{keyword}{const}\ QVariant\ \&value,\ \textcolor{keywordtype}{int}\ role)\ \textcolor{keyword}{override};\ \ \textcolor{comment}{//\ Surcharge}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ setData(\textcolor{keyword}{const}\ QVariantMap\ \&value\_list);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00143\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ addTestItem();}
-\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ selectedRow(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{int}\ getSelectedRow();}
-\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ resetCircle();}
-\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ belong(\textcolor{keywordtype}{double}\ pLa,\ \textcolor{keywordtype}{double}\ pLo,\ \textcolor{keywordtype}{double}\ oLa,\ \textcolor{keywordtype}{double}\ oLo,\ \textcolor{keywordtype}{float}\ rLa,\ \textcolor{keywordtype}{float}\ rLo);}
-\DoxyCodeLine{00149\ }
-\DoxyCodeLine{00150\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Slots}}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ privées}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ addTestItem();}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ selectedRow(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ getSelectedRow();}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ resetCircle();}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{bool}\ belong(\textcolor{keywordtype}{double}\ pLa,\ \textcolor{keywordtype}{double}\ pLo,\ \textcolor{keywordtype}{double}\ oLa,\ \textcolor{keywordtype}{double}\ oLo,\ \textcolor{keywordtype}{float}\ rLa,\ \textcolor{keywordtype}{float}\ rLo);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{public}\ slots:}
 \DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ append(\textcolor{keyword}{const}\ QString\ filename,\ \textcolor{keyword}{const}\ QString\ url);}
-\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchExifMetadata(\textcolor{keywordtype}{int}\ row\ =\ -\/1);}
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ saveMetadata();}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ setSelectedItemCoords(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
-\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ setInCircleItemCoords(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
-\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ setPhotoProperty(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ photo,\ \textcolor{keyword}{const}\ QString\ value,\ \textcolor{keyword}{const}\ QString\ property);}
-\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ applyCreatorToAll();}
-\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ appendSavedPosition(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
-\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ removeSavedPosition();}
-\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ setData(\textcolor{keywordtype}{int}\ row,\ QString\ value,\ QString\ property);}
-\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ duplicateData(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ removeData(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00166\ }
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00168\ signals:}
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//\ Signaux\ émis}}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//\ Slots}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ append(\textcolor{keyword}{const}\ QString\ filename,\ \textcolor{keyword}{const}\ QString\ url);}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchExifMetadata(\textcolor{keywordtype}{int}\ row\ =\ -\/1);}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ saveMetadata();}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ setSelectedItemCoords(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ setInCircleItemCoords(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ setPhotoProperty(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ photo,\ \textcolor{keyword}{const}\ QString\ value,\ \textcolor{keyword}{const}\ QString\ property);}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ applyCreatorToAll();}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ appendSavedPosition(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ removeSavedPosition();}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ setData(\textcolor{keywordtype}{int}\ row,\ QString\ value,\ QString\ property);}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ duplicateData(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ removeData(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ signals:}
 \DoxyCodeLine{00171\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ selectedRowChanged(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ row);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ sendSuggestion(QString\ text,\ QString\ target,\ QString\ category,\ \textcolor{keywordtype}{int}\ row);\ \ }
-\DoxyCodeLine{00174\ }
-\DoxyCodeLine{00175\ }
-\DoxyCodeLine{00176\ }
-\DoxyCodeLine{00177\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//\ Membres}}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{comment}{//\ Signaux\ émis}}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ selectedRowChanged(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ row);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ sendSuggestion(QString\ text,\ QString\ target,\ QString\ category,\ \textcolor{keywordtype}{int}\ row);\ \ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ dataCleared();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ }
 \DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00180\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00181\ \ \ \ \ QModelIndex\ m\_markerIndex\ =\ QModelIndex();\ \ }
-\DoxyCodeLine{00182\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_markerRow\ =\ -\/1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00184\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00185\ \ \ \ \ QVector<Photo>\ m\_photos;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_lastSelectedRow\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_dumpedRow\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00188\ \};}
-\DoxyCodeLine{00189\ }
-\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PHOTOMODEL\_H}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{comment}{//\ Membres}}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00182\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00183\ \ \ \ \ QModelIndex\ m\_markerIndex\ =\ QModelIndex();\ \ }
+\DoxyCodeLine{00184\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_markerRow\ =\ -\/1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00187\ \ \ \ \ QVector<Photo>\ m\_photos;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_lastSelectedRow\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_dumpedRow\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PHOTOMODEL\_H}}
 
 \end{DoxyCode}

@@ -205,11 +205,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>selectedRowChanged</b
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendSuggestion</b> (QString text, QString target, QString category, int row)</td></tr>
 <tr class="memdesc:ab8f7cb78c57128f6a6df184a4d89f2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce signal envoie une <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> au <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a>. <br /></td></tr>
 <tr class="separator:ab8f7cb78c57128f6a6df184a4d89f2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdede59b31ccb60a9c2d3ad0838661c3" id="r_abdede59b31ccb60a9c2d3ad0838661c3"><td class="memItemLeft" align="right" valign="top"><a id="abdede59b31ccb60a9c2d3ad0838661c3" name="abdede59b31ccb60a9c2d3ad0838661c3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>dataCleared</b> ()</td></tr>
+<tr class="memdesc:abdede59b31ccb60a9c2d3ad0838661c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand le modèle a été vidé. <br /></td></tr>
+<tr class="separator:abdede59b31ccb60a9c2d3ad0838661c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aac3d5e1ae72e823b4e6091497c5cf27d" id="r_aac3d5e1ae72e823b4e6091497c5cf27d"><td class="memItemLeft" align="right" valign="top">QHash&lt; int, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">roleNames</a> () const override</td></tr>
-<tr class="separator:aac3d5e1ae72e823b4e6091497c5cf27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a244f996eed49122ebe11c5369d63a0e2" id="r_a244f996eed49122ebe11c5369d63a0e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a244f996eed49122ebe11c5369d63a0e2">PhotoModel</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:a244f996eed49122ebe11c5369d63a0e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose.  <br /></td></tr>
 <tr class="separator:a244f996eed49122ebe11c5369d63a0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,6 +221,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f09addf9a989e85b7ae5797156b270f" id="r_a3f09addf9a989e85b7ae5797156b270f"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a3f09addf9a989e85b7ae5797156b270f">data</a> (const QModelIndex &amp;index, int role=Qt::DisplayRole) const override</td></tr>
 <tr class="memdesc:a3f09addf9a989e85b7ae5797156b270f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the role value of an element of the model.  <br /></td></tr>
 <tr class="separator:a3f09addf9a989e85b7ae5797156b270f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1304d28519eb274764ef65afffec6c96" id="r_a1304d28519eb274764ef65afffec6c96"><td class="memItemLeft" align="right" valign="top"><a id="a1304d28519eb274764ef65afffec6c96" name="a1304d28519eb274764ef65afffec6c96"></a>
+Qt::ItemFlags&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b> (const QModelIndex &amp;index) const override</td></tr>
+<tr class="separator:a1304d28519eb274764ef65afffec6c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac3d5e1ae72e823b4e6091497c5cf27d" id="r_aac3d5e1ae72e823b4e6091497c5cf27d"><td class="memItemLeft" align="right" valign="top">QHash&lt; int, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">roleNames</a> () const override</td></tr>
+<tr class="separator:aac3d5e1ae72e823b4e6091497c5cf27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c8036e57376630243dfa6841d7f2251" id="r_a3c8036e57376630243dfa6841d7f2251"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a3c8036e57376630243dfa6841d7f2251">getRoleName</a> (int role)</td></tr>
+<tr class="memdesc:a3c8036e57376630243dfa6841d7f2251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom du role dans le modèle.  <br /></td></tr>
+<tr class="separator:a3c8036e57376630243dfa6841d7f2251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d2159990dbea68afefa28bfdd6804fe" id="r_a1d2159990dbea68afefa28bfdd6804fe"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_photo_model.html#a1d2159990dbea68afefa28bfdd6804fe">getUrl</a> (int row)</td></tr>
 <tr class="memdesc:a1d2159990dbea68afefa28bfdd6804fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the full name of the photo. This is an example of unitary getter method.  <br /></td></tr>
 <tr class="separator:a1d2159990dbea68afefa28bfdd6804fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -437,10 +447,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b> = 0</t
 <p>Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> item to the model, from a list of metadata. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>: a 'key-value' dictionnary of metadata.</td></tr>
+    <tr><td class="paramname">data</td><td>: a 'key-value' dictionnary of metadata. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Accepts only 2 keys: filename and imageUrl.</dd></dl>
 <div class="fragment"><div class="line">QVariantMap map;</div>
 <div class="line">map.insert(<span class="stringliteral">&quot;filename&quot;</span>, QVariant(filename));</div>
 <div class="line">map.insert(<a class="code hl_function" href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">roleNames</a>().value(ImageUrlRole), QVariant(url));</div>
@@ -802,6 +813,33 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b> = 0</t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>une Map contenant toutes les propriétés de l'item, dont la propriété spéciale: "row". </dd></dl>
+
+</div>
+</div>
+<a id="a3c8036e57376630243dfa6841d7f2251" name="a3c8036e57376630243dfa6841d7f2251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c8036e57376630243dfa6841d7f2251">&#9670;&#160;</a></span>getRoleName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString PhotoModel::getRoleName </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>role</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le nom du role dans le modèle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">role</td><td>la valeur numérique du role. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>la valeur texte du role. </dd></dl>
 
 </div>
 </div>
