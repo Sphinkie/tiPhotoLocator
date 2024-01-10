@@ -8,10 +8,12 @@ import Qt.labs.platform
  *  Example folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
  * ***************************************************************** */
 FolderDialog {
+    id: folderDialog
     currentFolder: "file:///C:"
     // URL du dossier de départ
     folder: ""
     property int lastFolder: -1
+    property var recents: []
     onAccepted: {
         // On passe par ici quand on clique sur OK, donc, même si on reselectionne le même folder
         folderListModel.folder = folder;
@@ -32,7 +34,7 @@ FolderDialog {
             // On met à jour le photoModel
             _photoModel.clear();
             // On ajoute les photos du dossier dans le modèle
-            for (var i = 0; i < folderListModel.count; i++ ) {                
+            for (var i = 0; i < folderListModel.count; i++ ) {
                 window.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
             }
             // Puis on lance la récupération des données EXIF (envoi signal)
@@ -45,25 +47,25 @@ FolderDialog {
         }
     }
 
-    function addRecentFolder(string foldername)
-{
-   var folderList = settings.recents;
-   int posFolder = settings.lastFolder + 1; 
-   console.log(foldername);
-   folderList[posFolder] = foldername;
-   settings.recents = folderList;
-   settings.lastFolder = posFolder
-   // TODO : gérer un maximum de 5
-}
+    function addRecentFolder(foldername)
+    {
+        var folderList = settings.recents;
+        var posFolder = settings.lastFolder + 1;
+        console.log(foldername);
+        folderList[posFolder] = foldername;
+        settings.recents = folderList;
+        settings.lastFolder = posFolder
+        // TODO : gérer un maximum de 5
+    }
 
     // --------------------------------------
     // On mémorise le chemin dans les Settings
     // --------------------------------------
     Settings {
         id: settings
-        category: recentFolders
-        property alias recents: ""
-        property alias lastFolder: lastFolder
+        category: "recentFolders"
+        property alias recents: folderDialog.recents
+        property alias lastFolder: folderDialog.lastFolder
     }
 
 
