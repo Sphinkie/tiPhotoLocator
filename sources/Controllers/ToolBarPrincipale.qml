@@ -21,5 +21,5 @@ ToolBarPrincipaleForm {
             rescanWarning.open()
 		}
  
-        folderPath.text: Utilities.toStandardPath(folderDialog.folder)
+        folderPath.text: Utilities.toStandardPath(folderListModel.folder)
 }

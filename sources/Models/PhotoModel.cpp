@@ -340,19 +340,17 @@ void PhotoModel::selectedRow(int row)
     if (m_lastSelectedRow != -1)
     {
         m_photos[m_lastSelectedRow].isSelected = false;
-        m_photos[m_lastSelectedRow].insideCircle = false;
+        // m_photos[m_lastSelectedRow].insideCircle = false;
         QModelIndex previous_index = this->index(m_lastSelectedRow, 0);
         emit dataChanged(previous_index, previous_index, {IsSelectedRole, InsideCircleRole} );
         qDebug() << m_photos[m_lastSelectedRow].isSelected << m_photos[m_lastSelectedRow].filename ;
     }
     // On remet à True le nouvel item sélectionné
     m_photos[row].isSelected = true;
-    m_photos[row].insideCircle = true;
     QModelIndex new_index = this->index(row, 0);
-    emit dataChanged(new_index, new_index, {IsSelectedRole, InsideCircleRole} );
-    qDebug() << "PhotoModel: " << this << m_photos[row].isSelected << m_photos[row].filename  ;
+    emit dataChanged(new_index, new_index, {IsSelectedRole} );
     m_lastSelectedRow = row;
-    // On notifie les autres classes qui ont besoin de savoir quelle est photo sélectinée
+    // On notifie les autres classes qui ont besoin de savoir quelle est la photo sélectionée
     emit selectedRowChanged(row);
 }
 
@@ -792,7 +790,7 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
         }
         idx = idx.siblingAtRow(++row);
     }
-    // A la fin, on notifie en une seule fois l'ensemble des photos.
+    // A la fin, on notifie en une seule fois l'ensemble de toutes les photos.
     emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
 
     // si la fonction est relancée une seconde fois alors que celle-ci n'est pas finie : on ignore

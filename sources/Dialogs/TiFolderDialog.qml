@@ -30,9 +30,9 @@ FolderDialog {
 
     function addRecentFolder(foldername)
     {
+        // On ajoute le dossier ouvert à la liste des "recents" dans les Settings.
         var folderList = settings.recentList;
         var posFolder = settings.recentNumber;
-        console.log(foldername);
         // On mémorise un maximum de 7 recent folders
         if (posFolder>6) posFolder=0;
         folderList[posFolder] = foldername;
