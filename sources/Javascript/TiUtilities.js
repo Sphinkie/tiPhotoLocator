@@ -5,14 +5,12 @@
 // ------------------------------------------
 
 
-
-
 /*!
  * \brief Transforme un chemin en format Windows "C:\Users\David\Pictures". Par exemple:
  * file:///E:/TiPhotos
  * file://nas/photo/1997/1997 Sicile
  * \param objet: un chemin au format "file:///C:/Users/David/Pictures"
- * @return un chemin au format "C:\Users\David\Pictures"
+ * \return un chemin au format "C:\Users\David\Pictures"
  */
 function toStandardPath(objet)
 {

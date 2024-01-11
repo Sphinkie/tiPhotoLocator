@@ -105,5 +105,6 @@
         <file>Cameras/KODAK EASYSHARE M550 Digital Camera.png</file>
         <file>Cameras/CYBERSHOT.png</file>
         <file>Images/logo_TPL.ico</file>
+        <file>Components/FolderLoadTimer.qml</file>
     </qresource>
 </RCC>

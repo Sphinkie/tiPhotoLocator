@@ -12,8 +12,4 @@ FolderListModel {
     nameFilters: ["*.jpg", "*.JPG", "*.jpeg", "*.JPEG"]
     folder: ""
 
-    onFolderChanged: {
-        console.log("folder changed");
-    }
-
 }

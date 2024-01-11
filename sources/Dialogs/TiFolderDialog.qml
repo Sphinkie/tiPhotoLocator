@@ -1,7 +1,7 @@
 import QtQuick
 import QtCore
 import Qt.labs.platform
-
+import "../Components"
 
 /*! *****************************************************************
  *  Fenetre de dialogue pour selectionner le dossier.
@@ -12,50 +12,32 @@ FolderDialog {
     currentFolder: "file:///C:"
     // URL du dossier de départ
     folder: ""
-    property int lastFolder: -1
-    property var recents: []
+    property int recentNumber: 0
+    property var recentList: []
+
     onAccepted: {
         // On passe par ici quand on clique sur OK, donc, même si on reselectionne le même folder
         folderListModel.folder = folder;
         // console.log("Accepted");
-        // ajout du folder dans les Settings "Récents"
-        addRecentFolder (folderListModel.folder);
-        // Il faut attendre que le FolderModel soit à jour (timer 1 seconde),
-        // puis on met à jour la liste du PhotoModel (fileName et fileUrl )
+        // Ajout du folder dans les Settings "Recent Folders"
+        addRecentFolder(folder);
+        // On attend que le FolderModel soit à jour (timer 1 seconde),
+        // puis on met à jour la liste du PhotoModel (fileName et fileUrl)
         folderTimer.start();
     }
 
-    Timer {
-        id: folderTimer
-        interval: 1000
-        running: false;
-        repeat: false
-        onTriggered: {
-            // On met à jour le photoModel
-            _photoModel.clear();
-            // On ajoute les photos du dossier dans le modèle
-            for (var i = 0; i < folderListModel.count; i++ ) {
-                window.append(folderListModel.get(i,"fileName"), folderListModel.get(i,"fileUrl").toString() )
-            }
-            // Puis on lance la récupération des données EXIF (envoi signal)
-            Timer: {
-                interval: 1000;   // 1 sec
-                running: true;    // starts the timer
-                repeat: false;
-                onTriggered: window.fetchExifMetadata();
-            }
-        }
-    }
+    FolderLoadTimer {id: folderTimer}
 
     function addRecentFolder(foldername)
     {
-        var folderList = settings.recents;
-        var posFolder = settings.lastFolder + 1;
+        var folderList = settings.recentList;
+        var posFolder = settings.recentNumber;
         console.log(foldername);
+        // On mémorise un maximum de 7 recent folders
+        if (posFolder>6) posFolder=0;
         folderList[posFolder] = foldername;
-        settings.recents = folderList;
-        settings.lastFolder = posFolder
-        // TODO : gérer un maximum de 5
+        settings.recentList = folderList;
+        settings.recentNumber = posFolder + 1;
     }
 
     // --------------------------------------
@@ -64,8 +46,8 @@ FolderDialog {
     Settings {
         id: settings
         category: "recentFolders"
-        property alias recents: folderDialog.recents
-        property alias lastFolder: folderDialog.lastFolder
+        property alias recentList: folderDialog.recentList
+        property alias recentNumber: folderDialog.recentNumber
     }
 
 
