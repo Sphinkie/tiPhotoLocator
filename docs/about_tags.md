@@ -8,28 +8,25 @@ The **EXchangeable Image Fileformat** (EXIF) format is described on the [exiftoo
 It has no official description.   
 (`IFD` : Image File Directory)
 
-| Tag name                   | Read | Write | Id & group     | Description        |
-| -------------------------- | ---- | ----- | -------------- | ------------------ |
-| ImageWidth                 | yes  | --    | 0x0100 IFD0    | Image width        |
-| ImageHeight                | yes  | --    | 0x0101 IFD0    | Image height       |
-| Make                       | yes  | --    | 0x010f IFD0    | Camera manufacturer|
-| Model                      | yes  | --    | 0x0110 IFD0    | Camera model       |
-| Orientation                | yes  | --    | 0x0112 IFD0    | Camera orientation |
-| ShutterSpeedValue          | yes  | --    | 0x9201 IFD0    | Shutter speed in seconds |
-| FNumber                    | yes  | --    | 0x829D IFD0    | Focal stop-number  |
+| Tag name                   | Read | Write | Id & group     | Description                        |
+| -------------------------- | ---- | ----- | -------------- | ---------------------------------- |
+| ImageWidth                 | yes  | --    | 0x0100 IFD0    | Image width                        |
+| ImageHeight                | yes  | --    | 0x0101 IFD0    | Image height                       |
+| Make                       | yes  | --    | 0x010f IFD0    | Camera manufacturer                |
+| Model                      | yes  | --    | 0x0110 IFD0    | Camera model                       |
+| Orientation                | yes  | --    | 0x0112 IFD0    | Camera orientation                 |
+| ShutterSpeedValue          | yes  | --    | 0x9201 IFD0    | Shutter speed in seconds           |
+| FNumber                    | yes  | --    | 0x829D IFD0    | Focal stop-number                  |
 | Software                   | yes  | --    | 0x0131 IFD0    | Camera or Scanner software version |
 | Artist                     | yes  | MWG   | 0x013b IFD0    | Name of photographer               |
-| ImageDescription           | MWG  | MWG   | 0x010e IDF0    | Image description  |
-| GPSLatitude                | yes  | yes   | 0x8825 IFD0    | Photo location     |
-| GPSLongitude               | yes  | yes   | 0x8825 IFD0    | Photo location     |
-| GPSLatitudeRef             | --   | yes   | 0x8825 IFD0    | North or South     |
-| GPSLongitudeRef            | --   | yes   | 0x8825 IFD0    | East or West       |
+| ImageDescription           | MWG  | MWG   | 0x010e IDF0    | Image description                  |
+| GPSLatitude                | yes  | yes   | 0x8825 IFD0    | Photo location                     |
+| GPSLongitude               | yes  | yes   | 0x8825 IFD0    | Photo location                     |
+| GPSLatitudeRef             | --   | yes   | 0x8825 IFD0    | North or South                     |
+| GPSLongitudeRef            | --   | yes   | 0x8825 IFD0    | East or West                       |
 | DateTimeOriginal           | yes  | yes   | 0x9003 ExifIFD | Date/time when the photo was taken |
-| MetadataProcessingSoftware | --   | yes   |                | "TiPhotoLocator"   |
-
-| Tag name | Read | Write | Id & group          | Description |
-| -------- | ---- | ----- | ------------------- | ----------- |
-| Landmark |      |       | Sony:Note Fabricant |             |
+| MetadataProcessingSoftware | --   | yes   |                | "TiPhotoLocator"                   |
+| Landmark                   | no   | no    | Sony           |                                    |
 
 `MWG`: Managed according to the Metadata Working Group recommandations.  
 
@@ -52,14 +49,14 @@ The **International Press Telecommunications Council** format (IPTC) is describe
 
 ## IPTC EXTENSION tags
 
-| Tag name                  | Read | Write | Description                    |
-| ------------------------- | ---- | ----- | ------------------------------ |
-| LocationShown/City        | MWG  | MWG   | Name of city shown on the photo|
-| LocationShown/CountryName | MWG  | MWG   | Country name                   |
-| Location/location name    | --   | --    | Location name                  |
-| Location/state            | --   | --    | Province or state              |
-| Location/sublocation      | --   | --    | Name of a city sublocation or of a well-known location or of a (natural) monument outside a city |
-| Location/WorldRegion      | --   | --    | World Region                   |
+| Tag name                  | Read | Write | Description                                                                                      |
+| ------------------------- | ---- | ----- | ------------------------------------------------------------------------------------------------ |
+| LocationShown/City        | MWG  | MWG   | Name of city shown on the photo                                                                  |
+| LocationShown/CountryName | MWG  | MWG   | Country name                                                                                     |
+| Location/location name    | --   | --    | Location name                                                                                    |
+| Location/state            | --   | --    | Province or state                                                                                |
+| Location/sublocation      | MWG  | MWG   | Name of a city sublocation or of a well-known location or of a (natural) monument outside a city |
+| Location/WorldRegion      | --   | --    | World Region                                                                                     |
 
 ## Unused tags
 

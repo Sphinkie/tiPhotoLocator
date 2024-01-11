@@ -52,6 +52,7 @@ struct Photo
     QString creator;            //!< Name of the photographer
     QString city;               //!< City shown in the Photo
     QString country;            //!< Country where the Photo was taken
+    QString location;           //!< City quarter or nearby monument or natural monument.
     QString description;        //!< can be: Description, ImageDescription or Caption;
     QString captionWriter;      //!< Initials of the description writer
     QString software;           //!< Software of the camera or scanner device
@@ -105,6 +106,7 @@ public:
         CreatorRole,
         CityRole,
         CountryRole,
+        LocationRole,
         DescriptionRole,
         CaptionWriterRole,
         SoftwareRole,
@@ -144,7 +146,7 @@ private:
     // Méthodes privées
     // -----------------------------------------------------
     void addTestItem();
-    void selectedRow(int row);
+    void selectedRow(const int row);
     int getSelectedRow();
     void resetCircle();
     bool belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo);
@@ -156,8 +158,8 @@ public slots:
     void append(const QString filename, const QString url);
     void fetchExifMetadata(int row = -1);
     void saveMetadata();
-    void setSelectedItemCoords(double latitude, double longitude);
-    void setInCircleItemCoords(double latitude, double longitude);
+    void setSelectedItemCoords(const double latitude, const double longitude);
+    void setInCircleItemCoords(const double latitude, const double longitude);
     void setPhotoProperty(const int photo, const QString value, const QString property);
     void applyCreatorToAll();
     void appendSavedPosition(double latitude, double longitude);

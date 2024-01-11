@@ -39,7 +39,8 @@ int PhotoModel::rowCount(const QModelIndex& parent) const
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Returns the role value of an element of the model. \note Implémentation obligatoire.
+ * \brief Returns the role value of an element of the model.
+ * \note Implémentation obligatoire.
  * \param  index : index of the element of the model.
  * \param  role : the requested role (enum).
  * \returns the requested role value
@@ -74,6 +75,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
     case CreatorRole:           return photo.creator;
     case CityRole:              return photo.city;
     case CountryRole:           return photo.country;
+    case LocationRole:          return photo.location;
     case DescriptionRole:       return photo.description;
     case CaptionWriterRole:     return photo.captionWriter;
     case SoftwareRole:          return photo.software;
@@ -111,6 +113,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {LongitudeRole,         "longitude"},
         {CityRole,              "city"},
         {CountryRole,           "country"},
+        {LocationRole,          "location"},
         // Photo
         {DateTimeOriginalRole,  "dateTimeOriginal"},
         {SoftwareRole,          "software"},
@@ -150,8 +153,8 @@ QVariant PhotoModel::getUrl(int row)
 {
     if (row < 0 || row >= m_photos.count())
         return QVariant();
-    QVariant result = QVariant(m_photos[row].imageUrl);
-    return result;
+    else
+        return QVariant(m_photos[row].imageUrl);
 }
 
 /* ********************************************************************************************************** */
@@ -190,7 +193,7 @@ void PhotoModel::append(const QVariantMap data)
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_photos.insert(rowOfInsert, *new_photo);
     endInsertRows();
-    qDebug() << "append" << data.value("filename").toString() << "to row" << rowOfInsert;
+    // qDebug() << "append" << data.value("filename").toString() << "to row" << rowOfInsert;
 }
 
 /* ********************************************************************************************************** */
@@ -234,7 +237,7 @@ void PhotoModel::removeSavedPosition()
  * \param latitude : Latitude GPS à affecter.
  * \param longitude : Longitude GPS à affecter.
  */
-void PhotoModel::setSelectedItemCoords(double latitude, double longitude)
+void PhotoModel::setSelectedItemCoords(const double latitude, const double longitude)
 {
     QModelIndex idx = this->index(m_lastSelectedRow, 0);
     setData(idx, latitude, LatitudeRole);
@@ -249,7 +252,7 @@ void PhotoModel::setSelectedItemCoords(double latitude, double longitude)
  * \param latitude : Latitude GPS à affecter aux photos
  * \param longitude : Longitude GPS à affecter aux photos
  */
-void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
+void PhotoModel::setInCircleItemCoords(const double latitude, const double longitude)
 {
     // On parcourt tous les items du modèle (par leur index dans le modèle)
     int row = 0;
@@ -263,7 +266,7 @@ void PhotoModel::setInCircleItemCoords(double latitude, double longitude)
             setData(idx, latitude, LatitudeRole);
             setData(idx, longitude, LongitudeRole);
             // Vérification
-            qDebug() << "PhotoModel: set latitude" << idx.data(LatitudeRole).toDouble() << "for" << idx.data(FilenameRole).toString();
+            // qDebug() << "PhotoModel: set latitude" << idx.data(LatitudeRole).toDouble() << "for" << idx.data(FilenameRole).toString();
         }
         idx = idx.siblingAtRow(++row);
     }
@@ -325,13 +328,12 @@ void PhotoModel::setPhotoProperty(const int photo, const QString value, const QS
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Mémorise la position fournie.
+ * \brief Mémorise la photo indiquée comme étant la photo sélectionnée dans la ListView.
  *
- * Met le flag **isSelected** du précédent item à *False* et le nouveau à *True*. <br>
- * Met aussi le flag **insideCircle** du précédent item à *False* et le nouveau à *True*.
+ * Met le flag **isSelected** du précédent item à *False* et le nouveau à *True*.
  * \param row : l'indice de l'item sélectionné dans la ListView.
  */
-void PhotoModel::selectedRow(int row)
+void PhotoModel::selectedRow(const int row)
 {
     qDebug() << "selectedRow " << row << "/" << m_photos.count();
     if (row < 0 || row >= m_photos.count() || row == m_lastSelectedRow)
@@ -340,12 +342,11 @@ void PhotoModel::selectedRow(int row)
     if (m_lastSelectedRow != -1)
     {
         m_photos[m_lastSelectedRow].isSelected = false;
-        // m_photos[m_lastSelectedRow].insideCircle = false;
         QModelIndex previous_index = this->index(m_lastSelectedRow, 0);
-        emit dataChanged(previous_index, previous_index, {IsSelectedRole, InsideCircleRole} );
-        qDebug() << m_photos[m_lastSelectedRow].isSelected << m_photos[m_lastSelectedRow].filename ;
+        emit dataChanged(previous_index, previous_index, {IsSelectedRole} );
+        // qDebug() << m_photos[m_lastSelectedRow].isSelected << m_photos[m_lastSelectedRow].filename ;
     }
-    // On remet à True le nouvel item sélectionné
+    // On met à True le nouvel item sélectionné
     m_photos[row].isSelected = true;
     QModelIndex new_index = this->index(row, 0);
     emit dataChanged(new_index, new_index, {IsSelectedRole} );
@@ -377,7 +378,7 @@ void PhotoModel::setData(int row, QString value, QString property)
  * Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la Photo.
  * Certains roles ne sont pas modifiables: `imageUrl, isSelected, hasGPS, filename, shutterSpeed, F-number`, etc.
  * \see https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
- * \note: It is important to emit the `dataChanged()` signal after saving the changes.
+ * \note: Il est important d'émettre le signal `dataChanged()` after saving the changes.
  *
  * \param index : l'index (au sens QModelIndex) de l'item à modifier.
  * \param value : la nouvelle valeur.
@@ -412,6 +413,11 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].country = value.toString();
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << CountryRole << ToBeSavedRole);
+            break;
+        case LocationRole:
+            m_photos[index.row()].location = value.toString();
+            m_photos[index.row()].toBeSaved = true;
+            emit dataChanged(index, index, QVector<int>() << LocationRole << ToBeSavedRole);
             break;
         case CreatorRole:
             m_photos[index.row()].creator = value.toString();
@@ -500,6 +506,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // Les metadata IPTC
     m_photos[row].city            = value_list["City"].toString();
     m_photos[row].country         = value_list["Country"].toString();
+    m_photos[row].location        = value_list["Location"].toString();
     m_photos[row].description     = value_list["Description"].toString();
     m_photos[row].software        = value_list["Software"].toString();
     m_photos[row].keywords        = value_list["Keywords"].toStringList();
@@ -614,7 +621,7 @@ void PhotoModel::fetchExifMetadata(int photo)
 /*!
  * \brief Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées.
  * \note Tag obligatoire: `imageUrl`.
- * \note Tags modifiés: `GPS coords, Creator, City, Country, DateTimeOriginal`.
+ * \note Tags modifiés: `GPS coords, Creator, City, Country, Location, DateTimeOriginal`.
  * \note Tags automatiques: `GPS Ref, MetadataEditingSoftware`.
  */
 void PhotoModel::saveMetadata()
@@ -645,6 +652,7 @@ void PhotoModel::saveMetadata()
             exifData.insert("Creator", idx.data(CreatorRole));          // MWG écrit aussi dans Artist
             exifData.insert("City", idx.data(CityRole));                // MWG écrit dans EXIF et dans IptcExt
             exifData.insert("Country", idx.data(CountryRole));          // MWG écrit dans EXIF et dans IptcExt
+            exifData.insert("Location", idx.data(CountryRole));         // MWG écrit dans EXIF et dans IptcExt
             exifData.insert("Description", idx.data(DescriptionRole));  // MWG écrit aussi dans ImageDescription
             exifData.insert("CaptionWriter", idx.data(CaptionWriterRole));
             exifData.insert("Keywords", idx.data(KeywordsRole));        // Ajout de la liste des keywords
@@ -684,6 +692,7 @@ void PhotoModel::addTestItem()
     ibizaData.insert("ImageWidth", 603);
     ibizaData.insert("City", "Ibiza");
     ibizaData.insert("Country", "Baleares");
+    ibizaData.insert("Location", "Southern beach");
     ibizaData.insert("Creator", "Midjourney");
     ibizaData.insert("GPSLatitude", 38.9148);
     ibizaData.insert("GPSLongitude", 1.4351);

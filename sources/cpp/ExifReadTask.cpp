@@ -52,12 +52,8 @@ void ExifReadTask::run()
     arguments << "-ext" << "JPG";       // Filtre sur les extensions
     arguments << "-ext" << "JPEG";      // Filtre sur les extensions
     arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
-
-    // Liste des tags à lire
-    arguments.append("-@");
-    arguments.append(m_argFile);
-    // Le dossier à scanner
-    arguments.append(m_filePath);
+    arguments << "-@"   << m_argFile;   // Liste des tags à lire
+    arguments.append(m_filePath);       // Le dossier à scanner
     // ---------------------------------------
     // Appel de ExifTool
     // ---------------------------------------
@@ -82,23 +78,24 @@ void ExifReadTask::run()
  * \param line : the received text
  * Flux reçu pour une image:
  * \code
-        "[{\r\n"
-        "  \"SourceFile\": \"E:/TiPhotos/P8160449.JPG\",\r\n"
-        "  \"FileName\": \"P8160449.JPG\",\r\n"
-        "  \"DateTimeOriginal\": \"2023:08:16 13:30:20\",\r\n"
-        "  \"Model\": \"E-M10MarkII\",\r\n"
-        "  \"Make\": \"OLYMPUS CORPORATION\",\r\n"
-        "  \"ImageWidth\": 4608,\r\n"
-        "  \"ImageHeight\": 3072,\r\n"
-        "  \"Artist\": \"Merlin\",\r\n"
-        "  \"Creator\": [\"Yves\",\"Simone\"],\r\n"
-        "  \"Description\": \"A busy street.\",\r\n"
-        "  \"Keywords\": [\"XIXs\",\"crowd\"],\r\n"
-        "  \"GPSLatitude\": 48.7664165199528,\r\n"
-        "  \"GPSLongitude\": 14.0194248700017,\r\n"
-        "  \"City\": \"Paris\"\r\n"
-        "}]\r\n"
+        "[{
+        "  "SourceFile": "E:/TiPhotos/P8160449.JPG",  "
+        "  "FileName": "P8160449.JPG",                "
+        "  "DateTimeOriginal": "2023:08:16 13:30:20", "
+        "  "Model": "E-M10MarkII",           "
+        "  "Make": "OLYMPUS CORPORATION",    "
+        "  "ImageWidth": 4608,               "
+        "  "ImageHeight": 3072,              "
+        "  "Artist": "Blemia Borowicz",      "
+        "  "Creator": ["Yves","Simone"],     "
+        "  "Description": "A busy street.",  "
+        "  "Keywords": ["XIXs","crowd"],     "
+        "  "GPSLatitude": 48.7664165199528,  "
+        "  "GPSLongitude": 14.0194248700017, "
+       \" \"City\": \"Paris\"\r\n\"
+        "}]"
     \endcode
+ * (en fait toutes les lignes sont escapées sur le modèle de la ligne City.)
  */
 void ExifReadTask::processLine(QByteArray line)
 {
@@ -142,7 +139,7 @@ void ExifReadTask::init(PhotoModel* photoModel)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief List the tags to be read in the JPG files, and put them in the Arguments file for \a ExifTool.
+ * \brief List the tags to be read in the JPG files, and put them in the Arguments file for ExifTool.
  * \returns true if the file was successfully created.
  *
  * To learn about the usage of IPTC tags:
@@ -171,7 +168,7 @@ bool ExifReadTask::writeArgsFile()
     // Photo EXIF tags
     out << "-ImageWidth"        << Qt::endl;   // 4608
     out << "-ImageHeight"       << Qt::endl;   // 3072
-    // out << "-ImageDescription"  << Qt::endl;   // Alternate tag label for "Description" (EXIF)
+    //out << "-ImageDescription"  << Qt::endl;   // Alternate tag label for "Description" (EXIF)
     out << "-ShutterSpeed"      << Qt::endl;   // 0.005
     out << "-FNumber"           << Qt::endl;   // 2.8
     out << "-Orientation"       << Qt::endl;   // 1 (see below for code values)
@@ -181,17 +178,17 @@ bool ExifReadTask::writeArgsFile()
     // Photo IPTC tags
     out << "-Creator"           << Qt::endl;   // Name of the photographer (IPTC tag label)
     out << "-Description"       << Qt::endl;   // Description du contenu de la photo (important)
-    //out << "-Caption"         << Qt::endl;   // Alternate tag label for "Description" (IPTC)
     out << "-CaptionWriter"     << Qt::endl;   // Initials of the writer of the description
-    // out << "-Headline"       << Qt::endl;   // (optional) Short description in 2 to 5 words
     out << "-Keywords"          << Qt::endl;   // ["Sestire di San Marco","Veneto","Italy","geotagged","geo:lat=45.432555","geo:lon=12.337459"]
+    //out << "-Headline"        << Qt::endl;   // (optional) Short description in 2 to 5 words
+    //out << "-Caption"         << Qt::endl;   // Alternate tag label for "Description" (IPTC)
     // GPS coordinates
     out << "-GPSLatitude"       << Qt::endl;   // 45.4325547675333
     out << "-GPSLongitude"      << Qt::endl;   // 12.3374594498028
     // Reverse Geocoding
-    out << "-City"              << Qt::endl;
-    out << "-Country"           << Qt::endl;
-    out << "-Landmark"          << Qt::endl;
+    out << "-Country"           << Qt::endl;   // MGW will read IPTC:Country and IPTC-Ext:LocationShown/Country
+    out << "-City"              << Qt::endl;   // MGW will read IPTC:City and IPTC-Ext:LocationShown/City
+    out << "-Location"          << Qt::endl;   // MGW will read IPTC:Location and IPTC-Ext:LocationShown/sublocation
 
     // Fermeture du fichier
     file.close();

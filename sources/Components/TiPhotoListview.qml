@@ -32,7 +32,7 @@ ListView{
         repeat: false;
         onTriggered: {
             // Envoie une request pour récupérer des infos à partir des coords GPS
-            console.debug(">>>>> timer triggered");
+            // console.debug(">>>>> timer triggered");
             window.requestReverseGeocode(mapTab.photoLatitude, mapTab.photoLongitude);
         }
     }
@@ -129,7 +129,7 @@ ListView{
                     // On relance une demande d'infos ReverseGeo
                     if ( (tabbedPage.currentIndex === 1) && hasGPS) {
                         // Si onglet CARTE et COORDS GPS:
-                        console.debug(">>>> restart timer");
+                        // console.debug(">>>> restart timer");
                         geoTimer.restart();
                     }
                     else

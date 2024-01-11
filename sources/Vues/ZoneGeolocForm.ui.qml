@@ -8,6 +8,7 @@ Zone{
     property alias chipLong: chipLong
     property alias chipCity: chipCity
     property alias chipCountry: chipCountry
+    property alias chipLocation: chipLocation
 
     iconZone: "qrc:/Images/icon-world.png"
     txtZone: qsTr("Géolocalisation")
@@ -20,6 +21,11 @@ Zone{
         }
         Chips {
             id: chipLong
+            editable: false
+            deletable: true
+        }
+        Chips {
+            id: chipLocation
             editable: false
             deletable: true
         }

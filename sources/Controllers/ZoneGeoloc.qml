@@ -19,10 +19,14 @@ ZoneGeolocForm {
     {
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "city");
     }
-    chipCountry.deleteArea.onClicked:   // (mouse) =>
+    chipCountry.deleteArea.onClicked:
     {
-        // console.log("chipCountry.deleteArea.onClicked");
         window.setPhotoProperty(tabbedPage.selectedData.row, "", "country");
+    }
+    chipLocation.deleteArea.onClicked:   // (mouse) =>
+    {
+        console.log("chipLocation.deleteArea.onClicked");
+        window.setPhotoProperty(tabbedPage.selectedData.row, "", "location");
     }
 
     // On raffraichit la zone si SelectedData est modifiée
@@ -36,7 +40,8 @@ ZoneGeolocForm {
             chipLat.content = tabbedPage.selectedData.latitude.toFixed(4) + " Lat "  + ((tabbedPage.selectedData.latitude>0) ? "N" : "S");
             chipLong.content= tabbedPage.selectedData.longitude.toFixed(4) + " Long " + ((tabbedPage.selectedData.longitude>0) ? "E" : "W");
             chipCity.content= tabbedPage.selectedData.city;
-            chipCountry.content= tabbedPage.selectedData.country;
+            chipCountry.content = tabbedPage.selectedData.country;
+            chipLocation.content= tabbedPage.selectedData.location;
         }
     }
 
