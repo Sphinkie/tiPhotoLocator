@@ -1,4 +1,4 @@
-\doxysection{Suggestion\+Category\+Proxy\+Model Class Reference}
+\doxysection{Référence de la classe Suggestion\+Category\+Proxy\+Model}
 \label{class_suggestion_category_proxy_model}\index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
 
 
@@ -9,26 +9,26 @@ The \doxyref{Suggestion\+Category\+Proxy\+Model}{p.}{class_suggestion_category_p
 
 {\ttfamily \#include $<$Suggestion\+Category\+Proxy\+Model.\+h$>$}
 
-Inheritance diagram for Suggestion\+Category\+Proxy\+Model\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Suggestion\+Category\+Proxy\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_suggestion_category_proxy_model}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Slots}
+\doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ set\+Filter\+Enabled} (bool enabled)
 \begin{DoxyCompactList}\small\item\em Ce slot active ou désactive le filtrage par le proxy\+Model. \end{DoxyCompactList}\item 
 void \textbf{ remove\+Photo\+From\+Suggestion} (const int proxy\+Row)
 \begin{DoxyCompactList}\small\item\em Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Signals}
+\doxysubsubsection*{Signaux}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_suggestion_category_proxy_model_acbcc572b70158e4c6b93a43494837c74} 
 void {\bfseries filter\+Enabled\+Changed} ()
 \begin{DoxyCompactList}\small\item\em Signal émis quand l\textquotesingle{}état du filtrage change. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Suggestion\+Category\+Proxy\+Model} (QObject $\ast$parent=nullptr)
@@ -37,13 +37,13 @@ bool \textbf{ filter\+Enabled} () const
 \begin{DoxyCompactList}\small\item\em Cette méthode indique si le filtrage est actif ou non. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \textbf{ set\+Filter\+Value} (QString filter="{}"{})
 \begin{DoxyCompactList}\small\item\em Cette méthode invocable par QML active ou désactive le filtrage par le proxy\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Properties}
+\doxysubsubsection*{Propriétés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_suggestion_category_proxy_model_a32e202125b547edffe7900d9df77af86} 
 bool {\bfseries filter\+Enabled}
 \begin{DoxyCompactList}\small\item\em The filter\+Enabled property manages the status of the filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_suggestion_category_proxy_model_a15cde010b373ec1cfe3475a6b01dc05a} 
@@ -51,10 +51,10 @@ QString {\bfseries m\+\_\+filter} = "{}"{}
 \begin{DoxyCompactList}\small\item\em Chaine de caractères contenant le filtre. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 The \doxyref{Suggestion\+Category\+Proxy\+Model}{p.}{class_suggestion_category_proxy_model} class is a filter Proxy\+Model, that keeps only \doxyref{Suggestion}{p.}{struct_suggestion} with a given category. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_suggestion_category_proxy_model_a7f173be0c42da4ac2ddeef414d1d4247} 
 \index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
 \index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
@@ -66,13 +66,13 @@ The \doxyref{Suggestion\+Category\+Proxy\+Model}{p.}{class_suggestion_category_p
 Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}category"{}. Par défaut, le filtrage est inactif (tout passe). 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em parent} & \+: modèle source. \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{class_suggestion_category_proxy_model_aec23196b11c2801ba701656539a288d4} 
 \index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!filterEnabled@{filterEnabled}}
 \index{filterEnabled@{filterEnabled}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
@@ -83,7 +83,7 @@ Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiqu
 
 Cette méthode indique si le filtrage est actif ou non. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 true si le filtre est actif. 
 \end{DoxyReturn}
 \label{class_suggestion_category_proxy_model_a29d65a3ef6bd9db53b99b8edaf8600bc} 
@@ -100,7 +100,7 @@ Ce slot enlève la photo courante de la liste des photos correspondant à une su
 On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxyref{Suggestion\+Proxy\+Model}{p.}{class_suggestion_proxy_model}. 
 \end{DoxyNote}
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em proxy\+Row} & \+: Indice dans le Proxy\+Model de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
 \end{DoxyParams}
@@ -115,7 +115,7 @@ On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}i
 Ce slot active ou désactive le filtrage par le proxy\+Model. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em enabled} & \+: true pour activer le filtrage. \\
 \hline
 \end{DoxyParams}
@@ -130,13 +130,13 @@ Ce slot active ou désactive le filtrage par le proxy\+Model.
 Cette méthode invocable par QML active ou désactive le filtrage par le proxy\+Model. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em filter} & \+: La chaine à garder pour le filtrage. (vide = Accept All)\\
 \hline
 \end{DoxyParams}
 Le filtrage se fait sur la base \+: \doxyref{Suggestion}{p.}{struct_suggestion} dont la catégorie contient le mot passé en paramètre. Par exemple, le filtre "{}tag"{} laissera passer les catégories "{}tag"{} et "{}geo$\vert$tag"{}. 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Models/Suggestion\+Category\+Proxy\+Model.\+h\item 
 Models/Suggestion\+Category\+Proxy\+Model.\+cpp\end{DoxyCompactItemize}

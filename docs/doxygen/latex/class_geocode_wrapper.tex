@@ -1,4 +1,4 @@
-\doxysection{Geocode\+Wrapper Class Reference}
+\doxysection{Référence de la classe Geocode\+Wrapper}
 \label{class_geocode_wrapper}\index{GeocodeWrapper@{GeocodeWrapper}}
 
 
@@ -9,30 +9,30 @@ The \doxyref{Geocode\+Wrapper}{p.}{class_geocode_wrapper} class allows requests 
 
 {\ttfamily \#include $<$Geocode\+Wrapper.\+h$>$}
 
-Inheritance diagram for Geocode\+Wrapper\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Geocode\+Wrapper\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_geocode_wrapper}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Slots}
+\doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ request\+Reverse\+Geocode} (double latitude, double longitude)
 \begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =$>$ {\texttt{ Résultat}} La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} \end{DoxyCompactList}\item 
 void \textbf{ request\+Coordinates} (QString city)
 \begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Geocode\+Wrapper} (\textbf{ Suggestion\+Model} $\ast$suggestion\+\_\+model)
 \begin{DoxyCompactList}\small\item\em Le contructeur initialise le provider "{}\+OSM"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Slots}
+\doxysubsubsection*{Connecteurs privés}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ geo\+Code\+Finished} (QGeo\+Code\+Reply $\ast$reply)
 \begin{DoxyCompactList}\small\item\em Signal appelé lors de la réception de la réponse à la request. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_geocode_wrapper_adf339348abe1776e01f8345364dac1d1} 
@@ -43,7 +43,7 @@ QGeo\+Coding\+Manager $\ast$ {\bfseries m\+\_\+geo\+Manager}
 \begin{DoxyCompactList}\small\item\em Le \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} qui stockera les reponses. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 The \doxyref{Geocode\+Wrapper}{p.}{class_geocode_wrapper} class allows requests to Open\+Street\+Map for reverse geocoding. 
 
 \begin{DoxyNote}{Note}
@@ -57,7 +57,7 @@ Nécessite d\textquotesingle{}ajouter les lignes suivantes dans le fichier .pro.
 \end{DoxyNote}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453} 
 \index{GeocodeWrapper@{GeocodeWrapper}!GeocodeWrapper@{GeocodeWrapper}}
 \index{GeocodeWrapper@{GeocodeWrapper}!GeocodeWrapper@{GeocodeWrapper}}
@@ -69,13 +69,13 @@ Nécessite d\textquotesingle{}ajouter les lignes suivantes dans le fichier .pro.
 Le contructeur initialise le provider "{}\+OSM"{}. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em suggestion\+\_\+model} & \+: permet de savoir quel objet \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} appeler une fois les résultats reçus. \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 \index{GeocodeWrapper@{GeocodeWrapper}!geoCodeFinished@{geoCodeFinished}}
 \index{geoCodeFinished@{geoCodeFinished}!GeocodeWrapper@{GeocodeWrapper}}
@@ -87,7 +87,7 @@ Le contructeur initialise le provider "{}\+OSM"{}.
 Signal appelé lors de la réception de la réponse à la request. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em reply} & \+: le contenu de la réponse à la request. \\
 \hline
 \end{DoxyParams}
@@ -105,7 +105,7 @@ En cas de réponse à une demande de coordonnées\+: on les mémorise dans le QS
 Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em city} & \+: un nom de lieu, par exemple "{}\+Marsa el Brega"{} =$>$ 30.\+4074, 19.\+5784 \\
 \hline
 \end{DoxyParams}
@@ -120,7 +120,7 @@ Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu 
 Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =$>$ {\texttt{ Résultat}} La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em latitude} & \+: coordonnées GPS \\
 \hline
 {\em longitude} & coordonnées GPS \\
@@ -128,7 +128,7 @@ Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS.
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Cpp/Geocode\+Wrapper.\+h\item 
 Cpp/Geocode\+Wrapper.\+cpp\end{DoxyCompactItemize}

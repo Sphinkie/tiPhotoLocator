@@ -24,6 +24,7 @@ var struct_photo =
     [ "isSelected", "struct_photo.html#a8e391469cda515a3aacb6edafa2a8254", null ],
     [ "isWelcome", "struct_photo.html#a46c9dbe9c662028eff1907e39d5941f2", null ],
     [ "keywords", "struct_photo.html#a76af2f2ab2fa057b17b00e796fcfe2b5", null ],
+    [ "location", "struct_photo.html#a649223a8259c1bb869af35fe54ed5ff3", null ],
     [ "make", "struct_photo.html#a3f6620eb0f021aec853b0390d66c4898", null ],
     [ "orientation", "struct_photo.html#a0f11a71d79268e835723f1db0f4acffa", null ],
     [ "shutterSpeed", "struct_photo.html#aeaeadb764ea3e33efa012abc317676db", null ],

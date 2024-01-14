@@ -1,4 +1,4 @@
-\doxysection{Photo\+Model Class Reference}
+\doxysection{Référence de la classe Photo\+Model}
 \label{class_photo_model}\index{PhotoModel@{PhotoModel}}
 
 
@@ -9,13 +9,13 @@ The \doxyref{Photo\+Model}{p.}{class_photo_model} class manages a list of photo 
 
 {\ttfamily \#include $<$Photo\+Model.\+h$>$}
 
-Inheritance diagram for Photo\+Model\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Photo\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_photo_model}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Types}
+\doxysubsubsection*{Types publics}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_photo_model_afae44c634ae6bf2b6b6c2e2a19269159} 
@@ -46,14 +46,15 @@ enum \textbf{ Roles} \{ \newline
 , {\bfseries City\+Role}
 , \newline
 {\bfseries Country\+Role}
+, {\bfseries Location\+Role}
 , {\bfseries Description\+Role}
 , {\bfseries Caption\+Writer\+Role}
-, {\bfseries Software\+Role}
 , \newline
-{\bfseries Keywords\+Role}
+{\bfseries Software\+Role}
+, {\bfseries Keywords\+Role}
  \}
 \begin{DoxyCompactList}\small\item\em The Roles enum lists the roles associated to each attribute of a \doxyref{Photo}{p.}{struct_photo}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Slots}
+\doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ append} (const QString filename, const QString url)
@@ -62,9 +63,9 @@ void \textbf{ fetch\+Exif\+Metadata} (int row=-\/1)
 \begin{DoxyCompactList}\small\item\em Ce slot lit des données EXIF d\textquotesingle{}une (ou toutes) photos du répertoire. \end{DoxyCompactList}\item 
 void \textbf{ save\+Metadata} ()
 \begin{DoxyCompactList}\small\item\em Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées. \end{DoxyCompactList}\item 
-void \textbf{ set\+Selected\+Item\+Coords} (double latitude, double longitude)
+void \textbf{ set\+Selected\+Item\+Coords} (const double latitude, const double longitude)
 \begin{DoxyCompactList}\small\item\em Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée. \end{DoxyCompactList}\item 
-void \textbf{ set\+In\+Circle\+Item\+Coords} (double latitude, double longitude)
+void \textbf{ set\+In\+Circle\+Item\+Coords} (const double latitude, const double longitude)
 \begin{DoxyCompactList}\small\item\em Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
 void \textbf{ set\+Photo\+Property} (const int photo, const QString value, const QString property)
 \begin{DoxyCompactList}\small\item\em Ce slot affecte le role fourni à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. \end{DoxyCompactList}\item 
@@ -80,7 +81,7 @@ void \textbf{ duplicate\+Data} (int row)
 \begin{DoxyCompactList}\small\item\em Duplicates an item of the model, and add it at the end of the vector. \end{DoxyCompactList}\item 
 void \textbf{ remove\+Data} (int row)
 \begin{DoxyCompactList}\small\item\em Fonction typique qui supprime l\textquotesingle{}item désigné du modèle. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Signals}
+\doxysubsubsection*{Signaux}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_photo_model_ac6f14df5683cb7c053c9d5c6982a3d2c} 
@@ -92,7 +93,7 @@ void {\bfseries send\+Suggestion} (QString text, QString target, QString categor
 \label{class_photo_model_abdede59b31ccb60a9c2d3ad0838661c3} 
 void {\bfseries data\+Cleared} ()
 \begin{DoxyCompactList}\small\item\em Signal émis quand le modèle a été vidé. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Photo\+Model} (QObject $\ast$parent=nullptr)
@@ -128,31 +129,31 @@ bool \textbf{ set\+Data} (const QModel\+Index \&index, const QVariant \&value, i
 \begin{DoxyCompactList}\small\item\em Surcharge qui permet de modifier {\bfseries{unitairement}} un Role d\textquotesingle{}un item du modèle. \end{DoxyCompactList}\item 
 void \textbf{ set\+Data} (const QVariant\+Map \&value\+\_\+list)
 \begin{DoxyCompactList}\small\item\em Cette méthode permet de modifier plusieurs roles d\textquotesingle{}un item du modèle, avec comme clef le role {\bfseries{Filename\+Role}}. Elle est appelée lors de la lecture (ou relecture) globale des tags Exif des photos originales. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
+\doxysubsubsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_photo_model_af32aed3a0a39738d782a1d69a14175f2} 
 QModel\+Index {\bfseries m\+\_\+marker\+Index} = QModel\+Index()
 \begin{DoxyCompactList}\small\item\em Index du marker Saved\+Position. Initialisé à une valeur invalide. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Attributes}
+\doxysubsubsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_photo_model_a6ff090266c5c666181a02469943d9512} 
 int {\bfseries m\+\_\+marker\+Row} = -\/1
 \begin{DoxyCompactList}\small\item\em Position du marker Saved\+Position. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Properties}
+\doxysubsubsection*{Propriétés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_photo_model_a6376872cafff59ccc887f405a2515ed9} 
 int {\bfseries selected\+Row}
 \begin{DoxyCompactList}\small\item\em selected\+Row is the \doxyref{Photo}{p.}{struct_photo} row in the model corresponding to the selected photo in the List\+View. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Member Functions}
+\doxysubsubsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ add\+Test\+Item} ()
 \begin{DoxyCompactList}\small\item\em Adds a test item to the \doxyref{Photo\+Model}{p.}{class_photo_model}. (only if {\bfseries{Debug\+Mode}} is enabled in the $\ast$\+Settingss) \end{DoxyCompactList}\item 
-void \textbf{ selected\+Row} (int row)
-\begin{DoxyCompactList}\small\item\em Mémorise la position fournie. \end{DoxyCompactList}\item 
+void \textbf{ selected\+Row} (const int row)
+\begin{DoxyCompactList}\small\item\em Mémorise la photo indiquée comme étant la photo sélectionnée dans la List\+View. \end{DoxyCompactList}\item 
 \label{class_photo_model_ae3dd8e3599f33e699cd474c5fca7d0b2} 
 int {\bfseries get\+Selected\+Row} ()
 \begin{DoxyCompactList}\small\item\em Returns the last selected row. \end{DoxyCompactList}\item 
@@ -161,7 +162,7 @@ void {\bfseries reset\+Circle} ()
 \begin{DoxyCompactList}\small\item\em Enleve le flag "{}inside\+Circle"{} à toutes les photos. \end{DoxyCompactList}\item 
 bool \textbf{ belong} (double p\+La, double p\+Lo, double o\+La, double o\+Lo, float r\+La, float r\+Lo)
 \begin{DoxyCompactList}\small\item\em Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_photo_model_a6652f17b0436c7927b0924ddcd3ba98b} 
@@ -175,12 +176,12 @@ int {\bfseries m\+\_\+dumped\+Row} = 0
 \begin{DoxyCompactList}\small\item\em Compteur pour le dump de debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 The \doxyref{Photo\+Model}{p.}{class_photo_model} class manages a list of photo data. 
 
 \textbackslash{}inmodule Ti\+Photo\+Locator 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_photo_model_a244f996eed49122ebe11c5369d63a0e2} 
 \index{PhotoModel@{PhotoModel}!PhotoModel@{PhotoModel}}
 \index{PhotoModel@{PhotoModel}!PhotoModel@{PhotoModel}}
@@ -192,13 +193,13 @@ The \doxyref{Photo\+Model}{p.}{class_photo_model} class manages a list of photo 
 Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em parent} & \+: paramètre classique pour les QAbstract\+List\+Model. \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{class_photo_model_af43bef19e91b11bf4e79c55fe458d0a1} 
 \index{PhotoModel@{PhotoModel}!addTestItem@{addTestItem}}
 \index{addTestItem@{addTestItem}!PhotoModel@{PhotoModel}}
@@ -223,7 +224,7 @@ For testing purpose.
 Adds a \doxyref{Photo}{p.}{struct_photo} to the model, with just a name and a path (url). Other data should be filled later, from exif metadata. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em filename} & \+: filename of the photo \\
 \hline
 {\em url} & \+: full path of the photo (in Qt format) \\
@@ -240,7 +241,7 @@ Adds a \doxyref{Photo}{p.}{struct_photo} to the model, with just a name and a pa
 Adds a \doxyref{Photo}{p.}{struct_photo} item to the model, from a list of metadata. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em data} & \+: a \textquotesingle{}key-\/value\textquotesingle{} dictionnary of metadata. \\
 \hline
 \end{DoxyParams}
@@ -265,7 +266,7 @@ Accepts only 2 keys\+: filename and image\+Url.
 Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune). 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em latitude} & \+: latitude au format GPS. \\
 \hline
 {\em longitude} & \+: longitude au format GPS. \\
@@ -292,7 +293,7 @@ Le nom du photographe est configuré dans les Settings. \label{class_photo_model
 Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX, oY) et de rayon R. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em p\+La} & \+: Latitude du point à tester. \\
 \hline
 {\em p\+Lo} & \+: Longitude du point à tester. \\
@@ -306,7 +307,7 @@ Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O 
 {\em r\+Lo} & \+: le rayon du cercle sur l\textquotesingle{}axe des Longitudes E-\/W (en degrés). \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 true si le point est dans le cercle. 
 \end{DoxyReturn}
 \begin{DoxyNote}{Note}
@@ -336,13 +337,13 @@ Returns the role value of an element of the model.
 Implémentation obligatoire. 
 \end{DoxyNote}
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em index} & \+: index of the element of the model. \\
 \hline
 {\em role} & \+: the requested role (enum). \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 the requested role value 
 \end{DoxyReturn}
 \label{class_photo_model_a822190ecc2081c7b49030c0f6a42317f} 
@@ -369,7 +370,7 @@ Debug function.
 Duplicates an item of the model, and add it at the end of the vector. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em row} & \+: item row to be duplicated. \\
 \hline
 \end{DoxyParams}
@@ -384,7 +385,7 @@ Duplicates an item of the model, and add it at the end of the vector.
 Ce slot lit des données EXIF d\textquotesingle{}une (ou toutes) photos du répertoire. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em photo} & \+: l\textquotesingle{}indice de la photo (vide ou -\/1 = toutes les photos du répertoire) \\
 \hline
 \end{DoxyParams}
@@ -399,7 +400,7 @@ Ce slot lit des données EXIF d\textquotesingle{}une (ou toutes) photos du répe
 Parcourt toutes les \doxyref{Photo}{p.}{struct_photo} du modèle, et flague celles qui sont à l\textquotesingle{}interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX). 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em circle\+\_\+radius} & Le rayon du cercle (en mètres).\\
 \hline
 \end{DoxyParams}
@@ -414,11 +415,11 @@ On utilise les conversions\+: {\bfseries{1°lat = 111km}} et {\bfseries{1°long 
 La methode \doxyref{get()}{p.}{class_photo_model_a18fb19d062f2f7d7d79585d2e62c9634} (invocable par QML) renvoie les données de la photo demandée. Usage dans QML\+: {\ttfamily titre = my\+Model.\+get(1).title;} 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em row} & \+: indice. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 une Map contenant toutes les propriétés de l\textquotesingle{}item, dont la propriété spéciale\+: "{}row"{}. 
 \end{DoxyReturn}
 \label{class_photo_model_a3c8036e57376630243dfa6841d7f2251} 
@@ -432,11 +433,11 @@ une Map contenant toutes les propriétés de l\textquotesingle{}item, dont la pr
 Retourne le nom du role dans le modèle. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em role} & la valeur numérique du role. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 la valeur texte du role. 
 \end{DoxyReturn}
 \label{class_photo_model_a1d2159990dbea68afefa28bfdd6804fe} 
@@ -450,11 +451,11 @@ la valeur texte du role.
 Returns the full name of the photo. This is an example of unitary getter method. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em row} & \+: Indice de l\textquotesingle{}élément à lire. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 a QVariant containing the absolute path and full name (image URL) of the photo. 
 \end{DoxyReturn}
 \label{class_photo_model_a1e2f3f829e54ef445a5b1dea07ad2118} 
@@ -468,7 +469,7 @@ a QVariant containing the absolute path and full name (image URL) of the photo.
 Fonction typique qui supprime l\textquotesingle{}item désigné du modèle. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em row} & \+: la position dans le vecteur de l\textquotesingle{}item à supprimer. \\
 \hline
 \end{DoxyParams}
@@ -483,7 +484,7 @@ Fonction typique qui supprime l\textquotesingle{}item désigné du modèle.
 Enlève un des mots-\/clef descriptif de la photo. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em keyword} & \+: le mot-\/clef à retirer de la liste. \\
 \hline
 \end{DoxyParams}
@@ -527,11 +528,11 @@ Returns the number of items in the model.
 Implémentation obligatoire. 
 \end{DoxyNote}
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em parent} & \+: parent of the model. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 the number of elements in the model. 
 \end{DoxyReturn}
 \label{class_photo_model_ac393e2839ea5993f199ec669973972ef} 
@@ -547,23 +548,22 @@ Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPT
 \begin{DoxyNote}{Note}
 Tag obligatoire\+: {\ttfamily image\+Url}. 
 
-Tags modifiés\+: {\ttfamily GPS coords, Creator, City, Country, Date\+Time\+Original}. 
+Tags modifiés\+: {\ttfamily GPS coords, Creator, City, Country, Location, Date\+Time\+Original}. 
 
 Tags automatiques\+: {\ttfamily GPS Ref, Metadata\+Editing\+Software}. 
 \end{DoxyNote}
-\label{class_photo_model_aee33ef1753815d48baa8d8ab8716782c} 
+\label{class_photo_model_aa9fed3a1b288e554337ded22bdb1cf35} 
 \index{PhotoModel@{PhotoModel}!selectedRow@{selectedRow}}
 \index{selectedRow@{selectedRow}!PhotoModel@{PhotoModel}}
 \doxysubsubsection{selectedRow()}
-{\footnotesize\ttfamily void Photo\+Model\+::selected\+Row (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Photo\+Model\+::selected\+Row (\begin{DoxyParamCaption}\item[{const int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Mémorise la position fournie. 
+Mémorise la photo indiquée comme étant la photo sélectionnée dans la List\+View. 
 
-Met le flag {\bfseries{is\+Selected}} du précédent item à {\itshape False} et le nouveau à {\itshape True}. ~\newline
- Met aussi le flag {\bfseries{inside\+Circle}} du précédent item à {\itshape False} et le nouveau à {\itshape True}. 
-\begin{DoxyParams}{Parameters}
+Met le flag {\bfseries{is\+Selected}} du précédent item à {\itshape False} et le nouveau à {\itshape True}. 
+\begin{DoxyParams}{Paramètres}
 {\em row} & \+: l\textquotesingle{}indice de l\textquotesingle{}item sélectionné dans la List\+View. \\
 \hline
 \end{DoxyParams}
@@ -577,14 +577,14 @@ Met le flag {\bfseries{is\+Selected}} du précédent item à {\itshape False} et
 
 Surcharge qui permet de modifier {\bfseries{unitairement}} un Role d\textquotesingle{}un item du modèle. 
 
-Cette fonction met aussi à {\itshape True} le flag {\bfseries{To Be Saved}} car il s\textquotesingle{}agit d\textquotesingle{}une action opérateur. Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la \doxyref{Photo}{p.}{struct_photo}. Certains roles ne sont pas modifiables\+: {\ttfamily image\+Url, is\+Selected, has\+GPS, filename, shutter\+Speed, F-\/number}, etc. \begin{DoxySeeAlso}{See also}
+Cette fonction met aussi à {\itshape True} le flag {\bfseries{To Be Saved}} car il s\textquotesingle{}agit d\textquotesingle{}une action opérateur. Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la \doxyref{Photo}{p.}{struct_photo}. Certains roles ne sont pas modifiables\+: {\ttfamily image\+Url, is\+Selected, has\+GPS, filename, shutter\+Speed, F-\/number}, etc. \begin{DoxySeeAlso}{Voir également}
 {\texttt{ https\+://doc.\+qt.\+io/qt-\/5/qtquick-\/modelviewsdata-\/cppmodels.\+html\#qabstractitemmodel-\/subclass}} 
 \end{DoxySeeAlso}
 \begin{DoxyNote}{Note}
-\+: It is important to emit the {\ttfamily data\+Changed()} signal after saving the changes.
+\+: Il est important d\textquotesingle{}émettre le signal {\ttfamily data\+Changed()} after saving the changes.
 \end{DoxyNote}
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em index} & \+: l\textquotesingle{}index (au sens QModel\+Index) de l\textquotesingle{}item à modifier. \\
 \hline
 {\em value} & \+: la nouvelle valeur. \\
@@ -592,7 +592,7 @@ Cette fonction met aussi à {\itshape True} le flag {\bfseries{To Be Saved}} car
 {\em role} & \+: le Role à modifier ({\ttfamily Latitude\+Role, Longitude\+Role, To\+Be\+Saved\+Role, city, country}). \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 {\itshape true} si la modification a réussi. {\itshape False} si l\textquotesingle{}index n\textquotesingle{}est pas valide, ou si la nouvelle valeur est identique à l\textquotesingle{}existante. 
 \end{DoxyReturn}
 \label{class_photo_model_a606c1207c36cdf5e81f346ca82cec2d8} 
@@ -609,7 +609,7 @@ Roles non modifiables (ignorés)\+: {\ttfamily image\+Url, inside\+Circle}.~\new
  Roles non modifiables (recalculés)\+: {\ttfamily has\+GPS, to\+Be\+Saved}.~\newline
  Cette fonction positionne le flag {\bfseries{To\+Be\+Saved}} à {\itshape False}.~\newline
  
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em value\+\_\+list} & \+: la liste des données à modifier. Attention\+: les keys sont les noms des balises EXIF. {\ttfamily File\+Name} est obligatoire. \\
 \hline
 \end{DoxyParams}
@@ -624,7 +624,7 @@ Roles non modifiables (ignorés)\+: {\ttfamily image\+Url, inside\+Circle}.~\new
 Ce slot ajoute ou modifie une propriété d\textquotesingle{}une \doxyref{Photo}{p.}{struct_photo}, par exemple quand on clique sur une suggestion. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em row} & \+: indice de la photo. \\
 \hline
 {\em value} & \+: valeur de la propriété. \\
@@ -632,18 +632,18 @@ Ce slot ajoute ou modifie une propriété d\textquotesingle{}une \doxyref{Photo}
 {\em property} & \+: nom de la propriété. \\
 \hline
 \end{DoxyParams}
-\label{class_photo_model_a834795331bc8b3f329e8f2a143839265} 
+\label{class_photo_model_aa35674fe9c8ec79d2993ce56614bb909} 
 \index{PhotoModel@{PhotoModel}!setInCircleItemCoords@{setInCircleItemCoords}}
 \index{setInCircleItemCoords@{setInCircleItemCoords}!PhotoModel@{PhotoModel}}
 \doxysubsubsection{setInCircleItemCoords}
-{\footnotesize\ttfamily void Photo\+Model\+::set\+In\+Circle\+Item\+Coords (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily void Photo\+Model\+::set\+In\+Circle\+Item\+Coords (\begin{DoxyParamCaption}\item[{const double}]{latitude,  }\item[{const double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
 Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em latitude} & \+: Latitude GPS à affecter aux photos \\
 \hline
 {\em longitude} & \+: Longitude GPS à affecter aux photos \\
@@ -660,7 +660,7 @@ Ce slot affecte les coordonnées GPS fournies à toutes les photos géographique
 Ce slot affecte le role fourni à toutes les photos géographiquement situées à l\textquotesingle{}interieur du cercle rouge. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em photo} & \+: l\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} à modifier. Voir la note pour les valeurs particulières. \\
 \hline
 {\em value} & \+: la valeur \\
@@ -673,18 +673,18 @@ Valeurs particulières du paramètre {\ttfamily photo}\+: \begin{DoxyItemize}
 \item La valeur spéciale -\/1 signifie {\bfseries{toutes les photos}}. \item La valeur spéciale -\/2 signifie {\bfseries{la photo sélectionée}}. \item La valeur spéciale -\/3 signifie {\bfseries{les photos du cercle}}. \end{DoxyItemize}
 
 \end{DoxyNote}
-\label{class_photo_model_a3dc7e36064651fe29ab6685d8eed1dd6} 
+\label{class_photo_model_a582509a3df1c2f9c0e6ae9f7c89e0294} 
 \index{PhotoModel@{PhotoModel}!setSelectedItemCoords@{setSelectedItemCoords}}
 \index{setSelectedItemCoords@{setSelectedItemCoords}!PhotoModel@{PhotoModel}}
 \doxysubsubsection{setSelectedItemCoords}
-{\footnotesize\ttfamily void Photo\+Model\+::set\+Selected\+Item\+Coords (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily void Photo\+Model\+::set\+Selected\+Item\+Coords (\begin{DoxyParamCaption}\item[{const double}]{latitude,  }\item[{const double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
 Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em latitude} & \+: Latitude GPS à affecter. \\
 \hline
 {\em longitude} & \+: Longitude GPS à affecter. \\
@@ -701,7 +701,7 @@ Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée.
 Modifie un des mots-\/clef descriptif de la photo. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em keyword} & \+: la nouvelle valeur du mot-\/clef. \\
 \hline
 {\em index} & \+: la position du mot-\/clef dans la liste. \\
@@ -712,7 +712,7 @@ Cette méthode modifie la \doxyref{Photo}{p.}{struct_photo} actuellement sélect
 \end{DoxyNote}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Models/Photo\+Model.\+h\item 
 Models/Photo\+Model.\+cpp\end{DoxyCompactItemize}

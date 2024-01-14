@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "abcdefghiklmnoprstuw",
   1: "cegopsu",
   2: "abcdefginoprstuw",
-  3: "cdfghikmnopst",
+  3: "cdfghiklmnopst",
   4: "r",
   5: "fs",
   6: "aclpt"
@@ -22,12 +22,12 @@ var indexSectionNames =
 
 var indexSectionLabels =
 {
-  0: "All",
+  0: "Tout",
   1: "Classes",
-  2: "Functions",
+  2: "Fonctions",
   3: "Variables",
-  4: "Enumerations",
-  5: "Properties",
+  4: "Énumérations",
+  5: "Propriétés",
   6: "Pages"
 };
 

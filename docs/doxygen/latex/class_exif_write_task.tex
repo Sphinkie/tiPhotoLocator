@@ -1,24 +1,24 @@
-\doxysection{Exif\+Write\+Task Class Reference}
+\doxysection{Référence de la classe Exif\+Write\+Task}
 \label{class_exif_write_task}\index{ExifWriteTask@{ExifWriteTask}}
 
 
 La classe \doxyref{Exif\+Write\+Task}{p.}{class_exif_write_task} permet d\textquotesingle{}écrire des metadata dans les photos JEG de façon asynchrone.  
 
 
-Inheritance diagram for Exif\+Write\+Task\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Exif\+Write\+Task\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_exif_write_task}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Exif\+Write\+Task} (const QVariant\+Map exif\+Data, bool generate\+Backup=false)
 \begin{DoxyCompactList}\small\item\em Constructeur. On enregistre les paramètres. \end{DoxyCompactList}\item 
 virtual void \textbf{ run} ()
 \begin{DoxyCompactList}\small\item\em Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un QProcess, et on écrit les metadata dans l\textquotesingle{}image JPG. Cette tache est exécutée dans un thread QRunnable. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_exif_write_task_a30f450a4be6abe483b77c9445689725e} 
@@ -29,7 +29,7 @@ bool {\bfseries m\+\_\+generate\+Backup}
 \begin{DoxyCompactList}\small\item\em True si un backup de l\textquotesingle{}image doit être généré. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 La classe \doxyref{Exif\+Write\+Task}{p.}{class_exif_write_task} permet d\textquotesingle{}écrire des metadata dans les photos JEG de façon asynchrone. 
 
 \textbackslash{}inmodule Ti\+Photo\+Locator 
@@ -41,7 +41,7 @@ Tache asynchrone par utilisation de QThread\+Pool.
 \end{DoxyNote}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_exif_write_task_a5182e345ea27ce1581cc6d28542bae97} 
 \index{ExifWriteTask@{ExifWriteTask}!ExifWriteTask@{ExifWriteTask}}
 \index{ExifWriteTask@{ExifWriteTask}!ExifWriteTask@{ExifWriteTask}}
@@ -53,7 +53,7 @@ Tache asynchrone par utilisation de QThread\+Pool.
 Constructeur. On enregistre les paramètres. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em exif\+Data} & la liste des metadata à écrire dans le fichier JPG. \\
 \hline
 {\em generate\+Backup} & {\ttfamily true} si un backup de l\textquotesingle{}image doit être généré avant sa modification. 
@@ -77,7 +77,7 @@ Constructeur. On enregistre les paramètres.
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{class_exif_write_task_a62fcca5c4d5077f086df4b98cac752df} 
 \index{ExifWriteTask@{ExifWriteTask}!run@{run}}
 \index{run@{run}!ExifWriteTask@{ExifWriteTask}}
@@ -93,12 +93,12 @@ Le mode MWG de Exif\+Tool permet d\textquotesingle{}ecrire en une fois dans les 
 
 Pour vérifier les tags écrits\+: {\ttfamily exiftool -\/G1 -\/a -\/s -\/XMP-\/iptc\+Core\+:All -\/XMP-\/iptc\+Ext\+:All mypicture.\+jpg} (-\/G1 = Group 1 = "{}\+Location"{}) (-\/s = shows tag names instead of description) 
 \end{DoxyNote}
-\begin{DoxySeeAlso}{See also}
+\begin{DoxySeeAlso}{Voir également}
 {\texttt{ https\+://exiftool.\+org/\+Tag\+Names/\+MWG.\+html}} 
 \end{DoxySeeAlso}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Cpp/Exif\+Write\+Task.\+h\item 
 Cpp/Exif\+Write\+Task.\+cpp\end{DoxyCompactItemize}

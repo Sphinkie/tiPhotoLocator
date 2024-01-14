@@ -1,4 +1,4 @@
-\doxysection{Camera\+Set Class Reference}
+\doxysection{Référence de la classe Camera\+Set}
 \label{class_camera_set}\index{CameraSet@{CameraSet}}
 
 
@@ -9,13 +9,13 @@ La classe \doxyref{Camera\+Set}{p.}{class_camera_set} gère un ensemble de vigne
 
 {\ttfamily \#include $<$Camera\+Set.\+h$>$}
 
-Inheritance diagram for Camera\+Set\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Camera\+Set\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_camera_set}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Slots}
+\doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ on\+Finished} (QNetwork\+Reply $\ast$reply)
@@ -23,7 +23,7 @@ void \textbf{ on\+Finished} (QNetwork\+Reply $\ast$reply)
 \label{class_camera_set_a77e050b451359a66ab6d161477597b44} 
 void {\bfseries on\+Error} ()
 \begin{DoxyCompactList}\small\item\em Fonction appelée en cas d\textquotesingle{}erreur de la demande Rest. A voir si on met quelque chose d\textquotesingle{}utile ici. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Camera\+Set} (QObject $\ast$parent=nullptr)
@@ -32,7 +32,7 @@ Q\+\_\+\+INVOKABLE void \textbf{ append} (const QString cam\+\_\+model)
 \begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un modèle de caméra dans la liste. S\textquotesingle{}il n\textquotesingle{}y est pas, on demande à deep\+AI de générer une imagette. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE bool \textbf{ contains} (const QString cam\+\_\+model)
 \begin{DoxyCompactList}\small\item\em Indique si le modèle d\textquotesingle{}appareil photo demandé est déjà référencé. Si oui, il possède alors déjà une vignette. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Member Functions}
+\doxysubsubsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ insert} (const QString cam\+\_\+model)
@@ -42,7 +42,7 @@ void \textbf{ request\+Thumb} (const QString cam\+\_\+model)
 \label{class_camera_set_adfa00deb84c361446cafb946443c1997} 
 void {\bfseries request\+Meteo} ()
 \begin{DoxyCompactList}\small\item\em Envoi d\textquotesingle{}une requete GET à openweathermap. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_camera_set_aaae5cd5c7f4c1db3d1c7b11bb0786f34} 
@@ -56,12 +56,12 @@ QString {\bfseries m\+\_\+deepai\+Key}
 \begin{DoxyCompactList}\small\item\em API key pour les requètes deep\+AI. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 La classe \doxyref{Camera\+Set}{p.}{class_camera_set} gère un ensemble de vignette, correspondant chacune à un modèle d\textquotesingle{}appareil photo. 
 
 \textbackslash{}inmodule Ti\+Photo\+Locator 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_camera_set_a56a4c781a3334d0fcce5bbd955a373c6} 
 \index{CameraSet@{CameraSet}!CameraSet@{CameraSet}}
 \index{CameraSet@{CameraSet}!CameraSet@{CameraSet}}
@@ -73,13 +73,13 @@ La classe \doxyref{Camera\+Set}{p.}{class_camera_set} gère un ensemble de vigne
 Ce Constructeur instancie le Network Manager utilisé pour les requètes REST. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em parent} & l\textquotesingle{}objet parent. \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{class_camera_set_a89e8ab28a0d3873016954386591b3aca} 
 \index{CameraSet@{CameraSet}!append@{append}}
 \index{append@{append}!CameraSet@{CameraSet}}
@@ -91,7 +91,7 @@ Ce Constructeur instancie le Network Manager utilisé pour les requètes REST.
 Ajout d\textquotesingle{}un modèle de caméra dans la liste. S\textquotesingle{}il n\textquotesingle{}y est pas, on demande à deep\+AI de générer une imagette. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em cam\+\_\+model} & \\
 \hline
 \end{DoxyParams}
@@ -106,11 +106,11 @@ Ajout d\textquotesingle{}un modèle de caméra dans la liste. S\textquotesingle{
 Indique si le modèle d\textquotesingle{}appareil photo demandé est déjà référencé. Si oui, il possède alors déjà une vignette. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em cam\+\_\+model} & \+: le nom d\textquotesingle{}un modèle d\textquotesingle{}appareil photo. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 true si ce modèle existe déja dans le Set. 
 \end{DoxyReturn}
 \label{class_camera_set_aad47572ed65bafd4d146a513d641a80e} 
@@ -124,7 +124,7 @@ true si ce modèle existe déja dans le Set.
 Ajoute un modèle d\textquotesingle{}appareil photo dans le Set. On lui fabrique alors une vignette. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em cam\+\_\+model} & \+: le nom d\textquotesingle{}un modèle d\textquotesingle{}appareil photo. \\
 \hline
 \end{DoxyParams}
@@ -139,7 +139,7 @@ Ajoute un modèle d\textquotesingle{}appareil photo dans le Set. On lui fabrique
 Appelé lors de la réception d\textquotesingle{}une réponse à une requete deepai. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em reply} & \+: Le contenu de la réponse. \\
 \hline
 \end{DoxyParams}
@@ -154,13 +154,13 @@ Appelé lors de la réception d\textquotesingle{}une réponse à une requete dee
 Envoi d\textquotesingle{}une requete POST à deepai. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em cam\+\_\+model} & \+: non utilisé pour l\textquotesingle{}instant \\
 \hline
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Models/Camera\+Set.\+h\item 
 Models/Camera\+Set.\+cpp\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-\doxysection{Exif\+Read\+Task Class Reference}
+\doxysection{Référence de la classe Exif\+Read\+Task}
 \label{class_exif_read_task}\index{ExifReadTask@{ExifReadTask}}
 
 
@@ -9,13 +9,13 @@ La tache asynchrone \doxyref{Exif\+Read\+Task}{p.}{class_exif_read_task} permet 
 
 {\ttfamily \#include $<$Exif\+Read\+Task.\+h$>$}
 
-Inheritance diagram for Exif\+Read\+Task\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Exif\+Read\+Task\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_exif_read_task}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Exif\+Read\+Task} (QString file\+Path)
@@ -23,22 +23,22 @@ Inheritance diagram for Exif\+Read\+Task\+:\begin{figure}[H]
 \label{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8} 
 virtual void {\bfseries run} ()
 \begin{DoxyCompactList}\small\item\em \+: Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultats dans \doxyref{Photo\+Model}{p.}{class_photo_model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
 \item 
 static void \textbf{ init} (\textbf{ Photo\+Model} $\ast$photo\+Model)
 \begin{DoxyCompactList}\small\item\em Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Member Functions}
+\doxysubsubsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ process\+Line} (QByte\+Array line)
 \begin{DoxyCompactList}\small\item\em Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelée répétitivement. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Static Private Member Functions}
+\doxysubsubsection*{Fonctions membres privées statiques}
 \begin{DoxyCompactItemize}
 \item 
 static bool \textbf{ write\+Args\+File} ()
-\begin{DoxyCompactList}\small\item\em List the tags to be read in the JPG files, and put them in the Arguments file for {\itshape Exif\+Tool}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactList}\small\item\em List the tags to be read in the JPG files, and put them in the Arguments file for Exif\+Tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_exif_read_task_adee848da5859f1e0a5ef3ea8b5fd155d} 
@@ -47,7 +47,7 @@ QString {\bfseries m\+\_\+file\+Path}
 \label{class_exif_read_task_ab4eef780350cedaf18f03690daf6c8d2} 
 QByte\+Array {\bfseries m\+\_\+rx\+Line}
 \begin{DoxyCompactList}\small\item\em Données Exif\+Tool en cours de réception. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Static Private Attributes}
+\doxysubsubsection*{Attributs privés statiques}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_exif_read_task_aab7c30ee91f00ce2cde757814472285c} 
@@ -58,7 +58,7 @@ static \textbf{ Photo\+Model} $\ast$ {\bfseries m\+\_\+photo\+Model}
 \begin{DoxyCompactList}\small\item\em Modèle contenant les photos et leurs tags. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 La tache asynchrone \doxyref{Exif\+Read\+Task}{p.}{class_exif_read_task} permet de lire les metadonnées d\textquotesingle{}une photo JPG sur le disque dur. 
 
 \textbackslash{}inmodule Ti\+Photo\+Locator 
@@ -94,7 +94,7 @@ Description of {\bfseries{JSON}} options for {\ttfamily Exif\+Tool}.
 \end{DoxyCode}
  
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db} 
 \index{ExifReadTask@{ExifReadTask}!ExifReadTask@{ExifReadTask}}
 \index{ExifReadTask@{ExifReadTask}!ExifReadTask@{ExifReadTask}}
@@ -109,13 +109,13 @@ Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.
 Si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n\textquotesingle{}est pas optimisé. 
 \end{DoxyNote}
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em file\+Path} & le chemin + nom du fichier JPG à lire. \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4} 
 \index{ExifReadTask@{ExifReadTask}!init@{init}}
 \index{init@{init}!ExifReadTask@{ExifReadTask}}
@@ -127,7 +127,7 @@ Si on passe un nom de chemin, le process va traiter toutes les images du dossier
 Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em photo\+Model} & \+: la classe appelante, à qui il faudra renvoyer les metadata lues. \\
 \hline
 \end{DoxyParams}
@@ -142,28 +142,28 @@ Méthode à appeler lors de la première utilisation. Mémorise quelques infos s
 Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelée répétitivement. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em line} & \+: the received text Flux reçu pour une image\+: 
 \begin{DoxyCode}{1}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}[\{\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}SourceFile\(\backslash\)"{}:\ \(\backslash\)"{}E:/TiPhotos/P8160449.JPG\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}FileName\(\backslash\)"{}:\ \(\backslash\)"{}P8160449.JPG\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}DateTimeOriginal\(\backslash\)"{}:\ \(\backslash\)"{}2023:08:16\ 13:30:20\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Model\(\backslash\)"{}:\ \(\backslash\)"{}E-\/M10MarkII\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Make\(\backslash\)"{}:\ \(\backslash\)"{}OLYMPUS\ CORPORATION\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}ImageWidth\(\backslash\)"{}:\ 4608,\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}ImageHeight\(\backslash\)"{}:\ 3072,\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Artist\(\backslash\)"{}:\ \(\backslash\)"{}Merlin\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Creator\(\backslash\)"{}:\ [\(\backslash\)"{}Yves\(\backslash\)"{},\(\backslash\)"{}Simone\(\backslash\)"{}],\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Description\(\backslash\)"{}:\ \(\backslash\)"{}A\ busy\ street.\(\backslash\)"{},\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}Keywords\(\backslash\)"{}:\ [\(\backslash\)"{}XIXs\(\backslash\)"{},\(\backslash\)"{}crowd\(\backslash\)"{}],\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}GPSLatitude\(\backslash\)"{}:\ 48.7664165199528,\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}GPSLongitude\(\backslash\)"{}:\ 14.0194248700017,\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\ \ \(\backslash\)"{}City\(\backslash\)"{}:\ \(\backslash\)"{}Paris\(\backslash\)"{}\(\backslash\)r\(\backslash\)n"{}}}
-\DoxyCodeLine{\textcolor{stringliteral}{"{}\}]\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \textcolor{stringliteral}{"{}[\{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}SourceFile"{}}:\ \textcolor{stringliteral}{"{}E:/TiPhotos/P8160449.JPG"{}},\ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}FileName"{}}:\ \textcolor{stringliteral}{"{}P8160449.JPG"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}DateTimeOriginal"{}}:\ \textcolor{stringliteral}{"{}2023:08:16\ 13:30:20"{}},\ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}Model"{}}:\ \textcolor{stringliteral}{"{}E-\/M10MarkII"{}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}Make"{}}:\ \textcolor{stringliteral}{"{}OLYMPUS\ CORPORATION"{}},\ \ \ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}ImageWidth"{}}:\ 4608,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}ImageHeight"{}}:\ 3072,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}Artist"{}}:\ \textcolor{stringliteral}{"{}Blemia\ Borowicz"{}},\ \ \ \ \ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}Creator"{}}:\ [\textcolor{stringliteral}{"{}Yves"{}},\textcolor{stringliteral}{"{}Simone"{}}],\ \ \ \ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}Description"{}}:\ \textcolor{stringliteral}{"{}A\ busy\ street."{}},\ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}Keywords"{}}:\ [\textcolor{stringliteral}{"{}XIXs"{}},\textcolor{stringliteral}{"{}crowd"{}}],\ \ \ \ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}GPSLatitude"{}}:\ 48.7664165199528,\ \ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\ \ \textcolor{stringliteral}{"{}GPSLongitude"{}}:\ 14.0194248700017,\ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\(\backslash\)"{}\ \(\backslash\)"{}City\(\backslash\)"{}:\ \(\backslash\)"{}Paris\(\backslash\)"{}\(\backslash\)r\(\backslash\)n\(\backslash\)"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ "{}}\}]\textcolor{stringliteral}{"{}}}
 
 \end{DoxyCode}
- \\
+ (en fait toutes les lignes sont escapées sur le modèle de la ligne City.) \\
 \hline
 \end{DoxyParams}
 \label{class_exif_read_task_a209baeebef9ede8dafc98844324bbaa9} 
@@ -174,22 +174,22 @@ Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelé
 
 
 
-List the tags to be read in the JPG files, and put them in the Arguments file for {\itshape Exif\+Tool}. 
+List the tags to be read in the JPG files, and put them in the Arguments file for Exif\+Tool. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 true if the file was successfully created.
 \end{DoxyReturn}
 To learn about the usage of IPTC tags\+: \begin{DoxyItemize}
-\item \begin{DoxySeeAlso}{See also}
+\item \begin{DoxySeeAlso}{Voir également}
 {\texttt{ https\+://iptc.\+org/std/photometadata/documentation/mappingguidelines}} 
 \end{DoxySeeAlso}
-\item \begin{DoxySeeAlso}{See also}
+\item \begin{DoxySeeAlso}{Voir également}
 {\texttt{ https\+://www.\+carlseibert.\+com/guide-\/iptc-\/photo-\/metadata-\/fields}} 
 \end{DoxySeeAlso}
 \end{DoxyItemize}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Cpp/Exif\+Read\+Task.\+h\item 
 Cpp/Exif\+Read\+Task.\+cpp\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-\doxysection{Undated\+Photo\+Proxy\+Model Class Reference}
+\doxysection{Référence de la classe Undated\+Photo\+Proxy\+Model}
 \label{class_undated_photo_proxy_model}\index{UndatedPhotoProxyModel@{UndatedPhotoProxyModel}}
 
 
@@ -9,24 +9,24 @@ The \doxyref{Undated\+Photo\+Proxy\+Model}{p.}{class_undated_photo_proxy_model} 
 
 {\ttfamily \#include $<$Undated\+Photo\+Proxy\+Model.\+h$>$}
 
-Inheritance diagram for Undated\+Photo\+Proxy\+Model\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Undated\+Photo\+Proxy\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_undated_photo_proxy_model}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Slots}
+\doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ set\+Filter\+Enabled} (bool enabled)
 \begin{DoxyCompactList}\small\item\em Ce slot active ou désactive le filtrage par le proxy\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Signals}
+\doxysubsubsection*{Signaux}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_undated_photo_proxy_model_a8f7fadf267c65157d70e3c2b650c6bdc} 
 void {\bfseries filter\+Enabled\+Changed} ()
 \begin{DoxyCompactList}\small\item\em Signal émis quand l\textquotesingle{}état du filtrage change. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Undated\+Photo\+Proxy\+Model} (QObject $\ast$parent=nullptr)
@@ -35,7 +35,7 @@ bool \textbf{ filter\+Enabled} () const
 \begin{DoxyCompactList}\small\item\em Cette méthode indique si le filtrage est actif ou non. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE int \textbf{ get\+Source\+Index} (int row)
 \begin{DoxyCompactList}\small\item\em Cette fonction renvoie l\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans le modèle source. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Properties}
+\doxysubsubsection*{Propriétés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_undated_photo_proxy_model_a9f12a4092467d47a51bd8da5b537bc41} 
@@ -43,10 +43,10 @@ bool {\bfseries filter\+Enabled}
 \begin{DoxyCompactList}\small\item\em filter\+Enabled manages the status of the filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 The \doxyref{Undated\+Photo\+Proxy\+Model}{p.}{class_undated_photo_proxy_model} class is a filter Proxy\+Model, that filters \doxyref{Photo}{p.}{struct_photo} with/without original datetime. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_undated_photo_proxy_model_a427c0ae3d7123c5d2436f3905d4d4219} 
 \index{UndatedPhotoProxyModel@{UndatedPhotoProxyModel}!UndatedPhotoProxyModel@{UndatedPhotoProxyModel}}
 \index{UndatedPhotoProxyModel@{UndatedPhotoProxyModel}!UndatedPhotoProxyModel@{UndatedPhotoProxyModel}}
@@ -58,13 +58,13 @@ The \doxyref{Undated\+Photo\+Proxy\+Model}{p.}{class_undated_photo_proxy_model} 
 Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}\+Date\+Time\+Original"{}. Par défaut, le filtrage est inactif. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em parent} & \+: modèle source \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{class_undated_photo_proxy_model_a8cbaef411711118ef6c1ccf79c4160af} 
 \index{UndatedPhotoProxyModel@{UndatedPhotoProxyModel}!filterEnabled@{filterEnabled}}
 \index{filterEnabled@{filterEnabled}!UndatedPhotoProxyModel@{UndatedPhotoProxyModel}}
@@ -75,7 +75,7 @@ Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiqu
 
 Cette méthode indique si le filtrage est actif ou non. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 true si le filtre est actif. 
 \end{DoxyReturn}
 \label{class_undated_photo_proxy_model_adf0dda94c390ee7dc8895fe42582ca43} 
@@ -89,11 +89,11 @@ true si le filtre est actif.
 Cette fonction renvoie l\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans le modèle source. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em row} & \+: L\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans ce {\bfseries{proxy\+Model}}. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 l\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans le {\bfseries{source\+Model}}. 
 \end{DoxyReturn}
 \label{class_undated_photo_proxy_model_aee1302adb09891cddf838d3f8c1250f5} 
@@ -107,13 +107,13 @@ l\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans le {\bfse
 Ce slot active ou désactive le filtrage par le proxy\+Model. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em enabled} & \+: true pour activer le filtrage \\
 \hline
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Models/Undated\+Photo\+Proxy\+Model.\+h\item 
 Models/Undated\+Photo\+Proxy\+Model.\+cpp\end{DoxyCompactItemize}

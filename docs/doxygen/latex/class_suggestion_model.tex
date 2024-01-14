@@ -1,4 +1,4 @@
-\doxysection{Suggestion\+Model Class Reference}
+\doxysection{Référence de la classe Suggestion\+Model}
 \label{class_suggestion_model}\index{SuggestionModel@{SuggestionModel}}
 
 
@@ -9,13 +9,13 @@ The \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} class manages a list
 
 {\ttfamily \#include $<$Suggestion\+Model.\+h$>$}
 
-Inheritance diagram for Suggestion\+Model\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Suggestion\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_suggestion_model}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Types}
+\doxysubsubsection*{Types publics}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19} 
@@ -25,14 +25,14 @@ enum \textbf{ Roles} \{ {\bfseries Text\+Role} = Qt\+::User\+Role
 , {\bfseries Photos\+Role}
  \}
 \begin{DoxyCompactList}\small\item\em The Roles enum lists the roles associated to each attribute of a \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Slots}
+\doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ on\+Selected\+Photo\+Changed} (const int row)
 \begin{DoxyCompactList}\small\item\em Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la List\+View. \end{DoxyCompactList}\item 
 void \textbf{ append} (const QString text, const QString target, const QString category, int photo\+\_\+row=-\/2)
 \begin{DoxyCompactList}\small\item\em Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Suggestion\+Model} (QObject $\ast$parent=nullptr)
@@ -51,14 +51,14 @@ void \textbf{ remove\+Current\+Photo\+From\+Suggestion} (const QModel\+Index ind
 \label{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20} 
 Q\+\_\+\+INVOKABLE void {\bfseries dump\+Data} ()
 \begin{DoxyCompactList}\small\item\em Debug function that print (in the console) one line of the model at every call. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Member Functions}
+\doxysubsubsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ add\+Photo\+To\+Suggestion} (const int suggestion\+\_\+row, int photo\+\_\+row)
 \begin{DoxyCompactList}\small\item\em Ajoute une \doxyref{Photo}{p.}{struct_photo} à la liste des photos ayant un "{}match"{} avec cette \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\item 
 void \textbf{ add\+Category\+To\+Suggestion} (const int suggestion\+\_\+row, const QString category)
 \begin{DoxyCompactList}\small\item\em Ajoute une catégorie à la \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_suggestion_model_ae89572184f274b27c827e5f419a0df8f} 
@@ -72,10 +72,10 @@ int {\bfseries m\+\_\+dumped\+Row}
 \begin{DoxyCompactList}\small\item\em La dernière ligne affichée dans le dump de debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 The \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} class manages a list of \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0} 
 \index{SuggestionModel@{SuggestionModel}!SuggestionModel@{SuggestionModel}}
 \index{SuggestionModel@{SuggestionModel}!SuggestionModel@{SuggestionModel}}
@@ -87,13 +87,13 @@ The \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} class manages a list
 Contructor. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em parent} & object. \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997} 
 \index{SuggestionModel@{SuggestionModel}!addCategoryToSuggestion@{addCategoryToSuggestion}}
 \index{addCategoryToSuggestion@{addCategoryToSuggestion}!SuggestionModel@{SuggestionModel}}
@@ -105,7 +105,7 @@ Contructor.
 Ajoute une catégorie à la \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
 {\em category} & \+: La catégorie à ajouter à la \doxyref{Suggestion}{p.}{struct_suggestion}\+: "{}geo"{} ou "{}tag"{}.\\
@@ -122,7 +122,7 @@ Si on veut ajouter la catégorie déjà existante \+: on ne fait rien. Si on veu
 Ajoute une \doxyref{Photo}{p.}{struct_photo} à la liste des photos ayant un "{}match"{} avec cette \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
 {\em photo\+\_\+row} & \+: L\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} à ajouter à la \doxyref{Suggestion}{p.}{struct_suggestion}. La valeur spéciale -\/1 signifie \textquotesingle{}toutes les photos\textquotesingle{}. La valeur spéciale -\/2 signifie \textquotesingle{}la \doxyref{Photo}{p.}{struct_photo} sélectionée\textquotesingle{}. \\
@@ -139,7 +139,7 @@ Ajoute une \doxyref{Photo}{p.}{struct_photo} à la liste des photos ayant un "{}
 Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em text} & The text of the \doxyref{Suggestion}{p.}{struct_suggestion}. \\
 \hline
 {\em target} & The name of the Exif tag compatible with this \doxyref{Suggestion}{p.}{struct_suggestion}. \\
@@ -163,7 +163,7 @@ Returns the requested role value of an element of the model.
 \+: Implémentation obligatoire. 
 \end{DoxyNote}
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em index} & index of the element of the model. \\
 \hline
 {\em role} & the requested role (enum). \\
@@ -180,7 +180,7 @@ Returns the requested role value of an element of the model.
 Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la List\+View. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em row} & La position dans \doxyref{Photo\+Model}{p.}{class_photo_model} de la photo active. \\
 \hline
 \end{DoxyParams}
@@ -195,7 +195,7 @@ Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionn
 Ce slot enlève la \doxyref{Photo}{p.}{struct_photo} courante de la liste des photos correspondant à une \doxyref{Suggestion}{p.}{struct_suggestion} donnée. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em index} & \+: L\textquotesingle{}index dans le Model de la suggestion à modifier. \\
 \hline
 \end{DoxyParams}
@@ -226,13 +226,13 @@ Returns the number of elements in the model.
 \+: Implémentation obligatoire. 
 \end{DoxyNote}
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em parent} & parent of the model \\
 \hline
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Models/Suggestion\+Model.\+h\item 
 Models/Suggestion\+Model.\+cpp\end{DoxyCompactItemize}

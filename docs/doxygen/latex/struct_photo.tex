@@ -1,4 +1,4 @@
-\doxysection{Photo Struct Reference}
+\doxysection{Référence de la structure Photo}
 \label{struct_photo}\index{Photo@{Photo}}
 
 
@@ -9,7 +9,7 @@ A data structure containing all the attributes for a photo picture\+: filename, 
 
 {\ttfamily \#include $<$Photo\+Model.\+h$>$}
 
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \label{struct_photo_a10ef03ede9235052eb9f7d5e950f85d3} 
@@ -22,7 +22,7 @@ bool \textbf{ operator==} (const QString \&file\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur ==. \end{DoxyCompactList}\item 
 bool \textbf{ operator==} (const \textbf{ Photo} \&photo)
 \begin{DoxyCompactList}\small\item\em Opérateur de comparaison standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
+\doxysubsubsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
 \label{struct_photo_a74c2e37c247175676d801adab5d0251a} 
@@ -88,6 +88,9 @@ QString {\bfseries city}
 \label{struct_photo_a9bf494760dfe13bc320c8395a1d8368f} 
 QString {\bfseries country}
 \begin{DoxyCompactList}\small\item\em Country where the \doxyref{Photo}{p.}{struct_photo} was taken. \end{DoxyCompactList}\item 
+\label{struct_photo_a649223a8259c1bb869af35fe54ed5ff3} 
+QString {\bfseries location}
+\begin{DoxyCompactList}\small\item\em City quarter or nearby monument or natural monument. \end{DoxyCompactList}\item 
 \label{struct_photo_a6fe05dc549b7caf2ee3232476d41e760} 
 QString {\bfseries description}
 \begin{DoxyCompactList}\small\item\em can be\+: Description, Image\+Description or Caption; \end{DoxyCompactList}\item 
@@ -102,10 +105,10 @@ QString\+List {\bfseries keywords}
 \begin{DoxyCompactList}\small\item\em This is a list of keywords describing the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 A data structure containing all the attributes for a photo picture\+: filename, GPS coordinates, etc. 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{struct_photo_aaf8c4dfdd916b811562d6d4e7f5e1489} 
 \index{Photo@{Photo}!operator==@{operator==}}
 \index{operator==@{operator==}!Photo@{Photo}}
@@ -117,11 +120,11 @@ A data structure containing all the attributes for a photo picture\+: filename, 
 Opérateur de comparaison standard. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em photo} & \+: Un autre objet photo \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 True si les deux objets pointent sur les mêmes data. 
 \end{DoxyReturn}
 \label{struct_photo_aadb7a083611feae65440c3bfc3887417} 
@@ -135,16 +138,16 @@ True si les deux objets pointent sur les mêmes data.
 Surcharge de l\textquotesingle{}opérateur ==. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em file\+\_\+name} & Le texte à comparer \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 True si le {\bfseries{filename}} de la photo correspond au texte passé en paramètre. 
 \end{DoxyReturn}
 
 
-The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette structure a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Models/Photo\+Model.\+h\item 
 Models/Photo\+Model.\+cpp\end{DoxyCompactItemize}

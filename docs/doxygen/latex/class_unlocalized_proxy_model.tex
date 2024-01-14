@@ -1,4 +1,4 @@
-\doxysection{Unlocalized\+Proxy\+Model Class Reference}
+\doxysection{Référence de la classe Unlocalized\+Proxy\+Model}
 \label{class_unlocalized_proxy_model}\index{UnlocalizedProxyModel@{UnlocalizedProxyModel}}
 
 
@@ -9,24 +9,24 @@ The \doxyref{Unlocalized\+Proxy\+Model}{p.}{class_unlocalized_proxy_model} class
 
 {\ttfamily \#include $<$Unlocalized\+Proxy\+Model.\+h$>$}
 
-Inheritance diagram for Unlocalized\+Proxy\+Model\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Unlocalized\+Proxy\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_unlocalized_proxy_model}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Slots}
+\doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ set\+Filter\+Enabled} (bool enabled)
 \begin{DoxyCompactList}\small\item\em Ce slot active ou désactive le filtrage par le proxy\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Signals}
+\doxysubsubsection*{Signaux}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_unlocalized_proxy_model_adafd6e77a8a751a6b38936b59ce0619a} 
 void {\bfseries filter\+Enabled\+Changed} ()
 \begin{DoxyCompactList}\small\item\em Signal émis quand l\textquotesingle{}état du filtrage change. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Unlocalized\+Proxy\+Model} (QObject $\ast$parent=nullptr)
@@ -35,7 +35,7 @@ bool \textbf{ filter\+Enabled} () const
 \begin{DoxyCompactList}\small\item\em Cette méthode indique si le filtrage est actif ou non. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE int \textbf{ get\+Source\+Index} (int row)
 \begin{DoxyCompactList}\small\item\em Cette fonction renvoie l\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans le modèle source. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Properties}
+\doxysubsubsection*{Propriétés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_unlocalized_proxy_model_a523656010d6711d9b1186dc75f7745eb} 
@@ -43,10 +43,10 @@ bool {\bfseries filter\+Enabled}
 \begin{DoxyCompactList}\small\item\em filter\+Enabled manages the status of the filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Description détaillée}
 The \doxyref{Unlocalized\+Proxy\+Model}{p.}{class_unlocalized_proxy_model} class is a filter Proxy\+Model, that filters \doxyref{Photo}{p.}{struct_photo} with/without GPS coordinates. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_unlocalized_proxy_model_aefca3127511e50cfd59f6a58a23da2b9} 
 \index{UnlocalizedProxyModel@{UnlocalizedProxyModel}!UnlocalizedProxyModel@{UnlocalizedProxyModel}}
 \index{UnlocalizedProxyModel@{UnlocalizedProxyModel}!UnlocalizedProxyModel@{UnlocalizedProxyModel}}
@@ -58,13 +58,13 @@ The \doxyref{Unlocalized\+Proxy\+Model}{p.}{class_unlocalized_proxy_model} class
 Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}has\+GPS"{}. Par défaut, le filtrage est inactif. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em parent} & \+: modèle source \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentation des fonctions membres}
 \label{class_unlocalized_proxy_model_ab2e8701cd4689495b085d112425b7f8d} 
 \index{UnlocalizedProxyModel@{UnlocalizedProxyModel}!filterEnabled@{filterEnabled}}
 \index{filterEnabled@{filterEnabled}!UnlocalizedProxyModel@{UnlocalizedProxyModel}}
@@ -75,7 +75,7 @@ Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiqu
 
 Cette méthode indique si le filtrage est actif ou non. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 true si le filtre est actif. 
 \end{DoxyReturn}
 \label{class_unlocalized_proxy_model_a454ce12fc69f19ec46efd6b52dd23bdc} 
@@ -89,11 +89,11 @@ true si le filtre est actif.
 Cette fonction renvoie l\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans le modèle source. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em row} & \+: L\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans ce {\bfseries{proxy\+Model}}. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 l\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans le {\bfseries{source\+Model}} \doxyref{Photo\+Model}{p.}{class_photo_model}. 
 \end{DoxyReturn}
 \label{class_unlocalized_proxy_model_a50743a6fc31dae190a2da1eaf370dab7} 
@@ -107,13 +107,13 @@ l\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} dans le {\bfse
 Ce slot active ou désactive le filtrage par le proxy\+Model. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em enabled} & \+: true pour activer le filtrage \\
 \hline
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Models/Unlocalized\+Proxy\+Model.\+h\item 
 Models/Unlocalized\+Proxy\+Model.\+cpp\end{DoxyCompactItemize}
