@@ -132,12 +132,13 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
                 {
                     QString target;
                     // qDebug() << "compare" << field << adresse.country() << adresse.state();
-                    if (field == adresse.country()) target = "country";
+                    if    (field == adresse.country()) target = "country";
                     else if (field == adresse.state()) target = "country";
-                    else target = "city";
+                    else if (field == adresse.city())  target = "city";
+                    else target = "location";
                     m_suggestionModel->append(field, target, "geo");
                     // On ajoute aussi N fields (non-numériques) en tant que "tag"
-                    if (nb_kw-- >0)
+                    if (nb_kw-- > 0)
                         m_suggestionModel->append(field, "keywords", "tag");
                 }
             }

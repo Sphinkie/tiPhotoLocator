@@ -14,15 +14,15 @@ ZoneSuggestionForm {
     }
 
 
-
     // Gestion du grisage du bouton
-    Connections{
+    Connections {
         target: tabbedPage
         function onSelectedDataChanged()
         {
             bt_getinfo.enabled = tabbedPage.selectedData.hasGPS;
         }
     }
+
 
 }
 

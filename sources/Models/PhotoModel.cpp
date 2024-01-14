@@ -389,7 +389,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
 {
     if (index.isValid())
     {
-        qDebug() << "PhotoModel::setData" << roleNames().value(role);
+        // qDebug() << "PhotoModel::setData" << roleNames().value(role);
         switch (role)
         {
         case LatitudeRole:
@@ -652,7 +652,7 @@ void PhotoModel::saveMetadata()
             exifData.insert("Creator", idx.data(CreatorRole));          // MWG écrit aussi dans Artist
             exifData.insert("City", idx.data(CityRole));                // MWG écrit dans EXIF et dans IptcExt
             exifData.insert("Country", idx.data(CountryRole));          // MWG écrit dans EXIF et dans IptcExt
-            exifData.insert("Location", idx.data(CountryRole));         // MWG écrit dans EXIF et dans IptcExt
+            exifData.insert("Location", idx.data(LocationRole));        // MWG écrit dans EXIF et dans IptcExt
             exifData.insert("Description", idx.data(DescriptionRole));  // MWG écrit aussi dans ImageDescription
             exifData.insert("CaptionWriter", idx.data(CaptionWriterRole));
             exifData.insert("Keywords", idx.data(KeywordsRole));        // Ajout de la liste des keywords

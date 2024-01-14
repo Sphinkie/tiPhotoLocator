@@ -102,7 +102,9 @@ Map {
                 Text { id: markerText; text: isMarker? " " : filename; font.bold: true } // pas vide, sinon hauteur_texte=0
                 Image {
                     id: markerIcon;
-                    height: isMarker ? 42 : 48;    // Le marker est un peu plus petit que les autres
+                    height: isMarker ? 40                   // Le marker "saved position" est plus petit que les autres
+                                     : isSelected ? 48      // La photo sélectionnée est plus grosse pour être toujours visible
+                                                  : 44 ;    // Les autres sont légèrement plus petites
                     width: height
                     source: isMarker ? "qrc:///Images/mappin-yellow.png"               // le marker est jaune
                                      : isSelected ? "qrc:///Images/mappin-red.png"     // la photo sélectionée est rouge

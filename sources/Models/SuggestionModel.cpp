@@ -112,8 +112,7 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
         if ( (m_suggestions.at(i).text == text) && (m_suggestions.at(i).target == target))
         {
             // Trouvé: la suggestion existe dejà (même texte et même target)
-            qDebug() << "already contains" << text;
-            // On ajoute la categorie à la suggestion (au cas où elle serait différente)
+            // On ajoute la categorie à la suggestion (au cas où la catégorie serait différente)
             this->addCategoryToSuggestion(i, category);
             // On ajoute la photo à la liste
             this->addPhotoToSuggestion(i, photo_row);
@@ -127,7 +126,7 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
         photo_row = m_selectedPhotoRow;
     }
     // On ajoute la photo à la suggestion
-    qDebug()<< "Adding" << target <<  "(" << category << ") suggestion " << text << "for" << photo_row;
+    // qDebug()<< "Adding" << target <<  "(" << category << ") suggestion " << text << "for" << photo_row;
     Suggestion* new_suggestion = new Suggestion(text, target, category, photo_row);
     const int rowOfInsert = m_suggestions.count();
     // On ajoute la suggestion à la liste

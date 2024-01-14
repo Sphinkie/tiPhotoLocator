@@ -2,7 +2,7 @@ import QtQuick
 
 /*!
  * Ce Repeater contient la suggestions fournies par le ProxyModel.
- * Le ProxyModel doit être configuré pour filter soit les suggestions "geo", soit les suggestions "tag".
+ * Le ProxyModel doit être configuré pour filtrer soit les suggestions "geo", soit les suggestions "tag".
  */
 Repeater{
     model: _suggestionCategoryProxyModel
@@ -57,5 +57,7 @@ Repeater{
                 }
             }
         }
+
     }
+
 }

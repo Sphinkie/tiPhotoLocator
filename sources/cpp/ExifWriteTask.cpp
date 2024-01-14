@@ -73,8 +73,6 @@ void ExifWriteTask::run()
     arguments << "-ext" << "JPEG";      // Filtre sur les extensions
     arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
     //arguments << "-dateFormat" << "'%d-%m-%Y'";   // datetime format DD-MM-YYYY
-    //arguments.append("-ext"); arguments.append("JPG");    // Filtre sur les extensions
-    //arguments.append("-ext"); arguments.append("JPEG");   // Filtre sur les extensions
     //arguments.append("-use"); arguments.append("MWG");    // Use MetadataWorkingGroup recommendations
     if (!m_generateBackup) arguments.append("-overwrite_original");     // Genere un backup si demandé
     // Liste des tags à écrire
