@@ -14,7 +14,7 @@ import QtQuick
  *   \sa https://www.w3.org/wiki/CSS3/Color/Extended_color_keywords
  *
  * - Choisir les couleurs de sa SystemPalette
- *   Le site suivant compare 9 différents outils de donstruction de palette
+ *   Le site suivant compare 9 différents outils de construction de palette
  *   \sa https://www.webfx.com/blog/web-design/material-design-color-generators/
  *
  *   \see https://www.w3schools.com/colors/colors_picker.asp
