@@ -3,7 +3,7 @@ import QtCore
 import Qt.labs.platform
 import "../Components"
 
-/*! *****************************************************************
+/* ********************************************************************************************************** *****************************************************************
  *  Fenetre de dialogue pour selectionner le dossier.
  *  Example folder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
  * ***************************************************************** */

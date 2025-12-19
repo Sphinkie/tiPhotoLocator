@@ -7,10 +7,10 @@
 
 
 /* ********************************************************************************************************** */
-/*!
+/* **********************************************************************************************************
  * \class ExifReadTask
  * \inmodule TiPhotoLocator
- * \brief La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo JPG sur le disque dur.
+ * @brief La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo JPG sur le disque dur.
 
  Tache asynchrone par utilisation de QThreadPool.
 

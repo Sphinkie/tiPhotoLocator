@@ -5,8 +5,8 @@
 
 
 /* ********************************************************************************** */
-/*!
-   \brief A data structure containing a tag suggestion, for one or several Photo.
+/* **********************************************************************************************************
+   @brief A data structure containing a tag suggestion, for one or several Photo.
 */
 /* ********************************************************************************** */
 struct Suggestion
@@ -40,9 +40,9 @@ struct Suggestion
 
 
 /* ********************************************************************************** */
-/*!
+/* **********************************************************************************************************
  * \class SuggestionModel
- * \brief The SuggestionModel class manages a list of Suggestion.
+ * @brief The SuggestionModel class manages a list of Suggestion.
  */
 /* ********************************************************************************** */
 class SuggestionModel : public QAbstractListModel
@@ -50,8 +50,8 @@ class SuggestionModel : public QAbstractListModel
     Q_OBJECT
 
 public:
-    /*!
-     * \brief The Roles enum lists the roles associated to each attribute of a Suggestion
+    /* **********************************************************************************************************
+     * @brief The Roles enum lists the roles associated to each attribute of a Suggestion
      */
     enum Roles {
         TextRole  = Qt::UserRole,  // The first role that can be used for application-specific purposes.

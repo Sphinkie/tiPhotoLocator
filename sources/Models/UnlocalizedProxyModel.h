@@ -6,9 +6,9 @@
 
 
 /* ************************************************************************ */
-/*!
+/* **********************************************************************************************************
  * \class UnlocalizedProxyModel
- * \brief The UnlocalizedProxyModel class is a filter ProxyModel, that filters
+ * @brief The UnlocalizedProxyModel class is a filter ProxyModel, that filters
  *        Photo with/without GPS coordinates.
  */
 /* ************************************************************************ */

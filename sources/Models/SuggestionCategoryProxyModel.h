@@ -6,9 +6,9 @@
 
 
 /* ************************************************************************ */
-/*!
+/* **********************************************************************************************************
  * \class SuggestionCategoryProxyModel
- * \brief The SuggestionCategoryProxyModel class is a filter ProxyModel, that keeps
+ * @brief The SuggestionCategoryProxyModel class is a filter ProxyModel, that keeps
  *        only Suggestion with a given category.
  */
 /* ************************************************************************ */

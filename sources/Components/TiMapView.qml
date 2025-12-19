@@ -3,44 +3,47 @@ import QtCore
 import QtLocation
 import QtPositioning
 
-// ----------------------------------------------------------------
-// Affichage d'une carte OpenStreetMap
-// - Map: Donner un id
-// - MapItemView: Associer un modele (_selectedPhotoModel). Ce modèle contient les MapItems à afficher sur carte.
-//
-// Fonctions implémentées:
-// - Affiche un marker rouge à l'emplacememnt de la photo(s) présente dans le modèle
-// - Recentre la carte chaque fois que l'on selectionne une nouvelle photo
-// - Un clic sur la carte change les coords gps de la photo (le curseur est repositionné)
-// ----------------------------------------------------------------
 
+/** **********************************************************************************************************
+ * @brief Affichage d'une carte OpenStreetMap
+ * - Map: Donner un id
+ * - MapItemView: Associer un modele (_selectedPhotoModel). Ce modèle contient les MapItems à afficher sur carte.
+ *
+ * Fonctions implémentées:
+ * - Affiche un marker rouge à l'emplacememnt de la photo(s) présente dans le modèle
+ * - Recentre la carte chaque fois que l'on selectionne une nouvelle photo
+ * - Un clic sur la carte change les coords gps de la photo (le curseur est repositionné)
+ * ***********************************************************************************************************/
 Map {
     plugin: mapPlugin
-    center: QtPositioning.coordinate(parent.photoLatitude, parent.photoLongitude)
+    center: QtPositioning.coordinate(parent.photoLatitude,
+                                     parent.photoLongitude)
     zoomLevel: 6
 
     DragHandler {
         id: drag
         target: null
-        onTranslationChanged: (delta) => parent.pan(-delta.x, -delta.y)
+        onTranslationChanged: delta => parent.pan(-delta.x, -delta.y)
     }
     WheelHandler {
         id: wheel
         acceptedDevices: PointerDevice.Mouse
-        rotationScale: 1/60
+        rotationScale: 1 / 60
         property: "zoomLevel"
     }
 
     onMapItemsChanged: {
         // Called every time the marker changes on the map: cad un clic dans la listView
-        console.log("onMapItemsChanged: re-center the map");
-        mapView.center = QtPositioning.coordinate(parent.photoLatitude, parent.photoLongitude)
-        mapCircle.center = QtPositioning.coordinate(parent.photoLatitude, parent.photoLongitude)
+        console.log("onMapItemsChanged: re-center the map")
+        mapView.center = QtPositioning.coordinate(parent.photoLatitude,
+                                                  parent.photoLongitude)
+        mapCircle.center = QtPositioning.coordinate(parent.photoLatitude,
+                                                    parent.photoLongitude)
     }
 
     MapCircle {
         id: mapCircle
-        radius:  mapTools.slider_radius.value // en mètres
+        radius: mapTools.slider_radius.value // en mètres
         border.color: "red"
         border.width: 3
     }
@@ -49,7 +52,7 @@ Map {
     // The MapItemView type only makes sense when contained in a Map, meaning that it has no standalone presentation.
     MapItemView {
         id: mapitemView
-        model: _onTheMapProxyModel   // Ce modèle ne contient que les photos devant apparaitre sur la carte
+        model: _onTheMapProxyModel // Ce modèle ne contient que les photos devant apparaitre sur la carte
         delegate: mapDelegate
 
         // ------------------------------------------
@@ -57,33 +60,37 @@ Map {
         // ------------------------------------------
         MouseArea {
             anchors.fill: parent
-            onClicked: (mouse) => {
-                           console.log("Click on the map.");
+            onClicked: mouse => {
+                           console.log("Click on the map.")
                            // On repositionne le cercle
-                           mapCircle.center = mapView.toCoordinate(Qt.point(mouse.x,mouse.y))
+                           mapCircle.center = mapView.toCoordinate(
+                               Qt.point(mouse.x, mouse.y))
                            // TODO utiliser une variable de type coordinate
-                           var lati = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude);
-                           var longi = (mapView.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude);
+                           var lati = (mapView.toCoordinate(
+                                           Qt.point(mouse.x, mouse.y)).latitude)
+                           var longi = (mapView.toCoordinate(
+                                            Qt.point(mouse.x,
+                                                     mouse.y)).longitude)
                            // console.log("latitude  = " + lati );
                            // console.log("longitude = " + longi);
                            // On mémorise les coords du point cliqué dans les properties du parent
-                           mapTab.photoLatitude = lati;
-                           mapTab.photoLongitude= longi;
+                           mapTab.photoLatitude = lati
+                           mapTab.photoLongitude = longi
                            // On change les coordonnées dans l'item du modele
-                           window.setSelectedPhotoCoords(lati, longi);
-                           console.log(mapView.supportedMapTypes);  // Debug : Affiche la liste des cartes supportées
+                           window.setSelectedPhotoCoords(lati, longi)
+                           console.log(
+                               mapView.supportedMapTypes) // Debug : Affiche la liste des cartes supportées
                        }
         }
     }
 
-
     // ------------------------------------------
     // Le delegate pour afficher le Marker dans la MapView
     // ------------------------------------------
-    Component{
+    Component {
         id: mapDelegate
         // Affichage d'une icone avec sous-titre
-        MapQuickItem{
+        MapQuickItem {
             // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
             required property string filename
             required property double latitude
@@ -99,20 +106,25 @@ Map {
             // On dessine le marker et le texte (si la photo possede des coordonnées GPS)
             sourceItem: Column {
                 visible: hasGPS
-                Text { id: markerText; text: isMarker? " " : filename; font.bold: true } // pas vide, sinon hauteur_texte=0
+                Text {
+                    id: markerText
+                    text: isMarker ? " " : filename
+                    font.bold: true
+                } // pas vide, sinon hauteur_texte=0
                 Image {
-                    id: markerIcon;
-                    height: isMarker ? 40                   // Le marker "saved position" est plus petit que les autres
-                                     : isSelected ? 48      // La photo sélectionnée est plus grosse pour être toujours visible
-                                                  : 44 ;    // Les autres sont légèrement plus petites
+                    id: markerIcon
+                    height: isMarker ? 40 // Le marker "saved position" est plus petit que les autres
+                                     : isSelected ? 48 // La photo sélectionnée est plus grosse pour être toujours visible
+                                                  : 44 // Les autres sont légèrement plus petites
                     width: height
-                    source: isMarker ? "qrc:///Images/mappin-yellow.png"               // le marker est jaune
-                                     : isSelected ? "qrc:///Images/mappin-red.png"     // la photo sélectionée est rouge
-                                                  : "qrc:///Images/mappin-black.png";  // les autres sont en gris
+                    source: isMarker ? "qrc:///Images/mappin-yellow.png" // le marker est jaune
+                                     : isSelected ? "qrc:///Images/mappin-red.png" // la photo sélectionée est rouge
+                                                  : "qrc:///Images/mappin-black.png" // les autres sont en gris
                 }
             }
         }
     }
+
 
     /* supportedMapTypes
         0 Street Map        (Street map view in daylight mode)
@@ -124,35 +136,39 @@ Map {
     */
     activeMapType: supportedMapTypes[0]
 
-    Plugin{
+    Plugin {
         id: mapPlugin
         name: "osm"
         property string apikey
 
-        locales: ["fr_FR","en_US"]
+        locales: ["fr_FR", "en_US"]
+
         // parametres optionels : PluginParameter{ name: "" ; value: ""}
         // PluginParameter { name: "osm.mapping.providersrepository.address"; value: "http://www.mywebsite.com/osm_repository" }
         // PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey="+apikey}
         // PluginParameter { name: "osm.mapping.custom.host"; value: "http://a.tile.thunderforest.com/cycle/%z/%x/%y.png?apikey="+apikey}
         // PluginParameter { name: "osm.mapping.custom.host"; value: "https://tile.thunderforest.com/cycle/%z/%x/%y.png?apikey="+apikey}
         // PluginParameter { name: "osm.mapping.custom.host"; value: "http://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey="+apikey}
-
         PluginParameter {
-            name: "osm.mapping.custom.host";
-            readonly property url thunderurl : "https://tile.thunderforest.com/cycle/%z/%x/%y.png";
-            readonly property string thunderkey :  (mapPlugin.apikey ? "?apikey="+mapPlugin.apikey : "");
-            value: thunderurl       // + thunderkey;
+            name: "osm.mapping.custom.host"
+            readonly property url thunderurl: "https://tile.thunderforest.com/cycle/%z/%x/%y.png"
+            readonly property string thunderkey: (mapPlugin.apikey ? "?apikey="
+                                                                     + mapPlugin.apikey : "")
+            value: thunderurl // + thunderkey;
         }
 
-        PluginParameter {   // obsolete ?
-            name: "osm.mapping.providersrepository.address";
-            readonly property url thunderurl : "https://tile.thunderforest.com/cycle/%z/%x/%y.png";
-            readonly property string thunderkey :  (mapPlugin.apikey ? "?apikey="+mapPlugin.apikey : "");
-            value: thunderurl       // + thunderkey;
+        PluginParameter {
+            // obsolete ?
+            name: "osm.mapping.providersrepository.address"
+            readonly property url thunderurl: "https://tile.thunderforest.com/cycle/%z/%x/%y.png"
+            readonly property string thunderkey: (mapPlugin.apikey ? "?apikey="
+                                                                     + mapPlugin.apikey : "")
+            value: thunderurl // + thunderkey;
         }
 
         //PluginParameter { name: "osm.mapping.highdpi_tiles"; value: "false" }
         //PluginParameter { name: "osm.mapping.providersrepository.disabled"; value: "false" }
+
 
         /* Matthas Rauter (nov-2023) Qt Company - Fixed in Qt 6.7
 

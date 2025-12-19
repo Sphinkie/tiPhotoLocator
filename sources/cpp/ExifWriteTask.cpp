@@ -5,10 +5,10 @@
 
 
 /* ********************************************************************************************************** */
-/*!
+/* **********************************************************************************************************
  * \class ExifWriteTask
  * \inmodule TiPhotoLocator
- * \brief La classe ExifWriteTask permet d'écrire des metadata dans les photos JEG de façon asynchrone.
+ * @brief La classe ExifWriteTask permet d'écrire des metadata dans les photos JEG de façon asynchrone.
 
    Tache asynchrone par utilisation de QThreadPool.
 
@@ -20,10 +20,10 @@
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Constructeur. On enregistre les paramètres.
- * \param exifData: la liste des metadata à écrire dans le fichier JPG.
- * \param generateBackup: \c true si un backup de l'image doit être généré avant sa modification.
+/* **********************************************************************************************************
+ * @brief Constructeur. On enregistre les paramètres.
+ * @param exifData: la liste des metadata à écrire dans le fichier JPG.
+ * @param generateBackup: \c true si un backup de l'image doit être généré avant sa modification.
  \code
      QVariantMap: QMap(
       ("SourceFile",       QVariant(QString,   "E:/TiPhotos/P8160449.JPG"))
@@ -47,8 +47,8 @@ ExifWriteTask::ExifWriteTask(const QVariantMap exifData, bool generateBackup)
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Lancement de la tache. On lance **exifTool** dans un QProcess, et on écrit les metadata dans l'image JPG.
+/* **********************************************************************************************************
+ * @brief Lancement de la tache. On lance **exifTool** dans un QProcess, et on écrit les metadata dans l'image JPG.
  *        Cette tache est exécutée dans un thread QRunnable.
  * \note Le mode MWG de ExifTool permet d'ecrire en une fois dans les différents tags équivalents (ex: Artist et Creator,
  *       ou bien EXIF:City et IptcExt:City, etc). Le Metadata Working Group recommande de garder ces tags EXIF et IPTC

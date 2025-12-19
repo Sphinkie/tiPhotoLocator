@@ -9,11 +9,10 @@
 // QT += network
 
 
-/* ********************************************************************************************************** */
-/*!
- * \brief Ce Constructeur instancie le Network Manager utilisé pour les requètes REST.
- * \param parent: l'objet parent.
- */
+/** **********************************************************************************************************
+ * @brief Ce Constructeur instancie le Network Manager utilisé pour les requètes REST.
+ * @param parent: l'objet parent.
+ * ***********************************************************************************************************/
 CameraSet::CameraSet(QObject *parent) : QObject(parent)
 {
 	// pour deepAI, la clef-Api est dans les Settings, de façon à ne pas apparaitre en clair dans le code.
@@ -24,12 +23,11 @@ CameraSet::CameraSet(QObject *parent) : QObject(parent)
 }
 
 
-/* ********************************************************************************************************** */
-/*!
- * \brief Ajout d'un modèle de caméra dans la liste.
+/** **********************************************************************************************************
+ * @brief Ajout d'un modèle de caméra dans la liste.
  *        S'il n'y est pas, on demande à deepAI de générer une imagette.
- * \param cam_model
- */
+ * @param cam_model
+ * ***********************************************************************************************************/
 void CameraSet::append(const QString cam_model)
 {
     if (m_cameras.contains(cam_model))
@@ -42,41 +40,35 @@ void CameraSet::append(const QString cam_model)
 }
 
 
-
-/* ********************************************************************************************************** */
-/*!
- * \brief Indique si le modèle d'appareil photo demandé est déjà référencé.
+/** **********************************************************************************************************
+ * @brief Indique si le modèle d'appareil photo demandé est déjà référencé.
  *        Si oui, il possède alors déjà une vignette.
- * \param cam_model : le nom d'un modèle d'appareil photo.
- * \return true si ce modèle existe déja dans le Set.
- */
+ * @param cam_model : le nom d'un modèle d'appareil photo.
+ * @return true si ce modèle existe déja dans le Set.
+ * ***********************************************************************************************************/
 bool CameraSet::contains(const QString cam_model)
 {
     return  m_cameras.contains(cam_model);
 }
 
 
-/* ********************************************************************************************************** */
-/*!
- * \brief Ajoute un modèle d'appareil photo dans le Set. On lui fabrique alors une vignette.
- * \param cam_model : le nom d'un modèle d'appareil photo.
- */
+/** **********************************************************************************************************
+ * @brief Ajoute un modèle d'appareil photo dans le Set. On lui fabrique alors une vignette.
+ * @param cam_model : le nom d'un modèle d'appareil photo.
+ * ***********************************************************************************************************/
 void CameraSet::insert(const QString cam_model)
 {
     m_cameras.insert(cam_model);
 }
 
 
-/* ********************************************************************************************************** */
-/*!
- * \brief Envoi d'une requete POST à deepai.
- * \param cam_model : non utilisé pour l'instant
- */
+/** **********************************************************************************************************
+ * @brief Envoi d'une requete POST à deepai.
+ * @param cam_model : non utilisé pour l'instant
+ * ***********************************************************************************************************/
 void CameraSet::requestThumb(const QString cam_model)
 {
-
   //  QNetworkAccessManager* m_networkMgr = new QNetworkAccessManager(this);  // A été mis dans le Constructeur. Mais peut être mis ici pour les premiers tests. 
-
 
 	// On definit les paramètres de la requète:
     QUrlQuery params;
@@ -90,7 +82,6 @@ void CameraSet::requestThumb(const QString cam_model)
 
     qDebug() << "params.query:" << params.query(QUrl::FullyDecoded).toUtf8();
 
-
     // On definit l'URL de l'API
     QUrl resource("https://api.deepai.org/api/cyberpunk-generator");
     // Apparement, on peut aussi mettre les paramètres dans la query, plutôt que dans la commande m_networkMgr->post()
@@ -103,22 +94,19 @@ void CameraSet::requestThumb(const QString cam_model)
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     request.setRawHeader("Api-Key", m_deepaiKey.toUtf8());
 
-
     // Envoi de la requète POST
     m_networkMgr->post(request, params.query(QUrl::FullyDecoded).toUtf8());
 
     // On definit la fonction a appeler lors de la réception de la méthode: CameraSet::onFinished
-    connect(m_networkMgr, &QNetworkAccessManager::finished, this, &CameraSet::onFinished);
-		
+    connect(m_networkMgr, &QNetworkAccessManager::finished, this, &CameraSet::onFinished);		
 }
 
-/* ********************************************************************************************************** */
-/*!
- * \brief Envoi d'une requete GET à openweathermap.
- */
+
+/** **********************************************************************************************************
+ * @brief Envoi d'une requete GET à openweathermap.
+ * ***********************************************************************************************************/
 void CameraSet::requestMeteo()
 {
-
     //  QNetworkAccessManager* m_networkMgr = new QNetworkAccessManager(this);  // A été mis dans le Constructeur. Mais peut être mis ici pour les premiers tests.
 
     // On definit les paramètres de la requète:
@@ -145,11 +133,11 @@ void CameraSet::requestMeteo()
     connect(m_networkMgr, &QNetworkAccessManager::finished, this, &CameraSet::onFinished);
 }
 
-/* ********************************************************************************************************** */
-/*!
- * \brief Appelé lors de la réception d'une réponse à une requete deepai.
- * \param reply : Le contenu de la réponse.
- */
+
+/** **********************************************************************************************************
+ * @brief Appelé lors de la réception d'une réponse à une requete deepai.
+ * @param reply : Le contenu de la réponse.
+ * ***********************************************************************************************************/
 void CameraSet::onFinished(QNetworkReply* reply)
 {
 	// Pour l'instant, on ne fait juste qu'afficher le contenu de la réponse 	
@@ -171,12 +159,10 @@ void CameraSet::onFinished(QNetworkReply* reply)
 }
 
 
-
-/* ********************************************************************************************************** */
-/*!
- * \brief Fonction appelée en cas d'erreur de la demande Rest.
+/** **********************************************************************************************************
+ * @brief Fonction appelée en cas d'erreur de la demande Rest.
  *        A voir si on met quelque chose d'utile ici.
- */
+ * ***********************************************************************************************************/
 void CameraSet::onError()
 {
 

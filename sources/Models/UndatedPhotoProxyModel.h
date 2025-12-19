@@ -6,9 +6,9 @@
 
 
 /* ************************************************************************ */
-/*!
+/* **********************************************************************************************************
  * \class UndatedPhotoProxyModel
- * \brief The UndatedPhotoProxyModel class is a filter ProxyModel, that filters
+ * @brief The UndatedPhotoProxyModel class is a filter ProxyModel, that filters
  *        Photo with/without original datetime.
  */
 /* ************************************************************************ */

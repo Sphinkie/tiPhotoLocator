@@ -8,10 +8,10 @@
 
 
 /* ************************************************************************ */
-/*!
- * \brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.
+/* **********************************************************************************************************
+ * @brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.
  *        Le role à filtrer est "DateTimeOriginal". Par défaut, le filtrage est inactif.
- * \param parent : modèle source
+ * @param parent : modèle source
  */
 UndatedPhotoProxyModel::UndatedPhotoProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -21,8 +21,8 @@ UndatedPhotoProxyModel::UndatedPhotoProxyModel(QObject *parent) : QSortFilterPro
 
 
 /* ************************************************************************ */
-/*!
- * \brief Cette méthode indique si le filtrage est actif ou non.
+/* **********************************************************************************************************
+ * @brief Cette méthode indique si le filtrage est actif ou non.
  * \returns true si le filtre est actif.
  */
 bool UndatedPhotoProxyModel::filterEnabled() const
@@ -32,9 +32,9 @@ bool UndatedPhotoProxyModel::filterEnabled() const
 
 
 /* ************************************************************************ */
-/*!
- * \brief Ce slot active ou désactive le filtrage par le proxyModel.
- * \param enabled : true pour activer le filtrage
+/* **********************************************************************************************************
+ * @brief Ce slot active ou désactive le filtrage par le proxyModel.
+ * @param enabled : true pour activer le filtrage
  */
 void UndatedPhotoProxyModel::setFilterEnabled(bool enabled)
 {
@@ -49,9 +49,9 @@ void UndatedPhotoProxyModel::setFilterEnabled(bool enabled)
 
 
 /* ************************************************************************ */
-/*!
- * \brief Cette fonction renvoie l'indice de la Photo dans le modèle source.
- * \param  row : L'indice de la Photo dans ce \b proxyModel.
+/* **********************************************************************************************************
+ * @brief Cette fonction renvoie l'indice de la Photo dans le modèle source.
+ * @param  row : L'indice de la Photo dans ce \b proxyModel.
  * \return l'indice de la Photo dans le \b sourceModel.
  */
 int UndatedPhotoProxyModel::getSourceIndex(int row)

@@ -8,10 +8,10 @@
 
 
 /* ************************************************************************ */
-/*!
- * \brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.
+/* **********************************************************************************************************
+ * @brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.
  *        Le role à filtrer est "category". Par défaut, le filtrage est inactif (tout passe).
- * \param parent : modèle source.
+ * @param parent : modèle source.
  */
 SuggestionCategoryProxyModel::SuggestionCategoryProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
@@ -20,8 +20,8 @@ SuggestionCategoryProxyModel::SuggestionCategoryProxyModel(QObject *parent) : QS
 }
 
 /* ************************************************************************ */
-/*!
- * \brief Cette méthode indique si le filtrage est actif ou non.
+/* **********************************************************************************************************
+ * @brief Cette méthode indique si le filtrage est actif ou non.
  * \returns true si le filtre est actif.
  */
 bool SuggestionCategoryProxyModel::filterEnabled() const
@@ -30,9 +30,9 @@ bool SuggestionCategoryProxyModel::filterEnabled() const
 }
 
 /* ************************************************************************ */
-/*!
- * \brief Ce slot active ou désactive le filtrage par le proxyModel.
- * \param enabled : true pour activer le filtrage.
+/* **********************************************************************************************************
+ * @brief Ce slot active ou désactive le filtrage par le proxyModel.
+ * @param enabled : true pour activer le filtrage.
  */
 void SuggestionCategoryProxyModel::setFilterEnabled(bool enabled)
 {
@@ -46,9 +46,9 @@ void SuggestionCategoryProxyModel::setFilterEnabled(bool enabled)
 }
 
 /* ************************************************************************ */
-/*!
- * \brief Cette méthode invocable par QML active ou désactive le filtrage par le proxyModel.
- * \param filter : La chaine à garder pour le filtrage. (vide = Accept All)
+/* **********************************************************************************************************
+ * @brief Cette méthode invocable par QML active ou désactive le filtrage par le proxyModel.
+ * @param filter : La chaine à garder pour le filtrage. (vide = Accept All)
  *
  * Le filtrage se fait sur la base : Suggestion dont la catégorie contient le mot passé en paramètre.
  * Par exemple, le filtre "tag" laissera passer les catégories "tag" et "geo|tag".
@@ -63,10 +63,10 @@ void SuggestionCategoryProxyModel::setFilterValue(QString filter)
 }
 
 /* ********************************************************************************** */
-/*!
- * \brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
+/* **********************************************************************************************************
+ * @brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
  * \note On convertit l'indice du ProxyModel dans l'index du sourceModel SuggestionProxyModel.
- * \param proxyRow : Indice dans le ProxyModel de la Suggestion à modifier.
+ * @param proxyRow : Indice dans le ProxyModel de la Suggestion à modifier.
  */
 void SuggestionCategoryProxyModel::removePhotoFromSuggestion(const int proxyRow)
 {

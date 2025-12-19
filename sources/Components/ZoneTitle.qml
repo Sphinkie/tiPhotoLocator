@@ -1,12 +1,11 @@
 import QtQuick
 
 
-/*
- * Cette zone est une barre de titre
- */
-
-Zone{
-    id : zoneTitle
+/** **********************************************************************************************************
+ * @brief Cette zone est une barre de titre
+ * ***********************************************************************************************************/
+Zone {
+    id: zoneTitle
     property string titleText
     implicitHeight: 60
     color: TiStyle.suggestionBackgroundColor

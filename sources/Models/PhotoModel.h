@@ -4,8 +4,8 @@
 #include <QAbstractListModel>
 
 /* ********************************************************************************************************** */
-/*!
- * \brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.
+/* **********************************************************************************************************
+ * @brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.
  */
 struct Photo
 {
@@ -66,10 +66,10 @@ struct Photo
 
 
 /* ********************************************************************************************************** */
-/*!
+/* **********************************************************************************************************
  * \class PhotoModel
  * \inmodule TiPhotoLocator
- * \brief The PhotoModel class manages a list of photo data.
+ * @brief The PhotoModel class manages a list of photo data.
  */
 /* ********************************************************************************************************** */
 
@@ -81,8 +81,8 @@ class PhotoModel : public QAbstractListModel
     Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
 
 public:
-    /*!
-     * \brief The Roles enum lists the roles associated to each attribute of a Photo
+    /* **********************************************************************************************************
+     * @brief The Roles enum lists the roles associated to each attribute of a Photo
      */
     enum Roles {
         FilenameRole  = Qt::UserRole,  // The first role that can be used for application-specific purposes.

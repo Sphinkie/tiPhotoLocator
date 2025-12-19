@@ -5,8 +5,8 @@
 #include <QVariant>
 
 
-/*!
- * \brief The Utilities class contains a set of usefull static functions.
+/* **********************************************************************************************************
+ * @brief The Utilities class contains a set of usefull static functions.
  */
 class Utilities
 {

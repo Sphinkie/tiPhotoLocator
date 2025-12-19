@@ -1,64 +1,65 @@
 pragma Singleton
+
 import QtQuick
 
-/*!
- * Définition du Singleton de Style, où l'on définit les couleurs de l'application.
+
+/** **********************************************************************************************************
+ * @brief Définition du Singleton de Style, où l'on définit les couleurs de l'application.
  *
  * On essaye de suivre quelques principes...
  * - Les roles des couleurs dans le MaterialDesign (Surface, Primary, Secondary, Tertiary):
- *   \sa https://m3.material.io/styles/color/the-color-system/color-roles
+ *   @sa https://m3.material.io/styles/color/the-color-system/color-roles
  *
  * - Les noms des couleurs (keywords) définis dans la norme SVG.
  *   Ces noms sont utilisables en Python et en QMl notamment.
- *   \sa https://johndecember.com/html/spec/colorsvg.html
- *   \sa https://www.w3.org/wiki/CSS3/Color/Extended_color_keywords
+ *   @sa https://johndecember.com/html/spec/colorsvg.html
+ *   @sa https://www.w3.org/wiki/CSS3/Color/Extended_color_keywords
  *
  * - Choisir les couleurs de sa SystemPalette
  *   Le site suivant compare 9 différents outils de construction de palette
- *   \sa https://www.webfx.com/blog/web-design/material-design-color-generators/
+ *   @sa https://www.webfx.com/blog/web-design/material-design-color-generators/
  *
- *   \see https://www.w3schools.com/colors/colors_picker.asp
+ *   @see https://www.w3schools.com/colors/colors_picker.asp
  *
  *   Le site le plus connu: https://materialPalette.com
  *
- */
-Item{
+ * **********************************************************************************************************/
+Item {
 
     // Surface
     // Surface colors define contained areas, distinguishing them from a background and other on-screen elements.
     // Surface = couleur de fond
     // Surface container = couleur de fond des outils en haut et en bas
-    readonly property color surfaceBackgroundColor: "#f7f7f7"       // gris très clair pour la surface de fond
-    readonly property color surfaceContainerColor: "#dcedc8"        // vert très pale pour le container de fond
+    readonly property color surfaceBackgroundColor: "#f7f7f7" // gris très clair pour la surface de fond
+    readonly property color surfaceContainerColor: "#dcedc8" // vert très pale pour le container de fond
 
-    readonly property color primaryColor: "#8bc34a"                 // vert pour les boutons et les zones standard
+    readonly property color primaryColor: "#8bc34a" // vert pour les boutons et les zones standard
 
     // Primary: Zones
-    readonly property color zoneBackgroundColor: primaryColor       // vert pour les zones standard (darker=#6ca64f)
-    readonly property color trashcanBackgroundColor: "lightgrey"    // #d3d3d3 gris pour les zones corbeille  (darker=#c2c6c9)
-    readonly property color suggestionBackgroundColor: "lightblue"  // #add8e6 bleu pour les zones de suggestions (darker=#70b1c9)
+    readonly property color zoneBackgroundColor: primaryColor // vert pour les zones standard (darker=#6ca64f)
+    readonly property color trashcanBackgroundColor: "lightgrey" // #d3d3d3 gris pour les zones corbeille  (darker=#c2c6c9)
+    readonly property color suggestionBackgroundColor: "lightblue" // #add8e6 bleu pour les zones de suggestions (darker=#70b1c9)
 
     // Chips
-    readonly property color chipBackgroundColor: "#689f38"          // darkgreen : fond des Chips et TinyChips
-    readonly property color tinychipTextColor: "lightblue"          // Textes des TinyChips
-    readonly property color chipTextColor:     "#ffe0b3"            // Textes des Chips
+    readonly property color chipBackgroundColor: "#689f38" // darkgreen : fond des Chips et TinyChips
+    readonly property color tinychipTextColor: "lightblue" // Textes des TinyChips
+    readonly property color chipTextColor: "#ffe0b3" // Textes des Chips
 
     // Popups
-    readonly property color tertiaryForegroundColor: "#448aff"      // bleu soutenu
+    readonly property color tertiaryForegroundColor: "#448aff" // bleu soutenu
     readonly property color tertiaryBackgroundColor: "lightblue"
 
     // Boutons
     readonly property color buttonIdleColor: primaryColor
     readonly property color buttonHoveredColor: Qt.lighter(buttonIdleColor, 1.2)
     readonly property color buttonPressedColor: Qt.darker(buttonIdleColor, 1.3)
-    readonly property color buttonAccentColor: "darkorange"         // Fond orangé
+    readonly property color buttonAccentColor: "darkorange" // Fond orangé
 
     // Textes
-    readonly property color primaryTextColor:   "#212121"          // gris foncé      : Listview + toolbar
-    readonly property color secondaryTextColor: "#757575"          // gris moyen      : Répertoire dans la toolbar
-    readonly property color tertiaryTextColor:  "#bdbdbd"          // gris clair      : Annotations dans les settings
+    readonly property color primaryTextColor: "#212121" // gris foncé      : Listview + toolbar
+    readonly property color secondaryTextColor: "#757575" // gris moyen      : Répertoire dans la toolbar
+    readonly property color tertiaryTextColor: "#bdbdbd" // gris clair      : Annotations dans les settings
     //TODO : améliorer les couleurs suivantes:
-    readonly property color accentTextColor: "firebrick"           // filenames toBeSaved
-    readonly property color highlightBackgroundColor: "lightgrey"  // filename sélectionné
+    readonly property color accentTextColor: "firebrick" // filenames toBeSaved
+    readonly property color highlightBackgroundColor: "lightgrey" // filename sélectionné
 }
-

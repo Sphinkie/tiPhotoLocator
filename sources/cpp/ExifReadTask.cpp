@@ -17,12 +17,12 @@ QString     ExifReadTask::m_argFile;
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.
+/* **********************************************************************************************************
+ * @brief Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.
  *
  * \note Si on passe un nom de chemin, le process va traiter toutes les images du dossier.
  *       Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé.
- * \param filePath: le chemin + nom du fichier JPG à lire.
+ * @param filePath: le chemin + nom du fichier JPG à lire.
  */
 ExifReadTask::ExifReadTask(QString filePath)
 {
@@ -32,8 +32,8 @@ ExifReadTask::ExifReadTask(QString filePath)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief: Lancement de la tache. On lance **exifTool** dans un process, et on analyse la réponse.
+/* **********************************************************************************************************
+ * @brief: Lancement de la tache. On lance **exifTool** dans un process, et on analyse la réponse.
  * Cette tache est exécutée dans un thread QRunnable.
  * A la fin de la tache, on écrit les résultats dans PhotoModel.
  */
@@ -73,9 +73,9 @@ void ExifReadTask::run()
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.
- * \param line : the received text
+/* **********************************************************************************************************
+ * @brief Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.
+ * @param line : the received text
  * Flux reçu pour une image:
  * \code
         "[{
@@ -126,9 +126,9 @@ void ExifReadTask::processLine(QByteArray line)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques.
- * \param photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
+/* **********************************************************************************************************
+ * @brief Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques.
+ * @param photoModel : la classe appelante, à qui il faudra renvoyer les metadata lues.
  */
 void ExifReadTask::init(PhotoModel* photoModel)
 {
@@ -138,8 +138,8 @@ void ExifReadTask::init(PhotoModel* photoModel)
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief List the tags to be read in the JPG files, and put them in the Arguments file for ExifTool.
+/* **********************************************************************************************************
+ * @brief List the tags to be read in the JPG files, and put them in the Arguments file for ExifTool.
  * \returns true if the file was successfully created.
  *
  * To learn about the usage of IPTC tags:

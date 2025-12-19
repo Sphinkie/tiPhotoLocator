@@ -6,9 +6,9 @@
 #include "Models/SuggestionModel.h"
 
 /* ********************************************************************************************************** */
-/*!
+/* **********************************************************************************************************
  * \class GeocodeWrapper
- * \brief The GeocodeWrapper class allows requests to OpenStreetMap for reverse geocoding.
+ * @brief The GeocodeWrapper class allows requests to OpenStreetMap for reverse geocoding.
  * \note
     Nécessite d'ajouter les lignes suivantes dans le fichier .pro.
     \code

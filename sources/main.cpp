@@ -30,7 +30,7 @@
 
     \module TiPhotoLocator
     \title TiPhotoLocator
-    \brief Les classes C++.
+    @brief Les classes C++.
 
     TiPhotoLocator est developpé en C++ et en QML (avec le framework Qt version 6). \br
     Il lit et écrit les tags EXIF et IPTC des photos JPEG avec \l{https://exiftool.org}{exifTool}. \br
@@ -40,10 +40,10 @@
 
 
 /* ********************************************************************************* */
-/*!
- * \brief Programme principal
- * \param argc
- * \param argv
+/* **********************************************************************************************************
+ * @brief Programme principal
+ * @param argc
+ * @param argv
  * \return
  */
 int main(int argc, char *argv[])

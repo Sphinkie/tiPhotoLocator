@@ -12,9 +12,9 @@ Utilities::Utilities() {
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Convertit une chaine du type "25/08/2017 08:03" au format "2017:08:25 08:03:00".
- * \param value : Le QVariant contenant la nouvelle date.
+/* **********************************************************************************************************
+ * @brief Convertit une chaine du type "25/08/2017 08:03" au format "2017:08:25 08:03:00".
+ * @param value : Le QVariant contenant la nouvelle date.
  * \return la date pouvant être écrite dans un tag Exif.
  */
 QString Utilities::toExifDate(const QVariant value)
@@ -26,9 +26,9 @@ QString Utilities::toExifDate(const QVariant value)
 }
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Convertit une date saisie manuellement en une date correctement formatée, compatible Exif.
- * \param value : Une string au format "..\..\.... ..:.."
+/* **********************************************************************************************************
+ * @brief Convertit une date saisie manuellement en une date correctement formatée, compatible Exif.
+ * @param value : Une string au format "..\..\.... ..:.."
  * \return une string au format "9999:99:99 99:99:00"
  *
  * On est sûr de la présence des séparateurs / et : et ESP. Par contre, il peut y avoir 0 ou 1 ou 2 chiffres entre chaque.
@@ -69,9 +69,9 @@ QString Utilities::toStandardDateTime(const QVariant value)
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Convertit une chaine du type "2017:08:25 08:03:16" au format naturel "25/05/2017 08:03".
- * \param value : Le QVariant contenant la date issue d'un tag Exif.
+/* **********************************************************************************************************
+ * @brief Convertit une chaine du type "2017:08:25 08:03:16" au format naturel "25/05/2017 08:03".
+ * @param value : Le QVariant contenant la date issue d'un tag Exif.
  * \return la date pouvant être affichée dans un Chip.
  */
 QString Utilities::toReadableDateTime(const QVariant value)
@@ -83,10 +83,10 @@ QString Utilities::toReadableDateTime(const QVariant value)
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Reformate correctement l'année saisie par l'utilisateur.
- * \param sYear : L'année à corriger
- * \param defaultYear : La valeur par défaut. Par exemple: l'année couurante.
+/* **********************************************************************************************************
+ * @brief Reformate correctement l'année saisie par l'utilisateur.
+ * @param sYear : L'année à corriger
+ * @param defaultYear : La valeur par défaut. Par exemple: l'année couurante.
  * \return l'année au format "YYYY"
  *
  * Si l'année reçue est sur 2 chiffres, on ajoute 2000.
@@ -106,12 +106,12 @@ QString Utilities::fixYear(QString sYear, int defaultYear)
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Reformate correctement des digits saisis par l'utilisateur (jour, mois, heure, minutes).
- * \param sDigits : La valeur à formater.
- * \param defaultValue : La valeur par défaut, en cas de chaine vide ou non conforme.
- * \param min : La valeur minimale autorisée.
- * \param max : La valeur maximale autorisée.
+/* **********************************************************************************************************
+ * @brief Reformate correctement des digits saisis par l'utilisateur (jour, mois, heure, minutes).
+ * @param sDigits : La valeur à formater.
+ * @param defaultValue : La valeur par défaut, en cas de chaine vide ou non conforme.
+ * @param min : La valeur minimale autorisée.
+ * @param max : La valeur maximale autorisée.
  * \return les deux digits au format "XX".
  */
 QString Utilities::fixDigits(QString sDigits, int defaultValue, int min, int max)
@@ -126,10 +126,10 @@ QString Utilities::fixDigits(QString sDigits, int defaultValue, int min, int max
 
 
 /* ********************************************************************************************************** */
-/*!
- * \brief Remplace les éventuelles lettres diacritiques d'un texte par leur équivalent normalisé.
+/* **********************************************************************************************************
+ * @brief Remplace les éventuelles lettres diacritiques d'un texte par leur équivalent normalisé.
  *        Par exemple, on remplace 'à' par 'a'.
- * \param texte: le texte à scanner.
+ * @param texte: le texte à scanner.
  * \return le texte normalisé.
  */
 QString Utilities::normalise(QString texte)

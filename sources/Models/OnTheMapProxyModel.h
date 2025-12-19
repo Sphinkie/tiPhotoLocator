@@ -4,10 +4,10 @@
 #include <QSortFilterProxyModel>
 
 /* ************************************************************************ */
-/*!
+/* **********************************************************************************************************
  * \class OnTheMapProxyModel
  * \inmodule TiPhotoLocator
- * \brief The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s).
+ * @brief The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s).
  * \note Dans ce ProxyModel on doit ré-implementer les méthodes append(), get(), clear(), etc.
  */
 /* ************************************************************************ */
