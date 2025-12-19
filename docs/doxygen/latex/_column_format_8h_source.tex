@@ -1,0 +1,120 @@
+\doxysection{Column\+Format.\+h}
+\label{_column_format_8h_source}\index{Sources/ColumnFormat.h@{Sources/ColumnFormat.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLUMNFORMAT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLUMNFORMAT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <qregularexpression.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Ce\ tableau\ est\ pour\ les\ Status\ tips}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ QString\ columnFormat[]\ \ \ \ \ \ }
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{stringliteral}{"{}Start\ mode\ format\ =\ 1\ byte\ (1|2|3)\ "{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{stringliteral}{"{}Start\ time\ format\ =\ HH:MM:SS:FF\ (11\ bytes)"{}},\ \ \ \ \ \ \ \textcolor{comment}{//\ B}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{stringliteral}{"{}SourceType\ format\ =\ 1\ byte\ (0|1|3|4)"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ C}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{stringliteral}{"{}EventId\ format\ =\ Text\ -\/\ 128\ bytes\ max"{}},\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ D}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{stringliteral}{"{}Filename\ format\ =\ Text\ -\/\ 32\ bytes\ max"{}},\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ E}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{stringliteral}{"{}Title\ format\ =\ Text\ -\/\ 256\ bytes\ max"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ F}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{stringliteral}{"{}Commercial\ format\ =\ 1\ byte\ (0|1)"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ G}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{stringliteral}{"{}Quota\ format\ =\ 1\ byte\ (0|1)"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ H}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{stringliteral}{"{}TC\ IN\ format\ =\ HH:MM:SS:FF\ (11\ bytes)"{}},\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ I}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{stringliteral}{"{}Duration\ format\ =\ HH:MM:SS:FF\ (11\ bytes)"{}},\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ J}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{stringliteral}{"{}Parameter\ format\ =\ Text\ -\/\ 256\ bytes\ max"{}},\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ K}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{stringliteral}{"{}Extended\ parameter\ format\ =\ Unlimited\ text"{}},\ \ \ \ \ \ \ \textcolor{comment}{//\ L}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{stringliteral}{"{}Forced\ TC\ format\ =\ 1\ byte\ (0|1)"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{stringliteral}{"{}Loop\ mode\ format\ =\ 1\ byte\ (0|1)"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ N}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{stringliteral}{"{}Broadcast\ comment\ format\ =\ Unlimited\ text"{}},\ \ \ \ \ \ \ \ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Note\ :\ le\ R"{}(......)"{}\ permet\ de\ ne\ pas\ échapper\ les\ \(\backslash\).\ (R\ pour\ Raw\ Characters)}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ QRegularExpression\ columnRegEx[]\ \ \ \ \ \ \textcolor{comment}{//\ General}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[1,2,3]\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A}}
+\DoxyCodeLine{00034\ \ \ \ \ QRegularExpression(R\textcolor{stringliteral}{"{}(\string^\(\backslash\)d\{2\}:\(\backslash\)d\{2\}:\(\backslash\)d\{2\}:\(\backslash\)d\{2\}\$)"{}),\ \ \ \ \ }\textcolor{comment}{//\ B}}
+\DoxyCodeLine{00035\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1,3,4]\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ C}}
+\DoxyCodeLine{00036\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,128\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ D}}
+\DoxyCodeLine{00037\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,32\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ E}}
+\DoxyCodeLine{00038\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,256\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ F}}
+\DoxyCodeLine{00039\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]?\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ G}}
+\DoxyCodeLine{00040\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]?\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ H}}
+\DoxyCodeLine{00041\ \ \ \ \ QRegularExpression(R\textcolor{stringliteral}{"{}(\string^(\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d)?\$)"{}),\ \ \ \ \ \ }\textcolor{comment}{//\ I}}
+\DoxyCodeLine{00042\ \ \ \ \ QRegularExpression(R\textcolor{stringliteral}{"{}(\string^(\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d)?\$)"{}),\ \ \ \ \ \ }\textcolor{comment}{//\ J}}
+\DoxyCodeLine{00043\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,256\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ K}}
+\DoxyCodeLine{00044\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}.*"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ L}}
+\DoxyCodeLine{00045\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]?\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M}}
+\DoxyCodeLine{00046\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]?\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ N}}
+\DoxyCodeLine{00047\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}.*"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{00048\ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ s'il\ y\ a\ une\ dernière\ colone,\ elle\ doit\ être\ vide}}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ QRegularExpression\ columnRegEx0[]\ \ \ \ \ \ \textcolor{comment}{//\ EVP\ Live\ ou\ Server}}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[1,2,3]\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ QRegularExpression(R\textcolor{stringliteral}{"{}(\string^\(\backslash\)d\{2\}:\(\backslash\)d\{2\}:\(\backslash\)d\{2\}:\(\backslash\)d\{2\}\$)"{}),\ \ \ \ \ }\textcolor{comment}{//\ B}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1,3,4]\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ C}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,128\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ D}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,32\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ E}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,256\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ F}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]?\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ G}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]?\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ H}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ QRegularExpression(R\textcolor{stringliteral}{"{}(\string^(\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d)?\$)"{}),\ \ \ \ \ \ }\textcolor{comment}{//\ I}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ QRegularExpression(R\textcolor{stringliteral}{"{}(\string^(\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d)?\$)"{}),\ \ \ \ \ \ }\textcolor{comment}{//\ J}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ K\ Param\ interdit}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ L\ Ext\ Param\ interdit}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]?\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ N}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}.*"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}})}
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ QRegularExpression\ columnRegEx1[]\ \ \ \ \ \ \ \textcolor{comment}{//\ For\ Comments}}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ empty\ start\ mode}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ B\ empty\ start\ time}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1,3,4]\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ C}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,128\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ D}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,32\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ E}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,256\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ F}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]?\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ G}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1]?\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ H}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ I\ empty\ tc}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ J\ empty\ duration}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,256\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ K}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}.*"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ L}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M\ empty\ forced\ tc}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ N\ empty\ loop\ mode}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}.*"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}})}
+\DoxyCodeLine{00090\ \ \ \ \ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ QRegularExpression\ columnRegEx4[]\ \ \ \ \ \ \ \textcolor{comment}{//\ For\ Secondary\ Events}}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ empty\ start\ mode}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ B\ empty\ start\ time}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^[0,1,3,4]\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ C}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,128\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ D}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,32\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ E}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,256\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ F}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ G\ empty\ Ad}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ H\ empty\ quota}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ QRegularExpression(R\textcolor{stringliteral}{"{}(\string^(\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d)?\$)"{}),\ \ \ \ \ \ }\textcolor{comment}{//\ I}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ QRegularExpression(R\textcolor{stringliteral}{"{}(\string^(\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d:\(\backslash\)d\(\backslash\)d)?\$)"{}),\ \ \ \ \ \ }\textcolor{comment}{//\ J}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^.\{,256\}\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ K}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}.*"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ L}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M\ empty\ forced\ tc}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ N\ empty\ loop\ mode}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}.*"{}}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ QRegularExpression(\textcolor{stringliteral}{"{}\string^\$"{}})}
+\DoxyCodeLine{00110\ \ \ \ \ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COLUMNFORMAT\_H}}
+\DoxyCodeLine{00114\ }
+
+\end{DoxyCode}

@@ -19,7 +19,7 @@ Graphe d\textquotesingle{}héritage de Geocode\+Wrapper\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ request\+Reverse\+Geocode} (double latitude, double longitude)
-\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =$>$ {\texttt{ Résultat}} La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =$>$ {\texttt{Résultat}} La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} \end{DoxyCompactList}\item 
 void \textbf{ request\+Coordinates} (QString city)
 \begin{DoxyCompactList}\small\item\em Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Fonctions membres publiques}
@@ -57,12 +57,13 @@ Nécessite d\textquotesingle{}ajouter les lignes suivantes dans le fichier .pro.
 \end{DoxyNote}
 
 
+\label{doc-constructors}
 \doxysubsection{Documentation des constructeurs et destructeur}
-\label{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453} 
 \index{GeocodeWrapper@{GeocodeWrapper}!GeocodeWrapper@{GeocodeWrapper}}
 \index{GeocodeWrapper@{GeocodeWrapper}!GeocodeWrapper@{GeocodeWrapper}}
 \doxysubsubsection{GeocodeWrapper()}
-{\footnotesize\ttfamily Geocode\+Wrapper\+::\+Geocode\+Wrapper (\begin{DoxyParamCaption}\item[{\textbf{ Suggestion\+Model} $\ast$}]{suggestion\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{class_geocode_wrapper_a749d1015c9206b701b45e96d8c109453} 
+Geocode\+Wrapper\+::\+Geocode\+Wrapper (\begin{DoxyParamCaption}\item[{\textbf{ Suggestion\+Model} $\ast$}]{suggestion\+\_\+model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -75,12 +76,13 @@ Le contructeur initialise le provider "{}\+OSM"{}.
 \end{DoxyParams}
 
 
+\label{doc-func-members}
 \doxysubsection{Documentation des fonctions membres}
-\label{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 \index{GeocodeWrapper@{GeocodeWrapper}!geoCodeFinished@{geoCodeFinished}}
 \index{geoCodeFinished@{geoCodeFinished}!GeocodeWrapper@{GeocodeWrapper}}
 \doxysubsubsection{geoCodeFinished}
-{\footnotesize\ttfamily void Geocode\+Wrapper\+::geo\+Code\+Finished (\begin{DoxyParamCaption}\item[{QGeo\+Code\+Reply $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+{\footnotesize\ttfamily \label{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
+void Geocode\+Wrapper\+::geo\+Code\+Finished (\begin{DoxyParamCaption}\item[{QGeo\+Code\+Reply $\ast$}]{reply}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
 
 
@@ -94,11 +96,11 @@ Signal appelé lors de la réception de la réponse à la request.
 \begin{DoxyNote}{Note}
 \+: Exemple\+: "{}\+Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"{}
 \end{DoxyNote}
-En cas de réponse à une demande de coordonnées\+: on les mémorise dans le QSettings "{}home\+Coords"{}. En cas de réponse à une demande de reverse Localisation, on passe les réponses au \doxyref{Suggestion\+Model}{p.}{class_suggestion_model}. \label{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23} 
-\index{GeocodeWrapper@{GeocodeWrapper}!requestCoordinates@{requestCoordinates}}
+En cas de réponse à une demande de coordonnées\+: on les mémorise dans le QSettings "{}home\+Coords"{}. En cas de réponse à une demande de reverse Localisation, on passe les réponses au \doxyref{Suggestion\+Model}{p.}{class_suggestion_model}. \index{GeocodeWrapper@{GeocodeWrapper}!requestCoordinates@{requestCoordinates}}
 \index{requestCoordinates@{requestCoordinates}!GeocodeWrapper@{GeocodeWrapper}}
 \doxysubsubsection{requestCoordinates}
-{\footnotesize\ttfamily void Geocode\+Wrapper\+::request\+Coordinates (\begin{DoxyParamCaption}\item[{QString}]{city }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily \label{class_geocode_wrapper_ab3c38ff6c5a53d2b6c04cf5c88763b23} 
+void Geocode\+Wrapper\+::request\+Coordinates (\begin{DoxyParamCaption}\item[{QString}]{city}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -109,15 +111,15 @@ Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu 
 {\em city} & \+: un nom de lieu, par exemple "{}\+Marsa el Brega"{} =$>$ 30.\+4074, 19.\+5784 \\
 \hline
 \end{DoxyParams}
-\label{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b} 
 \index{GeocodeWrapper@{GeocodeWrapper}!requestReverseGeocode@{requestReverseGeocode}}
 \index{requestReverseGeocode@{requestReverseGeocode}!GeocodeWrapper@{GeocodeWrapper}}
 \doxysubsubsection{requestReverseGeocode}
-{\footnotesize\ttfamily void Geocode\+Wrapper\+::request\+Reverse\+Geocode (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily \label{class_geocode_wrapper_a4317ba9f8e11b9bf6b555df8a065b54b} 
+void Geocode\+Wrapper\+::request\+Reverse\+Geocode (\begin{DoxyParamCaption}\item[{double}]{latitude}{, }\item[{double}]{longitude}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =$>$ {\texttt{ Résultat}} La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
+Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =$>$ {\texttt{Résultat}} La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 
 
 \begin{DoxyParams}{Paramètres}

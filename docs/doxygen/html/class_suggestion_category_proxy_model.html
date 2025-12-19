@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TiPhotoLocator: Référence de la classe SuggestionCategoryProxyModel</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.8 -->
+<!-- Généré par Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_suggestion_category_proxy_model.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('class_suggestion_category_proxy_model.html','','class_suggestion_category_proxy_model-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,19 +90,12 @@ $(document).ready(function(){initNavTree('class_suggestion_category_proxy_model.
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-slots">Connecteurs publics</a> &#124;
-<a href="#signals">Signaux</a> &#124;
-<a href="#pub-methods">Fonctions membres publiques</a> &#124;
-<a href="#properties">Propriétés</a> &#124;
-<a href="#pri-attribs">Attributs privés</a> &#124;
-<a href="class_suggestion_category_proxy_model-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle"><div class="title">Référence de la classe SuggestionCategoryProxyModel</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>The <a class="el" href="class_suggestion_category_proxy_model.html" title="The SuggestionCategoryProxyModel class is a filter ProxyModel, that keeps only Suggestion with a give...">SuggestionCategoryProxyModel</a> class is a filter ProxyModel, that keeps only <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> with a given category.  
- <a href="class_suggestion_category_proxy_model.html#details">Plus de détails...</a></p>
+ <a href="#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_suggestion_category_proxy_model_8h_source.html">SuggestionCategoryProxyModel.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -113,51 +105,43 @@ Graphe d'héritage de SuggestionCategoryProxyModel:</div>
   <img src="class_suggestion_category_proxy_model.png" alt=""/>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Connecteurs publics</h2></td></tr>
-<tr class="memitem:a7ecc03f7eb5925bef1c0937221bcd469" id="r_a7ecc03f7eb5925bef1c0937221bcd469"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_category_proxy_model.html#a7ecc03f7eb5925bef1c0937221bcd469">setFilterEnabled</a> (bool enabled)</td></tr>
+<tr class="memitem:a7ecc03f7eb5925bef1c0937221bcd469" id="r_a7ecc03f7eb5925bef1c0937221bcd469"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ecc03f7eb5925bef1c0937221bcd469">setFilterEnabled</a> (bool enabled)</td></tr>
 <tr class="memdesc:a7ecc03f7eb5925bef1c0937221bcd469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot active ou désactive le filtrage par le proxyModel.  <br /></td></tr>
-<tr class="separator:a7ecc03f7eb5925bef1c0937221bcd469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29d65a3ef6bd9db53b99b8edaf8600bc" id="r_a29d65a3ef6bd9db53b99b8edaf8600bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_category_proxy_model.html#a29d65a3ef6bd9db53b99b8edaf8600bc">removePhotoFromSuggestion</a> (const int proxyRow)</td></tr>
+<tr class="memitem:a29d65a3ef6bd9db53b99b8edaf8600bc" id="r_a29d65a3ef6bd9db53b99b8edaf8600bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29d65a3ef6bd9db53b99b8edaf8600bc">removePhotoFromSuggestion</a> (const int proxyRow)</td></tr>
 <tr class="memdesc:a29d65a3ef6bd9db53b99b8edaf8600bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.  <br /></td></tr>
-<tr class="separator:a29d65a3ef6bd9db53b99b8edaf8600bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signaux</h2></td></tr>
 <tr class="memitem:acbcc572b70158e4c6b93a43494837c74" id="r_acbcc572b70158e4c6b93a43494837c74"><td class="memItemLeft" align="right" valign="top"><a id="acbcc572b70158e4c6b93a43494837c74" name="acbcc572b70158e4c6b93a43494837c74"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabledChanged</b> ()</td></tr>
 <tr class="memdesc:acbcc572b70158e4c6b93a43494837c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand l'état du filtrage change. <br /></td></tr>
-<tr class="separator:acbcc572b70158e4c6b93a43494837c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a7f173be0c42da4ac2ddeef414d1d4247" id="r_a7f173be0c42da4ac2ddeef414d1d4247"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_category_proxy_model.html#a7f173be0c42da4ac2ddeef414d1d4247">SuggestionCategoryProxyModel</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memitem:a7f173be0c42da4ac2ddeef414d1d4247" id="r_a7f173be0c42da4ac2ddeef414d1d4247"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f173be0c42da4ac2ddeef414d1d4247">SuggestionCategoryProxyModel</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:a7f173be0c42da4ac2ddeef414d1d4247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "category". Par défaut, le filtrage est inactif (tout passe).  <br /></td></tr>
-<tr class="separator:a7f173be0c42da4ac2ddeef414d1d4247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec23196b11c2801ba701656539a288d4" id="r_aec23196b11c2801ba701656539a288d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_category_proxy_model.html#aec23196b11c2801ba701656539a288d4">filterEnabled</a> () const</td></tr>
+<tr class="memitem:aec23196b11c2801ba701656539a288d4" id="r_aec23196b11c2801ba701656539a288d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec23196b11c2801ba701656539a288d4">filterEnabled</a> () const</td></tr>
 <tr class="memdesc:aec23196b11c2801ba701656539a288d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode indique si le filtrage est actif ou non.  <br /></td></tr>
-<tr class="separator:aec23196b11c2801ba701656539a288d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4033c7903dcf1ae1254b3e6b8a21f005" id="r_a4033c7903dcf1ae1254b3e6b8a21f005"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_suggestion_category_proxy_model.html#a4033c7903dcf1ae1254b3e6b8a21f005">setFilterValue</a> (QString filter=&quot;&quot;)</td></tr>
+<tr class="memitem:a4033c7903dcf1ae1254b3e6b8a21f005" id="r_a4033c7903dcf1ae1254b3e6b8a21f005"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4033c7903dcf1ae1254b3e6b8a21f005">setFilterValue</a> (QString filter=&quot;&quot;)</td></tr>
 <tr class="memdesc:a4033c7903dcf1ae1254b3e6b8a21f005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode invocable par QML active ou désactive le filtrage par le proxyModel.  <br /></td></tr>
-<tr class="separator:a4033c7903dcf1ae1254b3e6b8a21f005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Propriétés</h2></td></tr>
 <tr class="memitem:a32e202125b547edffe7900d9df77af86" id="r_a32e202125b547edffe7900d9df77af86"><td class="memItemLeft" align="right" valign="top"><a id="a32e202125b547edffe7900d9df77af86" name="a32e202125b547edffe7900d9df77af86"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>filterEnabled</b></td></tr>
 <tr class="memdesc:a32e202125b547edffe7900d9df77af86"><td class="mdescLeft">&#160;</td><td class="mdescRight">The filterEnabled property manages the status of the filtering. <br /></td></tr>
-<tr class="separator:a32e202125b547edffe7900d9df77af86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr class="memitem:a15cde010b373ec1cfe3475a6b01dc05a" id="r_a15cde010b373ec1cfe3475a6b01dc05a"><td class="memItemLeft" align="right" valign="top"><a id="a15cde010b373ec1cfe3475a6b01dc05a" name="a15cde010b373ec1cfe3475a6b01dc05a"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &quot;&quot;</td></tr>
 <tr class="memdesc:a15cde010b373ec1cfe3475a6b01dc05a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaine de caractères contenant le filtre. <br /></td></tr>
-<tr class="separator:a15cde010b373ec1cfe3475a6b01dc05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>The <a class="el" href="class_suggestion_category_proxy_model.html" title="The SuggestionCategoryProxyModel class is a filter ProxyModel, that keeps only Suggestion with a give...">SuggestionCategoryProxyModel</a> class is a filter ProxyModel, that keeps only <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> with a given category. </p>
-</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a7f173be0c42da4ac2ddeef414d1d4247" name="a7f173be0c42da4ac2ddeef414d1d4247"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f173be0c42da4ac2ddeef414d1d4247">&#9670;&#160;</a></span>SuggestionCategoryProxyModel()</h2>
 
@@ -170,14 +154,13 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &qu
         <tr>
           <td class="memname">SuggestionCategoryProxyModel::SuggestionCategoryProxyModel </td>
           <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -192,7 +175,7 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &qu
 
 </div>
 </div>
-<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
 <a id="aec23196b11c2801ba701656539a288d4" name="aec23196b11c2801ba701656539a288d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec23196b11c2801ba701656539a288d4">&#9670;&#160;</a></span>filterEnabled()</h2>
 
@@ -202,7 +185,7 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &qu
         <tr>
           <td class="memname">bool SuggestionCategoryProxyModel::filterEnabled </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -225,14 +208,13 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &qu
         <tr>
           <td class="memname">void SuggestionCategoryProxyModel::removePhotoFromSuggestion </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>proxyRow</em></td><td>)</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>proxyRow</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -260,14 +242,13 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &qu
         <tr>
           <td class="memname">void SuggestionCategoryProxyModel::setFilterEnabled </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enabled</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -291,8 +272,7 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &qu
         <tr>
           <td class="memname">void SuggestionCategoryProxyModel::setFilterValue </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>filter</em> = <code>&quot;&quot;</code></td><td>)</td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>filter</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -315,11 +295,19 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &qu
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="class_suggestion_category_proxy_model.html">SuggestionCategoryProxyModel</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="class_suggestion_category_proxy_model.html">SuggestionCategoryProxyModel</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

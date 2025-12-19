@@ -94,12 +94,13 @@ Description of {\bfseries{JSON}} options for {\ttfamily Exif\+Tool}.
 \end{DoxyCode}
  
 
+\label{doc-constructors}
 \doxysubsection{Documentation des constructeurs et destructeur}
-\label{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db} 
 \index{ExifReadTask@{ExifReadTask}!ExifReadTask@{ExifReadTask}}
 \index{ExifReadTask@{ExifReadTask}!ExifReadTask@{ExifReadTask}}
 \doxysubsubsection{ExifReadTask()}
-{\footnotesize\ttfamily Exif\+Read\+Task\+::\+Exif\+Read\+Task (\begin{DoxyParamCaption}\item[{QString}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{class_exif_read_task_ac76e0c8b20e09ce264693b434edce9db} 
+Exif\+Read\+Task\+::\+Exif\+Read\+Task (\begin{DoxyParamCaption}\item[{QString}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -115,12 +116,13 @@ Si on passe un nom de chemin, le process va traiter toutes les images du dossier
 \end{DoxyParams}
 
 
+\label{doc-func-members}
 \doxysubsection{Documentation des fonctions membres}
-\label{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4} 
 \index{ExifReadTask@{ExifReadTask}!init@{init}}
 \index{init@{init}!ExifReadTask@{ExifReadTask}}
 \doxysubsubsection{init()}
-{\footnotesize\ttfamily void Exif\+Read\+Task\+::init (\begin{DoxyParamCaption}\item[{\textbf{ Photo\+Model} $\ast$}]{photo\+Model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_exif_read_task_ae30b3d2ce698c12267cd51db35f4e3e4} 
+void Exif\+Read\+Task\+::init (\begin{DoxyParamCaption}\item[{\textbf{ Photo\+Model} $\ast$}]{photo\+Model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -131,11 +133,11 @@ Méthode à appeler lors de la première utilisation. Mémorise quelques infos s
 {\em photo\+Model} & \+: la classe appelante, à qui il faudra renvoyer les metadata lues. \\
 \hline
 \end{DoxyParams}
-\label{class_exif_read_task_a425555d73b1bc4ba915e2a9f9a0884c6} 
 \index{ExifReadTask@{ExifReadTask}!processLine@{processLine}}
 \index{processLine@{processLine}!ExifReadTask@{ExifReadTask}}
 \doxysubsubsection{processLine()}
-{\footnotesize\ttfamily void Exif\+Read\+Task\+::process\+Line (\begin{DoxyParamCaption}\item[{QByte\+Array}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_exif_read_task_a425555d73b1bc4ba915e2a9f9a0884c6} 
+void Exif\+Read\+Task\+::process\+Line (\begin{DoxyParamCaption}\item[{QByte\+Array}]{line}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -166,11 +168,11 @@ Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelé
  (en fait toutes les lignes sont escapées sur le modèle de la ligne City.) \\
 \hline
 \end{DoxyParams}
-\label{class_exif_read_task_a209baeebef9ede8dafc98844324bbaa9} 
 \index{ExifReadTask@{ExifReadTask}!writeArgsFile@{writeArgsFile}}
 \index{writeArgsFile@{writeArgsFile}!ExifReadTask@{ExifReadTask}}
 \doxysubsubsection{writeArgsFile()}
-{\footnotesize\ttfamily bool Exif\+Read\+Task\+::write\+Args\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_exif_read_task_a209baeebef9ede8dafc98844324bbaa9} 
+bool Exif\+Read\+Task\+::write\+Args\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -181,10 +183,10 @@ true if the file was successfully created.
 \end{DoxyReturn}
 To learn about the usage of IPTC tags\+: \begin{DoxyItemize}
 \item \begin{DoxySeeAlso}{Voir également}
-{\texttt{ https\+://iptc.\+org/std/photometadata/documentation/mappingguidelines}} 
+{\texttt{https\+://iptc.\+org/std/photometadata/documentation/mappingguidelines}} 
 \end{DoxySeeAlso}
 \item \begin{DoxySeeAlso}{Voir également}
-{\texttt{ https\+://www.\+carlseibert.\+com/guide-\/iptc-\/photo-\/metadata-\/fields}} 
+{\texttt{https\+://www.\+carlseibert.\+com/guide-\/iptc-\/photo-\/metadata-\/fields}} 
 \end{DoxySeeAlso}
 \end{DoxyItemize}
 

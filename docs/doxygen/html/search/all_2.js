@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cameraset_0',['cameraset',['../class_camera_set.html',1,'CameraSet'],['../class_camera_set.html#a56a4c781a3334d0fcce5bbd955a373c6',1,'CameraSet::CameraSet()']]],
+  ['cameraset_0',['CameraSet',['../class_camera_set.html',1,'CameraSet'],['../class_camera_set.html#a56a4c781a3334d0fcce5bbd955a373c6',1,'CameraSet::CameraSet()']]],
   ['cammodel_1',['camModel',['../struct_photo.html#a3c5204d88a446d1df0ee95feee81a574',1,'Photo']]],
   ['captionwriter_2',['captionWriter',['../struct_photo.html#a1b1dde1eb075006ff85b5539eed40f94',1,'Photo']]],
   ['category_3',['category',['../struct_suggestion.html#abdfdd0ed210feac3b5cd826c40d7643f',1,'Suggestion']]],

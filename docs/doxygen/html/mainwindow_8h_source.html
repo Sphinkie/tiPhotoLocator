@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSV Playlist Viewer:  Fichier source de Sources/mainwindow.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">CSV Playlist Viewer<span id="projectnumber">&#160;1.1</span>
+   </div>
+   <div id="projectbrief">A tiny application to easily geotag your photos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('mainwindow_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mainwindow.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MAINWINDOW_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MAINWINDOW_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QStandardItemModel&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">namespace </span>Ui { <span class="keyword">class </span><a class="code hl_class" href="class_main_window.html">MainWindow</a>; }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_main_window.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    Q_OBJECT</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="class_main_window.html">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_main_window.html#a0a4c035375a270bf063da240bc2c5f62">   25</a></span>    <span class="keyword">const</span> QString <a class="code hl_variable" href="class_main_window.html#a0a4c035375a270bf063da240bc2c5f62">version</a> = <span class="stringliteral">&quot;1.1&quot;</span>;       </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_main_window.html#ab7768373f002117dc81f1f8b9574312c">   26</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_main_window.html#ab7768373f002117dc81f1f8b9574312c">NbColumns</a> = 15;            </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a2ea16d8091291492f27f21c77a67b25a">on_action_Open_triggered</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a0b8c6952362faeeee64487be46b5ae6d">on_action_Quit_triggered</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#af440a40bc69a2e33a50e61466e206e4f">on_action_Close_triggered</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a09de6bdff902ebcdccee3a1dd715f69b">on_action_About_triggered</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ac90cbc4cf25ed8b120f091820a9cf194">on_action_Infos_triggered</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="class_ui_1_1_main_window.html">Ui::MainWindow</a>* ui;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    QStandardItemModel m_model;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_main_window.html#a761c1d7c968450691d752b3f4a5c48c5">checkForErrors</a>(<span class="keywordtype">int</span> source_type, <span class="keywordtype">int</span> column, QString value);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif </span><span class="comment">// MAINWINDOW_H</span></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">The MainWindow class.</div><div class="ttdef"><b>Definition</b> mainwindow.h:18</div></div>
+<div class="ttc" id="aclass_main_window_html_a09de6bdff902ebcdccee3a1dd715f69b"><div class="ttname"><a href="class_main_window.html#a09de6bdff902ebcdccee3a1dd715f69b">MainWindow::on_action_About_triggered</a></div><div class="ttdeci">void on_action_About_triggered()</div><div class="ttdoc">Affichage du popup About.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:209</div></div>
+<div class="ttc" id="aclass_main_window_html_a0a4c035375a270bf063da240bc2c5f62"><div class="ttname"><a href="class_main_window.html#a0a4c035375a270bf063da240bc2c5f62">MainWindow::version</a></div><div class="ttdeci">const QString version</div><div class="ttdoc">VERSION NUMBER.</div><div class="ttdef"><b>Definition</b> mainwindow.h:25</div></div>
+<div class="ttc" id="aclass_main_window_html_a0b8c6952362faeeee64487be46b5ae6d"><div class="ttname"><a href="class_main_window.html#a0b8c6952362faeeee64487be46b5ae6d">MainWindow::on_action_Quit_triggered</a></div><div class="ttdeci">void on_action_Quit_triggered()</div><div class="ttdoc">Quit the program.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:161</div></div>
+<div class="ttc" id="aclass_main_window_html_a2ea16d8091291492f27f21c77a67b25a"><div class="ttname"><a href="class_main_window.html#a2ea16d8091291492f27f21c77a67b25a">MainWindow::on_action_Open_triggered</a></div><div class="ttdeci">void on_action_Open_triggered()</div><div class="ttdoc">Fill the table with the content of a file.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:47</div></div>
+<div class="ttc" id="aclass_main_window_html_a761c1d7c968450691d752b3f4a5c48c5"><div class="ttname"><a href="class_main_window.html#a761c1d7c968450691d752b3f4a5c48c5">MainWindow::checkForErrors</a></div><div class="ttdeci">bool checkForErrors(int source_type, int column, QString value)</div><div class="ttdoc">Check if the data contains errors.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:171</div></div>
+<div class="ttc" id="aclass_main_window_html_ab7768373f002117dc81f1f8b9574312c"><div class="ttname"><a href="class_main_window.html#ab7768373f002117dc81f1f8b9574312c">MainWindow::NbColumns</a></div><div class="ttdeci">const int NbColumns</div><div class="ttdoc">Nombre de colonnes CSV autorisées par le format.</div><div class="ttdef"><b>Definition</b> mainwindow.h:26</div></div>
+<div class="ttc" id="aclass_main_window_html_ac90cbc4cf25ed8b120f091820a9cf194"><div class="ttname"><a href="class_main_window.html#ac90cbc4cf25ed8b120f091820a9cf194">MainWindow::on_action_Infos_triggered</a></div><div class="ttdeci">void on_action_Infos_triggered()</div><div class="ttdoc">Affichage du popup About.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:225</div></div>
+<div class="ttc" id="aclass_main_window_html_ae98d00a93bc118200eeef9f9bba1dba7"><div class="ttname"><a href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow()</div><div class="ttdoc">Destructeur.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:39</div></div>
+<div class="ttc" id="aclass_main_window_html_af440a40bc69a2e33a50e61466e206e4f"><div class="ttname"><a href="class_main_window.html#af440a40bc69a2e33a50e61466e206e4f">MainWindow::on_action_Close_triggered</a></div><div class="ttdeci">void on_action_Close_triggered()</div><div class="ttdoc">Vide la table.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:149</div></div>
+<div class="ttc" id="aclass_ui_1_1_main_window_html"><div class="ttname"><a href="class_ui_1_1_main_window.html">Ui::MainWindow</a></div><div class="ttdef"><b>Definition</b> ui_mainwindow.h:119</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_937900b87e0c7a5fa01190c395fb83f7.html">Sources</a></li><li class="navelem"><b>mainwindow.h</b></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

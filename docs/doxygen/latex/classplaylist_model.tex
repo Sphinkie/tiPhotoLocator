@@ -1,0 +1,120 @@
+\doxysection{Référence de la classe playlist\+Model}
+\label{classplaylist_model}\index{playlistModel@{playlistModel}}
+Graphe d\textquotesingle{}héritage de playlist\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classplaylist_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Types publics}
+\begin{DoxyCompactItemize}
+\item 
+\label{classplaylist_model_a39f7a87d2dd42d33c6b75a3d9e83d975} 
+enum \textbf{ Roles} \{ {\bfseries Line\+Role} = Qt\+::User\+Role
+ \}
+\begin{DoxyCompactList}\small\item\em brief The Roles enum list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ playlist\+Model} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+int \textbf{ row\+Count} (const QModel\+Index \&parent) const override
+\begin{DoxyCompactList}\small\item\em Returns the number of items in the model. \end{DoxyCompactList}\item 
+QVariant \textbf{ data} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
+\begin{DoxyCompactList}\small\item\em Returns the role value of an element of the model. \end{DoxyCompactList}\item 
+QHash$<$ int, QByte\+Array $>$ \textbf{ role\+Names} () const override
+\begin{DoxyCompactList}\small\item\em C\textquotesingle{}est la table de correspondance entre le role C++ et le nom de la property dans QML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\label{classplaylist_model_abd9e3b7154b3f300383a67da1974176f} 
+QVector$<$ \textbf{ Playline} $>$ {\bfseries m\+\_\+playlist}
+\begin{DoxyCompactList}\small\item\em La liste des lignes de la playlist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\label{classplaylist_model_a1031a93a2b524f87d8fbb062f3168ab2} 
+\index{playlistModel@{playlistModel}!playlistModel@{playlistModel}}
+\index{playlistModel@{playlistModel}!playlistModel@{playlistModel}}
+\doxysubsubsection{playlistModel()}
+{\footnotesize\ttfamily playlist\+Model\+::playlist\+Model (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur. 
+
+\DoxyHorRuler{0}
+ 
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\label{classplaylist_model_a4be0f3506ce417d4918c4a29f1e493d5} 
+\index{playlistModel@{playlistModel}!data@{data}}
+\index{data@{data}!playlistModel@{playlistModel}}
+\doxysubsubsection{data()}
+{\footnotesize\ttfamily QVariant playlist\+Model\+::data (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Returns the role value of an element of the model. 
+
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
+Implémentation obligatoire. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em index} & \+: index of the element of the model. \\
+\hline
+{\em role} & \+: the requested role (enum). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the requested role value 
+\end{DoxyReturn}
+\label{classplaylist_model_a36a00067f6838f5f1cab152c16f8b34d} 
+\index{playlistModel@{playlistModel}!roleNames@{roleNames}}
+\index{roleNames@{roleNames}!playlistModel@{playlistModel}}
+\doxysubsubsection{roleNames()}
+{\footnotesize\ttfamily QHash$<$ int, QByte\+Array $>$ playlist\+Model\+::role\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+C\textquotesingle{}est la table de correspondance entre le role C++ et le nom de la property dans QML. 
+
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
+Implémentation obligatoire. 
+\end{DoxyNote}
+\label{classplaylist_model_a9e89bbc71f8f4cf34b081f4275602a15} 
+\index{playlistModel@{playlistModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!playlistModel@{playlistModel}}
+\doxysubsubsection{rowCount()}
+{\footnotesize\ttfamily int playlist\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Returns the number of items in the model. 
+
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
+Implémentation obligatoire. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \+: parent of the model. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the number of elements in the model. 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+Sources/\+Models/playlistmodel.\+h\item 
+Sources/\+Models/playlistmodel.\+cpp\end{DoxyCompactItemize}

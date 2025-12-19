@@ -1,5 +1,5 @@
 pushd %~dp0
-if not %errorlevel% == 0 goto :end
+if not %errorlevel% == 0 goto :end1
 
 set ORG_LATEX_CMD=%LATEX_CMD%
 set ORG_MKIDX_CMD=%MKIDX_CMD%
@@ -16,6 +16,7 @@ del /s /f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log *.out *.brf *.blg *.bbl
 
 
 %LATEX_CMD% %MANUAL_FILE%.tex
+@if ERRORLEVEL 1 goto :error
 echo ----
 %MKIDX_CMD% %MANUAL_FILE%.idx
 setlocal enabledelayedexpansion
@@ -31,14 +32,23 @@ if !count! EQU 0 goto :skip
 
 echo ----
 %LATEX_CMD% %MANUAL_FILE%.tex
+@if ERRORLEVEL 1 goto :error
 goto :repeat
 :skip
 endlocal
 %MKIDX_CMD% %MANUAL_FILE%.idx
 %LATEX_CMD% %MANUAL_FILE%.tex
+@if ERRORLEVEL 1 goto :error
 dvips -o %MANUAL_FILE%.ps %MANUAL_FILE%.dvi
 gswin32c.exe -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=%MANUAL_FILE%.pdf -c save pop -f %MANUAL_FILE%.ps
 
+goto :end
+:error
+@echo ===============
+@echo Please consult %MANUAL_FILE%.log to see the error messages
+@echo ===============
+
+:end
 @REM reset environment
 popd
 set LATEX_CMD=%ORG_LATEX_CMD%
@@ -52,4 +62,4 @@ set ORG_MANUAL_FILE=
 set LATEX_COUNT=%ORG_LATEX_COUNT%
 set ORG_LATEX_COUNT=
 
-:end
+:end1

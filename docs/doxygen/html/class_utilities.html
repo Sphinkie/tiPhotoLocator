@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TiPhotoLocator: Référence de la classe Utilities</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.8 -->
+<!-- Généré par Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_utilities.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('class_utilities.html','','class_utilities-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,53 +90,41 @@ $(document).ready(function(){initNavTree('class_utilities.html',''); initResizab
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
-<a href="#pri-static-attribs">Attributs privés statiques</a> &#124;
-<a href="class_utilities-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle"><div class="title">Référence de la classe Utilities</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>The <a class="el" href="class_utilities.html" title="The Utilities class contains a set of usefull static functions.">Utilities</a> class contains a set of usefull static functions.  
- <a href="class_utilities.html#details">Plus de détails...</a></p>
+ <a href="#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_utilities_8h_source.html">Utilities.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
-<tr class="memitem:ad970fb1a077cf5d352faa2878ce410fc" id="r_ad970fb1a077cf5d352faa2878ce410fc"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#ad970fb1a077cf5d352faa2878ce410fc">toExifDate</a> (const QVariant value)</td></tr>
+<tr class="memitem:ad970fb1a077cf5d352faa2878ce410fc" id="r_ad970fb1a077cf5d352faa2878ce410fc"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad970fb1a077cf5d352faa2878ce410fc">toExifDate</a> (const QVariant value)</td></tr>
 <tr class="memdesc:ad970fb1a077cf5d352faa2878ce410fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une chaine du type "25/08/2017 08:03" au format "2017:08:25 08:03:00".  <br /></td></tr>
-<tr class="separator:ad970fb1a077cf5d352faa2878ce410fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae08d27f825de4f51f5523f6f014cf597" id="r_ae08d27f825de4f51f5523f6f014cf597"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#ae08d27f825de4f51f5523f6f014cf597">toReadableDateTime</a> (const QVariant value)</td></tr>
+<tr class="memitem:ae08d27f825de4f51f5523f6f014cf597" id="r_ae08d27f825de4f51f5523f6f014cf597"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae08d27f825de4f51f5523f6f014cf597">toReadableDateTime</a> (const QVariant value)</td></tr>
 <tr class="memdesc:ae08d27f825de4f51f5523f6f014cf597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une chaine du type "2017:08:25 08:03:16" au format naturel "25/05/2017 08:03".  <br /></td></tr>
-<tr class="separator:ae08d27f825de4f51f5523f6f014cf597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11c06c3910d1553d791258b060d436d8" id="r_a11c06c3910d1553d791258b060d436d8"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#a11c06c3910d1553d791258b060d436d8">toStandardDateTime</a> (const QVariant value)</td></tr>
+<tr class="memitem:a11c06c3910d1553d791258b060d436d8" id="r_a11c06c3910d1553d791258b060d436d8"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11c06c3910d1553d791258b060d436d8">toStandardDateTime</a> (const QVariant value)</td></tr>
 <tr class="memdesc:a11c06c3910d1553d791258b060d436d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit une date saisie manuellement en une date correctement formatée, compatible Exif.  <br /></td></tr>
-<tr class="separator:a11c06c3910d1553d791258b060d436d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40979a50f9670f01945d07c9e80e9a33" id="r_a40979a50f9670f01945d07c9e80e9a33"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#a40979a50f9670f01945d07c9e80e9a33">fixYear</a> (QString sYear, int defaultYear)</td></tr>
+<tr class="memitem:a40979a50f9670f01945d07c9e80e9a33" id="r_a40979a50f9670f01945d07c9e80e9a33"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40979a50f9670f01945d07c9e80e9a33">fixYear</a> (QString sYear, int defaultYear)</td></tr>
 <tr class="memdesc:a40979a50f9670f01945d07c9e80e9a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reformate correctement l'année saisie par l'utilisateur.  <br /></td></tr>
-<tr class="separator:a40979a50f9670f01945d07c9e80e9a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c31753eeb57b373d7a73c097e6766ee" id="r_a1c31753eeb57b373d7a73c097e6766ee"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#a1c31753eeb57b373d7a73c097e6766ee">fixDigits</a> (QString sMonth, int defaultValue, int min, int max)</td></tr>
+<tr class="memitem:a1c31753eeb57b373d7a73c097e6766ee" id="r_a1c31753eeb57b373d7a73c097e6766ee"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c31753eeb57b373d7a73c097e6766ee">fixDigits</a> (QString sMonth, int defaultValue, int min, int max)</td></tr>
 <tr class="memdesc:a1c31753eeb57b373d7a73c097e6766ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reformate correctement des digits saisis par l'utilisateur (jour, mois, heure, minutes).  <br /></td></tr>
-<tr class="separator:a1c31753eeb57b373d7a73c097e6766ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdd3b18e7db7c7b7d397fd7b3c7201ab" id="r_afdd3b18e7db7c7b7d397fd7b3c7201ab"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#afdd3b18e7db7c7b7d397fd7b3c7201ab">normalise</a> (QString texte)</td></tr>
+<tr class="memitem:afdd3b18e7db7c7b7d397fd7b3c7201ab" id="r_afdd3b18e7db7c7b7d397fd7b3c7201ab"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdd3b18e7db7c7b7d397fd7b3c7201ab">normalise</a> (QString texte)</td></tr>
 <tr class="memdesc:afdd3b18e7db7c7b7d397fd7b3c7201ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remplace les éventuelles lettres diacritiques d'un texte par leur équivalent normalisé. Par exemple, on remplace 'à' par 'a'.  <br /></td></tr>
-<tr class="separator:afdd3b18e7db7c7b7d397fd7b3c7201ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Attributs privés statiques</h2></td></tr>
 <tr class="memitem:a7e1e10ee30627aedf30eb97d8cf7d52a" id="r_a7e1e10ee30627aedf30eb97d8cf7d52a"><td class="memItemLeft" align="right" valign="top"><a id="a7e1e10ee30627aedf30eb97d8cf7d52a" name="a7e1e10ee30627aedf30eb97d8cf7d52a"></a>
 static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacriticLetters</b> = QString::fromUtf8(&quot;ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ&quot;)</td></tr>
 <tr class="memdesc:a7e1e10ee30627aedf30eb97d8cf7d52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des lettres diacritiques (accentuées) d'Europe. <br /></td></tr>
-<tr class="separator:a7e1e10ee30627aedf30eb97d8cf7d52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3ca40153c4e52be4bb47cd5bf48e97b" id="r_ab3ca40153c4e52be4bb47cd5bf48e97b"><td class="memItemLeft" align="right" valign="top">static const QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities.html#ab3ca40153c4e52be4bb47cd5bf48e97b">normalizedLetters</a></td></tr>
+<tr class="memitem:ab3ca40153c4e52be4bb47cd5bf48e97b" id="r_ab3ca40153c4e52be4bb47cd5bf48e97b"><td class="memItemLeft" align="right" valign="top">static const QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3ca40153c4e52be4bb47cd5bf48e97b">normalizedLetters</a></td></tr>
 <tr class="memdesc:ab3ca40153c4e52be4bb47cd5bf48e97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des lettres normalisées équivalentes aux lettres diacritiques (dans le même ordre).  <br /></td></tr>
-<tr class="separator:ab3ca40153c4e52be4bb47cd5bf48e97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>The <a class="el" href="class_utilities.html" title="The Utilities class contains a set of usefull static functions.">Utilities</a> class contains a set of usefull static functions. </p>
-</div><h2 class="groupheader">Documentation des fonctions membres</h2>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
 <a id="a1c31753eeb57b373d7a73c097e6766ee" name="a1c31753eeb57b373d7a73c097e6766ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c31753eeb57b373d7a73c097e6766ee">&#9670;&#160;</a></span>fixDigits()</h2>
 
@@ -150,36 +137,27 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
         <tr>
           <td class="memname">QString Utilities::fixDigits </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>sDigits</em>, </td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>sDigits</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>defaultValue</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -210,24 +188,17 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
         <tr>
           <td class="memname">QString Utilities::fixYear </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>sYear</em>, </td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>sYear</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>defaultYear</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>defaultYear</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -257,14 +228,13 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
         <tr>
           <td class="memname">QString Utilities::normalise </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>texte</em></td><td>)</td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>texte</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -292,14 +262,13 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
         <tr>
           <td class="memname">QString Utilities::toExifDate </td>
           <td>(</td>
-          <td class="paramtype">const QVariant&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramtype">const QVariant</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -327,14 +296,13 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
         <tr>
           <td class="memname">QString Utilities::toReadableDateTime </td>
           <td>(</td>
-          <td class="paramtype">const QVariant&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramtype">const QVariant</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -362,14 +330,13 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
         <tr>
           <td class="memname">QString Utilities::toStandardDateTime </td>
           <td>(</td>
-          <td class="paramtype">const QVariant&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramtype">const QVariant</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -386,7 +353,7 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
 
 </div>
 </div>
-<h2 class="groupheader">Documentation des données membres</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
 <a id="ab3ca40153c4e52be4bb47cd5bf48e97b" name="ab3ca40153c4e52be4bb47cd5bf48e97b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab3ca40153c4e52be4bb47cd5bf48e97b">&#9670;&#160;</a></span>normalizedLetters</h2>
 
@@ -402,7 +369,7 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -421,11 +388,19 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="class_utilities.html">Utilities</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="class_utilities.html">Utilities</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

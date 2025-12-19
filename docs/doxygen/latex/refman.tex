@@ -1,7 +1,16 @@
   % Handle batch mode
   % to overcome problems with too many open files
   \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
-  \pdfminorversion=7
+  \RequirePackage{iftex}
+  \ifLuaTeX
+    \directlua{pdf.setminorversion(7)}
+  \fi
+  \ifXeTeX
+    \special{pdf:minorversion 7}
+  \fi
+  \ifPDFTeX
+    \pdfminorversion=7
+  \fi
   % Set document class depending on configuration
   \documentclass[twoside]{book}
   %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
@@ -22,10 +31,18 @@
   \let\protected@wlog\@@protected@wlog
   \makeatother
   \IfFormatAtLeastTF{2016/01/01}{}{\usepackage{fixltx2e}} % for \textsubscript
-  \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
+  \ifPDFTeX
+    \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
+  \fi
   \usepackage{doxygen}
   \usepackage{graphicx}
-  \usepackage[utf8]{inputenc}
+  \iftutex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures={TeX}}
+    \usepackage{unicode-math}
+  \else
+    \usepackage[utf8]{inputenc}
+  \fi
   \usepackage{makeidx}
   \PassOptionsToPackage{warn}{textcomp}
   \usepackage{textcomp}
@@ -36,7 +53,10 @@
 \NoAutoSpaceBeforeFDP
   % Define default fonts
   % Font selection
-  \usepackage[T1]{fontenc}
+  \iftutex
+  \else
+    \usepackage[T1]{fontenc}
+  \fi
   % set main and monospaced font
   \usepackage[scaled=.90]{helvet}
 \usepackage{courier}
@@ -117,13 +137,14 @@
   }
   % ToC, LoF, LoT, bibliography, and index
   % Indices & bibliography
-  \usepackage{natbib}
+  \usepackage[numbers]{natbib}
   \usepackage[titles]{tocloft}
   \setcounter{tocdepth}{3}
   \setcounter{secnumdepth}{5}
   % creating indexes
   \makeindex
-  \usepackage{newunicodechar}
+  \ifPDFTeX
+\usepackage{newunicodechar}
   \makeatletter
     \def\doxynewunicodechar#1#2{%
     \@tempswafalse
@@ -142,6 +163,7 @@
   \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
   \doxynewunicodechar{²}{${}^{2}$}% Superscript two
   \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+\fi
   % Hyperlinks
   % Custom commands used by the header
   % Custom commands
@@ -174,7 +196,7 @@
   {\Large Ti\+Photo\+Locator}\\
   [1ex]\large 1.\+1 \\
   \vspace*{1cm}
-  {\large Généré par Doxygen 1.9.8}\\
+  {\large Généré par Doxygen 1.14.0}\\
   \end{center}
   \end{titlepage}
   \clearemptydoublepage

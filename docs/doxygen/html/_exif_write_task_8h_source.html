@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TiPhotoLocator:  Fichier source de Cpp/ExifWriteTask.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,28 +36,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.8 -->
+<!-- Généré par Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function() { init_codefold(0); });
-/* @license-end */
-</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -69,10 +64,9 @@ $(document).ready(function() { init_codefold(0); });
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_exif_write_task_8h_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('_exif_write_task_8h_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -106,10 +100,10 @@ $(document).ready(function(){initNavTree('_exif_write_task_8h_source.html',''); 
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QVariant&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_exif_write_task.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="class_exif_write_task.html">ExifWriteTask</a> : <span class="keyword">public</span> QRunnable</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_exif_write_task.html">    7</a></span><span class="keyword">class </span><a class="code hl_function" href="class_exif_write_task.html#a5182e345ea27ce1581cc6d28542bae97">ExifWriteTask</a> : <span class="keyword">public</span> QRunnable</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_exif_write_task.html">ExifWriteTask</a>(<span class="keyword">const</span> QVariantMap exifData, <span class="keywordtype">bool</span> generateBackup=<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_exif_write_task.html#a5182e345ea27ce1581cc6d28542bae97">ExifWriteTask</a>(<span class="keyword">const</span> QVariantMap exifData, <span class="keywordtype">bool</span> generateBackup=<span class="keyword">false</span>);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_exif_write_task.html#a62fcca5c4d5077f086df4b98cac752df">run</a>();</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
@@ -125,17 +119,18 @@ $(document).ready(function(){initNavTree('_exif_write_task_8h_source.html',''); 
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif </span><span class="comment">// EXIFWRITETASK_H</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="ttc" id="aclass_exif_write_task_html"><div class="ttname"><a href="class_exif_write_task.html">ExifWriteTask</a></div><div class="ttdoc">La classe ExifWriteTask permet d'écrire des metadata dans les photos JEG de façon asynchrone.</div><div class="ttdef"><b>Definition</b> ExifWriteTask.h:8</div></div>
-<div class="ttc" id="aclass_exif_write_task_html_a09a5dc832fd4d41b1ee9fbb9f55623f7"><div class="ttname"><a href="class_exif_write_task.html#a09a5dc832fd4d41b1ee9fbb9f55623f7">ExifWriteTask::m_generateBackup</a></div><div class="ttdeci">bool m_generateBackup</div><div class="ttdoc">True si un backup de l'image doit être généré.</div><div class="ttdef"><b>Definition</b> ExifWriteTask.h:18</div></div>
+<div class="ttc" id="aclass_exif_write_task_html_a09a5dc832fd4d41b1ee9fbb9f55623f7"><div class="ttname"><a href="class_exif_write_task.html#a09a5dc832fd4d41b1ee9fbb9f55623f7">ExifWriteTask::m_generateBackup</a></div><div class="ttdeci">bool m_generateBackup</div><div class="ttdoc">True si un backup de l&#39;image doit être généré.</div><div class="ttdef"><b>Definition</b> ExifWriteTask.h:18</div></div>
 <div class="ttc" id="aclass_exif_write_task_html_a30f450a4be6abe483b77c9445689725e"><div class="ttname"><a href="class_exif_write_task.html#a30f450a4be6abe483b77c9445689725e">ExifWriteTask::m_exifData</a></div><div class="ttdeci">QVariantMap m_exifData</div><div class="ttdoc">Liste des metadata à ecrire.</div><div class="ttdef"><b>Definition</b> ExifWriteTask.h:17</div></div>
-<div class="ttc" id="aclass_exif_write_task_html_a62fcca5c4d5077f086df4b98cac752df"><div class="ttname"><a href="class_exif_write_task.html#a62fcca5c4d5077f086df4b98cac752df">ExifWriteTask::run</a></div><div class="ttdeci">virtual void run()</div><div class="ttdoc">Lancement de la tache. On lance exifTool dans un QProcess, et on écrit les metadata dans l'image JPG....</div><div class="ttdef"><b>Definition</b> ExifWriteTask.cpp:61</div></div>
+<div class="ttc" id="aclass_exif_write_task_html_a5182e345ea27ce1581cc6d28542bae97"><div class="ttname"><a href="class_exif_write_task.html#a5182e345ea27ce1581cc6d28542bae97">ExifWriteTask::ExifWriteTask</a></div><div class="ttdeci">ExifWriteTask(const QVariantMap exifData, bool generateBackup=false)</div><div class="ttdoc">Constructeur. On enregistre les paramètres.</div><div class="ttdef"><b>Definition</b> ExifWriteTask.cpp:42</div></div>
+<div class="ttc" id="aclass_exif_write_task_html_a62fcca5c4d5077f086df4b98cac752df"><div class="ttname"><a href="class_exif_write_task.html#a62fcca5c4d5077f086df4b98cac752df">ExifWriteTask::run</a></div><div class="ttdeci">virtual void run()</div><div class="ttdoc">Lancement de la tache. On lance exifTool dans un QProcess, et on écrit les metadata dans l&#39;image JPG....</div><div class="ttdef"><b>Definition</b> ExifWriteTask.cpp:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_6d183b3509eec807c506455571052e4a.html">Cpp</a></li><li class="navelem"><b>ExifWriteTask.h</b></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_6d183b3509eec807c506455571052e4a.html">Cpp</a></li><li class="navelem"><b>ExifWriteTask.h</b></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TiPhotoLocator: Référence de la classe ExifReadTask</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.8 -->
+<!-- Généré par Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_exif_read_task.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('class_exif_read_task.html','','class_exif_read_task-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,20 +90,12 @@ $(document).ready(function(){initNavTree('class_exif_read_task.html',''); initRe
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Fonctions membres publiques</a> &#124;
-<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
-<a href="#pri-methods">Fonctions membres privées</a> &#124;
-<a href="#pri-static-methods">Fonctions membres privées statiques</a> &#124;
-<a href="#pri-attribs">Attributs privés</a> &#124;
-<a href="#pri-static-attribs">Attributs privés statiques</a> &#124;
-<a href="class_exif_read_task-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle"><div class="title">Référence de la classe ExifReadTask</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>La tache asynchrone <a class="el" href="class_exif_read_task.html" title="La tache asynchrone ExifReadTask permet de lire les metadonnées d&#39;une photo JPG sur le disque dur.">ExifReadTask</a> permet de lire les metadonnées d'une photo JPG sur le disque dur.  
- <a href="class_exif_read_task.html#details">Plus de détails...</a></p>
+ <a href="#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_exif_read_task_8h_source.html">ExifReadTask.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -114,57 +105,48 @@ Graphe d'héritage de ExifReadTask:</div>
   <img src="class_exif_read_task.png" alt=""/>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ac76e0c8b20e09ce264693b434edce9db" id="r_ac76e0c8b20e09ce264693b434edce9db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_read_task.html#ac76e0c8b20e09ce264693b434edce9db">ExifReadTask</a> (QString filePath)</td></tr>
+<tr class="memitem:ac76e0c8b20e09ce264693b434edce9db" id="r_ac76e0c8b20e09ce264693b434edce9db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac76e0c8b20e09ce264693b434edce9db">ExifReadTask</a> (QString filePath)</td></tr>
 <tr class="memdesc:ac76e0c8b20e09ce264693b434edce9db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.  <br /></td></tr>
-<tr class="separator:ac76e0c8b20e09ce264693b434edce9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f0693a4aa7d57897f906d3db0fd77b8" id="r_a1f0693a4aa7d57897f906d3db0fd77b8"><td class="memItemLeft" align="right" valign="top"><a id="a1f0693a4aa7d57897f906d3db0fd77b8" name="a1f0693a4aa7d57897f906d3db0fd77b8"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
 <tr class="memdesc:a1f0693a4aa7d57897f906d3db0fd77b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Lancement de la tache. On lance <b>exifTool</b> dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultats dans <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. <br /></td></tr>
-<tr class="separator:a1f0693a4aa7d57897f906d3db0fd77b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
-<tr class="memitem:ae30b3d2ce698c12267cd51db35f4e3e4" id="r_ae30b3d2ce698c12267cd51db35f4e3e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_read_task.html#ae30b3d2ce698c12267cd51db35f4e3e4">init</a> (<a class="el" href="class_photo_model.html">PhotoModel</a> *photoModel)</td></tr>
+<tr class="memitem:ae30b3d2ce698c12267cd51db35f4e3e4" id="r_ae30b3d2ce698c12267cd51db35f4e3e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae30b3d2ce698c12267cd51db35f4e3e4">init</a> (<a class="el" href="class_photo_model.html">PhotoModel</a> *photoModel)</td></tr>
 <tr class="memdesc:ae30b3d2ce698c12267cd51db35f4e3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques.  <br /></td></tr>
-<tr class="separator:ae30b3d2ce698c12267cd51db35f4e3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
-<tr class="memitem:a425555d73b1bc4ba915e2a9f9a0884c6" id="r_a425555d73b1bc4ba915e2a9f9a0884c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_read_task.html#a425555d73b1bc4ba915e2a9f9a0884c6">processLine</a> (QByteArray line)</td></tr>
+<tr class="memitem:a425555d73b1bc4ba915e2a9f9a0884c6" id="r_a425555d73b1bc4ba915e2a9f9a0884c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a425555d73b1bc4ba915e2a9f9a0884c6">processLine</a> (QByteArray line)</td></tr>
 <tr class="memdesc:a425555d73b1bc4ba915e2a9f9a0884c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.  <br /></td></tr>
-<tr class="separator:a425555d73b1bc4ba915e2a9f9a0884c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Fonctions membres privées statiques</h2></td></tr>
-<tr class="memitem:a209baeebef9ede8dafc98844324bbaa9" id="r_a209baeebef9ede8dafc98844324bbaa9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exif_read_task.html#a209baeebef9ede8dafc98844324bbaa9">writeArgsFile</a> ()</td></tr>
+<tr class="memitem:a209baeebef9ede8dafc98844324bbaa9" id="r_a209baeebef9ede8dafc98844324bbaa9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a209baeebef9ede8dafc98844324bbaa9">writeArgsFile</a> ()</td></tr>
 <tr class="memdesc:a209baeebef9ede8dafc98844324bbaa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">List the tags to be read in the JPG files, and put them in the Arguments file for ExifTool.  <br /></td></tr>
-<tr class="separator:a209baeebef9ede8dafc98844324bbaa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr class="memitem:adee848da5859f1e0a5ef3ea8b5fd155d" id="r_adee848da5859f1e0a5ef3ea8b5fd155d"><td class="memItemLeft" align="right" valign="top"><a id="adee848da5859f1e0a5ef3ea8b5fd155d" name="adee848da5859f1e0a5ef3ea8b5fd155d"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filePath</b></td></tr>
 <tr class="memdesc:adee848da5859f1e0a5ef3ea8b5fd155d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom du fichier contenant les arguments de ExifTool. <br /></td></tr>
-<tr class="separator:adee848da5859f1e0a5ef3ea8b5fd155d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4eef780350cedaf18f03690daf6c8d2" id="r_ab4eef780350cedaf18f03690daf6c8d2"><td class="memItemLeft" align="right" valign="top"><a id="ab4eef780350cedaf18f03690daf6c8d2" name="ab4eef780350cedaf18f03690daf6c8d2"></a>
 QByteArray&#160;</td><td class="memItemRight" valign="bottom"><b>m_rxLine</b></td></tr>
 <tr class="memdesc:ab4eef780350cedaf18f03690daf6c8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Données ExifTool en cours de réception. <br /></td></tr>
-<tr class="separator:ab4eef780350cedaf18f03690daf6c8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Attributs privés statiques</h2></td></tr>
 <tr class="memitem:aab7c30ee91f00ce2cde757814472285c" id="r_aab7c30ee91f00ce2cde757814472285c"><td class="memItemLeft" align="right" valign="top"><a id="aab7c30ee91f00ce2cde757814472285c" name="aab7c30ee91f00ce2cde757814472285c"></a>
 static QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_argFile</b></td></tr>
 <tr class="memdesc:aab7c30ee91f00ce2cde757814472285c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A renseigner lors du premier appel. <br /></td></tr>
-<tr class="separator:aab7c30ee91f00ce2cde757814472285c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa742802b2db821ed9a737a2300ae09ef" id="r_aa742802b2db821ed9a737a2300ae09ef"><td class="memItemLeft" align="right" valign="top"><a id="aa742802b2db821ed9a737a2300ae09ef" name="aa742802b2db821ed9a737a2300ae09ef"></a>
 static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_photoModel</b></td></tr>
 <tr class="memdesc:aa742802b2db821ed9a737a2300ae09ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modèle contenant les photos et leurs tags. <br /></td></tr>
-<tr class="separator:aa742802b2db821ed9a737a2300ae09ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La tache asynchrone <a class="el" href="class_exif_read_task.html" title="La tache asynchrone ExifReadTask permet de lire les metadonnées d&#39;une photo JPG sur le disque dur.">ExifReadTask</a> permet de lire les metadonnées d'une photo JPG sur le disque dur. </p>
 <p>\inmodule TiPhotoLocator </p>
 <p>Tache asynchrone par utilisation de QThreadPool.</p>
@@ -188,7 +170,7 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 <div class="line"> The JSON output is UTF-8 regardless of any -L or -charset option setting, but the UTF-8 validation is disabled if a character set other than UTF-8 is specified.</div>
 <div class="line"> By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings).</div>
 <div class="line"> Note that ExifTool quotes JSON values only if they don&#39;t look like numbers (regardless of the original storage format or the relevant metadata specification).</div>
-</div><!-- fragment --> </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+</div><!-- fragment --> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="ac76e0c8b20e09ce264693b434edce9db" name="ac76e0c8b20e09ce264693b434edce9db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac76e0c8b20e09ce264693b434edce9db">&#9670;&#160;</a></span>ExifReadTask()</h2>
 
@@ -201,14 +183,13 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
         <tr>
           <td class="memname">ExifReadTask::ExifReadTask </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -224,7 +205,7 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 
 </div>
 </div>
-<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
 <a id="ae30b3d2ce698c12267cd51db35f4e3e4" name="ae30b3d2ce698c12267cd51db35f4e3e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae30b3d2ce698c12267cd51db35f4e3e4">&#9670;&#160;</a></span>init()</h2>
 
@@ -237,14 +218,13 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
         <tr>
           <td class="memname">void ExifReadTask::init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td>
-          <td class="paramname"><em>photoModel</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_photo_model.html">PhotoModel</a> *</td>          <td class="paramname"><span class="paramname"><em>photoModel</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -271,14 +251,13 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
         <tr>
           <td class="memname">void ExifReadTask::processLine </td>
           <td>(</td>
-          <td class="paramtype">QByteArray&#160;</td>
-          <td class="paramname"><em>line</em></td><td>)</td>
+          <td class="paramtype">QByteArray</td>          <td class="paramname"><span class="paramname"><em>line</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -321,13 +300,13 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
         <tr>
           <td class="memname">bool ExifReadTask::writeArgsFile </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -349,11 +328,19 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="class_exif_read_task.html">ExifReadTask</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="class_exif_read_task.html">ExifReadTask</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

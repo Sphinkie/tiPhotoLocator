@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TiPhotoLocator:  Fichier source de Cpp/ExifReadTask.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,28 +36,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.8 -->
+<!-- Généré par Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function() { init_codefold(0); });
-/* @license-end */
-</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -69,10 +64,9 @@ $(document).ready(function() { init_codefold(0); });
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_exif_read_task_8h_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('_exif_read_task_8h_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -112,10 +106,10 @@ $(document).ready(function(){initNavTree('_exif_read_task_8h_source.html',''); i
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_exif_read_task.html">   49</a></span><span class="keyword">class </span><a class="code hl_class" href="class_exif_read_task.html">ExifReadTask</a> : <span class="keyword">public</span> QRunnable</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_exif_read_task.html">   49</a></span><span class="keyword">class </span><a class="code hl_function" href="class_exif_read_task.html#ac76e0c8b20e09ce264693b434edce9db">ExifReadTask</a> : <span class="keyword">public</span> QRunnable</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_exif_read_task.html">ExifReadTask</a>(QString filePath);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_exif_read_task.html#ac76e0c8b20e09ce264693b434edce9db">ExifReadTask</a>(QString filePath);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_exif_read_task.html#ae30b3d2ce698c12267cd51db35f4e3e4">init</a>(<a class="code hl_class" href="class_photo_model.html">PhotoModel</a>* photoModel);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_exif_read_task.html#a1f0693a4aa7d57897f906d3db0fd77b8">run</a>();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
@@ -136,23 +130,24 @@ $(document).ready(function(){initNavTree('_exif_read_task_8h_source.html',''); i
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">// EXIFREADTASK_H</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="ttc" id="aclass_exif_read_task_html"><div class="ttname"><a href="class_exif_read_task.html">ExifReadTask</a></div><div class="ttdoc">La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo JPG sur le disque dur.</div><div class="ttdef"><b>Definition</b> ExifReadTask.h:50</div></div>
 <div class="ttc" id="aclass_exif_read_task_html_a1f0693a4aa7d57897f906d3db0fd77b8"><div class="ttname"><a href="class_exif_read_task.html#a1f0693a4aa7d57897f906d3db0fd77b8">ExifReadTask::run</a></div><div class="ttdeci">virtual void run()</div><div class="ttdoc">: Lancement de la tache. On lance exifTool dans un process, et on analyse la réponse....</div><div class="ttdef"><b>Definition</b> ExifReadTask.cpp:40</div></div>
-<div class="ttc" id="aclass_exif_read_task_html_a209baeebef9ede8dafc98844324bbaa9"><div class="ttname"><a href="class_exif_read_task.html#a209baeebef9ede8dafc98844324bbaa9">ExifReadTask::writeArgsFile</a></div><div class="ttdeci">static bool writeArgsFile()</div><div class="ttdoc">List the tags to be read in the JPG files, and put them in the Arguments file for ExifTool.</div><div class="ttdef"><b>Definition</b> ExifReadTask.cpp:149</div></div>
-<div class="ttc" id="aclass_exif_read_task_html_a425555d73b1bc4ba915e2a9f9a0884c6"><div class="ttname"><a href="class_exif_read_task.html#a425555d73b1bc4ba915e2a9f9a0884c6">ExifReadTask::processLine</a></div><div class="ttdeci">void processLine(QByteArray line)</div><div class="ttdoc">Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.</div><div class="ttdef"><b>Definition</b> ExifReadTask.cpp:100</div></div>
+<div class="ttc" id="aclass_exif_read_task_html_a209baeebef9ede8dafc98844324bbaa9"><div class="ttname"><a href="class_exif_read_task.html#a209baeebef9ede8dafc98844324bbaa9">ExifReadTask::writeArgsFile</a></div><div class="ttdeci">static bool writeArgsFile()</div><div class="ttdoc">List the tags to be read in the JPG files, and put them in the Arguments file for ExifTool.</div><div class="ttdef"><b>Definition</b> ExifReadTask.cpp:147</div></div>
+<div class="ttc" id="aclass_exif_read_task_html_a425555d73b1bc4ba915e2a9f9a0884c6"><div class="ttname"><a href="class_exif_read_task.html#a425555d73b1bc4ba915e2a9f9a0884c6">ExifReadTask::processLine</a></div><div class="ttdeci">void processLine(QByteArray line)</div><div class="ttdoc">Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.</div><div class="ttdef"><b>Definition</b> ExifReadTask.cpp:98</div></div>
 <div class="ttc" id="aclass_exif_read_task_html_aa742802b2db821ed9a737a2300ae09ef"><div class="ttname"><a href="class_exif_read_task.html#aa742802b2db821ed9a737a2300ae09ef">ExifReadTask::m_photoModel</a></div><div class="ttdeci">static PhotoModel * m_photoModel</div><div class="ttdoc">Modèle contenant les photos et leurs tags.</div><div class="ttdef"><b>Definition</b> ExifReadTask.h:66</div></div>
 <div class="ttc" id="aclass_exif_read_task_html_aab7c30ee91f00ce2cde757814472285c"><div class="ttname"><a href="class_exif_read_task.html#aab7c30ee91f00ce2cde757814472285c">ExifReadTask::m_argFile</a></div><div class="ttdeci">static QString m_argFile</div><div class="ttdoc">A renseigner lors du premier appel.</div><div class="ttdef"><b>Definition</b> ExifReadTask.h:65</div></div>
 <div class="ttc" id="aclass_exif_read_task_html_ab4eef780350cedaf18f03690daf6c8d2"><div class="ttname"><a href="class_exif_read_task.html#ab4eef780350cedaf18f03690daf6c8d2">ExifReadTask::m_rxLine</a></div><div class="ttdeci">QByteArray m_rxLine</div><div class="ttdoc">Données ExifTool en cours de réception.</div><div class="ttdef"><b>Definition</b> ExifReadTask.h:64</div></div>
+<div class="ttc" id="aclass_exif_read_task_html_ac76e0c8b20e09ce264693b434edce9db"><div class="ttname"><a href="class_exif_read_task.html#ac76e0c8b20e09ce264693b434edce9db">ExifReadTask::ExifReadTask</a></div><div class="ttdeci">ExifReadTask(QString filePath)</div><div class="ttdoc">Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.</div><div class="ttdef"><b>Definition</b> ExifReadTask.cpp:27</div></div>
 <div class="ttc" id="aclass_exif_read_task_html_adee848da5859f1e0a5ef3ea8b5fd155d"><div class="ttname"><a href="class_exif_read_task.html#adee848da5859f1e0a5ef3ea8b5fd155d">ExifReadTask::m_filePath</a></div><div class="ttdeci">QString m_filePath</div><div class="ttdoc">Nom du fichier contenant les arguments de ExifTool.</div><div class="ttdef"><b>Definition</b> ExifReadTask.h:63</div></div>
-<div class="ttc" id="aclass_exif_read_task_html_ae30b3d2ce698c12267cd51db35f4e3e4"><div class="ttname"><a href="class_exif_read_task.html#ae30b3d2ce698c12267cd51db35f4e3e4">ExifReadTask::init</a></div><div class="ttdeci">static void init(PhotoModel *photoModel)</div><div class="ttdoc">Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques.</div><div class="ttdef"><b>Definition</b> ExifReadTask.cpp:133</div></div>
+<div class="ttc" id="aclass_exif_read_task_html_ae30b3d2ce698c12267cd51db35f4e3e4"><div class="ttname"><a href="class_exif_read_task.html#ae30b3d2ce698c12267cd51db35f4e3e4">ExifReadTask::init</a></div><div class="ttdeci">static void init(PhotoModel *photoModel)</div><div class="ttdoc">Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques.</div><div class="ttdef"><b>Definition</b> ExifReadTask.cpp:131</div></div>
 <div class="ttc" id="aclass_photo_model_html"><div class="ttname"><a href="class_photo_model.html">PhotoModel</a></div><div class="ttdoc">The PhotoModel class manages a list of photo data.</div><div class="ttdef"><b>Definition</b> PhotoModel.h:77</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_6d183b3509eec807c506455571052e4a.html">Cpp</a></li><li class="navelem"><b>ExifReadTask.h</b></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_6d183b3509eec807c506455571052e4a.html">Cpp</a></li><li class="navelem"><b>ExifReadTask.h</b></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

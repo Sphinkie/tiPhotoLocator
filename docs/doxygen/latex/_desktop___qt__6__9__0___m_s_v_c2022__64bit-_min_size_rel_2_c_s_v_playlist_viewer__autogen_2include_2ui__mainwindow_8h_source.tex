@@ -1,0 +1,141 @@
+\doxysection{ui\+\_\+mainwindow.\+h}
+\label{_desktop___qt__6__9__0___m_s_v_c2022__64bit-_min_size_rel_2_c_s_v_playlist_viewer__autogen_2include_2ui__mainwindow_8h_source}\index{build/Desktop\_Qt\_6\_9\_0\_MSVC2022\_64bit-\/MinSizeRel/CSVPlaylistViewer\_autogen/include/ui\_mainwindow.h@{build/Desktop\_Qt\_6\_9\_0\_MSVC2022\_64bit-\/MinSizeRel/CSVPlaylistViewer\_autogen/include/ui\_mainwindow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ Form\ generated\ from\ reading\ UI\ file\ 'mainwindow.ui'}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Created\ by:\ Qt\ User\ Interface\ Compiler\ version\ 6.9.0}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ WARNING!\ All\ changes\ made\ in\ this\ file\ will\ be\ lost\ when\ recompiling\ UI\ file!}}
+\DoxyCodeLine{00007\ \textcolor{comment}{********************************************************************************/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ UI\_MAINWINDOW\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ UI\_MAINWINDOW\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QtCore/QVariant>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QtGui/QAction>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QtWidgets/QApplication>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QtWidgets/QHeaderView>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMainWindow>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMenu>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMenuBar>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QtWidgets/QStatusBar>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QtWidgets/QTableView>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QtWidgets/QVBoxLayout>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QtWidgets/QWidget>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }Ui\_MainWindow}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ QAction\ *action\_Open;}
+\DoxyCodeLine{00030\ \ \ \ \ QAction\ *action\_Close;}
+\DoxyCodeLine{00031\ \ \ \ \ QAction\ *action\_Quit;}
+\DoxyCodeLine{00032\ \ \ \ \ QAction\ *action\_About;}
+\DoxyCodeLine{00033\ \ \ \ \ QAction\ *action\_Infos;}
+\DoxyCodeLine{00034\ \ \ \ \ QWidget\ *centralwidget;}
+\DoxyCodeLine{00035\ \ \ \ \ QVBoxLayout\ *verticalLayout\_2;}
+\DoxyCodeLine{00036\ \ \ \ \ QTableView\ *tableView;}
+\DoxyCodeLine{00037\ \ \ \ \ QMenuBar\ *menubar;}
+\DoxyCodeLine{00038\ \ \ \ \ QMenu\ *menu\_File;}
+\DoxyCodeLine{00039\ \ \ \ \ QMenu\ *menuHelp;}
+\DoxyCodeLine{00040\ \ \ \ \ QStatusBar\ *statusbar;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUi(QMainWindow\ *MainWindow)}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MainWindow-\/>objectName().isEmpty())}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ MainWindow-\/>setObjectName(\textcolor{stringliteral}{"{}MainWindow"{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ MainWindow-\/>resize(1658,\ 804);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ MainWindow-\/>setWindowTitle(QString::fromUtf8(\textcolor{stringliteral}{"{}CSV\ Playlist\ Viewer"{}}));}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ action\_Open\ =\ \textcolor{keyword}{new}\ QAction(MainWindow);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ action\_Open-\/>setObjectName(\textcolor{stringliteral}{"{}action\_Open"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ QIcon\ icon(QIcon::fromTheme(QIcon::ThemeIcon::DocumentOpen));}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ action\_Open-\/>setIcon(icon);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ action\_Close\ =\ \textcolor{keyword}{new}\ QAction(MainWindow);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ action\_Close-\/>setObjectName(\textcolor{stringliteral}{"{}action\_Close"{}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ QIcon\ icon1(QIcon::fromTheme(QIcon::ThemeIcon::EditClear));}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ action\_Close-\/>setIcon(icon1);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ action\_Quit\ =\ \textcolor{keyword}{new}\ QAction(MainWindow);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ action\_Quit-\/>setObjectName(\textcolor{stringliteral}{"{}action\_Quit"{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ QIcon\ icon2(QIcon::fromTheme(QIcon::ThemeIcon::SystemLogOut));}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ action\_Quit-\/>setIcon(icon2);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ action\_Quit-\/>setMenuRole(QAction::MenuRole::QuitRole);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ action\_About\ =\ \textcolor{keyword}{new}\ QAction(MainWindow);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ action\_About-\/>setObjectName(\textcolor{stringliteral}{"{}action\_About"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ QIcon\ icon3(QIcon::fromTheme(QIcon::ThemeIcon::HelpAbout));}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ action\_About-\/>setIcon(icon3);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ action\_About-\/>setMenuRole(QAction::MenuRole::AboutRole);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ action\_Infos\ =\ \textcolor{keyword}{new}\ QAction(MainWindow);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ action\_Infos-\/>setObjectName(\textcolor{stringliteral}{"{}action\_Infos"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ QIcon\ icon4(QIcon::fromTheme(QIcon::ThemeIcon::HelpFaq));}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ action\_Infos-\/>setIcon(icon4);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ centralwidget\ =\ \textcolor{keyword}{new}\ QWidget(MainWindow);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ centralwidget-\/>setObjectName(\textcolor{stringliteral}{"{}centralwidget"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ verticalLayout\_2\ =\ \textcolor{keyword}{new}\ QVBoxLayout(centralwidget);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ verticalLayout\_2-\/>setObjectName(\textcolor{stringliteral}{"{}verticalLayout\_2"{}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ tableView\ =\ \textcolor{keyword}{new}\ QTableView(centralwidget);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ tableView-\/>setObjectName(\textcolor{stringliteral}{"{}tableView"{}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ verticalLayout\_2-\/>addWidget(tableView);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ MainWindow-\/>setCentralWidget(centralwidget);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ menubar\ =\ \textcolor{keyword}{new}\ QMenuBar(MainWindow);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ menubar-\/>setObjectName(\textcolor{stringliteral}{"{}menubar"{}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ menubar-\/>setGeometry(QRect(0,\ 0,\ 1658,\ 22));}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ menu\_File\ =\ \textcolor{keyword}{new}\ QMenu(menubar);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ menu\_File-\/>setObjectName(\textcolor{stringliteral}{"{}menu\_File"{}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ menuHelp\ =\ \textcolor{keyword}{new}\ QMenu(menubar);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ menuHelp-\/>setObjectName(\textcolor{stringliteral}{"{}menuHelp"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ MainWindow-\/>setMenuBar(menubar);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ statusbar\ =\ \textcolor{keyword}{new}\ QStatusBar(MainWindow);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ statusbar-\/>setObjectName(\textcolor{stringliteral}{"{}statusbar"{}});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ MainWindow-\/>setStatusBar(statusbar);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ menubar-\/>addAction(menu\_File-\/>menuAction());}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ menubar-\/>addAction(menuHelp-\/>menuAction());}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ menu\_File-\/>addAction(action\_Open);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ menu\_File-\/>addAction(action\_Close);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ menu\_File-\/>addSeparator();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ menu\_File-\/>addAction(action\_Quit);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ menuHelp-\/>addAction(action\_Infos);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ menuHelp-\/>addAction(action\_About);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ retranslateUi(MainWindow);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ QMetaObject::connectSlotsByName(MainWindow);}
+\DoxyCodeLine{00104\ \ \ \ \ \}\ \textcolor{comment}{//\ setupUi}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ retranslateUi(QMainWindow\ *MainWindow)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ action\_Open-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\&Load\ CSV\ ..."{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#if\ QT\_CONFIG(tooltip)}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ action\_Open-\/>setToolTip(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Open\ CSV\ file"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QT\_CONFIG(tooltip)}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ action\_Close-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\&Clear\ playlist"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#if\ QT\_CONFIG(tooltip)}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ action\_Close-\/>setToolTip(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Clear\ playlist\ table"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QT\_CONFIG(tooltip)}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ action\_Quit-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\&Quit"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#if\ QT\_CONFIG(shortcut)}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ action\_Quit-\/>setShortcut(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Ctrl+Q"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QT\_CONFIG(shortcut)}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ action\_About-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}About\ application"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ action\_Infos-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Infos"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ menu\_File-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\&File"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ menuHelp-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Help"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ (void)MainWindow;}
+\DoxyCodeLine{00125\ \ \ \ \ \}\ \textcolor{comment}{//\ retranslateUi}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{class\ }MainWindow:\ \textcolor{keyword}{public}\ Ui\_MainWindow\ \{\};}
+\DoxyCodeLine{00131\ \}\ \textcolor{comment}{//\ namespace\ Ui}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_MAINWINDOW\_H}}
+
+\end{DoxyCode}

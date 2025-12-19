@@ -24,7 +24,7 @@ enum \textbf{ Roles} \{ {\bfseries Text\+Role} = Qt\+::User\+Role
 , {\bfseries Category\+Role}
 , {\bfseries Photos\+Role}
  \}
-\begin{DoxyCompactList}\small\item\em The Roles enum lists the roles associated to each attribute of a \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The \doxyref{Roles}{p.}{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19} enum lists the roles associated to each attribute of a \doxyref{Suggestion}{p.}{struct_suggestion}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
@@ -75,12 +75,13 @@ int {\bfseries m\+\_\+dumped\+Row}
 \doxysubsection{Description détaillée}
 The \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} class manages a list of \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
+\label{doc-constructors}
 \doxysubsection{Documentation des constructeurs et destructeur}
-\label{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0} 
 \index{SuggestionModel@{SuggestionModel}!SuggestionModel@{SuggestionModel}}
 \index{SuggestionModel@{SuggestionModel}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{SuggestionModel()}
-{\footnotesize\ttfamily Suggestion\+Model\+::\+Suggestion\+Model (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{class_suggestion_model_a0e304826f0095e36eecd9ce321ac4eb0} 
+Suggestion\+Model\+::\+Suggestion\+Model (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -93,12 +94,13 @@ Contructor.
 \end{DoxyParams}
 
 
+\label{doc-func-members}
 \doxysubsection{Documentation des fonctions membres}
-\label{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997} 
 \index{SuggestionModel@{SuggestionModel}!addCategoryToSuggestion@{addCategoryToSuggestion}}
 \index{addCategoryToSuggestion@{addCategoryToSuggestion}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{addCategoryToSuggestion()}
-{\footnotesize\ttfamily void Suggestion\+Model\+::add\+Category\+To\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{suggestion\+\_\+row,  }\item[{const QString}]{category }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_suggestion_model_afd4ef6320e2a644e8dbd9c40f9ff3997} 
+void Suggestion\+Model\+::add\+Category\+To\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{suggestion\+\_\+row}{, }\item[{const QString}]{category}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -111,11 +113,11 @@ Ajoute une catégorie à la \doxyref{Suggestion}{p.}{struct_suggestion}.
 {\em category} & \+: La catégorie à ajouter à la \doxyref{Suggestion}{p.}{struct_suggestion}\+: "{}geo"{} ou "{}tag"{}.\\
 \hline
 \end{DoxyParams}
-Si on veut ajouter la catégorie déjà existante \+: on ne fait rien. Si on veut ajouter une autre catégorie \+: la catégorie devient "{}geo$\vert$tag"{} (les deux). \label{class_suggestion_model_a0de02decfdbfe787caf63895eca58cb6} 
-\index{SuggestionModel@{SuggestionModel}!addPhotoToSuggestion@{addPhotoToSuggestion}}
+Si on veut ajouter la catégorie déjà existante \+: on ne fait rien. Si on veut ajouter une autre catégorie \+: la catégorie devient "{}geo$\vert$tag"{} (les deux). \index{SuggestionModel@{SuggestionModel}!addPhotoToSuggestion@{addPhotoToSuggestion}}
 \index{addPhotoToSuggestion@{addPhotoToSuggestion}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{addPhotoToSuggestion()}
-{\footnotesize\ttfamily void Suggestion\+Model\+::add\+Photo\+To\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{suggestion\+\_\+row,  }\item[{int}]{photo\+\_\+row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_suggestion_model_a0de02decfdbfe787caf63895eca58cb6} 
+void Suggestion\+Model\+::add\+Photo\+To\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{suggestion\+\_\+row}{, }\item[{int}]{photo\+\_\+row}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -128,11 +130,11 @@ Ajoute une \doxyref{Photo}{p.}{struct_photo} à la liste des photos ayant un "{}
 {\em photo\+\_\+row} & \+: L\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} à ajouter à la \doxyref{Suggestion}{p.}{struct_suggestion}. La valeur spéciale -\/1 signifie \textquotesingle{}toutes les photos\textquotesingle{}. La valeur spéciale -\/2 signifie \textquotesingle{}la \doxyref{Photo}{p.}{struct_photo} sélectionée\textquotesingle{}. \\
 \hline
 \end{DoxyParams}
-\label{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f} 
 \index{SuggestionModel@{SuggestionModel}!append@{append}}
 \index{append@{append}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{append}
-{\footnotesize\ttfamily void Suggestion\+Model\+::append (\begin{DoxyParamCaption}\item[{const QString}]{text,  }\item[{const QString}]{target,  }\item[{const QString}]{category,  }\item[{int}]{photo\+\_\+row = {\ttfamily -\/2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily \label{class_suggestion_model_ab7946b300734bc0e257f3e5a8904ec3f} 
+void Suggestion\+Model\+::append (\begin{DoxyParamCaption}\item[{const QString}]{text}{, }\item[{const QString}]{target}{, }\item[{const QString}]{category}{, }\item[{int}]{photo\+\_\+row}{ = {\ttfamily -\/2}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -149,11 +151,11 @@ Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui
 {\em photo\+\_\+row} & L\textquotesingle{}indice de la \doxyref{Photo}{p.}{struct_photo} à associée à cette \doxyref{Suggestion}{p.}{struct_suggestion}. La valeur spéciale -\/1 signifie \textquotesingle{}toutes les photos\textquotesingle{}. La valeur spéciale -\/2 signifie \textquotesingle{}la \doxyref{Photo}{p.}{struct_photo} sélectionée\textquotesingle{} (valeur par défaut). \\
 \hline
 \end{DoxyParams}
-\label{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c} 
 \index{SuggestionModel@{SuggestionModel}!data@{data}}
 \index{data@{data}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{data()}
-{\footnotesize\ttfamily QVariant Suggestion\+Model\+::data (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+{\footnotesize\ttfamily \label{class_suggestion_model_a403421fd09afc22273162b74e74b7d7c} 
+QVariant Suggestion\+Model\+::data (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index}{, }\item[{int}]{role}{ = {\ttfamily Qt\+:\+:DisplayRole}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
 
 
@@ -169,11 +171,11 @@ Returns the requested role value of an element of the model.
 {\em role} & the requested role (enum). \\
 \hline
 \end{DoxyParams}
-\label{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198} 
 \index{SuggestionModel@{SuggestionModel}!onSelectedPhotoChanged@{onSelectedPhotoChanged}}
 \index{onSelectedPhotoChanged@{onSelectedPhotoChanged}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{onSelectedPhotoChanged}
-{\footnotesize\ttfamily void Suggestion\+Model\+::on\+Selected\+Photo\+Changed (\begin{DoxyParamCaption}\item[{const int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily \label{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198} 
+void Suggestion\+Model\+::on\+Selected\+Photo\+Changed (\begin{DoxyParamCaption}\item[{const int}]{row}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -184,11 +186,11 @@ Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionn
 {\em row} & La position dans \doxyref{Photo\+Model}{p.}{class_photo_model} de la photo active. \\
 \hline
 \end{DoxyParams}
-\label{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f} 
 \index{SuggestionModel@{SuggestionModel}!removeCurrentPhotoFromSuggestion@{removeCurrentPhotoFromSuggestion}}
 \index{removeCurrentPhotoFromSuggestion@{removeCurrentPhotoFromSuggestion}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{removeCurrentPhotoFromSuggestion()}
-{\footnotesize\ttfamily void Suggestion\+Model\+::remove\+Current\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const QModel\+Index}]{index }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_suggestion_model_aea38923e1af3b5faee8ba4caccc8281f} 
+void Suggestion\+Model\+::remove\+Current\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const QModel\+Index}]{index}{}\end{DoxyParamCaption})}
 
 
 
@@ -199,11 +201,11 @@ Ce slot enlève la \doxyref{Photo}{p.}{struct_photo} courante de la liste des ph
 {\em index} & \+: L\textquotesingle{}index dans le Model de la suggestion à modifier. \\
 \hline
 \end{DoxyParams}
-\label{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd} 
 \index{SuggestionModel@{SuggestionModel}!roleNames@{roleNames}}
 \index{roleNames@{roleNames}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{roleNames()}
-{\footnotesize\ttfamily QHash$<$ int, QByte\+Array $>$ Suggestion\+Model\+::role\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+{\footnotesize\ttfamily \label{class_suggestion_model_a5153ff9a46757355350432e5e8a810cd} 
+QHash$<$ int, QByte\+Array $>$ Suggestion\+Model\+::role\+Names (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
 
 
@@ -212,11 +214,11 @@ Table of Role names.
 \begin{DoxyNote}{Note}
 Implémentation obligatoire.
 \end{DoxyNote}
-C\textquotesingle{}est la correspondance entre le role C++ et le nom de la property dans QML. \label{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea} 
-\index{SuggestionModel@{SuggestionModel}!rowCount@{rowCount}}
+C\textquotesingle{}est la correspondance entre le role C++ et le nom de la property dans QML. \index{SuggestionModel@{SuggestionModel}!rowCount@{rowCount}}
 \index{rowCount@{rowCount}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{rowCount()}
-{\footnotesize\ttfamily int Suggestion\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+{\footnotesize\ttfamily \label{class_suggestion_model_a0c1caffe345aeb30f636f3a1784e9cea} 
+int Suggestion\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
 
 
 

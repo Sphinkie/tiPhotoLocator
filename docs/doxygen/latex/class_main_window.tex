@@ -1,0 +1,171 @@
+\doxysection{Référence de la classe Main\+Window}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+The \doxyref{Main\+Window}{p.}{class_main_window} class.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Main\+Window} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Contructeur. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Main\+Window} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_main_window_a0a4c035375a270bf063da240bc2c5f62} 
+const QString {\bfseries version} = "{}1.\+1"{}
+\begin{DoxyCompactList}\small\item\em VERSION NUMBER. \end{DoxyCompactList}\item 
+\label{class_main_window_ab7768373f002117dc81f1f8b9574312c} 
+const int {\bfseries Nb\+Columns} = 15
+\begin{DoxyCompactList}\small\item\em Nombre de colonnes CSV autorisées par le format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Connecteurs privés}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ on\+\_\+action\+\_\+\+Open\+\_\+triggered} ()
+\begin{DoxyCompactList}\small\item\em Fill the table with the content of a file. \end{DoxyCompactList}\item 
+void \textbf{ on\+\_\+action\+\_\+\+Quit\+\_\+triggered} ()
+\begin{DoxyCompactList}\small\item\em Quit the program. \end{DoxyCompactList}\item 
+void \textbf{ on\+\_\+action\+\_\+\+Close\+\_\+triggered} ()
+\begin{DoxyCompactList}\small\item\em Vide la table. \end{DoxyCompactList}\item 
+void \textbf{ on\+\_\+action\+\_\+\+About\+\_\+triggered} ()
+\begin{DoxyCompactList}\small\item\em Affichage du popup About. \end{DoxyCompactList}\item 
+void \textbf{ on\+\_\+action\+\_\+\+Infos\+\_\+triggered} ()
+\begin{DoxyCompactList}\small\item\em Affichage du popup About. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ check\+For\+Errors} (int source\+\_\+type, int column, QString value)
+\begin{DoxyCompactList}\small\item\em Check if the data contains errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_main_window_a35466a70ed47252a0191168126a352a5} 
+\textbf{ Ui\+::\+Main\+Window} $\ast$ {\bfseries ui}
+\item 
+\label{class_main_window_a33248a2efb12f142c588b7ec5adfc6d1} 
+QStandard\+Item\+Model {\bfseries m\+\_\+model}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+The \doxyref{Main\+Window}{p.}{class_main_window} class. 
+
+\DoxyHorRuler{0}
+  
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\label{class_main_window_a996c5a2b6f77944776856f08ec30858d} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{MainWindow()}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Contructeur. 
+
+\DoxyHorRuler{0}
+ 
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{$\sim$MainWindow()}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur. 
+
+\DoxyHorRuler{0}
+  
+
+\doxysubsection{Documentation des fonctions membres}
+\label{class_main_window_a761c1d7c968450691d752b3f4a5c48c5} 
+\index{MainWindow@{MainWindow}!checkForErrors@{checkForErrors}}
+\index{checkForErrors@{checkForErrors}!MainWindow@{MainWindow}}
+\doxysubsubsection{checkForErrors()}
+{\footnotesize\ttfamily bool Main\+Window\+::check\+For\+Errors (\begin{DoxyParamCaption}\item[{int}]{source\+\_\+type,  }\item[{int}]{column,  }\item[{QString}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check if the data contains errors. 
+
+\DoxyHorRuler{0}
+  \label{class_main_window_a09de6bdff902ebcdccee3a1dd715f69b} 
+\index{MainWindow@{MainWindow}!on\_action\_About\_triggered@{on\_action\_About\_triggered}}
+\index{on\_action\_About\_triggered@{on\_action\_About\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{on\_action\_About\_triggered}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+action\+\_\+\+About\+\_\+triggered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Affichage du popup About. 
+
+\DoxyHorRuler{0}
+  \label{class_main_window_af440a40bc69a2e33a50e61466e206e4f} 
+\index{MainWindow@{MainWindow}!on\_action\_Close\_triggered@{on\_action\_Close\_triggered}}
+\index{on\_action\_Close\_triggered@{on\_action\_Close\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{on\_action\_Close\_triggered}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+action\+\_\+\+Close\+\_\+triggered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Vide la table. 
+
+\DoxyHorRuler{0}
+  \label{class_main_window_ac90cbc4cf25ed8b120f091820a9cf194} 
+\index{MainWindow@{MainWindow}!on\_action\_Infos\_triggered@{on\_action\_Infos\_triggered}}
+\index{on\_action\_Infos\_triggered@{on\_action\_Infos\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{on\_action\_Infos\_triggered}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+action\+\_\+\+Infos\+\_\+triggered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Affichage du popup About. 
+
+\DoxyHorRuler{0}
+  \label{class_main_window_a2ea16d8091291492f27f21c77a67b25a} 
+\index{MainWindow@{MainWindow}!on\_action\_Open\_triggered@{on\_action\_Open\_triggered}}
+\index{on\_action\_Open\_triggered@{on\_action\_Open\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{on\_action\_Open\_triggered}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+action\+\_\+\+Open\+\_\+triggered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Fill the table with the content of a file. 
+
+\DoxyHorRuler{0}
+  \label{class_main_window_a0b8c6952362faeeee64487be46b5ae6d} 
+\index{MainWindow@{MainWindow}!on\_action\_Quit\_triggered@{on\_action\_Quit\_triggered}}
+\index{on\_action\_Quit\_triggered@{on\_action\_Quit\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{on\_action\_Quit\_triggered}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+action\+\_\+\+Quit\+\_\+triggered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Quit the program. 
+
+\DoxyHorRuler{0}
+  
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+Sources/mainwindow.\+h\item 
+Sources/mainwindow.\+cpp\end{DoxyCompactItemize}

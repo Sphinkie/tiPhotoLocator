@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSV Playlist Viewer:  Fichier source de Sources/Models/playlistmodel.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">CSV Playlist Viewer<span id="projectnumber">&#160;1.1</span>
+   </div>
+   <div id="projectbrief">A tiny application to easily geotag your photos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('playlistmodel_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">playlistmodel.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PLAYLISTMODEL_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PLAYLISTMODEL_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QAbstractListModel&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;playline.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classplaylist_model.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="classplaylist_model.html">playlistModel</a> : <span class="keyword">public</span> QAbstractListModel</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_class" href="classplaylist_model.html">playlistModel</a>();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classplaylist_model.html#a39f7a87d2dd42d33c6b75a3d9e83d975">   14</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="classplaylist_model.html#a39f7a87d2dd42d33c6b75a3d9e83d975">Roles</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        LineRole  = Qt::UserRole</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    };</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// -----------------------------------------------------</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// Surcharges obligatoires</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// -----------------------------------------------------</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classplaylist_model.html">playlistModel</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span>      <a class="code hl_function" href="classplaylist_model.html#a9e89bbc71f8f4cf34b081f4275602a15">rowCount</a>(<span class="keyword">const</span> QModelIndex&amp; parent) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    QVariant <a class="code hl_function" href="classplaylist_model.html#a4be0f3506ce417d4918c4a29f1e493d5">data</a>(<span class="keyword">const</span> QModelIndex&amp; index, <span class="keywordtype">int</span> role = Qt::DisplayRole) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    QHash&lt;int, QByteArray&gt; <a class="code hl_function" href="classplaylist_model.html#a36a00067f6838f5f1cab152c16f8b34d">roleNames</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classplaylist_model.html#abd9e3b7154b3f300383a67da1974176f">   27</a></span>    QVector&lt;Playline&gt; <a class="code hl_variable" href="classplaylist_model.html#abd9e3b7154b3f300383a67da1974176f">m_playlist</a>;  </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif </span><span class="comment">// PLAYLISTMODEL_H</span></div>
+<div class="ttc" id="aclassplaylist_model_html"><div class="ttname"><a href="classplaylist_model.html">playlistModel</a></div><div class="ttdef"><b>Definition</b> playlistmodel.h:8</div></div>
+<div class="ttc" id="aclassplaylist_model_html_a36a00067f6838f5f1cab152c16f8b34d"><div class="ttname"><a href="classplaylist_model.html#a36a00067f6838f5f1cab152c16f8b34d">playlistModel::roleNames</a></div><div class="ttdeci">QHash&lt; int, QByteArray &gt; roleNames() const override</div><div class="ttdoc">C'est la table de correspondance entre le role C++ et le nom de la property dans QML.</div><div class="ttdef"><b>Definition</b> playlistmodel.cpp:51</div></div>
+<div class="ttc" id="aclassplaylist_model_html_a39f7a87d2dd42d33c6b75a3d9e83d975"><div class="ttname"><a href="classplaylist_model.html#a39f7a87d2dd42d33c6b75a3d9e83d975">playlistModel::Roles</a></div><div class="ttdeci">Roles</div><div class="ttdoc">brief The Roles enum list.</div><div class="ttdef"><b>Definition</b> playlistmodel.h:14</div></div>
+<div class="ttc" id="aclassplaylist_model_html_a4be0f3506ce417d4918c4a29f1e493d5"><div class="ttname"><a href="classplaylist_model.html#a4be0f3506ce417d4918c4a29f1e493d5">playlistModel::data</a></div><div class="ttdeci">QVariant data(const QModelIndex &amp;index, int role=Qt::DisplayRole) const override</div><div class="ttdoc">Returns the role value of an element of the model.</div><div class="ttdef"><b>Definition</b> playlistmodel.cpp:33</div></div>
+<div class="ttc" id="aclassplaylist_model_html_a9e89bbc71f8f4cf34b081f4275602a15"><div class="ttname"><a href="classplaylist_model.html#a9e89bbc71f8f4cf34b081f4275602a15">playlistModel::rowCount</a></div><div class="ttdeci">int rowCount(const QModelIndex &amp;parent) const override</div><div class="ttdoc">Returns the number of items in the model.</div><div class="ttdef"><b>Definition</b> playlistmodel.cpp:18</div></div>
+<div class="ttc" id="aclassplaylist_model_html_abd9e3b7154b3f300383a67da1974176f"><div class="ttname"><a href="classplaylist_model.html#abd9e3b7154b3f300383a67da1974176f">playlistModel::m_playlist</a></div><div class="ttdeci">QVector&lt; Playline &gt; m_playlist</div><div class="ttdoc">La liste des lignes de la playlist.</div><div class="ttdef"><b>Definition</b> playlistmodel.h:27</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_937900b87e0c7a5fa01190c395fb83f7.html">Sources</a></li><li class="navelem"><a class="el" href="dir_85bcaa6c393378bb59e2d27ab4b775eb.html">Models</a></li><li class="navelem"><b>playlistmodel.h</b></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

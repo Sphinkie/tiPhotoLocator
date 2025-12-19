@@ -64,12 +64,13 @@ int {\bfseries m\+\_\+filter\+Photo\+Row}
 \doxysubsection{Description détaillée}
 The \doxyref{Suggestion\+Proxy\+Model}{p.}{class_suggestion_proxy_model} class is a filter Proxy\+Model, that filters the \doxyref{Suggestion}{p.}{struct_suggestion} related to a given \doxyref{Photo}{p.}{struct_photo}. 
 
+\label{doc-constructors}
 \doxysubsection{Documentation des constructeurs et destructeur}
-\label{class_suggestion_proxy_model_af3e1807aac2879bcb22d656c4aead90b} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!SuggestionProxyModel@{SuggestionProxyModel}}
 \index{SuggestionProxyModel@{SuggestionProxyModel}!SuggestionProxyModel@{SuggestionProxyModel}}
 \doxysubsubsection{SuggestionProxyModel()}
-{\footnotesize\ttfamily Suggestion\+Proxy\+Model\+::\+Suggestion\+Proxy\+Model (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{class_suggestion_proxy_model_af3e1807aac2879bcb22d656c4aead90b} 
+Suggestion\+Proxy\+Model\+::\+Suggestion\+Proxy\+Model (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -82,12 +83,13 @@ Contructeur.
 \end{DoxyParams}
 
 
+\label{doc-func-members}
 \doxysubsection{Documentation des fonctions membres}
-\label{class_suggestion_proxy_model_a189be5918036c550fd0093d566e716ae} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!filterAcceptsRow@{filterAcceptsRow}}
 \index{filterAcceptsRow@{filterAcceptsRow}!SuggestionProxyModel@{SuggestionProxyModel}}
 \doxysubsubsection{filterAcceptsRow()}
-{\footnotesize\ttfamily bool Suggestion\+Proxy\+Model\+::filter\+Accepts\+Row (\begin{DoxyParamCaption}\item[{int}]{source\+Row,  }\item[{const QModel\+Index \&}]{source\+Parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{class_suggestion_proxy_model_a189be5918036c550fd0093d566e716ae} 
+bool Suggestion\+Proxy\+Model\+::filter\+Accepts\+Row (\begin{DoxyParamCaption}\item[{int}]{source\+Row}{, }\item[{const QModel\+Index \&}]{source\+Parent}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
 
 
@@ -103,11 +105,11 @@ true si la ligne est acceptée.
 {\em source\+Parent} & \+: Le modèle parent (\doxyref{Suggestion\+Model}{p.}{class_suggestion_model}). \\
 \hline
 \end{DoxyParams}
-\label{class_suggestion_proxy_model_a6047e86b0fba57062818fb856496a775} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!filterEnabled@{filterEnabled}}
 \index{filterEnabled@{filterEnabled}!SuggestionProxyModel@{SuggestionProxyModel}}
 \doxysubsubsection{filterEnabled()}
-{\footnotesize\ttfamily bool Suggestion\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_suggestion_proxy_model_a6047e86b0fba57062818fb856496a775} 
+bool Suggestion\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -116,11 +118,11 @@ Returns the state of the filtering.
 \begin{DoxyReturn}{Renvoie}
 true if the filter is active. 
 \end{DoxyReturn}
-\label{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!removePhotoFromSuggestion@{removePhotoFromSuggestion}}
 \index{removePhotoFromSuggestion@{removePhotoFromSuggestion}!SuggestionProxyModel@{SuggestionProxyModel}}
 \doxysubsubsection{removePhotoFromSuggestion\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{proxy\+Row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily \label{class_suggestion_proxy_model_a57f046aabf95036f87b02209f0174e10} 
+void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const int}]{proxy\+Row}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -134,11 +136,11 @@ On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}i
 {\em proxy\+Row} & \+: Indice dans le Proxy\+Model de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
 \end{DoxyParams}
-\label{class_suggestion_proxy_model_ad0b9f7027dfc10c28e67fcf1edbeb66b} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!removePhotoFromSuggestion@{removePhotoFromSuggestion}}
 \index{removePhotoFromSuggestion@{removePhotoFromSuggestion}!SuggestionProxyModel@{SuggestionProxyModel}}
 \doxysubsubsection{removePhotoFromSuggestion\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const QModel\+Index}]{proxy\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily \label{class_suggestion_proxy_model_ad0b9f7027dfc10c28e67fcf1edbeb66b} 
+void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyParamCaption}\item[{const QModel\+Index}]{proxy\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -152,11 +154,11 @@ On convertit l\textquotesingle{}index du Proxy\+Model dans l\textquotesingle{}in
 {\em proxy\+Index} & \+: Index dans le Proxy\+Model de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
 \end{DoxyParams}
-\label{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424b19c} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!setFilterEnabled@{setFilterEnabled}}
 \index{setFilterEnabled@{setFilterEnabled}!SuggestionProxyModel@{SuggestionProxyModel}}
 \doxysubsubsection{setFilterEnabled}
-{\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily \label{class_suggestion_proxy_model_ab6c4e1a2a793fc44957953297424b19c} 
+void Suggestion\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -167,11 +169,11 @@ Active ou désactive le filtrage par le Proxy\+Model.
 {\em enabled} & \+: Mettre true pour activer le filtrage. \\
 \hline
 \end{DoxyParams}
-\label{class_suggestion_proxy_model_add1caa599574ee457caa9f63251e5252} 
 \index{SuggestionProxyModel@{SuggestionProxyModel}!setFilterValue@{setFilterValue}}
 \index{setFilterValue@{setFilterValue}!SuggestionProxyModel@{SuggestionProxyModel}}
 \doxysubsubsection{setFilterValue}
-{\footnotesize\ttfamily void Suggestion\+Proxy\+Model\+::set\+Filter\+Value (\begin{DoxyParamCaption}\item[{const int}]{photo\+Row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily \label{class_suggestion_proxy_model_add1caa599574ee457caa9f63251e5252} 
+void Suggestion\+Proxy\+Model\+::set\+Filter\+Value (\begin{DoxyParamCaption}\item[{const int}]{photo\+Row}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 

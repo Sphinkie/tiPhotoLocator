@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TiPhotoLocator: Référence de la structure Photo</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.8 -->
+<!-- Généré par Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('struct_photo.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('struct_photo.html','','struct_photo-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,146 +90,112 @@ $(document).ready(function(){initNavTree('struct_photo.html',''); initResizable(
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Fonctions membres publiques</a> &#124;
-<a href="#pub-attribs">Attributs publics</a> &#124;
-<a href="struct_photo-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle"><div class="title">Référence de la structure Photo</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.  
- <a href="struct_photo.html#details">Plus de détails...</a></p>
+ <a href="#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_photo_model_8h_source.html">PhotoModel.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a10ef03ede9235052eb9f7d5e950f85d3" id="r_a10ef03ede9235052eb9f7d5e950f85d3"><td class="memItemLeft" align="right" valign="top"><a id="a10ef03ede9235052eb9f7d5e950f85d3" name="a10ef03ede9235052eb9f7d5e950f85d3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Photo</b> ()</td></tr>
 <tr class="memdesc:a10ef03ede9235052eb9f7d5e950f85d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="separator:a10ef03ede9235052eb9f7d5e950f85d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bf87b3475256941dadccf1bba9e5650" id="r_a9bf87b3475256941dadccf1bba9e5650"><td class="memItemLeft" align="right" valign="top"><a id="a9bf87b3475256941dadccf1bba9e5650" name="a9bf87b3475256941dadccf1bba9e5650"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Photo</b> (const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, const bool is_welcome=false, bool is_selected=false)</td></tr>
 <tr class="memdesc:a9bf87b3475256941dadccf1bba9e5650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec valeurs. <br /></td></tr>
-<tr class="separator:a9bf87b3475256941dadccf1bba9e5650"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadb7a083611feae65440c3bfc3887417" id="r_aadb7a083611feae65440c3bfc3887417"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_photo.html#aadb7a083611feae65440c3bfc3887417">operator==</a> (const QString &amp;file_name)</td></tr>
+<tr class="memitem:aadb7a083611feae65440c3bfc3887417" id="r_aadb7a083611feae65440c3bfc3887417"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadb7a083611feae65440c3bfc3887417">operator==</a> (const QString &amp;file_name)</td></tr>
 <tr class="memdesc:aadb7a083611feae65440c3bfc3887417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'opérateur ==.  <br /></td></tr>
-<tr class="separator:aadb7a083611feae65440c3bfc3887417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf8c4dfdd916b811562d6d4e7f5e1489" id="r_aaf8c4dfdd916b811562d6d4e7f5e1489"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_photo.html#aaf8c4dfdd916b811562d6d4e7f5e1489">operator==</a> (const <a class="el" href="struct_photo.html">Photo</a> &amp;photo)</td></tr>
+<tr class="memitem:aaf8c4dfdd916b811562d6d4e7f5e1489" id="r_aaf8c4dfdd916b811562d6d4e7f5e1489"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf8c4dfdd916b811562d6d4e7f5e1489">operator==</a> (const <a class="el" href="struct_photo.html">Photo</a> &amp;photo)</td></tr>
 <tr class="memdesc:aaf8c4dfdd916b811562d6d4e7f5e1489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opérateur de comparaison standard.  <br /></td></tr>
-<tr class="separator:aaf8c4dfdd916b811562d6d4e7f5e1489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
 <tr class="memitem:a74c2e37c247175676d801adab5d0251a" id="r_a74c2e37c247175676d801adab5d0251a"><td class="memItemLeft" align="right" valign="top"><a id="a74c2e37c247175676d801adab5d0251a" name="a74c2e37c247175676d801adab5d0251a"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>filename</b></td></tr>
 <tr class="memdesc:a74c2e37c247175676d801adab5d0251a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Example: "IMG_20230823_1234500.jpg". <br /></td></tr>
-<tr class="separator:a74c2e37c247175676d801adab5d0251a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a201e9224f059933d60838a7fe331646d" id="r_a201e9224f059933d60838a7fe331646d"><td class="memItemLeft" align="right" valign="top"><a id="a201e9224f059933d60838a7fe331646d" name="a201e9224f059933d60838a7fe331646d"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>imageUrl</b></td></tr>
 <tr class="memdesc:a201e9224f059933d60838a7fe331646d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Example: "qrc:///Images/ibiza.png". <br /></td></tr>
-<tr class="separator:a201e9224f059933d60838a7fe331646d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebc8cca52d5bbb81ca5726f221818839" id="r_aebc8cca52d5bbb81ca5726f221818839"><td class="memItemLeft" align="right" valign="top"><a id="aebc8cca52d5bbb81ca5726f221818839" name="aebc8cca52d5bbb81ca5726f221818839"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>gpsLatitude</b> = 0</td></tr>
 <tr class="memdesc:aebc8cca52d5bbb81ca5726f221818839"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPS coordinates. Example: 38.980 (Ibiza) <br /></td></tr>
-<tr class="separator:aebc8cca52d5bbb81ca5726f221818839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad76b83d8bbaae4a2e4bfefef2f268008" id="r_ad76b83d8bbaae4a2e4bfefef2f268008"><td class="memItemLeft" align="right" valign="top"><a id="ad76b83d8bbaae4a2e4bfefef2f268008" name="ad76b83d8bbaae4a2e4bfefef2f268008"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>gpsLongitude</b> = 0</td></tr>
 <tr class="memdesc:ad76b83d8bbaae4a2e4bfefef2f268008"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPS coordinates. Example: 1.4333 (Ibiza) <br /></td></tr>
-<tr class="separator:ad76b83d8bbaae4a2e4bfefef2f268008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2fe738cd3749de9263ff89bfa971ec9" id="r_af2fe738cd3749de9263ff89bfa971ec9"><td class="memItemLeft" align="right" valign="top"><a id="af2fe738cd3749de9263ff89bfa971ec9" name="af2fe738cd3749de9263ff89bfa971ec9"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasGPS</b> = false</td></tr>
 <tr class="memdesc:af2fe738cd3749de9263ff89bfa971ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">has GPS coordinates (latitude/longitude) <br /></td></tr>
-<tr class="separator:af2fe738cd3749de9263ff89bfa971ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e391469cda515a3aacb6edafa2a8254" id="r_a8e391469cda515a3aacb6edafa2a8254"><td class="memItemLeft" align="right" valign="top"><a id="a8e391469cda515a3aacb6edafa2a8254" name="a8e391469cda515a3aacb6edafa2a8254"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSelected</b></td></tr>
 <tr class="memdesc:a8e391469cda515a3aacb6edafa2a8254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique que cet item est sélectionné dans la ListView. <br /></td></tr>
-<tr class="separator:a8e391469cda515a3aacb6edafa2a8254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accaf8898f12c82d9872c555309d563b1" id="r_accaf8898f12c82d9872c555309d563b1"><td class="memItemLeft" align="right" valign="top"><a id="accaf8898f12c82d9872c555309d563b1" name="accaf8898f12c82d9872c555309d563b1"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isMarker</b> = false</td></tr>
 <tr class="memdesc:accaf8898f12c82d9872c555309d563b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exemple: une position sauvegardée sur la carte. <br /></td></tr>
-<tr class="separator:accaf8898f12c82d9872c555309d563b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46c9dbe9c662028eff1907e39d5941f2" id="r_a46c9dbe9c662028eff1907e39d5941f2"><td class="memItemLeft" align="right" valign="top"><a id="a46c9dbe9c662028eff1907e39d5941f2" name="a46c9dbe9c662028eff1907e39d5941f2"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isWelcome</b> = false</td></tr>
 <tr class="memdesc:a46c9dbe9c662028eff1907e39d5941f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exemple: L'image de la page d'acceuil. <br /></td></tr>
-<tr class="separator:a46c9dbe9c662028eff1907e39d5941f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33f360a2eccf88cc843e3a469600b3d5" id="r_a33f360a2eccf88cc843e3a469600b3d5"><td class="memItemLeft" align="right" valign="top"><a id="a33f360a2eccf88cc843e3a469600b3d5" name="a33f360a2eccf88cc843e3a469600b3d5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>insideCircle</b> = false</td></tr>
 <tr class="memdesc:a33f360a2eccf88cc843e3a469600b3d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">inside the radius of nearby photos <br /></td></tr>
-<tr class="separator:a33f360a2eccf88cc843e3a469600b3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66c836579b45614de3f51edba11ea2fe" id="r_a66c836579b45614de3f51edba11ea2fe"><td class="memItemLeft" align="right" valign="top"><a id="a66c836579b45614de3f51edba11ea2fe" name="a66c836579b45614de3f51edba11ea2fe"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>toBeSaved</b> = false</td></tr>
 <tr class="memdesc:a66c836579b45614de3f51edba11ea2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if one of the following fields has been modified <br /></td></tr>
-<tr class="separator:a66c836579b45614de3f51edba11ea2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a481cec4ea67fe90721b20510f55dee5a" id="r_a481cec4ea67fe90721b20510f55dee5a"><td class="memItemLeft" align="right" valign="top"><a id="a481cec4ea67fe90721b20510f55dee5a" name="a481cec4ea67fe90721b20510f55dee5a"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>dateTimeOriginal</b></td></tr>
 <tr class="memdesc:a481cec4ea67fe90721b20510f55dee5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time when the camera shutter was pressed (no changes allowed in this app) <br /></td></tr>
-<tr class="separator:a481cec4ea67fe90721b20510f55dee5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c5204d88a446d1df0ee95feee81a574" id="r_a3c5204d88a446d1df0ee95feee81a574"><td class="memItemLeft" align="right" valign="top"><a id="a3c5204d88a446d1df0ee95feee81a574" name="a3c5204d88a446d1df0ee95feee81a574"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>camModel</b></td></tr>
 <tr class="memdesc:a3c5204d88a446d1df0ee95feee81a574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera model (no changes allowed in this app) <br /></td></tr>
-<tr class="separator:a3c5204d88a446d1df0ee95feee81a574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f6620eb0f021aec853b0390d66c4898" id="r_a3f6620eb0f021aec853b0390d66c4898"><td class="memItemLeft" align="right" valign="top"><a id="a3f6620eb0f021aec853b0390d66c4898" name="a3f6620eb0f021aec853b0390d66c4898"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>make</b></td></tr>
 <tr class="memdesc:a3f6620eb0f021aec853b0390d66c4898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera manifacturer (no changes allowed in this app) <br /></td></tr>
-<tr class="separator:a3f6620eb0f021aec853b0390d66c4898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47567d8ecc3f845ae1846903113d625b" id="r_a47567d8ecc3f845ae1846903113d625b"><td class="memItemLeft" align="right" valign="top"><a id="a47567d8ecc3f845ae1846903113d625b" name="a47567d8ecc3f845ae1846903113d625b"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>imageWidth</b> = 0</td></tr>
 <tr class="memdesc:a47567d8ecc3f845ae1846903113d625b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Image width (no changes allowed in this app) <br /></td></tr>
-<tr class="separator:a47567d8ecc3f845ae1846903113d625b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4555e7bf8da94eb11398e0948ab6c3d2" id="r_a4555e7bf8da94eb11398e0948ab6c3d2"><td class="memItemLeft" align="right" valign="top"><a id="a4555e7bf8da94eb11398e0948ab6c3d2" name="a4555e7bf8da94eb11398e0948ab6c3d2"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>imageHeight</b> = 0</td></tr>
 <tr class="memdesc:a4555e7bf8da94eb11398e0948ab6c3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Image height (no changes allowed in this app) <br /></td></tr>
-<tr class="separator:a4555e7bf8da94eb11398e0948ab6c3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f11a71d79268e835723f1db0f4acffa" id="r_a0f11a71d79268e835723f1db0f4acffa"><td class="memItemLeft" align="right" valign="top"><a id="a0f11a71d79268e835723f1db0f4acffa" name="a0f11a71d79268e835723f1db0f4acffa"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>orientation</b> = 1</td></tr>
 <tr class="memdesc:a0f11a71d79268e835723f1db0f4acffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 = Horizontal <br /></td></tr>
-<tr class="separator:a0f11a71d79268e835723f1db0f4acffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaeadb764ea3e33efa012abc317676db" id="r_aeaeadb764ea3e33efa012abc317676db"><td class="memItemLeft" align="right" valign="top"><a id="aeaeadb764ea3e33efa012abc317676db" name="aeaeadb764ea3e33efa012abc317676db"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>shutterSpeed</b> = -1</td></tr>
 <tr class="memdesc:aeaeadb764ea3e33efa012abc317676db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Durée d'exposition (no changes allowed in this app) <br /></td></tr>
-<tr class="separator:aeaeadb764ea3e33efa012abc317676db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52f8b3c14a9736e4a6f1a338987a4113" id="r_a52f8b3c14a9736e4a6f1a338987a4113"><td class="memItemLeft" align="right" valign="top"><a id="a52f8b3c14a9736e4a6f1a338987a4113" name="a52f8b3c14a9736e4a6f1a338987a4113"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>fNumber</b> = -1</td></tr>
 <tr class="memdesc:a52f8b3c14a9736e4a6f1a338987a4113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouverture (no changes allowed in this app) <br /></td></tr>
-<tr class="separator:a52f8b3c14a9736e4a6f1a338987a4113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8557579ced9c4e8587443564bfe659dd" id="r_a8557579ced9c4e8587443564bfe659dd"><td class="memItemLeft" align="right" valign="top"><a id="a8557579ced9c4e8587443564bfe659dd" name="a8557579ced9c4e8587443564bfe659dd"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>creator</b></td></tr>
 <tr class="memdesc:a8557579ced9c4e8587443564bfe659dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the photographer. <br /></td></tr>
-<tr class="separator:a8557579ced9c4e8587443564bfe659dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af69f56742ec76589b96b355cdc447149" id="r_af69f56742ec76589b96b355cdc447149"><td class="memItemLeft" align="right" valign="top"><a id="af69f56742ec76589b96b355cdc447149" name="af69f56742ec76589b96b355cdc447149"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>city</b></td></tr>
 <tr class="memdesc:af69f56742ec76589b96b355cdc447149"><td class="mdescLeft">&#160;</td><td class="mdescRight">City shown in the <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>. <br /></td></tr>
-<tr class="separator:af69f56742ec76589b96b355cdc447149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bf494760dfe13bc320c8395a1d8368f" id="r_a9bf494760dfe13bc320c8395a1d8368f"><td class="memItemLeft" align="right" valign="top"><a id="a9bf494760dfe13bc320c8395a1d8368f" name="a9bf494760dfe13bc320c8395a1d8368f"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>country</b></td></tr>
 <tr class="memdesc:a9bf494760dfe13bc320c8395a1d8368f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Country where the <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> was taken. <br /></td></tr>
-<tr class="separator:a9bf494760dfe13bc320c8395a1d8368f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a649223a8259c1bb869af35fe54ed5ff3" id="r_a649223a8259c1bb869af35fe54ed5ff3"><td class="memItemLeft" align="right" valign="top"><a id="a649223a8259c1bb869af35fe54ed5ff3" name="a649223a8259c1bb869af35fe54ed5ff3"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>location</b></td></tr>
 <tr class="memdesc:a649223a8259c1bb869af35fe54ed5ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">City quarter or nearby monument or natural monument. <br /></td></tr>
-<tr class="separator:a649223a8259c1bb869af35fe54ed5ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fe05dc549b7caf2ee3232476d41e760" id="r_a6fe05dc549b7caf2ee3232476d41e760"><td class="memItemLeft" align="right" valign="top"><a id="a6fe05dc549b7caf2ee3232476d41e760" name="a6fe05dc549b7caf2ee3232476d41e760"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>description</b></td></tr>
 <tr class="memdesc:a6fe05dc549b7caf2ee3232476d41e760"><td class="mdescLeft">&#160;</td><td class="mdescRight">can be: Description, ImageDescription or Caption; <br /></td></tr>
-<tr class="separator:a6fe05dc549b7caf2ee3232476d41e760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b1dde1eb075006ff85b5539eed40f94" id="r_a1b1dde1eb075006ff85b5539eed40f94"><td class="memItemLeft" align="right" valign="top"><a id="a1b1dde1eb075006ff85b5539eed40f94" name="a1b1dde1eb075006ff85b5539eed40f94"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>captionWriter</b></td></tr>
 <tr class="memdesc:a1b1dde1eb075006ff85b5539eed40f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initials of the description writer. <br /></td></tr>
-<tr class="separator:a1b1dde1eb075006ff85b5539eed40f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e092e500b8cc02272e39b823f094180" id="r_a1e092e500b8cc02272e39b823f094180"><td class="memItemLeft" align="right" valign="top"><a id="a1e092e500b8cc02272e39b823f094180" name="a1e092e500b8cc02272e39b823f094180"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>software</b></td></tr>
 <tr class="memdesc:a1e092e500b8cc02272e39b823f094180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Software of the camera or scanner device. <br /></td></tr>
-<tr class="separator:a1e092e500b8cc02272e39b823f094180"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76af2f2ab2fa057b17b00e796fcfe2b5" id="r_a76af2f2ab2fa057b17b00e796fcfe2b5"><td class="memItemLeft" align="right" valign="top"><a id="a76af2f2ab2fa057b17b00e796fcfe2b5" name="a76af2f2ab2fa057b17b00e796fcfe2b5"></a>
 QStringList&#160;</td><td class="memItemRight" valign="bottom"><b>keywords</b></td></tr>
 <tr class="memdesc:a76af2f2ab2fa057b17b00e796fcfe2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a list of keywords describing the image. <br /></td></tr>
-<tr class="separator:a76af2f2ab2fa057b17b00e796fcfe2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc. </p>
-</div><h2 class="groupheader">Documentation des fonctions membres</h2>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
 <a id="aaf8c4dfdd916b811562d6d4e7f5e1489" name="aaf8c4dfdd916b811562d6d4e7f5e1489"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaf8c4dfdd916b811562d6d4e7f5e1489">&#9670;&#160;</a></span>operator==() <span class="overload">[1/2]</span></h2>
 
@@ -240,8 +205,7 @@ QStringList&#160;</td><td class="memItemRight" valign="bottom"><b>keywords</b></
         <tr>
           <td class="memname">bool Photo::operator== </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_photo.html">Photo</a> &amp;&#160;</td>
-          <td class="paramname"><em>photo</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_photo.html">Photo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>photo</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -267,8 +231,7 @@ QStringList&#160;</td><td class="memItemRight" valign="bottom"><b>keywords</b></
         <tr>
           <td class="memname">bool Photo::operator== </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>file_name</em></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -291,11 +254,19 @@ QStringList&#160;</td><td class="memItemRight" valign="bottom"><b>keywords</b></
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="struct_photo.html">Photo</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="struct_photo.html">Photo</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>
