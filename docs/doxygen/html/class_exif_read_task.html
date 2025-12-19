@@ -109,9 +109,8 @@ Graphe d'héritage de ExifReadTask:</div>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ac76e0c8b20e09ce264693b434edce9db" id="r_ac76e0c8b20e09ce264693b434edce9db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac76e0c8b20e09ce264693b434edce9db">ExifReadTask</a> (QString filePath)</td></tr>
 <tr class="memdesc:ac76e0c8b20e09ce264693b434edce9db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.  <br /></td></tr>
-<tr class="memitem:a1f0693a4aa7d57897f906d3db0fd77b8" id="r_a1f0693a4aa7d57897f906d3db0fd77b8"><td class="memItemLeft" align="right" valign="top"><a id="a1f0693a4aa7d57897f906d3db0fd77b8" name="a1f0693a4aa7d57897f906d3db0fd77b8"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
-<tr class="memdesc:a1f0693a4aa7d57897f906d3db0fd77b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Lancement de la tache. On lance <b>exifTool</b> dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultats dans <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. <br /></td></tr>
+<tr class="memitem:a1f0693a4aa7d57897f906d3db0fd77b8" id="r_a1f0693a4aa7d57897f906d3db0fd77b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f0693a4aa7d57897f906d3db0fd77b8">run</a> ()</td></tr>
+<tr class="memdesc:a1f0693a4aa7d57897f906d3db0fd77b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lancement de la tache. On lance <b>exifTool</b> dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultats dans <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
@@ -148,8 +147,8 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La tache asynchrone <a class="el" href="class_exif_read_task.html" title="La tache asynchrone ExifReadTask permet de lire les metadonnées d&#39;une photo JPG sur le disque dur.">ExifReadTask</a> permet de lire les metadonnées d'une photo JPG sur le disque dur. </p>
-<p>\inmodule TiPhotoLocator </p>
-<p>Tache asynchrone par utilisation de QThreadPool.</p>
+<hr  />
+ <p>Tache asynchrone par utilisation de QThreadPool.</p>
 <dl class="section note"><dt>Note</dt><dd>les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux. Donc, à la fin du traitement, pour actualiser les données du <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>, il faut faire un appel direct à une méthode du modèle. Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.</dd></dl>
 <p>Description of <b>JSON</b> options for <code>ExifTool</code>.</p>
 <div class="fragment"><div class="line">-j[[+]=*JSONFILE*] (-json)</div>
@@ -195,7 +194,8 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 </div><div class="memdoc">
 
 <p>Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. </p>
-<dl class="section note"><dt>Note</dt><dd>Si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé. </dd></dl>
+<hr  />
+ <dl class="section note"><dt>Note</dt><dd>Si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé. </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">filePath</td><td>le chemin + nom du fichier JPG à lire. </td></tr>
@@ -230,7 +230,8 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 </div><div class="memdoc">
 
 <p>Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">photoModel</td><td>: la classe appelante, à qui il faudra renvoyer les metadata lues. </td></tr>
   </table>
@@ -263,7 +264,8 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 </div><div class="memdoc">
 
 <p>Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">line</td><td>: the received text Flux reçu pour une image: <div class="fragment"><div class="line"> <span class="stringliteral">&quot;[{</span></div>
 <div class="line"><span class="stringliteral"> &quot;</span>  <span class="stringliteral">&quot;SourceFile&quot;</span>: <span class="stringliteral">&quot;E:/TiPhotos/P8160449.JPG&quot;</span>,  <span class="stringliteral">&quot;</span></div>
@@ -286,6 +288,34 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
   </dd>
 </dl>
 
+</div>
+</div>
+<a id="a1f0693a4aa7d57897f906d3db0fd77b8" name="a1f0693a4aa7d57897f906d3db0fd77b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f0693a4aa7d57897f906d3db0fd77b8">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExifReadTask::run </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lancement de la tache. On lance <b>exifTool</b> dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultats dans <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. </p>
+<hr  />
+ 
 </div>
 </div>
 <a id="a209baeebef9ede8dafc98844324bbaa9" name="a209baeebef9ede8dafc98844324bbaa9"></a>
@@ -312,7 +342,8 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 </div><div class="memdoc">
 
 <p>List the tags to be read in the JPG files, and put them in the Arguments file for ExifTool. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>true if the file was successfully created.</dd></dl>
+<hr  />
+ <dl class="section return"><dt>Renvoie</dt><dd>true if the file was successfully created.</dd></dl>
 <p>To learn about the usage of IPTC tags: </p><ul>
 <li><dl class="section see"><dt>Voir également</dt><dd><a href="https://iptc.org/std/photometadata/documentation/mappingguidelines">https://iptc.org/std/photometadata/documentation/mappingguidelines</a> </dd></dl>
 </li>

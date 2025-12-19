@@ -7,34 +7,31 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QSortFilterProxyModel>}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{comment}{/*\ ************************************************************************\ */}}
-\DoxyCodeLine{00013\ \textcolor{comment}{/*\ ************************************************************************\ */}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }OnTheMapProxyModel\ :\ \textcolor{keyword}{public}\ QSortFilterProxyModel}
-\DoxyCodeLine{00016\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00020\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ filterEnabled\ READ\ filterEnabled\ WRITE\ setFilterEnabled\ NOTIFY\ filterEnabledChanged)}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{explicit}\ OnTheMapProxyModel(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ filterEnabled()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }OnTheMapProxyModel\ :\ \textcolor{keyword}{public}\ QSortFilterProxyModel}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ filterEnabled\ READ\ filterEnabled\ WRITE\ setFilterEnabled\ NOTIFY\ filterEnabledChanged)}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{explicit}\ OnTheMapProxyModel(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ filterEnabled()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ setFilterEnabled(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ setAllItemsCoords(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ latitude,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ setAllItemsSavedCoords();}
 \DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setFilterEnabled(\textcolor{keywordtype}{bool}\ enabled);}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setAllItemsCoords(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ latitude,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ longitude);}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setAllItemsSavedCoords();}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ signals:}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ filterEnabledChanged();\ \ }
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ filterAcceptsRow(\textcolor{keywordtype}{int}\ sourceRow,\ \textcolor{keyword}{const}\ QModelIndex\ \&sourceParent)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_filterEnabled;\ \ }
-\DoxyCodeLine{00039\ \};}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ONTHEMAPPROXYMODEL\_H}}
+\DoxyCodeLine{00026\ signals:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ filterEnabledChanged();\ \ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ filterAcceptsRow(\textcolor{keywordtype}{int}\ sourceRow,\ \textcolor{keyword}{const}\ QModelIndex\ \&sourceParent)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_filterEnabled;\ \ }
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ONTHEMAPPROXYMODEL\_H}}
 
 \end{DoxyCode}

@@ -6,23 +6,20 @@
 #include "Models/PhotoModel.h"
 
 
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
- * \class ExifReadTask
- * \inmodule TiPhotoLocator
+/** **********************************************************************************************************
  * @brief La tache asynchrone ExifReadTask permet de lire les metadonnées d'une photo JPG sur le disque dur.
 
  Tache asynchrone par utilisation de QThreadPool.
 
- \note
+ @note
     les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.
     Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct à une méthode du modèle.
     Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.
 
-   \details
+   @details
    Description of \b JSON options for \c ExifTool.
 
-   \code{.unparsed}
+   @code{.unparsed}
    -j[[+]=*JSONFILE*] (-json)
 
     Use JSON (JavaScript Object Notation) formatting for console output (or import a JSON file if *JSONFILE* is specified).
@@ -41,11 +38,8 @@
     The JSON output is UTF-8 regardless of any -L or -charset option setting, but the UTF-8 validation is disabled if a character set other than UTF-8 is specified.
     By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings).
     Note that ExifTool quotes JSON values only if they don't look like numbers (regardless of the original storage format or the relevant metadata specification).
-  \endcode
-*/
-/* ********************************************************************************************************** */
-
-
+  @endcode
+ * ***********************************************************************************************************/
 class ExifReadTask : public QRunnable
 {
 public:

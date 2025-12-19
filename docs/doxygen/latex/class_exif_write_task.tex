@@ -5,6 +5,10 @@
 La classe \doxyref{Exif\+Write\+Task}{p.}{class_exif_write_task} permet d\textquotesingle{}écrire des metadata dans les photos JEG de façon asynchrone.  
 
 
+
+
+{\ttfamily \#include $<$Exif\+Write\+Task.\+h$>$}
+
 Graphe d\textquotesingle{}héritage de Exif\+Write\+Task\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,12 +36,14 @@ bool {\bfseries m\+\_\+generate\+Backup}
 \doxysubsection{Description détaillée}
 La classe \doxyref{Exif\+Write\+Task}{p.}{class_exif_write_task} permet d\textquotesingle{}écrire des metadata dans les photos JEG de façon asynchrone. 
 
-\textbackslash{}inmodule Ti\+Photo\+Locator 
+\DoxyHorRuler{0}
+ 
 
 Tache asynchrone par utilisation de QThread\+Pool.
 
 \begin{DoxyNote}{Note}
-\+: les QRunnable n\textquotesingle{}héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l\textquotesingle{}aide de signaux. Donc, à la fin du traitement, pour actualiser les données du \doxyref{Photo\+Model}{p.}{class_photo_model}, il faut faire un appel direct. Cependant, cela n\textquotesingle{}est pas contraire aux recommandations\+: mettre à jour des données peut se faire par appel synchrone. 
+\+: les QRunnable n\textquotesingle{}héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l\textquotesingle{}aide de signaux. Donc, à la fin du traitement, pour actualiser les données du \doxyref{Photo\+Model}{p.}{class_photo_model}, il faut faire un appel direct. Cependant, cela n\textquotesingle{}est pas contraire aux recommandations\+: mettre à jour des données peut se faire par appel synchrone. \DoxyHorRuler{0}
+ 
 \end{DoxyNote}
 
 
@@ -53,7 +59,8 @@ Exif\+Write\+Task\+::\+Exif\+Write\+Task (\begin{DoxyParamCaption}\item[{const Q
 
 Constructeur. On enregistre les paramètres. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em exif\+Data} & la liste des metadata à écrire dans le fichier JPG. \\
 \hline
@@ -90,7 +97,8 @@ void Exif\+Write\+Task\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption
 
 Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un QProcess, et on écrit les metadata dans l\textquotesingle{}image JPG. Cette tache est exécutée dans un thread QRunnable. 
 
-\begin{DoxyNote}{Note}
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
 Le mode MWG de Exif\+Tool permet d\textquotesingle{}ecrire en une fois dans les différents tags équivalents (ex\+: Artist et Creator, ou bien EXIF\+:City et Iptc\+Ext\+:City, etc). Le Metadata Working Group recommande de garder ces tags EXIF et IPTC synchronisés. 
 
 Pour vérifier les tags écrits\+: {\ttfamily exiftool -\/G1 -\/a -\/s -\/XMP-\/iptc\+Core\+:All -\/XMP-\/iptc\+Ext\+:All mypicture.\+jpg} (-\/G1 = Group 1 = "{}\+Location"{}) (-\/s = shows tag names instead of description) 

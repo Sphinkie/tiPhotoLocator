@@ -54,6 +54,9 @@ QString {\bfseries m\+\_\+filter} = "{}"{}
 \doxysubsection{Description détaillée}
 The \doxyref{Suggestion\+Category\+Proxy\+Model}{p.}{class_suggestion_category_proxy_model} class is a filter Proxy\+Model, that keeps only \doxyref{Suggestion}{p.}{struct_suggestion} with a given category. 
 
+\DoxyHorRuler{0}
+ 
+
 \label{doc-constructors}
 \doxysubsection{Documentation des constructeurs et destructeur}
 \index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}}
@@ -66,7 +69,8 @@ Suggestion\+Category\+Proxy\+Model\+::\+Suggestion\+Category\+Proxy\+Model (\beg
 
 Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt. Le role à filtrer est "{}category"{}. Par défaut, le filtrage est inactif (tout passe). 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em parent} & \+: modèle source. \\
 \hline
@@ -85,7 +89,8 @@ bool Suggestion\+Category\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCapt
 
 Cette méthode indique si le filtrage est actif ou non. 
 
-\begin{DoxyReturn}{Renvoie}
+\DoxyHorRuler{0}
+ \begin{DoxyReturn}{Renvoie}
 true si le filtre est actif. 
 \end{DoxyReturn}
 \index{SuggestionCategoryProxyModel@{SuggestionCategoryProxyModel}!removePhotoFromSuggestion@{removePhotoFromSuggestion}}
@@ -98,7 +103,8 @@ void Suggestion\+Category\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\beg
 
 Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
 
-\begin{DoxyNote}{Note}
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
 On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxyref{Suggestion\+Proxy\+Model}{p.}{class_suggestion_proxy_model}. 
 \end{DoxyNote}
 
@@ -116,7 +122,8 @@ void Suggestion\+Category\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyPara
 
 Ce slot active ou désactive le filtrage par le proxy\+Model. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em enabled} & \+: true pour activer le filtrage. \\
 \hline
@@ -131,7 +138,8 @@ void Suggestion\+Category\+Proxy\+Model\+::set\+Filter\+Value (\begin{DoxyParamC
 
 Cette méthode invocable par QML active ou désactive le filtrage par le proxy\+Model. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em filter} & \+: La chaine à garder pour le filtrage. (vide = Accept All)\\
 \hline

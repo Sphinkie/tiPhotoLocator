@@ -8,33 +8,28 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QSortFilterProxyModel>}}
 \DoxyCodeLine{00005\ }
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{comment}{/*\ ************************************************************************\ */}}
-\DoxyCodeLine{00014\ \textcolor{comment}{/*\ ************************************************************************\ */}}
-\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }UnlocalizedProxyModel\ :\ \textcolor{keyword}{public}\ QSortFilterProxyModel}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ filterEnabled\ READ\ filterEnabled\ WRITE\ setFilterEnabled\ NOTIFY\ filterEnabledChanged)}
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }UnlocalizedProxyModel\ :\ \textcolor{keyword}{public}\ QSortFilterProxyModel}
-\DoxyCodeLine{00018\ \{}
-\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00022\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ filterEnabled\ READ\ filterEnabled\ WRITE\ setFilterEnabled\ NOTIFY\ filterEnabledChanged)}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ UnlocalizedProxyModel(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ filterEnabled()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ pouvant\ être\ appelées\ depuis\ QML}}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00030\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{int}\ getSourceIndex(\textcolor{keywordtype}{int}\ row);}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ setFilterEnabled(\textcolor{keywordtype}{bool}\ enabled);}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ signals:}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ filterEnabledChanged();\ \ }
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNLOCALIZEDPROXYMODEL\_H}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{explicit}\ UnlocalizedProxyModel(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ filterEnabled()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Méthodes\ pouvant\ être\ appelées\ depuis\ QML}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{int}\ getSourceIndex(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setFilterEnabled(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ signals:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ filterEnabledChanged();\ \ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNLOCALIZEDPROXYMODEL\_H}}
 
 \end{DoxyCode}

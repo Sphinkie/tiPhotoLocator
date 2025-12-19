@@ -6,5 +6,6 @@ var searchData=
   ['filterenabledchanged_3',['filterEnabledChanged',['../class_on_the_map_proxy_model.html#aa7c81a7a958b6a60d0e39b1d166f6829',1,'OnTheMapProxyModel::filterEnabledChanged()'],['../class_suggestion_category_proxy_model.html#acbcc572b70158e4c6b93a43494837c74',1,'SuggestionCategoryProxyModel::filterEnabledChanged()'],['../class_suggestion_proxy_model.html#a1b4ad3a4a83b4c7c959394a68871d349',1,'SuggestionProxyModel::filterEnabledChanged()'],['../class_undated_photo_proxy_model.html#a8f7fadf267c65157d70e3c2b650c6bdc',1,'UndatedPhotoProxyModel::filterEnabledChanged()'],['../class_unlocalized_proxy_model.html#adafd6e77a8a751a6b38936b59ce0619a',1,'UnlocalizedProxyModel::filterEnabledChanged()']]],
   ['findincirclephotos_4',['findInCirclePhotos',['../class_photo_model.html#a8cd1ac5560f3897892474271c5206106',1,'PhotoModel']]],
   ['fixdigits_5',['fixDigits',['../class_utilities.html#a1c31753eeb57b373d7a73c097e6766ee',1,'Utilities']]],
-  ['fixyear_6',['fixYear',['../class_utilities.html#a40979a50f9670f01945d07c9e80e9a33',1,'Utilities']]]
+  ['fixyear_6',['fixYear',['../class_utilities.html#a40979a50f9670f01945d07c9e80e9a33',1,'Utilities']]],
+  ['flags_7',['flags',['../class_photo_model.html#a1304d28519eb274764ef65afffec6c96',1,'PhotoModel::flags()'],['../class_suggestion_model.html#ae3b26fa49dff5a4c7f1a79e061dd9970',1,'SuggestionModel::flags()']]]
 ];

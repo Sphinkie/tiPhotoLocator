@@ -9,6 +9,11 @@ The \doxyref{Utilities}{p.}{class_utilities} class contains a set of usefull sta
 
 {\ttfamily \#include $<$Utilities.\+h$>$}
 
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Utilities} ()
+\begin{DoxyCompactList}\small\item\em Constructeur vide. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,6 +42,24 @@ static const QString\+List \textbf{ normalized\+Letters}
 \doxysubsection{Description détaillée}
 The \doxyref{Utilities}{p.}{class_utilities} class contains a set of usefull static functions. 
 
+\DoxyHorRuler{0}
+ 
+
+\label{doc-constructors}
+\doxysubsection{Documentation des constructeurs et destructeur}
+\index{Utilities@{Utilities}!Utilities@{Utilities}}
+\index{Utilities@{Utilities}!Utilities@{Utilities}}
+\doxysubsubsection{Utilities()}
+{\footnotesize\ttfamily \label{class_utilities_ab1676c9ce35cf347a73d16f1094e1271} 
+Utilities\+::\+Utilities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructeur vide. 
+
+\DoxyHorRuler{0}
+  
+
 \label{doc-func-members}
 \doxysubsection{Documentation des fonctions membres}
 \index{Utilities@{Utilities}!fixDigits@{fixDigits}}
@@ -49,7 +72,8 @@ QString Utilities\+::fix\+Digits (\begin{DoxyParamCaption}\item[{QString}]{s\+Di
 
 Reformate correctement des digits saisis par l\textquotesingle{}utilisateur (jour, mois, heure, minutes). 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em s\+Digits} & \+: La valeur à formater. \\
 \hline
@@ -73,7 +97,8 @@ QString Utilities\+::fix\+Year (\begin{DoxyParamCaption}\item[{QString}]{s\+Year
 
 Reformate correctement l\textquotesingle{}année saisie par l\textquotesingle{}utilisateur. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em s\+Year} & \+: L\textquotesingle{}année à corriger \\
 \hline
@@ -93,7 +118,8 @@ QString Utilities\+::normalise (\begin{DoxyParamCaption}\item[{QString}]{texte}{
 
 Remplace les éventuelles lettres diacritiques d\textquotesingle{}un texte par leur équivalent normalisé. Par exemple, on remplace \textquotesingle{}à\textquotesingle{} par \textquotesingle{}a\textquotesingle{}. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em texte} & le texte à scanner. \\
 \hline
@@ -111,7 +137,8 @@ QString Utilities\+::to\+Exif\+Date (\begin{DoxyParamCaption}\item[{const QVaria
 
 Convertit une chaine du type "{}25/08/2017 08\+:03"{} au format "{}2017\+:08\+:25 08\+:03\+:00"{}. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em value} & \+: Le QVariant contenant la nouvelle date. \\
 \hline
@@ -129,7 +156,8 @@ QString Utilities\+::to\+Readable\+Date\+Time (\begin{DoxyParamCaption}\item[{co
 
 Convertit une chaine du type "{}2017\+:08\+:25 08\+:03\+:16"{} au format naturel "{}25/05/2017 08\+:03"{}. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em value} & \+: Le QVariant contenant la date issue d\textquotesingle{}un tag Exif. \\
 \hline
@@ -147,7 +175,8 @@ QString Utilities\+::to\+Standard\+Date\+Time (\begin{DoxyParamCaption}\item[{co
 
 Convertit une date saisie manuellement en une date correctement formatée, compatible Exif. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em value} & \+: Une string au format "{}..\textbackslash{}..\textbackslash{}.... ..\+:.."{} \\
 \hline

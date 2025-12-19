@@ -10,11 +10,10 @@
 
 #define QT_NO_DEBUG_OUTPUT
 
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Le contructeur initialise le provider "OSM".
  * @param suggestion_model : permet de savoir quel objet SuggestionModel appeler une fois les résultats reçus.
- */
+ * ***********************************************************************************************************/
 GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 {
     m_suggestionModel = suggestion_model;
@@ -36,14 +35,14 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 
 }
 
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS.
  *        Par exemple: 38.980 et 1.433 => <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway">Résultat</a>
  *        La réponse est traitée par geoCodeFinished()
  * @param latitude : coordonnées GPS
  * @param longitude: coordonnées GPS
- */
+ * ***********************************************************************************************************/
+
 void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
 {
     // Réglage de la langues des tags
@@ -64,12 +63,11 @@ void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
 }
 
 
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city.
  *        La réponse est traitée par geoCodeFinished()
  * @param city : un nom de lieu, par exemple "Marsa el Brega" => 30.4074, 19.5784
- */
+ * ***********************************************************************************************************/
 void GeocodeWrapper::requestCoordinates(QString city)
 {
     QGeoAddress adresse = QGeoAddress();
@@ -86,15 +84,14 @@ void GeocodeWrapper::requestCoordinates(QString city)
 }
 
 
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Signal appelé lors de la réception de la réponse à la request.
  * @param reply : le contenu de la réponse à la request.
  * \note: Exemple: "Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"
  *
  * En cas de réponse à une demande de coordonnées: on les mémorise dans le QSettings "homeCoords".
  * En cas de réponse à une demande de reverse Localisation, on passe les réponses au SuggestionModel.
- */
+ * ***********************************************************************************************************/
 void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
 {
     qDebug() << "finished with code" << reply->error();

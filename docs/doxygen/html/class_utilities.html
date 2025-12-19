@@ -99,6 +99,11 @@ $(function(){initNavTree('class_utilities.html','','class_utilities-members'); }
 
 <p><code>#include &lt;<a class="el" href="_utilities_8h_source.html">Utilities.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:ab1676c9ce35cf347a73d16f1094e1271" id="r_ab1676c9ce35cf347a73d16f1094e1271"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1676c9ce35cf347a73d16f1094e1271">Utilities</a> ()</td></tr>
+<tr class="memdesc:ab1676c9ce35cf347a73d16f1094e1271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur vide.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr class="memitem:ad970fb1a077cf5d352faa2878ce410fc" id="r_ad970fb1a077cf5d352faa2878ce410fc"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad970fb1a077cf5d352faa2878ce410fc">toExifDate</a> (const QVariant value)</td></tr>
@@ -124,7 +129,29 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>The <a class="el" href="class_utilities.html" title="The Utilities class contains a set of usefull static functions.">Utilities</a> class contains a set of usefull static functions. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<hr  />
+ </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="ab1676c9ce35cf347a73d16f1094e1271" name="ab1676c9ce35cf347a73d16f1094e1271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1676c9ce35cf347a73d16f1094e1271">&#9670;&#160;</a></span>Utilities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Utilities::Utilities </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur vide. </p>
+<hr  />
+  
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
 <a id="a1c31753eeb57b373d7a73c097e6766ee" name="a1c31753eeb57b373d7a73c097e6766ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c31753eeb57b373d7a73c097e6766ee">&#9670;&#160;</a></span>fixDigits()</h2>
 
@@ -163,7 +190,8 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
 </div><div class="memdoc">
 
 <p>Reformate correctement des digits saisis par l'utilisateur (jour, mois, heure, minutes). </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">sDigits</td><td>: La valeur à formater. </td></tr>
     <tr><td class="paramname">defaultValue</td><td>: La valeur par défaut, en cas de chaine vide ou non conforme. </td></tr>
@@ -204,7 +232,8 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
 </div><div class="memdoc">
 
 <p>Reformate correctement l'année saisie par l'utilisateur. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">sYear</td><td>: L'année à corriger </td></tr>
     <tr><td class="paramname">defaultYear</td><td>: La valeur par défaut. Par exemple: l'année couurante. </td></tr>
@@ -240,7 +269,8 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
 </div><div class="memdoc">
 
 <p>Remplace les éventuelles lettres diacritiques d'un texte par leur équivalent normalisé. Par exemple, on remplace 'à' par 'a'. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">texte</td><td>le texte à scanner. </td></tr>
   </table>
@@ -274,7 +304,8 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
 </div><div class="memdoc">
 
 <p>Convertit une chaine du type "25/08/2017 08:03" au format "2017:08:25 08:03:00". </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>: Le QVariant contenant la nouvelle date. </td></tr>
   </table>
@@ -308,7 +339,8 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
 </div><div class="memdoc">
 
 <p>Convertit une chaine du type "2017:08:25 08:03:16" au format naturel "25/05/2017 08:03". </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>: Le QVariant contenant la date issue d'un tag Exif. </td></tr>
   </table>
@@ -342,7 +374,8 @@ static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>diacr
 </div><div class="memdoc">
 
 <p>Convertit une date saisie manuellement en une date correctement formatée, compatible Exif. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>: Une string au format "..\..\.... ..:.." </td></tr>
   </table>

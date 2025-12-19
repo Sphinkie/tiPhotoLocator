@@ -20,8 +20,7 @@ Graphe d\textquotesingle{}héritage de Camera\+Set\+:\begin{figure}[H]
 \item 
 void \textbf{ on\+Finished} (QNetwork\+Reply $\ast$reply)
 \begin{DoxyCompactList}\small\item\em Appelé lors de la réception d\textquotesingle{}une réponse à une requete deepai. \end{DoxyCompactList}\item 
-\label{class_camera_set_a77e050b451359a66ab6d161477597b44} 
-void {\bfseries on\+Error} ()
+void \textbf{ on\+Error} ()
 \begin{DoxyCompactList}\small\item\em Fonction appelée en cas d\textquotesingle{}erreur de la demande Rest. A voir si on met quelque chose d\textquotesingle{}utile ici. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
@@ -39,8 +38,7 @@ void \textbf{ insert} (const QString cam\+\_\+model)
 \begin{DoxyCompactList}\small\item\em Ajoute un modèle d\textquotesingle{}appareil photo dans le Set. On lui fabrique alors une vignette. \end{DoxyCompactList}\item 
 void \textbf{ request\+Thumb} (const QString cam\+\_\+model)
 \begin{DoxyCompactList}\small\item\em Envoi d\textquotesingle{}une requete POST à deepai. \end{DoxyCompactList}\item 
-\label{class_camera_set_adfa00deb84c361446cafb946443c1997} 
-void {\bfseries request\+Meteo} ()
+void \textbf{ request\+Meteo} ()
 \begin{DoxyCompactList}\small\item\em Envoi d\textquotesingle{}une requete GET à openweathermap. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
@@ -59,7 +57,8 @@ QString {\bfseries m\+\_\+deepai\+Key}
 \doxysubsection{Description détaillée}
 La classe \doxyref{Camera\+Set}{p.}{class_camera_set} gère un ensemble de vignette, correspondant chacune à un modèle d\textquotesingle{}appareil photo. 
 
-\textbackslash{}inmodule Ti\+Photo\+Locator 
+\DoxyHorRuler{0}
+ 
 
 \label{doc-constructors}
 \doxysubsection{Documentation des constructeurs et destructeur}
@@ -73,7 +72,8 @@ Camera\+Set\+::\+Camera\+Set (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{pa
 
 Ce Constructeur instancie le Network Manager utilisé pour les requètes REST. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em parent} & l\textquotesingle{}objet parent. \\
 \hline
@@ -92,7 +92,8 @@ void Camera\+Set\+::append (\begin{DoxyParamCaption}\item[{const QString}]{cam\+
 
 Ajout d\textquotesingle{}un modèle de caméra dans la liste. S\textquotesingle{}il n\textquotesingle{}y est pas, on demande à deep\+AI de générer une imagette. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em cam\+\_\+model} & \\
 \hline
@@ -107,7 +108,8 @@ bool Camera\+Set\+::contains (\begin{DoxyParamCaption}\item[{const QString}]{cam
 
 Indique si le modèle d\textquotesingle{}appareil photo demandé est déjà référencé. Si oui, il possède alors déjà une vignette. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em cam\+\_\+model} & \+: le nom d\textquotesingle{}un modèle d\textquotesingle{}appareil photo. \\
 \hline
@@ -125,12 +127,24 @@ void Camera\+Set\+::insert (\begin{DoxyParamCaption}\item[{const QString}]{cam\+
 
 Ajoute un modèle d\textquotesingle{}appareil photo dans le Set. On lui fabrique alors une vignette. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em cam\+\_\+model} & \+: le nom d\textquotesingle{}un modèle d\textquotesingle{}appareil photo. \\
 \hline
 \end{DoxyParams}
-\index{CameraSet@{CameraSet}!onFinished@{onFinished}}
+\index{CameraSet@{CameraSet}!onError@{onError}}
+\index{onError@{onError}!CameraSet@{CameraSet}}
+\doxysubsubsection{onError}
+{\footnotesize\ttfamily \label{class_camera_set_a77e050b451359a66ab6d161477597b44} 
+void Camera\+Set\+::on\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Fonction appelée en cas d\textquotesingle{}erreur de la demande Rest. A voir si on met quelque chose d\textquotesingle{}utile ici. 
+
+\DoxyHorRuler{0}
+ \index{CameraSet@{CameraSet}!onFinished@{onFinished}}
 \index{onFinished@{onFinished}!CameraSet@{CameraSet}}
 \doxysubsubsection{onFinished}
 {\footnotesize\ttfamily \label{class_camera_set_ae521eda047c7409a02da364ba8d60db1} 
@@ -140,12 +154,24 @@ void Camera\+Set\+::on\+Finished (\begin{DoxyParamCaption}\item[{QNetwork\+Reply
 
 Appelé lors de la réception d\textquotesingle{}une réponse à une requete deepai. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em reply} & \+: Le contenu de la réponse. \\
 \hline
 \end{DoxyParams}
-\index{CameraSet@{CameraSet}!requestThumb@{requestThumb}}
+\index{CameraSet@{CameraSet}!requestMeteo@{requestMeteo}}
+\index{requestMeteo@{requestMeteo}!CameraSet@{CameraSet}}
+\doxysubsubsection{requestMeteo()}
+{\footnotesize\ttfamily \label{class_camera_set_adfa00deb84c361446cafb946443c1997} 
+void Camera\+Set\+::request\+Meteo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Envoi d\textquotesingle{}une requete GET à openweathermap. 
+
+\DoxyHorRuler{0}
+ \index{CameraSet@{CameraSet}!requestThumb@{requestThumb}}
 \index{requestThumb@{requestThumb}!CameraSet@{CameraSet}}
 \doxysubsubsection{requestThumb()}
 {\footnotesize\ttfamily \label{class_camera_set_a69c54b2309d3d34b2c58305a939327bd} 
@@ -155,7 +181,8 @@ void Camera\+Set\+::request\+Thumb (\begin{DoxyParamCaption}\item[{const QString
 
 Envoi d\textquotesingle{}une requete POST à deepai. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em cam\+\_\+model} & \+: non utilisé pour l\textquotesingle{}instant \\
 \hline

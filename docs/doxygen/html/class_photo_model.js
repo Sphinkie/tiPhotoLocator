@@ -42,6 +42,7 @@ var class_photo_model =
     [ "duplicateData", "class_photo_model.html#aacde479b741e9f94c2077ad979e6b6a7", null ],
     [ "fetchExifMetadata", "class_photo_model.html#a3cc8c0b5e6803970def517a8d57ae155", null ],
     [ "findInCirclePhotos", "class_photo_model.html#a8cd1ac5560f3897892474271c5206106", null ],
+    [ "flags", "class_photo_model.html#a1304d28519eb274764ef65afffec6c96", null ],
     [ "get", "class_photo_model.html#a18fb19d062f2f7d7d79585d2e62c9634", null ],
     [ "getRoleName", "class_photo_model.html#a3c8036e57376630243dfa6841d7f2251", null ],
     [ "getSelectedRow", "class_photo_model.html#ae3dd8e3599f33e699cd474c5fca7d0b2", null ],

@@ -96,6 +96,8 @@ $(function(){initNavTree('class_exif_write_task.html','','class_exif_write_task-
 
 <p>La classe <a class="el" href="class_exif_write_task.html" title="La classe ExifWriteTask permet d&#39;écrire des metadata dans les photos JEG de façon asynchrone.">ExifWriteTask</a> permet d'écrire des metadata dans les photos JEG de façon asynchrone.  
  <a href="#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_exif_write_task_8h_source.html">ExifWriteTask.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de ExifWriteTask:</div>
 <div class="dyncontent">
@@ -121,9 +123,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_generateBackup</b><
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_exif_write_task.html" title="La classe ExifWriteTask permet d&#39;écrire des metadata dans les photos JEG de façon asynchrone.">ExifWriteTask</a> permet d'écrire des metadata dans les photos JEG de façon asynchrone. </p>
-<p>\inmodule TiPhotoLocator </p>
-<p>Tache asynchrone par utilisation de QThreadPool.</p>
-<dl class="section note"><dt>Note</dt><dd>: les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux. Donc, à la fin du traitement, pour actualiser les données du <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>, il faut faire un appel direct. Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone. </dd></dl>
+<hr  />
+ <p>Tache asynchrone par utilisation de QThreadPool.</p>
+<dl class="section note"><dt>Note</dt><dd>: les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux. Donc, à la fin du traitement, pour actualiser les données du <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>, il faut faire un appel direct. Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone. <hr  />
+ </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a5182e345ea27ce1581cc6d28542bae97" name="a5182e345ea27ce1581cc6d28542bae97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5182e345ea27ce1581cc6d28542bae97">&#9670;&#160;</a></span>ExifWriteTask()</h2>
@@ -153,7 +156,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_generateBackup</b><
 </div><div class="memdoc">
 
 <p>Constructeur. On enregistre les paramètres. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">exifData</td><td>la liste des metadata à écrire dans le fichier JPG. </td></tr>
     <tr><td class="paramname">generateBackup</td><td><code>true</code> si un backup de l'image doit être généré avant sa modification. <div class="fragment"><div class="line">QVariantMap: QMap(</div>
@@ -200,7 +204,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_generateBackup</b><
 </div><div class="memdoc">
 
 <p>Lancement de la tache. On lance <b>exifTool</b> dans un QProcess, et on écrit les metadata dans l'image JPG. Cette tache est exécutée dans un thread QRunnable. </p>
-<dl class="section note"><dt>Note</dt><dd>Le mode MWG de ExifTool permet d'ecrire en une fois dans les différents tags équivalents (ex: Artist et Creator, ou bien EXIF:City et IptcExt:City, etc). Le Metadata Working Group recommande de garder ces tags EXIF et IPTC synchronisés. </dd>
+<hr  />
+ <dl class="section note"><dt>Note</dt><dd>Le mode MWG de ExifTool permet d'ecrire en une fois dans les différents tags équivalents (ex: Artist et Creator, ou bien EXIF:City et IptcExt:City, etc). Le Metadata Working Group recommande de garder ces tags EXIF et IPTC synchronisés. </dd>
 <dd>
 Pour vérifier les tags écrits: <span class="tt">exiftool -G1 -a -s -XMP-iptcCore:All -XMP-iptcExt:All mypicture.jpg</span> (-G1 = Group 1 = "Location") (-s = shows tag names instead of description) </dd></dl>
 <dl class="section see"><dt>Voir également</dt><dd><a href="https://exiftool.org/TagNames/MWG.html">https://exiftool.org/TagNames/MWG.html</a> </dd></dl>

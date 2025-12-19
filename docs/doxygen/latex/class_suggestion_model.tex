@@ -18,7 +18,6 @@ Graphe d\textquotesingle{}héritage de Suggestion\+Model\+:\begin{figure}[H]
 \doxysubsubsection*{Types publics}
 \begin{DoxyCompactItemize}
 \item 
-\label{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19} 
 enum \textbf{ Roles} \{ {\bfseries Text\+Role} = Qt\+::User\+Role
 , {\bfseries Target\+Role}
 , {\bfseries Category\+Role}
@@ -41,15 +40,13 @@ int \textbf{ row\+Count} (const QModel\+Index \&parent) const override
 \begin{DoxyCompactList}\small\item\em Returns the number of elements in the model. \end{DoxyCompactList}\item 
 QVariant \textbf{ data} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const override
 \begin{DoxyCompactList}\small\item\em Returns the requested role value of an element of the model. \end{DoxyCompactList}\item 
-\label{class_suggestion_model_ae3b26fa49dff5a4c7f1a79e061dd9970} 
-Qt\+::\+Item\+Flags {\bfseries flags} (const QModel\+Index \&index) const override
-\item 
+Qt\+::\+Item\+Flags \textbf{ flags} (const QModel\+Index \&index) const override
+\begin{DoxyCompactList}\small\item\em surcharge. \end{DoxyCompactList}\item 
 QHash$<$ int, QByte\+Array $>$ \textbf{ role\+Names} () const override
 \begin{DoxyCompactList}\small\item\em Table of Role names. \end{DoxyCompactList}\item 
 void \textbf{ remove\+Current\+Photo\+From\+Suggestion} (const QModel\+Index index)
 \begin{DoxyCompactList}\small\item\em Ce slot enlève la \doxyref{Photo}{p.}{struct_photo} courante de la liste des photos correspondant à une \doxyref{Suggestion}{p.}{struct_suggestion} donnée. \end{DoxyCompactList}\item 
-\label{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20} 
-Q\+\_\+\+INVOKABLE void {\bfseries dump\+Data} ()
+Q\+\_\+\+INVOKABLE void \textbf{ dump\+Data} ()
 \begin{DoxyCompactList}\small\item\em Debug function that print (in the console) one line of the model at every call. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
@@ -75,6 +72,24 @@ int {\bfseries m\+\_\+dumped\+Row}
 \doxysubsection{Description détaillée}
 The \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} class manages a list of \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
+\DoxyHorRuler{0}
+ 
+
+\label{doc-enum-members}
+\doxysubsection{Documentation des énumérations membres}
+\index{SuggestionModel@{SuggestionModel}!Roles@{Roles}}
+\index{Roles@{Roles}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{Roles}
+{\footnotesize\ttfamily \label{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19} 
+enum \textbf{ Suggestion\+Model\+::\+Roles}}
+
+
+
+The \doxyref{Roles}{p.}{class_suggestion_model_a7c221c2ccd838f3f3d83f11460322e19} enum lists the roles associated to each attribute of a \doxyref{Suggestion}{p.}{struct_suggestion}. 
+
+\DoxyHorRuler{0}
+ 
+
 \label{doc-constructors}
 \doxysubsection{Documentation des constructeurs et destructeur}
 \index{SuggestionModel@{SuggestionModel}!SuggestionModel@{SuggestionModel}}
@@ -87,7 +102,8 @@ Suggestion\+Model\+::\+Suggestion\+Model (\begin{DoxyParamCaption}\item[{QObject
 
 Contructor. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em parent} & object. \\
 \hline
@@ -106,7 +122,8 @@ void Suggestion\+Model\+::add\+Category\+To\+Suggestion (\begin{DoxyParamCaption
 
 Ajoute une catégorie à la \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
@@ -123,7 +140,8 @@ void Suggestion\+Model\+::add\+Photo\+To\+Suggestion (\begin{DoxyParamCaption}\i
 
 Ajoute une \doxyref{Photo}{p.}{struct_photo} à la liste des photos ayant un "{}match"{} avec cette \doxyref{Suggestion}{p.}{struct_suggestion}. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em suggestion\+\_\+row} & \+: L\textquotesingle{}indice de la \doxyref{Suggestion}{p.}{struct_suggestion} à modifier. \\
 \hline
@@ -139,6 +157,9 @@ void Suggestion\+Model\+::append (\begin{DoxyParamCaption}\item[{const QString}]
 
 
 Adds a suggestion to the model. Ce slot permet à n\textquotesingle{}importe qui d\textquotesingle{}ajouter une \doxyref{Suggestion}{p.}{struct_suggestion}. 
+
+\DoxyHorRuler{0}
+ 
 
 
 \begin{DoxyParams}{Paramètres}
@@ -161,8 +182,9 @@ QVariant Suggestion\+Model\+::data (\begin{DoxyParamCaption}\item[{const QModel\
 
 Returns the requested role value of an element of the model. 
 
-\begin{DoxyNote}{Note}
-\+: Implémentation obligatoire. 
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
+Implémentation obligatoire. 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Paramètres}
@@ -171,7 +193,29 @@ Returns the requested role value of an element of the model.
 {\em role} & the requested role (enum). \\
 \hline
 \end{DoxyParams}
-\index{SuggestionModel@{SuggestionModel}!onSelectedPhotoChanged@{onSelectedPhotoChanged}}
+\index{SuggestionModel@{SuggestionModel}!dumpData@{dumpData}}
+\index{dumpData@{dumpData}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{dumpData()}
+{\footnotesize\ttfamily \label{class_suggestion_model_af3345223f2aa9b5d563b9097271a1d20} 
+void Suggestion\+Model\+::dump\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Debug function that print (in the console) one line of the model at every call. 
+
+\DoxyHorRuler{0}
+ \index{SuggestionModel@{SuggestionModel}!flags@{flags}}
+\index{flags@{flags}!SuggestionModel@{SuggestionModel}}
+\doxysubsubsection{flags()}
+{\footnotesize\ttfamily \label{class_suggestion_model_ae3b26fa49dff5a4c7f1a79e061dd9970} 
+Qt\+::\+Item\+Flags Suggestion\+Model\+::flags (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+surcharge. 
+
+\DoxyHorRuler{0}
+ \index{SuggestionModel@{SuggestionModel}!onSelectedPhotoChanged@{onSelectedPhotoChanged}}
 \index{onSelectedPhotoChanged@{onSelectedPhotoChanged}!SuggestionModel@{SuggestionModel}}
 \doxysubsubsection{onSelectedPhotoChanged}
 {\footnotesize\ttfamily \label{class_suggestion_model_a5a28097cf78d3d5619e64a48c0b7d198} 
@@ -181,7 +225,8 @@ void Suggestion\+Model\+::on\+Selected\+Photo\+Changed (\begin{DoxyParamCaption}
 
 Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la List\+View. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em row} & La position dans \doxyref{Photo\+Model}{p.}{class_photo_model} de la photo active. \\
 \hline
@@ -196,7 +241,8 @@ void Suggestion\+Model\+::remove\+Current\+Photo\+From\+Suggestion (\begin{DoxyP
 
 Ce slot enlève la \doxyref{Photo}{p.}{struct_photo} courante de la liste des photos correspondant à une \doxyref{Suggestion}{p.}{struct_suggestion} donnée. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em index} & \+: L\textquotesingle{}index dans le Model de la suggestion à modifier. \\
 \hline
@@ -211,7 +257,8 @@ QHash$<$ int, QByte\+Array $>$ Suggestion\+Model\+::role\+Names (\begin{DoxyPara
 
 Table of Role names. 
 
-\begin{DoxyNote}{Note}
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
 Implémentation obligatoire.
 \end{DoxyNote}
 C\textquotesingle{}est la correspondance entre le role C++ et le nom de la property dans QML. \index{SuggestionModel@{SuggestionModel}!rowCount@{rowCount}}
@@ -224,8 +271,9 @@ int Suggestion\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const QModel
 
 Returns the number of elements in the model. 
 
-\begin{DoxyNote}{Note}
-\+: Implémentation obligatoire. 
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
+Implémentation obligatoire. 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Paramètres}

@@ -64,6 +64,9 @@ int {\bfseries m\+\_\+filter\+Photo\+Row}
 \doxysubsection{Description détaillée}
 The \doxyref{Suggestion\+Proxy\+Model}{p.}{class_suggestion_proxy_model} class is a filter Proxy\+Model, that filters the \doxyref{Suggestion}{p.}{struct_suggestion} related to a given \doxyref{Photo}{p.}{struct_photo}. 
 
+\DoxyHorRuler{0}
+ 
+
 \label{doc-constructors}
 \doxysubsection{Documentation des constructeurs et destructeur}
 \index{SuggestionProxyModel@{SuggestionProxyModel}!SuggestionProxyModel@{SuggestionProxyModel}}
@@ -76,7 +79,8 @@ Suggestion\+Proxy\+Model\+::\+Suggestion\+Proxy\+Model (\begin{DoxyParamCaption}
 
 Contructeur. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em parent} & \+: modèle source. \\
 \hline
@@ -95,7 +99,8 @@ bool Suggestion\+Proxy\+Model\+::filter\+Accepts\+Row (\begin{DoxyParamCaption}\
 
 Laisse passer les lignes correspondant au filtrage, cad\+: les \doxyref{Suggestion}{p.}{struct_suggestion} liées à la photo demandée. 
 
-\begin{DoxyReturn}{Renvoie}
+\DoxyHorRuler{0}
+ \begin{DoxyReturn}{Renvoie}
 true si la ligne est acceptée. 
 \end{DoxyReturn}
 
@@ -115,7 +120,8 @@ bool Suggestion\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{}{}\e
 
 Returns the state of the filtering. 
 
-\begin{DoxyReturn}{Renvoie}
+\DoxyHorRuler{0}
+ \begin{DoxyReturn}{Renvoie}
 true if the filter is active. 
 \end{DoxyReturn}
 \index{SuggestionProxyModel@{SuggestionProxyModel}!removePhotoFromSuggestion@{removePhotoFromSuggestion}}
@@ -128,7 +134,8 @@ void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyPar
 
 Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
 
-\begin{DoxyNote}{Note}
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
 On convertit l\textquotesingle{}indice du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxyref{Suggestion\+Model}{p.}{class_suggestion_model}. 
 \end{DoxyNote}
 
@@ -146,7 +153,8 @@ void Suggestion\+Proxy\+Model\+::remove\+Photo\+From\+Suggestion (\begin{DoxyPar
 
 Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée. 
 
-\begin{DoxyNote}{Note}
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
 On convertit l\textquotesingle{}index du Proxy\+Model dans l\textquotesingle{}index du source\+Model \doxyref{Suggestion\+Model}{p.}{class_suggestion_model}. 
 \end{DoxyNote}
 
@@ -164,7 +172,8 @@ void Suggestion\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption}\
 
 Active ou désactive le filtrage par le Proxy\+Model. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em enabled} & \+: Mettre true pour activer le filtrage. \\
 \hline
@@ -179,8 +188,9 @@ void Suggestion\+Proxy\+Model\+::set\+Filter\+Value (\begin{DoxyParamCaption}\it
 
 Mémorise le filtre à appliquer. 
 
-\begin{DoxyNote}{Note}
-\+: On n\textquotesingle{}utilise pas les slots par défaut du Proxy\+Model, tels que set\+Filter\+Role() et Set\+Filter\+Fixed\+Value()...) 
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
+On n\textquotesingle{}utilise pas les slots par défaut du Proxy\+Model, tels que set\+Filter\+Role() et Set\+Filter\+Fixed\+Value()...) 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Paramètres}

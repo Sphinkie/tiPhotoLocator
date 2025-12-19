@@ -33,8 +33,7 @@ void {\bfseries filter\+Enabled\+Changed} ()
 \doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\label{class_on_the_map_proxy_model_afb8170a7f9e508bfdc6238e649e957cf} 
-{\bfseries On\+The\+Map\+Proxy\+Model} (QObject $\ast$parent=nullptr)
+\textbf{ On\+The\+Map\+Proxy\+Model} (QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Contructeur. Par défaut, le filtre est actif. \end{DoxyCompactList}\item 
 bool \textbf{ filter\+Enabled} () const
 \begin{DoxyCompactList}\small\item\em Indique si le filtre est actif ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -60,10 +59,27 @@ bool {\bfseries m\+\_\+filter\+Enabled}
 \doxysubsection{Description détaillée}
 The \doxyref{On\+The\+Map\+Proxy\+Model}{p.}{class_on_the_map_proxy_model} class is a filter Proxy\+Model, to keep only the selected photo(s). 
 
-\textbackslash{}inmodule Ti\+Photo\+Locator \begin{DoxyNote}{Note}
-Dans ce Proxy\+Model on doit ré-\/implementer les méthodes append(), get(), clear(), etc. 
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
+Dans ce Proxy\+Model on doit ré-\/implementer les méthodes append(), get(), clear(), etc. \DoxyHorRuler{0}
+ 
 \end{DoxyNote}
 
+
+\label{doc-constructors}
+\doxysubsection{Documentation des constructeurs et destructeur}
+\index{OnTheMapProxyModel@{OnTheMapProxyModel}!OnTheMapProxyModel@{OnTheMapProxyModel}}
+\index{OnTheMapProxyModel@{OnTheMapProxyModel}!OnTheMapProxyModel@{OnTheMapProxyModel}}
+\doxysubsubsection{OnTheMapProxyModel()}
+{\footnotesize\ttfamily \label{class_on_the_map_proxy_model_afb8170a7f9e508bfdc6238e649e957cf} 
+On\+The\+Map\+Proxy\+Model\+::\+On\+The\+Map\+Proxy\+Model (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Contructeur. Par défaut, le filtre est actif. 
+
+\DoxyHorRuler{0}
+ 
 
 \label{doc-func-members}
 \doxysubsection{Documentation des fonctions membres}
@@ -77,7 +93,8 @@ bool On\+The\+Map\+Proxy\+Model\+::filter\+Accepts\+Row (\begin{DoxyParamCaption
 
 Effectue le filtrage. Laisse passer les lignes correspondant au filtrage, cad \+: photos "{}selectionnée"{} et le marqueur "{}\+Saved Position"{}. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em source\+Row} & \+: Le numero d\textquotesingle{}une ligne du modèle parent (\doxyref{Photo\+Model}{p.}{class_photo_model}). \\
 \hline
@@ -97,7 +114,8 @@ bool On\+The\+Map\+Proxy\+Model\+::filter\+Enabled (\begin{DoxyParamCaption}{}{}
 
 Indique si le filtre est actif ou non. 
 
-\begin{DoxyReturn}{Renvoie}
+\DoxyHorRuler{0}
+ \begin{DoxyReturn}{Renvoie}
 true si le filtre est actif. 
 \end{DoxyReturn}
 \index{OnTheMapProxyModel@{OnTheMapProxyModel}!setAllItemsCoords@{setAllItemsCoords}}
@@ -109,6 +127,9 @@ void On\+The\+Map\+Proxy\+Model\+::set\+All\+Items\+Coords (\begin{DoxyParamCapt
 
 
 Ce slot affecte les coordonnées GPS fournies à toutes les photos du modèle filtré (hors saved position). 
+
+\DoxyHorRuler{0}
+
 
 Details\+: Ce slot est appelé quand l\textquotesingle{}utilisateur change la position d\textquotesingle{}une photo sur la carte. C\textquotesingle{}est un peu mieux de le faire ici, car on ne parcourt pas toutes les photos du modèle source, mais seulement celle du modèle filtré. 
 \begin{DoxyParams}{Paramètres}
@@ -127,6 +148,9 @@ void On\+The\+Map\+Proxy\+Model\+::set\+All\+Items\+Saved\+Coords (\begin{DoxyPa
 
 Ce slot applique les coordonnées GPS de la Saved\+Position à toutes les photos du modèle filtré. 
 
+\DoxyHorRuler{0}
+ 
+
 Ce slot est appelé quand l\textquotesingle{}utilisateur appuye sur "{}\+Apply Saved Position"{}. \index{OnTheMapProxyModel@{OnTheMapProxyModel}!setFilterEnabled@{setFilterEnabled}}
 \index{setFilterEnabled@{setFilterEnabled}!OnTheMapProxyModel@{OnTheMapProxyModel}}
 \doxysubsubsection{setFilterEnabled}
@@ -137,7 +161,8 @@ void On\+The\+Map\+Proxy\+Model\+::set\+Filter\+Enabled (\begin{DoxyParamCaption
 
 Ce slot active ou désactive le filtrage par le Proxy\+Model. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em enabled} & \+: true pour activer le filtrage \\
 \hline

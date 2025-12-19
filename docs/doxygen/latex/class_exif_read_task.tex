@@ -20,9 +20,8 @@ Graphe d\textquotesingle{}héritage de Exif\+Read\+Task\+:\begin{figure}[H]
 \item 
 \textbf{ Exif\+Read\+Task} (QString file\+Path)
 \begin{DoxyCompactList}\small\item\em Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. \end{DoxyCompactList}\item 
-\label{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8} 
-virtual void {\bfseries run} ()
-\begin{DoxyCompactList}\small\item\em \+: Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultats dans \doxyref{Photo\+Model}{p.}{class_photo_model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \textbf{ run} ()
+\begin{DoxyCompactList}\small\item\em Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultats dans \doxyref{Photo\+Model}{p.}{class_photo_model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -61,7 +60,8 @@ static \textbf{ Photo\+Model} $\ast$ {\bfseries m\+\_\+photo\+Model}
 \doxysubsection{Description détaillée}
 La tache asynchrone \doxyref{Exif\+Read\+Task}{p.}{class_exif_read_task} permet de lire les metadonnées d\textquotesingle{}une photo JPG sur le disque dur. 
 
-\textbackslash{}inmodule Ti\+Photo\+Locator 
+\DoxyHorRuler{0}
+ 
 
 Tache asynchrone par utilisation de QThread\+Pool.
 
@@ -106,6 +106,9 @@ Exif\+Read\+Task\+::\+Exif\+Read\+Task (\begin{DoxyParamCaption}\item[{QString}]
 
 Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. 
 
+\DoxyHorRuler{0}
+ 
+
 \begin{DoxyNote}{Note}
 Si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n\textquotesingle{}est pas optimisé. 
 \end{DoxyNote}
@@ -128,7 +131,8 @@ void Exif\+Read\+Task\+::init (\begin{DoxyParamCaption}\item[{\textbf{ Photo\+Mo
 
 Méthode à appeler lors de la première utilisation. Mémorise quelques infos statiques. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em photo\+Model} & \+: la classe appelante, à qui il faudra renvoyer les metadata lues. \\
 \hline
@@ -143,7 +147,8 @@ void Exif\+Read\+Task\+::process\+Line (\begin{DoxyParamCaption}\item[{QByte\+Ar
 
 Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelée répétitivement. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em line} & \+: the received text Flux reçu pour une image\+: 
 \begin{DoxyCode}{1}
@@ -168,7 +173,18 @@ Analyse une partie du flux texte reçu de exif\+Tool. Cette méthode est appelé
  (en fait toutes les lignes sont escapées sur le modèle de la ligne City.) \\
 \hline
 \end{DoxyParams}
-\index{ExifReadTask@{ExifReadTask}!writeArgsFile@{writeArgsFile}}
+\index{ExifReadTask@{ExifReadTask}!run@{run}}
+\index{run@{run}!ExifReadTask@{ExifReadTask}}
+\doxysubsubsection{run()}
+{\footnotesize\ttfamily \label{class_exif_read_task_a1f0693a4aa7d57897f906d3db0fd77b8} 
+void Exif\+Read\+Task\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Lancement de la tache. On lance {\bfseries{exif\+Tool}} dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, on écrit les résultats dans \doxyref{Photo\+Model}{p.}{class_photo_model}. 
+
+\DoxyHorRuler{0}
+ \index{ExifReadTask@{ExifReadTask}!writeArgsFile@{writeArgsFile}}
 \index{writeArgsFile@{writeArgsFile}!ExifReadTask@{ExifReadTask}}
 \doxysubsubsection{writeArgsFile()}
 {\footnotesize\ttfamily \label{class_exif_read_task_a209baeebef9ede8dafc98844324bbaa9} 
@@ -178,7 +194,8 @@ bool Exif\+Read\+Task\+::write\+Args\+File (\begin{DoxyParamCaption}{}{}\end{Dox
 
 List the tags to be read in the JPG files, and put them in the Arguments file for Exif\+Tool. 
 
-\begin{DoxyReturn}{Renvoie}
+\DoxyHorRuler{0}
+ \begin{DoxyReturn}{Renvoie}
 true if the file was successfully created.
 \end{DoxyReturn}
 To learn about the usage of IPTC tags\+: \begin{DoxyItemize}

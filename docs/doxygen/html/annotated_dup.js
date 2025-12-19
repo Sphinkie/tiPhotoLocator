@@ -14,5 +14,5 @@ var annotated_dup =
     [ "SuggestionProxyModel", "class_suggestion_proxy_model.html", "class_suggestion_proxy_model" ],
     [ "UndatedPhotoProxyModel", "class_undated_photo_proxy_model.html", "class_undated_photo_proxy_model" ],
     [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", "class_unlocalized_proxy_model" ],
-    [ "Utilities", "class_utilities.html", null ]
+    [ "Utilities", "class_utilities.html", "class_utilities" ]
 ];

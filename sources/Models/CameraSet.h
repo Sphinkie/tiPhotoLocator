@@ -7,8 +7,7 @@
 #include <QSet>
 
 /** **********************************************************************************************************
- * @class La classe CameraSet gère un ensemble de vignette, correspondant chacune à un modèle d'appareil photo.
- *
+ * @brief La classe CameraSet gère un ensemble de vignette, correspondant chacune à un modèle d'appareil photo.
  * ***********************************************************************************************************/
 class CameraSet : public QObject
 {

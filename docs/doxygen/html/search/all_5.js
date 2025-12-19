@@ -8,5 +8,6 @@ var searchData=
   ['findincirclephotos_5',['findInCirclePhotos',['../class_photo_model.html#a8cd1ac5560f3897892474271c5206106',1,'PhotoModel']]],
   ['fixdigits_6',['fixDigits',['../class_utilities.html#a1c31753eeb57b373d7a73c097e6766ee',1,'Utilities']]],
   ['fixyear_7',['fixYear',['../class_utilities.html#a40979a50f9670f01945d07c9e80e9a33',1,'Utilities']]],
-  ['fnumber_8',['fNumber',['../struct_photo.html#a52f8b3c14a9736e4a6f1a338987a4113',1,'Photo']]]
+  ['flags_8',['flags',['../class_photo_model.html#a1304d28519eb274764ef65afffec6c96',1,'PhotoModel::flags()'],['../class_suggestion_model.html#ae3b26fa49dff5a4c7f1a79e061dd9970',1,'SuggestionModel::flags()']]],
+  ['fnumber_9',['fNumber',['../struct_photo.html#a52f8b3c14a9736e4a6f1a338987a4113',1,'Photo']]]
 ];

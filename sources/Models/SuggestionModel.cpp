@@ -2,13 +2,10 @@
 #include "SuggestionModel.h"
 
 
-
-
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Contructor.
  * @param parent object.
- */
+ * ***********************************************************************************************************/
 SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
 {
     QSettings settings;
@@ -25,10 +22,9 @@ SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
 }
 
 
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Returns the number of elements in the model.
- * \note: Implémentation obligatoire.
+ * @note Implémentation obligatoire.
  * @param parent: parent of the model
  */
 int SuggestionModel::rowCount(const QModelIndex& parent) const
@@ -39,13 +35,12 @@ int SuggestionModel::rowCount(const QModelIndex& parent) const
 }
 
 
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Returns the requested role value of an element of the model.
- * \note: Implémentation obligatoire.
+ * @note Implémentation obligatoire.
  * @param index: index of the element of the model.
  * @param role: the requested role (enum).
- */
+ * ***********************************************************************************************************/
 QVariant SuggestionModel::data(const QModelIndex &index, int role) const
 {
     if ( !index.isValid() )
@@ -64,12 +59,11 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
     }
 }
 
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Table of Role names.
- * \note Implémentation obligatoire.
- * \details C'est la correspondance entre le role C++ et le nom de la property dans QML.
- */
+ * @note Implémentation obligatoire.
+ * @details C'est la correspondance entre le role C++ et le nom de la property dans QML.
+ * ***********************************************************************************************************/
 QHash<int, QByteArray> SuggestionModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
@@ -82,7 +76,9 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 }
 
 
-/* ********************************************************************************************************** */
+/** *********************************************************************************************************
+ * @brief surcharge.
+ * **********************************************************************************************************/
 Qt::ItemFlags SuggestionModel::flags(const QModelIndex &index) const
 {
     if (!index.isValid())
@@ -91,8 +87,8 @@ Qt::ItemFlags SuggestionModel::flags(const QModelIndex &index) const
     return (Qt::ItemIsEditable | Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 }
 
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+
+/** **********************************************************************************************************
  * @brief Adds a suggestion to the model.
  *        Ce slot permet à n'importe qui d'ajouter une Suggestion.
  *
@@ -102,7 +98,7 @@ Qt::ItemFlags SuggestionModel::flags(const QModelIndex &index) const
  * @param photo_row: L'indice de la Photo à associée à cette Suggestion.
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
  *                   La valeur spéciale -2 signifie 'la Photo sélectionée' (valeur par défaut).
- */
+ * ***********************************************************************************************************/
 void SuggestionModel::append(const QString text, const QString target, const QString category, int photo_row)
 {
     if (text.isEmpty()) return;
@@ -135,14 +131,14 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
     endInsertRows();
 }
 
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+
+/** **********************************************************************************************************
  * @brief Ajoute une Photo à la liste des photos ayant un "match" avec cette Suggestion.
  * @param suggestion_row : L'indice de la Suggestion à modifier.
  * @param photo_row : L'indice de la Photo à ajouter à la Suggestion.
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
  *                   La valeur spéciale -2 signifie 'la Photo sélectionée'.
- */
+ * ***********************************************************************************************************/
 void SuggestionModel::addPhotoToSuggestion(const int suggestion_row, int photo_row)
 {
     if (suggestion_row<0 || suggestion_row>m_suggestions.count()) return;
@@ -157,15 +153,15 @@ void SuggestionModel::addPhotoToSuggestion(const int suggestion_row, int photo_r
     emit dataChanged(index, index, QVector<int>() << PhotosRole);
 }
 
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+
+/** **********************************************************************************************************
  * @brief Ajoute une catégorie à la Suggestion.
  * @param suggestion_row : L'indice de la Suggestion à modifier.
  * @param category : La catégorie à ajouter à la Suggestion: "geo" ou "tag".
  *
  * Si on veut ajouter la catégorie déjà existante : on ne fait rien.
  * Si on veut ajouter une autre catégorie : la catégorie devient "geo|tag" (les deux).
- */
+ * ***********************************************************************************************************/
 void SuggestionModel::addCategoryToSuggestion(const int suggestion_row, const QString category)
 {
     if (suggestion_row<0 || suggestion_row>m_suggestions.count()) return;
@@ -179,11 +175,11 @@ void SuggestionModel::addCategoryToSuggestion(const int suggestion_row, const QS
     emit dataChanged(index, index, QVector<int>() << CategoryRole);
 }
 
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+
+/** **********************************************************************************************************
  * @brief Ce slot enlève la Photo courante de la liste des photos correspondant à une Suggestion donnée.
  * @param index : L'index dans le Model de la suggestion à modifier.
- */
+ * ***********************************************************************************************************/
 void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 {
     if (! index.isValid()) return;
@@ -195,11 +191,10 @@ void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 }
 
 
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
  * @param row: La position dans PhotoModel de la photo active.
- */
+ * ***********************************************************************************************************/
 void SuggestionModel::onSelectedPhotoChanged(const int row)
 {
     if (row<0) return;
@@ -207,10 +202,10 @@ void SuggestionModel::onSelectedPhotoChanged(const int row)
     m_selectedPhotoRow = row;
 }
 
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
+
+/** **********************************************************************************************************
  * @brief Debug function that print (in the console) one line of the model at every call.
- */
+ * ***********************************************************************************************************/
 void SuggestionModel::dumpData()
 {
     if (m_dumpedRow>=m_suggestions.count()) {
@@ -223,13 +218,12 @@ void SuggestionModel::dumpData()
 }
 
 
-/* ********************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Operateur de comparaison.
- * \note Cet operateur == permet d'utiliser la méthode Contains().
+ * @note Cet operateur == permet d'utiliser la méthode Contains().
  * @param suggestion: Second operande.
- * \return True si le \b texte des deux suggestions est identique.
- */
+ * @return True si le \b texte des deux suggestions est identique.
+ * ***********************************************************************************************************/
 bool Suggestion::operator== (const Suggestion &suggestion) const
 {
     // As a member function, when binary operator is overloaded, the initial parameter required is a pointer to this.

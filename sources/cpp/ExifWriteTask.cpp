@@ -4,27 +4,11 @@
 #include <QDebug>
 
 
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
- * \class ExifWriteTask
- * \inmodule TiPhotoLocator
- * @brief La classe ExifWriteTask permet d'écrire des metadata dans les photos JEG de façon asynchrone.
-
-   Tache asynchrone par utilisation de QThreadPool.
-
-   \note: les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.
-          Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct.
-          Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.
- */
-/* ********************************************************************************************************** */
-
-
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Constructeur. On enregistre les paramètres.
  * @param exifData: la liste des metadata à écrire dans le fichier JPG.
  * @param generateBackup: \c true si un backup de l'image doit être généré avant sa modification.
- \code
+   @code
      QVariantMap: QMap(
       ("SourceFile",       QVariant(QString,   "E:/TiPhotos/P8160449.JPG"))
       ("FileName",         QVariant(QString,   "P8160449.JPG"))
@@ -37,8 +21,8 @@
       ("Make",             QVariant(QString,   "OLYMPUS CORPORATION"))
       ("Model",            QVariant(QString,   "E-M10MarkII"))
       )
-  \endcode
- */
+  @endcode
+ * ***********************************************************************************************************/
 ExifWriteTask::ExifWriteTask(const QVariantMap exifData, bool generateBackup)
 {
     m_exifData = exifData;
@@ -46,18 +30,17 @@ ExifWriteTask::ExifWriteTask(const QVariantMap exifData, bool generateBackup)
 }
 
 
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
+/** **********************************************************************************************************
  * @brief Lancement de la tache. On lance **exifTool** dans un QProcess, et on écrit les metadata dans l'image JPG.
  *        Cette tache est exécutée dans un thread QRunnable.
- * \note Le mode MWG de ExifTool permet d'ecrire en une fois dans les différents tags équivalents (ex: Artist et Creator,
+ * @note Le mode MWG de ExifTool permet d'ecrire en une fois dans les différents tags équivalents (ex: Artist et Creator,
  *       ou bien EXIF:City et IptcExt:City, etc). Le Metadata Working Group recommande de garder ces tags EXIF et IPTC
  *       synchronisés.
- * \note Pour vérifier les tags écrits: `exiftool -G1 -a -s -XMP-iptcCore:All -XMP-iptcExt:All mypicture.jpg`
+ * @note Pour vérifier les tags écrits: `exiftool -G1 -a -s -XMP-iptcCore:All -XMP-iptcExt:All mypicture.jpg`
  *       (-G1 = Group 1 = "Location")
  *       (-s = shows tag names instead of description)
- * \sa https://exiftool.org/TagNames/MWG.html
- */
+ * @sa https://exiftool.org/TagNames/MWG.html
+ * ***********************************************************************************************************/
 void ExifWriteTask::run()
 {
     QString filePath = m_exifData.value("imageUrl").toString();

@@ -5,18 +5,15 @@
 #include <QtLocation/QGeoCodingManager>
 #include "Models/SuggestionModel.h"
 
-/* ********************************************************************************************************** */
-/* **********************************************************************************************************
- * \class GeocodeWrapper
+/** **********************************************************************************************************
  * @brief The GeocodeWrapper class allows requests to OpenStreetMap for reverse geocoding.
- * \note
+ * @note
     Nécessite d'ajouter les lignes suivantes dans le fichier .pro.
-    \code
+    @code
         QT += positioning
         QT += location
-    \endcode
-*/
-/* ********************************************************************************************************** */
+    @endcode
+ * ***********************************************************************************************************/
 
 class GeocodeWrapper : public QObject
 {

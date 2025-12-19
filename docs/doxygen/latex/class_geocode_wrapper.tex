@@ -46,7 +46,8 @@ QGeo\+Coding\+Manager $\ast$ {\bfseries m\+\_\+geo\+Manager}
 \doxysubsection{Description détaillée}
 The \doxyref{Geocode\+Wrapper}{p.}{class_geocode_wrapper} class allows requests to Open\+Street\+Map for reverse geocoding. 
 
-\begin{DoxyNote}{Note}
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
 Nécessite d\textquotesingle{}ajouter les lignes suivantes dans le fichier .pro. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{QT\ +=\ positioning}
@@ -69,7 +70,8 @@ Geocode\+Wrapper\+::\+Geocode\+Wrapper (\begin{DoxyParamCaption}\item[{\textbf{ 
 
 Le contructeur initialise le provider "{}\+OSM"{}. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em suggestion\+\_\+model} & \+: permet de savoir quel objet \doxyref{Suggestion\+Model}{p.}{class_suggestion_model} appeler une fois les résultats reçus. \\
 \hline
@@ -88,7 +90,8 @@ void Geocode\+Wrapper\+::geo\+Code\+Finished (\begin{DoxyParamCaption}\item[{QGe
 
 Signal appelé lors de la réception de la réponse à la request. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em reply} & \+: le contenu de la réponse à la request. \\
 \hline
@@ -106,7 +109,8 @@ void Geocode\+Wrapper\+::request\+Coordinates (\begin{DoxyParamCaption}\item[{QS
 
 Envoie une requete pour obtenir les coordonnées GPS d\textquotesingle{}un lieu donné par le paramètre city. La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em city} & \+: un nom de lieu, par exemple "{}\+Marsa el Brega"{} =$>$ 30.\+4074, 19.\+5784 \\
 \hline
@@ -121,7 +125,8 @@ void Geocode\+Wrapper\+::request\+Reverse\+Geocode (\begin{DoxyParamCaption}\ite
 
 Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple\+: 38.\+980 et 1.\+433 =$>$ {\texttt{Résultat}} La réponse est traitée par \doxyref{geo\+Code\+Finished()}{p.}{class_geocode_wrapper_a07234eb935d74cfd85d48058608a1ec4} 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
 {\em latitude} & \+: coordonnées GPS \\
 \hline
