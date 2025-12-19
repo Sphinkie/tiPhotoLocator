@@ -4,14 +4,18 @@ import QtQuick.Controls
 import "../Components"
 import "../Javascript/TiUtilities.js" as Utilities
 
-/*! *****************************************************************
- *  Menu principal.
- * ***************************************************************** */
-MenuBar{
+
+/** **********************************************************************************************************
+ * @brief Menu principal.
+ * ***********************************************************************************************************/
+MenuBar {
     Menu {
         id: fileMenu
         title: qsTr("Dossiers")
-        MenuItem  { text: qsTr("Ouvrir..."); onTriggered: folderDialog.open(); }
+        MenuItem {
+            text: qsTr("Ouvrir...")
+            onTriggered: folderDialog.open()
+        }
 
         Menu {
             id: recentFoldersMenu
@@ -26,14 +30,16 @@ MenuBar{
                 delegate: MenuItem {
                     text: Utilities.toStandardPath(modelData)
                     onTriggered: {
-                        console.log(modelData);
-                        folderListModel.folder = modelData;
+                        console.log(modelData)
+                        folderListModel.folder = modelData
                         // puis on met à jour la liste du PhotoModel
-                        folderTimer.start();
+                        folderTimer.start()
                     }
                 }
-                onObjectAdded: (index, object) => recentFoldersMenu.insertItem(index, object)
-                onObjectRemoved: (index, object) => recentFoldersMenu.removeItem(object)
+                onObjectAdded: (index, object) => recentFoldersMenu.insertItem(
+                                   index, object)
+                onObjectRemoved: (index, object) => recentFoldersMenu.removeItem(
+                                     object)
             }
 
             MenuSeparator {}
@@ -44,22 +50,36 @@ MenuBar{
             }
         }
         MenuSeparator {}
-        MenuItem  { text: qsTr("Quitter"); onTriggered: Qt.quit(); }
+        MenuItem {
+            text: qsTr("Quitter")
+            onTriggered: Qt.quit()
+        }
     }
     Menu {
         id: settingsMenu
         title: qsTr("Réglages")
-        MenuItem  { text: qsTr("Configuration"); onClicked: settingsPopup.open(); }
+        MenuItem {
+            text: qsTr("Configuration")
+            onClicked: settingsPopup.open()
+        }
     }
     Menu {
-        id:helpMenu
+        id: helpMenu
         title: qsTr("Aide")
         // TODO: MenuItem  { text: qsTr("Obtenir une API KEY"); onTriggered: apiPage.open(); }
-        MenuItem  { text: qsTr("Credits"); onTriggered: creditsPage.open(); }
-        MenuItem  { text: qsTr("A propos"); onTriggered: aboutPage.open(); }
+        MenuItem {
+            text: qsTr("Credits")
+            onTriggered: creditsPage.open()
+        }
+        MenuItem {
+            text: qsTr("A propos")
+            onTriggered: aboutPage.open()
+        }
     }
 
-     FolderLoadTimer {id: folderTimer}
+    FolderLoadTimer {
+        id: folderTimer
+    }
 
     // ------------------------------------------------------
     // On relit les chemins récents dans les Settings
@@ -70,9 +90,9 @@ MenuBar{
         property alias recentList: recentFoldersMenu.recents
         property alias recentNumber: recentFoldersMenu.number
 
-        function clearRecentFolders(){
-            recentList = [];
-            recentNumber = 0;
+        function clearRecentFolders() {
+            recentList = []
+            recentNumber = 0
         }
     }
 }

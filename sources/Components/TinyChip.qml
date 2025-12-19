@@ -3,12 +3,12 @@ import QtQuick.Controls
 import "../Components"
 
 
-/*
- * Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt label.
+/** **********************************************************************************************************
+ * @brief Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt label.
  * A noter que le Label possède un texte et un rectangle en background.
  * Avantage: la longueur de rectangle suit naturellement la longueur du texte.
  * @see https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html
- */
+ * ***********************************************************************************************************/
 Label {
     leftPadding: 20 // Positionnement du texte à l'intérieur du rectangle
     rightPadding: 20

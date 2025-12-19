@@ -5,6 +5,8 @@
 *.pro.user.*
 sources/*.pro.user
 sources/*.pro.user.*
+/sources/build
+/build
 /build*
 /build-tiPhotoLocator-Desktop*
 *.bak
