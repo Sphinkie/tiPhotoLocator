@@ -8,7 +8,6 @@ sources/*.pro.user.*
 /sources/build
 /build
 /build*
-/build-tiPhotoLocator-Desktop*
 *.bak
 *.bkp
 *.psd

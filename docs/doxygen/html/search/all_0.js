@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['about_20tags_0',['About Tags',['../md__d_1_2_mes_01_programmes_2_windows_2ti_photo_locator_2docs_2about__tags.html',1,'']]],
+  ['about_20tags_0',['About Tags',['../md_docs_2about__tags.html',1,'']]],
   ['addcategorytosuggestion_1',['addCategoryToSuggestion',['../class_suggestion_model.html#afd4ef6320e2a644e8dbd9c40f9ff3997',1,'SuggestionModel']]],
   ['addphototosuggestion_2',['addPhotoToSuggestion',['../class_suggestion_model.html#a0de02decfdbfe787caf63895eca58cb6',1,'SuggestionModel']]],
   ['addtestitem_3',['addTestItem',['../class_photo_model.html#af43bef19e91b11bf4e79c55fe458d0a1',1,'PhotoModel']]],

@@ -1,0 +1,3 @@
+// Fichier de ressources cmake pour l'icone de l'application
+
+desktop_icon   ICON "Images/logo_TPL.ico"

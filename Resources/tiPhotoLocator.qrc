@@ -1,0 +1,62 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qtquickcontrols2.conf</file>
+        <file>Logos/logo_TPL.ico</file>
+        <file>Cameras/Canon.png</file>
+        <file>Cameras/DMC-TZ10.png</file>
+        <file>Cameras/E-M10MarkII.png</file>
+        <file>Cameras/default.png</file>
+        <file>Cameras/Midjourney.png</file>
+        <file>Cameras/OpticFilm 7200.png</file>
+        <file>Cameras/YP-G70.png</file>
+        <file>Cameras/M2007J17G.png</file>
+        <file>Cameras/HX90V.png</file>
+        <file>Cameras/COOLPIX S30.png</file>
+        <file>Cameras/KODAK EASYSHARE M550 Digital Camera.png</file>
+        <file>Cameras/CYBERSHOT.png</file>
+        <file>Images/bt-apply.png</file>
+        <file>Images/avatar.jpg</file>
+        <file>Images/bt-clear.png</file>
+        <file>Images/bt-refresh.png</file>
+        <file>Images/bt-reload.png</file>
+        <file>Images/bt-rescan.png</file>
+        <file>Images/bt-revert.png</file>
+        <file>Images/bt-suggestion.png</file>
+        <file>Images/bt-suppr.png</file>
+        <file>Images/chip-del.png</file>
+        <file>Images/chip-del2.png</file>
+        <file>Images/chip-edit.png</file>
+        <file>Images/chip-revert.png</file>
+        <file>Images/chip-save.png</file>
+        <file>Images/circle-red.png</file>
+        <file>Images/icon-camera1.png</file>
+        <file>Images/icon-camera2.png</file>
+        <file>Images/icon-camera5.png</file>
+        <file>Images/icon-loupe.png</file>
+        <file>Images/icon-pen.png</file>
+        <file>Images/icon-photo.png</file>
+        <file>Images/icon-preview.png</file>
+        <file>Images/icon-suggestion.png</file>
+        <file>Images/icon-tag.png</file>
+        <file>Images/icon-world.png</file>
+        <file>Images/icon-world2.png</file>
+        <file>Images/icon-world3.png</file>
+        <file>Images/icon-world4.png</file>
+        <file>Images/IMG_00000001.png</file>
+        <file>Images/logo_TLP3.png</file>
+        <file>Images/logo_TLP4.png</file>
+        <file>Images/logo_TPL.png</file>
+        <file>Images/mappin-black.png</file>
+        <file>Images/mappin-green.png</file>
+        <file>Images/mappin-grey.png</file>
+        <file>Images/mappin-red.png</file>
+        <file>Images/mappin-yellow.png</file>
+        <file>Images/pin-green.png</file>
+        <file>Images/pin-red.png</file>
+        <file>Images/pin-yellow.png</file>
+        <file>Images/trashcan.png</file>
+        <file>Images/trashcan2.png</file>
+        <file>Images/welcome.png</file>
+        <file>Images/icon-camera.png</file>
+    </qresource>
+</RCC>

@@ -9,7 +9,6 @@ To compile the sources of this application, you need the Qt 6 framework, [from t
   * Qt 6.x
     * MSVC 2019 64-bits compiler
     * MinGW 64-bits compiler
-    * Qt5 Compatibility module (*for DropShadow*)
     * Qt Installer framework
     * Additional libraries:
       * Qt Locator
