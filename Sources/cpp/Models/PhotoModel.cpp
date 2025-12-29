@@ -18,7 +18,7 @@
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
     // On met l'item Welcome dans la liste
-    m_photos << Photo("Select your photo folder", "qrc:Images/welcome.png", false, true, true);
+    m_photos << Photo("Select your photo folder", "qrc:Pictures/welcome.png", false, true, true);
 
     this->addTestItem();    
 }
@@ -676,7 +676,7 @@ void PhotoModel::addTestItem()
     bool debugMode = settings.value("debugModeEnabled", false).toBool();
     if (!debugMode) return;
 
-    this->m_photos << Photo("IMG_00000001", "qrc:///Images/IMG_00000001.png");
+    this->m_photos << Photo("IMG_00000001", "qrc:///Pictures/IMG_00000001.png");
     QVariantMap ibizaData;
     ibizaData.insert("FileName", "IMG_00000001");
     ibizaData.insert("DateTimeOriginal", "2023:08:25 01:03:16");

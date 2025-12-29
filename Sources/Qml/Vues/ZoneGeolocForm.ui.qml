@@ -12,7 +12,7 @@ Zone{
 
     iconZone: "qrc:/Images/icon-world.png"
     txtZone: qsTr("Géolocalisation")
-
+	
     ColumnLayout {
         Chips {
             id: chipLat

@@ -24,7 +24,7 @@ Zone {
         wrapMode: Text.WordWrap
         // anchors.centerIn: zonePreview // A mettre si on veut positionner le texte à mi-hauteur.
         horizontalAlignment: Text.AlignHCenter
-        color : TiStyle.primaryTextColor
+        // DDL color : TiStyle.primaryTextColor
         textFormat: Text.StyledText
     }
 

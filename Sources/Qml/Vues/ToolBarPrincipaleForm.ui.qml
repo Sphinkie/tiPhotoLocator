@@ -6,7 +6,7 @@ import "../Components"
 
 
 Rectangle {
-    color: TiStyle.surfaceContainerColor
+    // DDL color: TiStyle.surfaceContainerColor
     property alias bt_reload: bt_reload
     property alias bt_rescan: bt_rescan
     property alias folderPath: folderPath
@@ -15,7 +15,7 @@ Rectangle {
 
     RowLayout {
 
-        TiButton {
+        Button {
             id: bt_reload
             icon.source: "qrc:/Images/bt-reload.png"
             text: qsTr("Reload")
@@ -26,7 +26,7 @@ Rectangle {
             Layout.leftMargin: 20
             Layout.topMargin: 10
         }
-        TiButton {
+        Button {
             id: bt_rescan
             icon.source: "qrc:/Images/bt-rescan.png"
             text: qsTr("Rescan")
@@ -40,7 +40,7 @@ Rectangle {
         Text {
             text: qsTr("Répertoire:")
             font.pixelSize: 16
-            color: TiStyle.secondaryTextColor
+            // DDL color: TiStyle.secondaryTextColor
             // Positionnement à l'interieur du rectangle
             verticalAlignment: Text.AlignVCenter
             leftPadding: 20
@@ -48,7 +48,7 @@ Rectangle {
         Text {
             id: folderPath
             font.pixelSize: 16
-            color: TiStyle.primaryTextColor
+            // DDL color: TiStyle.primaryTextColor
             font.family: "Courier"
             // Positionnement à l'interieur du rectangle
             verticalAlignment: Text.AlignVCenter

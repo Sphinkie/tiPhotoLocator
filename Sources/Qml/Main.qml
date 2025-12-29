@@ -21,11 +21,12 @@ Window {
     // dimensions minimales
     minimumHeight: 640
     minimumWidth: 1200
-    color: TiStyle.surfaceBackgroundColor
 
     // ----------------------------------------------------------------
     // Couleurs du thème: voir fichier conf
     // ----------------------------------------------------------------
+    //Material.background: Material.LightGreen
+    color: Material.color(Material.LightGreen, Material.Shade200)
 
     // ----------------------------------------------------------------
     // Les signaux vers PhotoModel
@@ -134,7 +135,7 @@ Window {
     Rectangle {
         id: filtersAndTabsBar
         anchors.top: toolBar.bottom
-        color: TiStyle.surfaceContainerColor
+        // DDL color: TiStyle.surfaceContainerColor
         width: parent.width
         height: filtersAndTabslayout.height
 

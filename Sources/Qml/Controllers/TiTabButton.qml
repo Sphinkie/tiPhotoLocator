@@ -1,11 +1,9 @@
 import QtQuick
 import "../Vues"
 
-TiTabButtonForm
-{
+TiTabButtonForm {
 
     property string filter
 
-    onClicked: _suggestionCategoryProxyModel.setFilterValue(filter);
-
+    onClicked: _suggestionCategoryProxyModel.setFilterValue(filter)
 }

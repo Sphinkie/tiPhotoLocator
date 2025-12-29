@@ -14,8 +14,8 @@ ListView {
         required property bool isSelected
         width: 134
         height: 104
-        color: isSelected? TiStyle.primaryColor : TiStyle.surfaceContainerColor
 
+        // DDL color: isSelected? TiStyle.primaryColor : TiStyle.surfaceContainerColor
         Image {
             width: 130
             height: 100
@@ -23,7 +23,5 @@ ListView {
             fillMode: Image.PreserveAspectFit
             source: imageUrl
         }
-
     }
-
 }

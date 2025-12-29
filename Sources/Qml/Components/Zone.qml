@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls.Material
 
 Rectangle {
     id: rectZone
@@ -8,7 +9,7 @@ Rectangle {
 
     radius: 16
     color: TiStyle.zoneBackgroundColor
-    implicitHeight: 300    // Note: Mettre Layout.fillHeight dans le parent pour bien occuper tout l'espace
+    implicitHeight: 300 // Note: Mettre Layout.fillHeight dans le parent pour bien occuper tout l'espace
     implicitWidth: 380
     property bool dropable: true
     clip: true
@@ -23,7 +24,7 @@ Rectangle {
     }
 
     // Texte explicatif (optionnel)
-    Text{
+    Text {
         color: Qt.darker(parent.color, 1.6)
         text: txtZone
         font.weight: Font.Thin
@@ -35,5 +36,4 @@ Rectangle {
         width: parent.width
         horizontalAlignment: Text.AlignHCenter
     }
-
 }

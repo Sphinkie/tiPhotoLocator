@@ -3,9 +3,9 @@ import QtQuick.Layouts
 
 Rectangle {
     Layout.preferredHeight: 120
-    color: TiStyle.surfaceContainerColor
 
-    RowLayout{
+    // DDL color: TiStyle.surfaceContainerColor
+    RowLayout {
         anchors.fill: parent
         anchors.leftMargin: listViewFrame.width
         anchors.topMargin: 8
@@ -16,7 +16,7 @@ Rectangle {
             color: "green"
         }
 
-        ImagettesListView{
+        ImagettesListView {
             Layout.fillWidth: true
             height: 104
         }
@@ -27,7 +27,5 @@ Rectangle {
             Layout.rightMargin: 30
             color: "green"
         }
-
     }
-
 }

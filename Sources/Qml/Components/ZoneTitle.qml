@@ -8,8 +8,8 @@ Zone {
     id: zoneTitle
     property string titleText
     implicitHeight: 60
-    color: TiStyle.suggestionBackgroundColor
 
+    // DDL color: TiStyle.suggestionBackgroundColor
     Text {
         width: parent.width
         text: parent.titleText
@@ -17,7 +17,7 @@ Zone {
         wrapMode: Text.WordWrap
         anchors.centerIn: zoneTitle // A mettre si on veut positionner le texte à mi-hauteur.
         horizontalAlignment: Text.AlignHCenter
-        // color : TiStyle.primaryTextColor
+        // DDL color : TiStyle.primaryTextColor
         textFormat: Text.StyledText
     }
 }

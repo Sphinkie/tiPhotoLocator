@@ -53,7 +53,7 @@ Item {
         id: chipRectangle
         radius: 16
         visible: content ? true : false
-        // DDL color: TiStyle.chipBackgroundColor
+        color: TiStyle.chipBackgroundColor
         anchors.fill: parent
 
 
@@ -109,7 +109,7 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             text: targetName
             font.pixelSize: 12
-            color: TiStyle.surfaceContainerColor
+            // DDL color: TiStyle.surfaceContainerColor
             // Positionnement du texte
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.NoWrap
@@ -130,7 +130,7 @@ Item {
             text: content
             readOnly: true
             font.pixelSize: 14
-            color: canSave ? "white" : TiStyle.chipTextColor
+            // DDL color: canSave ? "white" : TiStyle.chipTextColor
             // Positionnement du texte
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter

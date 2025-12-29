@@ -17,8 +17,8 @@ Popup {
     modal: true
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
     background: Rectangle {
-        color: TiStyle.tertiaryBackgroundColor
-        border.color: TiStyle.tertiaryForegroundColor
+        // DDL color: TiStyle.tertiaryBackgroundColor
+        // DDL border.color: TiStyle.tertiaryForegroundColor
         border.width: 2
     }
     parent: Overlay.overlay
@@ -120,12 +120,12 @@ Popup {
     }
 
     //    }
-    TiButton {
+    Button {
         id: buttonClose
         text: qsTr("Fermer")
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: 38
-        color: TiStyle.tertiaryForegroundColor
+        // DDL color: TiStyle.tertiaryForegroundColor
     }
 }

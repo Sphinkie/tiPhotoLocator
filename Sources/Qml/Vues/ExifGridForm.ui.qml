@@ -19,7 +19,7 @@ GridLayout {
     Text {
         text: qsTr("Fabriquant de l'appareil photo")
         font.pixelSize: 14
-        color: TiStyle.secondaryTextColor
+        // DDL color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter
     }
 
@@ -33,7 +33,7 @@ GridLayout {
     Text {
         text: qsTr("Modèle de l'appareil photo")
         font.pixelSize: 14
-        color: TiStyle.secondaryTextColor
+        // DDL color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter
     }
 
@@ -47,7 +47,7 @@ GridLayout {
     Text {
         text: qsTr("Camera Aperture and Speed of the shot")
         font.pixelSize: 14
-        color: TiStyle.secondaryTextColor
+        // DDL color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter
     }
 
@@ -61,7 +61,7 @@ GridLayout {
     Text {
         text: qsTr("Nom du photographe")
         font.pixelSize: 14
-        color: TiStyle.secondaryTextColor
+        // DDL color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter
     }
 
@@ -75,7 +75,7 @@ GridLayout {
     Text {
         text: qsTr("Coordonnées GPS au moment de la prise de vue.")
         font.pixelSize: 14
-        color: TiStyle.secondaryTextColor
+        // DDL color: TiStyle.secondaryTextColor
         verticalAlignment: Text.AlignVCenter
     }
 }

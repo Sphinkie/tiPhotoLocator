@@ -1,11 +1,5 @@
 
 *.xml
-*.user
-*.pro.user
-*.pro.user.*
-sources/*.pro.user
-sources/*.pro.user.*
-/sources/build
 /build
 /build*
 *.bak

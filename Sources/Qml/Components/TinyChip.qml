@@ -18,8 +18,8 @@ Label {
     visible: content ? true : false
     text: content
     font.pixelSize: 14
-    color: TiStyle.tinychipTextColor
 
+    // DDL color: TiStyle.tinychipTextColor
     background: Rectangle {
         color: TiStyle.chipBackgroundColor
         implicitHeight: 24

@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls.Material
 import "../Components"
 
 Zone {
@@ -24,10 +25,10 @@ Zone {
                 id: suggestionRepeater
             }
 
-            TiButton {
+            Button {
                 id: bt_getinfo
                 text: qsTr("Autres tags...")
-                color: "lightskyblue"
+                // DDL color: "lightskyblue"
                 icon.source: "qrc:/Images/icon-suggestion.png"
             }
         }

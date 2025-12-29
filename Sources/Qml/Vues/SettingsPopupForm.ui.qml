@@ -15,8 +15,8 @@ Popup {
     focus: true
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
     background: Rectangle {
-        color: TiStyle.tertiaryBackgroundColor
-        border.color: TiStyle.tertiaryForegroundColor
+        // DDL color: TiStyle.tertiaryBackgroundColor
+        // DDL border.color: TiStyle.tertiaryForegroundColor
         border.width: 2
     }
     parent: Overlay.overlay
@@ -35,7 +35,7 @@ Popup {
         Text {
             text: qsTr("Configuration")
             font.pixelSize: 24
-            color: TiStyle.tertiaryForegroundColor
+            // DDL color: TiStyle.tertiaryForegroundColor
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             Layout.fillHeight: false
@@ -67,7 +67,7 @@ Popup {
                         placeholderText: qsTr("Enter your name here")
                     }
                     Text {
-                        color: TiStyle.tertiaryForegroundColor
+                        // DDL color: TiStyle.tertiaryForegroundColor
                         text: "Creator (IPTC)"
                         font.pixelSize: 12
                         style: Text.Normal
@@ -91,7 +91,7 @@ Popup {
                         placeholderText: qsTr("initiales")
                     }
                     Text {
-                        color: TiStyle.tertiaryForegroundColor
+                        // DDL color: TiStyle.tertiaryForegroundColor
                         text: "Caption Writer (IPTC)"
                         font.pixelSize: 12
                         style: Text.Normal
@@ -113,7 +113,7 @@ Popup {
                         enabled: false
                     }
                     Text {
-                        color: TiStyle.tertiaryForegroundColor
+                        // DDL color: TiStyle.tertiaryForegroundColor
                         text: "Metadata Software (Exif)"
                         font.pixelSize: 12
                         style: Text.Normal
@@ -202,7 +202,7 @@ Popup {
         // ------------------------------------------------------------------
         // ---------------- Buttons
         // ------------------------------------------------------------------
-        TiButton {
+        Button {
             id: buttonClose
             width: 100
             text: qsTr("Fermer")
@@ -214,7 +214,7 @@ Popup {
             Layout.margins: 0
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             Layout.fillWidth: false
-            color: TiStyle.tertiaryForegroundColor
+            // DDL color: TiStyle.tertiaryForegroundColor
         }
     }
 

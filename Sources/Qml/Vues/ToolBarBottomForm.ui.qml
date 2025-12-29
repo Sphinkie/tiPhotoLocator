@@ -6,7 +6,7 @@ import "../Components"
 
 Rectangle {
     id: bottomRect
-    color: TiStyle.surfaceContainerColor
+    // DDL color: TiStyle.surfaceContainerColor
     height: bottomToolBarLayout.height + 20
 
     property alias bt_dump1: bt_dump1
@@ -23,7 +23,7 @@ Rectangle {
         Layout.alignment: Qt.AlignRight // on cale les boutons à droite
         spacing: 20
 
-        TiButton {
+        Button {
             id: bt_dump1
             text: qsTr("Dump PhotoModel")
             visible: bottomRect.useDebug
@@ -33,7 +33,7 @@ Rectangle {
             Layout.leftMargin: 20
             Layout.topMargin: 10
         }
-        TiButton {
+        Button {
             id: bt_dump2
             text: qsTr("Dump SuggModel")
             visible: bottomRect.useDebug
@@ -53,16 +53,17 @@ Rectangle {
                 visible: parent.hovered
             }
         }
-        TiButton {
+        Button {
             id: bt_save
             text: qsTr("Enregistrer")
             Layout.topMargin: 10
-            color: shouldSave ? TiStyle.buttonAccentColor : TiStyle.buttonIdleColor
+            // DDL color: shouldSave ? TiStyle.buttonAccentColor : TiStyle.buttonIdleColor
+            highlighted: shouldSave
             ToolTip.text: qsTr("Enregistre les tags EXIF des photos modifiées")
             ToolTip.visible: hovered
             ToolTip.delay: 500
         }
-        TiButton {
+        Button {
             id: bt_quit
             text: qsTr("Quitter")
             ToolTip.text: qsTr("Quitte l'application")

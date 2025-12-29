@@ -15,7 +15,7 @@ Item {
 
     height: bt_save_pos.height + 20
 
-    TiButton {
+    Button {
         id: bt_save_pos
         enabled: false
         text: qsTr("Save Position")
@@ -26,7 +26,7 @@ Item {
         anchors {left: parent.left; leftMargin: 30; verticalCenter: parent.verticalCenter}
     }
 
-    TiButton {
+    Button {
         id: bt_remove_savedpos
         enabled: false
         text: qsTr("Clear Saved Position")
@@ -35,7 +35,7 @@ Item {
         // TODO Attention au cas ou on a vidé le modele (reload): il faut masquer ce bouton
     }
 
-    TiButton {
+    Button {
         id: bt_apply_savedpos
         enabled: false
         text: qsTr("Apply Saved Position")
@@ -59,7 +59,7 @@ Item {
         anchors {left: slider_radius.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
     }
 
-    TiButton {
+    Button {
         id: bt_revert
         enabled: false
         text: qsTr("Rétablir")
@@ -70,7 +70,7 @@ Item {
         ToolTip.delay: 500
     }
 
-    TiButton {
+    Button {
         id: bt_clear_pos
         enabled: false
         text: qsTr("Clear GPS Coords")

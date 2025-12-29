@@ -9,7 +9,7 @@ TabButton {
 
     contentItem: Text {
         text: control.text
-        color: control.down ? "white" : "black"
+        // DDL color: control.down ? "white" : "black"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
@@ -20,8 +20,7 @@ TabButton {
     }
 
     background: Rectangle {
-        color: control.checked ? TiStyle.chipBackgroundColor : TiStyle.zoneBackgroundColor.lighter(
-                                     1.1)
+        // DDL color: control.checked ? TiStyle.chipBackgroundColor : TiStyle.zoneBackgroundColor.lighter(1.1)
         radius: 3
     }
 }
