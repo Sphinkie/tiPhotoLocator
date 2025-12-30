@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
+import ".."
 
 
 /** **********************************************************************************************************
@@ -53,7 +54,7 @@ Item {
         id: chipRectangle
         radius: 16
         visible: content ? true : false
-        color: TiStyle.chipBackgroundColor
+        color: Style.chipBackgroundColor
         anchors.fill: parent
 
 

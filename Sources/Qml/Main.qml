@@ -25,8 +25,17 @@ Window {
     // ----------------------------------------------------------------
     // Couleurs du thème: voir fichier conf
     // ----------------------------------------------------------------
-    //Material.background: Material.LightGreen
-    color: Material.color(Material.LightGreen, Material.Shade200)
+    Material.theme: Material.Light
+    // Couleur des textes
+    Material.foreground: Material.Brown
+    // Couleur primaire = le bandeau de l'application. Les Chips
+    Material.primary: Material.Green
+    // Couleur d'accentuation pour les items en highlight.
+    Material.accent: Material.Orange
+    // Couleur du fond: Barre de menu. Barre des onglets. Zones.
+    Material.background: Material.LightGreen
+
+    // color: Style.surfaceBackgroundColor
 
     // ----------------------------------------------------------------
     // Les signaux vers PhotoModel
@@ -135,7 +144,7 @@ Window {
     Rectangle {
         id: filtersAndTabsBar
         anchors.top: toolBar.bottom
-        // DDL color: TiStyle.surfaceContainerColor
+        color: Style.surfaceContainerColor
         width: parent.width
         height: filtersAndTabslayout.height
 
@@ -280,12 +289,6 @@ Window {
                     Layout.rightMargin: 40
                     Layout.fillHeight: true
                 }
-                //                Zone{
-                //                  Layout.rightMargin: 40
-                //                  Layout.fillHeight: true
-                //                  color: TiStyle.trashcanBackgroundColor
-                //                  iconZone: "qrc:/Images/trashcan.png"
-                //                }
             }
 
             // ------------------ IPTC/EXIF TAGS TAB ----------------------------

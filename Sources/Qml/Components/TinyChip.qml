@@ -21,7 +21,7 @@ Label {
 
     // DDL color: TiStyle.tinychipTextColor
     background: Rectangle {
-        color: TiStyle.chipBackgroundColor
+        color: Style.chipBackgroundColor
         implicitHeight: 24
         radius: 12
         id: pastilleText
