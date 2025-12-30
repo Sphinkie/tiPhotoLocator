@@ -10,7 +10,6 @@ ToolBarBottomForm {
 
     bt_dump1.onClicked: {
         _photoModel.dumpData()
-        //  _cameraSet.append("TZ80")         // Ajouté pour les tests d'API de Lisa
     }
 
     bt_dump2.onClicked: {
@@ -18,9 +17,9 @@ ToolBarBottomForm {
         Netwk.requestAPI()
     }
 
+    // Check status mémorisé dans les Settings
     cb_backups.onCheckedChanged: {
 
-        // Statut mémorisé dans les Settings
     }
 
     bt_save.onClicked: {

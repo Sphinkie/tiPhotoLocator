@@ -1,10 +1,11 @@
 
 *.xml
-/build
-/build*
 *.bak
 *.bkp
 *.psd
+CMakeLists.txt.user
+/build
+/build*
 /installeur/packages/com.sphinkie.tiphotolocator/data*
 /installeur/*.exe
 /installeur/*.zip

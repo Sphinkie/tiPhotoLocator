@@ -10,6 +10,10 @@ import "./Components"
 import "./Models"
 import "./Controllers"
 
+
+/** **********************************************************************************************************
+ * @brief Fenêtre principale.
+ * ***********************************************************************************************************/
 Window {
     id: window
     title: "tiPhotoLocator"
@@ -23,7 +27,7 @@ Window {
     minimumWidth: 1200
 
     // ----------------------------------------------------------------
-    // Couleurs du thème: voir fichier conf
+    // Couleurs du thème: voir aussi fichier conf.
     // ----------------------------------------------------------------
     Material.theme: Material.Light
     // Couleur des textes
@@ -104,7 +108,7 @@ Window {
         id: metadataPopup
     }
     // ----------------------------------------------------------------
-    // Modèles de données: Liste des fichiers du dossier
+    // Modèles de données: Liste des photos (fichiers) du dossier
     // ----------------------------------------------------------------
     ModelFolderList {
         id: folderListModel
@@ -131,9 +135,10 @@ Window {
     // ----------------------------------------------------------------
     ToolBarPrincipale {
         id: toolBar
-        width: parent.width
+        //width: parent.width
         anchors {
             top: menuBar.bottom
+            right: parent.right
             left: parent.left
         }
     }
@@ -142,7 +147,7 @@ Window {
     // Filtres et Onglets
     // ----------------------------------------------------------------
     Rectangle {
-        id: filtersAndTabsBar
+        id: line2
         anchors.top: toolBar.bottom
         color: Style.surfaceContainerColor
         width: parent.width
@@ -208,9 +213,10 @@ Window {
     // ListView des filenames des photos + page de contenu de l'onglet
     // ----------------------------------------------------------------
     RowLayout {
+        id: line3
         anchors {
-            top: filtersAndTabsBar.bottom
-            bottom: imagettes.top
+            top: line2.bottom
+            bottom: line4.top
             left: parent.left
             right: parent.right
         }
@@ -229,8 +235,8 @@ Window {
             id: tabbedPage
             Layout.fillWidth: true
             currentIndex: tabBar.currentIndex
-            property var selectedData: _photoModel.get(
-                                           0) // On l'initialise sur la photo Welcome (type = QVariantMap)
+            // On l'initialise sur la photo Welcome (type = QVariantMap)
+            property var selectedData: _photoModel.get(0)
 
             Connections {
                 target: _photoModel
@@ -322,26 +328,38 @@ Window {
     }
 
     // --------------------------------- Ligne 4
-    // Imagettes
+    // Boutons et Imagettes
     // ----------------------------------------------------------------
-    TiImagettes {
-        id: imagettes
-        height: 120
-        anchors {
-            bottom: bottomToolBar.top
-            left: parent.left
-            right: parent.right
-        }
-    }
-
-    // --------------------------------- Ligne 5
-    // Barre de boutons en bas
-    // ----------------------------------------------------------------
-    ToolBarBottom {
-        id: bottomToolBar
+    RowLayout {
+        id: line4
         anchors.bottom: parent.bottom
-        width: parent.width
-    }
+        anchors.right: parent.right
+        anchors.left: parent.left
+        //anchors.top: line3.bottom
+
+        // Barre de boutons
+        ToolBarBottom {
+            id: bottomToolBar
+            height: 160
+            Layout.preferredWidth: 380
+        }
+
+        ImagettesListView {
+            id: imagettes
+            height: 160
+            Layout.fillWidth: true
+            Layout.rightMargin: 30
+        }
+
+
+        /*
+        // Imagettes
+        TiImagettes {
+            id: imagettes
+            height: 120
+            Layout.fillWidth: true
+        }
+*/ }
 
     // ----------------------------------------------------------------
     // Lecture des Settings

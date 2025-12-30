@@ -2,9 +2,17 @@ import QtQuick
 import QtQuick.Layouts
 import "../Controllers"
 
-
 GridLayout {
-    columns: 3
+    columns: 4
+
+    ZoneGeoloc {
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        Layout.margins: 10
+        chipLocation.editable: true
+        chipCity.editable: true
+        chipCountry.editable: true
+    }
 
     ZoneCamera {
         Layout.fillWidth: true
@@ -28,24 +36,11 @@ GridLayout {
     ZoneSuggestedTags {
         Layout.fillWidth: true
         Layout.fillHeight: true
-        Layout.columnSpan: 3
+        Layout.columnSpan: 4
         Layout.margins: 10
         Layout.rightMargin: 40
         color: "lightblue"
         iconZone: "qrc:/Images/icon-suggestion.png"
         txtZone: qsTr("Suggestions")
     }
-
-    /*
-    Zone {
-        Layout.fillWidth: true
-        Layout.fillHeight: true
-        Layout.columnSpan: 3
-        Layout.margins: 10
-        color: "lightgrey"
-        iconZone: "qrc:/Images/trashcan.png"
-        txtZone: qsTr("Corbeille")
-    }
-*/
 }
-

@@ -1,31 +1,23 @@
 import QtQuick
 import QtQuick.Layouts
 
+
+/** **********************************************************************************************************
+ * @brief Rectangle contenant les imagettes des photos sélectionnées.
+ * @warning OBSOLETE
+ * ***********************************************************************************************************/
 Rectangle {
     Layout.preferredHeight: 120
 
-    // DDL color: TiStyle.surfaceContainerColor
     RowLayout {
         anchors.fill: parent
         anchors.leftMargin: listViewFrame.width
         anchors.topMargin: 8
 
-        Rectangle {
-            width: 15
-            height: 104
-            color: "green"
-        }
-
         ImagettesListView {
             Layout.fillWidth: true
             height: 104
-        }
-
-        Rectangle {
-            width: 15
-            height: 104
             Layout.rightMargin: 30
-            color: "green"
         }
     }
 }
