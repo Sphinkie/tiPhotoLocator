@@ -1,7 +1,13 @@
 import QtQuick
 import QtQuick.Layouts
+import ".."
 
-// https://www.youtube.com/watch?v=ZArpJDRJxcI
+
+/** **********************************************************************************************************
+ * @brief Liste des filename des photos, associée au modèle filtré UnlocalizedProxyModel.
+ * Ce modèle est basé sur PhotoModel, filtré par UndatedPhotoProxyModel puis par UnlocalizedProxyModel.
+ * @sa https://www.youtube.com/watch?v=ZArpJDRJxcI
+ * ***********************************************************************************************************/
 ListView {
     id: photoListAndDelegate
     anchors.fill: parent
@@ -10,7 +16,10 @@ ListView {
     focus: true
     clip: true // pour que les items restent à l'interieur de la listview
 
-    // Une ligne en bas de la listview
+
+    /** ******************************************************************************************************
+     * Une ligne en bas de la listview
+     * *******************************************************************************************************/
     footer: Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
@@ -18,26 +27,36 @@ ListView {
         color: "darkgrey"
     }
 
-    // background de l'item sélectionné
+
+    /** ******************************************************************************************************
+     * Background de l'item sélectionné.
+     * *******************************************************************************************************/
     highlight: Rectangle {
         Layout.fillWidth: true
-        // DDL color: TiStyle.highlightBackgroundColor
+        color: Style.highlightBackgroundColor
+        radius: 6
     }
 
+
+    /** ******************************************************************************************************
+     * Timer avant envoi d'une request pour récupérer des infos à partir des coordonnées GPS.
+     * *******************************************************************************************************/
     Timer {
         id: geoTimer
         interval: 5000 // 5 sec
         running: false
         repeat: false
         onTriggered: {
-            // Envoie une request pour récupérer des infos à partir des coords GPS
             // console.debug(">>>>> timer triggered");
             window.requestReverseGeocode(mapTab.photoLatitude,
                                          mapTab.photoLongitude)
         }
     }
 
-    // le delegate pour afficher la ListModel dans la ListView
+
+    /** ******************************************************************************************************
+     * Le delegate pour afficher la ListModel  dans la ListView.
+     * *******************************************************************************************************/
     Component {
         id: listDelegate
         Item {
@@ -85,7 +104,7 @@ ListView {
                 anchors.left: gpsIcon.right
                 text: filename
                 font.pixelSize: 16
-                // DDL color: toBeSaved ? TiStyle.accentTextColor : TiStyle.primaryTextColor
+                color: toBeSaved ? Style.accentTextColor : Style.primaryTextColor
                 // DDL highlighted: toBeSaved
             }
 

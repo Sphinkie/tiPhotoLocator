@@ -14,14 +14,18 @@ ListView {
     model: _onTheMapProxyModel
     focus: false
 
-    // le delegate pour afficher l'imagette dans la ListView
+
+    /** ******************************************************************************************************
+     * Le delegate pour afficher l'imagette dans la ListView.
+     * *******************************************************************************************************/
     delegate: Rectangle {
         required property string imageUrl
         required property bool isSelected
         width: 160
         height: 160
-
-        color: isSelected ? Material.primaryColor : "transparent"
+        radius: 4
+        border.color: isSelected ? Material.primaryColor : "transparent"
+        border.width: 3
         Image {
             id: image
             width: 154
