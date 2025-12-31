@@ -4,7 +4,7 @@ import ".."
 
 
 /** **********************************************************************************************************
- * @brief Liste des filename des photos, associée au modèle filtré UnlocalizedProxyModel.
+ * @brief Liste des filenames des photos, associée au modèle filtré UnlocalizedProxyModel.
  * Ce modèle est basé sur PhotoModel, filtré par UndatedPhotoProxyModel puis par UnlocalizedProxyModel.
  * @sa https://www.youtube.com/watch?v=ZArpJDRJxcI
  * ***********************************************************************************************************/
@@ -78,7 +78,10 @@ ListView {
 
             visible: !isMarker // On n'affiche pas la "Saved Position"
 
-            // icone "In Circle"
+
+            /** **********************************************************************************************
+             * icone "In Circle".
+             * ***********************************************************************************************/
             Image {
                 id: circleIcon
                 anchors.left: parent.left
@@ -88,7 +91,10 @@ ListView {
                 width: 24
             }
 
-            // icone "Has GPS"
+
+            /** **********************************************************************************************
+             * icone "Has GPS".
+             * ***********************************************************************************************/
             Image {
                 id: gpsIcon
                 anchors.left: circleIcon.right
@@ -98,7 +104,10 @@ ListView {
                 width: 24
             }
 
-            // Filename de l'image
+
+            /** **********************************************************************************************
+             * Filename de l'image.
+             * ***********************************************************************************************/
             Text {
                 id: nameText
                 anchors.left: gpsIcon.right
@@ -108,7 +117,10 @@ ListView {
                 // DDL highlighted: toBeSaved
             }
 
-            // Tag City
+
+            /** **********************************************************************************************
+             * Tag City avec le nom de la ville associée.
+             * ***********************************************************************************************/
             TinyChip {
                 id: cityText
                 anchors.left: nameText.right
@@ -119,7 +131,10 @@ ListView {
                 height: 20
             }
 
-            // Gestion du clic sur un item de la liste
+
+            /** **********************************************************************************************
+             * Gestion du clic sur un item de la liste.
+             * ***********************************************************************************************/
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
