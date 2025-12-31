@@ -31,11 +31,11 @@ Window {
     // ----------------------------------------------------------------
     Material.theme: Material.Light
     // Couleur des textes
-    Material.foreground: Material.Brown
+    Material.foreground: Material.Orange
     // Couleur primaire = le bandeau de l'application. Les Chips
     Material.primary: Material.Green
     // Couleur d'accentuation pour les items en highlight.
-    Material.accent: Material.Orange
+    Material.accent: Material.Red
     // Couleur du fond: Barre de menu. Barre des onglets. Zones.
     Material.background: Material.LightGreen
 

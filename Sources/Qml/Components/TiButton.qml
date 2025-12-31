@@ -4,7 +4,6 @@ import QtQuick.Controls
 
 /** **********************************************************************************************************
  * @brief Bouton customisé pour TiPhotoLocator
- * @obsolete
  * Pressed:  event is generated when you push down the mouse button
  * Released: event is generated when you release the mouse button (which has been pressed down before)
  * Clicked:  event is generated when a mouse button Pressed & Released.
@@ -12,6 +11,7 @@ import QtQuick.Controls
  * @see https://doc.qt.io/qt-5/qtquickcontrols2-customize.html#customizing-button
  * ***********************************************************************************************************/
 Button {
+    // WARNING obsolete
     display: AbstractButton.TextBesideIcon // IconOnly
     property color color: TiStyle.buttonIdleColor
 

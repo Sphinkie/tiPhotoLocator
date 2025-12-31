@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
+import QtQuick.Controls.Material
 import ".."
 
 
@@ -102,15 +103,15 @@ Item {
 
         /** ************************************************************************************
          * Libellé "Target", cad le nom du tag à attribuer.
+         * Couleur automatique du thème Material: foreground
          * *************************************************************************************/
-        Text {
+        Label {
             id: chipTarget
             anchors.left: parent.left // Pas de bouton quand on affiche la target
             anchors.leftMargin: 12
             anchors.verticalCenter: parent.verticalCenter
             text: targetName
             font.pixelSize: 12
-            // DDL color: TiStyle.surfaceContainerColor
             // Positionnement du texte
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.NoWrap
@@ -120,6 +121,7 @@ Item {
 
         /** ************************************************************************************
          * Texte du chip, cad la valeur du tag à attribuer.
+         * Couleur automatique du thème Material: noir
          * *************************************************************************************/
         TextInput {
             id: chipText
@@ -131,7 +133,6 @@ Item {
             text: content
             readOnly: true
             font.pixelSize: 14
-            // DDL color: canSave ? "white" : TiStyle.chipTextColor
             // Positionnement du texte
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter

@@ -4,9 +4,9 @@ import QtQuick.Layouts
 
 /** **********************************************************************************************************
  * @brief Rectangle contenant les imagettes des photos sélectionnées.
- * @warning OBSOLETE
  * ***********************************************************************************************************/
 Rectangle {
+    // WARNING OBSOLETE
     Layout.preferredHeight: 120
 
     RowLayout {

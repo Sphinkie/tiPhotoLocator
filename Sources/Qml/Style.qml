@@ -57,7 +57,7 @@ Item {
     readonly property color primaryTextColor: "#212121" // gris foncé      : Listview + toolbar
     readonly property color secondaryTextColor: "#757575" // gris moyen    : Répertoire dans la toolbar
     readonly property color tertiaryTextColor: "#bdbdbd" // gris clair     : Annotations dans les settings
-    //TODO : améliorer les couleurs suivantes:
+    // TODO : améliorer les couleurs suivantes:
     readonly property color accentTextColor: "firebrick" // filenames toBeSaved
     readonly property color highlightBackgroundColor: "lightgrey" // filename sélectionné
 }
