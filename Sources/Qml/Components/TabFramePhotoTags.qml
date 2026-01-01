@@ -2,6 +2,10 @@ import QtQuick
 import QtQuick.Layouts
 import "../Controllers"
 
+
+/** *************************************************************************************
+ * @brief Onglets avec les tags de la photo sélectionnée, regroupés par catégorie.
+ * *************************************************************************************/
 GridLayout {
     columns: 4
 

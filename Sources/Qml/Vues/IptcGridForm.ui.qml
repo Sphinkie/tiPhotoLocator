@@ -3,6 +3,10 @@ import QtQuick.Layouts
 import QtQuick.Controls.Material
 import "../Components"
 
+
+/** *************************************************************************************************
+ * @brief Vue de l'onglet avec les tags pouvant être appliquées à toutes les photos du dossier.
+ * *************************************************************************************************/
 GridLayout {
     property alias bt_applyCreator: bt_applyCreator
     property alias bt_applyCountry: bt_applyCountry
@@ -11,7 +15,7 @@ GridLayout {
     rowSpacing: 10
     columns: 3
 
-    // rows: 6
+    /// Tag "Creator"
     TinyChip {
         content: "Creator"
     }
@@ -27,6 +31,7 @@ GridLayout {
         verticalAlignment: Text.AlignVCenter
     }
 
+    /// Tag "City"
     TinyChip {
         content: "City"
     }

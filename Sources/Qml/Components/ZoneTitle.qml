@@ -13,11 +13,10 @@ Zone {
     Text {
         width: parent.width
         text: parent.titleText
-        font.pointSize: 12
+        font.pointSize: 10
         wrapMode: Text.WordWrap
         anchors.centerIn: zoneTitle // A mettre si on veut positionner le texte à mi-hauteur.
         horizontalAlignment: Text.AlignHCenter
-        // DDL color : TiStyle.primaryTextColor
         textFormat: Text.StyledText
     }
 }

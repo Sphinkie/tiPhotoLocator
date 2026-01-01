@@ -114,13 +114,14 @@ Window {
         id: folderListModel
     }
 
-    // ----------------------------------------------------------------
+    // ------------------------------------------------------------------------------
     // Page principale
-    // ----------------------------------------------------------------
+    // ------------------------------------------------------------------------------
 
-    // Ligne 0 --------------------------------------------------------
-    // Menu principal (Prend toute la largeur)
-    // ----------------------------------------------------------------
+
+    /** *****************************************************************************
+     * Ligne 0 : Menu principal (Prend toute la largeur)
+     * ******************************************************************************/
     TiMenuBar {
         id: menuBar
         anchors {
@@ -130,9 +131,10 @@ Window {
         }
     }
 
-    // Ligne 1 --------------------------------------------------------
-    // Barre d'outils du folder: refresh / reload / rescan / foldername
-    // ----------------------------------------------------------------
+
+    /** *****************************************************************************
+     * Ligne 1 : Barre d'outils du folder: refresh / reload / rescan / foldername
+     * ******************************************************************************/
     ToolBarPrincipale {
         id: toolBar
         //width: parent.width
@@ -143,9 +145,10 @@ Window {
         }
     }
 
-    // Ligne 2 --------------------------------------------------------
-    // Filtres et Onglets
-    // ----------------------------------------------------------------
+
+    /** *****************************************************************************
+     * Ligne 2 : Filtres et Onglets
+     * ******************************************************************************/
     Rectangle {
         id: line2
         anchors.top: toolBar.bottom
@@ -209,9 +212,10 @@ Window {
         }
     }
 
-    // Ligne 3 --------------------------------------------------------
-    // ListView des filenames des photos + page de contenu de l'onglet
-    // ----------------------------------------------------------------
+
+    /** *****************************************************************************
+     * Ligne 3 : ListView des filenames des photos + page de contenu de l'onglet.
+     * ******************************************************************************/
     RowLayout {
         id: line3
         anchors {
@@ -221,6 +225,10 @@ Window {
             right: parent.right
         }
 
+
+        /** *************************************************************************
+         * Encadré avec la ListView des filenames des photos. (Largeur fixe).
+         * **************************************************************************/
         Frame {
             id: listViewFrame
             Layout.fillHeight: true
@@ -231,13 +239,20 @@ Window {
             TiPhotoListview {}
         }
 
+
+        /** *************************************************************************
+         * Frames avec le contenu des onglets.
+         * **************************************************************************/
         StackLayout {
             id: tabbedPage
             Layout.fillWidth: true
+            Layout.margins: 16
+
             currentIndex: tabBar.currentIndex
             // On l'initialise sur la photo Welcome (type = QVariantMap)
             property var selectedData: _photoModel.get(0)
 
+            /// ------------------ CONNEXIONS----------------------------
             Connections {
                 target: _photoModel
                 function onDataChanged() {
@@ -247,89 +262,36 @@ Window {
                 }
             }
 
-            // ------------------ PREVIEW TAB --------------------------
-            TiPhotoPreview {
+            /// ------------------ PREVIEW TAB --------------------------
+            TabFramePhotoPreview {
                 id: previewView
                 Layout.fillWidth: true
             }
 
-            // ------------------ MAP TAB ------------------------------
-            GridLayout {
+            /// ------------------ MAP TAB ------------------------------
+            TabFramePhotoMap {
                 id: mapTab
                 Layout.fillWidth: true
-                // Les coordonnées du point sélectionné
-                // Actualisé lors d'un clic sur la listView, ou sur la carte.
-                property point homeCoords
-                //property double photoLatitude: settings.homeCoords.x
-                //property double photoLongitude: settings.homeCoords.y
-                property double photoLatitude: homeCoords.x
-                property double photoLongitude: homeCoords.y
-                columnSpacing: 8
-                rows: 3 // toolbar et carte/zones
-                columns: 2 // carte et zone des tags
-                // T T
-                // M Z1
-                // M Z2
-
-                // Barre d'outils pour la carte (controleur)
-                ToolBarMap {
-                    id: mapTools
-                    Layout.columnSpan: 2 // Toute la largeur
-                    Layout.fillWidth: true
-                }
-
-                TiMapView {
-                    id: mapView
-                    Layout.rowSpan: 2 // Haute comme 2 zones
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                }
-
-                // Affichage des infos supplémentaires (coords GPS, etc)
-                ZoneGeoloc {
-                    Layout.rightMargin: 40
-                    Layout.fillHeight: true
-                }
-                ZoneSuggestion {
-                    id: zoneSuggestionGeo
-                    Layout.rightMargin: 40
-                    Layout.fillHeight: true
-                }
             }
 
-            // ------------------ IPTC/EXIF TAGS TAB ----------------------------
-            TiPhotoTags {
+            /// ------------------ IPTC/EXIF TAGS TAB ----------------------------
+            TabFramePhotoTags {
                 id: photoTagsTab
+                Layout.fillWidth: true
             }
 
-            // ------------------ GLOBAL TAB ----------------------------
-            ColumnLayout {
+            /// ------------------ GLOBAL TAGS TAB ----------------------------
+            TabFrameGlobalTags {
+                id: tabFrameGlobalTags
                 Layout.fillWidth: true
-                Layout.fillHeight: true
-                ExifTitle {
-                    Layout.fillWidth: true
-                    Layout.topMargin: 20
-                    Layout.rightMargin: 40
-                }
-                ExifGrid {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                }
-                IptcTitle {
-                    Layout.fillWidth: true
-                    Layout.rightMargin: 40
-                }
-                IptcGrid {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                }
             }
         }
     }
 
-    // --------------------------------- Ligne 4
-    // Boutons et Imagettes
-    // ----------------------------------------------------------------
+
+    /** *****************************************************************************
+     * Ligne 4 : Boutons et Imagettes.
+     * ******************************************************************************/
     RowLayout {
         id: line4
         anchors.bottom: parent.bottom
