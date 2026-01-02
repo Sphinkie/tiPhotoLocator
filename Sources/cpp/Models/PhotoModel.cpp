@@ -771,7 +771,7 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
     // Cas particulier du rayon non fourni.
     if (circle_radius==-1) circle_radius = m_lastCircleRadius;
     else m_lastCircleRadius = circle_radius;
-    qDebug() << "circle_radius" << circle_radius << "m";
+    // qDebug() << "findInCirclePhotos > circle_radius" << circle_radius << "m";
 
     // Cas particulier du rayon nul
     if (circle_radius==0)  {
@@ -787,8 +787,8 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
     //qDebug() << "findInCirclePhotos" << circle_lat << circle_long << circle_radius << "m";
 
     double rayon_lat = double(circle_radius) / 111111;       // rayon_lat = circle_radius(km) / 111.11
-    double rayon_long = rayon_lat / cos(circle_lat);
-    // qDebug() << "constantes; Rlat" << rayon_lat << ", Rlon" << rayon_long;
+    double rayon_long = abs(rayon_lat / cos(circle_lat));
+    // qDebug() << "constantes: Rlat" << rayon_lat << ", Rlon" << rayon_long;
 
     // On parcourt tous les items du modèle (qui ont des coords GPS) pour positionner insideCircle.
     int row = 0;
