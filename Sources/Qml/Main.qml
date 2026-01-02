@@ -12,7 +12,7 @@ import "./Controllers"
 
 
 /** **********************************************************************************************************
- * @brief Fenêtre principale.
+ * @brief QML: Fenêtre principale.
  * ***********************************************************************************************************/
 Window {
     id: window
@@ -212,7 +212,7 @@ Window {
 
 
     /** *****************************************************************************
-     * Ligne 3 : ListView des filenames + page de contenu de l'onglet.
+     * Ligne 3 : ListView des filenames + Page de contenu de l'onglet.
      * ******************************************************************************/
     RowLayout {
         id: line3

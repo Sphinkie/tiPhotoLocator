@@ -4,7 +4,7 @@ import "../Javascript/TiUtilities.js" as Utilities
 
 
 /** **********************************************************************************************************
- * @brief Controlleur pour la Zone des informations de Preview.
+ * @brief QMLControlleur pour la Zone des informations de Preview.
  * Le flag isphoto sert à savoir si on est positionné sur un filename ou sur l'item de bienvenue au démarrage.
  * tabbebPage est l'item parent qui contient les infos sur la photos sélectionnée (selectedData), et qui les
  * partage avec tous ses onglets (sous-items).

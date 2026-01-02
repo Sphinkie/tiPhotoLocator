@@ -4,7 +4,7 @@ import "../Controllers"
 
 
 /** *************************************************************************************
- * @brief Composition de la page de l'onglet "MAP".
+ * @brief QML: Composition de la page de l'onglet "MAP".
  * [ ToolBar de Map     ]
  * |     Map     |[zone1]
  * |             |[zone2]

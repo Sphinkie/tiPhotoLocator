@@ -3,9 +3,9 @@ import QtQuick.Controls.Material
 
 
 /** **********************************************************************************************************
- * @brief Liste (sur une ligne horizontale) des imagettes des photos sélectionnées.
+ * @brief QML: Liste (sur une ligne horizontale) des imagettes des photos sélectionnées.
  * Cette ListView est basée sur le Model _onTheMapProxyModel (ensemble des photos à l'intérieur du cercle).
- * La photo qui est sélectionné dans la listView principale a un cadre
+ * La photo qui est sélectionné dans la listView principale a un cadre.
  * ***********************************************************************************************************/
 ListView {
     spacing: 4
@@ -33,6 +33,9 @@ ListView {
             anchors.centerIn: parent
             fillMode: Image.PreserveAspectFit
             source: imageUrl
+            asynchronous: true
+            // Smooth filtering gives better visual quality, but it may be slower on some hardware.
+            smooth: false
         }
     }
 }

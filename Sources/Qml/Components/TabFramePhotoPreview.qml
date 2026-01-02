@@ -4,7 +4,7 @@ import "../Controllers"
 
 
 /** *************************************************************************************
- * @brief Composition de la page de l'onglet "PREVIEW".
+ * @brief QML: Composition de la page de l'onglet "PREVIEW".
  * *************************************************************************************/
 RowLayout {
 
@@ -32,6 +32,7 @@ RowLayout {
             width: Math.min(sourceSize.width, parent.width)
             // Centrer l'image
             anchors.centerIn: parent
+            asynchronous: true
         }
     }
 

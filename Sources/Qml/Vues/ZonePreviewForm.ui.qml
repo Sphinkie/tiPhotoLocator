@@ -3,6 +3,11 @@ import QtQuick.Layouts
 import "../Components"
 
 
+/** **********************************************************************************************************
+ * @brief QML: Zone des informations de Preview.
+ * Cette zone comporte les Chips principaux, non éditables: Filename, Dimensions, Date de la prise de vue,
+ * Appareil photo, et Pays.
+ * ***********************************************************************************************************/
 Zone {
 
     property alias chipName: chipName
@@ -24,7 +29,7 @@ Zone {
         wrapMode: Text.WordWrap
         // anchors.centerIn: zonePreview // A mettre si on veut positionner le texte à mi-hauteur.
         horizontalAlignment: Text.AlignHCenter
-        // DDL color : TiStyle.primaryTextColor
+        // TODO color : TiStyle.primaryTextColor
         textFormat: Text.StyledText
     }
 
@@ -57,7 +62,7 @@ Zone {
         }
         Chips {
             id: chipMake
-            Layout.topMargin: 30  // on laisse un espace
+            Layout.topMargin: 30 // on laisse un espace
             Layout.leftMargin: 20
             editable: false
             deletable: false
@@ -76,4 +81,3 @@ Zone {
         }
     }
 }
-

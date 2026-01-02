@@ -4,7 +4,7 @@ import ".."
 
 
 /** **********************************************************************************************************
- * @brief Liste des filenames des photos, associée au modèle filtré UnlocalizedProxyModel.
+ * @brief QML: Liste des filenames des photos, associée au modèle filtré UnlocalizedProxyModel.
  * Ce modèle est basé sur PhotoModel, filtré par UndatedPhotoProxyModel puis par UnlocalizedProxyModel.
  * @sa https://www.youtube.com/watch?v=ZArpJDRJxcI
  * ***********************************************************************************************************/
@@ -15,6 +15,9 @@ ListView {
     delegate: listDelegate
     focus: true
     clip: true // pour que les items restent à l'interieur de la listview
+    // Dépacement rapide du highlight: en 0.5s max
+    highlightMoveDuration: 500
+    highlightMoveVelocity: -1
 
 
     /** ******************************************************************************************************
