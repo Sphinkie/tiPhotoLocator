@@ -70,7 +70,7 @@ Item {
     // TODO : couleur à améliorer
     readonly property color accentTextColor: Material.accentColor // "firebrick" // filenames toBeSaved
 
-    // Le(s) filename(s) sélectionné(s) dans la liste
+    // La couleur de fond de(s) filename(s) sélectionné(s) dans la liste
     readonly property color highlightBackgroundColor: Material.color(
                                                           Material.LightGreen,
                                                           Material.Shade200)

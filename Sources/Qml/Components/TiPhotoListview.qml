@@ -160,11 +160,11 @@ ListView {
                     window.setSuggestionFilter(sourceindex)
 
                     // On réactualise le contenu du cercle rouge
-                    // TODO : C'est consommateur car on parcourt toutes les photos du modèel à chaque clic!
+                    // TODO : C'est consommateur car on parcourt toutes les photos du modèle à chaque clic!
                     _photoModel.findInCirclePhotos()
 
                     // On relance une demande d'infos ReverseGeo
-                    // si onglet CARTE et COORDS GPS et il n'y a pas déjà de City ni Country:
+                    // si onglet CARTE et COORDS GPS et s'il n'y a pas déjà de City ni Country:
                     if ((tabbedPage.currentIndex === 1) && hasGPS && city === ""
                             && country === "") {
                         // console.debug(">>>> restart geoTimer")
