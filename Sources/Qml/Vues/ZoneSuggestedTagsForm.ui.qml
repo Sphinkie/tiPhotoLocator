@@ -3,23 +3,30 @@ import QtQuick.Layouts
 import QtQuick.Controls.Material
 import "../Components"
 
+
+/** **********************************************************************************************************
+ * @brief Cette zone affiche les Chips de Suggestion de Tags pour cette photo.
+ * ***********************************************************************************************************/
 Zone {
     id: suggestedTagsZone
-    color: TiStyle.suggestionBackgroundColor
-    iconZone: "qrc:/Images/icon-suggestion.png"
-    txtZone: qsTr("Suggestions")
     property alias bt_getinfo: bt_getinfo
 
+    color: Style.suggestionBackgroundColor
+    iconZone: "qrc:/Images/icon-suggestion.png"
+    txtZone: qsTr("Suggestions")
+
+    // Le Flickable permet de scroller s'il y a trop de suggestions.
     Flickable {
         contentWidth: parent.width
         contentHeight: parent.height
-        //        contentHeight: grille.implicitHeight
+
+        // Le Flow met les chips les unes après les autres.
         Flow {
             id: grille
             width: parent.width
             height: parent.height
-            padding: 10
-            spacing: 10
+            spacing: 12
+            padding: 20
 
             SuggestionRepeater {
                 id: suggestionRepeater
@@ -28,7 +35,6 @@ Zone {
             Button {
                 id: bt_getinfo
                 text: qsTr("Autres tags...")
-                // DDL color: "lightskyblue"
                 icon.source: "qrc:/Images/icon-suggestion.png"
             }
         }

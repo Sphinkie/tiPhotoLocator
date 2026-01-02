@@ -4,7 +4,7 @@ import "../Vues"
 
 
 /** **********************************************************************************************************
- * @brief Controlleur pour la barre de boutons au dessus de la carte.
+ * @brief Controlleur pour la barre de boutons située au dessus de la carte.
  * ***********************************************************************************************************/
 ToolBarMapForm {
 

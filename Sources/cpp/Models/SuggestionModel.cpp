@@ -204,7 +204,7 @@ void SuggestionModel::removeFromSuggestion(const QString target)
     // On trouve la (ou les) suggestion(s) demandées
     for (int row=0; row<m_suggestions.count(); row++ )
     {
-        qDebug() << m_suggestions.at(row).target <<  m_suggestions.at(row).text;
+        // qDebug() << m_suggestions.at(row).target <<  m_suggestions.at(row).text;
         if (m_suggestions.at(row).target == target)
         {
             // Trouvé: On retire la photo de la suggestion

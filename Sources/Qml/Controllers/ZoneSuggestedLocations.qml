@@ -4,7 +4,7 @@ import "../Vues"
 
 /** **********************************************************************************************************
  * @brief Controlleur pour la Zone située dans l'onglet CARTE.
- * La zone contient les suggestions géographiques du SuggestionRepeater (city, country, etc)
+ * Cette zone contient les suggestions géographiques du SuggestionRepeater (city, country, etc)
  * ainsi que le bouton "Chercher".
  * ***********************************************************************************************************/
 ZoneSuggestedLocationsForm {

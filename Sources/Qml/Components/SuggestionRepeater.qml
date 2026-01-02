@@ -1,8 +1,10 @@
 import QtQuick
+import QtQuick.Layouts
 
 
 /** **********************************************************************************************************
  * @brief Ce Repeater contient les suggestions fournies par le modèle SuggestionCategoryProxyModel.
+ * Le Repeater doit être encapsulé dans un positionneur de type Flow, ColumnLayout ou Column.
  * Ce modele est basé sur SuggestionModel et est filtré selon la Category.
  * Le ProxyModel doit être configuré pour filtrer soit les suggestions "geo", soit les suggestions "tag".
  * ***********************************************************************************************************/
