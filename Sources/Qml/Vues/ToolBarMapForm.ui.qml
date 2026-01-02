@@ -4,12 +4,13 @@ import QtQuick.Controls.Material
 import "../Components"
 
 
-
+/** **********************************************************************************************************
+ * @brief Cette vue correspond à la barre d'outils spécifiques à la carte.
+ * ***********************************************************************************************************/
 Item {
     property alias bt_save_pos: bt_save_pos
     property alias bt_remove_savedpos: bt_remove_savedpos
     property alias bt_apply_savedpos: bt_apply_savedpos
-    property alias bt_clear_coords: bt_clear_pos
     property alias slider_radius: slider_radius
     property alias bt_revert: bt_revert
 
@@ -70,14 +71,4 @@ Item {
         ToolTip.delay: 500
     }
 
-    Button {
-        id: bt_clear_pos
-        enabled: false
-        text: qsTr("Clear GPS Coords")
-        icon.source: "qrc:/Images/bt-suppr.png"
-        anchors {right: parent.right; rightMargin: 40; verticalCenter: parent.verticalCenter}
-        ToolTip.text: qsTr("Efface les coordonnées GPS de la photo (si besoin de confidentialité)")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
-    }
 }

@@ -7,6 +7,14 @@ import "../Vues"
  * ***********************************************************************************************************/
 ZoneGeolocForm {
 
+    bt_clear_coords.onClicked: {
+        // On efface les coordonnées GPS des photos affichées
+        window.setSelectedPhotoCoords(0, 0)
+        // On efface la copie locale QML de ces coordonnées...
+        mapTab.photoLatitude = 0
+        mapTab.photoLongitude = 0
+    }
+
     // -----------------------------------------------------------------------------------
     // EDIT BUTTON
     // -----------------------------------------------------------------------------------
@@ -69,6 +77,7 @@ ZoneGeolocForm {
         target: tabbedPage
         function onSelectedDataChanged() {
             // console.debug("onSelectedDataChanged->ZoneGeoloc");
+            bt_clear_coords.enabled = tabbedPage.selectedData.hasGPS
             chipLat.visible = tabbedPage.selectedData.hasGPS
             chipLong.visible = tabbedPage.selectedData.hasGPS
             chipLat.content = tabbedPage.selectedData.latitude.toFixed(

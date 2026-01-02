@@ -1,7 +1,11 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls.Material
 import "../Components"
 
+/** **********************************************************************************************************
+ * @brief Cette zone affiche les Chips de catégorie "geo" associés à la photo.
+ * ***********************************************************************************************************/
 Zone{
     id: geolocZone
     property alias chipLat: chipLat
@@ -9,11 +13,25 @@ Zone{
     property alias chipCity: chipCity
     property alias chipCountry: chipCountry
     property alias chipLocation: chipLocation
+	property alias bt_clear_coords: bt_clear_coords
 
     iconZone: "qrc:/Images/icon-world.png"
     txtZone: qsTr("Géolocalisation")
 	
     ColumnLayout {
+	
+		Button {
+			id: bt_clear_coords
+			enabled: false
+			text: qsTr("Clear GPS Coords")
+			icon.source: "qrc:/Images/bt-suppr.png"
+			Layout.leftMargin: 20 
+			Layout.topMargin: 20 
+			ToolTip.text: qsTr("Efface les coordonnées GPS de la photo (si besoin de confidentialité)")
+			ToolTip.visible: hovered
+			ToolTip.delay: 500
+		}
+	
         Chips {
             id: chipLat
             editable: false
