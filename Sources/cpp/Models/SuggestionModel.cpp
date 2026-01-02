@@ -29,7 +29,7 @@ SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
  * @brief Returns the number of elements in the model.
  * @note Implémentation obligatoire.
  * @param parent: parent of the model
- */
+ * ***********************************************************************************************************/
 int SuggestionModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid())
@@ -100,7 +100,7 @@ Qt::ItemFlags SuggestionModel::flags(const QModelIndex &index) const
  * @param category: The category of the Suggestion ("geo", "tag", "geo|tag")
  * @param photo_row: L'indice de la Photo à associée à cette Suggestion.
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
- *                   La valeur spéciale -2 signifie 'la Photo sélectionée' (valeur par défaut).
+ *                   La valeur spéciale -2 signifie 'la Photo sélectionnée' (valeur par défaut).
  * ***********************************************************************************************************/
 void SuggestionModel::append(const QString text, const QString target, const QString category, int photo_row)
 {
@@ -118,7 +118,7 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
             return;
         }
     }
-    // A la fin de la boucle, on ne l'a pas trouvé: il s'agit donc d'un nouvelle suggestion
+    // A la fin de la boucle, on ne l'a pas trouvé: il s'agit donc d'une nouvelle suggestion
     if (photo_row == -2)
     {
         // si le numéro de la photo n'est pas fourni, on prend la photo sélectionnée dans la ListView.
@@ -174,14 +174,14 @@ void SuggestionModel::addCategoryToSuggestion(const int suggestion_row, const QS
         m_suggestions[suggestion_row].category = "geo|tag";
     }
     // Emit signal
-    QModelIndex index = this->index(suggestion_row, 0);;
+    QModelIndex index = this->index(suggestion_row, 0);
     emit dataChanged(index, index, QVector<int>() << CategoryRole);
 }
 
 
 /** **********************************************************************************************************
  * @brief Ce slot enlève la Photo courante de la liste des photos correspondant à une Suggestion donnée.
- * @param index : L'index dans le Model de la suggestion à modifier.
+ * @param index : L'index dans le Model de la Suggestion à modifier.
  * ***********************************************************************************************************/
 void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 {
@@ -191,6 +191,28 @@ void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
     m_suggestions[row].photos.remove(m_selectedPhotoRow);
     // Emit signal
     emit dataChanged(index, index, QVector<int>() << PhotosRole);
+}
+
+/** **********************************************************************************************************
+ * @brief Enlève la Photo courante de la liste des photos correspondant à une Suggestion donnée.
+ * @param target : la suggestion à enlever, par exemple "city", "country"...
+ * Note: la suggestion existe toujours: on a juste enlevé la photo courante de ses photos associées:
+ * donc elle n'apparait plus dans la Zone.
+ * ***********************************************************************************************************/
+void SuggestionModel::removeFromSuggestion(const QString target)
+{
+    // On trouve la (ou les) suggestion(s) demandées
+    for (int row=0; row<m_suggestions.count(); row++ )
+    {
+        qDebug() << m_suggestions.at(row).target <<  m_suggestions.at(row).text;
+        if (m_suggestions.at(row).target == target)
+        {
+            // Trouvé: On retire la photo de la suggestion
+            m_suggestions[row].photos.remove(m_selectedPhotoRow);
+            // Emit signal : la liste des suggestions a changé
+            emit dataChanged(index(row), index(row), QVector<int>() << PhotosRole);
+        }
+    }
 }
 
 

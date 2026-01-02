@@ -3,7 +3,7 @@ import "../Vues"
 
 
 /** **********************************************************************************************************
- * @brief Controlleur de la zone d'affichage des données geographiques.
+ * @brief Controlleur de la zone d'affichage des données géographiques. Gère les boutons des Chips.
  * ***********************************************************************************************************/
 ZoneGeolocForm {
 

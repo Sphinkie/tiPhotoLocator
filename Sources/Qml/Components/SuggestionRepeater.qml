@@ -2,7 +2,8 @@ import QtQuick
 
 
 /** **********************************************************************************************************
- * @brief Ce Repeater contient les suggestions fournies par le modèle filtré par catégorie SuggestionCategoryProxyModel.
+ * @brief Ce Repeater contient les suggestions fournies par le modèle SuggestionCategoryProxyModel.
+ * Ce modele est basé sur SuggestionModel et est filtré selon la Category.
  * Le ProxyModel doit être configuré pour filtrer soit les suggestions "geo", soit les suggestions "tag".
  * ***********************************************************************************************************/
 Repeater {
@@ -11,7 +12,11 @@ Repeater {
     focus: false
     clip: true // pour que les items restent à l'interieur du Repeater
 
-    // Le delegate pour afficher un item dans le Flow
+
+    /** ******************************************************************************************************
+     * Le delegate pour afficher chaque item du Flow. Chaque item est composé d'un Chips cliquable
+     * (cad avec MouseArea).
+     * *******************************************************************************************************/
     Component {
         id: suggestionDelegate
 
@@ -23,9 +28,13 @@ Repeater {
             required property string text
             required property string target
             required property string category
+            // index = property particulière = indice de la suggestion
             required property string index
 
-            // property particulière = indice de la suggestion
+
+            /** ************************************************************************************************
+             * Chips de suggestion.
+             * *************************************************************************************************/
             Chips {
                 id: currrentChip
                 content: text
@@ -34,7 +43,10 @@ Repeater {
                 targetName: target + ":"
             }
 
-            // Gestion du clic sur un item (Chip suggestion)
+
+            /** ************************************************************************************************
+             * Gestion du clic sur le Chip.
+             * *************************************************************************************************/
             MouseArea {
                 anchors.fill: parent
                 onClicked: {

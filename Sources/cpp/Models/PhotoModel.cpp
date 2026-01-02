@@ -778,6 +778,8 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
         this->resetCircle();
         return;
     }
+    // Le rayon du cerce n'est pas nul.
+    m_circleResetted = false;
 
     // Le centre du cercle est la photo sélectionnée
     double circle_lat = m_photos[m_lastSelectedRow].gpsLatitude;
@@ -788,7 +790,7 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
     double rayon_long = rayon_lat / cos(circle_lat);
     // qDebug() << "constantes; Rlat" << rayon_lat << ", Rlon" << rayon_long;
 
-    // On parcourt tous les items du modèle (qui ont des coords GPS)
+    // On parcourt tous les items du modèle (qui ont des coords GPS) pour positionner insideCircle.
     int row = 0;
     QModelIndex idx = this->index(row, 0);
     while (idx.isValid())
@@ -817,6 +819,9 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
  * ***********************************************************************************************************/
 void PhotoModel::resetCircle()
 {
+    // Si cela a déjà été fait, on ne recommence pas.
+    if (m_circleResetted) return;
+
     // On parcourt tous les items du modèle
     int row = 0;
     QModelIndex idx = this->index(row, 0);
@@ -827,6 +832,7 @@ void PhotoModel::resetCircle()
     }
     // A la fin, on notifie en une seule fois l'ensemble des photos.
     emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
+    m_circleResetted = true;
 }
 
 

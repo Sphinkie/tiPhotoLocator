@@ -104,9 +104,3 @@ void SuggestionProxyModel::removePhotoFromSuggestion(const QModelIndex proxyInde
     source_model->removeCurrentPhotoFromSuggestion(mapToSource(proxyIndex));
 }
 
-
-
-
-
-
-

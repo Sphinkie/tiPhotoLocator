@@ -7,15 +7,15 @@ import "../Vues"
  * La zone contient les suggestions géographiques du SuggestionRepeater (city, country, etc)
  * ainsi que le bouton "Chercher".
  * ***********************************************************************************************************/
-ZoneSuggestionForm {
+ZoneSuggestedLocationsForm {
 
 
     /** ******************************************************************************************************
-     * Gestion du bouton Chercher.
+     * Clic sur bouton "Chercher".
      * A noter que la recherche est aussi lancée automatiquement par un Timer de TiPhotoListview.
      * *******************************************************************************************************/
     bt_getinfo.onClicked: {
-        // si Click, on envoie une request pour récupérer des infos à partir des coords GPS.
+        // On envoie une request pour récupérer des infos à partir des coords GPS.
         window.requestReverseGeocode(mapTab.photoLatitude,
                                      mapTab.photoLongitude)
     }

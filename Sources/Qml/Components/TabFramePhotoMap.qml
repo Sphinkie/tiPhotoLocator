@@ -6,8 +6,8 @@ import "../Controllers"
 /** *************************************************************************************
  * @brief Composition de la page de l'onglet "MAP".
  * [ ToolBar de Map     ]
- * | Map         |[zone1]
- * | Map         |[zone2]
+ * |     Map     |[zone1]
+ * |             |[zone2]
  * *************************************************************************************/
 GridLayout {
     // Les coordonnées du point sélectionné
@@ -30,7 +30,7 @@ GridLayout {
         Layout.fillWidth: true
     }
 
-    /// La carte haute comme 2 zones (controleur avec vue).
+    /// La carte haute comme deux zones (controleur avec vue).
     TiMapView {
         id: mapView
         Layout.rowSpan: 2
@@ -45,8 +45,8 @@ GridLayout {
     }
 
     /// Zone 2: Affichage du bouton "chercher" et des suggestions.
-    ZoneSuggestion {
-        id: zoneSuggestionGeo
+    ZoneSuggestedLocations {
+        id: zoneSuggestedLocations
         Layout.rightMargin: 40
         Layout.fillHeight: true
     }

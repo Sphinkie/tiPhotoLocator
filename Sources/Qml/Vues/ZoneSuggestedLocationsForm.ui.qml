@@ -3,9 +3,9 @@ import QtQuick.Layouts
 import QtQuick.Controls.Material
 import "../Components"
 
-Zone{
+Zone {
     id: suggestionZone
-    // DDL color: TiStyle.suggestionBackgroundColor
+    color: Style.suggestionBackgroundColor
     iconZone: "qrc:/Images/icon-suggestion.png"
     txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
     property alias bt_getinfo: bt_getinfo
@@ -16,7 +16,6 @@ Zone{
         Button {
             id: bt_getinfo
             text: qsTr("Chercher")
-            // DDL color: "lightskyblue"
             icon.source: "qrc:/Images/icon-suggestion.png"
             enabled: tabbedPage.selectedData.hasGPS
             Layout.alignment: Qt.AlignRight
@@ -25,13 +24,10 @@ Zone{
         }
 
         SuggestionRepeater {
-            id : suggestionRepeater
+            id: suggestionRepeater
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.leftMargin: 20
         }
     }
-
 }
-
-

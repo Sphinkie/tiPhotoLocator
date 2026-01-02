@@ -183,7 +183,9 @@ private:
     QVector<Photo> m_photos;                    //!< La liste des Photo du modèle
     int m_lastSelectedRow = 0;                  //!< L'indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
     int m_dumpedRow = 0;                        //!< Compteur pour le dump de debug
-    int m_lastCircleRadius = 0;                  //!< Valeur précdente du rayon de recherche
+    int m_lastCircleRadius = 0;                 //!< Valeur précdente du rayon de recherche
+    bool m_circleResetted = true;               //!< True si le rayon du cercle est à 0, et que le flag insideCircle a été resetté sur toutes les photos.
+
 };
 
 #endif // PHOTOMODEL_H

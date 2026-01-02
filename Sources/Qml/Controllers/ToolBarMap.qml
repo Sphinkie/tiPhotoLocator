@@ -10,15 +10,14 @@ ToolBarMapForm {
 
     property bool savedPositionExists: false
 
+    /// Clic sur "Save Position" : On enregistre la position de l'image dans la Saved Position.
     bt_save_pos.onClicked: {
-        // Après un clic sur Save Position,
-        // On enregistre la position de l'image dans la Saved Position
         window.savePosition(mapTab.photoLatitude, mapTab.photoLongitude)
         savedPositionExists = true
     }
 
+    /// Clic sur "Remove Saved Pos": Efface la Saved Position.
     bt_remove_savedpos.onClicked: {
-        // On efface la Saved Position
         window.clearSavedPosition()
         savedPositionExists = false
     }
@@ -33,7 +32,8 @@ ToolBarMapForm {
             mapView.center = pos
     }
 
-    /// Quand on relache le slider, il recherche les photos qui pourraient être dans le cercle.
+    /// Quand on relache le slider,
+    // FIXME il recherche les photos qui pourraient être dans le cercle.
     slider_radius.onPressedChanged: {
         if (!slider_radius.pressed)
             _photoModel.findInCirclePhotos(slider_radius.value)
@@ -55,7 +55,7 @@ ToolBarMapForm {
     bt_remove_savedpos.enabled: savedPositionExists
     bt_apply_savedpos.enabled: savedPositionExists
 
-    // Gestion du grisage des boutons
+    /// Gestion du grisage des boutons
     Connections {
         target: tabbedPage
         function onSelectedDataChanged() {

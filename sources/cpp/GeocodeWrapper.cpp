@@ -116,10 +116,14 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         {
             // Cas 2 : On avait demandé des suggestions
             const QGeoAddress adresse = geolocation.address();
-            qDebug() << adresse.text();
+            qDebug() << "adresse" << adresse.text();
             // Il y a un bug dans Qt: county et district sont toujours vides. On va les chercher dans le texte.
             QStringList fieldlist = adresse.text().split(", ", Qt::SkipEmptyParts);
-            // On mémorise les suggestions
+            // On efface les suggestions précédentes
+            m_suggestionModel->removeFromSuggestion("city");
+            m_suggestionModel->removeFromSuggestion("country");
+            m_suggestionModel->removeFromSuggestion("location");
+            // On mémorise les nouvelles suggestions recues
             int nb_kw = 2;
             foreach (QString field, fieldlist) {
                 bool isInt;
@@ -127,12 +131,13 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
                 // Si c'est un numérique (ex: code postal), on l'ignore.
                 if (!isInt)
                 {
-                    QString target;
+                    QString target; // par exemple: city, country, etc
                     // qDebug() << "compare" << field << adresse.country() << adresse.state();
                     if    (field == adresse.country()) target = "country";
                     else if (field == adresse.state()) target = "country";
                     else if (field == adresse.city())  target = "city";
                     else target = "location";
+                    // Par défaut, la suggestion est associée à la photo courante.
                     m_suggestionModel->append(field, target, "geo");
                     // On ajoute aussi N fields (non-numériques) en tant que "tag"
                     if (nb_kw-- > 0)

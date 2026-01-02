@@ -52,6 +52,8 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/TiPhotoListview.qml
         Sources/Qml/Components/TabFramePhotoPreview.qml
         Sources/Qml/Components/TabFramePhotoTags.qml
+        Sources/Qml/Components/TabFrameGlobalTags.qml
+        Sources/Qml/Components/TabFramePhotoMap.qml
         Sources/Qml/Components/Zone.qml
         Sources/Qml/Components/ZoneTitle.qml
         Sources/Qml/Controllers/ExifGrid.qml
@@ -67,7 +69,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Controllers/ZonePhoto.qml
         Sources/Qml/Controllers/ZonePreview.qml
         Sources/Qml/Controllers/ZoneSuggestedTags.qml
-        Sources/Qml/Controllers/ZoneSuggestion.qml
+        Sources/Qml/Controllers/ZoneSuggestedLocations.qml
         Sources/Qml/Controllers/ZoneUserdata.qml
         Sources/Qml/Dialogs/AboutDialog.qml
         Sources/Qml/Dialogs/ApikeyDialog.qml
@@ -77,19 +79,20 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Models/ModelFolderList.qml
         Sources/Qml/Vues/ExifGridForm.ui.qml
         Sources/Qml/Vues/IptcGridForm.ui.qml
-        Sources/Qml/Vues/MetadataPopupForm.ui.qml Sources/Qml/Vues/SettingsPopupForm.ui.qml Sources/Qml/Vues/TiTabButtonForm.ui.qml Sources/Qml/Vues/ToolBarBottomForm.ui.qml
+        Sources/Qml/Vues/MetadataPopupForm.ui.qml
+        Sources/Qml/Vues/SettingsPopupForm.ui.qml
+        Sources/Qml/Vues/TiTabButtonForm.ui.qml
+        Sources/Qml/Vues/ToolBarBottomForm.ui.qml
         Sources/Qml/Vues/ToolBarMapForm.ui.qml Sources/Qml/Vues/ToolBarPrincipaleForm.ui.qml Sources/Qml/Vues/ZoneCameraForm.ui.qml Sources/Qml/Vues/ZoneGeolocForm.ui.qml
         Sources/Qml/Vues/ZonePhotoForm.ui.qml
         Sources/Qml/Vues/ZonePreviewForm.ui.qml
         Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml
-        Sources/Qml/Vues/ZoneSuggestionForm.ui.qml
+        Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml
         Sources/Qml/Vues/ZoneUserdataForm.ui.qml
     QML_FILES
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
-        QML_FILES Sources/Qml/Components/TabFrameGlobalTags.qml
-        QML_FILES Sources/Qml/Components/TabFramePhotoMap.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

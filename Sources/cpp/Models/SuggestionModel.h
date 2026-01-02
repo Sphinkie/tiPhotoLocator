@@ -26,9 +26,9 @@ struct Suggestion
     };
 
     // Elements de la structure
-    QString text;              //!< Le contenu textuel de la suggestion. Example: "COSTA RICA".
-    QString target;            //!< Le nom de la metadata compatible avec ce texte. Example: "country".
-    QString category;          //!< Permet aux zones d'afficher ou non la suggestion. Example: "geo", "tag"...
+    QString text;              //!< Le contenu textuel de la suggestion. Exemple: "COSTA RICA".
+    QString target;            //!< Le nom de la metadata compatible avec ce texte. Exemple: "country".
+    QString category;          //!< Permet aux zones d'afficher ou non la suggestion. Exemple: "geo", "tag"...
     QSet<int> photos;          //!< List of Photo matching this suggestion.
 
     // Surcharges d'opérateur
@@ -65,9 +65,10 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     // -----------------------------------------------------
-    // Methodes publiques
+    // Méthodes publiques
     // -----------------------------------------------------
     void removeCurrentPhotoFromSuggestion(const QModelIndex index);
+    void removeFromSuggestion(const QString target);
     Q_INVOKABLE void dumpData();
 
 public slots:
@@ -85,7 +86,7 @@ private:
     // Membres
     // -----------------------------------------------------
     QVector<Suggestion> m_suggestions;  //!< La liste des Suggestion
-    int m_selectedPhotoRow = -4;        //!< La valeur par defaut -4 ne correspond à aucune photo
+    int m_selectedPhotoRow = -4;        //!< La valeur par défaut -4 ne correspond à aucune photo.
     int m_dumpedRow;                    //!< La dernière ligne affichée dans le dump de debug.
 
 };

@@ -46,34 +46,32 @@ Window {
     // ----------------------------------------------------------------
     // sur une photo unitaire:
     signal append(string filename, string url)
-    // Ajoute une JPG au modèle
+    //< Ajoute une JPG au modèle
     signal fetchSingleExifMetadata(int row)
-    // Lit les metadata d'une JPG
+    //< Lit les metadata d'une JPG
     signal setPhotoProperty(int photo, string texte, string target)
-    // Fait un setData pour affecter un role du Model
+    //< Fait un setData pour affecter un role du Model
     signal setSelectedPhotoCoords(double lati, double longi)
-    // Positionne les coords de la photo séléctionnée
-    // sur plusieurs photos:
+    //< Positionne les coords de la photo séléctionnée sur plusieurs photos
     signal fetchExifMetadata
-    // Lit les metadata de toutes les JPG
+    //< Lit les metadata de toutes les JPG
     signal saveMetadata
-    // Ecrit les metadata sur le disque
+    //< Ecrit les metadata sur le disque
     signal applyCreatorToAll
-    // Applique le Creator (des settings) à toutes les photos du modèle
+    //< Applique le Creator (des settings) à toutes les photos du modèle
     signal applySavedPositionToCoords
-    // Affecte la position mémorisée à toutes les photos du cercle
-    // Gestion de la SavedPosition
+    //< Affecte la position mémorisée à toutes les photos du cercle
     signal savePosition(double lati, double longi)
-    // Mémorise une position
+    //< Mémorise une position
     signal clearSavedPosition
-    // Efface une position mémorisée
+    //< Efface une position mémorisée
     // ----------------------------------------------------------------
     // Les signaux vers SuggestionModel
     // ----------------------------------------------------------------
     signal setSuggestionFilter(int row)
     signal setCategoryFilter(string category)
     signal removePhotoFromSuggestion(int row)
-    // Retire la photo courante de la Suggestion passée en paramètre
+    //< Retire la photo courante de la Suggestion passée en paramètre
     // ----------------------------------------------------------------
     // Autres signaux
     // ----------------------------------------------------------------
