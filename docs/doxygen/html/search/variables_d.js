@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['target_0',['target',['../struct_suggestion.html#ac3b42e1b81fb69adfb3ad0334b80fe1e',1,'Suggestion']]],
-  ['text_1',['text',['../struct_suggestion.html#aecac3e72672ace070a7c01823b4beac1',1,'Suggestion']]],
-  ['tobesaved_2',['toBeSaved',['../struct_photo.html#a66c836579b45614de3f51edba11ea2fe',1,'Photo']]]
+  ['settings_0',['settings',['../class_iptc_grid.html#a996459437a7010dc06d9f190964c8718',1,'IptcGrid::settings'],['../class_settings_popup_form.html#a31109f8b75b1bbf32ae4a7d2c32963c2',1,'SettingsPopupForm::settings']]],
+  ['shutterspeed_1',['shutterSpeed',['../struct_photo.html#aeaeadb764ea3e33efa012abc317676db',1,'Photo']]],
+  ['software_2',['software',['../struct_photo.html#a1e092e500b8cc02272e39b823f094180',1,'Photo']]]
 ];

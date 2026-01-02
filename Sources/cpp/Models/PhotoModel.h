@@ -126,7 +126,7 @@ public:
     Q_INVOKABLE void clear();
     Q_INVOKABLE void removePhotoKeyword(QString keyword);
     Q_INVOKABLE void updatePhotoKeyword(QString keyword, int index);
-    Q_INVOKABLE void findInCirclePhotos(int circle_radius);
+    Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
 
     // -----------------------------------------------------
     // Methodes publiques
@@ -183,6 +183,7 @@ private:
     QVector<Photo> m_photos;                    //!< La liste des Photo du modèle
     int m_lastSelectedRow = 0;                  //!< L'indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
     int m_dumpedRow = 0;                        //!< Compteur pour le dump de debug
+    int m_lastCircleRadius = 0;                  //!< Valeur précdente du rayon de recherche
 };
 
 #endif // PHOTOMODEL_H

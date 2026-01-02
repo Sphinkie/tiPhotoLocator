@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['orientation_0',['orientation',['../struct_photo.html#a0f11a71d79268e835723f1db0f4acffa',1,'Photo']]]
+  ['nametext_0',['nameText',['../class_ti_photo_listview.html#af0e2f03597538710748d422c05626989',1,'TiPhotoListview']]],
+  ['normalizedletters_1',['normalizedLetters',['../class_utilities.html#ab3ca40153c4e52be4bb47cd5bf48e97b',1,'Utilities']]]
 ];

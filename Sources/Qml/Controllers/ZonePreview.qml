@@ -4,7 +4,10 @@ import "../Javascript/TiUtilities.js" as Utilities
 
 
 /** **********************************************************************************************************
- * @brief Controlleur.
+ * @brief Controlleur pour la Zone des informations de Preview.
+ * Le flag isphoto sert à savoir si on est positionné sur un filename ou sur l'item de bienvenue au démarrage.
+ * tabbebPage est l'item parent qui contient les infos sur la photos sélectionnée (selectedData), et qui les
+ * partage avec tous ses onglets (sous-items).
  * ***********************************************************************************************************/
 ZonePreviewForm {
 
@@ -20,7 +23,7 @@ ZonePreviewForm {
 
     txtZone: isphoto ? qsTr("Summary") : ""
 
-    // On determine le contenu des champs ici, mais ça marche aussi si on le fait dans la vue.
+    // On determine le contenu des 7 Chips ici, mais ça marche aussi si on le fait dans la vue.
     chipName.content: isphoto ? tabbedPage.selectedData.filename : ""
     chipSize.content: isphoto ? tabbedPage.selectedData.imageWidth + " x "
                                 + tabbedPage.selectedData.imageHeight : ""

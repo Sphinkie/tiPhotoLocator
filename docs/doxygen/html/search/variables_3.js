@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['gpslatitude_0',['gpsLatitude',['../struct_photo.html#aebc8cca52d5bbb81ca5726f221818839',1,'Photo']]],
-  ['gpslongitude_1',['gpsLongitude',['../struct_photo.html#ad76b83d8bbaae4a2e4bfefef2f268008',1,'Photo']]]
+  ['filename_0',['filename',['../struct_photo.html#a74c2e37c247175676d801adab5d0251a',1,'Photo']]],
+  ['fnumber_1',['fNumber',['../struct_photo.html#a52f8b3c14a9736e4a6f1a338987a4113',1,'Photo']]],
+  ['footer_2',['footer',['../class_ti_photo_listview.html#a830a12241df27ddf89097ac801687021',1,'TiPhotoListview']]]
 ];

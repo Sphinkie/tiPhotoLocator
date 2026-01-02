@@ -152,7 +152,7 @@ Window {
     Rectangle {
         id: line2
         anchors.top: toolBar.bottom
-        color: Style.surfaceContainerColor
+        // TODO color: Style.surfaceContainerColor
         width: parent.width
         height: filtersAndTabslayout.height
 
@@ -214,7 +214,7 @@ Window {
 
 
     /** *****************************************************************************
-     * Ligne 3 : ListView des filenames des photos + page de contenu de l'onglet.
+     * Ligne 3 : ListView des filenames + page de contenu de l'onglet.
      * ******************************************************************************/
     RowLayout {
         id: line3
@@ -227,7 +227,7 @@ Window {
 
 
         /** *************************************************************************
-         * Encadré avec la ListView des filenames des photos. (Largeur fixe).
+         * Encadré avec la ListView des filenames. (Largeur fixe).
          * **************************************************************************/
         Frame {
             id: listViewFrame
@@ -299,29 +299,21 @@ Window {
         anchors.left: parent.left
         //anchors.top: line3.bottom
 
-        // Barre de boutons
+        /// Barre de boutons
         ToolBarBottom {
             id: bottomToolBar
             height: 160
             Layout.preferredWidth: 380
         }
 
+        /// Barre des imagettes
         ImagettesListView {
             id: imagettes
             height: 160
             Layout.fillWidth: true
             Layout.rightMargin: 30
         }
-
-
-        /*
-        // Imagettes
-        TiImagettes {
-            id: imagettes
-            height: 120
-            Layout.fillWidth: true
-        }
-*/ }
+    }
 
     // ----------------------------------------------------------------
     // Lecture des Settings

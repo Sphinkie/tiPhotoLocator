@@ -15,7 +15,9 @@ GridLayout {
     rowSpacing: 10
     columns: 3
 
+    // -- --------------------------------------------------------
     /// Tag "Creator"
+    // -- --------------------------------------------------------
     TinyChip {
         content: "Creator"
     }
@@ -31,7 +33,9 @@ GridLayout {
         verticalAlignment: Text.AlignVCenter
     }
 
+    // -- --------------------------------------------------------
     /// Tag "City"
+    // -- --------------------------------------------------------
     TinyChip {
         content: "City"
     }
@@ -53,6 +57,9 @@ GridLayout {
         verticalAlignment: Text.AlignVCenter
     }
 
+    // -- --------------------------------------------------------
+    /// Tag "Country"
+    // -- --------------------------------------------------------
     TinyChip {
         content: "Country"
     }
@@ -74,6 +81,9 @@ GridLayout {
         verticalAlignment: Text.AlignVCenter
     }
 
+    // -- --------------------------------------------------------
+    /// Tag "Description"
+    // -- --------------------------------------------------------
     TinyChip {
         content: "Description"
     }
@@ -88,6 +98,9 @@ GridLayout {
         verticalAlignment: Text.AlignVCenter
     }
 
+    // -- --------------------------------------------------------
+    /// Tag "Writer"
+    // -- --------------------------------------------------------
     TinyChip {
         content: "Description Writer"
     }
@@ -103,6 +116,9 @@ GridLayout {
         verticalAlignment: Text.AlignVCenter
     }
 
+    // -- --------------------------------------------------------
+    /// Tags "keywords"
+    // -- --------------------------------------------------------
     TinyChip {
         content: "Keywords"
     }

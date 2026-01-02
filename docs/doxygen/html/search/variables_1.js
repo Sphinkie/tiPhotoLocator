@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['datetimeoriginal_0',['dateTimeOriginal',['../struct_photo.html#a481cec4ea67fe90721b20510f55dee5a',1,'Photo']]],
-  ['description_1',['description',['../struct_photo.html#a6fe05dc549b7caf2ee3232476d41e760',1,'Photo']]],
-  ['diacriticletters_2',['diacriticLetters',['../class_utilities.html#a7e1e10ee30627aedf30eb97d8cf7d52a',1,'Utilities']]]
+  ['cammodel_0',['camModel',['../struct_photo.html#a3c5204d88a446d1df0ee95feee81a574',1,'Photo']]],
+  ['captionwriter_1',['captionWriter',['../struct_photo.html#a1b1dde1eb075006ff85b5539eed40f94',1,'Photo']]],
+  ['category_2',['category',['../struct_suggestion.html#abdfdd0ed210feac3b5cd826c40d7643f',1,'Suggestion']]],
+  ['chipdel_3',['chipDel',['../class_chips.html#a4b688f1cba635167b38d2ecea69a95dd',1,'Chips']]],
+  ['chipedit_4',['chipEdit',['../class_chips.html#ab58ee09ea98e269ee8957873a51f498b',1,'Chips']]],
+  ['chiprectangle_5',['chipRectangle',['../class_chips.html#a384fd32c1dba1fee423da772f75c5070',1,'Chips']]],
+  ['chiprevert_6',['chipRevert',['../class_chips.html#a862a928f9c46196948e907beeeb568a6',1,'Chips']]],
+  ['chipsave_7',['chipSave',['../class_chips.html#aaa9810e2d33ea0566ad0def1ff3fcf05',1,'Chips']]],
+  ['chipshadow_8',['chipShadow',['../class_chips.html#a6ab105783c919a4b957c150be271d41b',1,'Chips']]],
+  ['chiptarget_9',['chipTarget',['../class_chips.html#a85ac411f6727873de6634858d21d96f7',1,'Chips']]],
+  ['chiptext_10',['chipText',['../class_chips.html#a3f74a511ec723f48b14f24b60d07fa9a',1,'Chips']]],
+  ['circleicon_11',['circleIcon',['../class_ti_photo_listview.html#ae493c3efbc2e7c4b290d314a9ff201de',1,'TiPhotoListview']]],
+  ['city_12',['city',['../struct_photo.html#af69f56742ec76589b96b355cdc447149',1,'Photo']]],
+  ['citytext_13',['cityText',['../class_ti_photo_listview.html#a786716788170e0c9a892b8ecd8f2aec9',1,'TiPhotoListview']]],
+  ['country_14',['country',['../struct_photo.html#a9bf494760dfe13bc320c8395a1d8368f',1,'Photo']]],
+  ['creator_15',['creator',['../struct_photo.html#a8557579ced9c4e8587443564bfe659dd',1,'Photo']]]
 ];

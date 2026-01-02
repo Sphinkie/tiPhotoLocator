@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['suggestion_0',['Suggestion',['../struct_suggestion.html',1,'']]],
-  ['suggestioncategoryproxymodel_1',['SuggestionCategoryProxyModel',['../class_suggestion_category_proxy_model.html',1,'']]],
-  ['suggestionmodel_2',['SuggestionModel',['../class_suggestion_model.html',1,'']]],
-  ['suggestionproxymodel_3',['SuggestionProxyModel',['../class_suggestion_proxy_model.html',1,'']]]
+  ['imagetteslistview_0',['ImagettesListView',['../class_imagettes_list_view.html',1,'']]],
+  ['iptcgrid_1',['IptcGrid',['../class_iptc_grid.html',1,'']]],
+  ['iptcgridform_2',['IptcGridForm',['../class_iptc_grid_form.html',1,'']]],
+  ['iptctitle_3',['IptcTitle',['../class_iptc_title.html',1,'']]]
 ];

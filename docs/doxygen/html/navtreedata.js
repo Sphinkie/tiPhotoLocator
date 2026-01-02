@@ -26,22 +26,22 @@ var NAVTREE =
 [
   [ "TiPhotoLocator", "index.html", [
     [ "Ti Photo Locator", "index.html", "index" ],
-    [ "About Tags", "md_docs_2about__tags.html", [
-      [ "Exif tags", "md_docs_2about__tags.html#autotoc_md6", null ],
-      [ "IPTC CORE tags", "md_docs_2about__tags.html#autotoc_md7", null ],
-      [ "IPTC EXTENSION tags", "md_docs_2about__tags.html#autotoc_md8", null ],
-      [ "Unused tags", "md_docs_2about__tags.html#autotoc_md9", null ]
+    [ "About Tags", "md__docs_2about__tags.html", [
+      [ "Exif tags", "md__docs_2about__tags.html#autotoc_md6", null ],
+      [ "IPTC CORE tags", "md__docs_2about__tags.html#autotoc_md7", null ],
+      [ "IPTC EXTENSION tags", "md__docs_2about__tags.html#autotoc_md8", null ],
+      [ "Unused tags", "md__docs_2about__tags.html#autotoc_md9", null ]
     ] ],
-    [ "Compilation", "md_docs_2compilation.html", [
-      [ "Installation of the developpement environnement", "md_docs_2compilation.html#autotoc_md11", null ],
-      [ "Documentation", "md_docs_2compilation.html#autotoc_md12", null ]
+    [ "Compilation", "md__docs_2compilation.html", [
+      [ "Installation of the developpement environnement", "md__docs_2compilation.html#autotoc_md11", null ],
+      [ "Documentation", "md__docs_2compilation.html#autotoc_md12", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Liste des classes", "annotated.html", "annotated_dup" ],
       [ "Index des classes", "classes.html", null ],
       [ "Hiérarchie des classes", "hierarchy.html", "hierarchy" ],
       [ "Membres de classe", "functions.html", [
-        [ "Tout", "functions.html", null ],
+        [ "Tout", "functions.html", "functions_dup" ],
         [ "Fonctions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Énumérations", "functions_enum.html", null ],
@@ -56,7 +56,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_camera_set_8h_source.html"
+"_camera_set_8h_source.html",
+"class_suggestion_proxy_model.html#a1b4ad3a4a83b4c7c959394a68871d349"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

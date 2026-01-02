@@ -247,6 +247,7 @@ void PhotoModel::setSelectedItemCoords(const double latitude, const double longi
  *        l'interieur du cercle rouge.
  * @param latitude : Latitude GPS à affecter aux photos
  * @param longitude : Longitude GPS à affecter aux photos
+ * @see PhotoModel::findInCirclePhotos
  * ***********************************************************************************************************/
 void PhotoModel::setInCircleItemCoords(const double latitude, const double longitude)
 {
@@ -759,13 +760,25 @@ QVariantMap PhotoModel::get(int row)
  * @brief Parcourt toutes les Photo du modèle, et flague celles qui sont à l'interieur du cercle demandé.
  *        Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).
  * @param circle_radius: Le rayon du cercle (en mètres).
+ *        Si *circle_radius* vaut **0**, alors on enleve les pictos "circle".
+ *        Si *circle_radius* vaut **-1**, (*default value*) alors on réutilise la dernière valeur de rayon reçue.
  *
  * On utilise les conversions: **1°lat = 111km**  et  **1°long = 111km x cos(lat)**.
+ * @see PhotoModel::resetCircle et PhotoModel::belong
  * ***********************************************************************************************************/
 void PhotoModel::findInCirclePhotos(int circle_radius)
 {
-    if (circle_radius==0)
-        resetCircle();
+    // Cas particulier du rayon non fourni.
+    if (circle_radius==-1) circle_radius = m_lastCircleRadius;
+    else m_lastCircleRadius = circle_radius;
+    qDebug() << "circle_radius" << circle_radius << "m";
+
+    // Cas particulier du rayon nul
+    if (circle_radius==0)  {
+        this->resetCircle();
+        return;
+    }
+
     // Le centre du cercle est la photo sélectionnée
     double circle_lat = m_photos[m_lastSelectedRow].gpsLatitude;
     double circle_long = m_photos[m_lastSelectedRow].gpsLongitude;

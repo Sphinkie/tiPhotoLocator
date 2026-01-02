@@ -1,4 +1,4 @@
-# Doxyfile 1.14.0
+# Doxyfile 1.9.8
 
 # This file describes the settings to be used by the documentation system
 # Doxygen (www.doxygen.org) for a project.
@@ -67,7 +67,7 @@ PROJECT_LOGO           = ./Resources/Images/logo_TPL.png
 # when the HTML document is shown. Doxygen will copy the logo to the output
 # directory.
 
-PROJECT_ICON           =
+PROJECT_ICON           = ./Resources/Logos/logo_TPL.ico
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -349,7 +349,7 @@ OPTIMIZE_OUTPUT_SLICE  = NO
 #
 # Note see also the list of default file extension mappings.
 
-EXTENSION_MAPPING      =
+EXTENSION_MAPPING      = qml=C++
 
 # If the MARKDOWN_SUPPORT tag is enabled then Doxygen pre-processes all comments
 # according to the Markdown format, which allows for more readable
@@ -991,10 +991,11 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = Sources/cpp \
-                         ./readme.md \
-                         ./docs/about_tags.md \
-                         ./docs/compilation.md
+INPUT                  = ./Sources/cpp 
+INPUT                 += ./Sources/Qml 
+INPUT                 += ./readme.md \
+                         ./Docs/about_tags.md \
+                         ./Docs/compilation.md
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1039,6 +1040,7 @@ FILE_PATTERNS          = *.c \
                          *.cxx \
                          *.cxxm \
                          *.cpp \
+						 *.qml \
                          *.cppm \
                          *.c++ \
                          *.c++m \
@@ -1148,7 +1150,7 @@ EXAMPLE_RECURSIVE      = NO
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             = ./docs/images
+IMAGE_PATH             = ./Docs/Images
 
 # The INPUT_FILTER tag can be used to specify a program that Doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -1187,7 +1189,7 @@ INPUT_FILTER           =
 # need to set EXTENSION_MAPPING for the extension otherwise the files are not
 # properly processed by Doxygen.
 
-FILTER_PATTERNS        =
+FILTER_PATTERNS        = *.qml=doxyqml
 
 # If the FILTER_SOURCE_FILES tag is set to YES, the input filter (if set using
 # INPUT_FILTER) will also be used to filter the input files that are used for
@@ -1706,14 +1708,14 @@ SITEMAP_URL            =
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-GENERATE_QHP           = NO
+GENERATE_QHP           = YES
 
 # If the QHG_LOCATION tag is specified, the QCH_FILE tag can be used to specify
 # the file name of the resulting .qch file. The path specified is relative to
 # the HTML output folder.
 # This tag requires that the tag GENERATE_QHP is set to YES.
 
-QCH_FILE               =
+QCH_FILE               = ../qch/TiPhotoLocator.qch
 
 # The QHP_NAMESPACE tag specifies the namespace to use when generating Qt Help
 # Project output. For more information please see Qt Help Project / Namespace
@@ -1722,7 +1724,7 @@ QCH_FILE               =
 # The default value is: org.doxygen.Project.
 # This tag requires that the tag GENERATE_QHP is set to YES.
 
-QHP_NAMESPACE          = org.doxygen.Project
+QHP_NAMESPACE          = sphinkie.tiphotolocator
 
 # The QHP_VIRTUAL_FOLDER tag specifies the namespace to use when generating Qt
 # Help Project output. For more information please see Qt Help Project / Virtual
@@ -1754,14 +1756,14 @@ QHP_CUST_FILTER_ATTRS  =
 # https://doc.qt.io/archives/qt-4.8/qthelpproject.html#filter-attributes).
 # This tag requires that the tag GENERATE_QHP is set to YES.
 
-QHP_SECT_FILTER_ATTRS  =
+QHP_SECT_FILTER_ATTRS  = TiPhotoLocator
 
 # The QHG_LOCATION tag can be used to specify the location (absolute path
 # including file name) of Qt's qhelpgenerator. If non-empty Doxygen will try to
 # run qhelpgenerator on the generated .qhp file.
 # This tag requires that the tag GENERATE_QHP is set to YES.
 
-QHG_LOCATION           =
+QHG_LOCATION           = C:\Qt\6.10.1\msvc2022_64\bin\qhelpgenerator.exe
 
 # If the GENERATE_ECLIPSEHELP tag is set to YES, additional index files will be
 # generated, together with the HTML files, they form an Eclipse help plugin. To

@@ -6,6 +6,7 @@
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TiPhotoLocator: Référence de la classe PhotoModel</title>
+<link rel="icon" href="logo_TPL.ico" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -208,8 +209,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a77dea7e487119a062064faa3c60ed2d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enlève un des mots-clef descriptif de la photo.  <br /></td></tr>
 <tr class="memitem:a3260014636b9e9ae523391a753be104c" id="r_a3260014636b9e9ae523391a753be104c"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3260014636b9e9ae523391a753be104c">updatePhotoKeyword</a> (QString keyword, int index)</td></tr>
 <tr class="memdesc:a3260014636b9e9ae523391a753be104c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie un des mots-clef descriptif de la photo.  <br /></td></tr>
-<tr class="memitem:a8cd1ac5560f3897892474271c5206106" id="r_a8cd1ac5560f3897892474271c5206106"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cd1ac5560f3897892474271c5206106">findInCirclePhotos</a> (int circle_radius)</td></tr>
-<tr class="memdesc:a8cd1ac5560f3897892474271c5206106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parcourt toutes les <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> du modèle, et flague celles qui sont à l'interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).  <br /></td></tr>
+<tr class="memitem:a262b8d92e3edf3884c723c965f7de5e1" id="r_a262b8d92e3edf3884c723c965f7de5e1"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a262b8d92e3edf3884c723c965f7de5e1">findInCirclePhotos</a> (int circle_radius=-1)</td></tr>
+<tr class="memdesc:a262b8d92e3edf3884c723c965f7de5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parcourt toutes les <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> du modèle, et flague celles qui sont à l'interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).  <br /></td></tr>
 <tr class="memitem:a28933cf9451c4794c12325ac125f439f" id="r_a28933cf9451c4794c12325ac125f439f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28933cf9451c4794c12325ac125f439f">append</a> (const QVariantMap <a class="el" href="#a3f09addf9a989e85b7ae5797156b270f">data</a>)</td></tr>
 <tr class="memdesc:a28933cf9451c4794c12325ac125f439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> item to the model, from a list of metadata.  <br /></td></tr>
 <tr class="memitem:ad7a5d45624200d819ee0ab429387baa0" id="r_ad7a5d45624200d819ee0ab429387baa0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7a5d45624200d819ee0ab429387baa0">setData</a> (const QModelIndex &amp;index, const QVariant &amp;value, int role) override</td></tr>
@@ -259,6 +260,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_lastSelectedRow</b> 
 <tr class="memitem:a844160211f6ff9d747dcc59310d2fc22" id="r_a844160211f6ff9d747dcc59310d2fc22"><td class="memItemLeft" align="right" valign="top"><a id="a844160211f6ff9d747dcc59310d2fc22" name="a844160211f6ff9d747dcc59310d2fc22"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b> = 0</td></tr>
 <tr class="memdesc:a844160211f6ff9d747dcc59310d2fc22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compteur pour le dump de debug. <br /></td></tr>
+<tr class="memitem:ac14973957cff384c1ba7566b93ec5c78" id="r_ac14973957cff384c1ba7566b93ec5c78"><td class="memItemLeft" align="right" valign="top"><a id="ac14973957cff384c1ba7566b93ec5c78" name="ac14973957cff384c1ba7566b93ec5c78"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_lastCircleRadius</b> = 0</td></tr>
+<tr class="memdesc:ac14973957cff384c1ba7566b93ec5c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur précdente du rayon de recherche. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>The <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a> class manages a list of photo data. </p>
@@ -700,8 +704,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b> = 0</t
 
 </div>
 </div>
-<a id="a8cd1ac5560f3897892474271c5206106" name="a8cd1ac5560f3897892474271c5206106"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cd1ac5560f3897892474271c5206106">&#9670;&#160;</a></span>findInCirclePhotos()</h2>
+<a id="a262b8d92e3edf3884c723c965f7de5e1" name="a262b8d92e3edf3884c723c965f7de5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a262b8d92e3edf3884c723c965f7de5e1">&#9670;&#160;</a></span>findInCirclePhotos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -709,7 +713,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b> = 0</t
         <tr>
           <td class="memname">void PhotoModel::findInCirclePhotos </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>circle_radius</em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>circle_radius</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -719,11 +723,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b> = 0</t
 <hr  />
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">circle_radius</td><td>Le rayon du cercle (en mètres).</td></tr>
+    <tr><td class="paramname">circle_radius</td><td>Le rayon du cercle (en mètres). Si <em>circle_radius</em> vaut <b>0</b>, alors on enleve les pictos "circle". Si <em>circle_radius</em> vaut <b>-1</b>, (<em>default value</em>) alors on réutilise la dernière valeur de rayon reçue.</td></tr>
   </table>
   </dd>
 </dl>
-<p>On utilise les conversions: <b>1°lat = 111km</b> et <b>1°long = 111km x cos(lat)</b>. </p>
+<p>On utilise les conversions: <b>1°lat = 111km</b> et <b>1°long = 111km x cos(lat)</b>. </p><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="#a8b4c0daf563670d61c87102a19bead12" title="Enleve le flag &quot;insideCircle&quot; à toutes les photos.">PhotoModel::resetCircle</a> et <a class="el" href="#aa63d16a07716d0ad5aff2ff1be183198" title="Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX,...">PhotoModel::belong</a> </dd></dl>
 
 </div>
 </div>
@@ -1157,7 +1161,7 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
 
 <p>Surcharge qui permet de modifier <b>unitairement</b> un Role d'un item du modèle. </p>
 <hr  />
- <p>Cette fonction met aussi à <em>True</em> le flag <b>To Be Saved</b> car il s'agit d'une action opérateur. Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>. Certains roles ne sont pas modifiables: <span class="tt">imageUrl, isSelected, hasGPS, filename, shutterSpeed, F-number</span>, etc. </p><dl class="section see"><dt>Voir également</dt><dd><a href="https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass">https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass</a> </dd></dl>
+ <p>Cette fonction met aussi à <em>True</em> le flag <b>To Be Saved</b> car il s'agit d'une action opérateur. Cette fonction est appelée quand on clique sur un <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a>, pour modifier une des propriétés de la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>. Certains roles ne sont pas modifiables: <span class="tt">imageUrl, isSelected, hasGPS, filename, shutterSpeed, F-number</span>, etc. </p><dl class="section see"><dt>Voir également</dt><dd><a href="https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass">https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass</a> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>: Il est important d'émettre le signal <span class="tt">dataChanged()</span> after saving the changes.</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -1281,6 +1285,7 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="#a262b8d92e3edf3884c723c965f7de5e1" title="Parcourt toutes les Photo du modèle, et flague celles qui sont à l&#39;interieur du cercle demandé....">PhotoModel::findInCirclePhotos</a> </dd></dl>
 
 </div>
 </div>

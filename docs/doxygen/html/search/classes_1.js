@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['exifreadtask_0',['ExifReadTask',['../class_exif_read_task.html',1,'']]],
-  ['exifwritetask_1',['ExifWriteTask',['../class_exif_write_task.html',1,'']]]
+  ['cameraset_0',['CameraSet',['../class_camera_set.html',1,'']]],
+  ['chips_1',['Chips',['../class_chips.html',1,'']]],
+  ['creditsdialog_2',['CreditsDialog',['../class_credits_dialog.html',1,'']]]
 ];

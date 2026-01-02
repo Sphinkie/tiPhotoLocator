@@ -9,13 +9,18 @@ import "../Vues"
  * ***********************************************************************************************************/
 ZoneSuggestionForm {
 
+
+    /** ******************************************************************************************************
+     * Gestion du bouton Chercher.
+     * A noter que la recherche est aussi lancée automatiquement par un Timer de TiPhotoListview.
+     * *******************************************************************************************************/
     bt_getinfo.onClicked: {
-        // on envoie une request pour récupérer des infos à partir des coords GPS
+        // si Click, on envoie une request pour récupérer des infos à partir des coords GPS.
         window.requestReverseGeocode(mapTab.photoLatitude,
                                      mapTab.photoLongitude)
     }
 
-    // Gestion du grisage du bouton
+    /// Le bouton est grisé si la photo n'a pas de coordonnées GPS.
     Connections {
         target: tabbedPage
         function onSelectedDataChanged() {

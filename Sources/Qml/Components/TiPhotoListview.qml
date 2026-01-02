@@ -39,11 +39,12 @@ ListView {
 
 
     /** ******************************************************************************************************
-     * Timer avant envoi d'une request pour récupérer des infos à partir des coordonnées GPS.
+     * Timer de 4 secondes avant envoi d'une request pour récupérer des infos à partir des coordonnées GPS.
+     * Ce timer est déclenché par le clic sur un item de la liste.
      * *******************************************************************************************************/
     Timer {
         id: geoTimer
-        interval: 5000 // 5 sec
+        interval: 4000
         running: false
         repeat: false
         onTriggered: {
@@ -66,6 +67,7 @@ ListView {
             // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
             required property string filename
             required property string city
+            required property string country
             required property double latitude
             required property double longitude
             required property bool hasGPS
@@ -157,15 +159,15 @@ ListView {
                     // On change le filtrage des suggestions pour filtrer uniquement sur la photo active
                     window.setSuggestionFilter(sourceindex)
 
-                    // On remet le rayon du cercle rouge de la carte à zéro
-                    // mapTools.slider_radius.value = 0;
                     // On réactualise le contenu du cercle rouge
-                    _photoModel.findInCirclePhotos(mapTools.slider_radius.value)
+                    // TODO : C'est consommateur car on parcourt toutes les photos du modèel à chaque clic!
+                    _photoModel.findInCirclePhotos()
 
                     // On relance une demande d'infos ReverseGeo
-                    if ((tabbedPage.currentIndex === 1) && hasGPS) {
-                        // Si onglet CARTE et COORDS GPS:
-                        // console.debug(">>>> restart timer");
+                    // si onglet CARTE et COORDS GPS et il n'y a pas déjà de City ni Country:
+                    if ((tabbedPage.currentIndex === 1) && hasGPS && city === ""
+                            && country === "") {
+                        // console.debug(">>>> restart geoTimer")
                         geoTimer.restart()
                     } else
                         geoTimer.stop()
