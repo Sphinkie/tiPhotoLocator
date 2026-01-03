@@ -7,8 +7,9 @@ var searchData=
   ['photos_4',['photos',['../struct_suggestion.html#af319b358957378992fcbcd14022e2125',1,'Suggestion']]],
   ['phototagstab_5',['photoTagsTab',['../class_main.html#a937161b6dd4dce68dc7521e1b27819dd',1,'Main']]],
   ['presentation_6',['Presentation',['../index.html#autotoc_md1',1,'']]],
-  ['previewview_7',['previewView',['../class_main.html#aac7638d6eb0c8f33f5cf7fe00e8eded7',1,'Main']]],
-  ['primarycolor_8',['primaryColor',['../class_style.html#a9d26a25965fed39e9def07c6e71d6d12',1,'Style']]],
-  ['primarytextcolor_9',['primaryTextColor',['../class_style.html#a7bc2b09d1d2e5db097456fba1d1773f6',1,'Style']]],
-  ['processline_10',['processLine',['../class_exif_read_task.html#a425555d73b1bc4ba915e2a9f9a0884c6',1,'ExifReadTask']]]
+  ['previewimage_7',['previewImage',['../class_tab_frame_photo_preview.html#aec47a78e5b8f23286fac3ce3a46f449b',1,'TabFramePhotoPreview']]],
+  ['previewview_8',['previewView',['../class_main.html#aac7638d6eb0c8f33f5cf7fe00e8eded7',1,'Main']]],
+  ['primarycolor_9',['primaryColor',['../class_style.html#a9d26a25965fed39e9def07c6e71d6d12',1,'Style']]],
+  ['primarytextcolor_10',['primaryTextColor',['../class_style.html#a7bc2b09d1d2e5db097456fba1d1773f6',1,'Style']]],
+  ['processline_11',['processLine',['../class_exif_read_task.html#a425555d73b1bc4ba915e2a9f9a0884c6',1,'ExifReadTask']]]
 ];

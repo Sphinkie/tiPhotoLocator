@@ -95,7 +95,7 @@ $(function(){initNavTree('class_tool_bar_map.html','','class_tool_bar_map-member
 </div><!--header-->
 <div class="contents">
 
-<p>Controlleur pour la barre de boutons au dessus de la carte.  
+<p>Controlleur pour la barre de boutons située au dessus de la carte.  
  <a href="#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de ToolBarMap:</div>
@@ -103,7 +103,7 @@ Graphe d'héritage de ToolBarMap:</div>
  <div class="center">
   <img src="class_tool_bar_map.png" usemap="#ToolBarMap_map" alt=""/>
   <map id="ToolBarMap_map" name="ToolBarMap_map">
-<area href="class_tool_bar_map_form.html" alt="ToolBarMapForm" shape="rect" coords="0,56,110,80"/>
+<area href="class_tool_bar_map_form.html" title="Cette vue correspond à la barre d&#39;outils spécifiques à la carte." alt="ToolBarMapForm" shape="rect" coords="0,56,110,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -118,8 +118,6 @@ alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_save_pos</b></td>
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_remove_savedpos</b></td></tr>
 <tr class="memitem:a9b90a6d5e7d38ccd081b0dd273eba84b inherit properties_class_tool_bar_map_form" id="r_a9b90a6d5e7d38ccd081b0dd273eba84b"><td class="memItemLeft" align="right" valign="top">
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_apply_savedpos</b></td></tr>
-<tr class="memitem:a6ad8f22e5e036dbe62226284f58d1ede inherit properties_class_tool_bar_map_form" id="r_a6ad8f22e5e036dbe62226284f58d1ede"><td class="memItemLeft" align="right" valign="top">
-alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_clear_coords</b></td></tr>
 <tr class="memitem:a80ee2f69db7952f8aa5c00dce07a1526 inherit properties_class_tool_bar_map_form" id="r_a80ee2f69db7952f8aa5c00dce07a1526"><td class="memItemLeft" align="right" valign="top">
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>slider_radius</b></td></tr>
 <tr class="memitem:a2860198ff75b91b5bce290f73092d0f3 inherit properties_class_tool_bar_map_form" id="r_a2860198ff75b91b5bce290f73092d0f3"><td class="memItemLeft" align="right" valign="top">
@@ -129,8 +127,10 @@ alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_revert</b></td></
 Attributs privés</h2></td></tr>
 <tr class="memitem:abdbf38e8f864fadd430b710508ec9c86" id="r_abdbf38e8f864fadd430b710508ec9c86"><td class="memItemLeft" align="right" valign="top"><a id="abdbf38e8f864fadd430b710508ec9c86" name="abdbf38e8f864fadd430b710508ec9c86"></a>
 var bt_save_pos&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
+<tr class="memdesc:abdbf38e8f864fadd430b710508ec9c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clic sur "Save Position" : On enregistre la position de l'image dans la Saved Position. <br /></td></tr>
 <tr class="memitem:a8073c4fcea8eb24ee5f946088afa8c69" id="r_a8073c4fcea8eb24ee5f946088afa8c69"><td class="memItemLeft" align="right" valign="top"><a id="a8073c4fcea8eb24ee5f946088afa8c69" name="a8073c4fcea8eb24ee5f946088afa8c69"></a>
 var bt_remove_savedpos&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
+<tr class="memdesc:a8073c4fcea8eb24ee5f946088afa8c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clic sur "Remove Saved Pos": Efface la Saved Position. <br /></td></tr>
 <tr class="memitem:a7b87f3bf3a16378e62fed8fa776b3398" id="r_a7b87f3bf3a16378e62fed8fa776b3398"><td class="memItemLeft" align="right" valign="top"><a id="a7b87f3bf3a16378e62fed8fa776b3398" name="a7b87f3bf3a16378e62fed8fa776b3398"></a>
 var bt_apply_savedpos&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
 <tr class="memitem:a3742e2fff2e380999a42e65ef3e6fe06" id="r_a3742e2fff2e380999a42e65ef3e6fe06"><td class="memItemLeft" align="right" valign="top"><a id="a3742e2fff2e380999a42e65ef3e6fe06" name="a3742e2fff2e380999a42e65ef3e6fe06"></a>
@@ -138,17 +138,14 @@ var slider_radius&#160;</td><td class="memItemRight" valign="bottom"><b>onPresse
 <tr class="memdesc:a3742e2fff2e380999a42e65ef3e6fe06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quand on relache le slider, il recherche les photos qui pourraient être dans le cercle. <br /></td></tr>
 <tr class="memitem:aacca358e97a51f1913cfcd2090e2de21" id="r_aacca358e97a51f1913cfcd2090e2de21"><td class="memItemLeft" align="right" valign="top"><a id="aacca358e97a51f1913cfcd2090e2de21" name="aacca358e97a51f1913cfcd2090e2de21"></a>
 var bt_revert&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
-<tr class="memitem:ac4a8578a9e1adbb52823e2d4d48b60e8" id="r_ac4a8578a9e1adbb52823e2d4d48b60e8"><td class="memItemLeft" align="right" valign="top"><a id="ac4a8578a9e1adbb52823e2d4d48b60e8" name="ac4a8578a9e1adbb52823e2d4d48b60e8"></a>
-var bt_clear_coords&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
 <tr class="memitem:a3fca8b772457088d12cbe79e2f93e679" id="r_a3fca8b772457088d12cbe79e2f93e679"><td class="memItemLeft" align="right" valign="top"><a id="a3fca8b772457088d12cbe79e2f93e679" name="a3fca8b772457088d12cbe79e2f93e679"></a>
 var bt_remove_savedpos&#160;</td><td class="memItemRight" valign="bottom"><b>enabled</b></td></tr>
 <tr class="memitem:a43901d58406ba0ab1d5dda138258529b" id="r_a43901d58406ba0ab1d5dda138258529b"><td class="memItemLeft" align="right" valign="top"><a id="a43901d58406ba0ab1d5dda138258529b" name="a43901d58406ba0ab1d5dda138258529b"></a>
 var bt_apply_savedpos&#160;</td><td class="memItemRight" valign="bottom"><b>enabled</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Controlleur pour la barre de boutons au dessus de la carte. </p>
+<div class="textblock"><p>Controlleur pour la barre de boutons située au dessus de la carte. </p>
 <hr  />
- <hr  />
  </div><hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>Sources/Qml/Controllers/<b>ToolBarMap.qml</b></li>
 </ul>

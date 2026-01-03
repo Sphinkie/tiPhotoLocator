@@ -12,5 +12,6 @@ var searchData=
   ['flags_9',['flags',['../class_photo_model.html#a1304d28519eb274764ef65afffec6c96',1,'PhotoModel::flags()'],['../class_suggestion_model.html#ae3b26fa49dff5a4c7f1a79e061dd9970',1,'SuggestionModel::flags()']]],
   ['fnumber_10',['fNumber',['../struct_photo.html#a52f8b3c14a9736e4a6f1a338987a4113',1,'Photo']]],
   ['folderloadtimer_11',['FolderLoadTimer',['../class_folder_load_timer.html',1,'']]],
-  ['footer_12',['footer',['../class_ti_photo_listview.html#a830a12241df27ddf89097ac801687021',1,'TiPhotoListview']]]
+  ['foldertimer_12',['folderTimer',['../class_ti_folder_dialog.html#ab20164ba0864d93d72e15fc1a8b8c5c5',1,'TiFolderDialog']]],
+  ['footer_13',['footer',['../class_ti_photo_listview.html#a830a12241df27ddf89097ac801687021',1,'TiPhotoListview']]]
 ];

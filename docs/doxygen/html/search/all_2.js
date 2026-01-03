@@ -24,5 +24,6 @@ var searchData=
   ['core_20tags_21',['IPTC CORE tags',['../md__docs_2about__tags.html#autotoc_md7',1,'']]],
   ['country_22',['country',['../struct_photo.html#a9bf494760dfe13bc320c8395a1d8368f',1,'Photo']]],
   ['creator_23',['creator',['../struct_photo.html#a8557579ced9c4e8587443564bfe659dd',1,'Photo']]],
-  ['creditsdialog_24',['CreditsDialog',['../class_credits_dialog.html',1,'']]]
+  ['creditsdialog_24',['CreditsDialog',['../class_credits_dialog.html',1,'']]],
+  ['currrentchip_25',['currrentChip',['../class_suggestion_repeater.html#a466180a757e71f64499f94ad6bd3601c',1,'SuggestionRepeater']]]
 ];

@@ -15,5 +15,6 @@ var searchData=
   ['city_12',['city',['../struct_photo.html#af69f56742ec76589b96b355cdc447149',1,'Photo']]],
   ['citytext_13',['cityText',['../class_ti_photo_listview.html#a786716788170e0c9a892b8ecd8f2aec9',1,'TiPhotoListview']]],
   ['country_14',['country',['../struct_photo.html#a9bf494760dfe13bc320c8395a1d8368f',1,'Photo']]],
-  ['creator_15',['creator',['../struct_photo.html#a8557579ced9c4e8587443564bfe659dd',1,'Photo']]]
+  ['creator_15',['creator',['../struct_photo.html#a8557579ced9c4e8587443564bfe659dd',1,'Photo']]],
+  ['currrentchip_16',['currrentChip',['../class_suggestion_repeater.html#a466180a757e71f64499f94ad6bd3601c',1,'SuggestionRepeater']]]
 ];

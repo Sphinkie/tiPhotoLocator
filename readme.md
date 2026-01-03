@@ -17,13 +17,13 @@ But, if you don't have recorded any GPX file, or if your photos are older than h
 
 **IPTV** metadata are filled manually by humans and contain editorial information such as the *title*, the *description*, *copy rights*, etc.
 
-Details concerning the tags used by the application are on [this page](docs/about_tags.md)
+Details concerning the tags used by the application are on [this page](./Docs/about_tags.md)
 
 ## Technical information
 
 The application is developped with the [Qt framework](https://qt.io) and uses the [ExifTool utility](https://exiftool.org) by Phil Harvey to read and write the Exif and IPTC tags.
 
-Explanation concerning the compiler configuration are on [this page](docs/compilation.md)
+Explanation concerning the compiler configuration are on [this page](./Docs/compilation.md)
 
 ## Inspiration
 

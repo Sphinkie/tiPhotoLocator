@@ -15,6 +15,7 @@ var class_suggestion_model =
     [ "flags", "class_suggestion_model.html#ae3b26fa49dff5a4c7f1a79e061dd9970", null ],
     [ "onSelectedPhotoChanged", "class_suggestion_model.html#a5a28097cf78d3d5619e64a48c0b7d198", null ],
     [ "removeCurrentPhotoFromSuggestion", "class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f", null ],
+    [ "removeFromSuggestion", "class_suggestion_model.html#a54ef63c254c7a560110977f2240156c6", null ],
     [ "roleNames", "class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd", null ],
     [ "rowCount", "class_suggestion_model.html#a0c1caffe345aeb30f636f3a1784e9cea", null ],
     [ "m_dumpedRow", "class_suggestion_model.html#a71e147fc8f25a5f6ff2f24ebc256acc6", null ],

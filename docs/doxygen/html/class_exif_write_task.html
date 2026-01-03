@@ -95,7 +95,7 @@ $(function(){initNavTree('class_exif_write_task.html','','class_exif_write_task-
 </div><!--header-->
 <div class="contents">
 
-<p>La classe <a class="el" href="class_exif_write_task.html" title="La classe ExifWriteTask permet d&#39;écrire des metadata dans les photos JEG de façon asynchrone.">ExifWriteTask</a> permet d'écrire des metadata dans les photos JEG de façon asynchrone.  
+<p>La classe <a class="el" href="class_exif_write_task.html" title="La classe ExifWriteTask permet d&#39;écrire des metadata dans une photo JPEG de façon asynchrone.">ExifWriteTask</a> permet d'écrire des metadata dans une photo JPEG de façon asynchrone.  
  <a href="#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_exif_write_task_8h_source.html">ExifWriteTask.h</a>&gt;</code></p>
@@ -108,8 +108,8 @@ Graphe d'héritage de ExifWriteTask:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a5182e345ea27ce1581cc6d28542bae97" id="r_a5182e345ea27ce1581cc6d28542bae97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5182e345ea27ce1581cc6d28542bae97">ExifWriteTask</a> (const QVariantMap exifData, bool generateBackup=false)</td></tr>
-<tr class="memdesc:a5182e345ea27ce1581cc6d28542bae97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur. On enregistre les paramètres.  <br /></td></tr>
+<tr class="memitem:a094efafd2235d0494ca74e58a9a2ca23" id="r_a094efafd2235d0494ca74e58a9a2ca23"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a094efafd2235d0494ca74e58a9a2ca23">ExifWriteTask</a> (const QVariantMap exifData, <a class="el" href="class_photo_model.html">PhotoModel</a> *photoModel, bool generateBackup=false)</td></tr>
+<tr class="memdesc:a094efafd2235d0494ca74e58a9a2ca23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur. On enregistre les paramètres.  <br /></td></tr>
 <tr class="memitem:a62fcca5c4d5077f086df4b98cac752df" id="r_a62fcca5c4d5077f086df4b98cac752df"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62fcca5c4d5077f086df4b98cac752df">run</a> ()</td></tr>
 <tr class="memdesc:a62fcca5c4d5077f086df4b98cac752df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lancement de la tache. On lance <b>exifTool</b> dans un QProcess, et on écrit les metadata dans l'image JPG. Cette tache est exécutée dans un thread QRunnable.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -117,20 +117,23 @@ Fonctions membres publiques</h2></td></tr>
 Attributs privés</h2></td></tr>
 <tr class="memitem:a30f450a4be6abe483b77c9445689725e" id="r_a30f450a4be6abe483b77c9445689725e"><td class="memItemLeft" align="right" valign="top"><a id="a30f450a4be6abe483b77c9445689725e" name="a30f450a4be6abe483b77c9445689725e"></a>
 QVariantMap&#160;</td><td class="memItemRight" valign="bottom"><b>m_exifData</b></td></tr>
-<tr class="memdesc:a30f450a4be6abe483b77c9445689725e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des metadata à ecrire. <br /></td></tr>
+<tr class="memdesc:a30f450a4be6abe483b77c9445689725e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des metadata à écrire. <br /></td></tr>
 <tr class="memitem:a09a5dc832fd4d41b1ee9fbb9f55623f7" id="r_a09a5dc832fd4d41b1ee9fbb9f55623f7"><td class="memItemLeft" align="right" valign="top"><a id="a09a5dc832fd4d41b1ee9fbb9f55623f7" name="a09a5dc832fd4d41b1ee9fbb9f55623f7"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_generateBackup</b></td></tr>
 <tr class="memdesc:a09a5dc832fd4d41b1ee9fbb9f55623f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">True si un backup de l'image doit être généré. <br /></td></tr>
+<tr class="memitem:a7ac83b6c8c115c77feff3dbe57af3e4d" id="r_a7ac83b6c8c115c77feff3dbe57af3e4d"><td class="memItemLeft" align="right" valign="top"><a id="a7ac83b6c8c115c77feff3dbe57af3e4d" name="a7ac83b6c8c115c77feff3dbe57af3e4d"></a>
+<a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_photoModel</b></td></tr>
+<tr class="memdesc:a7ac83b6c8c115c77feff3dbe57af3e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modèle des photos. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>La classe <a class="el" href="class_exif_write_task.html" title="La classe ExifWriteTask permet d&#39;écrire des metadata dans les photos JEG de façon asynchrone.">ExifWriteTask</a> permet d'écrire des metadata dans les photos JEG de façon asynchrone. </p>
+<div class="textblock"><p>La classe <a class="el" href="class_exif_write_task.html" title="La classe ExifWriteTask permet d&#39;écrire des metadata dans une photo JPEG de façon asynchrone.">ExifWriteTask</a> permet d'écrire des metadata dans une photo JPEG de façon asynchrone. </p>
 <hr  />
  <p>Tache asynchrone par utilisation de QThreadPool.</p>
-<dl class="section note"><dt>Note</dt><dd>: les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux. Donc, à la fin du traitement, pour actualiser les données du <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>, il faut faire un appel direct. Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone. <hr  />
+<dl class="section note"><dt>Note</dt><dd>: les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux. Cependant, on peut faire un appel direct à la fin du traitement, pour informer le <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. Cela n'est pas contraire aux recommandations: modifier des données peut se faire par appel synchrone. <hr  />
  </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="a5182e345ea27ce1581cc6d28542bae97" name="a5182e345ea27ce1581cc6d28542bae97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5182e345ea27ce1581cc6d28542bae97">&#9670;&#160;</a></span>ExifWriteTask()</h2>
+<a id="a094efafd2235d0494ca74e58a9a2ca23" name="a094efafd2235d0494ca74e58a9a2ca23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a094efafd2235d0494ca74e58a9a2ca23">&#9670;&#160;</a></span>ExifWriteTask()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,6 +145,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_generateBackup</b><
           <td class="memname">ExifWriteTask::ExifWriteTask </td>
           <td>(</td>
           <td class="paramtype">const QVariantMap</td>          <td class="paramname"><span class="paramname"><em>exifData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_photo_model.html">PhotoModel</a> *</td>          <td class="paramname"><span class="paramname"><em>photoModel</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -161,18 +169,22 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_generateBackup</b><
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">exifData</td><td>la liste des metadata à écrire dans le fichier JPG. </td></tr>
-    <tr><td class="paramname">generateBackup</td><td><code>true</code> si un backup de l'image doit être généré avant sa modification. <div class="fragment"><div class="line">QVariantMap: QMap(</div>
-<div class="line"> (<span class="stringliteral">&quot;SourceFile&quot;</span>,       QVariant(QString,   <span class="stringliteral">&quot;E:/TiPhotos/P8160449.JPG&quot;</span>))</div>
-<div class="line"> (<span class="stringliteral">&quot;FileName&quot;</span>,         QVariant(QString,   <span class="stringliteral">&quot;P8160449.JPG&quot;</span>))</div>
-<div class="line"> (<span class="stringliteral">&quot;Artist&quot;</span>,           QVariant(QString,   <span class="stringliteral">&quot;Blemia Borowicz&quot;</span>))</div>
-<div class="line"> (<span class="stringliteral">&quot;DateTimeOriginal&quot;</span>, QVariant(QString,   <span class="stringliteral">&quot;2023:08:16 13:30:20&quot;</span>))</div>
-<div class="line"> (<span class="stringliteral">&quot;GPSLatitude&quot;</span>,      QVariant(<span class="keywordtype">double</span>,    48.7664))</div>
-<div class="line"> (<span class="stringliteral">&quot;GPSLatitudeRef&quot;</span>,   QVariant(QString,   <span class="stringliteral">&quot;N&quot;</span>))</div>
-<div class="line"> (<span class="stringliteral">&quot;GPSLongitude&quot;</span>,     QVariant(<span class="keywordtype">double</span>,    14.0194))</div>
-<div class="line"> (<span class="stringliteral">&quot;GPSLongitudeRef&quot;</span>,  QVariant(QString,   <span class="stringliteral">&quot;E&quot;</span>))</div>
-<div class="line"> (<span class="stringliteral">&quot;Make&quot;</span>,             QVariant(QString,   <span class="stringliteral">&quot;OLYMPUS CORPORATION&quot;</span>))</div>
-<div class="line"> (<span class="stringliteral">&quot;Model&quot;</span>,            QVariant(QString,   <span class="stringliteral">&quot;E-M10MarkII&quot;</span>))</div>
-<div class="line"> )</div>
+    <tr><td class="paramname">generateBackup</td><td><code>true</code> si un backup de l'image doit être généré avant sa modification. Code de remplissage de la QMap: <div class="fragment"><div class="line">QVariantMap exifData;</div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;index&quot;</span>,            idx;                       <span class="comment">// Index de la photo</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;imageUrl&quot;</span>,         idx.data(ImageUrlRole));   <span class="comment">// Ce champ sert de clef</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;GPSLatitude&quot;</span>,      idx.data(LatitudeRole));</div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;GPSLongitude&quot;</span>,     idx.data(LongitudeRole));</div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;GPSLatitudeRef&quot;</span>,   idx.data(LatitudeRole).toInt()&gt;0 ? <span class="stringliteral">&quot;N&quot;</span> : <span class="stringliteral">&quot;S&quot;</span> );</div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;GPSLongitudeRef&quot;</span>,  idx.data(LongitudeRole).toInt()&gt;0 ? <span class="stringliteral">&quot;E&quot;</span> : <span class="stringliteral">&quot;W&quot;</span> );</div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;DateTimeOriginal&quot;</span>, idx.data(DateTimeOriginalRole));</div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;MetadataEditingSoftware&quot;</span>, software);</div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Creator&quot;</span>,          idx.data(CreatorRole));      <span class="comment">// MWG écrit aussi dans Artist</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;City&quot;</span>,             idx.data(CityRole));         <span class="comment">// MWG écrit dans EXIF et dans IptcExt</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Country&quot;</span>,          idx.data(CountryRole));      <span class="comment">// MWG écrit dans EXIF et dans IptcExt</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Location&quot;</span>,         idx.data(LocationRole));     <span class="comment">// MWG écrit dans EXIF et dans IptcExt</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Description&quot;</span>,      idx.data(DescriptionRole));  <span class="comment">// MWG écrit aussi dans ImageDescription</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;CaptionWriter&quot;</span>,    idx.data(CaptionWriterRole));</div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Keywords&quot;</span>,         idx.data(KeywordsRole));     <span class="comment">// Liste des keywords</span></div>
 </div><!-- fragment --> </td></tr>
   </table>
   </dd>

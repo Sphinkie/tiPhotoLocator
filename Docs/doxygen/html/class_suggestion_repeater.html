@@ -95,7 +95,7 @@ $(function(){initNavTree('class_suggestion_repeater.html','','class_suggestion_r
 </div><!--header-->
 <div class="contents">
 
-<p>Ce Repeater contient les suggestions fournies par le modèle filtré par catégorie <a class="el" href="class_suggestion_category_proxy_model.html" title="The SuggestionCategoryProxyModel class is a filter ProxyModel, that keeps only Suggestion with a give...">SuggestionCategoryProxyModel</a>. Le ProxyModel doit être configuré pour filtrer soit les suggestions "geo", soit les suggestions "tag".  
+<p>Ce Repeater contient les suggestions fournies par le modèle <a class="el" href="class_suggestion_category_proxy_model.html" title="The SuggestionCategoryProxyModel class is a filter ProxyModel, that keeps only Suggestion with a give...">SuggestionCategoryProxyModel</a>. Le Repeater doit être encapsulé dans un positionneur de type Flow, ColumnLayout ou Column. Ce modele est basé sur <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a> et est filtré selon la Category. Le ProxyModel doit être configuré pour filtrer soit les suggestions "geo", soit les suggestions "tag".  
  <a href="#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de SuggestionRepeater:</div>
@@ -114,17 +114,64 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>delegate</b></td></tr>
 var&#160;</td><td class="memItemRight" valign="bottom"><b>focus</b></td></tr>
 <tr class="memitem:a16a5777730b724d2c4b2c97dd2c39557" id="r_a16a5777730b724d2c4b2c97dd2c39557"><td class="memItemLeft" align="right" valign="top"><a id="a16a5777730b724d2c4b2c97dd2c39557" name="a16a5777730b724d2c4b2c97dd2c39557"></a>
 var&#160;</td><td class="memItemRight" valign="bottom"><b>clip</b></td></tr>
-<tr class="memitem:ae368711aa06c4a024b6d7c4868145489" id="r_ae368711aa06c4a024b6d7c4868145489"><td class="memItemLeft" align="right" valign="top"><a id="ae368711aa06c4a024b6d7c4868145489" name="ae368711aa06c4a024b6d7c4868145489"></a>
-Component&#160;</td><td class="memItemRight" valign="bottom"><b>suggestionDelegate</b></td></tr>
+<tr class="memitem:ae368711aa06c4a024b6d7c4868145489" id="r_ae368711aa06c4a024b6d7c4868145489"><td class="memItemLeft" align="right" valign="top">Component&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae368711aa06c4a024b6d7c4868145489">suggestionDelegate</a></td></tr>
 <tr class="memitem:ae6f94907d0d26b2afce8bfec1ee02537" id="r_ae6f94907d0d26b2afce8bfec1ee02537"><td class="memItemLeft" align="right" valign="top"><a id="ae6f94907d0d26b2afce8bfec1ee02537" name="ae6f94907d0d26b2afce8bfec1ee02537"></a>
 Item&#160;</td><td class="memItemRight" valign="bottom"><b>currrentItem</b></td></tr>
-<tr class="memitem:a466180a757e71f64499f94ad6bd3601c" id="r_a466180a757e71f64499f94ad6bd3601c"><td class="memItemLeft" align="right" valign="top"><a id="a466180a757e71f64499f94ad6bd3601c" name="a466180a757e71f64499f94ad6bd3601c"></a>
-<a class="el" href="class_chips.html">Chips</a>&#160;</td><td class="memItemRight" valign="bottom"><b>currrentChip</b></td></tr>
+<tr class="memitem:a466180a757e71f64499f94ad6bd3601c" id="r_a466180a757e71f64499f94ad6bd3601c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_chips.html">Chips</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a466180a757e71f64499f94ad6bd3601c">currrentChip</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Ce Repeater contient les suggestions fournies par le modèle filtré par catégorie <a class="el" href="class_suggestion_category_proxy_model.html" title="The SuggestionCategoryProxyModel class is a filter ProxyModel, that keeps only Suggestion with a give...">SuggestionCategoryProxyModel</a>. Le ProxyModel doit être configuré pour filtrer soit les suggestions "geo", soit les suggestions "tag". </p>
+<div class="textblock"><p>Ce Repeater contient les suggestions fournies par le modèle <a class="el" href="class_suggestion_category_proxy_model.html" title="The SuggestionCategoryProxyModel class is a filter ProxyModel, that keeps only Suggestion with a give...">SuggestionCategoryProxyModel</a>. Le Repeater doit être encapsulé dans un positionneur de type Flow, ColumnLayout ou Column. Ce modele est basé sur <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a> et est filtré selon la Category. Le ProxyModel doit être configuré pour filtrer soit les suggestions "geo", soit les suggestions "tag". </p>
 <hr  />
- </div><hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+ </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
+<a id="a466180a757e71f64499f94ad6bd3601c" name="a466180a757e71f64499f94ad6bd3601c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a466180a757e71f64499f94ad6bd3601c">&#9670;&#160;</a></span>currrentChip</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_chips.html">Chips</a> SuggestionRepeater::currrentChip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a> de suggestion. </p>
+
+</div>
+</div>
+<a id="ae368711aa06c4a024b6d7c4868145489" name="ae368711aa06c4a024b6d7c4868145489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae368711aa06c4a024b6d7c4868145489">&#9670;&#160;</a></span>suggestionDelegate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Component SuggestionRepeater::suggestionDelegate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> Le delegate pour afficher chaque item du Flow. Chaque item est composé d'un <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a> cliquable (cad avec MouseArea). </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>Sources/Qml/Components/<b>SuggestionRepeater.qml</b></li>
 </ul>
 </div><!-- contents -->

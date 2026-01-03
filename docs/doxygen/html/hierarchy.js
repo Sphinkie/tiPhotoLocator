@@ -1,8 +1,5 @@
 var hierarchy =
 [
-    [ "Button", null, [
-      [ "TiButton", "class_ti_button.html", null ]
-    ] ],
     [ "ColumnLayout", null, [
       [ "TabFrameGlobalTags", "class_tab_frame_global_tags.html", null ]
     ] ],
@@ -89,7 +86,6 @@ var hierarchy =
       [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", null ]
     ] ],
     [ "Rectangle", null, [
-      [ "TiImagettes", "class_ti_imagettes.html", null ],
       [ "ToolBarBottomForm", "class_tool_bar_bottom_form.html", [
         [ "ToolBarBottom", "class_tool_bar_bottom.html", null ]
       ] ],
@@ -103,11 +99,11 @@ var hierarchy =
         [ "ZonePreviewForm", "class_zone_preview_form.html", [
           [ "ZonePreview", "class_zone_preview.html", null ]
         ] ],
+        [ "ZoneSuggestedLocationsForm", "class_zone_suggested_locations_form.html", [
+          [ "ZoneSuggestedLocations", "class_zone_suggested_locations.html", null ]
+        ] ],
         [ "ZoneSuggestedTagsForm", "class_zone_suggested_tags_form.html", [
           [ "ZoneSuggestedTags", "class_zone_suggested_tags.html", null ]
-        ] ],
-        [ "ZoneSuggestionForm", "class_zone_suggestion_form.html", [
-          [ "ZoneSuggestion", "class_zone_suggestion.html", null ]
         ] ],
         [ "ZoneTitle", "class_zone_title.html", [
           [ "ExifTitle", "class_exif_title.html", null ],

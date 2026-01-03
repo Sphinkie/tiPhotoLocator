@@ -15,7 +15,7 @@ var searchData=
   ['setincircleitemcoords_12',['setInCircleItemCoords',['../class_photo_model.html#aa35674fe9c8ec79d2993ce56614bb909',1,'PhotoModel']]],
   ['setphotoproperty_13',['setPhotoProperty',['../class_photo_model.html#a50dc093e369a2741b62aa03556df061c',1,'PhotoModel']]],
   ['setselecteditemcoords_14',['setSelectedItemCoords',['../class_photo_model.html#a582509a3df1c2f9c0e6ae9f7c89e0294',1,'PhotoModel']]],
-  ['settings_15',['settings',['../class_iptc_grid.html#a996459437a7010dc06d9f190964c8718',1,'IptcGrid::settings'],['../class_settings_popup_form.html#a31109f8b75b1bbf32ae4a7d2c32963c2',1,'SettingsPopupForm::settings']]],
+  ['settings_15',['settings',['../class_iptc_grid.html#a996459437a7010dc06d9f190964c8718',1,'IptcGrid::settings'],['../class_ti_folder_dialog.html#afd2ddd7d4a9054da377e8b6b75074e6b',1,'TiFolderDialog::settings'],['../class_settings_popup_form.html#a31109f8b75b1bbf32ae4a7d2c32963c2',1,'SettingsPopupForm::settings'],['../class_tool_bar_bottom_form.html#a666adc92a8b06f52b0c2a42facff79aa',1,'ToolBarBottomForm::settings']]],
   ['settingspopup_16',['SettingsPopup',['../class_settings_popup.html',1,'']]],
   ['settingspopupform_17',['SettingsPopupForm',['../class_settings_popup_form.html',1,'']]],
   ['shutterspeed_18',['shutterSpeed',['../struct_photo.html#aeaeadb764ea3e33efa012abc317676db',1,'Photo']]],
@@ -24,9 +24,10 @@ var searchData=
   ['suggestion_21',['Suggestion',['../struct_suggestion.html',1,'Suggestion'],['../struct_suggestion.html#af2eddc6a6b273397e3455724a25c88ef',1,'Suggestion::Suggestion()'],['../struct_suggestion.html#a7b7b80cdbe8f3980639fe23fae9960b6',1,'Suggestion::Suggestion(const QString &amp;suggestion_text, const QString &amp;suggestion_target, const QString suggestion_category, const int first_photo)']]],
   ['suggestionbackgroundcolor_22',['suggestionBackgroundColor',['../class_style.html#ae958fbfc96deca9e9a0b39d4e1e38404',1,'Style']]],
   ['suggestioncategoryproxymodel_23',['SuggestionCategoryProxyModel',['../class_suggestion_category_proxy_model.html',1,'SuggestionCategoryProxyModel'],['../class_suggestion_category_proxy_model.html#a7f173be0c42da4ac2ddeef414d1d4247',1,'SuggestionCategoryProxyModel::SuggestionCategoryProxyModel()']]],
-  ['suggestionmodel_24',['SuggestionModel',['../class_suggestion_model.html',1,'SuggestionModel'],['../class_suggestion_model.html#a0e304826f0095e36eecd9ce321ac4eb0',1,'SuggestionModel::SuggestionModel()']]],
-  ['suggestionproxymodel_25',['SuggestionProxyModel',['../class_suggestion_proxy_model.html',1,'SuggestionProxyModel'],['../class_suggestion_proxy_model.html#af3e1807aac2879bcb22d656c4aead90b',1,'SuggestionProxyModel::SuggestionProxyModel()']]],
-  ['suggestionrepeater_26',['SuggestionRepeater',['../class_suggestion_repeater.html',1,'']]],
-  ['surfacecontainercolor_27',['surfaceContainerColor',['../class_style.html#a8757f72daba53eee9779307960878d2c',1,'Style']]],
-  ['syslang_28',['sysLang',['../class_settings_popup.html#ac563cb0e8e1126a22a25df028ff371c0',1,'SettingsPopup']]]
+  ['suggestiondelegate_24',['suggestionDelegate',['../class_suggestion_repeater.html#ae368711aa06c4a024b6d7c4868145489',1,'SuggestionRepeater']]],
+  ['suggestionmodel_25',['SuggestionModel',['../class_suggestion_model.html',1,'SuggestionModel'],['../class_suggestion_model.html#a0e304826f0095e36eecd9ce321ac4eb0',1,'SuggestionModel::SuggestionModel()']]],
+  ['suggestionproxymodel_26',['SuggestionProxyModel',['../class_suggestion_proxy_model.html',1,'SuggestionProxyModel'],['../class_suggestion_proxy_model.html#af3e1807aac2879bcb22d656c4aead90b',1,'SuggestionProxyModel::SuggestionProxyModel()']]],
+  ['suggestionrepeater_27',['SuggestionRepeater',['../class_suggestion_repeater.html',1,'']]],
+  ['surfacecontainercolor_28',['surfaceContainerColor',['../class_style.html#a8757f72daba53eee9779307960878d2c',1,'Style']]],
+  ['syslang_29',['sysLang',['../class_settings_popup.html#ac563cb0e8e1126a22a25df028ff371c0',1,'SettingsPopup']]]
 ];

@@ -2,5 +2,6 @@ var searchData=
 [
   ['filename_0',['filename',['../struct_photo.html#a74c2e37c247175676d801adab5d0251a',1,'Photo']]],
   ['fnumber_1',['fNumber',['../struct_photo.html#a52f8b3c14a9736e4a6f1a338987a4113',1,'Photo']]],
-  ['footer_2',['footer',['../class_ti_photo_listview.html#a830a12241df27ddf89097ac801687021',1,'TiPhotoListview']]]
+  ['foldertimer_2',['folderTimer',['../class_ti_folder_dialog.html#ab20164ba0864d93d72e15fc1a8b8c5c5',1,'TiFolderDialog']]],
+  ['footer_3',['footer',['../class_ti_photo_listview.html#a830a12241df27ddf89097ac801687021',1,'TiPhotoListview']]]
 ];

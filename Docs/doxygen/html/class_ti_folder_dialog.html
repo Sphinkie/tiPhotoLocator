@@ -94,6 +94,9 @@ $(function(){initNavTree('class_ti_folder_dialog.html','','class_ti_folder_dialo
   <div class="headertitle"><div class="title">Référence de la classe TiFolderDialog</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>QML: Fenêtre de dialogue pour selectionner le dossier. Folder example: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0].  
+ <a href="#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de TiFolderDialog:</div>
 <div class="dyncontent">
@@ -103,8 +106,7 @@ Graphe d'héritage de TiFolderDialog:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:aa77f9cdb4ff03fc10d80a581449ac23e" id="r_aa77f9cdb4ff03fc10d80a581449ac23e"><td class="memItemLeft" align="right" valign="top"><a id="aa77f9cdb4ff03fc10d80a581449ac23e" name="aa77f9cdb4ff03fc10d80a581449ac23e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addRecentFolder</b> (foldername)</td></tr>
+<tr class="memitem:aa77f9cdb4ff03fc10d80a581449ac23e" id="r_aa77f9cdb4ff03fc10d80a581449ac23e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa77f9cdb4ff03fc10d80a581449ac23e">addRecentFolder</a> (foldername)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Propriétés</h2></td></tr>
@@ -119,11 +121,106 @@ Attributs privés</h2></td></tr>
 var&#160;</td><td class="memItemRight" valign="bottom"><b>currentFolder</b></td></tr>
 <tr class="memitem:ada3967279daa5f2629ff8b0f7b0d84e7" id="r_ada3967279daa5f2629ff8b0f7b0d84e7"><td class="memItemLeft" align="right" valign="top"><a id="ada3967279daa5f2629ff8b0f7b0d84e7" name="ada3967279daa5f2629ff8b0f7b0d84e7"></a>
 var&#160;</td><td class="memItemRight" valign="bottom"><b>folder</b></td></tr>
-<tr class="memitem:a0de014f6666d965b1cb9167ff18243a1" id="r_a0de014f6666d965b1cb9167ff18243a1"><td class="memItemLeft" align="right" valign="top"><a id="a0de014f6666d965b1cb9167ff18243a1" name="a0de014f6666d965b1cb9167ff18243a1"></a>
-var&#160;</td><td class="memItemRight" valign="bottom"><b>onAccepted</b></td></tr>
-<tr class="memitem:afd2ddd7d4a9054da377e8b6b75074e6b" id="r_afd2ddd7d4a9054da377e8b6b75074e6b"><td class="memItemLeft" align="right" valign="top"><a id="afd2ddd7d4a9054da377e8b6b75074e6b" name="afd2ddd7d4a9054da377e8b6b75074e6b"></a>
-Settings&#160;</td><td class="memItemRight" valign="bottom"><b>settings</b></td></tr>
+<tr class="memitem:a0de014f6666d965b1cb9167ff18243a1" id="r_a0de014f6666d965b1cb9167ff18243a1"><td class="memItemLeft" align="right" valign="top">var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0de014f6666d965b1cb9167ff18243a1">onAccepted</a></td></tr>
+<tr class="memitem:ab20164ba0864d93d72e15fc1a8b8c5c5" id="r_ab20164ba0864d93d72e15fc1a8b8c5c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_folder_load_timer.html">FolderLoadTimer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab20164ba0864d93d72e15fc1a8b8c5c5">folderTimer</a></td></tr>
+<tr class="memitem:afd2ddd7d4a9054da377e8b6b75074e6b" id="r_afd2ddd7d4a9054da377e8b6b75074e6b"><td class="memItemLeft" align="right" valign="top">Settings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd2ddd7d4a9054da377e8b6b75074e6b">settings</a></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>QML: Fenêtre de dialogue pour selectionner le dossier. Folder example: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]. </p>
+<hr  />
+ </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<a id="aa77f9cdb4ff03fc10d80a581449ac23e" name="aa77f9cdb4ff03fc10d80a581449ac23e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa77f9cdb4ff03fc10d80a581449ac23e">&#9670;&#160;</a></span>addRecentFolder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TiFolderDialog::addRecentFolder </td>
+          <td>(</td>
+          <td class="paramtype">foldername</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<hr  />
+<p> Ajout du dossier ouvert à la liste des "recents" dans les Settings. </p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
+<a id="ab20164ba0864d93d72e15fc1a8b8c5c5" name="ab20164ba0864d93d72e15fc1a8b8c5c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab20164ba0864d93d72e15fc1a8b8c5c5">&#9670;&#160;</a></span>folderTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_folder_load_timer.html">FolderLoadTimer</a> TiFolderDialog::folderTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> Timer de ralentissement (le C++ est plus rapide que le QML) </p>
+
+</div>
+</div>
+<a id="a0de014f6666d965b1cb9167ff18243a1" name="a0de014f6666d965b1cb9167ff18243a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de014f6666d965b1cb9167ff18243a1">&#9670;&#160;</a></span>onAccepted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">var TiFolderDialog::onAccepted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> Clic sur OK: on charge la liste des fichiers du répertoire sélectionné. </p>
+
+</div>
+</div>
+<a id="afd2ddd7d4a9054da377e8b6b75074e6b" name="afd2ddd7d4a9054da377e8b6b75074e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2ddd7d4a9054da377e8b6b75074e6b">&#9670;&#160;</a></span>settings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Settings TiFolderDialog::settings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> Mémorisation du chemin dans les Settings. </p>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>Sources/Qml/Dialogs/<b>TiFolderDialog.qml</b></li>
 </ul>
