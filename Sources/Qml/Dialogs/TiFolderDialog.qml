@@ -5,7 +5,7 @@ import "../Components"
 
 
 /** ***************************************************************************************
- * @brief QML: Fenetre de dialogue pour selectionner le dossier.
+ * @brief QML: Fenêtre de dialogue pour selectionner le dossier.
  * Folder example: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
  * ****************************************************************************************/
 FolderDialog {
@@ -31,12 +31,19 @@ FolderDialog {
         folderTimer.start()
     }
 
+
+    /** ***********************************************************************************
+     * Timer de ralentissement (le C++ est plus rapide que le QML)
+     * ************************************************************************************/
     FolderLoadTimer {
         id: folderTimer
     }
 
+
+    /** ***********************************************************************************
+     * Ajout du dossier ouvert à la liste des "recents" dans les Settings.
+     * ************************************************************************************/
     function addRecentFolder(foldername) {
-        // On ajoute le dossier ouvert à la liste des "recents" dans les Settings.
         var folderList = settings.recentList
         var posFolder = settings.recentNumber
         // On mémorise un maximum de 7 recent folders
@@ -47,9 +54,10 @@ FolderDialog {
         settings.recentNumber = posFolder + 1
     }
 
-    // --------------------------------------
-    // On mémorise le chemin dans les Settings
-    // --------------------------------------
+
+    /** ***********************************************************************************
+     * Mémorisation du chemin dans les Settings.
+     * ************************************************************************************/
     Settings {
         id: settings
         category: "recentFolders"

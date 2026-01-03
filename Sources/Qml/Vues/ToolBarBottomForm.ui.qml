@@ -4,9 +4,13 @@ import QtQuick.Controls.Material
 import QtCore
 import "../Components"
 
+
+/** **********************************************************************************************************
+ * @brief Vue de la barre de boutons du bas.
+ * *********************************************************************************************************** */
 Rectangle {
     id: bottomRect
-    // DDL color: TiStyle.surfaceContainerColor
+    // TODO color: TiStyle.surfaceContainerColor
     height: bottomToolBarLayout.height + 20
 
     property alias bt_dump1: bt_dump1
@@ -17,7 +21,10 @@ Rectangle {
     property bool useDebug
     property bool shouldSave
 
-    // property alias reglages2: reglages2
+
+    /** *************************************************************************************
+     * Les boutons sont en ligne, calée sur la droite.
+     * **************************************************************************************/
     RowLayout {
         id: bottomToolBarLayout
         Layout.alignment: Qt.AlignRight // on cale les boutons à droite
@@ -57,7 +64,6 @@ Rectangle {
             id: bt_save
             text: qsTr("Enregistrer")
             Layout.topMargin: 10
-            // DDL color: shouldSave ? TiStyle.buttonAccentColor : TiStyle.buttonIdleColor
             highlighted: shouldSave
             ToolTip.text: qsTr("Enregistre les tags EXIF des photos modifiées")
             ToolTip.visible: hovered
@@ -74,29 +80,10 @@ Rectangle {
         }
     }
 
-    // ----------------------------------------------------------------
-    // Dès qu'un item change, on colorie le bouton
-    // ----------------------------------------------------------------
-    Connections{
-      target: _photoModel
-      function onDataCleared()
-      {
-          console.log("onDataCleared");
-          shouldSave = false;
-      }
-      function onDataChanged(topLeft, bottomRight, roles)
-      {
-          // console.log("dataChanged", roles.length, " roles: ", roles);
-          roles.forEach(function(role){
-            // console.log(_photoModel.getRoleName(role));
-            if (_photoModel.getRoleName(role) === "toBeSaved") shouldSave = true;
-          });
-      }
-    }
 
-    // ----------------------------------------------------------------
-    // On mémorise la ckeckbox dans les Settings
-    // ----------------------------------------------------------------
+    /** *************************************************************************************
+     * Mémorisation de la ckeckbox "Générer backups" dans les Settings.
+     * **************************************************************************************/
     Settings {
         id: settings
         property alias backupsEnabled: cb_backups.checked

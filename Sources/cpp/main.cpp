@@ -42,9 +42,9 @@ int main(int argc, char *argv[])
     app.setOrganizationDomain("de-lorenzo.fr");
     app.setWindowIcon(QIcon(":Images/logo_TPL.ico")); // Icon displayed in the top-left corner of the application's top-level window.
 
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // On initialise nos Models
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     PhotoModel photoModel;
     OnTheMapProxyModel onTheMapProxyModel;
     onTheMapProxyModel.setSourceModel(&photoModel);
@@ -58,24 +58,24 @@ int main(int argc, char *argv[])
     suggestionProxyModel.setSourceModel(&suggestionModel);
     SuggestionCategoryProxyModel suggestionCategoryProxyModel;
     suggestionCategoryProxyModel.setSourceModel(&suggestionProxyModel);
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // On initialise nos classes
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     GeocodeWrapper geocodeWrapper(&suggestionModel); // on lui passe le modèle qui mémorisera les suggestions
     CameraSet cameraSet;
 
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Initialisation du moteur QML:
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Au choix
     QQmlApplicationEngine engine;
     QQmlContext* context = engine.rootContext();
 //    QQuickView view;
 //    QQmlContext* context = view.rootContext();
 
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // On ajoute au contexte les classes qui ont des property QML
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     context->setContextProperty("_photoModel", &photoModel);
     context->setContextProperty("_onTheMapProxyModel", &onTheMapProxyModel);
     context->setContextProperty("_suggestionModel", &suggestionModel);  // Pour le dump de debug
@@ -85,17 +85,17 @@ int main(int argc, char *argv[])
     context->setContextProperty("_undatedPhotoProxyModel", &undatedPhotoProxyModel);
     context->setContextProperty("_cameraSet", &cameraSet);
 
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Connexion des signaux
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Sortie en cas de bug.
     QObject::connect(
         &engine, &QQmlApplicationEngine::objectCreationFailed, &app,[]()
         { QCoreApplication::exit(-1); }, Qt::QueuedConnection);
 
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Démarrage (au choix)
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Charge la page Main.qml du projet
     engine.loadFromModule("QT_TiPhotoLocator", "Main");
     //const QUrl url(QStringLiteral("qrc:/Main.qml"));
@@ -111,24 +111,24 @@ int main(int argc, char *argv[])
     }
 
 
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Connexions
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     //QObject *item = view.rootObject();
     // Le firstRootItem est la première balise du QML, cad "window".
     QObject *firstRootItem = engine.rootObjects().first();
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Connexions QML vers classe C++
-    // --------------------------------------
-    QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)),          &photoModel, SLOT(append(QString,QString)));
-    QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),     &photoModel, SLOT(fetchExifMetadata(int)));
-    QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),              &photoModel, SLOT(fetchExifMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                   &photoModel, SLOT(saveMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(savePosition(double,double)),      &photoModel, SLOT(appendSavedPosition(double,double)));
-    QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),             &photoModel, SLOT(removeSavedPosition()));
-    QObject::connect(firstRootItem,   SIGNAL(applyCreatorToAll()),              &photoModel, SLOT(applyCreatorToAll()));
-    QObject::connect(firstRootItem,   SIGNAL(setPhotoProperty(int,QString,QString)),   &photoModel, SLOT(setPhotoProperty(int,QString,QString)));
-    QObject::connect(firstRootItem,   SIGNAL(setSelectedPhotoCoords(double,double)),   &photoModel, SLOT(setSelectedItemCoords(double,double)));
+    // ----------------------------------------------------------------------------
+    QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)),               &photoModel, SLOT(append(QString,QString)));
+    QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),          &photoModel, SLOT(fetchExifMetadata(int)));
+    QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),                   &photoModel, SLOT(fetchExifMetadata()));
+    QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                        &photoModel, SLOT(saveMetadata()));
+    QObject::connect(firstRootItem,   SIGNAL(savePosition(double,double)),           &photoModel, SLOT(appendSavedPosition(double,double)));
+    QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),                  &photoModel, SLOT(removeSavedPosition()));
+    QObject::connect(firstRootItem,   SIGNAL(applyCreatorToAll()),                   &photoModel, SLOT(applyCreatorToAll()));
+    QObject::connect(firstRootItem,   SIGNAL(setPhotoProperty(int,QString,QString)), &photoModel, SLOT(setPhotoProperty(int,QString,QString)));
+    QObject::connect(firstRootItem,   SIGNAL(setSelectedPhotoCoords(double,double)), &photoModel, SLOT(setSelectedItemCoords(double,double)));
 
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel,   SLOT(setAllItemsSavedCoords()));
     QObject::connect(firstRootItem,   SIGNAL(setSuggestionFilter(int)),             &suggestionProxyModel, SLOT(setFilterValue(int)));
@@ -137,14 +137,14 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper,       SLOT(requestReverseGeocode(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(requestCoords(QString)),               &geocodeWrapper,       SLOT(requestCoordinates(QString)));
 
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Connexions entre classes C++
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     QObject::connect(&photoModel, SIGNAL(selectedRowChanged(int)),                     &suggestionModel, SLOT(onSelectedPhotoChanged(int)));
     QObject::connect(&photoModel, SIGNAL(sendSuggestion(QString,QString,QString,int)), &suggestionModel, SLOT(append(QString,QString,QString,int)));
 
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     // Exécution de QML
-    // --------------------------------------
+    // ----------------------------------------------------------------------------
     return app.exec();
 }

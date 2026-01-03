@@ -1,11 +1,12 @@
 import QtQuick
+import QtCore
 import "../Vues"
 import "../Javascript/Networking.js" as Netwk
 
 
 /** **********************************************************************************************************
  * @brief Controlleur pour la barre de boutons du bas.
- * *********************************************************************************************************** */
+ * ***********************************************************************************************************/
 ToolBarBottomForm {
 
     bt_dump1.onClicked: {
@@ -30,5 +31,47 @@ ToolBarBottomForm {
 
     bt_quit.onClicked: {
         Qt.quit()
+    }
+
+
+    /** *******************************************************************
+     * Connexions : Slots pour les signaux émis par PhotoModel
+     * ********************************************************************/
+    Connections {
+        target: _photoModel
+
+
+        /** *******************************************************************
+         * Ce slot enlève le highlight du bouton Enregistrer.
+         * ********************************************************************/
+        function onDataSaved() {
+            // console.log("onDataSaved")
+            shouldSave = false
+        }
+        function onDataCleared() {
+            // console.log("onDataCleared")
+            shouldSave = false
+        }
+
+
+        /** *******************************************************************
+         * Dès qu'un item change, le signal dataChanged est émis par setData. on highlighte le bouton Enregistrer.
+         * @param topLeft: unused
+         * @param bottomRight: unused
+         * @param roles: Liste des roles modifiés, exemple ["country, "toBeSaved"].
+         * ********************************************************************/
+        function onDataChanged(topLeft, bottomRight, roles) {
+            // console.log("dataChanged", roles.length, " roles:")
+            // S'il y a toBeSaved parmi les roles, et qu'il n'est pas seul on positionne le flag.
+            // Si ce role est seul, on suppose que c'est pour le faire retomber à false
+            // (vu qu'on n'a pas la valeur ici).
+            roles.forEach(function (role) {
+                // console.log("-", _photoModel.getRoleName(role))
+                if ((_photoModel.getRoleName(role) === "toBeSaved")
+                        && (roles.length > 1))
+                    // alors on highlight le bouton Enregistrer.
+                    shouldSave = true
+            })
+        }
     }
 }

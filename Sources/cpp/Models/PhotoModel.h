@@ -170,6 +170,7 @@ signals:
     void selectedRowChanged(const int row);                                        //!< Signal émis quand la Photo sélectionnée change.
     void sendSuggestion(QString text, QString target, QString category, int row);  //!< Ce signal envoie une Suggestion au SuggestionModel.
     void dataCleared();                                                            //!< Signal émis quand le modèle a été vidé.
+    void dataSaved();                                                              //!< Signal émis quand les données ont été enregistrées sur le disque.
 
 
     // -----------------------------------------------------

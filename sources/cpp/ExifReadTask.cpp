@@ -33,7 +33,7 @@ ExifReadTask::ExifReadTask(QString filePath)
 /** **********************************************************************************************************
  * @brief Lancement de la tache. On lance **exifTool** dans un process, et on analyse la réponse.
  * Cette tache est exécutée dans un thread QRunnable.
- * A la fin de la tache, on écrit les résultats dans PhotoModel.
+ * A la fin de la tache, processLine écrit les résultats dans PhotoModel.
  * ***********************************************************************************************************/
 void ExifReadTask::run()
 {

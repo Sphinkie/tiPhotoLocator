@@ -8,24 +8,30 @@
  * @brief Constructeur. On enregistre les paramètres.
  * @param exifData: la liste des metadata à écrire dans le fichier JPG.
  * @param generateBackup: \c true si un backup de l'image doit être généré avant sa modification.
+ * Code de remplissage de la QMap:
    @code
-     QVariantMap: QMap(
-      ("SourceFile",       QVariant(QString,   "E:/TiPhotos/P8160449.JPG"))
-      ("FileName",         QVariant(QString,   "P8160449.JPG"))
-      ("Artist",           QVariant(QString,   "Blemia Borowicz"))
-      ("DateTimeOriginal", QVariant(QString,   "2023:08:16 13:30:20"))
-      ("GPSLatitude",      QVariant(double,    48.7664))
-      ("GPSLatitudeRef",   QVariant(QString,   "N"))
-      ("GPSLongitude",     QVariant(double,    14.0194))
-      ("GPSLongitudeRef",  QVariant(QString,   "E"))
-      ("Make",             QVariant(QString,   "OLYMPUS CORPORATION"))
-      ("Model",            QVariant(QString,   "E-M10MarkII"))
-      )
+        QVariantMap exifData;
+        exifData.insert("index",            idx;                       // Index de la photo
+        exifData.insert("imageUrl",         idx.data(ImageUrlRole));   // Ce champ sert de clef
+        exifData.insert("GPSLatitude",      idx.data(LatitudeRole));
+        exifData.insert("GPSLongitude",     idx.data(LongitudeRole));
+        exifData.insert("GPSLatitudeRef",   idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
+        exifData.insert("GPSLongitudeRef",  idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
+        exifData.insert("DateTimeOriginal", idx.data(DateTimeOriginalRole));
+        exifData.insert("MetadataEditingSoftware", software);
+        exifData.insert("Creator",          idx.data(CreatorRole));      // MWG écrit aussi dans Artist
+        exifData.insert("City",             idx.data(CityRole));         // MWG écrit dans EXIF et dans IptcExt
+        exifData.insert("Country",          idx.data(CountryRole));      // MWG écrit dans EXIF et dans IptcExt
+        exifData.insert("Location",         idx.data(LocationRole));     // MWG écrit dans EXIF et dans IptcExt
+        exifData.insert("Description",      idx.data(DescriptionRole));  // MWG écrit aussi dans ImageDescription
+        exifData.insert("CaptionWriter",    idx.data(CaptionWriterRole));
+        exifData.insert("Keywords",         idx.data(KeywordsRole));     // Liste des keywords
   @endcode
  * ***********************************************************************************************************/
-ExifWriteTask::ExifWriteTask(const QVariantMap exifData, bool generateBackup)
+ExifWriteTask::ExifWriteTask(const QVariantMap exifData, PhotoModel* photoModel, bool generateBackup)
 {
     m_exifData = exifData;
+    m_photoModel = photoModel;
     m_generateBackup = generateBackup;
 }
 
@@ -55,9 +61,8 @@ void ExifWriteTask::run()
     arguments << "-ext" << "JPG";       // Filtre sur les extensions
     arguments << "-ext" << "JPEG";      // Filtre sur les extensions
     arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
-    //arguments << "-dateFormat" << "'%d-%m-%Y'";   // datetime format DD-MM-YYYY
-    //arguments.append("-use"); arguments.append("MWG");    // Use MetadataWorkingGroup recommendations
-    if (!m_generateBackup) arguments.append("-overwrite_original");     // Genere un backup si demandé
+    //arguments << "-dateFormat" << "'%d-%m-%Y'";                    // datetime format DD-MM-YYYY
+    if (!m_generateBackup) arguments.append("-overwrite_original");  // Genere un backup si demandé
     // Liste des tags à écrire
     QMapIterator<QString, QVariant> itr(m_exifData);
     while (itr.hasNext()) {
@@ -91,7 +96,11 @@ void ExifWriteTask::run()
         // When a CRLF is receive, it is finished
         qInfo() << exifProcess.readLine();  // On affiche une éventuelle erreur
     }
-    // qDebug() << "Finished with code" << exifProcess.exitCode() << exifProcess.exitStatus() ;
+    // ---------------------------------------
+    // Execution terminée
+    // ---------------------------------------
+    QModelIndex idx = m_exifData.value("index").toModelIndex();
+    m_photoModel->setData(idx, false, PhotoModel::ToBeSavedRole);
 }
 
 

@@ -371,7 +371,7 @@ void PhotoModel::setData(int row, QString value, QString property)
 /** **********************************************************************************************************
  * @brief Surcharge qui permet de modifier **unitairement** un Role d'un item du modèle.
  *
- * Cette fonction met aussi à *True* le flag **To Be Saved** car il s'agit d'une action opérateur.
+ * Cette fonction met aussi à *True* le flag **To Be Saved** quand il s'agit d'une action opérateur.
  * Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la Photo.
  * Certains roles ne sont pas modifiables: `imageUrl, isSelected, hasGPS, filename, shutterSpeed, F-number`, etc.
  * @see https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
@@ -461,7 +461,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
  *
  * Roles non modifiables (ignorés): `imageUrl, insideCircle`.<br>
  * Roles non modifiables (recalculés): `hasGPS, toBeSaved`.<br>
- * Cette fonction positionne le flag **ToBeSaved** à *False*.<br>
+ * @note Cette fonction positionne le flag **ToBeSaved** à *False*.<br>
  * @param value_list : la liste des données à modifier. Attention: les keys sont les noms des balises EXIF. `FileName` est obligatoire.
  * ***********************************************************************************************************/
 void PhotoModel::setData(const QVariantMap &value_list)
@@ -622,10 +622,12 @@ void PhotoModel::fetchExifMetadata(int photo)
 void PhotoModel::saveMetadata()
 {
     qDebug() << "saveMetadata";
+    // On recupère certaines indos dans les Settings
     QSettings settings;
     bool backupsEnabled = settings.value("backupsEnabled", false).toBool();
     QString software = settings.value("software", "").toString();
 
+    // On cree le pool de threads.
     QThreadPool::globalInstance()->setMaxThreadCount(3);
     // On parcourt tous les items du modèle (par leur indice dans le vecteur)
     int row = 0;
@@ -635,8 +637,9 @@ void PhotoModel::saveMetadata()
         // On teste si cette photo a été modifiée et doit être enregistrée
         if (idx.data(ToBeSavedRole).toBool() && !idx.data(IsMarkerRole).toBool() && !idx.data(IsWelcomeRole).toBool())
         {
-            // On ecrit les metadonnées dans le fichier JPG
+            // On écrit les metadonnées dans le fichier JPG
             QVariantMap exifData;
+            exifData.insert("index", idx);                         // Index de la Photo
             exifData.insert("imageUrl", idx.data(ImageUrlRole));   // Ce champ sert de clef
             exifData.insert("GPSLatitude", idx.data(LatitudeRole));
             exifData.insert("GPSLongitude", idx.data(LongitudeRole));
@@ -653,17 +656,12 @@ void PhotoModel::saveMetadata()
             exifData.insert("Keywords", idx.data(KeywordsRole));        // Ajout de la liste des keywords
 
             //Instanciation et ajout de la tâche au pool de threads
-            ExifWriteTask *task = new ExifWriteTask(exifData, backupsEnabled);
+            ExifWriteTask *task = new ExifWriteTask(exifData, this, backupsEnabled);
             QThreadPool::globalInstance()->start(task);
-
-            // On fait retomber le flag "toBeSaved"
-            setData(idx, false, ToBeSavedRole);
-            // ou:
-            // m_photos[row].toBeSaved = false;
-            // emit dataChanged(idx, idx, QVector<int>() << ToBeSavedRole);
         }
         idx = idx.siblingAtRow(++row);
     }
+    emit dataSaved();
 }
 
 
