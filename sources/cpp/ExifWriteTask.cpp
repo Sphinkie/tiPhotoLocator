@@ -49,7 +49,7 @@ void ExifWriteTask::run()
         return;
 
     QProcess exifProcess;
-    QString program = "exifTool";
+    QString program = "Bin/exifTool.exe";
     QStringList arguments;
     arguments << "-preserve";           // Preserve file modification date/time
     arguments << "-ext" << "JPG";       // Filtre sur les extensions

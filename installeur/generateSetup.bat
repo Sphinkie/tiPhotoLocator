@@ -1,3 +1,10 @@
-C:\Qt\QtIFW-4.6.1\bin\binarycreator --offline-only -c config/config.xml -p packages TiPhotoLocatorSetup
+@ECHO -------------------------
+@ECHO SETUP generation
+@ECHO -------------------------
+set "AppName=TiPhotoLocator"
+
+del .\packages\sphinkie.%AppName%\data\vc_redist.x64.exe
+C:\Qt\Tools\QtInstallerFramework\4.10\bin\binarycreator --offline-only -c config/config.xml -p packages %AppName%Setup
+
 
 pause

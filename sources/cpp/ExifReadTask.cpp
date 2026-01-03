@@ -41,7 +41,7 @@ void ExifReadTask::run()
         m_filePath = QStandardPaths::displayName(QStandardPaths::PicturesLocation);  // TODO : vérifier le résultat
 
     QProcess exifProcess;
-    QString program = "exifTool";
+    QString program = "Bin/exifTool.exe";
     QStringList arguments;
     // Formattage du flux de sortie de ExifTool
     arguments.append("-json");          // output in JSON format

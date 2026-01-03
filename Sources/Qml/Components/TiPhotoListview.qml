@@ -119,7 +119,6 @@ ListView {
                 text: filename
                 font.pixelSize: 16
                 color: toBeSaved ? Style.accentTextColor : Style.primaryTextColor
-                // DDL highlighted: toBeSaved
             }
 
 
