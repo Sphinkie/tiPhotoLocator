@@ -64,7 +64,7 @@ void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
 
 /** **********************************************************************************************************
  * @brief Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city.
- *        La réponse est traitée par geoCodeFinished()
+ *        La réponse est traitée par geoCodeFinished().
  * @param city : un nom de lieu, par exemple "Marsa el Brega" => 30.4074, 19.5784
  * ***********************************************************************************************************/
 void GeocodeWrapper::requestCoordinates(QString city)

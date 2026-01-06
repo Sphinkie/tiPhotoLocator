@@ -17,7 +17,9 @@ class PhotoModel : public QAbstractListModel
     Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
     //! selectedCoords is the GPS coordinates of the selected Photo.
     Q_PROPERTY(QGeoCoordinate selectedCoords READ getSelectedCoords WRITE selectedCoords NOTIFY selectedCoordsChanged)
-    //! indique si un SavedPosition existe dan le modèle.
+    //! selectedItemHasGPS indicate if the selected Photo has GPS coordinates.
+    Q_PROPERTY(bool selectedItemHasGPS READ getSelectedItemHasGPS NOTIFY selectedItemHasGPSChanged)
+    //! indique si un SavedPosition existe dans le modèle.
     Q_PROPERTY(bool savedPositionExists MEMBER m_savedPositionExists NOTIFY savedPositionExistsChanged)
 
 public:
@@ -91,6 +93,7 @@ private:
     void selectedRow(const int row);
     void selectedCoords(const QGeoCoordinate coords);
     int  getSelectedRow();
+    bool getSelectedItemHasGPS();
     QGeoCoordinate getSelectedCoords();
     bool belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo);
 
@@ -123,6 +126,7 @@ signals:
     void dataSaved();                                                              //!< Signal émis quand les données ont été enregistrées sur le disque.
     void firstCoordsReady();                                                       //!< Signal émis quand les coordonnées GPS de la première photo sont disponibles.
     void savedPositionExistsChanged();                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
+    void selectedItemHasGPSChanged();                                              //!< Signal émis quand si hasGPS change.
 
     // -----------------------------------------------------
     // Membres

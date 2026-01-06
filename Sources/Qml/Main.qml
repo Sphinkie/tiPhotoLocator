@@ -312,14 +312,6 @@ Window {
             Layout.rightMargin: 30
         }
     }
-
-    // ----------------------------------------------------------------
-    // Lecture des Settings
-    // ----------------------------------------------------------------
-    Settings {
-        id: settings
-        property alias homeCoords: mapTab.homeCoords
-    }
 }
 
 /*##^##

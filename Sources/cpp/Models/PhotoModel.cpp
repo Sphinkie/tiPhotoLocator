@@ -539,6 +539,14 @@ int PhotoModel::getSelectedRow()
 }
 
 /** **********************************************************************************************************
+ * @brief Returns if the selected photo has GPS coordinates.
+ * ***********************************************************************************************************/
+bool PhotoModel::getSelectedItemHasGPS()
+{
+    return (m_photos[m_lastSelectedRow].hasGPS);
+}
+
+/** **********************************************************************************************************
  * @brief Returns the GPS Coords of the selected row.
  * ***********************************************************************************************************/
 QGeoCoordinate PhotoModel::getSelectedCoords()
@@ -552,9 +560,10 @@ QGeoCoordinate PhotoModel::getSelectedCoords()
  * ***********************************************************************************************************/
 void PhotoModel::selectFirstPhoto()
 {
+    qDebug() << "selectFirstPhoto";
     // On efface la Saved Position
     this->removeSavedPosition();
-    qDebug() << "selectFirstPhoto";
+    // On sélectionne la première photo
     this->selectedRow(0);
     // On prévient la MapView
     emit firstCoordsReady();
@@ -638,7 +647,6 @@ void PhotoModel::fetchExifMetadata(int photo)
         // QThreadPool::globalInstance()->waitForDone();
     }
 }
-
 
 
 /** **********************************************************************************************************

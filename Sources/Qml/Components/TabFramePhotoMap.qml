@@ -10,10 +10,6 @@ import "../Controllers"
  * |             |[zone2]
  * *************************************************************************************/
 GridLayout {
-    // Les coordonnées du point sélectionné
-    // Actualisé lors d'un clic sur la listView par activatePhoto(), ou sur la carte.
-    // homeCoords est mémorisé dans les settings : POUR ???
-    property point homeCoords
     property alias mapTools: mapTools
     property alias mapView: mapView
 
@@ -21,7 +17,7 @@ GridLayout {
     rows: 3 // toolbar et carte/zones
     columns: 2 // carte et zone des tags
 
-    /// Barre d'outils pour la carte sur toute la largeur (controleur avec vue).
+    /// Barre d'outils pour la carte, sur toute la largeur (controleur avec vue).
     ToolBarMap {
         id: mapTools
         Layout.columnSpan: 2

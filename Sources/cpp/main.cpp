@@ -102,8 +102,10 @@ int main(int argc, char *argv[])
     //view.setSource(QUrl("qrc:/main.qml"));    //engine.load(url);
     //view.show();
 
+    // ----------------------------------------------------------------------------
+    // Au lancement, on initilise les HomeCoords sur Paris (sauf si existe déjà).
+    // ----------------------------------------------------------------------------
     QSettings settings;
-    // FIXME
     QVariant homeCoords = settings.value("homeCoords", QVariant());
     if (!homeCoords.isValid())
     {

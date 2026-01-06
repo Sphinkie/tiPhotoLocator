@@ -23,10 +23,13 @@ import QtPositioning
  *   - le delegate affiche un marker gris à l'emplacement de chaque photo incluse dans le cercle
  * ***********************************************************************************************************/
 Map {
-    property alias mapCircle: mapCircle
+    // Position initiale de la carte
+    center: QtPositioning.coordinate(homeCoords.x,
+                                     homeCoords.y) // _photoModel.selectedCoords
     zoomLevel: 6
     plugin: mapPlugin
-    center: _photoModel.selectedCoords
+    property alias mapCircle: mapCircle
+    property point homeCoords
 
     DragHandler {
         id: drag
@@ -39,7 +42,6 @@ Map {
         rotationScale: 1 / 60
         property: "zoomLevel"
     }
-
     MapCircle {
         id: mapCircle
         radius: mapTools.slider_radius.value // en mètres
@@ -86,11 +88,17 @@ Map {
      * *******************************************************************************************************/
     onMapItemsChanged: {
         console.log("onMapItemsChanged")
-        // console.log(": re-center the map on selectedCoords", _photoModel.selectedCoords)
-        // On repositionne la carte sur les coords de la photo sélectionée
-        mapView.center = _photoModel.selectedCoords
-        // On repositionne le cercle
-        mapCircle.center = _photoModel.selectedCoords
+        if (_photoModel.selectedItemHasGPS) {
+            console.log(": re-center the map on selectedCoords",
+                        _photoModel.selectedCoords)
+            // On repositionne la carte sur les coords de la photo sélectionée
+            mapView.center = _photoModel.selectedCoords
+            // On repositionne le cercle
+            mapCircle.center = _photoModel.selectedCoords
+        }
+        // on lit homeCoords dans les ssettingss
+        homeCoords = settings.value("homeCoords")
+        console.log("onMapItemsChanged. Reload home coords:", homeCoords)
     }
 
 
@@ -105,11 +113,17 @@ Map {
          * Appelé après avoir lu les Exif de la première photo de la liste.
          * *******************************************************************************************************/
         function onFirstCoordsReady() {
-            console.log("onFirstCoordsReady: ", _photoModel.selectedCoords)
-            // On repositionne la carte sur ces coords
-            mapView.center = _photoModel.selectedCoords
-            // On repositionne le cercle
-            mapCircle.center = _photoModel.selectedCoords
+            if (_photoModel.selectedItemHasGPS) {
+                // console.log("onFirstCoordsReady: ", _photoModel.selectedCoords)
+                // On repositionne la carte sur ces coords
+                mapView.center = _photoModel.selectedCoords
+                // On repositionne le cercle
+                mapCircle.center = _photoModel.selectedCoords
+            } // Si pas de coordonnées pour la première photo, on remet la carte en position "home"
+            else {
+                mapView.center = QtPositioning.coordinate(homeCoords.x,
+                                                          homeCoords.y)
+            }
         }
     }
 
