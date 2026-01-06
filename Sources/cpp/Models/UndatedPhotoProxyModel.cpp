@@ -40,7 +40,6 @@ void UndatedPhotoProxyModel::setFilterEnabled(bool enabled)
         this->setFilterRegularExpression("");   // accept all
     endFilterChange();
     emit filterEnabledChanged();
-    //invalidateFilter();
 }
 
 
@@ -51,7 +50,7 @@ void UndatedPhotoProxyModel::setFilterEnabled(bool enabled)
  * ***********************************************************************************************************/
 int UndatedPhotoProxyModel::getSourceIndex(int row)
 {
-    qDebug() << "UndatedPhotoProxyModel::getSourceIndex";
+    // qDebug() << "UndatedPhotoProxyModel::getSourceIndex";
 
     // On convertit l'indice vers un indice de la source
     QModelIndex sourceIndex = mapToSource(index(row,0));
@@ -61,13 +60,13 @@ int UndatedPhotoProxyModel::getSourceIndex(int row)
     // Si le underneath_model est PhotoModel, on retourne l'indice
     if (!strcmp (underneath_model->metaObject()->className(), "PhotoModel"))
     {
-        qDebug() << "La source est un Model: on remonte son index";
+        // qDebug() << "La source est un Model: on remonte son index";
         return sourceIndex.row();
     }
     // Sinon, on lui transfère la demande.
     else
     {
-        qDebug() << "La source est un Proxy";
+        // qDebug() << "La source est un Proxy";
         auto proxy_model = dynamic_cast<UndatedPhotoProxyModel*>(underneath_model);
         return proxy_model->getSourceIndex(sourceIndex.row());
     }

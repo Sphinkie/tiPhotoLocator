@@ -64,7 +64,7 @@ void ExifReadTask::run()
         this->processLine(exifProcess.readLine());
     }
     // qDebug() << "Task finished" ;
-    if (m_filePos==0) m_photoModel->selectFirstPhoto();
+    if (m_filePos == 0) m_photoModel->selectFirstPhoto();
 }
 
 

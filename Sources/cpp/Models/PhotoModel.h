@@ -19,8 +19,10 @@ class PhotoModel : public QAbstractListModel
     Q_PROPERTY(QGeoCoordinate selectedCoords READ getSelectedCoords WRITE selectedCoords NOTIFY selectedCoordsChanged)
     //! selectedItemHasGPS indicate if the selected Photo has GPS coordinates.
     Q_PROPERTY(bool selectedItemHasGPS READ getSelectedItemHasGPS NOTIFY selectedItemHasGPSChanged)
-    //! indique si un SavedPosition existe dans le modèle.
+    //! Indique si un SavedPosition existe dans le modèle.
     Q_PROPERTY(bool savedPositionExists MEMBER m_savedPositionExists NOTIFY savedPositionExistsChanged)
+    //! Indique si le modele est en train de le lire les Exif.
+    Q_PROPERTY(bool loading MEMBER m_loading NOTIFY loadingChanged)
 
 public:
     /** *****************************************************************************************************
@@ -90,6 +92,7 @@ private:
     // -----------------------------------------------------
     void addTestItem();
     void resetCircle();
+    void setLoading(const bool state);
     void selectedRow(const int row);
     void selectedCoords(const QGeoCoordinate coords);
     int  getSelectedRow();
@@ -127,6 +130,7 @@ signals:
     void firstCoordsReady();                                                       //!< Signal émis quand les coordonnées GPS de la première photo sont disponibles.
     void savedPositionExistsChanged();                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
     void selectedItemHasGPSChanged();                                              //!< Signal émis quand si hasGPS change.
+    void loadingChanged();                                                         //!< Signal émis quand le status loading change.
 
     // -----------------------------------------------------
     // Membres
@@ -142,6 +146,7 @@ private:
     int m_lastCircleRadius = 0;                 //!< Valeur précdente du rayon de recherche
     bool m_circleResetted = true;               //!< True si le rayon du cercle est à 0, et que le flag insideCircle a été resetté sur toutes les photos.
     bool m_savedPositionExists = false;         //!< True si le marker SavedPosition existe
+    bool m_loading = false;                     //!< True si le modèle est en train de scanner le répertoire.
 };
 
 #endif // PHOTOMODEL_H

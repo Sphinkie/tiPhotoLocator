@@ -131,7 +131,7 @@ Window {
     /** *****************************************************************************
      * Ligne 1 : Barre d'outils du folder: refresh / reload / rescan / foldername
      * ******************************************************************************/
-    ToolBarPrincipale {
+    ToolbarPrincipale {
         id: toolBar
         //width: parent.width
         anchors {
@@ -298,7 +298,7 @@ Window {
         //anchors.top: line3.bottom
 
         /// Barre de boutons
-        ToolBarBottom {
+        ToolbarBottom {
             id: bottomToolBar
             height: 160
             Layout.preferredWidth: 380

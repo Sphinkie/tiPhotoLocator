@@ -7,7 +7,7 @@ import "../Javascript/Networking.js" as Netwk
 /** **********************************************************************************************************
  * @brief Controlleur pour la barre de boutons du bas.
  * ***********************************************************************************************************/
-ToolBarBottomForm {
+ToolbarBottomForm {
 
     bt_dump1.onClicked: {
         _photoModel.dumpData()

@@ -478,9 +478,9 @@ void PhotoModel::setData(const QVariantMap &value_list)
     if (m_photos.count() == 0) return;    // If the list of photo data is empty...
 
     int row;
-    // ----------------------------------
+    // -------------------------------------------------------------------
     // On cherche la photo
-    // ----------------------------------
+    // -------------------------------------------------------------------
     for (row=0; row<m_photos.count(); row++)
         if (m_photos[row] == file_name) break;  // Possible grace à notre surcharge de l'opérateur ==   :-)
 
@@ -522,11 +522,18 @@ void PhotoModel::setData(const QVariantMap &value_list)
     QModelIndex photo_index = this->index(row, 0);
     emit dataChanged(photo_index, photo_index);
 
-    // -------------------------------------
+    // -------------------------------------------------------------------
     // Certaines infos sont des suggestions
-    // -------------------------------------
+    // -------------------------------------------------------------------
     QString createDate = Utilities::toReadableDateTime(value_list["CreateDate"]);
     emit sendSuggestion(createDate, "dateTimeOriginal", "tag", row);
+
+    // -------------------------------------------------------------------
+    // S'il n'y a plus de thread en cours, on stoppe le BusyIndicator
+    // -------------------------------------------------------------------
+    int nbThreads = QThreadPool::globalInstance()->activeThreadCount();
+    qDebug() << "nbThreads" << nbThreads;
+    this->setLoading(nbThreads > 2);
 }
 
 
@@ -621,6 +628,7 @@ void PhotoModel::clear()
  * ***********************************************************************************************************/
 void PhotoModel::fetchExifMetadata(int photo)
 {
+    this->setLoading(true);
     // qSetMessagePattern("%{time process}");
     if (photo > -1)
     {
@@ -868,6 +876,15 @@ void PhotoModel::resetCircle()
     // A la fin, on notifie en une seule fois l'ensemble des photos.
     emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
     m_circleResetted = true;
+}
+
+/** **********************************************************************************************************
+ * @brief Positionne le flag "loading" qui indique que le modèle est en train de se remplir avec les données EXIF.
+ * ***********************************************************************************************************/
+void PhotoModel::setLoading(const bool state)
+{
+    m_loading = state;
+    emit loadingChanged();
 }
 
 

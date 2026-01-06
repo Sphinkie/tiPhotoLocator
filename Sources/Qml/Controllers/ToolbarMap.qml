@@ -6,7 +6,7 @@ import "../Vues"
 /** **********************************************************************************************************
  * @brief Controlleur pour la barre de boutons située au dessus de la carte.
  * ***********************************************************************************************************/
-ToolBarMapForm {
+ToolbarMapForm {
 
     /// Clic sur "Save Position" : On enregistre la position de l'image dans la Saved Position.
     bt_save_pos.onClicked: {

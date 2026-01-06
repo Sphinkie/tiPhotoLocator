@@ -42,7 +42,6 @@ void UnlocalizedProxyModel::setFilterEnabled(bool enabled)
         this->setFilterFixedString("");        // accept all
     endFilterChange();
     emit filterEnabledChanged();
-    //invalidateFilter();
 }
 
 
@@ -72,4 +71,5 @@ int UnlocalizedProxyModel::getSourceIndex(int row)
         auto proxy_model = dynamic_cast<UndatedPhotoProxyModel*>(underneath_model);
         return proxy_model->getSourceIndex(sourceIndex.row());
     }
+    // On fait ce traitement un peu compliqué, pour ne pas être contraint dans l'ordre où les proxyModels sont empilés.
 }

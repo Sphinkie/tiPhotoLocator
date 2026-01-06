@@ -19,9 +19,8 @@
 
 /** **********************************************************************************************************
  * @brief Programme principal
- * @param argc
- * @param argv
- * @return
+ * @param argc: (argument count): nombre de paramètres pointés par argv +1
+ * @param argv: (argument vector)
  *
  *   The ultimate Photo Locator.
  *       \li \l{TiPhotoLocator}{Les classes C++}

@@ -8,54 +8,46 @@ import "../Components"
  * @brief QML: Vue de la Toolbar principale: boutons du haut: Reload - Rescan - Dossier
  * *********************************************************************************************************** */
 Rectangle {
-    // TODO color: TiStyle.surfaceContainerColor
-    property alias bt_reload: bt_reload
     property alias bt_rescan: bt_rescan
     property alias folderPath: folderPath
-    height: bt_reload.height + 20
+    implicitHeight: 60
     implicitWidth: 800
 
     RowLayout {
+        spacing: 20
 
-        Button {
-            id: bt_reload
-            icon.source: "qrc:/Images/bt-reload.png"
-            text: qsTr("Reload")
-            ToolTip.text: qsTr("Recharge la liste des photos du répertoire")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
-            // Positionnement à l'interieur du rectangle
-            Layout.leftMargin: 20
-            Layout.topMargin: 10
-        }
+        /// Bouton de rescan
         Button {
             id: bt_rescan
-            icon.source: "qrc:/Images/bt-rescan.png"
+            icon.source: "qrc:/Images/bt-reload.png"
             text: qsTr("Rescan")
             ToolTip.text: qsTr(
                               "Rescanne les tags EXIF des photos du répertoire")
             ToolTip.visible: hovered
             ToolTip.delay: 500
-            // Positionnement à l'interieur du rectangle
+            // Positionnement à l'interieur du Layout
             Layout.leftMargin: 20
-            Layout.topMargin: 10
         }
-        Text {
+
+        /// Indicateur de travail
+        BusyIndicator {
+            implicitHeight: bt_rescan.height
+            running: _photoModel.loading
+        }
+
+        /// Nom du dossier en cours
+        Label {
             text: qsTr("Répertoire:")
             font.pixelSize: 16
-            // TODO color: TiStyle.secondaryTextColor
             // Positionnement à l'interieur du rectangle
             verticalAlignment: Text.AlignVCenter
-            leftPadding: 20
         }
         Text {
             id: folderPath
             font.pixelSize: 16
-            // TODO color: TiStyle.primaryTextColor
             font.family: "Courier"
             // Positionnement à l'interieur du rectangle
             verticalAlignment: Text.AlignVCenter
-            leftPadding: 10
         }
     }
 }
