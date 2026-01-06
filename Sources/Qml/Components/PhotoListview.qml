@@ -9,7 +9,6 @@ import ".."
  * @sa https://www.youtube.com/watch?v=ZArpJDRJxcI
  * ***********************************************************************************************************/
 ListView {
-    id: photoListView
     anchors.fill: parent
     model: _unlocalizedProxyModel // Activation de la checkbox "has GPS"
     delegate: listDelegate

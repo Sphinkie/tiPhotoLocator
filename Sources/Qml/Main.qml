@@ -232,7 +232,9 @@ Window {
             Layout.margins: 4
             Layout.preferredHeight: 200
             Layout.preferredWidth: 380
-            TiPhotoListview {}
+            PhotoListview {
+                id: photoListView
+            }
         }
 
 

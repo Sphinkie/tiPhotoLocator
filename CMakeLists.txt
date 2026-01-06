@@ -49,7 +49,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/TiMapView.qml
         Sources/Qml/Components/TiMenuBar.qml
         Sources/Qml/Components/TinyChip.qml
-        Sources/Qml/Components/TiPhotoListview.qml
+        Sources/Qml/Components/PhotoListview.qml
         Sources/Qml/Components/TabFramePhotoPreview.qml
         Sources/Qml/Components/TabFramePhotoTags.qml
         Sources/Qml/Components/TabFrameGlobalTags.qml

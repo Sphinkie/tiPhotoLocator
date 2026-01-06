@@ -12,7 +12,7 @@ ZoneSuggestedLocationsForm {
 
     /** ******************************************************************************************************
      * Clic sur bouton "Chercher" envoie une request pour récupérer des infos à partir des coords GPS.
-     * A noter que la recherche est aussi lancée automatiquement par un Timer de TiPhotoListview.
+     * A noter que la recherche est aussi lancée automatiquement par un Timer de PhotoListview.
      * *******************************************************************************************************/
     bt_getinfo.onClicked: {
         window.requestReverseGeocode(_photoModel.selectedCoords.latitude,

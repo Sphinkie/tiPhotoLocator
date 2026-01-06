@@ -24,7 +24,11 @@ Item {
         ToolTip.text: qsTr("Mémorise la position de la photo courante")
         ToolTip.visible: hovered
         ToolTip.delay: 500
-        anchors {left: parent.left; leftMargin: 30; verticalCenter: parent.verticalCenter}
+        anchors {
+            left: parent.left
+            leftMargin: 30
+            verticalCenter: parent.verticalCenter
+        }
     }
 
     Button {
@@ -32,7 +36,11 @@ Item {
         enabled: false
         text: qsTr("Clear Saved Position")
         icon.source: "qrc:/Images/bt-clear.png"
-        anchors {left: bt_save_pos.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
+        anchors {
+            left: bt_save_pos.right
+            leftMargin: 20
+            verticalCenter: parent.verticalCenter
+        }
         // TODO Attention au cas ou on a vidé le modele (reload): il faut masquer ce bouton
     }
 
@@ -44,7 +52,11 @@ Item {
         ToolTip.text: qsTr("Applique la position mémorisée à la photo courante")
         ToolTip.visible: hovered
         ToolTip.delay: 500
-        anchors {left: bt_remove_savedpos.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
+        anchors {
+            left: bt_remove_savedpos.right
+            leftMargin: 20
+            verticalCenter: parent.verticalCenter
+        }
     }
 
     Slider {
@@ -52,12 +64,21 @@ Item {
         enabled: false
         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         to: 3000 // unité = 1 mètre
-        onMoved: slider_label.text = Math.round(slider_radius.value/10)/100 + " km"
-        anchors { left: bt_apply_savedpos.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
+        //onMoved: slider_label.text = Math.round(slider_radius.value/10)/100 + " km"
+        anchors {
+            left: bt_apply_savedpos.right
+            leftMargin: 20
+            verticalCenter: parent.verticalCenter
+        }
     }
-    Label{
+    Label {
         id: slider_label
-        anchors {left: slider_radius.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
+        anchors {
+            left: slider_radius.right
+            leftMargin: 20
+            verticalCenter: parent.verticalCenter
+        }
+        text: Math.round(slider_radius.value / 10) / 100 + " km"
     }
 
     Button {
@@ -65,10 +86,13 @@ Item {
         enabled: false
         text: qsTr("Rétablir")
         icon.source: "qrc:/Images/bt-revert.png"
-        anchors {left: slider_label.right; leftMargin: 20; verticalCenter: parent.verticalCenter}
+        anchors {
+            left: slider_label.right
+            leftMargin: 20
+            verticalCenter: parent.verticalCenter
+        }
         ToolTip.text: qsTr("Recharge les coordonnées initiales de l'image")
         ToolTip.visible: hovered
         ToolTip.delay: 500
     }
-
 }
