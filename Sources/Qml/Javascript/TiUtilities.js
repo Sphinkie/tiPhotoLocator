@@ -26,6 +26,26 @@ function toStandardPath(objet) {
 
 
 /** ***************************************************************************************
+ * @brief Transforme un chemin en un texte court (24 char max) pour qu'on puisse lire le
+ * début (lecteur) et la fin dans le popup qui est assez étroit.
+ * Par exemple: `file:///E:/photo/1997/1997-09 Sicile` devient `E:...1997-09 Sicile`
+ * @param objet: un chemin au format "file:///C:/Users/David/Pictures"
+ * @return un chemin court au format "C:\...id\Pictures"
+ * ****************************************************************************************/
+function toShortPath(objet) {
+    // On passe le texte au format Windows
+    let texte = toStandardPath(objet)
+    // on raccourcit le texte
+    let len = texte.length
+    let result = texte
+    if (len > 21) {
+        result = texte.slice(0, 3) + "..." + texte.slice(len - 17)
+    }
+    return result
+}
+
+
+/** ***************************************************************************************
  * @brief Transforme une date du type "YYYY-MM-DD HH:MM:SS" en "DD/MM/YYYY"
  * @param objet: une date du type "YYYY-MM-DD HH:MM:SS"
  * @param sep: (optionel) Le séparateur à utiliser dans le résultat

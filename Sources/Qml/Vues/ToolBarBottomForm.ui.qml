@@ -25,31 +25,13 @@ Rectangle {
     /** *************************************************************************************
      * Les boutons sont en ligne, calée sur la droite.
      * **************************************************************************************/
-    RowLayout {
+    GridLayout {
         id: bottomToolBarLayout
         Layout.alignment: Qt.AlignRight // on cale les boutons à droite
-        spacing: 20
+        columns: 3
+        columnSpacing: 20
 
-        Button {
-            id: bt_dump1
-            text: qsTr("Dump PhotoModel")
-            visible: bottomRect.useDebug
-            ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
-            Layout.leftMargin: 20
-            Layout.topMargin: 10
-        }
-        Button {
-            id: bt_dump2
-            text: qsTr("Dump SuggModel")
-            visible: bottomRect.useDebug
-            ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
-            Layout.leftMargin: 20
-            Layout.topMargin: 10
-        }
+        /// Ligne 1:
         CheckBox {
             id: cb_backups
             text: qsTr("Générer backups")
@@ -76,6 +58,41 @@ Rectangle {
             ToolTip.visible: hovered
             ToolTip.delay: 500
             Layout.rightMargin: 20
+            Layout.topMargin: 10
+        }
+        /// Ligne 2:
+        ProgressBar {
+            id: saveProgress
+            Layout.row: 1
+            Layout.column: 1
+            Layout.columnSpan: 2
+            value: 0.3
+            visible: shouldSave // FIXME
+        }
+
+        /// Ligne 3:
+        Button {
+            id: bt_dump1
+            Layout.row: 2
+            Layout.column: 0
+            text: qsTr("Dump PhotoModel")
+            visible: bottomRect.useDebug
+            ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
+            ToolTip.visible: hovered
+            ToolTip.delay: 500
+            Layout.leftMargin: 20
+            Layout.topMargin: 10
+        }
+        Button {
+            id: bt_dump2
+            Layout.row: 2
+            Layout.column: 1
+            text: qsTr("Dump SuggModel")
+            visible: bottomRect.useDebug
+            ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
+            ToolTip.visible: hovered
+            ToolTip.delay: 500
+            Layout.leftMargin: 20
             Layout.topMargin: 10
         }
     }

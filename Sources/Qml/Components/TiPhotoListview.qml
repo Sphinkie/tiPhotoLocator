@@ -9,13 +9,13 @@ import ".."
  * @sa https://www.youtube.com/watch?v=ZArpJDRJxcI
  * ***********************************************************************************************************/
 ListView {
-    id: photoListAndDelegate
+    id: photoListView
     anchors.fill: parent
     model: _unlocalizedProxyModel // Activation de la checkbox "has GPS"
     delegate: listDelegate
     focus: true
-    clip: true // pour que les items restent à l'interieur de la listview
-    // Dépacement rapide du highlight: en 0.5s max
+    clip: true // pour que les items restent à l'intérieur de la listview
+    // Dépacement rapide du highlight: en 0.5 secondes max
     highlightMoveDuration: 500
     highlightMoveVelocity: -1
 
@@ -40,6 +40,11 @@ ListView {
         radius: 6
     }
 
+    //    onCountChanged: {
+    //        // Quand la liste change, on se repositionne sur le premier ingrédient.
+    //        currentIndex = 0
+    //    }
+
 
     /** ******************************************************************************************************
      * Timer de 4 secondes avant envoi d'une request pour récupérer des infos à partir des coordonnées GPS.
@@ -52,8 +57,7 @@ ListView {
         repeat: false
         onTriggered: {
             // console.debug(">>>>> timer triggered");
-            window.requestReverseGeocode(mapTab.photoLatitude,
-                                         mapTab.photoLongitude)
+            window.requestReverseGeocode(mapTab.homeCoords)
         }
     }
 
@@ -66,7 +70,7 @@ ListView {
         Item {
             id: wrapper
             height: 30
-            width: photoListAndDelegate.width
+            width: photoListView.width
             // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
             required property string filename
             required property string city
@@ -144,37 +148,49 @@ ListView {
                 onClicked: {
                     console.log("MouseArea: clic sur " + index)
                     __lv.currentIndex = index // Bouge le highlight dans la ListView
-                    var sourceindex = model.getSourceIndex(index)
-                    _photoModel.selectedRow = sourceindex // Actualise le PhotoModel
-
-                    // On mémorise dans selectedData les data de l'item selectionné du modèle.
-                    // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
-                    tabbedPage.selectedData = _photoModel.get(sourceindex)
-
-                    // On envoie les coordonnées pour centrer la carte sur le point selectionné
-                    if (hasGPS) {
-                        mapTab.photoLatitude = latitude
-                        mapTab.photoLongitude = longitude
-                    }
-                    // sinon: la position de la carte reste inchangée
-
-                    // On change le filtrage des suggestions pour filtrer uniquement sur la photo active
-                    window.setSuggestionFilter(sourceindex)
-
-                    // On réactualise le contenu du cercle rouge
-                    // TODO : C'est consommateur car on parcourt toutes les photos du modèle à chaque clic!
-                    _photoModel.findInCirclePhotos()
-
-                    // On relance une demande d'infos ReverseGeo
-                    // si onglet CARTE et COORDS GPS et s'il n'y a pas déjà de City ni Country:
-                    if ((tabbedPage.currentIndex === 1) && hasGPS && city === ""
-                            && country === "") {
-                        // console.debug(">>>> restart geoTimer")
-                        geoTimer.restart()
-                    } else
-                        geoTimer.stop()
+                    activatePhoto(index, hasGPS, city, country, latitude,
+                                  longitude)
                 }
             }
         }
+    }
+
+
+    /** **********************************************************************************************************
+     * @brief Active la photo sélectionnée (Preview, imagette, tags, et pinpoint géographique).
+     * Cette fonction est appelée quand on clique sur un item de listView, et aussi quand le logiciel se positionne
+     * automatiquement sur la première photo (TODO).
+     * @param pos : La position de la photo dans la listView
+     * ***********************************************************************************************************/
+    function activatePhoto(pos, hasGPS, city, country, latitude, longitude) {
+        var sourceindex = model.getSourceIndex(pos)
+        _photoModel.selectedRow = sourceindex // Actualise le PhotoModel
+
+        // On mémorise dans selectedData les data de l'item selectionné du modèle.
+        // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
+        tabbedPage.selectedData = _photoModel.get(sourceindex)
+
+        // On envoie les coordonnées pour centrer la carte et le cercle sur le point selectionné
+        // sinon (if not has GPS) la position de la carte reste inchangée
+        if (hasGPS) {
+            mapTab.mapView.center = _photoModel.selectedCoords
+            mapTab.mapView.mapCircle.center = _photoModel.selectedCoords
+        }
+
+        // On change le filtrage des suggestions pour filtrer uniquement sur la photo active
+        window.setSuggestionFilter(sourceindex)
+
+        // On réactualise le contenu du cercle rouge
+        // TODO : C'est consommateur car on parcourt toutes les photos du modèle à chaque clic!
+        _photoModel.findInCirclePhotos()
+
+        // On relance une demande d'infos ReverseGeo
+        // si onglet CARTE et COORDS GPS et s'il n'y a pas déjà de City ni Country:
+        if ((tabbedPage.currentIndex === 1) && hasGPS && city === ""
+                && country === "") {
+            // console.debug(">>>> restart geoTimer")
+            geoTimer.restart()
+        } else
+            geoTimer.stop()
     }
 }

@@ -4,7 +4,7 @@ import "../Javascript/TiUtilities.js" as Utilities
 
 
 /** **********************************************************************************************************
- * @brief Toolbar principale: boutons du haut: Reload - Rescan - Dossier
+ * @brief QML: Controleur de la Toolbar principale: boutons du haut: Reload - Rescan - Dossier
  * *********************************************************************************************************** */
 ToolBarPrincipaleForm {
 

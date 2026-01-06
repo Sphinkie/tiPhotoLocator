@@ -12,7 +12,7 @@ ToolBarMapForm {
 
     /// Clic sur "Save Position" : On enregistre la position de l'image dans la Saved Position.
     bt_save_pos.onClicked: {
-        window.savePosition(mapTab.photoLatitude, mapTab.photoLongitude)
+        window.savePosition(_photoModel.selectedCoords)
         savedPositionExists = true
     }
 

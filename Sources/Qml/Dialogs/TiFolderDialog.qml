@@ -5,7 +5,7 @@ import "../Components"
 
 
 /** ***************************************************************************************
- * @brief QML: Fenêtre de dialogue pour selectionner le dossier.
+ * @brief QML: Fenêtre de dialogue pour sélectionner le dossier.
  * Folder example: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
  * ****************************************************************************************/
 FolderDialog {
@@ -23,7 +23,7 @@ FolderDialog {
     onAccepted: {
         // On passe par ici quand on clique sur OK, donc, même si on reselectionne le même folder
         folderListModel.folder = folder
-        // console.log("Accepted");
+        console.log("Accepted")
         // Ajout du folder dans les Settings "Recent Folders"
         addRecentFolder(folder)
         // On attend que le FolderModel soit à jour (timer 1 seconde),
@@ -33,7 +33,7 @@ FolderDialog {
 
 
     /** ***********************************************************************************
-     * Timer de ralentissement (le C++ est plus rapide que le QML)
+     * Ce timer attend une seconde, puis charge les infos du dossier sélectionné.
      * ************************************************************************************/
     FolderLoadTimer {
         id: folderTimer
@@ -46,9 +46,13 @@ FolderDialog {
     function addRecentFolder(foldername) {
         var folderList = settings.recentList
         var posFolder = settings.recentNumber
+        // Eviter les doublons.
+        if (folderList.includes(foldername))
+            return
         // On mémorise un maximum de 7 recent folders
         if (posFolder > 6)
             posFolder = 0
+        // TODO gérer une FIFO
         folderList[posFolder] = foldername
         settings.recentList = folderList
         settings.recentNumber = posFolder + 1
@@ -56,7 +60,8 @@ FolderDialog {
 
 
     /** ***********************************************************************************
-     * Mémorisation du chemin dans les Settings.
+     * Mémorisation dans les Settings du nombre de RecentFolders, et de leurs chemins.
+     * Ils sont affichés par la TiMenuBar.
      * ************************************************************************************/
     Settings {
         id: settings

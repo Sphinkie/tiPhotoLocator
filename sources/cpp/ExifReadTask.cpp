@@ -8,7 +8,6 @@
 #include <QDebug>
 
 
-
 // ------------------------------------------
 // Membres statiques
 // ------------------------------------------
@@ -18,16 +17,15 @@ QString     ExifReadTask::m_argFile;
 
 /** **********************************************************************************************************
  * @brief Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.
- *
- * @note Si on passe un nom de chemin, le process va traiter toutes les images du dossier.
- *       Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé.
+ * @param pos: le numero du fichier dans la liste.
  * @param filePath: le chemin + nom du fichier JPG à lire.
  * ***********************************************************************************************************/
-ExifReadTask::ExifReadTask(QString filePath)
+ExifReadTask::ExifReadTask(int pos, QString filePath)
 {
     // On enlève les premiers caractères (cad "file:///")
     filePath.remove(0,8);
     m_filePath = filePath;
+    m_filePos = pos;
 }
 
 /** **********************************************************************************************************
@@ -41,7 +39,7 @@ void ExifReadTask::run()
         m_filePath = QStandardPaths::displayName(QStandardPaths::PicturesLocation);  // TODO : vérifier le résultat
 
     QProcess exifProcess;
-    QString program = "Bin/exifTool.exe";
+    QString program = "Bin/exiftool.exe";
     QStringList arguments;
     // Formattage du flux de sortie de ExifTool
     arguments.append("-json");          // output in JSON format
@@ -66,6 +64,7 @@ void ExifReadTask::run()
         this->processLine(exifProcess.readLine());
     }
     // qDebug() << "Task finished" ;
+    if (m_filePos==0) m_photoModel->selectFirstPhoto();
 }
 
 
@@ -74,7 +73,7 @@ void ExifReadTask::run()
  * @brief Analyse une partie du flux texte reçu de exifTool. Cette méthode est appelée répétitivement.
  * @param line : the received text
  * Flux reçu pour une image:
- * \code
+ * @code
         "[{
         "  "SourceFile": "E:/TiPhotos/P8160449.JPG",  "
         "  "FileName": "P8160449.JPG",                "
@@ -91,7 +90,7 @@ void ExifReadTask::run()
         "  "GPSLongitude": 14.0194248700017, "
        \" \"City\": \"Paris\"\r\n\"
         "}]"
-    \endcode
+    @endcode
  * (en fait toutes les lignes sont escapées sur le modèle de la ligne City.)
  * ***********************************************************************************************************/
 void ExifReadTask::processLine(QByteArray line)
@@ -106,6 +105,7 @@ void ExifReadTask::processLine(QByteArray line)
     else if (line.startsWith("}"))
     {
         // Dernière ligne d'une image: on envoie les data
+        // qDebug() << "end of line";
         m_rxLine.append("}");
         QJsonDocument jsonDoc = QJsonDocument::fromJson(m_rxLine);
         QJsonObject jsonObject = jsonDoc.object();
@@ -119,6 +119,7 @@ void ExifReadTask::processLine(QByteArray line)
         m_rxLine.append("{");
     }
     else
+        // On remplit la structure Json avec la ligne reçue
         m_rxLine.append(line);
 }
 

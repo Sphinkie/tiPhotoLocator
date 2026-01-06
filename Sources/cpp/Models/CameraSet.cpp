@@ -5,9 +5,6 @@
 
 #include "CameraSet.h"
 
-// Note: il faut ajouter la ligne suivante dans le fichier .pro
-// QT += network
-
 
 /** **********************************************************************************************************
  * @brief Ce Constructeur instancie le Network Manager utilisé pour les requètes REST.
@@ -15,7 +12,7 @@
  * ***********************************************************************************************************/
 CameraSet::CameraSet(QObject *parent) : QObject(parent)
 {
-	// pour deepAI, la clef-Api est dans les Settings, de façon à ne pas apparaitre en clair dans le code.
+    // Pour deepAI, la clef-Api est dans les Settings, de façon à ne pas apparaitre en clair dans le code.
     QSettings settings;
     m_deepaiKey = settings.value("deepaikey", "quickstart-QUdJIGlzIGNvbWluZy4uLi4K").toString();
 	// Qt recommande de n'instancier le Manager qu'une seule fois. On le fait donc dans le constructeur.

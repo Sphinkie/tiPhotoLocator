@@ -9,26 +9,32 @@ import "../Javascript/TiUtilities.js" as Utilities
  * @brief QML: Menu principal.
  * ***********************************************************************************************************/
 MenuBar {
+
+    /// Contenu du menu principal: Files | Settings | Help
     Menu {
         id: fileMenu
-        title: qsTr("Dossiers")
+        title: qsTr("Files")
+
+        /// Item du menu: File -> Ouvrir
         MenuItem {
-            text: qsTr("Ouvrir...")
+            text: qsTr("Open...")
             onTriggered: folderDialog.open()
         }
 
+        /// Item du menu: File -> Recents: la liste de 7 RecentFolders + Séparator + Clear RecentFolders
         Menu {
             id: recentFoldersMenu
-            title: qsTr("Récents")
+            title: qsTr("Recents")
             enabled: recentFoldersInstantiator.count > 0
             property var recents
             property var number
-
+            /// L'instanciateur crée dynamiquement des objets à partir d'une liste.
             Instantiator {
                 id: recentFoldersInstantiator
                 model: settings.recentList
                 delegate: MenuItem {
-                    text: Utilities.toStandardPath(modelData)
+                    // Texte affiché.
+                    text: Utilities.toShortPath(modelData)
                     onTriggered: {
                         console.log(modelData)
                         folderListModel.folder = modelData
@@ -41,23 +47,24 @@ MenuBar {
                 onObjectRemoved: (index, object) => recentFoldersMenu.removeItem(
                                      object)
             }
-
             MenuSeparator {}
-
             MenuItem {
-                text: qsTr("Clear Recent Files")
+                text: qsTr("Clear recent folders list")
                 onTriggered: settings.clearRecentFolders()
             }
         }
+
+        /// Item du menu: File -> Separateur
         MenuSeparator {}
+        /// Item du menu: File -> Quit
         MenuItem {
-            text: qsTr("Quitter")
+            text: qsTr("Quit")
             onTriggered: Qt.quit()
         }
     }
     Menu {
         id: settingsMenu
-        title: qsTr("Réglages")
+        title: qsTr("Settings")
         MenuItem {
             text: qsTr("Configuration")
             onClicked: settingsPopup.open()
@@ -65,14 +72,14 @@ MenuBar {
     }
     Menu {
         id: helpMenu
-        title: qsTr("Aide")
+        title: qsTr("Help")
         // TODO: MenuItem  { text: qsTr("Obtenir une API KEY"); onTriggered: apiPage.open(); }
         MenuItem {
             text: qsTr("Credits")
             onTriggered: creditsPage.open()
         }
         MenuItem {
-            text: qsTr("A propos")
+            text: qsTr("About")
             onTriggered: aboutPage.open()
         }
     }

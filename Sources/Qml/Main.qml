@@ -16,7 +16,7 @@ import "./Controllers"
  * ***********************************************************************************************************/
 Window {
     id: window
-    title: "tiPhotoLocator"
+    title: "tiPhotoLocator" + " w:" + width + " h:" + height
     visible: true
     visibility: "Maximized"
     // dimensions si on démaximise
@@ -24,7 +24,7 @@ Window {
     height: 1080
     // dimensions minimales
     minimumHeight: 640
-    minimumWidth: 1200
+    minimumWidth: 1400
 
     // ----------------------------------------------------------------
     // Couleurs du thème: voir aussi fichier conf.
@@ -32,7 +32,7 @@ Window {
     Material.theme: Material.Light
     // Couleur des textes
     Material.foreground: Material.Orange
-    // Couleur primaire = le bandeau de l'application. Les Chips
+    // Couleur primaire = le bandeau de l'application. Les Chips.
     Material.primary: Material.Green
     // Couleur d'accentuation pour les items en highlight.
     Material.accent: Material.Red
@@ -51,7 +51,7 @@ Window {
     //< Lit les metadata d'une JPG
     signal setPhotoProperty(int photo, string texte, string target)
     //< Fait un setData pour affecter un role du Model
-    signal setSelectedPhotoCoords(double lati, double longi)
+    signal setSelectedPhotoCoords(var coords)
     //< Positionne les coords de la photo séléctionnée sur plusieurs photos
     signal fetchExifMetadata
     //< Lit les metadata de toutes les JPG
@@ -61,7 +61,7 @@ Window {
     //< Applique le Creator (des settings) à toutes les photos du modèle
     signal applySavedPositionToCoords
     //< Affecte la position mémorisée à toutes les photos du cercle
-    signal savePosition(double lati, double longi)
+    signal savePosition(var coords)
     //< Mémorise une position
     signal clearSavedPosition
     //< Efface une position mémorisée
@@ -73,9 +73,9 @@ Window {
     signal removePhotoFromSuggestion(int row)
     //< Retire la photo courante de la Suggestion passée en paramètre
     // ----------------------------------------------------------------
-    // Autres signaux
+    // Les signaux vers geocodeWrapper
     // ----------------------------------------------------------------
-    signal requestReverseGeocode(double lati, double longi)
+    signal requestReverseGeocode(point coords)
     signal requestCoords(string city)
 
     // ----------------------------------------------------------------

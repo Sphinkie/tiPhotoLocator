@@ -43,7 +43,7 @@
 class ExifReadTask : public QRunnable
 {
 public:
-    explicit ExifReadTask(QString filePath);
+    explicit ExifReadTask(int pos, QString filePath);
     static void init(PhotoModel* photoModel);
     virtual void run();
 
@@ -55,6 +55,7 @@ private:
     // Membres
     // ------------------------------
     QString m_filePath;                //!< Nom du fichier contenant les arguments de ExifTool
+    int m_filePos =0;                  //!< Numéro du fichier dans la listView.
     QByteArray m_rxLine;               //!< Données ExifTool en cours de réception
     static QString m_argFile;          //!< A renseigner lors du premier appel.
     static PhotoModel* m_photoModel;   //!< Modèle contenant les photos et leurs tags

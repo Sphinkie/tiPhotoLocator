@@ -34,9 +34,11 @@ void SuggestionProxyModel::setFilterEnabled(bool enabled)
 {
     if (m_filterEnabled == enabled)
         return;
+    beginFilterChange();
     m_filterEnabled = enabled;
+    endFilterChange();
     emit filterEnabledChanged();
-    invalidateFilter();
+    //invalidateFilter();
 }
 
 

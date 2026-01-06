@@ -4,13 +4,15 @@ import QtQuick.Controls.Material
 import "../Components"
 
 
-
+/** **********************************************************************************************************
+ * @brief QML: Vue de la Toolbar principale: boutons du haut: Reload - Rescan - Dossier
+ * *********************************************************************************************************** */
 Rectangle {
-    // DDL color: TiStyle.surfaceContainerColor
+    // TODO color: TiStyle.surfaceContainerColor
     property alias bt_reload: bt_reload
     property alias bt_rescan: bt_rescan
     property alias folderPath: folderPath
-    height: bt_reload.height+20
+    height: bt_reload.height + 20
     implicitWidth: 800
 
     RowLayout {
@@ -30,7 +32,8 @@ Rectangle {
             id: bt_rescan
             icon.source: "qrc:/Images/bt-rescan.png"
             text: qsTr("Rescan")
-            ToolTip.text: qsTr("Rescanne les tags EXIF des photos du répertoire")
+            ToolTip.text: qsTr(
+                              "Rescanne les tags EXIF des photos du répertoire")
             ToolTip.visible: hovered
             ToolTip.delay: 500
             // Positionnement à l'interieur du rectangle
@@ -40,7 +43,7 @@ Rectangle {
         Text {
             text: qsTr("Répertoire:")
             font.pixelSize: 16
-            // DDL color: TiStyle.secondaryTextColor
+            // TODO color: TiStyle.secondaryTextColor
             // Positionnement à l'interieur du rectangle
             verticalAlignment: Text.AlignVCenter
             leftPadding: 20
@@ -48,7 +51,7 @@ Rectangle {
         Text {
             id: folderPath
             font.pixelSize: 16
-            // DDL color: TiStyle.primaryTextColor
+            // TODO color: TiStyle.primaryTextColor
             font.family: "Courier"
             // Positionnement à l'interieur du rectangle
             verticalAlignment: Text.AlignVCenter
@@ -56,6 +59,3 @@ Rectangle {
         }
     }
 }
-
-
-

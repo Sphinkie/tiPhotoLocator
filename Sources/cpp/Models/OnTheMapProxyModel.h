@@ -4,14 +4,17 @@
 #include <QSortFilterProxyModel>
 
 /** **********************************************************************************************************
- * @brief The OnTheMapProxyModel class is a filter ProxyModel, to keep only the selected photo(s).
+ * @brief OnTheMapProxyModel est un proxy model filtré de PhotoModel pour ne garder que la (ou les) photo(s)
+ *        qui sont visibles sur la Map, cad soit les photos sélectionnées, soit les photos dans le cercle.
+ * @details Ce ProxyModel est associé à la MapView qui affiche les maquerurs sur la carte.
+ *   Il doit être toujours actif.
  * @note Dans ce ProxyModel on doit ré-implementer les méthodes append(), get(), clear(), etc.
  * ********************************************************************************************************** */
 class OnTheMapProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
-    //! filterEnabled manages the status of the filtering.
+    /// filterEnabled manages the status of the filtering.
     Q_PROPERTY(bool filterEnabled READ filterEnabled WRITE setFilterEnabled NOTIFY filterEnabledChanged)
 
 public:

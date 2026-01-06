@@ -7,18 +7,26 @@ import QtPositioning
 /** **********************************************************************************************************
  * @brief Affichage d'une carte OpenStreetMap
  * - Map: Donner un id
- * - MapItemView: Associer un modele (_selectedPhotoModel). Ce modèle contient les MapItems à afficher sur carte.
+ * - MapItemView: Associer un modèle (_selectedPhotoModel) qui contient les MapItems à afficher sur carte.
  *
  * Fonctions implémentées:
- * - Affiche un marker rouge à l'emplacememnt de la photo(s) présente dans le modèle
- * - Recentre la carte chaque fois que l'on selectionne une nouvelle photo
- * - Un clic sur la carte change les coords gps de la photo (le curseur est repositionné)
+ * - Lors d'un clic sur la carte
+ *   - MapItemView.MouseArea affecte la position à la photo sélectionnée
+ *   - MapItemView.MouseArea repositionne le cercle
+ * - Lors du rechargement du dossier
+ *   - onMapItemsChanged (non systématique)
+ * - Lors du readExif (GPS coords) d'un nouveau dossier
+ *   - onFirstCoordsReady
+ * - Lors de la sélection d'une photo dans la liste
+ *   - le delegate markerDelegate affiche un marker rouge à l'emplacement de la photo
+ *   - le delegate affiche un marker jaune à l'emplacement de la SavedPos
+ *   - le delegate affiche un marker gris à l'emplacement de chaque photo incluse dans le cercle
  * ***********************************************************************************************************/
 Map {
-    plugin: mapPlugin
-    center: QtPositioning.coordinate(parent.photoLatitude,
-                                     parent.photoLongitude)
+    property alias mapCircle: mapCircle
     zoomLevel: 6
+    plugin: mapPlugin
+    center: _photoModel.selectedCoords // QtPositioning.coordinate(mapTab.homeCoords.x, mapTab.homeCoords.y)
 
     DragHandler {
         id: drag
@@ -32,15 +40,6 @@ Map {
         property: "zoomLevel"
     }
 
-    onMapItemsChanged: {
-        // Called every time the marker changes on the map: cad un clic dans la listView
-        console.log("onMapItemsChanged: re-center the map")
-        mapView.center = QtPositioning.coordinate(parent.photoLatitude,
-                                                  parent.photoLongitude)
-        mapCircle.center = QtPositioning.coordinate(parent.photoLatitude,
-                                                    parent.photoLongitude)
-    }
-
     MapCircle {
         id: mapCircle
         radius: mapTools.slider_radius.value // en mètres
@@ -48,47 +47,79 @@ Map {
         border.width: 3
     }
 
-    // The MapItemView is used to populate Map with MapItems from a model.
-    // The MapItemView type only makes sense when contained in a Map, meaning that it has no standalone presentation.
-    MapItemView {
-        id: mapitemView
-        model: _onTheMapProxyModel // Ce modèle ne contient que les photos devant apparaitre sur la carte
-        delegate: mapDelegate
 
-        // ------------------------------------------
-        // Click sur la carte
-        // ------------------------------------------
+    /** ******************************************************************************************************
+     * The MapItemView is used to populate the Map with MapItems (markers) from the OnTheMapProxyModel content.
+     * *******************************************************************************************************/
+    MapItemView {
+        id: mapItemView
+        //model: _onTheMapProxyModel // Ce modèle ne contient que les photos devant apparaitre sur la carte
+        model: _photoModel // TEST
+        delegate: markerDelegate
+
+
+        /** **************************************************************************************************
+         * Click sur la carte
+         * ***************************************************************************************************/
         MouseArea {
             anchors.fill: parent
             onClicked: mouse => {
                            console.log("Click on the map.")
+                           var mousePos = Qt.point(mouse.x, mouse.y)
+                           var mouseCoords = mapView.toCoordinate(mousePos)
+                           // console.log(mousePos, mouseCoords)
+                           // On change les coordonnées de la photo dans le modele
+                           _photoModel.selectedCoords = mouseCoords
                            // On repositionne le cercle
-                           mapCircle.center = mapView.toCoordinate(
-                               Qt.point(mouse.x, mouse.y))
-                           // TODO utiliser une variable de type coordinate
-                           var lati = (mapView.toCoordinate(
-                                           Qt.point(mouse.x, mouse.y)).latitude)
-                           var longi = (mapView.toCoordinate(
-                                            Qt.point(mouse.x,
-                                                     mouse.y)).longitude)
-                           // console.log("latitude  = " + lati );
-                           // console.log("longitude = " + longi);
-                           // On mémorise les coords du point cliqué dans les properties du parent
-                           mapTab.photoLatitude = lati
-                           mapTab.photoLongitude = longi
-                           // On change les coordonnées dans l'item du modele
-                           window.setSelectedPhotoCoords(lati, longi)
-                           console.log(
-                               mapView.supportedMapTypes) // Debug : Affiche la liste des cartes supportées
+                           mapCircle.center = mouseCoords
+                           // Debug : Affiche la liste des cartes supportées
+                           console.log(mapView.supportedMapTypes)
                        }
         }
     }
 
-    // ------------------------------------------
-    // Le delegate pour afficher le Marker dans la MapView
-    // ------------------------------------------
+
+    /** ******************************************************************************************************
+     * Appelé en cas de changement de la liste des MapItems. Cad:
+     * - lors d'un clic dans la listView,
+     * - parfois sur un changement des données du modèle, cad une nouvelle liste de photos. (pas toujours)
+     *   mais de toutes façon, c'est trop tôt, on a pas encore lu les Exif.
+     * *******************************************************************************************************/
+    onMapItemsChanged: {
+        console.log("onMapItemsChanged")
+        // console.log(": re-center the map on selectedCoords", _photoModel.selectedCoords)
+        // On repositionne la carte sur les coords de la photo sélectionée
+        mapView.center = _photoModel.selectedCoords
+        // On repositionne le cercle
+        mapCircle.center = _photoModel.selectedCoords
+    }
+
+
+    /** ******************************************************************************************************
+     * Slots.
+     * *******************************************************************************************************/
+    Connections {
+        target: _photoModel
+
+
+        /** ******************************************************************************************************
+         * Appelé après avoir lu les Exif de la première photo de la liste.
+         * *******************************************************************************************************/
+        function onFirstCoordsReady() {
+            console.log("onFirstCoordsReady: ", _photoModel.selectedCoords)
+            // On repositionne la carte sur ces coords
+            mapView.center = _photoModel.selectedCoords
+            // On repositionne le cercle
+            mapCircle.center = _photoModel.selectedCoords
+        }
+    }
+
+
+    /** ******************************************************************************************************
+     * Le delegate pour afficher un MapItem (le Marker) dans la MapView.
+     * *******************************************************************************************************/
     Component {
-        id: mapDelegate
+        id: markerDelegate
         // Affichage d'une icone avec sous-titre
         MapQuickItem {
             // Avec les required properties dans un delegate, on indique qu'il faut utiliser les roles du modèle
@@ -98,9 +129,9 @@ Map {
             required property bool hasGPS
             required property bool isMarker
             required property bool isSelected
-            // Position du marker
+            // Position du MapQuickItem (marker) = lat et long de la photo
             coordinate: QtPositioning.coordinate(latitude, longitude)
-            // Point d'ancrage de l'icone
+            // Point d'ancrage de l'icone p/r aux coordinates
             anchorPoint.x: markerIcon.width * 0.5
             anchorPoint.y: markerIcon.height + markerText.height
             // On dessine le marker et le texte (si la photo possede des coordonnées GPS)
@@ -133,8 +164,9 @@ Map {
         3 Night Transit Map (Public transit map view in night mode)
         4 Terrain Map       (Terrain map view)
         5 Hiking Map        (Hiking map view)
+        6 Custom URL Map    (Custom url map view set via urlprefix parameter)
     */
-    activeMapType: supportedMapTypes[0]
+    activeMapType: supportedMapTypes[0] // ou 4
 
     Plugin {
         id: mapPlugin

@@ -195,10 +195,9 @@ void PhotoModel::append(const QVariantMap data)
 
 /** **********************************************************************************************************
  * @brief Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune).
- * @param latitude : latitude au format GPS.
- * @param longitude : longitude au format GPS.
+ * @param coords : latitude et longitude au format GPS.
  * ***********************************************************************************************************/
-void PhotoModel::appendSavedPosition(double latitude, double longitude)
+void PhotoModel::appendSavedPosition(const QGeoCoordinate coords)
 {
     // S'il n'y a pas encore de Saved Position, on insère à la fin
     if (!m_markerIndex.isValid())
@@ -212,8 +211,8 @@ void PhotoModel::appendSavedPosition(double latitude, double longitude)
         m_markerRow = rowOfInsert;
         m_markerIndex = index(rowOfInsert,0);
     }
-    this->setData(m_markerIndex, latitude, LatitudeRole);
-    this->setData(m_markerIndex, longitude, LongitudeRole);
+    this->setData(m_markerIndex, coords.latitude(), LatitudeRole);
+    this->setData(m_markerIndex, coords.longitude(), LongitudeRole);
 }
 
 
@@ -225,20 +224,6 @@ void PhotoModel::removeSavedPosition()
 {
     this->removeData(m_markerRow);
     m_markerIndex = index(-1,0);
-}
-
-
-/** **********************************************************************************************************
- * @brief Affecte les coordonnées GPS fournies à la photo actuellement sélectionnée.
- * @param latitude : Latitude GPS à affecter.
- * @param longitude : Longitude GPS à affecter.
- * ***********************************************************************************************************/
-void PhotoModel::setSelectedItemCoords(const double latitude, const double longitude)
-{
-    QModelIndex idx = this->index(m_lastSelectedRow, 0);
-    setData(idx, latitude, LatitudeRole);
-    setData(idx, longitude, LongitudeRole);
-    qDebug() << "GPS coords changed for " << m_lastSelectedRow;
 }
 
 
@@ -328,12 +313,14 @@ void PhotoModel::setPhotoProperty(const int photo, const QString value, const QS
  * @brief Mémorise la photo indiquée comme étant la photo sélectionnée dans la ListView.
  *
  * Met le flag **isSelected** du précédent item à *False* et le nouveau à *True*.
+ * On fait aussi le traitement si le numéro de row est le même, car il s'agit peut-être d'une autre
+ * liste de photos.
  * @param row : l'indice de l'item sélectionné dans la ListView.
  * ***********************************************************************************************************/
 void PhotoModel::selectedRow(const int row)
 {
     qDebug() << "selectedRow " << row << "/" << m_photos.count();
-    if (row < 0 || row >= m_photos.count() || row == m_lastSelectedRow)
+    if (row < 0 || row >= m_photos.count() )
         return;
     // On remet à False le précédent item sélectionné
     if (m_lastSelectedRow != -1)
@@ -350,6 +337,18 @@ void PhotoModel::selectedRow(const int row)
     m_lastSelectedRow = row;
     // On notifie les autres classes qui ont besoin de savoir quelle est la photo sélectionée
     emit selectedRowChanged(row);
+}
+
+/** **********************************************************************************************************
+ * @brief Mémorise les coordonnées dans la photo sélectionnée.
+ *
+ * @param coords : Coordonnées GPS à appliquer.
+ * ***********************************************************************************************************/
+void PhotoModel::selectedCoords(const QGeoCoordinate coords)
+{
+    QModelIndex index = this->index(m_lastSelectedRow, 0);
+    this->setData(index, coords.latitude(), LatitudeRole);
+    this->setData(index, coords.longitude(), LongitudeRole);
 }
 
 
@@ -470,8 +469,8 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // On trouve l'index correspondant au "filename"
     const QString file_name = value_list.value("FileName").toString();
 
-    if (file_name.isEmpty()) return;      // If no "FileName" tag is received.
-    if (m_photos.count() == 0) return;    // If the list of photo data is empty.
+    if (file_name.isEmpty()) return;      // If no "FileName" tag is received...
+    if (m_photos.count() == 0) return;    // If the list of photo data is empty...
 
     int row;
     // ----------------------------------
@@ -534,6 +533,26 @@ int PhotoModel::getSelectedRow()
     return m_lastSelectedRow;
 }
 
+/** **********************************************************************************************************
+ * @brief Returns the GPS Coords of the selected row.
+ * ***********************************************************************************************************/
+QGeoCoordinate PhotoModel::getSelectedCoords()
+{
+    return QGeoCoordinate(m_photos[m_lastSelectedRow].gpsLatitude, m_photos[m_lastSelectedRow].gpsLongitude);
+}
+
+/** **********************************************************************************************************
+ * @brief Active la première photo de la liste (preview de l'image et pinpoint géographique).
+ * Cette méthode est appelée une fois que l'on a lu les données Exif de la première photo de la liste.
+ * ***********************************************************************************************************/
+void PhotoModel::selectFirstPhoto()
+{
+    qDebug() << "selectFirstPhoto";
+    this->selectedRow(0);
+    // On prévient la MapView
+    emit firstCoordsReady();
+}
+
 
 /** **********************************************************************************************************
  * @brief Debug function that print (in the console) one line of the model at every call.
@@ -571,30 +590,32 @@ void PhotoModel::dumpData()
  * ***********************************************************************************************************/
 void PhotoModel::clear()
 {
-    beginResetModel();  // cette methode envoie un signal indiquant à tous que ce modèle va subir un changement radical
+    beginResetModel();  // cette méthode envoie un signal indiquant à tous que ce modèle va subir un changement radical
     m_photos.clear();
     m_lastSelectedRow = 0;
-    endResetModel();    // cette methode envoie un signal ModelReset
+    endResetModel();    // cette méthode envoie un signal ModelReset.
     emit dataCleared();
 }
 
 
 /** **********************************************************************************************************
- * @brief Ce slot lit des données EXIF d'une (ou toutes) photos du répertoire.
+ * @brief Ce slot lit des données EXIF d'une (ou de toutes les) photos du répertoire, en utilisant la tache
+ *        asynchrone ExifReadTask. A la fin de chaque lecture, la tache appelle setData().
  * @param photo : l'indice de la photo (vide ou -1 = toutes les photos du répertoire)
  * ***********************************************************************************************************/
 void PhotoModel::fetchExifMetadata(int photo)
 {
     // qSetMessagePattern("%{time process}");
-    // qDebug() << "fetchExifMetadata";
     if (photo > -1)
     {
+        qDebug() << "fetchExifMetadata" << photo;
         // On lit les tags d'une photo
-        ExifReadTask *task = new ExifReadTask(m_photos[photo].imageUrl);
+        ExifReadTask *task = new ExifReadTask(photo, m_photos[photo].imageUrl);
         task->run();
     }
     else
     {
+        qDebug() << "fetchExifMetadata" << "all photos";
         // On lit les tags de toutes les photos
         QThreadPool::globalInstance()->setMaxThreadCount(4);   // Quantité maximum de threads
         // Mesures pour scanner 40 photos:
@@ -603,7 +624,7 @@ void PhotoModel::fetchExifMetadata(int photo)
         //Instanciation et ajout de plusieurs tâches au pool de threads
         for (int row = 0; row < m_photos.count(); row++)
         {
-            ExifReadTask *task = new ExifReadTask(m_photos[row].imageUrl);
+            ExifReadTask *task = new ExifReadTask(row, m_photos[row].imageUrl);
             QThreadPool::globalInstance()->start(task);
         }
         // On n'a pas besoin d'attendre de la fin de l'exécution des tâches du pool de threads.
@@ -615,6 +636,7 @@ void PhotoModel::fetchExifMetadata(int photo)
 
 /** **********************************************************************************************************
  * @brief Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées.
+ * Ce slot est connecté au signal QML saveMetadata émis par ToolBarBottom.
  * @note Tag obligatoire: `imageUrl`.
  * @note Tags modifiés: `GPS coords, Creator, City, Country, Location, DateTimeOriginal`.
  * @note Tags automatiques: `GPS Ref, MetadataEditingSoftware`.

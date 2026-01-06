@@ -11,16 +11,17 @@ ZoneSuggestedLocationsForm {
 
 
     /** ******************************************************************************************************
-     * Clic sur bouton "Chercher".
+     * Clic sur bouton "Chercher" envoie une request pour récupérer des infos à partir des coords GPS.
      * A noter que la recherche est aussi lancée automatiquement par un Timer de TiPhotoListview.
      * *******************************************************************************************************/
     bt_getinfo.onClicked: {
-        // On envoie une request pour récupérer des infos à partir des coords GPS.
-        window.requestReverseGeocode(mapTab.photoLatitude,
-                                     mapTab.photoLongitude)
+        window.requestReverseGeocode(mapTab.homeCoords)
     }
 
-    /// Le bouton est grisé si la photo n'a pas de coordonnées GPS.
+
+    /** ******************************************************************************************************
+     * Le bouton est grisé si la photo n'a pas de coordonnées GPS.
+     * *******************************************************************************************************/
     Connections {
         target: tabbedPage
         function onSelectedDataChanged() {

@@ -4,7 +4,6 @@
 #include <QSslSocket>                              // pour le plugin OSM
 #include <QSettings>
 #include <QDebug>
-
 #include "GeocodeWrapper.h"
 
 
@@ -39,11 +38,10 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
  * @brief Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS.
  *        Par exemple: 38.980 et 1.433 => <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway">Résultat</a>
  *        La réponse est traitée par geoCodeFinished()
- * @param latitude : coordonnées GPS
- * @param longitude: coordonnées GPS
+ * @param coords: latitude et longitude des coordonnées GPS
  * ***********************************************************************************************************/
 
-void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
+void GeocodeWrapper::requestReverseGeocode(const QPointF coords)
 {
     // Réglage de la langues des tags
     QSettings settings;
@@ -51,7 +49,7 @@ void GeocodeWrapper::requestReverseGeocode(double latitude, double longitude)
     if (tagLanguage==0)
         m_geoManager->setLocale(QLocale("en"));
     // Envoi de la requete
-    QGeoCoordinate coordinate = QGeoCoordinate(latitude, longitude);
+    QGeoCoordinate coordinate = QGeoCoordinate(coords.x(), coords.y());
     QGeoCodeReply* geoReply = m_geoManager->reverseGeocode(coordinate);
 
     // On regarde s'il y a une erreur immédiate

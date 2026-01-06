@@ -33,13 +33,14 @@ bool UndatedPhotoProxyModel::filterEnabled() const
  * ***********************************************************************************************************/
 void UndatedPhotoProxyModel::setFilterEnabled(bool enabled)
 {
+    beginFilterChange();
     if (enabled)
         this->setFilterRegularExpression("^$"); // accepte uniquement les Photos avec datatime vide
     else
         this->setFilterRegularExpression("");   // accept all
-
+    endFilterChange();
     emit filterEnabledChanged();
-    invalidateFilter();
+    //invalidateFilter();
 }
 
 

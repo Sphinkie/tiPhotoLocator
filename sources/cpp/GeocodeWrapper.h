@@ -2,6 +2,7 @@
 #define GEOCODEWRAPPER_H
 
 #include <QObject>
+#include <QPoint>
 #include <QtLocation/QGeoCodingManager>
 #include "Models/SuggestionModel.h"
 
@@ -29,7 +30,7 @@ public slots:
     // -----------------------------------
     // Slots
     // -----------------------------------
-    void requestReverseGeocode(double latitude, double longitude);
+    void requestReverseGeocode(const QPointF coords);
     void requestCoordinates(QString city);
 
 private slots:

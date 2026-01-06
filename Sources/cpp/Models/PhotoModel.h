@@ -2,67 +2,9 @@
 #define PHOTOMODEL_H
 
 #include <QAbstractListModel>
+#include <QGeoCoordinate>
 
-/** **********************************************************************************************************
- * @brief A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc.
- * ***********************************************************************************************************/
-struct Photo
-{
-    //! Default constructor
-    Photo() {}
-
-    //! Constructeur avec valeurs
-    Photo( const QString &file_name,
-          const QString &image_url,
-          const bool is_marker = false,
-          const bool is_welcome = false,
-          bool is_selected = false
-          )
-    {
-        filename = file_name;
-        imageUrl = image_url;
-        isMarker = is_marker;
-        isWelcome = is_welcome;
-        isSelected = is_selected;
-    }
-
-    // Elements de la structure
-    QString filename;           //!< Example: "IMG_20230823_1234500.jpg"
-    QString imageUrl;           //!< Example: "qrc:///Images/ibiza.png"
-    double gpsLatitude = 0;     //!< GPS coordinates. Example: 38.980 (Ibiza)
-    double gpsLongitude = 0;    //!< GPS coordinates. Example: 1.4333 (Ibiza)
-    // Elements déterminés automatiquement
-    bool hasGPS = false;        //!< has GPS coordinates (latitude/longitude)
-    bool isSelected;            //!< Indique que cet item est sélectionné dans la ListView
-    bool isMarker = false;      //!< Exemple: une position sauvegardée sur la carte
-    bool isWelcome = false;     //!< Exemple: L'image de la page d'acceuil
-    bool insideCircle = false;  //!< inside the radius of nearby photos
-    bool toBeSaved = false;     //!< true if one of the following fields has been modified
-    // EXIF tags
-    QString dateTimeOriginal;   //!< Time when the camera shutter was pressed (no changes allowed in this app)
-    QString camModel;           //!< Camera model (no changes allowed in this app)
-    QString make;               //!< Camera manifacturer (no changes allowed in this app)
-    int imageWidth = 0;         //!< Image width  (no changes allowed in this app)
-    int imageHeight = 0;        //!< Image height (no changes allowed in this app)
-    int orientation = 1;        //!< 1 = Horizontal
-    float shutterSpeed = -1;    //!< Durée d'exposition (no changes allowed in this app)
-    float fNumber = -1;         //!< Ouverture (no changes allowed in this app)
-    // IPTC tags
-    QString creator;            //!< Name of the photographer
-    QString city;               //!< City shown in the Photo
-    QString country;            //!< Country where the Photo was taken
-    QString location;           //!< City quarter or nearby monument or natural monument.
-    QString description;        //!< can be: Description, ImageDescription or Caption;
-    QString captionWriter;      //!< Initials of the description writer
-    QString software;           //!< Software of the camera or scanner device
-    QStringList keywords;       //!< This is a list of keywords describing the image
-
-    // Surcharges d'operateurs
-    bool operator == (const QString &file_name);
-    bool operator == (const Photo &photo);
-
-};
-
+#include "Photo.h"
 
 /** **********************************************************************************************************
  * @brief The PhotoModel class manages a list of photo data.
@@ -73,6 +15,8 @@ class PhotoModel : public QAbstractListModel
 
     //! selectedRow is the Photo row in the model corresponding to the selected photo in the ListView.
     Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
+    //! selectedCoords is the GPS coordinates of the selected Photo.
+    Q_PROPERTY(QGeoCoordinate selectedCoords READ getSelectedCoords WRITE selectedCoords NOTIFY selectedCoordsChanged)
 
 public:
     /** *****************************************************************************************************
@@ -134,15 +78,18 @@ public:
     void append(const QVariantMap data);
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // Surcharge
     void setData(const QVariantMap &value_list);
+    void selectFirstPhoto();
 
 private:
     // -----------------------------------------------------
     // Méthodes privées
     // -----------------------------------------------------
     void addTestItem();
-    void selectedRow(const int row);
-    int getSelectedRow();
     void resetCircle();
+    void selectedRow(const int row);
+    void selectedCoords(const QGeoCoordinate coords);
+    int     getSelectedRow();
+    QGeoCoordinate getSelectedCoords();
     bool belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo);
 
 public slots:
@@ -152,11 +99,10 @@ public slots:
     void append(const QString filename, const QString url);
     void fetchExifMetadata(int row = -1);
     void saveMetadata();
-    void setSelectedItemCoords(const double latitude, const double longitude);
     void setInCircleItemCoords(const double latitude, const double longitude);
     void setPhotoProperty(const int photo, const QString value, const QString property);
     void applyCreatorToAll();
-    void appendSavedPosition(double latitude, double longitude);
+    void appendSavedPosition(const QGeoCoordinate coords);
     void removeSavedPosition();
     void setData(int row, QString value, QString property);
     void duplicateData(int row);
@@ -168,10 +114,11 @@ signals:
     // Signaux émis
     // -----------------------------------------------------
     void selectedRowChanged(const int row);                                        //!< Signal émis quand la Photo sélectionnée change.
+    void selectedCoordsChanged();                                                  //!< Signal émis quand les coordonnées GPS de la Photo sélectionnée changent.
     void sendSuggestion(QString text, QString target, QString category, int row);  //!< Ce signal envoie une Suggestion au SuggestionModel.
     void dataCleared();                                                            //!< Signal émis quand le modèle a été vidé.
     void dataSaved();                                                              //!< Signal émis quand les données ont été enregistrées sur le disque.
-
+    void firstCoordsReady();                                                       //!< Signal émis quand les coordonnées GPS de la première photo sont disponibles.
 
     // -----------------------------------------------------
     // Membres

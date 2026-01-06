@@ -33,13 +33,14 @@ bool SuggestionCategoryProxyModel::filterEnabled() const
  * ***********************************************************************************************************/
 void SuggestionCategoryProxyModel::setFilterEnabled(bool enabled)
 {
+    beginFilterChange();
     if (enabled)
         this->setFilterFixedString(m_filter);
     else
         this->setFilterFixedString(""); // accept all
-
+    endFilterChange();
     emit filterEnabledChanged();
-    invalidateFilter();
+    //invalidateFilter();
 }
 
 

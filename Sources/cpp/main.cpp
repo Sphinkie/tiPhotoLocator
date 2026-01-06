@@ -103,6 +103,7 @@ int main(int argc, char *argv[])
     //view.show();
 
     QSettings settings;
+    // FIXME
     QVariant homeCoords = settings.value("homeCoords", QVariant());
     if (!homeCoords.isValid())
     {
@@ -124,18 +125,17 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),          &photoModel, SLOT(fetchExifMetadata(int)));
     QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),                   &photoModel, SLOT(fetchExifMetadata()));
     QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                        &photoModel, SLOT(saveMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(savePosition(double,double)),           &photoModel, SLOT(appendSavedPosition(double,double)));
+    QObject::connect(firstRootItem,   SIGNAL(savePosition(QGeoCoordinate)),          &photoModel, SLOT(appendSavedPosition(QGeoCoordinate)));
     QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),                  &photoModel, SLOT(removeSavedPosition()));
     QObject::connect(firstRootItem,   SIGNAL(applyCreatorToAll()),                   &photoModel, SLOT(applyCreatorToAll()));
     QObject::connect(firstRootItem,   SIGNAL(setPhotoProperty(int,QString,QString)), &photoModel, SLOT(setPhotoProperty(int,QString,QString)));
-    QObject::connect(firstRootItem,   SIGNAL(setSelectedPhotoCoords(double,double)), &photoModel, SLOT(setSelectedItemCoords(double,double)));
 
     QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel,   SLOT(setAllItemsSavedCoords()));
     QObject::connect(firstRootItem,   SIGNAL(setSuggestionFilter(int)),             &suggestionProxyModel, SLOT(setFilterValue(int)));
     QObject::connect(firstRootItem,   SIGNAL(removePhotoFromSuggestion(int)),       &suggestionCategoryProxyModel, SLOT(removePhotoFromSuggestion(int)));
 
-    QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(double,double)), &geocodeWrapper,       SLOT(requestReverseGeocode(double,double)));
     QObject::connect(firstRootItem,   SIGNAL(requestCoords(QString)),               &geocodeWrapper,       SLOT(requestCoordinates(QString)));
+    QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(QPointF)),       &geocodeWrapper,       SLOT(requestReverseGeocode(QPointF)));
 
     // ----------------------------------------------------------------------------
     // Connexions entre classes C++

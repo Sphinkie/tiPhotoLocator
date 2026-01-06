@@ -24,6 +24,8 @@ qt_add_qml_module(tiPhotoLocator
         Sources/cpp/GeocodeWrapper.cpp        Sources/cpp/GeocodeWrapper.h
         Sources/cpp/PhotoModelWrapper.cpp     Sources/cpp/PhotoModelWrapper.h
         Sources/cpp/Utilities.cpp             Sources/cpp/Utilities.h
+        Sources/cpp/Models/Photo.h
+        Sources/cpp/Models/Suggestion.h
         Sources/cpp/Models/CameraSet.cpp              Sources/cpp/Models/CameraSet.h
         Sources/cpp/Models/OnTheMapProxyModel.cpp     Sources/cpp/Models/OnTheMapProxyModel.h
         Sources/cpp/Models/PhotoModel.cpp             Sources/cpp/Models/PhotoModel.h

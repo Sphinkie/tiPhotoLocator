@@ -11,13 +11,11 @@ import "../Controllers"
  * *************************************************************************************/
 GridLayout {
     // Les coordonnées du point sélectionné
-    // Actualisé lors d'un clic sur la listView, ou sur la carte.
+    // Actualisé lors d'un clic sur la listView par activatePhoto(), ou sur la carte.
+    // homeCoords est mémorisé dans les settings : POUR ???
     property point homeCoords
-    //property double photoLatitude: settings.homeCoords.x
-    //property double photoLongitude: settings.homeCoords.y
-    property double photoLatitude: homeCoords.x
-    property double photoLongitude: homeCoords.y
     property alias mapTools: mapTools
+    property alias mapView: mapView
 
     columnSpacing: 8
     rows: 3 // toolbar et carte/zones
@@ -30,7 +28,7 @@ GridLayout {
         Layout.fillWidth: true
     }
 
-    /// La carte haute comme deux zones (controleur avec vue).
+    /// La carte est haute comme deux zones (controleur avec vue).
     TiMapView {
         id: mapView
         Layout.rowSpan: 2
