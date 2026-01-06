@@ -83,7 +83,10 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Vues/SettingsPopupForm.ui.qml
         Sources/Qml/Vues/TiTabButtonForm.ui.qml
         Sources/Qml/Vues/ToolBarBottomForm.ui.qml
-        Sources/Qml/Vues/ToolBarMapForm.ui.qml Sources/Qml/Vues/ToolBarPrincipaleForm.ui.qml Sources/Qml/Vues/ZoneCameraForm.ui.qml Sources/Qml/Vues/ZoneGeolocForm.ui.qml
+        Sources/Qml/Vues/ToolBarMapForm.ui.qml
+        Sources/Qml/Vues/ToolBarPrincipaleForm.ui.qml
+        Sources/Qml/Vues/ZoneCameraForm.ui.qml
+        Sources/Qml/Vues/ZoneGeolocForm.ui.qml
         Sources/Qml/Vues/ZonePhotoForm.ui.qml
         Sources/Qml/Vues/ZonePreviewForm.ui.qml
         Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml

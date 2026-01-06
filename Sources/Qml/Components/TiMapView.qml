@@ -26,7 +26,7 @@ Map {
     property alias mapCircle: mapCircle
     zoomLevel: 6
     plugin: mapPlugin
-    center: _photoModel.selectedCoords // QtPositioning.coordinate(mapTab.homeCoords.x, mapTab.homeCoords.y)
+    center: _photoModel.selectedCoords
 
     DragHandler {
         id: drag
@@ -53,8 +53,7 @@ Map {
      * *******************************************************************************************************/
     MapItemView {
         id: mapItemView
-        //model: _onTheMapProxyModel // Ce modèle ne contient que les photos devant apparaitre sur la carte
-        model: _photoModel // TEST
+        model: _onTheMapProxyModel // Ce modèle ne contient que les photos devant apparaitre sur la carte
         delegate: markerDelegate
 
 

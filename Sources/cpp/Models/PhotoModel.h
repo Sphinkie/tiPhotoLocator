@@ -17,6 +17,8 @@ class PhotoModel : public QAbstractListModel
     Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
     //! selectedCoords is the GPS coordinates of the selected Photo.
     Q_PROPERTY(QGeoCoordinate selectedCoords READ getSelectedCoords WRITE selectedCoords NOTIFY selectedCoordsChanged)
+    //! indique si un SavedPosition existe dan le modèle.
+    Q_PROPERTY(bool savedPositionExists MEMBER m_savedPositionExists NOTIFY savedPositionExistsChanged)
 
 public:
     /** *****************************************************************************************************
@@ -88,7 +90,7 @@ private:
     void resetCircle();
     void selectedRow(const int row);
     void selectedCoords(const QGeoCoordinate coords);
-    int     getSelectedRow();
+    int  getSelectedRow();
     QGeoCoordinate getSelectedCoords();
     bool belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo);
 
@@ -97,14 +99,15 @@ public slots:
     // Slots
     // -----------------------------------------------------
     void append(const QString filename, const QString url);
+    //void appendSavedPosition(QGeoCoordinate coords );
+    void appendSavedPosition();
     void fetchExifMetadata(int row = -1);
     void saveMetadata();
+    void setData(int row, QString value, QString property);
     void setInCircleItemCoords(const double latitude, const double longitude);
     void setPhotoProperty(const int photo, const QString value, const QString property);
     void applyCreatorToAll();
-    void appendSavedPosition(const QGeoCoordinate coords);
     void removeSavedPosition();
-    void setData(int row, QString value, QString property);
     void duplicateData(int row);
     void removeData(int row);
 
@@ -119,6 +122,7 @@ signals:
     void dataCleared();                                                            //!< Signal émis quand le modèle a été vidé.
     void dataSaved();                                                              //!< Signal émis quand les données ont été enregistrées sur le disque.
     void firstCoordsReady();                                                       //!< Signal émis quand les coordonnées GPS de la première photo sont disponibles.
+    void savedPositionExistsChanged();                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
 
     // -----------------------------------------------------
     // Membres
@@ -133,7 +137,7 @@ private:
     int m_dumpedRow = 0;                        //!< Compteur pour le dump de debug
     int m_lastCircleRadius = 0;                 //!< Valeur précdente du rayon de recherche
     bool m_circleResetted = true;               //!< True si le rayon du cercle est à 0, et que le flag insideCircle a été resetté sur toutes les photos.
-
+    bool m_savedPositionExists = false;         //!< True si le marker SavedPosition existe
 };
 
 #endif // PHOTOMODEL_H

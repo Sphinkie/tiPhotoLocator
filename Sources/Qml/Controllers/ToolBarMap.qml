@@ -8,21 +8,17 @@ import "../Vues"
  * ***********************************************************************************************************/
 ToolBarMapForm {
 
-    property bool savedPositionExists: false
-
     /// Clic sur "Save Position" : On enregistre la position de l'image dans la Saved Position.
     bt_save_pos.onClicked: {
-        window.savePosition(_photoModel.selectedCoords)
-        savedPositionExists = true
+        window.savePosition()
     }
 
     /// Clic sur "Remove Saved Pos": Efface la Saved Position.
     bt_remove_savedpos.onClicked: {
         window.clearSavedPosition()
-        savedPositionExists = false
     }
 
-    // Clic sur "Apply Saved Position": On applique les coordonnées du marker "SavedPosition" aux photos affichées.
+    /// Clic sur "Apply Saved Position": On applique les coordonnées du marker "SavedPosition" aux photos affichées.
     bt_apply_savedpos.onClicked: {
         window.applySavedPositionToCoords()
         // On recentre la carte, si la nouvelle Position est en dehors de la vue actuelle
@@ -43,8 +39,8 @@ ToolBarMapForm {
         window.fetchSingleExifMetadata(tabbedPage.selectedData.row)
     }
 
-    bt_remove_savedpos.enabled: savedPositionExists
-    bt_apply_savedpos.enabled: savedPositionExists
+    bt_remove_savedpos.enabled: _photoModel.savedPositionExists
+    bt_apply_savedpos.enabled: _photoModel.savedPositionExists
 
     /// Gestion du grisage des boutons
     Connections {

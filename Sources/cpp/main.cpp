@@ -125,7 +125,7 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),          &photoModel, SLOT(fetchExifMetadata(int)));
     QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),                   &photoModel, SLOT(fetchExifMetadata()));
     QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                        &photoModel, SLOT(saveMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(savePosition(QGeoCoordinate)),          &photoModel, SLOT(appendSavedPosition(QGeoCoordinate)));
+    QObject::connect(firstRootItem,   SIGNAL(savePosition()),                        &photoModel, SLOT(appendSavedPosition()));
     QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),                  &photoModel, SLOT(removeSavedPosition()));
     QObject::connect(firstRootItem,   SIGNAL(applyCreatorToAll()),                   &photoModel, SLOT(applyCreatorToAll()));
     QObject::connect(firstRootItem,   SIGNAL(setPhotoProperty(int,QString,QString)), &photoModel, SLOT(setPhotoProperty(int,QString,QString)));

@@ -42,36 +42,33 @@ Window {
     // color: Style.surfaceBackgroundColor
 
     // ----------------------------------------------------------------
-    // Les signaux vers PhotoModel
+    // Les signaux vers PhotoModel pour une photo unitaire:
     // ----------------------------------------------------------------
-    // sur une photo unitaire:
+    /// Ajoute une JPG au modèle
     signal append(string filename, string url)
-    //< Ajoute une JPG au modèle
+    /// Demande la lecture des metadata d'un fichier JPG
     signal fetchSingleExifMetadata(int row)
-    //< Lit les metadata d'une JPG
+    /// Fait un setData pour affecter un role du Model
     signal setPhotoProperty(int photo, string texte, string target)
-    //< Fait un setData pour affecter un role du Model
-    signal setSelectedPhotoCoords(var coords)
-    //< Positionne les coords de la photo séléctionnée sur plusieurs photos
+    /// Demande la lecture des metadata de toutes les fichiers JPG
     signal fetchExifMetadata
-    //< Lit les metadata de toutes les JPG
+    /// Ecrit les metadata sur le disque
     signal saveMetadata
-    //< Ecrit les metadata sur le disque
+    /// Applique le Creator (des settings) à toutes les photos du modèle
     signal applyCreatorToAll
-    //< Applique le Creator (des settings) à toutes les photos du modèle
+    /// Affecte la position mémorisée à toutes les photos du cercle
     signal applySavedPositionToCoords
-    //< Affecte la position mémorisée à toutes les photos du cercle
-    signal savePosition(var coords)
-    //< Mémorise une position
+    /// Mémorise une position// (var coords)
+    signal savePosition
+    /// Efface une position mémorisée
     signal clearSavedPosition
-    //< Efface une position mémorisée
     // ----------------------------------------------------------------
     // Les signaux vers SuggestionModel
     // ----------------------------------------------------------------
     signal setSuggestionFilter(int row)
     signal setCategoryFilter(string category)
+    /// Retire la photo courante de la Suggestion passée en paramètre
     signal removePhotoFromSuggestion(int row)
-    //< Retire la photo courante de la Suggestion passée en paramètre
     // ----------------------------------------------------------------
     // Les signaux vers geocodeWrapper
     // ----------------------------------------------------------------

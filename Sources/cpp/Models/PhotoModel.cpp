@@ -195,10 +195,11 @@ void PhotoModel::append(const QVariantMap data)
 
 /** **********************************************************************************************************
  * @brief Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune).
- * @param coords : latitude et longitude au format GPS.
+ * Ses coordonnées GPS sont celles de la photo sélectionnée.
  * ***********************************************************************************************************/
-void PhotoModel::appendSavedPosition(const QGeoCoordinate coords)
+void PhotoModel::appendSavedPosition()
 {
+    qDebug() << "appendSavedPosition"; // << coords.latitude();
     // S'il n'y a pas encore de Saved Position, on insère à la fin
     if (!m_markerIndex.isValid())
     {
@@ -210,9 +211,11 @@ void PhotoModel::appendSavedPosition(const QGeoCoordinate coords)
         // On mémorise sa position
         m_markerRow = rowOfInsert;
         m_markerIndex = index(rowOfInsert,0);
-    }
-    this->setData(m_markerIndex, coords.latitude(), LatitudeRole);
-    this->setData(m_markerIndex, coords.longitude(), LongitudeRole);
+    }   
+    this->setData(m_markerIndex, m_photos[m_lastSelectedRow].gpsLatitude, LatitudeRole);
+    this->setData(m_markerIndex, m_photos[m_lastSelectedRow].gpsLongitude, LongitudeRole);
+    m_savedPositionExists = true;
+    emit savedPositionExistsChanged();
 }
 
 
@@ -224,6 +227,8 @@ void PhotoModel::removeSavedPosition()
 {
     this->removeData(m_markerRow);
     m_markerIndex = index(-1,0);
+    m_savedPositionExists = false;
+    emit savedPositionExistsChanged();
 }
 
 
@@ -547,6 +552,8 @@ QGeoCoordinate PhotoModel::getSelectedCoords()
  * ***********************************************************************************************************/
 void PhotoModel::selectFirstPhoto()
 {
+    // On efface la Saved Position
+    this->removeSavedPosition();
     qDebug() << "selectFirstPhoto";
     this->selectedRow(0);
     // On prévient la MapView
