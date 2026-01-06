@@ -58,7 +58,7 @@ Window {
     signal applyCreatorToAll
     /// Affecte la position mémorisée à toutes les photos du cercle
     signal applySavedPositionToCoords
-    /// Mémorise une position// (var coords)
+    /// Mémorise la position courante
     signal savePosition
     /// Efface une position mémorisée
     signal clearSavedPosition
@@ -72,7 +72,8 @@ Window {
     // ----------------------------------------------------------------
     // Les signaux vers geocodeWrapper
     // ----------------------------------------------------------------
-    signal requestReverseGeocode(point coords)
+    /// Demande d'informations géographiques sur la position courante
+    signal requestReverseGeocode(double lati, double longi)
     signal requestCoords(string city)
 
     // ----------------------------------------------------------------

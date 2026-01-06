@@ -121,21 +121,21 @@ int main(int argc, char *argv[])
     // ----------------------------------------------------------------------------
     // Connexions QML vers classe C++
     // ----------------------------------------------------------------------------
-    QObject::connect(firstRootItem,   SIGNAL(append(QString,QString)),               &photoModel, SLOT(append(QString,QString)));
-    QObject::connect(firstRootItem,   SIGNAL(fetchSingleExifMetadata(int)),          &photoModel, SLOT(fetchExifMetadata(int)));
-    QObject::connect(firstRootItem,   SIGNAL(fetchExifMetadata()),                   &photoModel, SLOT(fetchExifMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(saveMetadata()),                        &photoModel, SLOT(saveMetadata()));
-    QObject::connect(firstRootItem,   SIGNAL(savePosition()),                        &photoModel, SLOT(appendSavedPosition()));
-    QObject::connect(firstRootItem,   SIGNAL(clearSavedPosition()),                  &photoModel, SLOT(removeSavedPosition()));
-    QObject::connect(firstRootItem,   SIGNAL(applyCreatorToAll()),                   &photoModel, SLOT(applyCreatorToAll()));
-    QObject::connect(firstRootItem,   SIGNAL(setPhotoProperty(int,QString,QString)), &photoModel, SLOT(setPhotoProperty(int,QString,QString)));
+    QObject::connect(firstRootItem, SIGNAL(append(QString,QString)),               &photoModel, SLOT(append(QString,QString)));
+    QObject::connect(firstRootItem, SIGNAL(fetchSingleExifMetadata(int)),          &photoModel, SLOT(fetchExifMetadata(int)));
+    QObject::connect(firstRootItem, SIGNAL(fetchExifMetadata()),                   &photoModel, SLOT(fetchExifMetadata()));
+    QObject::connect(firstRootItem, SIGNAL(saveMetadata()),                        &photoModel, SLOT(saveMetadata()));
+    QObject::connect(firstRootItem, SIGNAL(savePosition()),                        &photoModel, SLOT(appendSavedPosition()));
+    QObject::connect(firstRootItem, SIGNAL(clearSavedPosition()),                  &photoModel, SLOT(removeSavedPosition()));
+    QObject::connect(firstRootItem, SIGNAL(applyCreatorToAll()),                   &photoModel, SLOT(applyCreatorToAll()));
+    QObject::connect(firstRootItem, SIGNAL(setPhotoProperty(int,QString,QString)), &photoModel, SLOT(setPhotoProperty(int,QString,QString)));
 
-    QObject::connect(firstRootItem,   SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel,   SLOT(setAllItemsSavedCoords()));
-    QObject::connect(firstRootItem,   SIGNAL(setSuggestionFilter(int)),             &suggestionProxyModel, SLOT(setFilterValue(int)));
-    QObject::connect(firstRootItem,   SIGNAL(removePhotoFromSuggestion(int)),       &suggestionCategoryProxyModel, SLOT(removePhotoFromSuggestion(int)));
+    QObject::connect(firstRootItem, SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel,   SLOT(setAllItemsSavedCoords()));
+    QObject::connect(firstRootItem, SIGNAL(setSuggestionFilter(int)),             &suggestionProxyModel, SLOT(setFilterValue(int)));
+    QObject::connect(firstRootItem, SIGNAL(removePhotoFromSuggestion(int)),       &suggestionCategoryProxyModel, SLOT(removePhotoFromSuggestion(int)));
 
-    QObject::connect(firstRootItem,   SIGNAL(requestCoords(QString)),               &geocodeWrapper,       SLOT(requestCoordinates(QString)));
-    QObject::connect(firstRootItem,   SIGNAL(requestReverseGeocode(QPointF)),       &geocodeWrapper,       SLOT(requestReverseGeocode(QPointF)));
+    QObject::connect(firstRootItem, SIGNAL(requestReverseGeocode(double, double)),&geocodeWrapper,  SLOT(requestReverseGeocode(double, double)));
+    QObject::connect(firstRootItem, SIGNAL(requestCoords(QString)),               &geocodeWrapper,  SLOT(requestCoordinates(QString)));
 
     // ----------------------------------------------------------------------------
     // Connexions entre classes C++

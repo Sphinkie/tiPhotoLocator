@@ -15,7 +15,8 @@ ZoneSuggestedLocationsForm {
      * A noter que la recherche est aussi lancée automatiquement par un Timer de TiPhotoListview.
      * *******************************************************************************************************/
     bt_getinfo.onClicked: {
-        window.requestReverseGeocode(mapTab.homeCoords)
+        window.requestReverseGeocode(_photoModel.selectedCoords.latitude,
+                                     _photoModel.selectedCoords.longitude)
     }
 
 

@@ -38,18 +38,19 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
  * @brief Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS.
  *        Par exemple: 38.980 et 1.433 => <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&osmid=313893003&class=highway">Résultat</a>
  *        La réponse est traitée par geoCodeFinished()
- * @param coords: latitude et longitude des coordonnées GPS
+ * @param lati: latitude des coordonnées GPS
+ * @param longi: longitude des coordonnées GPS
  * ***********************************************************************************************************/
-
-void GeocodeWrapper::requestReverseGeocode(const QPointF coords)
+void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
 {
+    qDebug() << "requestReverseGeocode" << lati;
     // Réglage de la langues des tags
     QSettings settings;
     int tagLanguage = settings.value("tagLanguage",0).toInt();   // 0: English, 1: default
     if (tagLanguage==0)
         m_geoManager->setLocale(QLocale("en"));
     // Envoi de la requete
-    QGeoCoordinate coordinate = QGeoCoordinate(coords.x(), coords.y());
+    QGeoCoordinate coordinate = QGeoCoordinate(lati, longi);
     QGeoCodeReply* geoReply = m_geoManager->reverseGeocode(coordinate);
 
     // On regarde s'il y a une erreur immédiate

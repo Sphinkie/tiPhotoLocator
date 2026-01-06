@@ -40,14 +40,10 @@ ListView {
         radius: 6
     }
 
-    //    onCountChanged: {
-    //        // Quand la liste change, on se repositionne sur le premier ingrédient.
-    //        currentIndex = 0
-    //    }
-
 
     /** ******************************************************************************************************
-     * Timer de 4 secondes avant envoi d'une request pour récupérer des infos à partir des coordonnées GPS.
+     * Timer de 4 secondes avant envoi d'une request pour récupérer des infos à partir des coordonnées GPS
+     * de la photo courante.
      * Ce timer est déclenché par le clic sur un item de la liste.
      * *******************************************************************************************************/
     Timer {
@@ -56,8 +52,9 @@ ListView {
         running: false
         repeat: false
         onTriggered: {
-            // console.debug(">>>>> timer triggered");
-            window.requestReverseGeocode(mapTab.homeCoords)
+            // console.debug(">>>>> timer triggered")
+            window.requestReverseGeocode(_photoModel.selectedCoords.latitude,
+                                         _photoModel.selectedCoords.longitude)
         }
     }
 
@@ -150,6 +147,14 @@ ListView {
                     __lv.currentIndex = index // Bouge le highlight dans la ListView
                     activatePhoto(index, hasGPS, city, country, latitude,
                                   longitude)
+                    // On relance une demande d'infos ReverseGeo,
+                    // si onglet CARTE et COORDS GPS et s'il n'y a pas déjà de City ni Country:
+                    if ((tabbedPage.currentIndex === 1) && hasGPS && city === ""
+                            && country === "") {
+                        // console.debug(">>>> restart geoTimer")
+                        geoTimer.restart()
+                    } else
+                        geoTimer.stop()
                 }
             }
         }
@@ -183,14 +188,5 @@ ListView {
         // On réactualise le contenu du cercle rouge
         // TODO : C'est consommateur car on parcourt toutes les photos du modèle à chaque clic!
         _photoModel.findInCirclePhotos()
-
-        // On relance une demande d'infos ReverseGeo
-        // si onglet CARTE et COORDS GPS et s'il n'y a pas déjà de City ni Country:
-        if ((tabbedPage.currentIndex === 1) && hasGPS && city === ""
-                && country === "") {
-            // console.debug(">>>> restart geoTimer")
-            geoTimer.restart()
-        } else
-            geoTimer.stop()
     }
 }

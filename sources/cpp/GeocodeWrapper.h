@@ -20,17 +20,14 @@ class GeocodeWrapper : public QObject
 {
     Q_OBJECT
 
+// -----------------------------------
+// Méthodes
+// -----------------------------------
 public:
-    // -----------------------------------
-    // Méthodes
-    // -----------------------------------
     explicit GeocodeWrapper(SuggestionModel* suggestion_model);
 
 public slots:
-    // -----------------------------------
-    // Slots
-    // -----------------------------------
-    void requestReverseGeocode(const QPointF coords);
+    void requestReverseGeocode(double lati, double longi);
     void requestCoordinates(QString city);
 
 private slots:
