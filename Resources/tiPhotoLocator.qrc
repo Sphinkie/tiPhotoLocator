@@ -7,12 +7,12 @@
         <file>Cameras/E-M10MarkII.png</file>
         <file>Cameras/default.png</file>
         <file>Cameras/Midjourney.png</file>
-        <file>Cameras/OpticFilm 7200.png</file>
+        <file>Cameras/OpticFilm7200.png</file>
         <file>Cameras/YP-G70.png</file>
         <file>Cameras/M2007J17G.png</file>
         <file>Cameras/HX90V.png</file>
-        <file>Cameras/COOLPIX S30.png</file>
-        <file>Cameras/KODAK EASYSHARE M550 Digital Camera.png</file>
+        <file>Cameras/COOLPIXS30.png</file>
+        <file>Cameras/KODAKEASYSHAREM550DigitalCamera.png</file>
         <file>Cameras/CYBERSHOT.png</file>
         <file>Images/bt-apply.png</file>
         <file>Images/bt-clear.png</file>
@@ -58,7 +58,7 @@
         <file>Pictures/avatar.jpg</file>
         <file>Pictures/welcome.png</file>
         <file>Pictures/IMG_00000001.png</file>
-        <file>Cameras/iPhone 3GS.png</file>
-        <file>Cameras/Digimax L55W/Kenox X15 WIDE.png</file>
+        <file>Cameras/iPhone3GS.png</file>
+        <file>Cameras/DigimaxL55WKenoxX15WIDE.png</file>
     </qresource>
 </RCC>

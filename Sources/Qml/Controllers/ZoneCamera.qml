@@ -17,8 +17,10 @@ ZoneCameraForm {
     chipSpeed.visible: (tabbedPage.selectedData.shutterSpeed > 0)
     chipAperture.visible: (tabbedPage.selectedData.fNumber > 0)
 
-    // var camModel = tabbedPage.selectedData.camModel
-    camThumb.source: tabbedPage.selectedData.camModel ? "/Cameras/" + tabbedPage.selectedData.camModel + ".png" : ""
+    property string camPng: tabbedPage.selectedData.camModel
+    // on enleve les espaces et / et \
+    camThumb.source: camPng ? "/Cameras/" + camPng.replace(/[\s\\\/]/g,
+                                                           '') + ".png" : ""
 
     // Pour la vitesse, on veut une valeur plus lisible.
     // Au lieu de 1/714s, on veut 1/700s
