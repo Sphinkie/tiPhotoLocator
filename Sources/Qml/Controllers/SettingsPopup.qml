@@ -19,7 +19,7 @@ SettingsPopupForm {
         close()
     }
 
-    /// Fonction pour enregistrer les Setings au moment du click sur OK. (Non utilisée).
+    /// Fonction pour enregistrer les Settings au moment du click sur OK. (Non utilisée).
     function saveConfiguration() {
         //settings.category= "configuration";
         settings.setValue("photographe", textFieldName.text)

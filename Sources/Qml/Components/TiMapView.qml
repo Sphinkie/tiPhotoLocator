@@ -28,6 +28,19 @@ Map {
                                      homeCoords.y) // _photoModel.selectedCoords
     zoomLevel: 6
     plugin: mapPlugin
+
+
+    /* supportedMapTypes
+        0 Street Map        (Street map view)
+        1 Cycle Map         (Cycle map view)
+        2 Transit Map       (Public transit map view in daylight mode)
+        3 Night Transit Map (Public transit map view in night mode)
+        4 Terrain Map       (Terrain map view)
+        5 Hiking Map        (Hiking map view)
+        6 Custom URL Map    (Thunderforest)
+    */
+    activeMapType: supportedMapTypes[6] // 0 ou 4
+
     property alias mapCircle: mapCircle
     property point homeCoords
 
@@ -87,18 +100,16 @@ Map {
      *   mais de toutes façon, c'est trop tôt, on a pas encore lu les Exif.
      * *******************************************************************************************************/
     onMapItemsChanged: {
-        console.log("onMapItemsChanged")
+        // console.log("onMapItemsChanged")
         if (_photoModel.selectedItemHasGPS) {
-            console.log(": re-center the map on selectedCoords",
-                        _photoModel.selectedCoords)
+            // console.log(": re-center the map on selectedCoords", _photoModel.selectedCoords)
             // On repositionne la carte sur les coords de la photo sélectionée
             mapView.center = _photoModel.selectedCoords
             // On repositionne le cercle
             mapCircle.center = _photoModel.selectedCoords
         }
-        // on lit homeCoords dans les ssettingss
+        // on lit homeCoords dans les settings
         homeCoords = settings.value("homeCoords")
-        console.log("onMapItemsChanged. Reload home coords:", homeCoords)
     }
 
 
@@ -170,76 +181,72 @@ Map {
     }
 
 
-    /* supportedMapTypes
-        0 Street Map        (Street map view in daylight mode)
-        1 Cycle Map         (Cycle map view in daylight mode)
-        2 Transit Map       (Public transit map view in daylight mode)
-        3 Night Transit Map (Public transit map view in night mode)
-        4 Terrain Map       (Terrain map view)
-        5 Hiking Map        (Hiking map view)
-        6 Custom URL Map    (Custom url map view set via urlprefix parameter)
-    */
-    activeMapType: supportedMapTypes[0] // ou 4
+    /** ******************************************************************************************************
+     * @brief Plugin OSM pour la carte OpenStreetMap (ou thunderforest).
+     * On a 5 types de cartes potables:
+     * - 0 : openstreetmap classique
+     * - 4 : openstreetmap terrain
+     * - 6 + outdoors : thunderforest outdoors
+     * - 6 + landscape : thunderforest landscape
+     * - 6 + cycle : thunderforest cycle
 
+     * @note On définit les paramètres ainsi : PluginParameter{ name: "" ; value: ""}
+     * *******************************************************************************************************/
     Plugin {
         id: mapPlugin
         name: "osm"
-        property string apikey
-
         locales: ["fr_FR", "en_US"]
+        readonly property string thunder_url: "https://tile.thunderforest.com/"
+        readonly property string thunder_type: "landscape"
 
-        // parametres optionels : PluginParameter{ name: "" ; value: ""}
-        // PluginParameter { name: "osm.mapping.providersrepository.address"; value: "http://www.mywebsite.com/osm_repository" }
-        // PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey="+apikey}
-        // PluginParameter { name: "osm.mapping.custom.host"; value: "http://a.tile.thunderforest.com/cycle/%z/%x/%y.png?apikey="+apikey}
-        // PluginParameter { name: "osm.mapping.custom.host"; value: "https://tile.thunderforest.com/cycle/%z/%x/%y.png?apikey="+apikey}
-        // PluginParameter { name: "osm.mapping.custom.host"; value: "http://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey="+apikey}
+
+        /** *******************************************************************************************************
+         * @brief Ce paramètre permet de définir un serveur de *map tiles* autre que OpenStreetMap (ici /b thunderforest).
+         * Le serveur doit offrir une API compatible avec OSM.
+         *
+         * @note A postfix "%z/%x/%y.png" will be added to the url, except if the url ends with ".png".
+         * If the server requires an apikey, it has to be added to the url string.
+         * Exemple: `https://tile.thunderforest.com/landscape/11/940/584.png?apikey=0000000000000000000000000000000`
+
+         * @note To use this custom tile server, the `Map::activeMapType` parameter of the *Map* should be set to **MapType.CustomMap**.
+         * (This map type is only be available if this plugin parameter is set).
+         * The value is always: *Map::supportedMapTypes[supportedMapTypes.length - 1]*.
+         * Exemple: `map.activeMapType: supportedMapTypes[6]`
+         *
+         * @note: Setting the `osm.mapping.custom.host` parameter to a **new server** renders the map tile cache useless for the old custommap style.
+         * *******************************************************************************************************/
         PluginParameter {
             name: "osm.mapping.custom.host"
-            readonly property url thunderurl: "https://tile.thunderforest.com/cycle/%z/%x/%y.png"
-            readonly property string thunderkey: (mapPlugin.apikey ? "?apikey="
-                                                                     + mapPlugin.apikey : "")
-            value: thunderurl // + thunderkey;
+            readonly property string apikey: settings.value("mapApikey")
+            readonly property string thunder_key: (apikey ? "?apikey=" + apikey : "")
+            value: mapPlugin.thunder_url + mapPlugin.thunder_type + "/%z/%x/%y.png" + thunder_key
         }
 
+        /// Affichage d'un copyright en bas de la carte
         PluginParameter {
-            // obsolete ?
-            name: "osm.mapping.providersrepository.address"
-            readonly property url thunderurl: "https://tile.thunderforest.com/cycle/%z/%x/%y.png"
-            readonly property string thunderkey: (mapPlugin.apikey ? "?apikey="
-                                                                     + mapPlugin.apikey : "")
-            value: thunderurl // + thunderkey;
+            name: "osm.mapping.custom.mapcopyright"
+            value: mapPlugin.thunder_url + mapPlugin.thunder_type
         }
 
-        //PluginParameter { name: "osm.mapping.highdpi_tiles"; value: "false" }
-        //PluginParameter { name: "osm.mapping.providersrepository.disabled"; value: "false" }
+        /// Identification de l'application dans les requetes à Thunderbird
+        PluginParameter {
+            name: "osm.useragent"
+            value: "TiPhotoLocator"
+        }
 
 
-        /* Matthas Rauter (nov-2023) Qt Company - Fixed in Qt 6.7
-
-        https://bugreports.qt.io/browse/QTBUG-115742
-
-            So the only way I see to add this APIKEY parameter is to make it only work with Thunderforest
-            (by adding "apikey=" and whatever key the user entered to the URL) or to do some find-and-replace magic on the URL (by adding "apikey=%APIKEY" to the stored Thunderforest URL,
-            replacing %APIKEY with the respective key and removing everything after "?" entirely when no key is provided).
-            In my opinion both are worse than the current solution of providing a custom URL that includes the apikey.
-            Anyway, I agree that it is not documented properly, so I will add it to the documentation.
-
-        osm.mapping.custom.host
-            The url string of a custom tile server. This parameter should be set to a valid server url offering the correct OSM API.
-            The postfix "%z/%x/%y.png" will be added to the url. Since 6.5 the postfix will not be added if the url ends with ".png".
-            If the server requires an apikey, it has to be added to the url string.
-            To use this server, the Map::activeMapType parameter of the Map should be set to the supported map type whose type is \l{mapType::style}{MapType.CustomMap}.
-            This map type is only be available if this plugin parameter is set, in which case it is always {Map::supportedMapTypes}[supportedMapTypes.length - 1].
-            \note Setting the mapping.custom.host parameter to a new server renders the map tile cache useless for the old custommap style.
+        /* Autres paramètres possibles :
+          PluginParameter { name: "osm.mapping.highdpi_tiles";                value: "false" }
+          PluginParameter { name: "osm.mapping.providersrepository.disabled"; value: "false" }
+          PluginParameter { name: "osm.mapping.providersrepository.address";  value: "?obsolete?" }
         */
     }
 
-    // ----------------------------------------------------------------
-    // Lecture des Settings
-    // ----------------------------------------------------------------
+
+    /** *******************************************************************************************************
+     * Disponibilité des Settings en lecture
+     * ********************************************************************************************************/
     Settings {
         id: settings
-        property alias mapApikey: mapPlugin.apikey
     }
 }

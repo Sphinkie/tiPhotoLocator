@@ -196,17 +196,15 @@ Popup {
                 }
                 /// Clef API pour les cartes
                 RowLayout {
-                    Text {
+                    Label {
                         text: qsTr("Clef API pour les cartes:")
                         font.pixelSize: 12
-                        visible: false
                     }
                     TextField {
                         id: textFieldMapApiKey
                         Layout.fillWidth: true
                         height: 30
-                        placeholderText: qsTr("XXXXXXXXXXXXXXX")
-                        visible: false
+                        placeholderText: qsTr("Thunderforest or OpenStreetMap")
                     }
                 }
             }

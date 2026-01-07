@@ -532,7 +532,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // S'il n'y a plus de thread en cours, on stoppe le BusyIndicator
     // -------------------------------------------------------------------
     int nbThreads = QThreadPool::globalInstance()->activeThreadCount();
-    qDebug() << "nbThreads" << nbThreads;
+    // qDebug() << "nbThreads" << nbThreads;
     this->setLoading(nbThreads > 2);
 }
 
