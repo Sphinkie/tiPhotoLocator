@@ -4,14 +4,15 @@ import "../Vues"
 
 
 /** *************************************************************************************
- * @brief Frame avec les tags IPTC pouvant être appliqués à toutes les photos du dossier.
+ * @brief Zone avec les tags IPTC pouvant être appliqués à toutes les photos du dossier.
  * *************************************************************************************/
-IptcGridForm {
-    id: iptcGrid
+ZoneIptcForm {
+    id: iptcZone
     property string creator
     property string writer
     property string city: tabbedPage.selectedData.city
     property string country: tabbedPage.selectedData.country
+    property string location: tabbedPage.selectedData.location
 
     bt_applyCreator.onClicked: {
         window.applyCreatorToAll()
@@ -25,12 +26,16 @@ IptcGridForm {
         window.setPhotoProperty(-1, city, "city") // -1 = all
     }
 
+    bt_applyLocation.onClicked: {
+        window.setPhotoProperty(-1, location, "location") // -1 = all
+    }
+
     // ----------------------------------------------------------------
     /// Lecture des Settings
     // ----------------------------------------------------------------
     Settings {
         id: settings
-        property alias photographe: iptcGrid.creator
-        property alias initiales: iptcGrid.writer
+        property alias photographe: iptcZone.creator
+        property alias initiales: iptcZone.writer
     }
 }

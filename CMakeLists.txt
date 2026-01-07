@@ -40,11 +40,11 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Main.qml
         Sources/Qml/Style.qml
         Sources/Qml/Components/Chips.qml
-        Sources/Qml/Components/ExifTitle.qml
+
         Sources/Qml/Components/FatChip.qml
         Sources/Qml/Components/FolderLoadTimer.qml
         Sources/Qml/Components/ImagettesListView.qml
-        Sources/Qml/Components/IptcTitle.qml
+
         Sources/Qml/Components/SuggestionRepeater.qml
         Sources/Qml/Components/TiMapView.qml
         Sources/Qml/Components/TiMenuBar.qml
@@ -56,8 +56,8 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/TabFramePhotoMap.qml
         Sources/Qml/Components/Zone.qml
         Sources/Qml/Components/ZoneTitle.qml
-        Sources/Qml/Controllers/ExifGrid.qml
-        Sources/Qml/Controllers/IptcGrid.qml
+        Sources/Qml/Controllers/ZoneExif.qml
+        Sources/Qml/Controllers/ZoneIptc.qml
         Sources/Qml/Controllers/MetadataPopup.qml
         Sources/Qml/Controllers/SettingsPopup.qml
         Sources/Qml/Controllers/TiTabButton.qml
@@ -77,8 +77,8 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Dialogs/RescanWarning.qml
         Sources/Qml/Dialogs/TiFolderDialog.qml
         Sources/Qml/Models/ModelFolderList.qml
-        Sources/Qml/Vues/ExifGridForm.ui.qml
-        Sources/Qml/Vues/IptcGridForm.ui.qml
+        Sources/Qml/Vues/ZoneExifForm.ui.qml
+        Sources/Qml/Vues/ZoneIptcForm.ui.qml
         Sources/Qml/Vues/MetadataPopupForm.ui.qml
         Sources/Qml/Vues/SettingsPopupForm.ui.qml
         Sources/Qml/Vues/TiTabButtonForm.ui.qml

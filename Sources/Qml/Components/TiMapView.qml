@@ -238,7 +238,7 @@ Map {
         /* Autres paramètres possibles :
           PluginParameter { name: "osm.mapping.highdpi_tiles";                value: "false" }
           PluginParameter { name: "osm.mapping.providersrepository.disabled"; value: "false" }
-          PluginParameter { name: "osm.mapping.providersrepository.address";  value: "?obsolete?" }
+          PluginParameter { name: "osm.mapping.providersrepository.address";  value: "?????" }
         */
     }
 

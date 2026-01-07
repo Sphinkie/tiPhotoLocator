@@ -4,29 +4,18 @@ import "../Controllers"
 
 
 /** *************************************************************************************
- * @brief Onglet avec les tags pouvant être appliquées à toutes les photos du dossier.
+ * @brief Onglet avec les tags EXIF et IPTC.
  * *************************************************************************************/
 ColumnLayout {
-    Layout.fillWidth: true
-    Layout.fillHeight: true
-
-    /// Titre des tags EXIF
-    ExifTitle {
-        Layout.fillWidth: true
-    }
 
     /// Tableau des tags EXIF
-    ExifGrid {
+    ZoneExif {
         Layout.fillWidth: true
-    }
-
-    /// Titre des tags IPTC
-    IptcTitle {
-        Layout.fillWidth: true
+        Layout.fillHeight: true
     }
 
     /// Tableau des tags IPTC
-    IptcGrid {
+    ZoneIptc {
         Layout.fillWidth: true
         Layout.fillHeight: true
     }

@@ -9,7 +9,6 @@ Zone {
     property string titleText
     implicitHeight: 60
 
-    // DDL color: TiStyle.suggestionBackgroundColor
     Text {
         width: parent.width
         text: parent.titleText

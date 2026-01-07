@@ -23,7 +23,7 @@ Window {
     width: 1920
     height: 1080
     // dimensions minimales
-    minimumHeight: 640
+    minimumHeight: 768
     minimumWidth: 1400
 
     // ----------------------------------------------------------------
@@ -44,44 +44,40 @@ Window {
     // ----------------------------------------------------------------
     // Les signaux vers PhotoModel pour une photo unitaire:
     // ----------------------------------------------------------------
-    /// Ajoute une JPG au modèle
+    /// Ajoute une JPG au modèle.
     signal append(string filename, string url)
-    /// Demande la lecture des metadata d'un fichier JPG
+    /// Demande la lecture des metadata d'un fichier JPG.
     signal fetchSingleExifMetadata(int row)
-    /// Fait un setData pour affecter un role du Model
+    /// Fait un setData pour affecter un role du Model.
     signal setPhotoProperty(int photo, string texte, string target)
-    /// Demande la lecture des metadata de toutes les fichiers JPG
+    /// Demande la lecture des metadata de toutes les fichiers JPG.
     signal fetchExifMetadata
-    /// Ecrit les metadata sur le disque
+    /// Ecrit les metadata sur le disque.
     signal saveMetadata
-    /// Applique le Creator (des settings) à toutes les photos du modèle
+    /// Applique le Creator (des settings) à toutes les photos du modèle.
     signal applyCreatorToAll
-    /// Affecte la position mémorisée à toutes les photos du cercle
+    /// Affecte la position mémorisée à toutes les photos du cercle.
     signal applySavedPositionToCoords
-    /// Mémorise la position courante
+    /// Mémorise la position courante.
     signal savePosition
-    /// Efface une position mémorisée
+    /// Efface une position mémorisée.
     signal clearSavedPosition
     // ----------------------------------------------------------------
     // Les signaux vers SuggestionModel
     // ----------------------------------------------------------------
     signal setSuggestionFilter(int row)
+    /// Demande le filtrage des suggestions sur la catégorie donnée.
     signal setCategoryFilter(string category)
-    /// Retire la photo courante de la Suggestion passée en paramètre
+    /// Retire la photo courante de la Suggestion passée en paramètre.
     signal removePhotoFromSuggestion(int row)
     // ----------------------------------------------------------------
     // Les signaux vers geocodeWrapper
     // ----------------------------------------------------------------
-    /// Demande d'informations géographiques sur la position courante
+    /// Demande d'informations géographiques sur la position courante.
     signal requestReverseGeocode(double lati, double longi)
+    /// Demande les coordonnées GPS de la ville donnée.
     signal requestCoords(string city)
 
-    // ----------------------------------------------------------------
-    // Fenêtre de dialogue pour selectionner le dossier
-    // ----------------------------------------------------------------
-    TiFolderDialog {
-        id: folderDialog
-    }
     // ----------------------------------------------------------------
     // Déclaration des popups
     // ----------------------------------------------------------------
@@ -102,6 +98,12 @@ Window {
     }
     MetadataPopup {
         id: metadataPopup
+    }
+    // ----------------------------------------------------------------
+    // Fenêtre de dialogue pour selectionner le dossier
+    // ----------------------------------------------------------------
+    TiFolderDialog {
+        id: folderDialog
     }
     // ----------------------------------------------------------------
     // Modèles de données: Liste des photos (fichiers) du dossier
@@ -133,7 +135,6 @@ Window {
      * ******************************************************************************/
     ToolbarPrincipale {
         id: toolBar
-        //width: parent.width
         anchors {
             top: menuBar.bottom
             right: parent.right
@@ -148,7 +149,6 @@ Window {
     Rectangle {
         id: line2
         anchors.top: toolBar.bottom
-        // TODO color: Style.surfaceContainerColor
         width: parent.width
         height: filtersAndTabslayout.height
 
@@ -292,10 +292,11 @@ Window {
      * ******************************************************************************/
     RowLayout {
         id: line4
-        anchors.bottom: parent.bottom
-        anchors.right: parent.right
-        anchors.left: parent.left
-        //anchors.top: line3.bottom
+        anchors {
+            bottom: parent.bottom
+            right: parent.right
+            left: parent.left
+        }
 
         /// Barre de boutons
         ToolbarBottom {
