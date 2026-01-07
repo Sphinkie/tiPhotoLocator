@@ -177,8 +177,11 @@ ListView {
         // On envoie les coordonnées pour centrer la carte et le cercle sur le point selectionné
         // sinon (if not has GPS) la position de la carte reste inchangée
         if (hasGPS) {
-            mapTab.mapView.center = _photoModel.selectedCoords
-            mapTab.mapView.mapCircle.center = _photoModel.selectedCoords
+            var coords = _photoModel.selectedCoords
+            if (!mapTab.mapView.visibleRegion.contains(coords)) {
+                mapTab.mapView.center = coords
+                mapTab.mapView.mapCircle.center = coords
+            }
         }
 
         // On change le filtrage des suggestions pour filtrer uniquement sur la photo active

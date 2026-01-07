@@ -24,21 +24,21 @@ import QtPositioning
  * ***********************************************************************************************************/
 Map {
     // Position initiale de la carte
-    center: QtPositioning.coordinate(homeCoords.x,
-                                     homeCoords.y) // _photoModel.selectedCoords
+    center: QtPositioning.coordinate(homeCoords.x, homeCoords.y)
     zoomLevel: 6
     plugin: mapPlugin
 
 
-    /* supportedMapTypes
-        0 Street Map        (Street map view)
-        1 Cycle Map         (Cycle map view)
-        2 Transit Map       (Public transit map view in daylight mode)
-        3 Night Transit Map (Public transit map view in night mode)
-        4 Terrain Map       (Terrain map view)
-        5 Hiking Map        (Hiking map view)
-        6 Custom URL Map    (Thunderforest)
-    */
+    /** ******************************************************************************************************
+     * Les différentes cartes supportées par le plugin OSM:
+       - 0 Street Map        (Street map view)
+       - 1 Cycle Map         (Cycle map view)
+       - 2 Transit Map       (Public transit map view in daylight mode)
+       - 3 Night Transit Map (Public transit map view in night mode)
+       - 4 Terrain Map       (Terrain map view)
+       - 5 Hiking Map        (Hiking map view)
+       - 6 Custom URL Map    (Thunderforest)
+    * ********************************************************************************************************/
     activeMapType: supportedMapTypes[6] // 0 ou 4
 
     property alias mapCircle: mapCircle
@@ -95,20 +95,25 @@ Map {
 
     /** ******************************************************************************************************
      * Appelé en cas de changement de la liste des MapItems. Cad:
-     * - lors d'un clic dans la listView,
+     * - lors d'un clic dans la listView, (doublon ? c'est aussi fait dans PhotoListView)
      * - parfois sur un changement des données du modèle, cad une nouvelle liste de photos. (pas toujours)
      *   mais de toutes façon, c'est trop tôt, on a pas encore lu les Exif.
      * *******************************************************************************************************/
     onMapItemsChanged: {
+        // TODO : A vérifier mais on pourrait enlever les recentrages de ce slot.
         // console.log("onMapItemsChanged")
         if (_photoModel.selectedItemHasGPS) {
-            // console.log(": re-center the map on selectedCoords", _photoModel.selectedCoords)
-            // On repositionne la carte sur les coords de la photo sélectionée
-            mapView.center = _photoModel.selectedCoords
-            // On repositionne le cercle
-            mapCircle.center = _photoModel.selectedCoords
+            var coords = _photoModel.selectedCoords
+            // on vérifie si les coordonnées sont dejà visibles sur la portion de carte apparente (viewport)
+            if (!mapView.visibleRegion.contains(coords)) {
+                // console.log(": re-center the map on selectedCoords", coords)
+                // On repositionne la carte sur les coords de la photo sélectionée
+                mapView.center = coords
+                // On repositionne le cercle
+                mapCircle.center = coords
+            }
         }
-        // on lit homeCoords dans les settings
+        // on relit homeCoords dans les settings
         homeCoords = settings.value("homeCoords")
     }
 

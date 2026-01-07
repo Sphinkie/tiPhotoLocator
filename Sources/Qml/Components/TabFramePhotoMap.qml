@@ -18,14 +18,14 @@ GridLayout {
     columns: 2 // carte et zone des tags
 
     /// Barre d'outils pour la carte, sur toute la largeur (controleur avec vue).
-    ToolbarMap {
+    MapToolbar {
         id: mapTools
         Layout.columnSpan: 2
         Layout.fillWidth: true
     }
 
     /// La carte est haute comme deux zones (controleur avec vue).
-    TiMapView {
+    MapView {
         id: mapView
         Layout.rowSpan: 2
         Layout.fillWidth: true

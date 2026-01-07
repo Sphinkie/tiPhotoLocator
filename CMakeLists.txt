@@ -46,7 +46,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/ImagettesListView.qml
 
         Sources/Qml/Components/SuggestionRepeater.qml
-        Sources/Qml/Components/TiMapView.qml
+        Sources/Qml/Components/MapView.qml
         Sources/Qml/Components/TiMenuBar.qml
         Sources/Qml/Components/TinyChip.qml
         Sources/Qml/Components/PhotoListview.qml
@@ -62,7 +62,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Controllers/SettingsPopup.qml
         Sources/Qml/Controllers/TiTabButton.qml
         Sources/Qml/Controllers/ToolbarBottom.qml
-        Sources/Qml/Controllers/ToolbarMap.qml
+        Sources/Qml/Controllers/MapToolbar.qml
         Sources/Qml/Controllers/ToolbarPrincipale.qml
         Sources/Qml/Controllers/ZoneCamera.qml
         Sources/Qml/Controllers/ZoneGeoloc.qml
