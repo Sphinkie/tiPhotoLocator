@@ -83,11 +83,11 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
 }
 
 /** *********************************************************************************************************
- * Table of Role names.
+ * @brief Table of Role names.
  * C'est la correspondance entre le role C++ et le nom de la property dans QML.
- * \note Implémentation obligatoire.
- * \note Un appel à `roleNames().value(role);` renvoie la property (string) correspondant au role demandé.
- * \note Un appel à `roleNames().key(property.toUtf8());` renvoie le role (int) correspondant à la property demandée.
+ * @note Implémentation obligatoire.
+ * @note Un appel à `roleNames().value(role);` renvoie la property (string) correspondant au role demandé.
+ * @note Un appel à `roleNames().key(property.toUtf8());` renvoie le role (int) correspondant à la property demandée.
  * **********************************************************************************************************/
 QHash<int, QByteArray> PhotoModel::roleNames() const
 {
@@ -132,7 +132,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
 /** *********************************************************************************************************
  * @brief Retourne le nom du role dans le modèle.
  * @param role: la valeur numérique du role.
- * \return la valeur texte du role.
+ * @return la valeur texte du role.
  * **********************************************************************************************************/
 QString PhotoModel::getRoleName(int role)
 {
@@ -143,7 +143,7 @@ QString PhotoModel::getRoleName(int role)
 /** **********************************************************************************************************
  * @brief Returns the full name of the photo. This is an example of unitary getter method.
  * @param row : Indice de l'élément à lire.
- * \returns a QVariant containing the absolute path and full name (image URL) of the photo.
+ * @returns a QVariant containing the absolute path and full name (image URL) of the photo.
  * ***********************************************************************************************************/
 QVariant PhotoModel::getUrl(int row)
 {
@@ -641,7 +641,7 @@ void PhotoModel::fetchExifMetadata(int photo)
     {
         qDebug() << "fetchExifMetadata" << "all photos";
         // On lit les tags de toutes les photos
-        QThreadPool::globalInstance()->setMaxThreadCount(4);   // Quantité maximum de threads
+        QThreadPool::globalInstance()->setMaxThreadCount(3);   // Quantité maximum de threads
         // Mesures pour scanner 40 photos:
         // 1 par 1 = 32sec - 2 par 2 = 18sec - 3 par 3 = 13sec - 4 par 4 = 12sec - 5 par 5 = 12sec
         ExifReadTask::init(this);
@@ -667,7 +667,8 @@ void PhotoModel::fetchExifMetadata(int photo)
 void PhotoModel::saveMetadata()
 {
     qDebug() << "saveMetadata";
-    // On recupère certaines indos dans les Settings
+
+    // On recupère certaines infos dans les Settings
     QSettings settings;
     bool backupsEnabled = settings.value("backupsEnabled", false).toBool();
     QString software = settings.value("software", "").toString();
@@ -676,6 +677,7 @@ void PhotoModel::saveMetadata()
     QThreadPool::globalInstance()->setMaxThreadCount(3);
     // On parcourt tous les items du modèle (par leur indice dans le vecteur)
     int row = 0;
+    int taskCount = 1;
     QModelIndex idx = this->index(row, 0);
     while (idx.isValid())
     {
@@ -703,9 +705,11 @@ void PhotoModel::saveMetadata()
             //Instanciation et ajout de la tâche au pool de threads
             ExifWriteTask *task = new ExifWriteTask(exifData, this, backupsEnabled);
             QThreadPool::globalInstance()->start(task);
+            taskCount++;
         }
         idx = idx.siblingAtRow(++row);
     }
+    this->setWriteProgress(taskCount);
     emit dataSaved();
 }
 
@@ -880,11 +884,30 @@ void PhotoModel::resetCircle()
 
 /** **********************************************************************************************************
  * @brief Positionne le flag "loading" qui indique que le modèle est en train de se remplir avec les données EXIF.
+ * @param state: True pour indiquer que la lecture est en cours.
  * ***********************************************************************************************************/
 void PhotoModel::setLoading(const bool state)
 {
     m_loading = state;
     emit loadingChanged();
+}
+
+/** **********************************************************************************************************
+ * @brief PhotoModel::setWriteProgress
+ * @param total : Nombre de photos dont on veut écrire les exifs.
+ *    Si 0 ou non fourni, alors c'est que l'on vient de faire une écriture.
+ * ***********************************************************************************************************/
+void PhotoModel::setWriteProgress(const int total)
+{
+    if (total == 0)
+        m_countWrite++;
+    else
+        m_totalWrite = total-1;
+
+    // On convertit dans une valeur entre 0 et 1.
+    m_writeProgress = qreal(m_countWrite) / m_totalWrite;
+    // qDebug() << "progress" << m_countWrite <<"/" << m_totalWrite << "=" << m_writeProgress ;
+    emit writeProgressChanged();
 }
 
 

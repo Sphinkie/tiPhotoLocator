@@ -97,10 +97,11 @@ void ExifWriteTask::run()
         qInfo() << exifProcess.readLine();  // On affiche une éventuelle erreur
     }
     // ---------------------------------------
-    // Execution terminée
+    // Execution terminée pour une photo
     // ---------------------------------------
     QModelIndex idx = m_exifData.value("index").toModelIndex();
     m_photoModel->setData(idx, false, PhotoModel::ToBeSavedRole);
+    m_photoModel->setWriteProgress();
 }
 
 

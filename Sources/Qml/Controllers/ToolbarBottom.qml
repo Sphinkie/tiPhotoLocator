@@ -26,7 +26,6 @@ ToolbarBottomForm {
     bt_save.onClicked: {
         // On lance l'écriture des données EXIF et IPTC (envoi signal)
         window.saveMetadata()
-        shouldSave = false
     }
 
     bt_quit.onClicked: {
@@ -40,14 +39,12 @@ ToolbarBottomForm {
     Connections {
         target: _photoModel
 
-
-        /** *******************************************************************
-         * Ce slot enlève le highlight du bouton Enregistrer.
-         * ********************************************************************/
+        /// Si l'enregistrement des données Exif est en cours, on enlève le highlight du bouton Enregistrer.
         function onDataSaved() {
             // console.log("onDataSaved")
             shouldSave = false
         }
+        /// Si le modèle a été vidé, on enlève le highlight du bouton Enregistrer.
         function onDataCleared() {
             // console.log("onDataCleared")
             shouldSave = false
@@ -69,7 +66,7 @@ ToolbarBottomForm {
                 // console.log("-", _photoModel.getRoleName(role))
                 if ((_photoModel.getRoleName(role) === "toBeSaved")
                         && (roles.length > 1))
-                    // alors on highlight le bouton Enregistrer.
+                    // alors on highlighte le bouton Enregistrer.
                     shouldSave = true
             })
         }

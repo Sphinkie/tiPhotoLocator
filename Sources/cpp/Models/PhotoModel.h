@@ -21,8 +21,10 @@ class PhotoModel : public QAbstractListModel
     Q_PROPERTY(bool selectedItemHasGPS READ getSelectedItemHasGPS NOTIFY selectedItemHasGPSChanged)
     //! Indique si un SavedPosition existe dans le modèle.
     Q_PROPERTY(bool savedPositionExists MEMBER m_savedPositionExists NOTIFY savedPositionExistsChanged)
-    //! Indique si le modele est en train de le lire les Exif.
+    //! Indique si le modele est en train de lire les données Exif.
     Q_PROPERTY(bool loading MEMBER m_loading NOTIFY loadingChanged)
+    //! Indique si le modele est en train d'écrire les données Exif.
+    Q_PROPERTY(qreal writeProgress MEMBER m_writeProgress NOTIFY writeProgressChanged)
 
 public:
     /** *****************************************************************************************************
@@ -85,6 +87,7 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // Surcharge
     void setData(const QVariantMap &value_list);
     void selectFirstPhoto();
+    void setWriteProgress(const int total = 0);
 
 private:
     // -----------------------------------------------------
@@ -131,6 +134,7 @@ signals:
     void savedPositionExistsChanged();                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
     void selectedItemHasGPSChanged();                                              //!< Signal émis quand si hasGPS change.
     void loadingChanged();                                                         //!< Signal émis quand le status loading change.
+    void writeProgressChanged();                                                   //!< Signal émis chque fois qu'une nouvelle donnée Exif est écrite dans un JPG.
 
     // -----------------------------------------------------
     // Membres
@@ -147,6 +151,9 @@ private:
     bool m_circleResetted = true;               //!< True si le rayon du cercle est à 0, et que le flag insideCircle a été resetté sur toutes les photos.
     bool m_savedPositionExists = false;         //!< True si le marker SavedPosition existe
     bool m_loading = false;                     //!< True si le modèle est en train de scanner le répertoire.
+    qreal m_writeProgress = 0;                  //!< Progression de l'écriture des données Exif dans les JPG. Varie de 0 à 1.
+    int m_totalWrite = 1;                  //!< Nombre de fichiers JPEG à modifier avec de nouvelles metadata.
+    int m_countWrite = 0;                  //!< Nombre de fichiers JPEG modifiés avec de nouvelles metadata.
 };
 
 #endif // PHOTOMODEL_H

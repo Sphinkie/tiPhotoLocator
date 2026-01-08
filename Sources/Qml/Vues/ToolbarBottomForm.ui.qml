@@ -13,11 +13,12 @@ Rectangle {
     // TODO color: TiStyle.surfaceContainerColor
     height: bottomToolBarLayout.height + 20
 
-    property alias bt_dump1: bt_dump1
-    property alias bt_dump2: bt_dump2
     property alias cb_backups: cb_backups
     property alias bt_save: bt_save
     property alias bt_quit: bt_quit
+    //    property alias saveProgress: saveProgress
+    property alias bt_dump1: bt_dump1
+    property alias bt_dump2: bt_dump2
     property bool useDebug
     property bool shouldSave
 
@@ -66,8 +67,8 @@ Rectangle {
             Layout.row: 1
             Layout.column: 1
             Layout.columnSpan: 2
-            value: 0.3
-            visible: shouldSave // FIXME
+            value: _photoModel.writeProgress
+            visible: (value > 0 && value < 1)
         }
 
         /// Ligne 3:

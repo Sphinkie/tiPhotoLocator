@@ -190,18 +190,22 @@ Window {
                 Layout.leftMargin: 120
                 Layout.fillWidth: true
                 Layout.rightMargin: 40
-                TiTabButton {
+                TabButton {
                     text: qsTr("PREVIEW")
                 }
-                TiTabButton {
+                TabButton {
                     text: qsTr("CARTE")
-                    filter: "geo"
+                    //filter: "geo"
+                    onClicked: _suggestionCategoryProxyModel.setFilterValue(
+                                   "geo")
                 }
-                TiTabButton {
+                TabButton {
                     text: qsTr("EXIF / IPTC TAGS")
-                    filter: "tag"
+                    //filter: "tag"
+                    onClicked: _suggestionCategoryProxyModel.setFilterValue(
+                                   "tag")
                 }
-                TiTabButton {
+                TabButton {
                     text: qsTr("GLOBAL")
                 }
             }
