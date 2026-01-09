@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls.Material
+import Qt5Compat.GraphicalEffects
 import ".."
 
 Rectangle {
@@ -23,7 +24,11 @@ Rectangle {
         source: iconZone
         anchors.centerIn: rectZone
     }
-
+    ColorOverlay {
+        anchors.fill: imgZone
+        source: imgZone
+        color: Material.background
+    }
     // Texte explicatif (optionnel)
     Text {
         color: Qt.darker(parent.color, 1.6)

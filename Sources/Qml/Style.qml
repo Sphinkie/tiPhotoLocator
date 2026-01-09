@@ -17,10 +17,10 @@ import QtQuick.Controls.Material
  * **********************************************************************************************************/
 Item {
 
-    readonly property color primaryColor: Material.primary
+    readonly property color primaryColor: Material.primaryColor
     readonly property color foregroundColor: Material.foreground
-    readonly property color backgroundColor: Material.background
-    readonly property color accentColor: Material.accent
+    readonly property color backgroundColor: Material.backgroundColor
+    readonly property color accentColor: Material.accentColor
 
     readonly property color secondaryColor: Material.Cyan
 
@@ -32,25 +32,25 @@ Item {
     // "#f7f7f7" // gris très clair pour la surface de fond (non utilisé)
     // readonly property color surfaceBackgroundColor: Material.color(Material.LightGreen,Material.Shade200)
 
-    // Surface container = couleur de fond des Toolbars
+    // Surface container = couleur de fond des Toolbars (backgroundColor)
     readonly property color surfaceContainerColor: Material.color(
                                                        Material.BlueGrey,
                                                        Material.Shade100)
 
-    // Zones standard : vert (primary)
+    // Zones standard : (backgroundColor)
     readonly property color zoneBackgroundColor: Material.color(
-                                                     Material.LightGreen,
-                                                     Material.Shade400)
+                                                     Material.BlueGrey,
+                                                     Material.Shade100)
 
     // Zones de suggestions : bleu (secondary)
     readonly property color suggestionBackgroundColor: Material.color(
                                                            Material.Cyan,
                                                            Material.Shade200)
 
-    // Chips : vert (primary)
+    // Chips: (backgroundColor)
     readonly property color chipBackgroundColor: Material.color(
-                                                     Material.LightGreen,
-                                                     Material.Shade700)
+                                                     Material.BlueGrey,
+                                                     Material.Shade400)
     readonly property color tinychipTextColor: "lightblue" // Textes des TinyChips
     readonly property color chipTextColor: "#ffe0b3" // Textes des Chips
 

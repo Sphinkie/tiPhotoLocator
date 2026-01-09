@@ -24,7 +24,7 @@ ListView {
         width: 160
         height: 160
         radius: 4
-        border.color: isSelected ? Material.primaryColor : "transparent"
+        border.color: isSelected ? Material.accentColor : "transparent"
         border.width: 3
         Image {
             id: image
