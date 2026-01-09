@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>qtquickcontrols2.conf</file>
         <file>Logos/logo_TPL.ico</file>
         <file>Cameras/Canon.png</file>
         <file>Cameras/DMC-TZ10.png</file>

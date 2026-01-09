@@ -31,9 +31,7 @@ Window {
     // ----------------------------------------------------------------
     Material.theme: Material.Light
     // Couleur du fond: Barre de menu. Barre des onglets
-    Material.background: Material.color(
-                             Material.BlueGrey,
-                             Material.Shade200)
+    Material.background: Material.color(Material.BlueGrey, Material.Shade200)
     // Couleur des textes.
     Material.foreground: Material.DeepPurple
     // Couleur d'accentuation pour les items et textes en highlight.
@@ -117,16 +115,31 @@ Window {
     // ------------------------------------------------------------------------------
     // Page principale
     // ------------------------------------------------------------------------------
+    Rectangle {
+        id: topLogo
+        height: 50
+        width: 80
+        color: Material.background
+        Image {
+            anchors.fill: parent
+            fillMode: Image.PreserveAspectFit
+            source: "/Images/logo_TPL.png"
+            anchors {
+                top: parent.top
+                left: parent.left
+            }
+        }
+    }
 
 
     /** *****************************************************************************
      * Ligne 0 : Menu principal (Prend toute la largeur)
      * ******************************************************************************/
-    TiMenuBar {
+    MainMenuBar {
         id: menuBar
         anchors {
             top: parent.top
-            left: parent.left
+            left: topLogo.right
             right: parent.right
         }
     }
@@ -301,6 +314,7 @@ Window {
             bottom: parent.bottom
             right: parent.right
             left: parent.left
+            bottomMargin: 8
         }
 
         /// Barre de boutons

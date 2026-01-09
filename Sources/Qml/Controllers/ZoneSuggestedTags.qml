@@ -8,22 +8,10 @@ import "../Vues"
  * ***********************************************************************************************************/
 ZoneSuggestedTagsForm {
 
+    /// TODO: On recupere des infos à partir des IA
     bt_getinfo.onClicked: {
 
-        // on recupere des infos à partir des IA
     }
-
-
-    /*
-    // Gestion du grisage du bouton
-    Connections{
-        target: tabbedPage
-        function onSelectedDataChanged()
-        {
-            bt_getinfo.enabled = true
-        }
-    }
-*/
 }
 
 /*##^##

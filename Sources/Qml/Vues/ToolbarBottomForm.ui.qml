@@ -10,13 +10,11 @@ import "../Components"
  * *********************************************************************************************************** */
 Rectangle {
     id: bottomRect
-    // TODO color: TiStyle.surfaceContainerColor
     height: bottomToolBarLayout.height + 20
 
     property alias cb_backups: cb_backups
     property alias bt_save: bt_save
     property alias bt_quit: bt_quit
-    //    property alias saveProgress: saveProgress
     property alias bt_dump1: bt_dump1
     property alias bt_dump2: bt_dump2
     property bool useDebug

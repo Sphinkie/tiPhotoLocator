@@ -10,7 +10,7 @@ import "../Javascript/TiUtilities.js" as Utilities
  * ***********************************************************************************************************/
 MenuBar {
 
-    /// Contenu du menu principal: Files | Settings | Help
+    /// Contenu du menu principal: Logo | Files | Settings | Help
     Menu {
         id: fileMenu
         title: qsTr("Files")

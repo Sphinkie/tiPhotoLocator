@@ -13,6 +13,7 @@ set_source_files_properties(Sources/Qml/Style.qml PROPERTIES QT_QML_SINGLETON_TY
 qt_add_executable(tiPhotoLocator
     Sources/cpp/main.cpp
     Resources/tiPhotoLocator.qrc
+    Resources/appicon.rc
 )
 
 qt_add_qml_module(tiPhotoLocator
@@ -45,7 +46,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/ImagettesListView.qml
         Sources/Qml/Components/SuggestionRepeater.qml
         Sources/Qml/Components/MapView.qml
-        Sources/Qml/Components/TiMenuBar.qml
+        Sources/Qml/Components/MainMenuBar.qml
         Sources/Qml/Components/TinyChip.qml
         Sources/Qml/Components/PhotoListview.qml
         Sources/Qml/Components/TabFramePhotoPreview.qml

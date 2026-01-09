@@ -9,7 +9,7 @@ import QtQuick.Controls.Material
  * ***********************************************************************************************************/
 ListView {
     spacing: 4
-
+    leftMargin: 16
     orientation: Qt.Horizontal
     model: _onTheMapProxyModel
     focus: false
