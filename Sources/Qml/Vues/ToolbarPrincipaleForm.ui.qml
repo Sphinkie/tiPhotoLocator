@@ -38,10 +38,12 @@ Rectangle {
 
         /// Nom du dossier en cours
         Label {
+            id: folderlabel
             text: qsTr("Répertoire:")
             font.pixelSize: 16
             // Positionnement à l'interieur du rectangle
             verticalAlignment: Text.AlignVCenter
+            visible: folderPath.visible
         }
         Text {
             id: folderPath

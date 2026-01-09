@@ -17,20 +17,15 @@ import QtQuick.Controls.Material
  * **********************************************************************************************************/
 Item {
 
-    readonly property color primaryColor: Material.primaryColor
-    readonly property color foregroundColor: Material.foreground
-    readonly property color backgroundColor: Material.backgroundColor
-    readonly property color accentColor: Material.accentColor
+    readonly property color foregroundColor: Material.foreground       // Material.DeepPurple
+    readonly property color backgroundColor: Material.background       // Material.BlueGrey,
+    readonly property color accentColor: Material.accent               // Material.Brown
 
-    readonly property color secondaryColor: Material.Cyan
+    readonly property color secondaryColor: Material.LightBlue
 
     // ----------------------------------------------------------------------
     // Surfaces: couleurs de fond pour différents backgrounds
     // ----------------------------------------------------------------------
-
-    // Fond principal
-    // "#f7f7f7" // gris très clair pour la surface de fond (non utilisé)
-    // readonly property color surfaceBackgroundColor: Material.color(Material.LightGreen,Material.Shade200)
 
     // Surface container = couleur de fond des Toolbars (backgroundColor)
     readonly property color surfaceContainerColor: Material.color(
@@ -42,17 +37,15 @@ Item {
                                                      Material.BlueGrey,
                                                      Material.Shade100)
 
-    // Zones de suggestions : bleu (secondary)
+    // Zones de suggestions : bleu (secondaryColor)
     readonly property color suggestionBackgroundColor: Material.color(
-                                                           Material.Cyan,
-                                                           Material.Shade200)
+                                                           Material.LightBlue,
+                                                           Material.Shade50)
 
     // Chips: (backgroundColor)
     readonly property color chipBackgroundColor: Material.color(
                                                      Material.BlueGrey,
                                                      Material.Shade400)
-    readonly property color tinychipTextColor: "lightblue" // Textes des TinyChips
-    readonly property color chipTextColor: "#ffe0b3" // Textes des Chips
 
     // ----------------------------------------------------------------------
     // Popups:
@@ -68,7 +61,7 @@ Item {
     // ----------------------------------------------------------------------
     // Textes
     // ----------------------------------------------------------------------
-    readonly property color primaryTextColor: "#212121" // gris foncé      : Listview + toolbar
+    readonly property color primaryTextColor: "#212121"   // gris foncé      : Listview + toolbar
     readonly property color secondaryTextColor: "#757575" // gris moyen    : Répertoire dans la toolbar
     // gris clair     : Annotations dans les settings
     readonly property color tertiaryTextColor: Material.color(Material.Black,
@@ -76,7 +69,7 @@ Item {
     // TODO : couleur à améliorer
     readonly property color accentTextColor: Material.accentColor // "firebrick" // filenames toBeSaved
 
-    // La couleur de fond de(s) filename(s) sélectionné(s) dans la liste
+    // La couleur de fond du filename(s) sélectionné dans la liste.
     readonly property color highlightBackgroundColor: Material.color(
                                                           Material.LightGreen,
                                                           Material.Shade200)

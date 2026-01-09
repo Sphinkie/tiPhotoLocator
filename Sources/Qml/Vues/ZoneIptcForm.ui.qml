@@ -15,6 +15,7 @@ Zone {
 
     iconZone: "qrc:/Images/icon-tag.png"
     txtZone: title + br + brief + br + usage + br + note + br
+    color: Style.suggestionBackgroundColor
 
     readonly property string title: "<b>IPTC tags</b> "
     readonly property string brief: "<i>International Press Telecom Council</i>"

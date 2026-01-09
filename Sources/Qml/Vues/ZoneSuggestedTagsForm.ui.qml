@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls.Material
 import "../Components"
-
+import ".."
 
 /** **********************************************************************************************************
  * @brief Cette zone affiche les Chips de Suggestion de Tags pour cette photo.

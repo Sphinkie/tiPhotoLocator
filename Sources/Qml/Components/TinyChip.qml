@@ -19,7 +19,6 @@ Label {
     text: content
     font.pixelSize: 14
 
-    // DDL color: TiStyle.tinychipTextColor
     background: Rectangle {
         color: Style.chipBackgroundColor
         implicitHeight: 24

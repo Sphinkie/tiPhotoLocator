@@ -14,7 +14,10 @@ ToolbarPrincipaleForm {
     bt_rescan.onClicked: {
         rescanWarning.open()
     }
+    bt_rescan.visible: (folderListModel.count > 0)
 
     /// Nom du dossier de photos
-    folderPath.text: Utilities.toStandardPath(folderListModel.folder)
+    folderPath.text: ">" + Utilities.toStandardPath(folderListModel.folder) + "<"
+    folderPath.visible: (folderListModel.count > 0)
+
 }
