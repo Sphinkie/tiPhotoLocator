@@ -10,11 +10,18 @@ import QtQuick.Controls.Material
  * On essaye de suivre quelques principes...
  * - Les roles des couleurs dans le MaterialDesign (Surface, Primary, Secondary, Tertiary):
  *   @sa https://m3.material.io/styles/color/the-color-system/color-roles
- *
+ * Choisi sur coolors.co :
+ *  lavender grey - indigo - ash brow - lawn green - deep saffron
+ * Traduit par (équivalents Material pre-defined colors) :
+ *  BlueGrey (100) - DeepPurple - Brown - Lime -  Orange
  * **********************************************************************************************************/
 Item {
 
-    readonly property color primaryColor: Material.primaryColor
+    readonly property color primaryColor: Material.primary
+    readonly property color foregroundColor: Material.foreground
+    readonly property color backgroundColor: Material.background
+    readonly property color accentColor: Material.accent
+
     readonly property color secondaryColor: Material.Cyan
 
     // ----------------------------------------------------------------------
@@ -25,11 +32,10 @@ Item {
     // "#f7f7f7" // gris très clair pour la surface de fond (non utilisé)
     // readonly property color surfaceBackgroundColor: Material.color(Material.LightGreen,Material.Shade200)
 
-    // Surface container = couleur de fond des outils en haut et en bas
-    // "#dcedc8" // vert très pale pour le container de fond
+    // Surface container = couleur de fond des Toolbars
     readonly property color surfaceContainerColor: Material.color(
-                                                       Material.LightGreen,
-                                                       Material.Shade200)
+                                                       Material.BlueGrey,
+                                                       Material.Shade100)
 
     // Zones standard : vert (primary)
     readonly property color zoneBackgroundColor: Material.color(

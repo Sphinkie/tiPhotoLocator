@@ -19,7 +19,7 @@ Window {
     title: "tiPhotoLocator" + " w:" + width + " h:" + height
     visible: true
     visibility: "Maximized"
-    // dimensions si on démaximise
+    // dimensions si on dé-maximise
     width: 1920
     height: 1080
     // dimensions minimales
@@ -27,17 +27,19 @@ Window {
     minimumWidth: 1400
 
     // ----------------------------------------------------------------
-    // Couleurs du thème: voir aussi fichier conf.
+    // Couleurs du thème: voir aussi Style.qml
     // ----------------------------------------------------------------
     Material.theme: Material.Light
-    // Couleur des textes
-    Material.foreground: Material.Orange
-    // Couleur primaire = le bandeau de l'application. Les Chips.
-    Material.primary: Material.Green
-    // Couleur d'accentuation pour les items en highlight.
-    Material.accent: Material.Red
-    // Couleur du fond: Barre de menu. Barre des onglets. Zones.
-    Material.background: Material.LightGreen
+    // Couleur du fond: Barre de menu. Barre des onglets
+    Material.background: Material.color(
+                             Material.BlueGrey,
+                             Material.Shade200)
+    // Couleur des textes.
+    Material.foreground: Material.DeepPurple
+    // Couleur d'accentuation pour les items et textes en highlight.
+    Material.accent: Material.Brown
+    // Couleur primaire = non utilisé sur Desktop ?
+    Material.primary: Material.Red
 
     // color: Style.surfaceBackgroundColor
 
@@ -131,7 +133,7 @@ Window {
 
 
     /** *****************************************************************************
-     * Ligne 1 : Barre d'outils du folder: refresh / reload / rescan / foldername
+     * Ligne 1 : Barre d'outils du folder: refresh / reload / foldername
      * ******************************************************************************/
     ToolbarPrincipale {
         id: toolBar
@@ -151,6 +153,7 @@ Window {
         anchors.top: toolBar.bottom
         width: parent.width
         height: filtersAndTabslayout.height
+        color: Style.surfaceContainerColor
 
         RowLayout {
             id: filtersAndTabslayout
@@ -195,13 +198,11 @@ Window {
                 }
                 TabButton {
                     text: qsTr("CARTE")
-                    //filter: "geo"
                     onClicked: _suggestionCategoryProxyModel.setFilterValue(
                                    "geo")
                 }
                 TabButton {
                     text: qsTr("EXIF / IPTC TAGS")
-                    //filter: "tag"
                     onClicked: _suggestionCategoryProxyModel.setFilterValue(
                                    "tag")
                 }

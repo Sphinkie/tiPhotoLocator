@@ -40,11 +40,9 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Main.qml
         Sources/Qml/Style.qml
         Sources/Qml/Components/Chips.qml
-
         Sources/Qml/Components/FatChip.qml
         Sources/Qml/Components/FolderLoadTimer.qml
         Sources/Qml/Components/ImagettesListView.qml
-
         Sources/Qml/Components/SuggestionRepeater.qml
         Sources/Qml/Components/MapView.qml
         Sources/Qml/Components/TiMenuBar.qml
@@ -60,7 +58,6 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Controllers/ZoneIptc.qml
         Sources/Qml/Controllers/MetadataPopup.qml
         Sources/Qml/Controllers/SettingsPopup.qml
-        Sources/Qml/Controllers/TiTabButton.qml
         Sources/Qml/Controllers/ToolbarBottom.qml
         Sources/Qml/Controllers/MapToolbar.qml
         Sources/Qml/Controllers/ToolbarPrincipale.qml
@@ -81,7 +78,6 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Vues/ZoneIptcForm.ui.qml
         Sources/Qml/Vues/MetadataPopupForm.ui.qml
         Sources/Qml/Vues/SettingsPopupForm.ui.qml
-        Sources/Qml/Vues/TiTabButtonForm.ui.qml
         Sources/Qml/Vues/ToolbarBottomForm.ui.qml
         Sources/Qml/Vues/ToolbarMapForm.ui.qml
         Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml

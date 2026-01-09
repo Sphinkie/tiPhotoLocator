@@ -12,6 +12,7 @@ Rectangle {
     property alias folderPath: folderPath
     implicitHeight: 60
     implicitWidth: 800
+    color: Style.surfaceContainerColor
 
     RowLayout {
         spacing: 20

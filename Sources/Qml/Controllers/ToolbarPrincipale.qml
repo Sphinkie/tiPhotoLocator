@@ -1,4 +1,6 @@
 import QtQuick
+import QtQuick.Controls.Material
+
 import "../Vues"
 import "../Javascript/TiUtilities.js" as Utilities
 
