@@ -10,12 +10,6 @@ var hierarchy =
       [ "ModelFolderList", "class_model_folder_list.html", null ]
     ] ],
     [ "GridLayout", null, [
-      [ "ExifGridForm", "class_exif_grid_form.html", [
-        [ "ExifGrid", "class_exif_grid.html", null ]
-      ] ],
-      [ "IptcGridForm", "class_iptc_grid_form.html", [
-        [ "IptcGrid", "class_iptc_grid.html", null ]
-      ] ],
       [ "TabFramePhotoMap", "class_tab_frame_photo_map.html", null ],
       [ "TabFramePhotoTags", "class_tab_frame_photo_tags.html", null ]
     ] ],
@@ -24,8 +18,8 @@ var hierarchy =
         [ "FatChip", "class_fat_chip.html", null ]
       ] ],
       [ "Style", "class_style.html", null ],
-      [ "ToolBarMapForm", "class_tool_bar_map_form.html", [
-        [ "ToolBarMap", "class_tool_bar_map.html", null ]
+      [ "ToolbarMapForm", "class_toolbar_map_form.html", [
+        [ "MapToolbar", "class_map_toolbar.html", null ]
       ] ],
       [ "ZoneCameraForm", "class_zone_camera_form.html", [
         [ "ZoneCamera", "class_zone_camera.html", null ]
@@ -42,13 +36,13 @@ var hierarchy =
     ] ],
     [ "ListView", null, [
       [ "ImagettesListView", "class_imagettes_list_view.html", null ],
-      [ "TiPhotoListview", "class_ti_photo_listview.html", null ]
+      [ "PhotoListview", "class_photo_listview.html", null ]
     ] ],
     [ "Map", null, [
-      [ "TiMapView", "class_ti_map_view.html", null ]
+      [ "MapView", "class_map_view.html", null ]
     ] ],
     [ "MenuBar", null, [
-      [ "TiMenuBar", "class_ti_menu_bar.html", null ]
+      [ "MainMenuBar", "class_main_menu_bar.html", null ]
     ] ],
     [ "MessageDialog", null, [
       [ "AboutDialog", "class_about_dialog.html", null ],
@@ -86,15 +80,21 @@ var hierarchy =
       [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", null ]
     ] ],
     [ "Rectangle", null, [
-      [ "ToolBarBottomForm", "class_tool_bar_bottom_form.html", [
-        [ "ToolBarBottom", "class_tool_bar_bottom.html", null ]
+      [ "ToolbarBottomForm", "class_toolbar_bottom_form.html", [
+        [ "ToolbarBottom", "class_toolbar_bottom.html", null ]
       ] ],
-      [ "ToolBarPrincipaleForm", "class_tool_bar_principale_form.html", [
-        [ "ToolBarPrincipale", "class_tool_bar_principale.html", null ]
+      [ "ToolbarPrincipaleForm", "class_toolbar_principale_form.html", [
+        [ "ToolbarPrincipale", "class_toolbar_principale.html", null ]
       ] ],
       [ "Zone", "class_zone.html", [
+        [ "ZoneExifForm", "class_zone_exif_form.html", [
+          [ "ZoneExif", "class_zone_exif.html", null ]
+        ] ],
         [ "ZoneGeolocForm", "class_zone_geoloc_form.html", [
           [ "ZoneGeoloc", "class_zone_geoloc.html", null ]
+        ] ],
+        [ "ZoneIptcForm", "class_zone_iptc_form.html", [
+          [ "ZoneIptc", "class_zone_iptc.html", null ]
         ] ],
         [ "ZonePreviewForm", "class_zone_preview_form.html", [
           [ "ZonePreview", "class_zone_preview.html", null ]
@@ -105,10 +105,7 @@ var hierarchy =
         [ "ZoneSuggestedTagsForm", "class_zone_suggested_tags_form.html", [
           [ "ZoneSuggestedTags", "class_zone_suggested_tags.html", null ]
         ] ],
-        [ "ZoneTitle", "class_zone_title.html", [
-          [ "ExifTitle", "class_exif_title.html", null ],
-          [ "IptcTitle", "class_iptc_title.html", null ]
-        ] ]
+        [ "ZoneTitle", "class_zone_title.html", null ]
       ] ]
     ] ],
     [ "Repeater", null, [
@@ -118,11 +115,6 @@ var hierarchy =
       [ "TabFramePhotoPreview", "class_tab_frame_photo_preview.html", null ]
     ] ],
     [ "Suggestion", "struct_suggestion.html", null ],
-    [ "TabButton", null, [
-      [ "TiTabButtonForm", "class_ti_tab_button_form.html", [
-        [ "TiTabButton", "class_ti_tab_button.html", null ]
-      ] ]
-    ] ],
     [ "Timer", null, [
       [ "FolderLoadTimer", "class_folder_load_timer.html", null ]
     ] ],

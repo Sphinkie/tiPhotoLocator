@@ -243,6 +243,18 @@ void SuggestionModel::dumpData()
     m_dumpedRow++;
 }
 
+/** **********************************************************************************************************
+ * @brief Deletes all the items of the Model.
+ * @details On utilise cette fonction quand on scanne un nouveau répertoire de photos.
+ * ***********************************************************************************************************/
+void SuggestionModel::clear()
+{
+    beginResetModel();  // cette méthode envoie un signal indiquant à tous que ce modèle va subir un changement radical
+    m_suggestions.clear();
+    m_selectedPhotoRow = -4;
+    endResetModel();    // cette méthode envoie un signal ModelReset.
+}
+
 
 /** **********************************************************************************************************
  * @brief Operateur de comparaison.

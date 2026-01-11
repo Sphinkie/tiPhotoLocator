@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['imageheight_0',['imageHeight',['../struct_photo.html#a4555e7bf8da94eb11398e0948ab6c3d2',1,'Photo']]],
-  ['imagettes_1',['imagettes',['../class_main.html#af3dfb2a32b39c98a991299276fc2b67a',1,'Main']]],
-  ['imageurl_2',['imageUrl',['../struct_photo.html#a201e9224f059933d60838a7fe331646d',1,'Photo']]],
-  ['imagewidth_3',['imageWidth',['../struct_photo.html#a47567d8ecc3f845ae1846903113d625b',1,'Photo']]],
-  ['insidecircle_4',['insideCircle',['../struct_photo.html#a33f360a2eccf88cc843e3a469600b3d5',1,'Photo']]],
-  ['ismarker_5',['isMarker',['../struct_photo.html#accaf8898f12c82d9872c555309d563b1',1,'Photo']]],
-  ['isselected_6',['isSelected',['../struct_photo.html#a8e391469cda515a3aacb6edafa2a8254',1,'Photo']]],
-  ['iswelcome_7',['isWelcome',['../struct_photo.html#a46c9dbe9c662028eff1907e39d5941f2',1,'Photo']]]
+  ['geotimer_0',['geoTimer',['../class_photo_listview.html#a82d6553475abc572c63bd0caaaf792a1',1,'PhotoListview']]],
+  ['gpsicon_1',['gpsIcon',['../class_photo_listview.html#a541ea37c55ae2e2943b6ffcd890967b3',1,'PhotoListview']]],
+  ['gpslatitude_2',['gpsLatitude',['../struct_photo.html#aebc8cca52d5bbb81ca5726f221818839',1,'Photo']]],
+  ['gpslongitude_3',['gpsLongitude',['../struct_photo.html#ad76b83d8bbaae4a2e4bfefef2f268008',1,'Photo']]],
+  ['groupbox1_4',['groupBox1',['../class_settings_popup_form.html#abc412e3e5366a5060f3e74807fceba1e',1,'SettingsPopupForm']]],
+  ['groupbox2_5',['groupBox2',['../class_settings_popup_form.html#a01407a92ae641eb3744def9755f1938e',1,'SettingsPopupForm']]]
 ];

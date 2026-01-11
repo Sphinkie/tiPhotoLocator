@@ -1,6 +1,28 @@
 var searchData=
 [
-  ['toexifdate_0',['toExifDate',['../class_utilities.html#ad970fb1a077cf5d352faa2878ce410fc',1,'Utilities']]],
-  ['toreadabledatetime_1',['toReadableDateTime',['../class_utilities.html#ae08d27f825de4f51f5523f6f014cf597',1,'Utilities']]],
-  ['tostandarddatetime_2',['toStandardDateTime',['../class_utilities.html#a11c06c3910d1553d791258b060d436d8',1,'Utilities']]]
+  ['saveconfiguration_0',['saveConfiguration',['../class_settings_popup.html#a43b44a1a602cbe2679e1473b3c380053',1,'SettingsPopup']]],
+  ['savedpositionexistschanged_1',['savedPositionExistsChanged',['../class_photo_model.html#ab3c7d2f0f2caf79b26d742af009431d7',1,'PhotoModel']]],
+  ['savemetadata_2',['saveMetadata',['../class_photo_model.html#ac393e2839ea5993f199ec669973972ef',1,'PhotoModel::saveMetadata()'],['../class_main.html#a4f0612873776f7214fddf19803580063',1,'Main::saveMetadata()']]],
+  ['saveposition_3',['savePosition',['../class_main.html#a5f6509a236e35dc1666aa6ed1b790c99',1,'Main']]],
+  ['selectedcoords_4',['selectedCoords',['../class_photo_model.html#a113f7846c8f4fe7dc46bcc3d59d8e676',1,'PhotoModel']]],
+  ['selectedcoordschanged_5',['selectedCoordsChanged',['../class_photo_model.html#ad821814efc5f687c4c1db6935dcd04ee',1,'PhotoModel']]],
+  ['selecteditemhasgpschanged_6',['selectedItemHasGPSChanged',['../class_photo_model.html#a6a4eacd86096cf190af82576907e3a00',1,'PhotoModel']]],
+  ['selectedrow_7',['selectedRow',['../class_photo_model.html#aa9fed3a1b288e554337ded22bdb1cf35',1,'PhotoModel']]],
+  ['selectedrowchanged_8',['selectedRowChanged',['../class_photo_model.html#ac6f14df5683cb7c053c9d5c6982a3d2c',1,'PhotoModel']]],
+  ['selectfirstphoto_9',['selectFirstPhoto',['../class_photo_model.html#aa3d514c34c26ba9d741185fa4fff4bb2',1,'PhotoModel']]],
+  ['sendsuggestion_10',['sendSuggestion',['../class_photo_model.html#ab8f7cb78c57128f6a6df184a4d89f2bf',1,'PhotoModel']]],
+  ['setallitemscoords_11',['setAllItemsCoords',['../class_on_the_map_proxy_model.html#a8578bb0c25636337ba57681da049e4f1',1,'OnTheMapProxyModel']]],
+  ['setallitemssavedcoords_12',['setAllItemsSavedCoords',['../class_on_the_map_proxy_model.html#aebd8850a9093bc4166d6aed75d638141',1,'OnTheMapProxyModel']]],
+  ['setcategoryfilter_13',['setCategoryFilter',['../class_main.html#a7fca31d9bd8cce3190fe42c62dd946a9',1,'Main']]],
+  ['setdata_14',['setData',['../class_photo_model.html#ad7a5d45624200d819ee0ab429387baa0',1,'PhotoModel::setData(const QModelIndex &amp;index, const QVariant &amp;value, int role) override'],['../class_photo_model.html#a606c1207c36cdf5e81f346ca82cec2d8',1,'PhotoModel::setData(const QVariantMap &amp;value_list)'],['../class_photo_model.html#a5aef53c6395a6ccd579a019c62e472e0',1,'PhotoModel::setData(int row, QString value, QString property)']]],
+  ['setfilterenabled_15',['setFilterEnabled',['../class_on_the_map_proxy_model.html#ad5397db53587218f59299d48696f1b99',1,'OnTheMapProxyModel::setFilterEnabled()'],['../class_suggestion_category_proxy_model.html#a7ecc03f7eb5925bef1c0937221bcd469',1,'SuggestionCategoryProxyModel::setFilterEnabled()'],['../class_suggestion_proxy_model.html#ab6c4e1a2a793fc44957953297424b19c',1,'SuggestionProxyModel::setFilterEnabled()'],['../class_undated_photo_proxy_model.html#aee1302adb09891cddf838d3f8c1250f5',1,'UndatedPhotoProxyModel::setFilterEnabled()'],['../class_unlocalized_proxy_model.html#a50743a6fc31dae190a2da1eaf370dab7',1,'UnlocalizedProxyModel::setFilterEnabled()']]],
+  ['setfiltervalue_16',['setFilterValue',['../class_suggestion_category_proxy_model.html#a4033c7903dcf1ae1254b3e6b8a21f005',1,'SuggestionCategoryProxyModel::setFilterValue()'],['../class_suggestion_proxy_model.html#add1caa599574ee457caa9f63251e5252',1,'SuggestionProxyModel::setFilterValue()']]],
+  ['setincircleitemcoords_17',['setInCircleItemCoords',['../class_photo_model.html#aa35674fe9c8ec79d2993ce56614bb909',1,'PhotoModel']]],
+  ['setloading_18',['setLoading',['../class_photo_model.html#a5b6f4559d756ce4ca23aa60bf89f5f1c',1,'PhotoModel']]],
+  ['setphotoproperty_19',['setPhotoProperty',['../class_photo_model.html#a50dc093e369a2741b62aa03556df061c',1,'PhotoModel::setPhotoProperty()'],['../class_main.html#ac0ff9966818be09f18bfe42bc766ae33',1,'Main::setPhotoProperty()']]],
+  ['setwriteprogress_20',['setWriteProgress',['../class_photo_model.html#a55deb039e2fbabeb1de1f3ba871c3e48',1,'PhotoModel']]],
+  ['suggestion_21',['Suggestion',['../struct_suggestion.html#af2eddc6a6b273397e3455724a25c88ef',1,'Suggestion::Suggestion()'],['../struct_suggestion.html#a7b7b80cdbe8f3980639fe23fae9960b6',1,'Suggestion::Suggestion(const QString &amp;suggestion_text, const QString &amp;suggestion_target, const QString suggestion_category, const int first_photo)']]],
+  ['suggestioncategoryproxymodel_22',['SuggestionCategoryProxyModel',['../class_suggestion_category_proxy_model.html#a7f173be0c42da4ac2ddeef414d1d4247',1,'SuggestionCategoryProxyModel']]],
+  ['suggestionmodel_23',['SuggestionModel',['../class_suggestion_model.html#a0e304826f0095e36eecd9ce321ac4eb0',1,'SuggestionModel']]],
+  ['suggestionproxymodel_24',['SuggestionProxyModel',['../class_suggestion_proxy_model.html#af3e1807aac2879bcb22d656c4aead90b',1,'SuggestionProxyModel']]]
 ];

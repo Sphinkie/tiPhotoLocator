@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalise_0',['normalise',['../class_utilities.html#afdd3b18e7db7c7b7d397fd7b3c7201ab',1,'Utilities']]]
+  ['loadingchanged_0',['loadingChanged',['../class_photo_model.html#a1f7a41a6081eb84b1dd2bb67cd0377d7',1,'PhotoModel']]]
 ];

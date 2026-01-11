@@ -32,13 +32,21 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     // -----------------------------------------------------
+    // Méthodes pouvant être appelées depuis QML
+    // -----------------------------------------------------
+    Q_INVOKABLE void dumpData();
+    Q_INVOKABLE void clear();
+
+    // -----------------------------------------------------
     // Méthodes publiques
     // -----------------------------------------------------
     void removeCurrentPhotoFromSuggestion(const QModelIndex index);
     void removeFromSuggestion(const QString target);
-    Q_INVOKABLE void dumpData();
 
 public slots:
+    // -----------------------------------------------------
+    // Slots
+    // -----------------------------------------------------
     void onSelectedPhotoChanged(const int row);
     void append(const QString text, const QString target, const QString category, int photo_row = -2);
 
@@ -53,7 +61,7 @@ private:
     // Membres
     // -----------------------------------------------------
     QVector<Suggestion> m_suggestions;  //!< La liste des Suggestion
-    int m_selectedPhotoRow = -4;        //!< La valeur par défaut -4 ne correspond à aucune photo.
+    int m_selectedPhotoRow = -4;        //!< indice de la photo courante. Valeur spéciales: -4 = aucune photo | -1 = toutes les photos | -2 = la photo sélectionée'.
     int m_dumpedRow;                    //!< La dernière ligne affichée dans le dump de debug.
 
 };

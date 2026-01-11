@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['tabbedpage_0',['tabbedPage',['../class_main.html#a3994eabf899973374689e40d9deb48d7',1,'Main']]],
-  ['tabframeglobaltags_1',['tabFrameGlobalTags',['../class_main.html#a808b0b55bfd46ccf207d05db4ee86289',1,'Main']]],
-  ['target_2',['target',['../struct_suggestion.html#ac3b42e1b81fb69adfb3ad0334b80fe1e',1,'Suggestion']]],
-  ['text_3',['text',['../struct_suggestion.html#aecac3e72672ace070a7c01823b4beac1',1,'Suggestion']]],
-  ['tobesaved_4',['toBeSaved',['../struct_photo.html#a66c836579b45614de3f51edba11ea2fe',1,'Photo']]],
-  ['toolbar_5',['toolBar',['../class_main.html#a9158bc0176cf09c557d3e419a0755faa',1,'Main']]]
+  ['photos_0',['photos',['../struct_suggestion.html#af319b358957378992fcbcd14022e2125',1,'Suggestion']]],
+  ['phototagstab_1',['photoTagsTab',['../class_main.html#a937161b6dd4dce68dc7521e1b27819dd',1,'Main']]],
+  ['previewimage_2',['previewImage',['../class_tab_frame_photo_preview.html#aec47a78e5b8f23286fac3ce3a46f449b',1,'TabFramePhotoPreview']]],
+  ['previewview_3',['previewView',['../class_main.html#aac7638d6eb0c8f33f5cf7fe00e8eded7',1,'Main']]]
 ];

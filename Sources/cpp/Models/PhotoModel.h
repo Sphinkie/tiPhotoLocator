@@ -108,7 +108,6 @@ public slots:
     // Slots
     // -----------------------------------------------------
     void append(const QString filename, const QString url);
-    //void appendSavedPosition(QGeoCoordinate coords );
     void appendSavedPosition();
     void fetchExifMetadata(int row = -1);
     void saveMetadata();

@@ -10,25 +10,27 @@ import ".."
  * A noter que l'ombre doit être définie avant le rectangle, de façon à être dessinbée avant, donc dessous.
  * A noter que le Rectangle contient un texte, mais ne s'adapte pas automatiquement à la longueur du texte.
  * C'est plutot le texte qui s'adapte au rectangle parent.
- * @sa {https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html}
+ * @see {https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html}
  * ***********************************************************************************************************/
 Item {
-    property bool canSave: false
-    property bool editable: false
-    property bool deletable: false
+    property bool canSave: false ///< type:bool Fait apparaitre le mini-bouton Save.
+    property bool editable: false ///< type:bool Fait apparaitre le mini-bouton Edit.
+    property bool deletable: false ///< type:bool Fait apparaitre le mini-bouton Delete.
+    /// type:string le texte du Chips
     property string content
+    /// type:string Le label du Chips
     property string targetName
-    property alias editArea: editArea
-    property alias saveArea: saveArea
-    property alias revertArea: revertArea
-    property alias deleteArea: deleteArea
-    // Pour le controle inviduel des items
+    property alias editArea: editArea ///< type:MouseArea Zone cliquable du mini-bouton Edit.
+    property alias saveArea: saveArea ///< type:MouseArea Zone cliquable du mini-bouton Save.
+    property alias revertArea: revertArea ///< type:MouseArea Zone cliquable du mini-bouton Revert.
+    property alias deleteArea: deleteArea ///< type:MouseArea Zone cliquable du mini-bouton Delete.
+    /// Pour le controle inviduel des items
     property alias chipText: chipText
     // Les différents Chips doivent être dans un ColumLayout. On peut ainsi les aligner tous de la même façon.
-    Layout.topMargin: 10
-    Layout.leftMargin: 20
-    implicitHeight: 32
-    implicitWidth: 240
+    Layout.topMargin: 10 ///< marge haut (outside the item)
+    Layout.leftMargin: 20 ///< marge gauche (outside the item)
+    implicitHeight: 32 ///< Hauteur préférée si height n'est pas spécifiée.
+    implicitWidth: 240 ///< Largeur préférée si width n'est pas spécifiée.
 
 
     /** ************************************************************************************
@@ -71,7 +73,7 @@ Item {
             width: 26
             source: "qrc:/Images/chip-edit.png"
             visible: editable
-            // Clic sur l'icone EDIT: A gérer dans le controleur de la Zone parente avec chipXXX.editArea.onClicked:{...}
+            /// Clic sur l'icone EDIT: A gérer dans le controleur de la Zone parente avec chipXXX.editArea.onClicked:{...}
             MouseArea {
                 id: editArea
                 anchors.fill: parent
@@ -93,7 +95,7 @@ Item {
             width: 26
             source: "qrc:/Images/chip-save.png"
             visible: canSave
-            // Clic sur l'icone SAVE: A gérer dans le controlleur de la Zone parente avec chipXXX.saveArea.onClicked:{...}
+            /// Clic sur l'icone SAVE: A gérer dans le controlleur de la Zone parente avec chipXXX.saveArea.onClicked:{...}
             MouseArea {
                 id: saveArea
                 anchors.fill: parent
@@ -154,7 +156,7 @@ Item {
             width: 26
             source: "qrc:/Images/chip-del.png"
             visible: deletable
-            // Clic sur l'icone DELETE: A gérer dans le controlleur de la Zone parente avec chipXXX.deleteArea.onClicked:{...}
+            /// Clic sur l'icone DELETE: A gérer dans le controlleur de la Zone parente avec chipXXX.deleteArea.onClicked:{...}
             MouseArea {
                 id: deleteArea
                 anchors.fill: parent
@@ -174,7 +176,7 @@ Item {
             width: 26
             source: "qrc:/Images/chip-revert.png"
             visible: canSave
-            // Clic sur l'icone REVERT: A gérer dans le controlleur de la Zone parente avec chipXXX.revertArea.onClicked:{...}
+            /// Clic sur l'icone REVERT: A gérer dans le controlleur de la Zone parente avec chipXXX.revertArea.onClicked:{...}
             MouseArea {
                 id: revertArea
                 anchors.fill: parent

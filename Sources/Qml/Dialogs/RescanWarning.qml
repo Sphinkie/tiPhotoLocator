@@ -18,6 +18,7 @@ MessageDialog {
     onAccepted: {
         console.log("Manual Rescan")
         _photoModel.clear()
+        _suggestionModel.clear()
         // On ajoute une à une les photos du dossier dans le modèle
         for (var i = 0; i < folderListModel.count; i++) {
             window.append(folderListModel.get(i, "fileName"),

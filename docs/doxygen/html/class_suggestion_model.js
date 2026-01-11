@@ -10,6 +10,7 @@ var class_suggestion_model =
     [ "addCategoryToSuggestion", "class_suggestion_model.html#afd4ef6320e2a644e8dbd9c40f9ff3997", null ],
     [ "addPhotoToSuggestion", "class_suggestion_model.html#a0de02decfdbfe787caf63895eca58cb6", null ],
     [ "append", "class_suggestion_model.html#ab7946b300734bc0e257f3e5a8904ec3f", null ],
+    [ "clear", "class_suggestion_model.html#adf99459a4600a0d0aa9c77858bfa23e8", null ],
     [ "data", "class_suggestion_model.html#a403421fd09afc22273162b74e74b7d7c", null ],
     [ "dumpData", "class_suggestion_model.html#af3345223f2aa9b5d563b9097271a1d20", null ],
     [ "flags", "class_suggestion_model.html#ae3b26fa49dff5a4c7f1a79e061dd9970", null ],

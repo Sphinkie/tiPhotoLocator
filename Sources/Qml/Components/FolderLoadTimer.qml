@@ -10,8 +10,9 @@ Timer {
     running: false
     repeat: false
     onTriggered: {
-        // On vide le photoModel
+        // On vide les PhotoModel et SuggestionModel.
         _photoModel.clear()
+        _suggestionModel.clear()
         // On ajoute les photos du dossier dans le modèle
         for (var i = 0; i < folderListModel.count; i++) {
             window.append(folderListModel.get(i, "fileName"),

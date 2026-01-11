@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['filterenabled_0',['filterEnabled',['../class_on_the_map_proxy_model.html#ab41c6f6de0761832ee25c3262d57743c',1,'OnTheMapProxyModel::filterEnabled'],['../class_suggestion_category_proxy_model.html#a32e202125b547edffe7900d9df77af86',1,'SuggestionCategoryProxyModel::filterEnabled'],['../class_suggestion_proxy_model.html#a886804bbb675e92fd9bc8d4f549375eb',1,'SuggestionProxyModel::filterEnabled'],['../class_undated_photo_proxy_model.html#a9f12a4092467d47a51bd8da5b537bc41',1,'UndatedPhotoProxyModel::filterEnabled'],['../class_unlocalized_proxy_model.html#a523656010d6711d9b1186dc75f7745eb',1,'UnlocalizedProxyModel::filterEnabled']]]
+  ['deletable_0',['deletable',['../class_chips.html#af6f4c0da806a37ff3304980e3261a1bf',1,'Chips']]],
+  ['deletearea_1',['deleteArea',['../class_chips.html#ad300d4af5e2a4d8826fbd6f475678ac8',1,'Chips']]]
 ];

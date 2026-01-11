@@ -108,8 +108,8 @@ Graphe d'héritage de ExifReadTask:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ac76e0c8b20e09ce264693b434edce9db" id="r_ac76e0c8b20e09ce264693b434edce9db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac76e0c8b20e09ce264693b434edce9db">ExifReadTask</a> (QString filePath)</td></tr>
-<tr class="memdesc:ac76e0c8b20e09ce264693b434edce9db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.  <br /></td></tr>
+<tr class="memitem:a7a36929db65f2ac13251ee5e4925a472" id="r_a7a36929db65f2ac13251ee5e4925a472"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a36929db65f2ac13251ee5e4925a472">ExifReadTask</a> (int pos, QString filePath)</td></tr>
+<tr class="memdesc:a7a36929db65f2ac13251ee5e4925a472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.  <br /></td></tr>
 <tr class="memitem:a1f0693a4aa7d57897f906d3db0fd77b8" id="r_a1f0693a4aa7d57897f906d3db0fd77b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f0693a4aa7d57897f906d3db0fd77b8">run</a> ()</td></tr>
 <tr class="memdesc:a1f0693a4aa7d57897f906d3db0fd77b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lancement de la tache. On lance <b>exifTool</b> dans un process, et on analyse la réponse. Cette tache est exécutée dans un thread QRunnable. A la fin de la tache, processLine écrit les résultats dans <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -133,6 +133,9 @@ Attributs privés</h2></td></tr>
 <tr class="memitem:adee848da5859f1e0a5ef3ea8b5fd155d" id="r_adee848da5859f1e0a5ef3ea8b5fd155d"><td class="memItemLeft" align="right" valign="top"><a id="adee848da5859f1e0a5ef3ea8b5fd155d" name="adee848da5859f1e0a5ef3ea8b5fd155d"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filePath</b></td></tr>
 <tr class="memdesc:adee848da5859f1e0a5ef3ea8b5fd155d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom du fichier contenant les arguments de ExifTool. <br /></td></tr>
+<tr class="memitem:a40e7700eda71c078bd4a1dcc37fe928a" id="r_a40e7700eda71c078bd4a1dcc37fe928a"><td class="memItemLeft" align="right" valign="top"><a id="a40e7700eda71c078bd4a1dcc37fe928a" name="a40e7700eda71c078bd4a1dcc37fe928a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_filePos</b> =0</td></tr>
+<tr class="memdesc:a40e7700eda71c078bd4a1dcc37fe928a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro du fichier dans la listView. <br /></td></tr>
 <tr class="memitem:ab4eef780350cedaf18f03690daf6c8d2" id="r_ab4eef780350cedaf18f03690daf6c8d2"><td class="memItemLeft" align="right" valign="top"><a id="ab4eef780350cedaf18f03690daf6c8d2" name="ab4eef780350cedaf18f03690daf6c8d2"></a>
 QByteArray&#160;</td><td class="memItemRight" valign="bottom"><b>m_rxLine</b></td></tr>
 <tr class="memdesc:ab4eef780350cedaf18f03690daf6c8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Données ExifTool en cours de réception. <br /></td></tr>
@@ -171,8 +174,8 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 <div class="line"> By default XMP structures are flattened into individual tags in the JSON output, but the original structure may be preserved with the -struct option (this also causes all list-type XMP tags to be output as JSON arrays, otherwise single-item lists would be output as simple strings).</div>
 <div class="line"> Note that ExifTool quotes JSON values only if they don&#39;t look like numbers (regardless of the original storage format or the relevant metadata specification).</div>
 </div><!-- fragment --> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="ac76e0c8b20e09ce264693b434edce9db" name="ac76e0c8b20e09ce264693b434edce9db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac76e0c8b20e09ce264693b434edce9db">&#9670;&#160;</a></span>ExifReadTask()</h2>
+<a id="a7a36929db65f2ac13251ee5e4925a472" name="a7a36929db65f2ac13251ee5e4925a472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a36929db65f2ac13251ee5e4925a472">&#9670;&#160;</a></span>ExifReadTask()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,8 +186,12 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
         <tr>
           <td class="memname">ExifReadTask::ExifReadTask </td>
           <td>(</td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -196,9 +203,9 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 
 <p>Constructeur. On enregistre le chemin et le nom du fichier JPG à lire. </p>
 <hr  />
- <dl class="section note"><dt>Note</dt><dd>Si on passe un nom de chemin, le process va traiter toutes les images du dossier. Cependant, on évite de le faire car, en termes de performances, ce n'est pas optimisé. </dd></dl>
-<dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
+    <tr><td class="paramname">pos</td><td>le numero du fichier dans la liste. </td></tr>
     <tr><td class="paramname">filePath</td><td>le chemin + nom du fichier JPG à lire. </td></tr>
   </table>
   </dd>

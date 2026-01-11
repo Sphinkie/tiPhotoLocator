@@ -108,10 +108,10 @@ Graphe d'héritage de GeocodeWrapper:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Connecteurs publics</h2></td></tr>
-<tr class="memitem:a4317ba9f8e11b9bf6b555df8a065b54b" id="r_a4317ba9f8e11b9bf6b555df8a065b54b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4317ba9f8e11b9bf6b555df8a065b54b">requestReverseGeocode</a> (double latitude, double longitude)</td></tr>
-<tr class="memdesc:a4317ba9f8e11b9bf6b555df8a065b54b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple: 38.980 et 1.433 =&gt; <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=313893003&amp;class=highway">Résultat</a> La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>  <br /></td></tr>
+<tr class="memitem:a122fadb46be185cb6e7e375d618f3d9c" id="r_a122fadb46be185cb6e7e375d618f3d9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a122fadb46be185cb6e7e375d618f3d9c">requestReverseGeocode</a> (double lati, double longi)</td></tr>
+<tr class="memdesc:a122fadb46be185cb6e7e375d618f3d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple: 38.980 et 1.433 =&gt; <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=313893003&amp;class=highway">Résultat</a> La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>  <br /></td></tr>
 <tr class="memitem:ab3c38ff6c5a53d2b6c04cf5c88763b23" id="r_ab3c38ff6c5a53d2b6c04cf5c88763b23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3c38ff6c5a53d2b6c04cf5c88763b23">requestCoordinates</a> (QString city)</td></tr>
-<tr class="memdesc:ab3c38ff6c5a53d2b6c04cf5c88763b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>  <br /></td></tr>
+<tr class="memdesc:ab3c38ff6c5a53d2b6c04cf5c88763b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -233,7 +233,7 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
 </table>
 </div><div class="memdoc">
 
-<p>Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a> </p>
+<p>Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>. </p>
 <hr  />
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
@@ -244,8 +244,8 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
 
 </div>
 </div>
-<a id="a4317ba9f8e11b9bf6b555df8a065b54b" name="a4317ba9f8e11b9bf6b555df8a065b54b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4317ba9f8e11b9bf6b555df8a065b54b">&#9670;&#160;</a></span>requestReverseGeocode</h2>
+<a id="a122fadb46be185cb6e7e375d618f3d9c" name="a122fadb46be185cb6e7e375d618f3d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122fadb46be185cb6e7e375d618f3d9c">&#9670;&#160;</a></span>requestReverseGeocode</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,12 +256,12 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
         <tr>
           <td class="memname">void GeocodeWrapper::requestReverseGeocode </td>
           <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>latitude</em></span>, </td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>lati</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>longitude</em></span>&#160;)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>longi</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -275,8 +275,8 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
 <hr  />
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">latitude</td><td>: coordonnées GPS </td></tr>
-    <tr><td class="paramname">longitude</td><td>coordonnées GPS </td></tr>
+    <tr><td class="paramname">lati</td><td>latitude des coordonnées GPS </td></tr>
+    <tr><td class="paramname">longi</td><td>longitude des coordonnées GPS </td></tr>
   </table>
   </dd>
 </dl>

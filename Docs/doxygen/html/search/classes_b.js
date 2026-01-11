@@ -5,16 +5,10 @@ var searchData=
   ['tabframephotopreview_2',['TabFramePhotoPreview',['../class_tab_frame_photo_preview.html',1,'']]],
   ['tabframephototags_3',['TabFramePhotoTags',['../class_tab_frame_photo_tags.html',1,'']]],
   ['tifolderdialog_4',['TiFolderDialog',['../class_ti_folder_dialog.html',1,'']]],
-  ['timapview_5',['TiMapView',['../class_ti_map_view.html',1,'']]],
-  ['timenubar_6',['TiMenuBar',['../class_ti_menu_bar.html',1,'']]],
-  ['tinychip_7',['TinyChip',['../class_tiny_chip.html',1,'']]],
-  ['tiphotolistview_8',['TiPhotoListview',['../class_ti_photo_listview.html',1,'']]],
-  ['titabbutton_9',['TiTabButton',['../class_ti_tab_button.html',1,'']]],
-  ['titabbuttonform_10',['TiTabButtonForm',['../class_ti_tab_button_form.html',1,'']]],
-  ['toolbarbottom_11',['ToolBarBottom',['../class_tool_bar_bottom.html',1,'']]],
-  ['toolbarbottomform_12',['ToolBarBottomForm',['../class_tool_bar_bottom_form.html',1,'']]],
-  ['toolbarmap_13',['ToolBarMap',['../class_tool_bar_map.html',1,'']]],
-  ['toolbarmapform_14',['ToolBarMapForm',['../class_tool_bar_map_form.html',1,'']]],
-  ['toolbarprincipale_15',['ToolBarPrincipale',['../class_tool_bar_principale.html',1,'']]],
-  ['toolbarprincipaleform_16',['ToolBarPrincipaleForm',['../class_tool_bar_principale_form.html',1,'']]]
+  ['tinychip_5',['TinyChip',['../class_tiny_chip.html',1,'']]],
+  ['toolbarbottom_6',['ToolbarBottom',['../class_toolbar_bottom.html',1,'']]],
+  ['toolbarbottomform_7',['ToolbarBottomForm',['../class_toolbar_bottom_form.html',1,'']]],
+  ['toolbarmapform_8',['ToolbarMapForm',['../class_toolbar_map_form.html',1,'']]],
+  ['toolbarprincipale_9',['ToolbarPrincipale',['../class_toolbar_principale.html',1,'']]],
+  ['toolbarprincipaleform_10',['ToolbarPrincipaleForm',['../class_toolbar_principale_form.html',1,'']]]
 ];

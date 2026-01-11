@@ -1,0 +1,19 @@
+var NAVTREEINDEX2 =
+{
+"struct_photo.html#aadb7a083611feae65440c3bfc3887417":[3,0,19,3],
+"struct_photo.html#aaf8c4dfdd916b811562d6d4e7f5e1489":[3,0,19,2],
+"struct_photo.html#accaf8898f12c82d9872c555309d563b1":[3,0,19,20],
+"struct_photo.html#ad76b83d8bbaae4a2e4bfefef2f268008":[3,0,19,14],
+"struct_photo.html#aeaeadb764ea3e33efa012abc317676db":[3,0,19,27],
+"struct_photo.html#aebc8cca52d5bbb81ca5726f221818839":[3,0,19,13],
+"struct_photo.html#af2fe738cd3749de9263ff89bfa971ec9":[3,0,19,15],
+"struct_photo.html#af69f56742ec76589b96b355cdc447149":[3,0,19,6],
+"struct_suggestion.html":[3,0,27],
+"struct_suggestion.html#a063449adc119af01b2ca07be053223f6":[3,0,27,2],
+"struct_suggestion.html#a7b7b80cdbe8f3980639fe23fae9960b6":[3,0,27,1],
+"struct_suggestion.html#abdfdd0ed210feac3b5cd826c40d7643f":[3,0,27,3],
+"struct_suggestion.html#ac3b42e1b81fb69adfb3ad0334b80fe1e":[3,0,27,5],
+"struct_suggestion.html#aecac3e72672ace070a7c01823b4beac1":[3,0,27,6],
+"struct_suggestion.html#af2eddc6a6b273397e3455724a25c88ef":[3,0,27,0],
+"struct_suggestion.html#af319b358957378992fcbcd14022e2125":[3,0,27,4]
+};

@@ -134,12 +134,14 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:ae3b26fa49dff5a4c7f1a79e061dd9970"><td class="mdescLeft">&#160;</td><td class="mdescRight">surcharge.  <br /></td></tr>
 <tr class="memitem:a5153ff9a46757355350432e5e8a810cd" id="r_a5153ff9a46757355350432e5e8a810cd"><td class="memItemLeft" align="right" valign="top">QHash&lt; int, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5153ff9a46757355350432e5e8a810cd">roleNames</a> () const override</td></tr>
 <tr class="memdesc:a5153ff9a46757355350432e5e8a810cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table of Role names.  <br /></td></tr>
+<tr class="memitem:af3345223f2aa9b5d563b9097271a1d20" id="r_af3345223f2aa9b5d563b9097271a1d20"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3345223f2aa9b5d563b9097271a1d20">dumpData</a> ()</td></tr>
+<tr class="memdesc:af3345223f2aa9b5d563b9097271a1d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug function that print (in the console) one line of the model at every call.  <br /></td></tr>
+<tr class="memitem:adf99459a4600a0d0aa9c77858bfa23e8" id="r_adf99459a4600a0d0aa9c77858bfa23e8"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf99459a4600a0d0aa9c77858bfa23e8">clear</a> ()</td></tr>
+<tr class="memdesc:adf99459a4600a0d0aa9c77858bfa23e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all the items of the Model.  <br /></td></tr>
 <tr class="memitem:aea38923e1af3b5faee8ba4caccc8281f" id="r_aea38923e1af3b5faee8ba4caccc8281f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea38923e1af3b5faee8ba4caccc8281f">removeCurrentPhotoFromSuggestion</a> (const QModelIndex index)</td></tr>
 <tr class="memdesc:aea38923e1af3b5faee8ba4caccc8281f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> courante de la liste des photos correspondant à une <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> donnée.  <br /></td></tr>
 <tr class="memitem:a54ef63c254c7a560110977f2240156c6" id="r_a54ef63c254c7a560110977f2240156c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54ef63c254c7a560110977f2240156c6">removeFromSuggestion</a> (const QString target)</td></tr>
 <tr class="memdesc:a54ef63c254c7a560110977f2240156c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enlève la <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> courante de la liste des photos correspondant à une <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> donnée.  <br /></td></tr>
-<tr class="memitem:af3345223f2aa9b5d563b9097271a1d20" id="r_af3345223f2aa9b5d563b9097271a1d20"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3345223f2aa9b5d563b9097271a1d20">dumpData</a> ()</td></tr>
-<tr class="memdesc:af3345223f2aa9b5d563b9097271a1d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug function that print (in the console) one line of the model at every call.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
@@ -155,7 +157,7 @@ QVector&lt; <a class="el" href="struct_suggestion.html">Suggestion</a> &gt;&#160
 <tr class="memdesc:ae89572184f274b27c827e5f419a0df8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">La liste des <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a>. <br /></td></tr>
 <tr class="memitem:aa7612d5b8d5e5c63f265b25693d95524" id="r_aa7612d5b8d5e5c63f265b25693d95524"><td class="memItemLeft" align="right" valign="top"><a id="aa7612d5b8d5e5c63f265b25693d95524" name="aa7612d5b8d5e5c63f265b25693d95524"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectedPhotoRow</b> = -4</td></tr>
-<tr class="memdesc:aa7612d5b8d5e5c63f265b25693d95524"><td class="mdescLeft">&#160;</td><td class="mdescRight">La valeur par défaut -4 ne correspond à aucune photo. <br /></td></tr>
+<tr class="memdesc:aa7612d5b8d5e5c63f265b25693d95524"><td class="mdescLeft">&#160;</td><td class="mdescRight">indice de la photo courante. Valeur spéciales: -4 = aucune photo | -1 = toutes les photos | -2 = la photo sélectionée'. <br /></td></tr>
 <tr class="memitem:a71e147fc8f25a5f6ff2f24ebc256acc6" id="r_a71e147fc8f25a5f6ff2f24ebc256acc6"><td class="memItemLeft" align="right" valign="top"><a id="a71e147fc8f25a5f6ff2f24ebc256acc6" name="a71e147fc8f25a5f6ff2f24ebc256acc6"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b></td></tr>
 <tr class="memdesc:a71e147fc8f25a5f6ff2f24ebc256acc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">La dernière ligne affichée dans le dump de debug. <br /></td></tr>
@@ -344,6 +346,27 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dumpedRow</b></td></
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="adf99459a4600a0d0aa9c77858bfa23e8" name="adf99459a4600a0d0aa9c77858bfa23e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf99459a4600a0d0aa9c77858bfa23e8">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SuggestionModel::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deletes all the items of the Model. </p>
+<hr  />
+<p>On utilise cette fonction quand on scanne un nouveau répertoire de photos. </p>
 
 </div>
 </div>

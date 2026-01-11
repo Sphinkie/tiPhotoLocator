@@ -41,7 +41,6 @@ Item {
             leftMargin: 20
             verticalCenter: parent.verticalCenter
         }
-        // TODO Attention au cas ou on a vidé le modele (reload): il faut masquer ce bouton
     }
 
     Button {

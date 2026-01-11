@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['highlightbackgroundcolor_0',['highlightBackgroundColor',['../class_style.html#afe773c3659f12a8b4e6f9202f7acc400',1,'Style']]]
+  ['editable_0',['editable',['../class_chips.html#ac6387c850ae682d761efa43d373fe8f0',1,'Chips']]],
+  ['editarea_1',['editArea',['../class_chips.html#aa2cbbf033b2bc37b9f90d8fd033ceb92',1,'Chips']]]
 ];

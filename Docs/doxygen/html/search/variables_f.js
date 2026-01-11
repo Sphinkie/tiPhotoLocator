@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['zonepreview_0',['zonePreview',['../class_tab_frame_photo_preview.html#acbb6f021c794fa3a8d29b0216adf1fed',1,'TabFramePhotoPreview']]],
-  ['zonesuggestedlocations_1',['zoneSuggestedLocations',['../class_tab_frame_photo_map.html#ac903220ca750f18401dd2f1987f8a87a',1,'TabFramePhotoMap']]]
+  ['recentfoldersinstantiator_0',['recentFoldersInstantiator',['../class_main_menu_bar.html#acef52ef56982474751262ecf3fc4cf65',1,'MainMenuBar']]],
+  ['recentfoldersmenu_1',['recentFoldersMenu',['../class_main_menu_bar.html#ae4cc4d8eaa08ed1903de66272698d71e',1,'MainMenuBar']]]
 ];
