@@ -8,6 +8,15 @@
  * ***********************************************************************************************************/
 SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
 {
+    this->createInitialSuggestions();
+}
+
+
+/** **********************************************************************************************************
+ * @brief Ajoute au modèle quelques sugegstsio basiques.
+ * ***********************************************************************************************************/
+void SuggestionModel::createInitialSuggestions()
+{
     QSettings settings;
     QString photographe = settings.value("photographe","").toString();
     QString initiales   = settings.value("initiales","").toString();
@@ -251,6 +260,7 @@ void SuggestionModel::clear()
 {
     beginResetModel();  // cette méthode envoie un signal indiquant à tous que ce modèle va subir un changement radical
     m_suggestions.clear();
+    this->createInitialSuggestions();
     m_selectedPhotoRow = -4;
     endResetModel();    // cette méthode envoie un signal ModelReset.
 }

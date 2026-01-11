@@ -17,9 +17,9 @@ import QtQuick.Controls.Material
  * **********************************************************************************************************/
 Item {
 
-    readonly property color foregroundColor: Material.foreground       // Material.DeepPurple
-    readonly property color backgroundColor: Material.background       // Material.BlueGrey,
-    readonly property color accentColor: Material.accent               // Material.Brown
+    readonly property color foregroundColor: Material.foreground // Material.DeepPurple
+    readonly property color backgroundColor: Material.background // Material.BlueGrey,
+    readonly property color accentColor: Material.accent // Material.Brown
 
     readonly property color secondaryColor: Material.LightBlue
 
@@ -30,7 +30,7 @@ Item {
     // Surface container = couleur de fond des Toolbars (backgroundColor)
     readonly property color surfaceContainerColor: Material.color(
                                                        Material.BlueGrey,
-                                                       Material.Shade100)
+                                                       Material.Shade50)
 
     // Zones standard : (backgroundColor)
     readonly property color zoneBackgroundColor: Material.color(
@@ -61,7 +61,7 @@ Item {
     // ----------------------------------------------------------------------
     // Textes
     // ----------------------------------------------------------------------
-    readonly property color primaryTextColor: "#212121"   // gris foncé      : Listview + toolbar
+    readonly property color primaryTextColor: "#212121" // gris foncé      : Listview + toolbar
     readonly property color secondaryTextColor: "#757575" // gris moyen    : Répertoire dans la toolbar
     // gris clair     : Annotations dans les settings
     readonly property color tertiaryTextColor: Material.color(Material.Black,

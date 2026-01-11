@@ -35,7 +35,7 @@ Window {
     // Couleur des textes.
     Material.foreground: Material.DeepPurple
     // Couleur d'accentuation pour les items et textes en highlight.
-    Material.accent: Material.Brown
+    Material.accent: Material.color(Material.Brown, Material.Shade400)
     // Couleur primaire = non utilisé sur Desktop ?
     Material.primary: Material.Red
 
