@@ -42,7 +42,7 @@ FolderDialog {
 
     /** ***********************************************************************************
      * Ajout du dossier ouvert à la liste des "recents" dans les Settings.
-     * On insère ls items par le bas de la pile, car le Instanciator.model les affiche en sens inverse.
+     * On insère les items par le bas de la pile, car le Instanciator.model les affiche en sens inverse.
      * ************************************************************************************/
     function addRecentFolder(foldername) {
         var folderList = settings.recentList
@@ -55,6 +55,16 @@ FolderDialog {
             folderList.pop()
         }
         folderList.unshift(foldername)
+    }
+
+
+    /** ***********************************************************************************
+     * On vide la liste des "recents" dans les Settings, ainsi que la propriété partagée.
+     * ************************************************************************************/
+    function clearRecentFolders() {
+        console.log("clearRecentFolders")
+        settings.recentList = []
+        folderDialog.recentList = []
     }
 
 

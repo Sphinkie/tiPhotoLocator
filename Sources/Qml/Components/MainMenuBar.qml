@@ -26,11 +26,13 @@ MenuBar {
             id: recentFoldersMenu
             title: qsTr("Recents")
             enabled: recentFoldersInstantiator.count > 0
-            property var recents
+            // utilité ?
+            property var recents: folderDialog.recentList
+
             /// L'instanciateur crée dynamiquement des objets à partir d'une liste.
             Instantiator {
                 id: recentFoldersInstantiator
-                model: settings.recentList
+                model: folderDialog.recentList
                 delegate: MenuItem {
                     // Texte affiché.
                     text: Utilities.toShortPath(modelData)
@@ -50,7 +52,7 @@ MenuBar {
             MenuSeparator {}
             MenuItem {
                 text: qsTr("Clear recent folders list")
-                onTriggered: settings.clearRecentFolders()
+                onTriggered: folderDialog.clearRecentFolders()
             }
         }
 
@@ -86,17 +88,5 @@ MenuBar {
 
     FolderLoadTimer {
         id: folderTimer
-    }
-
-    // ------------------------------------------------------
-    // On relit les chemins récents dans les Settings
-    // ------------------------------------------------------
-    Settings {
-        id: settings
-        category: "recentFolders"
-        property alias recentList: recentFoldersMenu.recents
-        function clearRecentFolders() {
-            recentList = []
-        }
     }
 }
