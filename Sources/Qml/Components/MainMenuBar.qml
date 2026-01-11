@@ -27,7 +27,6 @@ MenuBar {
             title: qsTr("Recents")
             enabled: recentFoldersInstantiator.count > 0
             property var recents
-            property var number
             /// L'instanciateur crée dynamiquement des objets à partir d'une liste.
             Instantiator {
                 id: recentFoldersInstantiator
@@ -35,6 +34,7 @@ MenuBar {
                 delegate: MenuItem {
                     // Texte affiché.
                     text: Utilities.toShortPath(modelData)
+                    rightPadding: 8
                     onTriggered: {
                         console.log(modelData)
                         folderListModel.folder = modelData
@@ -95,11 +95,8 @@ MenuBar {
         id: settings
         category: "recentFolders"
         property alias recentList: recentFoldersMenu.recents
-        property alias recentNumber: recentFoldersMenu.number
-
         function clearRecentFolders() {
             recentList = []
-            recentNumber = 0
         }
     }
 }

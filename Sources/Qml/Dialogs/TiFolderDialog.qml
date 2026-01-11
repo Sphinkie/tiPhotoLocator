@@ -42,20 +42,19 @@ FolderDialog {
 
     /** ***********************************************************************************
      * Ajout du dossier ouvert à la liste des "recents" dans les Settings.
+     * On insère ls items par le bas de la pile, car le Instanciator.model les affiche en sens inverse.
      * ************************************************************************************/
     function addRecentFolder(foldername) {
         var folderList = settings.recentList
-        var posFolder = settings.recentNumber
+        // console.log("Nb recents", folderList.length)
         // Eviter les doublons.
         if (folderList.includes(foldername))
             return
-        // On mémorise un maximum de 7 recent folders
-        if (posFolder > 6)
-            posFolder = 0
-        // TODO gérer une FIFO
-        folderList[posFolder] = foldername
-        settings.recentList = folderList
-        settings.recentNumber = posFolder + 1
+        // On mémorise un maximum de 7 recent folders (0 ..6).
+        if (folderList.length > 6) {
+            folderList.pop()
+        }
+        folderList.unshift(foldername)
     }
 
 
@@ -67,6 +66,5 @@ FolderDialog {
         id: settings
         category: "recentFolders"
         property alias recentList: folderDialog.recentList
-        property alias recentNumber: folderDialog.recentNumber
     }
 }

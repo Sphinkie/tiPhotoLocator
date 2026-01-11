@@ -16,7 +16,7 @@ import "./Controllers"
  * ***********************************************************************************************************/
 Window {
     id: window
-    title: "tiPhotoLocator" + " w:" + width + " h:" + height
+    title: "tiPhotoLocator" // + " w:" + width + " h:" + height
     visible: true
     visibility: "Maximized"
     // dimensions si on dé-maximise
