@@ -13,7 +13,6 @@ FolderDialog {
     currentFolder: "file:///C:"
     // URL du dossier de départ
     folder: ""
-    property int recentNumber: 0
     property var recentList: []
 
 
@@ -35,7 +34,7 @@ FolderDialog {
     /** ***********************************************************************************
      * Ce timer attend une seconde, puis charge les infos du dossier sélectionné.
      * ************************************************************************************/
-    FolderLoadTimer {
+    TimerLoadFolder {
         id: folderTimer
     }
 

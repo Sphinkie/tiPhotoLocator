@@ -42,7 +42,6 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Style.qml
         Sources/Qml/Components/Chips.qml
         Sources/Qml/Components/FatChip.qml
-        Sources/Qml/Components/FolderLoadTimer.qml
         Sources/Qml/Components/ImagettesListView.qml
         Sources/Qml/Components/SuggestionRepeater.qml
         Sources/Qml/Components/MapView.qml
@@ -53,6 +52,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/TabFramePhotoTags.qml
         Sources/Qml/Components/TabFrameGlobalTags.qml
         Sources/Qml/Components/TabFramePhotoMap.qml
+        Sources/Qml/Components/TimerLoadFolder.qml
         Sources/Qml/Components/Zone.qml
         Sources/Qml/Components/ZoneTitle.qml
         Sources/Qml/Controllers/ZoneExif.qml
@@ -93,7 +93,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
-)
+    )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

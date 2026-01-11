@@ -26,9 +26,7 @@ MenuBar {
             id: recentFoldersMenu
             title: qsTr("Recents")
             enabled: recentFoldersInstantiator.count > 0
-            // utilité ?
-            property var recents: folderDialog.recentList
-
+            property var recents: folderDialog.recentList // utilité ?
             /// L'instanciateur crée dynamiquement des objets à partir d'une liste.
             Instantiator {
                 id: recentFoldersInstantiator
@@ -86,7 +84,7 @@ MenuBar {
         }
     }
 
-    FolderLoadTimer {
+    TimerLoadFolder {
         id: folderTimer
     }
 }

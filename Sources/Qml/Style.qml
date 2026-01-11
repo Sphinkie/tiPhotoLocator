@@ -71,6 +71,6 @@ Item {
 
     // La couleur de fond du filename(s) sélectionné dans la liste.
     readonly property color highlightBackgroundColor: Material.color(
-                                                          Material.LightGreen,
-                                                          Material.Shade200)
+                                                          Material.DeepPurple,
+                                                          Material.Shade100)
 }
