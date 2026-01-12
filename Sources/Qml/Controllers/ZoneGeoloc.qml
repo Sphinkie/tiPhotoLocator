@@ -12,7 +12,7 @@ ZoneGeolocForm {
      * On efface les coordonnées GPS de la photo sélectionnée.
      * ***********************************************************************************/
     bt_clear_coords.onClicked: {
-        _photoModel.selectedCoords = QtPositioning.coordinate(0, 0)
+        _photoModel.currentItemCoords = QtPositioning.coordinate(0, 0)
     }
 
     // -----------------------------------------------------------------------------------

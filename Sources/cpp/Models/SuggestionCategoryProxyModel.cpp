@@ -54,10 +54,11 @@ void SuggestionCategoryProxyModel::setFilterEnabled(bool enabled)
 void SuggestionCategoryProxyModel::setFilterValue(QString filter)
 {
     // qDebug() << "Filtering on category " << filter;
+    beginFilterChange();
     m_filter = filter;
     this->setFilterFixedString(filter);
+    endFilterChange();
     emit filterEnabledChanged();
-    invalidateFilter();
 }
 
 

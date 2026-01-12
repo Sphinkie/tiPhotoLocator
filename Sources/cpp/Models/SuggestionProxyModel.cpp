@@ -70,9 +70,10 @@ bool SuggestionProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &so
  * ***********************************************************************************************************/
 void SuggestionProxyModel::setFilterValue(const int photoRow)
 {
+    beginFilterChange();
     m_filterPhotoRow = photoRow;
     qDebug() << "setFilterValue" << m_filterPhotoRow;
-    invalidateRowsFilter();   // Le filtre à changé: On force un recalcul du filtrage
+    endFilterChange();  // Le filtre a changé: On force un recalcul du filtrage
     // This function should be called if you are implementing custom filtering (e.g. filterAcceptsRow()), and your filter parameters have changed.
 }
 

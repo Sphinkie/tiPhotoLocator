@@ -322,7 +322,7 @@ void PhotoModel::setPhotoProperty(const int photo, const QString value, const QS
  * liste de photos.
  * @param row : l'indice de l'item sélectionné dans la ListView.
  * ***********************************************************************************************************/
-void PhotoModel::selectedRow(const int row)
+void PhotoModel::currentItemRow(const int row)
 {
     qDebug() << "selectedRow " << row << "/" << m_photos.count();
     if (row < 0 || row >= m_photos.count() )
@@ -341,7 +341,7 @@ void PhotoModel::selectedRow(const int row)
     emit dataChanged(new_index, new_index, {IsSelectedRole} );
     m_lastSelectedRow = row;
     // On notifie les autres classes qui ont besoin de savoir quelle est la photo sélectionée
-    emit selectedRowChanged(row);
+    emit currentItemRowChanged(row);
 }
 
 /** **********************************************************************************************************
@@ -349,7 +349,7 @@ void PhotoModel::selectedRow(const int row)
  *
  * @param coords : Coordonnées GPS à appliquer.
  * ***********************************************************************************************************/
-void PhotoModel::selectedCoords(const QGeoCoordinate coords)
+void PhotoModel::currentItemCoords(const QGeoCoordinate coords)
 {
     QModelIndex index = this->index(m_lastSelectedRow, 0);
     this->setData(index, coords.latitude(), LatitudeRole);
@@ -540,7 +540,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
 /** **********************************************************************************************************
  * @brief Returns the last selected row.
  * ***********************************************************************************************************/
-int PhotoModel::getSelectedRow()
+int PhotoModel::getCurrentItemRow()
 {
     return m_lastSelectedRow;
 }
@@ -548,7 +548,7 @@ int PhotoModel::getSelectedRow()
 /** **********************************************************************************************************
  * @brief Returns if the selected photo has GPS coordinates.
  * ***********************************************************************************************************/
-bool PhotoModel::getSelectedItemHasGPS()
+bool PhotoModel::getCurrentItemHasGPS()
 {
     return (m_photos[m_lastSelectedRow].hasGPS);
 }
@@ -556,7 +556,7 @@ bool PhotoModel::getSelectedItemHasGPS()
 /** **********************************************************************************************************
  * @brief Returns the GPS Coords of the selected row.
  * ***********************************************************************************************************/
-QGeoCoordinate PhotoModel::getSelectedCoords()
+QGeoCoordinate PhotoModel::getCurrentItemCoords()
 {
     return QGeoCoordinate(m_photos[m_lastSelectedRow].gpsLatitude, m_photos[m_lastSelectedRow].gpsLongitude);
 }
@@ -571,7 +571,7 @@ void PhotoModel::selectFirstPhoto()
     // On efface la Saved Position
     this->removeSavedPosition();
     // On sélectionne la première photo
-    this->selectedRow(0);
+    this->currentItemRow(0);
     // On prévient la MapView
     emit firstCoordsReady();
 }

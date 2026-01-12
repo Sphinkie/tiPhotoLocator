@@ -83,7 +83,7 @@ Map {
                            var mouseCoords = mapView.toCoordinate(mousePos)
                            // console.log(mousePos, mouseCoords)
                            // On change les coordonnées de la photo dans le modele
-                           _photoModel.selectedCoords = mouseCoords
+                           _photoModel.currentItemCoords = mouseCoords
                            // On repositionne le cercle
                            mapCircle.center = mouseCoords
                            // Debug : Affiche la liste des cartes supportées
@@ -102,11 +102,11 @@ Map {
     onMapItemsChanged: {
         // TODO : A vérifier mais on pourrait enlever les recentrages de ce slot.
         // console.log("onMapItemsChanged")
-        if (_photoModel.selectedItemHasGPS) {
-            var coords = _photoModel.selectedCoords
+        if (_photoModel.currentItemHasGPS) {
+            var coords = _photoModel.currentItemCoords
             // on vérifie si les coordonnées sont dejà visibles sur la portion de carte apparente (viewport)
             if (!mapView.visibleRegion.contains(coords)) {
-                // console.log(": re-center the map on selectedCoords", coords)
+                // console.log(": re-center the map on currentItemCoords", coords)
                 // On repositionne la carte sur les coords de la photo sélectionée
                 mapView.center = coords
                 // On repositionne le cercle
@@ -129,12 +129,12 @@ Map {
          * Appelé après avoir lu les Exif de la première photo de la liste.
          * *******************************************************************************************************/
         function onFirstCoordsReady() {
-            if (_photoModel.selectedItemHasGPS) {
-                // console.log("onFirstCoordsReady: ", _photoModel.selectedCoords)
+            if (_photoModel.currentItemHasGPS) {
+                // console.log("onFirstCoordsReady: ", _photoModel.currentItemCoords)
                 // On repositionne la carte sur ces coords
-                mapView.center = _photoModel.selectedCoords
+                mapView.center = _photoModel.currentItemCoords
                 // On repositionne le cercle
-                mapCircle.center = _photoModel.selectedCoords
+                mapCircle.center = _photoModel.currentItemCoords
             } // Si pas de coordonnées pour la première photo, on remet la carte en position "home"
             else {
                 mapView.center = QtPositioning.coordinate(homeCoords.x,

@@ -131,8 +131,8 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
     // A la fin de la boucle, on ne l'a pas trouvé: il s'agit donc d'une nouvelle suggestion
     if (photo_row == -2)
     {
-        // si le numéro de la photo n'est pas fourni, on prend la photo sélectionnée dans la ListView.
-        photo_row = m_selectedPhotoRow;
+        // si le numéro de la photo n'est pas fourni, on prend la photo courante dans la ListView.
+        photo_row = m_currentPhotoRow;
     }
     // On ajoute la photo à la suggestion
     // qDebug()<< "Adding" << target <<  "(" << category << ") suggestion " << text << "for" << photo_row;
@@ -157,7 +157,7 @@ void SuggestionModel::addPhotoToSuggestion(const int suggestion_row, int photo_r
     if (suggestion_row<0 || suggestion_row>m_suggestions.count()) return;
     if (photo_row == -2)
     {
-        photo_row = m_selectedPhotoRow;
+        photo_row = m_currentPhotoRow;
     }
     // On ajoute la photo courante dans la liste.
     m_suggestions[suggestion_row].photos << photo_row;
@@ -198,7 +198,7 @@ void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
     if (! index.isValid()) return;
     // On retire la photo courante de la liste.
     int row = index.row();
-    m_suggestions[row].photos.remove(m_selectedPhotoRow);
+    m_suggestions[row].photos.remove(m_currentPhotoRow);
     // Emit signal
     emit dataChanged(index, index, QVector<int>() << PhotosRole);
 }
@@ -218,7 +218,7 @@ void SuggestionModel::removeFromSuggestion(const QString target)
         if (m_suggestions.at(row).target == target)
         {
             // Trouvé: On retire la photo de la suggestion
-            m_suggestions[row].photos.remove(m_selectedPhotoRow);
+            m_suggestions[row].photos.remove(m_currentPhotoRow);
             // Emit signal : la liste des suggestions a changé
             emit dataChanged(index(row), index(row), QVector<int>() << PhotosRole);
         }
@@ -230,11 +230,11 @@ void SuggestionModel::removeFromSuggestion(const QString target)
  * @brief Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
  * @param row: La position dans PhotoModel de la photo active.
  * ***********************************************************************************************************/
-void SuggestionModel::onSelectedPhotoChanged(const int row)
+void SuggestionModel::onCurrentPhotoChanged(const int row)
 {
     if (row<0) return;
     // On mémorise la photo actuellement sélectionnée dans la ListView
-    m_selectedPhotoRow = row;
+    m_currentPhotoRow = row;
 }
 
 
@@ -261,7 +261,7 @@ void SuggestionModel::clear()
     beginResetModel();  // cette méthode envoie un signal indiquant à tous que ce modèle va subir un changement radical
     m_suggestions.clear();
     this->createInitialSuggestions();
-    m_selectedPhotoRow = -4;
+    m_currentPhotoRow = -4;
     endResetModel();    // cette méthode envoie un signal ModelReset.
 }
 

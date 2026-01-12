@@ -141,7 +141,7 @@ int main(int argc, char *argv[])
     // ----------------------------------------------------------------------------
     // Connexions entre classes C++
     // ----------------------------------------------------------------------------
-    QObject::connect(&photoModel, SIGNAL(selectedRowChanged(int)),                     &suggestionModel, SLOT(onSelectedPhotoChanged(int)));
+    QObject::connect(&photoModel, SIGNAL(currentItemRowChanged(int)),                  &suggestionModel, SLOT(onCurrentPhotoChanged(int)));
     QObject::connect(&photoModel, SIGNAL(sendSuggestion(QString,QString,QString,int)), &suggestionModel, SLOT(append(QString,QString,QString,int)));
 
     // ----------------------------------------------------------------------------

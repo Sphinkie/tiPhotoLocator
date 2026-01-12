@@ -13,12 +13,12 @@ class PhotoModel : public QAbstractListModel
 {
     Q_OBJECT
 
-    //! selectedRow is the Photo row in the model corresponding to the selected photo in the ListView.
-    Q_PROPERTY(int selectedRow READ getSelectedRow WRITE selectedRow NOTIFY selectedRowChanged)
-    //! selectedCoords is the GPS coordinates of the selected Photo.
-    Q_PROPERTY(QGeoCoordinate selectedCoords READ getSelectedCoords WRITE selectedCoords NOTIFY selectedCoordsChanged)
-    //! selectedItemHasGPS indicate if the selected Photo has GPS coordinates.
-    Q_PROPERTY(bool selectedItemHasGPS READ getSelectedItemHasGPS NOTIFY selectedItemHasGPSChanged)
+    //! currentItemRow is the Photo row in the model corresponding to the current photo in the ListView.
+    Q_PROPERTY(int currentItemRow READ getCurrentItemRow WRITE currentItemRow NOTIFY currentItemRowChanged)
+    //! currentItemCoords is the GPS coordinates of the current Photo.
+    Q_PROPERTY(QGeoCoordinate currentItemCoords READ getCurrentItemCoords WRITE currentItemCoords NOTIFY currentItemCoordsChanged)
+    //! currentItemHasGPS indicate if the current Photo has GPS coordinates.
+    Q_PROPERTY(bool currentItemHasGPS READ getCurrentItemHasGPS NOTIFY currentItemHasGPSChanged)
     //! Indique si un SavedPosition existe dans le modèle.
     Q_PROPERTY(bool savedPositionExists MEMBER m_savedPositionExists NOTIFY savedPositionExistsChanged)
     //! Indique si le modele est en train de lire les données Exif.
@@ -96,11 +96,11 @@ private:
     void addTestItem();
     void resetCircle();
     void setLoading(const bool state);
-    void selectedRow(const int row);
-    void selectedCoords(const QGeoCoordinate coords);
-    int  getSelectedRow();
-    bool getSelectedItemHasGPS();
-    QGeoCoordinate getSelectedCoords();
+    void currentItemRow(const int row);
+    void currentItemCoords(const QGeoCoordinate coords);
+    int  getCurrentItemRow();
+    bool getCurrentItemHasGPS();
+    QGeoCoordinate getCurrentItemCoords();
     bool belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo);
 
 public slots:
@@ -124,14 +124,14 @@ signals:
     // -----------------------------------------------------
     // Signaux émis
     // -----------------------------------------------------
-    void selectedRowChanged(const int row);                                        //!< Signal émis quand la Photo sélectionnée change.
-    void selectedCoordsChanged();                                                  //!< Signal émis quand les coordonnées GPS de la Photo sélectionnée changent.
+    void currentItemRowChanged(const int row);                                     //!< Signal émis quand la Photo sélectionnée change.
+    void currentItemCoordsChanged();                                               //!< Signal émis quand les coordonnées GPS de la Photo sélectionnée changent.
     void sendSuggestion(QString text, QString target, QString category, int row);  //!< Ce signal envoie une Suggestion au SuggestionModel.
     void dataCleared();                                                            //!< Signal émis quand le modèle a été vidé.
     void dataSaved();                                                              //!< Signal émis quand les données ont été enregistrées sur le disque.
     void firstCoordsReady();                                                       //!< Signal émis quand les coordonnées GPS de la première photo sont disponibles.
     void savedPositionExistsChanged();                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
-    void selectedItemHasGPSChanged();                                              //!< Signal émis quand si hasGPS change.
+    void currentItemHasGPSChanged();                                              //!< Signal émis quand si hasGPS change.
     void loadingChanged();                                                         //!< Signal émis quand le status loading change.
     void writeProgressChanged();                                                   //!< Signal émis chque fois qu'une nouvelle donnée Exif est écrite dans un JPG.
 

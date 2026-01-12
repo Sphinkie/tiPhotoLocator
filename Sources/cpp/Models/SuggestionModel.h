@@ -47,7 +47,7 @@ public slots:
     // -----------------------------------------------------
     // Slots
     // -----------------------------------------------------
-    void onSelectedPhotoChanged(const int row);
+    void onCurrentPhotoChanged(const int row);
     void append(const QString text, const QString target, const QString category, int photo_row = -2);
 
 private:
@@ -62,7 +62,7 @@ private:
     // Membres
     // -----------------------------------------------------
     QVector<Suggestion> m_suggestions;  //!< La liste des Suggestion
-    int m_selectedPhotoRow = -4;        //!< indice de la photo courante. Valeur spéciales: -4 = aucune photo | -1 = toutes les photos | -2 = la photo sélectionée'.
+    int m_currentPhotoRow = -4;         //!< indice de la photo courante. Valeur spéciales: -4 = aucune photo | -1 = toutes les photos | -2 = la photo sélectionée'.
     int m_dumpedRow;                    //!< La dernière ligne affichée dans le dump de debug.
 
 };

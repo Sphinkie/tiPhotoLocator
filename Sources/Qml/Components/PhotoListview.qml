@@ -52,8 +52,8 @@ ListView {
         repeat: false
         onTriggered: {
             // console.debug(">>>>> timer triggered")
-            window.requestReverseGeocode(_photoModel.selectedCoords.latitude,
-                                         _photoModel.selectedCoords.longitude)
+            window.requestReverseGeocode(_photoModel.currentItemCoords.latitude,
+                                         _photoModel.currentItemCoords.longitude)
         }
     }
 
@@ -168,7 +168,7 @@ ListView {
      * ***********************************************************************************************************/
     function activatePhoto(pos, hasGPS, city, country, latitude, longitude) {
         var sourceindex = model.getSourceIndex(pos)
-        _photoModel.selectedRow = sourceindex // Actualise le PhotoModel
+        _photoModel.currentItemRow = sourceindex // Actualise le PhotoModel
 
         // On mémorise dans selectedData les data de l'item selectionné du modèle.
         // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
@@ -177,7 +177,7 @@ ListView {
         // On envoie les coordonnées pour centrer la carte et le cercle sur le point selectionné
         // sinon (if not has GPS) la position de la carte reste inchangée
         if (hasGPS) {
-            var coords = _photoModel.selectedCoords
+            var coords = _photoModel.currentItemCoords
             if (!mapTab.mapView.visibleRegion.contains(coords)) {
                 mapTab.mapView.center = coords
                 mapTab.mapView.mapCircle.center = coords

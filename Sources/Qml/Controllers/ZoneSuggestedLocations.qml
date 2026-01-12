@@ -15,8 +15,8 @@ ZoneSuggestedLocationsForm {
      * A noter que la recherche est aussi lancée automatiquement par un Timer de PhotoListview.
      * *******************************************************************************************************/
     bt_getinfo.onClicked: {
-        window.requestReverseGeocode(_photoModel.selectedCoords.latitude,
-                                     _photoModel.selectedCoords.longitude)
+        window.requestReverseGeocode(_photoModel.currentItemCoords.latitude,
+                                     _photoModel.currentItemCoords.longitude)
     }
 
 
