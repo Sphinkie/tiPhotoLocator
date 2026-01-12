@@ -24,7 +24,7 @@ RowLayout {
          * *****************************************************************************/
         Image {
             id: previewImage
-            source: (tabbedPage.currentIndex === 0) ? tabbedPage.selectedData.imageUrl : ""
+            source: (tabbedPage.currentIndex === 0) ? tabbedPage.currentPhoto.imageUrl : ""
             fillMode: Image.PreserveAspectFit
             // On limite les grandes photos à la taille de la page: (image affichée avec downscale)
             // On limite les petites photos à leur taille réelle: (image affichée sans upscale)

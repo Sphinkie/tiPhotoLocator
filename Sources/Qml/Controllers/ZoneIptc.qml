@@ -10,9 +10,9 @@ ZoneIptcForm {
     id: iptcZone
     property string creator
     property string writer
-    property string city: tabbedPage.selectedData.city
-    property string country: tabbedPage.selectedData.country
-    property string location: tabbedPage.selectedData.location
+    property string city: tabbedPage.currentPhoto.city
+    property string country: tabbedPage.currentPhoto.country
+    property string location: tabbedPage.currentPhoto.location
 
     bt_applyCreator.onClicked: {
         window.applyCreatorToAll()

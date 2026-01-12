@@ -21,7 +21,7 @@ ZonePhotoForm {
     }
     chipDate.saveArea.onClicked: {
         var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text
-        window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime,
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, newDateTime,
                                 "dateTimeOriginal")
         Chips.resetChipButtons(chipDate)
     }
@@ -41,7 +41,7 @@ ZonePhotoForm {
     }
     chipTime.saveArea.onClicked: {
         var newDateTime = chipDate.chipText.text + " " + chipTime.chipText.text
-        window.setPhotoProperty(tabbedPage.selectedData.row, newDateTime,
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, newDateTime,
                                 "dateTimeOriginal")
         Chips.resetChipButtons(chipTime)
     }
@@ -56,12 +56,12 @@ ZonePhotoForm {
         Chips.enableEdition(chipCreator)
     }
     chipCreator.saveArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row,
+        window.setPhotoProperty(tabbedPage.currentPhoto.row,
                                 chipCreator.chipText.text, "creator")
         Chips.resetChipButtons(chipCreator)
     }
     chipCreator.deleteArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row, "", "creator")
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "creator")
         Chips.resetChipButtons(chipCreator)
     }
     chipCreator.revertArea.onClicked: {
@@ -75,12 +75,12 @@ ZonePhotoForm {
         Chips.enableEdition(chipDescription)
     }
     chipDescription.saveArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row,
+        window.setPhotoProperty(tabbedPage.currentPhoto.row,
                                 chipDescription.chipText.text, "description")
         Chips.resetChipButtons(chipDescription)
     }
     chipDescription.deleteArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row, "", "description")
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "description")
     }
     chipDescription.revertArea.onClicked: {
         Chips.revertEdition(chipDescription)
@@ -90,7 +90,7 @@ ZonePhotoForm {
     // ------------------------------- CAPTION WRITER
     // -----------------------------------------------------------------------------------
     chipWriter.deleteArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row, "",
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, "",
                                 "captionWriter")
     }
 
@@ -103,12 +103,12 @@ ZonePhotoForm {
         function onSelectedDataChanged() {
             // console.debug("onSelectedDataChanged->ZonePhoto");
             chipDate.content = Utilities.toReadableDate(
-                        tabbedPage.selectedData.dateTimeOriginal)
+                        tabbedPage.currentPhoto.dateTimeOriginal)
             chipTime.content = Utilities.toReadableTime(
-                        tabbedPage.selectedData.dateTimeOriginal)
-            chipCreator.content = tabbedPage.selectedData.creator
-            chipDescription.content = tabbedPage.selectedData.description
-            chipWriter.content = tabbedPage.selectedData.captionWriter
+                        tabbedPage.currentPhoto.dateTimeOriginal)
+            chipCreator.content = tabbedPage.currentPhoto.creator
+            chipDescription.content = tabbedPage.currentPhoto.description
+            chipWriter.content = tabbedPage.currentPhoto.captionWriter
         }
     }
 }

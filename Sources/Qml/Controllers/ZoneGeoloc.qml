@@ -26,17 +26,17 @@ ZoneGeolocForm {
     // SAVE BUTTON
     // -----------------------------------------------------------------------------------
     chipCity.saveArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row,
+        window.setPhotoProperty(tabbedPage.currentPhoto.row,
                                 chipCity.chipText.text, "city")
         Chips.resetChipButtons(chipCity)
     }
     chipCountry.saveArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row,
+        window.setPhotoProperty(tabbedPage.currentPhoto.row,
                                 chipCountry.chipText.text, "country")
         Chips.resetChipButtons(chipCountry)
     }
     chipLocation.saveArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row,
+        window.setPhotoProperty(tabbedPage.currentPhoto.row,
                                 chipLocation.chipText.text, "location")
         Chips.resetChipButtons(chipLocation)
     }
@@ -52,21 +52,21 @@ ZoneGeolocForm {
     // DELETE BUTTON
     // -----------------------------------------------------------------------------------
     chipLat.deleteArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row, 0, "latitude")
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "latitude")
     }
     chipLong.deleteArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row, 0, "longitude")
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "longitude")
     }
     chipCity.deleteArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row, "", "city")
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "city")
     }
     chipCountry.deleteArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.selectedData.row, "", "country")
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "country")
     }
     chipLocation.deleteArea.onClicked: // (mouse) =>
     {
         console.log("chipLocation.deleteArea.onClicked")
-        window.setPhotoProperty(tabbedPage.selectedData.row, "", "location")
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "location")
     }
 
     // -----------------------------------------------------------------------------------
@@ -77,16 +77,16 @@ ZoneGeolocForm {
         target: tabbedPage
         function onSelectedDataChanged() {
             // console.debug("onSelectedDataChanged->ZoneGeoloc");
-            bt_clear_coords.enabled = tabbedPage.selectedData.hasGPS
-            chipLat.visible = tabbedPage.selectedData.hasGPS
-            chipLong.visible = tabbedPage.selectedData.hasGPS
-            chipLat.content = tabbedPage.selectedData.latitude.toFixed(
-                        4) + " Lat " + ((tabbedPage.selectedData.latitude > 0) ? "N" : "S")
-            chipLong.content = tabbedPage.selectedData.longitude.toFixed(
-                        4) + " Long " + ((tabbedPage.selectedData.longitude > 0) ? "E" : "W")
-            chipCity.content = tabbedPage.selectedData.city
-            chipCountry.content = tabbedPage.selectedData.country
-            chipLocation.content = tabbedPage.selectedData.location
+            bt_clear_coords.enabled = tabbedPage.currentPhoto.hasGPS
+            chipLat.visible = tabbedPage.currentPhoto.hasGPS
+            chipLong.visible = tabbedPage.currentPhoto.hasGPS
+            chipLat.content = tabbedPage.currentPhoto.latitude.toFixed(
+                        4) + " Lat " + ((tabbedPage.currentPhoto.latitude > 0) ? "N" : "S")
+            chipLong.content = tabbedPage.currentPhoto.longitude.toFixed(
+                        4) + " Long " + ((tabbedPage.currentPhoto.longitude > 0) ? "E" : "W")
+            chipCity.content = tabbedPage.currentPhoto.city
+            chipCountry.content = tabbedPage.currentPhoto.country
+            chipLocation.content = tabbedPage.currentPhoto.location
         }
     }
 }

@@ -8,16 +8,16 @@ import "../Vues"
 ZoneCameraForm {
 
     // On determine le contenu des chips ici, mais ça marche aussi si on le fait dans la vue.
-    chipModel.content: tabbedPage.selectedData.camModel
-    chipMaker.content: tabbedPage.selectedData.make
-    chipAperture.content: "ƒ " + tabbedPage.selectedData.fNumber.toFixed(1)
-    chipSpeed.content: arrondir(tabbedPage.selectedData.shutterSpeed) + " s"
-    chipSoftware.content: tabbedPage.selectedData.software
+    chipModel.content: tabbedPage.currentPhoto.camModel
+    chipMaker.content: tabbedPage.currentPhoto.make
+    chipAperture.content: "ƒ " + tabbedPage.currentPhoto.fNumber.toFixed(1)
+    chipSpeed.content: arrondir(tabbedPage.currentPhoto.shutterSpeed) + " s"
+    chipSoftware.content: tabbedPage.currentPhoto.software
 
-    chipSpeed.visible: (tabbedPage.selectedData.shutterSpeed > 0)
-    chipAperture.visible: (tabbedPage.selectedData.fNumber > 0)
+    chipSpeed.visible: (tabbedPage.currentPhoto.shutterSpeed > 0)
+    chipAperture.visible: (tabbedPage.currentPhoto.fNumber > 0)
 
-    property string camPng: tabbedPage.selectedData.camModel
+    property string camPng: tabbedPage.currentPhoto.camModel
     // on enleve les espaces et / et \
     camThumb.source: camPng ? "/Cameras/" + camPng.replace(/[\s\\\/]/g,
                                                            '') + ".png" : ""

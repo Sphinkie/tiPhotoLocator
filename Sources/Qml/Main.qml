@@ -266,15 +266,15 @@ Window {
 
             currentIndex: tabBar.currentIndex
             // On l'initialise sur la photo Welcome (type = QVariantMap)
-            property var selectedData: _photoModel.get(0)
+            property var currentPhoto: _photoModel.get(0)
 
             /// ------------------ CONNEXIONS----------------------------
             Connections {
                 target: _photoModel
                 function onDataChanged() {
                     // console.log("PhotoModel Data changed !");
-                    var currentrow = tabbedPage.selectedData.row
-                    tabbedPage.selectedData = _photoModel.get(currentrow)
+                    var currentrow = tabbedPage.currentPhoto.row
+                    tabbedPage.currentPhoto = _photoModel.get(currentrow)
                 }
             }
 

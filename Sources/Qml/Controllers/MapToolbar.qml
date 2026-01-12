@@ -22,8 +22,8 @@ ToolbarMapForm {
     bt_apply_savedpos.onClicked: {
         window.applySavedPositionToCoords()
         // On recentre la carte, si la nouvelle Position est en dehors de la vue actuelle
-        var pos = QtPositioning.coordinate(tabbedPage.selectedData.latitude,
-                                           tabbedPage.selectedData.longitude)
+        var pos = QtPositioning.coordinate(tabbedPage.currentPhoto.latitude,
+                                           tabbedPage.currentPhoto.longitude)
         if (!mapView.visibleRegion.contains(pos))
             mapView.center = pos
     }
@@ -36,7 +36,7 @@ ToolbarMapForm {
 
     // Clic sur "Revert": On recharge les infos à partir de la photo du disque.
     bt_revert.onClicked: {
-        window.fetchSingleExifMetadata(tabbedPage.selectedData.row)
+        window.fetchSingleExifMetadata(tabbedPage.currentPhoto.row)
     }
 
     bt_remove_savedpos.enabled: _photoModel.savedPositionExists
@@ -47,10 +47,10 @@ ToolbarMapForm {
         target: tabbedPage
         function onSelectedDataChanged() {
             // console.debug("onSelectedDataChanged->ToolBarMap");
-            // console.debug("hasGPS" + tabbedPage.selectedData.hasGPS);
-            bt_save_pos.enabled = tabbedPage.selectedData.hasGPS
-            bt_revert.enabled = tabbedPage.selectedData.toBeSaved
-            slider_radius.enabled = tabbedPage.selectedData.hasGPS
+            // console.debug("hasGPS" + tabbedPage.currentPhoto.hasGPS);
+            bt_save_pos.enabled = tabbedPage.currentPhoto.hasGPS
+            bt_revert.enabled = tabbedPage.currentPhoto.toBeSaved
+            slider_radius.enabled = tabbedPage.currentPhoto.hasGPS
         }
     }
 }

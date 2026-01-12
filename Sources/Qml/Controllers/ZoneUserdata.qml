@@ -102,7 +102,7 @@ ZoneUserdataForm {
             // console.debug("onSelectedDataChanged->ZoneUserData");
 
             // On détermine le contenu des chips ici
-            var photoKeywords = tabbedPage.selectedData.keywords
+            var photoKeywords = tabbedPage.currentPhoto.keywords
 
             // console.debug("photoKeywords[0]:" + photoKeywords[0]);
             chipKeyword0.content = photoKeywords[0] ? photoKeywords[0] : ""

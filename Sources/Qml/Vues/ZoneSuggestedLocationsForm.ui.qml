@@ -22,7 +22,7 @@ Zone {
             id: bt_getinfo
             text: qsTr("Chercher")
             icon.source: "qrc:/Images/icon-suggestion.png"
-            enabled: tabbedPage.selectedData.hasGPS
+            enabled: tabbedPage.currentPhoto.hasGPS
             Layout.topMargin: 16
             Layout.leftMargin: 20
             ToolTip.text: qsTr(

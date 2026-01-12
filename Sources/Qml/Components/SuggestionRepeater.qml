@@ -53,7 +53,7 @@ Repeater {
                 onClicked: {
                     // On affecte le texte de la suggestion à la target
                     // console.log("onglet:" + tabbedPage.currentIndex);
-                    console.log("chipMouseArea:" + target + " for " + tabbedPage.selectedData.row)
+                    console.log("chipMouseArea:" + target + " for " + tabbedPage.currentPhoto.row)
 
                     // Si onglet CARTE : on applique la suggestion à toutes les photos du cercle
                     if (tabbedPage.currentIndex === 1) {
@@ -65,7 +65,7 @@ Repeater {
 
                     // Si onglet TAG : on applique la suggestion à la seule photo sélectionnée
                     if (tabbedPage.currentIndex === 2)
-                        window.setPhotoProperty(tabbedPage.selectedData.row,
+                        window.setPhotoProperty(tabbedPage.currentPhoto.row,
                                                 text, target)
 
                     // On enlève le Chip de la zone Suggestions
