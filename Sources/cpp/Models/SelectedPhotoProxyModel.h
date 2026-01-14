@@ -1,13 +1,13 @@
-#ifndef UNLOCALIZEDPROXYMODEL_H
-#define UNLOCALIZEDPROXYMODEL_H
+#ifndef SELECTEDPHOTOPROXYMODEL_H
+#define SELECTEDPHOTOPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
 
 
 /** **********************************************************************************************************
- * @brief The UnlocalizedProxyModel class is a filter ProxyModel, that filters Photo with/without GPS coordinates.
+ * @brief The SelectedPhotoProxyModel class is a filter ProxyModel, that filters selected Photos.
  * ***********************************************************************************************************/
-class UnlocalizedProxyModel : public QSortFilterProxyModel
+class SelectedPhotoProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
@@ -15,7 +15,7 @@ class UnlocalizedProxyModel : public QSortFilterProxyModel
     Q_PROPERTY(bool filterEnabled READ filterEnabled WRITE setFilterEnabled NOTIFY filterEnabledChanged)
 
 public:
-    explicit UnlocalizedProxyModel(QObject *parent = nullptr);
+    explicit SelectedPhotoProxyModel(QObject *parent = nullptr);
     bool filterEnabled() const;
     // -----------------------------------------------------
     // Méthodes pouvant être appelées depuis QML
@@ -30,4 +30,4 @@ signals:
 
 };
 
-#endif // UNLOCALIZEDPROXYMODEL_H
+#endif // SELECTEDPHOTOPROXYMODEL_H

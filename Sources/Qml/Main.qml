@@ -124,10 +124,6 @@ ApplicationWindow {
         id: menuBar
         height: 50
         width: parent.width
-        //        anchors {
-        //            top: parent.top
-        //          right: parent.right
-        //    }
     }
 
 
@@ -137,11 +133,6 @@ ApplicationWindow {
     header: ToolbarPrincipale {
         id: toolBar
         width: parent.width
-        //anchors {
-        //top: menuBar.bottom
-        //right: parent.right
-        //  left: topLogo.right
-        // }
     }
 
 
@@ -157,50 +148,13 @@ ApplicationWindow {
 
         RowLayout {
             id: filtersAndTabslayout
-            anchors {
-                left: parent.left
-                right: parent.right
-            }
+            width: parent.width
 
-            CheckBox {
-                id: checkBox1
+            FilterBar {
+                id: filterBar
                 Layout.leftMargin: 20
-                text: qsTr("sans date")
-                ToolTip.text: qsTr("Liste des photos sans date")
-                ToolTip.visible: hovered
-                ToolTip.delay: 500
-                checked: false
-                onClicked: {
-                    _undatedPhotoProxyModel.filterEnabled = checked
-                }
             }
 
-            CheckBox {
-                id: checkBox2
-                Layout.leftMargin: 20
-                text: qsTr("sans localisation")
-                ToolTip.text: qsTr("Liste des photos sans localisation")
-                ToolTip.visible: hovered
-                ToolTip.delay: 500
-                checked: false
-                onClicked: {
-                    _unlocalizedProxyModel.filterEnabled = checked
-                }
-            }
-
-            CheckBox {
-                id: checkBox3
-                Layout.leftMargin: 20
-                text: qsTr("All")
-                ToolTip.text: qsTr("All photos")
-                ToolTip.visible: hovered
-                ToolTip.delay: 500
-                checked: false
-                onClicked: {
-
-                    // TODO
-                }
-            }
             TabBar {
                 id: tabBar
                 Layout.leftMargin: 120

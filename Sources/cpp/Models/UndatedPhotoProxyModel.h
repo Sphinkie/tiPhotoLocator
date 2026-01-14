@@ -9,6 +9,8 @@
  * ***********************************************************************************************************/
 class UndatedPhotoProxyModel : public QSortFilterProxyModel
 {
+    // FIXME : OBSOLETE !
+
     Q_OBJECT
 
     //! filterEnabled manages the status of the filtering.

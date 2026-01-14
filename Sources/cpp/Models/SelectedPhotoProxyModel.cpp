@@ -1,20 +1,18 @@
 #include<QDebug>
 #include "PhotoModel.h"
-#include "UnlocalizedProxyModel.h"
-
-#include "UndatedPhotoProxyModel.h"
+#include "SelectedPhotoProxyModel.h"
 
 #define QT_NO_DEBUG_OUTPUT
 
 
 /** **********************************************************************************************************
  * @brief Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt.
- *        Le role à filtrer est "hasGPS". Par défaut, le filtrage est inactif.
+ *        Le role à filtrer est "isSelected". Par défaut, le filtrage est inactif.
  * @param parent : modèle source
  * ***********************************************************************************************************/
-UnlocalizedProxyModel::UnlocalizedProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
+SelectedPhotoProxyModel::SelectedPhotoProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
-    this->setFilterRole(PhotoModel::HasGPSRole);
+    this->setFilterRole(PhotoModel::IsSelectedRole);
     this->setFilterEnabled(false);    // accept all
 }
 
@@ -23,7 +21,7 @@ UnlocalizedProxyModel::UnlocalizedProxyModel(QObject *parent) : QSortFilterProxy
  * @brief Cette méthode indique si le filtrage est actif ou non.
  * @returns true si le filtre est actif.
  * ***********************************************************************************************************/
-bool UnlocalizedProxyModel::filterEnabled() const
+bool SelectedPhotoProxyModel::filterEnabled() const
 {
     return !(this->filterRegularExpression().pattern() == "");
 }
@@ -33,11 +31,11 @@ bool UnlocalizedProxyModel::filterEnabled() const
  * @brief Ce slot active ou désactive le filtrage par le proxyModel.
  * @param enabled : true pour activer le filtrage
  * ***********************************************************************************************************/
-void UnlocalizedProxyModel::setFilterEnabled(bool enabled)
+void SelectedPhotoProxyModel::setFilterEnabled(bool enabled)
 {
     beginFilterChange();
     if (enabled)
-        this->setFilterFixedString("false");   // accepte uniquement les Photos avec hasGPS = "false"
+        this->setFilterFixedString("true");   // accepte uniquement les Photos avec isSelected = "true"
     else
         this->setFilterFixedString("");        // accept all
     endFilterChange();
@@ -50,9 +48,9 @@ void UnlocalizedProxyModel::setFilterEnabled(bool enabled)
  * @param  row : L'indice de la Photo dans ce \b proxyModel.
  * @return l'indice de la Photo dans le \b sourceModel PhotoModel.
  * ***********************************************************************************************************/
-int UnlocalizedProxyModel::getSourceIndex(int row)
+int SelectedPhotoProxyModel::getSourceIndex(int row)
 {
-    // qDebug() << "UnlocalizedProxyModel::getSourceIndex";
+    // qDebug() << "SelectedPhotoProxyModel::getSourceIndex";
 
     // On convertit l'indice vers un indice de la source
     QModelIndex sourceIndex = mapToSource(index(row,0));
@@ -68,7 +66,9 @@ int UnlocalizedProxyModel::getSourceIndex(int row)
     else
     {
         // qDebug() << "La source est un Proxy";
-        auto proxy_model = dynamic_cast<UndatedPhotoProxyModel*>(underneath_model);
+        // Ce cas n'est plus d'actualité avec la nouvelle architecture en v1.4 : il n'y a plus de proxy empilés.
+        // On garde le code comme modèle pour une autre fois.
+        auto proxy_model = dynamic_cast<SelectedPhotoProxyModel*>(underneath_model); // Mettre ici le PoxyModel du dessous.
         return proxy_model->getSourceIndex(sourceIndex.row());
     }
     // On fait ce traitement un peu compliqué, pour ne pas être contraint dans l'ordre où les proxyModels sont empilés.

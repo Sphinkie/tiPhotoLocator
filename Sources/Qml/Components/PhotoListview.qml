@@ -4,13 +4,13 @@ import ".."
 
 
 /** **********************************************************************************************************
- * @brief QML: Liste des filenames des photos, associée au modèle filtré UnlocalizedProxyModel.
- * Ce modèle est basé sur PhotoModel, filtré par UndatedPhotoProxyModel puis par UnlocalizedProxyModel.
+ * @brief QML: Liste des filenames des photos, associée au modèle filtré SelectedPhotoProxyModel.
+ * Ce modèle est basé sur PhotoModel, filtré pour afficher toutes photos, ou uniquement celles sélectionnées.
  * @sa https://www.youtube.com/watch?v=ZArpJDRJxcI
  * ***********************************************************************************************************/
 ListView {
     anchors.fill: parent
-    model: _unlocalizedProxyModel // Activation de la checkbox "has GPS"
+    model: _selectedPhotoProxyModel
     delegate: listDelegate
     focus: true
     clip: true // pour que les items restent à l'intérieur de la listview
@@ -147,8 +147,6 @@ ListView {
                 acceptedButtons: Qt.LeftButton | Qt.RightButton
                 onClicked: mouse => {
                                if (mouse.button === Qt.LeftButton) {
-                                   console.log(
-                                       "MouseArea: left-clic sur " + index)
                                    // Définit l'item courant de la ListView et positionne le highlight.
                                    __lv.currentIndex = index
                                    activatePhoto(index, hasGPS, city, country,
@@ -162,9 +160,10 @@ ListView {
                                    } else
                                    geoTimer.stop()
                                } else {
-                                   console.log(
-                                       "MouseArea: right-clic sur " + index)
                                    var sourceindex = model.getSourceIndex(index)
+                                   if (isSelected)
+                                   _photoModel.removeFromSelection(sourceindex)
+                                   else
                                    _photoModel.addToSelection(sourceindex)
                                }
                            }
@@ -175,8 +174,8 @@ ListView {
 
     /** **********************************************************************************************************
      * @brief Active la photo sélectionnée (Preview, imagette, tags, et pinpoint géographique).
-     * Cette fonction est appelée quand on clique sur un item de listView, et aussi quand le logiciel se positionne
-     * automatiquement sur la première photo (TODO).
+     * Cette fonction est appelée quand on clique sur un item de listView,
+     * TODO et aussi quand le logiciel se positionne  automatiquement sur la première photo.
      * @param pos : La position de la photo dans la listView
      * ***********************************************************************************************************/
     function activatePhoto(pos, hasGPS, city, country, latitude, longitude) {

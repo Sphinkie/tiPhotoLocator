@@ -811,19 +811,81 @@ QVariantMap PhotoModel::get(int row)
 
 
 /** **********************************************************************************************************
- * @brief Cette méthode (invocable par QML) ajoute la photo désigné aux groupe des photos sélectionnées.
+ * @brief Cette méthode (invocable par QML) ajoute la photo désignée aux photos sélectionnées.
  * @param row : indice de la photo dans la listView
  * @param exclusive : if True, all other Photos are unselected.
  * ***********************************************************************************************************/
 void PhotoModel::addToSelection(int row, bool exclusive)
 {
     qDebug() << "addToSelection" << row;
+    // Le paramètre 'exclusive' déselectionne toutes les autres photos.
     if (exclusive)
         this->resetSelection();
-    // TODO Ajouter un paramètre 'exclusive' qui déselectionne toutes les autres.
     QModelIndex idx = this->index(row, 0);
-    this->setData(idx,true, IsSelectedRole);
+    this->setData(idx, true, IsSelectedRole);
+}
 
+/** **********************************************************************************************************
+ * @brief Cette méthode enlève la photo désignée des photos sélectionnées.
+ * @param row : indice de la photo dans la listView
+ * ***********************************************************************************************************/
+void PhotoModel::removeFromSelection(int row)
+{
+    qDebug() << "removeFromSelection" << row;
+    QModelIndex idx = this->index(row, 0);
+    this->setData(idx, false, IsSelectedRole);
+}
+
+/** **********************************************************************************************************
+ * @brief Ajoute le flag "isSelected" à toutes les photos qui n'ont pas de date.
+ * ***********************************************************************************************************/
+void PhotoModel::selectUndated()
+{
+    // On parcourt tous les items du modèle
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        if (m_photos[row].dateTimeOriginal.isEmpty()) {
+            m_photos[row].isSelected = true;
+            emit dataChanged(idx, idx, QVector<int>() << IsSelectedRole);
+        }
+        idx = idx.siblingAtRow(++row);
+    }
+}
+
+/** **********************************************************************************************************
+ * @brief Ajoute le flag "isSelected" à toutes les photos qui n'ont pas de coordonnées GPS.
+ * ***********************************************************************************************************/
+void PhotoModel::selectUnlocalized()
+{
+    // On parcourt tous les items du modèle
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        if (!m_photos[row].hasGPS) {
+            m_photos[row].isSelected = true;
+            emit dataChanged(idx, idx, QVector<int>() << IsSelectedRole);
+        }
+        idx = idx.siblingAtRow(++row);
+    }
+}
+/** **********************************************************************************************************
+ * @brief Ajoute le flag "isSelected" à toutes les photos.
+ * ***********************************************************************************************************/
+void PhotoModel::selectAll()
+{
+    // On parcourt tous les items du modèle
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        m_photos[row].isSelected = true;
+        idx = idx.siblingAtRow(++row);
+    }
+    // A la fin, on notifie en une seule fois l'ensemble des photos.
+    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << IsSelectedRole);
 }
 
 

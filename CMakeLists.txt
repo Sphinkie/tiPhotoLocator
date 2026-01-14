@@ -33,7 +33,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/cpp/Models/SuggestionModel.cpp        Sources/cpp/Models/SuggestionModel.h
         Sources/cpp/Models/SuggestionProxyModel.cpp   Sources/cpp/Models/SuggestionProxyModel.h
         Sources/cpp/Models/UndatedPhotoProxyModel.cpp Sources/cpp/Models/UndatedPhotoProxyModel.h
-        Sources/cpp/Models/UnlocalizedProxyModel.cpp  Sources/cpp/Models/UnlocalizedProxyModel.h
+        Sources/cpp/Models/SelectedPhotoProxyModel.cpp  Sources/cpp/Models/SelectedPhotoProxyModel.h
         Sources/cpp/Models/SuggestionCategoryProxyModel.cpp  Sources/cpp/Models/SuggestionCategoryProxyModel.h
     RESOURCES
         Resources/tiPhotoLocator.qrc
@@ -94,6 +94,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
         QML_FILES Sources/Qml/Components/ApplicationLogo.qml
+        QML_FILES Sources/Qml/Components/FilterBar.qml
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

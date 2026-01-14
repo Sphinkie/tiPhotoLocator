@@ -76,6 +76,11 @@ public:
     Q_INVOKABLE QVariant getUrl(int row);
     Q_INVOKABLE QVariantMap get(int row);
     Q_INVOKABLE void addToSelection(int row, bool exclusive=false);
+    Q_INVOKABLE void removeFromSelection(int row);
+    Q_INVOKABLE void resetSelection();
+    Q_INVOKABLE void selectUnlocalized();
+    Q_INVOKABLE void selectUndated();
+    Q_INVOKABLE void selectAll();
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
     Q_INVOKABLE void removePhotoKeyword(QString keyword);
@@ -97,7 +102,6 @@ private:
     // -----------------------------------------------------
     void addTestItem();
     void resetCircle();
-    void resetSelection();
     void setLoading(const bool state);
     void currentItemRow(const int row);
     void currentItemCoords(const QGeoCoordinate coords);
