@@ -73,7 +73,10 @@ MenuBar {
     Menu {
         id: helpMenu
         title: qsTr("Help")
-        // TODO: MenuItem  { text: qsTr("Obtenir une API KEY"); onTriggered: apiPage.open(); }
+        MenuItem {
+            text: qsTr("Obtenir une API KEY")
+            onTriggered: apiPage.open()
+        }
         MenuItem {
             text: qsTr("Credits")
             onTriggered: creditsPage.open()

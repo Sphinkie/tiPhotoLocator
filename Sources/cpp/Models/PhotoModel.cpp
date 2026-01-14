@@ -337,10 +337,11 @@ void PhotoModel::currentItemRow(const int row)
         emit dataChanged(previous_index, previous_index, {IsCurrentRole} );
         // qDebug() << m_photos[m_lastCurrentRow].isCurrent << m_photos[m_lastCurrentRow].filename ;
     }
-    // On met à True le nouvel item courant
+    // On met à True le nouvel item courant (il est aussi sélectionné).
     m_photos[row].isCurrent = true;
+    m_photos[row].isSelected = true;
     QModelIndex new_index = this->index(row, 0);
-    emit dataChanged(new_index, new_index, {IsCurrentRole} );
+    emit dataChanged(new_index, new_index, {IsCurrentRole, IsSelectedRole} );
     m_lastCurrentRow = row;
     // On notifie les autres classes qui ont besoin de savoir quelle est la photo courante
     emit currentItemRowChanged(row);
@@ -932,15 +933,21 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
         {
             // Si la Photo est dans le cercle : on positionne "insideCircle" à true.
             if (belong(m_photos[row].gpsLatitude, m_photos[row].gpsLongitude, circle_lat, circle_long, rayon_lat, rayon_long) )
+            {
                 m_photos[row].insideCircle = true;
+                m_photos[row].isSelected = true;
+            }
             else
+            {
                 // Sinon on positionne "insideCircle" à false.
                 m_photos[row].insideCircle = false;
+                m_photos[row].isSelected = false;
+            }
         }
         idx = idx.siblingAtRow(++row);
     }
     // A la fin, on notifie en une seule fois l'ensemble de toutes les photos.
-    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
+    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole << IsSelectedRole);
 
     // si la fonction est relancée une seconde fois alors que celle-ci n'est pas finie : on ignore
     // TODO : Mettre un Mutex

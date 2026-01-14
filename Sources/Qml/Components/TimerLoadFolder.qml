@@ -23,6 +23,7 @@ Timer {
         // On reinitialise le cercle
         mapTab.mapTools.slider_radius.value = 0
         // Puis on lance la récupération des données EXIF (delay 1 sec))
+
         /// Timer utilisé pour les Exifs
         Timer: {
             interval: 1000 ///< Durée du timer = 1 seconde.

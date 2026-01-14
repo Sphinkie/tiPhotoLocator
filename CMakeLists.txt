@@ -25,23 +25,25 @@ qt_add_qml_module(tiPhotoLocator
         Sources/cpp/GeocodeWrapper.cpp        Sources/cpp/GeocodeWrapper.h
         Sources/cpp/PhotoModelWrapper.cpp     Sources/cpp/PhotoModelWrapper.h
         Sources/cpp/Utilities.cpp             Sources/cpp/Utilities.h
-        Sources/cpp/Models/Photo.h
-        Sources/cpp/Models/Suggestion.h
         Sources/cpp/Models/CameraSet.cpp              Sources/cpp/Models/CameraSet.h
-        Sources/cpp/Models/OnTheMapProxyModel.cpp     Sources/cpp/Models/OnTheMapProxyModel.h
+        Sources/cpp/Models/Photo.h
         Sources/cpp/Models/PhotoModel.cpp             Sources/cpp/Models/PhotoModel.h
+        Sources/cpp/Models/OnTheMapProxyModel.cpp     Sources/cpp/Models/OnTheMapProxyModel.h
+        Sources/cpp/Models/SelectedPhotoProxyModel.cpp  Sources/cpp/Models/SelectedPhotoProxyModel.h
+        Sources/cpp/Models/Suggestion.h
         Sources/cpp/Models/SuggestionModel.cpp        Sources/cpp/Models/SuggestionModel.h
         Sources/cpp/Models/SuggestionProxyModel.cpp   Sources/cpp/Models/SuggestionProxyModel.h
-        Sources/cpp/Models/UndatedPhotoProxyModel.cpp Sources/cpp/Models/UndatedPhotoProxyModel.h
-        Sources/cpp/Models/SelectedPhotoProxyModel.cpp  Sources/cpp/Models/SelectedPhotoProxyModel.h
         Sources/cpp/Models/SuggestionCategoryProxyModel.cpp  Sources/cpp/Models/SuggestionCategoryProxyModel.h
     RESOURCES
         Resources/tiPhotoLocator.qrc
     QML_FILES
         Sources/Qml/Main.qml
         Sources/Qml/Style.qml
+    QML_FILES
+        Sources/Qml/Components/ApplicationLogo.qml
         Sources/Qml/Components/Chips.qml
         Sources/Qml/Components/FatChip.qml
+        Sources/Qml/Components/FilterBar.qml
         Sources/Qml/Components/ImagettesListView.qml
         Sources/Qml/Components/SuggestionRepeater.qml
         Sources/Qml/Components/MapView.qml
@@ -55,26 +57,29 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/TimerLoadFolder.qml
         Sources/Qml/Components/Zone.qml
         Sources/Qml/Components/ZoneTitle.qml
-        Sources/Qml/Controllers/ZoneExif.qml
-        Sources/Qml/Controllers/ZoneIptc.qml
+    QML_FILES
         Sources/Qml/Controllers/PopupMetadata.qml
         Sources/Qml/Controllers/PopupSettings.qml
-        Sources/Qml/Controllers/ToolbarBottom.qml
-        Sources/Qml/Controllers/MapToolbar.qml
         Sources/Qml/Controllers/ToolbarPrincipale.qml
+        Sources/Qml/Controllers/ToolbarBottom.qml
+        Sources/Qml/Controllers/ToolbarMap.qml
         Sources/Qml/Controllers/ZoneCamera.qml
+        Sources/Qml/Controllers/ZoneExif.qml
+        Sources/Qml/Controllers/ZoneIptc.qml
         Sources/Qml/Controllers/ZoneGeoloc.qml
         Sources/Qml/Controllers/ZonePhoto.qml
         Sources/Qml/Controllers/ZonePreview.qml
         Sources/Qml/Controllers/ZoneSuggestedTags.qml
         Sources/Qml/Controllers/ZoneSuggestedLocations.qml
         Sources/Qml/Controllers/ZoneUserdata.qml
+    QML_FILES
         Sources/Qml/Dialogs/AboutDialog.qml
         Sources/Qml/Dialogs/ApikeyDialog.qml
         Sources/Qml/Dialogs/CreditsDialog.qml
         Sources/Qml/Dialogs/RescanWarning.qml
         Sources/Qml/Dialogs/TiFolderDialog.qml
         Sources/Qml/Models/ModelFolderList.qml
+    QML_FILES
         Sources/Qml/Vues/ZoneExifForm.ui.qml
         Sources/Qml/Vues/ZoneIptcForm.ui.qml
         Sources/Qml/Vues/PopupMetadataForm.ui.qml
@@ -93,8 +98,6 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
-        QML_FILES Sources/Qml/Components/ApplicationLogo.qml
-        QML_FILES Sources/Qml/Components/FilterBar.qml
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

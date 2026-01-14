@@ -8,7 +8,6 @@
 #include "Models/PhotoModel.h"
 #include "Models/OnTheMapProxyModel.h"
 #include "Models/SelectedPhotoProxyModel.h"
-#include "Models/UndatedPhotoProxyModel.h"
 #include "Models/SuggestionModel.h"
 #include "Models/SuggestionProxyModel.h"
 #include "Models/SuggestionCategoryProxyModel.h"
@@ -47,8 +46,6 @@ int main(int argc, char *argv[])
     PhotoModel photoModel;
     OnTheMapProxyModel onTheMapProxyModel;
     onTheMapProxyModel.setSourceModel(&photoModel);
-    UndatedPhotoProxyModel undatedPhotoProxyModel;
-    undatedPhotoProxyModel.setSourceModel(&photoModel);
     SelectedPhotoProxyModel selectedPhotoProxyModel;
     selectedPhotoProxyModel.setSourceModel(&photoModel);
 
@@ -81,7 +78,6 @@ int main(int argc, char *argv[])
     context->setContextProperty("_suggestionProxyModel", &suggestionProxyModel);
     context->setContextProperty("_suggestionCategoryProxyModel", &suggestionCategoryProxyModel);
     context->setContextProperty("_selectedPhotoProxyModel", &selectedPhotoProxyModel);
-    context->setContextProperty("_undatedPhotoProxyModel", &undatedPhotoProxyModel);
     context->setContextProperty("_cameraSet", &cameraSet);
 
     // ----------------------------------------------------------------------------

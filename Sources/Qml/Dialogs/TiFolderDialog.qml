@@ -68,8 +68,8 @@ FolderDialog {
 
 
     /** ***********************************************************************************
-     * Mémorisation dans les Settings du nombre de RecentFolders, et de leurs chemins.
-     * Ils sont affichés par la TiMenuBar.
+     * Mémorisation dans les Settings des chemins des RecentFolders.
+     * Ils sont affichés par la MenuBar.
      * ************************************************************************************/
     Settings {
         id: settings

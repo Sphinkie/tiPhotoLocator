@@ -18,7 +18,7 @@ GridLayout {
     columns: 2 // carte et zone des tags
 
     /// Barre d'outils pour la carte, sur toute la largeur (controleur avec vue).
-    MapToolbar {
+    ToolbarMap {
         id: mapTools
         Layout.columnSpan: 2
         Layout.fillWidth: true

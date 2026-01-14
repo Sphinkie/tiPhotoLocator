@@ -175,8 +175,12 @@ ListView {
     /** **********************************************************************************************************
      * @brief Active la photo sélectionnée (Preview, imagette, tags, et pinpoint géographique).
      * Cette fonction est appelée quand on clique sur un item de listView,
-     * TODO et aussi quand le logiciel se positionne  automatiquement sur la première photo.
-     * @param pos : La position de la photo dans la listView
+     * @param pos : La position de la photo dans la listView.
+     * @param hasGPS : La propriété hasGPS de la photo.
+     * @param city : La propriété city de la photo.
+     * @param country : La propriété country de la photo.
+     * @param latitude : La propriété latitude de la photo.
+     * @param longitude : La propriété longitude de la photo.
      * ***********************************************************************************************************/
     function activatePhoto(pos, hasGPS, city, country, latitude, longitude) {
         var sourceindex = model.getSourceIndex(pos)
@@ -188,14 +192,14 @@ ListView {
         // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
         tabbedPage.currentPhoto = _photoModel.get(sourceindex)
 
-        // On envoie les coordonnées pour centrer la carte et le cercle sur le point selectionné
-        // sinon (if not has GPS) la position de la carte reste inchangée
+        // On envoie les coordonnées pour centrer la carte et le cercle sur le point sélectionné,
+        // sinon (if not has GPS) la position de la carte reste inchangée.
         if (hasGPS) {
             var coords = _photoModel.currentItemCoords
             if (!mapTab.mapView.visibleRegion.contains(coords)) {
                 mapTab.mapView.center = coords
-                mapTab.mapView.mapCircle.center = coords
             }
+            mapTab.mapView.mapCircle.center = coords
         }
 
         // On change le filtrage des suggestions pour filtrer uniquement sur la photo active

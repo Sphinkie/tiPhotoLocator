@@ -62,7 +62,7 @@ Item {
         id: slider_radius
         enabled: false
         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-        to: 3000 // unité = 1 mètre
+        to: 4000 // unité = 1 mètre
         //onMoved: slider_label.text = Math.round(slider_radius.value/10)/100 + " km"
         anchors {
             left: bt_apply_savedpos.right

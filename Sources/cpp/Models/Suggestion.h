@@ -1,6 +1,9 @@
 #ifndef SUGGESTION_H
 #define SUGGESTION_H
 
+#include <QSet>
+#include <QString>
+
 /** **********************************************************************************************************
  * @brief A data structure containing a tag suggestion, for one or several Photo.
  * ***********************************************************************************************************/

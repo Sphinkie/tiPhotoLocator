@@ -64,6 +64,7 @@ void ExifReadTask::run()
         this->processLine(exifProcess.readLine());
     }
     // qDebug() << "Task finished" ;
+    // On positionne le curseur de la ListView sur la première photo.
     if (m_filePos == 0) m_photoModel->selectFirstPhoto();
 }
 

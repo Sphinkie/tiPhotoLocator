@@ -18,9 +18,9 @@ import QtPositioning
  * - Lors du readExif (GPS coords) d'un nouveau dossier
  *   - onFirstCoordsReady
  * - Lors de la sélection d'une photo dans la liste
- *   - le delegate markerDelegate affiche un marker rouge à l'emplacement de la photo
- *   - le delegate affiche un marker jaune à l'emplacement de la SavedPos
- *   - le delegate affiche un marker gris à l'emplacement de chaque photo incluse dans le cercle
+ *   - le delegate markerDelegate affiche un marker rouge à l'emplacement de la photo.
+ *   - le delegate affiche un marker jaune à l'emplacement de la SavedPos.
+ *   - le delegate affiche un marker gris à l'emplacement de chaque photo sélectionnée.
  * ***********************************************************************************************************/
 Map {
     // Position initiale de la carte
@@ -110,7 +110,7 @@ Map {
                 // On repositionne la carte sur les coords de la photo sélectionée
                 mapView.center = coords
                 // On repositionne le cercle
-                mapCircle.center = coords
+                //mapCircle.center = coords // apparement inutile
             }
         }
         // on relit homeCoords dans les settings
@@ -175,11 +175,11 @@ Map {
                     id: markerIcon
                     height: isMarker ? 40 // Le marker "saved position" est plus petit que les autres
                                      : isCurrent ? 48 // La photo sélectionnée est plus grosse pour être toujours visible
-                                                  : 44 // Les autres sont légèrement plus petites
+                                                 : 44 // Les autres sont légèrement plus petites
                     width: height
                     source: isMarker ? "qrc:///Images/mappin-yellow.png" // le marker est jaune
                                      : isCurrent ? "qrc:///Images/mappin-red.png" // la photo sélectionée est rouge
-                                                  : "qrc:///Images/mappin-black.png" // les autres sont en gris
+                                                 : "qrc:///Images/mappin-black.png" // les autres sont en gris
                 }
             }
         }

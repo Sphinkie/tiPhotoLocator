@@ -9,7 +9,7 @@ MessageDialog {
     readonly property string version: "1.3"
     readonly property string t0: qsTr("<b>TiPhotoLocator</b> permet de placer vos photos sur la carte géographique du monde, ainsi que d'éditer les tags EXIF et IPTC internes aux photos.<br/>")
     readonly property string t1: qsTr("<br/><br/>Programme réalisé par David de Lorenzo.")
-    readonly property string t2: qsTr("TiPhotoLocator est gratuit et sans publicité.")
+    readonly property string t_details: qsTr("TiPhotoLocator est gratuit et sans publicité.")
 
     // -------------------------------------------------
     // Propriétés de MessageDialog
@@ -22,7 +22,7 @@ MessageDialog {
     /// Informative text can be used to expand upon the text to give more information to the user.
     informativeText: t0 + t1
     /// This property holds the (unformated) text to be displayed in the details area.
-    detailedText: t2
+    detailedText: t_details
 
     /// Non visible au démarrage.
     Component.onCompleted: visible = false
