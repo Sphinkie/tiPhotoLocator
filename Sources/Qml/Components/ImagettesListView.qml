@@ -16,15 +16,15 @@ ListView {
 
 
     /** ******************************************************************************************************
-     * Le delegate pour afficher l'imagette dans la ListView.
+     * Le delegate pour afficher chaque imagette dans la ListView. L'image courante a un cadre.
      * *******************************************************************************************************/
     delegate: Rectangle {
         required property string imageUrl
-        required property bool isSelected
+        required property bool isCurrent
         width: 160
         height: 160
         radius: 4
-        border.color: isSelected ? Material.accentColor : "transparent"
+        border.color: isCurrent ? Material.accentColor : "transparent"
         border.width: 3
         Image {
             id: image

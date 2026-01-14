@@ -1,6 +1,7 @@
 #ifndef PHOTO_H
 #define PHOTO_H
 
+#include <QList>
 #include <QString>
 
 /** **********************************************************************************************************
@@ -16,14 +17,15 @@ struct Photo
           const QString &image_url,
           const bool is_marker = false,
           const bool is_welcome = false,
-          bool is_selected = false
+          bool is_current = false
           )
     {
         filename = file_name;
         imageUrl = image_url;
         isMarker = is_marker;
         isWelcome = is_welcome;
-        isSelected = is_selected;
+        isCurrent = is_current;
+        isSelected = is_current;
     }
 
     // Elements de la structure
@@ -33,6 +35,7 @@ struct Photo
     double gpsLongitude = 0;    //!< GPS coordinates. Example: 1.4333 (Ibiza)
     // Elements déterminés automatiquement
     bool hasGPS = false;        //!< has GPS coordinates (latitude/longitude)
+    bool isCurrent;             //!< Indique que cet item est l'item courant de la ListView
     bool isSelected;            //!< Indique que cet item est sélectionné dans la ListView
     bool isMarker = false;      //!< Exemple: une position sauvegardée sur la carte
     bool isWelcome = false;     //!< Exemple: L'image de la page d'acceuil

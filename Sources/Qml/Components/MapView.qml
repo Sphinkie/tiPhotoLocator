@@ -157,7 +157,7 @@ Map {
             required property double longitude
             required property bool hasGPS
             required property bool isMarker
-            required property bool isSelected
+            required property bool isCurrent
             // Position du MapQuickItem (marker) = lat et long de la photo
             coordinate: QtPositioning.coordinate(latitude, longitude)
             // Point d'ancrage de l'icone p/r aux coordinates
@@ -174,11 +174,11 @@ Map {
                 Image {
                     id: markerIcon
                     height: isMarker ? 40 // Le marker "saved position" est plus petit que les autres
-                                     : isSelected ? 48 // La photo sélectionnée est plus grosse pour être toujours visible
+                                     : isCurrent ? 48 // La photo sélectionnée est plus grosse pour être toujours visible
                                                   : 44 // Les autres sont légèrement plus petites
                     width: height
                     source: isMarker ? "qrc:///Images/mappin-yellow.png" // le marker est jaune
-                                     : isSelected ? "qrc:///Images/mappin-red.png" // la photo sélectionée est rouge
+                                     : isCurrent ? "qrc:///Images/mappin-red.png" // la photo sélectionée est rouge
                                                   : "qrc:///Images/mappin-black.png" // les autres sont en gris
                 }
             }

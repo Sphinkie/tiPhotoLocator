@@ -36,6 +36,7 @@ public:
         LatitudeRole,
         LongitudeRole,
         HasGPSRole,
+        IsCurrentRole,
         IsSelectedRole,
         IsMarkerRole,
         IsWelcomeRole,
@@ -74,7 +75,7 @@ public:
     Q_INVOKABLE QString getRoleName(int role);
     Q_INVOKABLE QVariant getUrl(int row);
     Q_INVOKABLE QVariantMap get(int row);
-    Q_INVOKABLE void addToSelection(int row);
+    Q_INVOKABLE void addToSelection(int row, bool exclusive=false);
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
     Q_INVOKABLE void removePhotoKeyword(QString keyword);
@@ -96,6 +97,7 @@ private:
     // -----------------------------------------------------
     void addTestItem();
     void resetCircle();
+    void resetSelection();
     void setLoading(const bool state);
     void currentItemRow(const int row);
     void currentItemCoords(const QGeoCoordinate coords);
@@ -145,7 +147,7 @@ protected:
     int m_markerRow = -1;                       //!< Position du marker SavedPosition
 private:
     QVector<Photo> m_photos;                    //!< La liste des Photo du modèle
-    int m_lastSelectedRow = 0;                  //!< L'indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
+    int m_lastCurrentRow = 0;                  //!< L'indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
     int m_dumpedRow = 0;                        //!< Compteur pour le dump de debug
     int m_lastCircleRadius = 0;                 //!< Valeur précdente du rayon de recherche
     bool m_circleResetted = true;               //!< True si le rayon du cercle est à 0, et que le flag insideCircle a été resetté sur toutes les photos.

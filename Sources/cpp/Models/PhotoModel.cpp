@@ -56,6 +56,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
     case LatitudeRole:          return photo.gpsLatitude;
     case LongitudeRole:         return photo.gpsLongitude;
     case HasGPSRole:            return photo.hasGPS;
+    case IsCurrentRole:         return photo.isCurrent;
     case IsSelectedRole:        return photo.isSelected;
     case IsMarkerRole:          return photo.isMarker;
     case IsWelcomeRole:         return photo.isWelcome;
@@ -99,6 +100,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {ImageHeightRole,       "imageHeight"},
         // flags
         {HasGPSRole,            "hasGPS"},
+        {IsCurrentRole,         "isCurrent"},
         {IsSelectedRole,        "isSelected"},
         {IsMarkerRole,          "isMarker"},
         {IsWelcomeRole,         "isWelcome"},
@@ -212,8 +214,8 @@ void PhotoModel::appendSavedPosition()
         m_markerRow = rowOfInsert;
         m_markerIndex = index(rowOfInsert,0);
     }   
-    this->setData(m_markerIndex, m_photos[m_lastSelectedRow].gpsLatitude, LatitudeRole);
-    this->setData(m_markerIndex, m_photos[m_lastSelectedRow].gpsLongitude, LongitudeRole);
+    this->setData(m_markerIndex, m_photos[m_lastCurrentRow].gpsLatitude, LatitudeRole);
+    this->setData(m_markerIndex, m_photos[m_lastCurrentRow].gpsLongitude, LongitudeRole);
     m_savedPositionExists = true;
     emit savedPositionExistsChanged();
 }
@@ -288,7 +290,7 @@ void PhotoModel::setPhotoProperty(const int photo, const QString value, const QS
         }
     case -2:
         // On affecte la photo sélectionnée.
-        setData(m_lastSelectedRow, value, property);
+        setData(m_lastCurrentRow, value, property);
         break;
     case -3:
         // Et on affecte les photos du cercle.
@@ -315,32 +317,32 @@ void PhotoModel::setPhotoProperty(const int photo, const QString value, const QS
 
 
 /** **********************************************************************************************************
- * @brief Mémorise la photo indiquée comme étant la photo sélectionnée dans la ListView.
+ * @brief Mémorise la photo indiquée comme étant la photo courante de la ListView.
  *
- * Met le flag **isSelected** du précédent item à *False* et le nouveau à *True*.
+ * Met le flag **isCurrent** du précédent item à *False* et le nouveau à *True*.
  * On fait aussi le traitement si le numéro de row est le même, car il s'agit peut-être d'une autre
  * liste de photos.
- * @param row : l'indice de l'item sélectionné dans la ListView.
+ * @param row : l'indice de l'item courant de la ListView.
  * ***********************************************************************************************************/
 void PhotoModel::currentItemRow(const int row)
 {
-    qDebug() << "selectedRow " << row << "/" << m_photos.count();
+    qDebug() << "currentItemRow " << row << "/" << m_photos.count();
     if (row < 0 || row >= m_photos.count() )
         return;
-    // On remet à False le précédent item sélectionné
-    if (m_lastSelectedRow != -1)
+    // On remet à False le précédent item courant
+    if (m_lastCurrentRow != -1)
     {
-        m_photos[m_lastSelectedRow].isSelected = false;
-        QModelIndex previous_index = this->index(m_lastSelectedRow, 0);
-        emit dataChanged(previous_index, previous_index, {IsSelectedRole} );
-        // qDebug() << m_photos[m_lastSelectedRow].isSelected << m_photos[m_lastSelectedRow].filename ;
+        m_photos[m_lastCurrentRow].isCurrent = false;
+        QModelIndex previous_index = this->index(m_lastCurrentRow, 0);
+        emit dataChanged(previous_index, previous_index, {IsCurrentRole} );
+        // qDebug() << m_photos[m_lastCurrentRow].isCurrent << m_photos[m_lastCurrentRow].filename ;
     }
-    // On met à True le nouvel item sélectionné
-    m_photos[row].isSelected = true;
+    // On met à True le nouvel item courant
+    m_photos[row].isCurrent = true;
     QModelIndex new_index = this->index(row, 0);
-    emit dataChanged(new_index, new_index, {IsSelectedRole} );
-    m_lastSelectedRow = row;
-    // On notifie les autres classes qui ont besoin de savoir quelle est la photo sélectionée
+    emit dataChanged(new_index, new_index, {IsCurrentRole} );
+    m_lastCurrentRow = row;
+    // On notifie les autres classes qui ont besoin de savoir quelle est la photo courante
     emit currentItemRowChanged(row);
 }
 
@@ -351,7 +353,7 @@ void PhotoModel::currentItemRow(const int row)
  * ***********************************************************************************************************/
 void PhotoModel::currentItemCoords(const QGeoCoordinate coords)
 {
-    QModelIndex index = this->index(m_lastSelectedRow, 0);
+    QModelIndex index = this->index(m_lastCurrentRow, 0);
     this->setData(index, coords.latitude(), LatitudeRole);
     this->setData(index, coords.longitude(), LongitudeRole);
 }
@@ -377,7 +379,7 @@ void PhotoModel::setData(int row, QString value, QString property)
  *
  * Cette fonction met aussi à *True* le flag **To Be Saved** quand il s'agit d'une action opérateur.
  * Cette fonction est appelée quand on clique sur un Chips, pour modifier une des propriétés de la Photo.
- * Certains roles ne sont pas modifiables: `imageUrl, isSelected, hasGPS, filename, shutterSpeed, F-number`, etc.
+ * Certains roles ne sont pas modifiables: `imageUrl, isCurrent, hasGPS, filename, shutterSpeed, F-number`, etc.
  * @see https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qabstractitemmodel-subclass
  * @note: Il est important d'émettre le signal `dataChanged()` after saving the changes.
  *
@@ -444,6 +446,10 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].keywords << value.toString();
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << KeywordsRole << ToBeSavedRole);
+            break;
+        case IsSelectedRole:
+            m_photos[index.row()].isSelected = value.toBool();
+            emit dataChanged(index, index, QVector<int>() << IsSelectedRole);
             break;
         case ToBeSavedRole:
             m_photos[index.row()].toBeSaved = value.toBool();
@@ -542,7 +548,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
  * ***********************************************************************************************************/
 int PhotoModel::getCurrentItemRow()
 {
-    return m_lastSelectedRow;
+    return m_lastCurrentRow;
 }
 
 /** **********************************************************************************************************
@@ -550,7 +556,7 @@ int PhotoModel::getCurrentItemRow()
  * ***********************************************************************************************************/
 bool PhotoModel::getCurrentItemHasGPS()
 {
-    return (m_photos[m_lastSelectedRow].hasGPS);
+    return (m_photos[m_lastCurrentRow].hasGPS);
 }
 
 /** **********************************************************************************************************
@@ -558,7 +564,7 @@ bool PhotoModel::getCurrentItemHasGPS()
  * ***********************************************************************************************************/
 QGeoCoordinate PhotoModel::getCurrentItemCoords()
 {
-    return QGeoCoordinate(m_photos[m_lastSelectedRow].gpsLatitude, m_photos[m_lastSelectedRow].gpsLongitude);
+    return QGeoCoordinate(m_photos[m_lastCurrentRow].gpsLatitude, m_photos[m_lastCurrentRow].gpsLongitude);
 }
 
 /** **********************************************************************************************************
@@ -591,6 +597,7 @@ void PhotoModel::dumpData()
 
     QString flags = "flags:";
     flags.append(m_photos[m_dumpedRow].toBeSaved ? " toBeSaved":"");
+    flags.append(m_photos[m_dumpedRow].isCurrent? " isCurrent":"");
     flags.append(m_photos[m_dumpedRow].isSelected? " isSelected":"");
     flags.append(m_photos[m_dumpedRow].insideCircle? " insideCircle":"");
 
@@ -615,7 +622,7 @@ void PhotoModel::clear()
 {
     beginResetModel();  // cette méthode envoie un signal indiquant à tous que ce modèle va subir un changement radical
     m_photos.clear();
-    m_lastSelectedRow = 0;
+    m_lastCurrentRow = 0;
     endResetModel();    // cette méthode envoie un signal ModelReset.
     emit dataCleared();
 }
@@ -806,11 +813,17 @@ QVariantMap PhotoModel::get(int row)
 /** **********************************************************************************************************
  * @brief Cette méthode (invocable par QML) ajoute la photo désigné aux groupe des photos sélectionnées.
  * @param row : indice de la photo dans la listView
+ * @param exclusive : if True, all other Photos are unselected.
  * ***********************************************************************************************************/
-void PhotoModel::addToSelection(int row)
+void PhotoModel::addToSelection(int row, bool exclusive)
 {
     qDebug() << "addToSelection" << row;
- // TODO affecter isSelected
+    if (exclusive)
+        this->resetSelection();
+    // TODO Ajouter un paramètre 'exclusive' qui déselectionne toutes les autres.
+    QModelIndex idx = this->index(row, 0);
+    this->setData(idx,true, IsSelectedRole);
+
 }
 
 
@@ -840,8 +853,8 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
     m_circleResetted = false;
 
     // Le centre du cercle est la photo sélectionnée
-    double circle_lat = m_photos[m_lastSelectedRow].gpsLatitude;
-    double circle_long = m_photos[m_lastSelectedRow].gpsLongitude;
+    double circle_lat = m_photos[m_lastCurrentRow].gpsLatitude;
+    double circle_long = m_photos[m_lastCurrentRow].gpsLongitude;
     //qDebug() << "findInCirclePhotos" << circle_lat << circle_long << circle_radius << "m";
 
     double rayon_lat = double(circle_radius) / 111111;       // rayon_lat = circle_radius(km) / 111.11
@@ -891,6 +904,23 @@ void PhotoModel::resetCircle()
     // A la fin, on notifie en une seule fois l'ensemble des photos.
     emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
     m_circleResetted = true;
+}
+
+/** **********************************************************************************************************
+ * @brief Enleve le flag "isSelected" à toutes les photos.
+ * ***********************************************************************************************************/
+void PhotoModel::resetSelection()
+{
+    // On parcourt tous les items du modèle
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        m_photos[row].isSelected = false;
+        idx = idx.siblingAtRow(++row);
+    }
+    // A la fin, on notifie en une seule fois l'ensemble des photos.
+    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << IsSelectedRole);
 }
 
 /** **********************************************************************************************************
@@ -983,12 +1013,12 @@ void PhotoModel::applyCreatorToAll()
  * ***********************************************************************************************************/
 void PhotoModel::removePhotoKeyword(QString keyword)
 {
-    if (m_photos[m_lastSelectedRow].keywords.contains(keyword))
+    if (m_photos[m_lastCurrentRow].keywords.contains(keyword))
     {
         qDebug() << "Remove" << keyword << "keyword";
-        m_photos[m_lastSelectedRow].keywords.removeOne(keyword);
-        m_photos[m_lastSelectedRow].toBeSaved = true;
-        QModelIndex idx = this->index(m_lastSelectedRow, 0);
+        m_photos[m_lastCurrentRow].keywords.removeOne(keyword);
+        m_photos[m_lastCurrentRow].toBeSaved = true;
+        QModelIndex idx = this->index(m_lastCurrentRow, 0);
         emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
     }
 }
@@ -1002,12 +1032,12 @@ void PhotoModel::removePhotoKeyword(QString keyword)
  * ***********************************************************************************************************/
 void PhotoModel::updatePhotoKeyword(QString keyword, int index)
 {
-    if (index<0 || index >= m_photos[m_lastSelectedRow].keywords.count()) return;
+    if (index<0 || index >= m_photos[m_lastCurrentRow].keywords.count()) return;
 
     qDebug() << "update" << keyword << "keyword";
-    m_photos[m_lastSelectedRow].keywords[index] = keyword;
-    m_photos[m_lastSelectedRow].toBeSaved = true;
-    QModelIndex idx = this->index(m_lastSelectedRow, 0);
+    m_photos[m_lastCurrentRow].keywords[index] = keyword;
+    m_photos[m_lastCurrentRow].toBeSaved = true;
+    QModelIndex idx = this->index(m_lastCurrentRow, 0);
     emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
 }
 

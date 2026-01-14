@@ -41,7 +41,7 @@ void OnTheMapProxyModel::setFilterEnabled(bool enabled)
 
 /** **********************************************************************************************************
  * @brief Effectue le filtrage.
- * Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnée" et le marqueur "Saved Position".
+ * Laisse passer les lignes correspondant au filtrage, cad : photos "selectionnées" et le marqueur "Saved Position".
  * @param sourceRow : Le numero d'une ligne du modèle parent (PhotoModel).
  * @param sourceParent : Le modèle parent (PhotoModel).
  * @returns true si la ligne est acceptée.

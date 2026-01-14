@@ -31,7 +31,7 @@ ListView {
 
 
     /** ******************************************************************************************************
-     * Background de l'item sélectionné.
+     * Background de l'item courant. (@see property ListView.highlightFollowsCurrentItem).
      * *******************************************************************************************************/
     highlight: Rectangle {
         Layout.fillWidth: true
@@ -78,6 +78,7 @@ ListView {
             required property bool insideCircle
             required property bool toBeSaved
             required property bool isMarker
+            required property bool isSelected
             required property int index
             // index is a special role available in the delegate: the row of the item in the model.
             readonly property ListView __lv: ListView.view
@@ -119,6 +120,7 @@ ListView {
                 anchors.left: gpsIcon.right
                 text: filename
                 font.pixelSize: 16
+                font.bold: isSelected ? true : false
                 color: toBeSaved ? Style.accentTextColor : Style.primaryTextColor
             }
 
@@ -147,11 +149,12 @@ ListView {
                                if (mouse.button === Qt.LeftButton) {
                                    console.log(
                                        "MouseArea: left-clic sur " + index)
-                                   __lv.currentIndex = index // Bouge le highlight dans la ListView
+                                   // Définit l'item courant de la ListView et positionne le highlight.
+                                   __lv.currentIndex = index
                                    activatePhoto(index, hasGPS, city, country,
                                                  latitude, longitude)
                                    // On relance une demande d'infos ReverseGeo,
-                                   // si onglet CARTE et COORDS GPS et s'il n'y a pas déjà de City ni Country:
+                                   // si onglet MAP et COORDS GPS et s'il n'y a pas déjà de City ni Country:
                                    if ((tabbedPage.currentIndex === 1) && hasGPS
                                        && city === "" && country === "") {
                                        // console.debug(">>>> restart geoTimer")
@@ -179,6 +182,8 @@ ListView {
     function activatePhoto(pos, hasGPS, city, country, latitude, longitude) {
         var sourceindex = model.getSourceIndex(pos)
         _photoModel.currentItemRow = sourceindex // Actualise le PhotoModel
+        // La photo courante est forcement sélectionée, mais de façon exclusive.
+        _photoModel.addToSelection(sourceindex, true)
 
         // On mémorise dans currentPhoto les data de l'item selectionné du modèle.
         // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
