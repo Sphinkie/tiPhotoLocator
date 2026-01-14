@@ -100,7 +100,7 @@ ZonePhotoForm {
     // On raffraichit la zone si SelectedData est modifiée
     Connections {
         target: tabbedPage
-        function onSelectedDataChanged() {
+        function onCurrentPhotoChanged() {
             // console.debug("onSelectedDataChanged->ZonePhoto");
             chipDate.content = Utilities.toReadableDate(
                         tabbedPage.currentPhoto.dateTimeOriginal)

@@ -25,7 +25,7 @@ ZoneSuggestedLocationsForm {
      * *******************************************************************************************************/
     Connections {
         target: tabbedPage
-        function onSelectedDataChanged() {
+        function onCurrentPhotoChanged() {
             bt_getinfo.enabled = tabbedPage.currentPhoto.hasGPS
         }
     }

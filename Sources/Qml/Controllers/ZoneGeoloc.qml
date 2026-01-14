@@ -75,7 +75,7 @@ ZoneGeolocForm {
     // On raffraichit la zone si SelectedData est modifiée
     Connections {
         target: tabbedPage
-        function onSelectedDataChanged() {
+        function onCurrentPhotoChanged() {
             // console.debug("onSelectedDataChanged->ZoneGeoloc");
             bt_clear_coords.enabled = tabbedPage.currentPhoto.hasGPS
             chipLat.visible = tabbedPage.currentPhoto.hasGPS

@@ -14,7 +14,7 @@ import "./Controllers"
 /** **********************************************************************************************************
  * @brief QML: Fenêtre principale.
  * ***********************************************************************************************************/
-Window {
+ApplicationWindow {
     id: window
     title: "tiPhotoLocator" // + " w:" + width + " h:" + height
     visible: true
@@ -25,21 +25,21 @@ Window {
     // dimensions minimales
     minimumHeight: 768
     minimumWidth: 1400
+    // Couleur de fond générale
+    color: "white"
 
     // ----------------------------------------------------------------
-    // Couleurs du thème: voir aussi Style.qml
+    // Couleurs du thème: voir Style.qml
     // ----------------------------------------------------------------
-    Material.theme: Material.Light
+    Material.theme: Style.theme
     // Couleur du fond: Barre de menu. Barre des onglets
-    Material.background: Material.color(Material.BlueGrey, Material.Shade200)
+    Material.background: Style.background
     // Couleur des textes.
-    Material.foreground: Material.DeepPurple
+    Material.foreground: Style.foreground
     // Couleur d'accentuation pour les items et textes en highlight.
-    Material.accent: Material.color(Material.Brown, Material.Shade400)
+    Material.accent: Style.accent
     // Couleur primaire = non utilisé sur Desktop ?
-    Material.primary: Material.Red
-
-    // color: Style.surfaceBackgroundColor
+    Material.primary: Style.primary
 
     // ----------------------------------------------------------------
     // Les signaux vers PhotoModel pour une photo unitaire:
@@ -93,10 +93,10 @@ Window {
     RescanWarning {
         id: rescanWarning
     }
-    SettingsPopup {
+    PopupSettings {
         id: settingsPopup
     }
-    MetadataPopup {
+    PopupMetadata {
         id: metadataPopup
     }
     // ----------------------------------------------------------------
@@ -115,46 +115,33 @@ Window {
     // ------------------------------------------------------------------------------
     // Page principale
     // ------------------------------------------------------------------------------
-    Rectangle {
-        id: topLogo
-        height: 50
-        width: 80
-        color: Material.background
-        Image {
-            anchors.fill: parent
-            fillMode: Image.PreserveAspectFit
-            source: "/Images/logo_TPL.png"
-            anchors {
-                top: parent.top
-                left: parent.left
-            }
-        }
-    }
 
 
     /** *****************************************************************************
-     * Ligne 0 : Menu principal (Prend toute la largeur)
+     * Ligne 0 : Menu principal
      * ******************************************************************************/
-    MainMenuBar {
+    menuBar: MainMenuBar {
         id: menuBar
-        anchors {
-            top: parent.top
-            left: topLogo.right
-            right: parent.right
-        }
+        height: 50
+        width: parent.width
+        //        anchors {
+        //            top: parent.top
+        //          right: parent.right
+        //    }
     }
 
 
     /** *****************************************************************************
-     * Ligne 1 : Barre d'outils du folder: refresh / reload / foldername
+     * Ligne 1 : Barre d'outils du folder: logo / reload / foldername
      * ******************************************************************************/
-    ToolbarPrincipale {
+    header: ToolbarPrincipale {
         id: toolBar
-        anchors {
-            top: menuBar.bottom
-            right: parent.right
-            left: parent.left
-        }
+        width: parent.width
+        //anchors {
+        //top: menuBar.bottom
+        //right: parent.right
+        //  left: topLogo.right
+        // }
     }
 
 
@@ -163,7 +150,7 @@ Window {
      * ******************************************************************************/
     Rectangle {
         id: line2
-        anchors.top: toolBar.bottom
+        //anchors.top: toolBar.bottom
         width: parent.width
         height: filtersAndTabslayout.height
         color: Style.surfaceContainerColor
@@ -201,6 +188,19 @@ Window {
                 }
             }
 
+            CheckBox {
+                id: checkBox3
+                Layout.leftMargin: 20
+                text: qsTr("All")
+                ToolTip.text: qsTr("All photos")
+                ToolTip.visible: hovered
+                ToolTip.delay: 500
+                checked: false
+                onClicked: {
+
+                    // TODO
+                }
+            }
             TabBar {
                 id: tabBar
                 Layout.leftMargin: 120
@@ -208,6 +208,8 @@ Window {
                 Layout.rightMargin: 40
                 TabButton {
                     text: qsTr("PREVIEW")
+                    // test des coins arrondis:
+                    Material.roundedScale: Material.LargeScale
                 }
                 TabButton {
                     text: qsTr("CARTE")

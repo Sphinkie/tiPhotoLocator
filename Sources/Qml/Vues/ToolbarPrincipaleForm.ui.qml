@@ -16,7 +16,10 @@ Rectangle {
 
     RowLayout {
         spacing: 20
-
+        /// Logo de l'application
+        ApplicationLogo {
+            id: topLogo
+        }
         /// Bouton de rescan
         Button {
             id: bt_rescan

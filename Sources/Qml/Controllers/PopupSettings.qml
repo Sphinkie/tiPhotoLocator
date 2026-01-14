@@ -5,7 +5,7 @@ import "../Vues"
 /** **********************************************************************************************************
  * @brief Controleur de la fenêtre des Settings.
  * ***********************************************************************************************************/
-SettingsPopupForm {
+PopupSettingsForm {
 
     readonly property string sysLang: Qt.locale().nativeLanguageName
 

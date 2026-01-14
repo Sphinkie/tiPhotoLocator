@@ -779,7 +779,7 @@ void PhotoModel::duplicateData(int row)
 
 
 /** **********************************************************************************************************
- * @brief La methode get() (invocable par QML) renvoie les données de la photo demandée.
+ * @brief La méthode get() (invocable par QML) renvoie les données de la photo demandée.
  *        Usage dans QML: `titre = myModel.get(1).title;`
  * @param row : indice.
  * @returns une Map contenant toutes les propriétés de l'item, dont la propriété spéciale: "row".
@@ -800,6 +800,17 @@ QVariantMap PhotoModel::get(int row)
         //qDebug() << itr.key() << ": " << itr.value();
     }
     return result;
+}
+
+
+/** **********************************************************************************************************
+ * @brief Cette méthode (invocable par QML) ajoute la photo désigné aux groupe des photos sélectionnées.
+ * @param row : indice de la photo dans la listView
+ * ***********************************************************************************************************/
+void PhotoModel::addToSelection(int row)
+{
+    qDebug() << "addToSelection" << row;
+ // TODO affecter isSelected
 }
 
 

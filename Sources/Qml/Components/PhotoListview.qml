@@ -52,8 +52,9 @@ ListView {
         repeat: false
         onTriggered: {
             // console.debug(">>>>> timer triggered")
-            window.requestReverseGeocode(_photoModel.currentItemCoords.latitude,
-                                         _photoModel.currentItemCoords.longitude)
+            window.requestReverseGeocode(
+                        _photoModel.currentItemCoords.latitude,
+                        _photoModel.currentItemCoords.longitude)
         }
     }
 
@@ -141,20 +142,29 @@ ListView {
              * ***********************************************************************************************/
             MouseArea {
                 anchors.fill: parent
-                onClicked: {
-                    console.log("MouseArea: clic sur " + index)
-                    __lv.currentIndex = index // Bouge le highlight dans la ListView
-                    activatePhoto(index, hasGPS, city, country, latitude,
-                                  longitude)
-                    // On relance une demande d'infos ReverseGeo,
-                    // si onglet CARTE et COORDS GPS et s'il n'y a pas déjà de City ni Country:
-                    if ((tabbedPage.currentIndex === 1) && hasGPS && city === ""
-                            && country === "") {
-                        // console.debug(">>>> restart geoTimer")
-                        geoTimer.restart()
-                    } else
-                        geoTimer.stop()
-                }
+                acceptedButtons: Qt.LeftButton | Qt.RightButton
+                onClicked: mouse => {
+                               if (mouse.button === Qt.LeftButton) {
+                                   console.log(
+                                       "MouseArea: left-clic sur " + index)
+                                   __lv.currentIndex = index // Bouge le highlight dans la ListView
+                                   activatePhoto(index, hasGPS, city, country,
+                                                 latitude, longitude)
+                                   // On relance une demande d'infos ReverseGeo,
+                                   // si onglet CARTE et COORDS GPS et s'il n'y a pas déjà de City ni Country:
+                                   if ((tabbedPage.currentIndex === 1) && hasGPS
+                                       && city === "" && country === "") {
+                                       // console.debug(">>>> restart geoTimer")
+                                       geoTimer.restart()
+                                   } else
+                                   geoTimer.stop()
+                               } else {
+                                   console.log(
+                                       "MouseArea: right-clic sur " + index)
+                                   var sourceindex = model.getSourceIndex(index)
+                                   _photoModel.addToSelection(sourceindex)
+                               }
+                           }
             }
         }
     }

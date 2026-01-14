@@ -45,7 +45,7 @@ ToolbarMapForm {
     /// Gestion du grisage des boutons
     Connections {
         target: tabbedPage
-        function onSelectedDataChanged() {
+        function onCurrentPhotoChanged() {
             // console.debug("onSelectedDataChanged->ToolBarMap");
             // console.debug("hasGPS" + tabbedPage.currentPhoto.hasGPS);
             bt_save_pos.enabled = tabbedPage.currentPhoto.hasGPS

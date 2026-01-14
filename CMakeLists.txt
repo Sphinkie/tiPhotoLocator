@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(QT_TiPhotoLocator VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTORCC ON)         # Auto use QRC resource File
 
 find_package(Qt6 REQUIRED COMPONENTS Quick Location)
 
@@ -57,8 +57,8 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/ZoneTitle.qml
         Sources/Qml/Controllers/ZoneExif.qml
         Sources/Qml/Controllers/ZoneIptc.qml
-        Sources/Qml/Controllers/MetadataPopup.qml
-        Sources/Qml/Controllers/SettingsPopup.qml
+        Sources/Qml/Controllers/PopupMetadata.qml
+        Sources/Qml/Controllers/PopupSettings.qml
         Sources/Qml/Controllers/ToolbarBottom.qml
         Sources/Qml/Controllers/MapToolbar.qml
         Sources/Qml/Controllers/ToolbarPrincipale.qml
@@ -77,8 +77,8 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Models/ModelFolderList.qml
         Sources/Qml/Vues/ZoneExifForm.ui.qml
         Sources/Qml/Vues/ZoneIptcForm.ui.qml
-        Sources/Qml/Vues/MetadataPopupForm.ui.qml
-        Sources/Qml/Vues/SettingsPopupForm.ui.qml
+        Sources/Qml/Vues/PopupMetadataForm.ui.qml
+        Sources/Qml/Vues/PopupSettingsForm.ui.qml
         Sources/Qml/Vues/ToolbarBottomForm.ui.qml
         Sources/Qml/Vues/ToolbarMapForm.ui.qml
         Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml
@@ -93,6 +93,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
+        QML_FILES Sources/Qml/Components/ApplicationLogo.qml
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

@@ -1,6 +1,6 @@
 import QtQuick
 import "../Vues"
 
-MetadataPopupForm {
+PopupMetadataForm {
     buttonClose.onClicked: close()
 }

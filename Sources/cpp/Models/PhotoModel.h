@@ -74,6 +74,7 @@ public:
     Q_INVOKABLE QString getRoleName(int role);
     Q_INVOKABLE QVariant getUrl(int row);
     Q_INVOKABLE QVariantMap get(int row);
+    Q_INVOKABLE void addToSelection(int row);
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
     Q_INVOKABLE void removePhotoKeyword(QString keyword);

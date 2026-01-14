@@ -98,7 +98,7 @@ ZoneUserdataForm {
     // On raffraichit la zone si SelectedData est modifiée
     Connections {
         target: tabbedPage
-        function onSelectedDataChanged() {
+        function onCurrentPhotoChanged() {
             // console.debug("onSelectedDataChanged->ZoneUserData");
 
             // On détermine le contenu des chips ici

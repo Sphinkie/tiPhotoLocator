@@ -17,10 +17,30 @@ import QtQuick.Controls.Material
  * **********************************************************************************************************/
 Item {
 
-    readonly property color foregroundColor: Material.foreground // Material.DeepPurple
-    readonly property color backgroundColor: Material.background // Material.BlueGrey,
-    readonly property color accentColor: Material.accent // Material.Brown
+    // ----------------------------------------------------------------------
+    // Définition du thème (voir Main.qml)
+    // ----------------------------------------------------------------------
+    /// Couleur du fond: Barre de menu. Barre des onglets
+    property var background: Material.color(
+                                 Material.BlueGrey,
+                                 Material.Shade200) // Material.background
+    /// Couleur d'accentuation pour les items et textes en highlight.
+    property var accent: Material.color(Material.Brown,
+                                        Material.Shade400) // Material.accent
+    /// Couleur des textes.
+    property int foreground: Material.DeepPurple // Material.foreground
+    /// Couleur primaire = non utilisé sur Desktop ?
+    property int primary: Material.BlueGrey
+    /// Thème clair ou foncé.
+    property int theme: Material.Light
 
+    // ----------------------------------------------------------------------
+    // Couleurs du Style
+    // ----------------------------------------------------------------------
+    readonly property color primaryColor: Material.color(primary)
+    readonly property color accentColor: Material.color(accent)
+    readonly property color backgroundColor: Material.color(background)
+    readonly property color foregroundColor: Material.color(foreground)
     readonly property color secondaryColor: Material.LightBlue
 
     // ----------------------------------------------------------------------
