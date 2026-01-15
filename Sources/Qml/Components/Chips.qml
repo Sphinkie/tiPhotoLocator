@@ -34,7 +34,7 @@ Item {
 
 
     /** ************************************************************************************
-     * Ombre sous le Chip.
+     * Ombre sous le Chip. (Avec Material, on pourrait utiliser 'elevation').
      * *************************************************************************************/
     RectangularShadow {
         id: chipShadow

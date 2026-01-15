@@ -270,8 +270,9 @@ void PhotoModel::setInCircleItemCoords(const double latitude, const double longi
  * @param property : le nom de la property correspondant au Role
  * @note Valeurs particulières du paramètre `photo`:
  *       \li La valeur spéciale -1 signifie **toutes les photos**.
- *       \li La valeur spéciale -2 signifie **la photo sélectionée**.
+ *       \li La valeur spéciale -2 signifie **la photo courante**.
  *       \li La valeur spéciale -3 signifie **les photos du cercle**.
+ *       \li La valeur spéciale -4 signifie **les photos sélectionées**.
  * ***********************************************************************************************************/
 void PhotoModel::setPhotoProperty(const int photo, const QString value, const QString property)
 {
@@ -289,11 +290,11 @@ void PhotoModel::setPhotoProperty(const int photo, const QString value, const QS
             break;
         }
     case -2:
-        // On affecte la photo sélectionnée.
+        // On affecte la photo courante.
         setData(m_lastCurrentRow, value, property);
         break;
     case -3:
-        // Et on affecte les photos du cercle.
+        // On affecte les photos du cercle.
         {
             int row = 0;
             QModelIndex idx = this->index(row, 0);
@@ -305,6 +306,20 @@ void PhotoModel::setPhotoProperty(const int photo, const QString value, const QS
                     setData(idx, value, roleNames().key(property.toUtf8()));
                 }
                 idx = idx.siblingAtRow(++row);
+            }
+            break;
+        }
+    case -4:
+        // On affecte les photos sélectionnées.
+        {
+            int row = 0;
+            QModelIndex idx = this->index(row, 0);
+            while (idx.isValid())
+            {
+                if (m_photos[row].isSelected) {
+                    setData(idx, value, roleNames().key(property.toUtf8()));
+                    idx = idx.siblingAtRow(++row);
+                }
             }
             break;
         }
@@ -1108,6 +1123,26 @@ void PhotoModel::updatePhotoKeyword(QString keyword, int index)
     m_photos[m_lastCurrentRow].toBeSaved = true;
     QModelIndex idx = this->index(m_lastCurrentRow, 0);
     emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
+}
+
+
+/** **********************************************************************************************************
+ * @brief Affecte les coordonnées GPS fournies à toutes les photos sélectionnées.
+ * @param coords: des coordonnées GPS.
+ * ***********************************************************************************************************/
+void PhotoModel::setSelectedItemsCoords(QGeoCoordinate coords)
+{
+    // On parcourt tous les items du modèle
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        if (m_photos[row].isSelected) {
+            this->setData(idx, coords.latitude(), LatitudeRole);
+            this->setData(idx, coords.longitude(), LongitudeRole);
+        }
+        idx = idx.siblingAtRow(++row);
+    }
 }
 
 

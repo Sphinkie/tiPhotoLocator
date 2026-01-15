@@ -18,7 +18,7 @@ import QtPositioning
  * - Lors du readExif (GPS coords) d'un nouveau dossier
  *   - onFirstCoordsReady
  * - Lors de la sélection d'une photo dans la liste
- *   - le delegate markerDelegate affiche un marker rouge à l'emplacement de la photo.
+ *   - le delegate markerDelegate affiche un marker rouge à l'emplacement de la photo courante.
  *   - le delegate affiche un marker jaune à l'emplacement de la SavedPos.
  *   - le delegate affiche un marker gris à l'emplacement de chaque photo sélectionnée.
  * ***********************************************************************************************************/
@@ -83,7 +83,8 @@ Map {
                            var mouseCoords = mapView.toCoordinate(mousePos)
                            // console.log(mousePos, mouseCoords)
                            // On change les coordonnées de la photo dans le modele
-                           _photoModel.currentItemCoords = mouseCoords
+                           //_photoModel.currentItemCoords = mouseCoords
+                           _photoModel.setSelectedItemsCoords(mouseCoords)
                            // On repositionne le cercle
                            mapCircle.center = mouseCoords
                            // Debug : Affiche la liste des cartes supportées

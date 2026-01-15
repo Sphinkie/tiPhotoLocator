@@ -85,6 +85,7 @@ public:
     Q_INVOKABLE void clear();
     Q_INVOKABLE void removePhotoKeyword(QString keyword);
     Q_INVOKABLE void updatePhotoKeyword(QString keyword, int index);
+    Q_INVOKABLE void setSelectedItemsCoords(QGeoCoordinate coords);
     Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
 
     // -----------------------------------------------------

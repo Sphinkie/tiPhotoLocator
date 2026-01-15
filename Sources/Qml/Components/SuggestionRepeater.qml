@@ -55,22 +55,20 @@ Repeater {
                     // console.log("onglet:" + tabbedPage.currentIndex);
                     console.log("chipMouseArea:" + target + " for " + tabbedPage.currentPhoto.row)
 
-                    // Si onglet CARTE : on applique la suggestion à toutes les photos du cercle
+                    // Si onglet CARTE : on applique la suggestion à toutes les photos sélectionnées (-4)
                     if (tabbedPage.currentIndex === 1) {
-                        window.setPhotoProperty(
-                                    -2, text, target) // -2 = photo sélectionnée
-                        window.setPhotoProperty(-3, text,
-                                                target) // -3 = photos du cercle
+                        window.setPhotoProperty(-4, text, target)
+                        // window.setPhotoProperty(-2, text, target)// -2: photo courante
+                        // window.setPhotoProperty(-3, text,target) // -3: photos du cercle
                     }
 
-                    // Si onglet TAG : on applique la suggestion à la seule photo sélectionnée
+                    // Si onglet TAG : on applique la suggestion aux photos sélectionnées (-4)
                     if (tabbedPage.currentIndex === 2)
-                        window.setPhotoProperty(tabbedPage.currentPhoto.row,
-                                                text, target)
+                        window.setPhotoProperty(-4, text, target)
+                        // window.setPhotoProperty(tabbedPage.currentPhoto.row, text, target)
 
-                    // On enlève le Chip de la zone Suggestions
-                    window.removePhotoFromSuggestion(
-                                index) // Attn: c'est l'index dans le proxyModel.
+                    // On enlève le Chip de la zone Suggestions. (Attn: c'est l'index dans le proxyModel).
+                    window.removePhotoFromSuggestion(index)
                 }
             }
         }
