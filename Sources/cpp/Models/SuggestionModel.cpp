@@ -20,18 +20,20 @@ void SuggestionModel::createInitialSuggestions()
     QSettings settings;
     QString photographe = settings.value("photographe","").toString();
     QString initiales   = settings.value("initiales","").toString();
+    QString homecity    = settings.value("homecity","").toString();
     this->append(photographe, "creator", "tag", -1);
     this->append(initiales,   "captionWriter", "tag", -1);
     this->append(" ", "country", "tag", -1);
-    this->append(" ", "city", "tag", -1);
+    this->append(homecity, "city", "tag", -1);
     this->append(" ", "location", "tag", -1);
     this->append(" ", "description", "tag", -1);
+    // TODO : traductions
     this->append("portrait",  "keywords", "tag", -1);
     this->append("paysage",   "keywords", "tag", -1);
     this->append("nature",    "keywords", "tag", -1);
-    this->append("animaux",   "keywords", "tag", -1);
+    this->append("animal",    "keywords", "tag", -1);
     this->append("urbanisme", "keywords", "tag", -1);
-    this->append("vacances",   "keywords", "tag", -1);
+    this->append("vacances",  "keywords", "tag", -1);
 }
 
 
@@ -103,24 +105,25 @@ Qt::ItemFlags SuggestionModel::flags(const QModelIndex &index) const
 
 /** **********************************************************************************************************
  * @brief Adds a suggestion to the model.
- *        Ce slot permet à n'importe qui d'ajouter une Suggestion.
+ *        Ce slot permet à n'importe qui d'ajouter une Suggestion. Il y a un controle pour éviter les doublons.
  *
  * @param text: The text of the Suggestion.
  * @param target: The name of the Exif tag compatible with this Suggestion.
  * @param category: The category of the Suggestion ("geo", "tag", "geo|tag")
- * @param photo_row: L'indice de la Photo à associée à cette Suggestion.
+ * @param photo_row: L'indice de la Photo à associer à cette Suggestion.
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
- *                   La valeur spéciale -2 signifie 'la Photo sélectionnée' (valeur par défaut).
+ *                   La valeur spéciale -2 signifie 'la Photo courante' (valeur par défaut).
  * ***********************************************************************************************************/
 void SuggestionModel::append(const QString text, const QString target, const QString category, int photo_row)
 {
     if (text.isEmpty()) return;
 
+    // On parcourt toutes les suggestions pour voir si elle est dejà référencée.
     for (int i=0; i<m_suggestions.count(); i++ )
     {
         if ( (m_suggestions.at(i).text == text) && (m_suggestions.at(i).target == target))
         {
-            // Trouvé: la suggestion existe dejà (même texte et même target)
+            // Si la suggestion existe dejà (même texte et même target)
             // On ajoute la categorie à la suggestion (au cas où la catégorie serait différente)
             this->addCategoryToSuggestion(i, category);
             // On ajoute la photo à la liste
@@ -147,6 +150,7 @@ void SuggestionModel::append(const QString text, const QString target, const QSt
 
 /** **********************************************************************************************************
  * @brief Ajoute une Photo à la liste des photos ayant un "match" avec cette Suggestion.
+ * La suggestion apparait alors dans la Zone des Suggestions pour cette Photo.
  * @param suggestion_row : L'indice de la Suggestion à modifier.
  * @param photo_row : L'indice de la Photo à ajouter à la Suggestion.
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
@@ -159,7 +163,7 @@ void SuggestionModel::addPhotoToSuggestion(const int suggestion_row, int photo_r
     {
         photo_row = m_currentPhotoRow;
     }
-    // On ajoute la photo courante dans la liste.
+    // On ajoute la photo courante dans la liste (comme c'est un Qset, il n'y a pas de doublons).
     m_suggestions[suggestion_row].photos << photo_row;
     // Emit signal
     QModelIndex index = this->index(suggestion_row, 0);;
@@ -172,8 +176,8 @@ void SuggestionModel::addPhotoToSuggestion(const int suggestion_row, int photo_r
  * @param suggestion_row : L'indice de la Suggestion à modifier.
  * @param category : La catégorie à ajouter à la Suggestion: "geo" ou "tag".
  *
- * Si on veut ajouter la catégorie déjà existante : on ne fait rien.
- * Si on veut ajouter une autre catégorie : la catégorie devient "geo|tag" (les deux).
+ * Si on veut ajouter une catégorie déjà existante: la fonction ne fait rien.
+ * Si on veut ajouter une autre catégorie: la catégorie devient "geo|tag" (les deux).
  * ***********************************************************************************************************/
 void SuggestionModel::addCategoryToSuggestion(const int suggestion_row, const QString category)
 {
@@ -190,8 +194,10 @@ void SuggestionModel::addCategoryToSuggestion(const int suggestion_row, const QS
 
 
 /** **********************************************************************************************************
- * @brief Ce slot enlève la Photo courante de la liste des photos correspondant à une Suggestion donnée.
+ * @brief Enlève la Photo courante de la liste des photos correspondant à une Suggestion donnée par son index.
  * @param index : L'index dans le Model de la Suggestion à modifier.
+ * Note: la suggestion existe toujours: on a juste enlevé la photo courante de ses photos associées:
+ * donc elle n'apparait plus dans la Zone des Suggestions pour cette Photo.
  * ***********************************************************************************************************/
 void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 {
@@ -204,10 +210,10 @@ void SuggestionModel::removeCurrentPhotoFromSuggestion(const QModelIndex index)
 }
 
 /** **********************************************************************************************************
- * @brief Enlève la Photo courante de la liste des photos correspondant à une Suggestion donnée.
+ * @brief Enlève la Photo courante de la liste des photos correspondant à une Suggestion donnée par sa Target.
  * @param target : la suggestion à enlever, par exemple "city", "country"...
  * Note: la suggestion existe toujours: on a juste enlevé la photo courante de ses photos associées:
- * donc elle n'apparait plus dans la Zone.
+ * donc elle n'apparait plus dans la Zone des Suggestions pour cette Photo.
  * ***********************************************************************************************************/
 void SuggestionModel::removeFromSuggestion(const QString target)
 {
@@ -227,13 +233,13 @@ void SuggestionModel::removeFromSuggestion(const QString target)
 
 
 /** **********************************************************************************************************
- * @brief Ce slot reçoit et mémorise la position dans le modèle de la photo sélectionnée dans la ListView.
+ * @brief Ce slot reçoit et mémorise l'indice dans le modèle de la photo courante de la ListView.
  * @param row: La position dans PhotoModel de la photo active.
  * ***********************************************************************************************************/
 void SuggestionModel::onCurrentPhotoChanged(const int row)
 {
     if (row<0) return;
-    // On mémorise la photo actuellement sélectionnée dans la ListView
+    // On mémorise la photo courante de la ListView.
     m_currentPhotoRow = row;
 }
 

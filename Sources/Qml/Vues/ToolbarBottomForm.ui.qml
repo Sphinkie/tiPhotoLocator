@@ -26,15 +26,24 @@ Rectangle {
      * **************************************************************************************/
     GridLayout {
         id: bottomToolBarLayout
-        Layout.alignment: Qt.AlignRight // on cale les boutons à droite
+        //Layout.alignment: Qt.AlignRight // on cale les boutons à droite
         columns: 3
         columnSpacing: 20
+
+        /// Ligne 0:
+        Text {
+            text: qsTr("%1 selected photos").arg(_photoModel.selectionCount)
+            leftPadding: 8
+            Layout.row: 0
+            Layout.column: 0
+        }
 
         /// Ligne 1:
         CheckBox {
             id: cb_backups
             text: qsTr("Générer backups")
             Layout.topMargin: 10
+            Layout.row: 1
             ToolTip {
                 text: qsTr("Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)")
                 delay: 500
@@ -62,7 +71,7 @@ Rectangle {
         /// Ligne 2:
         ProgressBar {
             id: saveProgress
-            Layout.row: 1
+            Layout.row: 2
             Layout.column: 1
             Layout.columnSpan: 2
             value: _photoModel.writeProgress
@@ -72,7 +81,7 @@ Rectangle {
         /// Ligne 3:
         Button {
             id: bt_dump1
-            Layout.row: 2
+            Layout.row: 3
             Layout.column: 0
             text: qsTr("Dump PhotoModel")
             visible: bottomRect.useDebug
@@ -84,7 +93,7 @@ Rectangle {
         }
         Button {
             id: bt_dump2
-            Layout.row: 2
+            Layout.row: 3
             Layout.column: 1
             text: qsTr("Dump SuggModel")
             visible: bottomRect.useDebug

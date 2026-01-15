@@ -30,8 +30,10 @@ ToolbarMapForm {
 
     /// Quand on relache le slider, il recherche les photos qui pourraient être dans le cercle.
     slider_radius.onPressedChanged: {
-        if (!slider_radius.pressed)
+        if (!slider_radius.pressed) {
             _photoModel.findInCirclePhotos(slider_radius.value)
+            _photoModel.suggestFromSelection()
+        }
     }
 
     // Clic sur "Revert": On recharge les infos à partir de la photo du disque.

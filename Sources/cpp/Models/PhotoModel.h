@@ -25,6 +25,9 @@ class PhotoModel : public QAbstractListModel
     Q_PROPERTY(bool loading MEMBER m_loading NOTIFY loadingChanged)
     //! Indique si le modele est en train d'écrire les données Exif.
     Q_PROPERTY(qreal writeProgress MEMBER m_writeProgress NOTIFY writeProgressChanged)
+    //! Le nombre de photos dans la sélection.
+    Q_PROPERTY(int selectionCount MEMBER m_selectionCount NOTIFY selectionCountChanged)
+
 
 public:
     /** *****************************************************************************************************
@@ -87,6 +90,10 @@ public:
     Q_INVOKABLE void updatePhotoKeyword(QString keyword, int index);
     Q_INVOKABLE void setSelectedItemsCoords(QGeoCoordinate coords);
     Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
+    Q_INVOKABLE void suggestFromSelection();
+    Q_INVOKABLE void suggestFromPrevious();
+    Q_INVOKABLE void suggestFromPhoto(const int row);
+    Q_INVOKABLE void selectionCount();
 
     // -----------------------------------------------------
     // Methodes publiques
@@ -132,35 +139,37 @@ signals:
     // -----------------------------------------------------
     // Signaux émis
     // -----------------------------------------------------
-    void currentItemRowChanged(const int row);                                     //!< Signal émis quand la Photo sélectionnée change.
-    void currentItemCoordsChanged();                                               //!< Signal émis quand les coordonnées GPS de la Photo sélectionnée changent.
     void sendSuggestion(QString text, QString target, QString category, int row);  //!< Ce signal envoie une Suggestion au SuggestionModel.
+    void writeProgressChanged();                                                   //!< Ce signal est émis chaque fois qu'une nouvelle donnée Exif est écrite dans un JPG.
+    void currentItemRowChanged(const int row);                                     //!< Signal émis quand la Photo courante change.
+    void currentItemCoordsChanged();                                               //!< Signal émis quand les coordonnées GPS de la Photo courante changent.
+    void currentItemHasGPSChanged();                                               //!< Signal émis quand le flag hasGPS de la photo courante change.
     void dataCleared();                                                            //!< Signal émis quand le modèle a été vidé.
     void dataSaved();                                                              //!< Signal émis quand les données ont été enregistrées sur le disque.
     void firstCoordsReady();                                                       //!< Signal émis quand les coordonnées GPS de la première photo sont disponibles.
     void savedPositionExistsChanged();                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
-    void currentItemHasGPSChanged();                                              //!< Signal émis quand si hasGPS change.
     void loadingChanged();                                                         //!< Signal émis quand le status loading change.
-    void writeProgressChanged();                                                   //!< Signal émis chque fois qu'une nouvelle donnée Exif est écrite dans un JPG.
+    void selectionCountChanged();                                                  //!< Signal émis quand le nombre de photos sélectionnées change.
 
     // -----------------------------------------------------
     // Membres
     // -----------------------------------------------------
 public:
-    QModelIndex m_markerIndex = QModelIndex();  //!< Index du marker SavedPosition. Initialisé à une valeur invalide.
+    QModelIndex m_markerIndex = QModelIndex();  //!< Index du marker SavedPosition. Initialisé à une valeur invalide.   
 protected:
     int m_markerRow = -1;                       //!< Position du marker SavedPosition
 private:
-    QVector<Photo> m_photos;                    //!< La liste des Photo du modèle
-    int m_lastCurrentRow = 0;                  //!< L'indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
-    int m_dumpedRow = 0;                        //!< Compteur pour le dump de debug
-    int m_lastCircleRadius = 0;                 //!< Valeur précdente du rayon de recherche
-    bool m_circleResetted = true;               //!< True si le rayon du cercle est à 0, et que le flag insideCircle a été resetté sur toutes les photos.
-    bool m_savedPositionExists = false;         //!< True si le marker SavedPosition existe
-    bool m_loading = false;                     //!< True si le modèle est en train de scanner le répertoire.
-    qreal m_writeProgress = 0;                  //!< Progression de l'écriture des données Exif dans les JPG. Varie de 0 à 1.
+    QVector<Photo> m_photos;               //!< La liste des Photo du modèle
+    int m_lastCurrentRow = 0;              //!< L'indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
+    int m_dumpedRow = 0;                   //!< Compteur pour le dump de debug
+    int m_lastCircleRadius = 0;            //!< Valeur précdente du rayon de recherche
+    bool m_circleResetted = true;          //!< True si le rayon du cercle est à 0, et que le flag insideCircle a été resetté sur toutes les photos.
+    bool m_savedPositionExists = false;    //!< True si le marker SavedPosition existe
+    bool m_loading = false;                //!< True si le modèle est en train de scanner le répertoire.
+    qreal m_writeProgress = 0;             //!< Progression de l'écriture des données Exif dans les JPG. Varie de 0 à 1.
     int m_totalWrite = 1;                  //!< Nombre de fichiers JPEG à modifier avec de nouvelles metadata.
     int m_countWrite = 0;                  //!< Nombre de fichiers JPEG modifiés avec de nouvelles metadata.
+    int m_selectionCount = 0;              //!< Nombre de photos dans la sélection.
 };
 
 #endif // PHOTOMODEL_H

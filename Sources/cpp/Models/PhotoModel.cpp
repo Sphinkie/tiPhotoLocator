@@ -263,11 +263,10 @@ void PhotoModel::setInCircleItemCoords(const double latitude, const double longi
 
 
 /** **********************************************************************************************************
- * @brief Ce slot affecte le role fourni à toutes les photos géographiquement situées à l'interieur
- *        du cercle rouge.
+ * @brief Ce slot affecte le role fourni à toutes les photos demandées.
  * @param photo : l'indice de la Photo à modifier. Voir la note pour les valeurs particulières.
- * @param value : la valeur
- * @param property : le nom de la property correspondant au Role
+ * @param value : la valeur de la property.
+ * @param property : le nom de la property (correspondant à un Role).
  * @note Valeurs particulières du paramètre `photo`:
  *       \li La valeur spéciale -1 signifie **toutes les photos**.
  *       \li La valeur spéciale -2 signifie **la photo courante**.
@@ -277,52 +276,49 @@ void PhotoModel::setInCircleItemCoords(const double latitude, const double longi
 void PhotoModel::setPhotoProperty(const int photo, const QString value, const QString property)
 {
     switch (photo) {
-    case -1:
+    case -1: {
         // On affecte toutes photos
+        int row = 0;
+        QModelIndex idx = this->index(row, 0);
+        while (idx.isValid())
         {
-            int row = 0;
-            QModelIndex idx = this->index(row, 0);
-            while (idx.isValid())
-            {
-                setData(idx, value, roleNames().key(property.toUtf8()));
-                idx = idx.siblingAtRow(++row);
-            }
-            break;
+            setData(idx, value, roleNames().key(property.toUtf8()));
+            idx = idx.siblingAtRow(++row);
         }
+        break;
+    }
     case -2:
         // On affecte la photo courante.
         setData(m_lastCurrentRow, value, property);
         break;
-    case -3:
+    case -3: {
         // On affecte les photos du cercle.
+        int row = 0;
+        QModelIndex idx = this->index(row, 0);
+        while (idx.isValid())
         {
-            int row = 0;
-            QModelIndex idx = this->index(row, 0);
-            while (idx.isValid())
+            // Si la photo est dans le cercle, on modifie ses données
+            if (idx.data(InsideCircleRole).toBool())
             {
-                // Si la photo est dans le cercle, on modifie ses données
-                if (idx.data(InsideCircleRole).toBool())
-                {
-                    setData(idx, value, roleNames().key(property.toUtf8()));
-                }
-                idx = idx.siblingAtRow(++row);
+                setData(idx, value, roleNames().key(property.toUtf8()));
             }
-            break;
+            idx = idx.siblingAtRow(++row);
         }
-    case -4:
+        break;
+    }
+    case -4: {
         // On affecte les photos sélectionnées.
+        int row = 0;
+        QModelIndex idx = this->index(row, 0);
+        while (idx.isValid())
         {
-            int row = 0;
-            QModelIndex idx = this->index(row, 0);
-            while (idx.isValid())
-            {
-                if (m_photos[row].isSelected) {
-                    setData(idx, value, roleNames().key(property.toUtf8()));
-                    idx = idx.siblingAtRow(++row);
-                }
+            if (m_photos[row].isSelected) {
+                setData(idx, value, roleNames().key(property.toUtf8()));
             }
-            break;
+            idx = idx.siblingAtRow(++row);
         }
+        break;
+    }
     default:
         // Autres cas: on a reçu un numéro de Photo
         setData(photo, value, property);
@@ -360,6 +356,8 @@ void PhotoModel::currentItemRow(const int row)
     m_lastCurrentRow = row;
     // On notifie les autres classes qui ont besoin de savoir quelle est la photo courante
     emit currentItemRowChanged(row);
+    m_selectionCount = 1;
+    emit selectionCountChanged();
 }
 
 /** **********************************************************************************************************
@@ -839,6 +837,8 @@ void PhotoModel::addToSelection(int row, bool exclusive)
         this->resetSelection();
     QModelIndex idx = this->index(row, 0);
     this->setData(idx, true, IsSelectedRole);
+    m_selectionCount++;
+    emit selectionCountChanged();
 }
 
 /** **********************************************************************************************************
@@ -850,7 +850,10 @@ void PhotoModel::removeFromSelection(int row)
     qDebug() << "removeFromSelection" << row;
     QModelIndex idx = this->index(row, 0);
     this->setData(idx, false, IsSelectedRole);
+    m_selectionCount--;
+    emit selectionCountChanged();
 }
+
 
 /** **********************************************************************************************************
  * @brief Ajoute le flag "isSelected" à toutes les photos qui n'ont pas de date.
@@ -868,7 +871,9 @@ void PhotoModel::selectUndated()
         }
         idx = idx.siblingAtRow(++row);
     }
+    this->selectionCount();
 }
+
 
 /** **********************************************************************************************************
  * @brief Ajoute le flag "isSelected" à toutes les photos qui n'ont pas de coordonnées GPS.
@@ -886,7 +891,10 @@ void PhotoModel::selectUnlocalized()
         }
         idx = idx.siblingAtRow(++row);
     }
+    this->selectionCount();
 }
+
+
 /** **********************************************************************************************************
  * @brief Ajoute le flag "isSelected" à toutes les photos.
  * ***********************************************************************************************************/
@@ -902,6 +910,8 @@ void PhotoModel::selectAll()
     }
     // A la fin, on notifie en une seule fois l'ensemble des photos.
     emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << IsSelectedRole);
+    m_selectionCount = m_photos.count();
+    emit selectionCountChanged();
 }
 
 
@@ -941,6 +951,7 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
 
     // On parcourt tous les items du modèle (qui ont des coords GPS) pour positionner insideCircle.
     int row = 0;
+    int selectionCount = 0;
     QModelIndex idx = this->index(row, 0);
     while (idx.isValid())
     {
@@ -959,10 +970,15 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
                 m_photos[row].isSelected = false;
             }
         }
+        if (m_photos[row].isSelected) selectionCount++;
         idx = idx.siblingAtRow(++row);
     }
     // A la fin, on notifie en une seule fois l'ensemble de toutes les photos.
     emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole << IsSelectedRole);
+
+    // On actualise le nombre de photos sélectionées
+    m_selectionCount = selectionCount;
+    emit selectionCountChanged();
 
     // si la fonction est relancée une seconde fois alors que celle-ci n'est pas finie : on ignore
     // TODO : Mettre un Mutex
@@ -1005,6 +1021,8 @@ void PhotoModel::resetSelection()
     }
     // A la fin, on notifie en une seule fois l'ensemble des photos.
     emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << IsSelectedRole);
+    m_selectionCount = 0;
+    emit selectionCountChanged();
 }
 
 /** **********************************************************************************************************
@@ -1143,6 +1161,73 @@ void PhotoModel::setSelectedItemsCoords(QGeoCoordinate coords)
         }
         idx = idx.siblingAtRow(++row);
     }
+}
+
+/** **********************************************************************************************************
+ * @brief Compte le nombre de photos sélectionnées.
+ * ***********************************************************************************************************/
+void PhotoModel::selectionCount()
+{
+    int count = 0;
+    // On parcourt tous les items du modèle
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        if (m_photos[row].isSelected) {
+            count++;
+        }
+        idx = idx.siblingAtRow(++row);
+    }
+    m_selectionCount = count;
+    emit selectionCountChanged();
+}
+
+/** **********************************************************************************************************
+ * @brief Cherche des suggestions de keywords, country, city, location pour la photo courante,
+ * en allant regarder dans les tags des autres photos de la selection.
+ * ***********************************************************************************************************/
+void PhotoModel::suggestFromSelection()
+{
+    // On parcourt tous les items du modèle
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        if (m_photos[row].isSelected) {
+            this->suggestFromPhoto(row);
+        }
+        idx = idx.siblingAtRow(++row);
+    }
+}
+
+/** **********************************************************************************************************
+ * @brief Envoie des suggestions de keywords, country, city, location pour la photo courante,
+ * en allant regarder dans les tags de la photo fournie.
+ * ***********************************************************************************************************/
+void PhotoModel::suggestFromPhoto(const int row)
+{
+    emit sendSuggestion(m_photos[row].city, "city", "tag", -2);
+    emit sendSuggestion(m_photos[row].country, "country", "tag", -2);
+    emit sendSuggestion(m_photos[row].location, "location", "tag", -2);
+    // TODO : Ajouter keywords et OriginalDateTime
+}
+
+/** **********************************************************************************************************
+ * @brief Cherche des suggestions de geotags (country, city, location) pour la photo courante, en allant
+ * regarder dans les tags des photos précédentes.
+ * ***********************************************************************************************************/
+void PhotoModel::suggestFromPrevious()
+{
+    // On parcourt les items précédents du modèle
+    int row = m_lastCurrentRow;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        this->suggestFromPhoto(row);
+        idx = idx.siblingAtRow(--row);
+    }
+    // TODO : si c'est lent quand il y a beaucoup de photos, alors s'arrêter au premier trouvé.
 }
 
 

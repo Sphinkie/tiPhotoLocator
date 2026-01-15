@@ -101,7 +101,7 @@ Map {
      *   mais de toutes façon, c'est trop tôt, on a pas encore lu les Exif.
      * *******************************************************************************************************/
     onMapItemsChanged: {
-        // TODO : A vérifier mais on pourrait enlever les recentrages de ce slot.
+        // TODO : A vérifier mais je pense qu'on pourrait enlever les recentrages de ce slot.
         // console.log("onMapItemsChanged")
         if (_photoModel.currentItemHasGPS) {
             var coords = _photoModel.currentItemCoords

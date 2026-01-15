@@ -159,12 +159,19 @@ ListView {
                                        geoTimer.restart()
                                    } else
                                    geoTimer.stop()
-                               } else {
+                               } // CLICK DROIT:
+                               else {
                                    var sourceindex = model.getSourceIndex(index)
-                                   if (isSelected)
-                                   _photoModel.removeFromSelection(sourceindex)
-                                   else
-                                   _photoModel.addToSelection(sourceindex)
+                                   // Si la photo est déjà sélectionnée, on la désélectionne.
+                                   if (isSelected) {
+                                       _photoModel.removeFromSelection(
+                                           sourceindex)
+                                   } // Sinon,on la sélectionne:
+                                   else {
+                                       _photoModel.addToSelection(sourceindex)
+                                       // et on ajoute ses tags aux suggestions courantes.
+                                       _photoModel.suggestFromPhoto(sourceindex)
+                                   }
                                }
                            }
             }
@@ -187,6 +194,8 @@ ListView {
         _photoModel.currentItemRow = sourceindex // Actualise le PhotoModel
         // La photo courante est forcement sélectionée, mais de façon exclusive.
         _photoModel.addToSelection(sourceindex, true)
+        // on cherche des suggestions de tags parmi les photos précédentes.
+        _photoModel.suggestFromPrevious()
 
         // On mémorise dans currentPhoto les data de l'item selectionné du modèle.
         // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
