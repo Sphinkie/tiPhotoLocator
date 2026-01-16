@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+	<Name>tiPhotoLocator</Name>
+	<Version>1.4</Version>
+	<Title>TiPhotoLocator: a tiny application to easily geotag your photos.</Title>
+	<Logo>logo_TPL.png</Logo>
+	<Publisher>Sphinkie</Publisher>
+	<StartMenuDir>TiPhotoLocator</StartMenuDir>
+	<TargetDir>@ApplicationsDir@/tiPhotoLocator</TargetDir>
+    <ProductImages>
+        <ProductImage>
+            <Image>screenshot_1.png</Image>
+            <Url>https://sphinkie.github.io/tiPhotoLocator/</Url>
+		</ProductImage>
+        <ProductImage>
+            <Image>TC_built_with_Qt.png</Image>
+            <Url>https://www.qt.io/</Url>
+		</ProductImage>
+        <ProductImage>
+            <Image>screenshot_2.png</Image>
+            <Url>https://sphinkie.github.io/tiPhotoLocator/</Url>
+		</ProductImage>
+        <ProductImage>
+            <Image>TC_with_Qt.png</Image>
+            <Url>https://www.qt.io/</Url>
+		</ProductImage>
+    </ProductImages>
+</Installer>

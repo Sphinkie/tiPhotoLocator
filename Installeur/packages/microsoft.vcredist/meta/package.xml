@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+	<DisplayName>VC Redist</DisplayName>
+	<Description>If necessary you can install the Microsoft Visual C++ redistributable (x64) 2015-2022.</Description>
+	<Version>14</Version>
+	<ReleaseDate>2023-12-17</ReleaseDate>
+	<Licenses>
+		<License name="Microsoft License Terms" file="microsoft_license.txt"/>
+	</Licenses>
+	<Default>false</Default>
+	<Operations>
+       <Operation name="Execute">
+			<Argument>{0,3010}</Argument>
+            <Argument>@TargetDir@\\vc_redist.x64.exe</Argument>
+        </Operation>
+	</Operations>
+</Package>

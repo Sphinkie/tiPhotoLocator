@@ -1,4 +1,4 @@
-@echo ON
+@echo OFF
 @echo --------------------------------------------------
 @echo Run me in Qt Creator terminal.. "Run Environment"
 @echo --------------------------------------------------
@@ -6,7 +6,6 @@
 setlocal 
 set "AppName=TiPhotoLocator"
 set "SourceDir=.\build\Desktop_Qt_6_10_1_MSVC2022_64bit-Release"
-
 set "TargetDir=.\Installeur\packages\sphinkie.%AppName%\data\"
 REM set TargetDir = .\dist
 
@@ -21,8 +20,9 @@ REM xcopy .\Data %TargetDir%\Data /S /I /Y
 @echo --------------------------------------------------
 @echo Copie de l'executable %AppName%
 @echo --------------------------------------------------
-copy %SourceDir%\%AppName%.exe %TargetDir%
+xcopy %SourceDir%\%AppName%.exe %TargetDir% /Y
 
+@echo ON
 @echo.
 @echo --------------------------------------------------
 @echo Deploiment des librairies avec QML

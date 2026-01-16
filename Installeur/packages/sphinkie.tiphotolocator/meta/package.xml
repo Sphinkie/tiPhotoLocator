@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>tiPhotoLocator</DisplayName>
+    <Description>TiPhotoLocator is a desktop application to easily tag and geotag your photos.</Description>
+    <Version>1.4</Version>
+    <ReleaseDate>2026-01-16</ReleaseDate>
+    <Licenses>
+        <License name="LGPL License" file="license.txt" />
+    </Licenses>
+    <Default>true</Default>
+	<Operations>
+		<!-- Start Menu Shortcut -->
+		<Operation name="CreateShortcut">
+			<Argument>@TargetDir@/TiPhotoLocator.exe</Argument>
+			<Argument>@StartMenuDir@/TiPhotoLocator.lnk</Argument>
+			<Argument>workingDirectory=@TargetDir@</Argument>
+			<Argument>description=The Ultimate Geotagger Application</Argument>		
+		</Operation>
+		<!-- Desktop Shortcut -->
+		<Operation name="CreateShortcut">
+			<Argument>@TargetDir@/TiPhotoLocator.exe</Argument>
+			<Argument>@DesktopDir@/TiPhotoLocator.lnk</Argument>
+			<Argument>workingDirectory=@TargetDir@</Argument>
+			<Argument>description=The Ultimate Geotagger Application</Argument>		
+		</Operation>
+	</Operations>
+</Package>

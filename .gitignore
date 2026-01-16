@@ -1,12 +1,10 @@
-.todo-doxydoc.txt
-*.xml
 *.bak
 *.bkp
 *.psd
 CMakeLists.txt.user
 /build
 /build*
-/installeur/packages/sphinkie.tiphotolocator/data*
-/installeur/packages/microsoft.vcredist/data*
+/installeur/packages/sphinkie.tiphotolocator/data/*
+/installeur/packages/microsoft.vcredist/data/*
 /installeur/*.exe
 /installeur/*.zip
