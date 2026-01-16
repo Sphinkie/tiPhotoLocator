@@ -132,7 +132,7 @@ Item {
             anchors.leftMargin: 4
             anchors.rightMargin: 4
             anchors.verticalCenter: parent.verticalCenter
-            text: contentHeight + content
+            text: content
             readOnly: true
             font.pixelSize: 14
             // Positionnement du texte
@@ -141,6 +141,8 @@ Item {
             // Retour à la ligne si le texte est plus long que le Rectangle
             wrapMode: Text.Wrap
             clip: false // Le texte n'est pas tronqué
+            //  La taille max du texte pouvant être saisi (24 pour le Chips, 180 pour les FatChips).
+            maximumLength: 24
         }
 
 
