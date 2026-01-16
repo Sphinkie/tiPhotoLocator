@@ -33,6 +33,7 @@ Zone {
     }
 
     ColumnLayout {
+        /// Ce chip affiche le filename de la photo.
         Chips {
             id: chipName
             Layout.topMargin: 20
@@ -40,18 +41,21 @@ Zone {
             editable: false
             deletable: false
         }
+        /// Ce chip affiche les dimensions de la photo.
         Chips {
             id: chipSize
             Layout.leftMargin: 20
             editable: false
             deletable: false
         }
+        /// Ce chip affiche la date de la photo.
         Chips {
             id: chipDate
             Layout.leftMargin: 20
             editable: false
             deletable: false
         }
+        /// Ce chip affiche l'heure de la photo.
         Chips {
             id: chipTime
             Layout.leftMargin: 20
@@ -59,6 +63,7 @@ Zone {
             editable: false
             deletable: false
         }
+        /// Ce chip affiche la marque de l'appareil photo.
         Chips {
             id: chipMake
             Layout.topMargin: 30 // on laisse un espace
@@ -66,12 +71,14 @@ Zone {
             editable: false
             deletable: false
         }
+        /// Ce chip affiche le modèle de l'appareil photo.
         Chips {
             id: chipCamModel
             Layout.leftMargin: 20
             editable: false
             deletable: false
         }
+        /// Ce chip affiche le pays où a été prise la photo.
         Chips {
             id: chipCountry
             Layout.leftMargin: 20

@@ -9,7 +9,7 @@ import "../Javascript/Chips.js" as Chips
 ZoneUserdataForm {
 
     // -----------------------------------------------------------------------------------
-    // EDIT BUTTON
+    // EDIT BUTTONS
     // -----------------------------------------------------------------------------------
     chipKeyword0.editArea.onClicked: Chips.enableEdition(chipKeyword0)
     chipKeyword1.editArea.onClicked: Chips.enableEdition(chipKeyword1)
@@ -21,7 +21,7 @@ ZoneUserdataForm {
     chipKeyword7.editArea.onClicked: Chips.enableEdition(chipKeyword7)
 
     // -----------------------------------------------------------------------------------
-    // SAVE BUTTON
+    // SAVE BUTTONS
     // -----------------------------------------------------------------------------------
     chipKeyword0.saveArea.onClicked: {
         _photoModel.updatePhotoKeyword(chipKeyword0.chipText.text, 0)
@@ -57,7 +57,7 @@ ZoneUserdataForm {
     }
 
     // -----------------------------------------------------------------------------------
-    // REVERT BUTTON
+    // REVERT BUTTONS
     // -----------------------------------------------------------------------------------
     chipKeyword0.revertArea.onClicked: Chips.revertEdition(chipKeyword0)
     chipKeyword1.revertArea.onClicked: Chips.revertEdition(chipKeyword1)
@@ -69,14 +69,10 @@ ZoneUserdataForm {
     chipKeyword7.revertArea.onClicked: Chips.revertEdition(chipKeyword7)
 
     // -----------------------------------------------------------------------------------
-    // DELETE BUTTON
+    // DELETE BUTTONS : On supprime un seul keyword dans la liste
     // -----------------------------------------------------------------------------------
-    chipKeyword0.deleteArea.onClicked: // (mouse) =>
-    {
-        // console.log("chipKeyword0.deleteArea.onClicked");
-        // On supprime un seul keyword dans la liste
-        _photoModel.removePhotoKeyword(chipKeyword0.content)
-    }
+    chipKeyword0.deleteArea.onClicked: _photoModel.removePhotoKeyword(
+                                           chipKeyword0.content)
     chipKeyword1.deleteArea.onClicked: _photoModel.removePhotoKeyword(
                                            chipKeyword1.content)
     chipKeyword2.deleteArea.onClicked: _photoModel.removePhotoKeyword(
@@ -92,10 +88,10 @@ ZoneUserdataForm {
     chipKeyword7.deleteArea.onClicked: _photoModel.removePhotoKeyword(
                                            chipKeyword7.content)
 
-    // -----------------------------------------------------------------------------------
-    // Connexions
-    // -----------------------------------------------------------------------------------
-    // On raffraichit la zone si SelectedData est modifiée
+
+    /** **********************************************************************************
+     * @brief Connexions: On raffraichit la Zone si CurrentPhoto est modifié.
+     * ***********************************************************************************/
     Connections {
         target: tabbedPage
         function onCurrentPhotoChanged() {

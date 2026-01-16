@@ -2,6 +2,10 @@ import QtQuick
 import QtQuick.Layouts
 import "../Components"
 
+
+/** **********************************************************************************************************
+ * @brief Cette Zone "Tags" affiche les Chips des Keywords (Userdata).
+ * ***********************************************************************************************************/
 Item {
     width: 400
     height: 400
@@ -15,6 +19,7 @@ Item {
     property alias chipKeyword6: chipKeyword6
     property alias chipKeyword7: chipKeyword7
 
+    /// La Zone peut comprendre jusqu'à 8 keywords, disposés en colonne.
     Zone {
         id: userDataZone
         anchors.fill: parent
@@ -22,41 +27,49 @@ Item {
         iconZone: "qrc:/Images/icon-tag.png"
 
         ColumnLayout {
+            /// Chip du keyword 0
             Chips {
                 id: chipKeyword0
                 editable: true
                 deletable: true
             }
+            /// Chip du keyword 1
             Chips {
                 id: chipKeyword1
                 editable: true
                 deletable: true
             }
+            /// Chip du keyword 2
             Chips {
                 id: chipKeyword2
                 editable: true
                 deletable: true
             }
+            /// Chip du keyword 3
             Chips {
                 id: chipKeyword3
                 editable: true
                 deletable: true
             }
+            /// Chip du keyword 4
             Chips {
                 id: chipKeyword4
                 editable: true
                 deletable: true
             }
+            /// Chip du keyword 5
             Chips {
                 id: chipKeyword5
                 editable: true
                 deletable: true
             }
+            /// Chip du keyword 6
             Chips {
                 id: chipKeyword6
                 editable: true
                 deletable: true
             }
+            /// Chip du keyword 7
             Chips {
                 id: chipKeyword7
                 editable: true

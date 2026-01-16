@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.2</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.4</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -105,9 +105,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a10ef03ede9235052eb9f7d5e950f85d3" id="r_a10ef03ede9235052eb9f7d5e950f85d3"><td class="memItemLeft" align="right" valign="top"><a id="a10ef03ede9235052eb9f7d5e950f85d3" name="a10ef03ede9235052eb9f7d5e950f85d3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Photo</b> ()</td></tr>
 <tr class="memdesc:a10ef03ede9235052eb9f7d5e950f85d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="memitem:a9bf87b3475256941dadccf1bba9e5650" id="r_a9bf87b3475256941dadccf1bba9e5650"><td class="memItemLeft" align="right" valign="top"><a id="a9bf87b3475256941dadccf1bba9e5650" name="a9bf87b3475256941dadccf1bba9e5650"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Photo</b> (const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, const bool is_welcome=false, bool is_selected=false)</td></tr>
-<tr class="memdesc:a9bf87b3475256941dadccf1bba9e5650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec valeurs. <br /></td></tr>
+<tr class="memitem:ab728b491964ad2e7e7b91a0d10b12789" id="r_ab728b491964ad2e7e7b91a0d10b12789"><td class="memItemLeft" align="right" valign="top"><a id="ab728b491964ad2e7e7b91a0d10b12789" name="ab728b491964ad2e7e7b91a0d10b12789"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Photo</b> (const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, const bool is_welcome=false, bool is_current=false)</td></tr>
+<tr class="memdesc:ab728b491964ad2e7e7b91a0d10b12789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec valeurs. <br /></td></tr>
 <tr class="memitem:aadb7a083611feae65440c3bfc3887417" id="r_aadb7a083611feae65440c3bfc3887417"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadb7a083611feae65440c3bfc3887417">operator==</a> (const QString &amp;file_name)</td></tr>
 <tr class="memdesc:aadb7a083611feae65440c3bfc3887417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'opérateur ==.  <br /></td></tr>
 <tr class="memitem:aaf8c4dfdd916b811562d6d4e7f5e1489" id="r_aaf8c4dfdd916b811562d6d4e7f5e1489"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf8c4dfdd916b811562d6d4e7f5e1489">operator==</a> (const <a class="el" href="struct_photo.html">Photo</a> &amp;photo)</td></tr>
@@ -130,6 +130,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>gpsLongitude</b> = 
 <tr class="memitem:af2fe738cd3749de9263ff89bfa971ec9" id="r_af2fe738cd3749de9263ff89bfa971ec9"><td class="memItemLeft" align="right" valign="top"><a id="af2fe738cd3749de9263ff89bfa971ec9" name="af2fe738cd3749de9263ff89bfa971ec9"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasGPS</b> = false</td></tr>
 <tr class="memdesc:af2fe738cd3749de9263ff89bfa971ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">has GPS coordinates (latitude/longitude) <br /></td></tr>
+<tr class="memitem:abf2a8150f9347ce6870ec0fafac524fa" id="r_abf2a8150f9347ce6870ec0fafac524fa"><td class="memItemLeft" align="right" valign="top"><a id="abf2a8150f9347ce6870ec0fafac524fa" name="abf2a8150f9347ce6870ec0fafac524fa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCurrent</b></td></tr>
+<tr class="memdesc:abf2a8150f9347ce6870ec0fafac524fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique que cet item est l'item courant de la ListView. <br /></td></tr>
 <tr class="memitem:a8e391469cda515a3aacb6edafa2a8254" id="r_a8e391469cda515a3aacb6edafa2a8254"><td class="memItemLeft" align="right" valign="top"><a id="a8e391469cda515a3aacb6edafa2a8254" name="a8e391469cda515a3aacb6edafa2a8254"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSelected</b></td></tr>
 <tr class="memdesc:a8e391469cda515a3aacb6edafa2a8254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique que cet item est sélectionné dans la ListView. <br /></td></tr>

@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.2</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.4</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -99,6 +99,7 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>addPhotoToSuggestion()&#160;:&#160;<a class="el" href="class_suggestion_model.html#a0de02decfdbfe787caf63895eca58cb6">SuggestionModel</a></li>
 <li>addRecentFolder()&#160;:&#160;<a class="el" href="class_ti_folder_dialog.html#aa77f9cdb4ff03fc10d80a581449ac23e">TiFolderDialog</a></li>
 <li>addTestItem()&#160;:&#160;<a class="el" href="class_photo_model.html#af43bef19e91b11bf4e79c55fe458d0a1">PhotoModel</a></li>
+<li>addToSelection()&#160;:&#160;<a class="el" href="class_photo_model.html#a99a5d7ef237b87ff7173cdc669fafd3b">PhotoModel</a></li>
 <li>append()&#160;:&#160;<a class="el" href="class_camera_set.html#a89e8ab28a0d3873016954386591b3aca">CameraSet</a>, <a class="el" href="class_main.html#aa28322e4b9aaf6ed8d659d57b7334cf5">Main</a>, <a class="el" href="class_photo_model.html#a28933cf9451c4794c12325ac125f439f">PhotoModel</a>, <a class="el" href="class_suggestion_model.html#ab7946b300734bc0e257f3e5a8904ec3f">SuggestionModel</a></li>
 <li>appendSavedPosition()&#160;:&#160;<a class="el" href="class_photo_model.html#ada671ca616e073c328f32e77f8a86566">PhotoModel</a></li>
 <li>applyCreatorToAll()&#160;:&#160;<a class="el" href="class_main.html#a580b6efa82d0e44235c259efd5c7d62e">Main</a>, <a class="el" href="class_photo_model.html#a536c2a2381b3ce827257068f5bf43933">PhotoModel</a></li>
@@ -117,6 +118,12 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>clearRecentFolders()&#160;:&#160;<a class="el" href="class_ti_folder_dialog.html#ae32cbc989574013941a87a969f51ae62">TiFolderDialog</a></li>
 <li>clearSavedPosition()&#160;:&#160;<a class="el" href="class_main.html#a5c48d62abe783b8012b9a03532505cec">Main</a></li>
 <li>contains()&#160;:&#160;<a class="el" href="class_camera_set.html#a2ca6f095743d702ae18cb6c9afb5cb22">CameraSet</a></li>
+<li>createInitialSuggestions()&#160;:&#160;<a class="el" href="class_suggestion_model.html#ae237db33f536544358c527f8ee0c3f18">SuggestionModel</a></li>
+<li>currentItemCoords()&#160;:&#160;<a class="el" href="class_photo_model.html#ab2a9ae6ee15c2e8aa80dfd123bc9b4ac">PhotoModel</a></li>
+<li>currentItemCoordsChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#aef20ff013a37689aac0a52cfd3d25ebc">PhotoModel</a></li>
+<li>currentItemHasGPSChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#a1c16d2f5f763eef50fa1673bedbf0b46">PhotoModel</a></li>
+<li>currentItemRow()&#160;:&#160;<a class="el" href="class_photo_model.html#ae9bd8bb5a9b1bfa42e4bccd4ffebda16">PhotoModel</a></li>
+<li>currentItemRowChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#a32757262733f7c3667e3e1eb28c2dde4">PhotoModel</a></li>
 </ul>
 
 
@@ -139,8 +146,8 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>fetchExifMetadata()&#160;:&#160;<a class="el" href="class_main.html#ab7bec792dc2255b6f1a32a7475caa9e4">Main</a>, <a class="el" href="class_photo_model.html#a3cc8c0b5e6803970def517a8d57ae155">PhotoModel</a></li>
 <li>fetchSingleExifMetadata()&#160;:&#160;<a class="el" href="class_main.html#afa885f918527233f02fecc1691ec09c1">Main</a></li>
 <li>filterAcceptsRow()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#ab1ac8a3c5b8f53a6cee9dbc0fbb38073">OnTheMapProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#a189be5918036c550fd0093d566e716ae">SuggestionProxyModel</a></li>
-<li>filterEnabled()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#aea978750450595380acfab7c3d60ef12">OnTheMapProxyModel</a>, <a class="el" href="class_suggestion_category_proxy_model.html#aec23196b11c2801ba701656539a288d4">SuggestionCategoryProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#a6047e86b0fba57062818fb856496a775">SuggestionProxyModel</a>, <a class="el" href="class_undated_photo_proxy_model.html#a8cbaef411711118ef6c1ccf79c4160af">UndatedPhotoProxyModel</a>, <a class="el" href="class_unlocalized_proxy_model.html#ab2e8701cd4689495b085d112425b7f8d">UnlocalizedProxyModel</a></li>
-<li>filterEnabledChanged()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#aa7c81a7a958b6a60d0e39b1d166f6829">OnTheMapProxyModel</a>, <a class="el" href="class_suggestion_category_proxy_model.html#acbcc572b70158e4c6b93a43494837c74">SuggestionCategoryProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#a1b4ad3a4a83b4c7c959394a68871d349">SuggestionProxyModel</a>, <a class="el" href="class_undated_photo_proxy_model.html#a8f7fadf267c65157d70e3c2b650c6bdc">UndatedPhotoProxyModel</a>, <a class="el" href="class_unlocalized_proxy_model.html#adafd6e77a8a751a6b38936b59ce0619a">UnlocalizedProxyModel</a></li>
+<li>filterEnabled()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#aea978750450595380acfab7c3d60ef12">OnTheMapProxyModel</a>, <a class="el" href="class_selected_photo_proxy_model.html#a974cf34220ba3679ab07f8ca82425355">SelectedPhotoProxyModel</a>, <a class="el" href="class_suggestion_category_proxy_model.html#aec23196b11c2801ba701656539a288d4">SuggestionCategoryProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#a6047e86b0fba57062818fb856496a775">SuggestionProxyModel</a>, <a class="el" href="class_undated_photo_proxy_model.html#a8cbaef411711118ef6c1ccf79c4160af">UndatedPhotoProxyModel</a></li>
+<li>filterEnabledChanged()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#aa7c81a7a958b6a60d0e39b1d166f6829">OnTheMapProxyModel</a>, <a class="el" href="class_selected_photo_proxy_model.html#ab0bdb4985d3268f46d27076cf385d783">SelectedPhotoProxyModel</a>, <a class="el" href="class_suggestion_category_proxy_model.html#acbcc572b70158e4c6b93a43494837c74">SuggestionCategoryProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#a1b4ad3a4a83b4c7c959394a68871d349">SuggestionProxyModel</a>, <a class="el" href="class_undated_photo_proxy_model.html#a8f7fadf267c65157d70e3c2b650c6bdc">UndatedPhotoProxyModel</a></li>
 <li>findInCirclePhotos()&#160;:&#160;<a class="el" href="class_photo_model.html#a262b8d92e3edf3884c723c965f7de5e1">PhotoModel</a></li>
 <li>firstCoordsReady()&#160;:&#160;<a class="el" href="class_photo_model.html#a187455537cc85b88e106f9c68cd64c7f">PhotoModel</a></li>
 <li>fixDigits()&#160;:&#160;<a class="el" href="class_utilities.html#a1c31753eeb57b373d7a73c097e6766ee">Utilities</a></li>
@@ -153,11 +160,11 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>geoCodeFinished()&#160;:&#160;<a class="el" href="class_geocode_wrapper.html#a07234eb935d74cfd85d48058608a1ec4">GeocodeWrapper</a></li>
 <li>GeocodeWrapper()&#160;:&#160;<a class="el" href="class_geocode_wrapper.html#a749d1015c9206b701b45e96d8c109453">GeocodeWrapper</a></li>
 <li>get()&#160;:&#160;<a class="el" href="class_photo_model.html#a18fb19d062f2f7d7d79585d2e62c9634">PhotoModel</a></li>
+<li>getCurrentItemCoords()&#160;:&#160;<a class="el" href="class_photo_model.html#a81b05ee0e6c3c97a5807f16203ed6215">PhotoModel</a></li>
+<li>getCurrentItemHasGPS()&#160;:&#160;<a class="el" href="class_photo_model.html#ae2115960e95b3b8e4877a90fd362a66c">PhotoModel</a></li>
+<li>getCurrentItemRow()&#160;:&#160;<a class="el" href="class_photo_model.html#a38fac21208306e1a156e08c1c37c974f">PhotoModel</a></li>
 <li>getRoleName()&#160;:&#160;<a class="el" href="class_photo_model.html#a3c8036e57376630243dfa6841d7f2251">PhotoModel</a></li>
-<li>getSelectedCoords()&#160;:&#160;<a class="el" href="class_photo_model.html#a90392bbec602bcc8409cc9bee763fd2d">PhotoModel</a></li>
-<li>getSelectedItemHasGPS()&#160;:&#160;<a class="el" href="class_photo_model.html#a65194f5620a2454e2215730fc1c8169a">PhotoModel</a></li>
-<li>getSelectedRow()&#160;:&#160;<a class="el" href="class_photo_model.html#ae3dd8e3599f33e699cd474c5fca7d0b2">PhotoModel</a></li>
-<li>getSourceIndex()&#160;:&#160;<a class="el" href="class_undated_photo_proxy_model.html#adf0dda94c390ee7dc8895fe42582ca43">UndatedPhotoProxyModel</a>, <a class="el" href="class_unlocalized_proxy_model.html#a454ce12fc69f19ec46efd6b52dd23bdc">UnlocalizedProxyModel</a></li>
+<li>getSourceIndex()&#160;:&#160;<a class="el" href="class_selected_photo_proxy_model.html#abb05183baa0c9f88d72acd95adb64050">SelectedPhotoProxyModel</a>, <a class="el" href="class_undated_photo_proxy_model.html#adf0dda94c390ee7dc8895fe42582ca43">UndatedPhotoProxyModel</a></li>
 <li>getUrl()&#160;:&#160;<a class="el" href="class_photo_model.html#a1d2159990dbea68afefa28bfdd6804fe">PhotoModel</a></li>
 </ul>
 
@@ -179,9 +186,9 @@ $(function(){initNavTree('functions_func.html','',''); });
 
 
 <h3 class="doxsection"><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>onCurrentPhotoChanged()&#160;:&#160;<a class="el" href="class_suggestion_model.html#a509f4df03362a904aeae8c2d873485a3">SuggestionModel</a></li>
 <li>onError()&#160;:&#160;<a class="el" href="class_camera_set.html#a77e050b451359a66ab6d161477597b44">CameraSet</a></li>
 <li>onFinished()&#160;:&#160;<a class="el" href="class_camera_set.html#ae521eda047c7409a02da364ba8d60db1">CameraSet</a></li>
-<li>onSelectedPhotoChanged()&#160;:&#160;<a class="el" href="class_suggestion_model.html#a5a28097cf78d3d5619e64a48c0b7d198">SuggestionModel</a></li>
 <li>OnTheMapProxyModel()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#afb8170a7f9e508bfdc6238e649e957cf">OnTheMapProxyModel</a></li>
 <li>operator==()&#160;:&#160;<a class="el" href="struct_photo.html#aadb7a083611feae65440c3bfc3887417">Photo</a>, <a class="el" href="struct_suggestion.html#a063449adc119af01b2ca07be053223f6">Suggestion</a></li>
 </ul>
@@ -198,6 +205,7 @@ $(function(){initNavTree('functions_func.html','',''); });
 <h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
 <li>removeCurrentPhotoFromSuggestion()&#160;:&#160;<a class="el" href="class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f">SuggestionModel</a></li>
 <li>removeData()&#160;:&#160;<a class="el" href="class_photo_model.html#a1e2f3f829e54ef445a5b1dea07ad2118">PhotoModel</a></li>
+<li>removeFromSelection()&#160;:&#160;<a class="el" href="class_photo_model.html#a550fbb31e5ea492677bff74d5274a2b4">PhotoModel</a></li>
 <li>removeFromSuggestion()&#160;:&#160;<a class="el" href="class_suggestion_model.html#a54ef63c254c7a560110977f2240156c6">SuggestionModel</a></li>
 <li>removePhotoFromSuggestion()&#160;:&#160;<a class="el" href="class_main.html#acfd526f850b84d0b663152040c27f6a2">Main</a>, <a class="el" href="class_suggestion_category_proxy_model.html#a29d65a3ef6bd9db53b99b8edaf8600bc">SuggestionCategoryProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#a57f046aabf95036f87b02209f0174e10">SuggestionProxyModel</a></li>
 <li>removePhotoKeyword()&#160;:&#160;<a class="el" href="class_photo_model.html#a77dea7e487119a062064faa3c60ed2d6">PhotoModel</a>, <a class="el" href="class_photo_model_wrapper.html#a3522f76919753b9434eb62126bebc7f1">PhotoModelWrapper</a></li>
@@ -208,6 +216,7 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>requestReverseGeocode()&#160;:&#160;<a class="el" href="class_geocode_wrapper.html#a122fadb46be185cb6e7e375d618f3d9c">GeocodeWrapper</a>, <a class="el" href="class_main.html#af95a1768861a370ba09089a7a6a97c09">Main</a></li>
 <li>requestThumb()&#160;:&#160;<a class="el" href="class_camera_set.html#a69c54b2309d3d34b2c58305a939327bd">CameraSet</a></li>
 <li>resetCircle()&#160;:&#160;<a class="el" href="class_photo_model.html#a8b4c0daf563670d61c87102a19bead12">PhotoModel</a></li>
+<li>resetSelection()&#160;:&#160;<a class="el" href="class_photo_model.html#a3418791003f8f006300b65265a4aaf81">PhotoModel</a></li>
 <li>roleNames()&#160;:&#160;<a class="el" href="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d">PhotoModel</a>, <a class="el" href="class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd">SuggestionModel</a></li>
 <li>rowCount()&#160;:&#160;<a class="el" href="class_photo_model.html#a0fdbd69a007a6bda5623cce8d5f3cd57">PhotoModel</a>, <a class="el" href="class_suggestion_model.html#a0c1caffe345aeb30f636f3a1784e9cea">SuggestionModel</a></li>
 <li>run()&#160;:&#160;<a class="el" href="class_exif_read_task.html#a1f0693a4aa7d57897f906d3db0fd77b8">ExifReadTask</a>, <a class="el" href="class_exif_write_task.html#a62fcca5c4d5077f086df4b98cac752df">ExifWriteTask</a></li>
@@ -215,27 +224,31 @@ $(function(){initNavTree('functions_func.html','',''); });
 
 
 <h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>saveConfiguration()&#160;:&#160;<a class="el" href="class_settings_popup.html#a43b44a1a602cbe2679e1473b3c380053">SettingsPopup</a></li>
+<li>saveConfiguration()&#160;:&#160;<a class="el" href="class_popup_settings.html#af1e31b6bfdc9bf19ef29ad2341bec260">PopupSettings</a></li>
 <li>savedPositionExistsChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#ab3c7d2f0f2caf79b26d742af009431d7">PhotoModel</a></li>
 <li>saveMetadata()&#160;:&#160;<a class="el" href="class_main.html#a4f0612873776f7214fddf19803580063">Main</a>, <a class="el" href="class_photo_model.html#ac393e2839ea5993f199ec669973972ef">PhotoModel</a></li>
 <li>savePosition()&#160;:&#160;<a class="el" href="class_main.html#a5f6509a236e35dc1666aa6ed1b790c99">Main</a></li>
-<li>selectedCoords()&#160;:&#160;<a class="el" href="class_photo_model.html#a113f7846c8f4fe7dc46bcc3d59d8e676">PhotoModel</a></li>
-<li>selectedCoordsChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#ad821814efc5f687c4c1db6935dcd04ee">PhotoModel</a></li>
-<li>selectedItemHasGPSChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#a6a4eacd86096cf190af82576907e3a00">PhotoModel</a></li>
-<li>selectedRow()&#160;:&#160;<a class="el" href="class_photo_model.html#aa9fed3a1b288e554337ded22bdb1cf35">PhotoModel</a></li>
-<li>selectedRowChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#ac6f14df5683cb7c053c9d5c6982a3d2c">PhotoModel</a></li>
+<li>selectAll()&#160;:&#160;<a class="el" href="class_photo_model.html#af7a88bb9ca10eaf2d573ddb453650bdc">PhotoModel</a></li>
+<li>SelectedPhotoProxyModel()&#160;:&#160;<a class="el" href="class_selected_photo_proxy_model.html#a54094dbdfabf593edc0d881d1b197d84">SelectedPhotoProxyModel</a></li>
 <li>selectFirstPhoto()&#160;:&#160;<a class="el" href="class_photo_model.html#aa3d514c34c26ba9d741185fa4fff4bb2">PhotoModel</a></li>
+<li>selectionCountChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#a8cc66b6d7ccc7f50bd419b00fbea1b53">PhotoModel</a></li>
+<li>selectUndated()&#160;:&#160;<a class="el" href="class_photo_model.html#a6a10a56693f2a9a186748cb02b8b763b">PhotoModel</a></li>
+<li>selectUnlocalized()&#160;:&#160;<a class="el" href="class_photo_model.html#a74dfbb2550a834deeea3c8bb09863ce6">PhotoModel</a></li>
 <li>sendSuggestion()&#160;:&#160;<a class="el" href="class_photo_model.html#ab8f7cb78c57128f6a6df184a4d89f2bf">PhotoModel</a></li>
 <li>setAllItemsCoords()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#a8578bb0c25636337ba57681da049e4f1">OnTheMapProxyModel</a></li>
 <li>setAllItemsSavedCoords()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#aebd8850a9093bc4166d6aed75d638141">OnTheMapProxyModel</a></li>
 <li>setCategoryFilter()&#160;:&#160;<a class="el" href="class_main.html#a7fca31d9bd8cce3190fe42c62dd946a9">Main</a></li>
 <li>setData()&#160;:&#160;<a class="el" href="class_photo_model.html#ad7a5d45624200d819ee0ab429387baa0">PhotoModel</a></li>
-<li>setFilterEnabled()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#ad5397db53587218f59299d48696f1b99">OnTheMapProxyModel</a>, <a class="el" href="class_suggestion_category_proxy_model.html#a7ecc03f7eb5925bef1c0937221bcd469">SuggestionCategoryProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#ab6c4e1a2a793fc44957953297424b19c">SuggestionProxyModel</a>, <a class="el" href="class_undated_photo_proxy_model.html#aee1302adb09891cddf838d3f8c1250f5">UndatedPhotoProxyModel</a>, <a class="el" href="class_unlocalized_proxy_model.html#a50743a6fc31dae190a2da1eaf370dab7">UnlocalizedProxyModel</a></li>
+<li>setFilterEnabled()&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#ad5397db53587218f59299d48696f1b99">OnTheMapProxyModel</a>, <a class="el" href="class_selected_photo_proxy_model.html#a1aa20135c6b1f287c3fc4008c9f9102d">SelectedPhotoProxyModel</a>, <a class="el" href="class_suggestion_category_proxy_model.html#a7ecc03f7eb5925bef1c0937221bcd469">SuggestionCategoryProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#ab6c4e1a2a793fc44957953297424b19c">SuggestionProxyModel</a>, <a class="el" href="class_undated_photo_proxy_model.html#aee1302adb09891cddf838d3f8c1250f5">UndatedPhotoProxyModel</a></li>
 <li>setFilterValue()&#160;:&#160;<a class="el" href="class_suggestion_category_proxy_model.html#a4033c7903dcf1ae1254b3e6b8a21f005">SuggestionCategoryProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#add1caa599574ee457caa9f63251e5252">SuggestionProxyModel</a></li>
 <li>setInCircleItemCoords()&#160;:&#160;<a class="el" href="class_photo_model.html#aa35674fe9c8ec79d2993ce56614bb909">PhotoModel</a></li>
 <li>setLoading()&#160;:&#160;<a class="el" href="class_photo_model.html#a5b6f4559d756ce4ca23aa60bf89f5f1c">PhotoModel</a></li>
 <li>setPhotoProperty()&#160;:&#160;<a class="el" href="class_main.html#ac0ff9966818be09f18bfe42bc766ae33">Main</a>, <a class="el" href="class_photo_model.html#a50dc093e369a2741b62aa03556df061c">PhotoModel</a></li>
+<li>setSelectedItemsCoords()&#160;:&#160;<a class="el" href="class_photo_model.html#a614ead774ff62e4d0431a955abb56651">PhotoModel</a></li>
 <li>setWriteProgress()&#160;:&#160;<a class="el" href="class_photo_model.html#a55deb039e2fbabeb1de1f3ba871c3e48">PhotoModel</a></li>
+<li>suggestFromPhoto()&#160;:&#160;<a class="el" href="class_photo_model.html#a23001133bf3fb44176664a2042e657ea">PhotoModel</a></li>
+<li>suggestFromPrevious()&#160;:&#160;<a class="el" href="class_photo_model.html#a6c8f1095b47978fde332a6018677b024">PhotoModel</a></li>
+<li>suggestFromSelection()&#160;:&#160;<a class="el" href="class_photo_model.html#ac9b73a40d67ee00486147e487bc1a89b">PhotoModel</a></li>
 <li>Suggestion()&#160;:&#160;<a class="el" href="struct_suggestion.html#af2eddc6a6b273397e3455724a25c88ef">Suggestion</a></li>
 <li>SuggestionCategoryProxyModel()&#160;:&#160;<a class="el" href="class_suggestion_category_proxy_model.html#a7f173be0c42da4ac2ddeef414d1d4247">SuggestionCategoryProxyModel</a></li>
 <li>SuggestionModel()&#160;:&#160;<a class="el" href="class_suggestion_model.html#a0e304826f0095e36eecd9ce321ac4eb0">SuggestionModel</a></li>
@@ -252,7 +265,6 @@ $(function(){initNavTree('functions_func.html','',''); });
 
 <h3 class="doxsection"><a id="index_u" name="index_u"></a>- u -</h3><ul>
 <li>UndatedPhotoProxyModel()&#160;:&#160;<a class="el" href="class_undated_photo_proxy_model.html#a427c0ae3d7123c5d2436f3905d4d4219">UndatedPhotoProxyModel</a></li>
-<li>UnlocalizedProxyModel()&#160;:&#160;<a class="el" href="class_unlocalized_proxy_model.html#aefca3127511e50cfd59f6a58a23da2b9">UnlocalizedProxyModel</a></li>
 <li>updatePhotoKeyword()&#160;:&#160;<a class="el" href="class_photo_model.html#a3260014636b9e9ae523391a753be104c">PhotoModel</a></li>
 <li>Utilities()&#160;:&#160;<a class="el" href="class_utilities.html#ab1676c9ce35cf347a73d16f1094e1271">Utilities</a></li>
 </ul>

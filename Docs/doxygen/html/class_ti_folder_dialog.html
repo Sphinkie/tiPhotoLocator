@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.2</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.4</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -111,8 +111,6 @@ Fonctions membres publiques</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Propriétés</h2></td></tr>
-<tr class="memitem:ad53480a09dec1bac938ad0743c5620ff" id="r_ad53480a09dec1bac938ad0743c5620ff"><td class="memItemLeft" align="right" valign="top"><a id="ad53480a09dec1bac938ad0743c5620ff" name="ad53480a09dec1bac938ad0743c5620ff"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>recentNumber</b></td></tr>
 <tr class="memitem:a63f4dee2779dddfff5bead0ff3785a6d" id="r_a63f4dee2779dddfff5bead0ff3785a6d"><td class="memItemLeft" align="right" valign="top"><a id="a63f4dee2779dddfff5bead0ff3785a6d" name="a63f4dee2779dddfff5bead0ff3785a6d"></a>
 var&#160;</td><td class="memItemRight" valign="bottom"><b>recentList</b></td></tr>
 </table><table class="memberdecls">
@@ -123,7 +121,7 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>currentFolder</b></td>
 <tr class="memitem:ada3967279daa5f2629ff8b0f7b0d84e7" id="r_ada3967279daa5f2629ff8b0f7b0d84e7"><td class="memItemLeft" align="right" valign="top"><a id="ada3967279daa5f2629ff8b0f7b0d84e7" name="ada3967279daa5f2629ff8b0f7b0d84e7"></a>
 var&#160;</td><td class="memItemRight" valign="bottom"><b>folder</b></td></tr>
 <tr class="memitem:a0de014f6666d965b1cb9167ff18243a1" id="r_a0de014f6666d965b1cb9167ff18243a1"><td class="memItemLeft" align="right" valign="top">var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0de014f6666d965b1cb9167ff18243a1">onAccepted</a></td></tr>
-<tr class="memitem:ab20164ba0864d93d72e15fc1a8b8c5c5" id="r_ab20164ba0864d93d72e15fc1a8b8c5c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_folder_load_timer.html">FolderLoadTimer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab20164ba0864d93d72e15fc1a8b8c5c5">folderTimer</a></td></tr>
+<tr class="memitem:a5ca2593be8a684ac8826a9eb65d6e1ef" id="r_a5ca2593be8a684ac8826a9eb65d6e1ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_timer_load_folder.html">TimerLoadFolder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ca2593be8a684ac8826a9eb65d6e1ef">folderTimer</a></td></tr>
 <tr class="memitem:afd2ddd7d4a9054da377e8b6b75074e6b" id="r_afd2ddd7d4a9054da377e8b6b75074e6b"><td class="memItemLeft" align="right" valign="top">Settings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd2ddd7d4a9054da377e8b6b75074e6b">settings</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
@@ -169,8 +167,8 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>folder</b></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
-<a id="ab20164ba0864d93d72e15fc1a8b8c5c5" name="ab20164ba0864d93d72e15fc1a8b8c5c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab20164ba0864d93d72e15fc1a8b8c5c5">&#9670;&#160;</a></span>folderTimer</h2>
+<a id="a5ca2593be8a684ac8826a9eb65d6e1ef" name="a5ca2593be8a684ac8826a9eb65d6e1ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca2593be8a684ac8826a9eb65d6e1ef">&#9670;&#160;</a></span>folderTimer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +177,7 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>folder</b></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_folder_load_timer.html">FolderLoadTimer</a> TiFolderDialog::folderTimer</td>
+          <td class="memname"><a class="el" href="class_timer_load_folder.html">TimerLoadFolder</a> TiFolderDialog::folderTimer</td>
         </tr>
       </table>
   </td>
@@ -237,7 +235,7 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>folder</b></td></tr>
 </table>
 </div><div class="memdoc">
 <hr  />
-<p> Mémorisation dans les Settings du nombre de RecentFolders, et de leurs chemins. Ils sont affichés par la TiMenuBar. </p>
+<p> Mémorisation dans les Settings des chemins des RecentFolders. Ils sont affichés par la MenuBar. </p>
 
 </div>
 </div>

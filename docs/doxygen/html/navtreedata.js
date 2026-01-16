@@ -57,8 +57,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_camera_set_8h_source.html",
-"class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a4b14ecbac030e9c2e28d92d38e834e25",
-"struct_photo.html#aadb7a083611feae65440c3bfc3887417"
+"class_photo_model.html#ae9bd8bb5a9b1bfa42e4bccd4ffebda16",
+"functions_enum.html"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

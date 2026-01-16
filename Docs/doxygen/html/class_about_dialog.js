@@ -7,5 +7,6 @@ var class_about_dialog =
     [ "title", "class_about_dialog.html#af3dce0f5555d2bdcbee401717c762d39", null ],
     [ "t0", "class_about_dialog.html#aeb4d0dacdd1ca4be43e9128233574aaf", null ],
     [ "t1", "class_about_dialog.html#adcf1d8405dfc26a961936d0a9202b846", null ],
-    [ "t2", "class_about_dialog.html#a0090c869995034de7d4a44ae1b5b6aa5", null ]
+    [ "t_details", "class_about_dialog.html#a03d9881dcc0e8c344eb20a09092d4571", null ],
+    [ "version", "class_about_dialog.html#a01aaf11038c1104c9ca9a09bda4c80d2", null ]
 ];

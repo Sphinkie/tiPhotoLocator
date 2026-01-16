@@ -3,8 +3,9 @@ import QtQuick.Controls.Material
 import "../Components"
 import ".."
 
+
 /** **********************************************************************************************************
- * @brief Cette zone affiche les Chips de Suggestion de Tags pour cette photo.
+ * @brief Cette Zone "Suggestions" affiche les Chips de Suggestion de Tags pour cette photo.
  * ***********************************************************************************************************/
 Zone {
     id: suggestedTagsZone
@@ -19,7 +20,7 @@ Zone {
         contentWidth: parent.width
         contentHeight: parent.height
 
-        // Le Flow met les chips les unes après les autres.
+        /// Le Flow positionne les Chips les unes après les autres.
         Flow {
             id: grille
             width: parent.width
@@ -27,15 +28,17 @@ Zone {
             spacing: 12
             padding: 20
 
+            /// Le repeter affiche chacune des Suggestions (de catégorie "tag") du Model.
             SuggestionRepeater {
                 id: suggestionRepeater
             }
 
+            /// En dernière position, on prévoit un bouton qui pourrait faire appel à une IA.
             Button {
                 id: bt_getinfo
                 text: qsTr("Autres tags...")
                 icon.source: "qrc:/Images/icon-suggestion.png"
-				visible: false
+                visible: false
             }
         }
     }

@@ -6,7 +6,7 @@ import QtQuick.Dialogs
  * @brief Popup "A propos de l'application" (menu principal).
  * ***********************************************************************************************************/
 MessageDialog {
-    readonly property string version: "1.3"
+    readonly property string version: "1.4"
     readonly property string t0: qsTr("<b>TiPhotoLocator</b> permet de placer vos photos sur la carte géographique du monde, ainsi que d'éditer les tags EXIF et IPTC internes aux photos.<br/>")
     readonly property string t1: qsTr("<br/><br/>Programme réalisé par David de Lorenzo.")
     readonly property string t_details: qsTr("TiPhotoLocator est gratuit et sans publicité.")

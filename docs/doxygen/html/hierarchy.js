@@ -1,5 +1,8 @@
 var hierarchy =
 [
+    [ "ApplicationWindow", null, [
+      [ "Main", "class_main.html", null ]
+    ] ],
     [ "ColumnLayout", null, [
       [ "TabFrameGlobalTags", "class_tab_frame_global_tags.html", null ]
     ] ],
@@ -19,7 +22,7 @@ var hierarchy =
       ] ],
       [ "Style", "class_style.html", null ],
       [ "ToolbarMapForm", "class_toolbar_map_form.html", [
-        [ "MapToolbar", "class_map_toolbar.html", null ]
+        [ "ToolbarMap", "class_toolbar_map.html", null ]
       ] ],
       [ "ZoneCameraForm", "class_zone_camera_form.html", [
         [ "ZoneCamera", "class_zone_camera.html", null ]
@@ -52,11 +55,11 @@ var hierarchy =
     ] ],
     [ "Photo", "struct_photo.html", null ],
     [ "Popup", null, [
-      [ "MetadataPopupForm", "class_metadata_popup_form.html", [
-        [ "MetadataPopup", "class_metadata_popup.html", null ]
+      [ "PopupMetadataForm", "class_popup_metadata_form.html", [
+        [ "PopupMetadata", "class_popup_metadata.html", null ]
       ] ],
-      [ "SettingsPopupForm", "class_settings_popup_form.html", [
-        [ "SettingsPopup", "class_settings_popup.html", null ]
+      [ "PopupSettingsForm", "class_popup_settings_form.html", [
+        [ "PopupSettings", "class_popup_settings.html", null ]
       ] ]
     ] ],
     [ "QAbstractListModel", null, [
@@ -74,12 +77,13 @@ var hierarchy =
     ] ],
     [ "QSortFilterProxyModel", null, [
       [ "OnTheMapProxyModel", "class_on_the_map_proxy_model.html", null ],
+      [ "SelectedPhotoProxyModel", "class_selected_photo_proxy_model.html", null ],
       [ "SuggestionCategoryProxyModel", "class_suggestion_category_proxy_model.html", null ],
       [ "SuggestionProxyModel", "class_suggestion_proxy_model.html", null ],
-      [ "UndatedPhotoProxyModel", "class_undated_photo_proxy_model.html", null ],
-      [ "UnlocalizedProxyModel", "class_unlocalized_proxy_model.html", null ]
+      [ "UndatedPhotoProxyModel", "class_undated_photo_proxy_model.html", null ]
     ] ],
     [ "Rectangle", null, [
+      [ "ApplicationLogo", "class_application_logo.html", null ],
       [ "ToolbarBottomForm", "class_toolbar_bottom_form.html", [
         [ "ToolbarBottom", "class_toolbar_bottom.html", null ]
       ] ],
@@ -112,14 +116,12 @@ var hierarchy =
       [ "SuggestionRepeater", "class_suggestion_repeater.html", null ]
     ] ],
     [ "RowLayout", null, [
+      [ "FilterBar", "class_filter_bar.html", null ],
       [ "TabFramePhotoPreview", "class_tab_frame_photo_preview.html", null ]
     ] ],
     [ "Suggestion", "struct_suggestion.html", null ],
     [ "Timer", null, [
-      [ "FolderLoadTimer", "class_folder_load_timer.html", null ]
+      [ "TimerLoadFolder", "class_timer_load_folder.html", null ]
     ] ],
-    [ "Utilities", "class_utilities.html", null ],
-    [ "Window", null, [
-      [ "Main", "class_main.html", null ]
-    ] ]
+    [ "Utilities", "class_utilities.html", null ]
 ];

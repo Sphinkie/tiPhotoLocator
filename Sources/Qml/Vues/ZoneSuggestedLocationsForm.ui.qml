@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Material
 import "../Components"
-import ".."
 
 
 /** **********************************************************************************************************
@@ -18,6 +17,7 @@ Zone {
 
     ColumnLayout {
 
+        /// En première position, ce bouton fait appel à une API pour obténier des suggestions de noms de lieux.
         Button {
             id: bt_getinfo
             text: qsTr("Chercher")
@@ -31,7 +31,7 @@ Zone {
             ToolTip.delay: 500
         }
 
-        // Le Flow met les chips les unes après les autres.
+        /// Le Flow positionne les Chips les unes après les autres.
         Flow {
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -39,6 +39,7 @@ Zone {
             topPadding: 10
             leftPadding: 20
 
+            /// Le repeter affiche chacune des Suggestions (de catégorie "geo") du Model.
             SuggestionRepeater {
                 id: suggestionRepeater
             }

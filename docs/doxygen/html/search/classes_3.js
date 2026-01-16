@@ -1,5 +1,5 @@
 var searchData=
 [
   ['fatchip_0',['FatChip',['../class_fat_chip.html',1,'']]],
-  ['folderloadtimer_1',['FolderLoadTimer',['../class_folder_load_timer.html',1,'']]]
+  ['filterbar_1',['FilterBar',['../class_filter_bar.html',1,'']]]
 ];

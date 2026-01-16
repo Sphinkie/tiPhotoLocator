@@ -1,7 +1,7 @@
 var struct_photo =
 [
     [ "Photo", "struct_photo.html#a10ef03ede9235052eb9f7d5e950f85d3", null ],
-    [ "Photo", "struct_photo.html#a9bf87b3475256941dadccf1bba9e5650", null ],
+    [ "Photo", "struct_photo.html#ab728b491964ad2e7e7b91a0d10b12789", null ],
     [ "operator==", "struct_photo.html#aaf8c4dfdd916b811562d6d4e7f5e1489", null ],
     [ "operator==", "struct_photo.html#aadb7a083611feae65440c3bfc3887417", null ],
     [ "camModel", "struct_photo.html#a3c5204d88a446d1df0ee95feee81a574", null ],
@@ -20,6 +20,7 @@ var struct_photo =
     [ "imageUrl", "struct_photo.html#a201e9224f059933d60838a7fe331646d", null ],
     [ "imageWidth", "struct_photo.html#a47567d8ecc3f845ae1846903113d625b", null ],
     [ "insideCircle", "struct_photo.html#a33f360a2eccf88cc843e3a469600b3d5", null ],
+    [ "isCurrent", "struct_photo.html#abf2a8150f9347ce6870ec0fafac524fa", null ],
     [ "isMarker", "struct_photo.html#accaf8898f12c82d9872c555309d563b1", null ],
     [ "isSelected", "struct_photo.html#a8e391469cda515a3aacb6edafa2a8254", null ],
     [ "isWelcome", "struct_photo.html#a46c9dbe9c662028eff1907e39d5941f2", null ],

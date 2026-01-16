@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.2</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.4</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -95,7 +95,7 @@ $(function(){initNavTree('class_photo_listview.html','','class_photo_listview-me
 </div><!--header-->
 <div class="contents">
 
-<p>QML: Liste des filenames des photos, associée au modèle filtré <a class="el" href="class_unlocalized_proxy_model.html" title="The UnlocalizedProxyModel class is a filter ProxyModel, that filters Photo with/without GPS coordinat...">UnlocalizedProxyModel</a>. Ce modèle est basé sur <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>, filtré par <a class="el" href="class_undated_photo_proxy_model.html" title="The UndatedPhotoProxyModel class is a filter ProxyModel, that filters Photo with/without original dat...">UndatedPhotoProxyModel</a> puis par <a class="el" href="class_unlocalized_proxy_model.html" title="The UnlocalizedProxyModel class is a filter ProxyModel, that filters Photo with/without GPS coordinat...">UnlocalizedProxyModel</a>.  
+<p>QML: Liste des filenames des photos, associée au modèle filtré <a class="el" href="class_selected_photo_proxy_model.html" title="The SelectedPhotoProxyModel class is a filter ProxyModel, that filters selected Photos.">SelectedPhotoProxyModel</a>. Ce modèle est basé sur <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>, filtré pour afficher toutes photos, ou uniquement celles sélectionnées.  
  <a href="#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de PhotoListview:</div>
@@ -107,7 +107,7 @@ Graphe d'héritage de PhotoListview:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a49af943e6e4855ee7401559d203f9c8d" id="r_a49af943e6e4855ee7401559d203f9c8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49af943e6e4855ee7401559d203f9c8d">activatePhoto</a> (pos, hasGPS, city, country, latitude, longitude)</td></tr>
-<tr class="memdesc:a49af943e6e4855ee7401559d203f9c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active la photo sélectionnée (Preview, imagette, tags, et pinpoint géographique). Cette fonction est appelée quand on clique sur un item de listView, et aussi quand le logiciel se positionne automatiquement sur la première photo (TODO).  <br /></td></tr>
+<tr class="memdesc:a49af943e6e4855ee7401559d203f9c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active la photo sélectionnée (Preview, imagette, tags, et pinpoint géographique). Cette fonction est appelée quand on clique sur un item de listView,.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
@@ -137,7 +137,7 @@ Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
 <tr class="memitem:ae447aac43304d79184cd885e670a3dc7" id="r_ae447aac43304d79184cd885e670a3dc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tiny_chip.html">TinyChip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae447aac43304d79184cd885e670a3dc7">cityText</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>QML: Liste des filenames des photos, associée au modèle filtré <a class="el" href="class_unlocalized_proxy_model.html" title="The UnlocalizedProxyModel class is a filter ProxyModel, that filters Photo with/without GPS coordinat...">UnlocalizedProxyModel</a>. Ce modèle est basé sur <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>, filtré par <a class="el" href="class_undated_photo_proxy_model.html" title="The UndatedPhotoProxyModel class is a filter ProxyModel, that filters Photo with/without original dat...">UndatedPhotoProxyModel</a> puis par <a class="el" href="class_unlocalized_proxy_model.html" title="The UnlocalizedProxyModel class is a filter ProxyModel, that filters Photo with/without GPS coordinat...">UnlocalizedProxyModel</a>. </p>
+<div class="textblock"><p>QML: Liste des filenames des photos, associée au modèle filtré <a class="el" href="class_selected_photo_proxy_model.html" title="The SelectedPhotoProxyModel class is a filter ProxyModel, that filters selected Photos.">SelectedPhotoProxyModel</a>. Ce modèle est basé sur <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>, filtré pour afficher toutes photos, ou uniquement celles sélectionnées. </p>
 <hr  />
  <dl class="section see"><dt>Voir également</dt><dd><a href="https://www.youtube.com/watch?v=ZArpJDRJxcI">https://www.youtube.com/watch?v=ZArpJDRJxcI</a> </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
@@ -180,11 +180,16 @@ Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Active la photo sélectionnée (Preview, imagette, tags, et pinpoint géographique). Cette fonction est appelée quand on clique sur un item de listView, et aussi quand le logiciel se positionne automatiquement sur la première photo (TODO). </p>
+<p>Active la photo sélectionnée (Preview, imagette, tags, et pinpoint géographique). Cette fonction est appelée quand on clique sur un item de listView,. </p>
 <hr  />
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td>: La position de la photo dans la listView </td></tr>
+    <tr><td class="paramname">pos</td><td>: La position de la photo dans la listView. </td></tr>
+    <tr><td class="paramname">hasGPS</td><td>: La propriété hasGPS de la photo. </td></tr>
+    <tr><td class="paramname">city</td><td>: La propriété city de la photo. </td></tr>
+    <tr><td class="paramname">country</td><td>: La propriété country de la photo. </td></tr>
+    <tr><td class="paramname">latitude</td><td>: La propriété latitude de la photo. </td></tr>
+    <tr><td class="paramname">longitude</td><td>: La propriété longitude de la photo. </td></tr>
   </table>
   </dd>
 </dl>
@@ -332,7 +337,7 @@ Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
 </table>
 </div><div class="memdoc">
 <hr  />
-<p> Background de l'item sélectionné. </p>
+<p> Background de l'item courant. (</p><dl class="section see"><dt>Voir également</dt><dd>property ListView.highlightFollowsCurrentItem). </dd></dl>
 
 </div>
 </div>

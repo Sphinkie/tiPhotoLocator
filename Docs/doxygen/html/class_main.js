@@ -14,16 +14,16 @@ var class_main =
     [ "setCategoryFilter", "class_main.html#a7fca31d9bd8cce3190fe42c62dd946a9", null ],
     [ "setPhotoProperty", "class_main.html#ac0ff9966818be09f18bfe42bc766ae33", null ],
     [ "bottomToolBar", "class_main.html#afdf9d5f249ee4ef9573ae402aef38f7a", null ],
+    [ "header", "class_main.html#aac07382860c30f1b9b149d4057b20fc4", null ],
     [ "imagettes", "class_main.html#af3dfb2a32b39c98a991299276fc2b67a", null ],
     [ "line2", "class_main.html#a2c1d358ddafd73b36bfb1f50ba6b9ccd", null ],
     [ "line3", "class_main.html#a424dfda57077b446d80cf22e08f90ceb", null ],
     [ "line4", "class_main.html#a26c5b37c4904dd52c911e44da994b6a5", null ],
     [ "listViewFrame", "class_main.html#af36ac68a0a050c7ea417087b76c0fff6", null ],
     [ "mapTab", "class_main.html#ab605bcb2c45d3d00f45f30908d18ee78", null ],
-    [ "menuBar", "class_main.html#adf243ebe1c1f57020aa34041b5aa01b3", null ],
+    [ "menuBar", "class_main.html#aaa5a22b926b84f30d878945b8570bcee", null ],
     [ "photoTagsTab", "class_main.html#a937161b6dd4dce68dc7521e1b27819dd", null ],
     [ "previewView", "class_main.html#aac7638d6eb0c8f33f5cf7fe00e8eded7", null ],
     [ "tabbedPage", "class_main.html#a3994eabf899973374689e40d9deb48d7", null ],
-    [ "tabFrameGlobalTags", "class_main.html#a808b0b55bfd46ccf207d05db4ee86289", null ],
-    [ "toolBar", "class_main.html#a054e9693e273e4dfb020b1049a3f31b4", null ]
+    [ "tabFrameGlobalTags", "class_main.html#a808b0b55bfd46ccf207d05db4ee86289", null ]
 ];
