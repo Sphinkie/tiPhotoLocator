@@ -60,6 +60,7 @@ public:
         DescriptionRole,
         CaptionWriterRole,
         SoftwareRole,
+        MetadataRole,
         KeywordsRole
     };
 

@@ -100,14 +100,14 @@ Popup {
                         style: Text.Normal
                     }
                 }
-                /// Valeur par défaut pour SOFTWARE
+                /// Valeur par défaut pour METADATA EDITING SOFTWARE
                 RowLayout {
                     Label {
-                        text: qsTr("Signature application:")
+                        text: qsTr("Application signature:")
                         font.pixelSize: 12
                     }
                     TextField {
-                        id: textFieldSoftware
+                        id: textFieldMetadataSoftware
                         Layout.fillWidth: true
                         height: 30
                         text: "TiPhotoLocator"
@@ -233,7 +233,7 @@ Popup {
         id: settings
         property alias photographe: textFieldName.text
         property alias initiales: textFieldInitials.text
-        property alias software: textFieldSoftware.text
+        property alias metadataSoftware: textFieldMetadataSoftware.text
         property alias homecity: textFieldHomecity.text
         property alias mapApikey: textFieldMapApiKey.text
         property alias preserveExif: checkBoxExif.checked

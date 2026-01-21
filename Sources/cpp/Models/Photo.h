@@ -45,6 +45,7 @@ struct Photo
     QString dateTimeOriginal;   //!< Time when the camera shutter was pressed (no changes allowed in this app)
     QString camModel;           //!< Camera model (no changes allowed in this app)
     QString make;               //!< Camera manifacturer (no changes allowed in this app)
+    QString metadata;           //!< Logiciel ayant renseigné les métadonnées
     int imageWidth = 0;         //!< Image width  (no changes allowed in this app)
     int imageHeight = 0;        //!< Image height (no changes allowed in this app)
     int orientation = 1;        //!< 1 = Horizontal

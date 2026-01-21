@@ -8,6 +8,7 @@ Item {
     property alias chipModel: chipModel
     property alias chipMaker: chipMaker
     property alias chipSoftware: chipSoftware
+    property alias chipMetadata: chipMetadata
     property alias chipAperture: chipAperture
     property alias chipSpeed: chipSpeed
     property alias camThumb: camThumb
@@ -35,6 +36,11 @@ Item {
                 deletable: false
             }
             Chips {
+                id: chipMetadata
+                editable: false
+                deletable: false
+            }
+            Chips {
                 id: chipAperture
                 editable: false
                 deletable: false
@@ -44,7 +50,7 @@ Item {
                 editable: false
                 deletable: false
             }
-            Item{
+            Item {
                 width: 128
                 height: 128
                 Layout.alignment: Qt.AlignHCenter

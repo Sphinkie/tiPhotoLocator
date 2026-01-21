@@ -77,6 +77,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
     case DescriptionRole:       return photo.description;
     case CaptionWriterRole:     return photo.captionWriter;
     case SoftwareRole:          return photo.software;
+    case MetadataRole:          return photo.metadata;
     case KeywordsRole:          return photo.keywords;
     default:
         return QVariant();
@@ -115,6 +116,7 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         // Photo
         {DateTimeOriginalRole,  "dateTimeOriginal"},
         {SoftwareRole,          "software"},
+        {MetadataRole,          "metadata"},
         {OrientationRole,       "orientation"},
         {ShutterSpeedRole,      "shutterSpeed"},
         {FNumberRole,           "fNumber"},
@@ -524,6 +526,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_photos[row].orientation     = value_list["Orientation"].toInt();
     m_photos[row].shutterSpeed    = value_list["ShutterSpeed"].toFloat();
     m_photos[row].fNumber         = value_list["FNumber"].toFloat();
+    m_photos[row].metadata        = value_list["MetadataEditingSoftware"].toString();
     // Les metadata IPTC
     m_photos[row].city            = value_list["City"].toString();
     m_photos[row].country         = value_list["Country"].toString();
@@ -531,7 +534,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     m_photos[row].description     = value_list["Description"].toString();
     m_photos[row].software        = value_list["Software"].toString();
     m_photos[row].keywords        = value_list["Keywords"].toStringList();
-    m_photos[row].captionWriter = value_list["CaptionWriter"].toString();
+    m_photos[row].captionWriter   = value_list["CaptionWriter"].toString();
     // En priorité, on prend le tag Exif 'Artist'. Si vide, on prend le tag IPTC 'Creator'.
     // Ce tag peut être une String  ou une StringList, selon le nombre d'artistes...
     if (value_list["Artist"].isNull())
@@ -692,7 +695,6 @@ void PhotoModel::saveMetadata()
     // On recupère certaines infos dans les Settings
     QSettings settings;
     bool backupsEnabled = settings.value("backupsEnabled", false).toBool();
-    QString software = settings.value("software", "").toString();
 
     // On cree le pool de threads.
     QThreadPool::globalInstance()->setMaxThreadCount(3);
@@ -714,7 +716,7 @@ void PhotoModel::saveMetadata()
             exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
             exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
             exifData.insert("DateTimeOriginal", idx.data(DateTimeOriginalRole));
-            exifData.insert("MetadataEditingSoftware", software);
+            exifData.insert("MetadataEditingSoftware", settings.value("metadataSoftware", "TiPhotoLocator").toString());
             exifData.insert("Creator", idx.data(CreatorRole));          // MWG écrit aussi dans Artist
             exifData.insert("City", idx.data(CityRole));                // MWG écrit dans EXIF et dans IptcExt
             exifData.insert("Country", idx.data(CountryRole));          // MWG écrit dans EXIF et dans IptcExt

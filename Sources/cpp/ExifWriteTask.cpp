@@ -18,7 +18,7 @@
         exifData.insert("GPSLatitudeRef",   idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
         exifData.insert("GPSLongitudeRef",  idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
         exifData.insert("DateTimeOriginal", idx.data(DateTimeOriginalRole));
-        exifData.insert("MetadataEditingSoftware", software);
+        exifData.insert("MetadataEditingSoftware", metadataSoftware);
         exifData.insert("Creator",          idx.data(CreatorRole));      // MWG écrit aussi dans Artist
         exifData.insert("City",             idx.data(CityRole));         // MWG écrit dans EXIF et dans IptcExt
         exifData.insert("Country",          idx.data(CountryRole));      // MWG écrit dans EXIF et dans IptcExt

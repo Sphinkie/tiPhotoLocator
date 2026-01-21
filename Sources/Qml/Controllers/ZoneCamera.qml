@@ -3,7 +3,8 @@ import "../Vues"
 
 
 /** **********************************************************************************************************
- * @brief Controlleur de la zone avec les informations sur l'appareil ayant fabriqué l'image (appareil photo ou scanner ou IA).
+ * @brief Controlleur de la zone avec les informations sur l'appareil ayant fabriqué l'image
+ *        (appareil photo ou scanner ou IA).
  * ***********************************************************************************************************/
 ZoneCameraForm {
 
@@ -13,6 +14,7 @@ ZoneCameraForm {
     chipAperture.content: "ƒ " + tabbedPage.currentPhoto.fNumber.toFixed(1)
     chipSpeed.content: arrondir(tabbedPage.currentPhoto.shutterSpeed) + " s"
     chipSoftware.content: tabbedPage.currentPhoto.software
+    chipMetadata.content: tabbedPage.currentPhoto.metadata
 
     chipSpeed.visible: (tabbedPage.currentPhoto.shutterSpeed > 0)
     chipAperture.visible: (tabbedPage.currentPhoto.fNumber > 0)
