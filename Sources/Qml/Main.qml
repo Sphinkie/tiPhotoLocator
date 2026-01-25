@@ -76,7 +76,7 @@ ApplicationWindow {
     /// Demande d'informations géographiques sur la position courante.
     signal requestReverseGeocode(double lati, double longi)
     /// Demande les coordonnées GPS de la ville donnée.
-    signal requestCoords(string city)
+    signal requestCoords(string city, bool home)
 
     // ----------------------------------------------------------------
     // Déclaration des popups

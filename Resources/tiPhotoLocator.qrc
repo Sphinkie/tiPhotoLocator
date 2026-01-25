@@ -60,5 +60,8 @@
         <file>Cameras/iPhone3GS.png</file>
         <file>Cameras/DigimaxL55WKenoxX15WIDE.png</file>
         <file>Images/bt-filter.png</file>
+        <file>Translations/eng.qm</file>
+        <file>Translations/fre.qm</file>
+        <file>Images/bt-find.png</file>
     </qresource>
 </RCC>

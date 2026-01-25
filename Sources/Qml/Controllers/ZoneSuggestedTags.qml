@@ -8,15 +8,8 @@ import "../Vues"
  * ***********************************************************************************************************/
 ZoneSuggestedTagsForm {
 
-    /// TODO: On recupere des infos à partir des IA
+    /// TODO: On recupère des infos à partir des IA
     bt_getinfo.onClicked: {
 
     }
 }
-
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
-##^##*/
-

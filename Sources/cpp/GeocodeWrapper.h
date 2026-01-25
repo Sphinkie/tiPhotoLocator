@@ -26,9 +26,12 @@ class GeocodeWrapper : public QObject
 public:
     explicit GeocodeWrapper(SuggestionModel* suggestion_model);
 
+signals:
+    void centerMap(double lati, double longi);
+
 public slots:
     void requestReverseGeocode(double lati, double longi);
-    void requestCoordinates(QString city);
+    void requestCoordinates(const QString city, const bool home = true);
 
 private slots:
     void geoCodeFinished(QGeoCodeReply* reply);
@@ -39,7 +42,7 @@ private:
     // -----------------------------------
     QGeoCodingManager* m_geoManager;       //!< Geocoding Manager pour les requètes REST
     SuggestionModel* m_suggestionModel;    //!< Le SuggestionModel qui stockera les reponses.
-
+    
 };
 
 #endif // GEOCODEWRAPPER_H

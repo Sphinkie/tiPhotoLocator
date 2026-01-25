@@ -26,7 +26,6 @@ Rectangle {
      * **************************************************************************************/
     GridLayout {
         id: bottomToolBarLayout
-        //Layout.alignment: Qt.AlignRight // on cale les boutons à droite
         columns: 3
         columnSpacing: 20
 
@@ -52,7 +51,7 @@ Rectangle {
         }
         Button {
             id: bt_save
-            text: qsTr("Enregistrer")
+            text: qsTr("Save")
             Layout.topMargin: 10
             highlighted: shouldSave
             ToolTip.text: qsTr("Enregistre les tags EXIF des photos modifiées")
@@ -61,7 +60,7 @@ Rectangle {
         }
         Button {
             id: bt_quit
-            text: qsTr("Quitter")
+            text: qsTr("Quit")
             ToolTip.text: qsTr("Quitte l'application")
             ToolTip.visible: hovered
             ToolTip.delay: 500

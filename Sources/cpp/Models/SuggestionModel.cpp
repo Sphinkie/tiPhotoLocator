@@ -20,20 +20,21 @@ void SuggestionModel::createInitialSuggestions()
     QSettings settings;
     QString photographe = settings.value("photographe","").toString();
     QString initiales   = settings.value("initiales","").toString();
-    QString homecity    = settings.value("homecity","").toString();
+    QString homecity    = settings.value("homecity"," ").toString();
+    if (homecity.isEmpty()) homecity= " ";
+
     this->append(photographe, "creator", "tag", -1);
     this->append(initiales,   "captionWriter", "tag", -1);
     this->append(" ", "country", "tag", -1);
     this->append(homecity, "city", "tag", -1);
     this->append(" ", "location", "tag", -1);
     this->append(" ", "description", "tag", -1);
-    // TODO : traductions
-    this->append("portrait",  "keywords", "tag", -1);
-    this->append("paysage",   "keywords", "tag", -1);
-    this->append("nature",    "keywords", "tag", -1);
-    this->append("animal",    "keywords", "tag", -1);
-    this->append("urbanisme", "keywords", "tag", -1);
-    this->append("vacances",  "keywords", "tag", -1);
+    this->append(tr("portrait"),  "keywords", "tag", -1);
+    this->append(tr("paysage"),   "keywords", "tag", -1);
+    this->append(tr("nature"),    "keywords", "tag", -1);
+    this->append(tr("animal"),    "keywords", "tag", -1);
+    this->append(tr("urbanisme"), "keywords", "tag", -1);
+    this->append(tr("vacances"),  "keywords", "tag", -1);
 }
 
 

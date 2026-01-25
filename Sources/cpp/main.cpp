@@ -78,6 +78,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("_suggestionProxyModel", &suggestionProxyModel);
     context->setContextProperty("_suggestionCategoryProxyModel", &suggestionCategoryProxyModel);
     context->setContextProperty("_selectedPhotoProxyModel", &selectedPhotoProxyModel);
+    context->setContextProperty("_geocodeWrapper", &geocodeWrapper);
     context->setContextProperty("_cameraSet", &cameraSet);
 
     // ----------------------------------------------------------------------------
@@ -116,7 +117,7 @@ int main(int argc, char *argv[])
     // Le firstRootItem est la première balise du QML, cad "window".
     QObject *firstRootItem = engine.rootObjects().first();
     // ----------------------------------------------------------------------------
-    // Connexions QML vers classe C++
+    // Connexions QML vers objet C++
     // ----------------------------------------------------------------------------
     QObject::connect(firstRootItem, SIGNAL(append(QString,QString)),               &photoModel, SLOT(append(QString,QString)));
     QObject::connect(firstRootItem, SIGNAL(fetchSingleExifMetadata(int)),          &photoModel, SLOT(fetchExifMetadata(int)));
@@ -132,10 +133,10 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem, SIGNAL(removePhotoFromSuggestion(int)),       &suggestionCategoryProxyModel, SLOT(removePhotoFromSuggestion(int)));
 
     QObject::connect(firstRootItem, SIGNAL(requestReverseGeocode(double, double)),&geocodeWrapper,  SLOT(requestReverseGeocode(double, double)));
-    QObject::connect(firstRootItem, SIGNAL(requestCoords(QString)),               &geocodeWrapper,  SLOT(requestCoordinates(QString)));
+    QObject::connect(firstRootItem, SIGNAL(requestCoords(QString, bool)),         &geocodeWrapper,  SLOT(requestCoordinates(QString, bool)));
 
     // ----------------------------------------------------------------------------
-    // Connexions entre classes C++
+    // Connexions entre objets C++
     // ----------------------------------------------------------------------------
     QObject::connect(&photoModel, SIGNAL(currentItemRowChanged(int)),                  &suggestionModel, SLOT(onCurrentPhotoChanged(int)));
     QObject::connect(&photoModel, SIGNAL(sendSuggestion(QString,QString,QString,int)), &suggestionModel, SLOT(append(QString,QString,QString,int)));

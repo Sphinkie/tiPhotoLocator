@@ -52,6 +52,7 @@ void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
     // Envoi de la requete
     QGeoCoordinate coordinate = QGeoCoordinate(lati, longi);
     QGeoCodeReply* geoReply = m_geoManager->reverseGeocode(coordinate);
+    geoReply->setProperty("requestType", "nominatim");
 
     // On regarde s'il y a une erreur immédiate
     if (geoReply->isFinished())
@@ -67,12 +68,12 @@ void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
  *        La réponse est traitée par geoCodeFinished().
  * @param city : un nom de lieu, par exemple "Marsa el Brega" => 30.4074, 19.5784
  * ***********************************************************************************************************/
-void GeocodeWrapper::requestCoordinates(QString city)
+void GeocodeWrapper::requestCoordinates(const QString city, const bool home)
 {
     QGeoAddress adresse = QGeoAddress();
     adresse.setCity(city);
     QGeoCodeReply* geoReply = m_geoManager->geocode(adresse);
-    geoReply->setProperty("coordOnly", true);
+    geoReply->setProperty("requestType", home? "home": "place");
 
     // On regarde s'il y a une erreur immédiate
     if (geoReply->isFinished())
@@ -86,10 +87,11 @@ void GeocodeWrapper::requestCoordinates(QString city)
 /** **********************************************************************************************************
  * @brief Signal appelé lors de la réception de la réponse à la request.
  * @param reply : le contenu de la réponse à la request.
- * \note: Exemple: "Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"
+ * @note: Exemple de reply Reverse Localisation: "Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"
  *
- * En cas de réponse à une demande de coordonnées: on les mémorise dans le QSettings "homeCoords".
- * En cas de réponse à une demande de reverse Localisation, on passe les réponses au SuggestionModel.
+ * - "home" : En cas de réponse à une demande de coordonnées de home: on les mémorise dans le QSettings "homeCoords".
+ * - "place" : En cas de réponse à une demande de coordonnées d'un endroit donné: on centre la carte dessus.
+ * - "nominatim" : En cas de réponse à une demande de Reverse Localisation, on passe les réponses au SuggestionModel.
  * ***********************************************************************************************************/
 void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
 {
@@ -99,21 +101,30 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
     else if (reply->locations().count() >0)
     {
         // On regarde quel type de requete était à l'origine de cette réponse
-        QVariant replyType = reply->property("coordOnly");
+        QString replyType = reply->property("requestType").toString();
         QGeoLocation geolocation = reply->locations().value(0);
 
-        if (replyType.isValid())
+        if (replyType == "home")
         {
-            // Cas 1 : On avait demandé des coords
+            // Cas 1 : On avait demandé des home coords
             // On extrait les coords de la réponse
             QGeoCoordinate coords = geolocation.coordinate();
             // On les mémorise dans un settings
             QSettings settings;
             settings.setValue("homeCoords", QPointF(coords.latitude(), coords.longitude()));
         }
+        else if (replyType == "place")
+        {
+            // Cas 2 : On avait demandé les coordpnnées d'un endroit donné.
+            // On extrait les coords de la réponse
+            QGeoCoordinate coords = geolocation.coordinate();
+            // On centre la carte sur les coordonnées retournées par l'API
+            qDebug() << "center map on " << coords;
+            emit centerMap(coords.latitude(), coords.longitude());
+        }
         else
         {
-            // Cas 2 : On avait demandé des suggestions
+            // Cas 3 : On avait demandé des suggestions
             const QGeoAddress adresse = geolocation.address();
             qDebug() << "adresse" << adresse.text();
             // Il y a un bug dans Qt: county et district sont toujours vides. On va les chercher dans le texte.

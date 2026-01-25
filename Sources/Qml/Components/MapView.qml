@@ -119,16 +119,13 @@ Map {
     }
 
 
-    /** ******************************************************************************************************
-     * Slots.
+    /* *******************************************************************************************************
+     * Slots pour PhotoModel.
      * *******************************************************************************************************/
     Connections {
         target: _photoModel
 
-
-        /** ******************************************************************************************************
-         * Appelé après avoir lu les Exif de la première photo de la liste.
-         * *******************************************************************************************************/
+        /// @brief Recentre la carte après avoir lu les Exif de la première photo de la liste.
         function onFirstCoordsReady() {
             if (_photoModel.currentItemHasGPS) {
                 // console.log("onFirstCoordsReady: ", _photoModel.currentItemCoords)
@@ -141,6 +138,20 @@ Map {
                 mapView.center = QtPositioning.coordinate(homeCoords.x,
                                                           homeCoords.y)
             }
+        }
+    }
+
+
+    /* *******************************************************************************************************
+     * Slots pour Suggestion Model.
+     * *******************************************************************************************************/
+    Connections {
+        target: _geocodeWrapper
+
+        /// @brief Recentre la carte sur les coordonnées fournies.
+        function onCenterMap(lati, longi) {
+            console.log("onCenterMap: ", lati, longi)
+            mapView.center = QtPositioning.coordinate(lati, longi)
         }
     }
 

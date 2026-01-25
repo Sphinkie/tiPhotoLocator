@@ -5,15 +5,22 @@ project(QT_TiPhotoLocator VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTORCC ON)         # Auto use QRC resource File
 
-find_package(Qt6 REQUIRED COMPONENTS Quick Location)
+find_package(Qt6 REQUIRED COMPONENTS Quick Location LinguistTools)
 
 qt_standard_project_setup(REQUIRES 6.8)
 set_source_files_properties(Sources/Qml/Style.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+
+qt_create_translation(QM_FILES
+    ${CMAKE_SOURCE_DIR}/Sources/
+    ./Languages/fre.ts
+    ./Languages/eng.ts
+)
 
 qt_add_executable(tiPhotoLocator
     Sources/cpp/main.cpp
     Resources/tiPhotoLocator.qrc
     Resources/appicon.rc
+    ${QM_FILES}
 )
 
 qt_add_qml_module(tiPhotoLocator
@@ -25,7 +32,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/cpp/GeocodeWrapper.cpp        Sources/cpp/GeocodeWrapper.h
         Sources/cpp/PhotoModelWrapper.cpp     Sources/cpp/PhotoModelWrapper.h
         Sources/cpp/Utilities.cpp             Sources/cpp/Utilities.h
-        Sources/cpp/Models/CameraSet.cpp              Sources/cpp/Models/CameraSet.h
+        Sources/cpp/Models/CameraSet.cpp      Sources/cpp/Models/CameraSet.h
         Sources/cpp/Models/Photo.h
         Sources/cpp/Models/PhotoModel.cpp             Sources/cpp/Models/PhotoModel.h
         Sources/cpp/Models/OnTheMapProxyModel.cpp     Sources/cpp/Models/OnTheMapProxyModel.h

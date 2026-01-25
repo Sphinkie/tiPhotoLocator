@@ -13,6 +13,7 @@ PopupSettingsForm {
         show()
     }
 
+    /// Request the coords of the city and close the popup.
     buttonClose.onClicked: {
         console.log("Settings closed -> requesting coords for " + settings.homecity)
         window.requestCoords(settings.homecity)

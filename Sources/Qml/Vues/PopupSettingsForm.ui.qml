@@ -131,14 +131,14 @@ Popup {
             id: groupBox2
             Layout.margins: 10
             Layout.fillWidth: true
-            title: qsTr("Configuration")
+            title: qsTr("Settings")
 
             ColumnLayout {
                 anchors.fill: parent
                 /// Ville sur laquelle centrer la carte
                 RowLayout {
                     Label {
-                        text: qsTr("Centrage carte:")
+                        text: qsTr("Map auto center:")
                         font.pixelSize: 12
                     }
                     TextField {
@@ -149,7 +149,7 @@ Popup {
                     }
                     Text {
                         color: Style.tertiaryForegroundColor
-                        text: "Redémarrage nécessaire"
+                        text: qsTr("Reboot needed")
                         font.pixelSize: 12
                         style: Text.Normal
                     }
@@ -157,7 +157,7 @@ Popup {
                 /// Langue de l'application
                 RowLayout {
                     Label {
-                        text: qsTr("Langue de l'application:")
+                        text: qsTr("Application language:")
                         font.pixelSize: 12
                     }
                     ComboBox {
@@ -217,7 +217,7 @@ Popup {
         Button {
             id: buttonClose
             width: 100
-            text: qsTr("Fermer")
+            text: qsTr("Close")
             Layout.fillWidth: false
             Layout.fillHeight: false
             Layout.margins: 0

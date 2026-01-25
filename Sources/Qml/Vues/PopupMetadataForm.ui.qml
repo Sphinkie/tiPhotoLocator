@@ -1,14 +1,11 @@
-
-/*
-This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
-It is supposed to be strictly declarative and only uses a subset of QML. If you edit
-this file manually, you might introduce QML code that is not supported by Qt Design Studio.
-Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
-*/
 import QtQuick
 import QtQuick.Controls.Material
 import "../Components"
 
+
+/** **********************************************************************************************************
+ * @brief Fenêtre popup de Metadata.
+ * ***********************************************************************************************************/
 Popup {
     id: metadataForm
     width: 520
@@ -122,7 +119,7 @@ Popup {
     //    }
     Button {
         id: buttonClose
-        text: qsTr("Fermer")
+        text: qsTr("Close")
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: 38

@@ -29,7 +29,7 @@ Repeater {
             required property string text
             required property string target
             required property string category
-            // index = property particulière = indice de la suggestion
+            // index = property particulière = indice de la suggestion courante
             required property string index
 
 
@@ -65,7 +65,7 @@ Repeater {
                     // Si onglet TAG : on applique la suggestion aux photos sélectionnées (-4)
                     if (tabbedPage.currentIndex === 2)
                         window.setPhotoProperty(-4, text, target)
-                        // window.setPhotoProperty(tabbedPage.currentPhoto.row, text, target)
+                    // window.setPhotoProperty(tabbedPage.currentPhoto.row, text, target)
 
                     // On enlève le Chip de la zone Suggestions. (Attn: c'est l'index dans le proxyModel).
                     window.removePhotoFromSuggestion(index)

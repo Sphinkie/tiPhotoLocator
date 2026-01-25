@@ -8,6 +8,15 @@ import "../Vues"
  * ***********************************************************************************************************/
 ToolbarMapForm {
 
+    /// Clic sur "Find" : on demande les coords GPS du site mentionné dans le TextField.
+    bt_find.onClicked: {
+        window.requestCoords(txt_find.text, false)
+    }
+    /// Clic sur "Enter" : on demande les coords GPS du site mentionné dans le TextField.
+    txt_find.onAccepted: {
+        window.requestCoords(txt_find.text, false)
+    }
+
     /// Clic sur "Save Position" : On enregistre la position de l'image dans la Saved Position.
     bt_save_pos.onClicked: {
         window.savePosition()
