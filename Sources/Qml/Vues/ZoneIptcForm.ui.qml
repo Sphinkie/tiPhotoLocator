@@ -19,8 +19,8 @@ Zone {
 
     readonly property string title: "<b>IPTC tags</b> "
     readonly property string brief: "<i>International Press Telecom Council</i>"
-    readonly property string usage: qsTr("Les tags IPTC contiennent principalement des informations éditoriales renseignés manuellement")
-    readonly property string note: qsTr("(description de l'image, etc)")
+    readonly property string usage: qsTr("IPTC tags mainly contain editorial information, usually manually filled:")
+    readonly property string note: qsTr("(image description, etc)")
     readonly property string br: "<br/>"
 
     /// Tableau des Chips avec leur description
@@ -37,10 +37,10 @@ Zone {
         }
         Button {
             id: bt_applyCreator
-            text: qsTr("Appliquer à tous")
+            text: qsTr("Apply to all")
         }
         Label {
-            text: qsTr("Le nom du photographe.")
+            text: qsTr("Photographer name.")
         }
 
         // -- --------------------------------------------------------
@@ -52,10 +52,10 @@ Zone {
         }
         Button {
             id: bt_applyCountry
-            text: qsTr("Appliquer à tous")
+            text: qsTr("Apply to all")
         }
         Label {
-            text: qsTr("Le pays où a été pris la photo.")
+            text: qsTr("The country where the photo was taken.")
         }
 
         // -- --------------------------------------------------------
@@ -67,7 +67,7 @@ Zone {
         }
         Button {
             id: bt_applyCity
-            text: qsTr("Appliquer à tous")
+            text: qsTr("Apply to all")
         }
         Label {
             text: qsTr("Le nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.")
@@ -82,7 +82,7 @@ Zone {
         }
         Button {
             id: bt_applyLocation
-            text: qsTr("Appliquer à tous")
+            text: qsTr("Apply to all")
         }
         Label {
             text: qsTr("Additionnal geographical information.")
@@ -96,7 +96,7 @@ Zone {
             content: "..."
         }
         Button {
-            text: qsTr("Appliquer à tous")
+            text: qsTr("Apply to all")
             enabled: false
         }
         Label {
@@ -111,7 +111,7 @@ Zone {
             content: writer ? writer : " "
         }
         Button {
-            text: qsTr("Appliquer à tous")
+            text: qsTr("Apply to all")
             enabled: false
         }
         Label {
@@ -126,7 +126,7 @@ Zone {
             content: "..."
         }
         Button {
-            text: qsTr("Appliquer à tous")
+            text: qsTr("Apply to all")
             enabled: false
         }
         Label {

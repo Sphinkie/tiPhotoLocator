@@ -166,7 +166,7 @@ ApplicationWindow {
                     Material.roundedScale: Material.LargeScale
                 }
                 TabButton {
-                    text: qsTr("CARTE")
+                    text: qsTr("MAP")
                     onClicked: _suggestionCategoryProxyModel.setFilterValue(
                                    "geo")
                 }

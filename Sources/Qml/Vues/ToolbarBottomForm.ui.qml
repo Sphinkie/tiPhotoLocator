@@ -31,7 +31,7 @@ Rectangle {
 
         /// Ligne 0:
         Text {
-            text: qsTr("%1 selected photos").arg(_photoModel.selectionCount)
+            text: qsTr("%n selected photos", "0", _photoModel.selectionCount)
             leftPadding: 8
             Layout.row: 0
             Layout.column: 0
@@ -40,7 +40,7 @@ Rectangle {
         /// Ligne 1:
         CheckBox {
             id: cb_backups
-            text: qsTr("Générer backups")
+            text: qsTr("Generate backups")
             Layout.topMargin: 10
             Layout.row: 1
             ToolTip {
@@ -61,7 +61,7 @@ Rectangle {
         Button {
             id: bt_quit
             text: qsTr("Quit")
-            ToolTip.text: qsTr("Quitte l'application")
+            ToolTip.text: qsTr("Quit application")
             ToolTip.visible: hovered
             ToolTip.delay: 500
             Layout.rightMargin: 20
@@ -82,7 +82,7 @@ Rectangle {
             id: bt_dump1
             Layout.row: 3
             Layout.column: 0
-            text: qsTr("Dump PhotoModel")
+            text: "Dump PhotoModel"
             visible: bottomRect.useDebug
             ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
             ToolTip.visible: hovered
@@ -94,7 +94,7 @@ Rectangle {
             id: bt_dump2
             Layout.row: 3
             Layout.column: 1
-            text: qsTr("Dump SuggModel")
+            text: "Dump SuggModel"
             visible: bottomRect.useDebug
             ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
             ToolTip.visible: hovered

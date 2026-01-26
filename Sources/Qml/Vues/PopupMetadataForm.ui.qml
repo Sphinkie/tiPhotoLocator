@@ -32,8 +32,8 @@ Popup {
     Text {
         id: desc1
         clip: true
-        readonly property string t1: qsTr("...")
-        readonly property string t2: qsTr("")
+        readonly property string t1: "..."
+        readonly property string t2: ""
         text: t1 + t2
         anchors.top: parent.top
         anchors.topMargin: 0
@@ -53,44 +53,44 @@ Popup {
 
         Text {
             id: text01
-            text: qsTr("..")
+            text: ".."
             font.pixelSize: 12
         }
 
         Text {
             id: text02
-            text: qsTr("..")
+            text: ".."
             font.pixelSize: 12
         }
 
         Text {
             id: text03
-            text: qsTr("..")
+            text: ".."
             font.pixelSize: 12
         }
         Text {
             id: text04
-            text: qsTr("..")
+            text: ".."
             font.pixelSize: 12
         }
         Text {
             id: text10
-            text: qsTr("..")
+            text: ".."
             font.pixelSize: 12
         }
         Text {
             id: text11
-            text: qsTr("..")
+            text: ".."
             font.pixelSize: 12
         }
         Text {
             id: text12
-            text: qsTr("..")
+            text: ".."
             font.pixelSize: 12
         }
         Text {
             id: text13
-            text: qsTr("..")
+            text: ".."
             font.pixelSize: 12
         }
     }
@@ -107,12 +107,12 @@ Popup {
         Text {
             y: 40
             clip: true
-            text: qsTr("...")
+            text: "..."
         }
         Text {
             y: 60
             clip: true
-            text: qsTr("...")
+            text: "..."
         }
     }
 

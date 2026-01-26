@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="en_US">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -135,12 +135,12 @@
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="39"/>
         <source>all</source>
-        <translation type="unfinished"></translation>
+        <translation>all</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="40"/>
         <source>Select all photos</source>
-        <translation type="unfinished"></translation>
+        <translation>Select all photos</translation>
     </message>
 </context>
 <context>
@@ -148,22 +148,26 @@
     <message>
         <location filename="../Sources/Qml/Main.qml" line="164"/>
         <source>PREVIEW</source>
-        <translation type="unfinished"></translation>
+        <translation>PREVIEW</translation>
+    </message>
+    <message>
+        <source>CARTE</source>
+        <translation type="vanished">MAP</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Main.qml" line="169"/>
-        <source>CARTE</source>
-        <translation type="unfinished"></translation>
+        <source>MAP</source>
+        <translation>MAP</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Main.qml" line="174"/>
         <source>EXIF / IPTC TAGS</source>
-        <translation type="unfinished"></translation>
+        <translation>EXIF / IPTC TAGS</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Main.qml" line="179"/>
         <source>GLOBAL</source>
-        <translation type="unfinished"></translation>
+        <translation>GLOBAL</translation>
     </message>
 </context>
 <context>
@@ -171,89 +175,69 @@
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="16"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Files</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="20"/>
         <source>Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Open...</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="27"/>
         <source>Recents</source>
-        <translation type="unfinished"></translation>
+        <translation>Recents</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="52"/>
         <source>Clear recent folders list</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear recent folders list</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="61"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Quit</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="67"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="69"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuration</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="75"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="77"/>
         <source>Obtenir une API KEY</source>
-        <translation type="unfinished"></translation>
+        <translation>How to get an API key</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="81"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Credits</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="85"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>About</translation>
     </message>
 </context>
 <context>
     <name>PopupMetadataForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="35"/>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="110"/>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="115"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="36"/>
-        <source></source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="56"/>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="62"/>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="68"/>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="73"/>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="78"/>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="83"/>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="88"/>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="93"/>
-        <source>..</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="122"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Close</translation>
     </message>
 </context>
 <context>
@@ -261,7 +245,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="43"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Configuration</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="59"/>
@@ -276,7 +260,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="72"/>
         <source>Enter your name here</source>
-        <translation type="unfinished"></translation>
+        <translation>Enter your name here</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="84"/>
@@ -284,43 +268,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="94"/>
-        <source>initiales</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="106"/>
         <source>Application signature:</source>
-        <translation type="unfinished"></translation>
+        <translation>Application signature:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="134"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="141"/>
         <source>Map auto center:</source>
-        <translation type="unfinished"></translation>
+        <translation>Map auto center:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="152"/>
         <source>Reboot needed</source>
-        <translation type="unfinished"></translation>
+        <translation>Reboot needed</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="160"/>
         <source>Application language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Application language:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="220"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Close</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="148"/>
         <source>Votre ville la plus photographiée</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="94"/>
+        <source>Initiales</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -341,7 +325,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="207"/>
         <source>Thunderforest or OpenStreetMap</source>
-        <translation type="unfinished"></translation>
+        <translation>Thunderforest or OpenStreetMap</translation>
     </message>
 </context>
 <context>
@@ -367,32 +351,32 @@
     <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="32"/>
         <source>portrait</source>
-        <translation type="unfinished"></translation>
+        <translation>portrait</translation>
     </message>
     <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="33"/>
-        <source>paysage</source>
-        <translation type="unfinished"></translation>
+        <source>landscape</source>
+        <translation>landscape</translation>
     </message>
     <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="34"/>
         <source>nature</source>
-        <translation type="unfinished"></translation>
+        <translation>nature</translation>
     </message>
     <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="35"/>
         <source>animal</source>
-        <translation type="unfinished"></translation>
+        <translation>animal</translation>
     </message>
     <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="36"/>
-        <source>urbanisme</source>
-        <translation type="unfinished"></translation>
+        <source>urbanism</source>
+        <translation>urbanism</translation>
     </message>
     <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="37"/>
-        <source>vacances</source>
-        <translation type="unfinished"></translation>
+        <source>holyday</source>
+        <translation>holyday</translation>
     </message>
 </context>
 <context>
@@ -400,20 +384,14 @@
     <message>
         <location filename="../Sources/Qml/Components/TabFramePhotoTags.qml" line="47"/>
         <source>Suggestions</source>
-        <translation type="unfinished"></translation>
+        <translation>Suggestions</translation>
     </message>
 </context>
 <context>
     <name>ToolbarBottomForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="34"/>
         <source>%1 selected photos</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="43"/>
-        <source>Générer backups</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">%1 selected photos</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="47"/>
@@ -428,33 +406,45 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="54"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Save</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="34"/>
+        <source>%n selected photos</source>
+        <comment>0</comment>
+        <translation>
+            <numerusform>%n selected photo</numerusform>
+            <numerusform>%n selected photos</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="43"/>
+        <source>Generate backups</source>
+        <translation>Generate backups</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="63"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Quit</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="64"/>
-        <source>Quitte l&apos;application</source>
-        <translation type="unfinished"></translation>
+        <source>Quit application</source>
+        <translation>Quit application</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="85"/>
         <source>Dump PhotoModel</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Dump PhotoModel</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="87"/>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="99"/>
         <source>DEBUG: Affiche une ligne du modèle dans la console</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">DEBUG</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="97"/>
         <source>Dump SuggModel</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Dump SuggModel</translation>
     </message>
 </context>
 <context>
@@ -462,12 +452,12 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="25"/>
         <source>Find a place</source>
-        <translation type="unfinished"></translation>
+        <translation>Find a place</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="46"/>
         <source>Save Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Save Position</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="48"/>
@@ -477,12 +467,12 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="61"/>
         <source>Clear Saved Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear Saved Position</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
         <source>Apply Saved Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Apply Saved Position</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
@@ -492,7 +482,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="110"/>
         <source>Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>Restore</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="117"/>
@@ -505,7 +495,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="27"/>
         <source>Rescan</source>
-        <translation type="unfinished"></translation>
+        <translation>Rescan</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="28"/>
@@ -529,34 +519,34 @@
 <context>
     <name>ZoneExifForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="17"/>
-        <source>Les tags EXIF sont définis au moment de la prise de vue.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="18"/>
-        <source>Ils contiennent principalement des informations techniques: modèle d&apos;appareil, objectif...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="35"/>
-        <source>Fabriquant de l&apos;appareil photo</source>
-        <translation type="unfinished"></translation>
+        <source>Camera Maker</source>
+        <translation>Camera Maker</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="46"/>
-        <source>Modèle de l&apos;appareil photo</source>
-        <translation type="unfinished"></translation>
+        <source>Camera model</source>
+        <translation>Camera model</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="68"/>
+        <source>Photographer name</source>
+        <translation>Photographer name</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="57"/>
         <source>Camera Aperture and Speed of the shot</source>
-        <translation type="unfinished"></translation>
+        <translation>Camera Aperture and Speed of the shot</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="68"/>
-        <source>Nom du photographe</source>
-        <translation type="unfinished"></translation>
+        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="17"/>
+        <source>EXIF tags are defined at the moment of the shot.</source>
+        <translation>EXIF tags are defined at the moment of the shot.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="18"/>
+        <source>They mainly contain technical information: camera model, lens...</source>
+        <translation>They mainly contain technical information: camera model, lens...</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="79"/>
@@ -568,31 +558,31 @@
     <name>ZoneGeolocForm.ui</name>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGeolocForm.ui.qml" line="20"/>
-        <source>Géolocalisation</source>
-        <translation type="unfinished"></translation>
+        <source>Geolocation</source>
+        <translation>Geolocation</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGeolocForm.ui.qml" line="27"/>
         <source>Clear GPS Coords</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear GPS Coords</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGeolocForm.ui.qml" line="31"/>
-        <source>Efface les coordonnées GPS de la photo (si besoin de confidentialité)</source>
-        <translation type="unfinished"></translation>
+        <source>Clear GPS photo coordinates (if some privacy is needed)</source>
+        <translation>Clear GPS photo coordinates (if some privacy is needed)</translation>
     </message>
 </context>
 <context>
     <name>ZoneIptcForm.ui</name>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="22"/>
-        <source>Les tags IPTC contiennent principalement des informations éditoriales renseignés manuellement</source>
-        <translation type="unfinished"></translation>
+        <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
+        <translation>IPTC tags mainly contain editorial information, usually manually filled:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="23"/>
-        <source>(description de l&apos;image, etc)</source>
-        <translation type="unfinished"></translation>
+        <source>(image description, etc)</source>
+        <translation>(image description, etc)</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="40"/>
@@ -602,18 +592,18 @@
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="99"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="114"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="129"/>
-        <source>Appliquer à tous</source>
-        <translation type="unfinished"></translation>
+        <source>Apply to all</source>
+        <translation>Apply to all</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="43"/>
-        <source>Le nom du photographe.</source>
-        <translation type="unfinished"></translation>
+        <source>Photographer name.</source>
+        <translation>Photographer name.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="58"/>
-        <source>Le pays où a été pris la photo.</source>
-        <translation type="unfinished"></translation>
+        <source>The country where the photo was taken.</source>
+        <translation>The country where the photo was taken.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="73"/>
@@ -623,7 +613,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="88"/>
         <source>Additionnal geographical information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Additionnal geographical information.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="103"/>
@@ -645,8 +635,8 @@
     <name>ZonePhotoForm.ui</name>
     <message>
         <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="18"/>
-        <source>Tags relatifs à la photo</source>
-        <translation type="unfinished"></translation>
+        <source>Photo related tags</source>
+        <translation>Photo related tags</translation>
     </message>
 </context>
 <context>
@@ -674,7 +664,7 @@
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="24"/>
         <source>Summary</source>
-        <translation type="unfinished"></translation>
+        <translation>Summary</translation>
     </message>
 </context>
 <context>
@@ -682,7 +672,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ZonePreviewForm.ui.qml" line="22"/>
         <source>Summary</source>
-        <translation type="unfinished"></translation>
+        <translation>Summary</translation>
     </message>
 </context>
 <context>
@@ -695,8 +685,8 @@ Limité à 100 requètes par jour.</source>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="23"/>
-        <source>Chercher</source>
-        <translation type="unfinished"></translation>
+        <source>Search</source>
+        <translation>Search</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="28"/>
@@ -709,7 +699,7 @@ Limité à 100 requètes par jour.</source>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="16"/>
         <source>Suggestions</source>
-        <translation type="unfinished"></translation>
+        <translation>Suggestions</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="39"/>
@@ -722,7 +712,7 @@ Limité à 100 requètes par jour.</source>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneUserdataForm.ui.qml" line="26"/>
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Tags</translation>
     </message>
 </context>
 </TS>

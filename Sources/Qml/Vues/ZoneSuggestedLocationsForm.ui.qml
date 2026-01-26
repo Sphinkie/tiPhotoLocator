@@ -20,7 +20,7 @@ Zone {
         /// En première position, ce bouton fait appel à une API pour obténier des suggestions de noms de lieux.
         Button {
             id: bt_getinfo
-            text: qsTr("Chercher")
+            text: qsTr("Search")
             icon.source: "qrc:/Images/icon-suggestion.png"
             enabled: tabbedPage.currentPhoto.hasGPS
             Layout.topMargin: 16

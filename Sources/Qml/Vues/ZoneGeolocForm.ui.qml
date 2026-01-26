@@ -17,7 +17,7 @@ Zone {
     property alias bt_clear_coords: bt_clear_coords
 
     iconZone: "qrc:/Images/icon-world.png"
-    txtZone: qsTr("Géolocalisation")
+    txtZone: qsTr("Geolocation")
 
     ColumnLayout {
 
@@ -28,7 +28,7 @@ Zone {
             icon.source: "qrc:/Images/bt-suppr.png"
             Layout.leftMargin: 20
             Layout.topMargin: 16
-            ToolTip.text: qsTr("Efface les coordonnées GPS de la photo (si besoin de confidentialité)")
+            ToolTip.text: qsTr("Clear GPS photo coordinates (if some privacy is needed)")
             ToolTip.visible: hovered
             ToolTip.delay: 500
         }

@@ -14,8 +14,8 @@ Zone {
 
     readonly property string title: "<b>EXIF tags</b> "
     readonly property string brief: "<i>EXchangeable Image Fileformat</i>"
-    readonly property string usage: qsTr("Les tags EXIF sont définis au moment de la prise de vue.")
-    readonly property string note: qsTr("Ils contiennent principalement des informations techniques: modèle d'appareil, objectif...")
+    readonly property string usage: qsTr("EXIF tags are defined at the moment of the shot.")
+    readonly property string note: qsTr("They mainly contain technical information: camera model, lens...")
     readonly property string br: "<br>"
 
     /// Tableau des Chips avec leur description
@@ -32,7 +32,7 @@ Zone {
         }
         /// Label "Camera Maker"
         Label {
-            text: qsTr("Fabriquant de l'appareil photo")
+            text: qsTr("Camera Maker")
         }
         /// Tag "Camera model"
         Chips {
@@ -43,7 +43,7 @@ Zone {
         }
         /// Label "Camera model"
         Label {
-            text: qsTr("Modèle de l'appareil photo")
+            text: qsTr("Camera model")
         }
         /// Tag for Speed and Aperture
         Chips {
@@ -65,7 +65,7 @@ Zone {
         }
         /// Label for Photographer name
         Label {
-            text: qsTr("Nom du photographe")
+            text: qsTr("Photographer name")
         }
         /// Tag for GPS coordinates
         Chips {

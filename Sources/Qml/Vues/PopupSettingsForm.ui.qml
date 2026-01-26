@@ -91,7 +91,7 @@ Popup {
                         horizontalAlignment: Text.AlignLeft
                         Layout.minimumWidth: 116
                         Layout.preferredWidth: 30
-                        placeholderText: qsTr("initiales")
+                        placeholderText: qsTr("Initiales")
                     }
                     Text {
                         color: Style.tertiaryForegroundColor

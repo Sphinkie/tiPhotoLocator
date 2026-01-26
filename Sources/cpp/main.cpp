@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QTranslator>
 #include <QQuickView>
 #include <QQmlContext>
 #include <QQuickItem>
@@ -39,6 +40,17 @@ int main(int argc, char *argv[])
     app.setOrganizationName("Sphinkie");
     app.setOrganizationDomain("de-lorenzo.fr");
     app.setWindowIcon(QIcon(":Logos/logo_TPL.ico")); // Icon displayed in the top-left corner of the application's top-level window.
+
+
+    // ----------------------------------------------------------------------------
+    // On choisit une langue
+    // ----------------------------------------------------------------------------
+    QTranslator traducteur;
+    // Cas d'une ressource en paramètre
+    QString lang = "eng";
+    bool trad_ok = traducteur.load(lang, ":/Translations/");
+    // Puis on applique la traduction  (avant de lancer le moteur QML)
+    if (trad_ok) app.installTranslator(&traducteur);
 
     // ----------------------------------------------------------------------------
     // On initialise nos Models
