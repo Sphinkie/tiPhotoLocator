@@ -31,7 +31,7 @@ signals:
 
 public slots:
     void requestReverseGeocode(double lati, double longi);
-    void requestCoordinates(const QString city, const bool home = true);
+    void requestCoordinates(const QString city, const bool home);
 
 private slots:
     void geoCodeFinished(QGeoCodeReply* reply);

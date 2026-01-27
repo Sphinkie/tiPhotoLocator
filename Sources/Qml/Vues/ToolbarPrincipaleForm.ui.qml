@@ -42,7 +42,7 @@ Rectangle {
         /// Nom du dossier en cours
         Label {
             id: folderlabel
-            text: qsTr("Répertoire:")
+            text: qsTr("Folder:")
             font.pixelSize: 16
             // Positionnement à l'interieur du rectangle
             verticalAlignment: Text.AlignVCenter

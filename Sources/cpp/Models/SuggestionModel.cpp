@@ -20,13 +20,16 @@ void SuggestionModel::createInitialSuggestions()
     QSettings settings;
     QString photographe = settings.value("photographe","").toString();
     QString initiales   = settings.value("initiales","").toString();
-    QString homecity    = settings.value("homecity"," ").toString();
-    if (homecity.isEmpty()) homecity= " ";
+    QString homeCity    = settings.value("homecity"," ").toString();
+    QString homeCountry = settings.value("homeCountry"," ").toString();
+    if (homeCity.isEmpty()) homeCity= " ";
+    if (homeCountry.isEmpty()) homeCountry= " ";
 
     this->append(photographe, "creator", "tag", -1);
     this->append(initiales,   "captionWriter", "tag", -1);
     this->append(" ", "country", "tag", -1);
-    this->append(homecity, "city", "tag", -1);
+    this->append(homeCountry, "country", "tag", -1);
+    this->append(homeCity, "city", "tag", -1);
     this->append(" ", "location", "tag", -1);
     this->append(" ", "description", "tag", -1);
     this->append(tr("portrait"),  "keywords", "tag", -1);

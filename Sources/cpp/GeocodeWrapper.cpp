@@ -12,6 +12,7 @@
 /** **********************************************************************************************************
  * @brief Le contructeur initialise le provider "OSM".
  * @param suggestion_model : permet de savoir quel objet SuggestionModel appeler une fois les résultats reçus.
+ * @note Les binaries openSSL doivent être installées avec le Qt Maintenance Tool
  * ***********************************************************************************************************/
 GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 {
@@ -23,15 +24,13 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 
     QGeoServiceProvider* geoProvider = new QGeoServiceProvider(providerName, parameters);
     m_geoManager = geoProvider->geocodingManager();
-    // cet objet n'est créé qu'une fois, et sera détruit à la sortie de l'application.
+    // Cet objet n'est créé qu'une fois, et sera détruit à la sortie de l'application.
     connect(m_geoManager, SIGNAL(finished(QGeoCodeReply*)), this, SLOT(geoCodeFinished(QGeoCodeReply*)));
 
     qDebug()
         << QSslSocket::supportsSsl()                   // doit retourner true
         << QSslSocket::sslLibraryBuildVersionString()  // la version utilisee pour compiler Qt   ("OpenSSL 1.1.1d  10 Sep 2019")
         << QSslSocket::sslLibraryVersionString();      // la version disponible
-    // Installer les binaries openSSL avec le Qt Maintenance Tool
-
 }
 
 /** **********************************************************************************************************
@@ -67,6 +66,7 @@ void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
  * @brief Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city.
  *        La réponse est traitée par geoCodeFinished().
  * @param city : un nom de lieu, par exemple "Marsa el Brega" => 30.4074, 19.5784
+ * @param home : True si cette ville doit être considérée comme la ville favorite (homecity)
  * ***********************************************************************************************************/
 void GeocodeWrapper::requestCoordinates(const QString city, const bool home)
 {
@@ -100,9 +100,10 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         qWarning() << reply->errorString();
     else if (reply->locations().count() >0)
     {
-        // On regarde quel type de requete était à l'origine de cette réponse
+        qDebug() << "locations found" << reply->locations().count() ;
+        // On regarde quel type de requête était à l'origine de cette réponse
         QString replyType = reply->property("requestType").toString();
-        QGeoLocation geolocation = reply->locations().value(0);
+        const QGeoLocation geolocation = reply->locations().value(0);
 
         if (replyType == "home")
         {
@@ -112,6 +113,7 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
             // On les mémorise dans un settings
             QSettings settings;
             settings.setValue("homeCoords", QPointF(coords.latitude(), coords.longitude()));
+            settings.setValue("homeCountry", geolocation.address().country());
         }
         else if (replyType == "place")
         {
@@ -142,9 +144,9 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
                 if (!isInt)
                 {
                     QString target; // par exemple: city, country, etc
-                    // qDebug() << "compare" << field << adresse.country() << adresse.state();
+                    //qDebug() << "compare" << field << adresse.country() << adresse.state() << adresse.county() << adresse.district() << adresse.street();
                     if    (field == adresse.country()) target = "country";
-                    else if (field == adresse.state()) target = "country";
+                    else if (field == adresse.state()) target = "location";
                     else if (field == adresse.city())  target = "city";
                     else target = "location";
                     // Par défaut, la suggestion est associée à la photo courante.
