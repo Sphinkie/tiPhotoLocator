@@ -36,6 +36,7 @@ public:
     // -----------------------------------------------------
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
+    Q_INVOKABLE void setDefaultDateFromFolder(const QString &folderUrl);
 
     // -----------------------------------------------------
     // Méthodes publiques

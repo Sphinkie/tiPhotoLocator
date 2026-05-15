@@ -359,6 +359,9 @@ void PhotoModel::currentItemRow(const int row)
     m_lastCurrentRow = row;
     // On notifie les autres classes qui ont besoin de savoir quelle est la photo courante
     emit currentItemRowChanged(row);
+    // ----------------------------------------------------------------------------
+    // Pour cette photo sélectionnée, on cherche quelques suggestions adaptées...
+    // ----------------------------------------------------------------------------
     // Suggestion dateTimeOriginal : on cherche en arrière la première date non vide
     QString suggestedDate;
     for (int i = row - 1; i >= 0; i--)

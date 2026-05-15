@@ -1,5 +1,10 @@
 #include <QSettings>
+#include <QDir>
+#include <QUrl>
+#include <QDate>
+#include <QRegularExpression>
 #include "SuggestionModel.h"
+#include "../utilities.h"
 
 
 /** **********************************************************************************************************
@@ -245,6 +250,56 @@ void SuggestionModel::onCurrentPhotoChanged(const int row)
     if (row<0) return;
     // On mémorise la photo courante de la ListView.
     m_currentPhotoRow = row;
+}
+
+
+/** **********************************************************************************************************
+ * @brief Extrait date, lieu et commentaires du nom du dossier et les ajoute comme suggestions globales.
+ *        Format attendu : YYYY[-. ]MM[-. ]<lieu>[-. ](<commentaires>)
+ *        Valeurs par défaut si la date est absente : date courante.
+ * @param folderUrl : URL du dossier (format "file:///...").
+ * ***********************************************************************************************************/
+void SuggestionModel::setDefaultDateFromFolder(const QString &folderUrl)
+{
+    QString folderName = QDir(QUrl(folderUrl).toLocalFile()).dirName();
+    QRegularExpression re(R"((\d{4})[-\. ]+(\d{1,2})[-\. ]*(.*))");
+    QRegularExpressionMatch match = re.match(folderName);
+
+    // --- Date ---
+    QString dateStr;
+    if (match.hasMatch())
+    {
+        int year  = match.captured(1).toInt();
+        int month = match.captured(2).toInt();
+        dateStr = QString("%1:%2:15 12:00:00").arg(year, 4, 10, QChar('0')).arg(month, 2, 10, QChar('0'));
+    }
+    else
+    {
+        dateStr = QDate::currentDate().toString("yyyy:MM:dd") + " 00:00:00";
+    }
+    this->append(Utilities::toReadableDateTime(dateStr), "dateTimeOriginal", "tag", -1);
+
+    if (!match.hasMatch()) return;
+
+    // --- Lieu et commentaires ---
+    QString rest = match.captured(3).trimmed();
+    QString location, description;
+    QRegularExpression commentRe(R"(^(.*?)\s*\(([^)]+)\)\s*$)");
+    QRegularExpressionMatch commentMatch = commentRe.match(rest);
+    if (commentMatch.hasMatch())
+    {
+        location    = commentMatch.captured(1).trimmed();
+        description = commentMatch.captured(2).trimmed();
+    }
+    else
+    {
+        location = rest;
+    }
+
+    if (!location.isEmpty())
+        this->append(location, "location", "tag", -1);
+    if (!description.isEmpty())
+        this->append(description, "description", "tag", -1);
 }
 
 

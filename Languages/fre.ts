@@ -349,7 +349,7 @@
 <context>
     <name>SuggestionModel</name>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="35"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="40"/>
         <source>portrait</source>
         <translation>portrait</translation>
     </message>
@@ -358,27 +358,27 @@
         <translation type="vanished">paysage</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="36"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="41"/>
         <source>landscape</source>
         <translation>paysage</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="37"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="42"/>
         <source>nature</source>
         <translation>nature</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="38"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="43"/>
         <source>animal</source>
         <translation>animal</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="39"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="44"/>
         <source>urbanism</source>
         <translation>urbanisme</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="40"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="45"/>
         <source>holyday</source>
         <translation>vacances</translation>
     </message>
