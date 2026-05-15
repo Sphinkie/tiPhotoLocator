@@ -85,6 +85,7 @@ ZonePhotoForm {
     chipDescription.revertArea.onClicked: {
         Chips.revertEdition(chipDescription)
     }
+    chipDescription.targetName: "description:"
 
     // -----------------------------------------------------------------------------------
     // ------------------------------- CAPTION WRITER

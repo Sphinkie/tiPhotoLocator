@@ -13,6 +13,7 @@ ZoneIptcForm {
     property string city: tabbedPage.currentPhoto.city
     property string country: tabbedPage.currentPhoto.country
     property string location: tabbedPage.currentPhoto.location
+    property string description: tabbedPage.currentPhoto.description
 
     bt_applyCreator.onClicked: {
         window.applyCreatorToAll()
@@ -28,6 +29,14 @@ ZoneIptcForm {
 
     bt_applyLocation.onClicked: {
         window.setPhotoProperty(-1, location, "location") // -1 = all
+    }
+
+    bt_applyDescription.onClicked: {
+        window.setPhotoProperty(-1, description, "description") // -1 = all
+    }
+
+    bt_applyWritter.onClicked: {
+        window.setPhotoProperty(-1, writer, "CaptionWriter") // -1 = all
     }
 
     // ----------------------------------------------------------------

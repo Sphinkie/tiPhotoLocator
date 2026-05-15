@@ -23,28 +23,6 @@ Zone {
         columns: 2
         columnSpacing: 24
 
-        /// Tag "Camera Maker"
-        Chips {
-            targetName: "Make"
-            content: "..."
-            editable: false
-            deletable: false
-        }
-        /// Label "Camera Maker"
-        Label {
-            text: qsTr("Camera Maker")
-        }
-        /// Tag "Camera model"
-        Chips {
-            targetName: "Model"
-            content: "..."
-            editable: false
-            deletable: false
-        }
-        /// Label "Camera model"
-        Label {
-            text: qsTr("Camera model")
-        }
         /// Tag for Speed and Aperture
         Chips {
             targetName: "Speed & Fnumber"

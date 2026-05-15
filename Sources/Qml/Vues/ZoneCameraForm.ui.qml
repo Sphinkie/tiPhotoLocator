@@ -24,16 +24,19 @@ Item {
                 id: chipModel
                 editable: false
                 deletable: false
+                targetName: "model:"
             }
             Chips {
                 id: chipMaker
                 editable: false
                 deletable: false
+                targetName: "brand:"
             }
             Chips {
                 id: chipSoftware
                 editable: false
                 deletable: false
+                targetName: "software:"
             }
             Chips {
                 id: chipMetadata
@@ -44,11 +47,13 @@ Item {
                 id: chipAperture
                 editable: false
                 deletable: false
+                targetName: "aperture:"
             }
             Chips {
                 id: chipSpeed
                 editable: false
                 deletable: false
+                targetName: "speed:"
             }
             Item {
                 width: 128

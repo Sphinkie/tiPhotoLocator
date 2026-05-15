@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
     //view.show();
 
     // ----------------------------------------------------------------------------
-    // Au lancement, on initilise les HomeCoords sur Paris (sauf si existe déjà).
+    // Au lancement, on initialise les HomeCoords sur Paris (sauf si existe déjà).
     // ----------------------------------------------------------------------------
     QSettings settings;
     QVariant homeCoords = settings.value("homeCoords", QVariant());

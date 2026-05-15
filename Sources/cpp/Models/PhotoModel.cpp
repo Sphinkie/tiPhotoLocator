@@ -6,6 +6,7 @@
 #include <QThreadPool>
 #include <QSettings>
 #include <QDebug>
+#include <QDate>
 
 
 #define QT_NO_DEBUG_OUTPUT
@@ -358,6 +359,19 @@ void PhotoModel::currentItemRow(const int row)
     m_lastCurrentRow = row;
     // On notifie les autres classes qui ont besoin de savoir quelle est la photo courante
     emit currentItemRowChanged(row);
+    // Suggestion dateTimeOriginal : on cherche en arrière la première date non vide
+    QString suggestedDate;
+    for (int i = row - 1; i >= 0; i--)
+    {
+        if (!m_photos[i].dateTimeOriginal.isEmpty())
+        {
+            suggestedDate = Utilities::toReadableDateTime(m_photos[i].dateTimeOriginal);
+            break;
+        }
+    }
+    if (suggestedDate.isEmpty())
+        suggestedDate = QDate::currentDate().toString("dd/MM/yyyy") + " 00:00";
+    emit sendSuggestion(suggestedDate, "dateTimeOriginal", "tag", row);
     m_selectionCount = 1;
     emit selectionCountChanged();
 }
@@ -548,8 +562,11 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // -------------------------------------------------------------------
     // Certaines infos sont des suggestions
     // -------------------------------------------------------------------
-    QString createDate = Utilities::toReadableDateTime(value_list["CreateDate"]);
-    emit sendSuggestion(createDate, "dateTimeOriginal", "tag", row);
+    if (row > 0)
+    {
+        QString prevDate = Utilities::toReadableDateTime(m_photos[row-1].dateTimeOriginal);
+        emit sendSuggestion(prevDate, "dateTimeOriginal", "tag", row);
+    }
 
     // -------------------------------------------------------------------
     // S'il n'y a plus de thread en cours, on stoppe le BusyIndicator

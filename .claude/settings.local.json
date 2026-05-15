@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\Mes_Programmes\\\\Windows\\\\QT_TiPhotoLocator\" -Force)",
+      "Bash(Select-Object Name, Mode)",
+      "Bash(Format-Table)"
+    ]
+  }
+}

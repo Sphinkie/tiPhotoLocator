@@ -519,22 +519,20 @@
 <context>
     <name>ZoneExifForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="35"/>
         <source>Camera Maker</source>
-        <translation>Camera Maker</translation>
+        <translation type="vanished">Camera Maker</translation>
+    </message>
+    <message>
+        <source>Camera model</source>
+        <translation type="vanished">Camera model</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="46"/>
-        <source>Camera model</source>
-        <translation>Camera model</translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="68"/>
         <source>Photographer name</source>
         <translation>Photographer name</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="57"/>
+        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="35"/>
         <source>Camera Aperture and Speed of the shot</source>
         <translation>Camera Aperture and Speed of the shot</translation>
     </message>
@@ -549,7 +547,7 @@
         <translation>They mainly contain technical information: camera model, lens...</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="79"/>
+        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="57"/>
         <source>Coordonnées GPS au moment de la prise de vue.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -575,58 +573,58 @@
 <context>
     <name>ZoneIptcForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="22"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="24"/>
         <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
         <translation>IPTC tags mainly contain editorial information, usually manually filled:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="23"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="25"/>
         <source>(image description, etc)</source>
         <translation>(image description, etc)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="40"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="55"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="70"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="85"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="99"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="114"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="129"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="42"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="57"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="72"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="87"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="102"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="117"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="132"/>
         <source>Apply to all</source>
         <translation>Apply to all</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="43"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="45"/>
         <source>Photographer name.</source>
         <translation>Photographer name.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="58"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="60"/>
         <source>The country where the photo was taken.</source>
         <translation>The country where the photo was taken.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="73"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="75"/>
         <source>Le nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="88"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="90"/>
         <source>Additionnal geographical information.</source>
         <translation>Additionnal geographical information.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="103"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="105"/>
         <source>Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="118"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="121"/>
         <source>Les initiales de la personne ayant rédigé la description.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="133"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="136"/>
         <source>Une liste de mots clefs relatifs à la photo, et utilisés pour les recheches.</source>
         <translation type="unfinished"></translation>
     </message>

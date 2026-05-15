@@ -8,9 +8,11 @@ import "../Components"
  * @brief Vue de l'onglet avec les tags pouvant être appliquées à toutes les photos du dossier.
  * *************************************************************************************************/
 Zone {
-    property alias bt_applyCreator: bt_applyCreator
+    property alias bt_applyDescription: bt_applyDescription
     property alias bt_applyLocation: bt_applyLocation
+    property alias bt_applyCreator: bt_applyCreator
     property alias bt_applyCountry: bt_applyCountry
+    property alias bt_applyWritter: bt_applyWritter
     property alias bt_applyCity: bt_applyCity
 
     iconZone: "qrc:/Images/icon-tag.png"
@@ -93,26 +95,27 @@ Zone {
         // -- --------------------------------------------------------
         Chips {
             targetName: "Description"
-            content: "..."
+            content: description ? description : " "
         }
         Button {
+            id: bt_applyDescription
             text: qsTr("Apply to all")
-            enabled: false
         }
         Label {
             text: qsTr("Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.")
         }
 
         // -- --------------------------------------------------------
-        /// Tag "Writer"
+        /// Tag "Writer". Actif uniquement s'il y a une description.
         // -- --------------------------------------------------------
         Chips {
             targetName: "Description Writer"
             content: writer ? writer : " "
         }
         Button {
+            id: bt_applyWritter
             text: qsTr("Apply to all")
-            enabled: false
+            enabled: description ? true : false
         }
         Label {
             text: qsTr("Les initiales de la personne ayant rédigé la description.")
