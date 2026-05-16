@@ -349,37 +349,37 @@
 <context>
     <name>SuggestionModel</name>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="40"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="39"/>
         <source>portrait</source>
         <translation>portrait</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="41"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="40"/>
         <source>landscape</source>
         <translation>landscape</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="42"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="41"/>
         <source>trekking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="43"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="42"/>
         <source>nature</source>
         <translation>nature</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="44"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="43"/>
         <source>animal</source>
         <translation>animal</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="45"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="44"/>
         <source>urbanism</source>
         <translation>urbanism</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="46"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="45"/>
         <source>holyday</source>
         <translation>holyday</translation>
     </message>
@@ -593,7 +593,7 @@
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="75"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="91"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="107"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="127"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="128"/>
         <source>Apply to all</source>
         <translation>Apply to all</translation>
     </message>
@@ -618,12 +618,12 @@
         <translation>Additionnal geographical information.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="110"/>
-        <source>Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</source>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="111"/>
+        <source>Description du contenu de la photo. En quelques mots: qui, quoi, comment, pourquoi.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="134"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="135"/>
         <source>Une liste de mots clefs relatifs à la photo, et utilisés pour les recherches.</source>
         <translation type="unfinished"></translation>
     </message>

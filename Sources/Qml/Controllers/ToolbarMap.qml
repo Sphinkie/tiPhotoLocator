@@ -62,6 +62,8 @@ ToolbarMapForm {
             bt_save_pos.enabled = tabbedPage.currentPhoto.hasGPS
             bt_revert.enabled = tabbedPage.currentPhoto.toBeSaved
             slider_radius.enabled = tabbedPage.currentPhoto.hasGPS
+            if (!tabbedPage.currentPhoto.hasGPS && tabbedPage.currentPhoto.city)
+                txt_find.text = tabbedPage.currentPhoto.city
         }
     }
 }

@@ -32,7 +32,6 @@ void SuggestionModel::createInitialSuggestions()
 
     this->append(photographe, "creator", "tag", -1);
     this->append(initiales,   "captionWriter", "tag", -1);
-//    this->append(" ", "country", "tag", -1);
     this->append(homeCountry, "country", "tag", -1);
     this->append(homeCity, "city", "tag", -1);
     this->append(" ", "location", "tag", -1);
