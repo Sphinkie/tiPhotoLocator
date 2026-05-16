@@ -466,9 +466,11 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             emit dataChanged(index, index, QVector<int>() << DateTimeOriginalRole << ToBeSavedRole);
             break;
         case DescriptionRole:
+            // Description + writer
             m_photos[index.row()].description = value.toString();
+            m_photos[index.row()].captionWriter = "David";
             m_photos[index.row()].toBeSaved = true;
-            emit dataChanged(index, index, QVector<int>() << DescriptionRole << ToBeSavedRole);
+            emit dataChanged(index, index, QVector<int>() << DescriptionRole << CaptionWriterRole << ToBeSavedRole);
             break;
         case CaptionWriterRole:
             m_photos[index.row()].captionWriter = value.toString();
@@ -644,7 +646,7 @@ void PhotoModel::dumpData()
              << flags
              << "dateTimeOriginal:" << m_photos[m_dumpedRow].dateTimeOriginal
              << "description:" << m_photos[m_dumpedRow].description
-             << "creator:" << m_photos[m_dumpedRow].creator
+             << "artist:" << m_photos[m_dumpedRow].creator
              << "keywords:" << m_photos[m_dumpedRow].keywords ;
 
     m_dumpedRow++;

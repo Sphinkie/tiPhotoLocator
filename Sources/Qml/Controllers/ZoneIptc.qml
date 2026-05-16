@@ -35,8 +35,8 @@ ZoneIptcForm {
         window.setPhotoProperty(-1, description, "description") // -1 = all
     }
 
-    bt_applyWritter.onClicked: {
-        window.setPhotoProperty(-1, writer, "CaptionWriter") // -1 = all
+    bt_applyKeyword.onClicked: {
+        window.setPhotoProperty(-1, keywords, "keyword") // -1 = all
     }
 
     // ----------------------------------------------------------------

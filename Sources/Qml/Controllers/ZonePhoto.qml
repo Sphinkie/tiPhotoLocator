@@ -67,6 +67,7 @@ ZonePhotoForm {
     chipCreator.revertArea.onClicked: {
         Chips.revertEdition(chipCreator)
     }
+    chipCreator.targetName: "artist:"
 
     // -----------------------------------------------------------------------------------
     // ------------------------------- DESCRIPTION

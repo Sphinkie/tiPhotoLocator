@@ -47,16 +47,19 @@ Zone {
             id: chipCountry
             editable: false
             deletable: true
+            targetName: "country:"
         }
         Chips {
             id: chipCity
             editable: false
             deletable: true
+            targetName: "city:"
         }
         Chips {
             id: chipLocation
             editable: false
             deletable: true
+            targetName: "location:"
         }
     }
 }

@@ -19,13 +19,13 @@
         exifData.insert("GPSLongitudeRef",  idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
         exifData.insert("DateTimeOriginal", idx.data(DateTimeOriginalRole));
         exifData.insert("MetadataEditingSoftware", metadataSoftware);
-        exifData.insert("Creator",          idx.data(CreatorRole));      // MWG écrit aussi dans Artist
-        exifData.insert("City",             idx.data(CityRole));         // MWG écrit dans EXIF et dans IptcExt
-        exifData.insert("Country",          idx.data(CountryRole));      // MWG écrit dans EXIF et dans IptcExt
-        exifData.insert("Location",         idx.data(LocationRole));     // MWG écrit dans EXIF et dans IptcExt
-        exifData.insert("Description",      idx.data(DescriptionRole));  // MWG écrit aussi dans ImageDescription
-        exifData.insert("CaptionWriter",    idx.data(CaptionWriterRole));
-        exifData.insert("Keywords",         idx.data(KeywordsRole));     // Liste des keywords
+        exifData.insert("Creator",          idx.data(CreatorRole));       // MWG écrit aussi dans Artist
+        exifData.insert("City",             idx.data(CityRole));          // MWG écrit dans EXIF et dans IptcExt
+        exifData.insert("Country",          idx.data(CountryRole));       // MWG écrit dans EXIF et dans IptcExt
+        exifData.insert("Location",         idx.data(LocationRole));      // MWG écrit dans EXIF et dans IptcExt
+        exifData.insert("Description",      idx.data(DescriptionRole));   // MWG écrit aussi dans ImageDescription
+        exifData.insert("CaptionWriter",    idx.data(CaptionWriterRole)); // On ecrit le Writer que s'il y a une description.
+        exifData.insert("Keywords",         idx.data(KeywordsRole));      // Liste des keywords
   @endcode
  * ***********************************************************************************************************/
 ExifWriteTask::ExifWriteTask(const QVariantMap exifData, PhotoModel* photoModel, bool generateBackup)
@@ -62,7 +62,7 @@ void ExifWriteTask::run()
     arguments << "-ext" << "JPEG";      // Filtre sur les extensions
     arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
     //arguments << "-dateFormat" << "'%d-%m-%Y'";                    // datetime format DD-MM-YYYY
-    if (!m_generateBackup) arguments.append("-overwrite_original");  // Genere un backup si demandé
+    if (!m_generateBackup) arguments.append("-overwrite_original");  // Génère un backup si demandé
     // Liste des tags à écrire
     QMapIterator<QString, QVariant> itr(m_exifData);
     while (itr.hasNext()) {

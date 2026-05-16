@@ -18,7 +18,7 @@ SuggestionModel::SuggestionModel(QObject *parent) : QAbstractListModel{parent}
 
 
 /** **********************************************************************************************************
- * @brief Ajoute au modèle quelques sugegstsio basiques.
+ * @brief Ajoute au modèle quelques suggestions basiques.
  * ***********************************************************************************************************/
 void SuggestionModel::createInitialSuggestions()
 {
@@ -32,7 +32,7 @@ void SuggestionModel::createInitialSuggestions()
 
     this->append(photographe, "creator", "tag", -1);
     this->append(initiales,   "captionWriter", "tag", -1);
-    this->append(" ", "country", "tag", -1);
+//    this->append(" ", "country", "tag", -1);
     this->append(homeCountry, "country", "tag", -1);
     this->append(homeCity, "city", "tag", -1);
     this->append(" ", "location", "tag", -1);
@@ -82,6 +82,7 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
         return QVariant();
     }
 }
+
 
 /** **********************************************************************************************************
  * @brief Table of Role names.
@@ -256,8 +257,8 @@ void SuggestionModel::onCurrentPhotoChanged(const int row)
 /** **********************************************************************************************************
  * @brief Extrait date, lieu et commentaires du nom du dossier et les ajoute comme suggestions globales.
  *        Format attendu : YYYY[-. ]MM[-. ]<lieu>[-. ](<commentaires>)
- *        Valeurs par défaut si la date est absente : date courante.
- * @param folderUrl : URL du dossier (format "file:///...").
+ *        Valeurs par défaut si la date est absente: date courante.
+ * @param folderUrl: URI du dossier (format "file:///...").
  * ***********************************************************************************************************/
 void SuggestionModel::setDefaultDateFromFolder(const QString &folderUrl)
 {
@@ -296,6 +297,7 @@ void SuggestionModel::setDefaultDateFromFolder(const QString &folderUrl)
         location = rest;
     }
 
+    // On ajoute les suggestions
     if (!location.isEmpty())
         this->append(location, "location", "tag", -1);
     if (!description.isEmpty())
