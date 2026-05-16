@@ -415,41 +415,49 @@
         <translation type="vanished">Générer backups</translation>
     </message>
     <message numerus="yes">
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="34"/>
         <source>%n selected photos</source>
         <comment>0</comment>
-        <translation>
+        <translation type="vanished">
             <numerusform>%n photo sélectionnée</numerusform>
             <numerusform>%n photos sélectionnées</numerusform>
         </translation>
     </message>
+    <message numerus="yes">
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="34"/>
+        <source>%n selected photos / </source>
+        <comment>0</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="43"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="44"/>
         <source>Generate backups</source>
         <translation>Générer backups</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="47"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="48"/>
         <source>Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)</source>
         <translation>Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="54"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="55"/>
         <source>Save</source>
         <translation>Enregistrer</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="57"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="58"/>
         <source>Enregistre les tags EXIF des photos modifiées</source>
         <translation>Enregistre les tags EXIF des photos modifiées</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="63"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="64"/>
         <source>Quit</source>
         <translation>Quitter</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="64"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="65"/>
         <source>Quit application</source>
         <translation>Générer backups</translation>
     </message>
@@ -462,8 +470,8 @@
         <translation type="vanished">Dump PhotoModel</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="87"/>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="99"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="88"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="100"/>
         <source>DEBUG: Affiche une ligne du modèle dans la console</source>
         <translation>DEBUG: Affiche une ligne du modèle dans la console</translation>
     </message>
@@ -703,7 +711,7 @@
         <translation type="vanished">Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="135"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="137"/>
         <source>Une liste de mots clefs relatifs à la photo, et utilisés pour les recherches.</source>
         <translation type="unfinished"></translation>
     </message>

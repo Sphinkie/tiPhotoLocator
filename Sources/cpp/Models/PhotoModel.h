@@ -27,6 +27,8 @@ class PhotoModel : public QAbstractListModel
     Q_PROPERTY(qreal writeProgress MEMBER m_writeProgress NOTIFY writeProgressChanged)
     //! Le nombre de photos dans la sélection.
     Q_PROPERTY(int selectionCount MEMBER m_selectionCount NOTIFY selectionCountChanged)
+    //! Le nombre total de photos dans le modèle.
+    Q_PROPERTY(int count READ getCount NOTIFY countChanged)
 
 
 public:
@@ -68,7 +70,7 @@ public:
     // Surcharges obligatoires
     // -----------------------------------------------------
     explicit PhotoModel(QObject *parent = nullptr);
-    int      rowCount(const QModelIndex& parent) const override;
+    int      rowCount(const QModelIndex& parent = QModelIndex()) const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
     Qt::ItemFlags flags(const QModelIndex &index) const override;
     QHash<int, QByteArray> roleNames() const override;
@@ -105,6 +107,7 @@ public:
     void setData(const QVariantMap &value_list);
     void selectFirstPhoto();
     void setWriteProgress(const int total = 0);
+    int  getCount() const { return rowCount(); }
 
 private:
     // -----------------------------------------------------
@@ -152,6 +155,7 @@ signals:
     void savedPositionExistsChanged();                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
     void loadingChanged();                                                         //!< Signal émis quand le status loading change.
     void selectionCountChanged();                                                  //!< Signal émis quand le nombre de photos sélectionnées change.
+    void countChanged();                                                           //!< Signal émis quand le nombre total de photos change.
 
     // -----------------------------------------------------
     // Membres

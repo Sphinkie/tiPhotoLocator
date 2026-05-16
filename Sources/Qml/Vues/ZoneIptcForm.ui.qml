@@ -132,6 +132,8 @@ Zone {
             }
         }
         Label {
+            id: lb_keywords
+            visible: photoKeywords.length > 0
             text: qsTr("Une liste de mots clefs relatifs à la photo, et utilisés pour les recherches.")
         }
     }

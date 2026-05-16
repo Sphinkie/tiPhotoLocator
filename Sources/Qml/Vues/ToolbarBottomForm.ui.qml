@@ -31,7 +31,8 @@ Rectangle {
 
         /// Ligne 0:
         Text {
-            text: qsTr("%n selected photos", "0", _photoModel.selectionCount)
+            text: qsTr("%n selected photos / ", "0",
+                       _photoModel.selectionCount) + _photoModel.count
             leftPadding: 8
             Layout.row: 0
             Layout.column: 0

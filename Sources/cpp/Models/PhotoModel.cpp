@@ -172,6 +172,7 @@ void PhotoModel::append(const QString filename, const QString url)
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_photos.insert(rowOfInsert, *new_photo);
     endInsertRows();
+    emit countChanged();
 }
 
 
@@ -194,6 +195,7 @@ void PhotoModel::append(const QVariantMap data)
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_photos.insert(rowOfInsert, *new_photo);
     endInsertRows();
+    emit countChanged();
     // qDebug() << "append" << data.value("filename").toString() << "to row" << rowOfInsert;
 }
 
@@ -213,6 +215,7 @@ void PhotoModel::appendSavedPosition()
         beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
         m_photos.insert(rowOfInsert, *new_data);
         endInsertRows();
+        emit countChanged();
         // On mémorise sa position
         m_markerRow = rowOfInsert;
         m_markerIndex = index(rowOfInsert,0);
@@ -663,6 +666,7 @@ void PhotoModel::clear()
     m_photos.clear();
     m_lastCurrentRow = 0;
     endResetModel();    // cette méthode envoie un signal ModelReset.
+    emit countChanged();
     emit dataCleared();
 }
 
@@ -802,6 +806,7 @@ void PhotoModel::removeData(int row)
     beginRemoveRows(QModelIndex(), row, row);
     m_photos.removeAt(row);
     endRemoveRows();
+    emit countChanged();
 }
 
 
@@ -820,6 +825,7 @@ void PhotoModel::duplicateData(int row)
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
     m_photos.insert(rowOfInsert, photo);
     endInsertRows();
+    emit countChanged();
 }
 
 
