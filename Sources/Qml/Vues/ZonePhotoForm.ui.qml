@@ -23,6 +23,7 @@ Item {
                 editable: true
                 deletable: false
 
+
                 /*
                 chipText.validator: RegularExpressionValidator {
                     regularExpression: /^(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/](18|19|20)\d\d$/
@@ -34,6 +35,7 @@ Item {
                 editable: true
                 deletable: false
 
+
                 /*
                 chipText.validator: RegularExpressionValidator {
                     regularExpression: /^(0[0-9]|1[0-9]|2[0-3])[\:][0-5][0-9]$/
@@ -44,16 +46,19 @@ Item {
                 id: chipCreator
                 editable: true
                 deletable: true
+                targetName: "artist"
             }
             FatChip {
                 id: chipDescription
                 editable: true
                 deletable: true
+                targetName: "description"
             }
             Chips {
                 id: chipWriter
                 editable: true
                 deletable: true
+                targetName: "writer"
             }
         }
     }

@@ -15,6 +15,8 @@ ZoneIptcForm {
     property string location: tabbedPage.currentPhoto.location
     property string description: tabbedPage.currentPhoto.description
 
+    photoKeywords: tabbedPage.currentPhoto ? tabbedPage.currentPhoto.keywords : []
+
     bt_applyCreator.onClicked: {
         window.applyCreatorToAll()
     }
@@ -35,9 +37,7 @@ ZoneIptcForm {
         window.setPhotoProperty(-1, description, "description") // -1 = all
     }
 
-    bt_applyKeyword.onClicked: {
-        window.setPhotoProperty(-1, keywords, "keyword") // -1 = all
-    }
+    onApplyKeyword: (keyword) => _photoModel.addKeywordToAll(keyword)
 
     // ----------------------------------------------------------------
     /// Lecture des Settings

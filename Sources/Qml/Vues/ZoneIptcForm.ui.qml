@@ -12,8 +12,9 @@ Zone {
     property alias bt_applyLocation: bt_applyLocation
     property alias bt_applyCreator: bt_applyCreator
     property alias bt_applyCountry: bt_applyCountry
-    property alias bt_applyKeyword: bt_applyKeyword
     property alias bt_applyCity: bt_applyCity
+    property var photoKeywords: []
+    signal applyKeyword(string keyword)
 
     iconZone: "qrc:/Images/icon-tag.png"
     txtZone: title + br + brief + br + usage + br + note + br
@@ -40,6 +41,7 @@ Zone {
         Button {
             id: bt_applyCreator
             text: qsTr("Apply to all")
+            enabled: creator ? true : false
         }
         Label {
             text: qsTr("Photographer name.")
@@ -55,6 +57,7 @@ Zone {
         Button {
             id: bt_applyCountry
             text: qsTr("Apply to all")
+            enabled: country ? true : false
         }
         Label {
             text: qsTr("The country where the photo was taken.")
@@ -70,6 +73,7 @@ Zone {
         Button {
             id: bt_applyCity
             text: qsTr("Apply to all")
+            enabled: city ? true : false
         }
         Label {
             text: qsTr("Le nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.")
@@ -85,6 +89,7 @@ Zone {
         Button {
             id: bt_applyLocation
             text: qsTr("Apply to all")
+            enabled: location ? true : false
         }
         Label {
             text: qsTr("Additionnal geographical information.")
@@ -100,25 +105,34 @@ Zone {
         Button {
             id: bt_applyDescription
             text: qsTr("Apply to all")
+            enabled: description ? true : false
         }
         Label {
-            text: qsTr("Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.")
+            text: qsTr("Description du contenu de la photo. En quelques mots: qui, quoi, comment, pourquoi.")
         }
 
         // -- --------------------------------------------------------
-        /// Tags "keywords"
+        /// Tags "keywords" (avec Repeater)
         // -- --------------------------------------------------------
-        Chips {
-            targetName: "Keywords"
-            content: "..."
-        }
-        Button {
-            id: bt_applyKeyword
-            text: qsTr("Apply to all")
-            enabled: false
+        ColumnLayout {
+            spacing: 0
+            Layout.columnSpan: 2
+            Repeater {
+                model: photoKeywords
+                RowLayout {
+                    Chips {
+                        targetName: "Keywords"
+                        content: modelData ? modelData : ""
+                    }
+                    Button {
+                        text: qsTr("Apply to all")
+                        onClicked: applyKeyword(modelData)
+                    }
+                }
+            }
         }
         Label {
-            text: qsTr("Une liste de mots clefs relatifs à la photo, et utilisés pour les recheches.")
+            text: qsTr("Une liste de mots clefs relatifs à la photo, et utilisés pour les recherches.")
         }
     }
 }

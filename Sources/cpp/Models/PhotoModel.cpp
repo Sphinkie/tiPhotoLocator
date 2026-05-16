@@ -1151,6 +1151,25 @@ void PhotoModel::removePhotoKeyword(QString keyword)
 
 
 /** **********************************************************************************************************
+ * @brief Ajoute un mot-clef à toutes les photos qui ne le possèdent pas déjà.
+ * @param keyword : le mot-clef à ajouter.
+ * ***********************************************************************************************************/
+void PhotoModel::addKeywordToAll(const QString& keyword)
+{
+    for (int row = 0; row < m_photos.count(); ++row)
+    {
+        if (!m_photos[row].keywords.contains(keyword))
+        {
+            m_photos[row].keywords << keyword;
+            m_photos[row].toBeSaved = true;
+            QModelIndex idx = this->index(row, 0);
+            emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
+        }
+    }
+}
+
+
+/** **********************************************************************************************************
  * @brief Modifie un des mots-clef descriptif de la photo.
  * @param keyword : la nouvelle valeur du mot-clef.
  * @param index : la position du mot-clef dans la liste.
