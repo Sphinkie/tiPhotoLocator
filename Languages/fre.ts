@@ -665,7 +665,6 @@
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="87"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="102"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="117"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="132"/>
         <source>Apply to all</source>
         <translation>Appliquer à tous</translation>
     </message>
@@ -695,12 +694,11 @@
         <translation>Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="121"/>
         <source>Les initiales de la personne ayant rédigé la description.</source>
-        <translation>Les initiales de la personne ayant rédigé la description.</translation>
+        <translation type="vanished">Les initiales de la personne ayant rédigé la description.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="136"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="121"/>
         <source>Une liste de mots clefs relatifs à la photo, et utilisés pour les recheches.</source>
         <translation>Une liste de mots clefs relatifs à la photo, et utilisés pour les recheches.</translation>
     </message>

@@ -589,7 +589,6 @@
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="87"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="102"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="117"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="132"/>
         <source>Apply to all</source>
         <translation>Apply to all</translation>
     </message>
@@ -620,11 +619,6 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="121"/>
-        <source>Les initiales de la personne ayant rédigé la description.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="136"/>
         <source>Une liste de mots clefs relatifs à la photo, et utilisés pour les recheches.</source>
         <translation type="unfinished"></translation>
     </message>

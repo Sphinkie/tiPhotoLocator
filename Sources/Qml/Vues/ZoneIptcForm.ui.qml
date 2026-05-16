@@ -113,6 +113,7 @@ Zone {
             content: "..."
         }
         Button {
+            id: bt_applyKeyword
             text: qsTr("Apply to all")
             enabled: false
         }

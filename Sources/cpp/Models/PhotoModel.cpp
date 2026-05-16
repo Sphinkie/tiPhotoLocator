@@ -468,7 +468,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
         case DescriptionRole:
             // Description + writer
             m_photos[index.row()].description = value.toString();
-            m_photos[index.row()].captionWriter = "David";
+            m_photos[index.row()].captionWriter = QSettings().value("initiales").toString();
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << DescriptionRole << CaptionWriterRole << ToBeSavedRole);
             break;
