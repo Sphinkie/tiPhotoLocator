@@ -35,7 +35,7 @@ Zone {
         /// Tag "Creator"
         // -- --------------------------------------------------------
         Chips {
-            targetName: "Creator"
+            targetName: "artist:"
             content: creator ? creator : " "
         }
         Button {
@@ -51,7 +51,7 @@ Zone {
         /// Tag "Country"
         // -- --------------------------------------------------------
         Chips {
-            targetName: "Country"
+            targetName: "country:"
             content: country ? country : " "
         }
         Button {
@@ -67,7 +67,7 @@ Zone {
         /// Tag "City"
         // -- --------------------------------------------------------
         Chips {
-            targetName: "City"
+            targetName: "city:"
             content: city ? city : " "
         }
         Button {
@@ -76,14 +76,14 @@ Zone {
             enabled: city ? true : false
         }
         Label {
-            text: qsTr("Le nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.")
+            text: qsTr("City where the photo was taken or nearest city.")
         }
 
         // -- --------------------------------------------------------
         /// Tag "Location"
         // -- --------------------------------------------------------
         Chips {
-            targetName: "Location"
+            targetName: "location:"
             content: location ? location : " "
         }
         Button {
@@ -99,7 +99,7 @@ Zone {
         /// Tag "Description"
         // -- --------------------------------------------------------
         Chips {
-            targetName: "Description"
+            targetName: "description:"
             content: description ? description : " "
         }
         Button {
@@ -108,7 +108,7 @@ Zone {
             enabled: description ? true : false
         }
         Label {
-            text: qsTr("Description du contenu de la photo. En quelques mots: qui, quoi, comment, pourquoi.")
+            text: qsTr("Photo content description: who, where, how, why? (in a few words).")
         }
 
         // -- --------------------------------------------------------
@@ -120,8 +120,9 @@ Zone {
             Repeater {
                 model: photoKeywords
                 RowLayout {
+                    spacing: 24
                     Chips {
-                        targetName: "Keywords"
+                        targetName: "keywords:"
                         content: modelData ? modelData : ""
                     }
                     Button {
@@ -134,7 +135,7 @@ Zone {
         Label {
             id: lb_keywords
             visible: photoKeywords.length > 0
-            text: qsTr("Une liste de mots clefs relatifs à la photo, et utilisés pour les recherches.")
+            text: qsTr("A list of keywords, related to the photo and used for searches.")
         }
     }
 }

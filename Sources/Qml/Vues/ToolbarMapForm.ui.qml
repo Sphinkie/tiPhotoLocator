@@ -45,7 +45,7 @@ Item {
         enabled: false
         text: qsTr("Save Position")
         icon.source: "qrc:/Images/mappin-black.png"
-        ToolTip.text: qsTr("Mémorise la position de la photo courante")
+        ToolTip.text: qsTr("Store the position of the current photo")
         ToolTip.visible: hovered
         ToolTip.delay: 500
         anchors {
@@ -72,7 +72,7 @@ Item {
         enabled: false
         text: qsTr("Apply Saved Position")
         icon.source: "qrc:/Images/bt-apply.png"
-        ToolTip.text: qsTr("Applique la position mémorisée à la photo courante")
+        ToolTip.text: qsTr("apply the stored position to the current photo")
         ToolTip.visible: hovered
         ToolTip.delay: 500
         anchors {
@@ -114,7 +114,7 @@ Item {
             leftMargin: 20
             verticalCenter: parent.verticalCenter
         }
-        ToolTip.text: qsTr("Recharge les coordonnées initiales de l'image")
+        ToolTip.text: qsTr("Reload the initial GPS coordinates of the photo")
         ToolTip.visible: hovered
         ToolTip.delay: 500
     }

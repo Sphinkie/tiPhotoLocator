@@ -25,8 +25,7 @@ Rectangle {
             id: bt_rescan
             icon.source: "qrc:/Images/bt-reload.png"
             text: qsTr("Rescan")
-            ToolTip.text: qsTr(
-                              "Rescanne les tags EXIF des photos du répertoire")
+            ToolTip.text: qsTr("Rescan all EXIF tags of the folder photos")
             ToolTip.visible: hovered
             ToolTip.delay: 500
             // Positionnement à l'interieur du Layout

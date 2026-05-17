@@ -7,7 +7,7 @@ import ".."
 
 /** **********************************************************************************************************
  * @brief Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle.
- * A noter que l'ombre doit être définie avant le rectangle, de façon à être dessinbée avant, donc dessous.
+ * A noter que l'ombre doit être définie avant le rectangle, de façon à être dessinée avant, donc dessous.
  * A noter que le Rectangle contient un texte, mais ne s'adapte pas automatiquement à la longueur du texte.
  * C'est plutot le texte qui s'adapte au rectangle parent.
  * @see {https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html}
@@ -106,11 +106,12 @@ Item {
         /** ************************************************************************************
          * Libellé "Target", cad le nom du tag à attribuer.
          * Couleur automatique du thème Material: foreground
+         * On décale un peu le texte s'il y a un bouton.
          * *************************************************************************************/
         Label {
             id: chipTarget
             anchors.left: parent.left // Pas de bouton quand on affiche la target
-            anchors.leftMargin: 12
+            anchors.leftMargin: (editable || canSave || deletable) ? 36 : 12
             anchors.verticalCenter: parent.verticalCenter
             text: targetName
             font.pixelSize: 12

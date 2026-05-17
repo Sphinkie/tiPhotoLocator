@@ -244,14 +244,12 @@
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="59"/>
         <source>Valeurs par défaut</source>
-        <translation>Valeurs par défaut</translation>
+        <translation type="vanished">Valeurs par défaut</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="65"/>
         <source>Nom du photographe:</source>
-        <translation>Nom du photographe:</translation>
+        <translation type="vanished">Nom du photographe:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="72"/>
@@ -259,17 +257,35 @@
         <translation>Entrez votre nom</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="84"/>
         <source>Initiales du rédacteur des descriptions:</source>
-        <translation>Initiales du rédacteur des descriptions:</translation>
+        <translation type="vanished">Initiales du rédacteur des descriptions:</translation>
     </message>
     <message>
         <source>initiales</source>
         <translation type="vanished">Initiales</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="94"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="59"/>
+        <source>Default values</source>
+        <translation>Valeurs par défaut</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="65"/>
+        <source>Photographer name:</source>
+        <translation>Nom du photographe:</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="84"/>
+        <source>Description writer initials:</source>
+        <translation>Initiales du rédacteur de la description:</translation>
+    </message>
+    <message>
         <source>Initiales</source>
+        <translation type="vanished">Initiales</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="94"/>
+        <source>Initials</source>
         <translation>Initiales</translation>
     </message>
     <message>
@@ -289,8 +305,27 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="148"/>
+        <source>Your most photographed place.</source>
+        <translation>Votre ville la plus photographiée.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="174"/>
+        <source>Do not change EXIF tags</source>
+        <translation>Ne pas modifier les tags EXIF</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="187"/>
+        <source>Tags and suggestions language:</source>
+        <translation>Langue des tags et suggestions:</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="200"/>
+        <source>Map provider API key:</source>
+        <translation>Clef API pour les cartes:</translation>
+    </message>
+    <message>
         <source>Votre ville la plus photographiée</source>
-        <translation>Votre ville la plus photographiée</translation>
+        <translation type="vanished">Votre ville la plus photographiée</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="152"/>
@@ -303,19 +338,16 @@
         <translation>Langue de l&apos;application:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="174"/>
         <source>Ne pas modifier les tags EXIF</source>
-        <translation>Ne pas modifier les tags EXIF</translation>
+        <translation type="vanished">Ne pas modifier les tags EXIF</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="187"/>
         <source>Langue des tags et suggestions:</source>
-        <translation>Langue des tags et suggestions:</translation>
+        <translation type="vanished">Langue des tags et suggestions:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="200"/>
         <source>Clef API pour les cartes:</source>
-        <translation>Clef API pour les cartes:</translation>
+        <translation type="vanished">Clef API pour les cartes:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="207"/>
@@ -365,7 +397,7 @@
     <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="41"/>
         <source>trekking</source>
-        <translation type="unfinished"></translation>
+        <translation>randonnée</translation>
     </message>
     <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="42"/>
@@ -426,9 +458,9 @@
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="34"/>
         <source>%n selected photos / </source>
         <comment>0</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n photo sélectionée / </numerusform>
+            <numerusform>%n photos sélectionées / </numerusform>
         </translation>
     </message>
     <message>
@@ -438,8 +470,23 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="48"/>
-        <source>Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)</source>
+        <source>Check to keep a copy of the original photos (IMAGENAME.jpg_original)</source>
         <translation>Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="58"/>
+        <source>Save EXIF tags of edited photos</source>
+        <translation>Enregistre les tags EXIF des photos modifiées</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="88"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="100"/>
+        <source>DEBUG: display one line of the model in the console</source>
+        <translation>DEBUG: Affiche une ligne du modèle dans la console</translation>
+    </message>
+    <message>
+        <source>Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)</source>
+        <translation type="vanished">Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="55"/>
@@ -447,9 +494,8 @@
         <translation>Enregistrer</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="58"/>
         <source>Enregistre les tags EXIF des photos modifiées</source>
-        <translation>Enregistre les tags EXIF des photos modifiées</translation>
+        <translation type="vanished">Enregistre les tags EXIF des photos modifiées</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="64"/>
@@ -470,10 +516,8 @@
         <translation type="vanished">Dump PhotoModel</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="88"/>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="100"/>
         <source>DEBUG: Affiche une ligne du modèle dans la console</source>
-        <translation>DEBUG: Affiche une ligne du modèle dans la console</translation>
+        <translation type="vanished">DEBUG: Affiche une ligne du modèle dans la console</translation>
     </message>
     <message>
         <source>Dump SuggModel</source>
@@ -494,8 +538,17 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="48"/>
-        <source>Mémorise la position de la photo courante</source>
+        <source>Store the position of the current photo</source>
         <translation>Mémorise la position de la photo courante</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
+        <source>apply the stored position tothe current photo</source>
+        <translation>Applique la position mémorisée à la photo courante</translation>
+    </message>
+    <message>
+        <source>Mémorise la position de la photo courante</source>
+        <translation type="vanished">Mémorise la position de la photo courante</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="61"/>
@@ -508,9 +561,8 @@
         <translation>Applique Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
         <source>Applique la position mémorisée à la photo courante</source>
-        <translation>Applique la position mémorisée à la photo courante</translation>
+        <translation type="vanished">Applique la position mémorisée à la photo courante</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="110"/>
@@ -677,7 +729,7 @@
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="75"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="91"/>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="107"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="128"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="129"/>
         <source>Apply to all</source>
         <translation>Appliquer à tous</translation>
     </message>
@@ -693,8 +745,30 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="79"/>
-        <source>Le nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.</source>
+        <source>City where the photo was taken or nearest city.</source>
         <translation>Nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="111"/>
+        <source>Photo content description: who, where, how, why? (in a few words).</source>
+        <translation>Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="138"/>
+        <source>A list of keywords, related to the photo and used for searches.</source>
+        <translation>Une liste de mots-clefs relatifs à la photo, et utilisés pour les recherches.</translation>
+    </message>
+    <message>
+        <source>Photo content description: who, where, how, why? (in a few words)</source>
+        <translation type="vanished">Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
+    </message>
+    <message>
+        <source>A list of leywords, related to the photo and used for searches.</source>
+        <translation type="vanished">Une liste de mots-clefs relatifs à la photo, et utilisés pour les recherches.</translation>
+    </message>
+    <message>
+        <source>Le nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.</source>
+        <translation type="vanished">Nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="95"/>
@@ -702,18 +776,8 @@
         <translation>Information géographique additionnelle.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="111"/>
-        <source>Description du contenu de la photo. En quelques mots: qui, quoi, comment, pourquoi.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</source>
         <translation type="vanished">Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="137"/>
-        <source>Une liste de mots clefs relatifs à la photo, et utilisés pour les recherches.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Les initiales de la personne ayant rédigé la description.</source>

@@ -56,13 +56,13 @@ Popup {
             id: groupBox1
             Layout.margins: 10
             Layout.fillWidth: true
-            title: qsTr("Valeurs par défaut")
+            title: qsTr("Default values")
 
             ColumnLayout {
                 /// Valeur par défaut pour CREATOR
                 RowLayout {
                     Label {
-                        text: qsTr("Nom du photographe:")
+                        text: qsTr("Photographer name:")
                         font.pixelSize: 12
                     }
                     TextField {
@@ -81,7 +81,7 @@ Popup {
                 /// Valeur par défaut pour CAPTION WRITER
                 RowLayout {
                     Label {
-                        text: qsTr("Initiales du rédacteur des descriptions:")
+                        text: qsTr("Description writer initials:")
                         font.pixelSize: 12
                     }
                     TextField {
@@ -91,7 +91,7 @@ Popup {
                         horizontalAlignment: Text.AlignLeft
                         Layout.minimumWidth: 116
                         Layout.preferredWidth: 30
-                        placeholderText: qsTr("Initiales")
+                        placeholderText: qsTr("Initials")
                     }
                     Text {
                         color: Style.tertiaryForegroundColor
@@ -145,7 +145,7 @@ Popup {
                         id: textFieldHomecity
                         Layout.fillWidth: true
                         height: 30
-                        placeholderText: qsTr("Votre ville la plus photographiée")
+                        placeholderText: qsTr("Your most photographed place.")
                     }
                     Text {
                         color: Style.tertiaryForegroundColor
@@ -171,7 +171,7 @@ Popup {
                 RowLayout {
                     CheckBox {
                         id: checkBoxExif
-                        text: qsTr("Ne pas modifier les tags EXIF")
+                        text: qsTr("Do not change EXIF tags")
                         visible: false
                         checked: false
                     }
@@ -184,7 +184,7 @@ Popup {
                 /// Langue des suggestions
                 RowLayout {
                     Label {
-                        text: qsTr("Langue des tags et suggestions:")
+                        text: qsTr("Tags and suggestions language:")
                         font.pixelSize: 12
                     }
                     ComboBox {
@@ -197,7 +197,7 @@ Popup {
                 /// Clef API pour les cartes
                 RowLayout {
                     Label {
-                        text: qsTr("Clef API pour les cartes:")
+                        text: qsTr("Map provider API key:")
                         font.pixelSize: 12
                     }
                     TextField {

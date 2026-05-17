@@ -46,19 +46,19 @@ Item {
                 id: chipCreator
                 editable: true
                 deletable: true
-                targetName: "artist"
+                targetName: "artist:"
             }
             FatChip {
                 id: chipDescription
                 editable: true
                 deletable: true
-                targetName: "description"
+                targetName: "description:"
             }
             Chips {
                 id: chipWriter
                 editable: true
                 deletable: true
-                targetName: "writer"
+                targetName: "writer:"
             }
         }
     }

@@ -45,7 +45,7 @@ Rectangle {
             Layout.topMargin: 10
             Layout.row: 1
             ToolTip {
-                text: qsTr("Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)")
+                text: qsTr("Check to keep a copy of the original photos (IMAGENAME.jpg_original)")
                 delay: 500
                 visible: parent.hovered
             }
@@ -55,7 +55,7 @@ Rectangle {
             text: qsTr("Save")
             Layout.topMargin: 10
             highlighted: shouldSave
-            ToolTip.text: qsTr("Enregistre les tags EXIF des photos modifiées")
+            ToolTip.text: qsTr("Save EXIF tags of edited photos")
             ToolTip.visible: hovered
             ToolTip.delay: 500
         }
@@ -85,7 +85,7 @@ Rectangle {
             Layout.column: 0
             text: "Dump PhotoModel"
             visible: bottomRect.useDebug
-            ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
+            ToolTip.text: qsTr("DEBUG: display one line of the model in the console")
             ToolTip.visible: hovered
             ToolTip.delay: 500
             Layout.leftMargin: 20
@@ -97,7 +97,7 @@ Rectangle {
             Layout.column: 1
             text: "Dump SuggModel"
             visible: bottomRect.useDebug
-            ToolTip.text: qsTr("DEBUG: Affiche une ligne du modèle dans la console")
+            ToolTip.text: qsTr("DEBUG: display one line of the model in the console")
             ToolTip.visible: hovered
             ToolTip.delay: 500
             Layout.leftMargin: 20
