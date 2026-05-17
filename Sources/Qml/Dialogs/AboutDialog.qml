@@ -7,9 +7,9 @@ import QtQuick.Dialogs
  * ***********************************************************************************************************/
 MessageDialog {
     readonly property string version: "1.4"
-    readonly property string t0: qsTr("<b>TiPhotoLocator</b> permet de placer vos photos sur la carte géographique du monde, ainsi que d'éditer les tags EXIF et IPTC internes aux photos.<br/>")
-    readonly property string t1: qsTr("<br/><br/>Programme réalisé par David de Lorenzo.")
-    readonly property string t_details: qsTr("TiPhotoLocator est gratuit et sans publicité.")
+    readonly property string t0: qsTr("<b>TiPhotoLocator</b> allows you to locate your photos on the world map, and edit the EXIF and IPTC tags embedded inside the photos.<br/>")
+    readonly property string t1: qsTr("<br/><br/>This application was created by David de Lorenzo.")
+    readonly property string t_details: qsTr("TiPhotoLocator is free and without ads.")
 
     // -------------------------------------------------
     // Propriétés de MessageDialog

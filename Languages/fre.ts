@@ -4,18 +4,30 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="10"/>
         <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; permet de placer vos photos sur la carte géographique du monde, ainsi que d&apos;éditer les tags EXIF et IPTC internes aux photos.&lt;br/&gt;</source>
+        <translation type="vanished">&lt;b&gt;TiPhotoLocator&lt;/b&gt; permet de placer vos photos sur la carte géographique du monde, ainsi que d&apos;éditer les tags EXIF et IPTC internes aux photos.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;br/&gt;&lt;br/&gt;Programme réalisé par David de Lorenzo.</source>
+        <translation type="vanished">&lt;br/&gt;&lt;br/&gt;Programme réalisé par David de Lorenzo.</translation>
+    </message>
+    <message>
+        <source>TiPhotoLocator est gratuit et sans publicité.</source>
+        <translation type="vanished">TiPhotoLocator est gratuit et sans publicité.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="10"/>
+        <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; allows you to locate your photos on the world map, and edit the EXIF and IPTC tags embedded inside the photos.&lt;br/&gt;</source>
         <translation>&lt;b&gt;TiPhotoLocator&lt;/b&gt; permet de placer vos photos sur la carte géographique du monde, ainsi que d&apos;éditer les tags EXIF et IPTC internes aux photos.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="11"/>
-        <source>&lt;br/&gt;&lt;br/&gt;Programme réalisé par David de Lorenzo.</source>
+        <source>&lt;br/&gt;&lt;br/&gt;This application was created by David de Lorenzo.</source>
         <translation>&lt;br/&gt;&lt;br/&gt;Programme réalisé par David de Lorenzo.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="12"/>
-        <source>TiPhotoLocator est gratuit et sans publicité.</source>
+        <source>TiPhotoLocator is free and without ads.</source>
         <translation>TiPhotoLocator est gratuit et sans publicité.</translation>
     </message>
 </context>
@@ -543,13 +555,17 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
-        <source>apply the stored position to the current photo</source>
+        <source>Apply the stored position to the current photo</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>apply the stored position to the current photo</source>
+        <translation type="vanished">Applique la position mémorisée à la photo courante</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="117"/>
         <source>Reload the initial GPS coordinates of the photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Recharge les coordonnées initiales de l&apos;image</translation>
     </message>
     <message>
         <source>apply the stored position tothe current photo</source>
@@ -593,7 +609,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="28"/>
         <source>Rescan all EXIF tags of the folder photos</source>
-        <translation type="unfinished"></translation>
+        <translation>Rescanne les tags EXIF des photos du répertoire</translation>
     </message>
     <message>
         <source>Rescanne les tags EXIF des photos du répertoire</source>
@@ -881,7 +897,7 @@ Limité à 100 requètes par jour.</source>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="39"/>
         <source>More tags...</source>
-        <translation type="unfinished"></translation>
+        <translation>Autres tags...</translation>
     </message>
     <message>
         <source>Autres tags...</source>

@@ -72,7 +72,7 @@ Item {
         enabled: false
         text: qsTr("Apply Saved Position")
         icon.source: "qrc:/Images/bt-apply.png"
-        ToolTip.text: qsTr("apply the stored position to the current photo")
+        ToolTip.text: qsTr("Apply the stored position to the current photo")
         ToolTip.visible: hovered
         ToolTip.delay: 500
         anchors {

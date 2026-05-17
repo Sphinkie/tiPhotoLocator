@@ -30,7 +30,7 @@ Item {
     Layout.topMargin: 10 ///< marge haut (outside the item)
     Layout.leftMargin: 20 ///< marge gauche (outside the item)
     implicitHeight: 32 ///< Hauteur préférée si height n'est pas spécifiée.
-    implicitWidth: 240 ///< Largeur préférée si width n'est pas spécifiée.
+    implicitWidth: 280 ///< Largeur préférée si width n'est pas spécifiée.
 
 
     /** ************************************************************************************
@@ -111,7 +111,7 @@ Item {
         Label {
             id: chipTarget
             anchors.left: parent.left // Pas de bouton quand on affiche la target
-            anchors.leftMargin: (editable || canSave || deletable) ? 36 : 12
+            anchors.leftMargin: (editable || canSave) ? 36 : 12
             anchors.verticalCenter: parent.verticalCenter
             text: targetName
             font.pixelSize: 12

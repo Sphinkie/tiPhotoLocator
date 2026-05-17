@@ -5,18 +5,18 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="10"/>
-        <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; permet de placer vos photos sur la carte géographique du monde, ainsi que d&apos;éditer les tags EXIF et IPTC internes aux photos.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; allows you to locate your photos on the world map, and edit the EXIF and IPTC tags embedded inside the photos.&lt;br/&gt;</source>
+        <translation>&lt;b&gt;TiPhotoLocator&lt;/b&gt; allows you to locate your photos on the world map, and edit the EXIF and IPTC tags embedded inside the photos.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="11"/>
-        <source>&lt;br/&gt;&lt;br/&gt;Programme réalisé par David de Lorenzo.</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;br/&gt;&lt;br/&gt;This application was created by David de Lorenzo.</source>
+        <translation>&lt;br/&gt;&lt;br/&gt;This application was created by David de Lorenzo.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="12"/>
-        <source>TiPhotoLocator est gratuit et sans publicité.</source>
-        <translation type="unfinished"></translation>
+        <source>TiPhotoLocator is free and without ads.</source>
+        <translation>TiPhotoLocator is free and without ads.</translation>
     </message>
 </context>
 <context>
@@ -486,6 +486,11 @@
         <translation>Store the position of the current photo</translation>
     </message>
     <message>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
+        <source>Apply the stored position to the current photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>apply the stored position tothe current photo</source>
         <translation type="vanished">Apply the stored position to the current photo</translation>
     </message>
@@ -500,9 +505,8 @@
         <translation>Apply Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
         <source>apply the stored position to the current photo</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">apply the stored position to the current photo</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="110"/>
@@ -512,7 +516,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="117"/>
         <source>Reload the initial GPS coordinates of the photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Reload the initial GPS coordinates of the photo</translation>
     </message>
 </context>
 <context>
@@ -525,7 +529,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="28"/>
         <source>Rescan all EXIF tags of the folder photos</source>
-        <translation type="unfinished"></translation>
+        <translation>Rescan all EXIF tags of the folder photos</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="44"/>
@@ -729,7 +733,7 @@ Limité à 100 requètes par jour.</source>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="39"/>
         <source>More tags...</source>
-        <translation type="unfinished"></translation>
+        <translation>More tags...</translation>
     </message>
 </context>
 <context>
