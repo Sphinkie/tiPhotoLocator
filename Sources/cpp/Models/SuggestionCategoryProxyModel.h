@@ -27,6 +27,9 @@ public slots:
 signals:
     void filterEnabledChanged();  //!< Signal émis quand l'état du filtrage change.
 
+protected:
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
+
 private:
     QString m_filter = "";        //!< Chaine de caractères contenant le filtre.
 };

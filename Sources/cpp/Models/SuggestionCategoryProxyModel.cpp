@@ -15,6 +15,7 @@ SuggestionCategoryProxyModel::SuggestionCategoryProxyModel(QObject *parent) : QS
 {
     this->setFilterRole(SuggestionModel::CategoryRole);
     this->setFilterValue();
+    this->sort(0, Qt::AscendingOrder);
 }
 
 /** **********************************************************************************************************
@@ -67,6 +68,14 @@ void SuggestionCategoryProxyModel::setFilterValue(QString filter)
  * @note On convertit l'indice du ProxyModel dans l'index du sourceModel SuggestionProxyModel.
  * @param proxyRow : Indice dans le ProxyModel de la Suggestion à modifier.
  * ***********************************************************************************************************/
+bool SuggestionCategoryProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    QString leftTarget  = sourceModel()->data(left,  SuggestionModel::TargetRole).toString();
+    QString rightTarget = sourceModel()->data(right, SuggestionModel::TargetRole).toString();
+    return leftTarget < rightTarget;
+}
+
+
 void SuggestionCategoryProxyModel::removePhotoFromSuggestion(const int proxyRow)
 {
     if (proxyRow<0) return;
