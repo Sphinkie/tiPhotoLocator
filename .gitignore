@@ -8,3 +8,4 @@ CMakeLists.txt.user
 /installeur/packages/microsoft.vcredist/data/*
 /installeur/*.exe
 /installeur/*.zip
+/.claude
