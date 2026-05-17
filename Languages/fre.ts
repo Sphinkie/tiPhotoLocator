@@ -543,8 +543,17 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
+        <source>apply the stored position to the current photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="117"/>
+        <source>Reload the initial GPS coordinates of the photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>apply the stored position tothe current photo</source>
-        <translation>Applique la position mémorisée à la photo courante</translation>
+        <translation type="vanished">Applique la position mémorisée à la photo courante</translation>
     </message>
     <message>
         <source>Mémorise la position de la photo courante</source>
@@ -570,9 +579,8 @@
         <translation>Restaurer</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="117"/>
         <source>Recharge les coordonnées initiales de l&apos;image</source>
-        <translation>Recharge les coordonnées initiales de l&apos;image</translation>
+        <translation type="vanished">Recharge les coordonnées initiales de l&apos;image</translation>
     </message>
 </context>
 <context>
@@ -584,11 +592,15 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="28"/>
-        <source>Rescanne les tags EXIF des photos du répertoire</source>
-        <translation>Rescanne les tags EXIF des photos du répertoire</translation>
+        <source>Rescan all EXIF tags of the folder photos</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="45"/>
+        <source>Rescanne les tags EXIF des photos du répertoire</source>
+        <translation type="vanished">Rescanne les tags EXIF des photos du répertoire</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="44"/>
         <source>Folder:</source>
         <translation>Répertoire:</translation>
     </message>
@@ -868,8 +880,12 @@ Limité à 100 requètes par jour.</source>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="39"/>
+        <source>More tags...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Autres tags...</source>
-        <translation>Autres tags...</translation>
+        <translation type="vanished">Autres tags...</translation>
     </message>
 </context>
 <context>

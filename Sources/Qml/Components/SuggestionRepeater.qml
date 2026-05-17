@@ -46,7 +46,11 @@ Repeater {
 
 
             /** ************************************************************************************************
-             * Gestion du clic sur le Chip.
+             * Gestion du clic sur le Chip: On affecte le texte de la suggestion à la target.
+             * Rappel: -4 = applique la suggestion à toutes les photos sélectionnées
+             *         -2 = applique la suggestion à la photo courante
+             *         -3 = applique la suggestion à toutes les photos du cercle
+             *      currentPhoto.row = applique la suggestion à la photo 'row'
              * *************************************************************************************************/
             MouseArea {
                 anchors.fill: parent
@@ -55,17 +59,14 @@ Repeater {
                     // console.log("onglet:" + tabbedPage.currentIndex);
                     console.log("chipMouseArea:" + target + " for " + tabbedPage.currentPhoto.row)
 
-                    // Si onglet CARTE : on applique la suggestion à toutes les photos sélectionnées (-4)
+                    // Si onglet CARTE : on applique la suggestion à toutes les photos sélectionnées
                     if (tabbedPage.currentIndex === 1) {
                         window.setPhotoProperty(-4, text, target)
-                        // window.setPhotoProperty(-2, text, target)// -2: photo courante
-                        // window.setPhotoProperty(-3, text,target) // -3: photos du cercle
                     }
 
                     // Si onglet TAG : on applique la suggestion aux photos sélectionnées (-4)
                     if (tabbedPage.currentIndex === 2)
                         window.setPhotoProperty(-4, text, target)
-                    // window.setPhotoProperty(tabbedPage.currentPhoto.row, text, target)
 
                     // On enlève le Chip de la zone Suggestions. (Attn: c'est l'index dans le proxyModel).
                     window.removePhotoFromSuggestion(index)

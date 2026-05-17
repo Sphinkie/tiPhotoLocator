@@ -563,6 +563,13 @@ void PhotoModel::setData(const QVariantMap &value_list)
         m_photos[row].creator       = value_list["Creator"].toStringList().value(0);
     else
         m_photos[row].creator       = value_list["Artist"].toStringList().value(0);
+    // On alimente le SuggestionModel avec toutes les valeurs rencontrées dans les EXIF/IPTC.
+    // SuggestionModel::append() déduplique automatiquement sur (text + target).
+    emit sendSuggestion(m_photos[row].city,     "city",     "tag", -1);
+    emit sendSuggestion(m_photos[row].country,  "country",  "tag", -1);
+    emit sendSuggestion(m_photos[row].location, "location", "tag", -1);
+    for (const QString &kw : m_photos[row].keywords)
+        emit sendSuggestion(kw, "keywords", "tag", -1);
     // Envoi du signal dataChanged()
     QModelIndex photo_index = this->index(row, 0);
     emit dataChanged(photo_index, photo_index);
@@ -1190,6 +1197,7 @@ void PhotoModel::updatePhotoKeyword(QString keyword, int index)
     m_photos[m_lastCurrentRow].toBeSaved = true;
     QModelIndex idx = this->index(m_lastCurrentRow, 0);
     emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
+    emit sendSuggestion(keyword, "keywords", "tag", -1);
 }
 
 

@@ -486,9 +486,8 @@
         <translation>Store the position of the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
         <source>apply the stored position tothe current photo</source>
-        <translation>Apply the stored position to the current photo</translation>
+        <translation type="vanished">Apply the stored position to the current photo</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="61"/>
@@ -501,13 +500,18 @@
         <translation>Apply Saved Position</translation>
     </message>
     <message>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
+        <source>apply the stored position to the current photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="110"/>
         <source>Restore</source>
         <translation>Restore</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="117"/>
-        <source>Recharge les coordonnées initiales de l&apos;image</source>
+        <source>Reload the initial GPS coordinates of the photo</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -520,11 +524,11 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="28"/>
-        <source>Rescanne les tags EXIF des photos du répertoire</source>
+        <source>Rescan all EXIF tags of the folder photos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="45"/>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="44"/>
         <source>Folder:</source>
         <translation>Folder:</translation>
     </message>
@@ -724,7 +728,7 @@ Limité à 100 requètes par jour.</source>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="39"/>
-        <source>Autres tags...</source>
+        <source>More tags...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

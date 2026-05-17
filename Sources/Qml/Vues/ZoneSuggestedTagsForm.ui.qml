@@ -28,7 +28,7 @@ Zone {
             spacing: 12
             padding: 20
 
-            /// Le repeter affiche chacune des Suggestions (de catégorie "tag") du Model.
+            /// Le repeater affiche chacune des Suggestions (de catégorie "tag") du Model.
             SuggestionRepeater {
                 id: suggestionRepeater
             }
@@ -36,7 +36,7 @@ Zone {
             /// En dernière position, on prévoit un bouton qui pourrait faire appel à une IA.
             Button {
                 id: bt_getinfo
-                text: qsTr("Autres tags...")
+                text: qsTr("More tags...")
                 icon.source: "qrc:/Images/icon-suggestion.png"
                 visible: false
             }
