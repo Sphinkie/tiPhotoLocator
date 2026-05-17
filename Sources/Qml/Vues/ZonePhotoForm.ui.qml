@@ -52,7 +52,7 @@ Item {
                 id: chipDescription
                 editable: true
                 deletable: true
-                targetName: "description:"
+                targetName: qsTr("content description:")
             }
             Chips {
                 id: chipWriter

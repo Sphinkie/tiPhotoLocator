@@ -125,23 +125,39 @@
 <context>
     <name>FilterBar</name>
     <message>
-        <location filename="../Sources/Qml/Components/FilterBar.qml" line="9"/>
         <source>sans date</source>
+        <translation type="vanished">sans date</translation>
+    </message>
+    <message>
+        <source>Select les photos sans date</source>
+        <translation type="vanished">Sélectionne les photos sans date</translation>
+    </message>
+    <message>
+        <source>sans localisation</source>
+        <translation type="vanished">sans localisation</translation>
+    </message>
+    <message>
+        <source>Select les photos sans localisation</source>
+        <translation type="vanished">Sélectionne les photos sans localisation</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/FilterBar.qml" line="9"/>
+        <source>undated</source>
         <translation>sans date</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="10"/>
-        <source>Select les photos sans date</source>
+        <source>Select all photos without a date</source>
         <translation>Sélectionne les photos sans date</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="24"/>
-        <source>sans localisation</source>
+        <source>unlocalized</source>
         <translation>sans localisation</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="25"/>
-        <source>Select les photos sans localisation</source>
+        <source>Select all photos without location</source>
         <translation>Sélectionne les photos sans localisation</translation>
     </message>
     <message>
@@ -402,34 +418,44 @@
         <translation type="vanished">paysage</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="40"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="38"/>
+        <source>who ? where ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="41"/>
         <source>landscape</source>
         <translation>paysage</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="41"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="42"/>
         <source>trekking</source>
         <translation>randonnée</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="42"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="43"/>
         <source>nature</source>
         <translation>nature</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="43"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="44"/>
         <source>animal</source>
         <translation>animal</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="44"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="45"/>
         <source>urbanism</source>
         <translation>urbanisme</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="45"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="46"/>
         <source>holyday</source>
         <translation>vacances</translation>
+    </message>
+    <message>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="40"/>
+        <source>nudity</source>
+        <translation>nu</translation>
     </message>
     <message>
         <source>urbanisme</source>
@@ -556,7 +582,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
         <source>Apply the stored position to the current photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Applique la position mémorisée à la photo courante</translation>
     </message>
     <message>
         <source>apply the stored position to the current photo</source>
@@ -826,6 +852,11 @@
         <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="18"/>
         <source>Photo related tags</source>
         <translation>Tags relatifs à la photo</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="55"/>
+        <source>content description:</source>
+        <translation>Description du contenu:</translation>
     </message>
 </context>
 <context>

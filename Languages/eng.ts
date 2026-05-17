@@ -114,22 +114,22 @@
     <name>FilterBar</name>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="9"/>
-        <source>sans date</source>
+        <source>undated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="10"/>
-        <source>Select les photos sans date</source>
+        <source>Select all photos without a date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="24"/>
-        <source>sans localisation</source>
+        <source>unlocalized</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="25"/>
-        <source>Select les photos sans localisation</source>
+        <source>Select all photos without location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -353,37 +353,47 @@
 <context>
     <name>SuggestionModel</name>
     <message>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="38"/>
+        <source>who ? where ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="39"/>
         <source>portrait</source>
         <translation>portrait</translation>
     </message>
     <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="40"/>
+        <source>nudity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="41"/>
         <source>landscape</source>
         <translation>landscape</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="41"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="42"/>
         <source>trekking</source>
         <translation>trekking</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="42"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="43"/>
         <source>nature</source>
         <translation>nature</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="43"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="44"/>
         <source>animal</source>
         <translation>animal</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="44"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="45"/>
         <source>urbanism</source>
         <translation>urbanism</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="45"/>
+        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="46"/>
         <source>holyday</source>
         <translation>holyday</translation>
     </message>
@@ -488,7 +498,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
         <source>Apply the stored position to the current photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Apply the stored position to the current photo</translation>
     </message>
     <message>
         <source>apply the stored position tothe current photo</source>
@@ -666,6 +676,11 @@
         <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="18"/>
         <source>Photo related tags</source>
         <translation>Photo related tags</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="55"/>
+        <source>content description:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

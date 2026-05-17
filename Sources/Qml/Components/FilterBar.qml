@@ -6,8 +6,8 @@ RowLayout {
 
     CheckBox {
         id: checkBox1
-        text: qsTr("sans date")
-        ToolTip.text: qsTr("Select les photos sans date")
+        text: qsTr("undated")
+        ToolTip.text: qsTr("Select all photos without a date")
         ToolTip.visible: hovered
         ToolTip.delay: 500
         checked: false
@@ -21,8 +21,8 @@ RowLayout {
 
     CheckBox {
         id: checkBox2
-        text: qsTr("sans localisation")
-        ToolTip.text: qsTr("Select les photos sans localisation")
+        text: qsTr("unlocalized")
+        ToolTip.text: qsTr("Select all photos without location")
         ToolTip.visible: hovered
         ToolTip.delay: 500
         checked: false

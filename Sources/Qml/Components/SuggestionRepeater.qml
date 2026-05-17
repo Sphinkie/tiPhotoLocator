@@ -55,9 +55,14 @@ Repeater {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    // On affecte le texte de la suggestion à la target
+                    // On affecte le texte de la suggestion à la target de la (ou des) photo(s).
                     // console.log("onglet:" + tabbedPage.currentIndex);
                     console.log("chipMouseArea:" + target + " for " + tabbedPage.currentPhoto.row)
+
+                    // Cas particulier: si c'est le tag 'description': on efface le texte qui est en fait un hint.
+                    if (target === "description") {
+                        text = " "
+                    }
 
                     // Si onglet CARTE : on applique la suggestion à toutes les photos sélectionnées
                     if (tabbedPage.currentIndex === 1) {

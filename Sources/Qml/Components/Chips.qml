@@ -26,6 +26,7 @@ Item {
     property alias deleteArea: deleteArea ///< type:MouseArea Zone cliquable du mini-bouton Delete.
     /// Pour le controle inviduel des items
     property alias chipText: chipText
+    property bool hideTargetWhenFilled: false ///< type:bool Si true, le targetName disparait dès que content est renseigné (pour FatChip).
     // Les différents Chips doivent être dans un ColumLayout. On peut ainsi les aligner tous de la même façon.
     Layout.topMargin: 10 ///< marge haut (outside the item)
     Layout.leftMargin: 20 ///< marge gauche (outside the item)
@@ -113,6 +114,8 @@ Item {
             anchors.left: parent.left // Pas de bouton quand on affiche la target
             anchors.leftMargin: (editable || canSave) ? 36 : 12
             anchors.verticalCenter: parent.verticalCenter
+            visible: !(hideTargetWhenFilled && content.trim() !== "")
+            width: (hideTargetWhenFilled && content.trim() !== "") ? 0 : implicitWidth
             text: targetName
             font.pixelSize: 12
             // Positionnement du texte

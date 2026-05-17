@@ -35,14 +35,15 @@ void SuggestionModel::createInitialSuggestions()
     this->append(homeCountry, "country", "tag", -1);
     this->append(homeCity, "city", "tag", -1);
     this->append(" ", "location", "tag", -1);
-    this->append(" ", "description", "tag", -1);
-    this->append(tr("portrait"),  "keywords", "tag", -1);
-    this->append(tr("landscape"), "keywords", "tag", -1);
-    this->append(tr("trekking"),  "keywords", "tag", -1);
-    this->append(tr("nature"),    "keywords", "tag", -1);
-    this->append(tr("animal"),    "keywords", "tag", -1);
-    this->append(tr("urbanism"),  "keywords", "tag", -1);
-    this->append(tr("holyday"),   "keywords", "tag", -1);
+    this->append(tr("who ? where ?"), "description", "tag", -1);
+    this->append(tr("portrait"),      "keywords", "tag", -1);
+    this->append(tr("nudity"),        "keywords", "tag", -1);
+    this->append(tr("landscape"),     "keywords", "tag", -1);
+    this->append(tr("trekking"),      "keywords", "tag", -1);
+    this->append(tr("nature"),        "keywords", "tag", -1);
+    this->append(tr("animal"),        "keywords", "tag", -1);
+    this->append(tr("urbanism"),      "keywords", "tag", -1);
+    this->append(tr("holyday"),       "keywords", "tag", -1);
 }
 
 
