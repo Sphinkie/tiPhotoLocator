@@ -8,14 +8,7 @@ import "../Controllers"
  * *************************************************************************************/
 ColumnLayout {
 
-
-    /*    /// Tableau des tags EXIF
-    ZoneExif {
-        Layout.fillWidth: true
-        Layout.fillHeight: true
-    }
-*/
-    /// Tableau des tags IPTC
+    /// Tableau des tags pouvant être appliqués globalement
     ZoneIptc {
         Layout.fillWidth: true
         Layout.fillHeight: true

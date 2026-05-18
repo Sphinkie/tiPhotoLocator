@@ -8,6 +8,7 @@ import "../Components"
  * @brief Vue de l'onglet avec les tags pouvant être appliquées à toutes les photos du dossier.
  * *************************************************************************************************/
 Zone {
+    // Boutons "Apply to All"
     property alias bt_applyDescription: bt_applyDescription
     property alias bt_applyLocation: bt_applyLocation
     property alias bt_applyCreator: bt_applyCreator
@@ -15,25 +16,30 @@ Zone {
     property alias bt_applyCity: bt_applyCity
     property alias bt_applyDateTime: bt_applyDateTime
     property var photoKeywords: []
+    // Latches pour mémoriser si le bouton a été cliqué
     property var appliedKeywords: []
     property string dateTimeFormatted: ""
-    property bool creatorApplied:     false
-    property bool countryApplied:     false
-    property bool cityApplied:        false
-    property bool locationApplied:    false
+    property bool creatorApplied: false
+    property bool countryApplied: false
+    property bool cityApplied: false
+    property bool locationApplied: false
     property bool descriptionApplied: false
-    property bool dateTimeApplied:    false
+    property bool dateTimeApplied: false
+    // Signal
     signal applyKeyword(string keyword)
 
     iconZone: "qrc:/Images/icon-tag.png"
-    txtZone: title + br + brief + br + usage + br + note + br
+    // iconZone: "qrc:/Images/icon-camera1" (icone alternative)
+    txtZone: title + br + brief + br + usage1 + br + note1 + br + usage2 + br + note2 + br
     color: Style.suggestionBackgroundColor
 
-    readonly property string title: "<b>IPTC tags</b> "
-    readonly property string brief: "<i>International Press Telecom Council</i>"
-    readonly property string usage: qsTr("IPTC tags mainly contain editorial information, usually manually filled:")
-    readonly property string note: qsTr("(image description, etc)")
-    readonly property string br: "<br/>"
+    readonly property string br: "<br>"
+    readonly property string title: "<b>EXIF and IPTC tags</b> "
+    readonly property string brief: "<i>EXchangeable Image Fileformat</i> & <i>International Press Telecom Council</i>"
+    readonly property string usage1: qsTr("IPTC tags mainly contain editorial information, usually manually filled:")
+    readonly property string note1: qsTr("(image description, etc)")
+    readonly property string usage2: qsTr("EXIF tags are defined at the moment of the shot.")
+    readonly property string note2: qsTr("They mainly contain technical information: camera model, lens...")
 
     /// Tableau des Chips avec leur description
     GridLayout {

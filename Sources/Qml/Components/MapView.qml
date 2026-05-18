@@ -214,7 +214,7 @@ Map {
         name: "osm"
         locales: ["fr_FR", "en_US"]
         readonly property string thunder_url: "https://tile.thunderforest.com/"
-        readonly property string thunder_type: "landscape"
+        readonly property string thunder_type: "outdoors"
 
 
         /** *******************************************************************************************************

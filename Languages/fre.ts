@@ -474,34 +474,6 @@
     </message>
 </context>
 <context>
-    <name>ZoneExifForm.ui</name>
-    <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="17"/>
-        <source>EXIF tags are defined at the moment of the shot.</source>
-        <translation>Les tags EXIF sont définis au moment de la prise de vue.</translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="18"/>
-        <source>They mainly contain technical information: camera model, lens...</source>
-        <translation>Ils contiennent principalement des informations techniques: modèle d&apos;appareil, objectif...</translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="57"/>
-        <source>GPS coordinates when the photo was taken.</source>
-        <translation>Coordonnées GPS au moment de la prise de vue.</translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="46"/>
-        <source>Photographer name</source>
-        <translation>Générer backups</translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="35"/>
-        <source>Camera Aperture and Speed of the shot</source>
-        <translation>Ouverture et Vitesse de prise de vue</translation>
-    </message>
-</context>
-<context>
     <name>ZoneGeolocForm.ui</name>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGeolocForm.ui.qml" line="20"/>
@@ -522,58 +494,68 @@
 <context>
     <name>ZoneIptcForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="34"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="39"/>
         <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
         <translation>Les tags IPTC contiennent principalement des informations éditoriales renseignées manuellement:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="35"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="40"/>
         <source>(image description, etc)</source>
         <translation>(description de l&apos;image, etc)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="52"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="69"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="85"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="101"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="117"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="133"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="156"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="41"/>
+        <source>EXIF tags are defined at the moment of the shot.</source>
+        <translation>Les tags EXIF sont définis au moment de la prise de vue.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="42"/>
+        <source>They mainly contain technical information: camera model, lens...</source>
+        <translation>Ils contiennent principalement des informations techniques: modèle d&apos;appareil, objectif...</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="58"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="75"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="91"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="107"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="123"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="139"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="162"/>
         <source>Apply to all</source>
         <translation>Appliquer à tous</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="57"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="63"/>
         <source>Photographer name.</source>
         <translation>Nom du photographe.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="73"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="79"/>
         <source>The country where the photo was taken.</source>
         <translation>Pays où a été pris la photo.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="89"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="95"/>
         <source>City where the photo was taken or nearest city.</source>
         <translation>Nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="121"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="127"/>
         <source>Date and time when the photo was taken.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jour et date de la prise de vue.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="138"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="144"/>
         <source>Photo content description: who, where, how, why? (in a few words).</source>
         <translation>Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="166"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="172"/>
         <source>A list of keywords, related to the photo and used for searches.</source>
         <translation>Une liste de mots-clefs relatifs à la photo, et utilisés pour les recherches.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="105"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="111"/>
         <source>Additionnal geographical information.</source>
         <translation>Information géographique additionnelle.</translation>
     </message>
@@ -611,7 +593,7 @@
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="19"/>
         <source>&lt;u&gt;Note:&lt;/u&gt; Modified data is saved into the photos only when you click the &lt;pre&gt;&apos;Save&apos;&lt;/pre&gt; button.</source>
-        <translation>&lt;u&gt;Note:&lt;/u&gt; Les données modifiées sont enregistrées dans les photos, uniquement lors du clic sur le bouton &lt;pre&gt;&apos;Enregistrer&apos;&lt;/pre&gt;.</translation>
+        <translation>&lt;u&gt;Note:&lt;/u&gt; Les données modifiées sont enregistrées dans les photos, uniquement lors du clic sur le bouton &lt;pre&gt;&apos;Enregistrer&apos;.&lt;/pre&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="24"/>
