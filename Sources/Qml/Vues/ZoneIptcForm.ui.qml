@@ -13,13 +13,16 @@ Zone {
     property alias bt_applyCreator: bt_applyCreator
     property alias bt_applyCountry: bt_applyCountry
     property alias bt_applyCity: bt_applyCity
+    property alias bt_applyDateTime: bt_applyDateTime
     property var photoKeywords: []
     property var appliedKeywords: []
-    property bool creatorApplied: false
-    property bool countryApplied: false
-    property bool cityApplied: false
-    property bool locationApplied: false
+    property string dateTimeFormatted: ""
+    property bool creatorApplied:     false
+    property bool countryApplied:     false
+    property bool cityApplied:        false
+    property bool locationApplied:    false
     property bool descriptionApplied: false
+    property bool dateTimeApplied:    false
     signal applyKeyword(string keyword)
 
     iconZone: "qrc:/Images/icon-tag.png"
@@ -100,6 +103,22 @@ Zone {
         }
         Label {
             text: qsTr("Additionnal geographical information.")
+        }
+
+        // -- --------------------------------------------------------
+        /// Tag "dateTimeOriginal"
+        // -- --------------------------------------------------------
+        Chips {
+            targetName: "date:"
+            content: dateTimeFormatted ? dateTimeFormatted : " "
+        }
+        Button {
+            id: bt_applyDateTime
+            text: qsTr("Apply to all")
+            enabled: !!dateTimeFormatted && !dateTimeApplied
+        }
+        Label {
+            text: qsTr("Date and time when the photo was taken.")
         }
 
         // -- --------------------------------------------------------

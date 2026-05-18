@@ -522,52 +522,58 @@
 <context>
     <name>ZoneIptcForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="31"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="34"/>
         <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
         <translation>IPTC tags mainly contain editorial information, usually manually filled:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="32"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="35"/>
         <source>(image description, etc)</source>
         <translation>(image description, etc)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="49"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="66"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="82"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="98"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="114"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="137"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="52"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="69"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="85"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="101"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="117"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="133"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="156"/>
         <source>Apply to all</source>
         <translation>Apply to all</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="54"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="57"/>
         <source>Photographer name.</source>
         <translation>Photographer name.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="70"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="73"/>
         <source>The country where the photo was taken.</source>
         <translation>The country where the photo was taken.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="86"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="89"/>
         <source>City where the photo was taken or nearest city.</source>
         <translation>The city where the photo was taken or the nearest city.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="119"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="121"/>
+        <source>Date and time when the photo was taken.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="138"/>
         <source>Photo content description: who, where, how, why? (in a few words).</source>
         <translation>Photo content description: who, where, how, why? (in a few words).</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="147"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="166"/>
         <source>A list of keywords, related to the photo and used for searches.</source>
         <translation>A list of keywords, related to the photo and used for searches.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="102"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="105"/>
         <source>Additionnal geographical information.</source>
         <translation>Additionnal geographical information.</translation>
     </message>

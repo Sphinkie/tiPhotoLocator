@@ -1,6 +1,7 @@
 import QtQuick
 import QtCore
 import "../Vues"
+import "../Javascript/TiUtilities.js" as Utilities
 
 
 /** *************************************************************************************
@@ -10,10 +11,15 @@ ZoneIptcForm {
     id: iptcZone
     property string creator
     property string writer
-    property string city: tabbedPage.currentPhoto.city
-    property string country: tabbedPage.currentPhoto.country
-    property string location: tabbedPage.currentPhoto.location
-    property string description: tabbedPage.currentPhoto.description
+    property string city:             tabbedPage.currentPhoto.city
+    property string country:          tabbedPage.currentPhoto.country
+    property string location:         tabbedPage.currentPhoto.location
+    property string description:      tabbedPage.currentPhoto.description
+    property string dateTimeOriginal: tabbedPage.currentPhoto.dateTimeOriginal
+
+    dateTimeFormatted: dateTimeOriginal
+                       ? Utilities.toReadableDate(dateTimeOriginal) + " " + Utilities.toReadableTime(dateTimeOriginal)
+                       : ""
 
     photoKeywords: tabbedPage.currentPhoto ? tabbedPage.currentPhoto.keywords : []
 
@@ -25,6 +31,7 @@ ZoneIptcForm {
         cityApplied        = false
         locationApplied    = false
         descriptionApplied = false
+        dateTimeApplied    = false
         appliedKeywords    = []
     }
 
@@ -46,6 +53,11 @@ ZoneIptcForm {
     bt_applyLocation.onClicked: {
         window.setPhotoProperty(-1, location, "location") // -1 = all
         locationApplied = true
+    }
+
+    bt_applyDateTime.onClicked: {
+        window.setPhotoProperty(-1, dateTimeOriginal, "dateTimeOriginal") // -1 = all
+        dateTimeApplied = true
     }
 
     bt_applyDescription.onClicked: {
