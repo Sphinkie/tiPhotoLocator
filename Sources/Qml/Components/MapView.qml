@@ -206,8 +206,17 @@ Map {
      * - 6 + outdoors : thunderforest outdoors
      * - 6 + landscape : thunderforest landscape
      * - 6 + cycle : thunderforest cycle
-
+     *
      * @note On définit les paramètres ainsi : PluginParameter{ name: "" ; value: ""}
+     *
+     * @note: Thunderforest fournit des tuiles raster — des images PNG pré-rendues côté serveur.
+     * Les noms de villes sont gravés dans l'image au moment du rendu, en utilisant le champ OSM name (langue locale).
+     * Il n'existe pas de paramètre d'URL pour choisir la langue.
+     * Le locales: ["fr_FR", "en_US"] dans Plugin n'affecte que les appels de géocodage, pas les tuiles.
+     *
+     * Pour controler la langue des labels plus précisement, il faudrait passer à un fournisseur de tuiles vectorielles (Mapbox, MapTiler, etc.)
+     * qui permet de choisir la langue du rendu (name:fr).
+     * Mais c'est un refactoring important — Qt Location supporte les tuiles vectorielles depuis Qt 6.5 via le plugin maplibre.
      * *******************************************************************************************************/
     Plugin {
         id: mapPlugin
