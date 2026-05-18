@@ -60,6 +60,30 @@ ListView {
 
 
     /** ******************************************************************************************************
+     * Navigation clavier dans la liste.
+     * *******************************************************************************************************/
+    Keys.onPressed: (event) => {
+        let target = currentIndex
+        if      (event.key === Qt.Key_Up)   target = Math.max(0, currentIndex - 1)
+        else if (event.key === Qt.Key_Down) target = Math.min(count - 1, currentIndex + 1)
+        else if (event.key === Qt.Key_Home) target = 0
+        else if (event.key === Qt.Key_End)  target = count - 1
+        else return
+
+        event.accepted = true
+        currentIndex = target
+        positionViewAtIndex(target, ListView.Contain)
+
+        // On lit les données directement dans le modèle (plus sûr que currentItem qui peut être null)
+        var sourceIdx = model.getSourceIndex(target)
+        var photo = _photoModel.get(sourceIdx)
+        if (photo && !photo.isMarker)
+            activatePhoto(target, photo.hasGPS, photo.city, photo.country,
+                          photo.latitude, photo.longitude)
+    }
+
+
+    /** ******************************************************************************************************
      * Le delegate pour afficher la ListModel dans la ListView.
      * *******************************************************************************************************/
     Component {
@@ -147,6 +171,7 @@ ListView {
                 acceptedButtons: Qt.LeftButton | Qt.RightButton
                 onClicked: mouse => {
                                if (mouse.button === Qt.LeftButton) {
+                                   __lv.forceActiveFocus()
                                    // Définit l'item courant de la ListView et positionne le highlight.
                                    __lv.currentIndex = index
                                    activatePhoto(index, hasGPS, city, country,

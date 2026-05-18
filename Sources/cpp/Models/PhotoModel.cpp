@@ -1264,7 +1264,6 @@ void PhotoModel::suggestFromPhoto(const int row)
     emit sendSuggestion(m_photos[row].city, "city", "tag", -2);
     emit sendSuggestion(m_photos[row].country, "country", "tag", -2);
     emit sendSuggestion(m_photos[row].location, "location", "tag", -2);
-    // TODO : Ajouter keywords et OriginalDateTime
 }
 
 /** **********************************************************************************************************
