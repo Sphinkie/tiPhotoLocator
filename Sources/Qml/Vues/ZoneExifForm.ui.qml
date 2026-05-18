@@ -54,7 +54,7 @@ Zone {
         }
         /// Label for GPS coordinates
         Label {
-            text: qsTr("Coordonnées GPS au moment de la prise de vue.")
+            text: qsTr("GPS coordinates when the photo was taken.")
         }
     }
 }

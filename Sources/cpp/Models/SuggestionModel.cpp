@@ -2,6 +2,8 @@
 #include <QDir>
 #include <QUrl>
 #include <QDate>
+#include <QFile>
+#include <QTextStream>
 #include <QRegularExpression>
 #include "SuggestionModel.h"
 #include "../utilities.h"
@@ -33,17 +35,31 @@ void SuggestionModel::createInitialSuggestions()
     this->append(photographe, "creator", "tag", -1);
     this->append(initiales,   "captionWriter", "tag", -1);
     this->append(homeCountry, "country", "tag", -1);
-    this->append(homeCity, "city", "tag", -1);
-    this->append(" ", "location", "tag", -1);
+    this->append(homeCity,    "city", "tag", -1);
+    this->append(" ",         "location", "tag", -1);
     this->append(tr("who ? where ?"), "description", "tag", -1);
-    this->append(tr("portrait"),      "keywords", "tag", -1);
-    this->append(tr("nudity"),        "keywords", "tag", -1);
-    this->append(tr("landscape"),     "keywords", "tag", -1);
-    this->append(tr("trekking"),      "keywords", "tag", -1);
-    this->append(tr("nature"),        "keywords", "tag", -1);
-    this->append(tr("animal"),        "keywords", "tag", -1);
-    this->append(tr("urbanism"),      "keywords", "tag", -1);
-    this->append(tr("holyday"),       "keywords", "tag", -1);
+    // Ajout des keywords définis dans les ressources.
+    int tagLanguage = settings.value("tagLanguage", 0).toInt();
+    this->loadKeywordsFromFile(tagLanguage == 0 ? "eng" : "fre");
+}
+
+
+/** **********************************************************************************************************
+ * @brief Charge les keywords prédéfinis depuis un fichier ressource selon la langue.
+ * @param lang : code de langue ("eng" ou "fre").
+ * ***********************************************************************************************************/
+void SuggestionModel::loadKeywordsFromFile(const QString &lang)
+{
+    QFile file(QString(":/Keywords/keywords.%1").arg(lang));
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine().trimmed();
+        if (!line.isEmpty())
+            this->append(line, "keywords", "tag", -1);
+    }
 }
 
 

@@ -58,6 +58,7 @@ private:
     void addPhotoToSuggestion(const int suggestion_row, int photo_row);
     void addCategoryToSuggestion(const int suggestion_row, const QString category);
     void createInitialSuggestions();
+    void loadKeywordsFromFile(const QString &lang);
 
     // -----------------------------------------------------
     // Membres

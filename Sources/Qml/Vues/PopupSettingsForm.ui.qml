@@ -164,7 +164,7 @@ Popup {
                         id: guiLanguages
                         Layout.fillWidth: true
                         height: 30
-                        model: ["français"]
+                        model: ["français", "english"]
                     }
                 }
                 /// Mode debug
@@ -191,7 +191,7 @@ Popup {
                         id: tagLanguages
                         Layout.fillWidth: true
                         height: 30
-                        model: ["english", sysLang + " (system)"]
+                        model: ["english", "french"]
                     }
                 }
                 /// Clef API pour les cartes
@@ -238,7 +238,7 @@ Popup {
         property alias mapApikey: textFieldMapApiKey.text
         property alias preserveExif: checkBoxExif.checked
         property alias debugModeEnabled: checkBoxDebug.checked
-        property alias tagLanguage: tagLanguages.currentIndex // 0: English, 1: Default
+        property alias tagLanguage: tagLanguages.currentIndex // 0: English, 1: French
         property alias guiLanguage: guiLanguages.currentIndex
     }
 }

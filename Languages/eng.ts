@@ -23,91 +23,91 @@
     <name>ApikeyDialog</name>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="10"/>
-        <source>Obtenir une API Key</source>
-        <translation type="unfinished"></translation>
+        <source>Get an API Key</source>
+        <translation>Get an API Key</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="12"/>
-        <source>Une clef API peut être obtenue auprès d&apos;un fournisseur de cartes (thunderforest, mapbox, esri...), de la façon suivante:&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:&lt;br/&gt;</source>
+        <translation>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="19"/>
-        <source>- Se connecter sur le site.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- Go to the website.&lt;br/&gt;</source>
+        <translation>- Go to the website.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="21"/>
-        <source>- Choisir le plan &lt;i&gt;Hobby Project&lt;/i&gt;.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
+        <translation>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="22"/>
-        <source>- Créer un compte.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- Create an account.&lt;br/&gt;</source>
+        <translation>- Create an account.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="23"/>
-        <source>- Se connecter avec le compte.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- Sign in with your account.&lt;br/&gt;</source>
+        <translation>- Sign in with your account.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="24"/>
-        <source>- Aller dans la page &lt;i&gt;Dashboard&lt;/i&gt;.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
+        <translation>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="25"/>
-        <source>- Copier l&apos;API Key.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- Copy the API Key.&lt;br/&gt;</source>
+        <translation>- Copy the API Key.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="26"/>
-        <source>- Coller dans le menu &apos;Configuration&apos;.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
+        <translation>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="27"/>
-        <source>- Relancer &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
+        <translation>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="28"/>
-        <source>Cette clef permet de ne plus avoir le watermark &apos;API Key Required&apos; sur les cartes.</source>
-        <translation type="unfinished"></translation>
+        <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
+        <translation>This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
     </message>
 </context>
 <context>
     <name>CreditsDialog</name>
     <message>
         <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="13"/>
-        <source>Je remercie les applications tierces qui ont aidé à la réalisation de ce programme:</source>
-        <translation type="unfinished"></translation>
+        <source>I would like to thank the third-party applications that helped build this program:</source>
+        <translation>I would like to thank the third-party applications that helped build this program:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="20"/>
-        <source>- le freeware &lt;a href=&apos;https://geosetter.de/en/main-en/&apos;&gt;GeoSetter&lt;/a&gt; pour l&apos;idée initiale.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- the freeware &lt;a href=&apos;https://geosetter.de/en/main-en/&apos;&gt;GeoSetter&lt;/a&gt; for the initial idea.&lt;br/&gt;</source>
+        <translation>- the freeware &lt;a href=&apos;https://geosetter.de/en/main-en/&apos;&gt;GeoSetter&lt;/a&gt; for the initial idea.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="21"/>
-        <source>- le freeware &lt;a href=&apos;https://exiftool.org/&apos;&gt;ExifTool&lt;/a&gt; pour la gestion des métadonnées EXIF.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- the freeware &lt;a href=&apos;https://exiftool.org/&apos;&gt;ExifTool&lt;/a&gt; for EXIF metadata management.&lt;br/&gt;</source>
+        <translation>- the freeware &lt;a href=&apos;https://exiftool.org/&apos;&gt;ExifTool&lt;/a&gt; for EXIF metadata management.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="22"/>
-        <source>- la &lt;a href=&apos;https://www.qt.io/&apos;&gt;Qt Company&lt;/a&gt; pour le framework Qt6 en C++ et QML.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- the &lt;a href=&apos;https://www.qt.io/&apos;&gt;Qt Company&lt;/a&gt; for the Qt6 C++ and QML framework.&lt;br/&gt;</source>
+        <translation>- the &lt;a href=&apos;https://www.qt.io/&apos;&gt;Qt Company&lt;/a&gt; for the Qt6 C++ and QML framework.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="23"/>
-        <source>- l&apos;organisation &lt;a href=&apos;https://www.openstreetmap.org&apos;&gt;OpenStreetMap&lt;/a&gt; pour les informations cartographiques.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- the &lt;a href=&apos;https://www.openstreetmap.org&apos;&gt;OpenStreetMap&lt;/a&gt; organisation for map data.&lt;br/&gt;</source>
+        <translation>- the &lt;a href=&apos;https://www.openstreetmap.org&apos;&gt;OpenStreetMap&lt;/a&gt; organisation for map data.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="24"/>
-        <source>- la société &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; pour la mise à disposition des cartes.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- the &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; company for providing the map tiles.&lt;br/&gt;</source>
+        <translation>- the &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; company for providing the map tiles.&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -115,22 +115,22 @@
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="9"/>
         <source>undated</source>
-        <translation type="unfinished"></translation>
+        <translation>undated</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="10"/>
         <source>Select all photos without a date</source>
-        <translation type="unfinished"></translation>
+        <translation>Select all photos without a date</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="24"/>
         <source>unlocalized</source>
-        <translation type="unfinished"></translation>
+        <translation>unlocalized</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="25"/>
         <source>Select all photos without location</source>
-        <translation type="unfinished"></translation>
+        <translation>Select all photos without location</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="39"/>
@@ -336,66 +336,54 @@
     <name>RescanWarning</name>
     <message>
         <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="10"/>
-        <source>Attention: les informations des images du répertoire vont être rechargées.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
+        <translation>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="11"/>
-        <source>Tous les changements non enregistrés vont être perdus.</source>
-        <translation type="unfinished"></translation>
+        <source>All unsaved changes will be lost.</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="13"/>
-        <source>Voulez-vous continuer?</source>
-        <translation type="unfinished"></translation>
+        <source>Do you want to continue?</source>
+        <translation>Do you want to continue?</translation>
     </message>
 </context>
 <context>
     <name>SuggestionModel</name>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="38"/>
-        <source>who ? where ?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="39"/>
-        <source>portrait</source>
-        <translation>portrait</translation>
-    </message>
-    <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="40"/>
-        <source>nudity</source>
-        <translation type="unfinished"></translation>
+        <source>who ? where ?</source>
+        <translation>Qui? Où?</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="41"/>
+        <source>portrait</source>
+        <translation type="vanished">portrait</translation>
+    </message>
+    <message>
         <source>landscape</source>
-        <translation>landscape</translation>
+        <translation type="vanished">landscape</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="42"/>
         <source>trekking</source>
-        <translation>trekking</translation>
+        <translation type="vanished">trekking</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="43"/>
         <source>nature</source>
-        <translation>nature</translation>
+        <translation type="vanished">nature</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="44"/>
         <source>animal</source>
-        <translation>animal</translation>
+        <translation type="vanished">animal</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="45"/>
         <source>urbanism</source>
-        <translation>urbanism</translation>
+        <translation type="vanished">urbanism</translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="46"/>
         <source>holyday</source>
-        <translation>holyday</translation>
+        <translation type="vanished">holyday</translation>
     </message>
 </context>
 <context>
@@ -587,8 +575,8 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="57"/>
-        <source>Coordonnées GPS au moment de la prise de vue.</source>
-        <translation type="unfinished"></translation>
+        <source>GPS coordinates when the photo was taken.</source>
+        <translation>GPS coordinates when the photo was taken.</translation>
     </message>
 </context>
 <context>
@@ -680,7 +668,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="55"/>
         <source>content description:</source>
-        <translation type="unfinished"></translation>
+        <translation>content description:</translation>
     </message>
 </context>
 <context>

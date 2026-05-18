@@ -62,6 +62,8 @@
         <file>Images/bt-filter.png</file>
         <file>Translations/eng.qm</file>
         <file>Translations/fre.qm</file>
+        <file>Keywords/keywords.eng</file>
+        <file>Keywords/keywords.fre</file>
         <file>Images/bt-find.png</file>
     </qresource>
 </RCC>
