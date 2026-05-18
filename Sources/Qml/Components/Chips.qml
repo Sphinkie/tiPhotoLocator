@@ -139,6 +139,7 @@ Item {
             text: content
             readOnly: true
             font.pixelSize: 14
+            font.bold: canSave
             // Positionnement du texte
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
