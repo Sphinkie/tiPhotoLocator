@@ -164,7 +164,13 @@ Popup {
                         id: guiLanguages
                         Layout.fillWidth: true
                         height: 30
-                        model: ["français", "english"]
+                        model: ["English", "Français"]
+                    }
+                    Text {
+                        color: Style.tertiaryForegroundColor
+                        text: qsTr("Reboot needed")
+                        font.pixelSize: 12
+                        style: Text.Normal
                     }
                 }
                 /// Mode debug
@@ -191,7 +197,13 @@ Popup {
                         id: tagLanguages
                         Layout.fillWidth: true
                         height: 30
-                        model: ["english", "french"]
+                        model: ["English", "Français"]
+                    }
+                    Text {
+                        color: Style.tertiaryForegroundColor
+                        text: qsTr("Reboot needed")
+                        font.pixelSize: 12
+                        style: Text.Normal
                     }
                 }
                 /// Clef API pour les cartes
@@ -239,6 +251,6 @@ Popup {
         property alias preserveExif: checkBoxExif.checked
         property alias debugModeEnabled: checkBoxDebug.checked
         property alias tagLanguage: tagLanguages.currentIndex // 0: English, 1: French
-        property alias guiLanguage: guiLanguages.currentIndex
+        property alias guiLanguage: guiLanguages.currentIndex // 0: English, 1: French
     }
 }

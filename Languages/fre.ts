@@ -4,18 +4,6 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; permet de placer vos photos sur la carte géographique du monde, ainsi que d&apos;éditer les tags EXIF et IPTC internes aux photos.&lt;br/&gt;</source>
-        <translation type="vanished">&lt;b&gt;TiPhotoLocator&lt;/b&gt; permet de placer vos photos sur la carte géographique du monde, ainsi que d&apos;éditer les tags EXIF et IPTC internes aux photos.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;br/&gt;&lt;br/&gt;Programme réalisé par David de Lorenzo.</source>
-        <translation type="vanished">&lt;br/&gt;&lt;br/&gt;Programme réalisé par David de Lorenzo.</translation>
-    </message>
-    <message>
-        <source>TiPhotoLocator est gratuit et sans publicité.</source>
-        <translation type="vanished">TiPhotoLocator est gratuit et sans publicité.</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="10"/>
         <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; allows you to locate your photos on the world map, and edit the EXIF and IPTC tags embedded inside the photos.&lt;br/&gt;</source>
         <translation>&lt;b&gt;TiPhotoLocator&lt;/b&gt; permet de placer vos photos sur la carte géographique du monde, ainsi que d&apos;éditer les tags EXIF et IPTC internes aux photos.&lt;br/&gt;</translation>
@@ -33,50 +21,6 @@
 </context>
 <context>
     <name>ApikeyDialog</name>
-    <message>
-        <source>Obtenir une API Key</source>
-        <translation type="vanished">Obtenir une API Key</translation>
-    </message>
-    <message>
-        <source>Une clef API peut être obtenue auprès d&apos;un fournisseur de cartes (thunderforest, mapbox, esri...), de la façon suivante:&lt;br/&gt;</source>
-        <translation type="vanished">Une clef API peut être obtenue auprès d&apos;un fournisseur de cartes (thunderforest, mapbox, esri...), de la façon suivante:&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Se connecter sur le site.&lt;br/&gt;</source>
-        <translation type="vanished">- Se connecter sur le site.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Choisir le plan &lt;i&gt;Hobby Project&lt;/i&gt;.&lt;br/&gt;</source>
-        <translation type="vanished">- Choisir le plan &lt;i&gt;Hobby Project&lt;/i&gt;.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Créer un compte.&lt;br/&gt;</source>
-        <translation type="vanished">- Créer un compte.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Se connecter avec le compte.&lt;br/&gt;</source>
-        <translation type="vanished">- Se connecter avec le compte.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Aller dans la page &lt;i&gt;Dashboard&lt;/i&gt;.&lt;br/&gt;</source>
-        <translation type="vanished">- Se connecter avec le compte.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Copier l&apos;API Key.&lt;br/&gt;</source>
-        <translation type="vanished">- Copier l&apos;API Key.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Coller dans le menu &apos;Configuration&apos;.&lt;br/&gt;</source>
-        <translation type="vanished">- Coller dans le menu &apos;Configuration&apos;.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Relancer &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
-        <translation type="vanished">- Relancer &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>Cette clef permet de ne plus avoir le watermark &apos;API Key Required&apos; sur les cartes.</source>
-        <translation type="vanished">Cette clef permet de ne plus avoir le watermark &apos;API Key Required&apos; sur les cartes.</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="10"/>
         <source>Get an API Key</source>
@@ -136,30 +80,6 @@
 <context>
     <name>CreditsDialog</name>
     <message>
-        <source>Je remercie les applications tierces qui ont aidé à la réalisation de ce programme:</source>
-        <translation type="vanished">Je remercie les applications tierces qui ont aidé à la réalisation de ce programme:</translation>
-    </message>
-    <message>
-        <source>- le freeware &lt;a href=&apos;https://geosetter.de/en/main-en/&apos;&gt;GeoSetter&lt;/a&gt; pour l&apos;idée initiale.&lt;br/&gt;</source>
-        <translation type="vanished">- le freeware &lt;a href=&apos;https://geosetter.de/en/main-en/&apos;&gt;GeoSetter&lt;/a&gt; pour l&apos;idée initiale.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- le freeware &lt;a href=&apos;https://exiftool.org/&apos;&gt;ExifTool&lt;/a&gt; pour la gestion des métadonnées EXIF.&lt;br/&gt;</source>
-        <translation type="vanished">- le freeware &lt;a href=&apos;https://exiftool.org/&apos;&gt;ExifTool&lt;/a&gt; pour la gestion des métadonnées EXIF.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- la &lt;a href=&apos;https://www.qt.io/&apos;&gt;Qt Company&lt;/a&gt; pour le framework Qt6 en C++ et QML.&lt;br/&gt;</source>
-        <translation type="vanished">- la &lt;a href=&apos;https://www.qt.io/&apos;&gt;Qt Company&lt;/a&gt; pour le framework Qt6 en C++ et QML.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- l&apos;organisation &lt;a href=&apos;https://www.openstreetmap.org&apos;&gt;OpenStreetMap&lt;/a&gt; pour les informations cartographiques.&lt;br/&gt;</source>
-        <translation type="vanished">- l&apos;organisation &lt;a href=&apos;https://www.openstreetmap.org&apos;&gt;OpenStreetMap&lt;/a&gt; pour les informations cartographiques.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- la société &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; pour la mise à disposition des cartes.&lt;br/&gt;</source>
-        <translation type="vanished">- la société &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; pour la mise à disposition des cartes.&lt;br/&gt;</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="13"/>
         <source>I would like to thank the third-party applications that helped build this program:</source>
         <translation>Je remercie les applications tierces qui ont aidé à la réalisation de ce programme:</translation>
@@ -192,22 +112,6 @@
 </context>
 <context>
     <name>FilterBar</name>
-    <message>
-        <source>sans date</source>
-        <translation type="vanished">sans date</translation>
-    </message>
-    <message>
-        <source>Select les photos sans date</source>
-        <translation type="vanished">Sélectionne les photos sans date</translation>
-    </message>
-    <message>
-        <source>sans localisation</source>
-        <translation type="vanished">sans localisation</translation>
-    </message>
-    <message>
-        <source>Select les photos sans localisation</source>
-        <translation type="vanished">Sélectionne les photos sans localisation</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Components/FilterBar.qml" line="9"/>
         <source>undated</source>
@@ -245,10 +149,6 @@
         <location filename="../Sources/Qml/Main.qml" line="164"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
-    </message>
-    <message>
-        <source>CARTE</source>
-        <translation type="vanished">CARTE</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Main.qml" line="169"/>
@@ -340,25 +240,9 @@
         <translation>Configuration</translation>
     </message>
     <message>
-        <source>Valeurs par défaut</source>
-        <translation type="vanished">Valeurs par défaut</translation>
-    </message>
-    <message>
-        <source>Nom du photographe:</source>
-        <translation type="vanished">Nom du photographe:</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="72"/>
         <source>Enter your name here</source>
         <translation>Entrez votre nom</translation>
-    </message>
-    <message>
-        <source>Initiales du rédacteur des descriptions:</source>
-        <translation type="vanished">Initiales du rédacteur des descriptions:</translation>
-    </message>
-    <message>
-        <source>initiales</source>
-        <translation type="vanished">Initiales</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="59"/>
@@ -374,10 +258,6 @@
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="84"/>
         <source>Description writer initials:</source>
         <translation>Initiales du rédacteur de la description:</translation>
-    </message>
-    <message>
-        <source>Initiales</source>
-        <translation type="vanished">Initiales</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="94"/>
@@ -405,26 +285,24 @@
         <translation>Votre ville la plus photographiée.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="174"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="180"/>
         <source>Do not change EXIF tags</source>
         <translation>Ne pas modifier les tags EXIF</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="187"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="193"/>
         <source>Tags and suggestions language:</source>
         <translation>Langue des tags et suggestions:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="200"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="212"/>
         <source>Map provider API key:</source>
         <translation>Clef API pour les cartes:</translation>
     </message>
     <message>
-        <source>Votre ville la plus photographiée</source>
-        <translation type="vanished">Votre ville la plus photographiée</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="152"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="171"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="204"/>
         <source>Reboot needed</source>
         <translation>Redémarrage nécessaire</translation>
     </message>
@@ -434,42 +312,18 @@
         <translation>Langue de l&apos;application:</translation>
     </message>
     <message>
-        <source>Ne pas modifier les tags EXIF</source>
-        <translation type="vanished">Ne pas modifier les tags EXIF</translation>
-    </message>
-    <message>
-        <source>Langue des tags et suggestions:</source>
-        <translation type="vanished">Langue des tags et suggestions:</translation>
-    </message>
-    <message>
-        <source>Clef API pour les cartes:</source>
-        <translation type="vanished">Clef API pour les cartes:</translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="207"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="219"/>
         <source>Thunderforest or OpenStreetMap</source>
         <translation>Thunderforest ou OpenStreetMap</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="220"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="232"/>
         <source>Close</source>
         <translation>Fermer</translation>
     </message>
 </context>
 <context>
     <name>RescanWarning</name>
-    <message>
-        <source>Attention: les informations des images du répertoire vont être rechargées.&lt;br/&gt;</source>
-        <translation type="vanished">Attention: les informations des images du répertoire vont être rechargées.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>Tous les changements non enregistrés vont être perdus.</source>
-        <translation type="vanished">Tous les changements non enregistrés vont être perdus.</translation>
-    </message>
-    <message>
-        <source>Voulez-vous continuer?</source>
-        <translation type="vanished">Voulez-vous continuer?</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="10"/>
         <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
@@ -489,53 +343,9 @@
 <context>
     <name>SuggestionModel</name>
     <message>
-        <source>portrait</source>
-        <translation type="vanished">portrait</translation>
-    </message>
-    <message>
-        <source>paysage</source>
-        <translation type="vanished">paysage</translation>
-    </message>
-    <message>
         <location filename="../Sources/cpp/Models/SuggestionModel.cpp" line="40"/>
         <source>who ? where ?</source>
         <translation>Qui? Où?</translation>
-    </message>
-    <message>
-        <source>landscape</source>
-        <translation type="vanished">paysage</translation>
-    </message>
-    <message>
-        <source>trekking</source>
-        <translation type="vanished">randonnée</translation>
-    </message>
-    <message>
-        <source>nature</source>
-        <translation type="vanished">nature</translation>
-    </message>
-    <message>
-        <source>animal</source>
-        <translation type="vanished">animal</translation>
-    </message>
-    <message>
-        <source>urbanism</source>
-        <translation type="vanished">urbanisme</translation>
-    </message>
-    <message>
-        <source>holyday</source>
-        <translation type="vanished">vacances</translation>
-    </message>
-    <message>
-        <source>nudity</source>
-        <translation type="vanished">nu</translation>
-    </message>
-    <message>
-        <source>urbanisme</source>
-        <translation type="vanished">urbanisme</translation>
-    </message>
-    <message>
-        <source>vacances</source>
-        <translation type="vanished">vacances</translation>
     </message>
 </context>
 <context>
@@ -548,22 +358,6 @@
 </context>
 <context>
     <name>ToolbarBottomForm.ui</name>
-    <message>
-        <source>%1 selected photos</source>
-        <translation type="vanished">%1 photos sélectionnées</translation>
-    </message>
-    <message>
-        <source>Générer backups</source>
-        <translation type="vanished">Générer backups</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n selected photos</source>
-        <comment>0</comment>
-        <translation type="vanished">
-            <numerusform>%n photo sélectionnée</numerusform>
-            <numerusform>%n photos sélectionnées</numerusform>
-        </translation>
-    </message>
     <message numerus="yes">
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="34"/>
         <source>%n selected photos / </source>
@@ -595,17 +389,9 @@
         <translation>DEBUG: Affiche une ligne du modèle dans la console</translation>
     </message>
     <message>
-        <source>Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)</source>
-        <translation type="vanished">Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="55"/>
         <source>Save</source>
         <translation>Enregistrer</translation>
-    </message>
-    <message>
-        <source>Enregistre les tags EXIF des photos modifiées</source>
-        <translation type="vanished">Enregistre les tags EXIF des photos modifiées</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="64"/>
@@ -616,22 +402,6 @@
         <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="65"/>
         <source>Quit application</source>
         <translation>Générer backups</translation>
-    </message>
-    <message>
-        <source>Quitte l&apos;application</source>
-        <translation type="vanished">Quitte l&apos;application</translation>
-    </message>
-    <message>
-        <source>Dump PhotoModel</source>
-        <translation type="vanished">Dump PhotoModel</translation>
-    </message>
-    <message>
-        <source>DEBUG: Affiche une ligne du modèle dans la console</source>
-        <translation type="vanished">DEBUG: Affiche une ligne du modèle dans la console</translation>
-    </message>
-    <message>
-        <source>Dump SuggModel</source>
-        <translation type="vanished">Dump SuggModel</translation>
     </message>
 </context>
 <context>
@@ -657,21 +427,9 @@
         <translation>Applique la position mémorisée à la photo courante</translation>
     </message>
     <message>
-        <source>apply the stored position to the current photo</source>
-        <translation type="vanished">Applique la position mémorisée à la photo courante</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="117"/>
         <source>Reload the initial GPS coordinates of the photo</source>
         <translation>Recharge les coordonnées initiales de l&apos;image</translation>
-    </message>
-    <message>
-        <source>apply the stored position tothe current photo</source>
-        <translation type="vanished">Applique la position mémorisée à la photo courante</translation>
-    </message>
-    <message>
-        <source>Mémorise la position de la photo courante</source>
-        <translation type="vanished">Mémorise la position de la photo courante</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="61"/>
@@ -684,17 +442,9 @@
         <translation>Applique Position</translation>
     </message>
     <message>
-        <source>Applique la position mémorisée à la photo courante</source>
-        <translation type="vanished">Applique la position mémorisée à la photo courante</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="110"/>
         <source>Restore</source>
         <translation>Restaurer</translation>
-    </message>
-    <message>
-        <source>Recharge les coordonnées initiales de l&apos;image</source>
-        <translation type="vanished">Recharge les coordonnées initiales de l&apos;image</translation>
     </message>
 </context>
 <context>
@@ -710,25 +460,13 @@
         <translation>Rescanne les tags EXIF des photos du répertoire</translation>
     </message>
     <message>
-        <source>Rescanne les tags EXIF des photos du répertoire</source>
-        <translation type="vanished">Rescanne les tags EXIF des photos du répertoire</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="44"/>
         <source>Folder:</source>
         <translation>Répertoire:</translation>
     </message>
-    <message>
-        <source>Répertoire:</source>
-        <translation type="vanished">Répertoire:</translation>
-    </message>
 </context>
 <context>
     <name>ZoneCameraForm.ui</name>
-    <message>
-        <source>Tags générés par l&apos;appareil photo&lt;br&gt;au moment de la prise de vue.</source>
-        <translation type="vanished">Tags générés par l&apos;appareil photo&lt;br&gt;au moment de la prise de vue.</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneCameraForm.ui.qml" line="20"/>
         <source>Tags generated by the camera&lt;br&gt;at the moment of the shot.</source>
@@ -737,14 +475,6 @@
 </context>
 <context>
     <name>ZoneExifForm.ui</name>
-    <message>
-        <source>Les tags EXIF sont définis au moment de la prise de vue.</source>
-        <translation type="vanished">Les tags EXIF sont définis au moment de la prise de vue.</translation>
-    </message>
-    <message>
-        <source>Ils contiennent principalement des informations techniques: modèle d&apos;appareil, objectif...</source>
-        <translation type="vanished">Ils contiennent principalement des informations techniques: modèle d&apos;appareil, objectif...</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="17"/>
         <source>EXIF tags are defined at the moment of the shot.</source>
@@ -761,46 +491,18 @@
         <translation>Coordonnées GPS au moment de la prise de vue.</translation>
     </message>
     <message>
-        <source>Camera Maker</source>
-        <translation type="vanished">Générer backups</translation>
-    </message>
-    <message>
-        <source>Camera model</source>
-        <translation type="vanished">Générer backups</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="46"/>
         <source>Photographer name</source>
         <translation>Générer backups</translation>
-    </message>
-    <message>
-        <source>Fabriquant de l&apos;appareil photo</source>
-        <translation type="vanished">Fabriquant de l&apos;appareil photo</translation>
-    </message>
-    <message>
-        <source>Modèle de l&apos;appareil photo</source>
-        <translation type="vanished">Modèle de l&apos;appareil photo</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneExifForm.ui.qml" line="35"/>
         <source>Camera Aperture and Speed of the shot</source>
         <translation>Ouverture et Vitesse de prise de vue</translation>
     </message>
-    <message>
-        <source>Nom du photographe</source>
-        <translation type="vanished">Nom du photographe</translation>
-    </message>
-    <message>
-        <source>Coordonnées GPS au moment de la prise de vue.</source>
-        <translation type="vanished">Coordonnées GPS au moment de la prise de vue.</translation>
-    </message>
 </context>
 <context>
     <name>ZoneGeolocForm.ui</name>
-    <message>
-        <source>Géolocalisation</source>
-        <translation type="vanished">Géolocalisation</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGeolocForm.ui.qml" line="20"/>
         <source>Geolocation</source>
@@ -816,33 +518,9 @@
         <source>Clear GPS photo coordinates (if some privacy is needed)</source>
         <translation>Efface les coordonnées GPS de la photo (si besoin de confidentialité)</translation>
     </message>
-    <message>
-        <source>Efface les coordonnées GPS de la photo (si besoin de confidentialité)</source>
-        <translation type="vanished">Efface les coordonnées GPS de la photo (si besoin de confidentialité)</translation>
-    </message>
 </context>
 <context>
     <name>ZoneIptcForm.ui</name>
-    <message>
-        <source>Les tags IPTC contiennent principalement des informations éditoriales renseignés manuellement</source>
-        <translation type="vanished">Les tags IPTC contiennent principalement des informations éditoriales renseignés manuellement</translation>
-    </message>
-    <message>
-        <source>(description de l&apos;image, etc)</source>
-        <translation type="vanished">(description de l&apos;image, etc)</translation>
-    </message>
-    <message>
-        <source>Appliquer à tous</source>
-        <translation type="vanished">Appliquer à tous</translation>
-    </message>
-    <message>
-        <source>Le nom du photographe.</source>
-        <translation type="vanished">Nom du photographe.</translation>
-    </message>
-    <message>
-        <source>Le pays où a été pris la photo.</source>
-        <translation type="vanished">Pays où a été pris la photo.</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="31"/>
         <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
@@ -889,41 +567,13 @@
         <translation>Une liste de mots-clefs relatifs à la photo, et utilisés pour les recherches.</translation>
     </message>
     <message>
-        <source>Photo content description: who, where, how, why? (in a few words)</source>
-        <translation type="vanished">Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
-    </message>
-    <message>
-        <source>A list of leywords, related to the photo and used for searches.</source>
-        <translation type="vanished">Une liste de mots-clefs relatifs à la photo, et utilisés pour les recherches.</translation>
-    </message>
-    <message>
-        <source>Le nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.</source>
-        <translation type="vanished">Nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="102"/>
         <source>Additionnal geographical information.</source>
         <translation>Information géographique additionnelle.</translation>
     </message>
-    <message>
-        <source>Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</source>
-        <translation type="vanished">Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
-    </message>
-    <message>
-        <source>Les initiales de la personne ayant rédigé la description.</source>
-        <translation type="vanished">Les initiales de la personne ayant rédigé la description.</translation>
-    </message>
-    <message>
-        <source>Une liste de mots clefs relatifs à la photo, et utilisés pour les recheches.</source>
-        <translation type="vanished">Une liste de mots clefs relatifs à la photo, et utilisés pour les recheches.</translation>
-    </message>
 </context>
 <context>
     <name>ZonePhotoForm.ui</name>
-    <message>
-        <source>Tags relatifs à la photo</source>
-        <translation type="vanished">Tags relatifs à la photo</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="18"/>
         <source>Photo related tags</source>
@@ -937,22 +587,6 @@
 </context>
 <context>
     <name>ZonePreview</name>
-    <message>
-        <source>Bienvenue !</source>
-        <translation type="vanished">Bienvenue !</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; vous aide à géolocaliser et tagger vos photos.</source>
-        <translation type="vanished">&lt;b&gt;TiPhotoLocator&lt;/b&gt; vous aide à géolocaliser et tagger vos photos.</translation>
-    </message>
-    <message>
-        <source>Pour commencer, ouvrez le répertoire contenant les photos avec le menu &lt;pre&gt;Dossiers → Ouvrir...&lt;/pre&gt;&lt;br&gt;Puis naviguez dans les onglets pour renseigner les différents tags.</source>
-        <translation type="vanished">Pour commencer, ouvrez le répertoire contenant les photos avec le menu &lt;pre&gt;Dossiers → Ouvrir...&lt;/pre&gt;&lt;br&gt;Puis naviguez dans les onglets pour renseigner les différents tags.</translation>
-    </message>
-    <message>
-        <source>&lt;u&gt;Note:&lt;/u&gt; Les données modifiées sont enregistrées dans les photos, uniquement lors du clic sur le bouton &lt;pre&gt;&apos;Enregistrer&apos;.&lt;/pre&gt;</source>
-        <translation type="vanished">&lt;u&gt;Note:&lt;/u&gt; Les données modifiées sont enregistrées dans les photos, uniquement lors du clic sur le bouton &lt;pre&gt;&apos;Enregistrer&apos;.&lt;/pre&gt;</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="16"/>
         <source>Welcome!</source>
@@ -990,11 +624,6 @@
 <context>
     <name>ZoneSuggestedLocationsForm.ui</name>
     <message>
-        <source>Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.
-Limité à 100 requètes par jour.</source>
-        <translation type="vanished">Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="16"/>
         <source>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.
 Limited to 100 requests per day.</source>
@@ -1010,14 +639,6 @@ Limited to 100 requests per day.</source>
         <source>Search geodata on Internet</source>
         <translation>Recherche de données géographiques sur Internet</translation>
     </message>
-    <message>
-        <source>Chercher</source>
-        <translation type="vanished">Chercher</translation>
-    </message>
-    <message>
-        <source>Recherche de données géographiques sur Internet</source>
-        <translation type="vanished">Recherche de données géographiques sur Internet</translation>
-    </message>
 </context>
 <context>
     <name>ZoneSuggestedTagsForm.ui</name>
@@ -1030,10 +651,6 @@ Limited to 100 requests per day.</source>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="39"/>
         <source>More tags...</source>
         <translation>Autres tags...</translation>
-    </message>
-    <message>
-        <source>Autres tags...</source>
-        <translation type="vanished">Autres tags...</translation>
     </message>
 </context>
 <context>

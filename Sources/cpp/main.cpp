@@ -43,11 +43,12 @@ int main(int argc, char *argv[])
 
 
     // ----------------------------------------------------------------------------
-    // On choisit une langue
+    // On choisit une langue pour le GUI de l'application
     // ----------------------------------------------------------------------------
+    QSettings settings;
     QTranslator traducteur;
     // Cas d'une ressource en paramètre
-    QString lang = "eng";
+    QString lang = (settings.value("guiLanguage", 0).toInt() == 1) ? "fre" : "eng";
     bool trad_ok = traducteur.load(lang, ":/Translations/");
     // Puis on applique la traduction  (avant de lancer le moteur QML)
     if (trad_ok) app.installTranslator(&traducteur);
@@ -113,7 +114,6 @@ int main(int argc, char *argv[])
     // ----------------------------------------------------------------------------
     // Au lancement, on initialise les HomeCoords sur Paris (sauf si existe déjà).
     // ----------------------------------------------------------------------------
-    QSettings settings;
     QVariant homeCoords = settings.value("homeCoords", QVariant());
     if (!homeCoords.isValid())
     {
