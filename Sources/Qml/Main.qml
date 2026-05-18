@@ -96,9 +96,7 @@ ApplicationWindow {
     PopupSettings {
         id: settingsPopup
     }
-    PopupMetadata {
-        id: metadataPopup
-    }
+
     // ----------------------------------------------------------------
     // Fenêtre de dialogue pour selectionner le dossier
     // ----------------------------------------------------------------
