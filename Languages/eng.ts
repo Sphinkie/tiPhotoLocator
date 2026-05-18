@@ -600,47 +600,47 @@
 <context>
     <name>ZoneIptcForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="25"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="31"/>
         <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
         <translation>IPTC tags mainly contain editorial information, usually manually filled:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="26"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="32"/>
         <source>(image description, etc)</source>
         <translation>(image description, etc)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="43"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="59"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="75"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="91"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="107"/>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="129"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="49"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="66"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="82"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="98"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="114"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="137"/>
         <source>Apply to all</source>
         <translation>Apply to all</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="47"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="54"/>
         <source>Photographer name.</source>
         <translation>Photographer name.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="63"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="70"/>
         <source>The country where the photo was taken.</source>
         <translation>The country where the photo was taken.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="79"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="86"/>
         <source>City where the photo was taken or nearest city.</source>
         <translation>The city where the photo was taken or the nearest city.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="111"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="119"/>
         <source>Photo content description: who, where, how, why? (in a few words).</source>
         <translation>Photo content description: who, where, how, why? (in a few words).</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="138"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="147"/>
         <source>A list of keywords, related to the photo and used for searches.</source>
         <translation>A list of keywords, related to the photo and used for searches.</translation>
     </message>
@@ -653,7 +653,7 @@
         <translation type="vanished">A list of keywords, related to the photo and used for searches.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="95"/>
+        <location filename="../Sources/Qml/Vues/ZoneIptcForm.ui.qml" line="102"/>
         <source>Additionnal geographical information.</source>
         <translation>Additionnal geographical information.</translation>
     </message>
@@ -711,9 +711,9 @@
     <name>ZoneSuggestedLocationsForm.ui</name>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="16"/>
-        <source>Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.
-Limité à 100 requètes par jour.</source>
-        <translation type="unfinished"></translation>
+        <source>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.
+Limited to 100 requests per day.</source>
+        <translation>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.&lt;br/&gt;Limited to 100 requests per day.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="23"/>
@@ -722,8 +722,8 @@ Limité à 100 requètes par jour.</source>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="28"/>
-        <source>Recherche de données géographiques sur Internet</source>
-        <translation type="unfinished"></translation>
+        <source>Search geodata on Internet</source>
+        <translation>Search geodata on Internet</translation>
     </message>
 </context>
 <context>

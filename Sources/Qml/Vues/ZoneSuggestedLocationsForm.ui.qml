@@ -13,11 +13,11 @@ Zone {
 
     color: Style.suggestionBackgroundColor
     iconZone: "qrc:/Images/icon-suggestion.png"
-    txtZone: qsTr("Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.")
+    txtZone: qsTr("These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.\nLimited to 100 requests per day.")
 
     ColumnLayout {
 
-        /// En première position, ce bouton fait appel à une API pour obténier des suggestions de noms de lieux.
+        /// En première position, ce bouton fait appel à une API pour obtenir des suggestions de noms de lieux ("nominatim").
         Button {
             id: bt_getinfo
             text: qsTr("Search")
@@ -25,8 +25,7 @@ Zone {
             enabled: tabbedPage.currentPhoto.hasGPS
             Layout.topMargin: 16
             Layout.leftMargin: 20
-            ToolTip.text: qsTr(
-                              "Recherche de données géographiques sur Internet")
+            ToolTip.text: qsTr("Search geodata on Internet")
             ToolTip.visible: hovered
             ToolTip.delay: 500
         }

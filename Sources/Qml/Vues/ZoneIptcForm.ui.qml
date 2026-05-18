@@ -14,6 +14,12 @@ Zone {
     property alias bt_applyCountry: bt_applyCountry
     property alias bt_applyCity: bt_applyCity
     property var photoKeywords: []
+    property var appliedKeywords: []
+    property bool creatorApplied: false
+    property bool countryApplied: false
+    property bool cityApplied: false
+    property bool locationApplied: false
+    property bool descriptionApplied: false
     signal applyKeyword(string keyword)
 
     iconZone: "qrc:/Images/icon-tag.png"
@@ -41,7 +47,8 @@ Zone {
         Button {
             id: bt_applyCreator
             text: qsTr("Apply to all")
-            enabled: creator ? true : false
+            // Note: !!creator est la notation compacte pour creator? true:false.
+            enabled: !!creator && !creatorApplied
         }
         Label {
             text: qsTr("Photographer name.")
@@ -57,7 +64,7 @@ Zone {
         Button {
             id: bt_applyCountry
             text: qsTr("Apply to all")
-            enabled: country ? true : false
+            enabled: !!country && !countryApplied
         }
         Label {
             text: qsTr("The country where the photo was taken.")
@@ -73,7 +80,7 @@ Zone {
         Button {
             id: bt_applyCity
             text: qsTr("Apply to all")
-            enabled: city ? true : false
+            enabled: !!city && !cityApplied
         }
         Label {
             text: qsTr("City where the photo was taken or nearest city.")
@@ -89,7 +96,7 @@ Zone {
         Button {
             id: bt_applyLocation
             text: qsTr("Apply to all")
-            enabled: location ? true : false
+            enabled: !!location && !locationApplied
         }
         Label {
             text: qsTr("Additionnal geographical information.")
@@ -105,7 +112,8 @@ Zone {
         Button {
             id: bt_applyDescription
             text: qsTr("Apply to all")
-            enabled: description ? true : false
+
+            enabled: !!description && !descriptionApplied
         }
         Label {
             text: qsTr("Photo content description: who, where, how, why? (in a few words).")
@@ -127,6 +135,7 @@ Zone {
                     }
                     Button {
                         text: qsTr("Apply to all")
+                        enabled: appliedKeywords.indexOf(modelData) === -1
                         onClicked: applyKeyword(modelData)
                     }
                 }
