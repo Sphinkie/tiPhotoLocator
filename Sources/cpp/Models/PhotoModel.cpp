@@ -165,12 +165,11 @@ QVariant PhotoModel::getUrl(int row)
  * @param filename : filename of the photo
  * @param url : full path of the photo (in Qt format)
  * ***********************************************************************************************************/
-void PhotoModel::append(const QString filename, const QString url)
+void PhotoModel::append(const QString& filename, const QString& url)
 {
     const int rowOfInsert = m_photos.count();
-    Photo* new_photo = new Photo(filename, url);
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
-    m_photos.insert(rowOfInsert, *new_photo);
+    m_photos.insert(rowOfInsert, Photo(filename, url));
     endInsertRows();
     emit countChanged();
 }
@@ -187,13 +186,12 @@ void PhotoModel::append(const QString filename, const QString url)
       map.insert(roleNames().value(ImageUrlRole), QVariant(url));
    @endcode
  * ***********************************************************************************************************/
-void PhotoModel::append(const QVariantMap data)
+void PhotoModel::append(const QVariantMap& data)
 {
     // qDebug() << "append QVariantMap:" << data;
     const int rowOfInsert = m_photos.count();
-    Photo* new_photo = new Photo(data["filename"].toString(), data["imageUrl"].toString());
     beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
-    m_photos.insert(rowOfInsert, *new_photo);
+    m_photos.insert(rowOfInsert, Photo(data["filename"].toString(), data["imageUrl"].toString()));
     endInsertRows();
     emit countChanged();
     // qDebug() << "append" << data.value("filename").toString() << "to row" << rowOfInsert;
@@ -211,9 +209,8 @@ void PhotoModel::appendSavedPosition()
     if (!m_markerIndex.isValid())
     {
         const int rowOfInsert = m_photos.count();
-        Photo* new_data = new Photo("Saved Position", "", true);
         beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
-        m_photos.insert(rowOfInsert, *new_data);
+        m_photos.insert(rowOfInsert, Photo("Saved Position", "", true));
         endInsertRows();
         emit countChanged();
         // On mémorise sa position
@@ -279,7 +276,7 @@ void PhotoModel::setInCircleItemCoords(const double latitude, const double longi
  *       \li La valeur spéciale -3 signifie **les photos du cercle**.
  *       \li La valeur spéciale -4 signifie **les photos sélectionées**.
  * ***********************************************************************************************************/
-void PhotoModel::setPhotoProperty(const int photo, const QString value, const QString property)
+void PhotoModel::setPhotoProperty(const int photo, const QString& value, const QString& property)
 {
     switch (photo) {
     case -1: {
@@ -402,7 +399,7 @@ void PhotoModel::currentItemCoords(const QGeoCoordinate coords)
  * @param value : valeur de la propriété.
  * @param property : nom de la propriété.
  * ***********************************************************************************************************/
-void PhotoModel::setData(int row, QString value, QString property)
+void PhotoModel::setData(int row, const QString& value, const QString& property)
 {
     QModelIndex index = this->index(row, 0);
     int role = roleNames().key(property.toUtf8());
@@ -1150,7 +1147,7 @@ void PhotoModel::applyCreatorToAll()
  * @param keyword : le mot-clef à retirer de la liste.
  * @note Cette méthode modifie la Photo actuellement sélectionée.
  * ***********************************************************************************************************/
-void PhotoModel::removePhotoKeyword(QString keyword)
+void PhotoModel::removePhotoKeyword(const QString& keyword)
 {
     if (m_photos[m_lastCurrentRow].keywords.contains(keyword))
     {
@@ -1188,7 +1185,7 @@ void PhotoModel::addKeywordToAll(const QString& keyword)
  * @param index : la position du mot-clef dans la liste.
  * @note Cette méthode modifie la Photo actuellement sélectionée.
  * ***********************************************************************************************************/
-void PhotoModel::updatePhotoKeyword(QString keyword, int index)
+void PhotoModel::updatePhotoKeyword(const QString& keyword, int index)
 {
     if (index<0 || index >= m_photos[m_lastCurrentRow].keywords.count()) return;
 

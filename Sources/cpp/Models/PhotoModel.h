@@ -89,8 +89,8 @@ public:
     Q_INVOKABLE void selectAll();
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
-    Q_INVOKABLE void removePhotoKeyword(QString keyword);
-    Q_INVOKABLE void updatePhotoKeyword(QString keyword, int index);
+    Q_INVOKABLE void removePhotoKeyword(const QString& keyword);
+    Q_INVOKABLE void updatePhotoKeyword(const QString& keyword, int index);
     Q_INVOKABLE void addKeywordToAll(const QString& keyword);
     Q_INVOKABLE void setSelectedItemsCoords(QGeoCoordinate coords);
     Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
@@ -102,7 +102,7 @@ public:
     // -----------------------------------------------------
     // Methodes publiques
     // -----------------------------------------------------
-    void append(const QVariantMap data);
+    void append(const QVariantMap& data);
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // Surcharge
     void setData(const QVariantMap &value_list);
     void selectFirstPhoto();
@@ -127,13 +127,13 @@ public slots:
     // -----------------------------------------------------
     // Slots
     // -----------------------------------------------------
-    void append(const QString filename, const QString url);
+    void append(const QString& filename, const QString& url);
     void appendSavedPosition();
     void fetchExifMetadata(int row = -1);
     void saveMetadata();
-    void setData(int row, QString value, QString property);
+    void setData(int row, const QString& value, const QString& property);
     void setInCircleItemCoords(const double latitude, const double longitude);
-    void setPhotoProperty(const int photo, const QString value, const QString property);
+    void setPhotoProperty(const int photo, const QString& value, const QString& property);
     void applyCreatorToAll();
     void removeSavedPosition();
     void duplicateData(int row);

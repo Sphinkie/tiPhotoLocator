@@ -17,8 +17,8 @@ Q_OBJECT
 public:
     explicit CameraSet(QObject *parent = nullptr);
 
-    Q_INVOKABLE void append(const QString cam_model);
-    Q_INVOKABLE bool contains(const QString cam_model);
+    Q_INVOKABLE void append(const QString& cam_model);
+    Q_INVOKABLE bool contains(const QString& cam_model);
 
 public slots:
 
@@ -27,8 +27,8 @@ public slots:
 
 private:
 
-    void insert(const QString cam_model);
-    void requestThumb(const QString cam_model);
+    void insert(const QString& cam_model);
+    void requestThumb(const QString& cam_model);
     void requestMeteo();
 
     QSet<QString> m_cameras ;               //!< L'ensemble des Camera

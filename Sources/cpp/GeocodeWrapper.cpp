@@ -69,7 +69,7 @@ void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
  * @param city : un nom de lieu, par exemple "Marsa el Brega" => 30.4074, 19.5784
  * @param home : True si cette ville doit être considérée comme la ville favorite (homecity)
  * ***********************************************************************************************************/
-void GeocodeWrapper::requestCoordinates(const QString city, const bool home)
+void GeocodeWrapper::requestCoordinates(const QString& city, const bool home)
 {
     QGeoAddress adresse = QGeoAddress();
     adresse.setCity(city);

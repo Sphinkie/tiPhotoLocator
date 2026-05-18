@@ -25,7 +25,7 @@ CameraSet::CameraSet(QObject *parent) : QObject(parent)
  *        S'il n'y est pas, on demande à deepAI de générer une imagette.
  * @param cam_model
  * ***********************************************************************************************************/
-void CameraSet::append(const QString cam_model)
+void CameraSet::append(const QString& cam_model)
 {
     if (m_cameras.contains(cam_model))
 		// Modèle de caméra dejà connu : on ne fait rien
@@ -43,7 +43,7 @@ void CameraSet::append(const QString cam_model)
  * @param cam_model : le nom d'un modèle d'appareil photo.
  * @return true si ce modèle existe déja dans le Set.
  * ***********************************************************************************************************/
-bool CameraSet::contains(const QString cam_model)
+bool CameraSet::contains(const QString& cam_model)
 {
     return  m_cameras.contains(cam_model);
 }
@@ -53,7 +53,7 @@ bool CameraSet::contains(const QString cam_model)
  * @brief Ajoute un modèle d'appareil photo dans le Set. On lui fabrique alors une vignette.
  * @param cam_model : le nom d'un modèle d'appareil photo.
  * ***********************************************************************************************************/
-void CameraSet::insert(const QString cam_model)
+void CameraSet::insert(const QString& cam_model)
 {
     m_cameras.insert(cam_model);
 }
@@ -63,7 +63,7 @@ void CameraSet::insert(const QString cam_model)
  * @brief Envoi d'une requete POST à deepai.
  * @param cam_model : non utilisé pour l'instant
  * ***********************************************************************************************************/
-void CameraSet::requestThumb(const QString cam_model)
+void CameraSet::requestThumb(const QString& cam_model)
 {
   //  QNetworkAccessManager* m_networkMgr = new QNetworkAccessManager(this);  // A été mis dans le Constructeur. Mais peut être mis ici pour les premiers tests. 
 

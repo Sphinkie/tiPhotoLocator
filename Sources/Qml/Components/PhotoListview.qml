@@ -14,7 +14,7 @@ ListView {
     delegate: listDelegate
     focus: true
     clip: true // pour que les items restent à l'intérieur de la listview
-    // Dépacement rapide du highlight: en 0.5 secondes max
+    // Déplacement rapide du highlight: en 0.5 secondes max
     highlightMoveDuration: 500
     highlightMoveVelocity: -1
 
@@ -60,7 +60,7 @@ ListView {
 
 
     /** ******************************************************************************************************
-     * Le delegate pour afficher la ListModel  dans la ListView.
+     * Le delegate pour afficher la ListModel dans la ListView.
      * *******************************************************************************************************/
     Component {
         id: listDelegate

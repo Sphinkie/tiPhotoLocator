@@ -50,7 +50,7 @@ public slots:
     // -----------------------------------------------------
     // Slots
     // -----------------------------------------------------
-    void append(const QString text, const QString target, const QString category, int photo_row = -2);
+    void append(const QString& text, const QString& target, const QString& category, int photo_row = -2);
     void onCurrentPhotoChanged(const int row);
 
 signals:

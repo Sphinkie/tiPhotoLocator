@@ -141,7 +141,7 @@ Qt::ItemFlags SuggestionModel::flags(const QModelIndex &index) const
  *                   La valeur spéciale -1 signifie 'toutes les photos'.
  *                   La valeur spéciale -2 signifie 'la Photo courante' (valeur par défaut).
  * ***********************************************************************************************************/
-void SuggestionModel::append(const QString text, const QString target, const QString category, int photo_row)
+void SuggestionModel::append(const QString& text, const QString& target, const QString& category, int photo_row)
 {
     if (text.isEmpty()) return;
 
