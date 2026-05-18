@@ -146,22 +146,22 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="164"/>
+        <location filename="../Sources/Qml/Main.qml" line="162"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="169"/>
+        <location filename="../Sources/Qml/Main.qml" line="167"/>
         <source>MAP</source>
         <translation>CARTE</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="174"/>
+        <location filename="../Sources/Qml/Main.qml" line="172"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>TAGS EXIF &amp; IPTC</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="179"/>
+        <location filename="../Sources/Qml/Main.qml" line="177"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
@@ -227,9 +227,8 @@
 <context>
     <name>PopupMetadataForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupMetadataForm.ui.qml" line="122"/>
         <source>Close</source>
-        <translation>Fermer</translation>
+        <translation type="vanished">Fermer</translation>
     </message>
 </context>
 <context>
