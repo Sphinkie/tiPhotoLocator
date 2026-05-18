@@ -17,6 +17,7 @@
 GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 {
     m_suggestionModel = suggestion_model;
+    QSettings settings;
     QString providerName = "osm";  // "osm" ou "esri"
     QVariantMap parameters;
 
@@ -24,6 +25,11 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 
     QGeoServiceProvider* geoProvider = new QGeoServiceProvider(providerName, parameters);
     m_geoManager = geoProvider->geocodingManager();
+    // On fixe la langue dès l'initialisation (avant toute requête).
+    if (settings.value("tagLanguage", 0).toInt() == 0)
+        m_geoManager->setLocale(QLocale("en"));
+    else
+        m_geoManager->setLocale(QLocale("fr"));
     // Cet objet n'est créé qu'une fois, et sera détruit à la sortie de l'application.
     connect(m_geoManager, SIGNAL(finished(QGeoCodeReply*)), this, SLOT(geoCodeFinished(QGeoCodeReply*)));
 
@@ -43,11 +49,6 @@ GeocodeWrapper::GeocodeWrapper(SuggestionModel* suggestion_model)
 void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
 {
     qDebug() << "requestReverseGeocode" << lati;
-    // Réglage de la langues des tags
-    QSettings settings;
-    int tagLanguage = settings.value("tagLanguage",0).toInt();   // 0: English, 1: default
-    if (tagLanguage==0)
-        m_geoManager->setLocale(QLocale("en"));
     // Envoi de la requete
     QGeoCoordinate coordinate = QGeoCoordinate(lati, longi);
     QGeoCodeReply* geoReply = m_geoManager->reverseGeocode(coordinate);

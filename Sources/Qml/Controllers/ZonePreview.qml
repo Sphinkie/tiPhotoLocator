@@ -5,7 +5,7 @@ import "../Javascript/TiUtilities.js" as Utilities
 
 /** **********************************************************************************************************
  * @brief QML: Controleur pour la Zone des informations de Preview.
- * tabbedPage est l'item parent qui contient les infos sur la photo sélectionnée dans la listview (currentPhoto), 
+ * tabbedPage est l'item parent qui contient les infos sur la photo sélectionnée dans la listview (currentPhoto),
  * et qui les partage avec tous ses onglets (sous-items).
  * ***********************************************************************************************************/
 ZonePreviewForm {
@@ -13,10 +13,10 @@ ZonePreviewForm {
     /// Le flag isphoto sert à savoir si on est positionné sur un filename ou sur l'item de bienvenue au démarrage.
     readonly property bool isphoto: !tabbedPage.currentPhoto.isWelcome
     /// Styled text
-    readonly property string bienvenue: qsTr("Bienvenue !")
-    readonly property string brief: qsTr("<b>TiPhotoLocator</b> vous aide à géolocaliser et tagger vos photos.")
-    readonly property string usage: qsTr("Pour commencer, ouvrez le répertoire contenant les photos avec le menu <pre>Dossiers → Ouvrir...</pre><br>Puis naviguez dans les onglets pour renseigner les différents tags.")
-    readonly property string note: qsTr("<u>Note:</u> Les données modifiées sont enregistrées dans les photos, uniquement lors du clic sur le bouton <pre>'Enregistrer'.</pre>")
+    readonly property string bienvenue: qsTr("Welcome!")
+    readonly property string brief: qsTr("<b>TiPhotoLocator</b> helps you geotag and tag your photos.")
+    readonly property string usage: qsTr("To get started, open the folder containing your photos via the menu <pre>Folders → Open...</pre><br>Then navigate the tabs to fill in the various tags.")
+    readonly property string note: qsTr("<u>Note:</u> Modified data is saved into the photos only when you click the <pre>'Save'</pre> button.")
     readonly property string br: "<br><br>"
 
     welcomeText: isphoto ? "" : br + bienvenue + br + brief + br + usage + br + note

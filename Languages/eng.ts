@@ -675,23 +675,23 @@
     <name>ZonePreview</name>
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="16"/>
-        <source>Bienvenue !</source>
-        <translation type="unfinished"></translation>
+        <source>Welcome!</source>
+        <translation>Welcome!</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="17"/>
-        <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; vous aide à géolocaliser et tagger vos photos.</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; helps you geotag and tag your photos.</source>
+        <translation>&lt;b&gt;TiPhotoLocator&lt;/b&gt; helps you geotag and tag your photos.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="18"/>
-        <source>Pour commencer, ouvrez le répertoire contenant les photos avec le menu &lt;pre&gt;Dossiers → Ouvrir...&lt;/pre&gt;&lt;br&gt;Puis naviguez dans les onglets pour renseigner les différents tags.</source>
-        <translation type="unfinished"></translation>
+        <source>To get started, open the folder containing your photos via the menu &lt;pre&gt;Folders → Open...&lt;/pre&gt;&lt;br&gt;Then navigate the tabs to fill in the various tags.</source>
+        <translation>To get started, open the folder containing your photos via the menu &lt;pre&gt;Folders → Open...&lt;/pre&gt;&lt;br&gt;Then navigate the tabs to fill in the various tags.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="19"/>
-        <source>&lt;u&gt;Note:&lt;/u&gt; Les données modifiées sont enregistrées dans les photos, uniquement lors du clic sur le bouton &lt;pre&gt;&apos;Enregistrer&apos;.&lt;/pre&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;u&gt;Note:&lt;/u&gt; Modified data is saved into the photos only when you click the &lt;pre&gt;&apos;Save&apos;&lt;/pre&gt; button.</source>
+        <translation>&lt;u&gt;Note:&lt;/u&gt; Modified data is saved into the photos only when you click the &lt;pre&gt;&apos;Save&apos;&lt;/pre&gt; button.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="24"/>
