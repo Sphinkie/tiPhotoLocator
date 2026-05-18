@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.4</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -177,14 +177,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_generateBackup</b><
 <div class="line">exifData.insert(<span class="stringliteral">&quot;GPSLatitudeRef&quot;</span>,   idx.data(LatitudeRole).toInt()&gt;0 ? <span class="stringliteral">&quot;N&quot;</span> : <span class="stringliteral">&quot;S&quot;</span> );</div>
 <div class="line">exifData.insert(<span class="stringliteral">&quot;GPSLongitudeRef&quot;</span>,  idx.data(LongitudeRole).toInt()&gt;0 ? <span class="stringliteral">&quot;E&quot;</span> : <span class="stringliteral">&quot;W&quot;</span> );</div>
 <div class="line">exifData.insert(<span class="stringliteral">&quot;DateTimeOriginal&quot;</span>, idx.data(DateTimeOriginalRole));</div>
-<div class="line">exifData.insert(<span class="stringliteral">&quot;MetadataEditingSoftware&quot;</span>, software);</div>
-<div class="line">exifData.insert(<span class="stringliteral">&quot;Creator&quot;</span>,          idx.data(CreatorRole));      <span class="comment">// MWG écrit aussi dans Artist</span></div>
-<div class="line">exifData.insert(<span class="stringliteral">&quot;City&quot;</span>,             idx.data(CityRole));         <span class="comment">// MWG écrit dans EXIF et dans IptcExt</span></div>
-<div class="line">exifData.insert(<span class="stringliteral">&quot;Country&quot;</span>,          idx.data(CountryRole));      <span class="comment">// MWG écrit dans EXIF et dans IptcExt</span></div>
-<div class="line">exifData.insert(<span class="stringliteral">&quot;Location&quot;</span>,         idx.data(LocationRole));     <span class="comment">// MWG écrit dans EXIF et dans IptcExt</span></div>
-<div class="line">exifData.insert(<span class="stringliteral">&quot;Description&quot;</span>,      idx.data(DescriptionRole));  <span class="comment">// MWG écrit aussi dans ImageDescription</span></div>
-<div class="line">exifData.insert(<span class="stringliteral">&quot;CaptionWriter&quot;</span>,    idx.data(CaptionWriterRole));</div>
-<div class="line">exifData.insert(<span class="stringliteral">&quot;Keywords&quot;</span>,         idx.data(KeywordsRole));     <span class="comment">// Liste des keywords</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;MetadataEditingSoftware&quot;</span>, metadataSoftware);</div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Creator&quot;</span>,          idx.data(CreatorRole));       <span class="comment">// MWG écrit aussi dans Artist</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;City&quot;</span>,             idx.data(CityRole));          <span class="comment">// MWG écrit dans EXIF et dans IptcExt</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Country&quot;</span>,          idx.data(CountryRole));       <span class="comment">// MWG écrit dans EXIF et dans IptcExt</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Location&quot;</span>,         idx.data(LocationRole));      <span class="comment">// MWG écrit dans EXIF et dans IptcExt</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Description&quot;</span>,      idx.data(DescriptionRole));   <span class="comment">// MWG écrit aussi dans ImageDescription</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;CaptionWriter&quot;</span>,    idx.data(CaptionWriterRole)); <span class="comment">// On ecrit le Writer que s&#39;il y a une description.</span></div>
+<div class="line">exifData.insert(<span class="stringliteral">&quot;Keywords&quot;</span>,         idx.data(KeywordsRole));      <span class="comment">// Liste des keywords</span></div>
 </div><!-- fragment --> </td></tr>
   </table>
   </dd>

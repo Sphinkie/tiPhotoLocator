@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.4</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -110,8 +110,8 @@ Graphe d'héritage de SuggestionCategoryProxyModel:</div>
 Connecteurs publics</h2></td></tr>
 <tr class="memitem:a7ecc03f7eb5925bef1c0937221bcd469" id="r_a7ecc03f7eb5925bef1c0937221bcd469"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ecc03f7eb5925bef1c0937221bcd469">setFilterEnabled</a> (bool enabled)</td></tr>
 <tr class="memdesc:a7ecc03f7eb5925bef1c0937221bcd469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot active ou désactive le filtrage par le proxyModel.  <br /></td></tr>
-<tr class="memitem:a29d65a3ef6bd9db53b99b8edaf8600bc" id="r_a29d65a3ef6bd9db53b99b8edaf8600bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29d65a3ef6bd9db53b99b8edaf8600bc">removePhotoFromSuggestion</a> (const int proxyRow)</td></tr>
-<tr class="memdesc:a29d65a3ef6bd9db53b99b8edaf8600bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.  <br /></td></tr>
+<tr class="memitem:a29d65a3ef6bd9db53b99b8edaf8600bc" id="r_a29d65a3ef6bd9db53b99b8edaf8600bc"><td class="memItemLeft" align="right" valign="top"><a id="a29d65a3ef6bd9db53b99b8edaf8600bc" name="a29d65a3ef6bd9db53b99b8edaf8600bc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removePhotoFromSuggestion</b> (const int proxyRow)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signaux</h2></td></tr>
@@ -127,6 +127,11 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:aec23196b11c2801ba701656539a288d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode indique si le filtrage est actif ou non.  <br /></td></tr>
 <tr class="memitem:a4033c7903dcf1ae1254b3e6b8a21f005" id="r_a4033c7903dcf1ae1254b3e6b8a21f005"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4033c7903dcf1ae1254b3e6b8a21f005">setFilterValue</a> (QString filter=&quot;&quot;)</td></tr>
 <tr class="memdesc:a4033c7903dcf1ae1254b3e6b8a21f005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode invocable par QML active ou désactive le filtrage par le proxyModel.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Fonctions membres protégées</h2></td></tr>
+<tr class="memitem:a65423d7797ebe23f53ff1b9dbbcc0e87" id="r_a65423d7797ebe23f53ff1b9dbbcc0e87"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65423d7797ebe23f53ff1b9dbbcc0e87">lessThan</a> (const QModelIndex &amp;left, const QModelIndex &amp;right) const override</td></tr>
+<tr class="memdesc:a65423d7797ebe23f53ff1b9dbbcc0e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Propriétés</h2></td></tr>
@@ -200,8 +205,8 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &qu
 
 </div>
 </div>
-<a id="a29d65a3ef6bd9db53b99b8edaf8600bc" name="a29d65a3ef6bd9db53b99b8edaf8600bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29d65a3ef6bd9db53b99b8edaf8600bc">&#9670;&#160;</a></span>removePhotoFromSuggestion</h2>
+<a id="a65423d7797ebe23f53ff1b9dbbcc0e87" name="a65423d7797ebe23f53ff1b9dbbcc0e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65423d7797ebe23f53ff1b9dbbcc0e87">&#9670;&#160;</a></span>lessThan()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,15 +215,19 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_filter</b> = &qu
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SuggestionCategoryProxyModel::removePhotoFromSuggestion </td>
+          <td class="memname">bool SuggestionCategoryProxyModel::lessThan </td>
           <td>(</td>
-          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>proxyRow</em></span></td><td>)</td>
+          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;) const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

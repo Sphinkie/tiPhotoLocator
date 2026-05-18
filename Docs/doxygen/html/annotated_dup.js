@@ -51,8 +51,6 @@ var annotated_dup =
     [ "Zone", "class_zone.html", null ],
     [ "ZoneCamera", "class_zone_camera.html", null ],
     [ "ZoneCameraForm", "class_zone_camera_form.html", null ],
-    [ "ZoneExif", "class_zone_exif.html", null ],
-    [ "ZoneExifForm", "class_zone_exif_form.html", "class_zone_exif_form" ],
     [ "ZoneGeoloc", "class_zone_geoloc.html", "class_zone_geoloc" ],
     [ "ZoneGeolocForm", "class_zone_geoloc_form.html", null ],
     [ "ZoneIptc", "class_zone_iptc.html", "class_zone_iptc" ],

@@ -32,7 +32,7 @@ var searchData=
   ['tifolderdialog_29',['TiFolderDialog',['../class_ti_folder_dialog.html',1,'']]],
   ['timerloadfolder_30',['TimerLoadFolder',['../class_timer_load_folder.html',1,'']]],
   ['tinychip_31',['TinyChip',['../class_tiny_chip.html',1,'']]],
-  ['title_32',['title',['../class_about_dialog.html#af3dce0f5555d2bdcbee401717c762d39',1,'AboutDialog::title'],['../class_apikey_dialog.html#abfac005eaac5e3007509875b902f0f49',1,'ApikeyDialog::title'],['../class_credits_dialog.html#ad7864e2fc7d9b8a400ecfaa7aaa05eed',1,'CreditsDialog::title'],['../class_zone_exif_form.html#a7fa4080f87ec36b779e03a077c045f0e',1,'ZoneExifForm::title'],['../class_zone_iptc_form.html#a7e2a36a3a35f788ce9d6b77852a1035f',1,'ZoneIptcForm::title']]],
+  ['title_32',['title',['../class_about_dialog.html#af3dce0f5555d2bdcbee401717c762d39',1,'AboutDialog::title'],['../class_apikey_dialog.html#abfac005eaac5e3007509875b902f0f49',1,'ApikeyDialog::title'],['../class_credits_dialog.html#ad7864e2fc7d9b8a400ecfaa7aaa05eed',1,'CreditsDialog::title'],['../class_zone_iptc_form.html#a7e2a36a3a35f788ce9d6b77852a1035f',1,'ZoneIptcForm::title']]],
   ['tobesaved_33',['toBeSaved',['../struct_photo.html#a66c836579b45614de3f51edba11ea2fe',1,'Photo']]],
   ['toexifdate_34',['toExifDate',['../class_utilities.html#ad970fb1a077cf5d352faa2878ce410fc',1,'Utilities']]],
   ['toolbarbottom_35',['ToolbarBottom',['../class_toolbar_bottom.html',1,'']]],

@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.4</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -110,8 +110,13 @@ Graphe d'héritage de GeocodeWrapper:</div>
 Connecteurs publics</h2></td></tr>
 <tr class="memitem:a122fadb46be185cb6e7e375d618f3d9c" id="r_a122fadb46be185cb6e7e375d618f3d9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a122fadb46be185cb6e7e375d618f3d9c">requestReverseGeocode</a> (double lati, double longi)</td></tr>
 <tr class="memdesc:a122fadb46be185cb6e7e375d618f3d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple: 38.980 et 1.433 =&gt; <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=313893003&amp;class=highway">Résultat</a> La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>  <br /></td></tr>
-<tr class="memitem:ab3c38ff6c5a53d2b6c04cf5c88763b23" id="r_ab3c38ff6c5a53d2b6c04cf5c88763b23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3c38ff6c5a53d2b6c04cf5c88763b23">requestCoordinates</a> (QString city)</td></tr>
-<tr class="memdesc:ab3c38ff6c5a53d2b6c04cf5c88763b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>.  <br /></td></tr>
+<tr class="memitem:a25567934f5ff042c2c1758d5cc86de3c" id="r_a25567934f5ff042c2c1758d5cc86de3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25567934f5ff042c2c1758d5cc86de3c">requestCoordinates</a> (const QString city, const bool home)</td></tr>
+<tr class="memdesc:a25567934f5ff042c2c1758d5cc86de3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
+Signaux</h2></td></tr>
+<tr class="memitem:a84e82779461279f7f72cd6da9f56d347" id="r_a84e82779461279f7f72cd6da9f56d347"><td class="memItemLeft" align="right" valign="top"><a id="a84e82779461279f7f72cd6da9f56d347" name="a84e82779461279f7f72cd6da9f56d347"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>centerMap</b> (double lati, double longi)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -170,6 +175,7 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Les binaries openSSL doivent être installées avec le Qt Maintenance Tool </dd></dl>
 
 </div>
 </div>
@@ -205,13 +211,17 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>: Exemple: "Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"</dd></dl>
-<p>En cas de réponse à une demande de coordonnées: on les mémorise dans le QSettings "homeCoords". En cas de réponse à une demande de reverse Localisation, on passe les réponses au <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>: Exemple de reply Reverse Localisation: "Santa Eulària des Riu, Ibiza, Îles Baléares, 07814, Espagne"</dd></dl>
+<ul>
+<li>"home" : En cas de réponse à une demande de coordonnées de home: on les mémorise dans le QSettings "homeCoords".</li>
+<li>"place" : En cas de réponse à une demande de coordonnées d'un endroit donné: on centre la carte dessus.</li>
+<li>"nominatim" : En cas de réponse à une demande de Reverse Localisation, on passe les réponses au <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a>. </li>
+</ul>
 
 </div>
 </div>
-<a id="ab3c38ff6c5a53d2b6c04cf5c88763b23" name="ab3c38ff6c5a53d2b6c04cf5c88763b23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3c38ff6c5a53d2b6c04cf5c88763b23">&#9670;&#160;</a></span>requestCoordinates</h2>
+<a id="a25567934f5ff042c2c1758d5cc86de3c" name="a25567934f5ff042c2c1758d5cc86de3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25567934f5ff042c2c1758d5cc86de3c">&#9670;&#160;</a></span>requestCoordinates</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,8 +232,12 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
         <tr>
           <td class="memname">void GeocodeWrapper::requestCoordinates </td>
           <td>(</td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>city</em></span></td><td>)</td>
+          <td class="paramtype">const QString</td>          <td class="paramname"><span class="paramname"><em>city</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>home</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -238,6 +252,7 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">city</td><td>: un nom de lieu, par exemple "Marsa el Brega" =&gt; 30.4074, 19.5784 </td></tr>
+    <tr><td class="paramname">home</td><td>: True si cette ville doit être considérée comme la ville favorite (homecity) </td></tr>
   </table>
   </dd>
 </dl>

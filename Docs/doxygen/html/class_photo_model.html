@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.4</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -141,6 +141,7 @@ Types publics</h2></td></tr>
 , <br />
 &#160;&#160;<b>CaptionWriterRole</b>
 , <b>SoftwareRole</b>
+, <b>MetadataRole</b>
 , <b>KeywordsRole</b>
 <br />
  }</td></tr>
@@ -206,13 +207,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>loadingChanged</b> ()
 <tr class="memitem:a8cc66b6d7ccc7f50bd419b00fbea1b53" id="r_a8cc66b6d7ccc7f50bd419b00fbea1b53"><td class="memItemLeft" align="right" valign="top"><a id="a8cc66b6d7ccc7f50bd419b00fbea1b53" name="a8cc66b6d7ccc7f50bd419b00fbea1b53"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>selectionCountChanged</b> ()</td></tr>
 <tr class="memdesc:a8cc66b6d7ccc7f50bd419b00fbea1b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand le nombre de photos sélectionnées change. <br /></td></tr>
+<tr class="memitem:a84ce035a6d4b174261f3e4f7ed79399d" id="r_a84ce035a6d4b174261f3e4f7ed79399d"><td class="memItemLeft" align="right" valign="top"><a id="a84ce035a6d4b174261f3e4f7ed79399d" name="a84ce035a6d4b174261f3e4f7ed79399d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>countChanged</b> ()</td></tr>
+<tr class="memdesc:a84ce035a6d4b174261f3e4f7ed79399d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand le nombre total de photos change. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a244f996eed49122ebe11c5369d63a0e2" id="r_a244f996eed49122ebe11c5369d63a0e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a244f996eed49122ebe11c5369d63a0e2">PhotoModel</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:a244f996eed49122ebe11c5369d63a0e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Just add the welcome item in the list. If the debug mode is active, a second item is added for testing purpose.  <br /></td></tr>
-<tr class="memitem:a0fdbd69a007a6bda5623cce8d5f3cd57" id="r_a0fdbd69a007a6bda5623cce8d5f3cd57"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fdbd69a007a6bda5623cce8d5f3cd57">rowCount</a> (const QModelIndex &amp;parent) const override</td></tr>
-<tr class="memdesc:a0fdbd69a007a6bda5623cce8d5f3cd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of items in the model.  <br /></td></tr>
+<tr class="memitem:a6be5a4ec62c39357efc906c2c9fc5515" id="r_a6be5a4ec62c39357efc906c2c9fc5515"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6be5a4ec62c39357efc906c2c9fc5515">rowCount</a> (const QModelIndex &amp;parent=QModelIndex()) const override</td></tr>
+<tr class="memdesc:a6be5a4ec62c39357efc906c2c9fc5515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of items in the model.  <br /></td></tr>
 <tr class="memitem:a3f09addf9a989e85b7ae5797156b270f" id="r_a3f09addf9a989e85b7ae5797156b270f"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f09addf9a989e85b7ae5797156b270f">data</a> (const QModelIndex &amp;index, int role=Qt::DisplayRole) const override</td></tr>
 <tr class="memdesc:a3f09addf9a989e85b7ae5797156b270f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the role value of an element of the model.  <br /></td></tr>
 <tr class="memitem:a1304d28519eb274764ef65afffec6c96" id="r_a1304d28519eb274764ef65afffec6c96"><td class="memItemLeft" align="right" valign="top">Qt::ItemFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1304d28519eb274764ef65afffec6c96">flags</a> (const QModelIndex &amp;index) const override</td></tr>
@@ -245,6 +249,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a77dea7e487119a062064faa3c60ed2d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enlève un des mots-clef descriptif de la photo.  <br /></td></tr>
 <tr class="memitem:a3260014636b9e9ae523391a753be104c" id="r_a3260014636b9e9ae523391a753be104c"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3260014636b9e9ae523391a753be104c">updatePhotoKeyword</a> (QString keyword, int index)</td></tr>
 <tr class="memdesc:a3260014636b9e9ae523391a753be104c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie un des mots-clef descriptif de la photo.  <br /></td></tr>
+<tr class="memitem:acc4cc81a42b022cd529c4d6408688f60" id="r_acc4cc81a42b022cd529c4d6408688f60"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc4cc81a42b022cd529c4d6408688f60">addKeywordToAll</a> (const QString &amp;keyword)</td></tr>
+<tr class="memdesc:acc4cc81a42b022cd529c4d6408688f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un mot-clef à toutes les photos qui ne le possèdent pas déjà.  <br /></td></tr>
 <tr class="memitem:a614ead774ff62e4d0431a955abb56651" id="r_a614ead774ff62e4d0431a955abb56651"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a614ead774ff62e4d0431a955abb56651">setSelectedItemsCoords</a> (QGeoCoordinate coords)</td></tr>
 <tr class="memdesc:a614ead774ff62e4d0431a955abb56651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affecte les coordonnées GPS fournies à toutes les photos sélectionnées.  <br /></td></tr>
 <tr class="memitem:a262b8d92e3edf3884c723c965f7de5e1" id="r_a262b8d92e3edf3884c723c965f7de5e1"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a262b8d92e3edf3884c723c965f7de5e1">findInCirclePhotos</a> (int circle_radius=-1)</td></tr>
@@ -267,6 +273,8 @@ Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>selection
 <tr class="memdesc:aa3d514c34c26ba9d741185fa4fff4bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active la première photo de la liste (preview de l'image et pinpoint géographique). Cette méthode est appelée une fois que l'on a lu les données Exif de la première photo de la liste.  <br /></td></tr>
 <tr class="memitem:a55deb039e2fbabeb1de1f3ba871c3e48" id="r_a55deb039e2fbabeb1de1f3ba871c3e48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55deb039e2fbabeb1de1f3ba871c3e48">setWriteProgress</a> (const int total=0)</td></tr>
 <tr class="memdesc:a55deb039e2fbabeb1de1f3ba871c3e48"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a55deb039e2fbabeb1de1f3ba871c3e48" title="PhotoModel::setWriteProgress.">PhotoModel::setWriteProgress</a>.  <br /></td></tr>
+<tr class="memitem:afda26dcf5d2f8d1ffdb9232392f46997" id="r_afda26dcf5d2f8d1ffdb9232392f46997"><td class="memItemLeft" align="right" valign="top"><a id="afda26dcf5d2f8d1ffdb9232392f46997" name="afda26dcf5d2f8d1ffdb9232392f46997"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getCount</b> () const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
@@ -302,6 +310,9 @@ qreal&#160;</td><td class="memItemRight" valign="bottom"><b>writeProgress</b></t
 <tr class="memdesc:a0b76a1d12f7232ac14434c6a764d15e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le modele est en train d'écrire les données Exif. <br /></td></tr>
 <tr class="memitem:aa41215645b3d02fec1ffa4b94b88b9b0" id="r_aa41215645b3d02fec1ffa4b94b88b9b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa41215645b3d02fec1ffa4b94b88b9b0">selectionCount</a></td></tr>
 <tr class="memdesc:aa41215645b3d02fec1ffa4b94b88b9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de photos dans la sélection.  <br /></td></tr>
+<tr class="memitem:a88c7ea8e69650c8e0f1f7bb61a105bc0" id="r_a88c7ea8e69650c8e0f1f7bb61a105bc0"><td class="memItemLeft" align="right" valign="top"><a id="a88c7ea8e69650c8e0f1f7bb61a105bc0" name="a88c7ea8e69650c8e0f1f7bb61a105bc0"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>count</b></td></tr>
+<tr class="memdesc:a88c7ea8e69650c8e0f1f7bb61a105bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre total de photos dans le modèle. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
@@ -417,6 +428,32 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<a id="acc4cc81a42b022cd529c4d6408688f60" name="acc4cc81a42b022cd529c4d6408688f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4cc81a42b022cd529c4d6408688f60">&#9670;&#160;</a></span>addKeywordToAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::addKeywordToAll </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>keyword</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un mot-clef à toutes les photos qui ne le possèdent pas déjà. </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyword</td><td>: le mot-clef à ajouter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af43bef19e91b11bf4e79c55fe458d0a1" name="af43bef19e91b11bf4e79c55fe458d0a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af43bef19e91b11bf4e79c55fe458d0a1">&#9670;&#160;</a></span>addTestItem()</h2>
 
@@ -543,7 +580,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 <div class="fragment"><div class="line">QVariantMap map;</div>
 <div class="line">map.insert(<span class="stringliteral">&quot;filename&quot;</span>, QVariant(filename));</div>
 <div class="line">map.insert(<a class="code hl_function" href="#aac3d5e1ae72e823b4e6091497c5cf27d">roleNames</a>().value(ImageUrlRole), QVariant(url));</div>
-<div class="ttc" id="aclass_photo_model_html_aac3d5e1ae72e823b4e6091497c5cf27d"><div class="ttname"><a href="#aac3d5e1ae72e823b4e6091497c5cf27d">PhotoModel::roleNames</a></div><div class="ttdeci">QHash&lt; int, QByteArray &gt; roleNames() const override</div><div class="ttdoc">Table of Role names. C&#39;est la correspondance entre le role C++ et le nom de la property dans QML.</div><div class="ttdef"><b>Definition</b> PhotoModel.cpp:93</div></div>
+<div class="ttc" id="aclass_photo_model_html_aac3d5e1ae72e823b4e6091497c5cf27d"><div class="ttname"><a href="#aac3d5e1ae72e823b4e6091497c5cf27d">PhotoModel::roleNames</a></div><div class="ttdeci">QHash&lt; int, QByteArray &gt; roleNames() const override</div><div class="ttdoc">Table of Role names. C&#39;est la correspondance entre le role C++ et le nom de la property dans QML.</div><div class="ttdef"><b>Definition</b> PhotoModel.cpp:95</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1312,8 +1349,8 @@ Un appel à <span class="tt"><a class="el" href="#aac3d5e1ae72e823b4e6091497c5cf
 
 </div>
 </div>
-<a id="a0fdbd69a007a6bda5623cce8d5f3cd57" name="a0fdbd69a007a6bda5623cce8d5f3cd57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fdbd69a007a6bda5623cce8d5f3cd57">&#9670;&#160;</a></span>rowCount()</h2>
+<a id="a6be5a4ec62c39357efc906c2c9fc5515" name="a6be5a4ec62c39357efc906c2c9fc5515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6be5a4ec62c39357efc906c2c9fc5515">&#9670;&#160;</a></span>rowCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1324,7 +1361,7 @@ Un appel à <span class="tt"><a class="el" href="#aac3d5e1ae72e823b4e6091497c5cf
         <tr>
           <td class="memname">int PhotoModel::rowCount </td>
           <td>(</td>
-          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QModelIndex()</span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>

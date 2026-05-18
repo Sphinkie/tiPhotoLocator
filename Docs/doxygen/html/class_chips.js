@@ -19,6 +19,7 @@ var class_chips =
     [ "deleteArea", "class_chips.html#ad300d4af5e2a4d8826fbd6f475678ac8", null ],
     [ "editable", "class_chips.html#ac6387c850ae682d761efa43d373fe8f0", null ],
     [ "editArea", "class_chips.html#aa2cbbf033b2bc37b9f90d8fd033ceb92", null ],
+    [ "hideTargetWhenFilled", "class_chips.html#ab15d66ccd1252ebc60f1598bf56ec960", null ],
     [ "revertArea", "class_chips.html#a712d1ffbc8aa67fae4b120e2e3afe38a", null ],
     [ "saveArea", "class_chips.html#a280cfbb450b5cc41e16f31ded7ede64c", null ],
     [ "targetName", "class_chips.html#ae3b1cb2195780ae3057bda1bca9b2ff6", null ]

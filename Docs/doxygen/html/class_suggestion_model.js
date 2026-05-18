@@ -15,12 +15,15 @@ var class_suggestion_model =
     [ "data", "class_suggestion_model.html#a403421fd09afc22273162b74e74b7d7c", null ],
     [ "dumpData", "class_suggestion_model.html#af3345223f2aa9b5d563b9097271a1d20", null ],
     [ "flags", "class_suggestion_model.html#ae3b26fa49dff5a4c7f1a79e061dd9970", null ],
+    [ "loadKeywordsFromFile", "class_suggestion_model.html#ac0cbea5880d75c4b7e15171811a4a4e0", null ],
     [ "onCurrentPhotoChanged", "class_suggestion_model.html#a509f4df03362a904aeae8c2d873485a3", null ],
     [ "removeCurrentPhotoFromSuggestion", "class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f", null ],
     [ "removeFromSuggestion", "class_suggestion_model.html#a54ef63c254c7a560110977f2240156c6", null ],
     [ "roleNames", "class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd", null ],
     [ "rowCount", "class_suggestion_model.html#a0c1caffe345aeb30f636f3a1784e9cea", null ],
+    [ "setDefaultDateFromFolder", "class_suggestion_model.html#ab69e53e15dc298ad51df7b8ee3fbddcf", null ],
     [ "m_currentPhotoRow", "class_suggestion_model.html#a114f7e94901935083f413db400c9a4aa", null ],
     [ "m_dumpedRow", "class_suggestion_model.html#a71e147fc8f25a5f6ff2f24ebc256acc6", null ],
+    [ "m_folderLocation", "class_suggestion_model.html#a3849860981955f2ddd2e4419113b03f1", null ],
     [ "m_suggestions", "class_suggestion_model.html#ae89572184f274b27c827e5f419a0df8f", null ]
 ];

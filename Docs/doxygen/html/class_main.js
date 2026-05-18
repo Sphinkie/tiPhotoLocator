@@ -7,7 +7,7 @@ var class_main =
     [ "fetchExifMetadata", "class_main.html#ab7bec792dc2255b6f1a32a7475caa9e4", null ],
     [ "fetchSingleExifMetadata", "class_main.html#afa885f918527233f02fecc1691ec09c1", null ],
     [ "removePhotoFromSuggestion", "class_main.html#acfd526f850b84d0b663152040c27f6a2", null ],
-    [ "requestCoords", "class_main.html#ac45a7cb24a9c67e6cd81609f34b8df8a", null ],
+    [ "requestCoords", "class_main.html#afebb10e3f2840f2403b2fb10a9096e5e", null ],
     [ "requestReverseGeocode", "class_main.html#af95a1768861a370ba09089a7a6a97c09", null ],
     [ "saveMetadata", "class_main.html#a4f0612873776f7214fddf19803580063", null ],
     [ "savePosition", "class_main.html#a5f6509a236e35dc1666aa6ed1b790c99", null ],

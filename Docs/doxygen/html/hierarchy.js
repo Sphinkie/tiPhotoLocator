@@ -91,9 +91,6 @@ var hierarchy =
         [ "ToolbarPrincipale", "class_toolbar_principale.html", null ]
       ] ],
       [ "Zone", "class_zone.html", [
-        [ "ZoneExifForm", "class_zone_exif_form.html", [
-          [ "ZoneExif", "class_zone_exif.html", null ]
-        ] ],
         [ "ZoneGeolocForm", "class_zone_geoloc_form.html", [
           [ "ZoneGeoloc", "class_zone_geoloc.html", null ]
         ] ],
