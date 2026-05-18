@@ -45,7 +45,7 @@ void SuggestionModel::createInitialSuggestions()
 
 
 /** **********************************************************************************************************
- * @brief Charge les keywords prédéfinis depuis un fichier ressource selon la langue.
+ * @brief Charge les keywords prédéfinis depuis un fichier ressource (un fichier par langue).
  * @param lang : code de langue ("eng" ou "fre").
  * ***********************************************************************************************************/
 void SuggestionModel::loadKeywordsFromFile(const QString &lang)
@@ -316,7 +316,11 @@ void SuggestionModel::setDefaultDateFromFolder(const QString &folderUrl)
 
     // On ajoute les suggestions
     if (!location.isEmpty())
+    {
         this->append(location, "location", "tag", -1);
+        m_folderLocation = location;
+        emit folderLocationChanged();
+    }
     if (!description.isEmpty())
         this->append(description, "description", "tag", -1);
 }
@@ -346,6 +350,8 @@ void SuggestionModel::clear()
     m_suggestions.clear();
     this->createInitialSuggestions();
     m_currentPhotoRow = -4;
+    m_folderLocation  = "";
+    emit folderLocationChanged();
     endResetModel();    // cette méthode envoie un signal ModelReset.
 }
 

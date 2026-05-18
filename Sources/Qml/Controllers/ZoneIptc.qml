@@ -56,7 +56,7 @@ ZoneIptcForm {
     }
 
     bt_applyDateTime.onClicked: {
-        window.setPhotoProperty(-1, dateTimeOriginal, "dateTimeOriginal") // -1 = all
+        window.setPhotoProperty(-1, dateTimeFormatted, "dateTimeOriginal") // -1 = all
         dateTimeApplied = true
     }
 

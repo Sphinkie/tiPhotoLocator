@@ -10,8 +10,10 @@
 class SuggestionModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(QString folderLocation READ folderLocation NOTIFY folderLocationChanged)
 
 public:
+    QString folderLocation() const { return m_folderLocation; }
     /** ******************************************************************************************************
      * @brief The Roles enum lists the roles associated to each attribute of a Suggestion
      * *******************************************************************************************************/
@@ -51,6 +53,9 @@ public slots:
     void append(const QString text, const QString target, const QString category, int photo_row = -2);
     void onCurrentPhotoChanged(const int row);
 
+signals:
+    void folderLocationChanged();
+
 private:
     // -----------------------------------------------------
     // Methodes privées
@@ -64,8 +69,9 @@ private:
     // Membres
     // -----------------------------------------------------
     QVector<Suggestion> m_suggestions;  //!< La liste des Suggestion
-    int m_currentPhotoRow = -4;         //!< Indice de la photo courante. Valeurs spéciales: -4 = aucune photo | -1 = toutes les photos | -2 = la photo sélectionée.
-    int m_dumpedRow;                    //!< La dernière ligne affichée dans le dump de debug.
+    int     m_currentPhotoRow = -4;    //!< Indice de la photo courante. Valeurs spéciales: -4 = aucune photo | -1 = toutes les photos | -2 = la photo sélectionée.
+    int     m_dumpedRow;               //!< La dernière ligne affichée dans le dump de debug.
+    QString m_folderLocation;          //!< Le lieu extrait du nom du dossier courant.
 
 };
 
