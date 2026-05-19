@@ -138,24 +138,66 @@
     </message>
 </context>
 <context>
+    <name>KeywordsPopup</name>
+    <message>
+        <source>Close</source>
+        <translation type="obsolete">Fermer</translation>
+    </message>
+</context>
+<context>
+    <name>KeywordsPopupForm</name>
+    <message>
+        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="60"/>
+        <source>User Keywords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="70"/>
+        <source>Predefined keywords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="92"/>
+        <source>My keywords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="165"/>
+        <source>+ Add new keyword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="180"/>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+</context>
+<context>
+    <name>KeywordsPopupForm.ui</name>
+    <message>
+        <source>Close</source>
+        <translation type="obsolete">Fermer</translation>
+    </message>
+</context>
+<context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="162"/>
+        <location filename="../Sources/Qml/Main.qml" line="165"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="167"/>
+        <location filename="../Sources/Qml/Main.qml" line="170"/>
         <source>MAP</source>
         <translation>CARTE</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="172"/>
+        <location filename="../Sources/Qml/Main.qml" line="175"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>TAGS EXIF &amp; IPTC</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="177"/>
+        <location filename="../Sources/Qml/Main.qml" line="180"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
@@ -198,22 +240,27 @@
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="75"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="73"/>
+        <source>Keywords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="79"/>
         <source>Help</source>
         <translation>Aide</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="77"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="81"/>
         <source>Obtenir une API KEY</source>
         <translation>Obtenir une API KEY</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="81"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="85"/>
         <source>Credits</source>
         <translation>Crédits</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="85"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="89"/>
         <source>About</source>
         <translation>A propos</translation>
     </message>

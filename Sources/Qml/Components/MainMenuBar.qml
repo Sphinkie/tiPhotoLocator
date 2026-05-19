@@ -69,6 +69,10 @@ MenuBar {
             text: qsTr("Configuration")
             onClicked: settingsPopup.open()
         }
+        MenuItem {
+            text: qsTr("Keywords")
+            onClicked: keywordsPopup.open()
+        }
     }
     Menu {
         id: helpMenu

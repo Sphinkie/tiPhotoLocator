@@ -65,6 +65,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/Zone.qml
         Sources/Qml/Components/ZoneTitle.qml
     QML_FILES
+        Sources/Qml/Controllers/KeywordsPopup.qml
         Sources/Qml/Controllers/PopupSettings.qml
         Sources/Qml/Controllers/ToolbarPrincipale.qml
         Sources/Qml/Controllers/ToolbarBottom.qml
@@ -86,6 +87,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Models/ModelFolderList.qml
     QML_FILES
         Sources/Qml/Vues/ZoneIptcForm.ui.qml
+        Sources/Qml/Vues/KeywordsPopupForm.qml
         Sources/Qml/Vues/PopupSettingsForm.ui.qml
         Sources/Qml/Vues/ToolbarBottomForm.ui.qml
         Sources/Qml/Vues/ToolbarMapForm.ui.qml

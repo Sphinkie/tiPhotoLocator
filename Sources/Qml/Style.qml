@@ -12,7 +12,8 @@ import QtQuick.Controls.Material
  *   @sa https://m3.material.io/styles/color/the-color-system/color-roles
  * Choisi sur coolors.co :
  *  lavender grey - indigo - ash brow - lawn green - deep saffron
- * Traduit par (équivalents Material pre-defined colors) :
+ * Traduit par (équivalents Material pre-defined colors):
+ *  @sa https://doc.qt.io/qt-6/qtquickcontrols-material.html
  *  BlueGrey (100) - DeepPurple - Brown - Lime -  Orange
  * **********************************************************************************************************/
 Item {
@@ -86,10 +87,12 @@ Item {
     // gris clair     : Annotations dans les settings
     readonly property color tertiaryTextColor: Material.color(Material.Black,
                                                               Material.Shade200)
-    // TODO : couleur à améliorer
-    readonly property color accentTextColor: Material.accentColor // "firebrick" // filenames toBeSaved
+    /// filenames toBeSaved
+    readonly property color accentTextColor: Material.color(
+                                                 Material.DeepOrange,
+                                                 Material.Shade800)
 
-    // La couleur de fond du filename(s) sélectionné dans la liste.
+    /// La couleur de fond du filename(s) sélectionné dans la liste.
     readonly property color highlightBackgroundColor: Material.color(
                                                           Material.DeepPurple,
                                                           Material.Shade100)

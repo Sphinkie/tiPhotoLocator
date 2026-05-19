@@ -67,5 +67,6 @@
         <file>Images/bt-find.png</file>
         <file>Images/bt-explorer.png</file>
         <file>Images/bt-folder.png</file>
+        <file>Images/bt_trashcan.png</file>
     </qresource>
 </RCC>

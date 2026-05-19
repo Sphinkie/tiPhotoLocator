@@ -76,6 +76,7 @@ int main(int argc, char *argv[])
     // ----------------------------------------------------------------------------
     // Initialisation du moteur QML:
     // ----------------------------------------------------------------------------
+    qputenv("QML_XHR_ALLOW_FILE_READ", "1");  // needed to read qrc:// files via XMLHttpRequest
     // Au choix
     QQmlApplicationEngine engine;
     QQmlContext* context = engine.rootContext();

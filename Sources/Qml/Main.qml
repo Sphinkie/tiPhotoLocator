@@ -96,6 +96,9 @@ ApplicationWindow {
     PopupSettings {
         id: settingsPopup
     }
+    KeywordsPopup {
+        id: keywordsPopup
+    }
 
     // ----------------------------------------------------------------
     // Fenêtre de dialogue pour selectionner le dossier
