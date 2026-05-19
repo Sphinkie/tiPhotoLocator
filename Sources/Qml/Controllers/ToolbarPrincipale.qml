@@ -14,7 +14,14 @@ ToolbarPrincipaleForm {
     bt_rescan.onClicked: {
         rescanWarning.open()
     }
+
+    /// Le bouton OPEN IN EXPLORER ouvre un Explorer Windows dans le dossier actif.
+    bt_explorer.onClicked: {
+        Qt.openUrlExternally(folderListModel.folder)
+    }
+
     bt_rescan.visible: (folderListModel.count > 0)
+    bt_explorer.visible: (folderListModel.count > 0)
 
     /// Nom du dossier de photos
     folderPath.text: Utilities.toStandardPath(folderListModel.folder)

@@ -113,34 +113,28 @@
 <context>
     <name>FilterBar</name>
     <message>
-        <location filename="../Sources/Qml/Components/FilterBar.qml" line="9"/>
         <source>undated</source>
-        <translation>sans date</translation>
+        <translation type="vanished">sans date</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/FilterBar.qml" line="10"/>
         <source>Select all photos without a date</source>
-        <translation>Sélectionne les photos sans date</translation>
+        <translation type="vanished">Sélectionne les photos sans date</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/FilterBar.qml" line="24"/>
         <source>unlocalized</source>
-        <translation>sans localisation</translation>
+        <translation type="vanished">sans localisation</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/FilterBar.qml" line="25"/>
         <source>Select all photos without location</source>
-        <translation>Sélectionne les photos sans localisation</translation>
+        <translation type="vanished">Sélectionne les photos sans localisation</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/FilterBar.qml" line="39"/>
         <source>all</source>
-        <translation>toutes</translation>
+        <translation type="vanished">toutes</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/FilterBar.qml" line="40"/>
         <source>Select all photos</source>
-        <translation>Sélectionne toutes les photos</translation>
+        <translation type="vanished">Sélectionne toutes les photos</translation>
     </message>
 </context>
 <context>
@@ -404,6 +398,39 @@
     </message>
 </context>
 <context>
+    <name>ToolbarFilters</name>
+    <message>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="9"/>
+        <source>undated</source>
+        <translation type="unfinished">sans date</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="10"/>
+        <source>Select all photos without a date</source>
+        <translation type="unfinished">Sélectionne les photos sans date</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="24"/>
+        <source>unlocalized</source>
+        <translation type="unfinished">sans localisation</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="25"/>
+        <source>Select all photos without location</source>
+        <translation type="unfinished">Sélectionne les photos sans localisation</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="39"/>
+        <source>select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="40"/>
+        <source>Select all photos</source>
+        <translation type="unfinished">Sélectionne toutes les photos</translation>
+    </message>
+</context>
+<context>
     <name>ToolbarMapForm.ui</name>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="25"/>
@@ -449,17 +476,27 @@
 <context>
     <name>ToolbarPrincipaleForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="27"/>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="28"/>
         <source>Rescan</source>
         <translation>Rescan</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="28"/>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="29"/>
         <source>Rescan all EXIF tags of the folder photos</source>
         <translation>Rescanne les tags EXIF des photos du répertoire</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="44"/>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="39"/>
+        <source>Open in Explorer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="40"/>
+        <source>Open the current folder in Windoss Explorer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="55"/>
         <source>Folder:</source>
         <translation>Répertoire:</translation>
     </message>

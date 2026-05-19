@@ -9,6 +9,7 @@ import "../Components"
  * *********************************************************************************************************** */
 Rectangle {
     property alias bt_rescan: bt_rescan
+    property alias bt_explorer: bt_explorer
     property alias folderPath: folderPath
     implicitHeight: 60
     implicitWidth: 800
@@ -31,7 +32,17 @@ Rectangle {
             // Positionnement à l'interieur du Layout
             Layout.leftMargin: 20
         }
-
+        /// Bouton de Open In Explorer
+        Button {
+            id: bt_explorer
+            icon.source: "qrc:/Images/bt-folder.png"
+            text: qsTr("Open in Explorer")
+            ToolTip.text: qsTr("Open the current folder in Windoss Explorer")
+            ToolTip.visible: hovered
+            ToolTip.delay: 500
+            // Positionnement à l'interieur du Layout
+            Layout.leftMargin: 20
+        }
         /// Indicateur de travail
         BusyIndicator {
             implicitHeight: bt_rescan.height

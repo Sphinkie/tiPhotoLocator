@@ -148,7 +148,7 @@ ApplicationWindow {
             id: filtersAndTabslayout
             width: parent.width
 
-            FilterBar {
+            ToolbarFilters {
                 id: filterBar
                 Layout.leftMargin: 20
             }

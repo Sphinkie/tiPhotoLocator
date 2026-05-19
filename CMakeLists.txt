@@ -50,7 +50,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/ApplicationLogo.qml
         Sources/Qml/Components/Chips.qml
         Sources/Qml/Components/FatChip.qml
-        Sources/Qml/Components/FilterBar.qml
+        Sources/Qml/Components/ToolbarFilters.qml
         Sources/Qml/Components/ImagettesListView.qml
         Sources/Qml/Components/SuggestionRepeater.qml
         Sources/Qml/Components/MapView.qml

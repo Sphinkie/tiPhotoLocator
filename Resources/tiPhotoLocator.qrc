@@ -65,5 +65,7 @@
         <file>Keywords/keywords.eng</file>
         <file>Keywords/keywords.fre</file>
         <file>Images/bt-find.png</file>
+        <file>Images/bt-explorer.png</file>
+        <file>Images/bt-folder.png</file>
     </qresource>
 </RCC>

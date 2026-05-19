@@ -36,7 +36,7 @@ RowLayout {
 
     CheckBox {
         id: checkBox3
-        text: qsTr("all")
+        text: qsTr("select all")
         ToolTip.text: qsTr("Select all photos")
         ToolTip.visible: hovered
         ToolTip.delay: 500
