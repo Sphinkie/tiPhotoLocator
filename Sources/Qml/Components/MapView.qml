@@ -49,11 +49,25 @@ Map {
         target: null
         onTranslationChanged: delta => parent.pan(-delta.x, -delta.y)
     }
+    // true : zoom centré sur le curseur / false : zoom centré sur la carte
+    readonly property bool zoomTowardsCursor: true
+
     WheelHandler {
         id: wheel
         acceptedDevices: PointerDevice.Mouse
         rotationScale: 1 / 60
-        property: "zoomLevel"
+        property: parent.zoomTowardsCursor ? "" : "zoomLevel"
+        onWheel: event => {
+            if (!parent.zoomTowardsCursor) return
+            var zoomDelta  = event.angleDelta.y / 480   // ~0.25 par cran de molette
+            var mousePos   = Qt.point(event.x, event.y)
+            var mouseCoord = parent.toCoordinate(mousePos)
+            parent.zoomLevel = Math.max(parent.minimumZoomLevel,
+                                        Math.min(parent.maximumZoomLevel,
+                                                 parent.zoomLevel + zoomDelta))
+            var newPos = parent.fromCoordinate(mouseCoord, false)
+            parent.pan(newPos.x - mousePos.x, newPos.y - mousePos.y)
+        }
     }
     MapCircle {
         id: mapCircle

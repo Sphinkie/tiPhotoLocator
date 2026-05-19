@@ -17,6 +17,10 @@ ToolbarMapForm {
         window.requestCoords(txt_find.text, false)
     }
 
+    /// Clic sur "Next" : on demande les coords GPS suivantes.
+    bt_next.onClicked: {
+        window.showNextCoords()
+    }
     /// Clic sur "Save Position" : On enregistre la position de l'image dans la Saved Position.
     bt_save_pos.onClicked: {
         window.savePosition()

@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QPoint>
 #include <QtLocation/QGeoCodingManager>
+#include <QGeoLocation>
 #include "Models/SuggestionModel.h"
 
 /** **********************************************************************************************************
@@ -32,6 +33,7 @@ signals:
 public slots:
     void requestReverseGeocode(double lati, double longi);
     void requestCoordinates(const QString& city, const bool home);
+    void onShowNextCoords();
 
 private slots:
     void geoCodeFinished(QGeoCodeReply* reply);
@@ -42,7 +44,8 @@ private:
     // -----------------------------------
     QGeoCodingManager* m_geoManager;       //!< Geocoding Manager pour les requètes REST
     SuggestionModel* m_suggestionModel;    //!< Le SuggestionModel qui stockera les reponses.
-    
+    QList<QGeoLocation> m_locations;       //!< La liste des différentes coordonnées GPS correspondant au label donné.
+    int m_index; //!< L'index des coordonnées GPS actuellement affichées.
 };
 
 #endif // GEOCODEWRAPPER_H

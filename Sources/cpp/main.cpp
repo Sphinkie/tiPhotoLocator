@@ -147,6 +147,7 @@ int main(int argc, char *argv[])
 
     QObject::connect(firstRootItem, SIGNAL(requestReverseGeocode(double, double)),&geocodeWrapper,  SLOT(requestReverseGeocode(double, double)));
     QObject::connect(firstRootItem, SIGNAL(requestCoords(QString, bool)),         &geocodeWrapper,  SLOT(requestCoordinates(QString, bool)));
+    QObject::connect(firstRootItem, SIGNAL(showNextCoords()),                     &geocodeWrapper,  SLOT(onShowNextCoords()));
 
     // ----------------------------------------------------------------------------
     // Connexions entre objets C++

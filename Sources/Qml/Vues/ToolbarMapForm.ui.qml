@@ -10,6 +10,7 @@ import "../Components"
 Item {
     property alias txt_find: txt_find
     property alias bt_find: bt_find
+    property alias bt_next: bt_next
     property alias bt_save_pos: bt_save_pos
     property alias bt_remove_savedpos: bt_remove_savedpos
     property alias bt_apply_savedpos: bt_apply_savedpos
@@ -40,6 +41,17 @@ Item {
         }
     }
 
+    RoundButton {
+        id: bt_next
+        enabled: txt_find.text !== ""
+        icon.source: "qrc:/Images/bt-next.png"
+        anchors {
+            left: bt_find.right
+            leftMargin: 0
+            verticalCenter: parent.verticalCenter
+        }
+    }
+
     Button {
         id: bt_save_pos
         enabled: false
@@ -49,7 +61,7 @@ Item {
         ToolTip.visible: hovered
         ToolTip.delay: 500
         anchors {
-            left: bt_find.right
+            left: bt_next.right
             leftMargin: 20
             verticalCenter: parent.verticalCenter
         }

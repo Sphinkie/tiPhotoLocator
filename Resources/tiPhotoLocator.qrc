@@ -13,14 +13,25 @@
         <file>Cameras/COOLPIXS30.png</file>
         <file>Cameras/KODAKEASYSHAREM550DigitalCamera.png</file>
         <file>Cameras/CYBERSHOT.png</file>
+        <file>Cameras/iPhone3GS.png</file>
+        <file>Cameras/DigimaxL55WKenoxX15WIDE.png</file>
+        <file>Cameras/AutoScanner.png</file>
+		
         <file>Images/bt-apply.png</file>
         <file>Images/bt-clear.png</file>
+        <file>Images/bt-filter.png</file>
         <file>Images/bt-refresh.png</file>
         <file>Images/bt-reload.png</file>
         <file>Images/bt-rescan.png</file>
         <file>Images/bt-revert.png</file>
         <file>Images/bt-suggestion.png</file>
         <file>Images/bt-suppr.png</file>
+        <file>Images/bt-find.png</file>
+        <file>Images/bt-explorer.png</file>
+        <file>Images/bt-folder.png</file>
+        <file>Images/bt-trashcan.png</file>
+        <file>Images/bt-next.png</file>
+
         <file>Images/chip-del.png</file>
         <file>Images/chip-del2.png</file>
         <file>Images/chip-edit.png</file>
@@ -37,6 +48,7 @@
         <file>Images/icon-preview.png</file>
         <file>Images/icon-suggestion.png</file>
         <file>Images/icon-tag.png</file>
+        <file>Images/icon-trashcan.png</file>
         <file>Images/icon-world.png</file>
         <file>Images/icon-world2.png</file>
         <file>Images/icon-world3.png</file>
@@ -52,22 +64,13 @@
         <file>Images/pin-green.png</file>
         <file>Images/pin-red.png</file>
         <file>Images/pin-yellow.png</file>
-        <file>Images/trashcan.png</file>
-        <file>Images/trashcan2.png</file>
+
         <file>Pictures/avatar.jpg</file>
         <file>Pictures/welcome.png</file>
         <file>Pictures/IMG_00000001.png</file>
-        <file>Cameras/iPhone3GS.png</file>
-        <file>Cameras/DigimaxL55WKenoxX15WIDE.png</file>
-        <file>Images/bt-filter.png</file>
         <file>Translations/eng.qm</file>
         <file>Translations/fre.qm</file>
         <file>Keywords/keywords.eng</file>
         <file>Keywords/keywords.fre</file>
-        <file>Images/bt-find.png</file>
-        <file>Images/bt-explorer.png</file>
-        <file>Images/bt-folder.png</file>
-        <file>Images/bt_trashcan.png</file>
-        <file>Cameras/AutoScanner.png</file>
     </qresource>
 </RCC>

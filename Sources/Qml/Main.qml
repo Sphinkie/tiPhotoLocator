@@ -77,6 +77,8 @@ ApplicationWindow {
     signal requestReverseGeocode(double lati, double longi)
     /// Demande les coordonnées GPS de la ville donnée.
     signal requestCoords(string city, bool home)
+    // Demande de centrer la carte sur les coordonnées suivantes
+    signal showNextCoords
 
     // ----------------------------------------------------------------
     // Déclaration des popups
@@ -292,10 +294,10 @@ ApplicationWindow {
             height: 160
             Layout.fillWidth: true
             Layout.rightMargin: 30
-            onImageClicked: (url) => {
-                imagePreviewPopup.imageSource = url
-                imagePreviewPopup.open()
-            }
+            onImageClicked: url => {
+                                imagePreviewPopup.imageSource = url
+                                imagePreviewPopup.open()
+                            }
         }
     }
 }

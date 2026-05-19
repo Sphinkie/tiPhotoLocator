@@ -177,7 +177,7 @@
 <context>
     <name>KeywordsRepeater</name>
     <message>
-        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="19"/>
+        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="21"/>
         <source>Apply to all</source>
         <translation type="unfinished">Apply to all</translation>
     </message>
@@ -185,22 +185,22 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="170"/>
+        <location filename="../Sources/Qml/Main.qml" line="172"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="175"/>
+        <location filename="../Sources/Qml/Main.qml" line="177"/>
         <source>MAP</source>
         <translation>MAP</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="180"/>
+        <location filename="../Sources/Qml/Main.qml" line="182"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>EXIF / IPTC TAGS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="185"/>
+        <location filename="../Sources/Qml/Main.qml" line="187"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
@@ -511,42 +511,42 @@
 <context>
     <name>ToolbarMapForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="25"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="26"/>
         <source>Find a place</source>
         <translation>Find a place</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="46"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="58"/>
         <source>Save Position</source>
         <translation>Save Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="48"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="60"/>
         <source>Store the position of the current photo</source>
         <translation>Store the position of the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="87"/>
         <source>Apply the stored position to the current photo</source>
         <translation>Apply the stored position to the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="61"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
         <source>Clear Saved Position</source>
         <translation>Clear Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="85"/>
         <source>Apply Saved Position</source>
         <translation>Apply Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="110"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="122"/>
         <source>Restore</source>
         <translation>Restore</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="117"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="129"/>
         <source>Reload the initial GPS coordinates of the photo</source>
         <translation>Reload the initial GPS coordinates of the photo</translation>
     </message>
@@ -672,7 +672,7 @@
         <translation type="unfinished">Photo content description: who, where, how, why? (in a few words).</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="176"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="160"/>
         <source>A list of keywords, related to the photo and used for searches.</source>
         <translation type="unfinished">A list of keywords, related to the photo and used for searches.</translation>
     </message>

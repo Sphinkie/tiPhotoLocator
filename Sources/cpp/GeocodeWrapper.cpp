@@ -104,12 +104,12 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         qDebug() << "locations found" << reply->locations().count() ;
         // On regarde quel type de requête était à l'origine de cette réponse
         QString replyType = reply->property("requestType").toString();
-        const QGeoLocation geolocation = reply->locations().value(0);
 
         if (replyType == "home")
         {
             // Cas 1 : On avait demandé des home coords
             // On extrait les coords de la réponse
+            const QGeoLocation geolocation = reply->locations().value(0);
             QGeoCoordinate coords = geolocation.coordinate();
             // On les mémorise dans un settings
             QSettings settings;
@@ -118,16 +118,17 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
         }
         else if (replyType == "place")
         {
-            // Cas 2 : On avait demandé les coordpnnées d'un endroit donné.
-            // On extrait les coords de la réponse
-            QGeoCoordinate coords = geolocation.coordinate();
-            // On centre la carte sur les coordonnées retournées par l'API
-            qDebug() << "center map on " << coords;
-            emit centerMap(coords.latitude(), coords.longitude());
+            // Cas 2 : On avait demandé les coordonnées d'un endroit donné.
+            // On stocke le résultat
+            m_locations = reply->locations();
+            // On centre les map sur les premières coordonnées retournées par l'API
+            m_index = 0;
+            this->onShowNextCoords();
         }
         else
         {
             // Cas 3 : On avait demandé des suggestions
+            const QGeoLocation geolocation = reply->locations().value(0);
             const QGeoAddress adresse = geolocation.address();
             qDebug() << "adresse" << adresse.text();
             // Il y a un bug dans Qt: county et district sont toujours vides. On va les chercher dans le texte.
@@ -164,3 +165,16 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
 }
 
 
+/** **********************************************************************************************************
+ * @brief Centre la carte sur un jeu de coordonées GPS parmi une liste.
+ * ***********************************************************************************************************/
+void GeocodeWrapper::onShowNextCoords()
+{
+    // On extrait les coords de la réponse
+    QGeoLocation geolocation = m_locations.value(m_index);
+    QGeoCoordinate coords = geolocation.coordinate();
+    // On centre la carte sur les coordonnées choisies
+    qDebug() << "center map on " << m_index << coords;
+    emit centerMap(coords.latitude(), coords.longitude());
+    if (m_index++ >= m_locations.count()-1) m_index=0;
+}

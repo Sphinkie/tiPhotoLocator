@@ -150,25 +150,9 @@ Zone {
         ColumnLayout {
             spacing: 0
             Layout.columnSpan: 2
-            KeywordsRepeater {}
-
-            /*
-            Repeater {
-                model: photoKeywords
-                RowLayout {
-                    spacing: 24
-                    Chips {
-                        targetName: "keywords:"
-                        content: modelData ? modelData : ""
-                    }
-                    Button {
-                        text: qsTr("Apply to all")
-                        enabled: appliedKeywords.indexOf(modelData) === -1
-                        onClicked: applyKeyword(modelData)
-                    }
-                }
+            KeywordsRepeater {
+                id: keywordsRepeater
             }
-            */
         }
         Label {
             id: lb_keywords
