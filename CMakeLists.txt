@@ -58,20 +58,20 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/TinyChip.qml
         Sources/Qml/Components/PhotoListview.qml
         Sources/Qml/Components/TabFramePhotoPreview.qml
+        Sources/Qml/Components/TabFramePhotoMap.qml
         Sources/Qml/Components/TabFramePhotoTags.qml
         Sources/Qml/Components/TabFrameGlobalTags.qml
-        Sources/Qml/Components/TabFramePhotoMap.qml
         Sources/Qml/Components/TimerLoadFolder.qml
         Sources/Qml/Components/Zone.qml
         Sources/Qml/Components/ZoneTitle.qml
     QML_FILES
-    Sources/Qml/Controllers/PopupKeywords.qml
+        Sources/Qml/Controllers/PopupKeywords.qml
         Sources/Qml/Controllers/PopupSettings.qml
         Sources/Qml/Controllers/ToolbarPrincipale.qml
         Sources/Qml/Controllers/ToolbarBottom.qml
         Sources/Qml/Controllers/ToolbarMap.qml
         Sources/Qml/Controllers/ZoneCamera.qml
-        Sources/Qml/Controllers/ZoneIptc.qml
+        Sources/Qml/Controllers/ZoneGlobalTags.qml
         Sources/Qml/Controllers/ZoneGeoloc.qml
         Sources/Qml/Controllers/ZonePhoto.qml
         Sources/Qml/Controllers/ZonePreview.qml
@@ -86,7 +86,6 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Dialogs/TiFolderDialog.qml
         Sources/Qml/Models/ModelFolderList.qml
     QML_FILES
-        Sources/Qml/Vues/ZoneIptcForm.ui.qml
         Sources/Qml/Vues/PopupKeywordsForm.qml
         Sources/Qml/Vues/PopupSettingsForm.ui.qml
         Sources/Qml/Vues/ToolbarBottomForm.ui.qml
@@ -94,6 +93,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml
         Sources/Qml/Vues/ZoneCameraForm.ui.qml
         Sources/Qml/Vues/ZoneGeolocForm.ui.qml
+        Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml
         Sources/Qml/Vues/ZonePhotoForm.ui.qml
         Sources/Qml/Vues/ZonePreviewForm.ui.qml
         Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml

@@ -9,7 +9,7 @@ import "../Controllers"
 ColumnLayout {
 
     /// Tableau des tags pouvant être appliqués globalement
-    ZoneIptc {
+    ZoneGlobalTags {
         Layout.fillWidth: true
         Layout.fillHeight: true
     }

@@ -5,34 +5,34 @@ import "../Javascript/TiUtilities.js" as Utilities
 
 
 /** *************************************************************************************
- * @brief Zone avec les tags IPTC pouvant être appliqués à toutes les photos du dossier.
+ * @brief Zone avec les tags pouvant être appliqués globalement à toutes les photos du dossier.
  * *************************************************************************************/
-ZoneIptcForm {
-    id: iptcZone
+ZoneGlobalTagsForm {
+    id: globalTagsZone
     property string creator
     property string writer
-    property string city:             tabbedPage.currentPhoto.city
-    property string country:          tabbedPage.currentPhoto.country
-    property string location:         tabbedPage.currentPhoto.location
-    property string description:      tabbedPage.currentPhoto.description
+    property string city: tabbedPage.currentPhoto.city
+    property string country: tabbedPage.currentPhoto.country
+    property string location: tabbedPage.currentPhoto.location
+    property string description: tabbedPage.currentPhoto.description
     property string dateTimeOriginal: tabbedPage.currentPhoto.dateTimeOriginal
 
-    dateTimeFormatted: dateTimeOriginal
-                       ? Utilities.toReadableDate(dateTimeOriginal) + " " + Utilities.toReadableTime(dateTimeOriginal)
-                       : ""
+    dateTimeFormatted: dateTimeOriginal ? Utilities.toReadableDate(
+                                              dateTimeOriginal) + " " + Utilities.toReadableTime(
+                                              dateTimeOriginal) : ""
 
     photoKeywords: tabbedPage.currentPhoto ? tabbedPage.currentPhoto.keywords : []
 
     // Surveillance du changement de photo : remise à zéro des flags.
     property string watchedFilename: tabbedPage.currentPhoto.filename
     onWatchedFilenameChanged: {
-        creatorApplied     = false
-        countryApplied     = false
-        cityApplied        = false
-        locationApplied    = false
+        creatorApplied = false
+        countryApplied = false
+        cityApplied = false
+        locationApplied = false
         descriptionApplied = false
-        dateTimeApplied    = false
-        appliedKeywords    = []
+        dateTimeApplied = false
+        appliedKeywords = []
     }
 
     bt_applyCreator.onClicked: {
@@ -56,7 +56,8 @@ ZoneIptcForm {
     }
 
     bt_applyDateTime.onClicked: {
-        window.setPhotoProperty(-1, dateTimeFormatted, "dateTimeOriginal") // -1 = all
+        window.setPhotoProperty(-1, dateTimeFormatted,
+                                "dateTimeOriginal") // -1 = all
         dateTimeApplied = true
     }
 
@@ -65,7 +66,7 @@ ZoneIptcForm {
         descriptionApplied = true
     }
 
-    onApplyKeyword: function(keyword) {
+    onApplyKeyword: function (keyword) {
         _photoModel.addKeywordToAll(keyword)
         appliedKeywords = appliedKeywords.concat([keyword])
     }
@@ -75,7 +76,7 @@ ZoneIptcForm {
     // ----------------------------------------------------------------
     Settings {
         id: settings
-        property alias photographe: iptcZone.creator
-        property alias initiales: iptcZone.writer
+        property alias photographe: globalTagsZone.creator
+        property alias initiales: globalTagsZone.writer
     }
 }

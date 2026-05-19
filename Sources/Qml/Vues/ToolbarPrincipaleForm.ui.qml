@@ -32,12 +32,12 @@ Rectangle {
             // Positionnement à l'interieur du Layout
             Layout.leftMargin: 20
         }
-        /// Bouton de Open In Explorer
+        /// Bouton 'Open in Explorer'
         Button {
             id: bt_explorer
             icon.source: "qrc:/Images/bt-folder.png"
             text: qsTr("Open in Explorer")
-            ToolTip.text: qsTr("Open the current folder in Windoss Explorer")
+            ToolTip.text: qsTr("Open the current folder in Windows Explorer")
             ToolTip.visible: hovered
             ToolTip.delay: 500
             // Positionnement à l'interieur du Layout

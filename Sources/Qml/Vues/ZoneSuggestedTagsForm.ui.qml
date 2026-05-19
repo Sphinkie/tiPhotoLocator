@@ -17,14 +17,17 @@ Zone {
 
     // Le Flickable permet de scroller s'il y a trop de suggestions.
     Flickable {
-        contentWidth: parent.width
-        contentHeight: parent.height
+        anchors.fill: parent
+        contentWidth: width
+        contentHeight: grille.height
+        clip: true
+        flickableDirection: Flickable.VerticalFlick
+        ScrollBar.vertical: ScrollBar { policy: ScrollBar.AsNeeded }
 
         /// Le Flow positionne les Chips les unes après les autres.
         Flow {
             id: grille
             width: parent.width
-            height: parent.height
             spacing: 12
             padding: 20
 

@@ -96,12 +96,12 @@ ApplicationWindow {
     PopupSettings {
         id: settingsPopup
     }
-    KeywordsPopup {
+    PopupKeywords {
         id: keywordsPopup
     }
 
     // ----------------------------------------------------------------
-    // Fenêtre de dialogue pour selectionner le dossier
+    // Fenêtre de dialogue pour sélectionner le dossier
     // ----------------------------------------------------------------
     TiFolderDialog {
         id: folderDialog
