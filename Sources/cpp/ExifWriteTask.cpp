@@ -69,11 +69,10 @@ void ExifWriteTask::run()
         itr.next();
         if (itr.key() == "Keywords")
         {
-            // La valeur est une liste de mot-clefs
+            // Vide la liste existante avant d'écrire la nouvelle
+            arguments.append("-Keywords=");
             foreach (QString keyword, itr.value().toStringList())
-            {
                 arguments.append("-Keywords=" + keyword.toUtf8());
-            }
         }
         else
         {
