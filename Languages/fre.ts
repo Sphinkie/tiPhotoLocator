@@ -147,29 +147,24 @@
 <context>
     <name>KeywordsPopupForm</name>
     <message>
-        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="60"/>
         <source>User Keywords</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Mots-clefs personnalisés</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="70"/>
         <source>Predefined keywords</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Keywords personnalisés</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="92"/>
         <source>My keywords</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Mes keywords</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="165"/>
         <source>+ Add new keyword</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">+ Ajouter un nouveau keyword</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/KeywordsPopupForm.qml" line="180"/>
         <source>Close</source>
-        <translation type="unfinished">Fermer</translation>
+        <translation type="vanished">Fermer</translation>
     </message>
 </context>
 <context>
@@ -242,7 +237,7 @@
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="73"/>
         <source>Keywords</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestion des keywords</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="79"/>
@@ -263,6 +258,34 @@
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="89"/>
         <source>About</source>
         <translation>A propos</translation>
+    </message>
+</context>
+<context>
+    <name>PopupKeywordsForm</name>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupKeywordsForm.qml" line="60"/>
+        <source>User Keywords</source>
+        <translation>Mots-clefs personnalisés</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupKeywordsForm.qml" line="70"/>
+        <source>Predefined keywords</source>
+        <translation>Keywords prédéfinis</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupKeywordsForm.qml" line="92"/>
+        <source>My keywords</source>
+        <translation>Keywords personnalisés</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupKeywordsForm.qml" line="165"/>
+        <source>Add new keyword</source>
+        <translation>Ajouter un nouveau mot-clef</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupKeywordsForm.qml" line="180"/>
+        <source>Close</source>
+        <translation>Fermer</translation>
     </message>
 </context>
 <context>
@@ -449,32 +472,32 @@
     <message>
         <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="9"/>
         <source>undated</source>
-        <translation type="unfinished">sans date</translation>
+        <translation>sans date</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="10"/>
         <source>Select all photos without a date</source>
-        <translation type="unfinished">Sélectionne les photos sans date</translation>
+        <translation>Sélectionne les photos sans date</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="24"/>
         <source>unlocalized</source>
-        <translation type="unfinished">sans localisation</translation>
+        <translation>sans localisation</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="25"/>
         <source>Select all photos without location</source>
-        <translation type="unfinished">Sélectionne les photos sans localisation</translation>
+        <translation>Sélectionne les photos sans localisation</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="39"/>
         <source>select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Toutes</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="40"/>
         <source>Select all photos</source>
-        <translation type="unfinished">Sélectionne toutes les photos</translation>
+        <translation>Sélectionne toutes les photos</translation>
     </message>
 </context>
 <context>
@@ -535,12 +558,12 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="39"/>
         <source>Open in Explorer</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir dans l&apos;Explorateur</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="40"/>
         <source>Open the current folder in Windoss Explorer</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvre le dossier dans l&apos;Explorateur Windows</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="55"/>

@@ -162,7 +162,7 @@ Popup {
                 /// Bouton Add new
                 Button {
                     id: addButton
-                    text: qsTr("+ Add new keyword")
+                    text: qsTr("Add new keyword")
                     visible: !newChip.visible && customModel.count < 12
                     Layout.alignment: Qt.AlignHCenter
                 }

@@ -5,7 +5,7 @@ import "../Vues"
 /** **********************************************************************************************************
  * @brief Controller du popup de gestion des keywords utilisateur.
  * *********************************************************************************************************** */
-KeywordsPopupForm {
+PopupKeywordsForm {
     id: keywordsPopup
 
     /// Chargement des infos à l'ouverture du popup
@@ -35,7 +35,6 @@ KeywordsPopupForm {
         var lang = settings.tagLanguage === 0 ? "eng" : "fre"
         xhr.open("GET", "qrc:/Keywords/keywords." + lang)
         xhr.send()
-        console.log("xhr", xhr.toString())
     }
 
     /// Gestion des chips existants
