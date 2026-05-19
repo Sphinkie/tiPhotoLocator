@@ -68,5 +68,6 @@
         <file>Images/bt-explorer.png</file>
         <file>Images/bt-folder.png</file>
         <file>Images/bt_trashcan.png</file>
+        <file>Cameras/AutoScanner.png</file>
     </qresource>
 </RCC>

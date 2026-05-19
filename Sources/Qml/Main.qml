@@ -100,6 +100,11 @@ ApplicationWindow {
         id: keywordsPopup
     }
 
+    /// Popup plein-écran pour visualiser une imagette en grand.
+    PopupImagette {
+        id: imagePreviewPopup
+    }
+
     // ----------------------------------------------------------------
     // Fenêtre de dialogue pour sélectionner le dossier
     // ----------------------------------------------------------------
@@ -287,6 +292,10 @@ ApplicationWindow {
             height: 160
             Layout.fillWidth: true
             Layout.rightMargin: 30
+            onImageClicked: (url) => {
+                imagePreviewPopup.imageSource = url
+                imagePreviewPopup.open()
+            }
         }
     }
 }

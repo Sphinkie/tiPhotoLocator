@@ -14,11 +14,13 @@ ListView {
     model: _onTheMapProxyModel
     focus: false
 
+    signal imageClicked(string imageUrl)
 
     /** ******************************************************************************************************
      * Le delegate pour afficher chaque imagette dans la ListView. L'image courante a un cadre.
      * *******************************************************************************************************/
     delegate: Rectangle {
+        id: delegateImagette
         required property string imageUrl
         required property bool isCurrent
         width: 160
@@ -27,15 +29,17 @@ ListView {
         border.color: isCurrent ? Material.accentColor : "transparent"
         border.width: 3
         Image {
-            id: image
             width: 154
             height: 154
             anchors.centerIn: parent
             fillMode: Image.PreserveAspectFit
-            source: imageUrl
+            source: delegateImagette.imageUrl
             asynchronous: true
-            // Smooth filtering gives better visual quality, but it may be slower on some hardware.
             smooth: false
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: delegateImagette.ListView.view.imageClicked(delegateImagette.imageUrl)
         }
     }
 }

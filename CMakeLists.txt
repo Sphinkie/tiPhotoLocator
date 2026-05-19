@@ -79,6 +79,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Controllers/ZoneSuggestedLocations.qml
         Sources/Qml/Controllers/ZoneUserdata.qml
     QML_FILES
+        Sources/Qml/Dialogs/PopupImagette.qml
         Sources/Qml/Dialogs/AboutDialog.qml
         Sources/Qml/Dialogs/ApikeyDialog.qml
         Sources/Qml/Dialogs/CreditsDialog.qml
@@ -103,6 +104,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
+        QML_FILES Sources/Qml/Components/KeywordsRepeater.qml
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

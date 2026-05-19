@@ -175,24 +175,32 @@
     </message>
 </context>
 <context>
+    <name>KeywordsRepeater</name>
+    <message>
+        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="19"/>
+        <source>Apply to all</source>
+        <translation type="unfinished">Appliquer à tous</translation>
+    </message>
+</context>
+<context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="165"/>
+        <location filename="../Sources/Qml/Main.qml" line="170"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="170"/>
+        <location filename="../Sources/Qml/Main.qml" line="175"/>
         <source>MAP</source>
         <translation>CARTE</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="175"/>
+        <location filename="../Sources/Qml/Main.qml" line="180"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>TAGS EXIF &amp; IPTC</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="180"/>
+        <location filename="../Sources/Qml/Main.qml" line="185"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
@@ -630,7 +638,6 @@
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="107"/>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="123"/>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="139"/>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="162"/>
         <source>Apply to all</source>
         <translation type="unfinished">Appliquer à tous</translation>
     </message>
@@ -665,7 +672,7 @@
         <translation type="unfinished">Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="172"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="176"/>
         <source>A list of keywords, related to the photo and used for searches.</source>
         <translation type="unfinished">Une liste de mots-clefs relatifs à la photo, et utilisés pour les recherches.</translation>
     </message>

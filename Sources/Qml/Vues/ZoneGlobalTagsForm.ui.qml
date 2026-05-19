@@ -150,6 +150,9 @@ Zone {
         ColumnLayout {
             spacing: 0
             Layout.columnSpan: 2
+            KeywordsRepeater {}
+
+            /*
             Repeater {
                 model: photoKeywords
                 RowLayout {
@@ -165,6 +168,7 @@ Zone {
                     }
                 }
             }
+            */
         }
         Label {
             id: lb_keywords
