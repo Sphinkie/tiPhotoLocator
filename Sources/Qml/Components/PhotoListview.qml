@@ -71,10 +71,15 @@ ListView {
         else return
 
         event.accepted = true
+        navigateTo(target)
+    }
+
+    function navigatePrev() { navigateTo(Math.max(0, currentIndex - 1)) }
+    function navigateNext() { navigateTo(Math.min(count - 1, currentIndex + 1)) }
+
+    function navigateTo(target) {
         currentIndex = target
         positionViewAtIndex(target, ListView.Contain)
-
-        // On lit les données directement dans le modèle (plus sûr que currentItem qui peut être null)
         var sourceIdx = model.getSourceIndex(target)
         var photo = _photoModel.get(sourceIdx)
         if (photo && !photo.isMarker)

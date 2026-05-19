@@ -26,13 +26,62 @@ RowLayout {
             id: previewImage
             source: (tabbedPage.currentIndex === 0) ? tabbedPage.currentPhoto.imageUrl : ""
             fillMode: Image.PreserveAspectFit
-            // On limite les grandes photos à la taille de la page: (image affichée avec downscale)
-            // On limite les petites photos à leur taille réelle: (image affichée sans upscale)
             height: Math.min(sourceSize.height, parent.height)
             width: Math.min(sourceSize.width, parent.width)
-            // Centrer l'image
             anchors.centerIn: parent
             asynchronous: true
+        }
+
+        // Flèche gauche : photo précédente
+        Rectangle {
+            id: prevArrow
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
+            width: 40
+            height: 80
+            radius: 4
+            color: prevMouse.containsMouse ? "#80000000" : "#40000000"
+            visible: photoListView.currentIndex > 0
+
+            Text {
+                anchors.centerIn: parent
+                text: "◄"
+                color: "white"
+                font.pixelSize: 22
+            }
+
+            MouseArea {
+                id: prevMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: photoListView.navigatePrev()
+            }
+        }
+
+        // Flèche droite : photo suivante
+        Rectangle {
+            id: nextArrow
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            width: 40
+            height: 80
+            radius: 4
+            color: nextMouse.containsMouse ? "#80000000" : "#40000000"
+            visible: photoListView.currentIndex < photoListView.count - 1
+
+            Text {
+                anchors.centerIn: parent
+                text: "►"
+                color: "white"
+                font.pixelSize: 22
+            }
+
+            MouseArea {
+                id: nextMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: photoListView.navigateNext()
+            }
         }
     }
 
