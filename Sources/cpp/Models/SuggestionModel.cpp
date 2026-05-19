@@ -41,6 +41,25 @@ void SuggestionModel::createInitialSuggestions()
     // Ajout des keywords définis dans les ressources.
     int tagLanguage = settings.value("tagLanguage", 0).toInt();
     this->loadKeywordsFromFile(tagLanguage == 0 ? "eng" : "fre");
+    this->loadKeywordsFromSettings();
+}
+
+
+/** **********************************************************************************************************
+ * @brief Charge les keywords personalisés depuis les settings.
+ * ***********************************************************************************************************/
+void SuggestionModel::loadKeywordsFromSettings()
+{
+    QSettings settings;
+    const QString csv_keywords = settings.value("customKeywords", "").toString();
+    if (csv_keywords.isEmpty()) return;
+    const QStringList keywords = csv_keywords.split(',', Qt::SkipEmptyParts);
+    for (const QString &kw : keywords)
+    {
+        const QString trimmed = kw.trimmed();
+        if (!trimmed.isEmpty())
+            this->append(trimmed, "keywords", "tag", -1);
+    }
 }
 
 

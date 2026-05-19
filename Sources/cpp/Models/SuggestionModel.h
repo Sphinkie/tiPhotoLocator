@@ -64,6 +64,7 @@ private:
     void addCategoryToSuggestion(const int suggestion_row, const QString category);
     void createInitialSuggestions();
     void loadKeywordsFromFile(const QString &lang);
+    void loadKeywordsFromSettings();
 
     // -----------------------------------------------------
     // Membres
