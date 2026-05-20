@@ -1,8 +1,8 @@
-Cherchons une liste plus concrète des plugins disponibles :Parfait ! Maintenant je peux vous donner une explication complète et détaillée.
+# Techniques d'optimisation de la taille des progralles en QML
 
-## **Option `--exclude-plugins` expliquée en détail**
+## Option `--exclude-plugins` expliquée en détail
 
-### **Syntaxe**
+### Syntaxe
 
 L'option `--exclude-plugins` accepte une liste séparée par des virgules de plugins individuels qui ne seront pas déployés. Par exemple : `--exclude-plugins qsvg,qpdf`
 
@@ -10,11 +10,11 @@ L'option `--exclude-plugins` accepte une liste séparée par des virgules de plu
 windeployqt.exe --qmldir <path-to-qml> --exclude-plugins qsvg,qpdf,qico MyApp.exe
 ```
 
-### **Comment ça fonctionne**
+### Comment ça fonctionne
 
 Normalement, `windeployqt` scanne votre application et déploie **tous** les plugins qu'il pense être nécessaires. L'option `--exclude-plugins` vous permet d'exclure certains plugins que vous êtes sûr de **ne pas utiliser**.
 
-### **Exemples de plugins à exclure**
+### Exemples de plugins à exclure
 
 Voici les plugins les plus courants que vous pouvez potentiellement exclure :
 
@@ -31,7 +31,7 @@ Voici les plugins les plus courants que vous pouvez potentiellement exclure :
 
 **Important** : Pour chaque type d'image que vous utilisez dans votre app, vous avez besoin du plugin correspondant. Par exemple, si vous utilisez des JPG, gardez `qjpeg`.
 
-### **Stratégie de suppression sûre**
+### Stratégie de suppression sûre
 
 1. **Identifiez ce que vous utilisez réellement** dans votre app QML :
    - Images PNG/JPG → `qjpeg`, `qgif` (garder)
@@ -53,7 +53,7 @@ windeployqt.exe --qmldir qml --exclude-plugins qtga,qwbmp,qico,qicns,qsvg,qsvgic
 
 3. **Vérifiez que votre app fonctionne** à chaque étape
 
-### **Autres options complémentaires**
+### Autres options complémentaires
 
 Pour une meilleure réduction de taille, combinez avec d'autres options :
 
@@ -70,6 +70,7 @@ windeployqt.exe ^
 - `--no-translations` : évite les fichiers de langue
 - `--no-compiler-runtime` : évite les DLL du compilateur (vous les fournissez via un redistributable)
 
-### **Gains attendus**
+### Gains attendus
 
-Si vous éliminez intelligemment les plugins inutiles, vous pouvez économiser **10-20 MB** sur les 80 MB. C'est modeste mais utile si chaque MB compte.
+Si vous éliminez intelligemment les plugins inutiles, vous pouvez économiser **10-20 MB** sur les 80 MB.  
+C'est modeste mais utile si chaque MB compte.

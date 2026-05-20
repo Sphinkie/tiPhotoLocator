@@ -337,6 +337,7 @@ void SuggestionModel::setDefaultDateFromFolder(const QString &folderUrl)
     if (!location.isEmpty())
     {
         this->append(location, "location", "tag", -1);
+        this->append(location, "city", "tag", -1);
         m_folderLocation = location;
         emit folderLocationChanged();
     }
