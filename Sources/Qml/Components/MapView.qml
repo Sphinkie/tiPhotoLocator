@@ -39,7 +39,8 @@ Map {
        - 5 Hiking Map        (Hiking map view)
        - 6 Custom URL Map    (Thunderforest)
     * ********************************************************************************************************/
-    activeMapType: supportedMapTypes[6] // 0 ou 4
+    readonly property var mapProviderIndices: [0, 4, 6]
+    activeMapType: supportedMapTypes[mapProviderIndices[settings.value("mapProvider", 2)]]
 
     property alias mapCircle: mapCircle
     property point homeCoords
@@ -237,7 +238,7 @@ Map {
         name: "osm"
         locales: ["fr_FR", "en_US"]
         readonly property string thunder_url: "https://tile.thunderforest.com/"
-        readonly property string thunder_type: "outdoors"
+        readonly property string thunder_type: settings.value("mapTheme", "outdoors")
 
 
         /** *******************************************************************************************************

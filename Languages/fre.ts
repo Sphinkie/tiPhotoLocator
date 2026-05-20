@@ -285,7 +285,17 @@
         <translation>Votre ville favorite.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="220"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="197"/>
+        <source>Map Provider:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="216"/>
+        <source>Map theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="259"/>
         <source>Do not change EXIF tags</source>
         <translation>Ne pas modifier les tags EXIF</translation>
     </message>
@@ -295,7 +305,7 @@
         <translation>Langue des tags et suggestions:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="199"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="237"/>
         <source>Map provider API key:</source>
         <translation>Clef API pour les cartes:</translation>
     </message>
@@ -303,6 +313,8 @@
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="151"/>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="170"/>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="189"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="208"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="227"/>
         <source>Reboot needed</source>
         <translation>Redémarrage nécessaire</translation>
     </message>
@@ -312,12 +324,12 @@
         <translation>Langue de l&apos;application:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="205"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="243"/>
         <source>Thunderforest or OpenStreetMap</source>
         <translation>Thunderforest ou OpenStreetMap</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="240"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="279"/>
         <source>Close</source>
         <translation>Fermer</translation>
     </message>

@@ -13,7 +13,7 @@ import "../Components"
 Popup {
     id: settingsForm
     width: 560
-    height: 620
+    height: 700
     property alias buttonClose: buttonClose
     property alias settings: settings
     modal: true
@@ -191,6 +191,44 @@ Popup {
                         style: Text.Normal
                     }
                 }
+                /// Map Provider (Thunderforest or OpenStreetMap)
+                RowLayout {
+                    Label {
+                        text: qsTr("Map Provider:")
+                        font.pixelSize: 12
+                    }
+                    ComboBox {
+                        id: mapProvider
+                        Layout.fillWidth: true
+                        implicitHeight: 36
+                        model: ["OSM Street map", "OSM Terrain Map", "ThunderForest"]
+                    }
+                    Text {
+                        color: Style.tertiaryForegroundColor
+                        text: qsTr("Reboot needed")
+                        font.pixelSize: 12
+                        style: Text.Normal
+                    }
+                }
+                /// Style de carte
+                RowLayout {
+                    Label {
+                        text: qsTr("Map theme:")
+                        font.pixelSize: 12
+                    }
+                    ComboBox {
+                        id: mapTheme
+                        Layout.fillWidth: true
+                        implicitHeight: 36
+                        model: ["outdoors", "landscape", "cycle", "neighbourhood", "atlas"]
+                    }
+                    Text {
+                        color: Style.tertiaryForegroundColor
+                        text: qsTr("Reboot needed")
+                        font.pixelSize: 12
+                        style: Text.Normal
+                    }
+                }
                 /// Clef API pour les cartes
                 RowLayout {
                     property bool apiKeyVisible: false
@@ -213,6 +251,7 @@ Popup {
                         onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
                     }
                 }
+
                 /// Mode debug
                 RowLayout {
                     CheckBox {
@@ -260,5 +299,7 @@ Popup {
         property alias debugModeEnabled: checkBoxDebug.checked
         property alias tagLanguage: tagLanguages.currentIndex // 0: English, 1: French
         property alias guiLanguage: guiLanguages.currentIndex // 0: English, 1: French
+        property alias mapTheme: mapTheme.currentText
+        property alias mapProvider: mapProvider.currentIndex
     }
 }
