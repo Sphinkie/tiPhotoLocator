@@ -627,7 +627,7 @@
         <translation>Tags relatifs à la photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="55"/>
+        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="57"/>
         <source>content description:</source>
         <translation>Description du contenu:</translation>
     </message>

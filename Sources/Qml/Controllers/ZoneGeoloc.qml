@@ -39,6 +39,24 @@ ZoneGeolocForm {
     }
 
     // -----------------------------------------------------------------------------------
+    // SWAP BUTTON (city ↔ location)
+    // -----------------------------------------------------------------------------------
+    chipCity.swapArea.onClicked: {
+        var val = chipCity.chipText.text
+        window.setPhotoProperty(-4, val, "location")
+        window.setPhotoProperty(-4, "", "city")
+        chipLocation.content = val
+        chipCity.content = ""
+    }
+    chipLocation.swapArea.onClicked: {
+        var val = chipLocation.chipText.text
+        window.setPhotoProperty(-4, val, "city")
+        window.setPhotoProperty(-4, "", "location")
+        chipCity.content = val
+        chipLocation.content = ""
+    }
+
+    // -----------------------------------------------------------------------------------
     // REVERT BUTTON
     // -----------------------------------------------------------------------------------
     chipCity.revertArea.onClicked: Chips.revertEdition(chipCity)

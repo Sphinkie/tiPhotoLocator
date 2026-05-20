@@ -18,12 +18,17 @@ Item {
     property bool deletable: false ///< type:bool Fait apparaitre le mini-bouton Delete.
     /// type:string le texte du Chips
     property string content
-    /// type:string Le label du Chips
-    property string targetName
+    /// type:string Le nom technique du tag (ex: "city", "location"). Dérive targetName automatiquement.
+    property string target: ""
+    /// type:string Le label affiché dans le Chips. Calculé depuis target, ou surchargeable directement.
+    property string targetName: target !== "" ? target + ":" : ""
+    // property string targetName
     property alias editArea: editArea ///< type:MouseArea Zone cliquable du mini-bouton Edit.
     property alias saveArea: saveArea ///< type:MouseArea Zone cliquable du mini-bouton Save.
     property alias revertArea: revertArea ///< type:MouseArea Zone cliquable du mini-bouton Revert.
     property alias deleteArea: deleteArea ///< type:MouseArea Zone cliquable du mini-bouton Delete.
+    property alias swapArea: swapArea ///< type:MouseArea Zone cliquable du mini-bouton Swap (city↔location).
+    property bool swappable: false ///< type:bool Active le bouton swap (city↔location). A positionner à true uniquement sur chipCity et chipLocation.
     /// Pour le controle inviduel des items
     property alias chipText: chipText
     property bool hideTargetWhenFilled: false ///< type:bool Si true, le targetName disparait dès que content est renseigné (pour FatChip).
@@ -115,8 +120,9 @@ Item {
             anchors.leftMargin: (editable || canSave) ? 36 : 12
             anchors.verticalCenter: parent.verticalCenter
             visible: !(hideTargetWhenFilled && content.trim() !== "")
-            width: (hideTargetWhenFilled && content.trim() !== "") ? 0 : implicitWidth
-            text: targetName
+            width: (hideTargetWhenFilled && content.trim(
+                        ) !== "") ? 0 : implicitWidth
+            text: targetName === "" ? target + ":" : targetName
             font.pixelSize: 12
             // Positionnement du texte
             verticalAlignment: Text.AlignVCenter
@@ -132,7 +138,7 @@ Item {
         TextInput {
             id: chipText
             anchors.left: targetName ? chipTarget.right : chipEdit.right
-            anchors.right: chipDel.left
+            anchors.right: chipSwapTarget.left
             anchors.leftMargin: 4
             anchors.rightMargin: 4
             anchors.verticalCenter: parent.verticalCenter
@@ -148,6 +154,25 @@ Item {
             clip: false // Le texte n'est pas tronqué
             //  La taille max du texte pouvant être saisi (24 pour le Chips, 180 pour les FatChips).
             maximumLength: 24
+        }
+
+
+        /** ************************************************************************************
+         * Icone "swap" pour basculer entre les targets "city" et "location".
+         * *************************************************************************************/
+        Image {
+            id: chipSwapTarget
+            anchors.right: chipDel.left
+            anchors.rightMargin: 2
+            anchors.verticalCenter: parent.verticalCenter
+            height: 26
+            width: visible ? 26 : 0
+            source: target === "city" ? "qrc:/Images/chip-loc.png" : "qrc:/Images/chip-city.png"
+            visible: swappable && content.trim() !== "" && !canSave
+            MouseArea {
+                id: swapArea
+                anchors.fill: parent
+            }
         }
 
 

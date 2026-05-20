@@ -22,6 +22,7 @@ Item {
                 id: chipDate
                 editable: true
                 deletable: false
+                targetName: "date:"
 
 
                 /*
@@ -34,6 +35,7 @@ Item {
                 id: chipTime
                 editable: true
                 deletable: false
+                targetName: "time:"
 
 
                 /*

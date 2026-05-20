@@ -42,6 +42,7 @@ Item {
                 id: chipMetadata
                 editable: false
                 deletable: false
+                targetName: "metadata:"
             }
             Chips {
                 id: chipAperture

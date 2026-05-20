@@ -37,29 +37,33 @@ Zone {
             id: chipLat
             editable: false
             deletable: true
+            target: "latitude"
         }
         Chips {
             id: chipLong
             editable: false
             deletable: true
+            target: "longitude"
         }
         Chips {
             id: chipCountry
             editable: false
             deletable: true
-            targetName: "country:"
+            target: "country"
         }
         Chips {
             id: chipCity
             editable: false
             deletable: true
-            targetName: "city:"
+            target: "city"
+            swappable: true
         }
         Chips {
             id: chipLocation
             editable: false
             deletable: true
-            targetName: "location:"
+            target: "location"
+            swappable: true
         }
     }
 }

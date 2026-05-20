@@ -32,48 +32,56 @@ Item {
                 id: chipKeyword0
                 editable: true
                 deletable: true
+                targetName: "keyword:"
             }
             /// Chip du keyword 1
             Chips {
                 id: chipKeyword1
                 editable: true
                 deletable: true
+                targetName: "keyword:"
             }
             /// Chip du keyword 2
             Chips {
                 id: chipKeyword2
                 editable: true
                 deletable: true
+                targetName: "keyword:"
             }
             /// Chip du keyword 3
             Chips {
                 id: chipKeyword3
                 editable: true
                 deletable: true
+                targetName: "keyword:"
             }
             /// Chip du keyword 4
             Chips {
                 id: chipKeyword4
                 editable: true
                 deletable: true
+                targetName: "keyword:"
             }
             /// Chip du keyword 5
             Chips {
                 id: chipKeyword5
                 editable: true
                 deletable: true
+                targetName: "keyword:"
             }
             /// Chip du keyword 6
             Chips {
                 id: chipKeyword6
                 editable: true
                 deletable: true
+                targetName: "keyword:"
             }
             /// Chip du keyword 7
             Chips {
                 id: chipKeyword7
                 editable: true
                 deletable: true
+                targetName: "keyword:"
             }
         }
     }
