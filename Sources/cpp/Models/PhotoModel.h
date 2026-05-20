@@ -91,6 +91,7 @@ public:
     Q_INVOKABLE void clear();
     Q_INVOKABLE void removePhotoKeyword(const QString& keyword);
     Q_INVOKABLE void updatePhotoKeyword(const QString& keyword, int index);
+    Q_INVOKABLE void replaceKeywordForSelection(const QString& oldKeyword, const QString& newKeyword);
     Q_INVOKABLE void addKeywordToAll(const QString& keyword);
     Q_INVOKABLE void setSelectedItemsCoords(QGeoCoordinate coords);
     Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);

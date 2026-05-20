@@ -1202,6 +1202,28 @@ void PhotoModel::updatePhotoKeyword(const QString& keyword, int index)
 
 
 /** **********************************************************************************************************
+ * @brief Remplace un keyword par un autre dans toutes les photos sélectionnées.
+ * Recherche par valeur (pas par index) pour gérer les listes de longueurs différentes.
+ * @param oldKeyword : le mot-clef à remplacer.
+ * @param newKeyword : le nouveau mot-clef.
+ * ***********************************************************************************************************/
+void PhotoModel::replaceKeywordForSelection(const QString& oldKeyword, const QString& newKeyword)
+{
+    for (int row = 0; row < m_photos.count(); row++)
+    {
+        if (!m_photos[row].isSelected) continue;
+        int idx = m_photos[row].keywords.indexOf(oldKeyword);
+        if (idx < 0) continue;
+        m_photos[row].keywords[idx] = newKeyword;
+        m_photos[row].toBeSaved = true;
+        QModelIndex qidx = this->index(row, 0);
+        emit dataChanged(qidx, qidx, QVector<int>() << KeywordsRole << ToBeSavedRole);
+    }
+    emit sendSuggestion(newKeyword, "keywords", "tag", -1);
+}
+
+
+/** **********************************************************************************************************
  * @brief Affecte les coordonnées GPS fournies à toutes les photos sélectionnées.
  * @param coords: des coordonnées GPS.
  * ***********************************************************************************************************/

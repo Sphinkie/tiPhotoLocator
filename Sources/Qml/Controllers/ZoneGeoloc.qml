@@ -26,18 +26,15 @@ ZoneGeolocForm {
     // SAVE BUTTON
     // -----------------------------------------------------------------------------------
     chipCity.saveArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.currentPhoto.row,
-                                chipCity.chipText.text, "city")
+        window.setPhotoProperty(-4, chipCity.chipText.text, "city")
         Chips.resetChipButtons(chipCity)
     }
     chipCountry.saveArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.currentPhoto.row,
-                                chipCountry.chipText.text, "country")
+        window.setPhotoProperty(-4, chipCountry.chipText.text, "country")
         Chips.resetChipButtons(chipCountry)
     }
     chipLocation.saveArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.currentPhoto.row,
-                                chipLocation.chipText.text, "location")
+        window.setPhotoProperty(-4, chipLocation.chipText.text, "location")
         Chips.resetChipButtons(chipLocation)
     }
 
