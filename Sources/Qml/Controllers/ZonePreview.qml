@@ -16,7 +16,7 @@ ZonePreviewForm {
     readonly property string bienvenue: qsTr("Welcome!")
     readonly property string brief: qsTr("<b>TiPhotoLocator</b> helps you geotag and tag your photos.")
     readonly property string usage: qsTr("To get started, open the folder containing your photos via the menu <pre>Folders → Open...</pre><br>Then navigate the tabs to fill in the various tags.")
-    readonly property string note: qsTr("<u>Note:</u> Modified data is saved into the photos only when you click the <pre>'Save'</pre> button.")
+    readonly property string note: qsTr("<u>Note:</u> Modified data is saved into the photos only when you click the button <pre>'Save'</pre>.")
     readonly property string br: "<br><br>"
 
     welcomeText: isphoto ? "" : br + bienvenue + br + brief + br + usage + br + note

@@ -111,75 +111,11 @@
     </message>
 </context>
 <context>
-    <name>FilterBar</name>
-    <message>
-        <source>undated</source>
-        <translation type="vanished">undated</translation>
-    </message>
-    <message>
-        <source>Select all photos without a date</source>
-        <translation type="vanished">Select all photos without a date</translation>
-    </message>
-    <message>
-        <source>unlocalized</source>
-        <translation type="vanished">unlocalized</translation>
-    </message>
-    <message>
-        <source>Select all photos without location</source>
-        <translation type="vanished">Select all photos without location</translation>
-    </message>
-    <message>
-        <source>all</source>
-        <translation type="vanished">all</translation>
-    </message>
-    <message>
-        <source>Select all photos</source>
-        <translation type="vanished">Select all photos</translation>
-    </message>
-</context>
-<context>
-    <name>KeywordsPopup</name>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Close</translation>
-    </message>
-</context>
-<context>
-    <name>KeywordsPopupForm</name>
-    <message>
-        <source>User Keywords</source>
-        <translation type="vanished">User Keywords</translation>
-    </message>
-    <message>
-        <source>Predefined keywords</source>
-        <translation type="vanished">Predefined keywords</translation>
-    </message>
-    <message>
-        <source>My keywords</source>
-        <translation type="vanished">My keywords</translation>
-    </message>
-    <message>
-        <source>+ Add new keyword</source>
-        <translation type="vanished">+ Add new keyword</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Close</translation>
-    </message>
-</context>
-<context>
-    <name>KeywordsPopupForm.ui</name>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Close</translation>
-    </message>
-</context>
-<context>
     <name>KeywordsRepeater</name>
     <message>
         <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="21"/>
         <source>Apply to all</source>
-        <translation type="unfinished">Apply to all</translation>
+        <translation>Apply to all</translation>
     </message>
 </context>
 <context>
@@ -294,13 +230,6 @@
         <location filename="../Sources/Qml/Vues/PopupKeywordsForm.qml" line="180"/>
         <source>Close</source>
         <translation>Close</translation>
-    </message>
-</context>
-<context>
-    <name>PopupMetadataForm.ui</name>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Close</translation>
     </message>
 </context>
 <context>
@@ -571,11 +500,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="40"/>
         <source>Open the current folder in Windows Explorer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open the current folder in Windoss Explorer</source>
-        <translation type="vanished">Open the current folder in Windows Explorer</translation>
+        <translation>Open the current folder in Windows Explorer</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="55"/>
@@ -614,22 +539,22 @@
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="39"/>
         <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
-        <translation type="unfinished">IPTC tags mainly contain editorial information, usually manually filled:</translation>
+        <translation>IPTC tags mainly contain editorial information, usually manually filled:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="40"/>
         <source>(image description, etc)</source>
-        <translation type="unfinished">(image description, etc)</translation>
+        <translation>(image description, etc)</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="41"/>
         <source>EXIF tags are defined at the moment of the shot.</source>
-        <translation type="unfinished">EXIF tags are defined at the moment of the shot.</translation>
+        <translation>EXIF tags are defined at the moment of the shot.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="42"/>
         <source>They mainly contain technical information: camera model, lens...</source>
-        <translation type="unfinished">They mainly contain technical information: camera model, lens...</translation>
+        <translation>They mainly contain technical information: camera model, lens...</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="58"/>
@@ -639,93 +564,42 @@
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="123"/>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="139"/>
         <source>Apply to all</source>
-        <translation type="unfinished">Apply to all</translation>
+        <translation>Apply to all</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="63"/>
         <source>Photographer name.</source>
-        <translation type="unfinished">Photographer name.</translation>
+        <translation>Photographer name.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="79"/>
         <source>The country where the photo was taken.</source>
-        <translation type="unfinished">The country where the photo was taken.</translation>
+        <translation>The country where the photo was taken.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="95"/>
         <source>City where the photo was taken or nearest city.</source>
-        <translation type="unfinished">The city where the photo was taken or the nearest city.</translation>
+        <translation>The city where the photo was taken or the nearest city.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="111"/>
         <source>Additionnal geographical information.</source>
-        <translation type="unfinished">Additionnal geographical information.</translation>
+        <translation>Additionnal geographical information.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="127"/>
         <source>Date and time when the photo was taken.</source>
-        <translation type="unfinished">Date and time when the photo was taken.</translation>
+        <translation>Date and time when the photo was taken.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="144"/>
         <source>Photo content description: who, where, how, why? (in a few words).</source>
-        <translation type="unfinished">Photo content description: who, where, how, why? (in a few words).</translation>
+        <translation>Photo content description: who, where, how, why? (in a few words).</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="160"/>
         <source>A list of keywords, related to the photo and used for searches.</source>
-        <translation type="unfinished">A list of keywords, related to the photo and used for searches.</translation>
-    </message>
-</context>
-<context>
-    <name>ZoneIptcForm.ui</name>
-    <message>
-        <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
-        <translation type="vanished">IPTC tags mainly contain editorial information, usually manually filled:</translation>
-    </message>
-    <message>
-        <source>(image description, etc)</source>
-        <translation type="vanished">(image description, etc)</translation>
-    </message>
-    <message>
-        <source>EXIF tags are defined at the moment of the shot.</source>
-        <translation type="vanished">EXIF tags are defined at the moment of the shot.</translation>
-    </message>
-    <message>
-        <source>They mainly contain technical information: camera model, lens...</source>
-        <translation type="vanished">They mainly contain technical information: camera model, lens...</translation>
-    </message>
-    <message>
-        <source>Apply to all</source>
-        <translation type="vanished">Apply to all</translation>
-    </message>
-    <message>
-        <source>Photographer name.</source>
-        <translation type="vanished">Photographer name.</translation>
-    </message>
-    <message>
-        <source>The country where the photo was taken.</source>
-        <translation type="vanished">The country where the photo was taken.</translation>
-    </message>
-    <message>
-        <source>City where the photo was taken or nearest city.</source>
-        <translation type="vanished">The city where the photo was taken or the nearest city.</translation>
-    </message>
-    <message>
-        <source>Date and time when the photo was taken.</source>
-        <translation type="vanished">Date and time when the photo was taken.</translation>
-    </message>
-    <message>
-        <source>Photo content description: who, where, how, why? (in a few words).</source>
-        <translation type="vanished">Photo content description: who, where, how, why? (in a few words).</translation>
-    </message>
-    <message>
-        <source>A list of keywords, related to the photo and used for searches.</source>
-        <translation type="vanished">A list of keywords, related to the photo and used for searches.</translation>
-    </message>
-    <message>
-        <source>Additionnal geographical information.</source>
-        <translation type="vanished">Additionnal geographical information.</translation>
+        <translation>A list of keywords, related to the photo and used for searches.</translation>
     </message>
 </context>
 <context>
@@ -760,8 +634,8 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="19"/>
-        <source>&lt;u&gt;Note:&lt;/u&gt; Modified data is saved into the photos only when you click the &lt;pre&gt;&apos;Save&apos;&lt;/pre&gt; button.</source>
-        <translation>&lt;u&gt;Note:&lt;/u&gt; Modified data is saved into the photos only when you click the &lt;pre&gt;&apos;Save&apos;&lt;/pre&gt; button.</translation>
+        <source>&lt;u&gt;Note:&lt;/u&gt; Modified data is saved into the photos only when you click the button &lt;pre&gt;&apos;Save&apos;&lt;/pre&gt;.</source>
+        <translation>&lt;u&gt;Note:&lt;/u&gt; Modified data is saved into the photos only when you click the button &lt;pre&gt;&apos;Save&apos;&lt;/pre&gt;.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="24"/>
@@ -814,7 +688,7 @@ Limited to 100 requests per day.</source>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneUserdataForm.ui.qml" line="26"/>
         <source>Tags</source>
-        <translation>Tags</translation>
+        <translation>Tags and Keywords</translation>
     </message>
 </context>
 </TS>
