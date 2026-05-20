@@ -1098,7 +1098,6 @@ void PhotoModel::setWriteProgress(const int total)
  * @param rLa : le rayon du cercle sur l'axe des Latitudes N-S(en degrés).
  * @param rLo : le rayon du cercle sur l'axe des Longitudes E-W (en degrés).
  * @return true si le point est dans le cercle.
- * @note Pour être le plus rapide possible, le cercle est plutôt un carré.
  * ***********************************************************************************************************/
 bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo)
 {
@@ -1113,9 +1112,13 @@ bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rL
     {
         return false;
     }
-    else
-        // TODO : pour les points qui arrivent jusqu'ici, on peut faire un test plus précis
-        return true;
+    else        
+    {
+        // Le point est dans le carré englobant: on vérifie qu'il est dans le cercle (ellipse normalisée).
+        double dLa = (pLa - oLa) / rLa;
+        double dLo = (pLo - oLo) / rLo;
+        return (dLa * dLa + dLo * dLo) <= 1.0;
+    }
 }
 
 
