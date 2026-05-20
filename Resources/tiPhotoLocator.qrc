@@ -16,7 +16,6 @@
         <file>Cameras/iPhone3GS.png</file>
         <file>Cameras/DigimaxL55WKenoxX15WIDE.png</file>
         <file>Cameras/AutoScanner.png</file>
-		
         <file>Images/bt-apply.png</file>
         <file>Images/bt-clear.png</file>
         <file>Images/bt-filter.png</file>
@@ -31,7 +30,6 @@
         <file>Images/bt-folder.png</file>
         <file>Images/bt-trashcan.png</file>
         <file>Images/bt-next.png</file>
-
         <file>Images/chip-del.png</file>
         <file>Images/chip-del2.png</file>
         <file>Images/chip-edit.png</file>
@@ -64,7 +62,6 @@
         <file>Images/pin-green.png</file>
         <file>Images/pin-red.png</file>
         <file>Images/pin-yellow.png</file>
-
         <file>Pictures/avatar.jpg</file>
         <file>Pictures/welcome.png</file>
         <file>Pictures/IMG_00000001.png</file>
@@ -72,5 +69,6 @@
         <file>Translations/fre.qm</file>
         <file>Keywords/keywords.eng</file>
         <file>Keywords/keywords.fre</file>
+        <file>Images/bt-eye.png</file>
     </qresource>
 </RCC>

@@ -12,8 +12,8 @@ import "../Components"
  * ***********************************************************************************************************/
 Popup {
     id: settingsForm
-    width: 520
-    height: 720
+    width: 560
+    height: 620
     property alias buttonClose: buttonClose
     property alias settings: settings
     modal: true
@@ -59,16 +59,16 @@ Popup {
             title: qsTr("Default values")
 
             ColumnLayout {
+                spacing: 14
                 /// Valeur par défaut pour CREATOR
                 RowLayout {
                     Label {
                         text: qsTr("Photographer name:")
                         font.pixelSize: 12
                     }
-                    TextField {
+                    TextFieldSettings {
                         id: textFieldName
                         Layout.fillWidth: true
-                        height: 30
                         placeholderText: qsTr("Enter your name here")
                     }
                     Text {
@@ -84,10 +84,9 @@ Popup {
                         text: qsTr("Description writer initials:")
                         font.pixelSize: 12
                     }
-                    TextField {
+                    TextFieldSettings {
                         id: textFieldInitials
                         Layout.fillWidth: true
-                        height: 30
                         horizontalAlignment: Text.AlignLeft
                         Layout.minimumWidth: 116
                         Layout.preferredWidth: 30
@@ -106,16 +105,15 @@ Popup {
                         text: qsTr("Application signature:")
                         font.pixelSize: 12
                     }
-                    TextField {
+                    TextFieldSettings {
                         id: textFieldMetadataSoftware
                         Layout.fillWidth: true
-                        height: 30
                         text: "TiPhotoLocator"
                         enabled: false
                     }
                     Text {
                         color: Style.tertiaryForegroundColor
-                        text: "Metadata Software (Exif)"
+                        text: "Metadata Software (EXIF)"
                         font.pixelSize: 12
                         style: Text.Normal
                     }
@@ -135,16 +133,17 @@ Popup {
 
             ColumnLayout {
                 anchors.fill: parent
+                spacing: 14
+
                 /// Ville sur laquelle centrer la carte
                 RowLayout {
                     Label {
                         text: qsTr("Map auto center:")
                         font.pixelSize: 12
                     }
-                    TextField {
+                    TextFieldSettings {
                         id: textFieldHomecity
                         Layout.fillWidth: true
-                        height: 30
                         placeholderText: qsTr("Your most photographed place.")
                     }
                     Text {
@@ -163,7 +162,7 @@ Popup {
                     ComboBox {
                         id: guiLanguages
                         Layout.fillWidth: true
-                        height: 30
+                        implicitHeight: 36
                         model: ["English", "Français"]
                     }
                     Text {
@@ -171,6 +170,47 @@ Popup {
                         text: qsTr("Reboot needed")
                         font.pixelSize: 12
                         style: Text.Normal
+                    }
+                }
+                /// Langue des suggestions
+                RowLayout {
+                    Label {
+                        text: qsTr("Tags and suggestions language:")
+                        font.pixelSize: 12
+                    }
+                    ComboBox {
+                        id: tagLanguages
+                        Layout.fillWidth: true
+                        implicitHeight: 36
+                        model: ["English", "Français"]
+                    }
+                    Text {
+                        color: Style.tertiaryForegroundColor
+                        text: qsTr("Reboot needed")
+                        font.pixelSize: 12
+                        style: Text.Normal
+                    }
+                }
+                /// Clef API pour les cartes
+                RowLayout {
+                    property bool apiKeyVisible: false
+
+                    Label {
+                        text: qsTr("Map provider API key:")
+                        font.pixelSize: 12
+                    }
+                    TextFieldSettings {
+                        id: textFieldMapApiKey
+                        Layout.fillWidth: true
+                        placeholderText: qsTr("Thunderforest or OpenStreetMap")
+                        echoMode: parent.apiKeyVisible ? TextInput.Normal : TextInput.Password
+                    }
+                    RoundButton {
+                        icon.source: "qrc:/Images/bt-eye.png"
+                        flat: true
+                        implicitHeight: 36
+                        implicitWidth: 36
+                        onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
                     }
                 }
                 /// Mode debug
@@ -185,38 +225,6 @@ Popup {
                         id: checkBoxDebug
                         text: "Debug mode"
                         visible: false
-                    }
-                }
-                /// Langue des suggestions
-                RowLayout {
-                    Label {
-                        text: qsTr("Tags and suggestions language:")
-                        font.pixelSize: 12
-                    }
-                    ComboBox {
-                        id: tagLanguages
-                        Layout.fillWidth: true
-                        height: 30
-                        model: ["English", "Français"]
-                    }
-                    Text {
-                        color: Style.tertiaryForegroundColor
-                        text: qsTr("Reboot needed")
-                        font.pixelSize: 12
-                        style: Text.Normal
-                    }
-                }
-                /// Clef API pour les cartes
-                RowLayout {
-                    Label {
-                        text: qsTr("Map provider API key:")
-                        font.pixelSize: 12
-                    }
-                    TextField {
-                        id: textFieldMapApiKey
-                        Layout.fillWidth: true
-                        height: 30
-                        placeholderText: qsTr("Thunderforest or OpenStreetMap")
                     }
                 }
             }

@@ -250,7 +250,7 @@
         <translation>Default values</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="65"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="66"/>
         <source>Photographer name:</source>
         <translation>Photographer name:</translation>
     </message>
@@ -260,17 +260,17 @@
         <translation>Description writer initials:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="94"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="93"/>
         <source>Initials</source>
         <translation>Initials</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="106"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="105"/>
         <source>Application signature:</source>
         <translation>Application signature:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="134"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="132"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
@@ -280,44 +280,44 @@
         <translation>Map auto center:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="148"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="147"/>
         <source>Your most photographed place.</source>
         <translation>Your most photographed place.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="152"/>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="171"/>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="204"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="151"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="170"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="189"/>
         <source>Reboot needed</source>
         <translation>Reboot needed</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="160"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="159"/>
         <source>Application language:</source>
         <translation>Application language:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="180"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="220"/>
         <source>Do not change EXIF tags</source>
         <translation>Do not change EXIF tags</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="193"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="178"/>
         <source>Tags and suggestions language:</source>
         <translation>Tags and suggestions language:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="212"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="199"/>
         <source>Map provider API key:</source>
         <translation>Map provider API key:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="232"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="240"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="219"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="205"/>
         <source>Thunderforest or OpenStreetMap</source>
         <translation>Thunderforest or OpenStreetMap</translation>
     </message>

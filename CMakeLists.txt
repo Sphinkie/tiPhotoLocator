@@ -53,6 +53,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/ToolbarFilters.qml
         Sources/Qml/Components/ImagettesListView.qml
         Sources/Qml/Components/SuggestionRepeater.qml
+        Sources/Qml/Components/TextFieldSettings.qml
         Sources/Qml/Components/MapView.qml
         Sources/Qml/Components/MainMenuBar.qml
         Sources/Qml/Components/TinyChip.qml
