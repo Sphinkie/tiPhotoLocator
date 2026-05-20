@@ -444,16 +444,19 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].city = value.toString();
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << CityRole << ToBeSavedRole);
+            emit sendSuggestion(value.toString(), "city", "tag", -1);
             break;
         case CountryRole:
             m_photos[index.row()].country = value.toString();
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << CountryRole << ToBeSavedRole);
+            emit sendSuggestion(value.toString(), "country", "tag", -1);
             break;
         case LocationRole:
             m_photos[index.row()].location = value.toString();
             m_photos[index.row()].toBeSaved = true;
             emit dataChanged(index, index, QVector<int>() << LocationRole << ToBeSavedRole);
+            emit sendSuggestion(value.toString(), "location", "tag", -1);
             break;
         case CreatorRole:
             m_photos[index.row()].creator = value.toString();
@@ -1261,9 +1264,9 @@ void PhotoModel::suggestFromSelection()
  * ***********************************************************************************************************/
 void PhotoModel::suggestFromPhoto(const int row)
 {
-    emit sendSuggestion(m_photos[row].city, "city", "tag", -2);
-    emit sendSuggestion(m_photos[row].country, "country", "tag", -2);
-    emit sendSuggestion(m_photos[row].location, "location", "tag", -2);
+    emit sendSuggestion(m_photos[row].city, "city", "tag", -1);
+    emit sendSuggestion(m_photos[row].country, "country", "tag", -1);
+    emit sendSuggestion(m_photos[row].location, "location", "tag", -1);
 }
 
 /** **********************************************************************************************************
