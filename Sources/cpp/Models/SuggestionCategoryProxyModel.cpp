@@ -72,7 +72,12 @@ bool SuggestionCategoryProxyModel::lessThan(const QModelIndex &left, const QMode
 {
     QString leftTarget  = sourceModel()->data(left,  SuggestionModel::TargetRole).toString();
     QString rightTarget = sourceModel()->data(right, SuggestionModel::TargetRole).toString();
-    return leftTarget < rightTarget;
+    if (leftTarget != rightTarget)
+        return leftTarget < rightTarget;
+    // Tri secondaire alphabétique quand les targets sont identiques (ex: plusieurs keywords)
+    QString leftText  = sourceModel()->data(left,  SuggestionModel::TextRole).toString();
+    QString rightText = sourceModel()->data(right, SuggestionModel::TextRole).toString();
+    return leftText < rightText;
 }
 
 
