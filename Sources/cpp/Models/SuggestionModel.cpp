@@ -368,7 +368,7 @@ void SuggestionModel::clear()
     beginResetModel();  // cette méthode envoie un signal indiquant à tous que ce modèle va subir un changement radical
     m_suggestions.clear();
     this->createInitialSuggestions();
-    m_currentPhotoRow = -4;
+    m_currentPhotoRow = -9;
     m_folderLocation  = "";
     emit folderLocationChanged();
     endResetModel();    // cette méthode envoie un signal ModelReset.

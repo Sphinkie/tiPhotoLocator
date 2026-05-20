@@ -70,7 +70,7 @@ private:
     // Membres
     // -----------------------------------------------------
     QVector<Suggestion> m_suggestions;  //!< La liste des Suggestion
-    int     m_currentPhotoRow = -4;    //!< Indice de la photo courante. Valeurs spéciales: -4 = aucune photo | -1 = toutes les photos | -2 = la photo sélectionée.
+    int     m_currentPhotoRow = -9;    //!< Indice de la photo courante. Valeurs spéciales: -9 = aucune photo | -1 = toutes les photos | -2 = la photo sélectionée.
     int     m_dumpedRow;               //!< La dernière ligne affichée dans le dump de debug.
     QString m_folderLocation;          //!< Le lieu extrait du nom du dossier courant.
 
