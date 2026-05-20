@@ -34,7 +34,7 @@ Zone {
     color: Style.suggestionBackgroundColor
 
     readonly property string br: "<br>"
-    readonly property string title: "<b>EXIF and IPTC tags</b> "
+    readonly property string title: qsTr("<b>EXIF and IPTC tags</b>")
     readonly property string brief: "<i>EXchangeable Image Fileformat</i> & <i>International Press Telecom Council</i>"
     readonly property string usage1: qsTr("IPTC tags mainly contain editorial information, usually manually filled:")
     readonly property string note1: qsTr("(image description, etc)")

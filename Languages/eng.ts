@@ -537,6 +537,11 @@
 <context>
     <name>ZoneGlobalTagsForm.ui</name>
     <message>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="37"/>
+        <source>&lt;b&gt;EXIF and IPTC tags&lt;/b&gt;</source>
+        <translation>&lt;b&gt;EXIF and IPTC tags&lt;/b&gt;</translation>
+    </message>
+    <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="39"/>
         <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
         <translation>IPTC tags mainly contain editorial information, usually manually filled:</translation>
