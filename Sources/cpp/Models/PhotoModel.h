@@ -95,7 +95,6 @@ public:
     Q_INVOKABLE void setSelectedItemsCoords(QGeoCoordinate coords);
     Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
     Q_INVOKABLE void suggestFromSelection();
-    Q_INVOKABLE void suggestFromPrevious();
     Q_INVOKABLE void suggestFromPhoto(const int row);
     Q_INVOKABLE void selectionCount();
 

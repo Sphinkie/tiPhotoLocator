@@ -62,20 +62,29 @@ ListView {
     /** ******************************************************************************************************
      * Navigation clavier dans la liste.
      * *******************************************************************************************************/
-    Keys.onPressed: (event) => {
-        let target = currentIndex
-        if      (event.key === Qt.Key_Up)   target = Math.max(0, currentIndex - 1)
-        else if (event.key === Qt.Key_Down) target = Math.min(count - 1, currentIndex + 1)
-        else if (event.key === Qt.Key_Home) target = 0
-        else if (event.key === Qt.Key_End)  target = count - 1
-        else return
+    Keys.onPressed: event => {
+                        let target = currentIndex
+                        if (event.key === Qt.Key_Up)
+                        target = Math.max(0, currentIndex - 1)
+                        else if (event.key === Qt.Key_Down)
+                        target = Math.min(count - 1, currentIndex + 1)
+                        else if (event.key === Qt.Key_Home)
+                        target = 0
+                        else if (event.key === Qt.Key_End)
+                        target = count - 1
+                        else
+                        return
 
-        event.accepted = true
-        navigateTo(target)
+                        event.accepted = true
+                        navigateTo(target)
+                    }
+
+    function navigatePrev() {
+        navigateTo(Math.max(0, currentIndex - 1))
     }
-
-    function navigatePrev() { navigateTo(Math.max(0, currentIndex - 1)) }
-    function navigateNext() { navigateTo(Math.min(count - 1, currentIndex + 1)) }
+    function navigateNext() {
+        navigateTo(Math.min(count - 1, currentIndex + 1))
+    }
 
     function navigateTo(target) {
         currentIndex = target
@@ -224,8 +233,6 @@ ListView {
         _photoModel.currentItemRow = sourceindex // Actualise le PhotoModel
         // La photo courante est forcement sélectionée, mais de façon exclusive.
         _photoModel.addToSelection(sourceindex, true)
-        // on cherche des suggestions de tags parmi les photos précédentes.
-        _photoModel.suggestFromPrevious()
 
         // On mémorise dans currentPhoto les data de l'item selectionné du modèle.
         // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.

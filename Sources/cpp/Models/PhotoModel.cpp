@@ -1269,23 +1269,6 @@ void PhotoModel::suggestFromPhoto(const int row)
     emit sendSuggestion(m_photos[row].location, "location", "tag", -1);
 }
 
-/** **********************************************************************************************************
- * @brief Cherche des suggestions de geotags (country, city, location) pour la photo courante, en allant
- * regarder dans les tags des photos précédentes.
- * ***********************************************************************************************************/
-void PhotoModel::suggestFromPrevious()
-{
-    // On parcourt les items précédents du modèle
-    int row = m_lastCurrentRow;
-    QModelIndex idx = this->index(row, 0);
-    while (idx.isValid())
-    {
-        this->suggestFromPhoto(row);
-        idx = idx.siblingAtRow(--row);
-    }
-    // TODO : si c'est lent quand il y a beaucoup de photos, alors s'arrêter au premier trouvé.
-}
-
 
 /** **********************************************************************************************************
  * @brief PhotoModel::flags
