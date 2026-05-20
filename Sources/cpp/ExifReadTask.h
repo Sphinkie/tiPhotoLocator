@@ -12,9 +12,9 @@
  Tache asynchrone par utilisation de QThreadPool.
 
  @note
-    les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux.
-    Donc, à la fin du traitement, pour actualiser les données du PhotoModel, il faut faire un appel direct à une méthode du modèle.
-    Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.
+    les QRunnable n'héritent pas de QObject et ne peuvent donc pas émettre de signaux.
+    Pour renvoyer les résultats au thread UI, on utilise QMetaObject::invokeMethod avec Qt::QueuedConnection,
+    ce qui garantit que setData() et selectFirstPhoto() s'exécutent sur le thread principal.
 
    @details
    Description of \b JSON options for \c ExifTool.

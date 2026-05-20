@@ -961,6 +961,7 @@ void PhotoModel::selectAll()
  *
  * On utilise les conversions: **1°lat = 111km**  et  **1°long = 111km x cos(lat)**.
  * @see PhotoModel::resetCircle et PhotoModel::belong
+ * @note: les appels rapprochés sont protégés par Mutex au niveau de PhotoModel
  * ***********************************************************************************************************/
 void PhotoModel::findInCirclePhotos(int circle_radius)
 {
@@ -1016,9 +1017,6 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
     // On actualise le nombre de photos sélectionées
     m_selectionCount = selectionCount;
     emit selectionCountChanged();
-
-    // si la fonction est relancée une seconde fois alors que celle-ci n'est pas finie : on ignore
-    // TODO : Mettre un Mutex
 }
 
 

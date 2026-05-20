@@ -65,7 +65,10 @@ void ExifReadTask::run()
     }
     // qDebug() << "Task finished" ;
     // On positionne le curseur de la ListView sur la première photo.
-    if (m_filePos == 0) m_photoModel->selectFirstPhoto();
+    if (m_filePos == 0) {
+        PhotoModel* model = m_photoModel;
+        QMetaObject::invokeMethod(model, [model](){ model->selectFirstPhoto(); }, Qt::QueuedConnection);
+    }
 }
 
 
@@ -110,8 +113,10 @@ void ExifReadTask::processLine(QByteArray line)
         m_rxLine.append("}");
         QJsonDocument jsonDoc = QJsonDocument::fromJson(m_rxLine);
         QJsonObject jsonObject = jsonDoc.object();
-        // On envoie les data au PhotoModel
-        m_photoModel->setData(jsonObject.toVariantMap());
+        // On envoie les data au PhotoModel via le thread UI
+        PhotoModel* model = m_photoModel;
+        QVariantMap variantMap = jsonObject.toVariantMap();
+        QMetaObject::invokeMethod(model, [model, variantMap](){ model->setData(variantMap); }, Qt::QueuedConnection);
     }
     else if (line.startsWith("[{"))
     {
