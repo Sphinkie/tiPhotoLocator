@@ -36,7 +36,7 @@ ExifReadTask::ExifReadTask(int pos, QString filePath)
 void ExifReadTask::run()
 {
     if (m_filePath.isEmpty())
-        m_filePath = QStandardPaths::displayName(QStandardPaths::PicturesLocation);  // TODO : vérifier le résultat
+        m_filePath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
 
     QProcess exifProcess;
     QString program = "Bin/exiftool.exe";
