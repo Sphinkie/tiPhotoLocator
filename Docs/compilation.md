@@ -18,3 +18,9 @@ To compile the sources of this application, you need the Qt 6 framework, [from t
 ## Documentation
 
 The project **doxygen** documentation for the developers is available [here](https://sphinkie.github.io/tiPhotoLocator/doxygen/html/index.html).
+
+## Fonctionnalités futures
+
+- [APIs de reconnaissance de contenu d'image](api-reconnaissance-image.md) — auto-suggestion de keywords via IA (Hugging Face, Imagga, Clarifai…)
+
+- [Optimisation de la taille des l'exécutable QML](size_optimisation.md) — Différentes techniques possibles, mais gain modeste.
