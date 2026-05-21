@@ -73,12 +73,19 @@ void ExifReadTask::run()
         // When a CRLF is receive, we process the line
         this->processLine(exifProcess.readLine());
     }
+    // Vider le buffer résiduel : le process peut terminer avant que la dernière ligne soit lue.
+    while (!exifProcess.atEnd())
+        this->processLine(exifProcess.readLine());
+
     // qDebug() << "Task finished" ;
     // On positionne le curseur de la ListView sur la première photo.
     if (m_filePos == 0) {
         PhotoModel* model = m_photoModel;
         QMetaObject::invokeMethod(model, [model](){ model->selectFirstPhoto(); }, Qt::QueuedConnection);
     }
+    // Signaler la fin de cette tâche pour mettre à jour le BusyIndicator.
+    PhotoModel* model = m_photoModel;
+    QMetaObject::invokeMethod(model, [model](){ model->readTaskFinished(); }, Qt::QueuedConnection);
 }
 
 

@@ -636,12 +636,6 @@ void PhotoModel::setData(const QVariantMap &value_list)
         emit sendSuggestion(prevDate, "dateTimeOriginal", "tag", row);
     }
 
-    // -------------------------------------------------------------------
-    // S'il n'y a plus de thread en cours, on stoppe le BusyIndicator
-    // -------------------------------------------------------------------
-    int nbThreads = QThreadPool::globalInstance()->activeThreadCount();
-    // qDebug() << "nbThreads" << nbThreads;
-    this->setLoading(nbThreads > 2);
 }
 
 
@@ -743,6 +737,7 @@ void PhotoModel::fetchExifMetadata(int photo)
     if (photo > -1)
     {
         qDebug() << "fetchExifMetadata" << photo;
+        m_pendingReadTasks = 1;
         // On lit les tags d'une photo
         ExifReadTask *task = new ExifReadTask(photo, m_photos[photo].imageUrl);
         task->run();
@@ -755,6 +750,7 @@ void PhotoModel::fetchExifMetadata(int photo)
         // Mesures pour scanner 40 photos:
         // 1 par 1 = 32sec - 2 par 2 = 18sec - 3 par 3 = 13sec - 4 par 4 = 12sec - 5 par 5 = 12sec
         ExifReadTask::init(this);
+        m_pendingReadTasks = m_photos.count();
         //Instanciation et ajout de plusieurs tâches au pool de threads
         for (int row = 0; row < m_photos.count(); row++)
         {
@@ -1133,6 +1129,19 @@ void PhotoModel::setLoading(const bool state)
 {
     m_loading = state;
     emit loadingChanged();
+}
+
+/** **********************************************************************************************************
+ * @brief Appelé par chaque ExifReadTask à la fin de son exécution.
+ *        Décrémente le compteur et arrête le BusyIndicator quand toutes les tâches sont terminées.
+ * ***********************************************************************************************************/
+void PhotoModel::readTaskFinished()
+{
+    if (--m_pendingReadTasks <= 0)
+    {
+        m_pendingReadTasks = 0;
+        this->setLoading(false);
+    }
 }
 
 /** **********************************************************************************************************

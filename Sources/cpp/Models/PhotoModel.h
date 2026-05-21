@@ -131,6 +131,7 @@ public slots:
     void append(const QString& filename, const QString& url);
     void appendSavedPosition();
     void fetchExifMetadata(int row = -1);
+    void readTaskFinished();
     void saveMetadata();
     void setData(int row, const QString& value, const QString& property);
     void setInCircleItemCoords(const double latitude, const double longitude);
@@ -173,6 +174,7 @@ private:
     bool m_circleResetted = true;          //!< True si le rayon du cercle est à 0, et que le flag insideCircle a été resetté sur toutes les photos.
     bool m_savedPositionExists = false;    //!< True si le marker SavedPosition existe
     bool m_loading = false;                //!< True si le modèle est en train de scanner le répertoire.
+    int m_pendingReadTasks = 0;            //!< Nombre de ExifReadTask encore en cours d'exécution.
     qreal m_writeProgress = 0;             //!< Progression de l'écriture des données Exif dans les JPG. Varie de 0 à 1.
     int m_totalWrite = 1;                  //!< Nombre de fichiers JPEG à modifier avec de nouvelles metadata.
     int m_countWrite = 0;                  //!< Nombre de fichiers JPEG modifiés avec de nouvelles metadata.
