@@ -173,7 +173,7 @@ ApplicationWindow {
                 Layout.rightMargin: 40
                 TabButton {
                     text: qsTr("PREVIEW")
-                    // test des coins arrondis:
+                    // TODO test des coins arrondis:
                     Material.roundedScale: Material.LargeScale
                 }
                 TabButton {

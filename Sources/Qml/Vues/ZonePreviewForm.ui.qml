@@ -16,6 +16,8 @@ Zone {
     property alias chipTime: chipTime
     property alias chipMake: chipMake
     property alias chipCamModel: chipCamModel
+    property alias chipSpeed: chipSpeed
+    property alias chipAperture: chipAperture
     property alias chipCountry: chipCountry
     property string welcomeText
 
@@ -74,6 +76,20 @@ Zone {
         /// Ce chip affiche le modèle de l'appareil photo.
         Chips {
             id: chipCamModel
+            Layout.leftMargin: 20
+            editable: false
+            deletable: false
+        }
+        /// Ce chip affiche la vitesse de déclenchement
+        Chips {
+            id: chipSpeed
+            Layout.leftMargin: 20
+            editable: false
+            deletable: false
+        }
+        /// Ce chip affiche l'ouverture de l'objectif
+        Chips {
+            id: chipAperture
             Layout.leftMargin: 20
             editable: false
             deletable: false

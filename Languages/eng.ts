@@ -309,7 +309,7 @@
         <translation>Map theme:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="259"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="261"/>
         <source>Do not change EXIF tags</source>
         <translation>Do not change EXIF tags</translation>
     </message>
@@ -324,7 +324,7 @@
         <translation>Map provider API key:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="279"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="281"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
@@ -663,7 +663,7 @@
 <context>
     <name>ZonePreviewForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZonePreviewForm.ui.qml" line="22"/>
+        <location filename="../Sources/Qml/Vues/ZonePreviewForm.ui.qml" line="24"/>
         <source>Summary</source>
         <translation>Summary</translation>
     </message>

@@ -252,7 +252,9 @@ Popup {
                     }
                 }
 
-                /// Mode debug
+                // -------------------------------------------------------
+                /// Mode debug TODO : encore cablé ?
+                // -------------------------------------------------------
                 RowLayout {
                     CheckBox {
                         id: checkBoxExif

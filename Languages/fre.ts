@@ -295,7 +295,7 @@
         <translation>Type de carte:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="259"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="261"/>
         <source>Do not change EXIF tags</source>
         <translation>Ne pas modifier les tags EXIF</translation>
     </message>
@@ -329,7 +329,7 @@
         <translation>Thunderforest ou OpenStreetMap</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="279"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="281"/>
         <source>Close</source>
         <translation>Fermer</translation>
     </message>
@@ -663,7 +663,7 @@
 <context>
     <name>ZonePreviewForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZonePreviewForm.ui.qml" line="22"/>
+        <location filename="../Sources/Qml/Vues/ZonePreviewForm.ui.qml" line="24"/>
         <source>Summary</source>
         <translation>Résumé</translation>
     </message>

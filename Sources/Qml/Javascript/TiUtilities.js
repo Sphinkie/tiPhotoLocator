@@ -31,10 +31,13 @@ function normalizeUrl(url) {
 function toStandardPath(objet) {
     let texte = objet.toString()
     if (texte.length > 8) {
-        texte = texte.replace("file:", "")        // retire "file:"
-        texte = texte.replace(/^\/\/\/\//, "//")  // file:////server → //server (UNC 4 slashes → 2)
-        texte = texte.replace(/^\/\/\/([^\/])/, "$1") // file:///C:/ → C:/ (chemin local)
-        texte = texte.replace(/\//g, "\\")        // remplace tous les / par des \
+        texte = texte.replace("file:", "") // retire "file:"
+        texte = texte.replace(
+                    /^\/\/\/\//,
+                    "//") // file:////server → //server (UNC 4 slashes → 2)
+        texte = texte.replace(/^\/\/\/([^\/])/,
+                              "$1") // file:///C:/ → C:/ (chemin local)
+        texte = texte.replace(/\//g, "\\") // remplace tous les / par des \
     }
     // console.log(texte);
     return texte
@@ -58,7 +61,8 @@ function toShortPath(objet) {
         if (texte.startsWith("\\\\")) {
             // Chemin UNC: on garde \\serveur jusqu'au premier \ suivant
             let serverEnd = texte.indexOf("\\", 2)
-            let prefix = serverEnd > 0 ? texte.slice(0, serverEnd) : texte.slice(0, 10)
+            let prefix = serverEnd > 0 ? texte.slice(
+                                             0, serverEnd) : texte.slice(0, 10)
             result = prefix + "..." + texte.slice(len - 17)
         } else {
             result = texte.slice(0, 3) + "..." + texte.slice(len - 17)
@@ -100,4 +104,27 @@ function toReadableTime(objet) {
         texte = groups[3] + ":" + groups[4]
     }
     return texte
+}
+
+
+/** ***************************************************************************************
+ * @brief Arrondit la vitesse de déclenchement à une valeur lisible standard.
+ * Pour la vitesse, on veut une valeur plus lisible.
+ * @param valeur: la metadata shutterspeed de l'image (par ex: 1/714 ou 1/1526)
+ * @return Une valeur lisible (par ex: 1/700 s ou 1/1500 s)
+ * ****************************************************************************************/
+function arrondir(valeur) {
+    // TODO si undefined or infinite return ""
+    if (valeur > 1)
+        return Math.floor(valeur)
+    else if (valeur < 0.01)
+        // au dela de 100, on arrondit au centième.
+        valeur = 100 * Math.round(1 / (valeur * 100))
+    else if (valeur < 0.1)
+        // au dela de 10, on arrondit au dizième.
+        valeur = 10 * Math.round(1 / (valeur * 10))
+    else if (valeur < 1)
+        // au dela de 10, on arrondit.
+        valeur = Math.round(1 / (valeur))
+    return ("1 / " + valeur + " s")
 }

@@ -33,6 +33,8 @@ ZonePreviewForm {
                           tabbedPage.currentPhoto.dateTimeOriginal)
     chipMake.content: tabbedPage.currentPhoto.make
     chipCamModel.content: tabbedPage.currentPhoto.camModel
+    chipSpeed.content: Utilities.arrondir(tabbedPage.currentPhoto.shutterSpeed)
+    chipAperture.content: "ƒ " + tabbedPage.currentPhoto.fNumber.toFixed(1)
     chipCountry.content: tabbedPage.currentPhoto.country
 }
 

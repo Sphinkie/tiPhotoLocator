@@ -18,6 +18,7 @@ Qualité & Nettoyage
   - Visibilité de la toolbar basée sur _photoModel.count plutôt que folderListModel.count
   - toStandardPath() et toShortPath() corrigés pour les chemins UNC
   - Écriture EXIF sélective : seuls les tags modifiés sont transmis à ExifTool (QSet<QString> dirtyFields)
+  - Correction : BusyIndicator bloqué indéfiniment après lecture des métadonnées (race condition + compteur m_pendingReadTasks)
 
 --------------------------------------------------------------------------------
  Version 1.6  (2026-05-21)

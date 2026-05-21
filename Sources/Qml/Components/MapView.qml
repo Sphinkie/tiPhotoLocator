@@ -116,7 +116,7 @@ Map {
      * Appelé en cas de changement de la liste des MapItems. Cad:
      * - lors d'un clic dans la listView, (doublon ? c'est aussi fait dans PhotoListView)
      * - parfois sur un changement des données du modèle, cad une nouvelle liste de photos. (pas toujours)
-     *   mais de toutes façon, c'est trop tôt, on a pas encore lu les Exif.
+     *   mais de toutes façons, c'est trop tôt, on a pas encore lu les Exif.
      * *******************************************************************************************************/
     onMapItemsChanged: {
         // TODO : A vérifier mais je pense qu'on pourrait enlever les recentrages de ce slot.
