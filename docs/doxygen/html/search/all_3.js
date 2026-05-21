@@ -9,10 +9,10 @@ var searchData=
   ['deletearea_6',['deleteArea',['../class_chips.html#ad300d4af5e2a4d8826fbd6f475678ac8',1,'Chips']]],
   ['description_7',['description',['../struct_photo.html#a6fe05dc549b7caf2ee3232476d41e760',1,'Photo']]],
   ['detailedtext_8',['detailedText',['../class_about_dialog.html#a24a4dcf82e9780bd4b616099c03bd46c',1,'AboutDialog::detailedText'],['../class_apikey_dialog.html#a09cd3608753b292e23dbffc317d9eb91',1,'ApikeyDialog::detailedText']]],
-  ['developpement_20environnement_9',['Installation of the developpement environnement',['../md__docs_2compilation.html#autotoc_md12',1,'']]],
+  ['developpement_20environnement_9',['Installation of the developpement environnement',['../md_docs_2compilation.html#autotoc_md12',1,'']]],
   ['developper_20corner_10',['Developper Corner',['../index.html#autotoc_md3',1,'']]],
   ['diacriticletters_11',['diacriticLetters',['../class_utilities.html#a7e1e10ee30627aedf30eb97d8cf7d52a',1,'Utilities']]],
-  ['documentation_12',['Documentation',['../md__docs_2compilation.html#autotoc_md13',1,'']]],
+  ['documentation_12',['Documentation',['../md_docs_2compilation.html#autotoc_md13',1,'']]],
   ['documentation_13',['Technical documentation',['../index.html#autotoc_md4',1,'']]],
   ['dumpdata_14',['dumpData',['../class_photo_model.html#a822190ecc2081c7b49030c0f6a42317f',1,'PhotoModel::dumpData()'],['../class_suggestion_model.html#af3345223f2aa9b5d563b9097271a1d20',1,'SuggestionModel::dumpData()']]],
   ['duplicatedata_15',['duplicateData',['../class_photo_model.html#aacde479b741e9f94c2077ad979e6b6a7',1,'PhotoModel']]]

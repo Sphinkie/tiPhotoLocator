@@ -15,16 +15,16 @@
 <section title="Inspiration" ref="index.html#autotoc_md5"/>
 </section>
 </section>
-<section title="About Tags" ref="md__docs_2about__tags.html">
-<section title="Exif tags" ref="md__docs_2about__tags.html#autotoc_md7"/>
-<section title="IPTC CORE tags" ref="md__docs_2about__tags.html#autotoc_md8"/>
-<section title="IPTC EXTENSION tags" ref="md__docs_2about__tags.html#autotoc_md9"/>
-<section title="Unused tags" ref="md__docs_2about__tags.html#autotoc_md10"/>
+<section title="About Tags" ref="md_docs_2about__tags.html">
+<section title="Exif tags" ref="md_docs_2about__tags.html#autotoc_md7"/>
+<section title="IPTC CORE tags" ref="md_docs_2about__tags.html#autotoc_md8"/>
+<section title="IPTC EXTENSION tags" ref="md_docs_2about__tags.html#autotoc_md9"/>
+<section title="Unused tags" ref="md_docs_2about__tags.html#autotoc_md10"/>
 </section>
-<section title="Compilation" ref="md__docs_2compilation.html">
-<section title="Installation of the developpement environnement" ref="md__docs_2compilation.html#autotoc_md12"/>
-<section title="Documentation" ref="md__docs_2compilation.html#autotoc_md13"/>
-<section title="Fonctionnalités futures" ref="md__docs_2compilation.html#autotoc_md14"/>
+<section title="Compilation" ref="md_docs_2compilation.html">
+<section title="Installation of the developpement environnement" ref="md_docs_2compilation.html#autotoc_md12"/>
+<section title="Documentation" ref="md_docs_2compilation.html#autotoc_md13"/>
+<section title="Fonctionnalités futures" ref="md_docs_2compilation.html#autotoc_md14"/>
 </section>
 <section title="Classes" ref="annotated.html">
 <section title="Liste des classes" ref="annotated.html">
@@ -932,8 +932,8 @@
 <keyword name="ZoneTitle" id="ZoneTitle_" ref="class_zone_title.html"/>
 <keyword name="ZoneUserdata" id="ZoneUserdata_" ref="class_zone_userdata.html"/>
 <keyword name="ZoneUserdataForm" id="ZoneUserdataForm_" ref="class_zone_userdata_form.html"/>
-<keyword name="About Tags" id="About Tags_" ref="md__docs_2about__tags.html"/>
-<keyword name="Compilation" id="Compilation_" ref="md__docs_2compilation.html"/>
+<keyword name="About Tags" id="About Tags_" ref="md_docs_2about__tags.html"/>
+<keyword name="Compilation" id="Compilation_" ref="md_docs_2compilation.html"/>
 <keyword name="Ti Photo Locator" id="Ti Photo Locator_" ref="index.html"/>
 <keyword name="accent" id="Style::accent_af4440916a3af441c1a00b935618782f2" ref="class_style.html#af4440916a3af441c1a00b935618782f2"/>
 <keyword name="accentColor" id="Style::accentColor_ad0cd5bd875e07a9bd8127d736d1e1572" ref="class_style.html#ad0cd5bd875e07a9bd8127d736d1e1572"/>
@@ -1651,7 +1651,7 @@
 <file>class_zone_userdata_form.html</file>
 <file>class_zone_userdata_form.png</file>
 <file>classes.html</file>
-<file>dir_5baf679cf4943df8904dce5d41d4d3dc.html</file>
+<file>dir_49e56c817e5e54854c35e136979f97ca.html</file>
 <file>dir_6a7069226bbd97f49edcefdea86efe3c.html</file>
 <file>dir_6e3933fcb8eb330a880b00d68302cb67.html</file>
 <file>dir_80deaa41e01a78ee3f8742fcac115338.html</file>
@@ -1717,8 +1717,8 @@
 <file>jquery.js</file>
 <file>logo_TPL.ico</file>
 <file>logo_TPL3.png</file>
-<file>md__docs_2about__tags.html</file>
-<file>md__docs_2compilation.html</file>
+<file>md_docs_2about__tags.html</file>
+<file>md_docs_2compilation.html</file>
 <file>menu.js</file>
 <file>menudata.js</file>
 <file>navtree.css</file>

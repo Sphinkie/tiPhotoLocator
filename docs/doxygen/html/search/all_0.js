@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['about_20tags_0',['About Tags',['../md__docs_2about__tags.html',1,'']]],
+  ['about_20tags_0',['About Tags',['../md_docs_2about__tags.html',1,'']]],
   ['aboutdialog_1',['AboutDialog',['../class_about_dialog.html',1,'']]],
   ['accent_2',['accent',['../class_style.html#af4440916a3af441c1a00b935618782f2',1,'Style']]],
   ['accentcolor_3',['accentColor',['../class_style.html#ad0cd5bd875e07a9bd8127d736d1e1572',1,'Style']]],
