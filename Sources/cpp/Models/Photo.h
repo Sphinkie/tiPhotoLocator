@@ -2,6 +2,7 @@
 #define PHOTO_H
 
 #include <QList>
+#include <QSet>
 #include <QString>
 
 /** **********************************************************************************************************
@@ -60,6 +61,7 @@ struct Photo
     QString captionWriter;      //!< Initials of the description writer
     QString software;           //!< Software of the camera or scanner device
     QStringList keywords;       //!< This is a list of keywords describing the image
+    QSet<QString> dirtyFields; //!< ExifTool tag names modified since last read/save
 
     // Surcharges d'operateurs
     bool operator == (const QString &file_name);

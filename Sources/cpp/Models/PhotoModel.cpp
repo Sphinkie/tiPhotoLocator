@@ -465,40 +465,53 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].gpsLatitude = value.toDouble();
             m_photos[index.row()].hasGPS = (value != 0);    // Pas hyper-rigoureux...
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("GPSLatitude");
+            m_photos[index.row()].dirtyFields.insert("GPSLatitudeRef");
+            m_photos[index.row()].dirtyFields.insert("GPSLongitude");
+            m_photos[index.row()].dirtyFields.insert("GPSLongitudeRef");
             emit dataChanged(index, index, QVector<int>() << LatitudeRole << HasGPSRole << ToBeSavedRole);
             break;
         case LongitudeRole:
             m_photos[index.row()].gpsLongitude = value.toDouble();
             m_photos[index.row()].hasGPS = (value != 0);     // Théoriquement, il faudrait tester lat et long...
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("GPSLatitude");
+            m_photos[index.row()].dirtyFields.insert("GPSLatitudeRef");
+            m_photos[index.row()].dirtyFields.insert("GPSLongitude");
+            m_photos[index.row()].dirtyFields.insert("GPSLongitudeRef");
             emit dataChanged(index, index, QVector<int>() << LongitudeRole << HasGPSRole << ToBeSavedRole);
             break;
         case CityRole:
             m_photos[index.row()].city = value.toString();
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("City");
             emit dataChanged(index, index, QVector<int>() << CityRole << ToBeSavedRole);
             emit sendSuggestion(value.toString(), "city", "tag", -1);
             break;
         case CountryRole:
             m_photos[index.row()].country = value.toString();
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("Country");
             emit dataChanged(index, index, QVector<int>() << CountryRole << ToBeSavedRole);
             emit sendSuggestion(value.toString(), "country", "tag", -1);
             break;
         case LocationRole:
             m_photos[index.row()].location = value.toString();
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("Location");
             emit dataChanged(index, index, QVector<int>() << LocationRole << ToBeSavedRole);
             emit sendSuggestion(value.toString(), "location", "tag", -1);
             break;
         case CreatorRole:
             m_photos[index.row()].creator = value.toString();
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("Creator");
             emit dataChanged(index, index, QVector<int>() << CreatorRole << ToBeSavedRole);
             break;
         case DateTimeOriginalRole:
             m_photos[index.row()].dateTimeOriginal = Utilities::toStandardDateTime(value);
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("DateTimeOriginal");
             emit dataChanged(index, index, QVector<int>() << DateTimeOriginalRole << ToBeSavedRole);
             break;
         case DescriptionRole:
@@ -506,16 +519,20 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             m_photos[index.row()].description = value.toString();
             m_photos[index.row()].captionWriter = QSettings().value("initiales").toString();
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("Description");
+            m_photos[index.row()].dirtyFields.insert("CaptionWriter");
             emit dataChanged(index, index, QVector<int>() << DescriptionRole << CaptionWriterRole << ToBeSavedRole);
             break;
         case CaptionWriterRole:
             m_photos[index.row()].captionWriter = value.toString();
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("CaptionWriter");
             emit dataChanged(index, index, QVector<int>() << CaptionWriterRole << ToBeSavedRole);
             break;
         case KeywordsRole:
             m_photos[index.row()].keywords << value.toString();
             m_photos[index.row()].toBeSaved = true;
+            m_photos[index.row()].dirtyFields.insert("Keywords");
             emit dataChanged(index, index, QVector<int>() << KeywordsRole << ToBeSavedRole);
             break;
         case IsSelectedRole:
@@ -524,6 +541,8 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             break;
         case ToBeSavedRole:
             m_photos[index.row()].toBeSaved = value.toBool();
+            if (!value.toBool())
+                m_photos[index.row()].dirtyFields.clear();
             emit dataChanged(index, index, QVector<int>() << ToBeSavedRole);
             break;
         default:
@@ -572,6 +591,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     // Les indicateurs calculés
     m_photos[row].hasGPS          = ((m_photos[row].gpsLatitude!=0) || ( m_photos[row].gpsLongitude!=0));
     m_photos[row].toBeSaved       = false;  // Les tags sont rétablis à leur valeur originelle
+    m_photos[row].dirtyFields.clear();
     // Les metadata EXIF
     m_photos[row].dateTimeOriginal= value_list["DateTimeOriginal"].toString();
     m_photos[row].camModel        = value_list["Model"].toString();
@@ -773,23 +793,35 @@ void PhotoModel::saveMetadata()
         // On teste si cette photo a été modifiée et doit être enregistrée
         if (idx.data(ToBeSavedRole).toBool() && !idx.data(IsMarkerRole).toBool() && !idx.data(IsWelcomeRole).toBool())
         {
-            // On écrit les metadonnées dans le fichier JPG
+            // On écrit uniquement les tags modifiés depuis la dernière lecture/sauvegarde
+            const QSet<QString>& dirty = m_photos[row].dirtyFields;
             QVariantMap exifData;
-            exifData.insert("index", idx);                         // Index de la Photo
-            exifData.insert("imageUrl", idx.data(ImageUrlRole));   // Ce champ sert de clef
-            exifData.insert("GPSLatitude", idx.data(LatitudeRole));
-            exifData.insert("GPSLongitude", idx.data(LongitudeRole));
-            exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toInt()>0 ? "N" : "S" );
-            exifData.insert("GPSLongitudeRef", idx.data(LongitudeRole).toInt()>0 ? "E" : "W" );
-            exifData.insert("DateTimeOriginal", idx.data(DateTimeOriginalRole));
+            exifData.insert("index", idx);
+            exifData.insert("imageUrl", idx.data(ImageUrlRole));
             exifData.insert("MetadataEditingSoftware", settings.value("metadataSoftware", "TiPhotoLocator").toString());
-            exifData.insert("Creator", idx.data(CreatorRole));          // MWG écrit aussi dans Artist
-            exifData.insert("City", idx.data(CityRole));                // MWG écrit dans EXIF et dans IptcExt
-            exifData.insert("Country", idx.data(CountryRole));          // MWG écrit dans EXIF et dans IptcExt
-            exifData.insert("Location", idx.data(LocationRole));        // MWG écrit dans EXIF et dans IptcExt
-            exifData.insert("Description", idx.data(DescriptionRole));  // MWG écrit aussi dans ImageDescription
-            exifData.insert("CaptionWriter", idx.data(CaptionWriterRole));
-            exifData.insert("Keywords", idx.data(KeywordsRole));        // Ajout de la liste des keywords
+            // GPS: les 4 champs sont liés — on les écrit ensemble si l'un d'eux est modifié
+            if (dirty.contains("GPSLatitude") || dirty.contains("GPSLongitude")) {
+                exifData.insert("GPSLatitude",    idx.data(LatitudeRole));
+                exifData.insert("GPSLongitude",   idx.data(LongitudeRole));
+                exifData.insert("GPSLatitudeRef", idx.data(LatitudeRole).toDouble() > 0 ? "N" : "S");
+                exifData.insert("GPSLongitudeRef",idx.data(LongitudeRole).toDouble() > 0 ? "E" : "W");
+            }
+            if (dirty.contains("DateTimeOriginal"))
+                exifData.insert("DateTimeOriginal", idx.data(DateTimeOriginalRole));
+            if (dirty.contains("Creator"))
+                exifData.insert("Creator", idx.data(CreatorRole));
+            if (dirty.contains("City"))
+                exifData.insert("City", idx.data(CityRole));
+            if (dirty.contains("Country"))
+                exifData.insert("Country", idx.data(CountryRole));
+            if (dirty.contains("Location"))
+                exifData.insert("Location", idx.data(LocationRole));
+            if (dirty.contains("Description"))
+                exifData.insert("Description", idx.data(DescriptionRole));
+            if (dirty.contains("CaptionWriter"))
+                exifData.insert("CaptionWriter", idx.data(CaptionWriterRole));
+            if (dirty.contains("Keywords"))
+                exifData.insert("Keywords", idx.data(KeywordsRole));
 
             //Instanciation et ajout de la tâche au pool de threads
             ExifWriteTask *task = new ExifWriteTask(exifData, this, backupsEnabled);

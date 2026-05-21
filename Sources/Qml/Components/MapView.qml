@@ -40,7 +40,8 @@ Map {
        - 6 Custom URL Map    (Thunderforest)
     * ********************************************************************************************************/
     readonly property var mapProviderIndices: [0, 4, 6]
-    activeMapType: supportedMapTypes[mapProviderIndices[settings.value("mapProvider", 2)]]
+    activeMapType: supportedMapTypes[mapProviderIndices[settings.value(
+                                                            "mapProvider", 2)]]
 
     property alias mapCircle: mapCircle
     property point homeCoords
@@ -59,16 +60,18 @@ Map {
         rotationScale: 1 / 60
         property: parent.zoomTowardsCursor ? "" : "zoomLevel"
         onWheel: event => {
-            if (!parent.zoomTowardsCursor) return
-            var zoomDelta  = event.angleDelta.y / 480   // ~0.25 par cran de molette
-            var mousePos   = Qt.point(event.x, event.y)
-            var mouseCoord = parent.toCoordinate(mousePos)
-            parent.zoomLevel = Math.max(parent.minimumZoomLevel,
-                                        Math.min(parent.maximumZoomLevel,
-                                                 parent.zoomLevel + zoomDelta))
-            var newPos = parent.fromCoordinate(mouseCoord, false)
-            parent.pan(newPos.x - mousePos.x, newPos.y - mousePos.y)
-        }
+                     if (!parent.zoomTowardsCursor)
+                     return
+                     var zoomDelta = event.angleDelta.y / 480 // ~0.25 par cran de molette
+                     var mousePos = Qt.point(event.x, event.y)
+                     var mouseCoord = parent.toCoordinate(mousePos)
+                     parent.zoomLevel = Math.max(
+                         parent.minimumZoomLevel,
+                         Math.min(parent.maximumZoomLevel,
+                                  parent.zoomLevel + zoomDelta))
+                     var newPos = parent.fromCoordinate(mouseCoord, false)
+                     parent.pan(newPos.x - mousePos.x, newPos.y - mousePos.y)
+                 }
     }
     MapCircle {
         id: mapCircle
@@ -125,8 +128,6 @@ Map {
                 // console.log(": re-center the map on currentItemCoords", coords)
                 // On repositionne la carte sur les coords de la photo sélectionée
                 mapView.center = coords
-                // On repositionne le cercle
-                //mapCircle.center = coords // apparement inutile
             }
         }
         // on relit homeCoords dans les settings
@@ -238,7 +239,8 @@ Map {
         name: "osm"
         locales: ["fr_FR", "en_US"]
         readonly property string thunder_url: "https://tile.thunderforest.com/"
-        readonly property string thunder_type: settings.value("mapTheme", "outdoors")
+        readonly property string thunder_type: settings.value("mapTheme",
+                                                              "outdoors")
 
 
         /** *******************************************************************************************************
