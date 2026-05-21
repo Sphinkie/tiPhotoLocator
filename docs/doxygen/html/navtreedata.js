@@ -27,15 +27,15 @@ var NAVTREE =
   [ "TiPhotoLocator", "index.html", [
     [ "Ti Photo Locator", "index.html", "index" ],
     [ "About Tags", "md__docs_2about__tags.html", [
-      [ "Exif tags", "md__docs_2about__tags.html#autotoc_md6", null ],
-      [ "IPTC CORE tags", "md__docs_2about__tags.html#autotoc_md7", null ],
-      [ "IPTC EXTENSION tags", "md__docs_2about__tags.html#autotoc_md8", null ],
-      [ "Unused tags", "md__docs_2about__tags.html#autotoc_md9", null ]
+      [ "Exif tags", "md__docs_2about__tags.html#autotoc_md7", null ],
+      [ "IPTC CORE tags", "md__docs_2about__tags.html#autotoc_md8", null ],
+      [ "IPTC EXTENSION tags", "md__docs_2about__tags.html#autotoc_md9", null ],
+      [ "Unused tags", "md__docs_2about__tags.html#autotoc_md10", null ]
     ] ],
     [ "Compilation", "md__docs_2compilation.html", [
-      [ "Installation of the developpement environnement", "md__docs_2compilation.html#autotoc_md11", null ],
-      [ "Documentation", "md__docs_2compilation.html#autotoc_md12", null ],
-      [ "Fonctionnalités futures", "md__docs_2compilation.html#autotoc_md13", null ]
+      [ "Installation of the developpement environnement", "md__docs_2compilation.html#autotoc_md12", null ],
+      [ "Documentation", "md__docs_2compilation.html#autotoc_md13", null ],
+      [ "Fonctionnalités futures", "md__docs_2compilation.html#autotoc_md14", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Liste des classes", "annotated.html", "annotated_dup" ],

@@ -28,11 +28,14 @@ With TiPhotoLocator, you can:
 - you can place your photo manually on the map, or ask the application to find the place by its name.
 - At any moment, you can click on the thumbnail to see a larger photo.
 
-> Supported folder name is `YYYY-MM - Place (comments)`.
+> Supported folder name is `YYYY-MM - Place (comments)`.  
 > (Separators can be dot, space or dash)
 
 
 ## Tagging Features
+
+![Screenshot](images/TPL-tags.png)  
+*The TAG page.*
 
 With TiPhotoLocator, you can:
 
