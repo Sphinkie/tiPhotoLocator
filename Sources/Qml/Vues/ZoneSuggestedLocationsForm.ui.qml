@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls.Material
 import "../Components"
 
@@ -15,30 +14,43 @@ Zone {
     iconZone: "qrc:/Images/icon-suggestion.png"
     txtZone: qsTr("These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.\nLimited to 100 requests per day.")
 
-    ColumnLayout {
+    /// Bouton fixe en haut — fait appel à l'API Nominatim pour obtenir des suggestions de noms de lieux.
+    Button {
+        id: bt_getinfo
+        anchors.top: parent.top
+        anchors.topMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 20
+        text: qsTr("Search")
+        icon.source: "qrc:/Images/icon-suggestion.png"
+        enabled: tabbedPage.currentPhoto.hasGPS
+        ToolTip.text: qsTr("Search geodata on Internet")
+        ToolTip.visible: hovered
+        ToolTip.delay: 500
+    }
 
-        /// En première position, ce bouton fait appel à une API pour obtenir des suggestions de noms de lieux ("nominatim").
-        Button {
-            id: bt_getinfo
-            text: qsTr("Search")
-            icon.source: "qrc:/Images/icon-suggestion.png"
-            enabled: tabbedPage.currentPhoto.hasGPS
-            Layout.topMargin: 16
-            Layout.leftMargin: 20
-            ToolTip.text: qsTr("Search geodata on Internet")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
-        }
+    /// Le Flickable permet de scroller s'il y a trop de suggestions.
+    Flickable {
+        anchors.top: bt_getinfo.bottom
+        anchors.topMargin: 8
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        contentWidth: width
+        contentHeight: suggestionFlow.height
+        clip: true
+        flickableDirection: Flickable.VerticalFlick
+        ScrollBar.vertical: ScrollBar { policy: ScrollBar.AsNeeded }
 
         /// Le Flow positionne les Chips les unes après les autres.
         Flow {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+            id: suggestionFlow
+            width: parent.width
             spacing: 12
             topPadding: 10
             leftPadding: 20
 
-            /// Le repeter affiche chacune des Suggestions (de catégorie "geo") du Model.
+            /// Le repeater affiche chacune des Suggestions (de catégorie "geo") du Model.
             SuggestionRepeater {
                 id: suggestionRepeater
             }
