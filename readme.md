@@ -6,6 +6,8 @@
 
 **[Visit the application site here](https://sphinkie.github.io/tiPhotoLocator)**
 
+Get the latest release of the software by clicking here: {latest release](https://github.com/Sphinkie/tiPhotoLocator/releases/download/v1.6/TiPhotoLocatorSetup.exe)
+
 ## Presentation
 
 When you have a GPX file, that you recorded during your trip, you can sync your photos with the GPX file.
@@ -19,15 +21,21 @@ But, if you don't have recorded any GPX file, or if your photos are older than h
 
 **IPTV** metadata are filled manually by humans and contain editorial information such as the *title*, the *description*, *copy rights*, etc.
 
-Details concerning the tags used by the application are on [this page](./Docs/about_tags.md)
+Details concerning the tags used by the application are on [this page](./docs/about_tags.md)
 
-## Technical information
+
+## Developper Corner
 
 The application is developped with the [Qt framework](https://qt.io) and uses the [ExifTool utility](https://exiftool.org) by Phil Harvey to read and write the Exif and IPTC tags.
 
-Explanation concerning the compiler configuration are on [this page](./Docs/compilation.md)
+Developpers can access to [doxygen documentation here](https://sphinkie.github.io/tiPhotoLocator/doxygen/html/index.html).
 
-## Inspiration
+### Technical documentation
+
+Explanation concerning the compiler configuration are on [this page](./docs/compilation.md)
+
+
+### Inspiration
 
 Other projets on the same theme:
 

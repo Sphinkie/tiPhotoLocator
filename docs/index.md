@@ -4,15 +4,18 @@
 
 **TiPhotoLocator** is a free and Ad-free application that allows you to geotag your favorites photos, and add other contextual tags.
 
-![Screenshot](images/TPL-preview.png)
+![Screenshot](images/TPL-preview.png)  
+*The PREVIEW page.*
+
 
 ## Presentation
 
-**TiPhotoLocator** proposes several pages to manage the photos: a *preview page* of the picture and the main matadata, a *map page* for geographical metadata and a *tag page* for other EXIF and IPTC tags management.
+**TiPhotoLocator** proposes several pages to manage the photos: a *preview page* of the picture and the main matadata, a *map page* for geographical metadata and a *tag page* for other EXIF and IPTC tags management.  
 
-![Screenshot](images/TPL-carte.png)
+Supported languages: English + French.
 
-Supported languages: English + French (for the moment).
+![Screenshot](images/TPL-carte.png)  
+*The MAP page.*
 
 ## Features
 
@@ -31,16 +34,13 @@ With TiPhotoLocator, you can:
 > Supported folder name is `YYYY-MM - Place (comments)`.
 > (Separators can be dot, space or dash)
 
-## Installation
+## Download
 
 Get the latest release of the software by clicking [here: "latest release"](https://github.com/Sphinkie/tiPhotoLocator/releases/latest/download/TiPhotoLocatorSetup.zip)
 
 Download the **TiPhotoLocatorSetup.zip** file, and unzip it in a folder on your computer.
 Then, just run the **TiPhotoLocatorSetup.exe** to install the program.
 
-## Developper corner
-
-Developpers can access to doxygen documentation [here](https://sphinkie.github.io/tiPhotoLocator/doxygen/html/index.html).
 
 ## About me
 
