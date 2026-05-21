@@ -26,9 +26,8 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -97,7 +96,7 @@ $(function(){initNavTree('class_map_view.html','',''); });
 
 <p>Liste complète des membres de <a class="el" href="class_map_view.html">MapView</a>, y compris les membres hérités :</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_map_view.html#a12eba70ae1cc64e09b80c25bad36c372">activeMapType</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>activeMapType</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>center</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>drag</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>homeCoords</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"></td></tr>
@@ -105,12 +104,14 @@ $(function(){initNavTree('class_map_view.html','',''); });
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>mapCircle</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_map_view.html#aea5ce9e936663afd07a6feb68042e929">mapItemView</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_map_view.html#ae5ded3bc79acf34fb2f954518b303a00">mapPlugin</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_map_view.html#ac2dcc7f77997c187247ad99275dc20a9">markerDelegate</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_map_view.html#a4705d5867e93eb43b1939a78c1f3623b">onMapItemsChanged</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>plugin</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_map_view.html#a37dc766bc9ad2693dc433fc9198460b2">settings</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>wheel</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>zoomLevel</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_map_view.html#a78225978fc4c1b6e1131b66491d6f173">mapProviderIndices</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_map_view.html#ac2dcc7f77997c187247ad99275dc20a9">markerDelegate</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_map_view.html#a4705d5867e93eb43b1939a78c1f3623b">onMapItemsChanged</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>plugin</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_map_view.html#a37dc766bc9ad2693dc433fc9198460b2">settings</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>wheel</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>zoomLevel</b> (défini dans <a class="el" href="class_map_view.html">MapView</a>)</td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_map_view.html#af1384361524f4308e1d06d7bfae98092">zoomTowardsCursor</a></td><td class="entry"><a class="el" href="class_map_view.html">MapView</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

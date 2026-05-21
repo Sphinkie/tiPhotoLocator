@@ -6,6 +6,7 @@ var class_chips =
     [ "chipRevert", "class_chips.html#a862a928f9c46196948e907beeeb568a6", null ],
     [ "chipSave", "class_chips.html#aaa9810e2d33ea0566ad0def1ff3fcf05", null ],
     [ "chipShadow", "class_chips.html#a6ab105783c919a4b957c150be271d41b", null ],
+    [ "chipSwapTarget", "class_chips.html#afa6e34912d890d70b733c12c43e8a41f", null ],
     [ "chipTarget", "class_chips.html#a85ac411f6727873de6634858d21d96f7", null ],
     [ "chipText", "class_chips.html#a3f74a511ec723f48b14f24b60d07fa9a", null ],
     [ "implicitHeight", "class_chips.html#ace08562c67d39cb777becaa0f25e8eed", null ],
@@ -22,5 +23,8 @@ var class_chips =
     [ "hideTargetWhenFilled", "class_chips.html#ab15d66ccd1252ebc60f1598bf56ec960", null ],
     [ "revertArea", "class_chips.html#a712d1ffbc8aa67fae4b120e2e3afe38a", null ],
     [ "saveArea", "class_chips.html#a280cfbb450b5cc41e16f31ded7ede64c", null ],
+    [ "swapArea", "class_chips.html#a36109c87cdf79393873ff90b401ff37c", null ],
+    [ "swappable", "class_chips.html#aaa5a30cb10fb2709fb7832e95a2ad1b8", null ],
+    [ "target", "class_chips.html#a4fd70908a8c2a5512af1cf0068e61d20", null ],
     [ "targetName", "class_chips.html#ae3b1cb2195780ae3057bda1bca9b2ff6", null ]
 ];

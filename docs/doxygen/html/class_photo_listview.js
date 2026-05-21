@@ -8,5 +8,6 @@ var class_photo_listview =
     [ "gpsIcon", "class_photo_listview.html#a541ea37c55ae2e2943b6ffcd890967b3", null ],
     [ "highlight", "class_photo_listview.html#a841063bfe4a62d1d6392eb99ff2b87be", null ],
     [ "listDelegate", "class_photo_listview.html#a1e0ea04da8274245f1d6d0aab18e780d", null ],
-    [ "nameText", "class_photo_listview.html#a1d8e398d484387aa153d46916c91ed6d", null ]
+    [ "nameText", "class_photo_listview.html#a1d8e398d484387aa153d46916c91ed6d", null ],
+    [ "onPressed", "class_photo_listview.html#ad7d6cf135abe1b8122abb228f1a9e302", null ]
 ];

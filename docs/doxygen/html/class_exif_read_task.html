@@ -26,9 +26,8 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -153,7 +152,7 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 <div class="textblock"><p>La tache asynchrone <a class="el" href="class_exif_read_task.html" title="La tache asynchrone ExifReadTask permet de lire les metadonnées d&#39;une photo JPG sur le disque dur.">ExifReadTask</a> permet de lire les metadonnées d'une photo JPG sur le disque dur. </p>
 <hr  />
  <p>Tache asynchrone par utilisation de QThreadPool.</p>
-<dl class="section note"><dt>Note</dt><dd>les QRunnable n'héritent pas de QObject et ne peuvent donc pas communiquer avec les autres objets à l'aide de signaux. Donc, à la fin du traitement, pour actualiser les données du <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>, il faut faire un appel direct à une méthode du modèle. Cependant, cela n'est pas contraire aux recommandations: mettre à jour des données peut se faire par appel synchrone.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>les QRunnable n'héritent pas de QObject et ne peuvent donc pas émettre de signaux. Pour renvoyer les résultats au thread UI, on utilise QMetaObject::invokeMethod avec Qt::QueuedConnection, ce qui garantit que setData() et selectFirstPhoto() s'exécutent sur le thread principal.</dd></dl>
 <p>Description of <b>JSON</b> options for <code>ExifTool</code>.</p>
 <div class="fragment"><div class="line">-j[[+]=*JSONFILE*] (-json)</div>
 <div class="line"> </div>

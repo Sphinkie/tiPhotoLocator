@@ -26,9 +26,8 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -144,9 +143,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>editable</b></td></tr
 <tr class="memitem:a923491728dbd5120266e2d3c4af62c31 inherit properties_class_chips" id="r_a923491728dbd5120266e2d3c4af62c31"><td class="memItemLeft" align="right" valign="top">
 string&#160;</td><td class="memItemRight" valign="bottom"><b>content</b></td></tr>
 <tr class="memdesc:a923491728dbd5120266e2d3c4af62c31 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">le texte du <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a> <br /></td></tr>
+<tr class="memitem:a4fd70908a8c2a5512af1cf0068e61d20 inherit properties_class_chips" id="r_a4fd70908a8c2a5512af1cf0068e61d20"><td class="memItemLeft" align="right" valign="top">
+string&#160;</td><td class="memItemRight" valign="bottom"><b>target</b></td></tr>
+<tr class="memdesc:a4fd70908a8c2a5512af1cf0068e61d20 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nom technique du tag (ex: "city", "location"). Dérive targetName automatiquement. <br /></td></tr>
 <tr class="memitem:ae3b1cb2195780ae3057bda1bca9b2ff6 inherit properties_class_chips" id="r_ae3b1cb2195780ae3057bda1bca9b2ff6"><td class="memItemLeft" align="right" valign="top">
 string&#160;</td><td class="memItemRight" valign="bottom"><b>targetName</b></td></tr>
-<tr class="memdesc:ae3b1cb2195780ae3057bda1bca9b2ff6 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le label du <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a>. <br /></td></tr>
+<tr class="memdesc:ae3b1cb2195780ae3057bda1bca9b2ff6 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le label affiché dans le <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a>. Calculé depuis target, ou surchargeable directement. <br /></td></tr>
 <tr class="memitem:aa2cbbf033b2bc37b9f90d8fd033ceb92 inherit properties_class_chips" id="r_aa2cbbf033b2bc37b9f90d8fd033ceb92"><td class="memItemLeft" align="right" valign="top">MouseArea&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chips.html#aa2cbbf033b2bc37b9f90d8fd033ceb92">editArea</a></td></tr>
 <tr class="memdesc:aa2cbbf033b2bc37b9f90d8fd033ceb92 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_zone.html">Zone</a> cliquable du mini-bouton Edit.  <br /></td></tr>
 <tr class="memitem:a280cfbb450b5cc41e16f31ded7ede64c inherit properties_class_chips" id="r_a280cfbb450b5cc41e16f31ded7ede64c"><td class="memItemLeft" align="right" valign="top">MouseArea&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chips.html#a280cfbb450b5cc41e16f31ded7ede64c">saveArea</a></td></tr>
@@ -154,7 +156,11 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>targetName</b></td>
 <tr class="memitem:a712d1ffbc8aa67fae4b120e2e3afe38a inherit properties_class_chips" id="r_a712d1ffbc8aa67fae4b120e2e3afe38a"><td class="memItemLeft" align="right" valign="top">MouseArea&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chips.html#a712d1ffbc8aa67fae4b120e2e3afe38a">revertArea</a></td></tr>
 <tr class="memdesc:a712d1ffbc8aa67fae4b120e2e3afe38a inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_zone.html">Zone</a> cliquable du mini-bouton Revert.  <br /></td></tr>
 <tr class="memitem:ad300d4af5e2a4d8826fbd6f475678ac8 inherit properties_class_chips" id="r_ad300d4af5e2a4d8826fbd6f475678ac8"><td class="memItemLeft" align="right" valign="top">MouseArea&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chips.html#ad300d4af5e2a4d8826fbd6f475678ac8">deleteArea</a></td></tr>
-<tr class="memdesc:ad300d4af5e2a4d8826fbd6f475678ac8 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clic sur l'icone DELETE: A gérer dans le controlleur de la <a class="el" href="class_zone.html">Zone</a> parente avec chipXXX.deleteArea.onClicked:{...}.  <br /></td></tr>
+<tr class="memdesc:ad300d4af5e2a4d8826fbd6f475678ac8 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_zone.html">Zone</a> cliquable du mini-bouton Delete.  <br /></td></tr>
+<tr class="memitem:a36109c87cdf79393873ff90b401ff37c inherit properties_class_chips" id="r_a36109c87cdf79393873ff90b401ff37c"><td class="memItemLeft" align="right" valign="top">
+MouseArea&#160;</td><td class="memItemRight" valign="bottom"><b>swapArea</b></td></tr>
+<tr class="memdesc:a36109c87cdf79393873ff90b401ff37c inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_zone.html">Zone</a> cliquable du mini-bouton Swap (city↔location). <br /></td></tr>
+<tr class="memitem:aaa5a30cb10fb2709fb7832e95a2ad1b8 inherit properties_class_chips" id="r_aaa5a30cb10fb2709fb7832e95a2ad1b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chips.html#aaa5a30cb10fb2709fb7832e95a2ad1b8">swappable</a></td></tr>
 <tr class="memitem:a93017c03e4e28b70d408806337be9f40 inherit properties_class_chips" id="r_a93017c03e4e28b70d408806337be9f40"><td class="memItemLeft" align="right" valign="top">
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>chipText</b></td></tr>
 <tr class="memdesc:a93017c03e4e28b70d408806337be9f40 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour le controle inviduel des items. <br /></td></tr>

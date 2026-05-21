@@ -26,9 +26,8 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -149,20 +148,20 @@ Types publics</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Connecteurs publics</h2></td></tr>
-<tr class="memitem:a8a98d5f81789881189e179d6059c1586" id="r_a8a98d5f81789881189e179d6059c1586"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a98d5f81789881189e179d6059c1586">append</a> (const QString filename, const QString url)</td></tr>
-<tr class="memdesc:a8a98d5f81789881189e179d6059c1586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> to the model, with just a name and a path (url). Other data should be filled later, from exif metadata.  <br /></td></tr>
+<tr class="memitem:adadb528b29e9f53d5d547558766c7ed7" id="r_adadb528b29e9f53d5d547558766c7ed7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adadb528b29e9f53d5d547558766c7ed7">append</a> (const QString &amp;filename, const QString &amp;url)</td></tr>
+<tr class="memdesc:adadb528b29e9f53d5d547558766c7ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> to the model, with just a name and a path (url). Other data should be filled later, from exif metadata.  <br /></td></tr>
 <tr class="memitem:ada671ca616e073c328f32e77f8a86566" id="r_ada671ca616e073c328f32e77f8a86566"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada671ca616e073c328f32e77f8a86566">appendSavedPosition</a> ()</td></tr>
 <tr class="memdesc:ada671ca616e073c328f32e77f8a86566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune). Ses coordonnées GPS sont celles de la photo sélectionnée.  <br /></td></tr>
 <tr class="memitem:a3cc8c0b5e6803970def517a8d57ae155" id="r_a3cc8c0b5e6803970def517a8d57ae155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cc8c0b5e6803970def517a8d57ae155">fetchExifMetadata</a> (int row=-1)</td></tr>
 <tr class="memdesc:a3cc8c0b5e6803970def517a8d57ae155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot lit des données EXIF d'une (ou de toutes les) photos du répertoire, en utilisant la tache asynchrone <a class="el" href="class_exif_read_task.html" title="La tache asynchrone ExifReadTask permet de lire les metadonnées d&#39;une photo JPG sur le disque dur.">ExifReadTask</a>. A la fin de chaque lecture, la tache appelle <a class="el" href="#ad7a5d45624200d819ee0ab429387baa0" title="Surcharge qui permet de modifier unitairement un Role d&#39;un item du modèle.">setData()</a>.  <br /></td></tr>
 <tr class="memitem:ac393e2839ea5993f199ec669973972ef" id="r_ac393e2839ea5993f199ec669973972ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac393e2839ea5993f199ec669973972ef">saveMetadata</a> ()</td></tr>
 <tr class="memdesc:ac393e2839ea5993f199ec669973972ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot écrit dans les fichiers JPG (de façon asynchrone) les metadonnées IPTC des photos qui ont été modifiées. Ce slot est connecté au signal QML saveMetadata émis par ToolBarBottom.  <br /></td></tr>
-<tr class="memitem:a5aef53c6395a6ccd579a019c62e472e0" id="r_a5aef53c6395a6ccd579a019c62e472e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5aef53c6395a6ccd579a019c62e472e0">setData</a> (int row, QString value, QString property)</td></tr>
-<tr class="memdesc:a5aef53c6395a6ccd579a019c62e472e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot ajoute ou modifie une propriété d'une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple quand on clique sur une suggestion.  <br /></td></tr>
+<tr class="memitem:a977628a232c65b712b89b67406e7743d" id="r_a977628a232c65b712b89b67406e7743d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a977628a232c65b712b89b67406e7743d">setData</a> (int row, const QString &amp;value, const QString &amp;property)</td></tr>
+<tr class="memdesc:a977628a232c65b712b89b67406e7743d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot ajoute ou modifie une propriété d'une <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>, par exemple quand on clique sur une suggestion.  <br /></td></tr>
 <tr class="memitem:aa35674fe9c8ec79d2993ce56614bb909" id="r_aa35674fe9c8ec79d2993ce56614bb909"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa35674fe9c8ec79d2993ce56614bb909">setInCircleItemCoords</a> (const double latitude, const double longitude)</td></tr>
 <tr class="memdesc:aa35674fe9c8ec79d2993ce56614bb909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à l'interieur du cercle rouge.  <br /></td></tr>
-<tr class="memitem:a50dc093e369a2741b62aa03556df061c" id="r_a50dc093e369a2741b62aa03556df061c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50dc093e369a2741b62aa03556df061c">setPhotoProperty</a> (const int photo, const QString value, const QString property)</td></tr>
-<tr class="memdesc:a50dc093e369a2741b62aa03556df061c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot affecte le role fourni à toutes les photos demandées.  <br /></td></tr>
+<tr class="memitem:a165ad27d0e76a28be804d26fa26b9c15" id="r_a165ad27d0e76a28be804d26fa26b9c15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a165ad27d0e76a28be804d26fa26b9c15">setPhotoProperty</a> (const int photo, const QString &amp;value, const QString &amp;property)</td></tr>
+<tr class="memdesc:a165ad27d0e76a28be804d26fa26b9c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce slot affecte le role fourni à toutes les photos demandées.  <br /></td></tr>
 <tr class="memitem:a536c2a2381b3ce827257068f5bf43933" id="r_a536c2a2381b3ce827257068f5bf43933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a536c2a2381b3ce827257068f5bf43933">applyCreatorToAll</a> ()</td></tr>
 <tr class="memdesc:a536c2a2381b3ce827257068f5bf43933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique le "photographe" à toutes les photos du modèle.  <br /></td></tr>
 <tr class="memitem:a6c2e4a731969e952993dfe4d38e5788f" id="r_a6c2e4a731969e952993dfe4d38e5788f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c2e4a731969e952993dfe4d38e5788f">removeSavedPosition</a> ()</td></tr>
@@ -245,10 +244,12 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a822190ecc2081c7b49030c0f6a42317f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug function that print (in the console) one line of the model at every call.  <br /></td></tr>
 <tr class="memitem:a1ff9f0f539d9b65e0521ebbaa498b21b" id="r_a1ff9f0f539d9b65e0521ebbaa498b21b"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ff9f0f539d9b65e0521ebbaa498b21b">clear</a> ()</td></tr>
 <tr class="memdesc:a1ff9f0f539d9b65e0521ebbaa498b21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all the items of the Model.  <br /></td></tr>
-<tr class="memitem:a77dea7e487119a062064faa3c60ed2d6" id="r_a77dea7e487119a062064faa3c60ed2d6"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77dea7e487119a062064faa3c60ed2d6">removePhotoKeyword</a> (QString keyword)</td></tr>
-<tr class="memdesc:a77dea7e487119a062064faa3c60ed2d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enlève un des mots-clef descriptif de la photo.  <br /></td></tr>
-<tr class="memitem:a3260014636b9e9ae523391a753be104c" id="r_a3260014636b9e9ae523391a753be104c"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3260014636b9e9ae523391a753be104c">updatePhotoKeyword</a> (QString keyword, int index)</td></tr>
-<tr class="memdesc:a3260014636b9e9ae523391a753be104c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie un des mots-clef descriptif de la photo.  <br /></td></tr>
+<tr class="memitem:ad3307d71659f79588f3bdb0908bd84eb" id="r_ad3307d71659f79588f3bdb0908bd84eb"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3307d71659f79588f3bdb0908bd84eb">removePhotoKeyword</a> (const QString &amp;keyword)</td></tr>
+<tr class="memdesc:ad3307d71659f79588f3bdb0908bd84eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enlève un des mots-clef descriptif de la photo.  <br /></td></tr>
+<tr class="memitem:a2288f782a336bc413295e6bc4be0f5ec" id="r_a2288f782a336bc413295e6bc4be0f5ec"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2288f782a336bc413295e6bc4be0f5ec">updatePhotoKeyword</a> (const QString &amp;keyword, int index)</td></tr>
+<tr class="memdesc:a2288f782a336bc413295e6bc4be0f5ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie un des mots-clef descriptif de la photo.  <br /></td></tr>
+<tr class="memitem:afab571e974df0d79ee1d8e7f6d033b17" id="r_afab571e974df0d79ee1d8e7f6d033b17"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afab571e974df0d79ee1d8e7f6d033b17">replaceKeywordForSelection</a> (const QString &amp;oldKeyword, const QString &amp;newKeyword)</td></tr>
+<tr class="memdesc:afab571e974df0d79ee1d8e7f6d033b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remplace un keyword par un autre dans toutes les photos sélectionnées. Recherche par valeur (pas par index) pour gérer les listes de longueurs différentes.  <br /></td></tr>
 <tr class="memitem:acc4cc81a42b022cd529c4d6408688f60" id="r_acc4cc81a42b022cd529c4d6408688f60"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc4cc81a42b022cd529c4d6408688f60">addKeywordToAll</a> (const QString &amp;keyword)</td></tr>
 <tr class="memdesc:acc4cc81a42b022cd529c4d6408688f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un mot-clef à toutes les photos qui ne le possèdent pas déjà.  <br /></td></tr>
 <tr class="memitem:a614ead774ff62e4d0431a955abb56651" id="r_a614ead774ff62e4d0431a955abb56651"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a614ead774ff62e4d0431a955abb56651">setSelectedItemsCoords</a> (QGeoCoordinate coords)</td></tr>
@@ -257,14 +258,12 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a262b8d92e3edf3884c723c965f7de5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parcourt toutes les <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> du modèle, et flague celles qui sont à l'interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).  <br /></td></tr>
 <tr class="memitem:ac9b73a40d67ee00486147e487bc1a89b" id="r_ac9b73a40d67ee00486147e487bc1a89b"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9b73a40d67ee00486147e487bc1a89b">suggestFromSelection</a> ()</td></tr>
 <tr class="memdesc:ac9b73a40d67ee00486147e487bc1a89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cherche des suggestions de keywords, country, city, location pour la photo courante, en allant regarder dans les tags des autres photos de la selection.  <br /></td></tr>
-<tr class="memitem:a6c8f1095b47978fde332a6018677b024" id="r_a6c8f1095b47978fde332a6018677b024"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c8f1095b47978fde332a6018677b024">suggestFromPrevious</a> ()</td></tr>
-<tr class="memdesc:a6c8f1095b47978fde332a6018677b024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cherche des suggestions de geotags (country, city, location) pour la photo courante, en allant regarder dans les tags des photos précédentes.  <br /></td></tr>
 <tr class="memitem:a23001133bf3fb44176664a2042e657ea" id="r_a23001133bf3fb44176664a2042e657ea"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23001133bf3fb44176664a2042e657ea">suggestFromPhoto</a> (const int row)</td></tr>
 <tr class="memdesc:a23001133bf3fb44176664a2042e657ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie des suggestions de keywords, country, city, location pour la photo courante, en allant regarder dans les tags de la photo fournie.  <br /></td></tr>
 <tr class="memitem:a0de6d700a5cf86a76f4858dd848cb4e7" id="r_a0de6d700a5cf86a76f4858dd848cb4e7"><td class="memItemLeft" align="right" valign="top"><a id="a0de6d700a5cf86a76f4858dd848cb4e7" name="a0de6d700a5cf86a76f4858dd848cb4e7"></a>
 Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>selectionCount</b> ()</td></tr>
-<tr class="memitem:a28933cf9451c4794c12325ac125f439f" id="r_a28933cf9451c4794c12325ac125f439f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28933cf9451c4794c12325ac125f439f">append</a> (const QVariantMap <a class="el" href="#a3f09addf9a989e85b7ae5797156b270f">data</a>)</td></tr>
-<tr class="memdesc:a28933cf9451c4794c12325ac125f439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> item to the model, from a list of metadata.  <br /></td></tr>
+<tr class="memitem:a6e4e4ae883cc26313764a9053ca95f8e" id="r_a6e4e4ae883cc26313764a9053ca95f8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e4e4ae883cc26313764a9053ca95f8e">append</a> (const QVariantMap &amp;<a class="el" href="#a3f09addf9a989e85b7ae5797156b270f">data</a>)</td></tr>
+<tr class="memdesc:a6e4e4ae883cc26313764a9053ca95f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> item to the model, from a list of metadata.  <br /></td></tr>
 <tr class="memitem:ad7a5d45624200d819ee0ab429387baa0" id="r_ad7a5d45624200d819ee0ab429387baa0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7a5d45624200d819ee0ab429387baa0">setData</a> (const QModelIndex &amp;index, const QVariant &amp;value, int role) override</td></tr>
 <tr class="memdesc:ad7a5d45624200d819ee0ab429387baa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge qui permet de modifier <b>unitairement</b> un Role d'un item du modèle.  <br /></td></tr>
 <tr class="memitem:a606c1207c36cdf5e81f346ca82cec2d8" id="r_a606c1207c36cdf5e81f346ca82cec2d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a606c1207c36cdf5e81f346ca82cec2d8">setData</a> (const QVariantMap &amp;value_list)</td></tr>
@@ -514,8 +513,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 
 </div>
 </div>
-<a id="a8a98d5f81789881189e179d6059c1586" name="a8a98d5f81789881189e179d6059c1586"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a98d5f81789881189e179d6059c1586">&#9670;&#160;</a></span>append <span class="overload">[1/2]</span></h2>
+<a id="adadb528b29e9f53d5d547558766c7ed7" name="adadb528b29e9f53d5d547558766c7ed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adadb528b29e9f53d5d547558766c7ed7">&#9670;&#160;</a></span>append <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,12 +525,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
         <tr>
           <td class="memname">void PhotoModel::append </td>
           <td>(</td>
-          <td class="paramtype">const QString</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString</td>          <td class="paramname"><span class="paramname"><em>url</em></span>&#160;)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -553,8 +552,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 
 </div>
 </div>
-<a id="a28933cf9451c4794c12325ac125f439f" name="a28933cf9451c4794c12325ac125f439f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28933cf9451c4794c12325ac125f439f">&#9670;&#160;</a></span>append() <span class="overload">[2/2]</span></h2>
+<a id="a6e4e4ae883cc26313764a9053ca95f8e" name="a6e4e4ae883cc26313764a9053ca95f8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e4e4ae883cc26313764a9053ca95f8e">&#9670;&#160;</a></span>append() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -562,7 +561,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
         <tr>
           <td class="memname">void PhotoModel::append </td>
           <td>(</td>
-          <td class="paramtype">const QVariantMap</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td class="paramtype">const QVariantMap &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -702,7 +701,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>true si le point est dans le cercle. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Pour être le plus rapide possible, le cercle est plutôt un carré. </dd></dl>
 
 </div>
 </div>
@@ -949,6 +947,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
   </dd>
 </dl>
 <p>On utilise les conversions: <b>1°lat = 111km</b> et <b>1°long = 111km x cos(lat)</b>. </p><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="#a8b4c0daf563670d61c87102a19bead12" title="Enleve le flag &quot;insideCircle&quot; à toutes les photos.">PhotoModel::resetCircle</a> et <a class="el" href="#aa63d16a07716d0ad5aff2ff1be183198" title="Indique si le point P de coordonnées (pX, pY) appartient au cercle de centre O (oX,...">PhotoModel::belong</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>: les appels rapprochés sont protégés par Mutex au niveau de <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a> </dd></dl>
 
 </div>
 </div>
@@ -1212,8 +1211,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 
 </div>
 </div>
-<a id="a77dea7e487119a062064faa3c60ed2d6" name="a77dea7e487119a062064faa3c60ed2d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77dea7e487119a062064faa3c60ed2d6">&#9670;&#160;</a></span>removePhotoKeyword()</h2>
+<a id="ad3307d71659f79588f3bdb0908bd84eb" name="ad3307d71659f79588f3bdb0908bd84eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3307d71659f79588f3bdb0908bd84eb">&#9670;&#160;</a></span>removePhotoKeyword()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1221,7 +1220,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
         <tr>
           <td class="memname">void PhotoModel::removePhotoKeyword </td>
           <td>(</td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>keyword</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>keyword</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1265,6 +1264,37 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 <p>Supprime du modèle l'item correspondant à la position sauvegardée. </p>
 <hr  />
 <p>L'item <b>SavedPosition</b>, de type <b>isMarker</b> est supprimé du modèle. </p>
+
+</div>
+</div>
+<a id="afab571e974df0d79ee1d8e7f6d033b17" name="afab571e974df0d79ee1d8e7f6d033b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afab571e974df0d79ee1d8e7f6d033b17">&#9670;&#160;</a></span>replaceKeywordForSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::replaceKeywordForSelection </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>oldKeyword</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>newKeyword</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remplace un keyword par un autre dans toutes les photos sélectionnées. Recherche par valeur (pas par index) pour gérer les listes de longueurs différentes. </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldKeyword</td><td>: le mot-clef à remplacer. </td></tr>
+    <tr><td class="paramname">newKeyword</td><td>: le nouveau mot-clef. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1576,8 +1606,8 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
 
 </div>
 </div>
-<a id="a5aef53c6395a6ccd579a019c62e472e0" name="a5aef53c6395a6ccd579a019c62e472e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5aef53c6395a6ccd579a019c62e472e0">&#9670;&#160;</a></span>setData <span class="overload">[3/3]</span></h2>
+<a id="a977628a232c65b712b89b67406e7743d" name="a977628a232c65b712b89b67406e7743d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a977628a232c65b712b89b67406e7743d">&#9670;&#160;</a></span>setData <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1593,12 +1623,12 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>property</em></span>&#160;)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>property</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1695,8 +1725,8 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
 
 </div>
 </div>
-<a id="a50dc093e369a2741b62aa03556df061c" name="a50dc093e369a2741b62aa03556df061c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50dc093e369a2741b62aa03556df061c">&#9670;&#160;</a></span>setPhotoProperty</h2>
+<a id="a165ad27d0e76a28be804d26fa26b9c15" name="a165ad27d0e76a28be804d26fa26b9c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165ad27d0e76a28be804d26fa26b9c15">&#9670;&#160;</a></span>setPhotoProperty</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1712,12 +1742,12 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString</td>          <td class="paramname"><span class="paramname"><em>property</em></span>&#160;)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>property</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1819,26 +1849,6 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
  
 </div>
 </div>
-<a id="a6c8f1095b47978fde332a6018677b024" name="a6c8f1095b47978fde332a6018677b024"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c8f1095b47978fde332a6018677b024">&#9670;&#160;</a></span>suggestFromPrevious()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PhotoModel::suggestFromPrevious </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Cherche des suggestions de geotags (country, city, location) pour la photo courante, en allant regarder dans les tags des photos précédentes. </p>
-<hr  />
- 
-</div>
-</div>
 <a id="ac9b73a40d67ee00486147e487bc1a89b" name="ac9b73a40d67ee00486147e487bc1a89b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac9b73a40d67ee00486147e487bc1a89b">&#9670;&#160;</a></span>suggestFromSelection()</h2>
 
@@ -1859,8 +1869,8 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
  
 </div>
 </div>
-<a id="a3260014636b9e9ae523391a753be104c" name="a3260014636b9e9ae523391a753be104c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3260014636b9e9ae523391a753be104c">&#9670;&#160;</a></span>updatePhotoKeyword()</h2>
+<a id="a2288f782a336bc413295e6bc4be0f5ec" name="a2288f782a336bc413295e6bc4be0f5ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2288f782a336bc413295e6bc4be0f5ec">&#9670;&#160;</a></span>updatePhotoKeyword()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1868,7 +1878,7 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
         <tr>
           <td class="memname">void PhotoModel::updatePhotoKeyword </td>
           <td>(</td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>keyword</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>keyword</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

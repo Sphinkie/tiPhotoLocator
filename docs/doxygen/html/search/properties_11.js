@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zonebackgroundcolor_0',['zoneBackgroundColor',['../class_style.html#a91ee7cc27aeb087d2d8999b1e0089cd3',1,'Style']]]
+  ['writeprogress_0',['writeProgress',['../class_photo_model.html#a0b76a1d12f7232ac14434c6a764d15e7',1,'PhotoModel']]]
 ];

@@ -6,8 +6,8 @@ var searchData=
   ['zonecameraform_3',['ZoneCameraForm',['../class_zone_camera_form.html',1,'']]],
   ['zonegeoloc_4',['ZoneGeoloc',['../class_zone_geoloc.html',1,'']]],
   ['zonegeolocform_5',['ZoneGeolocForm',['../class_zone_geoloc_form.html',1,'']]],
-  ['zoneiptc_6',['ZoneIptc',['../class_zone_iptc.html',1,'']]],
-  ['zoneiptcform_7',['ZoneIptcForm',['../class_zone_iptc_form.html',1,'']]],
+  ['zoneglobaltags_6',['ZoneGlobalTags',['../class_zone_global_tags.html',1,'']]],
+  ['zoneglobaltagsform_7',['ZoneGlobalTagsForm',['../class_zone_global_tags_form.html',1,'']]],
   ['zonephoto_8',['ZonePhoto',['../class_zone_photo.html',1,'']]],
   ['zonephotoform_9',['ZonePhotoForm',['../class_zone_photo_form.html',1,'']]],
   ['zonepreview_10',['ZonePreview',['../class_zone_preview.html',1,'']]],
@@ -20,5 +20,6 @@ var searchData=
   ['zonesuggestedtagsform_17',['ZoneSuggestedTagsForm',['../class_zone_suggested_tags_form.html',1,'']]],
   ['zonetitle_18',['ZoneTitle',['../class_zone_title.html',1,'']]],
   ['zoneuserdata_19',['ZoneUserdata',['../class_zone_userdata.html',1,'']]],
-  ['zoneuserdataform_20',['ZoneUserdataForm',['../class_zone_userdata_form.html',1,'']]]
+  ['zoneuserdataform_20',['ZoneUserdataForm',['../class_zone_userdata_form.html',1,'']]],
+  ['zoomtowardscursor_21',['zoomTowardsCursor',['../class_map_view.html#af1384361524f4308e1d06d7bfae98092',1,'MapView']]]
 ];

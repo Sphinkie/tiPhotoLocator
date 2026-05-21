@@ -26,9 +26,8 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -106,6 +105,12 @@ Graphe d'héritage de PhotoListview:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a494ba6003c39f426684eb6476a42b000" id="r_a494ba6003c39f426684eb6476a42b000"><td class="memItemLeft" align="right" valign="top"><a id="a494ba6003c39f426684eb6476a42b000" name="a494ba6003c39f426684eb6476a42b000"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>navigatePrev</b> ()</td></tr>
+<tr class="memitem:a0520e6601955f319aae33555ac9e76b3" id="r_a0520e6601955f319aae33555ac9e76b3"><td class="memItemLeft" align="right" valign="top"><a id="a0520e6601955f319aae33555ac9e76b3" name="a0520e6601955f319aae33555ac9e76b3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>navigateNext</b> ()</td></tr>
+<tr class="memitem:ad30f48f39753777de55a0f056f2ce470" id="r_ad30f48f39753777de55a0f056f2ce470"><td class="memItemLeft" align="right" valign="top"><a id="ad30f48f39753777de55a0f056f2ce470" name="ad30f48f39753777de55a0f056f2ce470"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>navigateTo</b> (target)</td></tr>
 <tr class="memitem:a49af943e6e4855ee7401559d203f9c8d" id="r_a49af943e6e4855ee7401559d203f9c8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49af943e6e4855ee7401559d203f9c8d">activatePhoto</a> (pos, hasGPS, city, country, latitude, longitude)</td></tr>
 <tr class="memdesc:a49af943e6e4855ee7401559d203f9c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active la photo sélectionnée (Preview, imagette, tags, et pinpoint géographique). Cette fonction est appelée quand on clique sur un item de listView,.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -128,6 +133,7 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>highlightMoveVelocity<
 <tr class="memitem:a208f5856a00e10931fc5efba6c6f8522" id="r_a208f5856a00e10931fc5efba6c6f8522"><td class="memItemLeft" align="right" valign="top">var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a208f5856a00e10931fc5efba6c6f8522">footer</a></td></tr>
 <tr class="memitem:a841063bfe4a62d1d6392eb99ff2b87be" id="r_a841063bfe4a62d1d6392eb99ff2b87be"><td class="memItemLeft" align="right" valign="top">var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a841063bfe4a62d1d6392eb99ff2b87be">highlight</a></td></tr>
 <tr class="memitem:a82d6553475abc572c63bd0caaaf792a1" id="r_a82d6553475abc572c63bd0caaaf792a1"><td class="memItemLeft" align="right" valign="top">Timer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82d6553475abc572c63bd0caaaf792a1">geoTimer</a></td></tr>
+<tr class="memitem:ad7d6cf135abe1b8122abb228f1a9e302" id="r_ad7d6cf135abe1b8122abb228f1a9e302"><td class="memItemLeft" align="right" valign="top">var Keys&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7d6cf135abe1b8122abb228f1a9e302">onPressed</a></td></tr>
 <tr class="memitem:a1e0ea04da8274245f1d6d0aab18e780d" id="r_a1e0ea04da8274245f1d6d0aab18e780d"><td class="memItemLeft" align="right" valign="top">Component&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e0ea04da8274245f1d6d0aab18e780d">listDelegate</a></td></tr>
 <tr class="memitem:a1e5dec182d42b0edd1c0714d197b960d" id="r_a1e5dec182d42b0edd1c0714d197b960d"><td class="memItemLeft" align="right" valign="top"><a id="a1e5dec182d42b0edd1c0714d197b960d" name="a1e5dec182d42b0edd1c0714d197b960d"></a>
 Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
@@ -386,6 +392,30 @@ Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
 </div><div class="memdoc">
 <hr  />
 <p> Filename de l'image. </p>
+
+</div>
+</div>
+<a id="ad7d6cf135abe1b8122abb228f1a9e302" name="ad7d6cf135abe1b8122abb228f1a9e302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d6cf135abe1b8122abb228f1a9e302">&#9670;&#160;</a></span>onPressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">var Keys PhotoListview::onPressed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> Navigation clavier dans la liste. </p>
 
 </div>
 </div>

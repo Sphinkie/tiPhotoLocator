@@ -55,8 +55,9 @@ var hierarchy =
     ] ],
     [ "Photo", "struct_photo.html", null ],
     [ "Popup", null, [
-      [ "PopupMetadataForm", "class_popup_metadata_form.html", [
-        [ "PopupMetadata", "class_popup_metadata.html", null ]
+      [ "PopupImagette", "class_popup_imagette.html", null ],
+      [ "PopupKeywordsForm", "class_popup_keywords_form.html", [
+        [ "PopupKeywords", "class_popup_keywords.html", null ]
       ] ],
       [ "PopupSettingsForm", "class_popup_settings_form.html", [
         [ "PopupSettings", "class_popup_settings.html", null ]
@@ -94,8 +95,8 @@ var hierarchy =
         [ "ZoneGeolocForm", "class_zone_geoloc_form.html", [
           [ "ZoneGeoloc", "class_zone_geoloc.html", null ]
         ] ],
-        [ "ZoneIptcForm", "class_zone_iptc_form.html", [
-          [ "ZoneIptc", "class_zone_iptc.html", null ]
+        [ "ZoneGlobalTagsForm", "class_zone_global_tags_form.html", [
+          [ "ZoneGlobalTags", "class_zone_global_tags.html", null ]
         ] ],
         [ "ZonePreviewForm", "class_zone_preview_form.html", [
           [ "ZonePreview", "class_zone_preview.html", null ]
@@ -110,13 +111,17 @@ var hierarchy =
       ] ]
     ] ],
     [ "Repeater", null, [
+      [ "KeywordsRepeater", "class_keywords_repeater.html", null ],
       [ "SuggestionRepeater", "class_suggestion_repeater.html", null ]
     ] ],
     [ "RowLayout", null, [
-      [ "FilterBar", "class_filter_bar.html", null ],
-      [ "TabFramePhotoPreview", "class_tab_frame_photo_preview.html", null ]
+      [ "TabFramePhotoPreview", "class_tab_frame_photo_preview.html", null ],
+      [ "ToolbarFilters", "class_toolbar_filters.html", null ]
     ] ],
     [ "Suggestion", "struct_suggestion.html", null ],
+    [ "TextField", null, [
+      [ "TextFieldSettings", "class_text_field_settings.html", null ]
+    ] ],
     [ "Timer", null, [
       [ "TimerLoadFolder", "class_timer_load_folder.html", null ]
     ] ],

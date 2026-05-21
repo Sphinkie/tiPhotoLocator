@@ -10,6 +10,8 @@ var searchData=
   ['loading_7',['loading',['../class_photo_model.html#a56d27419faf6d107503faadf856d75da',1,'PhotoModel']]],
   ['loadingchanged_8',['loadingChanged',['../class_photo_model.html#a1f7a41a6081eb84b1dd2bb67cd0377d7',1,'PhotoModel']]],
   ['loadkeywordsfromfile_9',['loadKeywordsFromFile',['../class_suggestion_model.html#ac0cbea5880d75c4b7e15171811a4a4e0',1,'SuggestionModel']]],
-  ['location_10',['location',['../struct_photo.html#a649223a8259c1bb869af35fe54ed5ff3',1,'Photo']]],
-  ['locator_11',['Ti Photo Locator',['../index.html',1,'']]]
+  ['loadkeywordsfromsettings_10',['loadKeywordsFromSettings',['../class_suggestion_model.html#a7472cc4f2bde6a78f4be33bcb05c8d5e',1,'SuggestionModel']]],
+  ['loadpredefinedkeywords_11',['loadPredefinedKeywords',['../class_popup_keywords.html#a0fda95d7fafc3a7234bb1e81522e7d37',1,'PopupKeywords']]],
+  ['location_12',['location',['../struct_photo.html#a649223a8259c1bb869af35fe54ed5ff3',1,'Photo']]],
+  ['locator_13',['Ti Photo Locator',['../index.html',1,'']]]
 ];

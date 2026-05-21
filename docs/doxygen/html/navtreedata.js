@@ -34,7 +34,8 @@ var NAVTREE =
     ] ],
     [ "Compilation", "md__docs_2compilation.html", [
       [ "Installation of the developpement environnement", "md__docs_2compilation.html#autotoc_md11", null ],
-      [ "Documentation", "md__docs_2compilation.html#autotoc_md12", null ]
+      [ "Documentation", "md__docs_2compilation.html#autotoc_md12", null ],
+      [ "Fonctionnalités futures", "md__docs_2compilation.html#autotoc_md13", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Liste des classes", "annotated.html", "annotated_dup" ],
@@ -43,7 +44,7 @@ var NAVTREE =
       [ "Membres de classe", "functions.html", [
         [ "Tout", "functions.html", "functions_dup" ],
         [ "Fonctions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Énumérations", "functions_enum.html", null ],
         [ "Propriétés", "functions_prop.html", null ]
       ] ]
@@ -57,8 +58,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_camera_set_8h_source.html",
-"class_photo_model.html#acc4cc81a42b022cd529c4d6408688f60",
-"files.html"
+"class_photo_model.html#ab2a9ae6ee15c2e8aa80dfd123bc9b4ac",
+"class_zone_preview_form.html#a0b122e982e53a3b4545ba67c9b3539b4"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

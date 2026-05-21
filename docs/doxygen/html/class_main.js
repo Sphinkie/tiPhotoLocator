@@ -15,6 +15,7 @@ var class_main =
     [ "setPhotoProperty", "class_main.html#ac0ff9966818be09f18bfe42bc766ae33", null ],
     [ "bottomToolBar", "class_main.html#afdf9d5f249ee4ef9573ae402aef38f7a", null ],
     [ "header", "class_main.html#aac07382860c30f1b9b149d4057b20fc4", null ],
+    [ "imagePreviewPopup", "class_main.html#ac08a4a5f2dc3d5ea2151e59d811cb02a", null ],
     [ "imagettes", "class_main.html#af3dfb2a32b39c98a991299276fc2b67a", null ],
     [ "line2", "class_main.html#a2c1d358ddafd73b36bfb1f50ba6b9ccd", null ],
     [ "line3", "class_main.html#a424dfda57077b446d80cf22e08f90ceb", null ],

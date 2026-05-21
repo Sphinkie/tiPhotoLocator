@@ -26,9 +26,8 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo_TPL.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.5</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -110,8 +109,10 @@ Graphe d'héritage de GeocodeWrapper:</div>
 Connecteurs publics</h2></td></tr>
 <tr class="memitem:a122fadb46be185cb6e7e375d618f3d9c" id="r_a122fadb46be185cb6e7e375d618f3d9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a122fadb46be185cb6e7e375d618f3d9c">requestReverseGeocode</a> (double lati, double longi)</td></tr>
 <tr class="memdesc:a122fadb46be185cb6e7e375d618f3d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir des informations sur un jeu de coordonnées GPS. Par exemple: 38.980 et 1.433 =&gt; <a href="https://nominatim.openstreetmap.org/ui/details.html?osmtype=W&amp;osmid=313893003&amp;class=highway">Résultat</a> La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>  <br /></td></tr>
-<tr class="memitem:a25567934f5ff042c2c1758d5cc86de3c" id="r_a25567934f5ff042c2c1758d5cc86de3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25567934f5ff042c2c1758d5cc86de3c">requestCoordinates</a> (const QString city, const bool home)</td></tr>
-<tr class="memdesc:a25567934f5ff042c2c1758d5cc86de3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>.  <br /></td></tr>
+<tr class="memitem:afe24d64afb183a81c2daa97f380aec34" id="r_afe24d64afb183a81c2daa97f380aec34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe24d64afb183a81c2daa97f380aec34">requestCoordinates</a> (const QString &amp;city, const bool home)</td></tr>
+<tr class="memdesc:afe24d64afb183a81c2daa97f380aec34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une requete pour obtenir les coordonnées GPS d'un lieu donné par le paramètre city. La réponse est traitée par <a class="el" href="#a07234eb935d74cfd85d48058608a1ec4" title="Signal appelé lors de la réception de la réponse à la request.">geoCodeFinished()</a>.  <br /></td></tr>
+<tr class="memitem:ad8fcd055196df78fe385baf7c4a1bbaa" id="r_ad8fcd055196df78fe385baf7c4a1bbaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8fcd055196df78fe385baf7c4a1bbaa">onShowNextCoords</a> ()</td></tr>
+<tr class="memdesc:ad8fcd055196df78fe385baf7c4a1bbaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centre la carte sur un jeu de coordonées GPS parmi une liste.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signaux</h2></td></tr>
@@ -136,6 +137,12 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
 <tr class="memitem:a859c70420ef396ad48626c65dacd61f7" id="r_a859c70420ef396ad48626c65dacd61f7"><td class="memItemLeft" align="right" valign="top"><a id="a859c70420ef396ad48626c65dacd61f7" name="a859c70420ef396ad48626c65dacd61f7"></a>
 <a class="el" href="class_suggestion_model.html">SuggestionModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_suggestionModel</b></td></tr>
 <tr class="memdesc:a859c70420ef396ad48626c65dacd61f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le <a class="el" href="class_suggestion_model.html" title="The SuggestionModel class manages a list of Suggestion.">SuggestionModel</a> qui stockera les reponses. <br /></td></tr>
+<tr class="memitem:a78aabbcabe5958c466c7a2479975c5e8" id="r_a78aabbcabe5958c466c7a2479975c5e8"><td class="memItemLeft" align="right" valign="top"><a id="a78aabbcabe5958c466c7a2479975c5e8" name="a78aabbcabe5958c466c7a2479975c5e8"></a>
+QList&lt; QGeoLocation &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_locations</b></td></tr>
+<tr class="memdesc:a78aabbcabe5958c466c7a2479975c5e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">La liste des différentes coordonnées GPS correspondant au label donné. <br /></td></tr>
+<tr class="memitem:a0da6d81ec9bbecef91345d386ce4cd6f" id="r_a0da6d81ec9bbecef91345d386ce4cd6f"><td class="memItemLeft" align="right" valign="top"><a id="a0da6d81ec9bbecef91345d386ce4cd6f" name="a0da6d81ec9bbecef91345d386ce4cd6f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_index</b></td></tr>
+<tr class="memdesc:a0da6d81ec9bbecef91345d386ce4cd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'index des coordonnées GPS actuellement affichées. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>The <a class="el" href="class_geocode_wrapper.html" title="The GeocodeWrapper class allows requests to OpenStreetMap for reverse geocoding.">GeocodeWrapper</a> class allows requests to OpenStreetMap for reverse geocoding. </p>
@@ -220,8 +227,36 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
 
 </div>
 </div>
-<a id="a25567934f5ff042c2c1758d5cc86de3c" name="a25567934f5ff042c2c1758d5cc86de3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25567934f5ff042c2c1758d5cc86de3c">&#9670;&#160;</a></span>requestCoordinates</h2>
+<a id="ad8fcd055196df78fe385baf7c4a1bbaa" name="ad8fcd055196df78fe385baf7c4a1bbaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8fcd055196df78fe385baf7c4a1bbaa">&#9670;&#160;</a></span>onShowNextCoords</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeocodeWrapper::onShowNextCoords </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Centre la carte sur un jeu de coordonées GPS parmi une liste. </p>
+<hr  />
+ 
+</div>
+</div>
+<a id="afe24d64afb183a81c2daa97f380aec34" name="afe24d64afb183a81c2daa97f380aec34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe24d64afb183a81c2daa97f380aec34">&#9670;&#160;</a></span>requestCoordinates</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,7 +267,7 @@ QGeoCodingManager *&#160;</td><td class="memItemRight" valign="bottom"><b>m_geoM
         <tr>
           <td class="memname">void GeocodeWrapper::requestCoordinates </td>
           <td>(</td>
-          <td class="paramtype">const QString</td>          <td class="paramname"><span class="paramname"><em>city</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>city</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
