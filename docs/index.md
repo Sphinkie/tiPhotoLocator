@@ -14,25 +14,33 @@
 
 Supported languages: English + French.
 
+
+## Geotagging Features
+
 ![Screenshot](images/TPL-carte.png)  
 *The MAP page.*
 
-## Features
-
 With TiPhotoLocator, you can:
 
-* set the GPS coords of your photo on a map
-* see the EXIF tags of the photo
-* Set the Geo tags of the photo (city, country, location)
-* Set the coordinates a  photo to other photos
-* Assign new tags (keywords) to your photos, one by one or by group.
-* Edit any tag and apply it the a photo or a group of photos.
-* Many tag suggestions are proposed: based on your history and on folder name.
-* you can place your photo manually on the map, or ask the application to find the place by its name.
-* At any moment, you can click on the thumbnail to see a larger photo.
+- set the GPS coords of your photo on a map
+- Set the Geo tags of the photo (city, country, location)
+- copy the coordinates a given photo to other photos
+- you can place your photo manually on the map, or ask the application to find the place by its name.
+- At any moment, you can click on the thumbnail to see a larger photo.
 
 > Supported folder name is `YYYY-MM - Place (comments)`.
 > (Separators can be dot, space or dash)
+
+## Tagging Features
+
+With TiPhotoLocator, you can:
+
+- see and edit the EXIF tags of the photo
+- Assign new tags (keywords) to your photos, one by one or by group.
+- Edit any tag and apply it the a photo or a group of photos.
+- Many tag suggestions are proposed: based on your history and on folder name.
+- At any moment, you can click on the thumbnail to see a larger photo.
+
 
 ## Download
 

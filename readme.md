@@ -6,7 +6,7 @@
 
 **[Visit the application site here](https://sphinkie.github.io/tiPhotoLocator)**
 
-Get the latest release of the software by clicking here: {latest release](https://github.com/Sphinkie/tiPhotoLocator/releases/download/v1.6/TiPhotoLocatorSetup.exe)
+Get the latest release of the software by clicking here: [latest release](https://github.com/Sphinkie/tiPhotoLocator/releases/latest/download/TiPhotoLocatorSetup.exe)
 
 ## Presentation
 
@@ -17,11 +17,11 @@ But, if you don't have recorded any GPX file, or if your photos are older than h
 
 **EXIF** and **IPTC** metadata are two different types of metadata, used in digital photography.
 
-**EXIF** metadata are usually generated automatically by the digital camera and contain technical information about the shot.
+- **EXIF** metadata are usually generated automatically by the digital camera and contain technical information about the shot.
 
-**IPTV** metadata are filled manually by humans and contain editorial information such as the *title*, the *description*, *copy rights*, etc.
+- **IPTV** metadata are filled manually by humans and contain editorial information such as the *title*, the *description*, *copy rights*, etc.
 
-Details concerning the tags used by the application are on [this page](./docs/about_tags.md)
+Details concerning the tags used by the application are on [this page](./docs/about_tags.md).
 
 
 ## Developper Corner
@@ -32,16 +32,16 @@ Developpers can access to [doxygen documentation here](https://sphinkie.github.i
 
 ### Technical documentation
 
-Explanation concerning the compiler configuration are on [this page](./docs/compilation.md)
+Explanation concerning the compiler configuration are on [this page](./docs/compilation.md).
 
 
 ### Inspiration
 
 Other projets on the same theme:
 
-An other application to geotag your photos: [GeoSetter](https://geosetter.de) by Friedemann Schmidt
+An other application to geotag your photos: [GeoSetter](https://geosetter.de) by Friedemann Schmidt.
 
-An application to geotag your photos with a `.gpx` file: [GPicSync](https://github.com/notfrancois/GPicSync)
+An application to geotag your photos with a `.gpx` file: [GPicSync](https://github.com/notfrancois/GPicSync).
 
 A photo gallery developed with Qt, exiv2 and OpenCV: [Tidy Images](https://github.com/Simon-12/tidy-images) by Simon-12.
 
