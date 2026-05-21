@@ -3,6 +3,22 @@
 ================================================================================
 
 --------------------------------------------------------------------------------
+ Version 1.7  (en cours)
+--------------------------------------------------------------------------------
+
+Compatibilité chemins réseau
+  - Support des chemins UNC (\\nas\share\...) en plus des lecteurs mappés (P:\...)
+  - Normalisation automatique de l'URL du dossier (file:////serveur/... pour FolderListModel)
+  - Fallback PhotoModel.scanFolder() via QDir quand FolderListModel ne supporte pas le chemin
+  - ExifTool : conversion QUrl::toLocalFile() + QDir::toNativeSeparators() pour chemins locaux et UNC
+  - Affichage correct du chemin UNC dans la toolbar (via window.currentFolderUrl)
+
+Qualité & Nettoyage
+  - Suppression du "welcome item" (photo fictive au démarrage du modèle)
+  - Visibilité de la toolbar basée sur _photoModel.count plutôt que folderListModel.count
+  - toStandardPath() et toShortPath() corrigés pour les chemins UNC
+
+--------------------------------------------------------------------------------
  Version 1.6  (2026-05-21)
 --------------------------------------------------------------------------------
 

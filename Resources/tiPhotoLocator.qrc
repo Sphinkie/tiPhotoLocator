@@ -51,8 +51,6 @@
         <file>Images/icon-world2.png</file>
         <file>Images/icon-world3.png</file>
         <file>Images/icon-world4.png</file>
-        <file>Images/logo_TLP3.png</file>
-        <file>Images/logo_TLP4.png</file>
         <file>Images/logo_TPL.png</file>
         <file>Images/mappin-black.png</file>
         <file>Images/mappin-green.png</file>
@@ -73,5 +71,7 @@
         <file>Images/chip-city.png</file>
         <file>Images/chip-loc.png</file>
         <file>Cameras/KODAKP850ZOOMDIGITALCAMERA.png</file>
+        <file>Images/logo_TPL3.png</file>
+        <file>Images/logo_TPL4.png</file>
     </qresource>
 </RCC>

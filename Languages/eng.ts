@@ -121,22 +121,22 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="172"/>
+        <location filename="../Sources/Qml/Main.qml" line="175"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="177"/>
+        <location filename="../Sources/Qml/Main.qml" line="180"/>
         <source>MAP</source>
         <translation>MAP</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="182"/>
+        <location filename="../Sources/Qml/Main.qml" line="185"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>EXIF / IPTC TAGS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="187"/>
+        <location filename="../Sources/Qml/Main.qml" line="190"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
@@ -159,47 +159,47 @@
         <translation>Recents</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="52"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="54"/>
         <source>Clear recent folders list</source>
         <translation>Clear recent folders list</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="61"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="63"/>
         <source>Quit</source>
         <translation>Quit</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="67"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="69"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="69"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="71"/>
         <source>Configuration</source>
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="73"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="75"/>
         <source>Keywords</source>
         <translation>Keywords management</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="79"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="81"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="81"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="83"/>
         <source>Obtenir une API KEY</source>
         <translation>How to get an API key</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="85"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="87"/>
         <source>Credits</source>
         <translation>Credits</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="89"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="91"/>
         <source>About</source>
         <translation>About</translation>
     </message>
