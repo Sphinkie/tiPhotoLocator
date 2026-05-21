@@ -1213,6 +1213,7 @@ void PhotoModel::applyCreatorToAll()
     {
         m_photos[row].creator = photographe;
         m_photos[row].toBeSaved = true;
+        m_photos[row].dirtyFields.insert("Creator");
         idx = idx.siblingAtRow(++row);
     }
     // A la fin, on notifie en une seule fois l'ensemble des photos.
@@ -1232,6 +1233,7 @@ void PhotoModel::removePhotoKeyword(const QString& keyword)
         qDebug() << "Remove" << keyword << "keyword";
         m_photos[m_lastCurrentRow].keywords.removeOne(keyword);
         m_photos[m_lastCurrentRow].toBeSaved = true;
+        m_photos[m_lastCurrentRow].dirtyFields.insert("Keywords");
         QModelIndex idx = this->index(m_lastCurrentRow, 0);
         emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
     }
@@ -1250,6 +1252,7 @@ void PhotoModel::addKeywordToAll(const QString& keyword)
         {
             m_photos[row].keywords << keyword;
             m_photos[row].toBeSaved = true;
+            m_photos[row].dirtyFields.insert("Keywords");
             QModelIndex idx = this->index(row, 0);
             emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
         }
@@ -1270,6 +1273,7 @@ void PhotoModel::updatePhotoKeyword(const QString& keyword, int index)
     qDebug() << "update" << keyword << "keyword";
     m_photos[m_lastCurrentRow].keywords[index] = keyword;
     m_photos[m_lastCurrentRow].toBeSaved = true;
+    m_photos[m_lastCurrentRow].dirtyFields.insert("Keywords");
     QModelIndex idx = this->index(m_lastCurrentRow, 0);
     emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
     emit sendSuggestion(keyword, "keywords", "tag", -1);
@@ -1291,6 +1295,7 @@ void PhotoModel::replaceKeywordForSelection(const QString& oldKeyword, const QSt
         if (idx < 0) continue;
         m_photos[row].keywords[idx] = newKeyword;
         m_photos[row].toBeSaved = true;
+        m_photos[row].dirtyFields.insert("Keywords");
         QModelIndex qidx = this->index(row, 0);
         emit dataChanged(qidx, qidx, QVector<int>() << KeywordsRole << ToBeSavedRole);
     }
