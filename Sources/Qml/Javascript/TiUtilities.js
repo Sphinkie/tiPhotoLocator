@@ -114,8 +114,12 @@ function toReadableTime(objet) {
  * @return Une valeur lisible (par ex: 1/700 s ou 1/1500 s)
  * ****************************************************************************************/
 function arrondir(valeur) {
-    // TODO si undefined or infinite return ""
-    if (valeur > 1)
+    // si undefined ou infinite, on ne renvoie rien
+    if (valeur === undefined)
+        return ""
+    else if (valeur === 0)
+        return ""
+    else if (valeur > 1)
         return Math.floor(valeur)
     else if (valeur < 0.01)
         // au dela de 100, on arrondit au centième.
@@ -126,5 +130,10 @@ function arrondir(valeur) {
     else if (valeur < 1)
         // au dela de 10, on arrondit.
         valeur = Math.round(1 / (valeur))
+    // Sécurité: si undefined ou infinite, on ne renvoie rien
+    if (valeur === undefined || !isFinite(valeur)) {
+        // valeur inutilisable
+        return ""
+    }
     return ("1 / " + valeur + " s")
 }
