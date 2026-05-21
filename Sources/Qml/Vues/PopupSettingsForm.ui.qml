@@ -13,7 +13,7 @@ import "../Components"
 Popup {
     id: settingsForm
     width: 560
-    height: 700
+    height: 720
     property alias buttonClose: buttonClose
     property alias settings: settings
     modal: true
@@ -246,8 +246,8 @@ Popup {
                     RoundButton {
                         icon.source: "qrc:/Images/bt-eye.png"
                         flat: true
-                        implicitHeight: 36
-                        implicitWidth: 36
+                        implicitHeight: 42
+                        implicitWidth: 42
                         onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
                     }
                 }

@@ -68,18 +68,6 @@ Item {
     }
 
     Button {
-        id: bt_remove_savedpos
-        enabled: false
-        text: qsTr("Clear Saved Position")
-        icon.source: "qrc:/Images/bt-clear.png"
-        anchors {
-            left: bt_save_pos.right
-            leftMargin: 20
-            verticalCenter: parent.verticalCenter
-        }
-    }
-
-    Button {
         id: bt_apply_savedpos
         enabled: false
         text: qsTr("Apply Saved Position")
@@ -88,7 +76,19 @@ Item {
         ToolTip.visible: hovered
         ToolTip.delay: 500
         anchors {
-            left: bt_remove_savedpos.right
+            left: bt_save_pos.right
+            leftMargin: 20
+            verticalCenter: parent.verticalCenter
+        }
+    }
+
+    Button {
+        id: bt_remove_savedpos
+        enabled: false
+        text: qsTr("Clear Saved Position")
+        icon.source: "qrc:/Images/bt-clear.png"
+        anchors {
+            left: bt_apply_savedpos.right
             leftMargin: 20
             verticalCenter: parent.verticalCenter
         }
@@ -101,7 +101,7 @@ Item {
         to: 4000 // unité = 1 mètre
         //onMoved: slider_label.text = Math.round(slider_radius.value/10)/100 + " km"
         anchors {
-            left: bt_apply_savedpos.right
+            left: bt_remove_savedpos.right
             leftMargin: 20
             verticalCenter: parent.verticalCenter
         }

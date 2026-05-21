@@ -287,12 +287,12 @@
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="197"/>
         <source>Map Provider:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fournisseur des cartes:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="216"/>
         <source>Map theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Type de carte:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="259"/>
@@ -467,7 +467,7 @@
         <translation>Mémorise la position de la photo courante</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="87"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
         <source>Apply the stored position to the current photo</source>
         <translation>Applique la position mémorisée à la photo courante</translation>
     </message>
@@ -477,12 +477,12 @@
         <translation>Recharge les coordonnées initiales de l&apos;image</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="88"/>
         <source>Clear Saved Position</source>
         <translation>Suppr. Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="85"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
         <source>Apply Saved Position</source>
         <translation>Applique Position</translation>
     </message>
@@ -671,18 +671,18 @@
 <context>
     <name>ZoneSuggestedLocationsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="16"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="15"/>
         <source>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.
 Limited to 100 requests per day.</source>
         <translation>Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="23"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="24"/>
         <source>Search</source>
         <translation>Chercher</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="28"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="27"/>
         <source>Search geodata on Internet</source>
         <translation>Recherche de données géographiques sur Internet</translation>
     </message>

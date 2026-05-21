@@ -301,12 +301,12 @@
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="197"/>
         <source>Map Provider:</source>
-        <translation type="unfinished"></translation>
+        <translation>Map Provider:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="216"/>
         <source>Map theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Map theme:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="259"/>
@@ -467,17 +467,17 @@
         <translation>Store the position of the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="87"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
         <source>Apply the stored position to the current photo</source>
         <translation>Apply the stored position to the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="88"/>
         <source>Clear Saved Position</source>
         <translation>Clear Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="85"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
         <source>Apply Saved Position</source>
         <translation>Apply Saved Position</translation>
     </message>
@@ -671,18 +671,18 @@
 <context>
     <name>ZoneSuggestedLocationsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="16"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="15"/>
         <source>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.
 Limited to 100 requests per day.</source>
         <translation>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.&lt;br/&gt;Limited to 100 requests per day.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="23"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="24"/>
         <source>Search</source>
         <translation>Search</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="28"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="27"/>
         <source>Search geodata on Internet</source>
         <translation>Search geodata on Internet</translation>
     </message>

@@ -72,5 +72,6 @@
         <file>Images/bt-eye.png</file>
         <file>Images/chip-city.png</file>
         <file>Images/chip-loc.png</file>
+        <file>Cameras/KODAKP850ZOOMDIGITALCAMERA.png</file>
     </qresource>
 </RCC>
