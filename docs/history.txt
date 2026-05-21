@@ -1,0 +1,49 @@
+================================================================================
+ TiPhotoLocator — Historique des versions
+================================================================================
+
+--------------------------------------------------------------------------------
+ Version 1.6  (2026-05-21)
+--------------------------------------------------------------------------------
+
+Interface & Navigation
+  - Navigation clavier (prev/next) dans la liste de photos (ListView)
+  - Bouton "Next Location" pour passer à la suggestion de localisation suivante
+  - Navigation prev/next dans l'onglet Aperçu (Preview)
+  - Bouton "Open in Explorer" pour ouvrir le dossier de la photo courante
+  - Ascenseur vertical dans la zone des suggestions géographiques (ZoneSuggestedLocations)
+  - Popup d'aperçu des imagettes avec KeywordsRepeater
+
+Suggestions & Tags
+  - Suggestions globales city/country/location extraites du nom du dossier
+  - Suggestion city basée sur le nom du dossier
+  - Suggestions keywords/city/country/location issues des métadonnées EXIF existantes
+  - Masquage automatique des suggestions de keywords déjà utilisés
+  - Tri des suggestions (tri secondaire par texte)
+  - Édition d'un tag appliquée simultanément à toutes les photos sélectionnées
+  - Chips : texte en gras quand la valeur est modifiée mais non encore sauvegardée
+  - Correction : bouton swap city ↔ location dans les chips de géolocalisation
+  - Popup de gestion des keywords utilisateur (custom keywords)
+  - Chargement des custom keywords
+
+Carte & Géolocalisation
+  - Choix du fournisseur de carte et du thème dans les paramètres (mapProvider/mapTheme)
+  - Correction du test d'appartenance à une zone : cercle précis via ellipse normalisée
+  - Correction de l'ordre des boutons toolbar carte (Save / Apply / Clear)
+
+Qualité & Performances
+  - ExifReadTask : thread-safety via QMetaObject::invokeMethod (QueuedConnection)
+  - Refactoring const& et correction de fuites mémoire
+  - Suppression de PopupMetadata (vue orpheline non connectée)
+  - Correction du chemin par défaut des images
+
+Icônes & Ressources
+  - Nouvelles icônes chip-city et chip-loc
+  - Ajout du profil caméra Kodak P850 Zoom
+
+--------------------------------------------------------------------------------
+ Version 1.5  (2026-05-18)
+--------------------------------------------------------------------------------
+  (voir tag git v1.5)
+
+================================================================================
