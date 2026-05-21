@@ -4,7 +4,7 @@
 
 **TiPhotoLocator** is a free and Ad-free application that allows you to geotag your favorites photos, and add other contextual tags.
 
-**[Visit the application site here](sphinkie.github.io/tiPhotoLocator)**
+**[Visit the application site here](https://sphinkie.github.io/tiPhotoLocator)**
 
 ## Presentation
 
