@@ -44,6 +44,9 @@ ApplicationWindow {
     // ----------------------------------------------------------------
     // Les signaux vers PhotoModel pour une photo unitaire:
     // ----------------------------------------------------------------
+    /// URL du dossier de photos actif (local ou UNC). Mis à jour par TiFolderDialog et MainMenuBar.
+    property url currentFolderUrl: ""
+
     /// Ajoute une JPG au modèle.
     signal append(string filename, string url)
     /// Demande la lecture des metadata d'un fichier JPG.

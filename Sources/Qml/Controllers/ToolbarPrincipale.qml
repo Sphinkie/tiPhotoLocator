@@ -20,10 +20,10 @@ ToolbarPrincipaleForm {
         Qt.openUrlExternally(folderListModel.folder)
     }
 
-    bt_rescan.visible: (folderListModel.count > 0)
-    bt_explorer.visible: (folderListModel.count > 0)
+    bt_rescan.visible: (_photoModel.count > 0)
+    bt_explorer.visible: (_photoModel.count > 0)
 
     /// Nom du dossier de photos
-    folderPath.text: Utilities.toStandardPath(folderListModel.folder)
-    folderPath.visible: (folderListModel.count > 0)
+    folderPath.text: Utilities.toStandardPath(window.currentFolderUrl)
+    folderPath.visible: (_photoModel.count > 0)
 }

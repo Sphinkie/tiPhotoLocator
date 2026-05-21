@@ -2,6 +2,8 @@
 
 #include <QProcess>
 #include <QStandardPaths>
+#include <QUrl>
+#include <QDir>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QFile>
@@ -18,14 +20,22 @@ QString     ExifReadTask::m_argFile;
 /** **********************************************************************************************************
  * @brief Constructeur. On enregistre le chemin et le nom du fichier JPG à lire.
  * @param pos: le numero du fichier dans la liste.
- * @param filePath: le chemin + nom du fichier JPG à lire.
+ * @param filePath: le chemin QML + nom du fichier JPG à lire.
+ * Exemple avec local path: `file:///P:/2008/2008-02 Montgolfières/100_6784.JPG` -> `P:\\2008\\2008-02 Montgolfières\\100_6784.JPG`
+ * Exemple avec UNC path  : `file:////nas/Photo/2003/2003-08 aout/Photo 141.jpg` -> `\\\\nas\\Photo\\2003\\2003-08 aout\\Photo 141.jpg`
  * ***********************************************************************************************************/
 ExifReadTask::ExifReadTask(int pos, QString filePath)
 {
-    // On enlève les premiers caractères (cad "file:///")
-    filePath.remove(0,8);
-    m_filePath = filePath;
+    // ------------------------------------------------------------------
+    // On transforme le chemin du format QML en chemin au format natif.
+    // ------------------------------------------------------------------
+    QUrl url(filePath);
+    QString localPath = url.toLocalFile();
+    if (localPath.isEmpty() && url.scheme() == QLatin1String("file") && !url.host().isEmpty())
+        localPath = "//" + url.host() + url.path(QUrl::FullyDecoded);
+    m_filePath = QDir::toNativeSeparators(localPath);
     m_filePos = pos;
+    // qDebug() << "ExifReadTask" << filePath << "->" << m_filePath;
 }
 
 /** **********************************************************************************************************
@@ -147,6 +157,18 @@ void ExifReadTask::init(PhotoModel* photoModel)
  * To learn about the usage of IPTC tags:
  *   @li @see https://iptc.org/std/photometadata/documentation/mappingguidelines
  *   @li @see https://www.carlseibert.com/guide-iptc-photo-metadata-fields
+ *
+ * @note
+ * Note sur le tag Orientation:
+ * - 0 = Ne sait pas
+ * - 1 = Horizontal (normal)
+ * - 2 = Mirror horizontal
+ * - 3 = Horizontal (Rotate 180)
+ * - 4 = Mirror vertical
+ * - 5 = Mirror horizontal and rotate 270 CW
+ * - 6 = Vertical (Rotate 90 CW)
+ * - 7 = Mirror horizontal and rotate 90 CW
+ * - 8 = Vertical (Rotate 270 CW)
  * ***********************************************************************************************************/
 bool ExifReadTask::writeArgsFile()
 {
@@ -197,16 +219,4 @@ bool ExifReadTask::writeArgsFile()
     return true;
 }
 
-/*
- * Orientation:
-0 = Ne sait pas
-1 = Horizontal (normal)
-2 =   Mirror horizontal
-3 = Horizontal (Rotate 180)
-4 =   Mirror vertical
-5 =   Mirror horizontal and rotate 270 CW
-6 = Vertical (Rotate 90 CW)
-7 =   Mirror horizontal and rotate 90 CW
-8 = Vertical (Rotate 270 CW)
-*/
 

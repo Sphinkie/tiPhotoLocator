@@ -98,6 +98,7 @@ public:
     Q_INVOKABLE void suggestFromSelection();
     Q_INVOKABLE void suggestFromPhoto(const int row);
     Q_INVOKABLE void selectionCount();
+    Q_INVOKABLE int  scanFolder(const QString& folderUrl);
 
     // -----------------------------------------------------
     // Methodes publiques

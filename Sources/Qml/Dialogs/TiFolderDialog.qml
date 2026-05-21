@@ -2,6 +2,7 @@ import QtQuick
 import QtCore
 import Qt.labs.platform
 import "../Components"
+import "../Javascript/TiUtilities.js" as Utilities
 
 
 /** ***************************************************************************************
@@ -21,10 +22,14 @@ FolderDialog {
      * ************************************************************************************/
     onAccepted: {
         // On passe par ici quand on clique sur OK, donc, même si on reselectionne le même folder
-        folderListModel.folder = folder
-        console.log("Accepted")
+        // Normalisation pour les chemins UNC (file://serveur/... → file:////serveur/...)
+        let normalizedFolder = Utilities.normalizeUrl(folder.toString())
+        folderListModel.folder = normalizedFolder
+        window.currentFolderUrl = normalizedFolder
+        console.log("Accepted folder URL:", folder.toString())
+        console.log("Normalized folder URL:", normalizedFolder)
         // Ajout du folder dans les Settings "Recent Folders"
-        addRecentFolder(folder)
+        addRecentFolder(normalizedFolder)
         // On attend que le FolderModel soit à jour (timer 1 seconde),
         // puis on met à jour la liste du PhotoModel (fileName et fileUrl)
         folderTimer.start()

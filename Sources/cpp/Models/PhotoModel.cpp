@@ -7,6 +7,8 @@
 #include <QSettings>
 #include <QDebug>
 #include <QDate>
+#include <QDir>
+#include <QUrl>
 
 
 #define QT_NO_DEBUG_OUTPUT
@@ -18,10 +20,7 @@
  * ***********************************************************************************************************/
 PhotoModel::PhotoModel(QObject *parent) : QAbstractListModel(parent)
 {
-    // On met l'item Welcome dans la liste
-    m_photos << Photo("Select your photo folder", "qrc:Pictures/welcome.png", false, true, true);
-
-    this->addTestItem();    
+    this->addTestItem();
 }
 
 /** **********************************************************************************************************
@@ -195,6 +194,40 @@ void PhotoModel::append(const QVariantMap& data)
     endInsertRows();
     emit countChanged();
     // qDebug() << "append" << data.value("filename").toString() << "to row" << rowOfInsert;
+}
+
+
+/** **********************************************************************************************************
+ * @brief Scanne un dossier directement via QDir (fallback pour les chemins UNC que FolderListModel ne supporte pas).
+ * @param folderUrl: URL du dossier (format "file:////serveur/chemin" ou "file:///C:/chemin")
+ * @return nombre de photos ajoutées au modèle
+ * ***********************************************************************************************************/
+int PhotoModel::scanFolder(const QString& folderUrl)
+{
+    QString localPath = QDir::toNativeSeparators(QUrl(folderUrl).toLocalFile());
+    if (localPath.isEmpty())
+        return 0;
+    QDir dir(localPath);
+    dir.setNameFilters({"*.jpg", "*.JPG", "*.jpeg", "*.JPEG"});
+    const QFileInfoList files = dir.entryInfoList(QDir::Files | QDir::NoDotAndDotDot);
+    for (const QFileInfo& fi : files) {
+        QString absPath = fi.absoluteFilePath();
+        QString fileUrl;
+        if (absPath.startsWith("\\\\") || absPath.startsWith("//")) {
+            // Chemin UNC: \\server\share\path → file:////server/share/path
+            // (format file:////  : host vide, chemin UNC dans le path)
+            // Contrairement à QUrl::fromLocalFile() qui produit file://server/path
+            // (host="server"), lequel rend isLocalFile()=false et toLocalFile()="".
+            QString normalized = absPath;
+            normalized.replace('\\', '/').remove(0, 2); // retire les // ou \\ initiaux
+            fileUrl = "file:////" + normalized;
+        } else {
+            fileUrl = QUrl::fromLocalFile(absPath).toString();
+        }
+        append(fi.fileName(), fileUrl);
+    }
+    qDebug() << "scanFolder:" << localPath << "->" << files.count() << "photos";
+    return files.count();
 }
 
 

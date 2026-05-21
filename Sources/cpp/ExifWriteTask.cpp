@@ -1,6 +1,8 @@
 #include "ExifWriteTask.h"
 #include "utilities.h"
 #include <QProcess>
+#include <QUrl>
+#include <QDir>
 #include <QDebug>
 
 
@@ -49,8 +51,16 @@ ExifWriteTask::ExifWriteTask(const QVariantMap exifData, PhotoModel* photoModel,
  * ***********************************************************************************************************/
 void ExifWriteTask::run()
 {
-    QString filePath = m_exifData.value("imageUrl").toString();
-    filePath.remove(0,8);
+    QUrl url(m_exifData.value("imageUrl").toString());
+    // ------------------------------------------------------------------
+    // On transforme le chemin du format QML en chemin au format natif.
+    // Exemple local path: `file:///P:/Photo/56784.jpg` -> `P:\\Photo\\56784.jpg`
+    // Exemple UNC path  : `file:////nas/Photo/141.jpg` -> `\\\\nas\\Photo\\141.jpg`
+    // ------------------------------------------------------------------
+    QString localPath = url.toLocalFile();
+    if (localPath.isEmpty() && url.scheme() == QLatin1String("file") && !url.host().isEmpty())
+        localPath = "//" + url.host() + url.path(QUrl::FullyDecoded);
+    QString filePath = QDir::toNativeSeparators(localPath);
     if (filePath.isEmpty())
         return;
 

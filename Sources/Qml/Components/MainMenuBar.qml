@@ -37,7 +37,9 @@ MenuBar {
                     rightPadding: 8
                     onTriggered: {
                         console.log(modelData)
-                        folderListModel.folder = modelData
+                        let normalizedFolder = Utilities.normalizeUrl(modelData)
+                        folderListModel.folder = normalizedFolder
+                        window.currentFolderUrl = normalizedFolder
                         // puis on met à jour la liste du PhotoModel
                         folderTimer.start()
                     }
