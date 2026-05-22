@@ -253,15 +253,9 @@ Popup {
                 }
 
                 // -------------------------------------------------------
-                /// Mode debug TODO : encore cablé ?
+                /// Mode DEBUG
                 // -------------------------------------------------------
                 RowLayout {
-                    CheckBox {
-                        id: checkBoxExif
-                        text: qsTr("Do not change EXIF tags")
-                        visible: false
-                        checked: false
-                    }
                     CheckBox {
                         id: checkBoxDebug
                         text: "Debug mode"
@@ -297,7 +291,6 @@ Popup {
         property alias metadataSoftware: textFieldMetadataSoftware.text
         property alias homecity: textFieldHomecity.text
         property alias mapApikey: textFieldMapApiKey.text
-        property alias preserveExif: checkBoxExif.checked
         property alias debugModeEnabled: checkBoxDebug.checked
         property alias tagLanguage: tagLanguages.currentIndex // 0: English, 1: French
         property alias guiLanguage: guiLanguages.currentIndex // 0: English, 1: French

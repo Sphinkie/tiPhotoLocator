@@ -25,7 +25,6 @@ PopupSettingsForm {
         //settings.category= "configuration";
         settings.setValue("photographe", textFieldName.text)
         settings.setValue("initiales", textFieldInitials.text)
-        settings.setValue("preserveExif", checkBoxExif.checked)
         settings.setValue("debugModeEnabled", checkBoxDebug.checked)
     }
 }
