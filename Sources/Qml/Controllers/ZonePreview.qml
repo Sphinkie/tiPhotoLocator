@@ -23,8 +23,9 @@ ZonePreviewForm {
     welcomeText: isWelcome ? br + br + bienvenue + br + brief + br + usage + br + note : ""
 
     txtZone: isWelcome ? "" : qsTr("Summary")
+    // assignChips (!isWelcome)
 
-    // On determine le contenu des 7 Chips ici.
+    // On determine le contenu des Chips ici.
     chipName.content: isWelcome ? "TiPhotoLocator" : tabbedPage.currentPhoto.filename
     chipSize.content: Utilities.toReadableSize(
                           tabbedPage.currentPhoto.imageWidth,

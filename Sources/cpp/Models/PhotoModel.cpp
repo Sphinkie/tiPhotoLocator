@@ -903,19 +903,39 @@ void PhotoModel::duplicateData(int row)
  * ***********************************************************************************************************/
 QVariantMap PhotoModel::get(int row)
 {
-    // On cree un itérateur sur la table des Roles
-    QHash<int,QByteArray> names = roleNames();
-    QHashIterator<int, QByteArray> itr(names);
-    QVariantMap result;
-    result["row"] = row;
+    // Si row est hors bornes, on utilise une Photo vide pour garantir des QVariants bien typés
+    // (évite les erreurs QML "Unable to assign [undefined] to QString" quand le modèle est vide).
+    const Photo& photo = (row >= 0 && row < m_photos.count()) ? m_photos.at(row) : Photo();
 
-    while (itr.hasNext()) {
-        itr.next();
-        QModelIndex idx = index(row, 0);
-        QVariant data = idx.data(itr.key());
-        result[itr.value()] = data;
-        //qDebug() << itr.key() << ": " << itr.value();
-    }
+    QVariantMap result;
+    result["row"]              = row;
+    result["filename"]         = photo.filename;
+    result["imageUrl"]         = photo.imageUrl;
+    result["latitude"]         = photo.gpsLatitude;
+    result["longitude"]        = photo.gpsLongitude;
+    result["hasGPS"]           = photo.hasGPS;
+    result["isCurrent"]        = photo.isCurrent;
+    result["isSelected"]       = photo.isSelected;
+    result["isMarker"]         = photo.isMarker;
+    result["insideCircle"]     = photo.insideCircle;
+    result["toBeSaved"]        = photo.toBeSaved;
+    result["dateTimeOriginal"] = photo.dateTimeOriginal;
+    result["camModel"]         = photo.camModel;
+    result["make"]             = photo.make;
+    result["imageWidth"]       = photo.imageWidth;
+    result["imageHeight"]      = photo.imageHeight;
+    result["orientation"]      = photo.orientation;
+    result["shutterSpeed"]     = photo.shutterSpeed;
+    result["fNumber"]          = photo.fNumber;
+    result["creator"]          = photo.creator;
+    result["city"]             = photo.city;
+    result["country"]          = photo.country;
+    result["location"]         = photo.location;
+    result["description"]      = photo.description;
+    result["captionWriter"]    = photo.captionWriter;
+    result["software"]         = photo.software;
+    result["metadata"]         = photo.metadata;
+    result["keywords"]         = photo.keywords;
     return result;
 }
 

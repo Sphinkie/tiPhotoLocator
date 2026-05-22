@@ -129,8 +129,8 @@ function toReadableSpeed(valeur) {
     else if (valeur < 1)
         // au dela de 10, on arrondit.
         valeur = Math.round(1 / (valeur))
-    // Sécurité: si résultat undefined ou infinite, on ne renvoie rien
-    if (valeur === undefined || !isFinite(valeur)) {
+    // Sécurité: si résultat null, undefined ou infinite, on ne renvoie rien
+    if (valeur === 0 || valeur === undefined || !isFinite(valeur)) {
         return ""
     }
     return ("1 / " + valeur + " s")
@@ -146,6 +146,8 @@ function toReadableAperture(valeur) {
     if (valeur === undefined)
         return ""
     else if (valeur === 0)
+        return ""
+    else if (valeur < 0)
         return ""
     else if (!isFinite(valeur))
         return ""
