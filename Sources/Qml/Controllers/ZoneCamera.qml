@@ -12,8 +12,10 @@ ZoneCameraForm {
     // On determine le contenu des chips ici, mais ça marche aussi si on le fait dans la vue.
     chipModel.content: tabbedPage.currentPhoto.camModel
     chipMaker.content: tabbedPage.currentPhoto.make
-    chipAperture.content: "ƒ " + tabbedPage.currentPhoto.fNumber.toFixed(1)
-    chipSpeed.content: Utilities.arrondir(tabbedPage.currentPhoto.shutterSpeed)
+    chipAperture.content: Utilities.toReadableAperture(
+                              tabbedPage.currentPhoto.fNumber)
+    chipSpeed.content: Utilities.toReadableSpeed(
+                           tabbedPage.currentPhoto.shutterSpeed)
     chipSoftware.content: tabbedPage.currentPhoto.software
     chipMetadata.content: tabbedPage.currentPhoto.metadata
 

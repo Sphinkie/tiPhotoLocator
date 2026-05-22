@@ -110,11 +110,10 @@ function toReadableTime(objet) {
 /** ***************************************************************************************
  * @brief Arrondit la vitesse de déclenchement à une valeur lisible standard.
  * Pour la vitesse, on veut une valeur plus lisible.
- * @param valeur: la metadata shutterspeed de l'image (par ex: 1/714 ou 1/1526)
- * @return Une valeur lisible (par ex: 1/700 s ou 1/1500 s)
+ * @param valeur: la metadata shutterspeed de l'image (par ex: 0.019999999552965164 ou 0.3333333432674408)
+ * @return Une valeur lisible (par ex: "1/50 s" ou "1/3 s")
  * ****************************************************************************************/
-function arrondir(valeur) {
-    // si undefined ou infinite, on ne renvoie rien
+function toReadableSpeed(valeur) {
     if (valeur === undefined)
         return ""
     else if (valeur === 0)
@@ -130,10 +129,44 @@ function arrondir(valeur) {
     else if (valeur < 1)
         // au dela de 10, on arrondit.
         valeur = Math.round(1 / (valeur))
-    // Sécurité: si undefined ou infinite, on ne renvoie rien
+    // Sécurité: si résultat undefined ou infinite, on ne renvoie rien
     if (valeur === undefined || !isFinite(valeur)) {
-        // valeur inutilisable
         return ""
     }
     return ("1 / " + valeur + " s")
+}
+
+
+/** ***************************************************************************************
+ * @brief Arrondit l'ouverture focale à une valeur lisible standard.
+ * @param valeur: la metadata fNumber de l'image (par ex: 3.587)
+ * @return Une valeur lisible (par ex: "ƒ 3.5")
+ * ****************************************************************************************/
+function toReadableAperture(valeur) {
+    if (valeur === undefined)
+        return ""
+    else if (valeur === 0)
+        return ""
+    else if (!isFinite(valeur))
+        return ""
+    else
+        return "ƒ " + valeur.toFixed(1)
+}
+
+
+/** ***************************************************************************************
+ * @brief Evite les valeus abbérentes.
+ * @param width: largeur de l'image remontée par l'OS
+ * @param height: hauteur de l'image remontée par l'OS
+ * @return Une valeur lisible (par ex: "3200 x 4000")
+ * ****************************************************************************************/
+function toReadableSize(width, height) {
+    if ((width === undefined) || (height === undefined))
+        return ""
+    else if ((width === 0) || (height === 0))
+        return ""
+    else if (!isFinite(width) || !isFinite(height))
+        return ""
+    else
+        return width + " x " + height
 }

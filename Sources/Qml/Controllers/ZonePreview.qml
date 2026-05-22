@@ -25,16 +25,19 @@ ZonePreviewForm {
 
     // On determine le contenu des 7 Chips ici, mais ça marche aussi si on le fait dans la vue.
     chipName.content: isphoto ? tabbedPage.currentPhoto.filename : ""
-    chipSize.content: isphoto ? tabbedPage.currentPhoto.imageWidth + " x "
-                                + tabbedPage.currentPhoto.imageHeight : ""
+    chipSize.content: isphoto ? Utilities.toReadableSize(
+                                    tabbedPage.currentPhoto.imageWidth,
+                                    tabbedPage.currentPhoto.imageHeight) : ""
     chipDate.content: Utilities.toReadableDate(
                           tabbedPage.currentPhoto.dateTimeOriginal)
     chipTime.content: Utilities.toReadableTime(
                           tabbedPage.currentPhoto.dateTimeOriginal)
     chipMake.content: tabbedPage.currentPhoto.make
     chipCamModel.content: tabbedPage.currentPhoto.camModel
-    chipSpeed.content: Utilities.arrondir(tabbedPage.currentPhoto.shutterSpeed)
-    chipAperture.content: "ƒ " + tabbedPage.currentPhoto.fNumber.toFixed(1)
+    chipSpeed.content: Utilities.toReadableSpeed(
+                           tabbedPage.currentPhoto.shutterSpeed)
+    chipAperture.content: Utilities.toReadableAperture(
+                              tabbedPage.currentPhoto.fNumber)
     chipCountry.content: tabbedPage.currentPhoto.country
 }
 
