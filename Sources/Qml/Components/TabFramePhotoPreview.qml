@@ -24,7 +24,7 @@ RowLayout {
          * *****************************************************************************/
         Image {
             id: previewImage
-            source: (tabbedPage.currentIndex === 0) ? tabbedPage.currentPhoto.imageUrl : ""
+            source: (tabbedPage.currentIndex === 0) ? (_photoModel.count === 0 ? "qrc:/Pictures/welcome.png" : tabbedPage.currentPhoto.imageUrl) : ""
             fillMode: Image.PreserveAspectFit
             height: Math.min(sourceSize.height, parent.height)
             width: Math.min(sourceSize.width, parent.width)

@@ -10,24 +10,25 @@ import "../Javascript/TiUtilities.js" as Utilities
  * ***********************************************************************************************************/
 ZonePreviewForm {
 
-    /// Le flag isphoto sert à savoir si on est positionné sur un filename ou sur l'item de bienvenue au démarrage.
-    readonly property bool isphoto: !tabbedPage.currentPhoto.isWelcome
-    /// Styled text
+    /// Le flag isWelcome sert à savoir si on est positionné sur un filename ou sur l'item de bienvenue au démarrage.
+    readonly property bool isWelcome: _photoModel.count === 0
+
+    /// Texte de bienvenue (avec possibilité de style)
     readonly property string bienvenue: qsTr("Welcome!")
     readonly property string brief: qsTr("<b>TiPhotoLocator</b> helps you geotag and tag your photos.")
     readonly property string usage: qsTr("To get started, open the folder containing your photos via the menu <pre>Folders → Open...</pre><br>Then navigate the tabs to fill in the various tags.")
-    readonly property string note: qsTr("<u>Note:</u> Modified data is saved into the photos only when you click the button <pre>'Save'</pre>.")
+    readonly property string note: qsTr("<u>Note:</u> Modified data is saved into the photos only when you click the <pre>'Save'</pre> button")
     readonly property string br: "<br><br>"
 
-    welcomeText: isphoto ? "" : br + bienvenue + br + brief + br + usage + br + note
+    welcomeText: isWelcome ? br + br + bienvenue + br + brief + br + usage + br + note : ""
 
-    txtZone: isphoto ? qsTr("Summary") : ""
+    txtZone: isWelcome ? "" : qsTr("Summary")
 
-    // On determine le contenu des 7 Chips ici, mais ça marche aussi si on le fait dans la vue.
-    chipName.content: isphoto ? tabbedPage.currentPhoto.filename : ""
-    chipSize.content: isphoto ? Utilities.toReadableSize(
-                                    tabbedPage.currentPhoto.imageWidth,
-                                    tabbedPage.currentPhoto.imageHeight) : ""
+    // On determine le contenu des 7 Chips ici.
+    chipName.content: isWelcome ? "TiPhotoLocator" : tabbedPage.currentPhoto.filename
+    chipSize.content: Utilities.toReadableSize(
+                          tabbedPage.currentPhoto.imageWidth,
+                          tabbedPage.currentPhoto.imageHeight)
     chipDate.content: Utilities.toReadableDate(
                           tabbedPage.currentPhoto.dateTimeOriginal)
     chipTime.content: Utilities.toReadableTime(
