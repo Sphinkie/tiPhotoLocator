@@ -59,7 +59,6 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
     case IsCurrentRole:         return photo.isCurrent;
     case IsSelectedRole:        return photo.isSelected;
     case IsMarkerRole:          return photo.isMarker;
-    case IsWelcomeRole:         return photo.isWelcome;
     case InsideCircleRole:      return photo.insideCircle;
     case ToBeSavedRole:         return photo.toBeSaved;
     case DateTimeOriginalRole:  return photo.dateTimeOriginal;
@@ -104,7 +103,6 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {IsCurrentRole,         "isCurrent"},
         {IsSelectedRole,        "isSelected"},
         {IsMarkerRole,          "isMarker"},
-        {IsWelcomeRole,         "isWelcome"},
         {InsideCircleRole,      "insideCircle"},
         {ToBeSavedRole,         "toBeSaved"},
         // Geolocation
@@ -787,7 +785,7 @@ void PhotoModel::saveMetadata()
     while (idx.isValid())
     {
         // On teste si cette photo a été modifiée et doit être enregistrée
-        if (idx.data(ToBeSavedRole).toBool() && !idx.data(IsMarkerRole).toBool() && !idx.data(IsWelcomeRole).toBool())
+        if (idx.data(ToBeSavedRole).toBool() && !idx.data(IsMarkerRole).toBool())
         {
             // On écrit uniquement les tags modifiés depuis la dernière lecture/sauvegarde
             const QSet<QString>& dirty = m_photos[row].dirtyFields;

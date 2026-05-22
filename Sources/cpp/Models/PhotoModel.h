@@ -44,7 +44,6 @@ public:
         IsCurrentRole,
         IsSelectedRole,
         IsMarkerRole,
-        IsWelcomeRole,
         InsideCircleRole,
         ToBeSavedRole,
         DateTimeOriginalRole,

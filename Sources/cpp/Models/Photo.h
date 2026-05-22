@@ -17,14 +17,12 @@ struct Photo
     Photo( const QString &file_name,
           const QString &image_url,
           const bool is_marker = false,
-          const bool is_welcome = false,
           bool is_current = false
           )
     {
         filename = file_name;
         imageUrl = image_url;
         isMarker = is_marker;
-        isWelcome = is_welcome;
         isCurrent = is_current;
         isSelected = is_current;
     }
@@ -39,7 +37,6 @@ struct Photo
     bool isCurrent;             //!< Indique que cet item est l'item courant de la ListView
     bool isSelected;            //!< Indique que cet item est sélectionné dans la ListView
     bool isMarker = false;      //!< Exemple: une position sauvegardée sur la carte
-    bool isWelcome = false;     //!< Exemple: L'image de la page d'acceuil
     bool insideCircle = false;  //!< inside the radius of nearby photos
     bool toBeSaved = false;     //!< true if one of the following fields has been modified
     // EXIF tags
