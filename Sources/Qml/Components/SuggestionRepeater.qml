@@ -34,11 +34,11 @@ Repeater {
 
             // Un keyword déjà présent dans la photo courante ne doit pas apparaître en suggestion.
             visible: {
-                // Si ce n'est pas un keyword => hide
+                // Si ce n'est pas un keyword => show
                 if (target !== "keywords")
-                    return false
+                    return true
                 // Si c'est un keyword => show only if not found
-                if (tabbedPage.currentPhoto.keywords)
+                else if (tabbedPage.currentPhoto.keywords)
                     return (tabbedPage.currentPhoto.keywords.indexOf(
                                 text) === -1)
                 // Si aucun keyword => hide

@@ -126,17 +126,17 @@
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="180"/>
+        <location filename="../Sources/Qml/Main.qml" line="178"/>
         <source>MAP</source>
         <translation>CARTE</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="185"/>
+        <location filename="../Sources/Qml/Main.qml" line="183"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>TAGS EXIF ET IPTC</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="190"/>
+        <location filename="../Sources/Qml/Main.qml" line="188"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
