@@ -121,7 +121,7 @@ private:
     int  getCurrentItemRow();
     bool getCurrentItemHasGPS();
     QGeoCoordinate getCurrentItemCoords();
-    bool belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo);
+    bool belong(double pLa, double pLo, double oLa, double oLo, double rLa, double rLo);
 
 public slots:
     // -----------------------------------------------------

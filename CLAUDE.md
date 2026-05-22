@@ -62,3 +62,7 @@ The app is a **QML + C++ hybrid**. The C++ backend exposes models as QML context
 - **Translations**: Strings in QML use `qsTr()`; C++ uses `tr()`. Translation files are in `Languages/fre.ts` and `eng.ts`. Run `lupdate` to extract new strings, `lrelease` to compile `.qm` files (CMake does this automatically at build time).
 - **ExifTool config**: Custom tag definitions live in `Bin/exiftool.config` — edit this when adding support for non-standard EXIF/IPTC tags.
 - **Developer API docs**: https://sphinkie.github.io/tiPhotoLocator/doxygen/html/index.html
+
+## Work History
+
+Session notes and version history are in `docs/history.txt`. Check it for current WIP (v1.7 in-progress section).

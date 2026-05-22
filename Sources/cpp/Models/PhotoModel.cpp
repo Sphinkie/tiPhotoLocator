@@ -461,7 +461,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
         {
         case LatitudeRole:
             m_photos[index.row()].gpsLatitude = value.toDouble();
-            m_photos[index.row()].hasGPS = (value != 0);    // Pas hyper-rigoureux...
+            m_photos[index.row()].hasGPS = (m_photos[index.row()].gpsLatitude != 0) || (m_photos[index.row()].gpsLongitude != 0);
             m_photos[index.row()].toBeSaved = true;
             m_photos[index.row()].dirtyFields.insert("GPSLatitude");
             m_photos[index.row()].dirtyFields.insert("GPSLatitudeRef");
@@ -471,7 +471,7 @@ bool PhotoModel::setData(const QModelIndex &index, const QVariant &value, int ro
             break;
         case LongitudeRole:
             m_photos[index.row()].gpsLongitude = value.toDouble();
-            m_photos[index.row()].hasGPS = (value != 0);     // Théoriquement, il faudrait tester lat et long...
+            m_photos[index.row()].hasGPS = (m_photos[index.row()].gpsLatitude != 0) || (m_photos[index.row()].gpsLongitude != 0);
             m_photos[index.row()].toBeSaved = true;
             m_photos[index.row()].dirtyFields.insert("GPSLatitude");
             m_photos[index.row()].dirtyFields.insert("GPSLatitudeRef");
@@ -1191,7 +1191,7 @@ void PhotoModel::setWriteProgress(const int total)
  * @param rLo : le rayon du cercle sur l'axe des Longitudes E-W (en degrés).
  * @return true si le point est dans le cercle.
  * ***********************************************************************************************************/
-bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, float rLa, float rLo)
+bool PhotoModel::belong(double pLa, double pLo, double oLa, double oLo, double rLa, double rLo)
 {
     if (rLa==0) return false;
     // qDebug() << "  Comparaison avec: pLa:" << pLa << "=> Ecart lat" << abs(pLa-oLa) << "vs" << rLa ;
