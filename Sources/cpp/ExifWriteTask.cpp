@@ -95,7 +95,7 @@ void ExifWriteTask::run()
     // ---------------------------------------
     // Appel de ExifTool
     // ---------------------------------------
-    qDebug() << program << arguments;
+    qInfo() << program << arguments;
     exifProcess.start(program, arguments);
     while(exifProcess.state() != QProcess::NotRunning)
     {
@@ -103,7 +103,9 @@ void ExifWriteTask::run()
         if (exifProcess.atEnd())
             exifProcess.waitForReadyRead();
         // When a CRLF is receive, it is finished
-        qInfo() << exifProcess.readLine();  // On affiche une éventuelle erreur
+        QString report = exifProcess.readLine();
+        if (!report.isEmpty())
+            qInfo() << report.chopped(2);  // On affiche le statut de l'écriture des metadata exif
     }
     // ---------------------------------------
     // Execution terminée pour une photo
