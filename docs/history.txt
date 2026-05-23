@@ -13,6 +13,12 @@ Compatibilité chemins réseau
   - ExifTool : conversion QUrl::toLocalFile() + QDir::toNativeSeparators() pour chemins locaux et UNC
   - Affichage correct du chemin UNC dans la toolbar (via window.currentFolderUrl)
 
+TODO (v1.7)
+  - Bug : les imagettes de la sélection multiple débordent sur le bouton "Enregistrer" lors du scroll
+    horizontal → appliquer clip:true ou contraindre la listview pour qu'elle ne déborde pas à gauche.
+  - Bug : après "Clear recent folders list" puis "Open" (sans quitter l'app), le dossier choisi
+    n'apparaît pas dans la liste des dossiers récents.
+
 Qualité & Nettoyage
   - Suppression du "welcome item" (photo fictive au démarrage du modèle)
   - Visibilité de la toolbar basée sur _photoModel.count plutôt que folderListModel.count
