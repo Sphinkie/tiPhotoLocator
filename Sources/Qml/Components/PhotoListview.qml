@@ -191,35 +191,28 @@ ListView {
              * ***********************************************************************************************/
             MouseArea {
                 anchors.fill: parent
-                acceptedButtons: Qt.LeftButton | Qt.RightButton
+                acceptedButtons: Qt.LeftButton
                 onClicked: mouse => {
-                               if (mouse.button === Qt.LeftButton) {
-                                   __lv.forceActiveFocus()
-                                   // Définit l'item courant de la ListView et positionne le highlight.
-                                   __lv.currentIndex = index
-                                   activatePhoto(index, hasGPS, city, country,
-                                                 latitude, longitude)
-                                   // On relance une demande d'infos ReverseGeo,
-                                   // si onglet MAP et COORDS GPS et s'il n'y a pas déjà de City ni Country:
-                                   if ((tabbedPage.currentIndex === 1) && hasGPS
-                                       && city === "" && country === "") {
-                                       // console.debug(">>>> restart geoTimer")
-                                       geoTimer.restart()
-                                   } else
-                                   geoTimer.stop()
-                               } // CLICK DROIT:
-                               else {
+                               __lv.forceActiveFocus()
+                               __lv.currentIndex = index
+                               if (mouse.modifiers & Qt.ControlModifier) {
+                                   // Ctrl+clic : toggle sélection multiple
                                    var sourceindex = model.getSourceIndex(index)
-                                   // Si la photo est déjà sélectionnée, on la désélectionne.
                                    if (isSelected) {
-                                       _photoModel.removeFromSelection(
-                                           sourceindex)
-                                   } // Sinon,on la sélectionne:
-                                   else {
+                                       _photoModel.removeFromSelection(sourceindex)
+                                   } else {
                                        _photoModel.addToSelection(sourceindex)
-                                       // et on ajoute ses tags aux suggestions courantes.
                                        _photoModel.suggestFromPhoto(sourceindex)
                                    }
+                               } else {
+                                   // Clic simple : activation exclusive
+                                   activatePhoto(index, hasGPS, city, country,
+                                                 latitude, longitude)
+                                   if ((tabbedPage.currentIndex === 1) && hasGPS
+                                       && city === "" && country === "")
+                                       geoTimer.restart()
+                                   else
+                                       geoTimer.stop()
                                }
                            }
             }
