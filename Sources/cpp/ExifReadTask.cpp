@@ -58,6 +58,7 @@ void ExifReadTask::run()
     arguments << "-ext" << "JPG";       // Filtre sur les extensions
     arguments << "-ext" << "JPEG";      // Filtre sur les extensions
     arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
+    arguments << "-charset" << "IPTC=UTF8";
     arguments << "-@"   << m_argFile;   // Liste des tags à lire
     arguments.append(m_filePath);       // Le dossier à scanner
     // ---------------------------------------

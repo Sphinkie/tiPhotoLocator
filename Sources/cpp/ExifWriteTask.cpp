@@ -1,8 +1,10 @@
 #include "ExifWriteTask.h"
-#include "utilities.h"
 #include <QProcess>
 #include <QUrl>
 #include <QDir>
+#include <QFile>
+#include <QTextStream>
+#include <QStandardPaths>
 #include <QDebug>
 
 
@@ -71,25 +73,37 @@ void ExifWriteTask::run()
     arguments << "-ext" << "JPG";       // Filtre sur les extensions
     arguments << "-ext" << "JPEG";      // Filtre sur les extensions
     arguments << "-use" << "MWG";       // Use MetadataWorkingGroup recommendations
+    arguments << "-charset" << "IPTC=UTF8";
     //arguments << "-dateFormat" << "'%d-%m-%Y'";                    // datetime format DD-MM-YYYY
     if (!m_generateBackup) arguments.append("-overwrite_original");  // Génère un backup si demandé
-    // Liste des tags à écrire
-    QMapIterator<QString, QVariant> itr(m_exifData);
-    while (itr.hasNext()) {
-        itr.next();
-        if (itr.key() == "Keywords")
-        {
-            // Vide la liste existante avant d'écrire la nouvelle
-            arguments.append("-Keywords=");
-            foreach (QString keyword, itr.value().toStringList())
-                arguments.append("-Keywords=" + keyword.toUtf8());
+
+    // Les valeurs des tags passent par un fichier UTF-8 pour éviter les problèmes
+    // d'encodage des arguments en ligne de commande sur Windows (Perl/ExifTool).
+    // Fichier temporaire : "C:/Users/David/AppData/Local/Temp/exiftool_write.args"
+    QString argsFilePath = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/exiftool_write.args";
+    QFile argsFile(argsFilePath);
+    if (argsFile.open(QFile::WriteOnly | QFile::Text))
+    {
+        QTextStream out(&argsFile);
+        out.setEncoding(QStringConverter::Utf8);
+        QMapIterator<QString, QVariant> itr(m_exifData);
+        while (itr.hasNext()) {
+            itr.next();
+            if (itr.key() == "index" || itr.key() == "imageUrl") continue;
+            if (itr.key() == "Keywords")
+            {
+                out << "-Keywords=\n";  // Vide la liste existante
+                for (const QString& keyword : itr.value().toStringList())
+                    out << "-Keywords=" << keyword << "\n";
+            }
+            else
+            {
+                out << "-" << itr.key() << "=" << itr.value().toString() << "\n";
+            }
         }
-        else
-        {
-            // On normalise la String en pur ASCII
-            arguments.append("-" + itr.key() + "=" + Utilities::normalise(itr.value().toString()));
-        }
+        argsFile.close();
     }
+    arguments << "-@" << argsFilePath;
     // Le fichier JPG à modifier
     arguments.append(filePath);
     // ---------------------------------------
