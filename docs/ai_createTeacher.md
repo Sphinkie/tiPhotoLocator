@@ -40,8 +40,14 @@ Pour obtenir les meilleurs résultats avec 4 ou 5 poses :
 
 ## Les prompts
 
+OPEN:
 Create a face view of this same character, on tiptoe, and pointing the finger toward something above her and on her right. She is also looking in this direction. Show the complete silhouette and details, keep the design style, outfit, background and lighting unchanged.
 
+TABS:
 Create a face view of this same character, looking straight forward and pointing the finger of the right hand towards something above her on her right, and the finger of the left hand towards something above her on her left. She is smiling and winking. Show the complete silhouette and details, keep the design style, outfit, background and lighting unchanged.
 
-Create a face view of this same character, looking down and pointing the finger of the right hand towards something below her on her right. She is leaning forward, without bending her legs. There is a nice view on her breast. Show the complete silhouette and details, keep the design style, outfit, background and lighting unchanged.
+SAVE:
+Create a face view of this same character, looking down and pointing the finger of the right hand towards something far below her, a bit on her right. She is leaning forward a lot and her finger almost touch the ground. Her legs are perfectly straight: she doesn't bend her knees. She is looking towards the camera. Show the complete silhouette and details, keep the design style, outfit, background and lighting unchanged.
+
+MAP:
+Create a rear view of this same character, pointing the finger on her right, like showing something on the wall. Show the complete silhouette and details, keep the design style, outfit, background and lighting unchanged.

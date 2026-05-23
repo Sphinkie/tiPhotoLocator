@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls.Material
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import ".."
 
 Rectangle {
@@ -24,10 +24,11 @@ Rectangle {
         source: iconZone
         anchors.centerIn: rectZone
     }
-    ColorOverlay {
+    MultiEffect {
         anchors.fill: imgZone
         source: imgZone
-        color: Material.background
+        colorization: 0.8
+        colorizationColor: Material.background
     }
     // Texte explicatif (optionnel)
     Text {
