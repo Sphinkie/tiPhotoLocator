@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Installer>
-	<Name>tiPhotoLocator</Name>
+	<Name>TiPhotoLocator</Name>
 	<Version>1.6</Version>
-	<Title>TiPhotoLocator: a tiny application to easily geotag your photos.</Title>
+	<Title>TiPhotoLocator - A desktop application to easily geotag your photos -</Title>
 	<Logo>logo_TPL.png</Logo>
 	<Publisher>Sphinkie</Publisher>
 	<StartMenuDir>TiPhotoLocator</StartMenuDir>
