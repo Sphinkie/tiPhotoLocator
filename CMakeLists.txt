@@ -123,6 +123,13 @@ target_link_libraries(tiPhotoLocator
     PRIVATE Qt6::Quick Qt6::Location
 )
 
+add_custom_command(TARGET tiPhotoLocator POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/Bin/exiftool.exe"
+        "$<TARGET_FILE_DIR:tiPhotoLocator>/Bin/exiftool.exe"
+    COMMENT "Copying exiftool.exe to build directory"
+)
+
 include(GNUInstallDirs)
 install(TARGETS tiPhotoLocator
     BUNDLE DESTINATION .
