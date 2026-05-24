@@ -1,23 +1,54 @@
 import QtQuick
-import QtQuick.Dialogs
+import QtQuick.Controls
+import QtQuick.Layouts
 
 
 /** **********************************************************************************************************
  * @brief Fenêtre d'aide pour l'obtention d'une API Key de cartes.
+ * Utilise un Dialog QML (et non MessageDialog natif) pour que les hyperliens soient cliquables.
  * ***********************************************************************************************************/
-MessageDialog {
-    /// Titre de la fenêtre de popup.
-    title: qsTr("Get an API Key")
-    /// Texte à afficher dans la fenêtre de popup.
-    text: qsTr("An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:<br/>")
-    /// Informative text can be used to expand upon the text to give more information to the user.
-    informativeText: t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 + t9
-    /// This property holds the (unformated) text to be displayed in the details area.
-    detailedText: t_details
+Dialog {
+    id: apikeyDialog
+    title: qsTr("How to get an API Key")
+    modal: true
+    standardButtons: Dialog.Ok
+    anchors.centerIn: Overlay.overlay
+    Component.onCompleted: visible = false
 
-    // onLinkActivated: Qt.openUrlExternally(link)
-    readonly property string t1: qsTr("- Go to the website.<br/>")
-    readonly property string t2: "  <a href='https://www.thunderforest.com/pricing/'>https://www.thunderforest.com</a>.<br/>"
+    ColumnLayout {
+        anchors.fill: parent
+        spacing: 12
+
+        Text {
+            text: qsTr("An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:")
+            wrapMode: Text.WordWrap
+            font.pointSize: 11
+            color: Style.secondaryTextColor
+            Layout.fillWidth: true
+        }
+
+        Text {
+            textFormat: Text.RichText
+            text: t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 + t9
+            wrapMode: Text.WordWrap
+            font.pointSize: 11
+            color: Style.secondaryTextColor
+            Layout.fillWidth: true
+            onLinkActivated: link => Qt.openUrlExternally(link)
+        }
+
+        Text {
+            text: qsTr("This key removes the 'API Key Required' watermark from the maps.")
+            wrapMode: Text.WordWrap
+            font.pointSize: 11
+            font.italic: true
+            color: Style.secondaryTextColor
+            Layout.fillWidth: true
+        }
+    }
+
+    readonly property string t1: qsTr("- Go to the website: ")
+    readonly property string t2: "<a href='https://www.thunderforest.com/pricing/'>https://www.thunderforest.com</a>.<br/>"
     readonly property string t3: qsTr("- Choose the <i>Hobby Project</i> plan.<br/>")
     readonly property string t4: qsTr("- Create an account.<br/>")
     readonly property string t5: qsTr("- Sign in with your account.<br/>")
@@ -25,8 +56,4 @@ MessageDialog {
     readonly property string t7: qsTr("- Copy the API Key.<br/>")
     readonly property string t8: qsTr("- Paste it in the 'Configuration' menu.<br/>")
     readonly property string t9: qsTr("- Restart <b>TiPhotoLocator</b>.<br/>")
-    readonly property string t_details: qsTr("This key removes the 'API Key Required' watermark from the maps.")
-
-    /// Non visible au démarrage.
-    Component.onCompleted: visible = false
 }
