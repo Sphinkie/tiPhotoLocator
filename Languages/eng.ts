@@ -32,7 +32,7 @@
     <message>
         <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="23"/>
         <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</source>
-        <translation type="unfinished"></translation>
+        <translation>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</translation>
     </message>
     <message>
         <source>- Go to the website.&lt;br/&gt;</source>
@@ -41,12 +41,12 @@
     <message>
         <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="12"/>
         <source>How to get an API Key</source>
-        <translation type="unfinished"></translation>
+        <translation>How to get an API Key</translation>
     </message>
     <message>
         <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="50"/>
         <source>- Go to the website: </source>
-        <translation type="unfinished"></translation>
+        <translation>- Go to the website: </translation>
     </message>
     <message>
         <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="52"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="12"/>
         <source>Credits</source>
-        <translation type="unfinished">Credits</translation>
+        <translation>Credits</translation>
     </message>
     <message>
         <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="23"/>
