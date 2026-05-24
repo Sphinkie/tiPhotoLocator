@@ -13,11 +13,12 @@ Compatibilité chemins réseau
   - ExifTool : conversion QUrl::toLocalFile() + QDir::toNativeSeparators() pour chemins locaux et UNC
   - Affichage correct du chemin UNC dans la toolbar (via window.currentFolderUrl)
 
-TODO (v1.7)
-  - Bug : les imagettes de la sélection multiple débordent sur le bouton "Enregistrer" lors du scroll
-    horizontal → appliquer clip:true ou contraindre la listview pour qu'elle ne déborde pas à gauche.
-  - Bug : après "Clear recent folders list" puis "Open" (sans quitter l'app), le dossier choisi
-    n'apparaît pas dans la liste des dossiers récents.
+Corrections de bugs
+  - Imagettes : clip:true sur ImagettesListView pour éviter le débordement lors du scroll horizontal
+  - Dossiers récents : menu "Recents" non mis à jour après "Clear" puis "Open" (property var / référence QML)
+  - Dossiers récents : menu "Recents" restait enabled après "Clear" (binding sur Instantiator.count remplacé par recentList.length)
+  - Sélection multiple : Ctrl+clic au lieu du clic droit (convention standard)
+  - Support des caractères accentués dans les metadata EXIF/IPTC (fichier args UTF-8 + -charset IPTC=UTF8)
 
 Qualité & Nettoyage
   - Suppression du "welcome item" (photo fictive au démarrage du modèle)
