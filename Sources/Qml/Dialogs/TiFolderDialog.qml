@@ -8,6 +8,12 @@ import "../Javascript/TiUtilities.js" as Utilities
 /** ***************************************************************************************
  * @brief QML: Fenêtre de dialogue pour sélectionner le dossier.
  * Folder example: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
+ * - Lecture des la RecentList des Settings (depuis QSettings → mémoire) :
+ *   une seule fois, à la création du composant, c'est-à-dire au démarrage de l'application.
+ *   Ainsi, la liste des dossiers récents est correcte à chaque relance.
+ * - Écriture dans les Settings: (depuis mémoire → QSettings) :
+ *   à chaque changement de la propriété aliasée, cad avec `folderDialog.recentList = folderList`
+ *   QSettings est mis à jour immédiatement sur le disque.
  * ****************************************************************************************/
 FolderDialog {
     id: folderDialog
@@ -49,16 +55,19 @@ FolderDialog {
      * On insère les items par le bas de la pile, car le Instanciator.model les affiche en sens inverse.
      * ************************************************************************************/
     function addRecentFolder(foldername) {
-        var folderList = settings.recentList
-        // console.log("Nb recents", folderList.length)
+        // .slice() crée une copie (nouvelle référence/ shallow copy)) : indispensable pour que QML
+        // détecte le changement lors du write-back et déclenche le signal de mise à jour.
+        // Note, sans argument, le contenu de la liste returné par slice est identique.
+        var folderList = folderDialog.recentList ? folderDialog.recentList.slice() : []
         // Eviter les doublons.
         if (folderList.includes(foldername))
             return
         // On mémorise un maximum de 7 recent folders (0 ..6).
-        if (folderList.length > 6) {
+        if (folderList.length > 6)
             folderList.pop()
-        }
         folderList.unshift(foldername)
+        // Write-back obligatoire : en QML, la lecture d'une property var retourne une copie.
+        folderDialog.recentList = folderList
     }
 
 
