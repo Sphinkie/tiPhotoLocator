@@ -22,57 +22,69 @@
 <context>
     <name>ApikeyDialog</name>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="10"/>
         <source>Get an API Key</source>
-        <translation>Get an API Key</translation>
+        <translation type="vanished">Get an API Key</translation>
+    </message>
+    <message>
+        <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:&lt;br/&gt;</source>
+        <translation type="vanished">An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="23"/>
+        <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>- Go to the website.&lt;br/&gt;</source>
+        <translation type="vanished">- Go to the website.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="12"/>
-        <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:&lt;br/&gt;</source>
-        <translation>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:&lt;br/&gt;</translation>
+        <source>How to get an API Key</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="19"/>
-        <source>- Go to the website.&lt;br/&gt;</source>
-        <translation>- Go to the website.&lt;br/&gt;</translation>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="50"/>
+        <source>- Go to the website: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="21"/>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="52"/>
         <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
         <translation>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="22"/>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="53"/>
         <source>- Create an account.&lt;br/&gt;</source>
         <translation>- Create an account.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="23"/>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="54"/>
         <source>- Sign in with your account.&lt;br/&gt;</source>
         <translation>- Sign in with your account.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="24"/>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="55"/>
         <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
         <translation>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="25"/>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="56"/>
         <source>- Copy the API Key.&lt;br/&gt;</source>
         <translation>- Copy the API Key.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="26"/>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="57"/>
         <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
         <translation>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="27"/>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="58"/>
         <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
         <translation>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="28"/>
+        <location filename="../sources/Qml/Dialogs/ApikeyDialog.qml" line="41"/>
         <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
         <translation>This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
     </message>
