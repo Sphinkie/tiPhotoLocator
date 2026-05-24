@@ -11,6 +11,7 @@ ListView {
     spacing: 4
     leftMargin: 16
     orientation: Qt.Horizontal
+    clip: true
     model: _onTheMapProxyModel
     focus: false
 
