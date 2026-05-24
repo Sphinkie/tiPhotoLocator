@@ -159,47 +159,47 @@
         <translation>Recents</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="54"/>
+        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="53"/>
         <source>Clear recent folders list</source>
         <translation>Clear recent folders list</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="63"/>
+        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="62"/>
         <source>Quit</source>
         <translation>Quit</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="69"/>
+        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="68"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="71"/>
+        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="70"/>
         <source>Configuration</source>
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="75"/>
+        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="74"/>
         <source>Keywords</source>
         <translation>Keywords management</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="81"/>
+        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="80"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="83"/>
+        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="82"/>
         <source>Obtenir une API KEY</source>
         <translation>How to get an API key</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="87"/>
+        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="86"/>
         <source>Credits</source>
         <translation>Credits</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="91"/>
+        <location filename="../sources/Qml/Components/MainMenuBar.qml" line="90"/>
         <source>About</source>
         <translation>About</translation>
     </message>
