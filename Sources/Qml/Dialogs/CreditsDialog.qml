@@ -1,21 +1,42 @@
 import QtQuick
-import QtQuick.Dialogs
+import QtQuick.Controls
+import QtQuick.Layouts
 
 
 /** **********************************************************************************************************
- * @brief Fenêtre de dialogue typique pour afficher les remerciements.
+ * @brief Fenêtre de dialogue pour afficher les remerciements.
+ * Utilise un Dialog QML (et non MessageDialog natif) pour que les hyperliens soient cliquables.
  * ***********************************************************************************************************/
-MessageDialog {
-
-    /// Titre de la fenêtre.
-    title: "Credits"
-    /// Texte principal.
-    text: qsTr(
-              "I would like to thank the third-party applications that helped build this program:")
-    /// Texte secondaire.
-    informativeText: t1 + t2 + t3 + t4 + t5
-    /// PAr défaut: ce popup est masqué.
+Dialog {
+    id: creditsDialog
+    title: qsTr("Credits")
+    modal: true
+    standardButtons: Dialog.Ok
+    anchors.centerIn: Overlay.overlay
     Component.onCompleted: visible = false
+
+    ColumnLayout {
+        anchors.fill: parent
+        spacing: 12
+
+        Text {
+            text: qsTr("I would like to thank the third-party applications that helped build this program:")
+            wrapMode: Text.WordWrap
+            font.pointSize: 11
+            color: Style.secondaryTextColor
+            Layout.fillWidth: true
+        }
+
+        Text {
+            textFormat: Text.RichText
+            text: t1 + t2 + t3 + t4 + t5
+            wrapMode: Text.WordWrap
+            font.pointSize: 11
+            color: Style.secondaryTextColor
+            Layout.fillWidth: true
+            onLinkActivated: link => Qt.openUrlExternally(link)
+        }
+    }
 
     readonly property string t1: qsTr("- the freeware <a href='https://geosetter.de/en/main-en/'>GeoSetter</a> for the initial idea.<br/>")
     readonly property string t2: qsTr("- the freeware <a href='https://exiftool.org/'>ExifTool</a> for EXIF metadata management.<br/>")

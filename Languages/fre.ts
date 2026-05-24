@@ -80,32 +80,37 @@
 <context>
     <name>CreditsDialog</name>
     <message>
-        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="13"/>
+        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="12"/>
+        <source>Credits</source>
+        <translation type="unfinished">Crédits</translation>
+    </message>
+    <message>
+        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="23"/>
         <source>I would like to thank the third-party applications that helped build this program:</source>
         <translation>Je remercie les applications tierces qui ont aidé à la réalisation de ce programme:</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="20"/>
+        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="41"/>
         <source>- the freeware &lt;a href=&apos;https://geosetter.de/en/main-en/&apos;&gt;GeoSetter&lt;/a&gt; for the initial idea.&lt;br/&gt;</source>
         <translation>- le freeware &lt;a href=&apos;https://geosetter.de/en/main-en/&apos;&gt;GeoSetter&lt;/a&gt; pour l&apos;idée initiale.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="21"/>
+        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="42"/>
         <source>- the freeware &lt;a href=&apos;https://exiftool.org/&apos;&gt;ExifTool&lt;/a&gt; for EXIF metadata management.&lt;br/&gt;</source>
         <translation>- le freeware &lt;a href=&apos;https://exiftool.org/&apos;&gt;ExifTool&lt;/a&gt; pour la gestion des métadonnées EXIF.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="22"/>
+        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="43"/>
         <source>- the &lt;a href=&apos;https://www.qt.io/&apos;&gt;Qt Company&lt;/a&gt; for the Qt6 C++ and QML framework.&lt;br/&gt;</source>
         <translation>- la &lt;a href=&apos;https://www.qt.io/&apos;&gt;Qt Company&lt;/a&gt; pour le framework Qt6 en C++ et QML.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="23"/>
+        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="44"/>
         <source>- the &lt;a href=&apos;https://www.openstreetmap.org&apos;&gt;OpenStreetMap&lt;/a&gt; organisation for map data.&lt;br/&gt;</source>
         <translation>- l&apos;organisation &lt;a href=&apos;https://www.openstreetmap.org&apos;&gt;OpenStreetMap&lt;/a&gt; pour les informations cartographiques.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="24"/>
+        <location filename="../sources/Qml/Dialogs/CreditsDialog.qml" line="45"/>
         <source>- the &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; company for providing the map tiles.&lt;br/&gt;</source>
         <translation>- la société &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; pour la mise à disposition des cartes.&lt;br/&gt;</translation>
     </message>
