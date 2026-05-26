@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -127,7 +127,11 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>folder</b></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>QML: Fenêtre de dialogue pour sélectionner le dossier. Folder example: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]. </p>
 <hr  />
- </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<ul>
+<li>Lecture des la RecentList des Settings (depuis QSettings → mémoire) : une seule fois, à la création du composant, c'est-à-dire au démarrage de l'application. Ainsi, la liste des dossiers récents est correcte à chaque relance.</li>
+<li>Écriture dans les Settings: (depuis mémoire → QSettings) : à chaque changement de la propriété aliasée, cad avec <span class="tt">folderDialog.recentList = folderList</span> QSettings est mis à jour immédiatement sur le disque. </li>
+</ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
 <a id="aa77f9cdb4ff03fc10d80a581449ac23e" name="aa77f9cdb4ff03fc10d80a581449ac23e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa77f9cdb4ff03fc10d80a581449ac23e">&#9670;&#160;</a></span>addRecentFolder()</h2>
 

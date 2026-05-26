@@ -1,7 +1,7 @@
 var searchData=
 [
   ['persistcustomkeywords_0',['persistCustomKeywords',['../class_popup_keywords.html#a0b49eab59ea17512060b8de719425e6b',1,'PopupKeywords']]],
-  ['photo_1',['Photo',['../struct_photo.html',1,'Photo'],['../struct_photo.html#a10ef03ede9235052eb9f7d5e950f85d3',1,'Photo::Photo()'],['../struct_photo.html#ab728b491964ad2e7e7b91a0d10b12789',1,'Photo::Photo(const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, const bool is_welcome=false, bool is_current=false)']]],
+  ['photo_1',['Photo',['../struct_photo.html',1,'Photo'],['../struct_photo.html#a10ef03ede9235052eb9f7d5e950f85d3',1,'Photo::Photo()'],['../struct_photo.html#a70dea3e00c545305d4b59af51d8c8a9a',1,'Photo::Photo(const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, bool is_current=false)']]],
   ['photo_20locator_2',['Ti Photo Locator',['../index.html',1,'']]],
   ['photolistview_3',['PhotoListview',['../class_photo_listview.html',1,'']]],
   ['photomodel_4',['PhotoModel',['../class_photo_model.html',1,'PhotoModel'],['../class_photo_model.html#a244f996eed49122ebe11c5369d63a0e2',1,'PhotoModel::PhotoModel()']]],

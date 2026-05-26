@@ -10,7 +10,7 @@ var searchData=
   ['t7_7',['t7',['../class_apikey_dialog.html#a289c5b3ccbd9c3047bf55585d3c379bd',1,'ApikeyDialog']]],
   ['t8_8',['t8',['../class_apikey_dialog.html#a0ff7f51ce108e4af07abe2110646b407',1,'ApikeyDialog']]],
   ['t9_9',['t9',['../class_apikey_dialog.html#a750843e5f4f8037a8dcd1b74922d1fb0',1,'ApikeyDialog']]],
-  ['t_5fdetails_10',['t_details',['../class_about_dialog.html#a03d9881dcc0e8c344eb20a09092d4571',1,'AboutDialog::t_details'],['../class_apikey_dialog.html#aaf23ffe41578b93274285bd794603c3d',1,'ApikeyDialog::t_details']]],
+  ['t_5fdetails_10',['t_details',['../class_about_dialog.html#a03d9881dcc0e8c344eb20a09092d4571',1,'AboutDialog']]],
   ['target_11',['target',['../class_chips.html#a4fd70908a8c2a5512af1cf0068e61d20',1,'Chips']]],
   ['targetname_12',['targetName',['../class_chips.html#ae3b1cb2195780ae3057bda1bca9b2ff6',1,'Chips']]],
   ['tertiarybackgroundcolor_13',['tertiaryBackgroundColor',['../class_style.html#a8b4d5777f41b0d390d9fca6de3f1fbed',1,'Style']]],

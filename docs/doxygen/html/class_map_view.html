@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -109,8 +109,7 @@ Propriétés</h2></td></tr>
 <tr class="memitem:a78225978fc4c1b6e1131b66491d6f173" id="r_a78225978fc4c1b6e1131b66491d6f173"><td class="memItemLeft" align="right" valign="top">var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78225978fc4c1b6e1131b66491d6f173">mapProviderIndices</a></td></tr>
 <tr class="memitem:a62cdcd79a7ebd2ff676782b5f53ce915" id="r_a62cdcd79a7ebd2ff676782b5f53ce915"><td class="memItemLeft" align="right" valign="top"><a id="a62cdcd79a7ebd2ff676782b5f53ce915" name="a62cdcd79a7ebd2ff676782b5f53ce915"></a>
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>mapCircle</b></td></tr>
-<tr class="memitem:ac1552a67bf5ac421e463ba55ddab8a72" id="r_ac1552a67bf5ac421e463ba55ddab8a72"><td class="memItemLeft" align="right" valign="top"><a id="ac1552a67bf5ac421e463ba55ddab8a72" name="ac1552a67bf5ac421e463ba55ddab8a72"></a>
-point&#160;</td><td class="memItemRight" valign="bottom"><b>homeCoords</b></td></tr>
+<tr class="memitem:a49f49a99899a341a74aa1192dd663ee6" id="r_a49f49a99899a341a74aa1192dd663ee6"><td class="memItemLeft" align="right" valign="top">var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49f49a99899a341a74aa1192dd663ee6">homeCoords</a></td></tr>
 <tr class="memitem:af1384361524f4308e1d06d7bfae98092" id="r_af1384361524f4308e1d06d7bfae98092"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1384361524f4308e1d06d7bfae98092">zoomTowardsCursor</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -131,6 +130,7 @@ WheelHandler&#160;</td><td class="memItemRight" valign="bottom"><b>wheel</b></td
 MapCircle&#160;</td><td class="memItemRight" valign="bottom"><b>mapCircle</b></td></tr>
 <tr class="memitem:aea5ce9e936663afd07a6feb68042e929" id="r_aea5ce9e936663afd07a6feb68042e929"><td class="memItemLeft" align="right" valign="top">MapItemView&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea5ce9e936663afd07a6feb68042e929">mapItemView</a></td></tr>
 <tr class="memitem:a4705d5867e93eb43b1939a78c1f3623b" id="r_a4705d5867e93eb43b1939a78c1f3623b"><td class="memItemLeft" align="right" valign="top">var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4705d5867e93eb43b1939a78c1f3623b">onMapItemsChanged</a></td></tr>
+<tr class="memdesc:a4705d5867e93eb43b1939a78c1f3623b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelé quand des markers apparaissent ou disparaissent de la carte (chargement d'un nouveau dossier, modification de coordonnées GPS, sélection d'une photo avec coords GPS, selection d'une photo sans coords GPS ce qui efface le marker...). Le recentrage est géré par onFirstCoordsReady =&gt; ici on se contente de rafraîchir homeCoords (default values = Paris).  <br /></td></tr>
 <tr class="memitem:ac2dcc7f77997c187247ad99275dc20a9" id="r_ac2dcc7f77997c187247ad99275dc20a9"><td class="memItemLeft" align="right" valign="top">Component&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2dcc7f77997c187247ad99275dc20a9">markerDelegate</a></td></tr>
 <tr class="memitem:ae5ded3bc79acf34fb2f954518b303a00" id="r_ae5ded3bc79acf34fb2f954518b303a00"><td class="memItemLeft" align="right" valign="top">Plugin&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5ded3bc79acf34fb2f954518b303a00">mapPlugin</a></td></tr>
 <tr class="memdesc:ae5ded3bc79acf34fb2f954518b303a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plugin OSM pour la carte OpenStreetMap (ou thunderforest). On a 5 types de cartes potables:  <br /></td></tr>
@@ -268,12 +268,10 @@ MapCircle&#160;</td><td class="memItemRight" valign="bottom"><b>mapCircle</b></t
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Appelé en cas de changement de la liste des MapItems. Cad:</p><ul>
-<li>lors d'un clic dans la listView, (doublon ? c'est aussi fait dans PhotoListView)</li>
-<li>parfois sur un changement des données du modèle, cad une nouvelle liste de photos. (pas toujours) mais de toutes façon, c'est trop tôt, on a pas encore lu les Exif. </li>
-</ul>
 
+<p>Appelé quand des markers apparaissent ou disparaissent de la carte (chargement d'un nouveau dossier, modification de coordonnées GPS, sélection d'une photo avec coords GPS, selection d'une photo sans coords GPS ce qui efface le marker...). Le recentrage est géré par onFirstCoordsReady =&gt; ici on se contente de rafraîchir homeCoords (default values = Paris). </p>
+<hr  />
+ 
 </div>
 </div>
 <a id="a37dc766bc9ad2693dc433fc9198460b2" name="a37dc766bc9ad2693dc433fc9198460b2"></a>
@@ -301,6 +299,29 @@ MapCircle&#160;</td><td class="memItemRight" valign="bottom"><b>mapCircle</b></t
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Documentation des propriétés</h2>
+<a id="a49f49a99899a341a74aa1192dd663ee6" name="a49f49a99899a341a74aa1192dd663ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f49a99899a341a74aa1192dd663ee6">&#9670;&#160;</a></span>homeCoords</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">var MapView::homeCoords</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel read">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Position d'accueil de la carte, lue depuis les Settings (Paris par défaut). Nota: settings est déclaré plus bas, mais accessible ici car les bindings QML sont évalués après la création de tous les objets du composant. </p>
+
+</div>
+</div>
 <a id="a78225978fc4c1b6e1131b66491d6f173" name="a78225978fc4c1b6e1131b66491d6f173"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78225978fc4c1b6e1131b66491d6f173">&#9670;&#160;</a></span>mapProviderIndices</h2>
 

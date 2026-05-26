@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -105,9 +105,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a10ef03ede9235052eb9f7d5e950f85d3" id="r_a10ef03ede9235052eb9f7d5e950f85d3"><td class="memItemLeft" align="right" valign="top"><a id="a10ef03ede9235052eb9f7d5e950f85d3" name="a10ef03ede9235052eb9f7d5e950f85d3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Photo</b> ()</td></tr>
 <tr class="memdesc:a10ef03ede9235052eb9f7d5e950f85d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="memitem:ab728b491964ad2e7e7b91a0d10b12789" id="r_ab728b491964ad2e7e7b91a0d10b12789"><td class="memItemLeft" align="right" valign="top"><a id="ab728b491964ad2e7e7b91a0d10b12789" name="ab728b491964ad2e7e7b91a0d10b12789"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Photo</b> (const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, const bool is_welcome=false, bool is_current=false)</td></tr>
-<tr class="memdesc:ab728b491964ad2e7e7b91a0d10b12789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec valeurs. <br /></td></tr>
+<tr class="memitem:a70dea3e00c545305d4b59af51d8c8a9a" id="r_a70dea3e00c545305d4b59af51d8c8a9a"><td class="memItemLeft" align="right" valign="top"><a id="a70dea3e00c545305d4b59af51d8c8a9a" name="a70dea3e00c545305d4b59af51d8c8a9a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Photo</b> (const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, bool is_current=false)</td></tr>
+<tr class="memdesc:a70dea3e00c545305d4b59af51d8c8a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec valeurs. <br /></td></tr>
 <tr class="memitem:aadb7a083611feae65440c3bfc3887417" id="r_aadb7a083611feae65440c3bfc3887417"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadb7a083611feae65440c3bfc3887417">operator==</a> (const QString &amp;file_name)</td></tr>
 <tr class="memdesc:aadb7a083611feae65440c3bfc3887417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'opérateur ==.  <br /></td></tr>
 <tr class="memitem:aaf8c4dfdd916b811562d6d4e7f5e1489" id="r_aaf8c4dfdd916b811562d6d4e7f5e1489"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf8c4dfdd916b811562d6d4e7f5e1489">operator==</a> (const <a class="el" href="struct_photo.html">Photo</a> &amp;photo)</td></tr>
@@ -139,9 +139,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSelected</b></td></
 <tr class="memitem:accaf8898f12c82d9872c555309d563b1" id="r_accaf8898f12c82d9872c555309d563b1"><td class="memItemLeft" align="right" valign="top"><a id="accaf8898f12c82d9872c555309d563b1" name="accaf8898f12c82d9872c555309d563b1"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isMarker</b> = false</td></tr>
 <tr class="memdesc:accaf8898f12c82d9872c555309d563b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exemple: une position sauvegardée sur la carte. <br /></td></tr>
-<tr class="memitem:a46c9dbe9c662028eff1907e39d5941f2" id="r_a46c9dbe9c662028eff1907e39d5941f2"><td class="memItemLeft" align="right" valign="top"><a id="a46c9dbe9c662028eff1907e39d5941f2" name="a46c9dbe9c662028eff1907e39d5941f2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isWelcome</b> = false</td></tr>
-<tr class="memdesc:a46c9dbe9c662028eff1907e39d5941f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exemple: L'image de la page d'acceuil. <br /></td></tr>
 <tr class="memitem:a33f360a2eccf88cc843e3a469600b3d5" id="r_a33f360a2eccf88cc843e3a469600b3d5"><td class="memItemLeft" align="right" valign="top"><a id="a33f360a2eccf88cc843e3a469600b3d5" name="a33f360a2eccf88cc843e3a469600b3d5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>insideCircle</b> = false</td></tr>
 <tr class="memdesc:a33f360a2eccf88cc843e3a469600b3d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">inside the radius of nearby photos <br /></td></tr>
@@ -199,6 +196,9 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>software</b></td><
 <tr class="memitem:a76af2f2ab2fa057b17b00e796fcfe2b5" id="r_a76af2f2ab2fa057b17b00e796fcfe2b5"><td class="memItemLeft" align="right" valign="top"><a id="a76af2f2ab2fa057b17b00e796fcfe2b5" name="a76af2f2ab2fa057b17b00e796fcfe2b5"></a>
 QStringList&#160;</td><td class="memItemRight" valign="bottom"><b>keywords</b></td></tr>
 <tr class="memdesc:a76af2f2ab2fa057b17b00e796fcfe2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a list of keywords describing the image. <br /></td></tr>
+<tr class="memitem:aeb680905b680957e72027a344d3fed28" id="r_aeb680905b680957e72027a344d3fed28"><td class="memItemLeft" align="right" valign="top"><a id="aeb680905b680957e72027a344d3fed28" name="aeb680905b680957e72027a344d3fed28"></a>
+QSet&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>dirtyFields</b></td></tr>
+<tr class="memdesc:aeb680905b680957e72027a344d3fed28"><td class="mdescLeft">&#160;</td><td class="mdescRight">ExifTool tag names modified since last read/save. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>A data structure containing all the attributes for a photo picture: filename, GPS coordinates, etc. </p>

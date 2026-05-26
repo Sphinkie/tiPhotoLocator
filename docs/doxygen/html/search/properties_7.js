@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isphoto_0',['isphoto',['../class_zone_preview.html#a3245b3560447889f360962f5864d4ec9',1,'ZonePreview']]]
+  ['iswelcome_0',['isWelcome',['../class_zone_preview.html#af22c4fe31276d2176e540e4a52125aa8',1,'ZonePreview']]]
 ];

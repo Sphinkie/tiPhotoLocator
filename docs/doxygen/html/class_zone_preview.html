@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -110,10 +110,10 @@ Graphe d'héritage de ZonePreview:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Propriétés</h2></td></tr>
-<tr class="memitem:a3245b3560447889f360962f5864d4ec9" id="r_a3245b3560447889f360962f5864d4ec9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3245b3560447889f360962f5864d4ec9">isphoto</a></td></tr>
-<tr class="memdesc:a3245b3560447889f360962f5864d4ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le flag isphoto sert à savoir si on est positionné sur un filename ou sur l'item de bienvenue au démarrage.  <br /></td></tr>
+<tr class="memitem:af22c4fe31276d2176e540e4a52125aa8" id="r_af22c4fe31276d2176e540e4a52125aa8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af22c4fe31276d2176e540e4a52125aa8">isWelcome</a></td></tr>
+<tr class="memdesc:af22c4fe31276d2176e540e4a52125aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le flag isWelcome sert à savoir si on est positionné sur un filename ou sur l'item de bienvenue au démarrage.  <br /></td></tr>
 <tr class="memitem:ac850a28e3f4977aa59493218143a32b1" id="r_ac850a28e3f4977aa59493218143a32b1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac850a28e3f4977aa59493218143a32b1">bienvenue</a></td></tr>
-<tr class="memdesc:ac850a28e3f4977aa59493218143a32b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Styled text.  <br /></td></tr>
+<tr class="memdesc:ac850a28e3f4977aa59493218143a32b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texte de bienvenue (avec possibilité de style)  <br /></td></tr>
 <tr class="memitem:ab87fc953736cb6b600b05c9f1671548f" id="r_ab87fc953736cb6b600b05c9f1671548f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab87fc953736cb6b600b05c9f1671548f">brief</a></td></tr>
 <tr class="memitem:aac9591a5dcd80375b7e844fbb2daaad6" id="r_aac9591a5dcd80375b7e844fbb2daaad6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac9591a5dcd80375b7e844fbb2daaad6">usage</a></td></tr>
 <tr class="memitem:a7f8c09bbbeee930c90d8f16ed7eb5db8" id="r_a7f8c09bbbeee930c90d8f16ed7eb5db8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f8c09bbbeee930c90d8f16ed7eb5db8">note</a></td></tr>
@@ -131,6 +131,10 @@ alias&#160;</td><td class="memItemRight" valign="bottom"><b>chipTime</b></td></t
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>chipMake</b></td></tr>
 <tr class="memitem:a3ba48a2360c7a5d32b08e185a93165bb inherit properties_class_zone_preview_form" id="r_a3ba48a2360c7a5d32b08e185a93165bb"><td class="memItemLeft" align="right" valign="top">
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>chipCamModel</b></td></tr>
+<tr class="memitem:a16c83e64368f70c036d2e9cd734715c8 inherit properties_class_zone_preview_form" id="r_a16c83e64368f70c036d2e9cd734715c8"><td class="memItemLeft" align="right" valign="top">
+alias&#160;</td><td class="memItemRight" valign="bottom"><b>chipSpeed</b></td></tr>
+<tr class="memitem:a4b92d3fd6e8a3699ec24b705fda9f3d7 inherit properties_class_zone_preview_form" id="r_a4b92d3fd6e8a3699ec24b705fda9f3d7"><td class="memItemLeft" align="right" valign="top">
+alias&#160;</td><td class="memItemRight" valign="bottom"><b>chipAperture</b></td></tr>
 <tr class="memitem:ad2de53d2e1f1f8f014a6332617953c7b inherit properties_class_zone_preview_form" id="r_ad2de53d2e1f1f8f014a6332617953c7b"><td class="memItemLeft" align="right" valign="top">
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>chipCountry</b></td></tr>
 <tr class="memitem:ad681f026b0e756e7e2f5370ce6fae1e6 inherit properties_class_zone_preview_form" id="r_ad681f026b0e756e7e2f5370ce6fae1e6"><td class="memItemLeft" align="right" valign="top">
@@ -161,6 +165,10 @@ var <a class="el" href="class_zone_preview_form.html#a0b122e982e53a3b4545ba67c9b
 var <a class="el" href="class_zone_preview_form.html#ab0acb651e3434e8c12671a4a0a2f049b">chipMake</a>&#160;</td><td class="memItemRight" valign="bottom"><b>content</b></td></tr>
 <tr class="memitem:aea049b31c5d3e500c115f45b6ff4e663" id="r_aea049b31c5d3e500c115f45b6ff4e663"><td class="memItemLeft" align="right" valign="top"><a id="aea049b31c5d3e500c115f45b6ff4e663" name="aea049b31c5d3e500c115f45b6ff4e663"></a>
 var <a class="el" href="class_zone_preview_form.html#a4f37f9b45ba737756bef40f6503c27a2">chipCamModel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>content</b></td></tr>
+<tr class="memitem:a29b66da007d49a2f4cb25bc86fb5dcce" id="r_a29b66da007d49a2f4cb25bc86fb5dcce"><td class="memItemLeft" align="right" valign="top"><a id="a29b66da007d49a2f4cb25bc86fb5dcce" name="a29b66da007d49a2f4cb25bc86fb5dcce"></a>
+var <a class="el" href="class_zone_preview_form.html#a1936656ccded24e95039809b95251a07">chipSpeed</a>&#160;</td><td class="memItemRight" valign="bottom"><b>content</b></td></tr>
+<tr class="memitem:ac00bd0d0e675d08204500319aad6ff27" id="r_ac00bd0d0e675d08204500319aad6ff27"><td class="memItemLeft" align="right" valign="top"><a id="ac00bd0d0e675d08204500319aad6ff27" name="ac00bd0d0e675d08204500319aad6ff27"></a>
+var <a class="el" href="class_zone_preview_form.html#af9179ed07369d488ae6c8c23e51f15a8">chipAperture</a>&#160;</td><td class="memItemRight" valign="bottom"><b>content</b></td></tr>
 <tr class="memitem:a97ad7583a708c74a26327381793f99c8" id="r_a97ad7583a708c74a26327381793f99c8"><td class="memItemLeft" align="right" valign="top"><a id="a97ad7583a708c74a26327381793f99c8" name="a97ad7583a708c74a26327381793f99c8"></a>
 var <a class="el" href="class_zone_preview_form.html#a0f6d6c8e463b32dab4340bb3a319baa4">chipCountry</a>&#160;</td><td class="memItemRight" valign="bottom"><b>content</b></td></tr>
 </table>
@@ -188,7 +196,7 @@ var <a class="el" href="class_zone_preview_form.html#a0f6d6c8e463b32dab4340bb3a3
 </table>
 </div><div class="memdoc">
 
-<p>Styled text. </p>
+<p>Texte de bienvenue (avec possibilité de style) </p>
 <dl class="section remark"><dt>Remarques</dt><dd>This property is read-only </dd></dl>
 
 </div>
@@ -239,8 +247,8 @@ var <a class="el" href="class_zone_preview_form.html#a0f6d6c8e463b32dab4340bb3a3
 
 </div>
 </div>
-<a id="a3245b3560447889f360962f5864d4ec9" name="a3245b3560447889f360962f5864d4ec9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3245b3560447889f360962f5864d4ec9">&#9670;&#160;</a></span>isphoto</h2>
+<a id="af22c4fe31276d2176e540e4a52125aa8" name="af22c4fe31276d2176e540e4a52125aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af22c4fe31276d2176e540e4a52125aa8">&#9670;&#160;</a></span>isWelcome</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +257,7 @@ var <a class="el" href="class_zone_preview_form.html#a0f6d6c8e463b32dab4340bb3a3
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ZonePreview::isphoto</td>
+          <td class="memname">bool ZonePreview::isWelcome</td>
         </tr>
       </table>
   </td>
@@ -259,7 +267,7 @@ var <a class="el" href="class_zone_preview_form.html#a0f6d6c8e463b32dab4340bb3a3
 </table>
 </div><div class="memdoc">
 
-<p>Le flag isphoto sert à savoir si on est positionné sur un filename ou sur l'item de bienvenue au démarrage. </p>
+<p>Le flag isWelcome sert à savoir si on est positionné sur un filename ou sur l'item de bienvenue au démarrage. </p>
 <dl class="section remark"><dt>Remarques</dt><dd>This property is read-only </dd></dl>
 
 </div>

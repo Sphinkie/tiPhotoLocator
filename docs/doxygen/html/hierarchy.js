@@ -6,6 +6,10 @@ var hierarchy =
     [ "ColumnLayout", null, [
       [ "TabFrameGlobalTags", "class_tab_frame_global_tags.html", null ]
     ] ],
+    [ "Dialog", null, [
+      [ "ApikeyDialog", "class_apikey_dialog.html", null ],
+      [ "CreditsDialog", "class_credits_dialog.html", null ]
+    ] ],
     [ "FolderDialog", null, [
       [ "TiFolderDialog", "class_ti_folder_dialog.html", null ]
     ] ],
@@ -49,8 +53,6 @@ var hierarchy =
     ] ],
     [ "MessageDialog", null, [
       [ "AboutDialog", "class_about_dialog.html", null ],
-      [ "ApikeyDialog", "class_apikey_dialog.html", null ],
-      [ "CreditsDialog", "class_credits_dialog.html", null ],
       [ "RescanWarning", "class_rescan_warning.html", null ]
     ] ],
     [ "Photo", "struct_photo.html", null ],

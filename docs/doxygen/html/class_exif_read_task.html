@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.6</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -206,7 +206,7 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">pos</td><td>le numero du fichier dans la liste. </td></tr>
-    <tr><td class="paramname">filePath</td><td>le chemin + nom du fichier JPG à lire. </td></tr>
+    <tr><td class="paramname">filePath</td><td>le chemin QML + nom du fichier JPG à lire. Exemple avec local path: <span class="tt"><a href="file:///P:/2008/2008-02">file:///P:/2008/2008-02</a> Montgolfières/100_6784.JPG</span> -&gt; <span class="tt">P:\\2008\\2008-02 Montgolfières\\100_6784.JPG</span> Exemple avec UNC path : <span class="tt"><a href="file:////nas/Photo/2003/2003-08">file:////nas/Photo/2003/2003-08</a> aout/Photo 141.jpg</span> -&gt; <span class="tt">\\\\nas\\<a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a>\\2003\\2003-08 aout\\<a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> 141.jpg</span> </td></tr>
   </table>
   </dd>
 </dl>
@@ -355,7 +355,19 @@ static <a class="el" href="class_photo_model.html">PhotoModel</a> *&#160;</td><t
 <p>To learn about the usage of IPTC tags: </p><ul>
 <li><dl class="section see"><dt>Voir également</dt><dd><a href="https://iptc.org/std/photometadata/documentation/mappingguidelines">https://iptc.org/std/photometadata/documentation/mappingguidelines</a> </dd></dl>
 </li>
-<li><dl class="section see"><dt>Voir également</dt><dd><a href="https://www.carlseibert.com/guide-iptc-photo-metadata-fields">https://www.carlseibert.com/guide-iptc-photo-metadata-fields</a> </dd></dl>
+<li><dl class="section see"><dt>Voir également</dt><dd><a href="https://www.carlseibert.com/guide-iptc-photo-metadata-fields">https://www.carlseibert.com/guide-iptc-photo-metadata-fields</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Note sur le tag Orientation:<ul>
+<li>0 = Ne sait pas</li>
+<li>1 = Horizontal (normal)</li>
+<li>2 = Mirror horizontal</li>
+<li>3 = Horizontal (Rotate 180)</li>
+<li>4 = Mirror vertical</li>
+<li>5 = Mirror horizontal and rotate 270 CW</li>
+<li>6 = Vertical (Rotate 90 CW)</li>
+<li>7 = Mirror horizontal and rotate 90 CW</li>
+<li>8 = Vertical (Rotate 270 CW) </li>
+</ul>
+</dd></dl>
 </li>
 </ul>
 

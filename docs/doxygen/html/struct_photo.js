@@ -1,7 +1,7 @@
 var struct_photo =
 [
     [ "Photo", "struct_photo.html#a10ef03ede9235052eb9f7d5e950f85d3", null ],
-    [ "Photo", "struct_photo.html#ab728b491964ad2e7e7b91a0d10b12789", null ],
+    [ "Photo", "struct_photo.html#a70dea3e00c545305d4b59af51d8c8a9a", null ],
     [ "operator==", "struct_photo.html#aaf8c4dfdd916b811562d6d4e7f5e1489", null ],
     [ "operator==", "struct_photo.html#aadb7a083611feae65440c3bfc3887417", null ],
     [ "camModel", "struct_photo.html#a3c5204d88a446d1df0ee95feee81a574", null ],
@@ -11,6 +11,7 @@ var struct_photo =
     [ "creator", "struct_photo.html#a8557579ced9c4e8587443564bfe659dd", null ],
     [ "dateTimeOriginal", "struct_photo.html#a481cec4ea67fe90721b20510f55dee5a", null ],
     [ "description", "struct_photo.html#a6fe05dc549b7caf2ee3232476d41e760", null ],
+    [ "dirtyFields", "struct_photo.html#aeb680905b680957e72027a344d3fed28", null ],
     [ "filename", "struct_photo.html#a74c2e37c247175676d801adab5d0251a", null ],
     [ "fNumber", "struct_photo.html#a52f8b3c14a9736e4a6f1a338987a4113", null ],
     [ "gpsLatitude", "struct_photo.html#aebc8cca52d5bbb81ca5726f221818839", null ],
@@ -23,7 +24,6 @@ var struct_photo =
     [ "isCurrent", "struct_photo.html#abf2a8150f9347ce6870ec0fafac524fa", null ],
     [ "isMarker", "struct_photo.html#accaf8898f12c82d9872c555309d563b1", null ],
     [ "isSelected", "struct_photo.html#a8e391469cda515a3aacb6edafa2a8254", null ],
-    [ "isWelcome", "struct_photo.html#a46c9dbe9c662028eff1907e39d5941f2", null ],
     [ "keywords", "struct_photo.html#a76af2f2ab2fa057b17b00e796fcfe2b5", null ],
     [ "location", "struct_photo.html#a649223a8259c1bb869af35fe54ed5ff3", null ],
     [ "make", "struct_photo.html#a3f6620eb0f021aec853b0390d66c4898", null ],

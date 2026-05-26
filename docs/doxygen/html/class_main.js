@@ -26,5 +26,6 @@ var class_main =
     [ "photoTagsTab", "class_main.html#a937161b6dd4dce68dc7521e1b27819dd", null ],
     [ "previewView", "class_main.html#aac7638d6eb0c8f33f5cf7fe00e8eded7", null ],
     [ "tabbedPage", "class_main.html#a3994eabf899973374689e40d9deb48d7", null ],
-    [ "tabFrameGlobalTags", "class_main.html#a808b0b55bfd46ccf207d05db4ee86289", null ]
+    [ "tabFrameGlobalTags", "class_main.html#a808b0b55bfd46ccf207d05db4ee86289", null ],
+    [ "currentFolderUrl", "class_main.html#a2bf237367c162dd11f4acbe25880aceb", null ]
 ];
