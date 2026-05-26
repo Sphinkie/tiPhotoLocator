@@ -3,6 +3,19 @@
 ================================================================================
 
 --------------------------------------------------------------------------------
+ Version 1.8  (en cours)
+--------------------------------------------------------------------------------
+
+Interface & Animations
+  - Animation de suppression sur les Chips : fondu + rétrécissement (opacity 1→0, scale 1→0.6, 250ms EaseOutQuad)
+  - Mécanisme : état QML "deleting" + Transition ; signal deleteClicked émis après l'animation
+  - Chips Latitude et Longitude animés simultanément lors d'une suppression GPS
+  - Bouton "Clear GPS coords" déclenche aussi l'animation sur les deux chips
+
+Corrections de bugs
+  - Suppression Lat ou Long : les deux coordonnées sont effacées (et non une seule à zéro)
+
+--------------------------------------------------------------------------------
  Version 1.7  (2026-05-26)
 --------------------------------------------------------------------------------
 
