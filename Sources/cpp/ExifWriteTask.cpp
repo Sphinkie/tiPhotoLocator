@@ -120,6 +120,7 @@ void ExifWriteTask::run()
         QString report = exifProcess.readLine();
         if (!report.isEmpty())
             qInfo() << report.chopped(2);  // On affiche le statut de l'écriture des metadata exif
+        // TODO : gérer le cas ""    N files weren't updated due to errors" vs ("    0 image files updated")
     }
     // ---------------------------------------
     // Execution terminée pour une photo
