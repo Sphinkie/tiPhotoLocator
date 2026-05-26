@@ -117,6 +117,17 @@ Map {
 
 
     /** ******************************************************************************************************
+     * Croix rouge fixe au centre de la carte (repère visuel).
+     * *******************************************************************************************************/
+    Item {
+        anchors.centerIn: parent
+        width: 20; height: 20
+        Rectangle { anchors.centerIn: parent; width: 20; height: 2; color: "red" }
+        Rectangle { anchors.centerIn: parent; width: 2; height: 20; color: "red" }
+    }
+
+
+    /** ******************************************************************************************************
      * @brief Appelé quand des markers apparaissent ou disparaissent de la carte
      * (chargement d'un nouveau dossier, modification de coordonnées GPS, sélection d'une photo avec coords GPS,
      * selection d'une photo sans coords GPS ce qui efface le marker...).
