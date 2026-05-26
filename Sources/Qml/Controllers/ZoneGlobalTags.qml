@@ -11,61 +11,82 @@ ZoneGlobalTagsForm {
     id: globalTagsZone
     property string creator
     property string writer
-    property string city: tabbedPage.currentPhoto.city
-    property string country: tabbedPage.currentPhoto.country
-    property string location: tabbedPage.currentPhoto.location
+    property string city:        tabbedPage.currentPhoto.city
+    property string country:     tabbedPage.currentPhoto.country
+    property string location:    tabbedPage.currentPhoto.location
     property string description: tabbedPage.currentPhoto.description
     property string dateTimeOriginal: tabbedPage.currentPhoto.dateTimeOriginal
 
-    dateTimeFormatted: dateTimeOriginal ? Utilities.toReadableDate(
-                                              dateTimeOriginal) + " " + Utilities.toReadableTime(
-                                              dateTimeOriginal) : ""
+    dateTimeFormatted: dateTimeOriginal ? Utilities.toReadableDate(dateTimeOriginal) + " " + Utilities.toReadableTime(dateTimeOriginal) : ""
 
     photoKeywords: tabbedPage.currentPhoto ? tabbedPage.currentPhoto.keywords : []
+    selectionCount: _photoModel.selectionCount
 
     // Surveillance du changement de photo : remise à zéro des flags.
     property string watchedFilename: tabbedPage.currentPhoto.filename
     onWatchedFilenameChanged: {
-        creatorApplied = false
-        countryApplied = false
-        cityApplied = false
-        locationApplied = false
+        creatorApplied     = false
+        countryApplied     = false
+        cityApplied        = false
+        locationApplied    = false
         descriptionApplied = false
-        dateTimeApplied = false
-        appliedKeywords = []
+        dateTimeApplied    = false
+        appliedKeywords    = []
     }
 
-    bt_applyCreator.onClicked: {
+    // -----------------------------------------------------------------------------------
+    // APPLY TO ALL
+    // -----------------------------------------------------------------------------------
+    tagCreator.onApplyAll: {
         window.applyCreatorToAll()
         creatorApplied = true
     }
-
-    bt_applyCountry.onClicked: {
-        window.setPhotoProperty(-1, country, "country") // -1 = all
+    tagCountry.onApplyAll: {
+        window.setPhotoProperty(-1, country, "country")
         countryApplied = true
     }
-
-    bt_applyCity.onClicked: {
-        window.setPhotoProperty(-1, city, "city") // -1 = all
+    tagCity.onApplyAll: {
+        window.setPhotoProperty(-1, city, "city")
         cityApplied = true
     }
-
-    bt_applyLocation.onClicked: {
-        window.setPhotoProperty(-1, location, "location") // -1 = all
+    tagLocation.onApplyAll: {
+        window.setPhotoProperty(-1, location, "location")
         locationApplied = true
     }
-
-    bt_applyDateTime.onClicked: {
-        window.setPhotoProperty(-1, dateTimeFormatted,
-                                "dateTimeOriginal") // -1 = all
+    tagDateTime.onApplyAll: {
+        window.setPhotoProperty(-1, dateTimeFormatted, "dateTimeOriginal")
         dateTimeApplied = true
     }
-
-    bt_applyDescription.onClicked: {
-        window.setPhotoProperty(-1, description, "description") // -1 = all
+    tagDescription.onApplyAll: {
+        window.setPhotoProperty(-1, description, "description")
         descriptionApplied = true
     }
 
+    // -----------------------------------------------------------------------------------
+    // APPLY TO SELECTION
+    // -----------------------------------------------------------------------------------
+    tagCreator.onApplyToSelection: {
+        window.applyCreatorToSelection()
+    }
+    tagCountry.onApplyToSelection: {
+        window.setPhotoProperty(-4, country, "country")
+    }
+    tagCity.onApplyToSelection: {
+        window.setPhotoProperty(-4, city, "city")
+    }
+    tagLocation.onApplyToSelection: {
+        window.setPhotoProperty(-4, location, "location")
+    }
+    tagDateTime.onApplyToSelection: {
+        window.setPhotoProperty(-4, dateTimeFormatted, "dateTimeOriginal")
+    }
+    tagDescription.onApplyToSelection: {
+        window.setPhotoProperty(-4, description, "description")
+    }
+
+    // -----------------------------------------------------------------------------------
+    // KEYWORDS
+    // -----------------------------------------------------------------------------------
     onApplyKeyword: function (keyword) {
         _photoModel.addKeywordToAll(keyword)
         appliedKeywords = appliedKeywords.concat([keyword])
@@ -77,6 +98,6 @@ ZoneGlobalTagsForm {
     Settings {
         id: settings
         property alias photographe: globalTagsZone.creator
-        property alias initiales: globalTagsZone.writer
+        property alias initiales:   globalTagsZone.writer
     }
 }
