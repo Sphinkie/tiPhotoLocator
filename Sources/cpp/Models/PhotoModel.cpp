@@ -1,7 +1,7 @@
 #include "PhotoModel.h"
 #include "../ExifReadTask.h"
 #include "../ExifWriteTask.h"
-#include "../utilities.h"
+#include "../Utilities.h"
 
 #include <QThreadPool>
 #include <QSettings>
@@ -619,6 +619,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
     emit sendSuggestion(m_photos[row].city,     "city",     "tag", -1);
     emit sendSuggestion(m_photos[row].country,  "country",  "tag", -1);
     emit sendSuggestion(m_photos[row].location, "location", "tag", -1);
+   // FIXME
     for (const QString &kw : m_photos[row].keywords)
         emit sendSuggestion(kw, "keywords", "tag", -1);
     // Envoi du signal dataChanged()
