@@ -101,8 +101,7 @@ ListView {
         var sourceIdx = model.getSourceIndex(target)
         var photo = _photoModel.get(sourceIdx)
         if (photo && !photo.isMarker)
-            activatePhoto(target, photo.hasGPS, photo.city, photo.country,
-                          photo.latitude, photo.longitude)
+            activatePhoto(target, photo.hasGPS, photo.city, photo.country)
     }
 
 
@@ -206,8 +205,7 @@ ListView {
                                    }
                                } else {
                                    // Clic simple : activation exclusive
-                                   activatePhoto(index, hasGPS, city, country,
-                                                 latitude, longitude)
+                                   activatePhoto(index, hasGPS, city, country)
                                    if ((tabbedPage.currentIndex === 1) && hasGPS
                                        && city === "" && country === "")
                                        geoTimer.restart()
@@ -230,7 +228,7 @@ ListView {
      * @param latitude : La propriété latitude de la photo.
      * @param longitude : La propriété longitude de la photo.
      * ***********************************************************************************************************/
-    function activatePhoto(pos, hasGPS, city, country, latitude, longitude) {
+    function activatePhoto(pos, hasGPS, city, country) {
         var sourceindex = model.getSourceIndex(pos)
         _photoModel.currentItemRow = sourceindex // Actualise le PhotoModel
         // La photo courante est forcement sélectionée, mais de façon exclusive.
