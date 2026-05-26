@@ -10,10 +10,11 @@ ZoneGeolocForm {
 
     /** **********************************************************************************
      * On efface les coordonnées GPS de la photo sélectionnée.
+     * Changer le State va déclencher l'animation de disparition.
      * ***********************************************************************************/
     bt_clear_coords.onClicked: {
-        window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "latitude")
-        window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "longitude")
+        chipLat.state = "deleting"
+        chipLong.state = "deleting"
     }
 
     // -----------------------------------------------------------------------------------
@@ -65,12 +66,25 @@ ZoneGeolocForm {
     chipLocation.revertArea.onClicked: Chips.revertEdition(chipLocation)
 
     // -----------------------------------------------------------------------------------
-    // DELETE BUTTON
+    // DELETE BUTTON : Gestion de l'effet de dispartion
+    // Lat et Long sont liés : supprimer l'un déclenche l'animation sur les deux.
     // -----------------------------------------------------------------------------------
+    Connections {
+        target: chipLat.deleteArea
+        /// Cliquer sur Delete LAT, change aussi le state de LONG.
+        function onClicked() { chipLong.state = "deleting" }
+    }
+    Connections {
+        target: chipLong.deleteArea
+        /// Cliquer sur Delete LONG, change aussi le state de LAT.
+        function onClicked() { chipLat.state = "deleting" }
+    }
     chipLat.onDeleteClicked: {
         window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "latitude")
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "longitude")
     }
     chipLong.onDeleteClicked: {
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "latitude")
         window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "longitude")
     }
     chipCity.onDeleteClicked: {
