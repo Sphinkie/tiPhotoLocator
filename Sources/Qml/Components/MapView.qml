@@ -47,8 +47,8 @@ Map {
     /// Position d'accueil de la carte, lue depuis les Settings (Paris par défaut).
     /// Nota: settings est déclaré plus bas, mais accessible ici car les bindings QML sont évalués après la création de tous les objets du composant.
     property var homeCoords: QtPositioning.coordinate(
-        settings.value("homeLatitude",  48.8529),
-        settings.value("homeLongitude", 2.35005))
+                                 settings.value("homeLatitude", 48.8529),
+                                 settings.value("homeLongitude", 2.35005))
 
     DragHandler {
         id: drag
@@ -117,27 +117,18 @@ Map {
 
 
     /** ******************************************************************************************************
-     * @brief Appelé en cas de changement de la liste des MapItems. Cad:
-     * - lors d'un clic dans la listView, (doublon ? c'est aussi fait dans PhotoListView)
-     * - parfois sur un changement des données du modèle, cad une nouvelle liste de photos. (pas toujours)
-     *   mais de toutes façons, c'est trop tôt, on a pas encore lu les Exif.
+     * @brief Appelé quand des markers apparaissent ou disparaissent de la carte
+     * (chargement d'un nouveau dossier, modification de coordonnées GPS, sélection d'une photo avec coords GPS,
+     * selection d'une photo sans coords GPS ce qui efface le marker...).
+     * Le recentrage est géré par onFirstCoordsReady =>
+     * ici on se contente de rafraîchir homeCoords (default values = Paris).
      * *******************************************************************************************************/
     onMapItemsChanged: {
-        // TODO : A vérifier mais je pense qu'on pourrait enlever le recentrage de la carte dans ce slot.
-        // console.log("onMapItemsChanged")
-        if (_photoModel.currentItemHasGPS) {
-            var coords = _photoModel.currentItemCoords
-            // on vérifie si les coordonnées sont dejà visibles sur la portion de carte apparente (viewport)
-            if (!mapView.visibleRegion.contains(coords)) {
-                // console.log(": re-center the map on currentItemCoords", coords)
-                // On repositionne la carte sur les coords de la photo sélectionée
-                mapView.center = coords
-            }
-        }
-        // on relit homeCoords dans les settings
-        homeCoords = QtPositioning.coordinate(
-            settings.value("homeLatitude",  48.8529),
-            settings.value("homeLongitude", 2.35005))
+        console.log("-> Signal onMapItemsChanged received")
+        homeCoords = QtPositioning.coordinate(settings.value("homeLatitude",
+                                                             48.8529),
+                                              settings.value("homeLongitude",
+                                                             2.35005))
     }
 
 
