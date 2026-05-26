@@ -12,6 +12,12 @@ Interface & Animations
   - Chips Latitude et Longitude animés simultanément lors d'une suppression GPS
   - Bouton "Clear GPS coords" déclenche aussi l'animation sur les deux chips
 
+Zone "Global Tags"
+  - Nouveau composant GlobalTag : encapsule une ligne complète (chip + boutons + libellé)
+  - Bouton "Apply to selection" ajouté à côté de "Apply to all" sur chaque tag
+  - "Apply to selection" activé uniquement si ≥ 2 photos sont sélectionnées (_photoModel.selectionCount)
+  - ZoneGlobalTagsForm refactorisée : GridLayout remplacé par ColumnLayout de GlobalTag
+
 Corrections de bugs
   - Suppression Lat ou Long : les deux coordonnées sont effacées (et non une seule à zéro)
 
