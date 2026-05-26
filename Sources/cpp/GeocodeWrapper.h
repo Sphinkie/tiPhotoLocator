@@ -5,6 +5,7 @@
 #include <QPoint>
 #include <QtLocation/QGeoCodingManager>
 #include <QGeoLocation>
+#include <QGeoCoordinate>
 #include "Models/SuggestionModel.h"
 
 /** **********************************************************************************************************
@@ -28,7 +29,7 @@ public:
     explicit GeocodeWrapper(SuggestionModel* suggestion_model);
 
 signals:
-    void centerMap(double lati, double longi);
+    void centerMap(QGeoCoordinate coord);
 
 public slots:
     void requestReverseGeocode(double lati, double longi);

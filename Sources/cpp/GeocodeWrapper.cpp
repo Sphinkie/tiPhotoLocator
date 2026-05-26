@@ -175,6 +175,6 @@ void GeocodeWrapper::onShowNextCoords()
     QGeoCoordinate coords = geolocation.coordinate();
     // On centre la carte sur les coordonnées choisies
     qDebug() << "center map on " << m_index << coords;
-    emit centerMap(coords.latitude(), coords.longitude());
+    emit centerMap(coords);
     if (m_index++ >= m_locations.count()-1) m_index=0;
 }

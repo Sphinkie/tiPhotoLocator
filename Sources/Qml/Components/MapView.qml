@@ -113,13 +113,13 @@ Map {
 
 
     /** ******************************************************************************************************
-     * Appelé en cas de changement de la liste des MapItems. Cad:
+     * @brief Appelé en cas de changement de la liste des MapItems. Cad:
      * - lors d'un clic dans la listView, (doublon ? c'est aussi fait dans PhotoListView)
      * - parfois sur un changement des données du modèle, cad une nouvelle liste de photos. (pas toujours)
      *   mais de toutes façons, c'est trop tôt, on a pas encore lu les Exif.
      * *******************************************************************************************************/
     onMapItemsChanged: {
-        // TODO : A vérifier mais je pense qu'on pourrait enlever les recentrages de ce slot.
+        // TODO : A vérifier mais je pense qu'on pourrait enlever le recentrage de la carte dans ce slot.
         // console.log("onMapItemsChanged")
         if (_photoModel.currentItemHasGPS) {
             var coords = _photoModel.currentItemCoords
@@ -165,9 +165,9 @@ Map {
         target: _geocodeWrapper
 
         /// @brief Recentre la carte sur les coordonnées fournies.
-        function onCenterMap(lati, longi) {
-            console.log("onCenterMap: ", lati, longi)
-            mapView.center = QtPositioning.coordinate(lati, longi)
+        function onCenterMap(coord) {
+            console.log("onCenterMap: ", coord)
+            mapView.center = coord
         }
     }
 
