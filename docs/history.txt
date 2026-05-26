@@ -3,7 +3,7 @@
 ================================================================================
 
 --------------------------------------------------------------------------------
- Version 1.7  (en cours)
+ Version 1.7  (2026-05-26)
 --------------------------------------------------------------------------------
 
 Compatibilité chemins réseau
@@ -13,19 +13,32 @@ Compatibilité chemins réseau
   - ExifTool : conversion QUrl::toLocalFile() + QDir::toNativeSeparators() pour chemins locaux et UNC
   - Affichage correct du chemin UNC dans la toolbar (via window.currentFolderUrl)
 
+Interface & Carte
+  - Image de bienvenue affichée au démarrage (zone preview vide)
+  - Croix rouge fixe au centre de la carte (repère visuel)
+  - Focus forcé sur la première photo après chargement ou rescan d'un dossier
+  - Carte centrée sur la ville d'accueil configurée dès le démarrage (correction regression)
+
 Corrections de bugs
   - Imagettes : clip:true sur ImagettesListView pour éviter le débordement lors du scroll horizontal
-  - Dossiers récents : menu "Recents" non mis à jour après "Clear" puis "Open" (property var / référence QML)
-  - Dossiers récents : menu "Recents" restait enabled après "Clear" (binding sur Instantiator.count remplacé par recentList.length)
+  - Dossiers récents : menu "Recents" non mis à jour après "Clear" puis "Open"
+  - Dossiers récents : menu "Recents" restait enabled après "Clear"
   - Sélection multiple : Ctrl+clic au lieu du clic droit (convention standard)
   - Support des caractères accentués dans les metadata EXIF/IPTC (fichier args UTF-8 + -charset IPTC=UTF8)
+  - hasGPS : présence simultanée de latitude ET longitude requise
+  - Effacement des coordonnées GPS corrigé
+  - Certaines suggestions avaient disparu après refactoring
 
 Qualité & Nettoyage
-  - Suppression du "welcome item" (photo fictive au démarrage du modèle)
-  - Visibilité de la toolbar basée sur _photoModel.count plutôt que folderListModel.count
-  - toStandardPath() et toShortPath() corrigés pour les chemins UNC
-  - Écriture EXIF sélective : seuls les tags modifiés sont transmis à ExifTool (QSet<QString> dirtyFields)
-  - Correction : BusyIndicator bloqué indéfiniment après lecture des métadonnées (race condition + compteur m_pendingReadTasks)
+  - Migration toolchain MSVC → LLVM-MinGW (portabilité multi-PC)
+  - Suppression du champ isWelcome (détection état vide via _photoModel.count)
+  - Suppression de checkBoxExif (setting preserveExif inutilisé)
+  - Écriture EXIF sélective : seuls les tags modifiés sont transmis à ExifTool (dirtyFields)
+  - Correction : BusyIndicator bloqué indéfiniment après lecture des métadonnées
+  - Refactoring GPS : signal centerMap passe QGeoCoordinate, homeCoords en double/double
+  - PhotoModel::get() retourne des QVariants bien typés (élimine les erreurs QML "undefined")
+  - Passage de Qt5Compat à QtQuick.Effects
+  - Fichiers EnableDebugMode.reg / DisableDebugMode.reg pour activer le mode debug sans recompiler
 
 --------------------------------------------------------------------------------
  Version 1.6  (2026-05-21)
