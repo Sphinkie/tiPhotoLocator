@@ -6,7 +6,7 @@
 #include <QTextStream>
 #include <QRegularExpression>
 #include "SuggestionModel.h"
-#include "../utilities.h"
+#include "../Utilities.h"
 
 
 /** **********************************************************************************************************

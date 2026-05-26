@@ -135,7 +135,7 @@ Map {
      * ici on se contente de rafraîchir homeCoords (default values = Paris).
      * *******************************************************************************************************/
     onMapItemsChanged: {
-        console.log("-> Signal onMapItemsChanged received")
+        // console.log("-> Signal onMapItemsChanged received")
         homeCoords = QtPositioning.coordinate(settings.value("homeLatitude",
                                                              48.8529),
                                               settings.value("homeLongitude",
