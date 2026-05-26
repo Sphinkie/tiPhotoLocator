@@ -71,22 +71,14 @@ ZoneUserdataForm {
     // -----------------------------------------------------------------------------------
     // DELETE BUTTONS : On supprime un seul keyword dans la liste
     // -----------------------------------------------------------------------------------
-    chipKeyword0.deleteArea.onClicked: _photoModel.removePhotoKeyword(
-                                           chipKeyword0.content)
-    chipKeyword1.deleteArea.onClicked: _photoModel.removePhotoKeyword(
-                                           chipKeyword1.content)
-    chipKeyword2.deleteArea.onClicked: _photoModel.removePhotoKeyword(
-                                           chipKeyword2.content)
-    chipKeyword3.deleteArea.onClicked: _photoModel.removePhotoKeyword(
-                                           chipKeyword3.content)
-    chipKeyword4.deleteArea.onClicked: _photoModel.removePhotoKeyword(
-                                           chipKeyword4.content)
-    chipKeyword5.deleteArea.onClicked: _photoModel.removePhotoKeyword(
-                                           chipKeyword5.content)
-    chipKeyword6.deleteArea.onClicked: _photoModel.removePhotoKeyword(
-                                           chipKeyword6.content)
-    chipKeyword7.deleteArea.onClicked: _photoModel.removePhotoKeyword(
-                                           chipKeyword7.content)
+    chipKeyword0.onDeleteClicked: _photoModel.removePhotoKeyword(chipKeyword0.content)
+    chipKeyword1.onDeleteClicked: _photoModel.removePhotoKeyword(chipKeyword1.content)
+    chipKeyword2.onDeleteClicked: _photoModel.removePhotoKeyword(chipKeyword2.content)
+    chipKeyword3.onDeleteClicked: _photoModel.removePhotoKeyword(chipKeyword3.content)
+    chipKeyword4.onDeleteClicked: _photoModel.removePhotoKeyword(chipKeyword4.content)
+    chipKeyword5.onDeleteClicked: _photoModel.removePhotoKeyword(chipKeyword5.content)
+    chipKeyword6.onDeleteClicked: _photoModel.removePhotoKeyword(chipKeyword6.content)
+    chipKeyword7.onDeleteClicked: _photoModel.removePhotoKeyword(chipKeyword7.content)
 
 
     /** **********************************************************************************

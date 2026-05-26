@@ -13,11 +13,14 @@ import ".."
  * @see {https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html}
  * ***********************************************************************************************************/
 Item {
+    id: chipRoot
     property bool canSave: false ///< type:bool Fait apparaitre le mini-bouton Save.
     property bool editable: false ///< type:bool Fait apparaitre le mini-bouton Edit.
     property bool deletable: false ///< type:bool Fait apparaitre le mini-bouton Delete.
     /// type:string le texte du Chips
     property string content
+    /// type:signal Emis après l'animation de suppression, pour déclencher la suppression réelle.
+    signal deleteClicked()
     /// type:string Le nom technique du tag (ex: "city", "location"). Dérive targetName automatiquement.
     property string target: ""
     /// type:string Le label affiché dans le Chips. Calculé depuis target, ou surchargeable directement.
@@ -52,7 +55,7 @@ Item {
         spread: 0
         color: Qt.darker(chipRectangle.color, 1.6)
         visible: chipRectangle.visible
-        cached: true // Performances. Mettre false pour les objets animés uniquement.
+        cached: false // false pour ne pas bloquer les animations sur le chip parent.
     }
 
 
@@ -188,7 +191,7 @@ Item {
             width: 26
             source: "qrc:/Images/chip-del.png"
             visible: deletable
-            /// Clic sur l'icone DELETE: A gérer dans le controlleur de la Zone parente avec chipXXX.deleteArea.onClicked:{...}
+            /// Clic sur l'icone DELETE: déclenche l'animation, puis émet le signal chipXXX.onDeleteClicked.
             MouseArea {
                 id: deleteArea
                 anchors.fill: parent
@@ -213,6 +216,35 @@ Item {
                 id: revertArea
                 anchors.fill: parent
             }
+        }
+    }
+
+
+    /** ************************************************************************************
+     * Interception du clic sur l'icone DELETE pour lancer l'animation avant suppression.
+     * *************************************************************************************/
+    Connections {
+        target: deleteArea
+        function onClicked() { chipRoot.state = "deleting" }
+    }
+
+
+    /** ************************************************************************************
+     * Etat "deleting" : le chip se réduit et disparait.
+     * *************************************************************************************/
+    states: State {
+        name: "deleting"
+        PropertyChanges { target: chipRoot; opacity: 0; scale: 0.6 }
+    }
+
+    transitions: Transition {
+        from: ""; to: "deleting"
+        SequentialAnimation {
+            ParallelAnimation {
+                NumberAnimation { target: chipRoot; property: "opacity"; duration: 250; easing.type: Easing.OutQuad }
+                NumberAnimation { target: chipRoot; property: "scale";   duration: 250; easing.type: Easing.OutQuad }
+            }
+            ScriptAction { script: { chipRoot.deleteClicked(); chipRoot.state = "" } }
         }
     }
 }

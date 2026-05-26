@@ -57,7 +57,7 @@ ZonePhotoForm {
         window.setPhotoProperty(-4, chipCreator.chipText.text, "creator")
         Chips.resetChipButtons(chipCreator)
     }
-    chipCreator.deleteArea.onClicked: {
+    chipCreator.onDeleteClicked: {
         window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "creator")
         Chips.resetChipButtons(chipCreator)
     }
@@ -75,7 +75,7 @@ ZonePhotoForm {
         window.setPhotoProperty(-4, chipDescription.chipText.text, "description")
         Chips.resetChipButtons(chipDescription)
     }
-    chipDescription.deleteArea.onClicked: {
+    chipDescription.onDeleteClicked: {
         window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "description")
     }
     chipDescription.revertArea.onClicked: {
@@ -85,9 +85,8 @@ ZonePhotoForm {
     // -----------------------------------------------------------------------------------
     // ------------------------------- CAPTION WRITER
     // -----------------------------------------------------------------------------------
-    chipWriter.deleteArea.onClicked: {
-        window.setPhotoProperty(tabbedPage.currentPhoto.row, "",
-                                "captionWriter")
+    chipWriter.onDeleteClicked: {
+        window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "captionWriter")
     }
 
     // -----------------------------------------------------------------------------------

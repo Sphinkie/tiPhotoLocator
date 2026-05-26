@@ -67,21 +67,19 @@ ZoneGeolocForm {
     // -----------------------------------------------------------------------------------
     // DELETE BUTTON
     // -----------------------------------------------------------------------------------
-    chipLat.deleteArea.onClicked: {
+    chipLat.onDeleteClicked: {
         window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "latitude")
     }
-    chipLong.deleteArea.onClicked: {
+    chipLong.onDeleteClicked: {
         window.setPhotoProperty(tabbedPage.currentPhoto.row, 0, "longitude")
     }
-    chipCity.deleteArea.onClicked: {
+    chipCity.onDeleteClicked: {
         window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "city")
     }
-    chipCountry.deleteArea.onClicked: {
+    chipCountry.onDeleteClicked: {
         window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "country")
     }
-    chipLocation.deleteArea.onClicked: // (mouse) =>
-    {
-        console.log("chipLocation.deleteArea.onClicked")
+    chipLocation.onDeleteClicked: {
         window.setPhotoProperty(tabbedPage.currentPhoto.row, "", "location")
     }
 

@@ -138,7 +138,7 @@ Popup {
                             saveArea.onClicked: saveRequested(index,
                                                               chipText.text)
                             revertArea.onClicked: revertRequested(index)
-                            deleteArea.onClicked: deleteRequested(index)
+                            onDeleteClicked: deleteRequested(index)
                         }
                     }
 
