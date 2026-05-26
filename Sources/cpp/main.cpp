@@ -115,11 +115,11 @@ int main(int argc, char *argv[])
     // ----------------------------------------------------------------------------
     // Au lancement, on initialise les HomeCoords sur Paris (sauf si existe déjà).
     // ----------------------------------------------------------------------------
-    QVariant homeCoords = settings.value("homeCoords", QVariant());
-    if (!homeCoords.isValid())
+    if (!settings.value("homeLatitude").isValid())
     {
-        settings.setValue("homecity", "Notre-Dame de Paris");
-        settings.setValue("homeCoords", QPointF(double(48.8529), double(2.35005)));
+        settings.setValue("homecity",      "Notre-Dame de Paris");
+        settings.setValue("homeLatitude",  48.8529);
+        settings.setValue("homeLongitude", 2.35005);
     }
 
 

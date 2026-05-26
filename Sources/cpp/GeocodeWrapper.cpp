@@ -113,7 +113,8 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
             QGeoCoordinate coords = geolocation.coordinate();
             // On les mémorise dans un settings
             QSettings settings;
-            settings.setValue("homeCoords", QPointF(coords.latitude(), coords.longitude()));
+            settings.setValue("homeLatitude",  coords.latitude());
+            settings.setValue("homeLongitude", coords.longitude());
             settings.setValue("homeCountry", geolocation.address().country());
         }
         else if (replyType == "place")

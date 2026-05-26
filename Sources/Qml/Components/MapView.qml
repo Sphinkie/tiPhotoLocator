@@ -24,7 +24,7 @@ import QtPositioning
  * ***********************************************************************************************************/
 Map {
     // Position initiale de la carte
-    center: QtPositioning.coordinate(homeCoords.x, homeCoords.y)
+    center: homeCoords
     zoomLevel: 6
     plugin: mapPlugin
 
@@ -44,7 +44,11 @@ Map {
                                                             "mapProvider", 2)]]
 
     property alias mapCircle: mapCircle
-    property point homeCoords
+    /// Position d'accueil de la carte, lue depuis les Settings (Paris par défaut).
+    /// Nota: settings est déclaré plus bas, mais accessible ici car les bindings QML sont évalués après la création de tous les objets du composant.
+    property var homeCoords: QtPositioning.coordinate(
+        settings.value("homeLatitude",  48.8529),
+        settings.value("homeLongitude", 2.35005))
 
     DragHandler {
         id: drag
@@ -131,7 +135,9 @@ Map {
             }
         }
         // on relit homeCoords dans les settings
-        homeCoords = settings.value("homeCoords")
+        homeCoords = QtPositioning.coordinate(
+            settings.value("homeLatitude",  48.8529),
+            settings.value("homeLongitude", 2.35005))
     }
 
 
@@ -151,8 +157,7 @@ Map {
                 mapCircle.center = _photoModel.currentItemCoords
             } // Si pas de coordonnées pour la première photo, on remet la carte en position "home"
             else {
-                mapView.center = QtPositioning.coordinate(homeCoords.x,
-                                                          homeCoords.y)
+                mapView.center = homeCoords
             }
         }
     }
