@@ -6,7 +6,7 @@
     <message>
         <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="10"/>
         <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; allows you to locate your photos on the world map, and edit the EXIF and IPTC tags embedded inside the photos.&lt;br/&gt;</source>
-        <translation type="unfinished">&lt;b&gt;TiPhotoLocator&lt;/b&gt; allows you to locate your photos on a world map, and edit the EXIF and IPTC tags embedded inside the photos.&lt;br/&gt;</translation>
+        <translation>&lt;b&gt;TiPhotoLocator&lt;/b&gt; allows you to locate your photos on a world map, and edit the EXIF and IPTC tags embedded inside the photos.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="11"/>
@@ -132,12 +132,12 @@
     <message>
         <location filename="../Sources/Qml/Components/GlobalTag.qml" line="35"/>
         <source>Apply to all</source>
-        <translation type="unfinished">Apply to all</translation>
+        <translation>Apply to all</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/GlobalTag.qml" line="40"/>
         <source>Apply to selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Apply to selection</translation>
     </message>
 </context>
 <context>
@@ -146,6 +146,15 @@
         <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="21"/>
         <source>Apply to all</source>
         <translation>Apply to all</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="27"/>
+        <source>Apply to selection</source>
+        <translation>Apply to selection</translation>
+    </message>
+    <message>
+        <source>Assign to selection</source>
+        <translation type="vanished">Apply to selection</translation>
     </message>
 </context>
 <context>
@@ -578,27 +587,27 @@
 <context>
     <name>ZoneGlobalTagsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="46"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="47"/>
         <source>&lt;b&gt;EXIF and IPTC tags&lt;/b&gt;</source>
         <translation>&lt;b&gt;EXIF and IPTC tags&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="48"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="49"/>
         <source>IPTC tags mainly contain editorial information, usually manually filled:</source>
         <translation>IPTC tags mainly contain editorial information, usually manually filled:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="49"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="50"/>
         <source>(image description, etc)</source>
         <translation>(image description, etc)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="50"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="51"/>
         <source>EXIF tags are defined at the moment of the shot.</source>
         <translation>EXIF tags are defined at the moment of the shot.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="51"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="52"/>
         <source>They mainly contain technical information: camera model, lens...</source>
         <translation>They mainly contain technical information: camera model, lens...</translation>
     </message>
@@ -607,37 +616,37 @@
         <translation type="vanished">Apply to all</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="62"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="63"/>
         <source>Photographer name.</source>
         <translation>Photographer name.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="71"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="72"/>
         <source>The country where the photo was taken.</source>
         <translation>The country where the photo was taken.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="80"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="81"/>
         <source>City where the photo was taken or nearest city.</source>
         <translation>The city where the photo was taken or the nearest city.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="89"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="90"/>
         <source>Additionnal geographical information.</source>
         <translation>Additionnal geographical information.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="98"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="99"/>
         <source>Date and time when the photo was taken.</source>
         <translation>Date and time when the photo was taken.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="107"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="108"/>
         <source>Photo content description: who, where, how, why? (in a few words).</source>
         <translation>Photo content description: who, where, how, why? (in a few words).</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="130"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="131"/>
         <source>A list of keywords, related to the photo and used for searches.</source>
         <translation>A list of keywords, related to the photo and used for searches.</translation>
     </message>

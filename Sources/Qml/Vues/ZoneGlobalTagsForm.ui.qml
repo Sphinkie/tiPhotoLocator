@@ -35,8 +35,9 @@ Zone {
     // Nombre de photos sélectionnées — à alimenter depuis le contrôleur
     property int selectionCount: 1
 
-    // Signal pour appliquer un keyword à toutes les photos
+    // Signal pour appliquer un keyword à toutes les photos / à la sélection
     signal applyKeyword(string keyword)
+    signal applyKeywordToSelection(string keyword)
 
     iconZone: "qrc:/Images/icon-tag.png"
     txtZone: title + br + brief + br + usage1 + br + note1 + br + usage2 + br + note2 + br

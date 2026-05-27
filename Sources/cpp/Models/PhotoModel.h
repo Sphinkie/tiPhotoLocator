@@ -80,24 +80,28 @@ public:
     Q_INVOKABLE QString getRoleName(int role);
     Q_INVOKABLE QVariant getUrl(int row);
     Q_INVOKABLE QVariantMap get(int row);
+    // Gestion de de la sélection
     Q_INVOKABLE void addToSelection(int row, bool exclusive=false);
     Q_INVOKABLE void removeFromSelection(int row);
     Q_INVOKABLE void resetSelection();
     Q_INVOKABLE void selectUnlocalized();
     Q_INVOKABLE void selectUndated();
     Q_INVOKABLE void selectAll();
-    Q_INVOKABLE void dumpData();
-    Q_INVOKABLE void clear();
+    Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
+    Q_INVOKABLE void selectionCount();
+    // Gestion  des keywords
     Q_INVOKABLE void removePhotoKeyword(const QString& keyword);
-    Q_INVOKABLE void updatePhotoKeyword(const QString& keyword, int index);
+    Q_INVOKABLE void replaceKeywordForCurrent(const QString& keyword, int index);
     Q_INVOKABLE void replaceKeywordForSelection(const QString& oldKeyword, const QString& newKeyword);
     Q_INVOKABLE void addKeywordToAll(const QString& keyword);
+    Q_INVOKABLE void addKeywordToSelection(const QString& keyword);
     Q_INVOKABLE void setSelectedItemsCoords(QGeoCoordinate coords);
-    Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
+    // Gestion des suggestions
     Q_INVOKABLE void suggestFromSelection();
     Q_INVOKABLE void suggestFromPhoto(const int row);
-    Q_INVOKABLE void selectionCount();
     Q_INVOKABLE int  scanFolder(const QString& folderUrl);
+    Q_INVOKABLE void dumpData();
+    Q_INVOKABLE void clear();
 
     // -----------------------------------------------------
     // Methodes publiques

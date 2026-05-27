@@ -22,5 +22,12 @@ Repeater {
             enabled: appliedKeywords.indexOf(modelData) === -1
             onClicked: applyKeyword(modelData)
         }
+        /// Bouton pour appliquer ce tag aux images sélectionnées.
+        Button {
+            text: qsTr("Apply to selection")
+            enabled: selectionCount > 1 && appliedKeywords.indexOf(
+                         modelData) === -1
+            onClicked: applyKeywordToSelection(modelData)
+        }
     }
 }

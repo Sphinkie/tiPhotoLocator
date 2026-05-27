@@ -1272,6 +1272,25 @@ void PhotoModel::addKeywordToAll(const QString& keyword)
             m_photos[row].keywords << keyword;
             m_photos[row].toBeSaved = true;
             m_photos[row].dirtyFields.insert("Keywords");
+        }
+    }
+    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << KeywordsRole << ToBeSavedRole);
+}
+
+
+/** **********************************************************************************************************
+ * @brief Ajoute un mot-clef aux photos sélectionnées qui ne le possèdent pas déjà.
+ * @param keyword : le mot-clef à ajouter.
+ * ***********************************************************************************************************/
+void PhotoModel::addKeywordToSelection(const QString& keyword)
+{
+    for (int row = 0; row < m_photos.count(); ++row)
+    {
+        if (m_photos[row].isSelected && !m_photos[row].keywords.contains(keyword))
+        {
+            m_photos[row].keywords << keyword;
+            m_photos[row].toBeSaved = true;
+            m_photos[row].dirtyFields.insert("Keywords");
             QModelIndex idx = this->index(row, 0);
             emit dataChanged(idx, idx, QVector<int>() << KeywordsRole << ToBeSavedRole);
         }
@@ -1280,16 +1299,16 @@ void PhotoModel::addKeywordToAll(const QString& keyword)
 
 
 /** **********************************************************************************************************
- * @brief Modifie un des mots-clef descriptif de la photo.
+ * @brief Remplace un keyword (mots-clef descriptif) par un autre dans la photo courante.
  * @param keyword : la nouvelle valeur du mot-clef.
  * @param index : la position du mot-clef dans la liste.
  * @note Cette méthode modifie la Photo actuellement sélectionée.
  * ***********************************************************************************************************/
-void PhotoModel::updatePhotoKeyword(const QString& keyword, int index)
+void PhotoModel::replaceKeywordForCurrent(const QString& keyword, int index)
 {
+    // on vérifie que l'index est valide
     if (index<0 || index >= m_photos[m_lastCurrentRow].keywords.count()) return;
 
-    qDebug() << "update" << keyword << "keyword";
     m_photos[m_lastCurrentRow].keywords[index] = keyword;
     m_photos[m_lastCurrentRow].toBeSaved = true;
     m_photos[m_lastCurrentRow].dirtyFields.insert("Keywords");

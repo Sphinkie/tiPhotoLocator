@@ -67,21 +67,27 @@ ZoneGlobalTagsForm {
     // -----------------------------------------------------------------------------------
     tagCreator.onApplyToSelection: {
         window.applyCreatorToSelection()
+        creatorApplied = true
     }
     tagCountry.onApplyToSelection: {
         window.setPhotoProperty(-4, country, "country")
+        countryApplied = true
     }
     tagCity.onApplyToSelection: {
         window.setPhotoProperty(-4, city, "city")
+        cityApplied = true
     }
     tagLocation.onApplyToSelection: {
         window.setPhotoProperty(-4, location, "location")
+        locationApplied = true
     }
     tagDateTime.onApplyToSelection: {
         window.setPhotoProperty(-4, dateTimeFormatted, "dateTimeOriginal")
+        dateTimeApplied = true
     }
     tagDescription.onApplyToSelection: {
         window.setPhotoProperty(-4, description, "description")
+        descriptionApplied = true
     }
 
     // -----------------------------------------------------------------------------------
@@ -89,6 +95,10 @@ ZoneGlobalTagsForm {
     // -----------------------------------------------------------------------------------
     onApplyKeyword: function (keyword) {
         _photoModel.addKeywordToAll(keyword)
+        appliedKeywords = appliedKeywords.concat([keyword])
+    }
+    onApplyKeywordToSelection: function (keyword) {
+        _photoModel.addKeywordToSelection(keyword)
         appliedKeywords = appliedKeywords.concat([keyword])
     }
 
