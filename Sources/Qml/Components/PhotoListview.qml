@@ -64,7 +64,9 @@ ListView {
      * *******************************************************************************************************/
     Connections {
         target: _photoModel
-        function onFirstCoordsReady() { navigateTo(0) }
+        function onFirstCoordsReady() {
+            navigateTo(0)
+        }
     }
 
 
@@ -197,7 +199,8 @@ ListView {
                                    // Ctrl+clic : toggle sélection multiple (curseur visuel inchangé)
                                    var sourceindex = model.getSourceIndex(index)
                                    if (isSelected) {
-                                       _photoModel.removeFromSelection(sourceindex)
+                                       _photoModel.removeFromSelection(
+                                           sourceindex)
                                    } else {
                                        _photoModel.addToSelection(sourceindex)
                                        _photoModel.suggestFromPhoto(sourceindex)
@@ -208,9 +211,9 @@ ListView {
                                    activatePhoto(index, hasGPS, city, country)
                                    if ((tabbedPage.currentIndex === 1) && hasGPS
                                        && city === "" && country === "")
-                                       geoTimer.restart()
+                                   geoTimer.restart()
                                    else
-                                       geoTimer.stop()
+                                   geoTimer.stop()
                                }
                            }
             }
@@ -252,7 +255,6 @@ ListView {
         window.setSuggestionFilter(sourceindex)
 
         // On réactualise le contenu du cercle rouge
-        // TODO : C'est consommateur car on parcourt toutes les photos du modèle à chaque clic!
         _photoModel.findInCirclePhotos()
     }
 }
