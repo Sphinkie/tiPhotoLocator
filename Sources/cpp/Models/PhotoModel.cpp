@@ -619,8 +619,9 @@ void PhotoModel::setData(const QVariantMap &value_list)
     emit sendSuggestion(m_photos[row].city,     "city",     "tag", -1);
     emit sendSuggestion(m_photos[row].country,  "country",  "tag", -1);
     emit sendSuggestion(m_photos[row].location, "location", "tag", -1);
-   // FIXME
-    for (const QString &kw : m_photos[row].keywords)
+    // std::as_const évite la détachement COW (copy-on-write) du QStringList lors de l'itération,
+    // car il indique que la liste de keywords de la photo va rester constante pendant l'opération.
+    for (const QString &kw : std::as_const(m_photos[row].keywords))
         emit sendSuggestion(kw, "keywords", "tag", -1);
     // Envoi du signal dataChanged()
     QModelIndex photo_index = this->index(row, 0);
