@@ -17,6 +17,15 @@ Zone "Global Tags"
   - Bouton "Apply to selection" ajouté à côté de "Apply to all" sur chaque tag
   - "Apply to selection" activé uniquement si ≥ 2 photos sont sélectionnées (_photoModel.selectionCount)
   - ZoneGlobalTagsForm refactorisée : GridLayout remplacé par ColumnLayout de GlobalTag
+  - Fix : bouton "Apply to selection" se grise après clic (flag xxxApplied manquant)
+
+Zone "Keywords"
+  - Bouton "Assign to selection" ajouté dans KeywordsRepeater
+  - Nouvelle méthode C++ addKeywordToSelection() — n'ajoute que si non présent
+  - addKeywordToAll() : un seul signal dataChanged émis en fin de boucle (au lieu de N)
+
+Qualité & Nettoyage
+  - Renommage updatePhotoKeyword → replaceKeywordForCurrent (cohérence avec replaceKeywordForSelection)
 
 Corrections de bugs
   - Suppression Lat ou Long : les deux coordonnées sont effacées (et non une seule à zéro)
