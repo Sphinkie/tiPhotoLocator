@@ -173,7 +173,9 @@ private:
     QVector<Photo> m_photos;               //!< La liste des Photo du modèle
     int m_lastCurrentRow = 0;              //!< L'indice de la précédente photo sélectionnée. (initialisé à 0 car au départ, on a un item: le Welcome Rolleyflex)
     int m_dumpedRow = 0;                   //!< Compteur pour le dump de debug
-    int m_lastCircleRadius = 0;            //!< Valeur précdente du rayon de recherche
+    int m_lastCircleRadius = 0;            //!< Valeur précédente du rayon de recherche
+    double m_lastCircleLat  = -1000.0;     //!< Latitude du dernier centre de cercle calculé (-1000 = jamais calculé)
+    double m_lastCircleLong = -1000.0;     //!< Longitude du dernier centre de cercle calculé
     bool m_circleResetted = true;          //!< True si le rayon du cercle est à 0, et que le flag insideCircle a été resetté sur toutes les photos.
     bool m_savedPositionExists = false;    //!< True si le marker SavedPosition existe
     bool m_loading = false;                //!< True si le modèle est en train de scanner le répertoire.

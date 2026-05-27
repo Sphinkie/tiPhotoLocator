@@ -26,6 +26,7 @@ Zone "Keywords"
 
 Qualité & Nettoyage
   - Renommage updatePhotoKeyword → replaceKeywordForCurrent (cohérence avec replaceKeywordForSelection)
+  - findInCirclePhotos() : court-circuit si photo sans GPS (resetCircle) ou si centre+rayon inchangés
 
 Corrections de bugs
   - Suppression Lat ou Long : les deux coordonnées sont effacées (et non une seule à zéro)

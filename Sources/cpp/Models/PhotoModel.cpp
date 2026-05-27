@@ -1046,22 +1046,34 @@ void PhotoModel::selectAll()
  * ***********************************************************************************************************/
 void PhotoModel::findInCirclePhotos(int circle_radius)
 {
-    // Cas particulier du rayon non fourni.
+    // Résolution du rayon : on capture l'ancienne valeur avant mise à jour pour la comparaison Cas 2.
+    int previousRadius = m_lastCircleRadius;
     if (circle_radius==-1) circle_radius = m_lastCircleRadius;
     else m_lastCircleRadius = circle_radius;
-    // qDebug() << "findInCirclePhotos > circle_radius" << circle_radius << "m";
 
-    // Cas particulier du rayon nul
+    // Cas 0 : rayon nul → effacer le cercle (resetCircle a son propre guard m_circleResetted)
     if (circle_radius==0)  {
         this->resetCircle();
         return;
     }
-    // Le rayon du cerce n'est pas nul.
     m_circleResetted = false;
 
     // Le centre du cercle est la photo sélectionnée
-    double circle_lat = m_photos[m_lastCurrentRow].gpsLatitude;
+    double circle_lat  = m_photos[m_lastCurrentRow].gpsLatitude;
     double circle_long = m_photos[m_lastCurrentRow].gpsLongitude;
+
+    // Cas 1 : photo courante sans GPS → pas de centre valide, on efface le cercle
+    if (!m_photos[m_lastCurrentRow].hasGPS) {
+        this->resetCircle();
+        return;
+    }
+
+    // Cas 2 : centre et rayon identiques au calcul précédent → résultat inchangé
+    if (circle_lat == m_lastCircleLat && circle_long == m_lastCircleLong && circle_radius == previousRadius) {
+        return;
+    }
+    m_lastCircleLat  = circle_lat;
+    m_lastCircleLong = circle_long;
     //qDebug() << "findInCirclePhotos" << circle_lat << circle_long << circle_radius << "m";
 
     double rayon_lat = double(circle_radius) / 111111;       // rayon_lat = circle_radius(km) / 111.11
@@ -1120,6 +1132,9 @@ void PhotoModel::resetCircle()
     // A la fin, on notifie en une seule fois l'ensemble des photos.
     emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
     m_circleResetted = true;
+    // Invalider le cache de centre : le prochain findInCirclePhotos devra recalculer.
+    m_lastCircleLat  = -1000.0;
+    m_lastCircleLong = -1000.0;
 }
 
 /** **********************************************************************************************************
