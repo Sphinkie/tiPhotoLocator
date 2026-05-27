@@ -9,6 +9,7 @@
 #include <QDate>
 #include <QDir>
 #include <QUrl>
+#include <QtMath>
 
 
 #define QT_NO_DEBUG_OUTPUT
@@ -720,6 +721,13 @@ void PhotoModel::clear()
     m_photos.clear();
     m_lastCurrentRow = 0;
     endResetModel();    // cette méthode envoie un signal ModelReset.
+    // Reset de l'état du cercle et de la sélection pour le nouveau dossier.
+    m_lastCircleRadius = 0;
+    m_lastCircleLat    = -1000.0;
+    m_lastCircleLong   = -1000.0;
+    m_circleResetted   = true;
+    m_selectionCount   = 0;
+    emit selectionCountChanged();
     emit countChanged();
     emit dataCleared();
 }
@@ -1076,8 +1084,8 @@ void PhotoModel::findInCirclePhotos(int circle_radius)
     m_lastCircleLong = circle_long;
     //qDebug() << "findInCirclePhotos" << circle_lat << circle_long << circle_radius << "m";
 
-    double rayon_lat = double(circle_radius) / 111111;       // rayon_lat = circle_radius(km) / 111.11
-    double rayon_long = abs(rayon_lat / cos(circle_lat));
+    double rayon_lat  = double(circle_radius) / 111111;                             // 1° lat ≈ 111 111 m
+    double rayon_long = abs(rayon_lat / cos(qDegreesToRadians(circle_lat)));        // cos() attend des radians
     // qDebug() << "constantes: Rlat" << rayon_lat << ", Rlon" << rayon_long;
 
     // On parcourt tous les items du modèle (qui ont des coords GPS) pour positionner insideCircle.
@@ -1121,16 +1129,24 @@ void PhotoModel::resetCircle()
     // Si cela a déjà été fait, on ne recommence pas.
     if (m_circleResetted) return;
 
-    // On parcourt tous les items du modèle
+    // On parcourt tous les items du modèle : on déselectionne uniquement les photos du cercle.
+    int selectionCount = 0;
     int row = 0;
     QModelIndex idx = this->index(row, 0);
     while (idx.isValid())
     {
-        m_photos[row].insideCircle = false;
+        if (m_photos[row].insideCircle) {
+            m_photos[row].insideCircle = false;
+            if (row != m_lastCurrentRow)       // la photo courante reste sélectionnée (marqueur carte)
+                m_photos[row].isSelected = false;
+        }
+        if (m_photos[row].isSelected) selectionCount++;
         idx = idx.siblingAtRow(++row);
     }
     // A la fin, on notifie en une seule fois l'ensemble des photos.
-    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole);
+    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << InsideCircleRole << IsSelectedRole);
+    m_selectionCount = selectionCount;
+    emit selectionCountChanged();
     m_circleResetted = true;
     // Invalider le cache de centre : le prochain findInCirclePhotos devra recalculer.
     m_lastCircleLat  = -1000.0;

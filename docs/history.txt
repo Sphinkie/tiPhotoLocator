@@ -32,6 +32,9 @@ Corrections de bugs
   - Suppression Lat ou Long : les deux coordonnées sont effacées (et non une seule à zéro)
   - Ctrl+clic : le curseur visuel (highlight) de la ListView reste sur la photo courante
   - Dialogue "Ouvrir" : s'ouvre désormais sur le dossier parent du dossier courant
+  - Cercle : remise à zéro du rayon efface aussi la sélection des photos (sauf photo courante)
+  - Cercle : bug de sélection parasite corrigé (cos() appelé avec degrés au lieu de radians)
+  - Cercle : ouverture d'un nouveau dossier réinitialise le rayon et la sélection
 
 --------------------------------------------------------------------------------
  Version 1.7  (2026-05-26)
