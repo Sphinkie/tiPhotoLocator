@@ -193,9 +193,8 @@ ListView {
                 acceptedButtons: Qt.LeftButton
                 onClicked: mouse => {
                                __lv.forceActiveFocus()
-                               __lv.currentIndex = index
                                if (mouse.modifiers & Qt.ControlModifier) {
-                                   // Ctrl+clic : toggle sélection multiple
+                                   // Ctrl+clic : toggle sélection multiple (curseur visuel inchangé)
                                    var sourceindex = model.getSourceIndex(index)
                                    if (isSelected) {
                                        _photoModel.removeFromSelection(sourceindex)
@@ -205,6 +204,7 @@ ListView {
                                    }
                                } else {
                                    // Clic simple : activation exclusive
+                                   __lv.currentIndex = index
                                    activatePhoto(index, hasGPS, city, country)
                                    if ((tabbedPage.currentIndex === 1) && hasGPS
                                        && city === "" && country === "")
