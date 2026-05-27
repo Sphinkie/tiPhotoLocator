@@ -401,9 +401,14 @@
 <context>
     <name>TabFramePhotoTags</name>
     <message>
-        <location filename="../Sources/Qml/Components/TabFramePhotoTags.qml" line="47"/>
+        <location filename="../Sources/Qml/Components/TabFramePhotoTags.qml" line="50"/>
         <source>Suggestions</source>
         <translation>Suggestions</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/TabFramePhotoTags.qml" line="58"/>
+        <source>Keywords Suggestions</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -722,7 +727,7 @@ Limited to 100 requests per day.</source>
 <context>
     <name>ZoneSuggestedTagsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="16"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="17"/>
         <source>Suggestions</source>
         <translation>Suggestions</translation>
     </message>

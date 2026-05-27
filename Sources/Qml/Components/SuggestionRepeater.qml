@@ -13,6 +13,9 @@ Repeater {
     focus: false
     clip: true // pour que les items restent à l'interieur du Repeater
 
+    //! Si true, n'affiche que les suggestions de type "keywords" (panneau droit).
+    property bool onlyKeywords: false
+
 
     /** ******************************************************************************************************
      * Le delegate pour afficher chaque item du Flow. Chaque item est composé d'un Chips cliquable
@@ -34,16 +37,15 @@ Repeater {
 
             // Un keyword déjà présent dans la photo courante ne doit pas apparaître en suggestion.
             visible: {
-                // Si ce n'est pas un keyword => show
-                if (target !== "keywords")
+                if (onlyKeywords) {
+                    // Panneau droit : keywords seulement, et non encore assignés
+                    if (target !== "keywords") return false
+                    if (tabbedPage.currentPhoto.keywords)
+                        return tabbedPage.currentPhoto.keywords.indexOf(text) === -1
                     return true
-                // Si c'est un keyword => show only if not found
-                else if (tabbedPage.currentPhoto.keywords)
-                    return (tabbedPage.currentPhoto.keywords.indexOf(
-                                text) === -1)
-                // Si aucun keyword => hide
-                else
-                    return false
+                }
+                // Panneau gauche : tout sauf les keywords (qui vont dans le panneau droit)
+                return target !== "keywords"
             }
 
 

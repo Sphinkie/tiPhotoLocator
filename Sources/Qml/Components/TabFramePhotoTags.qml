@@ -37,13 +37,25 @@ GridLayout {
         Layout.rightMargin: 40
     }
 
-    ZoneSuggestedTags {
+    RowLayout {
+        Layout.columnSpan: 4
         Layout.fillWidth: true
         Layout.fillHeight: true
-        Layout.columnSpan: 4
-        Layout.margins: 10
-        Layout.rightMargin: 40
-        iconZone: "qrc:/Images/icon-suggestion.png"
-        txtZone: qsTr("Suggestions")
+        spacing: 0
+
+        ZoneSuggestedTags {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.margins: 10
+            txtZone: qsTr("Suggestions")
+        }
+        ZoneSuggestedTags {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.margins: 10
+            Layout.rightMargin: 40
+            onlyKeywords: true
+            txtZone: qsTr("Keywords Suggestions")
+        }
     }
 }

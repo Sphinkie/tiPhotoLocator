@@ -24,6 +24,12 @@ Zone "Keywords"
   - Nouvelle méthode C++ addKeywordToSelection() — n'ajoute que si non présent
   - addKeywordToAll() : un seul signal dataChanged émis en fin de boucle (au lieu de N)
 
+Zone "Suggestions"
+  - Scission en deux panneaux : 2/3 gauche (tous tags sauf keywords) + 1/3 droit (keywords uniquement)
+  - SuggestionRepeater : propriété onlyKeywords (false par défaut) — filtre l'affichage par type
+  - ZoneSuggestedTagsForm : alias onlyKeywords exposé vers l'extérieur
+  - TabFramePhotoTags : RowLayout remplace le ZoneSuggestedTags unique
+
 Qualité & Nettoyage
   - Renommage updatePhotoKeyword → replaceKeywordForCurrent (cohérence avec replaceKeywordForSelection)
   - findInCirclePhotos() : court-circuit si photo sans GPS (resetCircle) ou si centre+rayon inchangés

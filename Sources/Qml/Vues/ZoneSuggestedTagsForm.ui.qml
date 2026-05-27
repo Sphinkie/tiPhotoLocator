@@ -10,6 +10,7 @@ import ".."
 Zone {
     id: suggestedTagsZone
     property alias bt_getinfo: bt_getinfo
+    property alias onlyKeywords: suggestionRepeater.onlyKeywords
 
     color: Style.suggestionBackgroundColor
     iconZone: "qrc:/Images/icon-suggestion.png"
@@ -17,7 +18,7 @@ Zone {
 
     // Le Flickable permet de scroller s'il y a trop de suggestions.
     Flickable {
-        anchors.fill: parent
+        anchors { fill: parent; margins: 10 }
         contentWidth: width
         contentHeight: grille.height
         clip: true
@@ -29,7 +30,6 @@ Zone {
             id: grille
             width: parent.width
             spacing: 12
-            padding: 20
 
             /// Le repeater affiche chacune des Suggestions (de catégorie "tag") du Model.
             SuggestionRepeater {
