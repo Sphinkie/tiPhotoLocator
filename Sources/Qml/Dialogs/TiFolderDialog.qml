@@ -17,8 +17,9 @@ import "../Javascript/TiUtilities.js" as Utilities
  * ****************************************************************************************/
 FolderDialog {
     id: folderDialog
+    // currentFolder : dossier affiché à l'ouverture du dialogue (point de départ de la navigation).
+    // folder        : dossier effectivement sélectionné après clic OK (résultat).
     currentFolder: "file:///C:"
-    // URL du dossier de départ
     folder: ""
     property var recentList: []
 
@@ -68,6 +69,23 @@ FolderDialog {
         folderList.unshift(foldername)
         // Write-back obligatoire : en QML, la lecture d'une property var retourne une copie.
         folderDialog.recentList = folderList
+    }
+
+
+    /** ***********************************************************************************
+     * Ouvre le dialogue en positionnant d'abord sur le dossier parent du dossier courant.
+     * Si aucun dossier n'est ouvert, on revient sur la racine C:.
+     * ************************************************************************************/
+    function openInParentFolder() {
+        var s = window.currentFolderUrl.toString()
+        if (s !== "" && s !== "file:") {
+            if (s.endsWith("/")) s = s.slice(0, -1)          // supprimer le slash final
+            var idx = s.lastIndexOf("/")
+            currentFolder = idx > 0 ? s.substring(0, idx) : "file:///C:"
+        } else {
+            currentFolder = "file:///C:"
+        }
+        open()
     }
 
 

@@ -18,7 +18,7 @@ MenuBar {
         /// Item du menu: File -> Ouvrir
         MenuItem {
             text: qsTr("Open...")
-            onTriggered: folderDialog.open()
+            onTriggered: folderDialog.openInParentFolder()
         }
 
         /// Item du menu: File -> Recents: la liste de 7 RecentFolders + Séparator + Clear RecentFolders

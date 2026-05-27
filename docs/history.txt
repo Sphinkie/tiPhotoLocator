@@ -31,6 +31,7 @@ Qualité & Nettoyage
 Corrections de bugs
   - Suppression Lat ou Long : les deux coordonnées sont effacées (et non une seule à zéro)
   - Ctrl+clic : le curseur visuel (highlight) de la ListView reste sur la photo courante
+  - Dialogue "Ouvrir" : s'ouvre désormais sur le dossier parent du dossier courant
 
 --------------------------------------------------------------------------------
  Version 1.7  (2026-05-26)
