@@ -29,6 +29,14 @@ Zone "Suggestions"
   - SuggestionRepeater : propriété onlyKeywords (false par défaut) — filtre l'affichage par type
   - ZoneSuggestedTagsForm : alias onlyKeywords exposé vers l'extérieur
   - TabFramePhotoTags : RowLayout remplace le ZoneSuggestedTags unique
+  - Animation de translation lors du clic sur un Chip suggestion : le chip "vole" vers le centre de sa zone destination (Option A — coordonnées dynamiques)
+  - GhostChip.qml : rectangle animé créé dans ghostLayer (z:999), déplacement + fondu + réduction (300ms InOutCubic)
+  - La mise à jour du modèle (setPhotoProperty + removePhotoFromSuggestion) est déclenchée en fin d'animation
+  - ghostLayer : Item transparent ancré à la fenêtre (Main.qml), sert de conteneur pour les ghost chips
+  - getCenterForTarget : fonction passée de TabFramePhotoTags/TabFramePhotoMap → ZoneSuggestedTags → SuggestionRepeater, calcule via mapToItem() le centre de la zone destination selon le target du chip
+  - Mapping target → zone : city/country/location/lat/long → ZoneGeoloc ; keywords → ZoneUserdata ; make/model → ZoneCamera ; autres → ZonePhoto
+  - Onglet MAP : les suggestions ciblent le bas de ZoneGeoloc (hauteur × 0.75)
+  - Fallback si getCenterForTarget absent : animation 150px vers le haut
 
 Qualité & Nettoyage
   - Renommage updatePhotoKeyword → replaceKeywordForCurrent (cohérence avec replaceKeywordForSelection)

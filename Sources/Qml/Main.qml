@@ -301,6 +301,13 @@ ApplicationWindow {
                             }
         }
     }
+
+    /// Couche transparente pour recevoir les ghost chips animés (z élevé pour passer au-dessus de tout).
+    Item {
+        id: ghostLayer
+        anchors.fill: parent
+        z: 999
+    }
 }
 
 /*##^##

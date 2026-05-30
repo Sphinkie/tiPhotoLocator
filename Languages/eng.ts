@@ -401,12 +401,12 @@
 <context>
     <name>TabFramePhotoTags</name>
     <message>
-        <location filename="../Sources/Qml/Components/TabFramePhotoTags.qml" line="50"/>
+        <location filename="../Sources/Qml/Components/TabFramePhotoTags.qml" line="54"/>
         <source>Suggestions</source>
         <translation>Suggestions</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/TabFramePhotoTags.qml" line="58"/>
+        <location filename="../Sources/Qml/Components/TabFramePhotoTags.qml" line="77"/>
         <source>Keywords Suggestions</source>
         <translation type="unfinished"></translation>
     </message>
@@ -708,18 +708,18 @@
 <context>
     <name>ZoneSuggestedLocationsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="15"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="16"/>
         <source>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.
 Limited to 100 requests per day.</source>
         <translation>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.&lt;br/&gt;Limited to 100 requests per day.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="24"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="25"/>
         <source>Search</source>
         <translation>Search</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="27"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="28"/>
         <source>Search geodata on Internet</source>
         <translation>Search geodata on Internet</translation>
     </message>
@@ -727,12 +727,12 @@ Limited to 100 requests per day.</source>
 <context>
     <name>ZoneSuggestedTagsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="17"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="18"/>
         <source>Suggestions</source>
         <translation>Suggestions</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="42"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="43"/>
         <source>More tags...</source>
         <translation>More tags...</translation>
     </message>

@@ -11,6 +11,7 @@ Zone {
     id: suggestedTagsZone
     property alias bt_getinfo: bt_getinfo
     property alias onlyKeywords: suggestionRepeater.onlyKeywords
+    property alias getCenterForTarget: suggestionRepeater.getCenterForTarget
 
     color: Style.suggestionBackgroundColor
     iconZone: "qrc:/Images/icon-suggestion.png"

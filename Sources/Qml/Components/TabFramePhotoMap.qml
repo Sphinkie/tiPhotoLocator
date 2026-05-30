@@ -5,9 +5,9 @@ import "../Controllers"
 
 /** *************************************************************************************
  * @brief QML: Composition de la page de l'onglet "MAP".
- * [ ToolBar de Map     ]
- * |     Map     |[zone1]
- * |             |[zone2]
+ * |        ToolBarMap       |
+ * |     MapView | zone tags |
+ * |             | zone sugg |
  * *************************************************************************************/
 GridLayout {
     property alias mapTools: mapTools
@@ -34,14 +34,21 @@ GridLayout {
 
     /// Zone 1: Affichage des infos supplémentaires (coords GPS, etc)
     ZoneGeoloc {
+        id: zoneGeolocMap
         Layout.rightMargin: 40
         Layout.fillHeight: true
     }
 
-    /// Zone 2: Affichage du bouton "chercher" et des suggestions.
+    /// Zone 2: Affichage du bouton "chercher geotags" et des suggestions.
     ZoneSuggestedLocations {
         id: zoneSuggestedLocations
         Layout.rightMargin: 40
         Layout.fillHeight: true
+        /// Les chips de cette zone de suggestions ont pour destination le centre/bas de la ZoneGeolocMap
+        getCenterForTarget: function (t) {
+            return zoneGeolocMap.mapToItem(ghostLayer,
+                                           zoneGeolocMap.width * 0.5,
+                                           zoneGeolocMap.height * 0.75)
+        }
     }
 }

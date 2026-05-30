@@ -9,6 +9,7 @@ import "../Components"
 Zone {
     id: suggestedLocationsZone
     property alias bt_getinfo: bt_getinfo
+    property alias getCenterForTarget: suggestionRepeater.getCenterForTarget
 
     color: Style.suggestionBackgroundColor
     iconZone: "qrc:/Images/icon-suggestion.png"

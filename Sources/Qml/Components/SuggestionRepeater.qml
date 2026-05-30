@@ -1,4 +1,5 @@
 import QtQuick
+import ".."
 
 
 /** **********************************************************************************************************
@@ -11,10 +12,24 @@ Repeater {
     model: _suggestionCategoryProxyModel
     delegate: suggestionDelegate
     focus: false
-    clip: true // pour que les items restent à l'interieur du Repeater
+    clip: true
 
     //! Si true, n'affiche que les suggestions de type "keywords" (panneau droit).
     property bool onlyKeywords: false
+
+    //! Fonction reçue du parent : renvoie le centre (en coords ghostLayer) de la zone destination pour un target donné.
+    property var getCenterForTarget: null
+
+
+    /** ******************************************************************************************************
+     * Ghost chip : rectangle animé qui vole de la zone suggestion vers la zone destination.
+     * Créé dynamiquement dans ghostLayer lors du clic, détruit en fin d'animation.
+     * @see GhostChip.qml
+     * *******************************************************************************************************/
+    Component {
+        id: ghostChipComponent
+        GhostChip {}
+    }
 
 
     /** ******************************************************************************************************
@@ -39,9 +54,11 @@ Repeater {
             visible: {
                 if (onlyKeywords) {
                     // Panneau droit : keywords seulement, et non encore assignés
-                    if (target !== "keywords") return false
+                    if (target !== "keywords")
+                        return false
                     if (tabbedPage.currentPhoto.keywords)
-                        return tabbedPage.currentPhoto.keywords.indexOf(text) === -1
+                        return tabbedPage.currentPhoto.keywords.indexOf(
+                                    text) === -1
                     return true
                 }
                 // Panneau gauche : tout sauf les keywords (qui vont dans le panneau droit)
@@ -62,7 +79,7 @@ Repeater {
 
 
             /** ************************************************************************************************
-             * Gestion du clic sur le Chip: On affecte le texte de la suggestion à la target.
+             * Gestion du clic sur le Chip: animation de vol vers la zone destination, puis affectation.
              * Rappel: -4 = applique la suggestion à toutes les photos sélectionnées
              *         -2 = applique la suggestion à la photo courante
              *         -3 = applique la suggestion à toutes les photos du cercle
@@ -71,26 +88,38 @@ Repeater {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    // On affecte le texte de la suggestion à la target de la (ou des) photo(s).
-                    // console.log("onglet:" + tabbedPage.currentIndex);
-                    console.log("chipMouseArea:" + target + " for " + tabbedPage.currentPhoto.row)
+                    // Capture des valeurs avant toute opération asynchrone
+                    var capturedText = (target === "description") ? " " : text
+                    var capturedTarget = target
+                    var capturedIndex = index
 
-                    // Cas particulier: si c'est le tag 'description': on efface le texte qui est en fait un hint.
-                    if (target === "description") {
-                        text = " "
-                    }
+                    // Position du chip source dans le référentiel de ghostLayer
+                    var sourcePos = currrentChip.mapToItem(ghostLayer, 0, 0)
 
-                    // Si onglet CARTE : on applique la suggestion à toutes les photos sélectionnées
-                    if (tabbedPage.currentIndex === 1) {
-                        window.setPhotoProperty(-4, text, target)
-                    }
+                    // Centre de la zone destination (fallback: 150px vers le haut si pas de fonction fournie)
+                    var destCenter = getCenterForTarget ? getCenterForTarget(
+                                                              capturedTarget) : Qt.point(
+                                                              sourcePos.x + currrentChip.width / 2,
+                                                              sourcePos.y - 150)
 
-                    // Si onglet TAG : on applique la suggestion aux photos sélectionnées (-4)
-                    if (tabbedPage.currentIndex === 2)
-                        window.setPhotoProperty(-4, text, target)
-
-                    // On enlève le Chip de la zone Suggestions. (Attn: c'est l'index dans le proxyModel).
-                    window.removePhotoFromSuggestion(index)
+                    // Création du ghost chip animé dans ghostLayer
+                    ghostChipComponent.createObject(ghostLayer, {
+                                                        "x": sourcePos.x,
+                                                        "y": sourcePos.y,
+                                                        "width": currrentChip.width,
+                                                        "height": currrentChip.height,
+                                                        "chipText": capturedText,
+                                                        "destX": destCenter.x,
+                                                        "destY": destCenter.y,
+                                                        "onDone": function () {
+                                                            window.setPhotoProperty(
+                                                                        -4,
+                                                                        capturedText,
+                                                                        capturedTarget)
+                                                            window.removePhotoFromSuggestion(
+                                                                        capturedIndex)
+                                                        }
+                                                    })
                 }
             }
         }

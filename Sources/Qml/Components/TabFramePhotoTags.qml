@@ -10,6 +10,7 @@ GridLayout {
     columns: 4
 
     ZoneGeoloc {
+        id: zoneGeoloc
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
@@ -19,18 +20,21 @@ GridLayout {
     }
 
     ZoneCamera {
+        id: zoneCamera
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
     }
 
     ZonePhoto {
+        id: zonePhoto
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
     }
 
     ZoneUserdata {
+        id: zoneUserdata
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 10
@@ -48,6 +52,21 @@ GridLayout {
             Layout.fillHeight: true
             Layout.margins: 10
             txtZone: qsTr("Suggestions")
+            /// Les chips de cette zone de suggestions ont pour destination le centre de l'une des trois zones du dessus.
+            getCenterForTarget: function (t) {
+                var zone
+                if (["city", "country", "location", "latitude", "longitude"].indexOf(
+                            t) >= 0)
+                    zone = zoneGeoloc
+                else if (t === "keywords")
+                    zone = zoneUserdata
+                else if (["make", "model"].indexOf(t) >= 0)
+                    zone = zoneCamera
+                else
+                    zone = zonePhoto
+                return zone.mapToItem(ghostLayer, zone.width / 2,
+                                      zone.height / 2)
+            }
         }
         ZoneSuggestedTags {
             Layout.fillWidth: true
@@ -56,6 +75,12 @@ GridLayout {
             Layout.rightMargin: 40
             onlyKeywords: true
             txtZone: qsTr("Keywords Suggestions")
+            /// Les chips de cette zone de Keywords ont pour destination le centre de zoneUserdata.
+            getCenterForTarget: function (t) {
+                return zoneUserdata.mapToItem(ghostLayer,
+                                              zoneUserdata.width / 2,
+                                              zoneUserdata.height / 2)
+            }
         }
     }
 }
