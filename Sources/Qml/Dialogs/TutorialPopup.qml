@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Controls.Material
+import QtCore
 
 
 /** **********************************************************************************************************
@@ -24,6 +25,15 @@ Popup {
 
     // Pas de contour Qt native
     background: Item {}
+
+    // Premier lancement : ouverture automatique si le tutoriel n'a pas encore été vu
+    Settings {
+        id: tutorialSettings
+        category: "tutorial"
+        property bool shown: false
+    }
+    Component.onCompleted: if (!tutorialSettings.shown) open()
+    onClosed: tutorialSettings.shown = true
 
     property int currentPage: 0
     onVisibleChanged: if (visible)
