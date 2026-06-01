@@ -9,17 +9,20 @@ import QtQuick.Controls.Material
 Popup {
     property string imageSource: ""
 
-    property real naturalWidth:  previewImage.sourceSize.width
+    property real naturalWidth: previewImage.sourceSize.width
     property real naturalHeight: previewImage.sourceSize.height
-    width:  naturalWidth  > 0 ? Math.min(naturalWidth, 1080) : 400
-    height: naturalWidth  > 0 ? width * naturalHeight / naturalWidth : 300
+    width: naturalWidth > 0 ? Math.min(naturalWidth, 1080) : 400
+    height: naturalWidth > 0 ? width * naturalHeight / naturalWidth : 300
 
     parent: Overlay.overlay
     anchors.centerIn: Overlay.overlay
-    modal: true
+    modal: true // bloque les clics sur le reste de l'UI.
     padding: 0
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
-    background: Rectangle { radius: 6; border.width: 2 }
+    background: Rectangle {
+        radius: 6
+        border.width: 2
+    }
 
     Image {
         id: previewImage

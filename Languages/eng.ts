@@ -578,41 +578,56 @@ This short tutorial will guide you through the main features of the application.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="43"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="42"/>
         <source>Open a folder
 
 Use File → Open to select a folder containing your photos.
-The photos are listed on the left side of the window.</source>
+The photos will be analyzed and listed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="49"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="47"/>
+        <source>Browse the list
+
+The photos are listed on the left side of the window.
+The pin marker indicates the photos that are already geolocalized.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="57"/>
         <source>Geotag your photos
 
 Click on the map to assign a location to the selected photo.
-You can also load a GPX track to geotag photos automatically.</source>
+Soon, you will also be able to load a GPX track to geotag photos automatically.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="55"/>
-        <source>Edit metadata
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="53"/>
+        <source>Edit metadata of the different tabs
 
 Add keywords, titles, and captions to your photos.
-Hit Save to write the changes into the EXIF/IPTC data.</source>
+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="148"/>
-        <source>Close</source>
-        <translation type="unfinished">Close</translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="156"/>
-        <source>Next  ›</source>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="63"/>
+        <source>Save you changes
+
+A the end, hit Save to write the changes into the EXIF/IPTC data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="157"/>
+        <source>Close</source>
+        <translation type="unfinished">Close</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="164"/>
+        <source>Next  ›</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="164"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>

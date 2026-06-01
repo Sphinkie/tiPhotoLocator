@@ -5,7 +5,7 @@ import QtQuick.Controls.Material
 
 
 /** **********************************************************************************************************
- * @brief Popup tutoriel — visite guidée de TiPhotoLocator en 4 pages.
+ * @brief Popup tutoriel — visite guidée de TiPhotoLocator en quelques pages.
  * Chaque page affiche une image (remplaçable dans pages[].image) et un texte descriptif.
  * Pas de contour Qt native : la carte flotte naturellement au-dessus de l'application.
  * ***********************************************************************************************************/
@@ -20,7 +20,7 @@ Popup {
     closePolicy: Popup.CloseOnEscape
 
     width: 720
-    height: 500
+    height: 760 // 500
 
     // Pas de contour Qt native
     background: Item {}
@@ -30,30 +30,38 @@ Popup {
                           currentPage = 0
 
     // ------------------------------------------------------------------
-    // Contenu des 4 pages: remplacer image par des captures d'écran dédiées
+    // Contenu des pages: Image et textes
     // ------------------------------------------------------------------
     readonly property var pages: [{
-            "image": "qrc:/Pictures/welcome.png",
+            "image": "qrc:/Tutorial/bellaminette-00.png",
             "text": qsTr("Welcome to TiPhotoLocator!\n\n"
                          + "This short tutorial will guide you through the main features "
                          + "of the application.")
         }, {
-            "image": "qrc:/Images/icon-camera.png",
-            "text": qsTr(
-                        "Open a folder\n\n"
-                        + "Use File → Open to select a folder containing your photos.\n"
-                        + "The photos are listed on the left side of the window.")
+            "image": "qrc:/Tutorial/bellaminette-01.png",
+            "text": qsTr("Open a folder\n\n"
+                         + "Use File → Open to select a folder containing your photos.\n"
+                         + "The photos will be analyzed and listed.")
         }, {
-            "image": "qrc:/Images/icon-world.png",
+            "image": "qrc:/Tutorial/bellaminette-04.png",
+            "text": qsTr(
+                        "Browse the list\n\n"
+                        + "The photos are listed on the left side of the window.\n"
+                        + "The pin marker indicates the photos that are already geolocalized.")
+        }, {
+            "image": "qrc:/Tutorial/bellaminette-02.png",
+            "text": qsTr("Edit metadata of the different tabs\n\n"
+                         + "Add keywords, titles, and captions to your photos.\n")
+        }, {
+            "image": "qrc:/Tutorial/bellaminette-03.png",
             "text": qsTr(
                         "Geotag your photos\n\n"
                         + "Click on the map to assign a location to the selected photo.\n"
-                        + "You can also load a GPX track to geotag photos automatically.")
+                        + "Soon, you will also be able to load a GPX track to geotag photos automatically.")
         }, {
-            "image": "qrc:/Images/icon-tag.png",
-            "text": qsTr(
-                        "Edit metadata\n\n" + "Add keywords, titles, and captions to your photos.\n"
-                        + "Hit Save to write the changes into the EXIF/IPTC data.")
+            "image": "qrc:/Tutorial/bellaminette-05.png",
+            "text": qsTr("Save you changes\n\n"
+                         + "A the end, hit Save to write the changes into the EXIF/IPTC data.")
         }]
 
     // ── Carte visuelle ────────────────────────────────────────────────────────
@@ -61,7 +69,7 @@ Popup {
         id: card
         anchors.fill: parent
         radius: 14
-        color: Qt.rgba(0.07, 0.07, 0.10, 0.92)
+        color: Qt.rgba(0.97, 0.97, 0.90, 0.22)
         clip: true
 
         ColumnLayout {
@@ -87,7 +95,7 @@ Popup {
             Rectangle {
                 Layout.fillWidth: true
                 implicitHeight: 1
-                color: Qt.rgba(1, 1, 1, 0.12)
+                color: Qt.rgba(0.1, 0.1, 0.1, 0.32)
             }
 
             // ── Texte de la page
@@ -98,9 +106,9 @@ Popup {
                 leftPadding: 24
                 rightPadding: 24
                 text: root.pages[root.currentPage].text
-                color: "white"
+                color: "black"
                 wrapMode: Text.WordWrap
-                font.pointSize: 10
+                font.pointSize: 12
             }
 
             // ── Barre de navigation
