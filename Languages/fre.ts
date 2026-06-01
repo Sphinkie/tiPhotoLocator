@@ -160,22 +160,22 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="175"/>
+        <location filename="../Sources/Qml/Main.qml" line="179"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="178"/>
+        <location filename="../Sources/Qml/Main.qml" line="182"/>
         <source>MAP</source>
         <translation>CARTE</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="183"/>
+        <location filename="../Sources/Qml/Main.qml" line="187"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>TAGS EXIF ET IPTC</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="188"/>
+        <location filename="../Sources/Qml/Main.qml" line="192"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
@@ -208,37 +208,42 @@
         <translation>Quitter</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="68"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="70"/>
         <source>Settings</source>
         <translation>Réglages</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="70"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="72"/>
         <source>Configuration</source>
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="74"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="76"/>
         <source>Keywords</source>
         <translation>Gestion des keywords</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="80"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="84"/>
         <source>Help</source>
         <translation>Aide</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="82"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="86"/>
+        <source>Tutorial</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="90"/>
         <source>Obtenir une API KEY</source>
         <translation>Obtenir une API KEY</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="86"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="94"/>
         <source>Credits</source>
         <translation>Crédits</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="90"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="98"/>
         <source>About</source>
         <translation>A propos</translation>
     </message>
@@ -561,6 +566,55 @@
         <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="55"/>
         <source>Folder:</source>
         <translation>Répertoire:</translation>
+    </message>
+</context>
+<context>
+    <name>TutorialPopup</name>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="37"/>
+        <source>Welcome to TiPhotoLocator!
+
+This short tutorial will guide you through the main features of the application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="43"/>
+        <source>Open a folder
+
+Use File → Open to select a folder containing your photos.
+The photos are listed on the left side of the window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="49"/>
+        <source>Geotag your photos
+
+Click on the map to assign a location to the selected photo.
+You can also load a GPX track to geotag photos automatically.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="55"/>
+        <source>Edit metadata
+
+Add keywords, titles, and captions to your photos.
+Hit Save to write the changes into the EXIF/IPTC data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="148"/>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="156"/>
+        <source>Next  ›</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="157"/>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

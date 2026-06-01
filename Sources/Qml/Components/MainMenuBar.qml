@@ -63,6 +63,8 @@ MenuBar {
             onTriggered: Qt.quit()
         }
     }
+
+    /// Menu SETTINGS
     Menu {
         id: settingsMenu
         title: qsTr("Settings")
@@ -75,9 +77,15 @@ MenuBar {
             onClicked: keywordsPopup.open()
         }
     }
+
+    /// Menu HELP
     Menu {
         id: helpMenu
         title: qsTr("Help")
+        MenuItem {
+            text: qsTr("Tutorial")
+            onTriggered: tutorialPage.open()
+        }
         MenuItem {
             text: qsTr("Obtenir une API KEY")
             onTriggered: apiPage.open()
@@ -92,6 +100,7 @@ MenuBar {
         }
     }
 
+    /// Timer: Attend 1 seconde, avant de remplir le PhotoModel.
     TimerLoadFolder {
         id: folderTimer
     }
