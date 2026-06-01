@@ -27,7 +27,7 @@ Pour obtenir les meilleurs résultats avec 4 ou 5 poses :
 ## Dzine AI 
 
 - meilleure précision 
-- Abonnement (9 à 25$ par mois)
+- Abonnement (de 9$ à 25$ par mois)
 - [Dzine AI](https://www.dzine.ai)
 
 ## Stable Diffusion avec ControlNet
@@ -51,3 +51,8 @@ Create a face view of this same character, looking down and pointing the finger 
 
 MAP:
 Create a rear view of this same character, pointing the finger on her right, like showing something on the wall. Show the complete silhouette and details, keep the design style, outfit, background and lighting unchanged.
+Create a rear view of this same character, pointing the finger on her right, like showing something on a wall. Show the complete silhouette and details, keep the design style, outfit, white background and lighting unchanged.
+
+LIST:
+Create a 90° view (showing her left profile) of this same character, looking forward and pointing the finger forward her. Show the complete silhouette and details (including the feet), keep the design style, outfit, background and lighting unchanged.
+Create a side profile view of this same character, 90-degree left side angle, showing the complete side silhouette and details (including the feet), keep the design style, outfit, background and lighting unchanged. She is pointing something in front of her with her finger.

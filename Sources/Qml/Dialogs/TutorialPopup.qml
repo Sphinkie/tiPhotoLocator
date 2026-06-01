@@ -19,8 +19,8 @@ Popup {
     padding: 0
     closePolicy: Popup.CloseOnEscape
 
-    width: 720
-    height: 760 // 500
+    width: 700
+    height: 740
 
     // Pas de contour Qt native
     background: Item {}
@@ -33,33 +33,33 @@ Popup {
     // Contenu des pages: Image et textes
     // ------------------------------------------------------------------
     readonly property var pages: [{
-            "image": "qrc:/Tutorial/bellaminette-00.png",
+            "image": "qrc:/Tutorial/bellaminette-hello.png",
             "text": qsTr("Welcome to TiPhotoLocator!\n\n"
                          + "This short tutorial will guide you through the main features "
                          + "of the application.")
         }, {
-            "image": "qrc:/Tutorial/bellaminette-01.png",
+            "image": "qrc:/Tutorial/bellaminette-open.png",
             "text": qsTr("Open a folder\n\n"
                          + "Use File → Open to select a folder containing your photos.\n"
                          + "The photos will be analyzed and listed.")
         }, {
-            "image": "qrc:/Tutorial/bellaminette-04.png",
+            "image": "qrc:/Tutorial/bellaminette-list.png",
             "text": qsTr(
                         "Browse the list\n\n"
                         + "The photos are listed on the left side of the window.\n"
                         + "The pin marker indicates the photos that are already geolocalized.")
         }, {
-            "image": "qrc:/Tutorial/bellaminette-02.png",
+            "image": "qrc:/Tutorial/bellaminette-tabs.png",
             "text": qsTr("Edit metadata of the different tabs\n\n"
                          + "Add keywords, titles, and captions to your photos.\n")
         }, {
-            "image": "qrc:/Tutorial/bellaminette-03.png",
+            "image": "qrc:/Tutorial/bellaminette-map.png",
             "text": qsTr(
                         "Geotag your photos\n\n"
                         + "Click on the map to assign a location to the selected photo.\n"
                         + "Soon, you will also be able to load a GPX track to geotag photos automatically.")
         }, {
-            "image": "qrc:/Tutorial/bellaminette-05.png",
+            "image": "qrc:/Tutorial/bellaminette-save.png",
             "text": qsTr("Save you changes\n\n"
                          + "A the end, hit Save to write the changes into the EXIF/IPTC data.")
         }]

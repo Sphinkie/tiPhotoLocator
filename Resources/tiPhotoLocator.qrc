@@ -73,11 +73,11 @@
         <file>Cameras/KODAKP850ZOOMDIGITALCAMERA.png</file>
         <file>Images/logo_TPL3.png</file>
         <file>Images/logo_TPL4.png</file>
-        <file>Tutorial/bellaminette-00.png</file>
-        <file>Tutorial/bellaminette-01.png</file>
-        <file>Tutorial/bellaminette-02.png</file>
-        <file>Tutorial/bellaminette-03.png</file>
-        <file>Tutorial/bellaminette-04.png</file>
-        <file>Tutorial/bellaminette-05.png</file>
+        <file>Tutorial/bellaminette-hello.png</file>
+        <file>Tutorial/bellaminette-open.png</file>
+        <file>Tutorial/bellaminette-tabs.png</file>
+        <file>Tutorial/bellaminette-map.png</file>
+        <file>Tutorial/bellaminette-list.png</file>
+        <file>Tutorial/bellaminette-save.png</file>
     </qresource>
 </RCC>
