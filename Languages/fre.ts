@@ -126,6 +126,19 @@
         <source>- the &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; company for providing the map tiles.&lt;br/&gt;</source>
         <translation>- la société &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; pour la mise à disposition des cartes.&lt;br/&gt;</translation>
     </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="46"/>
+        <source>- &lt;a href=&apos;https://bellaminettes.com/&apos;&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;  (Temporarily without his permission, as long as the software is only used by 2 or 3 people).&lt;br/&gt;</source>
+        <translation>- &lt;a href=&apos;https://bellaminettes.com/&apos;&gt;Bruno Bellamy&lt;/a&gt; pour la jolie instructrice du didacticiel.&lt;br/&gt;  (Temporairement sans sa permission, tant que logiciel n&apos;est utilisé que par 2 ou 3 personnes).&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <source>- &lt;a href=&apos;https://bellaminettes.com/&apos;&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;Temporarily without his permission, as long as the software is only used by 2 or 3 people.</source>
+        <translation type="vanished">- &lt;a href=&apos;https://bellaminettes.com/&gt;Bruno Bellamy&lt;/a&gt; pour la jolie instructrice du didacticiel.&lt;br/&gt;Temporairement sans sa permission, tant que logiciel n&apos;est utilisé que par 2 ou 3 personnes.</translation>
+    </message>
+    <message>
+        <source>- &lt;a href=&apos;https://bellaminettes.com/&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;Temporarily without his permission, as long as the software is only used by 2 or 3 people.</source>
+        <translation type="vanished">- &lt;a href=&apos;https://bellaminettes.com/&gt;Bruno Bellamy&lt;/a&gt; pour la jolie instructrice du didacticiel.&lt;br/&gt;Temporairement sans sa permission, tant que logiciel n&apos;est utilisé que par 2 ou 3 personnes.</translation>
+    </message>
 </context>
 <context>
     <name>GlobalTag</name>
@@ -230,7 +243,7 @@
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="86"/>
         <source>Tutorial</source>
-        <translation type="unfinished"></translation>
+        <translation>Didactitiel</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="90"/>
@@ -413,7 +426,7 @@
     <message>
         <location filename="../Sources/Qml/Components/TabFramePhotoTags.qml" line="77"/>
         <source>Keywords Suggestions</source>
-        <translation type="unfinished"></translation>
+        <translation>Keywords Suggestions</translation>
     </message>
 </context>
 <context>
@@ -571,65 +584,86 @@
 <context>
     <name>TutorialPopup</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="37"/>
         <source>Welcome to TiPhotoLocator!
 
 This short tutorial will guide you through the main features of the application.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Bienvenue dans TiPhotoLocator!
+
+je vais vous donner en quelques mot les fontions principales de cette application.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="42"/>
-        <source>Open a folder
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="48"/>
+        <source>Welcome to TiPhotoLocator!
 
-Use File → Open to select a folder containing your photos.
-The photos will be analyzed and listed.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="47"/>
-        <source>Browse the list
+With this short tutorial, I will guide you through the main features of the application.</source>
+        <translation>Bienvenue dans TiPhotoLocator!
 
-The photos are listed on the left side of the window.
-The pin marker indicates the photos that are already geolocalized.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="57"/>
-        <source>Geotag your photos
-
-Click on the map to assign a location to the selected photo.
-Soon, you will also be able to load a GPX track to geotag photos automatically.</source>
-        <translation type="unfinished"></translation>
+je vais vous donner en quelques mots les fonctions principales de cette application.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="53"/>
-        <source>Edit metadata of the different tabs
+        <source>Open a folder:
 
-Add keywords, titles, and captions to your photos.
+Use &apos;File → Open&apos; to select a folder containing your photos.
+The photos will be analyzed and listed.</source>
+        <translation>Pour accéder à un dossier de photos:
+
+Ouvrez le menu &apos;Fichers → Ouvrir&apos; pour sélectionner le dossier où se trouvent vos photos.
+Les photos sont alors analysées et listées.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="58"/>
+        <source>Browse the list:
+
+The photos are listed on the left side of the window.
+The pin marker indicates the photos that are already geolocalized.</source>
+        <translation>Parcourir la liste:
+
+Les photos sont listées à gauche de la fenêtre.
+Le marqueur rouge indique les photos qui sont déjà géolocalisées.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="64"/>
+        <source>Edit metadata of the different tabs:
+
+Add keywords, tags, and captions to your photos.
 </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="63"/>
-        <source>Save you changes
+        <translation>Editer les métadonnées dans les différents onglets:
 
-A the end, hit Save to write the changes into the EXIF/IPTC data.</source>
+Ajoutez des mots-clefs, descriptions et annotations à vos photos, de façon unitaire ou groupée.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="68"/>
+        <source>Geotag your photos:
+
+Click on the map to assign a location to the selected photo.
+City, country, and location data are proposed automatically.</source>
+        <translation type="unfinished">Geotaggez vos photos:
+
+Cliquez sur la carte pour assigner un emplacement aux photos sélectionnées.
+La ville, le pays, et des informations géographiques sont alors automatiquement proposées.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="74"/>
+        <source>Save you changes!
+
+Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="157"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="168"/>
         <source>Close</source>
-        <translation type="unfinished">Fermer</translation>
+        <translation>Fermer</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="164"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="175"/>
         <source>Next  ›</source>
-        <translation type="unfinished"></translation>
+        <translation>Suivant  ›</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="164"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="175"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminé</translation>
     </message>
 </context>
 <context>

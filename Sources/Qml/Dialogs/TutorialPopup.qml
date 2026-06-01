@@ -32,7 +32,8 @@ Popup {
         category: "tutorial"
         property bool shown: false
     }
-    Component.onCompleted: if (!tutorialSettings.shown) open()
+    Component.onCompleted: if (!tutorialSettings.shown)
+                               open()
     onClosed: tutorialSettings.shown = true
 
     property int currentPage: 0
@@ -45,33 +46,33 @@ Popup {
     readonly property var pages: [{
             "image": "qrc:/Tutorial/bellaminette-hello.png",
             "text": qsTr("Welcome to TiPhotoLocator!\n\n"
-                         + "This short tutorial will guide you through the main features "
+                         + "With this short tutorial, I will guide you through the main features "
                          + "of the application.")
         }, {
             "image": "qrc:/Tutorial/bellaminette-open.png",
-            "text": qsTr("Open a folder\n\n"
-                         + "Use File → Open to select a folder containing your photos.\n"
+            "text": qsTr("Open a folder:\n\n"
+                         + "Use 'File → Open' to select a folder containing your photos.\n"
                          + "The photos will be analyzed and listed.")
         }, {
             "image": "qrc:/Tutorial/bellaminette-list.png",
             "text": qsTr(
-                        "Browse the list\n\n"
+                        "Browse the list:\n\n"
                         + "The photos are listed on the left side of the window.\n"
                         + "The pin marker indicates the photos that are already geolocalized.")
         }, {
             "image": "qrc:/Tutorial/bellaminette-tabs.png",
-            "text": qsTr("Edit metadata of the different tabs\n\n"
-                         + "Add keywords, titles, and captions to your photos.\n")
+            "text": qsTr("Edit metadata of the different tabs:\n\n"
+                         + "Add keywords, tags, and captions to your photos.\n")
         }, {
             "image": "qrc:/Tutorial/bellaminette-map.png",
             "text": qsTr(
-                        "Geotag your photos\n\n"
+                        "Geotag your photos:\n\n"
                         + "Click on the map to assign a location to the selected photo.\n"
-                        + "Soon, you will also be able to load a GPX track to geotag photos automatically.")
+                        + "City, country, and location data are proposed automatically.")
         }, {
             "image": "qrc:/Tutorial/bellaminette-save.png",
-            "text": qsTr("Save you changes\n\n"
-                         + "A the end, hit Save to write the changes into the EXIF/IPTC data.")
+            "text": qsTr("Save you changes!\n\n"
+                         + "Finally, hit 'Save' to write the changes into the EXIF/IPTC data.")
         }]
 
     // ── Carte visuelle ────────────────────────────────────────────────────────

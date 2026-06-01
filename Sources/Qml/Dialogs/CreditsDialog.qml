@@ -29,7 +29,7 @@ Dialog {
 
         Text {
             textFormat: Text.RichText
-            text: t1 + t2 + t3 + t4 + t5
+            text: t1 + t2 + t3 + t4 + t5 + t6
             wrapMode: Text.WordWrap
             font.pointSize: 11
             color: Style.secondaryTextColor
@@ -43,4 +43,5 @@ Dialog {
     readonly property string t3: qsTr("- the <a href='https://www.qt.io/'>Qt Company</a> for the Qt6 C++ and QML framework.<br/>")
     readonly property string t4: qsTr("- the <a href='https://www.openstreetmap.org'>OpenStreetMap</a> organisation for map data.<br/>")
     readonly property string t5: qsTr("- the <a href='https://www.thunderforest.com/about/'>Thunderforest</a> company for providing the map tiles.<br/>")
+    readonly property string t6: qsTr("- <a href='https://bellaminettes.com/'>Bruno Bellamy</a> for the pretty instructor of the tutorial.<br/>  (Temporarily without his permission, as long as the software is only used by 2 or 3 people).<br/>")
 }
