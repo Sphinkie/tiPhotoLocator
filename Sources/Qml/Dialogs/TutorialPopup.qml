@@ -58,11 +58,12 @@ Popup {
             "text": qsTr(
                         "Browse the list:\n\n"
                         + "The photos are listed on the left side of the window.\n"
-                        + "The pin marker indicates the photos that are already geolocalized.")
+                        + "The red pin marker indicates the photos that are already geolocalized.")
         }, {
             "image": "qrc:/Tutorial/bellaminette-tabs.png",
             "text": qsTr("Edit metadata of the different tabs:\n\n"
-                         + "Add keywords, tags, and captions to your photos.\n")
+                         + "Select multiple photos with filter CHECKBOXES, the proximity CIRCLE, or simply with CTRL-CLIC.\n"
+                         + "Add keywords, tags, and captions to your photos.")
         }, {
             "image": "qrc:/Tutorial/bellaminette-map.png",
             "text": qsTr(

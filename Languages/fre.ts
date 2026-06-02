@@ -22,21 +22,9 @@
 <context>
     <name>ApikeyDialog</name>
     <message>
-        <source>Get an API Key</source>
-        <translation type="vanished">Obtenir une API Key</translation>
-    </message>
-    <message>
-        <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:&lt;br/&gt;</source>
-        <translation type="vanished">Une clef API peut être obtenue auprès d&apos;un fournisseur de cartes (thunderforest, mapbox, esri...), de la façon suivante:&lt;br/&gt;</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="23"/>
         <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</source>
         <translation>Une clef API peut être obtenue auprès d&apos;un fournisseur de cartes (thunderforest, mapbox, esri...), de la façon suivante:</translation>
-    </message>
-    <message>
-        <source>- Go to the website.&lt;br/&gt;</source>
-        <translation type="vanished">- Se connecter sur le site.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="12"/>
@@ -131,14 +119,6 @@
         <source>- &lt;a href=&apos;https://bellaminettes.com/&apos;&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;  (Temporarily without his permission, as long as the software is only used by 2 or 3 people).&lt;br/&gt;</source>
         <translation>- &lt;a href=&apos;https://bellaminettes.com/&apos;&gt;Bruno Bellamy&lt;/a&gt; pour la jolie instructrice du didacticiel.&lt;br/&gt;  (Temporairement sans sa permission, tant que logiciel n&apos;est utilisé que par 2 ou 3 personnes).&lt;br/&gt;</translation>
     </message>
-    <message>
-        <source>- &lt;a href=&apos;https://bellaminettes.com/&apos;&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;Temporarily without his permission, as long as the software is only used by 2 or 3 people.</source>
-        <translation type="vanished">- &lt;a href=&apos;https://bellaminettes.com/&gt;Bruno Bellamy&lt;/a&gt; pour la jolie instructrice du didacticiel.&lt;br/&gt;Temporairement sans sa permission, tant que logiciel n&apos;est utilisé que par 2 ou 3 personnes.</translation>
-    </message>
-    <message>
-        <source>- &lt;a href=&apos;https://bellaminettes.com/&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;Temporarily without his permission, as long as the software is only used by 2 or 3 people.</source>
-        <translation type="vanished">- &lt;a href=&apos;https://bellaminettes.com/&gt;Bruno Bellamy&lt;/a&gt; pour la jolie instructrice du didacticiel.&lt;br/&gt;Temporairement sans sa permission, tant que logiciel n&apos;est utilisé que par 2 ou 3 personnes.</translation>
-    </message>
 </context>
 <context>
     <name>GlobalTag</name>
@@ -164,10 +144,6 @@
         <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="27"/>
         <source>Apply to selection</source>
         <translation>Appliquer à la sélection</translation>
-    </message>
-    <message>
-        <source>Assign to selection</source>
-        <translation type="vanished">Appliquer à la sélection</translation>
     </message>
 </context>
 <context>
@@ -350,10 +326,6 @@
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="216"/>
         <source>Map theme:</source>
         <translation>Type de carte:</translation>
-    </message>
-    <message>
-        <source>Do not change EXIF tags</source>
-        <translation type="vanished">Ne pas modifier les tags EXIF</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="178"/>
@@ -584,14 +556,6 @@
 <context>
     <name>TutorialPopup</name>
     <message>
-        <source>Welcome to TiPhotoLocator!
-
-This short tutorial will guide you through the main features of the application.</source>
-        <translation type="vanished">Bienvenue dans TiPhotoLocator!
-
-je vais vous donner en quelques mot les fontions principales de cette application.</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="48"/>
         <source>Welcome to TiPhotoLocator!
 
@@ -616,8 +580,8 @@ Les photos sont alors analysées et listées.</translation>
         <source>Browse the list:
 
 The photos are listed on the left side of the window.
-The pin marker indicates the photos that are already geolocalized.</source>
-        <translation>Parcourir la liste:
+The red pin marker indicates the photos that are already geolocalized.</source>
+        <translation>Parcourez la liste:
 
 Les photos sont listées à gauche de la fenêtre.
 Le marqueur rouge indique les photos qui sont déjà géolocalisées.</translation>
@@ -626,42 +590,45 @@ Le marqueur rouge indique les photos qui sont déjà géolocalisées.</translati
         <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="64"/>
         <source>Edit metadata of the different tabs:
 
-Add keywords, tags, and captions to your photos.
-</source>
-        <translation>Editer les métadonnées dans les différents onglets:
+Select multiple photos with filter CHECKBOXES, the proximity CIRCLE, or simply with CTRL-CLIC.
+Add keywords, tags, and captions to your photos.</source>
+        <translation>Editez les métadonnées dans les différents onglets:
 
-Ajoutez des mots-clefs, descriptions et annotations à vos photos, de façon unitaire ou groupée.</translation>
+Sélectionnez plusieurs photos en même temps grace aux FILTRES à cocher, au CERCLE de proximité géographique, ou simplement par CTRL-CLIC.
+Ajoutez des mots-clefs, descriptions et annotations à vos photos.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="68"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="69"/>
         <source>Geotag your photos:
 
 Click on the map to assign a location to the selected photo.
 City, country, and location data are proposed automatically.</source>
-        <translation type="unfinished">Geotaggez vos photos:
+        <translation>Geotaggez vos photos:
 
 Cliquez sur la carte pour assigner un emplacement aux photos sélectionnées.
 La ville, le pays, et des informations géographiques sont alors automatiquement proposées.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="74"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="75"/>
         <source>Save you changes!
 
 Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrez les modifications!
+
+A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EXIF directement dans vos photos.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="168"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="169"/>
         <source>Close</source>
         <translation>Fermer</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="175"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="176"/>
         <source>Next  ›</source>
         <translation>Suivant  ›</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="175"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="176"/>
         <source>Done</source>
         <translation>Terminé</translation>
     </message>
@@ -718,10 +685,6 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</sou
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="52"/>
         <source>They mainly contain technical information: camera model, lens...</source>
         <translation>Ils contiennent principalement des informations techniques: modèle d&apos;appareil, objectif...</translation>
-    </message>
-    <message>
-        <source>Apply to all</source>
-        <translation type="vanished">Appliquer à tous</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="63"/>

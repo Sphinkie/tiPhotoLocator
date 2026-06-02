@@ -22,21 +22,9 @@
 <context>
     <name>ApikeyDialog</name>
     <message>
-        <source>Get an API Key</source>
-        <translation type="vanished">Get an API Key</translation>
-    </message>
-    <message>
-        <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:&lt;br/&gt;</source>
-        <translation type="vanished">An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:&lt;br/&gt;</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="23"/>
         <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</source>
         <translation>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</translation>
-    </message>
-    <message>
-        <source>- Go to the website.&lt;br/&gt;</source>
-        <translation type="vanished">- Go to the website.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="12"/>
@@ -131,10 +119,6 @@
         <source>- &lt;a href=&apos;https://bellaminettes.com/&apos;&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;  (Temporarily without his permission, as long as the software is only used by 2 or 3 people).&lt;br/&gt;</source>
         <translation>- &lt;a href=&apos;https://bellaminettes.com/&apos;&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;  (Temporarily without his permission, as long as the software is only used by 2 or 3 people).&lt;br/&gt;</translation>
     </message>
-    <message>
-        <source>- &lt;a href=&apos;https://bellaminettes.com/&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;Temporarily without his permission, as long as the software is only used by 2 or 3 people.</source>
-        <translation type="vanished">- &lt;a href=&apos;https://bellaminettes.com/&gt;Bruno Bellamy&lt;/a&gt; for the pretty instructor of the tutorial.&lt;br/&gt;Temporarily without his permission, as long as the software is only used by 2 or 3 people.</translation>
-    </message>
 </context>
 <context>
     <name>GlobalTag</name>
@@ -160,10 +144,6 @@
         <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="27"/>
         <source>Apply to selection</source>
         <translation>Apply to selection</translation>
-    </message>
-    <message>
-        <source>Assign to selection</source>
-        <translation type="vanished">Apply to selection</translation>
     </message>
 </context>
 <context>
@@ -360,10 +340,6 @@
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="216"/>
         <source>Map theme:</source>
         <translation>Map theme:</translation>
-    </message>
-    <message>
-        <source>Do not change EXIF tags</source>
-        <translation type="vanished">Do not change EXIF tags</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="178"/>
@@ -580,61 +556,6 @@
 <context>
     <name>TutorialPopup</name>
     <message>
-        <source>Welcome to TiPhotoLocator!
-
-This short tutorial will guide you through the main features of the application.</source>
-        <translation type="vanished">Welcome to TiPhotoLocator!
-
-This short tutorial will guide you through the main features of the application.</translation>
-    </message>
-    <message>
-        <source>Open a folder
-
-Use File → Open to select a folder containing your photos.
-The photos will be analyzed and listed.</source>
-        <translation type="vanished">Open a folder
-
-Use &quot;File → Open&quot; to select a folder containing your photos.
-The photos will be analyzed and listed.</translation>
-    </message>
-    <message>
-        <source>Browse the list
-
-The photos are listed on the left side of the window.
-The pin marker indicates the photos that are already geolocalized.</source>
-        <translation type="vanished">Browse the list
-
-The photos are listed on the left side of the window.
-The pin marker indicates the photos that are already geolocalized.</translation>
-    </message>
-    <message>
-        <source>Geotag your photos
-
-Click on the map to assign a location to the selected photo.
-Soon, you will also be able to load a GPX track to geotag photos automatically.</source>
-        <translation type="vanished">Geotag your photos
-
-Click on the map to assign a location to the selected photo.
-Soon, you will also be able to load a GPX track to geotag photos automatically.</translation>
-    </message>
-    <message>
-        <source>Edit metadata of the different tabs
-
-Add keywords, titles, and captions to your photos.
-</source>
-        <translation type="vanished">Edit metadata of the different tabs
-
-Add keywords, titles, and captions to your photos.</translation>
-    </message>
-    <message>
-        <source>Save you changes
-
-A the end, hit Save to write the changes into the EXIF/IPTC data.</source>
-        <translation type="vanished">Save you changes
-
-Finally, hit &quot;Save&quot; to write the changes into the EXIF/IPTC data.</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="48"/>
         <source>Welcome to TiPhotoLocator!
 
@@ -659,24 +580,25 @@ The photos will be analyzed and listed.</translation>
         <source>Browse the list:
 
 The photos are listed on the left side of the window.
-The pin marker indicates the photos that are already geolocalized.</source>
+The red pin marker indicates the photos that are already geolocalized.</source>
         <translation>Browse the list:
 
 The photos are listed on the left side of the window.
-The pin marker indicates the photos that are already geolocalized.</translation>
+The red pin marker indicates the photos that are already geolocalized.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="64"/>
         <source>Edit metadata of the different tabs:
 
-Add keywords, tags, and captions to your photos.
-</source>
+Select multiple photos with filter CHECKBOXES, the proximity CIRCLE, or simply with CTRL-CLIC.
+Add keywords, tags, and captions to your photos.</source>
         <translation>Edit metadata of the different tabs:
 
+Select multiple photos with filter CHECKBOXES, the proximity CIRCLE, or simply with CTRL-CLIC.
 Add keywords, tags, and captions to your photos.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="68"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="69"/>
         <source>Geotag your photos:
 
 Click on the map to assign a location to the selected photo.
@@ -687,7 +609,7 @@ Click on the map to assign a location to the selected photo.
 City, country, and location data are proposed automatically.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="74"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="75"/>
         <source>Save you changes!
 
 Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</source>
@@ -696,17 +618,17 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</sou
 Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="168"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="169"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="175"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="176"/>
         <source>Next  ›</source>
         <translation>Next  ›</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="175"/>
+        <location filename="../Sources/Qml/Dialogs/TutorialPopup.qml" line="176"/>
         <source>Done</source>
         <translation>Done</translation>
     </message>
@@ -763,10 +685,6 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="52"/>
         <source>They mainly contain technical information: camera model, lens...</source>
         <translation>They mainly contain technical information: camera model, lens...</translation>
-    </message>
-    <message>
-        <source>Apply to all</source>
-        <translation type="vanished">Apply to all</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="63"/>
