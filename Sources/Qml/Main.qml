@@ -110,7 +110,7 @@ ApplicationWindow {
     }
 
     /// Popup plein-écran pour visualiser une imagette en grand.
-    PopupImagette {
+    ImagettePopup {
         id: imagePreviewPopup
     }
 

@@ -3,7 +3,7 @@
 ================================================================================
 
 --------------------------------------------------------------------------------
- Version 1.8  (en cours)
+ Version 1.8  (2026-06-02)
 --------------------------------------------------------------------------------
 
 Interface & Animations
@@ -43,7 +43,10 @@ Aide & Tutorial
   - Popup sans frame Qt native (background: Item {}) — carte dark semi-transparente flottante
   - Ouverture automatique au premier lancement ; flag persisté dans les QSettings (groupe "tutorial")
   - Accessible à tout moment via Help → Tutorial
-  - Images dédiées dans Resources/Tutorial/ (bellaminette-0X.png)
+  - Images dédiées dans Resources/Tutorial/ (bellaminette-xxx.png)
+  - Indication des bellaminettes originales ou modifiées par IA
+  - Ajout du dessinateur B. Bellamy dans les crédits
+  
 
 Qualité & Nettoyage
   - Renommage updatePhotoKeyword → replaceKeywordForCurrent (cohérence avec replaceKeywordForSelection)

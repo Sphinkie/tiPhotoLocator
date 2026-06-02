@@ -52,14 +52,15 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/FatChip.qml
         Sources/Qml/Components/GhostChip.qml
         Sources/Qml/Components/GlobalTag.qml
-        Sources/Qml/Components/ToolbarFilters.qml
+        Sources/Qml/Components/KeywordsRepeater.qml
         Sources/Qml/Components/ImagettesListView.qml
         Sources/Qml/Components/SuggestionRepeater.qml
         Sources/Qml/Components/TextFieldSettings.qml
         Sources/Qml/Components/MapView.qml
         Sources/Qml/Components/MainMenuBar.qml
-        Sources/Qml/Components/TinyChip.qml
         Sources/Qml/Components/PhotoListview.qml
+        Sources/Qml/Components/TinyChip.qml
+        Sources/Qml/Components/ToolbarFilters.qml
         Sources/Qml/Components/TabFramePhotoPreview.qml
         Sources/Qml/Components/TabFramePhotoMap.qml
         Sources/Qml/Components/TabFramePhotoTags.qml
@@ -82,7 +83,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Controllers/ZoneSuggestedLocations.qml
         Sources/Qml/Controllers/ZoneUserdata.qml
     QML_FILES
-        Sources/Qml/Dialogs/PopupImagette.qml
+        Sources/Qml/Dialogs/ImagettePopup.qml
         Sources/Qml/Dialogs/AboutDialog.qml
         Sources/Qml/Dialogs/ApikeyDialog.qml
         Sources/Qml/Dialogs/CreditsDialog.qml
@@ -108,7 +109,6 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
-        QML_FILES Sources/Qml/Components/KeywordsRepeater.qml
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
