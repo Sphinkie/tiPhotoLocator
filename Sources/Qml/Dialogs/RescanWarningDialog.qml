@@ -3,7 +3,7 @@ import QtQuick.Dialogs
 
 
 /** **********************************************************************************************************
- * @brief QML: Ouvre un popup puis relit les Exif des photos si OK.
+ * @brief QML: Ouvre une MessageBox puis relit les Exif des photos si OK.
  * *********************************************************************************************************** */
 MessageDialog {
     title: "Rescan folder"

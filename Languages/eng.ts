@@ -365,19 +365,30 @@
 <context>
     <name>RescanWarning</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="10"/>
         <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
-        <translation>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</translation>
+        <translation type="vanished">Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="11"/>
-        <source>All unsaved changes will be lost.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="13"/>
         <source>Do you want to continue?</source>
-        <translation>Do you want to continue?</translation>
+        <translation type="vanished">Do you want to continue?</translation>
+    </message>
+</context>
+<context>
+    <name>RescanWarningDialog</name>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/RescanWarningDialog.qml" line="10"/>
+        <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
+        <translation type="unfinished">Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/RescanWarningDialog.qml" line="11"/>
+        <source>All unsaved changes will be lost.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/RescanWarningDialog.qml" line="13"/>
+        <source>Do you want to continue?</source>
+        <translation type="unfinished">Do you want to continue?</translation>
     </message>
 </context>
 <context>

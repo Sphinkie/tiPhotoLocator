@@ -86,7 +86,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Dialogs/AboutDialog.qml
         Sources/Qml/Dialogs/ApikeyDialog.qml
         Sources/Qml/Dialogs/CreditsDialog.qml
-        Sources/Qml/Dialogs/RescanWarning.qml
+        Sources/Qml/Dialogs/RescanWarningDialog.qml
         Sources/Qml/Dialogs/TiFolderDialog.qml
         Sources/Qml/Dialogs/TutorialPopup.qml
         Sources/Qml/Models/ModelFolderList.qml

@@ -365,19 +365,34 @@
 <context>
     <name>RescanWarning</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="10"/>
         <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
-        <translation>Attention: les informations des images du répertoire vont être rechargées.&lt;br/&gt;</translation>
+        <translation type="vanished">Attention: les informations des images du répertoire vont être rechargées.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="11"/>
         <source>All unsaved changes will be lost.</source>
-        <translation>Tous les changements non enregistrés vont être perdus.</translation>
+        <translation type="vanished">Tous les changements non enregistrés vont être perdus.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/RescanWarning.qml" line="13"/>
         <source>Do you want to continue?</source>
-        <translation>Voulez-vous continuer?</translation>
+        <translation type="vanished">Voulez-vous continuer?</translation>
+    </message>
+</context>
+<context>
+    <name>RescanWarningDialog</name>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/RescanWarningDialog.qml" line="10"/>
+        <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
+        <translation type="unfinished">Attention: les informations des images du répertoire vont être rechargées.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/RescanWarningDialog.qml" line="11"/>
+        <source>All unsaved changes will be lost.</source>
+        <translation type="unfinished">Tous les changements non enregistrés vont être perdus.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/RescanWarningDialog.qml" line="13"/>
+        <source>Do you want to continue?</source>
+        <translation type="unfinished">Voulez-vous continuer?</translation>
     </message>
 </context>
 <context>

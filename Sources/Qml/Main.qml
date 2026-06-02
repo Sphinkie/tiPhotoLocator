@@ -95,7 +95,7 @@ ApplicationWindow {
     ApikeyDialog {
         id: apiPage
     }
-    RescanWarning {
+    RescanWarningDialog {
         id: rescanWarning
     }
     PopupSettings {
