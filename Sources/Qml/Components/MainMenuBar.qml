@@ -4,7 +4,6 @@ import QtQuick.Controls
 import "../Components"
 import "../Javascript/TiUtilities.js" as Utilities
 
-
 /** **********************************************************************************************************
  * @brief QML: Menu principal.
  * ***********************************************************************************************************/
@@ -35,18 +34,16 @@ MenuBar {
                     text: Utilities.toShortPath(modelData)
                     rightPadding: 8
                     onTriggered: {
-                        console.log(modelData)
-                        let normalizedFolder = Utilities.normalizeUrl(modelData)
-                        folderListModel.folder = normalizedFolder
-                        window.currentFolderUrl = normalizedFolder
+                        console.log(modelData);
+                        let normalizedFolder = Utilities.normalizeUrl(modelData);
+                        folderListModel.folder = normalizedFolder;
+                        window.currentFolderUrl = normalizedFolder;
                         // puis on met à jour la liste du PhotoModel
-                        folderTimer.start()
+                        folderTimer.start();
                     }
                 }
-                onObjectAdded: (index, object) => recentFoldersMenu.insertItem(
-                                   index, object)
-                onObjectRemoved: (index, object) => recentFoldersMenu.removeItem(
-                                     object)
+                onObjectAdded: (index, object) => recentFoldersMenu.insertItem(index, object)
+                onObjectRemoved: (index, object) => recentFoldersMenu.removeItem(object)
             }
             MenuSeparator {}
             MenuItem {
@@ -87,8 +84,12 @@ MenuBar {
             onTriggered: tutorialPage.open()
         }
         MenuItem {
-            text: qsTr("Obtenir une API KEY")
-            onTriggered: apiPage.open()
+            text: qsTr("Get an API KEY for maps")
+            onTriggered: mapApiPage.open()
+        }
+        MenuItem {
+            text: qsTr("Get an API KEY for AI")
+            onTriggered: aiApiPage.open()
         }
         MenuItem {
             text: qsTr("Credits")

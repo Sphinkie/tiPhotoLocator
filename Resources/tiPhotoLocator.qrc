@@ -79,5 +79,6 @@
         <file>Tutorial/bellaminette-map.png</file>
         <file>Tutorial/bellaminette-list.png</file>
         <file>Tutorial/bellaminette-save.png</file>
+        <file>Images/bt-microscope.png</file>
     </qresource>
 </RCC>

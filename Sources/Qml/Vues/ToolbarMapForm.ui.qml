@@ -3,14 +3,14 @@ import QtQuick.Layouts
 import QtQuick.Controls.Material
 import "../Components"
 
-
 /** **********************************************************************************************************
- * @brief Cette vue correspond à la barre d'outils spécifiques à la carte.
+ * @brief Cette vue correspond à la barre d'outils spécifiques à la carte (onglet MAP).
  * ***********************************************************************************************************/
 Item {
     property alias txt_find: txt_find
     property alias bt_find: bt_find
     property alias bt_next: bt_next
+    property alias bt_ask_ai: bt_ask_ai
     property alias bt_save_pos: bt_save_pos
     property alias bt_remove_savedpos: bt_remove_savedpos
     property alias bt_apply_savedpos: bt_apply_savedpos
@@ -53,6 +53,21 @@ Item {
     }
 
     Button {
+        id: bt_ask_ai
+        enabled: false
+        text: qsTr("AI")
+        icon.source: "qrc:/Images/bt-microscope.png"
+        ToolTip.text: qsTr("Ask IA to guess the photo location")
+        ToolTip.visible: hovered
+        ToolTip.delay: 500
+        anchors {
+            left: bt_next.right
+            leftMargin: 20
+            verticalCenter: parent.verticalCenter
+        }
+    }
+
+    Button {
         id: bt_save_pos
         enabled: false
         text: qsTr("Save Position")
@@ -61,7 +76,7 @@ Item {
         ToolTip.visible: hovered
         ToolTip.delay: 500
         anchors {
-            left: bt_next.right
+            left: bt_ask_ai.right
             leftMargin: 20
             verticalCenter: parent.verticalCenter
         }

@@ -20,61 +20,112 @@
     </message>
 </context>
 <context>
+    <name>AiApikeyDialog</name>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="11"/>
+        <source>How to get an API Key for AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="22"/>
+        <source>An API key can be obtained from HugginFace as follows:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
+        <translation type="obsolete">This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="40"/>
+        <source>This AI will try to find the location of the photo, not keywords.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="49"/>
+        <source>- Go to the website: </source>
+        <translation type="unfinished">- Go to the website: </translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="51"/>
+        <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
+        <translation type="unfinished">- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="52"/>
+        <source>- Create an account.&lt;br/&gt;</source>
+        <translation type="unfinished">- Create an account.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="53"/>
+        <source>- Sign in with your account.&lt;br/&gt;</source>
+        <translation type="unfinished">- Sign in with your account.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="54"/>
+        <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
+        <translation type="unfinished">- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="55"/>
+        <source>- Copy the API Key.&lt;br/&gt;</source>
+        <translation type="unfinished">- Copy the API Key.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="56"/>
+        <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
+        <translation type="unfinished">- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="57"/>
+        <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
+        <translation type="unfinished">- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
+    </message>
+</context>
+<context>
     <name>ApikeyDialog</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="23"/>
         <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</source>
-        <translation>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</translation>
+        <translation type="vanished">An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="12"/>
         <source>How to get an API Key</source>
-        <translation>How to get an API Key</translation>
+        <translation type="vanished">How to get an API Key</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="50"/>
         <source>- Go to the website: </source>
-        <translation>- Go to the website: </translation>
+        <translation type="vanished">- Go to the website: </translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="52"/>
         <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
-        <translation>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
+        <translation type="vanished">- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="53"/>
         <source>- Create an account.&lt;br/&gt;</source>
-        <translation>- Create an account.&lt;br/&gt;</translation>
+        <translation type="vanished">- Create an account.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="54"/>
         <source>- Sign in with your account.&lt;br/&gt;</source>
-        <translation>- Sign in with your account.&lt;br/&gt;</translation>
+        <translation type="vanished">- Sign in with your account.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="55"/>
         <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
-        <translation>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
+        <translation type="vanished">- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="56"/>
         <source>- Copy the API Key.&lt;br/&gt;</source>
-        <translation>- Copy the API Key.&lt;br/&gt;</translation>
+        <translation type="vanished">- Copy the API Key.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="57"/>
         <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
-        <translation>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
+        <translation type="vanished">- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="58"/>
         <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
-        <translation>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
+        <translation type="vanished">- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/ApikeyDialog.qml" line="41"/>
         <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
-        <translation>This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
+        <translation type="vanished">This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
     </message>
 </context>
 <context>
@@ -149,22 +200,22 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="179"/>
+        <location filename="../Sources/Qml/Main.qml" line="178"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="182"/>
+        <location filename="../Sources/Qml/Main.qml" line="181"/>
         <source>MAP</source>
         <translation>MAP</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="187"/>
+        <location filename="../Sources/Qml/Main.qml" line="185"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>EXIF / IPTC TAGS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="192"/>
+        <location filename="../Sources/Qml/Main.qml" line="189"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
@@ -172,69 +223,136 @@
 <context>
     <name>MainMenuBar</name>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="16"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="15"/>
         <source>Files</source>
         <translation>Files</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="20"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="19"/>
         <source>Open...</source>
         <translation>Open...</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="27"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="26"/>
         <source>Recents</source>
         <translation>Recents</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="53"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="50"/>
         <source>Clear recent folders list</source>
         <translation>Clear recent folders list</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="62"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="59"/>
         <source>Quit</source>
         <translation>Quit</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="70"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="67"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="72"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="69"/>
         <source>Configuration</source>
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="76"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="73"/>
         <source>Keywords</source>
         <translation>Keywords management</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="84"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="81"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="86"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="83"/>
         <source>Tutorial</source>
         <translation>Tutorial</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="90"/>
-        <source>Obtenir une API KEY</source>
-        <translation>How to get an API key</translation>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="87"/>
+        <source>Get an API KEY for maps</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="94"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="91"/>
+        <source>Get an API KEY for AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Obtenir une API KEY</source>
+        <translation type="vanished">How to get an API key</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="95"/>
         <source>Credits</source>
         <translation>Credits</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="98"/>
+        <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="99"/>
         <source>About</source>
         <translation>About</translation>
+    </message>
+</context>
+<context>
+    <name>MapApikeyDialog</name>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="11"/>
+        <source>How to get an API Key for maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="22"/>
+        <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</source>
+        <translation type="unfinished">An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="40"/>
+        <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
+        <translation type="unfinished">This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="49"/>
+        <source>- Go to the website: </source>
+        <translation type="unfinished">- Go to the website: </translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="51"/>
+        <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
+        <translation type="unfinished">- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="52"/>
+        <source>- Create an account.&lt;br/&gt;</source>
+        <translation type="unfinished">- Create an account.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="53"/>
+        <source>- Sign in with your account.&lt;br/&gt;</source>
+        <translation type="unfinished">- Sign in with your account.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="54"/>
+        <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
+        <translation type="unfinished">- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="55"/>
+        <source>- Copy the API Key.&lt;br/&gt;</source>
+        <translation type="unfinished">- Copy the API Key.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="56"/>
+        <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
+        <translation type="unfinished">- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="57"/>
+        <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
+        <translation type="unfinished">- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -502,36 +620,46 @@
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="58"/>
+        <source>AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="60"/>
+        <source>Ask IA to guess the photo location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
         <source>Save Position</source>
         <translation>Save Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="60"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
         <source>Store the position of the current photo</source>
         <translation>Store the position of the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="90"/>
         <source>Apply the stored position to the current photo</source>
         <translation>Apply the stored position to the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="88"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="103"/>
         <source>Clear Saved Position</source>
         <translation>Clear Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="88"/>
         <source>Apply Saved Position</source>
         <translation>Apply Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="122"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="137"/>
         <source>Restore</source>
         <translation>Restore</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="129"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="144"/>
         <source>Reload the initial GPS coordinates of the photo</source>
         <translation>Reload the initial GPS coordinates of the photo</translation>
     </message>

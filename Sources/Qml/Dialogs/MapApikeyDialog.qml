@@ -2,14 +2,13 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-
 /** **********************************************************************************************************
  * @brief Fenêtre d'aide pour l'obtention d'une API Key de cartes.
  * Utilise un Dialog QML (et non MessageDialog natif) pour que les hyperliens soient cliquables.
  * ***********************************************************************************************************/
 Dialog {
     id: apikeyDialog
-    title: qsTr("How to get an API Key")
+    title: qsTr("How to get an API Key for maps")
     modal: true
     standardButtons: Dialog.Ok
     anchors.centerIn: Overlay.overlay

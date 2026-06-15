@@ -85,11 +85,13 @@ qt_add_qml_module(tiPhotoLocator
     QML_FILES
         Sources/Qml/Dialogs/ImagettePopup.qml
         Sources/Qml/Dialogs/AboutDialog.qml
-        Sources/Qml/Dialogs/ApikeyDialog.qml
+        Sources/Qml/Dialogs/AiApikeyDialog.qml
+        Sources/Qml/Dialogs/MapApikeyDialog.qml
         Sources/Qml/Dialogs/CreditsDialog.qml
         Sources/Qml/Dialogs/RescanWarningDialog.qml
         Sources/Qml/Dialogs/TiFolderDialog.qml
         Sources/Qml/Dialogs/TutorialPopup.qml
+    QML_FILES
         Sources/Qml/Models/ModelFolderList.qml
     QML_FILES
         Sources/Qml/Vues/PopupKeywordsForm.qml

@@ -10,7 +10,6 @@ import "./Components"
 import "./Models"
 import "./Controllers"
 
-
 /** **********************************************************************************************************
  * @brief QML: Fenêtre principale.
  * ***********************************************************************************************************/
@@ -92,8 +91,11 @@ ApplicationWindow {
     CreditsDialog {
         id: creditsPage
     }
-    ApikeyDialog {
-        id: apiPage
+    MapApikeyDialog {
+        id: mapApiPage
+    }
+    AiApikeyDialog {
+        id: aiApiPage
     }
     RescanWarningDialog {
         id: rescanWarning
@@ -131,7 +133,6 @@ ApplicationWindow {
     // Page principale
     // ------------------------------------------------------------------------------
 
-
     /** *****************************************************************************
      * Ligne 0 : Menu principal
      * ******************************************************************************/
@@ -141,7 +142,6 @@ ApplicationWindow {
         width: parent.width
     }
 
-
     /** *****************************************************************************
      * Ligne 1 : Barre d'outils du folder: logo / reload / foldername
      * ******************************************************************************/
@@ -149,7 +149,6 @@ ApplicationWindow {
         id: toolBar
         width: parent.width
     }
-
 
     /** *****************************************************************************
      * Ligne 2 : Filtres et Onglets
@@ -180,13 +179,11 @@ ApplicationWindow {
                 }
                 TabButton {
                     text: qsTr("MAP")
-                    onClicked: _suggestionCategoryProxyModel.setFilterValue(
-                                   "geo")
+                    onClicked: _suggestionCategoryProxyModel.setFilterValue("geo")
                 }
                 TabButton {
                     text: qsTr("EXIF / IPTC TAGS")
-                    onClicked: _suggestionCategoryProxyModel.setFilterValue(
-                                   "tag")
+                    onClicked: _suggestionCategoryProxyModel.setFilterValue("tag")
                 }
                 TabButton {
                     text: qsTr("GLOBAL")
@@ -194,7 +191,6 @@ ApplicationWindow {
             }
         }
     }
-
 
     /** *****************************************************************************
      * Ligne 3 : ListView des filenames + Page de contenu de l'onglet.
@@ -207,7 +203,6 @@ ApplicationWindow {
             left: parent.left
             right: parent.right
         }
-
 
         /** *************************************************************************
          * Encadré avec la ListView des filenames. (Largeur fixe).
@@ -223,7 +218,6 @@ ApplicationWindow {
                 id: photoListView
             }
         }
-
 
         /** *************************************************************************
          * Frames avec le contenu des onglets.
@@ -242,8 +236,8 @@ ApplicationWindow {
                 target: _photoModel
                 function onDataChanged() {
                     // console.log("PhotoModel Data changed !");
-                    var currentrow = tabbedPage.currentPhoto.row
-                    tabbedPage.currentPhoto = _photoModel.get(currentrow)
+                    var currentrow = tabbedPage.currentPhoto.row;
+                    tabbedPage.currentPhoto = _photoModel.get(currentrow);
                 }
             }
 
@@ -273,7 +267,6 @@ ApplicationWindow {
         }
     }
 
-
     /** *****************************************************************************
      * Ligne 4 : Boutons et Imagettes.
      * ******************************************************************************/
@@ -300,9 +293,9 @@ ApplicationWindow {
             Layout.fillWidth: true
             Layout.rightMargin: 30
             onImageClicked: url => {
-                                imagePreviewPopup.imageSource = url
-                                imagePreviewPopup.open()
-                            }
+                imagePreviewPopup.imageSource = url;
+                imagePreviewPopup.open();
+            }
         }
     }
 
