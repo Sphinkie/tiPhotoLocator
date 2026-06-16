@@ -14,7 +14,7 @@ Ce dossier est dédié :
 - [Comment optimiser la taille d'un éxécutable compilé avec Qt](size_optimisation.md).
 - [Documentation sur les tags EXIF](about_tags.md).
 - [Manuel exhaustif de ExifTool](exiftool.man.txt).
-- [Comment créer un personnage avec une IA](ai_createTeacher.md).
+- [Comment créer un personnage avec une IA](tutorial_creation_ai.md).
 
 
 ## Analyse des photos / tags automatiques
