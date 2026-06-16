@@ -1,4 +1,5 @@
 import QtQuick
+import QtCore
 import QtPositioning
 import "../Vues"
 
@@ -6,6 +7,11 @@ import "../Vues"
  * @brief Controlleur pour la barre de boutons située au dessus de la carte (onglet MAP).
  * ***********************************************************************************************************/
 ToolbarMapForm {
+
+    Settings {
+        id: aiSettings
+        property string vlmApiKey: ""
+    }
 
     /// Clic sur "Find" : on demande les coords GPS du site mentionné dans le TextField.
     bt_find.onClicked: {
@@ -21,9 +27,32 @@ ToolbarMapForm {
         window.showNextCoords();
     }
 
-    /// Clic sur "Ask AI" : on interroge Hugging Face
+    /// Clic sur "Ask AI" : interroge Llama-3.2-Vision (Groq) pour identifier le lieu sur la photo.
     bt_ask_ai.onClicked: {
-        // TODO;
+        bt_ask_ai.enabled = false;
+        var photoUrl = _photoModel.getUrl(tabbedPage.currentPhoto.row);
+        _landmarkWrapper.identify(photoUrl.toString(), aiSettings.vlmApiKey);
+    }
+
+    /// Réponses de LandmarkWrapper
+    Connections {
+        target: _landmarkWrapper
+
+        function onLandmarkFound(name, lat, lon) {
+            txt_find.text = name;
+            mapView.center = QtPositioning.coordinate(lat, lon);
+            bt_ask_ai.enabled = true;
+        }
+
+        function onLocationUnknown() {
+            txt_find.text = qsTr("Location not identified");
+            bt_ask_ai.enabled = true;
+        }
+
+        function onNetworkError(message) {
+            console.error("LandmarkWrapper: " + message);
+            bt_ask_ai.enabled = true;
+        }
     }
 
     /// Clic sur "Save Position" : On enregistre la position de l'image dans la Saved Position.
@@ -65,11 +94,10 @@ ToolbarMapForm {
     Connections {
         target: tabbedPage
         function onCurrentPhotoChanged() {
-            // console.debug("onSelectedDataChanged->ToolBarMap");
-            // console.debug("hasGPS" + tabbedPage.currentPhoto.hasGPS);
             bt_save_pos.enabled = tabbedPage.currentPhoto.hasGPS;
             bt_revert.enabled = tabbedPage.currentPhoto.toBeSaved;
             slider_radius.enabled = tabbedPage.currentPhoto.hasGPS;
+            bt_ask_ai.enabled = (tabbedPage.currentPhoto.row >= 0) && (aiSettings.vlmApikey !== "");
             if (!tabbedPage.currentPhoto.hasGPS) {
                 if (tabbedPage.currentPhoto.city)
                     txt_find.text = tabbedPage.currentPhoto.city;

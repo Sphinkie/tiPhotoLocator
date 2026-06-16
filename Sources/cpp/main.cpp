@@ -14,6 +14,7 @@
 #include "Models/SuggestionCategoryProxyModel.h"
 #include "Models/CameraSet.h"
 #include "GeocodeWrapper.h"
+#include "LandmarkWrapper.h"
 
 
 
@@ -71,6 +72,7 @@ int main(int argc, char *argv[])
     // On initialise nos classes
     // ----------------------------------------------------------------------------
     GeocodeWrapper geocodeWrapper(&suggestionModel); // on lui passe le modèle qui mémorisera les suggestions
+    LandmarkWrapper landmarkWrapper;
     CameraSet cameraSet;
 
     // ----------------------------------------------------------------------------
@@ -93,6 +95,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("_suggestionCategoryProxyModel", &suggestionCategoryProxyModel);
     context->setContextProperty("_selectedPhotoProxyModel", &selectedPhotoProxyModel);
     context->setContextProperty("_geocodeWrapper", &geocodeWrapper);
+    context->setContextProperty("_landmarkWrapper", &landmarkWrapper);
     context->setContextProperty("_cameraSet", &cameraSet);
 
     // ----------------------------------------------------------------------------
