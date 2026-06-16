@@ -7,8 +7,8 @@ import QtQuick.Layouts
  * Utilise un Dialog QML (et non MessageDialog natif) pour que les hyperliens soient cliquables.
  * ***********************************************************************************************************/
 Dialog {
-    id: apikeyDialog
-    title: qsTr("How to get an API Key for AI")
+    id: huggingTokenDialog
+    title: qsTr("How to get a Token for AI")
     modal: true
     standardButtons: Dialog.Ok
     anchors.centerIn: Overlay.overlay
@@ -47,12 +47,15 @@ Dialog {
     }
 
     readonly property string t1: qsTr("- Go to the website: ")
-    readonly property string t2: "<a href='https://www.hugginface.com'>https://www.hugginface.com</a>.<br/>"
-    readonly property string t3: qsTr("- Choose the <i>Hobby Project</i> plan.<br/>")
-    readonly property string t4: qsTr("- Create an account.<br/>")
-    readonly property string t5: qsTr("- Sign in with your account.<br/>")
-    readonly property string t6: qsTr("- Go to the <i>Dashboard</i> page.<br/>")
-    readonly property string t7: qsTr("- Copy the API Key.<br/>")
+    readonly property string t2: "<a href='console.groq.com'>https://console.groq.com</a>.<br/>"
+    // readonly property string t2: "<a href='https://huggingface.co'>https://huggingface.co</a>.<br/>"
+    readonly property string t3: qsTr("- Create an account.<br/>")
+    readonly property string t4: qsTr("- Validate the email.<br/>")
+    // readonly property string t5: qsTr("- Go to Settings > Access tokens > create a new token.<br/>")
+    readonly property string t5: qsTr("- Go to top-right menu >  API Keys → Create API Key.<br/>")
+    readonly property string t6: qsTr("- Give it a name, ie <i>TiPhotoLocator</i>.<br/>")
+    // readonly property string t7: qsTr("- Give it a type: <b>Read</b><br/>")
+    readonly property string t7: qsTr("- Submit")
     readonly property string t8: qsTr("- Paste it in the 'Configuration' menu.<br/>")
     readonly property string t9: qsTr("- Restart <b>TiPhotoLocator</b>.<br/>")
 }

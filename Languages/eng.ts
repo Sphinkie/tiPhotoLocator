@@ -23,12 +23,32 @@
     <name>AiApikeyDialog</name>
     <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="11"/>
-        <source>How to get an API Key for AI</source>
+        <source>How to get a Token for AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="22"/>
         <source>An API key can be obtained from HugginFace as follows:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="53"/>
+        <source>- Validate the email.&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="55"/>
+        <source>- Go to top-right menu &gt;  API Keys → Create API Key.&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="56"/>
+        <source>- Give it a name, ie &lt;i&gt;TiPhotoLocator&lt;/i&gt;.&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="58"/>
+        <source>- Submit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -46,9 +66,8 @@
         <translation type="unfinished">- Go to the website: </translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="51"/>
         <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
-        <translation type="unfinished">- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
+        <translation type="obsolete">- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="52"/>
@@ -56,27 +75,24 @@
         <translation type="unfinished">- Create an account.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="53"/>
         <source>- Sign in with your account.&lt;br/&gt;</source>
-        <translation type="unfinished">- Sign in with your account.&lt;br/&gt;</translation>
+        <translation type="obsolete">- Sign in with your account.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="54"/>
         <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
-        <translation type="unfinished">- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
+        <translation type="obsolete">- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="55"/>
         <source>- Copy the API Key.&lt;br/&gt;</source>
-        <translation type="unfinished">- Copy the API Key.&lt;br/&gt;</translation>
+        <translation type="obsolete">- Copy the API Key.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="56"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="59"/>
         <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
         <translation type="unfinished">- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="57"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="60"/>
         <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
         <translation type="unfinished">- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
     </message>
@@ -195,6 +211,24 @@
         <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="27"/>
         <source>Apply to selection</source>
         <translation>Apply to selection</translation>
+    </message>
+</context>
+<context>
+    <name>LandmarkWrapper</name>
+    <message>
+        <location filename="../Sources/cpp/LandmarkWrapper.cpp" line="39"/>
+        <source>VLM API key is not set.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/cpp/LandmarkWrapper.cpp" line="47"/>
+        <source>Cannot read image: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/cpp/LandmarkWrapper.cpp" line="116"/>
+        <source>Invalid JSON response from API.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -386,96 +420,106 @@
 <context>
     <name>PopupSettingsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="43"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="41"/>
         <source>Configuration</source>
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="72"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="69"/>
         <source>Enter your name here</source>
         <translation>Enter your name here</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="59"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="56"/>
         <source>Default values</source>
         <translation>Default values</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="66"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="63"/>
         <source>Photographer name:</source>
         <translation>Photographer name:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="84"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="81"/>
         <source>Description writer initials:</source>
         <translation>Description writer initials:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="93"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="90"/>
         <source>Initials</source>
         <translation>Initials</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="105"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="102"/>
         <source>Application signature:</source>
         <translation>Application signature:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="132"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="128"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="141"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="137"/>
         <source>Map auto center:</source>
         <translation>Map auto center:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="147"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="143"/>
         <source>Your most photographed place.</source>
         <translation>Your most photographed place.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="151"/>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="170"/>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="189"/>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="208"/>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="227"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="147"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="166"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="185"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="204"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="223"/>
         <source>Reboot needed</source>
         <translation>Reboot needed</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="159"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="155"/>
         <source>Application language:</source>
         <translation>Application language:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="197"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="193"/>
         <source>Map Provider:</source>
         <translation>Map Provider:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="216"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="212"/>
         <source>Map theme:</source>
         <translation>Map theme:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="178"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="255"/>
+        <source>VLM API key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="174"/>
         <source>Tags and suggestions language:</source>
         <translation>Tags and suggestions language:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="237"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="233"/>
         <source>Map provider API key:</source>
         <translation>Map provider API key:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="275"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="261"/>
+        <source>Groq API key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="291"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="243"/>
+        <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="239"/>
         <source>Thunderforest or OpenStreetMap</source>
         <translation>Thunderforest or OpenStreetMap</translation>
     </message>
@@ -609,6 +653,14 @@
         <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="40"/>
         <source>Select all photos</source>
         <translation>Select all photos</translation>
+    </message>
+</context>
+<context>
+    <name>ToolbarMap</name>
+    <message>
+        <location filename="../Sources/Qml/Controllers/ToolbarMap.qml" line="48"/>
+        <source>Location not identified</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -5,7 +5,6 @@ import QtQuick.Controls.Material
 import QtCore
 import "../Components"
 
-
 /** **********************************************************************************************************
  * @brief Fenêtre popup de Configuration.
  * Elle se compose de deux frames: les valeurs par défaut et les reglages.
@@ -13,7 +12,7 @@ import "../Components"
 Popup {
     id: settingsForm
     width: 560
-    height: 720
+    height: 760
     property alias buttonClose: buttonClose
     property alias settings: settings
     modal: true
@@ -33,8 +32,7 @@ Popup {
 
     ColumnLayout {
         anchors.fill: parent
-        spacing: 10
-
+        spacing: 2
 
         /** *********************************************************************
          * Titre de la fenêtre.
@@ -47,7 +45,6 @@ Popup {
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
-
 
         /** *********************************************************************
          * Group Box 1 : "Default values"
@@ -120,7 +117,6 @@ Popup {
                 }
             }
         }
-
 
         /** *********************************************************************
          * Group Box 2 "Configuration"
@@ -251,7 +247,28 @@ Popup {
                         onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
                     }
                 }
+                /// Clef API (token) pour VLM (Model-Vision-Language)
+                RowLayout {
+                    property bool apiKeyVisible: false
 
+                    Label {
+                        text: qsTr("VLM API key:")
+                        font.pixelSize: 12
+                    }
+                    TextFieldSettings {
+                        id: textFieldVLMToken
+                        Layout.fillWidth: true
+                        placeholderText: qsTr("Groq API key")
+                        echoMode: parent.apiKeyVisible ? TextInput.Normal : TextInput.Password
+                    }
+                    RoundButton {
+                        icon.source: "qrc:/Images/bt-eye.png"
+                        flat: true
+                        implicitHeight: 42
+                        implicitWidth: 42
+                        onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
+                    }
+                }
                 // -------------------------------------------------------
                 /// Mode DEBUG
                 // -------------------------------------------------------
@@ -264,7 +281,6 @@ Popup {
                 }
             }
         }
-
 
         /** *********************************************************************
          * Boutons
@@ -280,7 +296,6 @@ Popup {
         }
     }
 
-
     /** *********************************************************************
      * On mémorise la configuration dans les Settings
      * *********************************************************************/
@@ -291,6 +306,7 @@ Popup {
         property alias metadataSoftware: textFieldMetadataSoftware.text
         property alias homecity: textFieldHomecity.text
         property alias mapApikey: textFieldMapApiKey.text
+        property alias vlmApiKey: textFieldVLMToken.text
         property alias debugModeEnabled: checkBoxDebug.checked
         property alias tagLanguage: tagLanguages.currentIndex // 0: English, 1: French
         property alias guiLanguage: guiLanguages.currentIndex // 0: English, 1: French
