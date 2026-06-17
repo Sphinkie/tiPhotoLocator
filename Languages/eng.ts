@@ -22,57 +22,58 @@
 <context>
     <name>AiApikeyDialog</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="11"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="12"/>
         <source>How to get a Token for AI</source>
-        <translation type="unfinished"></translation>
+        <translation>How to get a Token for AI</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="22"/>
-        <source>An API key can be obtained from HugginFace as follows:</source>
-        <translation type="unfinished"></translation>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="23"/>
+        <source>An API key can be obtained from Groq AI as follows:</source>
+        <translation>An API key can be obtained from Groq AI as follows:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="53"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="54"/>
         <source>- Validate the email.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="55"/>
-        <source>- Go to top-right menu &gt;  API Keys → Create API Key.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>- Validate the email.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="56"/>
-        <source>- Give it a name, ie &lt;i&gt;TiPhotoLocator&lt;/i&gt;.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>- Go to top-right menu &gt;  API Keys → Create API Key.&lt;br/&gt;</source>
+        <translation>- Go to top-right menu &gt;  API Keys → Create API Key.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="58"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="57"/>
+        <source>- Give it a name, ie &lt;i&gt;TiPhotoLocator&lt;/i&gt;.&lt;br/&gt;</source>
+        <translation>- Give it a name, ie &lt;i&gt;TiPhotoLocator&lt;/i&gt;.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="59"/>
         <source>- Submit</source>
-        <translation type="unfinished"></translation>
+        <translation>- Submit</translation>
     </message>
     <message>
         <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
         <translation type="obsolete">This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="40"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="41"/>
         <source>This AI will try to find the location of the photo, not keywords.</source>
-        <translation type="unfinished"></translation>
+        <translation>This AI will try to find the location of the photo, not keywords.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="49"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="50"/>
         <source>- Go to the website: </source>
-        <translation type="unfinished">- Go to the website: </translation>
+        <translatorcomment>- Go to the website: </translatorcomment>
+        <translation>- Go to the website: </translation>
     </message>
     <message>
         <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
         <translation type="obsolete">- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="52"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="53"/>
         <source>- Create an account.&lt;br/&gt;</source>
-        <translation type="unfinished">- Create an account.&lt;br/&gt;</translation>
+        <translation>- Create an account.&lt;br/&gt;</translation>
     </message>
     <message>
         <source>- Sign in with your account.&lt;br/&gt;</source>
@@ -87,14 +88,14 @@
         <translation type="obsolete">- Copy the API Key.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="59"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="60"/>
         <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
-        <translation type="unfinished">- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
+        <translation>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="60"/>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="61"/>
         <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
-        <translation type="unfinished">- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
+        <translation>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -147,39 +148,44 @@
 <context>
     <name>CreditsDialog</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="12"/>
+        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="11"/>
         <source>Credits</source>
         <translation>Credits</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="23"/>
+        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="22"/>
         <source>I would like to thank the third-party applications that helped build this program:</source>
         <translation>I would like to thank the third-party applications that helped build this program:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="41"/>
+        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="40"/>
         <source>- the freeware &lt;a href=&apos;https://geosetter.de/en/main-en/&apos;&gt;GeoSetter&lt;/a&gt; for the initial idea.&lt;br/&gt;</source>
         <translation>- the freeware &lt;a href=&apos;https://geosetter.de/en/main-en/&apos;&gt;GeoSetter&lt;/a&gt; for the initial idea.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="42"/>
+        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="41"/>
         <source>- the freeware &lt;a href=&apos;https://exiftool.org/&apos;&gt;ExifTool&lt;/a&gt; for EXIF metadata management.&lt;br/&gt;</source>
         <translation>- the freeware &lt;a href=&apos;https://exiftool.org/&apos;&gt;ExifTool&lt;/a&gt; for EXIF metadata management.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="43"/>
+        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="42"/>
         <source>- the &lt;a href=&apos;https://www.qt.io/&apos;&gt;Qt Company&lt;/a&gt; for the Qt6 C++ and QML framework.&lt;br/&gt;</source>
         <translation>- the &lt;a href=&apos;https://www.qt.io/&apos;&gt;Qt Company&lt;/a&gt; for the Qt6 C++ and QML framework.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="44"/>
+        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="43"/>
         <source>- the &lt;a href=&apos;https://www.openstreetmap.org&apos;&gt;OpenStreetMap&lt;/a&gt; organisation for map data.&lt;br/&gt;</source>
         <translation>- the &lt;a href=&apos;https://www.openstreetmap.org&apos;&gt;OpenStreetMap&lt;/a&gt; organisation for map data.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="45"/>
+        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="44"/>
         <source>- the &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; company for providing the map tiles.&lt;br/&gt;</source>
         <translation>- the &lt;a href=&apos;https://www.thunderforest.com/about/&apos;&gt;Thunderforest&lt;/a&gt; company for providing the map tiles.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="45"/>
+        <source>- the &lt;a href=&apos;https://groq.com&apos;&gt;Groq&lt;/a&gt; IA Vision-Language Model (with llama-4) for photo localization.&lt;br/&gt;</source>
+        <translation>- the &lt;a href=&apos;https://groq.com&apos;&gt;Groq (with llama-4)&lt;/a&gt; IA Vision-Language Model for photo localization.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/CreditsDialog.qml" line="46"/>
@@ -218,17 +224,17 @@
     <message>
         <location filename="../Sources/cpp/LandmarkWrapper.cpp" line="39"/>
         <source>VLM API key is not set.</source>
-        <translation type="unfinished"></translation>
+        <translation>VLM API key is not set.</translation>
     </message>
     <message>
         <location filename="../Sources/cpp/LandmarkWrapper.cpp" line="47"/>
         <source>Cannot read image: </source>
-        <translation type="unfinished"></translation>
+        <translation>Cannot read image: </translation>
     </message>
     <message>
         <location filename="../Sources/cpp/LandmarkWrapper.cpp" line="116"/>
         <source>Invalid JSON response from API.</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid JSON response from API.</translation>
     </message>
 </context>
 <context>
@@ -309,12 +315,12 @@
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="87"/>
         <source>Get an API KEY for maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Get an API KEY for maps</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="91"/>
         <source>Get an API KEY for AI</source>
-        <translation type="unfinished"></translation>
+        <translation>Get an API KEY for AI</translation>
     </message>
     <message>
         <source>Obtenir une API KEY</source>
@@ -336,57 +342,57 @@
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="11"/>
         <source>How to get an API Key for maps</source>
-        <translation type="unfinished"></translation>
+        <translation>How to get an API Key for maps</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="22"/>
         <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</source>
-        <translation type="unfinished">An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</translation>
+        <translation>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="40"/>
         <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
-        <translation type="unfinished">This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
+        <translation>This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="49"/>
         <source>- Go to the website: </source>
-        <translation type="unfinished">- Go to the website: </translation>
+        <translation>- Go to the website: </translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="51"/>
         <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
-        <translation type="unfinished">- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
+        <translation>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="52"/>
         <source>- Create an account.&lt;br/&gt;</source>
-        <translation type="unfinished">- Create an account.&lt;br/&gt;</translation>
+        <translation>- Create an account.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="53"/>
         <source>- Sign in with your account.&lt;br/&gt;</source>
-        <translation type="unfinished">- Sign in with your account.&lt;br/&gt;</translation>
+        <translation>- Sign in with your account.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="54"/>
         <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
-        <translation type="unfinished">- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
+        <translation>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="55"/>
         <source>- Copy the API Key.&lt;br/&gt;</source>
-        <translation type="unfinished">- Copy the API Key.&lt;br/&gt;</translation>
+        <translation>- Copy the API Key.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="56"/>
         <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
-        <translation type="unfinished">- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
+        <translation>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/MapApikeyDialog.qml" line="57"/>
         <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
-        <translation type="unfinished">- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
+        <translation>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -496,7 +502,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="255"/>
         <source>VLM API key:</source>
-        <translation type="unfinished"></translation>
+        <translation>VLM API key:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="174"/>
@@ -511,7 +517,7 @@
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="261"/>
         <source>Groq API key</source>
-        <translation type="unfinished"></translation>
+        <translation>Groq API key</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="291"/>
@@ -540,17 +546,17 @@
     <message>
         <location filename="../Sources/Qml/Dialogs/RescanWarningDialog.qml" line="10"/>
         <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
-        <translation type="unfinished">Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</translation>
+        <translation>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/RescanWarningDialog.qml" line="11"/>
         <source>All unsaved changes will be lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>All unsaved changes will be lost.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/RescanWarningDialog.qml" line="13"/>
         <source>Do you want to continue?</source>
-        <translation type="unfinished">Do you want to continue?</translation>
+        <translation>Do you want to continue?</translation>
     </message>
 </context>
 <context>
@@ -660,7 +666,7 @@
     <message>
         <location filename="../Sources/Qml/Controllers/ToolbarMap.qml" line="49"/>
         <source>Unidentified</source>
-        <translation type="unfinished"></translation>
+        <translation>Unidentified location</translation>
     </message>
 </context>
 <context>
@@ -671,14 +677,13 @@
         <translation>Find a place</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="58"/>
         <source>AI</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Ask AI</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="60"/>
         <source>Ask IA to guess the photo location</source>
-        <translation type="unfinished"></translation>
+        <translation>Ask IA to guess the photo location</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
@@ -704,6 +709,11 @@
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="88"/>
         <source>Apply Saved Position</source>
         <translation>Apply Saved Position</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="58"/>
+        <source>Ask AI</source>
+        <translation>Ask AI</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="137"/>
@@ -983,12 +993,12 @@ Limited to 100 requests per day.</source>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="40"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="43"/>
         <source>Clear all suggestions</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear all suggestions</translation>
     </message>
 </context>
 <context>

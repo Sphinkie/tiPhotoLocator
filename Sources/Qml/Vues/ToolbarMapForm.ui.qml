@@ -55,7 +55,7 @@ Item {
     Button {
         id: bt_ask_ai
         enabled: false
-        text: qsTr("AI")
+        text: qsTr("Ask AI")
         icon.source: "qrc:/Images/bt-microscope.png"
         ToolTip.text: qsTr("Ask IA to guess the photo location")
         ToolTip.visible: hovered

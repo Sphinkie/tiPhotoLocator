@@ -3,11 +3,12 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 /** **********************************************************************************************************
- * @brief Fenêtre d'aide pour l'obtention d'une API Key de HugginFace.
+ * @brief Fenêtre d'aide pour l'obtention d'une API Key d'IA VLM (Vision-Language Model).
  * Utilise un Dialog QML (et non MessageDialog natif) pour que les hyperliens soient cliquables.
+ * @note Plusieurs IA ont été testées (via Hugging Face). La seule qui fonctionne gratuitement est Groq).
  * ***********************************************************************************************************/
 Dialog {
-    id: huggingTokenDialog
+    id: vlmTokenDialog
     title: qsTr("How to get a Token for AI")
     modal: true
     standardButtons: Dialog.Ok
@@ -19,7 +20,7 @@ Dialog {
         spacing: 12
 
         Text {
-            text: qsTr("An API key can be obtained from HugginFace as follows:")
+            text: qsTr("An API key can be obtained from Groq AI as follows:")
             wrapMode: Text.WordWrap
             font.pointSize: 11
             color: Style.secondaryTextColor
