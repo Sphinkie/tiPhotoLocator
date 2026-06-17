@@ -262,7 +262,7 @@
     <message>
         <location filename="../Sources/Qml/Main.qml" line="308"/>
         <source>Write error</source>
-        <translation type="unfinished"></translation>
+        <translation>Write error</translation>
     </message>
 </context>
 <context>
@@ -538,19 +538,23 @@
 <context>
     <name>QuitWarningDialog</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="10"/>
         <source>Warning:all changes have not been saved.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Warning:all changes have not been saved.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="11"/>
+        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="9"/>
+        <source>Warning: all changes have not been saved.&lt;br/&gt;</source>
+        <translation>Warning: all changes have not been saved.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="10"/>
         <source>All unsaved changes will be lost.</source>
-        <translation type="unfinished">All unsaved changes will be lost.</translation>
+        <translation>All unsaved changes will be lost.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="13"/>
+        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="12"/>
         <source>Do you want to continue?</source>
-        <translation type="unfinished">Do you want to continue?</translation>
+        <translation>Do you want to continue?</translation>
     </message>
 </context>
 <context>

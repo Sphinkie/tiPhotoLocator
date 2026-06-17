@@ -537,17 +537,21 @@
 <context>
     <name>QuitWarningDialog</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="10"/>
         <source>Warning:all changes have not been saved.&lt;br/&gt;</source>
-        <translation>Attention: tous les changements n&apos;ont pas été enregistrés.&lt;/br&gt;</translation>
+        <translation type="vanished">Attention: tous les changements n&apos;ont pas été enregistrés.&lt;/br&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="11"/>
+        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="9"/>
+        <source>Warning: all changes have not been saved.&lt;br/&gt;</source>
+        <translation>Attention: tous les changements n&apos;ont pas été enregistrés.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="10"/>
         <source>All unsaved changes will be lost.</source>
         <translation>Tous les changements non enregistrés vont être perdus.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="13"/>
+        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="12"/>
         <source>Do you want to continue?</source>
         <translation>Voulez-vous continuer?</translation>
     </message>

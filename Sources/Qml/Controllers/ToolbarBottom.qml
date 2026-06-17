@@ -1,6 +1,7 @@
 import QtQuick
 import QtCore
 import "../Vues"
+import "../Dialogs"
 import "../Javascript/Networking.js" as Netwk
 
 /** **********************************************************************************************************
@@ -25,8 +26,15 @@ ToolbarBottomForm {
         window.saveMetadata();
     }
 
+    QuitWarningDialog {
+        id: quitWarning
+    }
+
     bt_quit.onClicked: {
-        Qt.quit();
+        if (shouldSave)
+            quitWarning.open();
+        else
+            Qt.quit();
     }
 
     /** *******************************************************************

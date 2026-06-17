@@ -6,7 +6,7 @@ import QtQuick.Dialogs
  * *********************************************************************************************************** */
 MessageDialog {
     title: "Attention"
-    readonly property string t1: qsTr("Warning:all changes have not been saved.<br/>")
+    readonly property string t1: qsTr("Warning: all changes have not been saved.<br/>")
     readonly property string t2: qsTr("All unsaved changes will be lost.")
     text: t1 + t2
     informativeText: qsTr("Do you want to continue?")
