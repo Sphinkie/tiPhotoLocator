@@ -361,6 +361,24 @@ void SuggestionModel::dumpData()
 }
 
 /** **********************************************************************************************************
+ * @brief Supprime toutes les suggestions dont la catégorie contient la chaîne passée en paramètre.
+ * @param category : la catégorie à supprimer, par exemple "geo".
+ * ***********************************************************************************************************/
+void SuggestionModel::clearByCategory(const QString& category)
+{
+    for (int row = m_suggestions.count() - 1; row >= 0; --row)
+    {
+        if (m_suggestions.at(row).category.contains(category))
+        {
+            beginRemoveRows(QModelIndex(), row, row);
+            m_suggestions.removeAt(row);
+            endRemoveRows();
+        }
+    }
+}
+
+
+/** **********************************************************************************************************
  * @brief Deletes all the items of the Model.
  * @details On utilise cette fonction quand on scanne un nouveau répertoire de photos.
  * ***********************************************************************************************************/

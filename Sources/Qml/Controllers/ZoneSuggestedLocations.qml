@@ -20,7 +20,7 @@ ZoneSuggestedLocationsForm {
      * Clic sur bouton "Clean all" : vide la zone des tags résiduels.
      * *******************************************************************************************************/
     bt_clear_geo_suggs.onClicked: {
-        // TODO
+        _suggestionModel.clearByCategory("geo")
     }
 
     /** ******************************************************************************************************

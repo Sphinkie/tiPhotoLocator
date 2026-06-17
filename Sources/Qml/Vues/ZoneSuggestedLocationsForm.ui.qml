@@ -8,7 +8,8 @@ import "../Components"
 Zone {
     id: suggestedLocationsZone
     property alias bt_getinfo: bt_getinfo
-    property alias getCenterForTarget: suggestionRepeater.getCenterForTarget
+    property alias bt_clear_geo_suggs: bt_clear_geo_suggs
+    property alias getCenterForTarget: geoSuggestionRepeater.getCenterForTarget
 
     color: Style.suggestionBackgroundColor
     iconZone: "qrc:/Images/icon-suggestion.png"
@@ -38,7 +39,7 @@ Zone {
         anchors.leftMargin: 20
         text: qsTr("Clear")
         icon.source: "qrc:/Images/bt-clean-all.png"
-        enabled: _suggestionCategoryProxyModel.count > 0
+        enabled: geoSuggestionRepeater.count > 0
         ToolTip.text: qsTr("Clear all suggestions")
         ToolTip.visible: hovered
         ToolTip.delay: 500
@@ -69,7 +70,7 @@ Zone {
 
             /// Le repeater affiche chacune des Suggestions (de catégorie "geo") du Model.
             SuggestionRepeater {
-                id: suggestionRepeater
+                id: geoSuggestionRepeater
             }
         }
     }

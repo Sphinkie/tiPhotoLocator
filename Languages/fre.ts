@@ -969,28 +969,28 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
 <context>
     <name>ZoneSuggestedLocationsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="15"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="16"/>
         <source>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.
 Limited to 100 requests per day.</source>
         <translation>Suggestions basées sur la position GPS de la photo, grace au service gratuit et opensource OpenStreetMap.\nLimité à 100 requètes par jour.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="24"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="25"/>
         <source>Search</source>
         <translation>Chercher</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="27"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="28"/>
         <source>Search geodata on Internet</source>
         <translation>Recherche de données géographiques sur Internet</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="39"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="40"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="42"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="43"/>
         <source>Clear all suggestions</source>
         <translation type="unfinished"></translation>
     </message>

@@ -10,8 +10,8 @@ import ".."
 Zone {
     id: suggestedTagsZone
     property alias bt_getinfo: bt_getinfo
-    property alias onlyKeywords: suggestionRepeater.onlyKeywords
-    property alias getCenterForTarget: suggestionRepeater.getCenterForTarget
+    property alias onlyKeywords: tagSuggestionRepeater.onlyKeywords
+    property alias getCenterForTarget: tagSuggestionRepeater.getCenterForTarget
 
     color: Style.suggestionBackgroundColor
     iconZone: "qrc:/Images/icon-suggestion.png"
@@ -34,7 +34,7 @@ Zone {
 
             /// Le repeater affiche chacune des Suggestions (de catégorie "tag") du Model.
             SuggestionRepeater {
-                id: suggestionRepeater
+                id: tagSuggestionRepeater
             }
 
             /// En dernière position, on prévoit un bouton qui pourrait faire appel à une IA.
