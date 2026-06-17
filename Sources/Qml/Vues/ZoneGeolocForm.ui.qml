@@ -28,9 +28,12 @@ Zone {
             icon.source: "qrc:/Images/bt-suppr.png"
             Layout.leftMargin: 20
             Layout.topMargin: 16
-            ToolTip.text: qsTr("Clear GPS photo coordinates (if some privacy is needed)")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
+            ToolTip {
+                visible: parent.hovered
+                text: qsTr("Clear GPS photo coordinates (if some privacy is needed)")
+                delay: 500
+                y: -height - 4
+            }
         }
 
         Chips {

@@ -133,8 +133,7 @@ void ExifWriteTask::run()
             }
             else
             {
-                errorMessage = report.trimmed();
-                qInfo() << errorMessage; // "1 image files updated"
+                qInfo() << report.trimmed(); // "1 image files updated"
             }
         }
     }

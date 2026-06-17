@@ -25,9 +25,12 @@ Zone {
         text: qsTr("Search")
         icon.source: "qrc:/Images/icon-suggestion.png"
         enabled: tabbedPage.currentPhoto.hasGPS
-        ToolTip.text: qsTr("Search geodata on Internet")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
+        ToolTip {
+            visible: parent.hovered
+            text: qsTr("Search geodata on Internet")
+            delay: 500
+            y: -height - 4
+        }
     }
 
     /// Bouton fixe en haut — Nettoie la liste des suggestions Nominatim.
@@ -40,9 +43,12 @@ Zone {
         text: qsTr("Clear")
         icon.source: "qrc:/Images/bt-clean-all.png"
         enabled: geoSuggestionRepeater.count > 0
-        ToolTip.text: qsTr("Clear all suggestions")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
+        ToolTip {
+            visible: parent.hovered
+            text: qsTr("Clear all suggestions")
+            delay: 500
+            y: -height - 4
+        }
     }
 
     /// Le Flickable permet de scroller s'il y a trop de suggestions.

@@ -26,22 +26,26 @@ Rectangle {
             id: bt_rescan
             icon.source: "qrc:/Images/bt-reload.png"
             text: qsTr("Rescan")
-            ToolTip.text: qsTr("Rescan all EXIF tags of the folder photos")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
-            // Positionnement à l'interieur du Layout
             Layout.leftMargin: 20
+            ToolTip {
+                visible: parent.hovered
+                text: qsTr("Rescan all EXIF tags of the folder photos")
+                delay: 500
+                y: -height - 4
+            }
         }
         /// Bouton 'Open in Explorer'
         Button {
             id: bt_explorer
             icon.source: "qrc:/Images/bt-folder.png"
             text: qsTr("Open in Explorer")
-            ToolTip.text: qsTr("Open the current folder in Windows Explorer")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
-            // Positionnement à l'interieur du Layout
             Layout.leftMargin: 20
+            ToolTip {
+                visible: parent.hovered
+                text: qsTr("Open the current folder in Windows Explorer")
+                delay: 500
+                y: -height - 4
+            }
         }
         /// Indicateur de travail
         BusyIndicator {

@@ -48,6 +48,7 @@ Rectangle {
                 text: qsTr("Check to keep a copy of the original photos (IMAGENAME.jpg_original)")
                 delay: 500
                 visible: parent.hovered
+                y: -height - 4
             }
         }
         Button {
@@ -55,18 +56,24 @@ Rectangle {
             text: qsTr("Save")
             Layout.topMargin: 10
             highlighted: shouldSave
-            ToolTip.text: qsTr("Save EXIF tags of edited photos")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
+            ToolTip {
+                visible: parent.hovered
+                text: qsTr("Save EXIF tags of edited photos")
+                delay: 500
+                y: -height - 4
+            }
         }
         Button {
             id: bt_quit
             text: qsTr("Quit")
-            ToolTip.text: qsTr("Quit application")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
             Layout.rightMargin: 20
             Layout.topMargin: 10
+            ToolTip {
+                visible: parent.hovered
+                text: qsTr("Quit application")
+                delay: 500
+                y: -height - 4
+            }
         }
         /// Ligne 2:
         ProgressBar {
@@ -85,11 +92,14 @@ Rectangle {
             Layout.column: 0
             text: "Dump PhotoModel"
             visible: bottomRect.useDebug
-            ToolTip.text: qsTr("DEBUG: display one line of the model in the console")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
             Layout.leftMargin: 20
             Layout.topMargin: 10
+            ToolTip {
+                visible: parent.hovered
+                text: qsTr("DEBUG: display one line of the model in the console")
+                delay: 500
+                y: -height - 4
+            }
         }
         Button {
             id: bt_dump2
@@ -97,11 +107,14 @@ Rectangle {
             Layout.column: 1
             text: "Dump SuggModel"
             visible: bottomRect.useDebug
-            ToolTip.text: qsTr("DEBUG: display one line of the model in the console")
-            ToolTip.visible: hovered
-            ToolTip.delay: 500
             Layout.leftMargin: 20
             Layout.topMargin: 10
+            ToolTip {
+                visible: parent.hovered
+                text: qsTr("DEBUG: display one line of the model in the console")
+                delay: 500
+                y: -height - 4
+            }
         }
     }
 

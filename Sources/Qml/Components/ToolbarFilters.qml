@@ -7,9 +7,6 @@ RowLayout {
     CheckBox {
         id: checkBox1
         text: qsTr("undated")
-        ToolTip.text: qsTr("Select all photos without a date")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
         checked: false
         onClicked: {
             if (checked)
@@ -17,14 +14,17 @@ RowLayout {
             else
                 _photoModel.resetSelection()
         }
+        ToolTip {
+            visible: parent.hovered
+            text: qsTr("Select all photos without a date")
+            delay: 500
+            y: -height - 4
+        }
     }
 
     CheckBox {
         id: checkBox2
         text: qsTr("unlocalized")
-        ToolTip.text: qsTr("Select all photos without location")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
         checked: false
         onClicked: {
             if (checked)
@@ -32,20 +32,29 @@ RowLayout {
             else
                 _photoModel.resetSelection()
         }
+        ToolTip {
+            visible: parent.hovered
+            text: qsTr("Select all photos without location")
+            delay: 500
+            y: -height - 4
+        }
     }
 
     CheckBox {
         id: checkBox3
         text: qsTr("select all")
-        ToolTip.text: qsTr("Select all photos")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
         checked: false
         onClicked: {
             if (checked)
                 _photoModel.selectAll()
             else
                 _photoModel.resetSelection()
+        }
+        ToolTip {
+            visible: parent.hovered
+            text: qsTr("Select all photos")
+            delay: 500
+            y: -height - 4
         }
     }
 

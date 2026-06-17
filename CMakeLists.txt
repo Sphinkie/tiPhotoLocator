@@ -113,6 +113,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
+        QML_FILES Sources/Qml/Dialogs/QuitWarningDialog.qml
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

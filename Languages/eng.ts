@@ -536,6 +536,24 @@
     </message>
 </context>
 <context>
+    <name>QuitWarningDialog</name>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="10"/>
+        <source>Warning:all changes have not been saved.&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="11"/>
+        <source>All unsaved changes will be lost.</source>
+        <translation type="unfinished">All unsaved changes will be lost.</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="13"/>
+        <source>Do you want to continue?</source>
+        <translation type="unfinished">Do you want to continue?</translation>
+    </message>
+</context>
+<context>
     <name>RescanWarning</name>
     <message>
         <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
@@ -588,7 +606,7 @@
 <context>
     <name>ToolbarBottomForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="55"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="56"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
@@ -612,23 +630,23 @@
         <translation>Check to keep a copy of the original photos (IMAGENAME.jpg_original)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="58"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="61"/>
         <source>Save EXIF tags of edited photos</source>
         <translation>Save EXIF tags of edited photos</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="64"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="68"/>
         <source>Quit</source>
         <translation>Quit</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="65"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="73"/>
         <source>Quit application</source>
         <translation>Quit application</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="88"/>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="100"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="99"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="114"/>
         <source>DEBUG: display one line of the model in the console</source>
         <translation>DEBUG: display one line of the model in the console</translation>
     </message>
@@ -641,27 +659,27 @@
         <translation>undated</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="10"/>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="19"/>
         <source>Select all photos without a date</source>
         <translation>Select all photos without a date</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="24"/>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="27"/>
         <source>unlocalized</source>
         <translation>unlocalized</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="25"/>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="37"/>
         <source>Select all photos without location</source>
         <translation>Select all photos without location</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="39"/>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="45"/>
         <source>select all</source>
         <translation>select all</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="40"/>
+        <location filename="../Sources/Qml/Components/ToolbarFilters.qml" line="55"/>
         <source>Select all photos</source>
         <translation>Select all photos</translation>
     </message>
@@ -686,32 +704,32 @@
         <translation type="vanished">Ask AI</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="60"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="65"/>
         <source>Ask IA to guess the photo location</source>
         <translation>Ask IA to guess the photo location</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="73"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="79"/>
         <source>Save Position</source>
         <translation>Save Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="75"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="88"/>
         <source>Store the position of the current photo</source>
         <translation>Store the position of the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="90"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="106"/>
         <source>Apply the stored position to the current photo</source>
         <translation>Apply the stored position to the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="103"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="115"/>
         <source>Clear Saved Position</source>
         <translation>Clear Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="88"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="97"/>
         <source>Apply Saved Position</source>
         <translation>Apply Saved Position</translation>
     </message>
@@ -721,12 +739,12 @@
         <translation>Ask AI</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="137"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="149"/>
         <source>Restore</source>
         <translation>Restore</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="144"/>
+        <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="158"/>
         <source>Reload the initial GPS coordinates of the photo</source>
         <translation>Reload the initial GPS coordinates of the photo</translation>
     </message>
@@ -739,22 +757,22 @@
         <translation>Rescan</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="29"/>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="32"/>
         <source>Rescan all EXIF tags of the folder photos</source>
         <translation>Rescan all EXIF tags of the folder photos</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="39"/>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="41"/>
         <source>Open in Explorer</source>
         <translation>Open in Explorer</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="40"/>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="45"/>
         <source>Open the current folder in Windows Explorer</source>
         <translation>Open the current folder in Windows Explorer</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="55"/>
+        <location filename="../Sources/Qml/Vues/ToolbarPrincipaleForm.ui.qml" line="59"/>
         <source>Folder:</source>
         <translation>Folder:</translation>
     </message>
@@ -860,7 +878,7 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
         <translation>Clear GPS Coords</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGeolocForm.ui.qml" line="31"/>
+        <location filename="../Sources/Qml/Vues/ZoneGeolocForm.ui.qml" line="33"/>
         <source>Clear GPS photo coordinates (if some privacy is needed)</source>
         <translation>Clear GPS photo coordinates (if some privacy is needed)</translation>
     </message>
@@ -991,17 +1009,17 @@ Limited to 100 requests per day.</source>
         <translation>Search</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="28"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="30"/>
         <source>Search geodata on Internet</source>
         <translation>Search geodata on Internet</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="40"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="43"/>
         <source>Clear</source>
         <translation>Clear</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="43"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="48"/>
         <source>Clear all suggestions</source>
         <translation>Clear all suggestions</translation>
     </message>

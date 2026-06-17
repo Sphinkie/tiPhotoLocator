@@ -57,9 +57,15 @@ Item {
         enabled: false
         text: qsTr("Ask AI")
         icon.source: "qrc:/Images/bt-microscope.png"
-        ToolTip.text: qsTr("Ask IA to guess the photo location")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
+        //ToolTip.text: qsTr("Ask IA to guess the photo location")
+        //ToolTip.visible: hovered
+        //ToolTip.delay: 500
+        ToolTip {
+            visible: parent.hovered
+            text: qsTr("Ask IA to guess the photo location")
+            delay: 500
+            y: -height - 4    // 4px au-dessus du bouton
+        }
         anchors {
             left: bt_next.right
             leftMargin: 20
@@ -72,13 +78,16 @@ Item {
         enabled: false
         text: qsTr("Save Position")
         icon.source: "qrc:/Images/mappin-black.png"
-        ToolTip.text: qsTr("Store the position of the current photo")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
         anchors {
             left: bt_ask_ai.right
             leftMargin: 20
             verticalCenter: parent.verticalCenter
+        }
+        ToolTip {
+            visible: parent.hovered
+            text: qsTr("Store the position of the current photo")
+            delay: 500
+            y: -height - 4
         }
     }
 
@@ -87,13 +96,16 @@ Item {
         enabled: false
         text: qsTr("Apply Saved Position")
         icon.source: "qrc:/Images/bt-apply.png"
-        ToolTip.text: qsTr("Apply the stored position to the current photo")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
         anchors {
             left: bt_save_pos.right
             leftMargin: 20
             verticalCenter: parent.verticalCenter
+        }
+        ToolTip {
+            visible: parent.hovered
+            text: qsTr("Apply the stored position to the current photo")
+            delay: 500
+            y: -height - 4
         }
     }
 
@@ -141,8 +153,11 @@ Item {
             leftMargin: 20
             verticalCenter: parent.verticalCenter
         }
-        ToolTip.text: qsTr("Reload the initial GPS coordinates of the photo")
-        ToolTip.visible: hovered
-        ToolTip.delay: 500
+        ToolTip {
+            visible: parent.hovered
+            text: qsTr("Reload the initial GPS coordinates of the photo")
+            delay: 500
+            y: -height - 4
+        }
     }
 }
