@@ -257,6 +257,29 @@ void PhotoModel::appendSavedPosition()
 
 
 /** **********************************************************************************************************
+ * @brief Ajoute une entrée spéciale dans le modèle avec des coordonnées GPS explicites (marker jaune).
+ * Utilisé par l'identification IA pour sauvegarder la position du lieu reconnu.
+ * ***********************************************************************************************************/
+void PhotoModel::appendSavedPositionFromCoords(double latitude, double longitude)
+{
+    if (!m_markerIndex.isValid())
+    {
+        const int rowOfInsert = m_photos.count();
+        beginInsertRows(QModelIndex(), rowOfInsert, rowOfInsert);
+        m_photos.insert(rowOfInsert, Photo("Saved Position", "", true));
+        endInsertRows();
+        emit countChanged();
+        m_markerRow = rowOfInsert;
+        m_markerIndex = index(rowOfInsert, 0);
+    }
+    this->setData(m_markerIndex, latitude, LatitudeRole);
+    this->setData(m_markerIndex, longitude, LongitudeRole);
+    m_savedPositionExists = true;
+    emit savedPositionExistsChanged();
+}
+
+
+/** **********************************************************************************************************
  * @brief Supprime du modèle l'item correspondant à la position sauvegardée.
  * @details L'item **SavedPosition**, de type **isMarker** est supprimé du modèle.
  * ***********************************************************************************************************/

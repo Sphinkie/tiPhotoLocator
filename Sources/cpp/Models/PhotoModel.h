@@ -133,6 +133,7 @@ public slots:
     // -----------------------------------------------------
     void append(const QString& filename, const QString& url);
     void appendSavedPosition();
+    Q_INVOKABLE void appendSavedPositionFromCoords(double latitude, double longitude);
     void fetchExifMetadata(int row = -1);
     void readTaskFinished();
     void saveMetadata();

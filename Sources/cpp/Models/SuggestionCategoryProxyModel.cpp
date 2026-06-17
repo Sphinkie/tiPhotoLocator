@@ -64,9 +64,10 @@ void SuggestionCategoryProxyModel::setFilterValue(QString filter)
 
 
 /** **********************************************************************************************************
- * @brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
- * @note On convertit l'indice du ProxyModel dans l'index du sourceModel SuggestionProxyModel.
- * @param proxyRow : Indice dans le ProxyModel de la Suggestion à modifier.
+ * @brief Fonction de tri alphabétique des suggestions par ordre de *target*, puis par ordre du "texte" contenu.
+ * @param left : l'index d'une suggestion
+ * @param right : l'index d'une suggestion
+ * @return True si left est inférieur à right
  * ***********************************************************************************************************/
 bool SuggestionCategoryProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
@@ -80,7 +81,11 @@ bool SuggestionCategoryProxyModel::lessThan(const QModelIndex &left, const QMode
     return leftText < rightText;
 }
 
-
+/** **********************************************************************************************************
+ * @brief Ce slot enlève la photo courante de la liste des photos correspondant à une suggestion donnée.
+ * @note On convertit l'indice du ProxyModel dans l'index du sourceModel SuggestionProxyModel.
+ * @param proxyRow : Indice dans le ProxyModel de la Suggestion à modifier.
+ * ***********************************************************************************************************/
 void SuggestionCategoryProxyModel::removePhotoFromSuggestion(const int proxyRow)
 {
     if (proxyRow<0) return;

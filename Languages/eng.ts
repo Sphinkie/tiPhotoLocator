@@ -658,8 +658,8 @@
 <context>
     <name>ToolbarMap</name>
     <message>
-        <location filename="../Sources/Qml/Controllers/ToolbarMap.qml" line="48"/>
-        <source>Location not identified</source>
+        <location filename="../Sources/Qml/Controllers/ToolbarMap.qml" line="49"/>
+        <source>Unidentified</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -965,20 +965,30 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
 <context>
     <name>ZoneSuggestedLocationsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="16"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="15"/>
         <source>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.
 Limited to 100 requests per day.</source>
         <translation>These suggestions are based on the photo GPS metadata, thanks to the free OpenStreetMap service.&lt;br/&gt;Limited to 100 requests per day.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="25"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="24"/>
         <source>Search</source>
         <translation>Search</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="28"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="27"/>
         <source>Search geodata on Internet</source>
         <translation>Search geodata on Internet</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="39"/>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml" line="42"/>
+        <source>Clear all suggestions</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

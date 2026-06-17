@@ -39,13 +39,14 @@ ToolbarMapForm {
         target: _landmarkWrapper
 
         function onLandmarkFound(name, lat, lon) {
-            txt_find.text = name;
+            _suggestionModel.append(name, "location", "geo", -2);
+            _photoModel.appendSavedPositionFromCoords(lat, lon);
             mapView.center = QtPositioning.coordinate(lat, lon);
             bt_ask_ai.enabled = true;
         }
 
         function onLocationUnknown() {
-            txt_find.text = qsTr("Location not identified");
+            _suggestionModel.append(qsTr("Unidentified"), "location", "geo", -2);
             bt_ask_ai.enabled = true;
         }
 

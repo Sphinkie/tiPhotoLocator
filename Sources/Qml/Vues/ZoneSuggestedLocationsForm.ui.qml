@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Controls.Material
 import "../Components"
 
-
 /** **********************************************************************************************************
  * @brief Cette zone affiche les Chips de Suggestion géographiques.
  * ***********************************************************************************************************/
@@ -30,6 +29,21 @@ Zone {
         ToolTip.delay: 500
     }
 
+    /// Bouton fixe en haut — Nettoie la liste des suggestions Nominatim.
+    Button {
+        id: bt_clear_geo_suggs
+        anchors.top: parent.top
+        anchors.topMargin: 16
+        anchors.left: bt_getinfo.right
+        anchors.leftMargin: 20
+        text: qsTr("Clear")
+        icon.source: "qrc:/Images/bt-clean-all.png"
+        enabled: _suggestionCategoryProxyModel.count > 0
+        ToolTip.text: qsTr("Clear all suggestions")
+        ToolTip.visible: hovered
+        ToolTip.delay: 500
+    }
+
     /// Le Flickable permet de scroller s'il y a trop de suggestions.
     Flickable {
         anchors.top: bt_getinfo.bottom
@@ -41,7 +55,9 @@ Zone {
         contentHeight: suggestionFlow.height
         clip: true
         flickableDirection: Flickable.VerticalFlick
-        ScrollBar.vertical: ScrollBar { policy: ScrollBar.AsNeeded }
+        ScrollBar.vertical: ScrollBar {
+            policy: ScrollBar.AsNeeded
+        }
 
         /// Le Flow positionne les Chips les unes après les autres.
         Flow {

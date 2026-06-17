@@ -1,7 +1,6 @@
 import QtQuick
 import "../Vues"
 
-
 /** **********************************************************************************************************
  * @brief Controlleur pour la Zone située dans l'onglet CARTE.
  * Cette zone contient les suggestions géographiques du SuggestionRepeater (city, country, etc)
@@ -9,16 +8,20 @@ import "../Vues"
  * ***********************************************************************************************************/
 ZoneSuggestedLocationsForm {
 
-
     /** ******************************************************************************************************
      * Clic sur bouton "Chercher" envoie une request pour récupérer des infos à partir des coords GPS.
      * A noter que la recherche est aussi lancée automatiquement par un Timer de PhotoListview.
      * *******************************************************************************************************/
     bt_getinfo.onClicked: {
-        window.requestReverseGeocode(_photoModel.currentItemCoords.latitude,
-                                     _photoModel.currentItemCoords.longitude)
+        window.requestReverseGeocode(_photoModel.currentItemCoords.latitude, _photoModel.currentItemCoords.longitude);
     }
 
+    /** ******************************************************************************************************
+     * Clic sur bouton "Clean all" : vide la zone des tags résiduels.
+     * *******************************************************************************************************/
+    bt_clear_geo_suggs.onClicked: {
+        // TODO
+    }
 
     /** ******************************************************************************************************
      * Le bouton est grisé si la photo n'a pas de coordonnées GPS.
@@ -26,7 +29,7 @@ ZoneSuggestedLocationsForm {
     Connections {
         target: tabbedPage
         function onCurrentPhotoChanged() {
-            bt_getinfo.enabled = tabbedPage.currentPhoto.hasGPS
+            bt_getinfo.enabled = tabbedPage.currentPhoto.hasGPS;
         }
     }
 }

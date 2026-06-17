@@ -81,5 +81,7 @@
         <file>Tutorial/bellaminette-save.png</file>
         <file>Images/bt-microscope.png</file>
         <file>Cameras/RedmiNote5.png</file>
+        <file>Images/bt-clean-all.png</file>
+        <file>Images/bt-clear-all.png</file>
     </qresource>
 </RCC>
