@@ -79,6 +79,7 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
     case SoftwareRole:          return photo.software;
     case MetadataRole:          return photo.metadata;
     case KeywordsRole:          return photo.keywords;
+    case WriteErrorRole:        return photo.writeError;
     default:
         return QVariant();
     }
@@ -126,7 +127,8 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {CreatorRole,           "creator"},
         {KeywordsRole,          "keywords"},
         {DescriptionRole,       "description"},
-        {CaptionWriterRole,     "captionWriter"}
+        {CaptionWriterRole,     "captionWriter"},
+        {WriteErrorRole,        "writeError"}
     };
     return mapping;
 }
@@ -276,6 +278,22 @@ void PhotoModel::appendSavedPositionFromCoords(double latitude, double longitude
     this->setData(m_markerIndex, longitude, LongitudeRole);
     m_savedPositionExists = true;
     emit savedPositionExistsChanged();
+}
+
+
+/** **********************************************************************************************************
+ * @brief Enregistre un message d'erreur d'écriture ExifTool pour une photo.
+ *        Si message est vide, l'erreur précédente est effacée (écriture réussie).
+ *        Si message est non-vide, émet writeErrorOccurred pour la snackbar QML.
+ * ***********************************************************************************************************/
+void PhotoModel::setWriteError(QModelIndex idx, const QString& message)
+{
+    if (!idx.isValid()) return;
+    int row = idx.row();
+    m_photos[row].writeError = message;
+    emit dataChanged(idx, idx, {WriteErrorRole});
+    if (!message.isEmpty())
+        emit writeErrorOccurred(m_photos[row].filename, message);
 }
 
 

@@ -299,6 +299,16 @@ ApplicationWindow {
         }
     }
 
+    /// Snackbar pour les erreurs d'écriture ExifTool.
+    Snackbar { id: snackbar }
+
+    Connections {
+        target: _photoModel
+        function onWriteErrorOccurred(filename, message) {
+            snackbar.show(qsTr("Write error") + " — " + filename + " : " + message)
+        }
+    }
+
     /// Couche transparente pour recevoir les ghost chips animés (z élevé pour passer au-dessus de tout).
     Item {
         id: ghostLayer

@@ -39,6 +39,7 @@ struct Photo
     bool isMarker = false;      //!< Exemple: une position sauvegardée sur la carte
     bool insideCircle = false;  //!< inside the radius of nearby photos
     bool toBeSaved = false;     //!< true if one of the following fields has been modified
+    QString writeError;         //!< Message d'erreur ExifTool si la dernière écriture a échoué
     // EXIF tags
     QString dateTimeOriginal;   //!< Time when the camera shutter was pressed (no changes allowed in this app)
     QString camModel;           //!< Camera model (no changes allowed in this app)

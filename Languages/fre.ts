@@ -258,6 +258,11 @@
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
+    <message>
+        <location filename="../Sources/Qml/Main.qml" line="308"/>
+        <source>Write error</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainMenuBar</name>

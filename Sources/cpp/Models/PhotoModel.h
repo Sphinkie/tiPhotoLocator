@@ -62,7 +62,8 @@ public:
         CaptionWriterRole,
         SoftwareRole,
         MetadataRole,
-        KeywordsRole
+        KeywordsRole,
+        WriteErrorRole
     };
 
     // -----------------------------------------------------
@@ -134,6 +135,7 @@ public slots:
     void append(const QString& filename, const QString& url);
     void appendSavedPosition();
     Q_INVOKABLE void appendSavedPositionFromCoords(double latitude, double longitude);
+    void setWriteError(QModelIndex idx, const QString& message);
     void fetchExifMetadata(int row = -1);
     void readTaskFinished();
     void saveMetadata();
@@ -158,7 +160,8 @@ signals:
     void dataCleared();                                                            //!< Signal émis quand le modèle a été vidé.
     void dataSaved();                                                              //!< Signal émis quand les données ont été enregistrées sur le disque.
     void firstCoordsReady();                                                       //!< Signal émis quand les coordonnées GPS de la première photo sont disponibles.
-    void savedPositionExistsChanged();                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
+    void savedPositionExistsChanged();
+    void writeErrorOccurred(const QString& filename, const QString& message);  //!< Signal émis quand ExifTool échoue à écrire une photo.                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
     void loadingChanged();                                                         //!< Signal émis quand le status loading change.
     void selectionCountChanged();                                                  //!< Signal émis quand le nombre de photos sélectionnées change.
     void countChanged();                                                           //!< Signal émis quand le nombre total de photos change.

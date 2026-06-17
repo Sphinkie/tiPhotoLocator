@@ -111,6 +111,11 @@ void ExifWriteTask::run()
     // ---------------------------------------
     qInfo() << program << arguments;
     exifProcess.start(program, arguments);
+    bool hasError = false;
+    QString errorMessage;
+    // ---------------------------------------
+    // Execution en cours
+    // ---------------------------------------
     while(exifProcess.state() != QProcess::NotRunning)
     {
         // We wait the end
@@ -119,14 +124,34 @@ void ExifWriteTask::run()
         // When a CRLF is receive, it is finished
         QString report = exifProcess.readLine();
         if (!report.isEmpty())
-            qInfo() << report.chopped(2);  // On affiche le statut de l'écriture des metadata exif
-        // TODO : gérer le cas ""    N files weren't updated due to errors" vs ("    0 image files updated")
+        {
+            if (report.contains("error"))
+            {
+                hasError = true;
+                errorMessage = report.trimmed();
+                qWarning() << errorMessage;  // "1 files weren't updated due to errors"
+            }
+            else
+            {
+                hasError = true;  // POUR LE TEST
+                errorMessage = report.trimmed();
+                qInfo() << errorMessage; // "1 image files updated"
+            }
+        }
     }
     // ---------------------------------------
     // Execution terminée pour une photo
     // ---------------------------------------
     QModelIndex idx = m_exifData.value("index").toModelIndex();
-    m_photoModel->setData(idx, false, PhotoModel::ToBeSavedRole);
+    if (!hasError)
+    {
+        m_photoModel->setData(idx, false, PhotoModel::ToBeSavedRole);
+        m_photoModel->setWriteError(idx, "");
+    }
+    else
+    {
+        m_photoModel->setWriteError(idx, errorMessage);  // garde toBeSaved=true
+    }
     m_photoModel->setWriteProgress();
 }
 
