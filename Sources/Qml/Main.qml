@@ -58,6 +58,8 @@ ApplicationWindow {
     signal saveMetadata
     /// Applique le Creator (des settings) à toutes les photos du modèle.
     signal applyCreatorToAll
+    /// Applique le Creator (des settings) aux photos sélectionnées.
+    signal applyCreatorToSelection
     /// Affecte la position mémorisée à toutes les photos du cercle.
     signal applySavedPositionToCoords
     /// Mémorise la position courante.

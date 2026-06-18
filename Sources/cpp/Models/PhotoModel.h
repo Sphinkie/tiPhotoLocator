@@ -143,6 +143,7 @@ public slots:
     void setInCircleItemCoords(const double latitude, const double longitude);
     void setPhotoProperty(const int photo, const QString& value, const QString& property);
     void applyCreatorToAll();
+    void applyCreatorToSelection();
     void removeSavedPosition();
     void duplicateData(int row);
     void removeData(int row);

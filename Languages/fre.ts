@@ -52,10 +52,6 @@
         <translation>- Soumettre</translation>
     </message>
     <message>
-        <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
-        <translation type="obsolete">Cette clef permet de ne plus avoir le watermark &apos;API Key Required&apos; sur les cartes.</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="41"/>
         <source>This AI will try to find the location of the photo, not keywords.</source>
         <translation>Il sera demandé à l&apos;IA de localiser la photo, pas de génener des mot-clefs.</translation>
@@ -66,25 +62,9 @@
         <translation>- Se connecter sur le site: </translation>
     </message>
     <message>
-        <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
-        <translation type="obsolete">- Choisir le plan &lt;i&gt;Hobby Project&lt;/i&gt;.&lt;br/&gt;</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="53"/>
         <source>- Create an account.&lt;br/&gt;</source>
         <translation>- Créer un compte.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Sign in with your account.&lt;br/&gt;</source>
-        <translation type="obsolete">- Se connecter avec le compte.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
-        <translation type="obsolete">- Aller dans la page &lt;i&gt;Dashboard&lt;/i&gt;.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Copy the API Key.&lt;br/&gt;</source>
-        <translation type="obsolete">- Copier l&apos;API Key.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="60"/>
@@ -95,53 +75,6 @@
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="61"/>
         <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
         <translation>- Relancer &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>ApikeyDialog</name>
-    <message>
-        <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</source>
-        <translation type="vanished">Une clef API peut être obtenue auprès d&apos;un fournisseur de cartes (thunderforest, mapbox, esri...), de la façon suivante:</translation>
-    </message>
-    <message>
-        <source>How to get an API Key</source>
-        <translation type="vanished">Comment obtenir une API Key</translation>
-    </message>
-    <message>
-        <source>- Go to the website: </source>
-        <translation type="vanished">- Se connecter sur le site: </translation>
-    </message>
-    <message>
-        <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
-        <translation type="vanished">- Choisir le plan &lt;i&gt;Hobby Project&lt;/i&gt;.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Create an account.&lt;br/&gt;</source>
-        <translation type="vanished">- Créer un compte.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Sign in with your account.&lt;br/&gt;</source>
-        <translation type="vanished">- Se connecter avec le compte.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
-        <translation type="vanished">- Aller dans la page &lt;i&gt;Dashboard&lt;/i&gt;.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Copy the API Key.&lt;br/&gt;</source>
-        <translation type="vanished">- Copier l&apos;API Key.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
-        <translation type="vanished">- Coller dans le menu &apos;Configuration&apos;.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
-        <translation type="vanished">- Relancer &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
-        <translation type="vanished">Cette clef permet de ne plus avoir le watermark &apos;API Key Required&apos; sur les cartes.</translation>
     </message>
 </context>
 <context>
@@ -239,27 +172,27 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="178"/>
+        <location filename="../Sources/Qml/Main.qml" line="180"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="181"/>
+        <location filename="../Sources/Qml/Main.qml" line="183"/>
         <source>MAP</source>
         <translation>CARTE</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="185"/>
+        <location filename="../Sources/Qml/Main.qml" line="187"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>TAGS EXIF ET IPTC</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="189"/>
+        <location filename="../Sources/Qml/Main.qml" line="191"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="308"/>
+        <location filename="../Sources/Qml/Main.qml" line="310"/>
         <source>Write error</source>
         <translation>Erreur d&apos;écriture</translation>
     </message>
@@ -325,10 +258,6 @@
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="91"/>
         <source>Get an API KEY for AI</source>
         <translation>Clef API pour l&apos;IA</translation>
-    </message>
-    <message>
-        <source>Obtenir une API KEY</source>
-        <translation type="vanished">Obtenir une API KEY</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="95"/>
@@ -537,10 +466,6 @@
 <context>
     <name>QuitWarningDialog</name>
     <message>
-        <source>Warning:all changes have not been saved.&lt;br/&gt;</source>
-        <translation type="vanished">Attention: tous les changements n&apos;ont pas été enregistrés.&lt;/br&gt;</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="9"/>
         <source>Warning: all changes have not been saved.&lt;br/&gt;</source>
         <translation>Attention: tous les changements n&apos;ont pas été enregistrés.&lt;br/&gt;</translation>
@@ -554,21 +479,6 @@
         <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="12"/>
         <source>Do you want to continue?</source>
         <translation>Voulez-vous continuer?</translation>
-    </message>
-</context>
-<context>
-    <name>RescanWarning</name>
-    <message>
-        <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
-        <translation type="vanished">Attention: les informations des images du répertoire vont être rechargées.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>All unsaved changes will be lost.</source>
-        <translation type="vanished">Tous les changements non enregistrés vont être perdus.</translation>
-    </message>
-    <message>
-        <source>Do you want to continue?</source>
-        <translation type="vanished">Voulez-vous continuer?</translation>
     </message>
 </context>
 <context>

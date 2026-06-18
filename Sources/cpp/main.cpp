@@ -142,6 +142,7 @@ int main(int argc, char *argv[])
     QObject::connect(firstRootItem, SIGNAL(savePosition()),                        &photoModel, SLOT(appendSavedPosition()));
     QObject::connect(firstRootItem, SIGNAL(clearSavedPosition()),                  &photoModel, SLOT(removeSavedPosition()));
     QObject::connect(firstRootItem, SIGNAL(applyCreatorToAll()),                   &photoModel, SLOT(applyCreatorToAll()));
+    QObject::connect(firstRootItem, SIGNAL(applyCreatorToSelection()),             &photoModel, SLOT(applyCreatorToSelection()));
     QObject::connect(firstRootItem, SIGNAL(setPhotoProperty(int,QString,QString)), &photoModel, SLOT(setPhotoProperty(int,QString,QString)));
 
     QObject::connect(firstRootItem, SIGNAL(applySavedPositionToCoords()),         &onTheMapProxyModel,   SLOT(setAllItemsSavedCoords()));

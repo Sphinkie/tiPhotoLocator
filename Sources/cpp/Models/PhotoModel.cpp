@@ -1314,6 +1314,32 @@ void PhotoModel::applyCreatorToAll()
 
 
 /** **********************************************************************************************************
+ * @brief Applique le "photographe" aux photos sélectionnées du modèle.
+ * @details Le nom du photographe est configuré dans les Settings.
+ * ***********************************************************************************************************/
+void PhotoModel::applyCreatorToSelection()
+{
+    QSettings settings;
+    QString photographe = settings.value("photographe", "").toString();
+    if (photographe.isEmpty()) return;
+
+    int row = 0;
+    QModelIndex idx = this->index(row, 0);
+    while (idx.isValid())
+    {
+        if (m_photos[row].isSelected)
+        {
+            m_photos[row].creator = photographe;
+            m_photos[row].toBeSaved = true;
+            m_photos[row].dirtyFields.insert("Creator");
+        }
+        idx = idx.siblingAtRow(++row);
+    }
+    emit dataChanged(this->index(0, 0), index(m_photos.count()-1, 0), QVector<int>() << CreatorRole << ToBeSavedRole);
+}
+
+
+/** **********************************************************************************************************
  * @brief Enlève un des mots-clef descriptif de la photo.
  * @param keyword : le mot-clef à retirer de la liste.
  * @note Cette méthode modifie la Photo actuellement sélectionée.

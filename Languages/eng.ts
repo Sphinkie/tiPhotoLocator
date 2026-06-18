@@ -52,10 +52,6 @@
         <translation>- Submit</translation>
     </message>
     <message>
-        <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
-        <translation type="obsolete">This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="41"/>
         <source>This AI will try to find the location of the photo, not keywords.</source>
         <translation>This AI will try to find the location of the photo, not keywords.</translation>
@@ -67,25 +63,9 @@
         <translation>- Go to the website: </translation>
     </message>
     <message>
-        <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
-        <translation type="obsolete">- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="53"/>
         <source>- Create an account.&lt;br/&gt;</source>
         <translation>- Create an account.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Sign in with your account.&lt;br/&gt;</source>
-        <translation type="obsolete">- Sign in with your account.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
-        <translation type="obsolete">- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Copy the API Key.&lt;br/&gt;</source>
-        <translation type="obsolete">- Copy the API Key.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="60"/>
@@ -96,53 +76,6 @@
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="61"/>
         <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
         <translation>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>ApikeyDialog</name>
-    <message>
-        <source>An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</source>
-        <translation type="vanished">An API key can be obtained from a map provider (thunderforest, mapbox, esri...) as follows:</translation>
-    </message>
-    <message>
-        <source>How to get an API Key</source>
-        <translation type="vanished">How to get an API Key</translation>
-    </message>
-    <message>
-        <source>- Go to the website: </source>
-        <translation type="vanished">- Go to the website: </translation>
-    </message>
-    <message>
-        <source>- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</source>
-        <translation type="vanished">- Choose the &lt;i&gt;Hobby Project&lt;/i&gt; plan.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Create an account.&lt;br/&gt;</source>
-        <translation type="vanished">- Create an account.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Sign in with your account.&lt;br/&gt;</source>
-        <translation type="vanished">- Sign in with your account.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</source>
-        <translation type="vanished">- Go to the &lt;i&gt;Dashboard&lt;/i&gt; page.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Copy the API Key.&lt;br/&gt;</source>
-        <translation type="vanished">- Copy the API Key.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</source>
-        <translation type="vanished">- Paste it in the &apos;Configuration&apos; menu.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</source>
-        <translation type="vanished">- Restart &lt;b&gt;TiPhotoLocator&lt;/b&gt;.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>This key removes the &apos;API Key Required&apos; watermark from the maps.</source>
-        <translation type="vanished">This key removes the &apos;API Key Required&apos; watermark from the maps.</translation>
     </message>
 </context>
 <context>
@@ -240,27 +173,27 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="178"/>
+        <location filename="../Sources/Qml/Main.qml" line="180"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="181"/>
+        <location filename="../Sources/Qml/Main.qml" line="183"/>
         <source>MAP</source>
         <translation>MAP</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="185"/>
+        <location filename="../Sources/Qml/Main.qml" line="187"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>EXIF / IPTC TAGS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="189"/>
+        <location filename="../Sources/Qml/Main.qml" line="191"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="308"/>
+        <location filename="../Sources/Qml/Main.qml" line="310"/>
         <source>Write error</source>
         <translation>Write error</translation>
     </message>
@@ -326,10 +259,6 @@
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="91"/>
         <source>Get an API KEY for AI</source>
         <translation>Get an API KEY for AI</translation>
-    </message>
-    <message>
-        <source>Obtenir une API KEY</source>
-        <translation type="vanished">How to get an API key</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Components/MainMenuBar.qml" line="95"/>
@@ -538,10 +467,6 @@
 <context>
     <name>QuitWarningDialog</name>
     <message>
-        <source>Warning:all changes have not been saved.&lt;br/&gt;</source>
-        <translation type="vanished">Warning:all changes have not been saved.&lt;br/&gt;</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="9"/>
         <source>Warning: all changes have not been saved.&lt;br/&gt;</source>
         <translation>Warning: all changes have not been saved.&lt;br/&gt;</translation>
@@ -555,17 +480,6 @@
         <location filename="../Sources/Qml/Dialogs/QuitWarningDialog.qml" line="12"/>
         <source>Do you want to continue?</source>
         <translation>Do you want to continue?</translation>
-    </message>
-</context>
-<context>
-    <name>RescanWarning</name>
-    <message>
-        <source>Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</source>
-        <translation type="vanished">Warning: the metadata of all images in the folder will be reloaded.&lt;br/&gt;</translation>
-    </message>
-    <message>
-        <source>Do you want to continue?</source>
-        <translation type="vanished">Do you want to continue?</translation>
     </message>
 </context>
 <context>
@@ -702,10 +616,6 @@
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="26"/>
         <source>Find a place</source>
         <translation>Find a place</translation>
-    </message>
-    <message>
-        <source>AI</source>
-        <translation type="vanished">Ask AI</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarMapForm.ui.qml" line="65"/>

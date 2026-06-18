@@ -157,6 +157,13 @@ Item {
             clip: false // Le texte n'est pas tronqué
             //  La taille max du texte pouvant être saisi (24 pour le Chips, 180 pour les FatChips).
             maximumLength: 24
+            // Avec inputMask, Suppr efface le caractère mais ne déplace pas le curseur.
+            // On force l'avance d'une position pour que chaque Suppr efface un digit différent.
+            Keys.onDeletePressed: function(event) {
+                event.accepted = false  // laisser TextInput effacer le caractère
+                if (inputMask !== "")
+                    Qt.callLater(function() { cursorPosition = cursorPosition + 1 })
+            }
         }
 
 
