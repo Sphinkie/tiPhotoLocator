@@ -25,9 +25,15 @@ Zone Suggestions
   - ZoneSuggestedLocations : bouton "Clear" => SuggestionModel.clearByCategory("geo")
   - nouvelle méthode C++ : SuggestionModel::clearByCategory(category) — suppression à rebours avec beginRemoveRows/endRemoveRows
 
-Interface
+Interface & Thème
   - Chip City affiché dans l'onglet Preview (première page)
   - Tooltips : conversion du ToolTip "attaché" vers "composant" ToolTip inline pour pouvoir ajuster sa position en y.
+  - Chips : couleur par catégorie (geo=Teal, photo=DeepPurple, camera=BlueGrey, keyword=Indigo)
+  - Chips suggestions : version pastel Shade300 (texte foncé) vs Shade400 pour les valeurs appliquées
+  - Chips modifiés non sauvegardés : fond DeepOrange (Option C2) en remplacement du simple gras
+  - Trois notions distinctes dans Chips.qml : target (champ ExifTool), targetName (label affiché), chipCategory (couleur UI)
+  - isSuggestion : propriété bool sur Chips.qml — pastel automatique dans SuggestionRepeater
+  - GhostChip hérite de la couleur du chip source lors de l'animation de vol
 
 Corrections de bugs
   - Chips : touche Suppr avec inputMask — event.accepted=false pour laisser TextInput C++ agir (sinon le curseur n'avançait pas après effacement)

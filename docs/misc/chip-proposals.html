@@ -1,0 +1,235 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>TiPhotoLocator — Propositions chips</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #f0f2f5; color: #212121; padding: 32px; }
+  h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 36px; }
+  section { margin-bottom: 40px; }
+  h2 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; color: #333; }
+  .desc { font-size: 0.85rem; color: #555; margin-bottom: 16px; line-height: 1.5; }
+  .code { font-family: monospace; background: #eef; padding: 2px 6px; border-radius: 3px; font-size: 0.82rem; color: #445; }
+  .pros { font-size: 0.8rem; color: #2e7d32; margin-top: 6px; }
+  .cons { font-size: 0.8rem; color: #b71c1c; margin-top: 2px; }
+
+  /* Simulation chips */
+  .chips-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .chip {
+    display: flex; align-items: center; height: 32px; border-radius: 16px;
+    padding: 0 12px; font-size: 13px; font-weight: 400;
+    box-shadow: 3px 3px 6px rgba(0,0,0,.18);
+    position: relative; overflow: hidden; min-width: 120px;
+    user-select: none;
+  }
+  .chip-label { color: rgba(0,0,0,.5); font-size: 11px; margin-right: 4px; }
+  .chip-value { color: #111; font-size: 13px; }
+  .chip-icon { margin-left: auto; margin-right: -4px; opacity: .6; font-size: 16px; padding-left: 8px; }
+
+  /* === ÉTAT ACTUEL === */
+  .chip-current { background: #90a4ae; } /* BlueGrey 400 */
+  .chip-current .chip-label { color: rgba(255,255,255,.75); }
+  .chip-current .chip-value { color: #fff; }
+  .chip-current .chip-icon { color: #fff; }
+
+  /* === OPTION A : couleur par catégorie === */
+  .chip-geo   { background: #4db6ac; } /* Teal 300 */
+  .chip-photo { background: #9575cd; } /* DeepPurple 300 */
+  .chip-cam   { background: #78909c; } /* BlueGrey 400 */
+  .chip-kw    { background: #ffb74d; } /* Orange 300 */
+  .chip-geo .chip-label, .chip-photo .chip-label, .chip-cam .chip-label, .chip-kw .chip-label { color: rgba(255,255,255,.75); }
+  .chip-geo .chip-value, .chip-photo .chip-value, .chip-cam .chip-value, .chip-kw .chip-value { color: #fff; }
+  .chip-geo .chip-icon, .chip-photo .chip-icon, .chip-cam .chip-icon, .chip-kw .chip-icon { color: rgba(255,255,255,.8); }
+
+  /* === OPTION B : bande latérale === */
+  .chip-stripe { background: #cfd8dc; color: #212121; } /* BlueGrey 100 */
+  .chip-stripe::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+    border-radius: 16px 0 0 16px;
+  }
+  .chip-stripe.geo::before  { background: #009688; }
+  .chip-stripe.photo::before { background: #673ab7; }
+  .chip-stripe.cam::before   { background: #546e7a; }
+  .chip-stripe.kw::before    { background: #f57c00; }
+  .chip-stripe .chip-label  { color: rgba(0,0,0,.45); font-size: 11px; }
+  .chip-stripe .chip-value  { color: #111; }
+  .chip-stripe .chip-icon   { color: #555; }
+  /* décalage texte pour la bande */
+  .chip-stripe { padding-left: 16px; }
+
+  /* === OPTION C : dirty state === */
+  .chip-dirty-current { background: #90a4ae; outline: none; }
+  .chip-dirty-current .chip-label { color: rgba(255,255,255,.75); }
+  .chip-dirty-current .chip-value { color: #fff; font-weight: bold; }
+  .chip-dirty-current .chip-icon { color: #fff; }
+
+  .chip-dirty-new { background: #90a4ae; outline: 2.5px solid #e64a19; outline-offset: 1px; }
+  .chip-dirty-new .chip-label { color: rgba(255,255,255,.75); }
+  .chip-dirty-new .chip-value { color: #fff; font-weight: bold; }
+  .chip-dirty-new .chip-icon { color: #fff; }
+
+  .chip-dirty-fill { background: #ff8a65; outline: none; } /* Orange 300 */
+  .chip-dirty-fill .chip-label { color: rgba(255,255,255,.75); }
+  .chip-dirty-fill .chip-value { color: #fff; font-weight: bold; }
+  .chip-dirty-fill .chip-icon { color: #fff; }
+
+  /* section separator */
+  .divider { border: none; border-top: 1px solid #ddd; margin: 32px 0; }
+
+  .tag { display: inline-block; font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; font-weight: 600; }
+  .tag-easy { background: #c8e6c9; color: #1b5e20; }
+  .tag-med  { background: #fff9c4; color: #f57f17; }
+  .tag-hard { background: #ffcdd2; color: #b71c1c; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media(max-width:700px) { .grid { grid-template-columns: 1fr; } }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; font-size: 0.8rem; }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+</style>
+
+<h1>TiPhotoLocator — Propositions d'amélioration des Chips</h1>
+<p class="subtitle">Trois options indépendantes, combinables entre elles.</p>
+
+<!-- ÉTAT ACTUEL -->
+<section>
+  <h2>État actuel</h2>
+  <p class="desc">Tous les chips ont la même couleur <span class="code">BlueGrey Shade400</span> quelle que soit leur catégorie. L'œil n'a aucun repère visuel pour distinguer un champ GPS d'un keyword ou d'une date.</p>
+  <div class="chips-row">
+    <div class="chip chip-current"><span class="chip-label">city:</span><span class="chip-value">Saint-Paul</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-current"><span class="chip-label">country:</span><span class="chip-value">France</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-current"><span class="chip-label">keyword:</span><span class="chip-value">portrait</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-current"><span class="chip-label">date:</span><span class="chip-value">13/12/2011</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-current"><span class="chip-label">make:</span><span class="chip-value">DMC T10</span></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- OPTION A -->
+<section>
+  <h2>Option A — Couleur par catégorie <span class="tag tag-easy">Simple</span></h2>
+  <p class="desc">
+    Ajouter une propriété <span class="code">chipColor</span> dans <span class="code">Chips.qml</span>, avec une valeur par défaut calculée depuis <span class="code">target</span> via un switch QML. Les quatre catégories héritent d'une couleur définie dans <span class="code">Style.qml</span>. Les zones qui veulent surcharger peuvent passer la couleur explicitement.
+  </p>
+
+  <div class="legend">
+    <div class="legend-item"><div class="dot" style="background:#4db6ac"></div> Géolocalisation (Teal)</div>
+    <div class="legend-item"><div class="dot" style="background:#9575cd"></div> Photo / IPTC (DeepPurple)</div>
+    <div class="legend-item"><div class="dot" style="background:#78909c"></div> Appareil / EXIF (BlueGrey)</div>
+    <div class="legend-item"><div class="dot" style="background:#ffb74d"></div> Keywords (Orange)</div>
+  </div>
+
+  <div class="chips-row">
+    <div class="chip chip-geo"><span class="chip-label">city:</span><span class="chip-value">Saint-Paul</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-geo"><span class="chip-label">country:</span><span class="chip-value">France</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-geo"><span class="chip-label">location:</span><span class="chip-value">La Plaine</span><span class="chip-icon">⇄</span></div>
+    <div class="chip chip-photo"><span class="chip-label">date:</span><span class="chip-value">13/12/2011</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-photo"><span class="chip-label">creator:</span><span class="chip-value">David</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-cam"><span class="chip-label">make:</span><span class="chip-value">DMC T10</span></div>
+    <div class="chip chip-cam"><span class="chip-label">aperture:</span><span class="chip-value">f/3.5</span></div>
+    <div class="chip chip-kw"><span class="chip-label">keyword:</span><span class="chip-value">portrait</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-kw"><span class="chip-label">keyword:</span><span class="chip-value">voyage</span><span class="chip-icon">✎</span></div>
+  </div>
+
+  <p class="pros">✔ Un seul changement dans Chips.qml — aucun impact sur les zones appelantes</p>
+  <p class="pros">✔ Le GhostChip reprend automatiquement la couleur du chip source</p>
+  <p class="cons">✘ Les chips de suggestions (SuggestionRepeater) ont déjà leur propre fond bleu clair — vérifier la cohérence</p>
+
+  <br>
+  <p class="desc"><strong>Code dans Chips.qml :</strong></p>
+  <pre style="background:#f5f5f5;padding:12px;border-radius:6px;font-size:0.82rem;overflow-x:auto"><code>property color chipColor: {
+    switch(target) {
+        case "latitude": case "longitude":
+        case "country": case "city": case "location":
+            return Style.chipGeoColor       // Teal 300
+        case "keyword":
+            return Style.chipKeywordColor   // Orange 300
+        case "make": case "model":
+        case "aperture": case "speed": case "software":
+            return Style.chipCameraColor    // BlueGrey 400 (inchangé)
+        default:
+            return Style.chipPhotoColor     // DeepPurple 300
+    }
+}
+// Et dans chipRectangle :
+color: chipColor</code></pre>
+</section>
+
+<hr class="divider">
+
+<!-- OPTION B -->
+<section>
+  <h2>Option B — Bande latérale colorée <span class="tag tag-easy">Simple</span></h2>
+  <p class="desc">
+    Le fond du chip reste neutre (BlueGrey 100 = plus clair qu'actuellement), mais une fine bande de 5px à gauche encode la catégorie. Moins «criard» que l'option A, convient si on veut rester sobre.
+    Implémentation : un <span class="code">Rectangle</span> de 5px en position absolue dans <span class="code">chipRectangle</span>, avec <span class="code">color: chipAccentColor</span>.
+  </p>
+
+  <div class="chips-row">
+    <div class="chip chip-stripe geo"><span class="chip-label">city:</span><span class="chip-value">Saint-Paul</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-stripe geo"><span class="chip-label">country:</span><span class="chip-value">France</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-stripe photo"><span class="chip-label">date:</span><span class="chip-value">13/12/2011</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-stripe photo"><span class="chip-label">creator:</span><span class="chip-value">David</span><span class="chip-icon">✎</span></div>
+    <div class="chip chip-stripe cam"><span class="chip-label">make:</span><span class="chip-value">DMC T10</span></div>
+    <div class="chip chip-stripe kw"><span class="chip-label">keyword:</span><span class="chip-value">portrait</span><span class="chip-icon">✎</span></div>
+  </div>
+
+  <p class="pros">✔ Très discret, préserve le style actuel</p>
+  <p class="pros">✔ Meilleure lisibilité du texte (fond clair)</p>
+  <p class="cons">✘ Moins immédiatement visible qu'une couleur pleine — l'effet est subtil</p>
+</section>
+
+<hr class="divider">
+
+<!-- OPTION C -->
+<section>
+  <h2>Option C — État "modifié" plus visible <span class="tag tag-easy">Simple</span></h2>
+  <p class="desc">
+    Actuellement, <span class="code">canSave</span> met le texte en gras. Deux variantes plus expressives, à choisir :
+  </p>
+
+  <div class="grid">
+    <div>
+      <p class="desc"><strong>C1 — Bordure orange</strong><br>Le fond reste identique, mais une outline colorée (<span class="code">border.color</span> + <span class="code">border.width: 2</span>) signale la modification.</p>
+      <div class="chips-row">
+        <div class="chip chip-dirty-current"><span class="chip-label">city:</span><span class="chip-value">Saint-Paul</span></div>
+        <div class="chip chip-dirty-new"><span class="chip-label">city:</span><span class="chip-value">Le Port</span><span class="chip-icon">💾</span></div>
+      </div>
+      <p class="desc" style="margin-top:8px">← intact &nbsp;&nbsp; modifié →</p>
+      <p class="pros">✔ Peu intrusif, change seulement le contour</p>
+    </div>
+    <div>
+      <p class="desc"><strong>C2 — Fond orange</strong><br>Le chip entier change de couleur quand <span class="code">canSave</span> est vrai. Signal fort.</p>
+      <div class="chips-row">
+        <div class="chip chip-dirty-current"><span class="chip-label">city:</span><span class="chip-value">Saint-Paul</span></div>
+        <div class="chip chip-dirty-fill"><span class="chip-label">city:</span><span class="chip-value">Le Port</span><span class="chip-icon">💾</span></div>
+      </div>
+      <p class="desc" style="margin-top:8px">← intact &nbsp;&nbsp; modifié →</p>
+      <p class="pros">✔ Impossible à rater, cohérent avec <span class="code">accentTextColor: DeepOrange</span> déjà dans Style.qml</p>
+    </div>
+  </div>
+
+  <br>
+  <p class="desc"><strong>Code dans Chips.qml (variante C2) :</strong></p>
+  <pre style="background:#f5f5f5;padding:12px;border-radius:6px;font-size:0.82rem;overflow-x:auto"><code>// Dans chipRectangle :
+color: canSave ? Style.chipDirtyColor : chipColor
+// Dans Style.qml :
+readonly property color chipDirtyColor: Material.color(Material.DeepOrange, Material.Shade300)</code></pre>
+</section>
+
+<hr class="divider">
+
+<!-- RECOMMANDATION -->
+<section>
+  <h2>Recommandation</h2>
+  <p class="desc">
+    Ces trois options sont <strong>indépendantes et cumulables</strong>. La combinaison la plus efficace pour un minimum d'effort :
+  </p>
+  <ul style="font-size:0.88rem;line-height:2;padding-left:1.2em;color:#333">
+    <li><strong>A + C2</strong> : couleur par catégorie + fond orange sur modification → toute l'information d'état est encodée dans la couleur, sans ajouter un seul widget.</li>
+    <li>Tout se joue dans <span class="code">Chips.qml</span> (propriété <span class="code">chipColor</span> calculée) et <span class="code">Style.qml</span> (4 nouvelles couleurs). Aucun fichier zone à modifier.</li>
+  </ul>
+</section>
+</style>

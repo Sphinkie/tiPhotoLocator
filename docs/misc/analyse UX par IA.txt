@@ -1,0 +1,23 @@
+ Points forts
+  - Le fond blanc/gris très clair est neutre et laisse les photos respirer — c'est un bon choix pour une app photo.
+  - La carte ressort bien dans l'onglet MAP.
+
+  Ce qui manque ou gêne
+
+  - Absence de couleur d'accent cohérente. Le seul élément vraiment coloré est le bouton "Rescan" en rouge-rosé. 
+    Tout le reste est dans une même teinte gris uniforme — onglets, chips, zones, panneaux. L'œil n'a pas de repère visuel.
+	
+  - Les chips sont tous identiques visuellement. Dans l'onglet TAGS, une cinquantaine de chips affichent la même forme
+  et la même couleur grise, qu'il s'agisse d'une date, d'un pays, d'un auteur ou d'un keyword. Impossible de distinguer
+  les catégories au premier coup d'œil.
+  
+  - Hiérarchie visuelle faible. La barre d'onglets (PREVIEW / MAP / TAGS / GLOBAL) se fond dans le reste de l'interface
+  
+  — l'onglet actif n'est pas immédiatement évident.
+  
+  - Froideur générale. Le gris clair omniprésent donne une impression un peu "brouillon de formulaire Windows". Même une
+  légère teinte chaude (beige très clair, ou un gris légèrement teinté) changerait le ressenti.
+
+  Suggestion principale : utiliser la couleur pour encoder de l'information — par exemple, colorer les chips
+  différemment selon leur catégorie (géoloc en bleu, dates en vert, mots-clés en orange…). Ce serait utile
+  fonctionnellement et rendrait l'interface plus vivante sans trahir la sobriété existante.
