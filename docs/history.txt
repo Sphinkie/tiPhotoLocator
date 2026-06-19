@@ -3,6 +3,40 @@
 ================================================================================
 
 --------------------------------------------------------------------------------
+ Version 2.0  (2026-06-19)
+--------------------------------------------------------------------------------
+
+Reconnaissance de lieux par IA
+  - Nouvelle classe C++ LandmarkWrapper : appel REST vers Groq API (Llama-4 Scout 17B), image envoyée en base64
+  - Signaux : landmarkFound(name, lat, lon), locationUnknown(), networkError()
+  - Bouton "Ask AI" dans la toolbar Carte (ToolbarMap.qml)
+    Si lieu identifié → chip "location" affiché + SavedPosition renseignée
+  - IA choisie = Groq (API OpenAI-compatible, plus rapide, HuggingFace étant payant pour cette fonctionalité)
+  - Groq ajouté aux crédits (AboutDialog)
+  - Qt6::Network ajouté dans CMakeLists.txt
+
+Robustesse & Gestion des erreurs
+  - ExifWriteTask : en cas d'échec, la photo reste marquée "à sauvegarder" et un snackbar d'erreur s'affiche
+  - Photo.h : champ writeError (QString) pour mémoriser le message d'erreur ExifTool
+  - Snackbar.qml : nouveau composant (bas-gauche, parent: Overlay.overlay, 5s auto-fermeture, fondu)
+  - Warning avant fermeture si des modifications ne sont pas sauvegardées (QuitWarningDialog.qml)
+
+Zone Suggestions
+  - ZoneSuggestedLocations : bouton "Clear" => SuggestionModel.clearByCategory("geo")
+  - nouvelle méthode C++ : SuggestionModel::clearByCategory(category) — suppression à rebours avec beginRemoveRows/endRemoveRows
+
+Interface
+  - Chip City affiché dans l'onglet Preview (première page)
+  - Tooltips : conversion du ToolTip "attaché" vers "composant" ToolTip inline pour pouvoir ajuster sa position en y.
+
+Corrections de bugs
+  - Chips : touche Suppr avec inputMask — event.accepted=false pour laisser TextInput C++ agir (sinon le curseur n'avançait pas après effacement)
+  - applyCreatorToSelection : slot C++ + signal QML + connexion main.cpp manquants (la méthode était appelée depuis QML mais non implémentée)
+
+Qualité & Nettoyage
+  - Cleanup qmldir
+
+--------------------------------------------------------------------------------
  Version 1.8  (2026-06-02)
 --------------------------------------------------------------------------------
 
