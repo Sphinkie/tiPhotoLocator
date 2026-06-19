@@ -137,12 +137,12 @@
 <context>
     <name>GlobalTag</name>
     <message>
-        <location filename="../Sources/Qml/Components/GlobalTag.qml" line="35"/>
+        <location filename="../Sources/Qml/Components/GlobalTag.qml" line="37"/>
         <source>Apply to all</source>
         <translation>Apply to all</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/GlobalTag.qml" line="40"/>
+        <location filename="../Sources/Qml/Components/GlobalTag.qml" line="42"/>
         <source>Apply to selection</source>
         <translation>Apply to selection</translation>
     </message>
@@ -150,12 +150,12 @@
 <context>
     <name>KeywordsRepeater</name>
     <message>
-        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="21"/>
+        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="22"/>
         <source>Apply to all</source>
         <translation>Apply to all</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="27"/>
+        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="28"/>
         <source>Apply to selection</source>
         <translation>Apply to selection</translation>
     </message>
@@ -838,32 +838,32 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
         <translation>Photographer name.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="72"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="73"/>
         <source>The country where the photo was taken.</source>
         <translation>The country where the photo was taken.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="81"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="83"/>
         <source>City where the photo was taken or nearest city.</source>
         <translation>The city where the photo was taken or the nearest city.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="90"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="93"/>
         <source>Additionnal geographical information.</source>
         <translation>Additionnal geographical information.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="99"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="102"/>
         <source>Date and time when the photo was taken.</source>
         <translation>Date and time when the photo was taken.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="108"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="111"/>
         <source>Photo content description: who, where, how, why? (in a few words).</source>
         <translation>Photo content description: who, where, how, why? (in a few words).</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="131"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="134"/>
         <source>A list of keywords, related to the photo and used for searches.</source>
         <translation>A list of keywords, related to the photo and used for searches.</translation>
     </message>
@@ -876,7 +876,7 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
         <translation>Photo related tags</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="57"/>
+        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="61"/>
         <source>content description:</source>
         <translation>content description:</translation>
     </message>

@@ -136,12 +136,12 @@
 <context>
     <name>GlobalTag</name>
     <message>
-        <location filename="../Sources/Qml/Components/GlobalTag.qml" line="35"/>
+        <location filename="../Sources/Qml/Components/GlobalTag.qml" line="37"/>
         <source>Apply to all</source>
         <translation>Appliquer à tous</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/GlobalTag.qml" line="40"/>
+        <location filename="../Sources/Qml/Components/GlobalTag.qml" line="42"/>
         <source>Apply to selection</source>
         <translation>Appliquer à la sélection</translation>
     </message>
@@ -149,12 +149,12 @@
 <context>
     <name>KeywordsRepeater</name>
     <message>
-        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="21"/>
+        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="22"/>
         <source>Apply to all</source>
         <translation>Appliquer à tous</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="27"/>
+        <location filename="../Sources/Qml/Components/KeywordsRepeater.qml" line="28"/>
         <source>Apply to selection</source>
         <translation>Appliquer à la sélection</translation>
     </message>
@@ -837,32 +837,32 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
         <translation>Nom du photographe.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="72"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="73"/>
         <source>The country where the photo was taken.</source>
         <translation>Pays où a été pris la photo.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="81"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="83"/>
         <source>City where the photo was taken or nearest city.</source>
         <translation>Nom de la ville repésentée sur la photo, ou la ville proche du lieu photographié.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="90"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="93"/>
         <source>Additionnal geographical information.</source>
         <translation>Information géographique additionnelle.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="99"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="102"/>
         <source>Date and time when the photo was taken.</source>
         <translation>Jour et date de la prise de vue.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="108"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="111"/>
         <source>Photo content description: who, where, how, why? (in a few words).</source>
         <translation>Description du contenu de la photo. En quelques mots : qui, quoi, comment, pourquoi.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="131"/>
+        <location filename="../Sources/Qml/Vues/ZoneGlobalTagsForm.ui.qml" line="134"/>
         <source>A list of keywords, related to the photo and used for searches.</source>
         <translation>Une liste de mots-clefs relatifs à la photo, et utilisés pour les recherches.</translation>
     </message>
@@ -875,7 +875,7 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
         <translation>Tags relatifs à la photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="57"/>
+        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="61"/>
         <source>content description:</source>
         <translation>Description du contenu:</translation>
     </message>
