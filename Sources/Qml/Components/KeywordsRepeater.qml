@@ -14,6 +14,7 @@ Repeater {
         /// Affichage d'un tag de l'image courante
         Chips {
             targetName: "keywords:"
+            chipCategory: "keyword"
             content: modelData ? modelData : ""
         }
         /// Bouton pour appliquer ce tag à toutes les images.

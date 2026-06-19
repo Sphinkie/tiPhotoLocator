@@ -75,6 +75,7 @@ Repeater {
                 editable: false
                 deletable: false
                 target: currrentItem.target
+                isSuggestion: true
             }
 
 
@@ -109,6 +110,7 @@ Repeater {
                                                         "width": currrentChip.width,
                                                         "height": currrentChip.height,
                                                         "chipText": capturedText,
+                                                        "chipColor": currrentChip.chipColor,
                                                         "destX": destCenter.x,
                                                         "destY": destCenter.y,
                                                         "onDone": function () {

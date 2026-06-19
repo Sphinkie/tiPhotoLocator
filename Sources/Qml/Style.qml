@@ -3,7 +3,6 @@ pragma Singleton
 import QtQuick
 import QtQuick.Controls.Material
 
-
 /** **********************************************************************************************************
  * @brief Définition du Singleton de Style, où l'on définit les couleurs de l'application.
  *
@@ -22,12 +21,9 @@ Item {
     // Définition du thème (voir Main.qml)
     // ----------------------------------------------------------------------
     /// Couleur du fond: Barre de menu. Barre des onglets
-    property var background: Material.color(
-                                 Material.BlueGrey,
-                                 Material.Shade200) // Material.background
+    property var background: Material.color(Material.BlueGrey, Material.Shade200) // Material.background
     /// Couleur d'accentuation pour les items et textes en highlight.
-    property var accent: Material.color(Material.Brown,
-                                        Material.Shade400) // Material.accent
+    property var accent: Material.color(Material.Brown, Material.Shade400) // Material.accent
     /// Couleur des textes.
     property int foreground: Material.DeepPurple // Material.foreground
     /// Couleur primaire = non utilisé sur Desktop ?
@@ -49,24 +45,29 @@ Item {
     // ----------------------------------------------------------------------
 
     // Surface container = couleur de fond des Toolbars (backgroundColor)
-    readonly property color surfaceContainerColor: Material.color(
-                                                       Material.BlueGrey,
-                                                       Material.Shade50)
+    readonly property color surfaceContainerColor: Material.color(Material.BlueGrey, Material.Shade50)
 
     // Zones standard : (backgroundColor)
-    readonly property color zoneBackgroundColor: Material.color(
-                                                     Material.BlueGrey,
-                                                     Material.Shade100)
+    readonly property color zoneBackgroundColor: Material.color(Material.BlueGrey, Material.Shade100)
 
     // Zones de suggestions : bleu (secondaryColor)
-    readonly property color suggestionBackgroundColor: Material.color(
-                                                           Material.LightBlue,
-                                                           Material.Shade50)
+    readonly property color suggestionBackgroundColor: Material.color(Material.LightBlue, Material.Shade50)
 
-    // Chips: (backgroundColor)
-    readonly property color chipBackgroundColor: Material.color(
-                                                     Material.BlueGrey,
-                                                     Material.Shade400)
+    // Chips: couleur par défaut (aucune catégorie)
+    readonly property color chipBackgroundColor: Material.color(Material.BlueGrey, Material.Shade400)
+
+    // Chips par catégorie — valeurs appliquées (Shade400/500)
+    readonly property color chipGeoColor: Material.color(Material.Teal, Material.Shade400)
+    readonly property color chipPhotoColor: Material.color(Material.DeepPurple, Material.Shade400)
+    readonly property color chipCameraColor: Material.color(Material.BlueGrey, Material.Shade500)
+    readonly property color chipKeywordColor: Material.color(Material.Indigo, Material.Shade400)
+    // Chips suggestions — version pastel (Shade200/300, texte foncé)
+    readonly property color chipGeoSuggestionColor: Material.color(Material.Teal, Material.Shade300)
+    readonly property color chipPhotoSuggestionColor: Material.color(Material.DeepPurple, Material.Shade300)
+    readonly property color chipCameraSuggestionColor: Material.color(Material.BlueGrey, Material.Shade300)
+    readonly property color chipKeywordSuggestionColor: Material.color(Material.Indigo, Material.Shade300)
+    // Chip modifié non encore sauvegardé (Option C2)
+    readonly property color chipDirtyColor: Material.color(Material.DeepOrange, Material.Shade400)
 
     // ----------------------------------------------------------------------
     // Popups:
@@ -85,15 +86,10 @@ Item {
     readonly property color primaryTextColor: "#212121" // gris foncé      : Listview + toolbar
     readonly property color secondaryTextColor: "#757575" // gris moyen    : Répertoire dans la toolbar
     // gris clair     : Annotations dans les settings
-    readonly property color tertiaryTextColor: Material.color(Material.Black,
-                                                              Material.Shade200)
+    readonly property color tertiaryTextColor: Material.color(Material.Black, Material.Shade200)
     /// filenames toBeSaved
-    readonly property color accentTextColor: Material.color(
-                                                 Material.DeepOrange,
-                                                 Material.Shade800)
+    readonly property color accentTextColor: Material.color(Material.DeepOrange, Material.Shade800)
 
     /// La couleur de fond du filename(s) sélectionné dans la liste.
-    readonly property color highlightBackgroundColor: Material.color(
-                                                          Material.DeepPurple,
-                                                          Material.Shade100)
+    readonly property color highlightBackgroundColor: Material.color(Material.DeepPurple, Material.Shade100)
 }

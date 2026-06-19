@@ -16,6 +16,7 @@ RowLayout {
     property string tagDescription: ""  ///< Texte explicatif affiché à droite.
     property bool   applied: false      ///< Si true, "Apply to all" est désactivé (car déjà appliqué).
     property int    selectionCount: 1   ///< Nombre de photos sélectionnées (pour activer "Apply to selection").
+    property string chipCategory: "photo" ///< Catégorie de couleur du chip.
 
     signal applyAll()           ///< Emis quand l'utilisateur clique sur "Apply to all".
     signal applyToSelection()   ///< Emis quand l'utilisateur clique sur "Apply to selection".
@@ -27,6 +28,7 @@ RowLayout {
     Chips {
         targetName: root.tagName
         content: root.content ? root.content : " "
+        chipCategory: root.chipCategory
     }
 
     RowLayout {

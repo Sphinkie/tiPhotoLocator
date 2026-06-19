@@ -22,6 +22,7 @@ Item {
                 id: chipDate
                 editable: true
                 deletable: false
+                chipCategory: "photo"
                 targetName: "date:"
 
 
@@ -35,6 +36,7 @@ Item {
                 id: chipTime
                 editable: true
                 deletable: false
+                chipCategory: "photo"
                 targetName: "time:"
 
 
@@ -48,18 +50,21 @@ Item {
                 id: chipCreator
                 editable: true
                 deletable: true
+                chipCategory: "photo"
                 targetName: "artist:"
             }
             FatChip {
                 id: chipDescription
                 editable: true
                 deletable: true
+                chipCategory: "photo"
                 targetName: qsTr("content description:")
             }
             Chips {
                 id: chipWriter
                 editable: true
                 deletable: true
+                chipCategory: "photo"
                 targetName: "writer:"
             }
         }

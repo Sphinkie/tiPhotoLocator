@@ -27,8 +27,11 @@ Rectangle {
     /// Durée de l'animation en millisecondes.
     property int duree: 450
 
+    /// Couleur de fond reçue du chip source.
+    property color chipColor: Style.chipBackgroundColor
+
     radius: 16
-    color: Style.chipBackgroundColor
+    color: chipColor
     opacity: 0.9
 
     /// Le texte du GhostChip est reçu à sa création.
@@ -36,7 +39,7 @@ Rectangle {
         anchors.centerIn: parent
         text: ghostRect.chipText
         font.pixelSize: 14
-        color: "black"
+        color: "white"
         clip: true
     }
 

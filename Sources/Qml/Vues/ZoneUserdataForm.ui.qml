@@ -32,6 +32,7 @@ Item {
                 id: chipKeyword0
                 editable: true
                 deletable: true
+                chipCategory: "keyword"
                 targetName: "keyword:"
             }
             /// Chip du keyword 1
@@ -39,6 +40,7 @@ Item {
                 id: chipKeyword1
                 editable: true
                 deletable: true
+                chipCategory: "keyword"
                 targetName: "keyword:"
             }
             /// Chip du keyword 2
@@ -46,6 +48,7 @@ Item {
                 id: chipKeyword2
                 editable: true
                 deletable: true
+                chipCategory: "keyword"
                 targetName: "keyword:"
             }
             /// Chip du keyword 3
@@ -53,6 +56,7 @@ Item {
                 id: chipKeyword3
                 editable: true
                 deletable: true
+                chipCategory: "keyword"
                 targetName: "keyword:"
             }
             /// Chip du keyword 4
@@ -60,6 +64,7 @@ Item {
                 id: chipKeyword4
                 editable: true
                 deletable: true
+                chipCategory: "keyword"
                 targetName: "keyword:"
             }
             /// Chip du keyword 5
@@ -67,6 +72,7 @@ Item {
                 id: chipKeyword5
                 editable: true
                 deletable: true
+                chipCategory: "keyword"
                 targetName: "keyword:"
             }
             /// Chip du keyword 6
@@ -74,6 +80,7 @@ Item {
                 id: chipKeyword6
                 editable: true
                 deletable: true
+                chipCategory: "keyword"
                 targetName: "keyword:"
             }
             /// Chip du keyword 7
@@ -81,6 +88,7 @@ Item {
                 id: chipKeyword7
                 editable: true
                 deletable: true
+                chipCategory: "keyword"
                 targetName: "keyword:"
             }
         }

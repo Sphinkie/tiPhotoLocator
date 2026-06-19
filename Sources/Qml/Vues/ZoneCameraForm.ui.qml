@@ -24,36 +24,42 @@ Item {
                 id: chipModel
                 editable: false
                 deletable: false
+                chipCategory: "camera"
                 targetName: "model:"
             }
             Chips {
                 id: chipMaker
                 editable: false
                 deletable: false
+                chipCategory: "camera"
                 targetName: "brand:"
             }
             Chips {
                 id: chipSoftware
                 editable: false
                 deletable: false
+                chipCategory: "camera"
                 targetName: "software:"
             }
             Chips {
                 id: chipMetadata
                 editable: false
                 deletable: false
+                chipCategory: "camera"
                 targetName: "metadata:"
             }
             Chips {
                 id: chipAperture
                 editable: false
                 deletable: false
+                chipCategory: "camera"
                 targetName: "aperture:"
             }
             Chips {
                 id: chipSpeed
                 editable: false
                 deletable: false
+                chipCategory: "camera"
                 targetName: "speed:"
             }
             Item {

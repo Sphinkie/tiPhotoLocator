@@ -54,6 +54,7 @@ Zone {
         Chips {
             id: chipDate
             Layout.leftMargin: 20
+            chipCategory: "photo"
             editable: false
             deletable: false
         }
@@ -61,6 +62,7 @@ Zone {
         Chips {
             id: chipTime
             Layout.leftMargin: 20
+            chipCategory: "photo"
             //content: "HH:MM"
             editable: false
             deletable: false
@@ -70,6 +72,7 @@ Zone {
             id: chipMake
             Layout.topMargin: 30 // on laisse un espace
             Layout.leftMargin: 20
+            chipCategory: "camera"
             editable: false
             deletable: false
         }
@@ -77,6 +80,7 @@ Zone {
         Chips {
             id: chipCamModel
             Layout.leftMargin: 20
+            chipCategory: "camera"
             editable: false
             deletable: false
         }
@@ -84,6 +88,7 @@ Zone {
         Chips {
             id: chipSpeed
             Layout.leftMargin: 20
+            chipCategory: "camera"
             editable: false
             deletable: false
         }
@@ -91,6 +96,7 @@ Zone {
         Chips {
             id: chipAperture
             Layout.leftMargin: 20
+            chipCategory: "camera"
             editable: false
             deletable: false
         }
@@ -98,6 +104,7 @@ Zone {
         Chips {
             id: chipCountry
             Layout.leftMargin: 20
+            chipCategory: "geo"
             editable: false
             deletable: false
         }
@@ -105,6 +112,7 @@ Zone {
         Chips {
             id: chipCity
             Layout.leftMargin: 20
+            chipCategory: "geo"
             editable: false
             deletable: false
         }

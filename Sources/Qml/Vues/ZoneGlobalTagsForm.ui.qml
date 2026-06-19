@@ -68,6 +68,7 @@ Zone {
         GlobalTag {
             id: tagCountry
             tagName: "country:"
+            chipCategory: "geo"
             content: country
             tagDescription: qsTr("The country where the photo was taken.")
             applied: countryApplied
@@ -77,6 +78,7 @@ Zone {
         GlobalTag {
             id: tagCity
             tagName: "city:"
+            chipCategory: "geo"
             content: city
             tagDescription: qsTr("City where the photo was taken or nearest city.")
             applied: cityApplied
@@ -86,6 +88,7 @@ Zone {
         GlobalTag {
             id: tagLocation
             tagName: "location:"
+            chipCategory: "geo"
             content: location
             tagDescription: qsTr("Additionnal geographical information.")
             applied: locationApplied

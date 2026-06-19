@@ -4,13 +4,16 @@ import QtQuick.Effects
 import QtQuick.Controls.Material
 import ".."
 
-
 /** **********************************************************************************************************
  * @brief Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle.
  * A noter que l'ombre doit être définie avant le rectangle, de façon à être dessinée avant, donc dessous.
  * A noter que le Rectangle contient un texte, mais ne s'adapte pas automatiquement à la longueur du texte.
  * C'est plutot le texte qui s'adapte au rectangle parent.
  * @see {https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html}
+ * @note sur les properties
+ * - target : nom technique du champ EXIF/IPTC tel qu'il est passé à ExifTool ("city", "latitude", "keywords"…). Sert aussi à router la valeur vers le bon champ dans PhotoModel.
+ * - targetName : label purement visuel affiché dans le chip ("brand:", "content description:", "artist:"…). Calculé automatiquement depuis target,  ou surchargé si le nom ExifTool n'est pas userfriendly (ex : target="make" → targetName="brand:").
+ * - chipCategory : notion UI uniquement, sans lien avec ExifTool. Regroupe des targets de même domaine pour leur attribuer une couleur ("geo" = tout ce qui localise, "camera" = tout ce  que le boîtier génère, "photo" = IPTC éditables, "keyword" = mots-clés). Nécessaire pour les chips qui n'ont pas de target (ils utilisent targetName directement).
  * ***********************************************************************************************************/
 Item {
     id: chipRoot
@@ -20,7 +23,7 @@ Item {
     /// type:string le texte du Chips
     property string content
     /// type:signal Emis après l'animation de suppression, pour déclencher la suppression réelle.
-    signal deleteClicked()
+    signal deleteClicked
     /// type:string Le nom technique du tag (ex: "city", "location"). Dérive targetName automatiquement.
     property string target: ""
     /// type:string Le label affiché dans le Chips. Calculé depuis target, ou surchargeable directement.
@@ -35,12 +38,62 @@ Item {
     /// Pour le controle inviduel des items
     property alias chipText: chipText
     property bool hideTargetWhenFilled: false ///< type:bool Si true, le targetName disparait dès que content est renseigné (pour FatChip).
+    /// Catégorie explicite du chip : "geo", "photo", "camera", "keyword". Vide = auto-détection depuis target.
+    property string chipCategory: ""
+    /// Si true, utilise la couleur pastel (Shade200) — pour les chips de suggestion (valeur proposée, non encore appliquée).
+    property bool isSuggestion: false
+
+    /// Couleur de fond calculée selon la catégorie (ou target si chipCategory est vide).
+    readonly property color chipColor: {
+        var cat = chipCategory !== "" ? chipCategory : target;
+        if (cat === "")
+            return Style.chipBackgroundColor;
+        switch (cat) {
+        case "geo":
+        case "latitude":
+        case "longitude":
+        case "country":
+        case "city":
+        case "location":
+            return isSuggestion ? Style.chipGeoSuggestionColor : Style.chipGeoColor;
+        case "keyword":
+        case "keywords":
+            return isSuggestion ? Style.chipKeywordSuggestionColor : Style.chipKeywordColor;
+        case "camera":
+        case "make":
+        case "model":
+        case "software":
+        case "aperture":
+        case "speed":
+        case "metadata":
+            return isSuggestion ? Style.chipCameraSuggestionColor : Style.chipCameraColor;
+        default:
+            return isSuggestion ? Style.chipPhotoSuggestionColor : Style.chipPhotoColor;
+        }
+    }
+
+    /// true si le chip a une couleur de catégorie, false si fond gris neutre.
+    readonly property bool _isColored: chipCategory !== "" || target !== ""
+
+    readonly property color _chipLabelColor: {
+        if (canSave)
+            return Qt.rgba(1, 1, 1, 0.7); // blanc semi-transparent à 70%
+        if (isSuggestion)
+            return Qt.rgba(0, 0, 0, 0.55); // noir semi-transparent
+        return _isColored ? Qt.rgba(1, 1, 1, 0.7) : Qt.rgba(0, 0, 0, 0.55);
+    }
+    readonly property color _chipValueColor: {
+        if (canSave)
+            return "white";
+        if (isSuggestion)
+            return Style.primaryTextColor;
+        return _isColored ? "white" : Style.primaryTextColor;
+    }
     // Les différents Chips doivent être dans un ColumLayout. On peut ainsi les aligner tous de la même façon.
     Layout.topMargin: 10 ///< marge haut (outside the item)
     Layout.leftMargin: 20 ///< marge gauche (outside the item)
     implicitHeight: 32 ///< Hauteur préférée si height n'est pas spécifiée.
     implicitWidth: 280 ///< Largeur préférée si width n'est pas spécifiée.
-
 
     /** ************************************************************************************
      * Ombre sous le Chip. (Avec Material, on pourrait utiliser 'elevation').
@@ -58,7 +111,6 @@ Item {
         cached: false // false pour ne pas bloquer les animations sur le chip parent.
     }
 
-
     /** ************************************************************************************
      * Rectangle du Chip.
      * *************************************************************************************/
@@ -66,9 +118,8 @@ Item {
         id: chipRectangle
         radius: 16
         visible: content ? true : false
-        color: Style.chipBackgroundColor
+        color: canSave ? Style.chipDirtyColor : chipColor
         anchors.fill: parent
-
 
         /** ************************************************************************************
          * Icone "crayon" pour modifier la valeur du tag.
@@ -88,7 +139,6 @@ Item {
                 anchors.fill: parent
             }
         }
-
 
         /** ************************************************************************************
          * Icone "save" pour mémoriser la valeur du tag.
@@ -111,7 +161,6 @@ Item {
             }
         }
 
-
         /** ************************************************************************************
          * Libellé "Target", cad le nom du tag à attribuer.
          * Couleur automatique du thème Material: foreground
@@ -123,16 +172,15 @@ Item {
             anchors.leftMargin: (editable || canSave) ? 36 : 12
             anchors.verticalCenter: parent.verticalCenter
             visible: !(hideTargetWhenFilled && content.trim() !== "")
-            width: (hideTargetWhenFilled && content.trim(
-                        ) !== "") ? 0 : implicitWidth
+            width: (hideTargetWhenFilled && content.trim() !== "") ? 0 : implicitWidth
             text: targetName === "" ? target + ":" : targetName
+            color: _chipLabelColor
             font.pixelSize: 12
             // Positionnement du texte
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.NoWrap
             clip: true // Le texte peut être tronqué
         }
-
 
         /** ************************************************************************************
          * Texte du chip, cad la valeur du tag à attribuer.
@@ -146,6 +194,7 @@ Item {
             anchors.rightMargin: 4
             anchors.verticalCenter: parent.verticalCenter
             text: content
+            color: _chipValueColor
             readOnly: true
             font.pixelSize: 14
             font.bold: canSave
@@ -159,13 +208,14 @@ Item {
             maximumLength: 24
             // Avec inputMask, Suppr efface le caractère mais ne déplace pas le curseur.
             // On force l'avance d'une position pour que chaque Suppr efface un digit différent.
-            Keys.onDeletePressed: function(event) {
-                event.accepted = false  // laisser TextInput effacer le caractère
+            Keys.onDeletePressed: function (event) {
+                event.accepted = false;  // laisser TextInput effacer le caractère
                 if (inputMask !== "")
-                    Qt.callLater(function() { cursorPosition = cursorPosition + 1 })
+                    Qt.callLater(function () {
+                        cursorPosition = cursorPosition + 1;
+                    });
             }
         }
-
 
         /** ************************************************************************************
          * Icone "swap" pour basculer entre les targets "city" et "location".
@@ -185,7 +235,6 @@ Item {
             }
         }
 
-
         /** ************************************************************************************
          * Icone "corbeille" pour enlever le tag.
          * *************************************************************************************/
@@ -204,7 +253,6 @@ Item {
                 anchors.fill: parent
             }
         }
-
 
         /** ************************************************************************************
          * Icone "revert" pour remettre la valeur précédente du tag.
@@ -226,32 +274,52 @@ Item {
         }
     }
 
-
     /** ************************************************************************************
      * Interception du clic sur l'icone DELETE pour lancer l'animation avant suppression.
      * *************************************************************************************/
     Connections {
         target: deleteArea
-        function onClicked() { chipRoot.state = "deleting" }
+        function onClicked() {
+            chipRoot.state = "deleting";
+        }
     }
-
 
     /** ************************************************************************************
      * Etat "deleting" : le chip se réduit et disparait.
      * *************************************************************************************/
     states: State {
         name: "deleting"
-        PropertyChanges { target: chipRoot; opacity: 0; scale: 0.6 }
+        PropertyChanges {
+            target: chipRoot
+            opacity: 0
+            scale: 0.6
+        }
     }
 
     transitions: Transition {
-        from: ""; to: "deleting"
+        from: ""
+        to: "deleting"
         SequentialAnimation {
             ParallelAnimation {
-                NumberAnimation { target: chipRoot; property: "opacity"; duration: 250; easing.type: Easing.OutQuad }
-                NumberAnimation { target: chipRoot; property: "scale";   duration: 250; easing.type: Easing.OutQuad }
+                NumberAnimation {
+                    target: chipRoot
+                    property: "opacity"
+                    duration: 250
+                    easing.type: Easing.OutQuad
+                }
+                NumberAnimation {
+                    target: chipRoot
+                    property: "scale"
+                    duration: 250
+                    easing.type: Easing.OutQuad
+                }
             }
-            ScriptAction { script: { chipRoot.deleteClicked(); chipRoot.state = "" } }
+            ScriptAction {
+                script: {
+                    chipRoot.deleteClicked();
+                    chipRoot.state = "";
+                }
+            }
         }
     }
 }
