@@ -4,17 +4,17 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="10"/>
+        <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="9"/>
         <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; allows you to locate your photos on the world map, and edit the EXIF and IPTC tags embedded inside the photos.&lt;br/&gt;</source>
         <translation>&lt;b&gt;TiPhotoLocator&lt;/b&gt; allows you to locate your photos on a world map, and edit the EXIF and IPTC tags embedded inside the photos.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="11"/>
+        <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="10"/>
         <source>&lt;br/&gt;&lt;br/&gt;This application was created by David de Lorenzo.</source>
         <translation>&lt;br/&gt;&lt;br/&gt;This application was created by David de Lorenzo.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="12"/>
+        <location filename="../Sources/Qml/Dialogs/AboutDialog.qml" line="11"/>
         <source>TiPhotoLocator is free and without ads.</source>
         <translation>TiPhotoLocator is free and without ads.</translation>
     </message>
@@ -47,14 +47,17 @@
         <translation>- Give it a name, ie &lt;i&gt;TiPhotoLocator&lt;/i&gt;.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="59"/>
         <source>- Submit</source>
-        <translation>- Submit</translation>
+        <translation type="vanished">- Submit</translation>
+    </message>
+    <message>
+        <source>This AI will try to find the location of the photo, not keywords.</source>
+        <translation type="vanished">This AI will try to find the location of the photo, not keywords.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="41"/>
-        <source>This AI will try to find the location of the photo, not keywords.</source>
-        <translation>This AI will try to find the location of the photo, not keywords.</translation>
+        <source>Note: The AI will try to find the location of the photo, not keywords.&lt;br/&gt;AI suggests a &lt;b&gt;yellow marker&lt;/b&gt;, and a &lt;b&gt;location name&lt;/b&gt;.</source>
+        <translation>Note: The AI will try to find the location of the photo, not keywords.&lt;br/&gt;AI suggests a &lt;b&gt;yellow marker&lt;/b&gt;, and a &lt;b&gt;location name&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="50"/>
@@ -66,6 +69,11 @@
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="53"/>
         <source>- Create an account.&lt;br/&gt;</source>
         <translation>- Create an account.&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="59"/>
+        <source>- Submit.&lt;br/&gt;</source>
+        <translation>- Submit.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="60"/>
@@ -876,27 +884,27 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
 <context>
     <name>ZonePreview</name>
     <message>
-        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="17"/>
+        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="16"/>
         <source>Welcome!</source>
         <translation>Welcome!</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="18"/>
+        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="17"/>
         <source>&lt;b&gt;TiPhotoLocator&lt;/b&gt; helps you geotag and tag your photos.</source>
         <translation>&lt;b&gt;TiPhotoLocator&lt;/b&gt; helps you geotag and tag your photos.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="19"/>
+        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="18"/>
         <source>To get started, open the folder containing your photos via the menu &lt;pre&gt;Folders → Open...&lt;/pre&gt;&lt;br&gt;Then navigate the tabs to fill in the various tags.</source>
         <translation>To get started, open the folder containing your photos via the menu &lt;pre&gt;Folders → Open...&lt;/pre&gt;&lt;br&gt;Then navigate the tabs to fill in the various tags.</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="20"/>
+        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="19"/>
         <source>&lt;u&gt;Note:&lt;/u&gt; Modified data is saved into the photos only when you click the &lt;pre&gt;&apos;Save&apos;&lt;/pre&gt; button</source>
         <translation>&lt;u&gt;Note:&lt;/u&gt; Modified data is saved into the photos only when you click the &lt;pre&gt;&apos;Save&apos;&lt;/pre&gt; button</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="25"/>
+        <location filename="../Sources/Qml/Controllers/ZonePreview.qml" line="24"/>
         <source>Summary</source>
         <translation>Summary</translation>
     </message>

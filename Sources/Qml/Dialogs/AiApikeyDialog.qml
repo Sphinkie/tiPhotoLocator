@@ -38,7 +38,7 @@ Dialog {
         }
 
         Text {
-            text: qsTr("This AI will try to find the location of the photo, not keywords.")
+            text: qsTr("Note: The AI will try to find the location of the photo, not keywords.<br/>AI suggests a <b>yellow marker</b>, and a <b>location name</b>.")
             wrapMode: Text.WordWrap
             font.pointSize: 11
             font.italic: true
@@ -56,7 +56,7 @@ Dialog {
     readonly property string t5: qsTr("- Go to top-right menu >  API Keys → Create API Key.<br/>")
     readonly property string t6: qsTr("- Give it a name, ie <i>TiPhotoLocator</i>.<br/>")
     // readonly property string t7: qsTr("- Give it a type: <b>Read</b><br/>")
-    readonly property string t7: qsTr("- Submit")
+    readonly property string t7: qsTr("- Submit.<br/>")
     readonly property string t8: qsTr("- Paste it in the 'Configuration' menu.<br/>")
     readonly property string t9: qsTr("- Restart <b>TiPhotoLocator</b>.<br/>")
 }

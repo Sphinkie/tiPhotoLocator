@@ -2,7 +2,6 @@ import QtQuick
 import "../Vues"
 import "../Javascript/TiUtilities.js" as Utilities
 
-
 /** **********************************************************************************************************
  * @brief QML: Controleur pour la Zone des informations de Preview.
  * tabbedPage est l'item parent qui contient les infos sur la photo sélectionnée dans la listview (currentPhoto),
@@ -27,20 +26,15 @@ ZonePreviewForm {
 
     // On determine le contenu des Chips ici.
     chipName.content: isWelcome ? "TiPhotoLocator" : tabbedPage.currentPhoto.filename
-    chipSize.content: Utilities.toReadableSize(
-                          tabbedPage.currentPhoto.imageWidth,
-                          tabbedPage.currentPhoto.imageHeight)
-    chipDate.content: Utilities.toReadableDate(
-                          tabbedPage.currentPhoto.dateTimeOriginal)
-    chipTime.content: Utilities.toReadableTime(
-                          tabbedPage.currentPhoto.dateTimeOriginal)
+    chipSize.content: Utilities.toReadableSize(tabbedPage.currentPhoto.imageWidth, tabbedPage.currentPhoto.imageHeight)
+    chipDate.content: Utilities.toReadableDate(tabbedPage.currentPhoto.dateTimeOriginal)
+    chipTime.content: Utilities.toReadableTime(tabbedPage.currentPhoto.dateTimeOriginal)
     chipMake.content: tabbedPage.currentPhoto.make
     chipCamModel.content: tabbedPage.currentPhoto.camModel
-    chipSpeed.content: Utilities.toReadableSpeed(
-                           tabbedPage.currentPhoto.shutterSpeed)
-    chipAperture.content: Utilities.toReadableAperture(
-                              tabbedPage.currentPhoto.fNumber)
+    chipSpeed.content: Utilities.toReadableSpeed(tabbedPage.currentPhoto.shutterSpeed)
+    chipAperture.content: Utilities.toReadableAperture(tabbedPage.currentPhoto.fNumber)
     chipCountry.content: tabbedPage.currentPhoto.country
+    chipCity.content: tabbedPage.currentPhoto.city
 }
 
 /*##^##

@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Layouts
 import "../Components"
 
-
 /** **********************************************************************************************************
  * @brief QML: Zone des informations de Preview.
  * Cette zone comporte les Chips principaux, non éditables: Filename, Dimensions, Date de la prise de vue,
@@ -19,6 +18,7 @@ Zone {
     property alias chipSpeed: chipSpeed
     property alias chipAperture: chipAperture
     property alias chipCountry: chipCountry
+    property alias chipCity: chipCity
     property string welcomeText
 
     txtZone: qsTr("Summary")
@@ -97,6 +97,13 @@ Zone {
         /// Ce chip affiche le pays où a été prise la photo.
         Chips {
             id: chipCountry
+            Layout.leftMargin: 20
+            editable: false
+            deletable: false
+        }
+        /// Ce chip affiche la ville de la photo (ou la plus proche).
+        Chips {
+            id: chipCity
             Layout.leftMargin: 20
             editable: false
             deletable: false
