@@ -1,0 +1,422 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>TiPhotoLocator — Accent Color</title>
+<style>
+  :root {
+    --bg-50:  #ECEFF1;
+    --bg-100: #CFD8DC;
+    --bg-200: #B0BEC5;
+    --bg-400: #78909C;
+    --bg-500: #607D8B;
+    --bg-800: #37474F;
+    --chip-geo:     #26A69A;
+    --chip-photo:   #7E57C2;
+    --chip-camera:  #607D8B;
+    --chip-kw:      #5C6BC0;
+    --chip-dirty:   #FF7043;
+    --text-main:    #212121;
+    --text-mid:     #757575;
+    --text-dim:     rgba(0,0,0,.45);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #e8ecee;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--text-main);
+    padding: 28px 28px 48px;
+  }
+
+  header { margin-bottom: 24px; }
+  h1 { font-size: 1rem; font-weight: 700; color: var(--bg-800); margin-bottom: 3px; }
+  .subtitle { font-size: 0.8rem; color: var(--text-mid); line-height: 1.5; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 870px;
+  }
+
+  /* ── Card ── */
+  .card {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,.13);
+    background: #fff;
+    transition: box-shadow .2s;
+  }
+  .card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+  .card.pick {
+    box-shadow: 0 0 0 2.5px var(--c), 0 4px 14px rgba(0,0,0,.16);
+  }
+  .card.pick:hover {
+    box-shadow: 0 0 0 2.5px var(--c), 0 6px 18px rgba(0,0,0,.2);
+  }
+
+  /* ── Mini app shell ── */
+  .menubar {
+    background: var(--bg-200);
+    padding: 3px 8px;
+    display: flex;
+    gap: 10px;
+    font-size: 9.5px;
+    color: rgba(0,0,0,.6);
+    letter-spacing: .01em;
+  }
+
+  .toolbar {
+    background: var(--bg-100);
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid var(--bg-200);
+  }
+  .t-path {
+    flex: 1;
+    font-size: 9px;
+    color: var(--text-mid);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .t-btn {
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: var(--bg-400);
+    color: #fff;
+    border: none;
+    cursor: default;
+    letter-spacing: .02em;
+  }
+
+  /* TabBar — the main subject */
+  .tabbar {
+    background: var(--bg-100);
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+  }
+  .tab {
+    padding: 7px 9px 5px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,.42);
+    cursor: default;
+    border-bottom: 2.5px solid transparent;
+    user-select: none;
+  }
+  .tab.on {
+    color: var(--c-text, var(--c));
+    border-bottom-color: var(--c);
+  }
+
+  /* Content */
+  .content {
+    background: var(--bg-50);
+    padding: 9px 9px 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-height: 82px;
+  }
+  .row { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    border-radius: 11px;
+    padding: 0 9px;
+    font-size: 9.5px;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 1px 2px 4px rgba(0,0,0,.18);
+    white-space: nowrap;
+  }
+  .chip.geo    { background: var(--chip-geo);    }
+  .chip.photo  { background: var(--chip-photo);  }
+  .chip.cam    { background: var(--chip-camera); }
+  .chip.kw     { background: var(--chip-kw);     }
+  .chip.dirty  { background: var(--chip-dirty);  }
+  .chip.sugg-geo   { background: #80CBC4; color: rgba(0,0,0,.75); }
+  .chip.sugg-kw    { background: #9FA8DA; color: rgba(0,0,0,.75); }
+
+  /* Accent button — shows the accent as a filled action */
+  .abtn {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    border-radius: 3px;
+    padding: 0 9px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    background: var(--c);
+    color: var(--c-on, #fff);
+    box-shadow: 0 1px 4px rgba(0,0,0,.22);
+    white-space: nowrap;
+  }
+
+  /* ── Card footer ── */
+  .footer {
+    padding: 8px 10px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--c);
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  }
+  .name { font-size: .82rem; font-weight: 700; color: var(--bg-800); }
+  .hex  { font-size: .72rem; color: var(--text-mid); font-family: monospace; }
+  .badge {
+    margin-left: auto;
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 2px 7px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .badge.now  { background: var(--bg-100); color: var(--bg-500); }
+  .badge.pick { background: var(--c); color: var(--c-on, #fff); }
+
+  /* ── Conflict warning ── */
+  .conflict {
+    padding: 4px 10px;
+    background: #FFF8E1;
+    border-top: 1px solid #FFE082;
+    font-size: 8.5px;
+    color: #795548;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .conflict::before { content: "⚠"; font-size: 9px; }
+</style>
+
+<header>
+  <h1>Couleur d'accent — aperçu en contexte</h1>
+  <p class="subtitle">Chaque option sur fond BlueGrey identique à l'application. L'accent colore l'onglet actif, le bouton d'action, et l'état "modifié non sauvegardé".</p>
+</header>
+
+<div class="grid">
+
+  <!-- 1. Brown 400 — actuel -->
+  <div class="card" style="--c:#8D6E63; --c-text:#8D6E63;">
+    <div class="menubar"><span>Fichiers</span><span>Réglages</span><span>Aide</span></div>
+    <div class="toolbar">
+      <span class="t-path">P:\2023\La Réunion</span>
+      <button class="t-btn">Rescan</button>
+    </div>
+    <div class="tabbar">
+      <div class="tab">Preview</div>
+      <div class="tab on">Map</div>
+      <div class="tab">Tags</div>
+      <div class="tab">Global</div>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="chip geo">city: Saint-Paul</div>
+        <div class="chip sugg-geo">France</div>
+      </div>
+      <div class="row">
+        <div class="chip photo">date: 14/06/2023</div>
+        <div class="chip dirty">artist: David ✎</div>
+      </div>
+      <div class="row">
+        <div class="abtn">Enregistrer</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="dot"></div>
+      <span class="name">Brown 400</span>
+      <span class="hex">#8D6E63</span>
+      <span class="badge now">Actuel</span>
+    </div>
+  </div>
+
+  <!-- 2. Amber 600 — recommandé -->
+  <div class="card pick" style="--c:#FFB300; --c-text:#E65100; --c-on:rgba(0,0,0,.87);">
+    <div class="menubar"><span>Fichiers</span><span>Réglages</span><span>Aide</span></div>
+    <div class="toolbar">
+      <span class="t-path">P:\2023\La Réunion</span>
+      <button class="t-btn">Rescan</button>
+    </div>
+    <div class="tabbar">
+      <div class="tab">Preview</div>
+      <div class="tab on">Map</div>
+      <div class="tab">Tags</div>
+      <div class="tab">Global</div>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="chip geo">city: Saint-Paul</div>
+        <div class="chip sugg-geo">France</div>
+      </div>
+      <div class="row">
+        <div class="chip photo">date: 14/06/2023</div>
+        <div class="chip dirty">artist: David ✎</div>
+      </div>
+      <div class="row">
+        <div class="abtn">Enregistrer</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="dot"></div>
+      <span class="name">Amber 600</span>
+      <span class="hex">#FFB300</span>
+      <span class="badge pick">Recommandé</span>
+    </div>
+  </div>
+
+  <!-- 3. Amber 800 — plus foncé, meilleur contraste texte -->
+  <div class="card" style="--c:#FF8F00; --c-text:#FF8F00;">
+    <div class="menubar"><span>Fichiers</span><span>Réglages</span><span>Aide</span></div>
+    <div class="toolbar">
+      <span class="t-path">P:\2023\La Réunion</span>
+      <button class="t-btn">Rescan</button>
+    </div>
+    <div class="tabbar">
+      <div class="tab">Preview</div>
+      <div class="tab on">Map</div>
+      <div class="tab">Tags</div>
+      <div class="tab">Global</div>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="chip geo">city: Saint-Paul</div>
+        <div class="chip sugg-geo">France</div>
+      </div>
+      <div class="row">
+        <div class="chip photo">date: 14/06/2023</div>
+        <div class="chip dirty">artist: David ✎</div>
+      </div>
+      <div class="row">
+        <div class="abtn">Enregistrer</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="dot"></div>
+      <span class="name">Amber 800</span>
+      <span class="hex">#FF8F00</span>
+    </div>
+  </div>
+
+  <!-- 4. Teal 400 -->
+  <div class="card" style="--c:#26A69A; --c-text:#26A69A;">
+    <div class="menubar"><span>Fichiers</span><span>Réglages</span><span>Aide</span></div>
+    <div class="toolbar">
+      <span class="t-path">P:\2023\La Réunion</span>
+      <button class="t-btn">Rescan</button>
+    </div>
+    <div class="tabbar">
+      <div class="tab">Preview</div>
+      <div class="tab on">Map</div>
+      <div class="tab">Tags</div>
+      <div class="tab">Global</div>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="chip geo">city: Saint-Paul</div>
+        <div class="chip sugg-geo">France</div>
+      </div>
+      <div class="row">
+        <div class="chip photo">date: 14/06/2023</div>
+        <div class="chip dirty">artist: David ✎</div>
+      </div>
+      <div class="row">
+        <div class="abtn">Enregistrer</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="dot"></div>
+      <span class="name">Teal 400</span>
+      <span class="hex">#26A69A</span>
+    </div>
+    <div class="conflict">Déjà utilisé pour les chips géolocalisation</div>
+  </div>
+
+  <!-- 5. Indigo 400 -->
+  <div class="card" style="--c:#5C6BC0; --c-text:#5C6BC0;">
+    <div class="menubar"><span>Fichiers</span><span>Réglages</span><span>Aide</span></div>
+    <div class="toolbar">
+      <span class="t-path">P:\2023\La Réunion</span>
+      <button class="t-btn">Rescan</button>
+    </div>
+    <div class="tabbar">
+      <div class="tab">Preview</div>
+      <div class="tab on">Map</div>
+      <div class="tab">Tags</div>
+      <div class="tab">Global</div>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="chip geo">city: Saint-Paul</div>
+        <div class="chip sugg-geo">France</div>
+      </div>
+      <div class="row">
+        <div class="chip photo">date: 14/06/2023</div>
+        <div class="chip dirty">artist: David ✎</div>
+      </div>
+      <div class="row">
+        <div class="abtn">Enregistrer</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="dot"></div>
+      <span class="name">Indigo 400</span>
+      <span class="hex">#5C6BC0</span>
+    </div>
+    <div class="conflict">Déjà utilisé pour les chips keywords</div>
+  </div>
+
+  <!-- 6. DeepOrange 400 -->
+  <div class="card" style="--c:#FF7043; --c-text:#FF7043;">
+    <div class="menubar"><span>Fichiers</span><span>Réglages</span><span>Aide</span></div>
+    <div class="toolbar">
+      <span class="t-path">P:\2023\La Réunion</span>
+      <button class="t-btn">Rescan</button>
+    </div>
+    <div class="tabbar">
+      <div class="tab">Preview</div>
+      <div class="tab on">Map</div>
+      <div class="tab">Tags</div>
+      <div class="tab">Global</div>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="chip geo">city: Saint-Paul</div>
+        <div class="chip sugg-geo">France</div>
+      </div>
+      <div class="row">
+        <div class="chip photo">date: 14/06/2023</div>
+        <div class="chip dirty">artist: David ✎</div>
+      </div>
+      <div class="row">
+        <div class="abtn">Enregistrer</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="dot"></div>
+      <span class="name">DeepOrange 400</span>
+      <span class="hex">#FF7043</span>
+    </div>
+    <div class="conflict">Déjà utilisé pour les chips "dirty" (non sauvegardé)</div>
+  </div>
+
+</div>

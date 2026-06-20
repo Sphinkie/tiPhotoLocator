@@ -180,27 +180,27 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="180"/>
+        <location filename="../Sources/Qml/Main.qml" line="181"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="183"/>
+        <location filename="../Sources/Qml/Main.qml" line="184"/>
         <source>MAP</source>
         <translation>CARTE</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="187"/>
+        <location filename="../Sources/Qml/Main.qml" line="188"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>TAGS EXIF ET IPTC</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="191"/>
+        <location filename="../Sources/Qml/Main.qml" line="192"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="310"/>
+        <location filename="../Sources/Qml/Main.qml" line="313"/>
         <source>Write error</source>
         <translation>Erreur d&apos;écriture</translation>
     </message>
@@ -875,7 +875,7 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
         <translation>Tags relatifs à la photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="61"/>
+        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="57"/>
         <source>content description:</source>
         <translation>Description du contenu:</translation>
     </message>

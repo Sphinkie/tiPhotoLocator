@@ -25,7 +25,7 @@ qt_add_executable(tiPhotoLocator
 
 qt_add_qml_module(tiPhotoLocator
     URI QT_TiPhotoLocator
-    VERSION 1.0
+    VERSION 2.0
     SOURCES
         Sources/cpp/ExifReadTask.cpp          Sources/cpp/ExifReadTask.h
         Sources/cpp/ExifWriteTask.cpp         Sources/cpp/ExifWriteTask.h
@@ -60,6 +60,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/TextFieldSettings.qml
         Sources/Qml/Components/MapView.qml
         Sources/Qml/Components/MainMenuBar.qml
+        Sources/Qml/Components/MyTabButton.qml
         Sources/Qml/Components/PhotoListview.qml
         Sources/Qml/Components/TinyChip.qml
         Sources/Qml/Components/ToolbarFilters.qml
@@ -93,6 +94,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Dialogs/RescanWarningDialog.qml
         Sources/Qml/Dialogs/TiFolderDialog.qml
         Sources/Qml/Dialogs/TutorialPopup.qml
+        Sources/Qml/Dialogs/QuitWarningDialog.qml
     QML_FILES
         Sources/Qml/Models/ModelFolderList.qml
     QML_FILES
@@ -113,7 +115,6 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
-        QML_FILES Sources/Qml/Dialogs/QuitWarningDialog.qml
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

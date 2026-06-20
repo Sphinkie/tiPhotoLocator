@@ -181,27 +181,27 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="180"/>
+        <location filename="../Sources/Qml/Main.qml" line="181"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="183"/>
+        <location filename="../Sources/Qml/Main.qml" line="184"/>
         <source>MAP</source>
         <translation>MAP</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="187"/>
+        <location filename="../Sources/Qml/Main.qml" line="188"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>EXIF / IPTC TAGS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="191"/>
+        <location filename="../Sources/Qml/Main.qml" line="192"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="310"/>
+        <location filename="../Sources/Qml/Main.qml" line="313"/>
         <source>Write error</source>
         <translation>Write error</translation>
     </message>
@@ -876,7 +876,7 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
         <translation>Photo related tags</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="61"/>
+        <location filename="../Sources/Qml/Vues/ZonePhotoForm.ui.qml" line="57"/>
         <source>content description:</source>
         <translation>content description:</translation>
     </message>

@@ -1,0 +1,16 @@
+Voici les candidats qui s'accordent bien avec BlueGrey, par famille :
+
+  Contraste chaud/froid (le classique Material)
+  - Amber — jaune doré, contraste fort et chaleureux sur BlueGrey. Le duo BlueGrey+Amber est l'un des plus utilisés dans les apps Material "sérieuses" (dashboards, outils pro).
+  - Orange — plus vif qu'Amber, plus énergique. Moins raffiné.
+
+  Harmonie dans le froid (rester dans la même famille)
+  - Teal — déjà utilisé pour les chips geo, ça créerait une cohérence : la couleur d'accent de l'UI serait la même que la catégorie géolocalisation. Risque de confusion si on ne fait
+  pas attention.
+  - Cyan / LightBlue — plus clair, plus aérien. Doux mais peut manquer de punch pour un indicateur d'onglet.
+  - Indigo — profond, sérieux. Harmonieux avec BlueGrey car ils partagent la teinte bleue, mais avec plus de saturation.
+
+  Ma recommandation : Amber (Shade600 ou Shade700)
+
+  C'est le meilleur rapport harmonie/lisibilité avec BlueGrey : le contraste chaud/froid fait ressortir l'onglet actif sans agressivité, et Amber ne se retrouve pas déjà dans les
+  couleurs de chips — donc pas de confusion sémantique. Shade600/700 plutôt que 400 pour éviter qu'il soit trop pâle sur fond BlueGrey.
