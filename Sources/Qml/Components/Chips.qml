@@ -90,6 +90,8 @@ Item {
         return _isColored ? "white" : Style.primaryTextColor;
     }
     // Les différents Chips doivent être dans un ColumLayout. On peut ainsi les aligner tous de la même façon.
+    // visible sur le root (et non sur chipRectangle) pour que le ColumnLayout n'alloue pas d'espace aux chips vides.
+    visible: !!content
     Layout.topMargin: 10 ///< marge haut (outside the item)
     Layout.leftMargin: 20 ///< marge gauche (outside the item)
     implicitHeight: 32 ///< Hauteur préférée si height n'est pas spécifiée.
@@ -117,7 +119,6 @@ Item {
     Rectangle {
         id: chipRectangle
         radius: 16
-        visible: content ? true : false
         color: canSave ? Style.chipDirtyColor : chipColor
         anchors.fill: parent
 

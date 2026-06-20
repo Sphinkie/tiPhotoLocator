@@ -10,10 +10,10 @@ import QtQuick.Controls.Material
  * - Les roles des couleurs dans le MaterialDesign (Surface, Primary, Secondary, Tertiary):
  *   @sa https://m3.material.io/styles/color/the-color-system/color-roles
  * Choisi sur coolors.co :
- *  lavender grey - indigo - ash brow - lawn green - deep saffron
+ *  lavender grey - indigo - amber - lawn green - deep saffron
  * Traduit par (équivalents Material pre-defined colors):
  *  @sa https://doc.qt.io/qt-6/qtquickcontrols-material.html
- *  BlueGrey (100) - DeepPurple - Brown - Lime -  Orange
+ *  BlueGrey (100) - DeepPurple - Amber - Lime - Orange
  * **********************************************************************************************************/
 Item {
 
@@ -23,7 +23,7 @@ Item {
     /// Couleur du fond: Barre de menu. Barre des onglets
     property var background: Material.color(Material.BlueGrey, Material.Shade200) // Material.background
     /// Couleur d'accentuation pour les items et textes en highlight.
-    property var accent: Material.color(Material.Brown, Material.Shade400) // Material.accent
+    property var accent: Material.color(Material.Amber, Material.Shade700) // Material.accent
     /// Couleur des textes.
     property int foreground: Material.DeepPurple // Material.foreground
     /// Couleur primaire = non utilisé sur Desktop ?
@@ -66,7 +66,7 @@ Item {
     readonly property color chipPhotoSuggestionColor: Material.color(Material.DeepPurple, Material.Shade300)
     readonly property color chipCameraSuggestionColor: Material.color(Material.BlueGrey, Material.Shade300)
     readonly property color chipKeywordSuggestionColor: Material.color(Material.Indigo, Material.Shade300)
-    // Chip modifié non encore sauvegardé (Option C2)
+    // Chip modifié non encore sauvegardé
     readonly property color chipDirtyColor: Material.color(Material.DeepOrange, Material.Shade400)
 
     // ----------------------------------------------------------------------
@@ -89,6 +89,8 @@ Item {
     readonly property color tertiaryTextColor: Material.color(Material.Black, Material.Shade200)
     /// filenames toBeSaved
     readonly property color accentTextColor: Material.color(Material.DeepOrange, Material.Shade800)
+    /// Selected Tab text
+    readonly property color accentTabTextColor: Material.color(Material.DeepOrange, Material.Shade700)
 
     /// La couleur de fond du filename(s) sélectionné dans la liste.
     readonly property color highlightBackgroundColor: Material.color(Material.DeepPurple, Material.Shade100)

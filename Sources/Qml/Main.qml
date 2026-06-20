@@ -87,9 +87,11 @@ ApplicationWindow {
     // ----------------------------------------------------------------
     // Déclaration des popups
     // ----------------------------------------------------------------
+    /// Fenêtre de popup avec les infos sur le programme
     AboutDialog {
         id: aboutPage
     }
+    /// Fenêtre de popup avec les crédits
     CreditsDialog {
         id: creditsPage
     }
@@ -108,11 +110,10 @@ ApplicationWindow {
     PopupKeywords {
         id: keywordsPopup
     }
-
+    /// Popup en overlay pour le tutorial
     TutorialPopup {
         id: tutorialPage
     }
-
     /// Popup plein-écran pour visualiser une imagette en grand.
     ImagettePopup {
         id: imagePreviewPopup
@@ -176,18 +177,18 @@ ApplicationWindow {
                 Layout.leftMargin: 120
                 Layout.fillWidth: true
                 Layout.rightMargin: 40
-                TabButton {
+                MyTabButton {
                     text: qsTr("PREVIEW")
                 }
-                TabButton {
+                MyTabButton {
                     text: qsTr("MAP")
                     onClicked: _suggestionCategoryProxyModel.setFilterValue("geo")
                 }
-                TabButton {
+                MyTabButton {
                     text: qsTr("EXIF / IPTC TAGS")
                     onClicked: _suggestionCategoryProxyModel.setFilterValue("tag")
                 }
-                TabButton {
+                MyTabButton {
                     text: qsTr("GLOBAL")
                 }
             }
@@ -302,12 +303,14 @@ ApplicationWindow {
     }
 
     /// Snackbar pour les erreurs d'écriture ExifTool.
-    Snackbar { id: snackbar }
+    Snackbar {
+        id: snackbar
+    }
 
     Connections {
         target: _photoModel
         function onWriteErrorOccurred(filename, message) {
-            snackbar.show(qsTr("Write error") + " — " + filename + " : " + message)
+            snackbar.show(qsTr("Write error") + " — " + filename + " : " + message);
         }
     }
 
