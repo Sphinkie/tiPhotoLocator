@@ -34,6 +34,9 @@ Interface & Thème
   - Trois notions distinctes dans Chips.qml : target (champ ExifTool), targetName (label affiché), chipCategory (couleur UI)
   - isSuggestion : propriété bool sur Chips.qml — pastel automatique dans SuggestionRepeater
   - GhostChip hérite de la couleur du chip source lors de l'animation de vol
+  - Accent Brown → Amber 900 : meilleur contraste sur fond BlueGrey clair
+  - MyTabButton.qml : composant TabButton avec texte foncé (dissocié de l'accent) + gras sur onglet actif
+  - Chips.qml : visible sur chipRoot (pas sur chipRectangle) — le ColumnLayout ne réserve plus d'espace pour les chips vides
 
 Corrections de bugs
   - Chips : touche Suppr avec inputMask — event.accepted=false pour laisser TextInput C++ agir (sinon le curseur n'avançait pas après effacement)

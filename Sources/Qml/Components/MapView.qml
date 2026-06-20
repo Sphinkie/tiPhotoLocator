@@ -3,7 +3,6 @@ import QtCore
 import QtLocation
 import QtPositioning
 
-
 /** **********************************************************************************************************
  * @brief Affichage d'une carte OpenStreetMap
  * - Map: Donner un id
@@ -28,7 +27,6 @@ Map {
     zoomLevel: 6
     plugin: mapPlugin
 
-
     /** ******************************************************************************************************
      * Les différentes cartes supportées par le plugin OSM:
        - 0 Street Map        (Street map view)
@@ -40,15 +38,12 @@ Map {
        - 6 Custom URL Map    (Thunderforest)
     * ********************************************************************************************************/
     readonly property var mapProviderIndices: [0, 4, 6]
-    activeMapType: supportedMapTypes[mapProviderIndices[settings.value(
-                                                            "mapProvider", 2)]]
+    activeMapType: supportedMapTypes[mapProviderIndices[settings.value("mapProvider", 2)]]
 
     property alias mapCircle: mapCircle
     /// Position d'accueil de la carte, lue depuis les Settings (Paris par défaut).
     /// Nota: settings est déclaré plus bas, mais accessible ici car les bindings QML sont évalués après la création de tous les objets du composant.
-    property var homeCoords: QtPositioning.coordinate(
-                                 settings.value("homeLatitude", 48.8529),
-                                 settings.value("homeLongitude", 2.35005))
+    property var homeCoords: QtPositioning.coordinate(settings.value("homeLatitude", 48.8529), settings.value("homeLongitude", 2.35005))
 
     DragHandler {
         id: drag
@@ -64,18 +59,15 @@ Map {
         rotationScale: 1 / 60
         property: parent.zoomTowardsCursor ? "" : "zoomLevel"
         onWheel: event => {
-                     if (!parent.zoomTowardsCursor)
-                     return
-                     var zoomDelta = event.angleDelta.y / 480 // ~0.25 par cran de molette
-                     var mousePos = Qt.point(event.x, event.y)
-                     var mouseCoord = parent.toCoordinate(mousePos)
-                     parent.zoomLevel = Math.max(
-                         parent.minimumZoomLevel,
-                         Math.min(parent.maximumZoomLevel,
-                                  parent.zoomLevel + zoomDelta))
-                     var newPos = parent.fromCoordinate(mouseCoord, false)
-                     parent.pan(newPos.x - mousePos.x, newPos.y - mousePos.y)
-                 }
+            if (!parent.zoomTowardsCursor)
+                return;
+            var zoomDelta = event.angleDelta.y / 480; // ~0.25 par cran de molette
+            var mousePos = Qt.point(event.x, event.y);
+            var mouseCoord = parent.toCoordinate(mousePos);
+            parent.zoomLevel = Math.max(parent.minimumZoomLevel, Math.min(parent.maximumZoomLevel, parent.zoomLevel + zoomDelta));
+            var newPos = parent.fromCoordinate(mouseCoord, false);
+            parent.pan(newPos.x - mousePos.x, newPos.y - mousePos.y);
+        }
     }
     MapCircle {
         id: mapCircle
@@ -83,7 +75,6 @@ Map {
         border.color: "red"
         border.width: 3
     }
-
 
     /** ******************************************************************************************************
      * The MapItemView is used to populate the Map with MapItems (markers) from the OnTheMapProxyModel content.
@@ -93,39 +84,46 @@ Map {
         model: _onTheMapProxyModel // Ce modèle ne contient que les photos devant apparaitre sur la carte
         delegate: markerDelegate
 
-
         /** **************************************************************************************************
          * Click sur la carte
          * ***************************************************************************************************/
         MouseArea {
             anchors.fill: parent
             onClicked: mouse => {
-                           console.log("Click on the map.")
-                           var mousePos = Qt.point(mouse.x, mouse.y)
-                           var mouseCoords = mapView.toCoordinate(mousePos)
-                           // console.log(mousePos, mouseCoords)
-                           // On change les coordonnées de la photo dans le modele
-                           //_photoModel.currentItemCoords = mouseCoords
-                           _photoModel.setSelectedItemsCoords(mouseCoords)
-                           // On repositionne le cercle
-                           mapCircle.center = mouseCoords
-                           // Debug : Affiche la liste des cartes supportées
-                           console.log(mapView.supportedMapTypes)
-                       }
+                console.log("Click on the map.");
+                var mousePos = Qt.point(mouse.x, mouse.y);
+                var mouseCoords = mapView.toCoordinate(mousePos);
+                // console.log(mousePos, mouseCoords);
+                // On change les coordonnées de la photo dans le modele
+                _photoModel.setSelectedItemsCoords(mouseCoords);
+                // On repositionne le cercle
+                mapCircle.center = mouseCoords;
+                // Debug : Affiche la liste des cartes supportées
+                console.log(mapView.supportedMapTypes);
+            }
         }
     }
-
 
     /** ******************************************************************************************************
      * Croix rouge fixe au centre de la carte (repère visuel).
      * *******************************************************************************************************/
     Item {
         anchors.centerIn: parent
-        width: 20; height: 20
-        Rectangle { anchors.centerIn: parent; width: 20; height: 2; color: "red" }
-        Rectangle { anchors.centerIn: parent; width: 2; height: 20; color: "red" }
+        width: 20
+        height: 20
+        Rectangle {
+            anchors.centerIn: parent
+            width: 20
+            height: 2
+            color: "red"
+        }
+        Rectangle {
+            anchors.centerIn: parent
+            width: 2
+            height: 20
+            color: "red"
+        }
     }
-
 
     /** ******************************************************************************************************
      * @brief Appelé quand des markers apparaissent ou disparaissent de la carte
@@ -136,12 +134,8 @@ Map {
      * *******************************************************************************************************/
     onMapItemsChanged: {
         // console.log("-> Signal onMapItemsChanged received")
-        homeCoords = QtPositioning.coordinate(settings.value("homeLatitude",
-                                                             48.8529),
-                                              settings.value("homeLongitude",
-                                                             2.35005))
+        homeCoords = QtPositioning.coordinate(settings.value("homeLatitude", 48.8529), settings.value("homeLongitude", 2.35005));
     }
-
 
     /* *******************************************************************************************************
      * Slots pour PhotoModel.
@@ -154,16 +148,15 @@ Map {
             if (_photoModel.currentItemHasGPS) {
                 // console.log("onFirstCoordsReady: ", _photoModel.currentItemCoords)
                 // On repositionne la carte sur ces coords
-                mapView.center = _photoModel.currentItemCoords
+                mapView.center = _photoModel.currentItemCoords;
                 // On repositionne le cercle
-                mapCircle.center = _photoModel.currentItemCoords
+                mapCircle.center = _photoModel.currentItemCoords;
             } // Si pas de coordonnées pour la première photo, on remet la carte en position "home"
             else {
-                mapView.center = homeCoords
+                mapView.center = homeCoords;
             }
         }
     }
-
 
     /* *******************************************************************************************************
      * Slots pour Suggestion Model.
@@ -173,11 +166,10 @@ Map {
 
         /// @brief Recentre la carte sur les coordonnées fournies.
         function onCenterMap(coord) {
-            console.log("onCenterMap: ", coord)
-            mapView.center = coord
+            console.log("onCenterMap: ", coord);
+            mapView.center = coord;
         }
     }
-
 
     /** ******************************************************************************************************
      * Le delegate pour afficher un MapItem (le Marker) dans la MapView.
@@ -209,17 +201,16 @@ Map {
                 Image {
                     id: markerIcon
                     height: isMarker ? 40 // Le marker "saved position" est plus petit que les autres
-                                     : isCurrent ? 48 // La photo sélectionnée est plus grosse pour être toujours visible
-                                                 : 44 // Les autres sont légèrement plus petites
+                    : isCurrent ? 48 // La photo sélectionnée est plus grosse pour être toujours visible
+                    : 44 // Les autres sont légèrement plus petites
                     width: height
                     source: isMarker ? "qrc:///Images/mappin-yellow.png" // le marker est jaune
-                                     : isCurrent ? "qrc:///Images/mappin-red.png" // la photo sélectionée est rouge
-                                                 : "qrc:///Images/mappin-black.png" // les autres sont en gris
+                    : isCurrent ? "qrc:///Images/mappin-red.png" // la photo sélectionée est rouge
+                    : "qrc:///Images/mappin-black.png" // les autres sont en gris
                 }
             }
         }
     }
-
 
     /** ******************************************************************************************************
      * @brief Plugin OSM pour la carte OpenStreetMap (ou thunderforest).
@@ -246,9 +237,7 @@ Map {
         name: "osm"
         locales: ["fr_FR", "en_US"]
         readonly property string thunder_url: "https://tile.thunderforest.com/"
-        readonly property string thunder_type: settings.value("mapTheme",
-                                                              "outdoors")
-
+        readonly property string thunder_type: settings.value("mapTheme", "outdoors")
 
         /** *******************************************************************************************************
          * @brief Ce paramètre permet de définir un serveur de *map tiles* autre que OpenStreetMap (ici /b thunderforest).
@@ -284,14 +273,12 @@ Map {
             value: "TiPhotoLocator"
         }
 
-
         /* Autres paramètres possibles :
           PluginParameter { name: "osm.mapping.highdpi_tiles";                value: "false" }
           PluginParameter { name: "osm.mapping.providersrepository.disabled"; value: "false" }
           PluginParameter { name: "osm.mapping.providersrepository.address";  value: "?????" }
         */
     }
-
 
     /** *******************************************************************************************************
      * Disponibilité des Settings en lecture

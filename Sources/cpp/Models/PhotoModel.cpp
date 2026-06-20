@@ -311,14 +311,16 @@ void PhotoModel::removeSavedPosition()
 
 
 /** **********************************************************************************************************
- * @brief Ce slot affecte les coordonnées GPS fournies à toutes les photos géographiquement situées à
+ * @brief Ce slot affecte les même coordonnées GPS fournies à toutes les photos géographiquement situées à
  *        l'interieur du cercle rouge.
  * @param latitude : Latitude GPS à affecter aux photos
  * @param longitude : Longitude GPS à affecter aux photos
  * @see PhotoModel::findInCirclePhotos
+ * @note NOT USED
  * ***********************************************************************************************************/
 void PhotoModel::setInCircleItemCoords(const double latitude, const double longitude)
 {
+    qDebug() << "setInCircleItemCoords";
     // On parcourt tous les items du modèle (par leur index dans le modèle)
     int row = 0;
     QModelIndex idx = this->index(row, 0);
@@ -1443,19 +1445,32 @@ void PhotoModel::replaceKeywordForSelection(const QString& oldKeyword, const QSt
 /** **********************************************************************************************************
  * @brief Affecte les coordonnées GPS fournies à toutes les photos sélectionnées.
  * @param coords: des coordonnées GPS.
+ * Il faut distinguer le cas des photos sélectionées manuellement, et les photos sélectionées parce qu'elles
+ * sont dans le cercle. A priori, on ne veut pas modifier les photos du cercle.
+ * Solution A: si Rayon>0 ; on modifie uniquement la photo courante (easiest).
+ * Solution B: On teste si la photo est dans le cercle avant de la modifier ou pas.
  * ***********************************************************************************************************/
 void PhotoModel::setSelectedItemsCoords(QGeoCoordinate coords)
 {
-    // On parcourt tous les items du modèle
-    int row = 0;
-    QModelIndex idx = this->index(row, 0);
-    while (idx.isValid())
+    // Solution A
+    if (m_lastCircleRadius>0)
     {
-        if (m_photos[row].isSelected) {
-            this->setData(idx, coords.latitude(), LatitudeRole);
-            this->setData(idx, coords.longitude(), LongitudeRole);
+        this->currentItemCoords(coords);
+        this->findInCirclePhotos();
+    }
+    else
+    {
+        // On parcourt tous les items du modèle, pour trouver celles qui sont sélectionées
+        int row = 0;
+        QModelIndex idx = this->index(row, 0);
+        while (idx.isValid())
+        {
+            if (m_photos[row].isSelected) {
+                this->setData(idx, coords.latitude(), LatitudeRole);
+                this->setData(idx, coords.longitude(), LongitudeRole);
+            }
+            idx = idx.siblingAtRow(++row);
         }
-        idx = idx.siblingAtRow(++row);
     }
 }
 
