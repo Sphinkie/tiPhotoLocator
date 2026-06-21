@@ -627,6 +627,46 @@
     </message>
 </context>
 <context>
+    <name>ToolbarGpxForm.ui</name>
+    <message>
+        <source>Apply Saved Position</source>
+        <translation type="obsolete">Applique Position</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="32"/>
+        <source>Apply track point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply the stored position to the current photo</source>
+        <translation type="obsolete">Applique la position mémorisée à la photo courante</translation>
+    </message>
+    <message>
+        <source>Clear Saved Position</source>
+        <translation type="obsolete">Suppr. Position</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="41"/>
+        <source>Apply the track point to the current photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="50"/>
+        <source>Apply All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="76"/>
+        <source>Restore</source>
+        <translation type="unfinished">Restaurer</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="85"/>
+        <source>Reload the initial GPS coordinates of the photo</source>
+        <translation type="unfinished">Recharge les coordonnées initiales de l&apos;image</translation>
+    </message>
+</context>
+<context>
     <name>ToolbarMap</name>
     <message>
         <location filename="../Sources/Qml/Controllers/ToolbarMap.qml" line="49"/>
@@ -903,16 +943,21 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="60"/>
+        <source>Photo count:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="73"/>
         <source>GPX start:</source>
         <translation>Heure de début de la trace GPS:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="72"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="85"/>
         <source>Offset:</source>
         <translation>Décalage horaire:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="93"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="115"/>
         <source>Camera time:</source>
         <translation>Heure de l&apos;appareil photo:</translation>
     </message>

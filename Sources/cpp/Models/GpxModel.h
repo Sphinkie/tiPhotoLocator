@@ -2,8 +2,17 @@
 #define GPXMODEL_H
 
 #include <QAbstractListModel>
+#include <QDateTime>
 #include <QGeoCoordinate>
 #include <QUrl>
+
+/** ******************************************************************
+ * @brief Un point du tracé GPX avec sa position et son horodatage.
+ * *******************************************************************/
+struct GpxTrackPoint {
+    QGeoCoordinate coord;
+    QDateTime      time;
+};
 
 /** ******************************************************************
  * @brief Structure interne décrivant un fichier GPX.
@@ -46,16 +55,18 @@ public:
 public slots:
     void refresh(const QUrl& folderUrl);
     void selectTrack(int row);
+    void matchPhotos(QObject* photoModelObj, int offsetHours);
 
 signals:
     void currentTrackPointsChanged();
 
 private:
-    QString      readStartTime(const QString& filePath);
-    QVariantList parseTrackPoints(const QString& filePath);
+    QString                readStartTime(const QString& filePath);
+    QVector<GpxTrackPoint> parseTrack(const QString& filePath);
 
-    QVector<GpxFileInfo> m_files;             //!< Liste des fichiers GPX détectés.
-    QVariantList         m_currentTrackPoints; //!< Points du track sélectionné (QGeoCoordinate).
+    QVector<GpxFileInfo>   m_files;              //!< Liste des fichiers GPX détectés.
+    QVector<GpxTrackPoint> m_currentTrack;       //!< Points du track sélectionné (avec timestamps).
+    QVariantList           m_currentTrackPoints; //!< Coordonnées seules pour MapPolyline QML.
 };
 
 #endif // GPXMODEL_H

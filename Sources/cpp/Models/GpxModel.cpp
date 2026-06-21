@@ -1,8 +1,10 @@
 #include "GpxModel.h"
+#include "PhotoModel.h"
 
 #include <QDir>
 #include <QFile>
 #include <QXmlStreamReader>
+#include <algorithm>  // pour lower_bound
 
 
 /** **********************************************************************************************************
@@ -109,20 +111,24 @@ void GpxModel::selectTrack(int row)
         emit currentTrackPointsChanged();
         return;
     }
-    m_currentTrackPoints = parseTrackPoints(m_files.at(row).filePath);
+    m_currentTrack = parseTrack(m_files.at(row).filePath);
+    m_currentTrackPoints.clear();
+    for (const GpxTrackPoint& pt : std::as_const(m_currentTrack))
+        m_currentTrackPoints.append(QVariant::fromValue(pt.coord));
     emit currentTrackPointsChanged();
 }
 
 
 /** **********************************************************************************************************
- * @brief Parse tous les <trkpt> du fichier GPX et retourne la liste des coordonnées.
+ * @brief Parse tous les <trkpt> du fichier GPX et retourne les points avec coordonnées ET timestamps.
  *
+ * Structure GPX : <trkpt lat="..." lon="..."><time>ISO8601</time>...</trkpt>
  * @param filePath : chemin absolu du fichier .gpx.
- * @return QVariantList de QGeoCoordinate, compatible avec MapPolyline.path en QML.
+ * @return QVector<GpxTrackPoint> trié chronologiquement.
  * ***********************************************************************************************************/
-QVariantList GpxModel::parseTrackPoints(const QString& filePath)
+QVector<GpxTrackPoint> GpxModel::parseTrack(const QString& filePath)
 {
-    QVariantList points;
+    QVector<GpxTrackPoint> points;
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return points;
@@ -131,17 +137,108 @@ QVariantList GpxModel::parseTrackPoints(const QString& filePath)
     while (!xml.atEnd() && !xml.hasError())
     {
         xml.readNext();
-        if (xml.isStartElement() && xml.name() == QLatin1String("trkpt"))
+        if (!xml.isStartElement() || xml.name() != QLatin1String("trkpt"))
+            continue;
+
+        const QXmlStreamAttributes attrs = xml.attributes();
+        bool latOk = false, lonOk = false;
+        const double lat = attrs.value("lat").toDouble(&latOk);
+        const double lon = attrs.value("lon").toDouble(&lonOk);
+        if (!latOk || !lonOk) continue;
+
+        // Lit les éléments enfants de <trkpt> pour trouver <time>
+        QDateTime time;
+        while (!xml.atEnd())
         {
-            const QXmlStreamAttributes attrs = xml.attributes();
-            bool latOk = false, lonOk = false;
-            const double lat = attrs.value("lat").toDouble(&latOk);
-            const double lon = attrs.value("lon").toDouble(&lonOk);
-            if (latOk && lonOk)
-                points.append(QVariant::fromValue(QGeoCoordinate(lat, lon)));
+            xml.readNext();
+            if (xml.isEndElement() && xml.name() == QLatin1String("trkpt"))
+                break;
+            if (xml.isStartElement() && xml.name() == QLatin1String("time"))
+                time = QDateTime::fromString(xml.readElementText(), Qt::ISODate);
         }
+
+        points.append({QGeoCoordinate(lat, lon), time});
     }
     return points;
+}
+
+
+/** **********************************************************************************************************
+ * @brief Pour chaque photo du modèle, recherche si son horodatage correspond à un point du track.
+ *        En cas de correspondance, stocke les coordonnées GPS interpolées dans la photo (temporaire).
+ *
+ * @param photoModelObj : le PhotoModel (passé comme QObject* pour être appelable depuis QML).
+ * @param offsetHours   : décalage caméra - GPS en heures entières.
+ *                        Exemple : +2 signifie que la caméra affiche 14:00 quand le GPS indique 12:00.
+ * ***********************************************************************************************************/
+void GpxModel::matchPhotos(QObject* photoModelObj, int offsetHours)
+{
+    PhotoModel* photoModel = qobject_cast<PhotoModel*>(photoModelObj);
+    if (!photoModel) return;
+    // On resette la track précédente
+    photoModel->resetOnTrack();
+    if (m_currentTrack.isEmpty()) return;
+
+    // On calcule l'heure de début et de fin de la track
+    const qint64 offsetSecs  = qint64(offsetHours) * 3600;
+    const QDateTime trackStart = m_currentTrack.first().time;
+    const QDateTime trackEnd   = m_currentTrack.last().time;
+    if (!trackStart.isValid() || !trackEnd.isValid()) return;
+
+    // On parcourt tout le PhotoModel
+    for (int row = 0; row < photoModel->rowCount(); ++row)
+    {
+        const QModelIndex idx = photoModel->index(row, 0);
+        const QString dateStr = idx.data(PhotoModel::DateTimeOriginalRole).toString();
+        if (dateStr.isEmpty()) continue;
+
+        // On lit de Datetime de chaque photo
+        // Format EXIF : "yyyy:MM:dd HH:mm:ss", pas de fuseau horaire
+        QDateTime photoTime = QDateTime::fromString(dateStr, "yyyy:MM:dd HH:mm:ss");
+        if (!photoTime.isValid()) continue;
+
+        // Heure Photo en équivalent GPS ("fixed time") = heure caméra - décalage
+        const QDateTime photoFixedTime = photoTime.addSecs(-offsetSecs);
+
+        // Si hors plage de la track → on ignore
+        if (photoFixedTime < trackStart || photoFixedTime > trackEnd) continue;
+
+        // Recherche le premier point dont time >= gpsTime
+        // std::lower_bound (itérateur début, itr final, valeur cherchée, fonction de comparation "<")
+        // Cela fait une recherche binaire dans un tableau trié (donc rapide).
+        // Elle retourne un itérateur vers le premier élément qui n'est pas inférieur à la valeur cible.
+        auto it = std::lower_bound(m_currentTrack.cbegin(), m_currentTrack.cend(), photoFixedTime,
+            [](const GpxTrackPoint& pt, const QDateTime& t) { return pt.time < t; });
+        // La fonction lambda indique à l'algorithme comment comparer un GpxTrackPoint et un QDateTime.
+
+        double lat, lon;
+        // si l'itérateur trouvé est le premier, on prend ses coordonnées.
+        if (it == m_currentTrack.cbegin())
+        {
+            lat = it->coord.latitude();
+            lon = it->coord.longitude();
+        }
+        // si l'itérateur trouvé est le dernier, on prend les coordonnées du précédent.
+        else if (it == m_currentTrack.cend())
+        {
+            --it;
+            lat = it->coord.latitude();
+            lon = it->coord.longitude();
+        }
+        // Sinon: interpolation linéaire entre le point précédent et le point courant
+        else
+        {
+            const auto prev  = std::prev(it); // prev = pointeur vers le TrackPoint précédent
+            const qint64 span   = prev->time.secsTo(it->time); // nombre de secondes entre prev et it
+            const qint64 offset = prev->time.secsTo(photoFixedTime); // nombre de secondes entre prev et photo
+            const double t = (span > 0) ? double(offset) / double(span) : 0.0;
+            // on applique le ratio d'interpolation
+            lat = prev->coord.latitude()  + t * (it->coord.latitude()  - prev->coord.latitude());
+            lon = prev->coord.longitude() + t * (it->coord.longitude() - prev->coord.longitude());
+        }
+        // La photo ayant été trouvée, on positionne le flag "isOnTrack" et on envoie ses coords supposées.
+        photoModel->setOnTrack(row, lat, lon);
+    }
 }
 
 

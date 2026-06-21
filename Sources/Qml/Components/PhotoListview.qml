@@ -121,6 +121,7 @@ ListView {
             required property double longitude
             required property bool hasGPS
             required property bool insideCircle
+            required property bool isOnTrack
             required property bool toBeSaved
             required property bool isMarker
             required property bool isSelected
@@ -131,13 +132,13 @@ ListView {
             visible: !isMarker // On n'affiche pas la "Saved Position"
 
             /** **********************************************************************************************
-             * icone "In Circle".
+             * icone "In Circle" / "On The Track"
              * ***********************************************************************************************/
             Image {
                 id: circleIcon
                 anchors.left: parent.left
-                visible: insideCircle
-                source: "qrc:///Images/circle-red.png"
+                visible: insideCircle || isOnTrack
+                source: isOnTrack ? "qrc:///Images/pin-green.png" : "qrc:///Images/circle-red.png"
                 height: 24
                 width: 24
             }

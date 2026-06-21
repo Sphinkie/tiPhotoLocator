@@ -38,8 +38,11 @@ struct Photo
     bool isSelected;            //!< Indique que cet item est sélectionné dans la ListView
     bool isMarker = false;      //!< Exemple: une position sauvegardée sur la carte
     bool insideCircle = false;  //!< inside the radius of nearby photos
+    bool isOnTrack = false;     //!< true si la photo correspond au track GPX sélectionné (temporaire)
     bool toBeSaved = false;     //!< true if one of the following fields has been modified
     QString writeError;         //!< Message d'erreur ExifTool si la dernière écriture a échoué
+    double onTrackLatitude = 0; //!< Latitude interpolée depuis le track GPX (temporaire, non sauvegardée)
+    double onTrackLongitude = 0;//!< Longitude interpolée depuis le track GPX (temporaire, non sauvegardée)
     // EXIF tags
     QString dateTimeOriginal;   //!< Time when the camera shutter was pressed (no changes allowed in this app)
     QString camModel;           //!< Camera model (no changes allowed in this app)
@@ -59,7 +62,7 @@ struct Photo
     QString captionWriter;      //!< Initials of the description writer
     QString software;           //!< Software of the camera or scanner device
     QStringList keywords;       //!< This is a list of keywords describing the image
-    QSet<QString> dirtyFields; //!< ExifTool tag names modified since last read/save
+    QSet<QString> dirtyFields;  //!< ExifTool tag names modified since last read/save
 
     // Surcharges d'operateurs
     bool operator == (const QString &file_name);

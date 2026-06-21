@@ -45,6 +45,9 @@ public:
         IsSelectedRole,
         IsMarkerRole,
         InsideCircleRole,
+        IsOnTrackRole,
+        OnTrackLatitudeRole,
+        OnTrackLongitudeRole,
         ToBeSavedRole,
         DateTimeOriginalRole,
         CamModelRole,
@@ -109,6 +112,8 @@ public:
     // -----------------------------------------------------
     void append(const QVariantMap& data);
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // Surcharge
+    void setOnTrack(int row, double lat, double lon);
+    void resetOnTrack();
     void setData(const QVariantMap &value_list);
     void selectFirstPhoto();
     void setWriteProgress(const int total = 0);

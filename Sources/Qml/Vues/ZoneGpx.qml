@@ -8,7 +8,8 @@ import ".."
  * @brief Cette zone affiche les fichiers GPX associés au dossier de photos.
  * ***********************************************************************************************************/
 Zone {
-    property alias bt_clear_coords: bt_refresh_gpx
+    property alias bt_refresh_gpx: bt_refresh_gpx
+    // TODO :   cette zone n'a pas de controlleur
 
     iconZone: "qrc:/Images/icon-world3.png"
     txtZone: qsTr("GPX Tracking")
@@ -16,7 +17,7 @@ Zone {
     /// Retourne l'heure caméra théorique en appliquant le décalage horaire au temps GPX.
     function cameraTime(gpxTime, offsetH) {
         if (!gpxTime)
-            return "--:--";
+            return "--:--:--";
         var parts = gpxTime.split(":");
         var h = ((parseInt(parts[0]) + offsetH) % 24 + 24) % 24;
         var m = parts[1];
@@ -52,6 +53,19 @@ Zone {
             Layout.topMargin: 8
         }
 
+        /// Nombre de photos associées
+        RowLayout {
+            Layout.leftMargin: 20
+            Layout.topMargin: 12
+            Label {
+                text: qsTr("Photo count:")
+            }
+            Label {
+                text: "12"  // TODO
+                font.bold: true
+            }
+        }
+
         /// Heure de début du track GPX sélectionné
         RowLayout {
             Layout.leftMargin: 20
@@ -83,6 +97,15 @@ Zone {
                 valueFromText: function (text, locale) {
                     return parseInt(text);
                 }
+                onValueChanged: _gpxModel.matchPhotos(_photoModel, value)
+            }
+        }
+
+        /// Re-match automatique quand un nouveau track est chargé
+        Connections {
+            target: _gpxModel
+            function onCurrentTrackPointsChanged() {
+                _gpxModel.matchPhotos(_photoModel, offsetSpinBox.value);
             }
         }
 

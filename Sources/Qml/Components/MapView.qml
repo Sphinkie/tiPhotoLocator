@@ -185,14 +185,17 @@ Map {
             required property bool hasGPS
             required property bool isMarker
             required property bool isCurrent
-            // Position du MapQuickItem (marker) = lat et long de la photo
-            coordinate: QtPositioning.coordinate(latitude, longitude)
+            required property bool isOnTrack
+            required property double onTrackLatitude
+            required property double onTrackLongitude
+            // Position : coordonnées GPS interpolées si on-track, coordonnées réelles sinon
+            coordinate: isOnTrack ? QtPositioning.coordinate(onTrackLatitude, onTrackLongitude) : QtPositioning.coordinate(latitude, longitude)
             // Point d'ancrage de l'icone p/r aux coordinates
             anchorPoint.x: markerIcon.width * 0.5
             anchorPoint.y: markerIcon.height + markerText.height
             // On dessine le marker et le texte (si la photo possede des coordonnées GPS)
             sourceItem: Column {
-                visible: hasGPS
+                visible: hasGPS || isOnTrack
                 Text {
                     id: markerText
                     text: isMarker ? " " : filename
@@ -202,11 +205,12 @@ Map {
                     id: markerIcon
                     height: isMarker ? 40 // Le marker "saved position" est plus petit que les autres
                     : isCurrent ? 48 // La photo sélectionnée est plus grosse pour être toujours visible
-                    : 44 // Les autres sont légèrement plus petites
+                    : 44             // Les autres sont légèrement plus petites
                     width: height
                     source: isMarker ? "qrc:///Images/mappin-yellow.png" // le marker est jaune
-                    : isCurrent ? "qrc:///Images/mappin-red.png" // la photo sélectionée est rouge
-                    : "qrc:///Images/mappin-black.png" // les autres sont en gris
+                    : isCurrent ? "qrc:///Images/mappin-red.png"    // la photo sélectionnée est rouge
+                    : isOnTrack ? "qrc:///Images/pin-green.png"     // la photo sur la track est verte
+                    : "qrc:///Images/mappin-black.png"  // les autres sont en gris
                 }
             }
         }

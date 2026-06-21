@@ -60,8 +60,11 @@ QVariant PhotoModel::data(const QModelIndex &index, int role) const
     case IsCurrentRole:         return photo.isCurrent;
     case IsSelectedRole:        return photo.isSelected;
     case IsMarkerRole:          return photo.isMarker;
-    case InsideCircleRole:      return photo.insideCircle;
-    case ToBeSavedRole:         return photo.toBeSaved;
+    case InsideCircleRole:       return photo.insideCircle;
+    case IsOnTrackRole:          return photo.isOnTrack;
+    case OnTrackLatitudeRole:    return photo.onTrackLatitude;
+    case OnTrackLongitudeRole:   return photo.onTrackLongitude;
+    case ToBeSavedRole:          return photo.toBeSaved;
     case DateTimeOriginalRole:  return photo.dateTimeOriginal;
     case CamModelRole:          return photo.camModel;
     case MakeRole:              return photo.make;
@@ -105,8 +108,11 @@ QHash<int, QByteArray> PhotoModel::roleNames() const
         {IsCurrentRole,         "isCurrent"},
         {IsSelectedRole,        "isSelected"},
         {IsMarkerRole,          "isMarker"},
-        {InsideCircleRole,      "insideCircle"},
-        {ToBeSavedRole,         "toBeSaved"},
+        {InsideCircleRole,       "insideCircle"},
+        {IsOnTrackRole,          "isOnTrack"},
+        {OnTrackLatitudeRole,    "onTrackLatitude"},
+        {OnTrackLongitudeRole,   "onTrackLongitude"},
+        {ToBeSavedRole,          "toBeSaved"},
         // Geolocation
         {LatitudeRole,          "latitude"},
         {LongitudeRole,         "longitude"},
@@ -1561,5 +1567,39 @@ bool Photo::operator == (const Photo &photo)
     if (this->filename == photo.filename)
         return true;
     return false;
+}
+
+
+/** **********************************************************************************************************
+ * @brief Marque la photo comme étant sur le track GPX et stocke ses coordonnées interpolées.
+ * @note Ces données sont temporaires (non sauvegardées sur disque). Elles disparaissent au prochain refresh.
+ * @param row : indice de la photo.
+ * @param lat, lon : coordonnées GPS interpolées depuis le track GPX.
+ * ***********************************************************************************************************/
+void PhotoModel::setOnTrack(int row, double lat, double lon)
+{
+    if (row < 0 || row >= m_photos.count()) return;
+    m_photos[row].isOnTrack         = true;
+    m_photos[row].onTrackLatitude   = lat;
+    m_photos[row].onTrackLongitude  = lon;
+    const QModelIndex idx = index(row, 0);
+    emit dataChanged(idx, idx, {IsOnTrackRole, OnTrackLatitudeRole, OnTrackLongitudeRole});
+}
+
+
+/** **********************************************************************************************************
+ * @brief Efface le flag isOnTrack sur toutes les photos du modèle.
+ * ***********************************************************************************************************/
+void PhotoModel::resetOnTrack()
+{
+    for (int row = 0; row < m_photos.count(); ++row)
+    {
+        if (!m_photos[row].isOnTrack) continue;
+        m_photos[row].isOnTrack        = false;
+        m_photos[row].onTrackLatitude  = 0;
+        m_photos[row].onTrackLongitude = 0;
+        const QModelIndex idx = index(row, 0);
+        emit dataChanged(idx, idx, {IsOnTrackRole, OnTrackLatitudeRole, OnTrackLongitudeRole});
+    }
 }
 
