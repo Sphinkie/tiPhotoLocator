@@ -68,6 +68,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/TabFramePhotoMap.qml
         Sources/Qml/Components/TabFramePhotoTags.qml
         Sources/Qml/Components/TabFrameGlobalTags.qml
+        Sources/Qml/Components/TabFrameGPX.qml
         Sources/Qml/Components/TimerLoadFolder.qml
         Sources/Qml/Components/Zone.qml
         Sources/Qml/Components/ZoneTitle.qml
@@ -115,6 +116,9 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
+        QML_FILES Sources/Qml/Vues/ZoneGpx.qml
+        QML_FILES Sources/Qml/Components/ListViewGPXfiles.qml
+        QML_FILES Sources/Qml/Models/ModelGpxList.qml
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

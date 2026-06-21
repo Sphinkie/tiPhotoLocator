@@ -90,8 +90,13 @@ Item {
     /// filenames toBeSaved
     readonly property color accentTextColor: Material.color(Material.DeepOrange, Material.Shade800)
     /// Selected Tab text
-    readonly property color accentTabTextColor: Material.color(Material.DeepOrange, Material.Shade700)
+    readonly property color accentTabTextColor: Material.color(Material.DeepPurple, Material.Shade800)
+    /// Unselected Tab text
+    readonly property color tabTextColor: Material.color(Material.DeepPurple, Material.Shade400)
 
+    // ----------------------------------------------------------------------
+    // Liste des Photos
+    // ----------------------------------------------------------------------
     /// La couleur de fond du filename(s) sélectionné dans la liste.
     readonly property color highlightBackgroundColor: Material.color(Material.DeepPurple, Material.Shade100)
 }

@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Layouts
 import ".."
 
-
 /** **********************************************************************************************************
  * @brief QML: Liste des filenames des photos, associée au modèle filtré SelectedPhotoProxyModel.
  * Ce modèle est basé sur PhotoModel, filtré pour afficher toutes photos, ou uniquement celles sélectionnées.
@@ -18,7 +17,6 @@ ListView {
     highlightMoveDuration: 500
     highlightMoveVelocity: -1
 
-
     /** ******************************************************************************************************
      * Une ligne en bas de la listview
      * *******************************************************************************************************/
@@ -29,7 +27,6 @@ ListView {
         color: "darkgrey"
     }
 
-
     /** ******************************************************************************************************
      * Background de l'item courant. (@see property ListView.highlightFollowsCurrentItem).
      * *******************************************************************************************************/
@@ -38,7 +35,6 @@ ListView {
         color: Style.highlightBackgroundColor
         radius: 6
     }
-
 
     /** ******************************************************************************************************
      * Timer de 4 secondes avant envoi d'une request pour récupérer des infos à partir des coordonnées GPS
@@ -52,12 +48,9 @@ ListView {
         repeat: false
         onTriggered: {
             // console.debug(">>>>> timer triggered")
-            window.requestReverseGeocode(
-                        _photoModel.currentItemCoords.latitude,
-                        _photoModel.currentItemCoords.longitude)
+            window.requestReverseGeocode(_photoModel.currentItemCoords.latitude, _photoModel.currentItemCoords.longitude);
         }
     }
-
 
     /** ******************************************************************************************************
      * Après chargement d'un dossier ou rescan, on force le focus sur la première photo.
@@ -65,47 +58,51 @@ ListView {
     Connections {
         target: _photoModel
         function onFirstCoordsReady() {
-            navigateTo(0)
+            navigateTo(0);
         }
     }
-
 
     /** ******************************************************************************************************
      * Navigation clavier dans la liste.
      * *******************************************************************************************************/
     Keys.onPressed: event => {
-                        let target = currentIndex
-                        if (event.key === Qt.Key_Up)
-                        target = Math.max(0, currentIndex - 1)
-                        else if (event.key === Qt.Key_Down)
-                        target = Math.min(count - 1, currentIndex + 1)
-                        else if (event.key === Qt.Key_Home)
-                        target = 0
-                        else if (event.key === Qt.Key_End)
-                        target = count - 1
-                        else
-                        return
-
-                        event.accepted = true
-                        navigateTo(target)
-                    }
-
+        let target = currentIndex;
+        if (event.key === Qt.Key_Up)
+            target = Math.max(0, currentIndex - 1);
+        else if (event.key === Qt.Key_Down)
+            target = Math.min(count - 1, currentIndex + 1);
+        else if (event.key === Qt.Key_Home)
+            target = 0;
+        else if (event.key === Qt.Key_End)
+            target = count - 1;
+        else
+            return;
+        event.accepted = true;
+        navigateTo(target);
+    }
+    /** ******************************************************************************************************
+     * Navigation : Bouton flèche gauche "◄"
+     * *******************************************************************************************************/
     function navigatePrev() {
-        navigateTo(Math.max(0, currentIndex - 1))
+        navigateTo(Math.max(0, currentIndex - 1));
     }
+    /** ******************************************************************************************************
+     * Navigation :  Bouton flèche droite "►"
+     * *******************************************************************************************************/
     function navigateNext() {
-        navigateTo(Math.min(count - 1, currentIndex + 1))
+        navigateTo(Math.min(count - 1, currentIndex + 1));
     }
-
+    /** ******************************************************************************************************
+     * Navigation dans la liste : clavier ou boutons "◄" et "►"
+     * *******************************************************************************************************/
     function navigateTo(target) {
-        currentIndex = target
-        positionViewAtIndex(target, ListView.Contain)
-        var sourceIdx = model.getSourceIndex(target)
-        var photo = _photoModel.get(sourceIdx)
+        currentIndex = target;
+        positionViewAtIndex(target, ListView.Contain);
+        var sourceIdx = model.getSourceIndex(target);
+        var photo = _photoModel.get(sourceIdx);
         if (photo && !photo.isMarker)
-            activatePhoto(target, photo.hasGPS, photo.city, photo.country)
+            activatePhoto(target, photo.hasGPS, photo.city, photo.country);
     }
-
 
     /** ******************************************************************************************************
      * Le delegate pour afficher la ListModel dans la ListView.
@@ -133,7 +130,6 @@ ListView {
 
             visible: !isMarker // On n'affiche pas la "Saved Position"
 
-
             /** **********************************************************************************************
              * icone "In Circle".
              * ***********************************************************************************************/
@@ -145,7 +141,6 @@ ListView {
                 height: 24
                 width: 24
             }
-
 
             /** **********************************************************************************************
              * icone "Has GPS".
@@ -159,7 +154,6 @@ ListView {
                 width: 24
             }
 
-
             /** **********************************************************************************************
              * Filename de l'image.
              * ***********************************************************************************************/
@@ -171,7 +165,6 @@ ListView {
                 font.bold: isSelected ? true : false
                 color: toBeSaved ? Style.accentTextColor : Style.primaryTextColor
             }
-
 
             /** **********************************************************************************************
              * Tag City avec le nom de la ville associée.
@@ -186,7 +179,6 @@ ListView {
                 height: 20
             }
 
-
             /** **********************************************************************************************
              * Gestion du clic sur un item de la liste.
              * ***********************************************************************************************/
@@ -194,32 +186,29 @@ ListView {
                 anchors.fill: parent
                 acceptedButtons: Qt.LeftButton
                 onClicked: mouse => {
-                               __lv.forceActiveFocus()
-                               if (mouse.modifiers & Qt.ControlModifier) {
-                                   // Ctrl+clic : toggle sélection multiple (curseur visuel inchangé)
-                                   var sourceindex = model.getSourceIndex(index)
-                                   if (isSelected) {
-                                       _photoModel.removeFromSelection(
-                                           sourceindex)
-                                   } else {
-                                       _photoModel.addToSelection(sourceindex)
-                                       _photoModel.suggestFromPhoto(sourceindex)
-                                   }
-                               } else {
-                                   // Clic simple : activation exclusive
-                                   __lv.currentIndex = index
-                                   activatePhoto(index, hasGPS, city, country)
-                                   if ((tabbedPage.currentIndex === 1) && hasGPS
-                                       && city === "" && country === "")
-                                   geoTimer.restart()
-                                   else
-                                   geoTimer.stop()
-                               }
-                           }
+                    __lv.forceActiveFocus();
+                    if (mouse.modifiers & Qt.ControlModifier) {
+                        // Ctrl+clic : toggle sélection multiple (curseur visuel inchangé)
+                        var sourceindex = model.getSourceIndex(index);
+                        if (isSelected) {
+                            _photoModel.removeFromSelection(sourceindex);
+                        } else {
+                            _photoModel.addToSelection(sourceindex);
+                            _photoModel.suggestFromPhoto(sourceindex);
+                        }
+                    } else {
+                        // Clic simple : activation exclusive
+                        __lv.currentIndex = index;
+                        activatePhoto(index, hasGPS, city, country);
+                        if ((tabbedPage.currentIndex === 1) && hasGPS && city === "" && country === "")
+                            geoTimer.restart();
+                        else
+                            geoTimer.stop();
+                    }
+                }
             }
         }
     }
-
 
     /** **********************************************************************************************************
      * @brief Active la photo sélectionnée (Preview, imagette, tags, et pinpoint géographique).
@@ -232,29 +221,29 @@ ListView {
      * @param longitude : La propriété longitude de la photo.
      * ***********************************************************************************************************/
     function activatePhoto(pos, hasGPS, city, country) {
-        var sourceindex = model.getSourceIndex(pos)
-        _photoModel.currentItemRow = sourceindex // Actualise le PhotoModel
+        var sourceindex = model.getSourceIndex(pos);
+        _photoModel.currentItemRow = sourceindex; // Actualise le PhotoModel
         // La photo courante est forcement sélectionée, mais de façon exclusive.
-        _photoModel.addToSelection(sourceindex, true)
+        _photoModel.addToSelection(sourceindex, true);
 
         // On mémorise dans currentPhoto les data de l'item selectionné du modèle.
         // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.
-        tabbedPage.currentPhoto = _photoModel.get(sourceindex)
+        tabbedPage.currentPhoto = _photoModel.get(sourceindex);
 
         // On envoie les coordonnées pour centrer la carte et le cercle sur le point sélectionné,
         // sinon (if not has GPS) la position de la carte reste inchangée.
         if (hasGPS) {
-            var coords = _photoModel.currentItemCoords
+            var coords = _photoModel.currentItemCoords;
             if (!mapTab.mapView.visibleRegion.contains(coords)) {
-                mapTab.mapView.center = coords
+                mapTab.mapView.center = coords;
             }
-            mapTab.mapView.mapCircle.center = coords
+            mapTab.mapView.mapCircle.center = coords;
         }
 
         // On change le filtrage des suggestions pour filtrer uniquement sur la photo active
-        window.setSuggestionFilter(sourceindex)
+        window.setSuggestionFilter(sourceindex);
 
         // On réactualise le contenu du cercle rouge
-        _photoModel.findInCirclePhotos()
+        _photoModel.findInCirclePhotos();
     }
 }

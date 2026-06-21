@@ -185,6 +185,9 @@ ApplicationWindow {
                     onClicked: _suggestionCategoryProxyModel.setFilterValue("geo")
                 }
                 MyTabButton {
+                    text: qsTr("GPX")
+                }
+                MyTabButton {
                     text: qsTr("EXIF / IPTC TAGS")
                     onClicked: _suggestionCategoryProxyModel.setFilterValue("tag")
                 }
@@ -256,6 +259,12 @@ ApplicationWindow {
                 Layout.fillWidth: true
             }
 
+            /// ------------------ GPX TAB ------------------------------
+            TabFrameGPX {
+                id: gpxTab
+                Layout.fillWidth: true
+            }
+
             /// ------------------ IPTC/EXIF TAGS TAB ----------------------------
             TabFramePhotoTags {
                 id: photoTagsTab
@@ -302,11 +311,14 @@ ApplicationWindow {
         }
     }
 
-    /// Snackbar pour les erreurs d'écriture ExifTool.
+    /** *****************************************************************************
+     * Snackbar pour les erreurs d'écriture ExifTool.
+     * ******************************************************************************/
     Snackbar {
         id: snackbar
     }
 
+    /// Connexion pour le snackbar
     Connections {
         target: _photoModel
         function onWriteErrorOccurred(filename, message) {
