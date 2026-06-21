@@ -186,7 +186,7 @@ ApplicationWindow {
                     onClicked: _suggestionCategoryProxyModel.setFilterValue("geo")
                 }
                 MyTabButton {
-                    text: qsTr("GPX")
+                    text: qsTr("GPS LOGGER")
                 }
                 MyTabButton {
                     text: qsTr("EXIF / IPTC TAGS")

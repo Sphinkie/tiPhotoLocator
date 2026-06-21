@@ -5,7 +5,7 @@ project(QT_TiPhotoLocator VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTORCC ON)         # Auto use QRC resource File
 
-find_package(Qt6 REQUIRED COMPONENTS Quick Location Network LinguistTools)
+find_package(Qt6 REQUIRED COMPONENTS Quick Location Positioning Network LinguistTools)
 
 qt_standard_project_setup(REQUIRES 6.8)
 set_source_files_properties(Sources/Qml/Style.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
@@ -133,7 +133,7 @@ set_target_properties(tiPhotoLocator PROPERTIES
 )
 
 target_link_libraries(tiPhotoLocator
-    PRIVATE Qt6::Quick Qt6::Location Qt6::Network
+    PRIVATE Qt6::Quick Qt6::Location Qt6::Positioning Qt6::Network
 )
 
 add_custom_command(TARGET tiPhotoLocator POST_BUILD

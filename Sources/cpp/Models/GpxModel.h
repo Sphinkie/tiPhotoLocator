@@ -2,6 +2,7 @@
 #define GPXMODEL_H
 
 #include <QAbstractListModel>
+#include <QGeoCoordinate>
 #include <QUrl>
 
 /** ******************************************************************
@@ -22,8 +23,10 @@ struct GpxFileInfo {
 class GpxModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(QVariantList currentTrackPoints READ currentTrackPoints NOTIFY currentTrackPointsChanged)
 
 public:
+    QVariantList currentTrackPoints() const { return m_currentTrackPoints; }
     /** ******************************************************************************************************
      * @brief Rôles exposés au QML.
      * *******************************************************************************************************/
@@ -42,11 +45,17 @@ public:
 
 public slots:
     void refresh(const QUrl& folderUrl);
+    void selectTrack(int row);
+
+signals:
+    void currentTrackPointsChanged();
 
 private:
-    QString readStartTime(const QString& filePath);
+    QString      readStartTime(const QString& filePath);
+    QVariantList parseTrackPoints(const QString& filePath);
 
-    QVector<GpxFileInfo> m_files;  //!< Liste des fichiers GPX détectés.
+    QVector<GpxFileInfo> m_files;             //!< Liste des fichiers GPX détectés.
+    QVariantList         m_currentTrackPoints; //!< Points du track sélectionné (QGeoCoordinate).
 };
 
 #endif // GPXMODEL_H

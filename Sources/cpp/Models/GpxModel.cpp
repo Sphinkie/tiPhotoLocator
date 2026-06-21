@@ -89,6 +89,59 @@ void GpxModel::refresh(const QUrl& folderUrl)
     }
 
     endResetModel();
+
+    // On vide le tracé courant — il n'est plus valide après un changement de dossier.
+    m_currentTrackPoints.clear();
+    emit currentTrackPointsChanged();
+}
+
+
+/** **********************************************************************************************************
+ * @brief Charge le tracé du fichier GPX sélectionné dans currentTrackPoints.
+ *
+ * @param row : index dans le modèle. Passer -1 pour vider le tracé.
+ * ***********************************************************************************************************/
+void GpxModel::selectTrack(int row)
+{
+    if (row < 0 || row >= m_files.size())
+    {
+        m_currentTrackPoints.clear();
+        emit currentTrackPointsChanged();
+        return;
+    }
+    m_currentTrackPoints = parseTrackPoints(m_files.at(row).filePath);
+    emit currentTrackPointsChanged();
+}
+
+
+/** **********************************************************************************************************
+ * @brief Parse tous les <trkpt> du fichier GPX et retourne la liste des coordonnées.
+ *
+ * @param filePath : chemin absolu du fichier .gpx.
+ * @return QVariantList de QGeoCoordinate, compatible avec MapPolyline.path en QML.
+ * ***********************************************************************************************************/
+QVariantList GpxModel::parseTrackPoints(const QString& filePath)
+{
+    QVariantList points;
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return points;
+
+    QXmlStreamReader xml(&file);
+    while (!xml.atEnd() && !xml.hasError())
+    {
+        xml.readNext();
+        if (xml.isStartElement() && xml.name() == QLatin1String("trkpt"))
+        {
+            const QXmlStreamAttributes attrs = xml.attributes();
+            bool latOk = false, lonOk = false;
+            const double lat = attrs.value("lat").toDouble(&latOk);
+            const double lon = attrs.value("lon").toDouble(&lonOk);
+            if (latOk && lonOk)
+                points.append(QVariant::fromValue(QGeoCoordinate(lat, lon)));
+        }
+    }
+    return points;
 }
 
 

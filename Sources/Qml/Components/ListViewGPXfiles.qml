@@ -35,6 +35,7 @@ Rectangle {
         model: _gpxModel
         focus: true
         delegate: delegateGpx
+        onCurrentIndexChanged: _gpxModel.selectTrack(currentIndex)
         highlight: Rectangle { color: Style.chipGeoSuggestionColor; opacity: 0.6 }
         highlightFollowsCurrentItem: true
     }
