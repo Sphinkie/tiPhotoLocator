@@ -42,6 +42,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/cpp/Models/SuggestionModel.cpp        Sources/cpp/Models/SuggestionModel.h
         Sources/cpp/Models/SuggestionProxyModel.cpp   Sources/cpp/Models/SuggestionProxyModel.h
         Sources/cpp/Models/SuggestionCategoryProxyModel.cpp  Sources/cpp/Models/SuggestionCategoryProxyModel.h
+        Sources/cpp/Models/GpxModel.cpp               Sources/cpp/Models/GpxModel.h
     RESOURCES
         Resources/tiPhotoLocator.qrc
     QML_FILES
@@ -55,6 +56,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/GlobalTag.qml
         Sources/Qml/Components/KeywordsRepeater.qml
         Sources/Qml/Components/ImagettesListView.qml
+        Sources/Qml/Components/ListViewGPXfiles.qml
         Sources/Qml/Components/Snackbar.qml
         Sources/Qml/Components/SuggestionRepeater.qml
         Sources/Qml/Components/TextFieldSettings.qml
@@ -112,13 +114,11 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml
         Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml
         Sources/Qml/Vues/ZoneUserdataForm.ui.qml
+        Sources/Qml/Vues/ZoneGpx.qml
     QML_FILES
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
         Sources/Qml/Javascript/TiUtilities.js
-        QML_FILES Sources/Qml/Vues/ZoneGpx.qml
-        QML_FILES Sources/Qml/Components/ListViewGPXfiles.qml
-        QML_FILES Sources/Qml/Models/ModelGpxList.qml
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

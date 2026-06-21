@@ -178,34 +178,42 @@
     </message>
 </context>
 <context>
+    <name>ListViewGPXfiles</name>
+    <message>
+        <location filename="../Sources/Qml/Components/ListViewGPXfiles.qml" line="23"/>
+        <source>No GPX file</source>
+        <translation>Aucun fichier GPX</translation>
+    </message>
+</context>
+<context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="181"/>
+        <location filename="../Sources/Qml/Main.qml" line="182"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="184"/>
+        <location filename="../Sources/Qml/Main.qml" line="185"/>
         <source>MAP</source>
         <translation>CARTE</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="188"/>
+        <location filename="../Sources/Qml/Main.qml" line="189"/>
         <source>GPX</source>
-        <translation type="unfinished"></translation>
+        <translation>GPX</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="191"/>
+        <location filename="../Sources/Qml/Main.qml" line="192"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>TAGS EXIF ET IPTC</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="195"/>
+        <location filename="../Sources/Qml/Main.qml" line="196"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="325"/>
+        <location filename="../Sources/Qml/Main.qml" line="326"/>
         <source>Write error</source>
         <translation>Erreur d&apos;écriture</translation>
     </message>
@@ -877,32 +885,32 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="14"/>
         <source>GPX Tracking</source>
-        <translation type="unfinished"></translation>
+        <translation>Traces GPS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="33"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="34"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Raffraîchir</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="39"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="41"/>
         <source>Refresh GPX file list</source>
-        <translation type="unfinished"></translation>
+        <translation>Relit les fichiers GPS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="58"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="60"/>
         <source>GPX start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Heure de début de la trace GPS:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="70"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="72"/>
         <source>Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Décalage horaire:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="91"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="93"/>
         <source>Camera time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Heure de l&apos;appareil photo:</translation>
     </message>
 </context>
 <context>

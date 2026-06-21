@@ -25,15 +25,17 @@ Zone {
     }
 
     ColumnLayout {
+        width: parent.width
         spacing: 4
 
         Button {
             id: bt_refresh_gpx
-            enabled: true
+            enabled: window.currentFolderUrl != ""
             text: qsTr("Refresh")
             icon.source: "qrc:/Images/bt-refresh.png"
             Layout.leftMargin: 20
             Layout.topMargin: 16
+            onClicked: _gpxModel.refresh(window.currentFolderUrl)
             ToolTip {
                 visible: parent.hovered
                 text: qsTr("Refresh GPX file list")

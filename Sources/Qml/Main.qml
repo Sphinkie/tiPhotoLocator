@@ -45,6 +45,7 @@ ApplicationWindow {
     // ----------------------------------------------------------------
     /// URL du dossier de photos actif (local ou UNC). Mis à jour par TiFolderDialog et MainMenuBar.
     property url currentFolderUrl: ""
+    onCurrentFolderUrlChanged: _gpxModel.refresh(currentFolderUrl)
 
     /// Ajoute une JPG au modèle.
     signal append(string filename, string url)

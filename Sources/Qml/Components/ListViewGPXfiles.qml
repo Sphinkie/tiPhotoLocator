@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Controls.Material
-import "../Models"
 import ".."
 
 /** **********************************************************************************************************
@@ -10,23 +9,30 @@ import ".."
 Rectangle {
     implicitWidth: 320
     height: 384  // 8 items × 48px
+    color: Qt.rgba(1, 1, 1, 0.35)
 
     /// Heure de début du fichier GPX sélectionné (ex: "14:23:00"), vide si aucun.
-    property string currentStartTime: {
-        if (__lv.currentIndex < 0) return ""
-        var item = __lv.model.get(__lv.currentIndex)
-        return item ? item.startTime : ""
-    }
+    property string currentStartTime: __lv.currentItem ? __lv.currentItem.startTime : ""
 
     /** ******************************************************************************************************
   * La ListView
   * *******************************************************************************************************/
+    Text {
+        anchors.centerIn: parent
+        visible: __lv.count === 0
+        text: qsTr("No GPX file")
+        opacity: 0.7
+        font.pixelSize: 13
+        font.italic: true
+        color: Style.primaryTextColor
+    }
+
     ListView {
         id: __lv
         anchors.fill: parent
         orientation: Qt.Vertical
         clip: true
-        model: ModelGpxList {}
+        model: _gpxModel
         focus: true
         delegate: delegateGpx
         highlight: Rectangle { color: Style.chipGeoSuggestionColor; opacity: 0.6 }
@@ -54,7 +60,8 @@ Rectangle {
                 Text {
                     text: myItem.name
                     font.pixelSize: 13
-                    color: myItem.index === __lv.currentIndex ? Style.chipGeoColor : Material.foreground
+                    color: myItem.index === __lv.currentIndex ? Style.chipGeoColor : Style.foregroundColor
+                    font.bold: myItem.index === __lv.currentIndex
                 }
                 Text {
                     text: myItem.startTime

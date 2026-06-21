@@ -13,6 +13,7 @@
 #include "Models/SuggestionProxyModel.h"
 #include "Models/SuggestionCategoryProxyModel.h"
 #include "Models/CameraSet.h"
+#include "Models/GpxModel.h"
 #include "GeocodeWrapper.h"
 #include "LandmarkWrapper.h"
 
@@ -74,6 +75,7 @@ int main(int argc, char *argv[])
     GeocodeWrapper geocodeWrapper(&suggestionModel); // on lui passe le modèle qui mémorisera les suggestions
     LandmarkWrapper landmarkWrapper;
     CameraSet cameraSet;
+    GpxModel gpxModel;
 
     // ----------------------------------------------------------------------------
     // Initialisation du moteur QML:
@@ -97,6 +99,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("_geocodeWrapper", &geocodeWrapper);
     context->setContextProperty("_landmarkWrapper", &landmarkWrapper);
     context->setContextProperty("_cameraSet", &cameraSet);
+    context->setContextProperty("_gpxModel", &gpxModel);
 
     // ----------------------------------------------------------------------------
     // Connexion des signaux
