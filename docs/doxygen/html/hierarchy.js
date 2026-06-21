@@ -7,8 +7,9 @@ var hierarchy =
       [ "TabFrameGlobalTags", "class_tab_frame_global_tags.html", null ]
     ] ],
     [ "Dialog", null, [
-      [ "ApikeyDialog", "class_apikey_dialog.html", null ],
-      [ "CreditsDialog", "class_credits_dialog.html", null ]
+      [ "AiApikeyDialog", "class_ai_apikey_dialog.html", null ],
+      [ "CreditsDialog", "class_credits_dialog.html", null ],
+      [ "MapApikeyDialog", "class_map_apikey_dialog.html", null ]
     ] ],
     [ "FolderDialog", null, [
       [ "TiFolderDialog", "class_ti_folder_dialog.html", null ]
@@ -16,7 +17,10 @@ var hierarchy =
     [ "FolderListModel", null, [
       [ "ModelFolderList", "class_model_folder_list.html", null ]
     ] ],
+    [ "GpxFileInfo", "struct_gpx_file_info.html", null ],
+    [ "GpxTrackPoint", "struct_gpx_track_point.html", null ],
     [ "GridLayout", null, [
+      [ "TabFrameGPX", "class_tab_frame_g_p_x.html", null ],
       [ "TabFramePhotoMap", "class_tab_frame_photo_map.html", null ],
       [ "TabFramePhotoTags", "class_tab_frame_photo_tags.html", null ]
     ] ],
@@ -25,6 +29,9 @@ var hierarchy =
         [ "FatChip", "class_fat_chip.html", null ]
       ] ],
       [ "Style", "class_style.html", null ],
+      [ "ToolbarGpxForm", "class_toolbar_gpx_form.html", [
+        [ "ToolbarGpx", "class_toolbar_gpx.html", null ]
+      ] ],
       [ "ToolbarMapForm", "class_toolbar_map_form.html", [
         [ "ToolbarMap", "class_toolbar_map.html", null ]
       ] ],
@@ -41,6 +48,9 @@ var hierarchy =
     [ "Label", null, [
       [ "TinyChip", "class_tiny_chip.html", null ]
     ] ],
+    [ "ListModel", null, [
+      [ "ModelGpxList", "class_model_gpx_list.html", null ]
+    ] ],
     [ "ListView", null, [
       [ "ImagettesListView", "class_imagettes_list_view.html", null ],
       [ "PhotoListview", "class_photo_listview.html", null ]
@@ -53,25 +63,29 @@ var hierarchy =
     ] ],
     [ "MessageDialog", null, [
       [ "AboutDialog", "class_about_dialog.html", null ],
-      [ "RescanWarning", "class_rescan_warning.html", null ]
+      [ "QuitWarningDialog", "class_quit_warning_dialog.html", null ],
+      [ "RescanWarningDialog", "class_rescan_warning_dialog.html", null ]
     ] ],
     [ "Photo", "struct_photo.html", null ],
     [ "Popup", null, [
-      [ "PopupImagette", "class_popup_imagette.html", null ],
+      [ "ImagettePopup", "class_imagette_popup.html", null ],
       [ "PopupKeywordsForm", "class_popup_keywords_form.html", [
         [ "PopupKeywords", "class_popup_keywords.html", null ]
       ] ],
       [ "PopupSettingsForm", "class_popup_settings_form.html", [
         [ "PopupSettings", "class_popup_settings.html", null ]
-      ] ]
+      ] ],
+      [ "TutorialPopup", "class_tutorial_popup.html", null ]
     ] ],
     [ "QAbstractListModel", null, [
+      [ "GpxModel", "class_gpx_model.html", null ],
       [ "PhotoModel", "class_photo_model.html", null ],
       [ "SuggestionModel", "class_suggestion_model.html", null ]
     ] ],
     [ "QObject", null, [
       [ "CameraSet", "class_camera_set.html", null ],
       [ "GeocodeWrapper", "class_geocode_wrapper.html", null ],
+      [ "LandmarkWrapper", "class_landmark_wrapper.html", null ],
       [ "PhotoModelWrapper", "class_photo_model_wrapper.html", null ]
     ] ],
     [ "QRunnable", null, [
@@ -87,6 +101,9 @@ var hierarchy =
     ] ],
     [ "Rectangle", null, [
       [ "ApplicationLogo", "class_application_logo.html", null ],
+      [ "GhostChip", "class_ghost_chip.html", null ],
+      [ "ListViewGPXfiles", "class_list_view_g_p_xfiles.html", null ],
+      [ "Snackbar", "class_snackbar.html", null ],
       [ "ToolbarBottomForm", "class_toolbar_bottom_form.html", [
         [ "ToolbarBottom", "class_toolbar_bottom.html", null ]
       ] ],
@@ -100,6 +117,7 @@ var hierarchy =
         [ "ZoneGlobalTagsForm", "class_zone_global_tags_form.html", [
           [ "ZoneGlobalTags", "class_zone_global_tags.html", null ]
         ] ],
+        [ "ZoneGpx", "class_zone_gpx.html", null ],
         [ "ZonePreviewForm", "class_zone_preview_form.html", [
           [ "ZonePreview", "class_zone_preview.html", null ]
         ] ],
@@ -117,10 +135,14 @@ var hierarchy =
       [ "SuggestionRepeater", "class_suggestion_repeater.html", null ]
     ] ],
     [ "RowLayout", null, [
+      [ "GlobalTag", "class_global_tag.html", null ],
       [ "TabFramePhotoPreview", "class_tab_frame_photo_preview.html", null ],
       [ "ToolbarFilters", "class_toolbar_filters.html", null ]
     ] ],
     [ "Suggestion", "struct_suggestion.html", null ],
+    [ "TabButton", null, [
+      [ "MyTabButton", "class_my_tab_button.html", null ]
+    ] ],
     [ "TextField", null, [
       [ "TextFieldSettings", "class_text_field_settings.html", null ]
     ] ],

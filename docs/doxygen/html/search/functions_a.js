@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['oncurrentphotochanged_0',['onCurrentPhotoChanged',['../class_suggestion_model.html#a509f4df03362a904aeae8c2d873485a3',1,'SuggestionModel']]],
-  ['onerror_1',['onError',['../class_camera_set.html#a77e050b451359a66ab6d161477597b44',1,'CameraSet']]],
-  ['onfinished_2',['onFinished',['../class_camera_set.html#ae521eda047c7409a02da364ba8d60db1',1,'CameraSet']]],
-  ['onshownextcoords_3',['onShowNextCoords',['../class_geocode_wrapper.html#ad8fcd055196df78fe385baf7c4a1bbaa',1,'GeocodeWrapper']]],
-  ['onthemapproxymodel_4',['OnTheMapProxyModel',['../class_on_the_map_proxy_model.html#afb8170a7f9e508bfdc6238e649e957cf',1,'OnTheMapProxyModel']]],
-  ['operator_3d_3d_5',['operator==',['../struct_photo.html#aadb7a083611feae65440c3bfc3887417',1,'Photo::operator==(const QString &amp;file_name)'],['../struct_photo.html#aaf8c4dfdd916b811562d6d4e7f5e1489',1,'Photo::operator==(const Photo &amp;photo)'],['../struct_suggestion.html#a063449adc119af01b2ca07be053223f6',1,'Suggestion::operator==()']]]
+  ['navigatenext_0',['navigateNext',['../class_photo_listview.html#a0520e6601955f319aae33555ac9e76b3',1,'PhotoListview']]],
+  ['navigateprev_1',['navigatePrev',['../class_photo_listview.html#a494ba6003c39f426684eb6476a42b000',1,'PhotoListview']]],
+  ['navigateto_2',['navigateTo',['../class_photo_listview.html#ad30f48f39753777de55a0f056f2ce470',1,'PhotoListview']]],
+  ['normalise_3',['normalise',['../class_utilities.html#afdd3b18e7db7c7b7d397fd7b3c7201ab',1,'Utilities']]]
 ];

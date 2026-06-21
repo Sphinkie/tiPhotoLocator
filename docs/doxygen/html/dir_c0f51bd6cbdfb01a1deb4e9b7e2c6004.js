@@ -1,6 +1,7 @@
 var dir_c0f51bd6cbdfb01a1deb4e9b7e2c6004 =
 [
     [ "CameraSet.h", "_camera_set_8h_source.html", null ],
+    [ "GpxModel.h", "_gpx_model_8h_source.html", null ],
     [ "OnTheMapProxyModel.h", "_on_the_map_proxy_model_8h_source.html", null ],
     [ "Photo.h", "_photo_8h_source.html", null ],
     [ "PhotoModel.h", "_photo_model_8h_source.html", null ],

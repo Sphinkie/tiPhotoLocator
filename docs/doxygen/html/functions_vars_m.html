@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -99,11 +99,14 @@ $(function(){initNavTree('functions_vars_m.html','',''); });
 <li>m_circleResetted&#160;:&#160;<a class="el" href="class_photo_model.html#a30419f6dc634fbac53925922232e861f">PhotoModel</a></li>
 <li>m_countWrite&#160;:&#160;<a class="el" href="class_photo_model.html#a8198679bf4201acd77e3216049abdb81">PhotoModel</a></li>
 <li>m_currentPhotoRow&#160;:&#160;<a class="el" href="class_suggestion_model.html#a114f7e94901935083f413db400c9a4aa">SuggestionModel</a></li>
+<li>m_currentTrack&#160;:&#160;<a class="el" href="class_gpx_model.html#ac4d950fd7b0d1394e5a3ed5f1d547046">GpxModel</a></li>
+<li>m_currentTrackPoints&#160;:&#160;<a class="el" href="class_gpx_model.html#aca36c25e3aecd48f7e02e214e21d621d">GpxModel</a></li>
 <li>m_deepaiKey&#160;:&#160;<a class="el" href="class_camera_set.html#a4dbd8817b6336dde9a92ecc822f1f354">CameraSet</a></li>
 <li>m_dumpedRow&#160;:&#160;<a class="el" href="class_photo_model.html#a844160211f6ff9d747dcc59310d2fc22">PhotoModel</a>, <a class="el" href="class_suggestion_model.html#a71e147fc8f25a5f6ff2f24ebc256acc6">SuggestionModel</a></li>
 <li>m_exifData&#160;:&#160;<a class="el" href="class_exif_write_task.html#a30f450a4be6abe483b77c9445689725e">ExifWriteTask</a></li>
 <li>m_filePath&#160;:&#160;<a class="el" href="class_exif_read_task.html#adee848da5859f1e0a5ef3ea8b5fd155d">ExifReadTask</a></li>
 <li>m_filePos&#160;:&#160;<a class="el" href="class_exif_read_task.html#a40e7700eda71c078bd4a1dcc37fe928a">ExifReadTask</a></li>
+<li>m_files&#160;:&#160;<a class="el" href="class_gpx_model.html#a9f48d83641f004bb16806df04fcef7aa">GpxModel</a></li>
 <li>m_filter&#160;:&#160;<a class="el" href="class_suggestion_category_proxy_model.html#a15cde010b373ec1cfe3475a6b01dc05a">SuggestionCategoryProxyModel</a></li>
 <li>m_filterEnabled&#160;:&#160;<a class="el" href="class_on_the_map_proxy_model.html#af83d556dce60b764e65082d856e2fc0f">OnTheMapProxyModel</a>, <a class="el" href="class_suggestion_proxy_model.html#ad1295d961a6634c58ff34981bc1b6df1">SuggestionProxyModel</a></li>
 <li>m_filterPhotoRow&#160;:&#160;<a class="el" href="class_suggestion_proxy_model.html#a549876b1f6cec3fb6a37d6fd28439450">SuggestionProxyModel</a></li>
@@ -111,12 +114,15 @@ $(function(){initNavTree('functions_vars_m.html','',''); });
 <li>m_generateBackup&#160;:&#160;<a class="el" href="class_exif_write_task.html#a09a5dc832fd4d41b1ee9fbb9f55623f7">ExifWriteTask</a></li>
 <li>m_geoManager&#160;:&#160;<a class="el" href="class_geocode_wrapper.html#adf339348abe1776e01f8345364dac1d1">GeocodeWrapper</a></li>
 <li>m_index&#160;:&#160;<a class="el" href="class_geocode_wrapper.html#a0da6d81ec9bbecef91345d386ce4cd6f">GeocodeWrapper</a></li>
+<li>m_lastCircleLat&#160;:&#160;<a class="el" href="class_photo_model.html#a61478a24b728846e10c752f5e549f79c">PhotoModel</a></li>
+<li>m_lastCircleLong&#160;:&#160;<a class="el" href="class_photo_model.html#aa3e02095541fb1e6f1d4b403d2162577">PhotoModel</a></li>
 <li>m_lastCircleRadius&#160;:&#160;<a class="el" href="class_photo_model.html#ac14973957cff384c1ba7566b93ec5c78">PhotoModel</a></li>
 <li>m_lastCurrentRow&#160;:&#160;<a class="el" href="class_photo_model.html#a1d1b6c95fee19ce3b6ac37beb5c14a57">PhotoModel</a></li>
 <li>m_loading&#160;:&#160;<a class="el" href="class_photo_model.html#a11387915a2315b9426aa63be7d64ae49">PhotoModel</a></li>
 <li>m_locations&#160;:&#160;<a class="el" href="class_geocode_wrapper.html#a78aabbcabe5958c466c7a2479975c5e8">GeocodeWrapper</a></li>
 <li>m_markerIndex&#160;:&#160;<a class="el" href="class_photo_model.html#af32aed3a0a39738d782a1d69a14175f2">PhotoModel</a></li>
 <li>m_markerRow&#160;:&#160;<a class="el" href="class_photo_model.html#a6ff090266c5c666181a02469943d9512">PhotoModel</a></li>
+<li>m_matchCount&#160;:&#160;<a class="el" href="class_gpx_model.html#af17837371e0c1f5fbf946cd688d4d940">GpxModel</a></li>
 <li>m_networkMgr&#160;:&#160;<a class="el" href="class_camera_set.html#a9bcc216de40d580d73b9511d983bf628">CameraSet</a></li>
 <li>m_pendingReadTasks&#160;:&#160;<a class="el" href="class_photo_model.html#ad6d02a95aeaf5f93d350189197c6f64d">PhotoModel</a></li>
 <li>m_photoModel&#160;:&#160;<a class="el" href="class_exif_read_task.html#aa742802b2db821ed9a737a2300ae09ef">ExifReadTask</a>, <a class="el" href="class_exif_write_task.html#a7ac83b6c8c115c77feff3dbe57af3e4d">ExifWriteTask</a></li>
@@ -133,7 +139,7 @@ $(function(){initNavTree('functions_vars_m.html','',''); });
 <li>mapPlugin&#160;:&#160;<a class="el" href="class_map_view.html#ae5ded3bc79acf34fb2f954518b303a00">MapView</a></li>
 <li>mapTab&#160;:&#160;<a class="el" href="class_main.html#ab605bcb2c45d3d00f45f30908d18ee78">Main</a></li>
 <li>mapTools&#160;:&#160;<a class="el" href="class_tab_frame_photo_map.html#a3c6ff25b4a38295e78139b0bd4fc7884">TabFramePhotoMap</a></li>
-<li>mapView&#160;:&#160;<a class="el" href="class_tab_frame_photo_map.html#ad78ac3577fe11997cc5267d33d754f05">TabFramePhotoMap</a></li>
+<li>mapView&#160;:&#160;<a class="el" href="class_tab_frame_g_p_x.html#a9e64ab098a58ed31989a1a9bb4d2d9a1">TabFrameGPX</a>, <a class="el" href="class_tab_frame_photo_map.html#ad78ac3577fe11997cc5267d33d754f05">TabFramePhotoMap</a></li>
 <li>markerDelegate&#160;:&#160;<a class="el" href="class_map_view.html#ac2dcc7f77997c187247ad99275dc20a9">MapView</a></li>
 <li>maximumLength&#160;:&#160;<a class="el" href="class_fat_chip.html#af2f57d0100bc8324c8f46b924cf0bd83">FatChip</a></li>
 <li>menuBar&#160;:&#160;<a class="el" href="class_main.html#aaa5a22b926b84f30d878945b8570bcee">Main</a></li>

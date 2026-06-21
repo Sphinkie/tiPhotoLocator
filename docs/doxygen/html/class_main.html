@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -124,6 +124,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>saveMetadata</b> ()</
 <tr class="memitem:a580b6efa82d0e44235c259efd5c7d62e" id="r_a580b6efa82d0e44235c259efd5c7d62e"><td class="memItemLeft" align="right" valign="top"><a id="a580b6efa82d0e44235c259efd5c7d62e" name="a580b6efa82d0e44235c259efd5c7d62e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>applyCreatorToAll</b> ()</td></tr>
 <tr class="memdesc:a580b6efa82d0e44235c259efd5c7d62e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique le Creator (des settings) à toutes les photos du modèle. <br /></td></tr>
+<tr class="memitem:a38d2034da32743fed407bea33bd68c1f" id="r_a38d2034da32743fed407bea33bd68c1f"><td class="memItemLeft" align="right" valign="top"><a id="a38d2034da32743fed407bea33bd68c1f" name="a38d2034da32743fed407bea33bd68c1f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>applyCreatorToSelection</b> ()</td></tr>
+<tr class="memdesc:a38d2034da32743fed407bea33bd68c1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique le Creator (des settings) aux photos sélectionnées. <br /></td></tr>
 <tr class="memitem:a827bdc33fe9a2ee87ed3de1d094da45e" id="r_a827bdc33fe9a2ee87ed3de1d094da45e"><td class="memItemLeft" align="right" valign="top"><a id="a827bdc33fe9a2ee87ed3de1d094da45e" name="a827bdc33fe9a2ee87ed3de1d094da45e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>applySavedPositionToCoords</b> ()</td></tr>
 <tr class="memdesc:a827bdc33fe9a2ee87ed3de1d094da45e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affecte la position mémorisée à toutes les photos du cercle. <br /></td></tr>
@@ -184,21 +187,30 @@ var Material&#160;</td><td class="memItemRight" valign="bottom"><b>foreground</b
 var Material&#160;</td><td class="memItemRight" valign="bottom"><b>accent</b></td></tr>
 <tr class="memitem:a7190607f5513b7748122e34130a8749b" id="r_a7190607f5513b7748122e34130a8749b"><td class="memItemLeft" align="right" valign="top"><a id="a7190607f5513b7748122e34130a8749b" name="a7190607f5513b7748122e34130a8749b"></a>
 var Material&#160;</td><td class="memItemRight" valign="bottom"><b>primary</b></td></tr>
+<tr class="memitem:af080a930828df3124b4eb07a4510cf47" id="r_af080a930828df3124b4eb07a4510cf47"><td class="memItemLeft" align="right" valign="top"><a id="af080a930828df3124b4eb07a4510cf47" name="af080a930828df3124b4eb07a4510cf47"></a>
+var&#160;</td><td class="memItemRight" valign="bottom"><b>onCurrentFolderUrlChanged</b></td></tr>
 <tr class="memitem:a4f956b7263c664340cb606ec2cc03aac" id="r_a4f956b7263c664340cb606ec2cc03aac"><td class="memItemLeft" align="right" valign="top"><a id="a4f956b7263c664340cb606ec2cc03aac" name="a4f956b7263c664340cb606ec2cc03aac"></a>
 <a class="el" href="class_about_dialog.html">AboutDialog</a>&#160;</td><td class="memItemRight" valign="bottom"><b>aboutPage</b></td></tr>
+<tr class="memdesc:a4f956b7263c664340cb606ec2cc03aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fenêtre de popup avec les infos sur le programme. <br /></td></tr>
 <tr class="memitem:a0a2efcc080855f7243a45c280f4dc45c" id="r_a0a2efcc080855f7243a45c280f4dc45c"><td class="memItemLeft" align="right" valign="top"><a id="a0a2efcc080855f7243a45c280f4dc45c" name="a0a2efcc080855f7243a45c280f4dc45c"></a>
 <a class="el" href="class_credits_dialog.html">CreditsDialog</a>&#160;</td><td class="memItemRight" valign="bottom"><b>creditsPage</b></td></tr>
-<tr class="memitem:aaeba1f79df9f9db89b1472112ceabb11" id="r_aaeba1f79df9f9db89b1472112ceabb11"><td class="memItemLeft" align="right" valign="top"><a id="aaeba1f79df9f9db89b1472112ceabb11" name="aaeba1f79df9f9db89b1472112ceabb11"></a>
-<a class="el" href="class_apikey_dialog.html">ApikeyDialog</a>&#160;</td><td class="memItemRight" valign="bottom"><b>apiPage</b></td></tr>
-<tr class="memitem:af94311b26bd72ef57dd28abc73b52a1f" id="r_af94311b26bd72ef57dd28abc73b52a1f"><td class="memItemLeft" align="right" valign="top"><a id="af94311b26bd72ef57dd28abc73b52a1f" name="af94311b26bd72ef57dd28abc73b52a1f"></a>
-<a class="el" href="class_rescan_warning.html">RescanWarning</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rescanWarning</b></td></tr>
+<tr class="memdesc:a0a2efcc080855f7243a45c280f4dc45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fenêtre de popup avec les crédits. <br /></td></tr>
+<tr class="memitem:a17eabd1f81843b987642f56500fd7a07" id="r_a17eabd1f81843b987642f56500fd7a07"><td class="memItemLeft" align="right" valign="top"><a id="a17eabd1f81843b987642f56500fd7a07" name="a17eabd1f81843b987642f56500fd7a07"></a>
+<a class="el" href="class_map_apikey_dialog.html">MapApikeyDialog</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mapApiPage</b></td></tr>
+<tr class="memitem:a917b11517d90ab40b5229913c3df72b7" id="r_a917b11517d90ab40b5229913c3df72b7"><td class="memItemLeft" align="right" valign="top"><a id="a917b11517d90ab40b5229913c3df72b7" name="a917b11517d90ab40b5229913c3df72b7"></a>
+<a class="el" href="class_ai_apikey_dialog.html">AiApikeyDialog</a>&#160;</td><td class="memItemRight" valign="bottom"><b>aiApiPage</b></td></tr>
+<tr class="memitem:af7917cbacf5f597987829d5e9e7c78fe" id="r_af7917cbacf5f597987829d5e9e7c78fe"><td class="memItemLeft" align="right" valign="top"><a id="af7917cbacf5f597987829d5e9e7c78fe" name="af7917cbacf5f597987829d5e9e7c78fe"></a>
+<a class="el" href="class_rescan_warning_dialog.html">RescanWarningDialog</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rescanWarning</b></td></tr>
 <tr class="memitem:ae911b8fbd6d12c5c258fd04775a2b79f" id="r_ae911b8fbd6d12c5c258fd04775a2b79f"><td class="memItemLeft" align="right" valign="top"><a id="ae911b8fbd6d12c5c258fd04775a2b79f" name="ae911b8fbd6d12c5c258fd04775a2b79f"></a>
 <a class="el" href="class_popup_settings.html">PopupSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>settingsPopup</b></td></tr>
 <tr class="memitem:afd221cec8c334e0890f51c89613fee2b" id="r_afd221cec8c334e0890f51c89613fee2b"><td class="memItemLeft" align="right" valign="top"><a id="afd221cec8c334e0890f51c89613fee2b" name="afd221cec8c334e0890f51c89613fee2b"></a>
 <a class="el" href="class_popup_keywords.html">PopupKeywords</a>&#160;</td><td class="memItemRight" valign="bottom"><b>keywordsPopup</b></td></tr>
-<tr class="memitem:ac08a4a5f2dc3d5ea2151e59d811cb02a" id="r_ac08a4a5f2dc3d5ea2151e59d811cb02a"><td class="memItemLeft" align="right" valign="top"><a id="ac08a4a5f2dc3d5ea2151e59d811cb02a" name="ac08a4a5f2dc3d5ea2151e59d811cb02a"></a>
-<a class="el" href="class_popup_imagette.html">PopupImagette</a>&#160;</td><td class="memItemRight" valign="bottom"><b>imagePreviewPopup</b></td></tr>
-<tr class="memdesc:ac08a4a5f2dc3d5ea2151e59d811cb02a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Popup plein-écran pour visualiser une imagette en grand. <br /></td></tr>
+<tr class="memitem:ae5478a9eb9286de56f56a19f11bb7c56" id="r_ae5478a9eb9286de56f56a19f11bb7c56"><td class="memItemLeft" align="right" valign="top"><a id="ae5478a9eb9286de56f56a19f11bb7c56" name="ae5478a9eb9286de56f56a19f11bb7c56"></a>
+<a class="el" href="class_tutorial_popup.html">TutorialPopup</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tutorialPage</b></td></tr>
+<tr class="memdesc:ae5478a9eb9286de56f56a19f11bb7c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Popup en overlay pour le tutorial. <br /></td></tr>
+<tr class="memitem:a22cce10650b6af0eb10f3e992db538d9" id="r_a22cce10650b6af0eb10f3e992db538d9"><td class="memItemLeft" align="right" valign="top"><a id="a22cce10650b6af0eb10f3e992db538d9" name="a22cce10650b6af0eb10f3e992db538d9"></a>
+<a class="el" href="class_imagette_popup.html">ImagettePopup</a>&#160;</td><td class="memItemRight" valign="bottom"><b>imagePreviewPopup</b></td></tr>
+<tr class="memdesc:a22cce10650b6af0eb10f3e992db538d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Popup plein-écran pour visualiser une imagette en grand. <br /></td></tr>
 <tr class="memitem:a0ddef6c00225add942e12c5d8867a73c" id="r_a0ddef6c00225add942e12c5d8867a73c"><td class="memItemLeft" align="right" valign="top"><a id="a0ddef6c00225add942e12c5d8867a73c" name="a0ddef6c00225add942e12c5d8867a73c"></a>
 <a class="el" href="class_ti_folder_dialog.html">TiFolderDialog</a>&#160;</td><td class="memItemRight" valign="bottom"><b>folderDialog</b></td></tr>
 <tr class="memitem:a40f5363ee69126d7725bf917ee1fba64" id="r_a40f5363ee69126d7725bf917ee1fba64"><td class="memItemLeft" align="right" valign="top"><a id="a40f5363ee69126d7725bf917ee1fba64" name="a40f5363ee69126d7725bf917ee1fba64"></a>
@@ -223,6 +235,9 @@ TabBar&#160;</td><td class="memItemRight" valign="bottom"><b>tabBar</b></td></tr
 <tr class="memitem:ab605bcb2c45d3d00f45f30908d18ee78" id="r_ab605bcb2c45d3d00f45f30908d18ee78"><td class="memItemLeft" align="right" valign="top"><a id="ab605bcb2c45d3d00f45f30908d18ee78" name="ab605bcb2c45d3d00f45f30908d18ee78"></a>
 <a class="el" href="class_tab_frame_photo_map.html">TabFramePhotoMap</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mapTab</b></td></tr>
 <tr class="memdesc:ab605bcb2c45d3d00f45f30908d18ee78"><td class="mdescLeft">&#160;</td><td class="mdescRight">---------------&mdash; MAP TAB ---------------------------&mdash; <br /></td></tr>
+<tr class="memitem:a29a03d3ec8a1fbddef839c7287b35754" id="r_a29a03d3ec8a1fbddef839c7287b35754"><td class="memItemLeft" align="right" valign="top"><a id="a29a03d3ec8a1fbddef839c7287b35754" name="a29a03d3ec8a1fbddef839c7287b35754"></a>
+<a class="el" href="class_tab_frame_g_p_x.html">TabFrameGPX</a>&#160;</td><td class="memItemRight" valign="bottom"><b>gpxTab</b></td></tr>
+<tr class="memdesc:a29a03d3ec8a1fbddef839c7287b35754"><td class="mdescLeft">&#160;</td><td class="mdescRight">---------------&mdash; GPX TAB ---------------------------&mdash; <br /></td></tr>
 <tr class="memitem:a937161b6dd4dce68dc7521e1b27819dd" id="r_a937161b6dd4dce68dc7521e1b27819dd"><td class="memItemLeft" align="right" valign="top"><a id="a937161b6dd4dce68dc7521e1b27819dd" name="a937161b6dd4dce68dc7521e1b27819dd"></a>
 <a class="el" href="class_tab_frame_photo_tags.html">TabFramePhotoTags</a>&#160;</td><td class="memItemRight" valign="bottom"><b>photoTagsTab</b></td></tr>
 <tr class="memdesc:a937161b6dd4dce68dc7521e1b27819dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">---------------&mdash; IPTC/EXIF TAGS TAB -------------------------&mdash; <br /></td></tr>
@@ -236,6 +251,10 @@ TabBar&#160;</td><td class="memItemRight" valign="bottom"><b>tabBar</b></td></tr
 <tr class="memitem:af3dfb2a32b39c98a991299276fc2b67a" id="r_af3dfb2a32b39c98a991299276fc2b67a"><td class="memItemLeft" align="right" valign="top"><a id="af3dfb2a32b39c98a991299276fc2b67a" name="af3dfb2a32b39c98a991299276fc2b67a"></a>
 <a class="el" href="class_imagettes_list_view.html">ImagettesListView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>imagettes</b></td></tr>
 <tr class="memdesc:af3dfb2a32b39c98a991299276fc2b67a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Barre des imagettes. <br /></td></tr>
+<tr class="memitem:a21f1cc462970d3199d67476b7ecd9999" id="r_a21f1cc462970d3199d67476b7ecd9999"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_snackbar.html">Snackbar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21f1cc462970d3199d67476b7ecd9999">snackbar</a></td></tr>
+<tr class="memitem:a8672070236403cae63f1abe1c92c73cc" id="r_a8672070236403cae63f1abe1c92c73cc"><td class="memItemLeft" align="right" valign="top"><a id="a8672070236403cae63f1abe1c92c73cc" name="a8672070236403cae63f1abe1c92c73cc"></a>
+Item&#160;</td><td class="memItemRight" valign="bottom"><b>ghostLayer</b></td></tr>
+<tr class="memdesc:a8672070236403cae63f1abe1c92c73cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Couche transparente pour recevoir les ghost chips animés (z élevé pour passer au-dessus de tout). <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>QML: Fenêtre principale. </p>
@@ -382,6 +401,30 @@ TabBar&#160;</td><td class="memItemRight" valign="bottom"><b>tabBar</b></td></tr
 </div><div class="memdoc">
 <hr  />
 <p> Ligne 0 : Menu principal </p>
+
+</div>
+</div>
+<a id="a21f1cc462970d3199d67476b7ecd9999" name="a21f1cc462970d3199d67476b7ecd9999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f1cc462970d3199d67476b7ecd9999">&#9670;&#160;</a></span>snackbar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_snackbar.html">Snackbar</a> Main::snackbar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> <a class="el" href="class_snackbar.html" title="Snackbar Material Design — notification non-bloquante qui s&#39;affiche brièvement en bas de l&#39;écran....">Snackbar</a> pour les erreurs d'écriture ExifTool. </p>
 
 </div>
 </div>

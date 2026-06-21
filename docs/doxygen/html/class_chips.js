@@ -1,5 +1,6 @@
 var class_chips =
 [
+    [ "deleteClicked", "class_chips.html#a8284d8dd2a294d9e9a550b9409138cb9", null ],
     [ "chipDel", "class_chips.html#a4b688f1cba635167b38d2ecea69a95dd", null ],
     [ "chipEdit", "class_chips.html#ab58ee09ea98e269ee8957873a51f498b", null ],
     [ "chipRectangle", "class_chips.html#a384fd32c1dba1fee423da772f75c5070", null ],
@@ -12,8 +13,11 @@ var class_chips =
     [ "implicitHeight", "class_chips.html#ace08562c67d39cb777becaa0f25e8eed", null ],
     [ "implicitWidth", "class_chips.html#ab55b2db6588047553d2d11c74e68a210", null ],
     [ "leftMargin", "class_chips.html#abf42b177c50e02f89b092d9e3397093b", null ],
+    [ "states", "class_chips.html#a17eb4ada1af0a1e453dc9e095f725f5b", null ],
     [ "topMargin", "class_chips.html#ad762f22bce92fc0d8c1773b01cc1771f", null ],
     [ "canSave", "class_chips.html#ac3230eb7d1b077f88145bc5293694cab", null ],
+    [ "chipCategory", "class_chips.html#aa00ceffa48fe428d22b228b2b1c705c9", null ],
+    [ "chipColor", "class_chips.html#a8d92398a7526ab31ccfd3b6899c70c7b", null ],
     [ "chipText", "class_chips.html#a93017c03e4e28b70d408806337be9f40", null ],
     [ "content", "class_chips.html#a923491728dbd5120266e2d3c4af62c31", null ],
     [ "deletable", "class_chips.html#af6f4c0da806a37ff3304980e3261a1bf", null ],
@@ -21,6 +25,7 @@ var class_chips =
     [ "editable", "class_chips.html#ac6387c850ae682d761efa43d373fe8f0", null ],
     [ "editArea", "class_chips.html#aa2cbbf033b2bc37b9f90d8fd033ceb92", null ],
     [ "hideTargetWhenFilled", "class_chips.html#ab15d66ccd1252ebc60f1598bf56ec960", null ],
+    [ "isSuggestion", "class_chips.html#aeeaf03a04dbe214633dd839025a5e59f", null ],
     [ "revertArea", "class_chips.html#a712d1ffbc8aa67fae4b120e2e3afe38a", null ],
     [ "saveArea", "class_chips.html#a280cfbb450b5cc41e16f31ded7ede64c", null ],
     [ "swapArea", "class_chips.html#a36109c87cdf79393873ff90b401ff37c", null ],

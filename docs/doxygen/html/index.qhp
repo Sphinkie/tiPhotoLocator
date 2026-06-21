@@ -6,7 +6,7 @@
 <filterAttribute>TiPhotoLocator</filterAttribute>
 <filterAttribute>doxygen</filterAttribute>
 <toc>
-<section title="TiPhotoLocator 1.7" ref="index.html">
+<section title="TiPhotoLocator 2.0" ref="index.html">
 <section title="Ti Photo Locator" ref="index.html">
 <section title="Presentation" ref="index.html#autotoc_md1"/>
 <section title="Exif and IPTC tags" ref="index.html#autotoc_md2"/>
@@ -39,16 +39,16 @@
 <section title="t_details" ref="class_about_dialog.html#a03d9881dcc0e8c344eb20a09092d4571"/>
 <section title="version" ref="class_about_dialog.html#a01aaf11038c1104c9ca9a09bda4c80d2"/>
 </section>
-<section title="ApikeyDialog" ref="class_apikey_dialog.html">
-<section title="t1" ref="class_apikey_dialog.html#a3cf1f29639403a648d9d43f32ec0d963"/>
-<section title="t2" ref="class_apikey_dialog.html#a60e2320f69884ac00c63a5ef813c572f"/>
-<section title="t3" ref="class_apikey_dialog.html#a102551dfb1f77889b1068af850ea82b2"/>
-<section title="t4" ref="class_apikey_dialog.html#a005fad7191b042480690093c4af61a7a"/>
-<section title="t5" ref="class_apikey_dialog.html#aa7f432faeac5b3c4ace4e64fdb139570"/>
-<section title="t6" ref="class_apikey_dialog.html#ad8f2978559722b57c8caa58d432dd610"/>
-<section title="t7" ref="class_apikey_dialog.html#a289c5b3ccbd9c3047bf55585d3c379bd"/>
-<section title="t8" ref="class_apikey_dialog.html#a0ff7f51ce108e4af07abe2110646b407"/>
-<section title="t9" ref="class_apikey_dialog.html#a750843e5f4f8037a8dcd1b74922d1fb0"/>
+<section title="AiApikeyDialog" ref="class_ai_apikey_dialog.html">
+<section title="t1" ref="class_ai_apikey_dialog.html#a43131db7183d9fa7134b22e87ab7df52"/>
+<section title="t2" ref="class_ai_apikey_dialog.html#aafcf26da6355348efeb21167da641f19"/>
+<section title="t3" ref="class_ai_apikey_dialog.html#a6ead3a6a2d537183a48aed19efa8ab25"/>
+<section title="t4" ref="class_ai_apikey_dialog.html#a6cb5a6615bd782f26a4984a8216cb88b"/>
+<section title="t5" ref="class_ai_apikey_dialog.html#a1012f9bc052630f64c4b419045641dfc"/>
+<section title="t6" ref="class_ai_apikey_dialog.html#a7482ebcd6389153d40977e8ad60ba3b2"/>
+<section title="t7" ref="class_ai_apikey_dialog.html#a717f8529aafe005fce099faff52c6229"/>
+<section title="t8" ref="class_ai_apikey_dialog.html#a99f9ebabbac88a683d9f0e70b4ca869a"/>
+<section title="t9" ref="class_ai_apikey_dialog.html#a5960464a02ea5880995d86aa299a0f92"/>
 </section>
 <section title="ApplicationLogo" ref="class_application_logo.html">
 </section>
@@ -66,6 +66,7 @@
 <section title="m_networkMgr" ref="class_camera_set.html#a9bcc216de40d580d73b9511d983bf628"/>
 </section>
 <section title="Chips" ref="class_chips.html">
+<section title="deleteClicked" ref="class_chips.html#a8284d8dd2a294d9e9a550b9409138cb9"/>
 <section title="chipDel" ref="class_chips.html#a4b688f1cba635167b38d2ecea69a95dd"/>
 <section title="chipEdit" ref="class_chips.html#ab58ee09ea98e269ee8957873a51f498b"/>
 <section title="chipRectangle" ref="class_chips.html#a384fd32c1dba1fee423da772f75c5070"/>
@@ -78,8 +79,11 @@
 <section title="implicitHeight" ref="class_chips.html#ace08562c67d39cb777becaa0f25e8eed"/>
 <section title="implicitWidth" ref="class_chips.html#ab55b2db6588047553d2d11c74e68a210"/>
 <section title="leftMargin" ref="class_chips.html#abf42b177c50e02f89b092d9e3397093b"/>
+<section title="states" ref="class_chips.html#a17eb4ada1af0a1e453dc9e095f725f5b"/>
 <section title="topMargin" ref="class_chips.html#ad762f22bce92fc0d8c1773b01cc1771f"/>
 <section title="canSave" ref="class_chips.html#ac3230eb7d1b077f88145bc5293694cab"/>
+<section title="chipCategory" ref="class_chips.html#aa00ceffa48fe428d22b228b2b1c705c9"/>
+<section title="chipColor" ref="class_chips.html#a8d92398a7526ab31ccfd3b6899c70c7b"/>
 <section title="chipText" ref="class_chips.html#a93017c03e4e28b70d408806337be9f40"/>
 <section title="content" ref="class_chips.html#a923491728dbd5120266e2d3c4af62c31"/>
 <section title="deletable" ref="class_chips.html#af6f4c0da806a37ff3304980e3261a1bf"/>
@@ -87,6 +91,7 @@
 <section title="editable" ref="class_chips.html#ac6387c850ae682d761efa43d373fe8f0"/>
 <section title="editArea" ref="class_chips.html#aa2cbbf033b2bc37b9f90d8fd033ceb92"/>
 <section title="hideTargetWhenFilled" ref="class_chips.html#ab15d66ccd1252ebc60f1598bf56ec960"/>
+<section title="isSuggestion" ref="class_chips.html#aeeaf03a04dbe214633dd839025a5e59f"/>
 <section title="revertArea" ref="class_chips.html#a712d1ffbc8aa67fae4b120e2e3afe38a"/>
 <section title="saveArea" ref="class_chips.html#a280cfbb450b5cc41e16f31ded7ede64c"/>
 <section title="swapArea" ref="class_chips.html#a36109c87cdf79393873ff90b401ff37c"/>
@@ -100,6 +105,8 @@
 <section title="t3" ref="class_credits_dialog.html#a2f36c8775d70205e0290ba8d5292360b"/>
 <section title="t4" ref="class_credits_dialog.html#ab7aeb2139552d34b082c8070b20d1322"/>
 <section title="t5" ref="class_credits_dialog.html#a4dc551bdc0559b1ce614e54e14ed56f0"/>
+<section title="t6" ref="class_credits_dialog.html#afd8a51371aba820f9d34ae09624b8d33"/>
+<section title="t7" ref="class_credits_dialog.html#a497d0aea30f804d36429dc8972d2aa21"/>
 </section>
 <section title="ExifReadTask" ref="class_exif_read_task.html">
 <section title="ExifReadTask" ref="class_exif_read_task.html#a7a36929db65f2ac13251ee5e4925a472"/>
@@ -136,14 +143,75 @@
 <section title="m_locations" ref="class_geocode_wrapper.html#a78aabbcabe5958c466c7a2479975c5e8"/>
 <section title="m_suggestionModel" ref="class_geocode_wrapper.html#a859c70420ef396ad48626c65dacd61f7"/>
 </section>
+<section title="GhostChip" ref="class_ghost_chip.html">
+<section title="flyAnim" ref="class_ghost_chip.html#af1551e145161e99160395d0cbb4e0575"/>
+<section title="onCompleted" ref="class_ghost_chip.html#a0a8406f135107dfe3819586ceefab044"/>
+<section title="chipColor" ref="class_ghost_chip.html#a86b6f1a0a417d1792af8432a7c0dccca"/>
+<section title="chipText" ref="class_ghost_chip.html#a08d857f25c1cedc3ff52f411b157ab67"/>
+<section title="destX" ref="class_ghost_chip.html#a7a95a69c7f3c4a7b001342e903c41ab3"/>
+<section title="duree" ref="class_ghost_chip.html#a63911282b1c643c181bad07be419a1be"/>
+<section title="onDone" ref="class_ghost_chip.html#a9cec5f505d754a787bca7c81f51fed6c"/>
+</section>
+<section title="GlobalTag" ref="class_global_tag.html">
+<section title="applyAll" ref="class_global_tag.html#a81ceefac5c978d410382aecf8236cbb0"/>
+<section title="applyToSelection" ref="class_global_tag.html#a4af13a046af5cd31837077e62827537b"/>
+<section title="applied" ref="class_global_tag.html#a20a99912011b37c0e6130ce69a9deb12"/>
+<section title="chipCategory" ref="class_global_tag.html#a998e7798f8c80ab63d59c740c513f619"/>
+<section title="content" ref="class_global_tag.html#aa1fde29e08c8268639af91fb61e8759e"/>
+<section title="selectionCount" ref="class_global_tag.html#ad5f460f54c18471ac7301f8c6f28af86"/>
+<section title="tagDescription" ref="class_global_tag.html#a9c028f5bb26f6c47fae3f987a423b771"/>
+<section title="tagName" ref="class_global_tag.html#a404ef7f98d51d21e83e52701494a029e"/>
+</section>
+<section title="GpxFileInfo" ref="struct_gpx_file_info.html">
+<section title="filePath" ref="struct_gpx_file_info.html#ad9fc17afbd82a9a6ffcf22cc02d2574f"/>
+<section title="name" ref="struct_gpx_file_info.html#aebbda030f03cb3aa5f51fc2003cd7fec"/>
+<section title="startTime" ref="struct_gpx_file_info.html#a30adf61dea8dbd42a341344381cba308"/>
+</section>
+<section title="GpxModel" ref="class_gpx_model.html">
+<section title="Roles" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987">
+<section title="NameRole" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2f284328b63c0f3d82efc3278f558942"/>
+<section title="FilePathRole" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a020a37e1814a273b8d85e49ed59c8f38"/>
+<section title="StartTimeRole" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2e4e889c79b53f537f8bd46f8c845ab6"/>
+</section>
+<section title="GpxModel" ref="class_gpx_model.html#ab5f08b7eb04cd707addbf05e4b808781"/>
+<section title="currentTrackPointsChanged" ref="class_gpx_model.html#a89d5153a753eb8bf4e853d052056b1ce"/>
+<section title="data" ref="class_gpx_model.html#af7f53e1fb305b56bb1c6badba881c7f5"/>
+<section title="firstOnTrackFound" ref="class_gpx_model.html#a89922a519a0e937d9a4eddaa4643eac7"/>
+<section title="matchCountChanged" ref="class_gpx_model.html#ae34c9156a1ec7175a959821e041531d8"/>
+<section title="matchPhotos" ref="class_gpx_model.html#a6da2032e71565f43d785145a05b86c83"/>
+<section title="parseTrack" ref="class_gpx_model.html#a71007112af10fb87a695179be1f2d6f2"/>
+<section title="readStartTime" ref="class_gpx_model.html#af0995bc254f67c88a268b5c1788e7213"/>
+<section title="refresh" ref="class_gpx_model.html#a1691546500164c1cc83e2f45bbc7c665"/>
+<section title="roleNames" ref="class_gpx_model.html#a88b4c37bdb81ad85d0b22fcdf8b54555"/>
+<section title="rowCount" ref="class_gpx_model.html#ad8a3de6109996db37f599d5e1c8e194f"/>
+<section title="selectTrack" ref="class_gpx_model.html#a47af24a7ad95325a0951280fb368934f"/>
+<section title="m_currentTrack" ref="class_gpx_model.html#ac4d950fd7b0d1394e5a3ed5f1d547046"/>
+<section title="m_currentTrackPoints" ref="class_gpx_model.html#aca36c25e3aecd48f7e02e214e21d621d"/>
+<section title="m_files" ref="class_gpx_model.html#a9f48d83641f004bb16806df04fcef7aa"/>
+<section title="m_matchCount" ref="class_gpx_model.html#af17837371e0c1f5fbf946cd688d4d940"/>
+</section>
+<section title="GpxTrackPoint" ref="struct_gpx_track_point.html">
+</section>
+<section title="ImagettePopup" ref="class_imagette_popup.html">
+</section>
 <section title="ImagettesListView" ref="class_imagettes_list_view.html">
 <section title="delegate" ref="class_imagettes_list_view.html#a69ad50dff6a6155056424e7bd783071b"/>
 </section>
 <section title="KeywordsRepeater" ref="class_keywords_repeater.html">
 </section>
+<section title="LandmarkWrapper" ref="class_landmark_wrapper.html">
+<section title="LandmarkWrapper" ref="class_landmark_wrapper.html#a579ce7e2361a35f2a530442e05150e96"/>
+<section title="identify" ref="class_landmark_wrapper.html#aa355c85096ffd145a2d3dff32a4cbcdb"/>
+<section title="onReplyFinished" ref="class_landmark_wrapper.html#a081a0aea19184f5d7921126b680c6126"/>
+</section>
+<section title="ListViewGPXfiles" ref="class_list_view_g_p_xfiles.html">
+<section title="delegateGpx" ref="class_list_view_g_p_xfiles.html#a9972632e3bc6bfcd441ff8b35bec4636"/>
+<section title="currentStartTime" ref="class_list_view_g_p_xfiles.html#a624f9a982193eefbb4a4a270fdc987ba"/>
+</section>
 <section title="Main" ref="class_main.html">
 <section title="append" ref="class_main.html#aa28322e4b9aaf6ed8d659d57b7334cf5"/>
 <section title="applyCreatorToAll" ref="class_main.html#a580b6efa82d0e44235c259efd5c7d62e"/>
+<section title="applyCreatorToSelection" ref="class_main.html#a38d2034da32743fed407bea33bd68c1f"/>
 <section title="applySavedPositionToCoords" ref="class_main.html#a827bdc33fe9a2ee87ed3de1d094da45e"/>
 <section title="clearSavedPosition" ref="class_main.html#a5c48d62abe783b8012b9a03532505cec"/>
 <section title="fetchExifMetadata" ref="class_main.html#ab7bec792dc2255b6f1a32a7475caa9e4"/>
@@ -155,9 +223,13 @@
 <section title="savePosition" ref="class_main.html#a5f6509a236e35dc1666aa6ed1b790c99"/>
 <section title="setCategoryFilter" ref="class_main.html#a7fca31d9bd8cce3190fe42c62dd946a9"/>
 <section title="setPhotoProperty" ref="class_main.html#ac0ff9966818be09f18bfe42bc766ae33"/>
+<section title="aboutPage" ref="class_main.html#a4f956b7263c664340cb606ec2cc03aac"/>
 <section title="bottomToolBar" ref="class_main.html#afdf9d5f249ee4ef9573ae402aef38f7a"/>
+<section title="creditsPage" ref="class_main.html#a0a2efcc080855f7243a45c280f4dc45c"/>
+<section title="ghostLayer" ref="class_main.html#a8672070236403cae63f1abe1c92c73cc"/>
+<section title="gpxTab" ref="class_main.html#a29a03d3ec8a1fbddef839c7287b35754"/>
 <section title="header" ref="class_main.html#aac07382860c30f1b9b149d4057b20fc4"/>
-<section title="imagePreviewPopup" ref="class_main.html#ac08a4a5f2dc3d5ea2151e59d811cb02a"/>
+<section title="imagePreviewPopup" ref="class_main.html#a22cce10650b6af0eb10f3e992db538d9"/>
 <section title="imagettes" ref="class_main.html#af3dfb2a32b39c98a991299276fc2b67a"/>
 <section title="line2" ref="class_main.html#a2c1d358ddafd73b36bfb1f50ba6b9ccd"/>
 <section title="line3" ref="class_main.html#a424dfda57077b446d80cf22e08f90ceb"/>
@@ -167,14 +239,30 @@
 <section title="menuBar" ref="class_main.html#aaa5a22b926b84f30d878945b8570bcee"/>
 <section title="photoTagsTab" ref="class_main.html#a937161b6dd4dce68dc7521e1b27819dd"/>
 <section title="previewView" ref="class_main.html#aac7638d6eb0c8f33f5cf7fe00e8eded7"/>
+<section title="snackbar" ref="class_main.html#a21f1cc462970d3199d67476b7ecd9999"/>
 <section title="tabbedPage" ref="class_main.html#a3994eabf899973374689e40d9deb48d7"/>
 <section title="tabFrameGlobalTags" ref="class_main.html#a808b0b55bfd46ccf207d05db4ee86289"/>
+<section title="tutorialPage" ref="class_main.html#ae5478a9eb9286de56f56a19f11bb7c56"/>
 <section title="currentFolderUrl" ref="class_main.html#a2bf237367c162dd11f4acbe25880aceb"/>
 </section>
 <section title="MainMenuBar" ref="class_main_menu_bar.html">
 <section title="fileMenu" ref="class_main_menu_bar.html#ac3680b417d3b7012ae23a6a3b6ac67a4"/>
+<section title="folderTimer" ref="class_main_menu_bar.html#ab6d7974c9e194111814bbf1a1fc9e170"/>
+<section title="helpMenu" ref="class_main_menu_bar.html#a0915b0ed09befc4cfa27a092b60d9bd7"/>
 <section title="recentFoldersInstantiator" ref="class_main_menu_bar.html#acef52ef56982474751262ecf3fc4cf65"/>
 <section title="recentFoldersMenu" ref="class_main_menu_bar.html#ae4cc4d8eaa08ed1903de66272698d71e"/>
+<section title="settingsMenu" ref="class_main_menu_bar.html#ab029cf70ff79828424978a307758715c"/>
+</section>
+<section title="MapApikeyDialog" ref="class_map_apikey_dialog.html">
+<section title="t1" ref="class_map_apikey_dialog.html#aad2f0d6d209fe7356072754ba39917e1"/>
+<section title="t2" ref="class_map_apikey_dialog.html#aebcb70b8dd0f543a33f111bd36c652cf"/>
+<section title="t3" ref="class_map_apikey_dialog.html#acc6d46fd70f9fc868abf4883a5d62935"/>
+<section title="t4" ref="class_map_apikey_dialog.html#a1dccee404cc4a843a487fbbed32140b6"/>
+<section title="t5" ref="class_map_apikey_dialog.html#a8fa6c3278cea1ba5b3e69c73e674fda6"/>
+<section title="t6" ref="class_map_apikey_dialog.html#a728956514ae0a5fcbbc4742785b373dd"/>
+<section title="t7" ref="class_map_apikey_dialog.html#ac2e6f01a9f28c7d75d3e3124af78a3fb"/>
+<section title="t8" ref="class_map_apikey_dialog.html#a39a22f449baa5016da93a14e5186128c"/>
+<section title="t9" ref="class_map_apikey_dialog.html#a0b7fcf4777e51c8bf378c05023c70338"/>
 </section>
 <section title="MapView" ref="class_map_view.html">
 <section title="mapItemView" ref="class_map_view.html#aea5ce9e936663afd07a6feb68042e929"/>
@@ -187,6 +275,9 @@
 <section title="zoomTowardsCursor" ref="class_map_view.html#af1384361524f4308e1d06d7bfae98092"/>
 </section>
 <section title="ModelFolderList" ref="class_model_folder_list.html">
+</section>
+<section title="ModelGpxList" ref="class_model_gpx_list.html"/>
+<section title="MyTabButton" ref="class_my_tab_button.html">
 </section>
 <section title="OnTheMapProxyModel" ref="class_on_the_map_proxy_model.html">
 <section title="OnTheMapProxyModel" ref="class_on_the_map_proxy_model.html#afb8170a7f9e508bfdc6238e649e957cf"/>
@@ -223,18 +314,25 @@
 <section title="insideCircle" ref="struct_photo.html#a33f360a2eccf88cc843e3a469600b3d5"/>
 <section title="isCurrent" ref="struct_photo.html#abf2a8150f9347ce6870ec0fafac524fa"/>
 <section title="isMarker" ref="struct_photo.html#accaf8898f12c82d9872c555309d563b1"/>
+<section title="isOnTrack" ref="struct_photo.html#a463d3ce695014135930aa012e926a887"/>
 <section title="isSelected" ref="struct_photo.html#a8e391469cda515a3aacb6edafa2a8254"/>
 <section title="keywords" ref="struct_photo.html#a76af2f2ab2fa057b17b00e796fcfe2b5"/>
 <section title="location" ref="struct_photo.html#a649223a8259c1bb869af35fe54ed5ff3"/>
 <section title="make" ref="struct_photo.html#a3f6620eb0f021aec853b0390d66c4898"/>
 <section title="metadata" ref="struct_photo.html#a263add422839a94cf7e9c7c5fe744d44"/>
+<section title="onTrackLatitude" ref="struct_photo.html#a4ad3287779ab91c520c021d623e8cf52"/>
+<section title="onTrackLongitude" ref="struct_photo.html#ae07599d85fd1780bf94e5ff96ffd791f"/>
 <section title="orientation" ref="struct_photo.html#a0f11a71d79268e835723f1db0f4acffa"/>
 <section title="shutterSpeed" ref="struct_photo.html#aeaeadb764ea3e33efa012abc317676db"/>
 <section title="software" ref="struct_photo.html#a1e092e500b8cc02272e39b823f094180"/>
 <section title="toBeSaved" ref="struct_photo.html#a66c836579b45614de3f51edba11ea2fe"/>
+<section title="writeError" ref="struct_photo.html#a9aafc2bc1ed9f0ede911519f006c4a3a"/>
 </section>
 <section title="PhotoListview" ref="class_photo_listview.html">
 <section title="activatePhoto" ref="class_photo_listview.html#a7b01aee094d18d20caa64d58e3525fe8"/>
+<section title="navigateNext" ref="class_photo_listview.html#a0520e6601955f319aae33555ac9e76b3"/>
+<section title="navigatePrev" ref="class_photo_listview.html#a494ba6003c39f426684eb6476a42b000"/>
+<section title="navigateTo" ref="class_photo_listview.html#ad30f48f39753777de55a0f056f2ce470"/>
 <section title="circleIcon" ref="class_photo_listview.html#afe9ad0639bdc8df220e4d4c3e1e6b5fd"/>
 <section title="cityText" ref="class_photo_listview.html#ae447aac43304d79184cd885e670a3dc7"/>
 <section title="footer" ref="class_photo_listview.html#a208f5856a00e10931fc5efba6c6f8522"/>
@@ -256,6 +354,9 @@
 <section title="IsSelectedRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159aae214ab574182fa11a20e7191e3ef240"/>
 <section title="IsMarkerRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a4b14ecbac030e9c2e28d92d38e834e25"/>
 <section title="InsideCircleRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a5e0bdf8a9ba7f5f72e7d293f9cf30372"/>
+<section title="IsOnTrackRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159aa61d83b5261b6d1108445f13ade0801e"/>
+<section title="OnTrackLatitudeRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159ace4aca924e963cf80514fb863ceea41b"/>
+<section title="OnTrackLongitudeRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a7f034c556f6e91a78c12894cbfa9040e"/>
 <section title="ToBeSavedRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a958ba4961be0538c4f4d602be137b0f5"/>
 <section title="DateTimeOriginalRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a7d9a9a9723993a4868d513c30c4ee000"/>
 <section title="CamModelRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a58c7dcd89769675769ec5c0384c5c46e"/>
@@ -274,15 +375,19 @@
 <section title="SoftwareRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a70889937ba9e34e563c49805c3bb5f97"/>
 <section title="MetadataRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159aa020f02cfeb2aaf927c8295a24da26df"/>
 <section title="KeywordsRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159adb79c881f8389a1692ffe12536fcb4fb"/>
+<section title="WriteErrorRole" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159abef6d897ec7de0c92cb0c6ad22d49dc3"/>
 </section>
 <section title="PhotoModel" ref="class_photo_model.html#a244f996eed49122ebe11c5369d63a0e2"/>
 <section title="addKeywordToAll" ref="class_photo_model.html#acc4cc81a42b022cd529c4d6408688f60"/>
+<section title="addKeywordToSelection" ref="class_photo_model.html#a3086b8033fdb5e88cb72cee975cea8dc"/>
 <section title="addTestItem" ref="class_photo_model.html#af43bef19e91b11bf4e79c55fe458d0a1"/>
 <section title="addToSelection" ref="class_photo_model.html#a99a5d7ef237b87ff7173cdc669fafd3b"/>
 <section title="append" ref="class_photo_model.html#adadb528b29e9f53d5d547558766c7ed7"/>
 <section title="append" ref="class_photo_model.html#a6e4e4ae883cc26313764a9053ca95f8e"/>
 <section title="appendSavedPosition" ref="class_photo_model.html#ada671ca616e073c328f32e77f8a86566"/>
+<section title="appendSavedPositionFromCoords" ref="class_photo_model.html#af5f930db4a232ac52701f0ff6c1381d3"/>
 <section title="applyCreatorToAll" ref="class_photo_model.html#a536c2a2381b3ce827257068f5bf43933"/>
+<section title="applyCreatorToSelection" ref="class_photo_model.html#ac4d52358bd85dcf13e69e0b1b91ba9ee"/>
 <section title="belong" ref="class_photo_model.html#aa26cbc3ffc9ede489900b49a602a73f7"/>
 <section title="clear" ref="class_photo_model.html#a1ff9f0f539d9b65e0521ebbaa498b21b"/>
 <section title="countChanged" ref="class_photo_model.html#a84ce035a6d4b174261f3e4f7ed79399d"/>
@@ -312,12 +417,13 @@
 <section title="removeFromSelection" ref="class_photo_model.html#a550fbb31e5ea492677bff74d5274a2b4"/>
 <section title="removePhotoKeyword" ref="class_photo_model.html#ad3307d71659f79588f3bdb0908bd84eb"/>
 <section title="removeSavedPosition" ref="class_photo_model.html#a6c2e4a731969e952993dfe4d38e5788f"/>
+<section title="replaceKeywordForCurrent" ref="class_photo_model.html#adf0feece70209c745997d33093c86cf1"/>
 <section title="replaceKeywordForSelection" ref="class_photo_model.html#afab571e974df0d79ee1d8e7f6d033b17"/>
 <section title="resetCircle" ref="class_photo_model.html#a8b4c0daf563670d61c87102a19bead12"/>
+<section title="resetOnTrack" ref="class_photo_model.html#ab88f4485e93ab72a8ce7147330627b19"/>
 <section title="resetSelection" ref="class_photo_model.html#a3418791003f8f006300b65265a4aaf81"/>
 <section title="roleNames" ref="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d"/>
 <section title="rowCount" ref="class_photo_model.html#a6be5a4ec62c39357efc906c2c9fc5515"/>
-<section title="savedPositionExistsChanged" ref="class_photo_model.html#ab3c7d2f0f2caf79b26d742af009431d7"/>
 <section title="saveMetadata" ref="class_photo_model.html#ac393e2839ea5993f199ec669973972ef"/>
 <section title="scanFolder" ref="class_photo_model.html#ae0685e0e936d1b7c58ef98ad237e6eea"/>
 <section title="selectAll" ref="class_photo_model.html#af7a88bb9ca10eaf2d573ddb453650bdc"/>
@@ -331,16 +437,20 @@
 <section title="setData" ref="class_photo_model.html#a977628a232c65b712b89b67406e7743d"/>
 <section title="setInCircleItemCoords" ref="class_photo_model.html#aa35674fe9c8ec79d2993ce56614bb909"/>
 <section title="setLoading" ref="class_photo_model.html#a5b6f4559d756ce4ca23aa60bf89f5f1c"/>
+<section title="setOnTrack" ref="class_photo_model.html#adbd0bdd419294de0c9945072d30eb2e7"/>
 <section title="setPhotoProperty" ref="class_photo_model.html#a165ad27d0e76a28be804d26fa26b9c15"/>
 <section title="setSelectedItemsCoords" ref="class_photo_model.html#a614ead774ff62e4d0431a955abb56651"/>
+<section title="setWriteError" ref="class_photo_model.html#a24ad28505093881b0f6a134075fc6cfa"/>
 <section title="setWriteProgress" ref="class_photo_model.html#a55deb039e2fbabeb1de1f3ba871c3e48"/>
 <section title="suggestFromPhoto" ref="class_photo_model.html#a23001133bf3fb44176664a2042e657ea"/>
 <section title="suggestFromSelection" ref="class_photo_model.html#ac9b73a40d67ee00486147e487bc1a89b"/>
-<section title="updatePhotoKeyword" ref="class_photo_model.html#a2288f782a336bc413295e6bc4be0f5ec"/>
+<section title="writeErrorOccurred" ref="class_photo_model.html#ad84cf3bafbea60e8429873f3543deeed"/>
 <section title="writeProgressChanged" ref="class_photo_model.html#a5df97061b628ed74528bafb4764d8f71"/>
 <section title="m_circleResetted" ref="class_photo_model.html#a30419f6dc634fbac53925922232e861f"/>
 <section title="m_countWrite" ref="class_photo_model.html#a8198679bf4201acd77e3216049abdb81"/>
 <section title="m_dumpedRow" ref="class_photo_model.html#a844160211f6ff9d747dcc59310d2fc22"/>
+<section title="m_lastCircleLat" ref="class_photo_model.html#a61478a24b728846e10c752f5e549f79c"/>
+<section title="m_lastCircleLong" ref="class_photo_model.html#aa3e02095541fb1e6f1d4b403d2162577"/>
 <section title="m_lastCircleRadius" ref="class_photo_model.html#ac14973957cff384c1ba7566b93ec5c78"/>
 <section title="m_lastCurrentRow" ref="class_photo_model.html#a1d1b6c95fee19ce3b6ac37beb5c14a57"/>
 <section title="m_loading" ref="class_photo_model.html#a11387915a2315b9426aa63be7d64ae49"/>
@@ -364,8 +474,6 @@
 <section title="PhotoModelWrapper" ref="class_photo_model_wrapper.html">
 <section title="PhotoModelWrapper" ref="class_photo_model_wrapper.html#a49c84b315f5fb6520abab97240e69c54"/>
 <section title="removePhotoKeyword" ref="class_photo_model_wrapper.html#a3522f76919753b9434eb62126bebc7f1"/>
-</section>
-<section title="PopupImagette" ref="class_popup_imagette.html">
 </section>
 <section title="PopupKeywords" ref="class_popup_keywords.html">
 <section title="loadPredefinedKeywords" ref="class_popup_keywords.html#a0fda95d7fafc3a7234bb1e81522e7d37"/>
@@ -398,26 +506,44 @@
 <section title="groupBox2" ref="class_popup_settings_form.html#ad75a5f1370e59c5c8c58637fd2e9ac25"/>
 <section title="settings" ref="class_popup_settings_form.html#a25842889117b9bda52cb863415225bd1"/>
 </section>
-<section title="RescanWarning" ref="class_rescan_warning.html">
-<section title="onAccepted" ref="class_rescan_warning.html#a934558718a1cd789c225a7abc9ade476"/>
-<section title="t1" ref="class_rescan_warning.html#abe637228fd0b7515a1d262b46c0683fe"/>
-<section title="t2" ref="class_rescan_warning.html#a21bf376effbaf167249f0af4325faee8"/>
+<section title="QuitWarningDialog" ref="class_quit_warning_dialog.html">
+<section title="onAccepted" ref="class_quit_warning_dialog.html#af150f45c15828e522cc14792c725f76a"/>
+<section title="t1" ref="class_quit_warning_dialog.html#a73f629a65e870d0c0b45c15224ce7541"/>
+<section title="t2" ref="class_quit_warning_dialog.html#ac0fbeebb9725d26284d2e366187235d6"/>
+</section>
+<section title="RescanWarningDialog" ref="class_rescan_warning_dialog.html">
+<section title="onAccepted" ref="class_rescan_warning_dialog.html#ac7f550862e1bd8e97e645dbef1d65e06"/>
+<section title="t1" ref="class_rescan_warning_dialog.html#a66d664bd57f3fed217872d4ef147bfc8"/>
+<section title="t2" ref="class_rescan_warning_dialog.html#a38d6815a18997269e9e461a55610e4e6"/>
 </section>
 <section title="SelectedPhotoProxyModel" ref="class_selected_photo_proxy_model.html">
 <section title="SelectedPhotoProxyModel" ref="class_selected_photo_proxy_model.html#a54094dbdfabf593edc0d881d1b197d84"/>
 <section title="filterEnabled" ref="class_selected_photo_proxy_model.html#a974cf34220ba3679ab07f8ca82425355"/>
 <section title="filterEnabledChanged" ref="class_selected_photo_proxy_model.html#ab0bdb4985d3268f46d27076cf385d783"/>
+<section title="getProxyIndex" ref="class_selected_photo_proxy_model.html#a1952d19843c3ad03c3f5b71bf0ae9c9d"/>
 <section title="getSourceIndex" ref="class_selected_photo_proxy_model.html#abb05183baa0c9f88d72acd95adb64050"/>
 <section title="setFilterEnabled" ref="class_selected_photo_proxy_model.html#a1aa20135c6b1f287c3fc4008c9f9102d"/>
 <section title="filterEnabled" ref="class_selected_photo_proxy_model.html#ac975bdb37c62408e4f69e06050c9a9a9"/>
 </section>
+<section title="Snackbar" ref="class_snackbar.html">
+</section>
 <section title="Style" ref="class_style.html">
 <section title="accent" ref="class_style.html#af4440916a3af441c1a00b935618782f2"/>
 <section title="accentColor" ref="class_style.html#ad0cd5bd875e07a9bd8127d736d1e1572"/>
+<section title="accentTabTextColor" ref="class_style.html#adb3db5c08fc0e975a18bfb86fd9c045a"/>
 <section title="accentTextColor" ref="class_style.html#a2399ed4ad411915eb46afe2da12b2c34"/>
 <section title="background" ref="class_style.html#a6b7c8ff5bf7fa39a2a83944c26f1d796"/>
 <section title="backgroundColor" ref="class_style.html#af8211a64a3153ee0c36ecb1efb91c163"/>
 <section title="chipBackgroundColor" ref="class_style.html#a27dd50f235bf592331ce9d975cf03893"/>
+<section title="chipCameraColor" ref="class_style.html#abe4d439888b6b96a70029d6095ff5c49"/>
+<section title="chipCameraSuggestionColor" ref="class_style.html#aef5730c2d4815405d94076f9b6d75d63"/>
+<section title="chipDirtyColor" ref="class_style.html#acdf48fbc85f1c4623d55b3722f9e2104"/>
+<section title="chipGeoColor" ref="class_style.html#a9a5aaead6a8da09953afaa6634b0bac9"/>
+<section title="chipGeoSuggestionColor" ref="class_style.html#a9c976d25911389bf7ba2624800f9bf92"/>
+<section title="chipKeywordColor" ref="class_style.html#a1eb76a7d2287095352ada68dad4e617e"/>
+<section title="chipKeywordSuggestionColor" ref="class_style.html#a1bdd52a2cb4ef875b1b62fd06866db45"/>
+<section title="chipPhotoColor" ref="class_style.html#a3380792437e2a120178dc01e718f0ef3"/>
+<section title="chipPhotoSuggestionColor" ref="class_style.html#a8b470f5edab7a3032f82eba6c3a1c81f"/>
 <section title="foreground" ref="class_style.html#a72d62054795e3e1871bdef08367bbf76"/>
 <section title="foregroundColor" ref="class_style.html#af738ba6c1de208d1a5a3f0b2e6e22540"/>
 <section title="highlightBackgroundColor" ref="class_style.html#afe773c3659f12a8b4e6f9202f7acc400"/>
@@ -428,6 +554,7 @@
 <section title="secondaryTextColor" ref="class_style.html#aa2f5b14c301001e53a872963531c34be"/>
 <section title="suggestionBackgroundColor" ref="class_style.html#ae958fbfc96deca9e9a0b39d4e1e38404"/>
 <section title="surfaceContainerColor" ref="class_style.html#a8757f72daba53eee9779307960878d2c"/>
+<section title="tabTextColor" ref="class_style.html#ac321fe0a4fa9c6091a726c470104d70b"/>
 <section title="tertiaryBackgroundColor" ref="class_style.html#a8b4d5777f41b0d390d9fca6de3f1fbed"/>
 <section title="tertiaryForegroundColor" ref="class_style.html#afe644e79061a8e7f251c907a26f1f001"/>
 <section title="tertiaryTextColor" ref="class_style.html#a3152af5f94d71db7980e8c51d0949c9a"/>
@@ -448,6 +575,7 @@
 <section title="filterEnabled" ref="class_suggestion_category_proxy_model.html#aec23196b11c2801ba701656539a288d4"/>
 <section title="filterEnabledChanged" ref="class_suggestion_category_proxy_model.html#acbcc572b70158e4c6b93a43494837c74"/>
 <section title="lessThan" ref="class_suggestion_category_proxy_model.html#a65423d7797ebe23f53ff1b9dbbcc0e87"/>
+<section title="removePhotoFromSuggestion" ref="class_suggestion_category_proxy_model.html#a29d65a3ef6bd9db53b99b8edaf8600bc"/>
 <section title="setFilterEnabled" ref="class_suggestion_category_proxy_model.html#a7ecc03f7eb5925bef1c0937221bcd469"/>
 <section title="setFilterValue" ref="class_suggestion_category_proxy_model.html#a4033c7903dcf1ae1254b3e6b8a21f005"/>
 <section title="m_filter" ref="class_suggestion_category_proxy_model.html#a15cde010b373ec1cfe3475a6b01dc05a"/>
@@ -465,6 +593,7 @@
 <section title="addPhotoToSuggestion" ref="class_suggestion_model.html#a0de02decfdbfe787caf63895eca58cb6"/>
 <section title="append" ref="class_suggestion_model.html#ad3ab6524021cc864b62b4eb9002bd152"/>
 <section title="clear" ref="class_suggestion_model.html#adf99459a4600a0d0aa9c77858bfa23e8"/>
+<section title="clearByCategory" ref="class_suggestion_model.html#af2e3d7cd156362e409d8f83a1928e8a7"/>
 <section title="createInitialSuggestions" ref="class_suggestion_model.html#ae237db33f536544358c527f8ee0c3f18"/>
 <section title="data" ref="class_suggestion_model.html#a403421fd09afc22273162b74e74b7d7c"/>
 <section title="dumpData" ref="class_suggestion_model.html#af3345223f2aa9b5d563b9097271a1d20"/>
@@ -497,12 +626,22 @@
 </section>
 <section title="SuggestionRepeater" ref="class_suggestion_repeater.html">
 <section title="currrentChip" ref="class_suggestion_repeater.html#a466180a757e71f64499f94ad6bd3601c"/>
+<section title="ghostChipComponent" ref="class_suggestion_repeater.html#aaa64edb5d93b050218a1934ddc8cdeca"/>
 <section title="suggestionDelegate" ref="class_suggestion_repeater.html#ae368711aa06c4a024b6d7c4868145489"/>
+<section title="getCenterForTarget" ref="class_suggestion_repeater.html#a55ca9575344811a06d579613ecf81e51"/>
+<section title="onlyKeywords" ref="class_suggestion_repeater.html#a0997c2b4e4deb9b7f1f81faf2c41a750"/>
 </section>
 <section title="TabFrameGlobalTags" ref="class_tab_frame_global_tags.html"/>
+<section title="TabFrameGPX" ref="class_tab_frame_g_p_x.html">
+<section title="gpxPolyline" ref="class_tab_frame_g_p_x.html#a6b6b998b8952e40efbb3c40c33196ccd"/>
+<section title="gpxTools" ref="class_tab_frame_g_p_x.html#a139708d9193dc759fbc4640250a9ba9e"/>
+<section title="mapView" ref="class_tab_frame_g_p_x.html#a9e64ab098a58ed31989a1a9bb4d2d9a1"/>
+<section title="zoneGpx" ref="class_tab_frame_g_p_x.html#a76732e6a612af44c940014651b06977d"/>
+</section>
 <section title="TabFramePhotoMap" ref="class_tab_frame_photo_map.html">
 <section title="mapTools" ref="class_tab_frame_photo_map.html#a3c6ff25b4a38295e78139b0bd4fc7884"/>
 <section title="mapView" ref="class_tab_frame_photo_map.html#ad78ac3577fe11997cc5267d33d754f05"/>
+<section title="zoneGeolocMap" ref="class_tab_frame_photo_map.html#a5d4283519cf3797cd159b6d270ba133e"/>
 <section title="zoneSuggestedLocations" ref="class_tab_frame_photo_map.html#ac903220ca750f18401dd2f1987f8a87a"/>
 </section>
 <section title="TabFramePhotoPreview" ref="class_tab_frame_photo_preview.html">
@@ -516,6 +655,7 @@
 <section title="TiFolderDialog" ref="class_ti_folder_dialog.html">
 <section title="addRecentFolder" ref="class_ti_folder_dialog.html#aa77f9cdb4ff03fc10d80a581449ac23e"/>
 <section title="clearRecentFolders" ref="class_ti_folder_dialog.html#ae32cbc989574013941a87a969f51ae62"/>
+<section title="openInParentFolder" ref="class_ti_folder_dialog.html#a3353422c83c36d14976843e7a4e6d51e"/>
 <section title="folderTimer" ref="class_ti_folder_dialog.html#a5ca2593be8a684ac8826a9eb65d6e1ef"/>
 <section title="onAccepted" ref="class_ti_folder_dialog.html#a0de014f6666d965b1cb9167ff18243a1"/>
 <section title="settings" ref="class_ti_folder_dialog.html#afd2ddd7d4a9054da377e8b6b75074e6b"/>
@@ -539,10 +679,18 @@
 </section>
 <section title="ToolbarFilters" ref="class_toolbar_filters.html">
 </section>
+<section title="ToolbarGpx" ref="class_toolbar_gpx.html">
+<section title="onClicked" ref="class_toolbar_gpx.html#a61da8ebfdb9143e75222ae59866ef415"/>
+<section title="onClicked" ref="class_toolbar_gpx.html#a7f9eeda217d439c3c0960d8703181112"/>
+<section title="onClicked" ref="class_toolbar_gpx.html#ab34ef829729cc40193f0fbc4dd5b96d7"/>
+</section>
+<section title="ToolbarGpxForm" ref="class_toolbar_gpx_form.html">
+</section>
 <section title="ToolbarMap" ref="class_toolbar_map.html">
 <section title="onAccepted" ref="class_toolbar_map.html#a7bd879048557affbe962255ae5c02cdd"/>
 <section title="onClicked" ref="class_toolbar_map.html#aed4a2dbdb73afce1823dddde725184fd"/>
 <section title="onClicked" ref="class_toolbar_map.html#a1691f414f41a43e20fb073d7c40c24a0"/>
+<section title="onClicked" ref="class_toolbar_map.html#a7b90e6c1d16fb73f3bf80baaab8a3496"/>
 <section title="onClicked" ref="class_toolbar_map.html#a5567dcac75eabc285e197a91a4f4595e"/>
 <section title="onClicked" ref="class_toolbar_map.html#a6e1887ed37362c1b762cad531346ebc2"/>
 <section title="onClicked" ref="class_toolbar_map.html#a9ce3b3423837550b83cbbd14aeec922c"/>
@@ -560,6 +708,9 @@
 <section title="bt_rescan" ref="class_toolbar_principale_form.html#a4bd810aa6baaeb63e920867f07e5fb31"/>
 <section title="folderlabel" ref="class_toolbar_principale_form.html#a7951cc6bab1a9d55868d109fac06e6f4"/>
 <section title="topLogo" ref="class_toolbar_principale_form.html#a468cd41c8a2d5c7f1d25a9325ac7ce32"/>
+</section>
+<section title="TutorialPopup" ref="class_tutorial_popup.html">
+<section title="pages" ref="class_tutorial_popup.html#add04f73e58ab5fc73707ee494d54e949"/>
 </section>
 <section title="UndatedPhotoProxyModel" ref="class_undated_photo_proxy_model.html">
 <section title="UndatedPhotoProxyModel" ref="class_undated_photo_proxy_model.html#a427c0ae3d7123c5d2436f3905d4d4219"/>
@@ -595,6 +746,10 @@
 <section title="usage1" ref="class_zone_global_tags_form.html#a8846263fa65ecd0c3123a0de62bea38d"/>
 <section title="usage2" ref="class_zone_global_tags_form.html#ab641d4ad383a9b539da34190b4f25146"/>
 </section>
+<section title="ZoneGpx" ref="class_zone_gpx.html">
+<section title="cameraTime" ref="class_zone_gpx.html#ac367d6c720e1be0b97fb02d2cc2829da"/>
+<section title="listGpx" ref="class_zone_gpx.html#ac0a11f8291d69157452b4573d8efc3ef"/>
+</section>
 <section title="ZonePhoto" ref="class_zone_photo.html">
 </section>
 <section title="ZonePhotoForm" ref="class_zone_photo_form.html">
@@ -610,6 +765,7 @@
 <section title="ZonePreviewForm" ref="class_zone_preview_form.html">
 <section title="chipAperture" ref="class_zone_preview_form.html#af9179ed07369d488ae6c8c23e51f15a8"/>
 <section title="chipCamModel" ref="class_zone_preview_form.html#a4f37f9b45ba737756bef40f6503c27a2"/>
+<section title="chipCity" ref="class_zone_preview_form.html#ae397f77fe756859f6e13827316124bc4"/>
 <section title="chipCountry" ref="class_zone_preview_form.html#a0f6d6c8e463b32dab4340bb3a319baa4"/>
 <section title="chipDate" ref="class_zone_preview_form.html#ac5d9ab0f3009190986540310d567992e"/>
 <section title="chipMake" ref="class_zone_preview_form.html#ab0acb651e3434e8c12671a4a0a2f049b"/>
@@ -620,11 +776,13 @@
 </section>
 <section title="ZoneSuggestedLocations" ref="class_zone_suggested_locations.html">
 <section title="onClicked" ref="class_zone_suggested_locations.html#adc508b0c0b110bf5e53a76361cde3831"/>
+<section title="onClicked" ref="class_zone_suggested_locations.html#aa66f8057737deba2d4b87537270a4e3c"/>
 </section>
 <section title="ZoneSuggestedLocationsForm" ref="class_zone_suggested_locations_form.html">
+<section title="bt_clear_geo_suggs" ref="class_zone_suggested_locations_form.html#add1ffa6e4b472e06fb63f3b64740f0a7"/>
 <section title="bt_getinfo" ref="class_zone_suggested_locations_form.html#a31c1fd694bf20154da18b502172f3ec1"/>
+<section title="geoSuggestionRepeater" ref="class_zone_suggested_locations_form.html#aa14ca3665ec91145b66e50debe940cf3"/>
 <section title="suggestionFlow" ref="class_zone_suggested_locations_form.html#a85b1b89a70fe79cbf6a7f5977ab12c6d"/>
-<section title="suggestionRepeater" ref="class_zone_suggested_locations_form.html#adf61ed5663f22607d285bc0982a72ed2"/>
 </section>
 <section title="ZoneSuggestedTags" ref="class_zone_suggested_tags.html">
 <section title="onClicked" ref="class_zone_suggested_tags.html#aebeb4e6b85d3be150e5a350ada06e483"/>
@@ -632,7 +790,7 @@
 <section title="ZoneSuggestedTagsForm" ref="class_zone_suggested_tags_form.html">
 <section title="bt_getinfo" ref="class_zone_suggested_tags_form.html#aa20e915ae75b3e91bfeadb9dc159be51"/>
 <section title="grille" ref="class_zone_suggested_tags_form.html#a2f052f343e3eb8b17815b3a29cc7459a"/>
-<section title="suggestionRepeater" ref="class_zone_suggested_tags_form.html#a90480726e53f412348cce34344d53d76"/>
+<section title="tagSuggestionRepeater" ref="class_zone_suggested_tags_form.html#a654c2acc79ba903e572b72777ea119db"/>
 </section>
 <section title="ZoneTitle" ref="class_zone_title.html">
 </section>
@@ -659,8 +817,9 @@
 <section title="TabFrameGlobalTags" ref="class_tab_frame_global_tags.html"/>
 </section>
 <section title="Dialog" ref="doxygen_blank.html">
-<section title="ApikeyDialog" ref="class_apikey_dialog.html"/>
+<section title="AiApikeyDialog" ref="class_ai_apikey_dialog.html"/>
 <section title="CreditsDialog" ref="class_credits_dialog.html"/>
+<section title="MapApikeyDialog" ref="class_map_apikey_dialog.html"/>
 </section>
 <section title="FolderDialog" ref="doxygen_blank.html">
 <section title="TiFolderDialog" ref="class_ti_folder_dialog.html"/>
@@ -668,7 +827,10 @@
 <section title="FolderListModel" ref="doxygen_blank.html">
 <section title="ModelFolderList" ref="class_model_folder_list.html"/>
 </section>
+<section title="GpxFileInfo" ref="struct_gpx_file_info.html"/>
+<section title="GpxTrackPoint" ref="struct_gpx_track_point.html"/>
 <section title="GridLayout" ref="doxygen_blank.html">
+<section title="TabFrameGPX" ref="class_tab_frame_g_p_x.html"/>
 <section title="TabFramePhotoMap" ref="class_tab_frame_photo_map.html"/>
 <section title="TabFramePhotoTags" ref="class_tab_frame_photo_tags.html"/>
 </section>
@@ -677,6 +839,9 @@
 <section title="FatChip" ref="class_fat_chip.html"/>
 </section>
 <section title="Style" ref="class_style.html"/>
+<section title="ToolbarGpxForm" ref="class_toolbar_gpx_form.html">
+<section title="ToolbarGpx" ref="class_toolbar_gpx.html"/>
+</section>
 <section title="ToolbarMapForm" ref="class_toolbar_map_form.html">
 <section title="ToolbarMap" ref="class_toolbar_map.html"/>
 </section>
@@ -693,6 +858,9 @@
 <section title="Label" ref="doxygen_blank.html">
 <section title="TinyChip" ref="class_tiny_chip.html"/>
 </section>
+<section title="ListModel" ref="doxygen_blank.html">
+<section title="ModelGpxList" ref="class_model_gpx_list.html"/>
+</section>
 <section title="ListView" ref="doxygen_blank.html">
 <section title="ImagettesListView" ref="class_imagettes_list_view.html"/>
 <section title="PhotoListview" ref="class_photo_listview.html"/>
@@ -705,25 +873,29 @@
 </section>
 <section title="MessageDialog" ref="doxygen_blank.html">
 <section title="AboutDialog" ref="class_about_dialog.html"/>
-<section title="RescanWarning" ref="class_rescan_warning.html"/>
+<section title="QuitWarningDialog" ref="class_quit_warning_dialog.html"/>
+<section title="RescanWarningDialog" ref="class_rescan_warning_dialog.html"/>
 </section>
 <section title="Photo" ref="struct_photo.html"/>
 <section title="Popup" ref="doxygen_blank.html">
-<section title="PopupImagette" ref="class_popup_imagette.html"/>
+<section title="ImagettePopup" ref="class_imagette_popup.html"/>
 <section title="PopupKeywordsForm" ref="class_popup_keywords_form.html">
 <section title="PopupKeywords" ref="class_popup_keywords.html"/>
 </section>
 <section title="PopupSettingsForm" ref="class_popup_settings_form.html">
 <section title="PopupSettings" ref="class_popup_settings.html"/>
 </section>
+<section title="TutorialPopup" ref="class_tutorial_popup.html"/>
 </section>
 <section title="QAbstractListModel" ref="doxygen_blank.html">
+<section title="GpxModel" ref="class_gpx_model.html"/>
 <section title="PhotoModel" ref="class_photo_model.html"/>
 <section title="SuggestionModel" ref="class_suggestion_model.html"/>
 </section>
 <section title="QObject" ref="doxygen_blank.html">
 <section title="CameraSet" ref="class_camera_set.html"/>
 <section title="GeocodeWrapper" ref="class_geocode_wrapper.html"/>
+<section title="LandmarkWrapper" ref="class_landmark_wrapper.html"/>
 <section title="PhotoModelWrapper" ref="class_photo_model_wrapper.html"/>
 </section>
 <section title="QRunnable" ref="doxygen_blank.html">
@@ -739,6 +911,9 @@
 </section>
 <section title="Rectangle" ref="doxygen_blank.html">
 <section title="ApplicationLogo" ref="class_application_logo.html"/>
+<section title="GhostChip" ref="class_ghost_chip.html"/>
+<section title="ListViewGPXfiles" ref="class_list_view_g_p_xfiles.html"/>
+<section title="Snackbar" ref="class_snackbar.html"/>
 <section title="ToolbarBottomForm" ref="class_toolbar_bottom_form.html">
 <section title="ToolbarBottom" ref="class_toolbar_bottom.html"/>
 </section>
@@ -752,6 +927,7 @@
 <section title="ZoneGlobalTagsForm" ref="class_zone_global_tags_form.html">
 <section title="ZoneGlobalTags" ref="class_zone_global_tags.html"/>
 </section>
+<section title="ZoneGpx" ref="class_zone_gpx.html"/>
 <section title="ZonePreviewForm" ref="class_zone_preview_form.html">
 <section title="ZonePreview" ref="class_zone_preview.html"/>
 </section>
@@ -769,10 +945,14 @@
 <section title="SuggestionRepeater" ref="class_suggestion_repeater.html"/>
 </section>
 <section title="RowLayout" ref="doxygen_blank.html">
+<section title="GlobalTag" ref="class_global_tag.html"/>
 <section title="TabFramePhotoPreview" ref="class_tab_frame_photo_preview.html"/>
 <section title="ToolbarFilters" ref="class_toolbar_filters.html"/>
 </section>
 <section title="Suggestion" ref="struct_suggestion.html"/>
+<section title="TabButton" ref="doxygen_blank.html">
+<section title="MyTabButton" ref="class_my_tab_button.html"/>
+</section>
 <section title="TextField" ref="doxygen_blank.html">
 <section title="TextFieldSettings" ref="class_text_field_settings.html"/>
 </section>
@@ -827,9 +1007,11 @@
 <section title="s" ref="functions_vars_s.html"/>
 <section title="t" ref="functions_vars_t.html"/>
 <section title="u" ref="functions_vars_u.html"/>
+<section title="w" ref="functions_vars_w.html"/>
 <section title="z" ref="functions_vars_z.html"/>
 </section>
 <section title="Énumérations" ref="functions_enum.html"/>
+<section title="Valeurs énumérées" ref="functions_eval.html"/>
 <section title="Propriétés" ref="functions_prop.html"/>
 </section>
 </section>
@@ -839,6 +1021,7 @@
 <section title="cpp" ref="dir_80deaa41e01a78ee3f8742fcac115338.html">
 <section title="Models" ref="dir_c0f51bd6cbdfb01a1deb4e9b7e2c6004.html">
 <section title="CameraSet.h" ref="_camera_set_8h_source.html"/>
+<section title="GpxModel.h" ref="_gpx_model_8h_source.html"/>
 <section title="OnTheMapProxyModel.h" ref="_on_the_map_proxy_model_8h_source.html"/>
 <section title="Photo.h" ref="_photo_8h_source.html"/>
 <section title="PhotoModel.h" ref="_photo_model_8h_source.html"/>
@@ -852,6 +1035,7 @@
 <section title="ExifReadTask.h" ref="_exif_read_task_8h_source.html"/>
 <section title="ExifWriteTask.h" ref="_exif_write_task_8h_source.html"/>
 <section title="GeocodeWrapper.h" ref="_geocode_wrapper_8h_source.html"/>
+<section title="LandmarkWrapper.h" ref="_landmark_wrapper_8h_source.html"/>
 <section title="PhotoModelWrapper.h" ref="_photo_model_wrapper_8h_source.html"/>
 <section title="Utilities.h" ref="_utilities_8h_source.html"/>
 </section>
@@ -862,7 +1046,7 @@
 </toc>
 <keywords>
 <keyword name="AboutDialog" id="AboutDialog_" ref="class_about_dialog.html"/>
-<keyword name="ApikeyDialog" id="ApikeyDialog_" ref="class_apikey_dialog.html"/>
+<keyword name="AiApikeyDialog" id="AiApikeyDialog_" ref="class_ai_apikey_dialog.html"/>
 <keyword name="ApplicationLogo" id="ApplicationLogo_" ref="class_application_logo.html"/>
 <keyword name="CameraSet" id="CameraSet_" ref="class_camera_set.html"/>
 <keyword name="Chips" id="Chips_" ref="class_chips.html"/>
@@ -871,24 +1055,36 @@
 <keyword name="ExifWriteTask" id="ExifWriteTask_" ref="class_exif_write_task.html"/>
 <keyword name="FatChip" id="FatChip_" ref="class_fat_chip.html"/>
 <keyword name="GeocodeWrapper" id="GeocodeWrapper_" ref="class_geocode_wrapper.html"/>
+<keyword name="GhostChip" id="GhostChip_" ref="class_ghost_chip.html"/>
+<keyword name="GlobalTag" id="GlobalTag_" ref="class_global_tag.html"/>
+<keyword name="GpxFileInfo" id="GpxFileInfo_" ref="struct_gpx_file_info.html"/>
+<keyword name="GpxModel" id="GpxModel_" ref="class_gpx_model.html"/>
+<keyword name="GpxTrackPoint" id="GpxTrackPoint_" ref="struct_gpx_track_point.html"/>
+<keyword name="ImagettePopup" id="ImagettePopup_" ref="class_imagette_popup.html"/>
 <keyword name="ImagettesListView" id="ImagettesListView_" ref="class_imagettes_list_view.html"/>
 <keyword name="KeywordsRepeater" id="KeywordsRepeater_" ref="class_keywords_repeater.html"/>
+<keyword name="LandmarkWrapper" id="LandmarkWrapper_" ref="class_landmark_wrapper.html"/>
+<keyword name="ListViewGPXfiles" id="ListViewGPXfiles_" ref="class_list_view_g_p_xfiles.html"/>
 <keyword name="Main" id="Main_" ref="class_main.html"/>
 <keyword name="MainMenuBar" id="MainMenuBar_" ref="class_main_menu_bar.html"/>
+<keyword name="MapApikeyDialog" id="MapApikeyDialog_" ref="class_map_apikey_dialog.html"/>
 <keyword name="MapView" id="MapView_" ref="class_map_view.html"/>
 <keyword name="ModelFolderList" id="ModelFolderList_" ref="class_model_folder_list.html"/>
+<keyword name="ModelGpxList" id="ModelGpxList_" ref="class_model_gpx_list.html"/>
+<keyword name="MyTabButton" id="MyTabButton_" ref="class_my_tab_button.html"/>
 <keyword name="OnTheMapProxyModel" id="OnTheMapProxyModel_" ref="class_on_the_map_proxy_model.html"/>
 <keyword name="Photo" id="Photo_" ref="struct_photo.html"/>
 <keyword name="PhotoListview" id="PhotoListview_" ref="class_photo_listview.html"/>
 <keyword name="PhotoModel" id="PhotoModel_" ref="class_photo_model.html"/>
 <keyword name="PhotoModelWrapper" id="PhotoModelWrapper_" ref="class_photo_model_wrapper.html"/>
-<keyword name="PopupImagette" id="PopupImagette_" ref="class_popup_imagette.html"/>
 <keyword name="PopupKeywords" id="PopupKeywords_" ref="class_popup_keywords.html"/>
 <keyword name="PopupKeywordsForm" id="PopupKeywordsForm_" ref="class_popup_keywords_form.html"/>
 <keyword name="PopupSettings" id="PopupSettings_" ref="class_popup_settings.html"/>
 <keyword name="PopupSettingsForm" id="PopupSettingsForm_" ref="class_popup_settings_form.html"/>
-<keyword name="RescanWarning" id="RescanWarning_" ref="class_rescan_warning.html"/>
+<keyword name="QuitWarningDialog" id="QuitWarningDialog_" ref="class_quit_warning_dialog.html"/>
+<keyword name="RescanWarningDialog" id="RescanWarningDialog_" ref="class_rescan_warning_dialog.html"/>
 <keyword name="SelectedPhotoProxyModel" id="SelectedPhotoProxyModel_" ref="class_selected_photo_proxy_model.html"/>
+<keyword name="Snackbar" id="Snackbar_" ref="class_snackbar.html"/>
 <keyword name="Style" id="Style_" ref="class_style.html"/>
 <keyword name="Suggestion" id="Suggestion_" ref="struct_suggestion.html"/>
 <keyword name="SuggestionCategoryProxyModel" id="SuggestionCategoryProxyModel_" ref="class_suggestion_category_proxy_model.html"/>
@@ -896,6 +1092,7 @@
 <keyword name="SuggestionProxyModel" id="SuggestionProxyModel_" ref="class_suggestion_proxy_model.html"/>
 <keyword name="SuggestionRepeater" id="SuggestionRepeater_" ref="class_suggestion_repeater.html"/>
 <keyword name="TabFrameGlobalTags" id="TabFrameGlobalTags_" ref="class_tab_frame_global_tags.html"/>
+<keyword name="TabFrameGPX" id="TabFrameGPX_" ref="class_tab_frame_g_p_x.html"/>
 <keyword name="TabFramePhotoMap" id="TabFramePhotoMap_" ref="class_tab_frame_photo_map.html"/>
 <keyword name="TabFramePhotoPreview" id="TabFramePhotoPreview_" ref="class_tab_frame_photo_preview.html"/>
 <keyword name="TabFramePhotoTags" id="TabFramePhotoTags_" ref="class_tab_frame_photo_tags.html"/>
@@ -906,10 +1103,13 @@
 <keyword name="ToolbarBottom" id="ToolbarBottom_" ref="class_toolbar_bottom.html"/>
 <keyword name="ToolbarBottomForm" id="ToolbarBottomForm_" ref="class_toolbar_bottom_form.html"/>
 <keyword name="ToolbarFilters" id="ToolbarFilters_" ref="class_toolbar_filters.html"/>
+<keyword name="ToolbarGpx" id="ToolbarGpx_" ref="class_toolbar_gpx.html"/>
+<keyword name="ToolbarGpxForm" id="ToolbarGpxForm_" ref="class_toolbar_gpx_form.html"/>
 <keyword name="ToolbarMap" id="ToolbarMap_" ref="class_toolbar_map.html"/>
 <keyword name="ToolbarMapForm" id="ToolbarMapForm_" ref="class_toolbar_map_form.html"/>
 <keyword name="ToolbarPrincipale" id="ToolbarPrincipale_" ref="class_toolbar_principale.html"/>
 <keyword name="ToolbarPrincipaleForm" id="ToolbarPrincipaleForm_" ref="class_toolbar_principale_form.html"/>
+<keyword name="TutorialPopup" id="TutorialPopup_" ref="class_tutorial_popup.html"/>
 <keyword name="UndatedPhotoProxyModel" id="UndatedPhotoProxyModel_" ref="class_undated_photo_proxy_model.html"/>
 <keyword name="Utilities" id="Utilities_" ref="class_utilities.html"/>
 <keyword name="Zone" id="Zone_" ref="class_zone.html"/>
@@ -919,6 +1119,7 @@
 <keyword name="ZoneGeolocForm" id="ZoneGeolocForm_" ref="class_zone_geoloc_form.html"/>
 <keyword name="ZoneGlobalTags" id="ZoneGlobalTags_" ref="class_zone_global_tags.html"/>
 <keyword name="ZoneGlobalTagsForm" id="ZoneGlobalTagsForm_" ref="class_zone_global_tags_form.html"/>
+<keyword name="ZoneGpx" id="ZoneGpx_" ref="class_zone_gpx.html"/>
 <keyword name="ZonePhoto" id="ZonePhoto_" ref="class_zone_photo.html"/>
 <keyword name="ZonePhotoForm" id="ZonePhotoForm_" ref="class_zone_photo_form.html"/>
 <keyword name="ZonePreview" id="ZonePreview_" ref="class_zone_preview.html"/>
@@ -933,13 +1134,16 @@
 <keyword name="About Tags" id="About Tags_" ref="md_docs_2about__tags.html"/>
 <keyword name="Compilation" id="Compilation_" ref="md_docs_2compilation.html"/>
 <keyword name="Ti Photo Locator" id="Ti Photo Locator_" ref="index.html"/>
+<keyword name="aboutPage" id="Main::aboutPage_a4f956b7263c664340cb606ec2cc03aac" ref="class_main.html#a4f956b7263c664340cb606ec2cc03aac"/>
 <keyword name="accent" id="Style::accent_af4440916a3af441c1a00b935618782f2" ref="class_style.html#af4440916a3af441c1a00b935618782f2"/>
 <keyword name="accentColor" id="Style::accentColor_ad0cd5bd875e07a9bd8127d736d1e1572" ref="class_style.html#ad0cd5bd875e07a9bd8127d736d1e1572"/>
+<keyword name="accentTabTextColor" id="Style::accentTabTextColor_adb3db5c08fc0e975a18bfb86fd9c045a" ref="class_style.html#adb3db5c08fc0e975a18bfb86fd9c045a"/>
 <keyword name="accentTextColor" id="Style::accentTextColor_a2399ed4ad411915eb46afe2da12b2c34" ref="class_style.html#a2399ed4ad411915eb46afe2da12b2c34"/>
 <keyword name="activatePhoto(pos, hasGPS, city, country)" id="PhotoListview::activatePhoto_a7b01aee094d18d20caa64d58e3525fe8" ref="class_photo_listview.html#a7b01aee094d18d20caa64d58e3525fe8"/>
 <keyword name="addButton" id="PopupKeywordsForm::addButton_a81b95b354179c57850eae324a27aff87" ref="class_popup_keywords_form.html#a81b95b354179c57850eae324a27aff87"/>
 <keyword name="addCategoryToSuggestion(const int suggestion_row, const QString category)" id="SuggestionModel::addCategoryToSuggestion_afd4ef6320e2a644e8dbd9c40f9ff3997" ref="class_suggestion_model.html#afd4ef6320e2a644e8dbd9c40f9ff3997"/>
 <keyword name="addKeywordToAll(const QString &amp;keyword)" id="PhotoModel::addKeywordToAll_acc4cc81a42b022cd529c4d6408688f60" ref="class_photo_model.html#acc4cc81a42b022cd529c4d6408688f60"/>
+<keyword name="addKeywordToSelection(const QString &amp;keyword)" id="PhotoModel::addKeywordToSelection_a3086b8033fdb5e88cb72cee975cea8dc" ref="class_photo_model.html#a3086b8033fdb5e88cb72cee975cea8dc"/>
 <keyword name="addPhotoToSuggestion(const int suggestion_row, int photo_row)" id="SuggestionModel::addPhotoToSuggestion_a0de02decfdbfe787caf63895eca58cb6" ref="class_suggestion_model.html#a0de02decfdbfe787caf63895eca58cb6"/>
 <keyword name="addRecentFolder(foldername)" id="TiFolderDialog::addRecentFolder_aa77f9cdb4ff03fc10d80a581449ac23e" ref="class_ti_folder_dialog.html#aa77f9cdb4ff03fc10d80a581449ac23e"/>
 <keyword name="addTestItem()" id="PhotoModel::addTestItem_af43bef19e91b11bf4e79c55fe458d0a1" ref="class_photo_model.html#af43bef19e91b11bf4e79c55fe458d0a1"/>
@@ -950,9 +1154,15 @@
 <keyword name="append(const QString &amp;text, const QString &amp;target, const QString &amp;category, int photo_row=-2)" id="SuggestionModel::append_ad3ab6524021cc864b62b4eb9002bd152" ref="class_suggestion_model.html#ad3ab6524021cc864b62b4eb9002bd152"/>
 <keyword name="append(string filename, string url)" id="Main::append_aa28322e4b9aaf6ed8d659d57b7334cf5" ref="class_main.html#aa28322e4b9aaf6ed8d659d57b7334cf5"/>
 <keyword name="appendSavedPosition()" id="PhotoModel::appendSavedPosition_ada671ca616e073c328f32e77f8a86566" ref="class_photo_model.html#ada671ca616e073c328f32e77f8a86566"/>
+<keyword name="appendSavedPositionFromCoords(double latitude, double longitude)" id="PhotoModel::appendSavedPositionFromCoords_af5f930db4a232ac52701f0ff6c1381d3" ref="class_photo_model.html#af5f930db4a232ac52701f0ff6c1381d3"/>
+<keyword name="applied" id="GlobalTag::applied_a20a99912011b37c0e6130ce69a9deb12" ref="class_global_tag.html#a20a99912011b37c0e6130ce69a9deb12"/>
+<keyword name="applyAll()" id="GlobalTag::applyAll_a81ceefac5c978d410382aecf8236cbb0" ref="class_global_tag.html#a81ceefac5c978d410382aecf8236cbb0"/>
 <keyword name="applyCreatorToAll()" id="PhotoModel::applyCreatorToAll_a536c2a2381b3ce827257068f5bf43933" ref="class_photo_model.html#a536c2a2381b3ce827257068f5bf43933"/>
 <keyword name="applyCreatorToAll()" id="Main::applyCreatorToAll_a580b6efa82d0e44235c259efd5c7d62e" ref="class_main.html#a580b6efa82d0e44235c259efd5c7d62e"/>
+<keyword name="applyCreatorToSelection()" id="PhotoModel::applyCreatorToSelection_ac4d52358bd85dcf13e69e0b1b91ba9ee" ref="class_photo_model.html#ac4d52358bd85dcf13e69e0b1b91ba9ee"/>
+<keyword name="applyCreatorToSelection()" id="Main::applyCreatorToSelection_a38d2034da32743fed407bea33bd68c1f" ref="class_main.html#a38d2034da32743fed407bea33bd68c1f"/>
 <keyword name="applySavedPositionToCoords()" id="Main::applySavedPositionToCoords_a827bdc33fe9a2ee87ed3de1d094da45e" ref="class_main.html#a827bdc33fe9a2ee87ed3de1d094da45e"/>
+<keyword name="applyToSelection()" id="GlobalTag::applyToSelection_a4af13a046af5cd31837077e62827537b" ref="class_global_tag.html#a4af13a046af5cd31837077e62827537b"/>
 <keyword name="background" id="Style::background_a6b7c8ff5bf7fa39a2a83944c26f1d796" ref="class_style.html#a6b7c8ff5bf7fa39a2a83944c26f1d796"/>
 <keyword name="backgroundColor" id="Style::backgroundColor_af8211a64a3153ee0c36ecb1efb91c163" ref="class_style.html#af8211a64a3153ee0c36ecb1efb91c163"/>
 <keyword name="belong(double pLa, double pLo, double oLa, double oLo, double rLa, double rLo)" id="PhotoModel::belong_aa26cbc3ffc9ede489900b49a602a73f7" ref="class_photo_model.html#aa26cbc3ffc9ede489900b49a602a73f7"/>
@@ -963,6 +1173,7 @@
 <keyword name="br" id="ZoneGlobalTagsForm::br_a5f7ac77b14f280e54a69a54f97e37842" ref="class_zone_global_tags_form.html#a5f7ac77b14f280e54a69a54f97e37842"/>
 <keyword name="brief" id="ZonePreview::brief_ab87fc953736cb6b600b05c9f1671548f" ref="class_zone_preview.html#ab87fc953736cb6b600b05c9f1671548f"/>
 <keyword name="brief" id="ZoneGlobalTagsForm::brief_ae843fb5b2523e75a69c7e0ad9917591c" ref="class_zone_global_tags_form.html#ae843fb5b2523e75a69c7e0ad9917591c"/>
+<keyword name="bt_clear_geo_suggs" id="ZoneSuggestedLocationsForm::bt_clear_geo_suggs_add1ffa6e4b472e06fb63f3b64740f0a7" ref="class_zone_suggested_locations_form.html#add1ffa6e4b472e06fb63f3b64740f0a7"/>
 <keyword name="bt_dump1" id="ToolbarBottomForm::bt_dump1_a61126360fb9b0153ef170798d6deb6cb" ref="class_toolbar_bottom_form.html#a61126360fb9b0153ef170798d6deb6cb"/>
 <keyword name="bt_explorer" id="ToolbarPrincipaleForm::bt_explorer_af8a51b523624a18fdbbe802e3d4770c9" ref="class_toolbar_principale_form.html#af8a51b523624a18fdbbe802e3d4770c9"/>
 <keyword name="bt_getinfo" id="ZoneSuggestedLocationsForm::bt_getinfo_a31c1fd694bf20154da18b502172f3ec1" ref="class_zone_suggested_locations_form.html#a31c1fd694bf20154da18b502172f3ec1"/>
@@ -970,6 +1181,7 @@
 <keyword name="bt_rescan" id="ToolbarPrincipaleForm::bt_rescan_a4bd810aa6baaeb63e920867f07e5fb31" ref="class_toolbar_principale_form.html#a4bd810aa6baaeb63e920867f07e5fb31"/>
 <keyword name="buttonClose" id="PopupSettingsForm::buttonClose_a3ac03b678e11889c0f00b290efba3d91" ref="class_popup_settings_form.html#a3ac03b678e11889c0f00b290efba3d91"/>
 <keyword name="CameraSet(QObject *parent=nullptr)" id="CameraSet::CameraSet_a56a4c781a3334d0fcce5bbd955a373c6" ref="class_camera_set.html#a56a4c781a3334d0fcce5bbd955a373c6"/>
+<keyword name="cameraTime(gpxTime, offsetH)" id="ZoneGpx::cameraTime_ac367d6c720e1be0b97fb02d2cc2829da" ref="class_zone_gpx.html#ac367d6c720e1be0b97fb02d2cc2829da"/>
 <keyword name="camModel" id="Photo::camModel_a3c5204d88a446d1df0ee95feee81a574" ref="struct_photo.html#a3c5204d88a446d1df0ee95feee81a574"/>
 <keyword name="canSave" id="Chips::canSave_ac3230eb7d1b077f88145bc5293694cab" ref="class_chips.html#ac3230eb7d1b077f88145bc5293694cab"/>
 <keyword name="captionWriter" id="Photo::captionWriter_a1b1dde1eb075006ff85b5539eed40f94" ref="struct_photo.html#a1b1dde1eb075006ff85b5539eed40f94"/>
@@ -977,11 +1189,21 @@
 <keyword name="cb_backups" id="ToolbarBottomForm::cb_backups_a2873cd1a15da2be98244d7f45e66dbe4" ref="class_toolbar_bottom_form.html#a2873cd1a15da2be98244d7f45e66dbe4"/>
 <keyword name="chipAperture" id="ZonePreviewForm::chipAperture_af9179ed07369d488ae6c8c23e51f15a8" ref="class_zone_preview_form.html#af9179ed07369d488ae6c8c23e51f15a8"/>
 <keyword name="chipBackgroundColor" id="Style::chipBackgroundColor_a27dd50f235bf592331ce9d975cf03893" ref="class_style.html#a27dd50f235bf592331ce9d975cf03893"/>
+<keyword name="chipCameraColor" id="Style::chipCameraColor_abe4d439888b6b96a70029d6095ff5c49" ref="class_style.html#abe4d439888b6b96a70029d6095ff5c49"/>
+<keyword name="chipCameraSuggestionColor" id="Style::chipCameraSuggestionColor_aef5730c2d4815405d94076f9b6d75d63" ref="class_style.html#aef5730c2d4815405d94076f9b6d75d63"/>
 <keyword name="chipCamModel" id="ZonePreviewForm::chipCamModel_a4f37f9b45ba737756bef40f6503c27a2" ref="class_zone_preview_form.html#a4f37f9b45ba737756bef40f6503c27a2"/>
+<keyword name="chipCategory" id="Chips::chipCategory_aa00ceffa48fe428d22b228b2b1c705c9" ref="class_chips.html#aa00ceffa48fe428d22b228b2b1c705c9"/>
+<keyword name="chipCategory" id="GlobalTag::chipCategory_a998e7798f8c80ab63d59c740c513f619" ref="class_global_tag.html#a998e7798f8c80ab63d59c740c513f619"/>
+<keyword name="chipCity" id="ZonePreviewForm::chipCity_ae397f77fe756859f6e13827316124bc4" ref="class_zone_preview_form.html#ae397f77fe756859f6e13827316124bc4"/>
+<keyword name="chipColor" id="Chips::chipColor_a8d92398a7526ab31ccfd3b6899c70c7b" ref="class_chips.html#a8d92398a7526ab31ccfd3b6899c70c7b"/>
+<keyword name="chipColor" id="GhostChip::chipColor_a86b6f1a0a417d1792af8432a7c0dccca" ref="class_ghost_chip.html#a86b6f1a0a417d1792af8432a7c0dccca"/>
 <keyword name="chipCountry" id="ZonePreviewForm::chipCountry_a0f6d6c8e463b32dab4340bb3a319baa4" ref="class_zone_preview_form.html#a0f6d6c8e463b32dab4340bb3a319baa4"/>
 <keyword name="chipDate" id="ZonePreviewForm::chipDate_ac5d9ab0f3009190986540310d567992e" ref="class_zone_preview_form.html#ac5d9ab0f3009190986540310d567992e"/>
 <keyword name="chipDel" id="Chips::chipDel_a4b688f1cba635167b38d2ecea69a95dd" ref="class_chips.html#a4b688f1cba635167b38d2ecea69a95dd"/>
+<keyword name="chipDirtyColor" id="Style::chipDirtyColor_acdf48fbc85f1c4623d55b3722f9e2104" ref="class_style.html#acdf48fbc85f1c4623d55b3722f9e2104"/>
 <keyword name="chipEdit" id="Chips::chipEdit_ab58ee09ea98e269ee8957873a51f498b" ref="class_chips.html#ab58ee09ea98e269ee8957873a51f498b"/>
+<keyword name="chipGeoColor" id="Style::chipGeoColor_a9a5aaead6a8da09953afaa6634b0bac9" ref="class_style.html#a9a5aaead6a8da09953afaa6634b0bac9"/>
+<keyword name="chipGeoSuggestionColor" id="Style::chipGeoSuggestionColor_a9c976d25911389bf7ba2624800f9bf92" ref="class_style.html#a9c976d25911389bf7ba2624800f9bf92"/>
 <keyword name="chipKeyword0" id="ZoneUserdataForm::chipKeyword0_aeae5d4b151301c8819a342fbe84e8fc7" ref="class_zone_userdata_form.html#aeae5d4b151301c8819a342fbe84e8fc7"/>
 <keyword name="chipKeyword1" id="ZoneUserdataForm::chipKeyword1_abf8eccd325b75e50150c41c41a870b96" ref="class_zone_userdata_form.html#abf8eccd325b75e50150c41c41a870b96"/>
 <keyword name="chipKeyword2" id="ZoneUserdataForm::chipKeyword2_a6ab36eca71dcac4361ac35f9232739dc" ref="class_zone_userdata_form.html#a6ab36eca71dcac4361ac35f9232739dc"/>
@@ -990,8 +1212,12 @@
 <keyword name="chipKeyword5" id="ZoneUserdataForm::chipKeyword5_a12c312e270ca7e478b7d04ab4c615c16" ref="class_zone_userdata_form.html#a12c312e270ca7e478b7d04ab4c615c16"/>
 <keyword name="chipKeyword6" id="ZoneUserdataForm::chipKeyword6_a726b28b47cea2c320cc766a7f2cc33b5" ref="class_zone_userdata_form.html#a726b28b47cea2c320cc766a7f2cc33b5"/>
 <keyword name="chipKeyword7" id="ZoneUserdataForm::chipKeyword7_a20a8836e1e9f5beef6ecff1e784b38c7" ref="class_zone_userdata_form.html#a20a8836e1e9f5beef6ecff1e784b38c7"/>
+<keyword name="chipKeywordColor" id="Style::chipKeywordColor_a1eb76a7d2287095352ada68dad4e617e" ref="class_style.html#a1eb76a7d2287095352ada68dad4e617e"/>
+<keyword name="chipKeywordSuggestionColor" id="Style::chipKeywordSuggestionColor_a1bdd52a2cb4ef875b1b62fd06866db45" ref="class_style.html#a1bdd52a2cb4ef875b1b62fd06866db45"/>
 <keyword name="chipMake" id="ZonePreviewForm::chipMake_ab0acb651e3434e8c12671a4a0a2f049b" ref="class_zone_preview_form.html#ab0acb651e3434e8c12671a4a0a2f049b"/>
 <keyword name="chipName" id="ZonePreviewForm::chipName_a00b9c2ffa880a2e5e00dfb95f4e3dbef" ref="class_zone_preview_form.html#a00b9c2ffa880a2e5e00dfb95f4e3dbef"/>
+<keyword name="chipPhotoColor" id="Style::chipPhotoColor_a3380792437e2a120178dc01e718f0ef3" ref="class_style.html#a3380792437e2a120178dc01e718f0ef3"/>
+<keyword name="chipPhotoSuggestionColor" id="Style::chipPhotoSuggestionColor_a8b470f5edab7a3032f82eba6c3a1c81f" ref="class_style.html#a8b470f5edab7a3032f82eba6c3a1c81f"/>
 <keyword name="chipRectangle" id="Chips::chipRectangle_a384fd32c1dba1fee423da772f75c5070" ref="class_chips.html#a384fd32c1dba1fee423da772f75c5070"/>
 <keyword name="chipRevert" id="Chips::chipRevert_a862a928f9c46196948e907beeeb568a6" ref="class_chips.html#a862a928f9c46196948e907beeeb568a6"/>
 <keyword name="chipSave" id="Chips::chipSave_aaa9810e2d33ea0566ad0def1ff3fcf05" ref="class_chips.html#aaa9810e2d33ea0566ad0def1ff3fcf05"/>
@@ -1002,22 +1228,26 @@
 <keyword name="chipTarget" id="Chips::chipTarget_a85ac411f6727873de6634858d21d96f7" ref="class_chips.html#a85ac411f6727873de6634858d21d96f7"/>
 <keyword name="chipText" id="Chips::chipText_a93017c03e4e28b70d408806337be9f40" ref="class_chips.html#a93017c03e4e28b70d408806337be9f40"/>
 <keyword name="chipText" id="Chips::chipText_a3f74a511ec723f48b14f24b60d07fa9a" ref="class_chips.html#a3f74a511ec723f48b14f24b60d07fa9a"/>
+<keyword name="chipText" id="GhostChip::chipText_a08d857f25c1cedc3ff52f411b157ab67" ref="class_ghost_chip.html#a08d857f25c1cedc3ff52f411b157ab67"/>
 <keyword name="chipTime" id="ZonePreviewForm::chipTime_a0b122e982e53a3b4545ba67c9b3539b4" ref="class_zone_preview_form.html#a0b122e982e53a3b4545ba67c9b3539b4"/>
 <keyword name="circleIcon" id="PhotoListview::circleIcon_afe9ad0639bdc8df220e4d4c3e1e6b5fd" ref="class_photo_listview.html#afe9ad0639bdc8df220e4d4c3e1e6b5fd"/>
 <keyword name="city" id="Photo::city_af69f56742ec76589b96b355cdc447149" ref="struct_photo.html#af69f56742ec76589b96b355cdc447149"/>
 <keyword name="cityText" id="PhotoListview::cityText_ae447aac43304d79184cd885e670a3dc7" ref="class_photo_listview.html#ae447aac43304d79184cd885e670a3dc7"/>
 <keyword name="clear()" id="PhotoModel::clear_a1ff9f0f539d9b65e0521ebbaa498b21b" ref="class_photo_model.html#a1ff9f0f539d9b65e0521ebbaa498b21b"/>
 <keyword name="clear()" id="SuggestionModel::clear_adf99459a4600a0d0aa9c77858bfa23e8" ref="class_suggestion_model.html#adf99459a4600a0d0aa9c77858bfa23e8"/>
+<keyword name="clearByCategory(const QString &amp;category)" id="SuggestionModel::clearByCategory_af2e3d7cd156362e409d8f83a1928e8a7" ref="class_suggestion_model.html#af2e3d7cd156362e409d8f83a1928e8a7"/>
 <keyword name="clearRecentFolders()" id="TiFolderDialog::clearRecentFolders_ae32cbc989574013941a87a969f51ae62" ref="class_ti_folder_dialog.html#ae32cbc989574013941a87a969f51ae62"/>
 <keyword name="clearSavedPosition()" id="Main::clearSavedPosition_a5c48d62abe783b8012b9a03532505cec" ref="class_main.html#a5c48d62abe783b8012b9a03532505cec"/>
 <keyword name="closeButton" id="PopupKeywordsForm::closeButton_a27d4aea06be73a03b53f86df0fb900f3" ref="class_popup_keywords_form.html#a27d4aea06be73a03b53f86df0fb900f3"/>
 <keyword name="contains(const QString &amp;cam_model)" id="CameraSet::contains_ac004e13c349e7a7d1e448f423029617d" ref="class_camera_set.html#ac004e13c349e7a7d1e448f423029617d"/>
 <keyword name="content" id="Chips::content_a923491728dbd5120266e2d3c4af62c31" ref="class_chips.html#a923491728dbd5120266e2d3c4af62c31"/>
+<keyword name="content" id="GlobalTag::content_aa1fde29e08c8268639af91fb61e8759e" ref="class_global_tag.html#aa1fde29e08c8268639af91fb61e8759e"/>
 <keyword name="count" id="PhotoModel::count_a88c7ea8e69650c8e0f1f7bb61a105bc0" ref="class_photo_model.html#a88c7ea8e69650c8e0f1f7bb61a105bc0"/>
 <keyword name="countChanged()" id="PhotoModel::countChanged_a84ce035a6d4b174261f3e4f7ed79399d" ref="class_photo_model.html#a84ce035a6d4b174261f3e4f7ed79399d"/>
 <keyword name="country" id="Photo::country_a9bf494760dfe13bc320c8395a1d8368f" ref="struct_photo.html#a9bf494760dfe13bc320c8395a1d8368f"/>
 <keyword name="createInitialSuggestions()" id="SuggestionModel::createInitialSuggestions_ae237db33f536544358c527f8ee0c3f18" ref="class_suggestion_model.html#ae237db33f536544358c527f8ee0c3f18"/>
 <keyword name="creator" id="Photo::creator_a8557579ced9c4e8587443564bfe659dd" ref="struct_photo.html#a8557579ced9c4e8587443564bfe659dd"/>
+<keyword name="creditsPage" id="Main::creditsPage_a0a2efcc080855f7243a45c280f4dc45c" ref="class_main.html#a0a2efcc080855f7243a45c280f4dc45c"/>
 <keyword name="currentFolderUrl" id="Main::currentFolderUrl_a2bf237367c162dd11f4acbe25880aceb" ref="class_main.html#a2bf237367c162dd11f4acbe25880aceb"/>
 <keyword name="currentItemCoords" id="PhotoModel::currentItemCoords_a944a184d2f60609c532a600aae3a8ba2" ref="class_photo_model.html#a944a184d2f60609c532a600aae3a8ba2"/>
 <keyword name="currentItemCoords(const QGeoCoordinate coords)" id="PhotoModel::currentItemCoords_ab2a9ae6ee15c2e8aa80dfd123bc9b4ac" ref="class_photo_model.html#ab2a9ae6ee15c2e8aa80dfd123bc9b4ac"/>
@@ -1027,24 +1257,31 @@
 <keyword name="currentItemRow" id="PhotoModel::currentItemRow_a3ba134a102ab67149e79de8d8041958d" ref="class_photo_model.html#a3ba134a102ab67149e79de8d8041958d"/>
 <keyword name="currentItemRow(const int row)" id="PhotoModel::currentItemRow_ae9bd8bb5a9b1bfa42e4bccd4ffebda16" ref="class_photo_model.html#ae9bd8bb5a9b1bfa42e4bccd4ffebda16"/>
 <keyword name="currentItemRowChanged(const int row)" id="PhotoModel::currentItemRowChanged_a32757262733f7c3667e3e1eb28c2dde4" ref="class_photo_model.html#a32757262733f7c3667e3e1eb28c2dde4"/>
+<keyword name="currentStartTime" id="ListViewGPXfiles::currentStartTime_a624f9a982193eefbb4a4a270fdc987ba" ref="class_list_view_g_p_xfiles.html#a624f9a982193eefbb4a4a270fdc987ba"/>
+<keyword name="currentTrackPointsChanged()" id="GpxModel::currentTrackPointsChanged_a89d5153a753eb8bf4e853d052056b1ce" ref="class_gpx_model.html#a89d5153a753eb8bf4e853d052056b1ce"/>
 <keyword name="currrentChip" id="SuggestionRepeater::currrentChip_a466180a757e71f64499f94ad6bd3601c" ref="class_suggestion_repeater.html#a466180a757e71f64499f94ad6bd3601c"/>
 <keyword name="customModel" id="PopupKeywordsForm::customModel_a0e41995674e0d0d7785dbc0adaa0e696" ref="class_popup_keywords_form.html#a0e41995674e0d0d7785dbc0adaa0e696"/>
+<keyword name="data(const QModelIndex &amp;index, int role=Qt::DisplayRole) const override" id="GpxModel::data_af7f53e1fb305b56bb1c6badba881c7f5" ref="class_gpx_model.html#af7f53e1fb305b56bb1c6badba881c7f5"/>
 <keyword name="data(const QModelIndex &amp;index, int role=Qt::DisplayRole) const override" id="PhotoModel::data_a3f09addf9a989e85b7ae5797156b270f" ref="class_photo_model.html#a3f09addf9a989e85b7ae5797156b270f"/>
 <keyword name="data(const QModelIndex &amp;index, int role=Qt::DisplayRole) const override" id="SuggestionModel::data_a403421fd09afc22273162b74e74b7d7c" ref="class_suggestion_model.html#a403421fd09afc22273162b74e74b7d7c"/>
 <keyword name="dataCleared()" id="PhotoModel::dataCleared_abdede59b31ccb60a9c2d3ad0838661c3" ref="class_photo_model.html#abdede59b31ccb60a9c2d3ad0838661c3"/>
 <keyword name="dataSaved()" id="PhotoModel::dataSaved_af709f4fa981daf428fa902237f6820de" ref="class_photo_model.html#af709f4fa981daf428fa902237f6820de"/>
 <keyword name="dateTimeOriginal" id="Photo::dateTimeOriginal_a481cec4ea67fe90721b20510f55dee5a" ref="struct_photo.html#a481cec4ea67fe90721b20510f55dee5a"/>
 <keyword name="delegate" id="ImagettesListView::delegate_a69ad50dff6a6155056424e7bd783071b" ref="class_imagettes_list_view.html#a69ad50dff6a6155056424e7bd783071b"/>
+<keyword name="delegateGpx" id="ListViewGPXfiles::delegateGpx_a9972632e3bc6bfcd441ff8b35bec4636" ref="class_list_view_g_p_xfiles.html#a9972632e3bc6bfcd441ff8b35bec4636"/>
 <keyword name="deletable" id="Chips::deletable_af6f4c0da806a37ff3304980e3261a1bf" ref="class_chips.html#af6f4c0da806a37ff3304980e3261a1bf"/>
 <keyword name="deletable" id="FatChip::deletable_aa282ad954d1119b29bd2db63ccd4f56a" ref="class_fat_chip.html#aa282ad954d1119b29bd2db63ccd4f56a"/>
 <keyword name="deleteArea" id="Chips::deleteArea_ad300d4af5e2a4d8826fbd6f475678ac8" ref="class_chips.html#ad300d4af5e2a4d8826fbd6f475678ac8"/>
+<keyword name="deleteClicked()" id="Chips::deleteClicked_a8284d8dd2a294d9e9a550b9409138cb9" ref="class_chips.html#a8284d8dd2a294d9e9a550b9409138cb9"/>
 <keyword name="description" id="Photo::description_a6fe05dc549b7caf2ee3232476d41e760" ref="struct_photo.html#a6fe05dc549b7caf2ee3232476d41e760"/>
+<keyword name="destX" id="GhostChip::destX_a7a95a69c7f3c4a7b001342e903c41ab3" ref="class_ghost_chip.html#a7a95a69c7f3c4a7b001342e903c41ab3"/>
 <keyword name="detailedText" id="AboutDialog::detailedText_a24a4dcf82e9780bd4b616099c03bd46c" ref="class_about_dialog.html#a24a4dcf82e9780bd4b616099c03bd46c"/>
 <keyword name="diacriticLetters" id="Utilities::diacriticLetters_a7e1e10ee30627aedf30eb97d8cf7d52a" ref="class_utilities.html#a7e1e10ee30627aedf30eb97d8cf7d52a"/>
 <keyword name="dirtyFields" id="Photo::dirtyFields_aeb680905b680957e72027a344d3fed28" ref="struct_photo.html#aeb680905b680957e72027a344d3fed28"/>
 <keyword name="dumpData()" id="PhotoModel::dumpData_a822190ecc2081c7b49030c0f6a42317f" ref="class_photo_model.html#a822190ecc2081c7b49030c0f6a42317f"/>
 <keyword name="dumpData()" id="SuggestionModel::dumpData_af3345223f2aa9b5d563b9097271a1d20" ref="class_suggestion_model.html#af3345223f2aa9b5d563b9097271a1d20"/>
 <keyword name="duplicateData(int row)" id="PhotoModel::duplicateData_aacde479b741e9f94c2077ad979e6b6a7" ref="class_photo_model.html#aacde479b741e9f94c2077ad979e6b6a7"/>
+<keyword name="duree" id="GhostChip::duree_a63911282b1c643c181bad07be419a1be" ref="class_ghost_chip.html#a63911282b1c643c181bad07be419a1be"/>
 <keyword name="editable" id="Chips::editable_ac6387c850ae682d761efa43d373fe8f0" ref="class_chips.html#ac6387c850ae682d761efa43d373fe8f0"/>
 <keyword name="editable" id="FatChip::editable_a96a81357679022e5a1ab8f257a6f074f" ref="class_fat_chip.html#a96a81357679022e5a1ab8f257a6f074f"/>
 <keyword name="editArea" id="Chips::editArea_aa2cbbf033b2bc37b9f90d8fd033ceb92" ref="class_chips.html#aa2cbbf033b2bc37b9f90d8fd033ceb92"/>
@@ -1056,6 +1293,8 @@
 <keyword name="fetchSingleExifMetadata(int row)" id="Main::fetchSingleExifMetadata_afa885f918527233f02fecc1691ec09c1" ref="class_main.html#afa885f918527233f02fecc1691ec09c1"/>
 <keyword name="fileMenu" id="MainMenuBar::fileMenu_ac3680b417d3b7012ae23a6a3b6ac67a4" ref="class_main_menu_bar.html#ac3680b417d3b7012ae23a6a3b6ac67a4"/>
 <keyword name="filename" id="Photo::filename_a74c2e37c247175676d801adab5d0251a" ref="struct_photo.html#a74c2e37c247175676d801adab5d0251a"/>
+<keyword name="filePath" id="GpxFileInfo::filePath_ad9fc17afbd82a9a6ffcf22cc02d2574f" ref="struct_gpx_file_info.html#ad9fc17afbd82a9a6ffcf22cc02d2574f"/>
+<keyword name="FilePathRole" id="GpxModel::FilePathRole_ae76055335014cea9cbdbbc2dc87c0987a020a37e1814a273b8d85e49ed59c8f38" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a020a37e1814a273b8d85e49ed59c8f38"/>
 <keyword name="filterAcceptsRow(int sourceRow, const QModelIndex &amp;sourceParent) const override" id="OnTheMapProxyModel::filterAcceptsRow_ab1ac8a3c5b8f53a6cee9dbc0fbb38073" ref="class_on_the_map_proxy_model.html#ab1ac8a3c5b8f53a6cee9dbc0fbb38073"/>
 <keyword name="filterAcceptsRow(int sourceRow, const QModelIndex &amp;sourceParent) const override" id="SuggestionProxyModel::filterAcceptsRow_a189be5918036c550fd0093d566e716ae" ref="class_suggestion_proxy_model.html#a189be5918036c550fd0093d566e716ae"/>
 <keyword name="filterEnabled" id="OnTheMapProxyModel::filterEnabled_ab41c6f6de0761832ee25c3262d57743c" ref="class_on_the_map_proxy_model.html#ab41c6f6de0761832ee25c3262d57743c"/>
@@ -1075,43 +1314,57 @@
 <keyword name="filterEnabledChanged()" id="UndatedPhotoProxyModel::filterEnabledChanged_a8f7fadf267c65157d70e3c2b650c6bdc" ref="class_undated_photo_proxy_model.html#a8f7fadf267c65157d70e3c2b650c6bdc"/>
 <keyword name="findInCirclePhotos(int circle_radius=-1)" id="PhotoModel::findInCirclePhotos_a262b8d92e3edf3884c723c965f7de5e1" ref="class_photo_model.html#a262b8d92e3edf3884c723c965f7de5e1"/>
 <keyword name="firstCoordsReady()" id="PhotoModel::firstCoordsReady_a187455537cc85b88e106f9c68cd64c7f" ref="class_photo_model.html#a187455537cc85b88e106f9c68cd64c7f"/>
+<keyword name="firstOnTrackFound(int sourceRow)" id="GpxModel::firstOnTrackFound_a89922a519a0e937d9a4eddaa4643eac7" ref="class_gpx_model.html#a89922a519a0e937d9a4eddaa4643eac7"/>
 <keyword name="fixDigits(QString sMonth, int defaultValue, int min, int max)" id="Utilities::fixDigits_a1c31753eeb57b373d7a73c097e6766ee" ref="class_utilities.html#a1c31753eeb57b373d7a73c097e6766ee"/>
 <keyword name="fixYear(QString sYear, int defaultYear)" id="Utilities::fixYear_a40979a50f9670f01945d07c9e80e9a33" ref="class_utilities.html#a40979a50f9670f01945d07c9e80e9a33"/>
 <keyword name="flags(const QModelIndex &amp;index) const override" id="PhotoModel::flags_a1304d28519eb274764ef65afffec6c96" ref="class_photo_model.html#a1304d28519eb274764ef65afffec6c96"/>
 <keyword name="flags(const QModelIndex &amp;index) const override" id="SuggestionModel::flags_ae3b26fa49dff5a4c7f1a79e061dd9970" ref="class_suggestion_model.html#ae3b26fa49dff5a4c7f1a79e061dd9970"/>
+<keyword name="flyAnim" id="GhostChip::flyAnim_af1551e145161e99160395d0cbb4e0575" ref="class_ghost_chip.html#af1551e145161e99160395d0cbb4e0575"/>
 <keyword name="fNumber" id="Photo::fNumber_a52f8b3c14a9736e4a6f1a338987a4113" ref="struct_photo.html#a52f8b3c14a9736e4a6f1a338987a4113"/>
 <keyword name="folderlabel" id="ToolbarPrincipaleForm::folderlabel_a7951cc6bab1a9d55868d109fac06e6f4" ref="class_toolbar_principale_form.html#a7951cc6bab1a9d55868d109fac06e6f4"/>
+<keyword name="folderTimer" id="MainMenuBar::folderTimer_ab6d7974c9e194111814bbf1a1fc9e170" ref="class_main_menu_bar.html#ab6d7974c9e194111814bbf1a1fc9e170"/>
 <keyword name="folderTimer" id="TiFolderDialog::folderTimer_a5ca2593be8a684ac8826a9eb65d6e1ef" ref="class_ti_folder_dialog.html#a5ca2593be8a684ac8826a9eb65d6e1ef"/>
 <keyword name="footer" id="PhotoListview::footer_a208f5856a00e10931fc5efba6c6f8522" ref="class_photo_listview.html#a208f5856a00e10931fc5efba6c6f8522"/>
 <keyword name="foreground" id="Style::foreground_a72d62054795e3e1871bdef08367bbf76" ref="class_style.html#a72d62054795e3e1871bdef08367bbf76"/>
 <keyword name="foregroundColor" id="Style::foregroundColor_af738ba6c1de208d1a5a3f0b2e6e22540" ref="class_style.html#af738ba6c1de208d1a5a3f0b2e6e22540"/>
 <keyword name="geoCodeFinished(QGeoCodeReply *reply)" id="GeocodeWrapper::geoCodeFinished_a07234eb935d74cfd85d48058608a1ec4" ref="class_geocode_wrapper.html#a07234eb935d74cfd85d48058608a1ec4"/>
 <keyword name="GeocodeWrapper(SuggestionModel *suggestion_model)" id="GeocodeWrapper::GeocodeWrapper_a749d1015c9206b701b45e96d8c109453" ref="class_geocode_wrapper.html#a749d1015c9206b701b45e96d8c109453"/>
+<keyword name="geoSuggestionRepeater" id="ZoneSuggestedLocationsForm::geoSuggestionRepeater_aa14ca3665ec91145b66e50debe940cf3" ref="class_zone_suggested_locations_form.html#aa14ca3665ec91145b66e50debe940cf3"/>
 <keyword name="geoTimer" id="PhotoListview::geoTimer_a82d6553475abc572c63bd0caaaf792a1" ref="class_photo_listview.html#a82d6553475abc572c63bd0caaaf792a1"/>
 <keyword name="get(int row)" id="PhotoModel::get_a18fb19d062f2f7d7d79585d2e62c9634" ref="class_photo_model.html#a18fb19d062f2f7d7d79585d2e62c9634"/>
+<keyword name="getCenterForTarget" id="SuggestionRepeater::getCenterForTarget_a55ca9575344811a06d579613ecf81e51" ref="class_suggestion_repeater.html#a55ca9575344811a06d579613ecf81e51"/>
 <keyword name="getCurrentItemCoords()" id="PhotoModel::getCurrentItemCoords_a81b05ee0e6c3c97a5807f16203ed6215" ref="class_photo_model.html#a81b05ee0e6c3c97a5807f16203ed6215"/>
 <keyword name="getCurrentItemHasGPS()" id="PhotoModel::getCurrentItemHasGPS_ae2115960e95b3b8e4877a90fd362a66c" ref="class_photo_model.html#ae2115960e95b3b8e4877a90fd362a66c"/>
 <keyword name="getCurrentItemRow()" id="PhotoModel::getCurrentItemRow_a38fac21208306e1a156e08c1c37c974f" ref="class_photo_model.html#a38fac21208306e1a156e08c1c37c974f"/>
+<keyword name="getProxyIndex(int sourceRow)" id="SelectedPhotoProxyModel::getProxyIndex_a1952d19843c3ad03c3f5b71bf0ae9c9d" ref="class_selected_photo_proxy_model.html#a1952d19843c3ad03c3f5b71bf0ae9c9d"/>
 <keyword name="getRoleName(int role)" id="PhotoModel::getRoleName_a3c8036e57376630243dfa6841d7f2251" ref="class_photo_model.html#a3c8036e57376630243dfa6841d7f2251"/>
 <keyword name="getSourceIndex(int row)" id="SelectedPhotoProxyModel::getSourceIndex_abb05183baa0c9f88d72acd95adb64050" ref="class_selected_photo_proxy_model.html#abb05183baa0c9f88d72acd95adb64050"/>
 <keyword name="getSourceIndex(int row)" id="UndatedPhotoProxyModel::getSourceIndex_adf0dda94c390ee7dc8895fe42582ca43" ref="class_undated_photo_proxy_model.html#adf0dda94c390ee7dc8895fe42582ca43"/>
 <keyword name="getUrl(int row)" id="PhotoModel::getUrl_a1d2159990dbea68afefa28bfdd6804fe" ref="class_photo_model.html#a1d2159990dbea68afefa28bfdd6804fe"/>
+<keyword name="ghostChipComponent" id="SuggestionRepeater::ghostChipComponent_aaa64edb5d93b050218a1934ddc8cdeca" ref="class_suggestion_repeater.html#aaa64edb5d93b050218a1934ddc8cdeca"/>
+<keyword name="ghostLayer" id="Main::ghostLayer_a8672070236403cae63f1abe1c92c73cc" ref="class_main.html#a8672070236403cae63f1abe1c92c73cc"/>
 <keyword name="gpsIcon" id="PhotoListview::gpsIcon_a541ea37c55ae2e2943b6ffcd890967b3" ref="class_photo_listview.html#a541ea37c55ae2e2943b6ffcd890967b3"/>
 <keyword name="gpsLatitude" id="Photo::gpsLatitude_aebc8cca52d5bbb81ca5726f221818839" ref="struct_photo.html#aebc8cca52d5bbb81ca5726f221818839"/>
 <keyword name="gpsLongitude" id="Photo::gpsLongitude_ad76b83d8bbaae4a2e4bfefef2f268008" ref="struct_photo.html#ad76b83d8bbaae4a2e4bfefef2f268008"/>
+<keyword name="GpxModel(QObject *parent=nullptr)" id="GpxModel::GpxModel_ab5f08b7eb04cd707addbf05e4b808781" ref="class_gpx_model.html#ab5f08b7eb04cd707addbf05e4b808781"/>
+<keyword name="gpxPolyline" id="TabFrameGPX::gpxPolyline_a6b6b998b8952e40efbb3c40c33196ccd" ref="class_tab_frame_g_p_x.html#a6b6b998b8952e40efbb3c40c33196ccd"/>
+<keyword name="gpxTab" id="Main::gpxTab_a29a03d3ec8a1fbddef839c7287b35754" ref="class_main.html#a29a03d3ec8a1fbddef839c7287b35754"/>
+<keyword name="gpxTools" id="TabFrameGPX::gpxTools_a139708d9193dc759fbc4640250a9ba9e" ref="class_tab_frame_g_p_x.html#a139708d9193dc759fbc4640250a9ba9e"/>
 <keyword name="grille" id="ZoneSuggestedTagsForm::grille_a2f052f343e3eb8b17815b3a29cc7459a" ref="class_zone_suggested_tags_form.html#a2f052f343e3eb8b17815b3a29cc7459a"/>
 <keyword name="groupBox1" id="PopupSettingsForm::groupBox1_a5b2041f31c1ba7e1e9cdbe6b7cf39707" ref="class_popup_settings_form.html#a5b2041f31c1ba7e1e9cdbe6b7cf39707"/>
 <keyword name="groupBox2" id="PopupSettingsForm::groupBox2_ad75a5f1370e59c5c8c58637fd2e9ac25" ref="class_popup_settings_form.html#ad75a5f1370e59c5c8c58637fd2e9ac25"/>
 <keyword name="hasGPS" id="Photo::hasGPS_af2fe738cd3749de9263ff89bfa971ec9" ref="struct_photo.html#af2fe738cd3749de9263ff89bfa971ec9"/>
 <keyword name="header" id="Main::header_aac07382860c30f1b9b149d4057b20fc4" ref="class_main.html#aac07382860c30f1b9b149d4057b20fc4"/>
+<keyword name="helpMenu" id="MainMenuBar::helpMenu_a0915b0ed09befc4cfa27a092b60d9bd7" ref="class_main_menu_bar.html#a0915b0ed09befc4cfa27a092b60d9bd7"/>
 <keyword name="hideTargetWhenFilled" id="Chips::hideTargetWhenFilled_ab15d66ccd1252ebc60f1598bf56ec960" ref="class_chips.html#ab15d66ccd1252ebc60f1598bf56ec960"/>
 <keyword name="hideTargetWhenFilled" id="FatChip::hideTargetWhenFilled_ab2aa574d74f079fc6502f6c2bce05e46" ref="class_fat_chip.html#ab2aa574d74f079fc6502f6c2bce05e46"/>
 <keyword name="highlight" id="PhotoListview::highlight_a841063bfe4a62d1d6392eb99ff2b87be" ref="class_photo_listview.html#a841063bfe4a62d1d6392eb99ff2b87be"/>
 <keyword name="highlightBackgroundColor" id="Style::highlightBackgroundColor_afe773c3659f12a8b4e6f9202f7acc400" ref="class_style.html#afe773c3659f12a8b4e6f9202f7acc400"/>
 <keyword name="homeCoords" id="MapView::homeCoords_a49f49a99899a341a74aa1192dd663ee6" ref="class_map_view.html#a49f49a99899a341a74aa1192dd663ee6"/>
 <keyword name="horizontalAlignment" id="FatChip::horizontalAlignment_aa92ab8436db584b094101089c7a1dd5e" ref="class_fat_chip.html#aa92ab8436db584b094101089c7a1dd5e"/>
+<keyword name="identify(const QString &amp;imageUrl, const QString &amp;apiKey)" id="LandmarkWrapper::identify_aa355c85096ffd145a2d3dff32a4cbcdb" ref="class_landmark_wrapper.html#aa355c85096ffd145a2d3dff32a4cbcdb"/>
 <keyword name="imageHeight" id="Photo::imageHeight_a4555e7bf8da94eb11398e0948ab6c3d2" ref="struct_photo.html#a4555e7bf8da94eb11398e0948ab6c3d2"/>
-<keyword name="imagePreviewPopup" id="Main::imagePreviewPopup_ac08a4a5f2dc3d5ea2151e59d811cb02a" ref="class_main.html#ac08a4a5f2dc3d5ea2151e59d811cb02a"/>
+<keyword name="imagePreviewPopup" id="Main::imagePreviewPopup_a22cce10650b6af0eb10f3e992db538d9" ref="class_main.html#a22cce10650b6af0eb10f3e992db538d9"/>
 <keyword name="imagettes" id="Main::imagettes_af3dfb2a32b39c98a991299276fc2b67a" ref="class_main.html#af3dfb2a32b39c98a991299276fc2b67a"/>
 <keyword name="imageUrl" id="Photo::imageUrl_a201e9224f059933d60838a7fe331646d" ref="struct_photo.html#a201e9224f059933d60838a7fe331646d"/>
 <keyword name="imageWidth" id="Photo::imageWidth_a47567d8ecc3f845ae1846903113d625b" ref="struct_photo.html#a47567d8ecc3f845ae1846903113d625b"/>
@@ -1126,15 +1379,19 @@
 <keyword name="interval" id="TimerLoadFolder::interval_a1906929509d93e2b406fd5f8341b762d" ref="class_timer_load_folder.html#a1906929509d93e2b406fd5f8341b762d"/>
 <keyword name="isCurrent" id="Photo::isCurrent_abf2a8150f9347ce6870ec0fafac524fa" ref="struct_photo.html#abf2a8150f9347ce6870ec0fafac524fa"/>
 <keyword name="isMarker" id="Photo::isMarker_accaf8898f12c82d9872c555309d563b1" ref="struct_photo.html#accaf8898f12c82d9872c555309d563b1"/>
+<keyword name="isOnTrack" id="Photo::isOnTrack_a463d3ce695014135930aa012e926a887" ref="struct_photo.html#a463d3ce695014135930aa012e926a887"/>
 <keyword name="isSelected" id="Photo::isSelected_a8e391469cda515a3aacb6edafa2a8254" ref="struct_photo.html#a8e391469cda515a3aacb6edafa2a8254"/>
+<keyword name="isSuggestion" id="Chips::isSuggestion_aeeaf03a04dbe214633dd839025a5e59f" ref="class_chips.html#aeeaf03a04dbe214633dd839025a5e59f"/>
 <keyword name="isWelcome" id="ZonePreview::isWelcome_af22c4fe31276d2176e540e4a52125aa8" ref="class_zone_preview.html#af22c4fe31276d2176e540e4a52125aa8"/>
 <keyword name="keywords" id="Photo::keywords_a76af2f2ab2fa057b17b00e796fcfe2b5" ref="struct_photo.html#a76af2f2ab2fa057b17b00e796fcfe2b5"/>
+<keyword name="LandmarkWrapper(QObject *parent=nullptr)" id="LandmarkWrapper::LandmarkWrapper_a579ce7e2361a35f2a530442e05150e96" ref="class_landmark_wrapper.html#a579ce7e2361a35f2a530442e05150e96"/>
 <keyword name="leftMargin" id="Chips::leftMargin_abf42b177c50e02f89b092d9e3397093b" ref="class_chips.html#abf42b177c50e02f89b092d9e3397093b"/>
 <keyword name="lessThan(const QModelIndex &amp;left, const QModelIndex &amp;right) const override" id="SuggestionCategoryProxyModel::lessThan_a65423d7797ebe23f53ff1b9dbbcc0e87" ref="class_suggestion_category_proxy_model.html#a65423d7797ebe23f53ff1b9dbbcc0e87"/>
 <keyword name="line2" id="Main::line2_a2c1d358ddafd73b36bfb1f50ba6b9ccd" ref="class_main.html#a2c1d358ddafd73b36bfb1f50ba6b9ccd"/>
 <keyword name="line3" id="Main::line3_a424dfda57077b446d80cf22e08f90ceb" ref="class_main.html#a424dfda57077b446d80cf22e08f90ceb"/>
 <keyword name="line4" id="Main::line4_a26c5b37c4904dd52c911e44da994b6a5" ref="class_main.html#a26c5b37c4904dd52c911e44da994b6a5"/>
 <keyword name="listDelegate" id="PhotoListview::listDelegate_a1e0ea04da8274245f1d6d0aab18e780d" ref="class_photo_listview.html#a1e0ea04da8274245f1d6d0aab18e780d"/>
+<keyword name="listGpx" id="ZoneGpx::listGpx_ac0a11f8291d69157452b4573d8efc3ef" ref="class_zone_gpx.html#ac0a11f8291d69157452b4573d8efc3ef"/>
 <keyword name="listViewFrame" id="Main::listViewFrame_af36ac68a0a050c7ea417087b76c0fff6" ref="class_main.html#af36ac68a0a050c7ea417087b76c0fff6"/>
 <keyword name="loading" id="PhotoModel::loading_a56d27419faf6d107503faadf856d75da" ref="class_photo_model.html#a56d27419faf6d107503faadf856d75da"/>
 <keyword name="loadingChanged()" id="PhotoModel::loadingChanged_a1f7a41a6081eb84b1dd2bb67cd0377d7" ref="class_photo_model.html#a1f7a41a6081eb84b1dd2bb67cd0377d7"/>
@@ -1147,12 +1404,15 @@
 <keyword name="m_circleResetted" id="PhotoModel::m_circleResetted_a30419f6dc634fbac53925922232e861f" ref="class_photo_model.html#a30419f6dc634fbac53925922232e861f"/>
 <keyword name="m_countWrite" id="PhotoModel::m_countWrite_a8198679bf4201acd77e3216049abdb81" ref="class_photo_model.html#a8198679bf4201acd77e3216049abdb81"/>
 <keyword name="m_currentPhotoRow" id="SuggestionModel::m_currentPhotoRow_a114f7e94901935083f413db400c9a4aa" ref="class_suggestion_model.html#a114f7e94901935083f413db400c9a4aa"/>
+<keyword name="m_currentTrack" id="GpxModel::m_currentTrack_ac4d950fd7b0d1394e5a3ed5f1d547046" ref="class_gpx_model.html#ac4d950fd7b0d1394e5a3ed5f1d547046"/>
+<keyword name="m_currentTrackPoints" id="GpxModel::m_currentTrackPoints_aca36c25e3aecd48f7e02e214e21d621d" ref="class_gpx_model.html#aca36c25e3aecd48f7e02e214e21d621d"/>
 <keyword name="m_deepaiKey" id="CameraSet::m_deepaiKey_a4dbd8817b6336dde9a92ecc822f1f354" ref="class_camera_set.html#a4dbd8817b6336dde9a92ecc822f1f354"/>
 <keyword name="m_dumpedRow" id="PhotoModel::m_dumpedRow_a844160211f6ff9d747dcc59310d2fc22" ref="class_photo_model.html#a844160211f6ff9d747dcc59310d2fc22"/>
 <keyword name="m_dumpedRow" id="SuggestionModel::m_dumpedRow_a71e147fc8f25a5f6ff2f24ebc256acc6" ref="class_suggestion_model.html#a71e147fc8f25a5f6ff2f24ebc256acc6"/>
 <keyword name="m_exifData" id="ExifWriteTask::m_exifData_a30f450a4be6abe483b77c9445689725e" ref="class_exif_write_task.html#a30f450a4be6abe483b77c9445689725e"/>
 <keyword name="m_filePath" id="ExifReadTask::m_filePath_adee848da5859f1e0a5ef3ea8b5fd155d" ref="class_exif_read_task.html#adee848da5859f1e0a5ef3ea8b5fd155d"/>
 <keyword name="m_filePos" id="ExifReadTask::m_filePos_a40e7700eda71c078bd4a1dcc37fe928a" ref="class_exif_read_task.html#a40e7700eda71c078bd4a1dcc37fe928a"/>
+<keyword name="m_files" id="GpxModel::m_files_a9f48d83641f004bb16806df04fcef7aa" ref="class_gpx_model.html#a9f48d83641f004bb16806df04fcef7aa"/>
 <keyword name="m_filter" id="SuggestionCategoryProxyModel::m_filter_a15cde010b373ec1cfe3475a6b01dc05a" ref="class_suggestion_category_proxy_model.html#a15cde010b373ec1cfe3475a6b01dc05a"/>
 <keyword name="m_filterEnabled" id="OnTheMapProxyModel::m_filterEnabled_af83d556dce60b764e65082d856e2fc0f" ref="class_on_the_map_proxy_model.html#af83d556dce60b764e65082d856e2fc0f"/>
 <keyword name="m_filterEnabled" id="SuggestionProxyModel::m_filterEnabled_ad1295d961a6634c58ff34981bc1b6df1" ref="class_suggestion_proxy_model.html#ad1295d961a6634c58ff34981bc1b6df1"/>
@@ -1161,12 +1421,15 @@
 <keyword name="m_generateBackup" id="ExifWriteTask::m_generateBackup_a09a5dc832fd4d41b1ee9fbb9f55623f7" ref="class_exif_write_task.html#a09a5dc832fd4d41b1ee9fbb9f55623f7"/>
 <keyword name="m_geoManager" id="GeocodeWrapper::m_geoManager_adf339348abe1776e01f8345364dac1d1" ref="class_geocode_wrapper.html#adf339348abe1776e01f8345364dac1d1"/>
 <keyword name="m_index" id="GeocodeWrapper::m_index_a0da6d81ec9bbecef91345d386ce4cd6f" ref="class_geocode_wrapper.html#a0da6d81ec9bbecef91345d386ce4cd6f"/>
+<keyword name="m_lastCircleLat" id="PhotoModel::m_lastCircleLat_a61478a24b728846e10c752f5e549f79c" ref="class_photo_model.html#a61478a24b728846e10c752f5e549f79c"/>
+<keyword name="m_lastCircleLong" id="PhotoModel::m_lastCircleLong_aa3e02095541fb1e6f1d4b403d2162577" ref="class_photo_model.html#aa3e02095541fb1e6f1d4b403d2162577"/>
 <keyword name="m_lastCircleRadius" id="PhotoModel::m_lastCircleRadius_ac14973957cff384c1ba7566b93ec5c78" ref="class_photo_model.html#ac14973957cff384c1ba7566b93ec5c78"/>
 <keyword name="m_lastCurrentRow" id="PhotoModel::m_lastCurrentRow_a1d1b6c95fee19ce3b6ac37beb5c14a57" ref="class_photo_model.html#a1d1b6c95fee19ce3b6ac37beb5c14a57"/>
 <keyword name="m_loading" id="PhotoModel::m_loading_a11387915a2315b9426aa63be7d64ae49" ref="class_photo_model.html#a11387915a2315b9426aa63be7d64ae49"/>
 <keyword name="m_locations" id="GeocodeWrapper::m_locations_a78aabbcabe5958c466c7a2479975c5e8" ref="class_geocode_wrapper.html#a78aabbcabe5958c466c7a2479975c5e8"/>
 <keyword name="m_markerIndex" id="PhotoModel::m_markerIndex_af32aed3a0a39738d782a1d69a14175f2" ref="class_photo_model.html#af32aed3a0a39738d782a1d69a14175f2"/>
 <keyword name="m_markerRow" id="PhotoModel::m_markerRow_a6ff090266c5c666181a02469943d9512" ref="class_photo_model.html#a6ff090266c5c666181a02469943d9512"/>
+<keyword name="m_matchCount" id="GpxModel::m_matchCount_af17837371e0c1f5fbf946cd688d4d940" ref="class_gpx_model.html#af17837371e0c1f5fbf946cd688d4d940"/>
 <keyword name="m_networkMgr" id="CameraSet::m_networkMgr_a9bcc216de40d580d73b9511d983bf628" ref="class_camera_set.html#a9bcc216de40d580d73b9511d983bf628"/>
 <keyword name="m_pendingReadTasks" id="PhotoModel::m_pendingReadTasks_ad6d02a95aeaf5f93d350189197c6f64d" ref="class_photo_model.html#ad6d02a95aeaf5f93d350189197c6f64d"/>
 <keyword name="m_photoModel" id="ExifReadTask::m_photoModel_aa742802b2db821ed9a737a2300ae09ef" ref="class_exif_read_task.html#aa742802b2db821ed9a737a2300ae09ef"/>
@@ -1185,12 +1448,20 @@
 <keyword name="mapProviderIndices" id="MapView::mapProviderIndices_a78225978fc4c1b6e1131b66491d6f173" ref="class_map_view.html#a78225978fc4c1b6e1131b66491d6f173"/>
 <keyword name="mapTab" id="Main::mapTab_ab605bcb2c45d3d00f45f30908d18ee78" ref="class_main.html#ab605bcb2c45d3d00f45f30908d18ee78"/>
 <keyword name="mapTools" id="TabFramePhotoMap::mapTools_a3c6ff25b4a38295e78139b0bd4fc7884" ref="class_tab_frame_photo_map.html#a3c6ff25b4a38295e78139b0bd4fc7884"/>
+<keyword name="mapView" id="TabFrameGPX::mapView_a9e64ab098a58ed31989a1a9bb4d2d9a1" ref="class_tab_frame_g_p_x.html#a9e64ab098a58ed31989a1a9bb4d2d9a1"/>
 <keyword name="mapView" id="TabFramePhotoMap::mapView_ad78ac3577fe11997cc5267d33d754f05" ref="class_tab_frame_photo_map.html#ad78ac3577fe11997cc5267d33d754f05"/>
 <keyword name="markerDelegate" id="MapView::markerDelegate_ac2dcc7f77997c187247ad99275dc20a9" ref="class_map_view.html#ac2dcc7f77997c187247ad99275dc20a9"/>
+<keyword name="matchCountChanged()" id="GpxModel::matchCountChanged_ae34c9156a1ec7175a959821e041531d8" ref="class_gpx_model.html#ae34c9156a1ec7175a959821e041531d8"/>
+<keyword name="matchPhotos(QObject *photoModelObj, int offsetHours)" id="GpxModel::matchPhotos_a6da2032e71565f43d785145a05b86c83" ref="class_gpx_model.html#a6da2032e71565f43d785145a05b86c83"/>
 <keyword name="maximumLength" id="FatChip::maximumLength_af2f57d0100bc8324c8f46b924cf0bd83" ref="class_fat_chip.html#af2f57d0100bc8324c8f46b924cf0bd83"/>
 <keyword name="menuBar" id="Main::menuBar_aaa5a22b926b84f30d878945b8570bcee" ref="class_main.html#aaa5a22b926b84f30d878945b8570bcee"/>
 <keyword name="metadata" id="Photo::metadata_a263add422839a94cf7e9c7c5fe744d44" ref="struct_photo.html#a263add422839a94cf7e9c7c5fe744d44"/>
+<keyword name="name" id="GpxFileInfo::name_aebbda030f03cb3aa5f51fc2003cd7fec" ref="struct_gpx_file_info.html#aebbda030f03cb3aa5f51fc2003cd7fec"/>
+<keyword name="NameRole" id="GpxModel::NameRole_ae76055335014cea9cbdbbc2dc87c0987a2f284328b63c0f3d82efc3278f558942" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2f284328b63c0f3d82efc3278f558942"/>
 <keyword name="nameText" id="PhotoListview::nameText_a1d8e398d484387aa153d46916c91ed6d" ref="class_photo_listview.html#a1d8e398d484387aa153d46916c91ed6d"/>
+<keyword name="navigateNext()" id="PhotoListview::navigateNext_a0520e6601955f319aae33555ac9e76b3" ref="class_photo_listview.html#a0520e6601955f319aae33555ac9e76b3"/>
+<keyword name="navigatePrev()" id="PhotoListview::navigatePrev_a494ba6003c39f426684eb6476a42b000" ref="class_photo_listview.html#a494ba6003c39f426684eb6476a42b000"/>
+<keyword name="navigateTo(target)" id="PhotoListview::navigateTo_ad30f48f39753777de55a0f056f2ce470" ref="class_photo_listview.html#ad30f48f39753777de55a0f056f2ce470"/>
 <keyword name="newChip" id="PopupKeywordsForm::newChip_a76607bfb5c560687bb193f0275bcceb0" ref="class_popup_keywords_form.html#a76607bfb5c560687bb193f0275bcceb0"/>
 <keyword name="normalise(QString texte)" id="Utilities::normalise_afdd3b18e7db7c7b7d397fd7b3c7201ab" ref="class_utilities.html#afdd3b18e7db7c7b7d397fd7b3c7201ab"/>
 <keyword name="normalizedLetters" id="Utilities::normalizedLetters_ab3ca40153c4e52be4bb47cd5bf48e97b" ref="class_utilities.html#ab3ca40153c4e52be4bb47cd5bf48e97b"/>
@@ -1198,15 +1469,20 @@
 <keyword name="note1" id="ZoneGlobalTagsForm::note1_a568002014dc48905697f4bf9c206a307" ref="class_zone_global_tags_form.html#a568002014dc48905697f4bf9c206a307"/>
 <keyword name="note2" id="ZoneGlobalTagsForm::note2_a6345b1d5ef523b494bb683474a12e702" ref="class_zone_global_tags_form.html#a6345b1d5ef523b494bb683474a12e702"/>
 <keyword name="onAccepted" id="ToolbarMap::onAccepted_a7bd879048557affbe962255ae5c02cdd" ref="class_toolbar_map.html#a7bd879048557affbe962255ae5c02cdd"/>
-<keyword name="onAccepted" id="RescanWarning::onAccepted_a934558718a1cd789c225a7abc9ade476" ref="class_rescan_warning.html#a934558718a1cd789c225a7abc9ade476"/>
+<keyword name="onAccepted" id="QuitWarningDialog::onAccepted_af150f45c15828e522cc14792c725f76a" ref="class_quit_warning_dialog.html#af150f45c15828e522cc14792c725f76a"/>
+<keyword name="onAccepted" id="RescanWarningDialog::onAccepted_ac7f550862e1bd8e97e645dbef1d65e06" ref="class_rescan_warning_dialog.html#ac7f550862e1bd8e97e645dbef1d65e06"/>
 <keyword name="onAccepted" id="TiFolderDialog::onAccepted_a0de014f6666d965b1cb9167ff18243a1" ref="class_ti_folder_dialog.html#a0de014f6666d965b1cb9167ff18243a1"/>
 <keyword name="onAddCancelled" id="PopupKeywords::onAddCancelled_aaf75c21a1afd43a3baa76889681dc52f" ref="class_popup_keywords.html#aaf75c21a1afd43a3baa76889681dc52f"/>
 <keyword name="onAddConfirmed" id="PopupKeywords::onAddConfirmed_a82a48616c4239bd5f59cf6298e2cbe23" ref="class_popup_keywords.html#a82a48616c4239bd5f59cf6298e2cbe23"/>
 <keyword name="onClicked" id="PopupKeywords::onClicked_a9a4f584753887dd7bbed8801377c0934" ref="class_popup_keywords.html#a9a4f584753887dd7bbed8801377c0934"/>
 <keyword name="onClicked" id="PopupKeywords::onClicked_a2078638cf5b1584ac50831bc43709897" ref="class_popup_keywords.html#a2078638cf5b1584ac50831bc43709897"/>
 <keyword name="onClicked" id="PopupSettings::onClicked_a1d2c5fd0ebdfa42b6409f38462a3cfa5" ref="class_popup_settings.html#a1d2c5fd0ebdfa42b6409f38462a3cfa5"/>
+<keyword name="onClicked" id="ToolbarGpx::onClicked_a61da8ebfdb9143e75222ae59866ef415" ref="class_toolbar_gpx.html#a61da8ebfdb9143e75222ae59866ef415"/>
+<keyword name="onClicked" id="ToolbarGpx::onClicked_a7f9eeda217d439c3c0960d8703181112" ref="class_toolbar_gpx.html#a7f9eeda217d439c3c0960d8703181112"/>
+<keyword name="onClicked" id="ToolbarGpx::onClicked_ab34ef829729cc40193f0fbc4dd5b96d7" ref="class_toolbar_gpx.html#ab34ef829729cc40193f0fbc4dd5b96d7"/>
 <keyword name="onClicked" id="ToolbarMap::onClicked_aed4a2dbdb73afce1823dddde725184fd" ref="class_toolbar_map.html#aed4a2dbdb73afce1823dddde725184fd"/>
 <keyword name="onClicked" id="ToolbarMap::onClicked_a1691f414f41a43e20fb073d7c40c24a0" ref="class_toolbar_map.html#a1691f414f41a43e20fb073d7c40c24a0"/>
+<keyword name="onClicked" id="ToolbarMap::onClicked_a7b90e6c1d16fb73f3bf80baaab8a3496" ref="class_toolbar_map.html#a7b90e6c1d16fb73f3bf80baaab8a3496"/>
 <keyword name="onClicked" id="ToolbarMap::onClicked_a5567dcac75eabc285e197a91a4f4595e" ref="class_toolbar_map.html#a5567dcac75eabc285e197a91a4f4595e"/>
 <keyword name="onClicked" id="ToolbarMap::onClicked_a6e1887ed37362c1b762cad531346ebc2" ref="class_toolbar_map.html#a6e1887ed37362c1b762cad531346ebc2"/>
 <keyword name="onClicked" id="ToolbarMap::onClicked_a9ce3b3423837550b83cbbd14aeec922c" ref="class_toolbar_map.html#a9ce3b3423837550b83cbbd14aeec922c"/>
@@ -1214,24 +1490,34 @@
 <keyword name="onClicked" id="ToolbarPrincipale::onClicked_ab154d8212f9845871049a54745ce8941" ref="class_toolbar_principale.html#ab154d8212f9845871049a54745ce8941"/>
 <keyword name="onClicked" id="ZoneGeoloc::onClicked_abd927a6d63bd1826940eda7227fc76d2" ref="class_zone_geoloc.html#abd927a6d63bd1826940eda7227fc76d2"/>
 <keyword name="onClicked" id="ZoneSuggestedLocations::onClicked_adc508b0c0b110bf5e53a76361cde3831" ref="class_zone_suggested_locations.html#adc508b0c0b110bf5e53a76361cde3831"/>
+<keyword name="onClicked" id="ZoneSuggestedLocations::onClicked_aa66f8057737deba2d4b87537270a4e3c" ref="class_zone_suggested_locations.html#aa66f8057737deba2d4b87537270a4e3c"/>
 <keyword name="onClicked" id="ZoneSuggestedTags::onClicked_aebeb4e6b85d3be150e5a350ada06e483" ref="class_zone_suggested_tags.html#aebeb4e6b85d3be150e5a350ada06e483"/>
+<keyword name="onCompleted" id="GhostChip::onCompleted_a0a8406f135107dfe3819586ceefab044" ref="class_ghost_chip.html#a0a8406f135107dfe3819586ceefab044"/>
 <keyword name="onCompleted" id="AboutDialog::onCompleted_a5873351d5c58542e77c3fb105451f00a" ref="class_about_dialog.html#a5873351d5c58542e77c3fb105451f00a"/>
 <keyword name="onCurrentPhotoChanged(const int row)" id="SuggestionModel::onCurrentPhotoChanged_a509f4df03362a904aeae8c2d873485a3" ref="class_suggestion_model.html#a509f4df03362a904aeae8c2d873485a3"/>
+<keyword name="onDone" id="GhostChip::onDone_a9cec5f505d754a787bca7c81f51fed6c" ref="class_ghost_chip.html#a9cec5f505d754a787bca7c81f51fed6c"/>
 <keyword name="onEditRequested" id="PopupKeywords::onEditRequested_a4553a47af2c558cd4133496ac795b584" ref="class_popup_keywords.html#a4553a47af2c558cd4133496ac795b584"/>
 <keyword name="onError()" id="CameraSet::onError_a77e050b451359a66ab6d161477597b44" ref="class_camera_set.html#a77e050b451359a66ab6d161477597b44"/>
 <keyword name="onFinished(QNetworkReply *reply)" id="CameraSet::onFinished_ae521eda047c7409a02da364ba8d60db1" ref="class_camera_set.html#ae521eda047c7409a02da364ba8d60db1"/>
+<keyword name="onlyKeywords" id="SuggestionRepeater::onlyKeywords_a0997c2b4e4deb9b7f1f81faf2c41a750" ref="class_suggestion_repeater.html#a0997c2b4e4deb9b7f1f81faf2c41a750"/>
 <keyword name="onMapItemsChanged" id="MapView::onMapItemsChanged_a4705d5867e93eb43b1939a78c1f3623b" ref="class_map_view.html#a4705d5867e93eb43b1939a78c1f3623b"/>
 <keyword name="onOpened" id="PopupKeywords::onOpened_ac77e39b98a77baf714f17800aa7e5136" ref="class_popup_keywords.html#ac77e39b98a77baf714f17800aa7e5136"/>
 <keyword name="onPressed" id="PhotoListview::onPressed_ad7d6cf135abe1b8122abb228f1a9e302" ref="class_photo_listview.html#ad7d6cf135abe1b8122abb228f1a9e302"/>
 <keyword name="onPressedChanged" id="ToolbarMap::onPressedChanged_af549822f749abd04d9bf816ecfb9e65f" ref="class_toolbar_map.html#af549822f749abd04d9bf816ecfb9e65f"/>
+<keyword name="onReplyFinished()" id="LandmarkWrapper::onReplyFinished_a081a0aea19184f5d7921126b680c6126" ref="class_landmark_wrapper.html#a081a0aea19184f5d7921126b680c6126"/>
 <keyword name="onSaveRequested" id="PopupKeywords::onSaveRequested_ade4adb97c6efc59df222753946134691" ref="class_popup_keywords.html#ade4adb97c6efc59df222753946134691"/>
 <keyword name="onShowNextCoords()" id="GeocodeWrapper::onShowNextCoords_ad8fcd055196df78fe385baf7c4a1bbaa" ref="class_geocode_wrapper.html#ad8fcd055196df78fe385baf7c4a1bbaa"/>
 <keyword name="OnTheMapProxyModel(QObject *parent=nullptr)" id="OnTheMapProxyModel::OnTheMapProxyModel_afb8170a7f9e508bfdc6238e649e957cf" ref="class_on_the_map_proxy_model.html#afb8170a7f9e508bfdc6238e649e957cf"/>
+<keyword name="onTrackLatitude" id="Photo::onTrackLatitude_a4ad3287779ab91c520c021d623e8cf52" ref="struct_photo.html#a4ad3287779ab91c520c021d623e8cf52"/>
+<keyword name="onTrackLongitude" id="Photo::onTrackLongitude_ae07599d85fd1780bf94e5ff96ffd791f" ref="struct_photo.html#ae07599d85fd1780bf94e5ff96ffd791f"/>
 <keyword name="onTriggered" id="TimerLoadFolder::onTriggered_ac5f7b44799b5bfeb523d3dbbbde0c47a" ref="class_timer_load_folder.html#ac5f7b44799b5bfeb523d3dbbbde0c47a"/>
+<keyword name="openInParentFolder()" id="TiFolderDialog::openInParentFolder_a3353422c83c36d14976843e7a4e6d51e" ref="class_ti_folder_dialog.html#a3353422c83c36d14976843e7a4e6d51e"/>
 <keyword name="operator==(const QString &amp;file_name)" id="Photo::operator==_aadb7a083611feae65440c3bfc3887417" ref="struct_photo.html#aadb7a083611feae65440c3bfc3887417"/>
 <keyword name="operator==(const Photo &amp;photo)" id="Photo::operator==_aaf8c4dfdd916b811562d6d4e7f5e1489" ref="struct_photo.html#aaf8c4dfdd916b811562d6d4e7f5e1489"/>
 <keyword name="operator==(const Suggestion &amp;suggestion) const" id="Suggestion::operator==_a063449adc119af01b2ca07be053223f6" ref="struct_suggestion.html#a063449adc119af01b2ca07be053223f6"/>
 <keyword name="orientation" id="Photo::orientation_a0f11a71d79268e835723f1db0f4acffa" ref="struct_photo.html#a0f11a71d79268e835723f1db0f4acffa"/>
+<keyword name="pages" id="TutorialPopup::pages_add04f73e58ab5fc73707ee494d54e949" ref="class_tutorial_popup.html#add04f73e58ab5fc73707ee494d54e949"/>
+<keyword name="parseTrack(const QString &amp;filePath)" id="GpxModel::parseTrack_a71007112af10fb87a695179be1f2d6f2" ref="class_gpx_model.html#a71007112af10fb87a695179be1f2d6f2"/>
 <keyword name="persistCustomKeywords()" id="PopupKeywords::persistCustomKeywords_a0b49eab59ea17512060b8de719425e6b" ref="class_popup_keywords.html#a0b49eab59ea17512060b8de719425e6b"/>
 <keyword name="Photo()" id="Photo::Photo_a10ef03ede9235052eb9f7d5e950f85d3" ref="struct_photo.html#a10ef03ede9235052eb9f7d5e950f85d3"/>
 <keyword name="Photo(const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, bool is_current=false)" id="Photo::Photo_a70dea3e00c545305d4b59af51d8c8a9a" ref="struct_photo.html#a70dea3e00c545305d4b59af51d8c8a9a"/>
@@ -1246,13 +1532,16 @@
 <keyword name="primaryColor" id="Style::primaryColor_a9d26a25965fed39e9def07c6e71d6d12" ref="class_style.html#a9d26a25965fed39e9def07c6e71d6d12"/>
 <keyword name="primaryTextColor" id="Style::primaryTextColor_a7bc2b09d1d2e5db097456fba1d1773f6" ref="class_style.html#a7bc2b09d1d2e5db097456fba1d1773f6"/>
 <keyword name="processLine(QByteArray line)" id="ExifReadTask::processLine_a425555d73b1bc4ba915e2a9f9a0884c6" ref="class_exif_read_task.html#a425555d73b1bc4ba915e2a9f9a0884c6"/>
+<keyword name="readStartTime(const QString &amp;filePath)" id="GpxModel::readStartTime_af0995bc254f67c88a268b5c1788e7213" ref="class_gpx_model.html#af0995bc254f67c88a268b5c1788e7213"/>
 <keyword name="readTaskFinished()" id="PhotoModel::readTaskFinished_a3d1e08915aeec13f2b27d92df7960606" ref="class_photo_model.html#a3d1e08915aeec13f2b27d92df7960606"/>
 <keyword name="recentFoldersInstantiator" id="MainMenuBar::recentFoldersInstantiator_acef52ef56982474751262ecf3fc4cf65" ref="class_main_menu_bar.html#acef52ef56982474751262ecf3fc4cf65"/>
 <keyword name="recentFoldersMenu" id="MainMenuBar::recentFoldersMenu_ae4cc4d8eaa08ed1903de66272698d71e" ref="class_main_menu_bar.html#ae4cc4d8eaa08ed1903de66272698d71e"/>
+<keyword name="refresh(const QUrl &amp;folderUrl)" id="GpxModel::refresh_a1691546500164c1cc83e2f45bbc7c665" ref="class_gpx_model.html#a1691546500164c1cc83e2f45bbc7c665"/>
 <keyword name="removeCurrentPhotoFromSuggestion(const QModelIndex index)" id="SuggestionModel::removeCurrentPhotoFromSuggestion_aea38923e1af3b5faee8ba4caccc8281f" ref="class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f"/>
 <keyword name="removeData(int row)" id="PhotoModel::removeData_a1e2f3f829e54ef445a5b1dea07ad2118" ref="class_photo_model.html#a1e2f3f829e54ef445a5b1dea07ad2118"/>
 <keyword name="removeFromSelection(int row)" id="PhotoModel::removeFromSelection_a550fbb31e5ea492677bff74d5274a2b4" ref="class_photo_model.html#a550fbb31e5ea492677bff74d5274a2b4"/>
 <keyword name="removeFromSuggestion(const QString target)" id="SuggestionModel::removeFromSuggestion_a54ef63c254c7a560110977f2240156c6" ref="class_suggestion_model.html#a54ef63c254c7a560110977f2240156c6"/>
+<keyword name="removePhotoFromSuggestion(const int proxyRow)" id="SuggestionCategoryProxyModel::removePhotoFromSuggestion_a29d65a3ef6bd9db53b99b8edaf8600bc" ref="class_suggestion_category_proxy_model.html#a29d65a3ef6bd9db53b99b8edaf8600bc"/>
 <keyword name="removePhotoFromSuggestion(const int proxyRow)" id="SuggestionProxyModel::removePhotoFromSuggestion_a57f046aabf95036f87b02209f0174e10" ref="class_suggestion_proxy_model.html#a57f046aabf95036f87b02209f0174e10"/>
 <keyword name="removePhotoFromSuggestion(const QModelIndex proxyIndex)" id="SuggestionProxyModel::removePhotoFromSuggestion_ad0b9f7027dfc10c28e67fcf1edbeb66b" ref="class_suggestion_proxy_model.html#ad0b9f7027dfc10c28e67fcf1edbeb66b"/>
 <keyword name="removePhotoFromSuggestion(int row)" id="Main::removePhotoFromSuggestion_acfd526f850b84d0b663152040c27f6a2" ref="class_main.html#acfd526f850b84d0b663152040c27f6a2"/>
@@ -1260,6 +1549,7 @@
 <keyword name="removePhotoKeyword(QString keyword)" id="PhotoModelWrapper::removePhotoKeyword_a3522f76919753b9434eb62126bebc7f1" ref="class_photo_model_wrapper.html#a3522f76919753b9434eb62126bebc7f1"/>
 <keyword name="removeSavedPosition()" id="PhotoModel::removeSavedPosition_a6c2e4a731969e952993dfe4d38e5788f" ref="class_photo_model.html#a6c2e4a731969e952993dfe4d38e5788f"/>
 <keyword name="repeat" id="TimerLoadFolder::repeat_afad159c81f3ce168f9a8e8e21afae161" ref="class_timer_load_folder.html#afad159c81f3ce168f9a8e8e21afae161"/>
+<keyword name="replaceKeywordForCurrent(const QString &amp;keyword, int index)" id="PhotoModel::replaceKeywordForCurrent_adf0feece70209c745997d33093c86cf1" ref="class_photo_model.html#adf0feece70209c745997d33093c86cf1"/>
 <keyword name="replaceKeywordForSelection(const QString &amp;oldKeyword, const QString &amp;newKeyword)" id="PhotoModel::replaceKeywordForSelection_afab571e974df0d79ee1d8e7f6d033b17" ref="class_photo_model.html#afab571e974df0d79ee1d8e7f6d033b17"/>
 <keyword name="requestCoordinates(const QString &amp;city, const bool home)" id="GeocodeWrapper::requestCoordinates_afe24d64afb183a81c2daa97f380aec34" ref="class_geocode_wrapper.html#afe24d64afb183a81c2daa97f380aec34"/>
 <keyword name="requestCoords(string city, bool home)" id="Main::requestCoords_afebb10e3f2840f2403b2fb10a9096e5e" ref="class_main.html#afebb10e3f2840f2403b2fb10a9096e5e"/>
@@ -1268,10 +1558,16 @@
 <keyword name="requestReverseGeocode(double lati, double longi)" id="Main::requestReverseGeocode_af95a1768861a370ba09089a7a6a97c09" ref="class_main.html#af95a1768861a370ba09089a7a6a97c09"/>
 <keyword name="requestThumb(const QString &amp;cam_model)" id="CameraSet::requestThumb_a0fb996a8af37e012293507fef026a9db" ref="class_camera_set.html#a0fb996a8af37e012293507fef026a9db"/>
 <keyword name="resetCircle()" id="PhotoModel::resetCircle_a8b4c0daf563670d61c87102a19bead12" ref="class_photo_model.html#a8b4c0daf563670d61c87102a19bead12"/>
+<keyword name="resetOnTrack()" id="PhotoModel::resetOnTrack_ab88f4485e93ab72a8ce7147330627b19" ref="class_photo_model.html#ab88f4485e93ab72a8ce7147330627b19"/>
 <keyword name="resetSelection()" id="PhotoModel::resetSelection_a3418791003f8f006300b65265a4aaf81" ref="class_photo_model.html#a3418791003f8f006300b65265a4aaf81"/>
 <keyword name="revertArea" id="Chips::revertArea_a712d1ffbc8aa67fae4b120e2e3afe38a" ref="class_chips.html#a712d1ffbc8aa67fae4b120e2e3afe38a"/>
+<keyword name="roleNames() const override" id="GpxModel::roleNames_a88b4c37bdb81ad85d0b22fcdf8b54555" ref="class_gpx_model.html#a88b4c37bdb81ad85d0b22fcdf8b54555"/>
 <keyword name="roleNames() const override" id="PhotoModel::roleNames_aac3d5e1ae72e823b4e6091497c5cf27d" ref="class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d"/>
 <keyword name="roleNames() const override" id="SuggestionModel::roleNames_a5153ff9a46757355350432e5e8a810cd" ref="class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd"/>
+<keyword name="Roles" id="GpxModel::Roles_ae76055335014cea9cbdbbc2dc87c0987" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987"/>
+<keyword name="NameRole" id="GpxModel::NameRole_ae76055335014cea9cbdbbc2dc87c0987a2f284328b63c0f3d82efc3278f558942" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2f284328b63c0f3d82efc3278f558942"/>
+<keyword name="FilePathRole" id="GpxModel::FilePathRole_ae76055335014cea9cbdbbc2dc87c0987a020a37e1814a273b8d85e49ed59c8f38" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a020a37e1814a273b8d85e49ed59c8f38"/>
+<keyword name="StartTimeRole" id="GpxModel::StartTimeRole_ae76055335014cea9cbdbbc2dc87c0987a2e4e889c79b53f537f8bd46f8c845ab6" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2e4e889c79b53f537f8bd46f8c845ab6"/>
 <keyword name="Roles" id="PhotoModel::Roles_afae44c634ae6bf2b6b6c2e2a19269159" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159"/>
 <keyword name="FilenameRole" id="PhotoModel::FilenameRole_afae44c634ae6bf2b6b6c2e2a19269159a449026fc86a695198a9250097d409e0c" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a449026fc86a695198a9250097d409e0c"/>
 <keyword name="ImageUrlRole" id="PhotoModel::ImageUrlRole_afae44c634ae6bf2b6b6c2e2a19269159aca647a8668a9cc1d605dbcbcff78ef4d" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159aca647a8668a9cc1d605dbcbcff78ef4d"/>
@@ -1282,6 +1578,9 @@
 <keyword name="IsSelectedRole" id="PhotoModel::IsSelectedRole_afae44c634ae6bf2b6b6c2e2a19269159aae214ab574182fa11a20e7191e3ef240" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159aae214ab574182fa11a20e7191e3ef240"/>
 <keyword name="IsMarkerRole" id="PhotoModel::IsMarkerRole_afae44c634ae6bf2b6b6c2e2a19269159a4b14ecbac030e9c2e28d92d38e834e25" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a4b14ecbac030e9c2e28d92d38e834e25"/>
 <keyword name="InsideCircleRole" id="PhotoModel::InsideCircleRole_afae44c634ae6bf2b6b6c2e2a19269159a5e0bdf8a9ba7f5f72e7d293f9cf30372" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a5e0bdf8a9ba7f5f72e7d293f9cf30372"/>
+<keyword name="IsOnTrackRole" id="PhotoModel::IsOnTrackRole_afae44c634ae6bf2b6b6c2e2a19269159aa61d83b5261b6d1108445f13ade0801e" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159aa61d83b5261b6d1108445f13ade0801e"/>
+<keyword name="OnTrackLatitudeRole" id="PhotoModel::OnTrackLatitudeRole_afae44c634ae6bf2b6b6c2e2a19269159ace4aca924e963cf80514fb863ceea41b" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159ace4aca924e963cf80514fb863ceea41b"/>
+<keyword name="OnTrackLongitudeRole" id="PhotoModel::OnTrackLongitudeRole_afae44c634ae6bf2b6b6c2e2a19269159a7f034c556f6e91a78c12894cbfa9040e" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a7f034c556f6e91a78c12894cbfa9040e"/>
 <keyword name="ToBeSavedRole" id="PhotoModel::ToBeSavedRole_afae44c634ae6bf2b6b6c2e2a19269159a958ba4961be0538c4f4d602be137b0f5" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a958ba4961be0538c4f4d602be137b0f5"/>
 <keyword name="DateTimeOriginalRole" id="PhotoModel::DateTimeOriginalRole_afae44c634ae6bf2b6b6c2e2a19269159a7d9a9a9723993a4868d513c30c4ee000" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a7d9a9a9723993a4868d513c30c4ee000"/>
 <keyword name="CamModelRole" id="PhotoModel::CamModelRole_afae44c634ae6bf2b6b6c2e2a19269159a58c7dcd89769675769ec5c0384c5c46e" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a58c7dcd89769675769ec5c0384c5c46e"/>
@@ -1300,11 +1599,13 @@
 <keyword name="SoftwareRole" id="PhotoModel::SoftwareRole_afae44c634ae6bf2b6b6c2e2a19269159a70889937ba9e34e563c49805c3bb5f97" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159a70889937ba9e34e563c49805c3bb5f97"/>
 <keyword name="MetadataRole" id="PhotoModel::MetadataRole_afae44c634ae6bf2b6b6c2e2a19269159aa020f02cfeb2aaf927c8295a24da26df" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159aa020f02cfeb2aaf927c8295a24da26df"/>
 <keyword name="KeywordsRole" id="PhotoModel::KeywordsRole_afae44c634ae6bf2b6b6c2e2a19269159adb79c881f8389a1692ffe12536fcb4fb" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159adb79c881f8389a1692ffe12536fcb4fb"/>
+<keyword name="WriteErrorRole" id="PhotoModel::WriteErrorRole_afae44c634ae6bf2b6b6c2e2a19269159abef6d897ec7de0c92cb0c6ad22d49dc3" ref="class_photo_model.html#afae44c634ae6bf2b6b6c2e2a19269159abef6d897ec7de0c92cb0c6ad22d49dc3"/>
 <keyword name="Roles" id="SuggestionModel::Roles_a7c221c2ccd838f3f3d83f11460322e19" ref="class_suggestion_model.html#a7c221c2ccd838f3f3d83f11460322e19"/>
 <keyword name="TextRole" id="SuggestionModel::TextRole_a7c221c2ccd838f3f3d83f11460322e19aee4072df39f361a98a8f2ab7e3f6cf9a" ref="class_suggestion_model.html#a7c221c2ccd838f3f3d83f11460322e19aee4072df39f361a98a8f2ab7e3f6cf9a"/>
 <keyword name="TargetRole" id="SuggestionModel::TargetRole_a7c221c2ccd838f3f3d83f11460322e19a5adc028a7cb0f7d0c8067d129dcd5657" ref="class_suggestion_model.html#a7c221c2ccd838f3f3d83f11460322e19a5adc028a7cb0f7d0c8067d129dcd5657"/>
 <keyword name="CategoryRole" id="SuggestionModel::CategoryRole_a7c221c2ccd838f3f3d83f11460322e19a9a802f306bd923f83694592b79f70c93" ref="class_suggestion_model.html#a7c221c2ccd838f3f3d83f11460322e19a9a802f306bd923f83694592b79f70c93"/>
 <keyword name="PhotosRole" id="SuggestionModel::PhotosRole_a7c221c2ccd838f3f3d83f11460322e19a119189e51297870cff4480885a9f26eb" ref="class_suggestion_model.html#a7c221c2ccd838f3f3d83f11460322e19a119189e51297870cff4480885a9f26eb"/>
+<keyword name="rowCount(const QModelIndex &amp;parent=QModelIndex()) const override" id="GpxModel::rowCount_ad8a3de6109996db37f599d5e1c8e194f" ref="class_gpx_model.html#ad8a3de6109996db37f599d5e1c8e194f"/>
 <keyword name="rowCount(const QModelIndex &amp;parent=QModelIndex()) const override" id="PhotoModel::rowCount_a6be5a4ec62c39357efc906c2c9fc5515" ref="class_photo_model.html#a6be5a4ec62c39357efc906c2c9fc5515"/>
 <keyword name="rowCount(const QModelIndex &amp;parent) const override" id="SuggestionModel::rowCount_a0c1caffe345aeb30f636f3a1784e9cea" ref="class_suggestion_model.html#a0c1caffe345aeb30f636f3a1784e9cea"/>
 <keyword name="run()" id="ExifReadTask::run_a1f0693a4aa7d57897f906d3db0fd77b8" ref="class_exif_read_task.html#a1f0693a4aa7d57897f906d3db0fd77b8"/>
@@ -1313,7 +1614,6 @@
 <keyword name="saveArea" id="Chips::saveArea_a280cfbb450b5cc41e16f31ded7ede64c" ref="class_chips.html#a280cfbb450b5cc41e16f31ded7ede64c"/>
 <keyword name="saveConfiguration()" id="PopupSettings::saveConfiguration_af1e31b6bfdc9bf19ef29ad2341bec260" ref="class_popup_settings.html#af1e31b6bfdc9bf19ef29ad2341bec260"/>
 <keyword name="savedPositionExists" id="PhotoModel::savedPositionExists_a1153ffe0150ba4dcc0f9e1a7e246807d" ref="class_photo_model.html#a1153ffe0150ba4dcc0f9e1a7e246807d"/>
-<keyword name="savedPositionExistsChanged()" id="PhotoModel::savedPositionExistsChanged_ab3c7d2f0f2caf79b26d742af009431d7" ref="class_photo_model.html#ab3c7d2f0f2caf79b26d742af009431d7"/>
 <keyword name="saveMetadata()" id="PhotoModel::saveMetadata_ac393e2839ea5993f199ec669973972ef" ref="class_photo_model.html#ac393e2839ea5993f199ec669973972ef"/>
 <keyword name="saveMetadata()" id="Main::saveMetadata_a4f0612873776f7214fddf19803580063" ref="class_main.html#a4f0612873776f7214fddf19803580063"/>
 <keyword name="savePosition()" id="Main::savePosition_a5f6509a236e35dc1666aa6ed1b790c99" ref="class_main.html#a5f6509a236e35dc1666aa6ed1b790c99"/>
@@ -1325,7 +1625,9 @@
 <keyword name="SelectedPhotoProxyModel(QObject *parent=nullptr)" id="SelectedPhotoProxyModel::SelectedPhotoProxyModel_a54094dbdfabf593edc0d881d1b197d84" ref="class_selected_photo_proxy_model.html#a54094dbdfabf593edc0d881d1b197d84"/>
 <keyword name="selectFirstPhoto()" id="PhotoModel::selectFirstPhoto_aa3d514c34c26ba9d741185fa4fff4bb2" ref="class_photo_model.html#aa3d514c34c26ba9d741185fa4fff4bb2"/>
 <keyword name="selectionCount" id="PhotoModel::selectionCount_aa41215645b3d02fec1ffa4b94b88b9b0" ref="class_photo_model.html#aa41215645b3d02fec1ffa4b94b88b9b0"/>
+<keyword name="selectionCount" id="GlobalTag::selectionCount_ad5f460f54c18471ac7301f8c6f28af86" ref="class_global_tag.html#ad5f460f54c18471ac7301f8c6f28af86"/>
 <keyword name="selectionCountChanged()" id="PhotoModel::selectionCountChanged_a8cc66b6d7ccc7f50bd419b00fbea1b53" ref="class_photo_model.html#a8cc66b6d7ccc7f50bd419b00fbea1b53"/>
+<keyword name="selectTrack(int row)" id="GpxModel::selectTrack_a47af24a7ad95325a0951280fb368934f" ref="class_gpx_model.html#a47af24a7ad95325a0951280fb368934f"/>
 <keyword name="selectUndated()" id="PhotoModel::selectUndated_a6a10a56693f2a9a186748cb02b8b763b" ref="class_photo_model.html#a6a10a56693f2a9a186748cb02b8b763b"/>
 <keyword name="selectUnlocalized()" id="PhotoModel::selectUnlocalized_a74dfbb2550a834deeea3c8bb09863ce6" ref="class_photo_model.html#a74dfbb2550a834deeea3c8bb09863ce6"/>
 <keyword name="sendSuggestion(QString text, QString target, QString category, int row)" id="PhotoModel::sendSuggestion_ab8f7cb78c57128f6a6df184a4d89f2bf" ref="class_photo_model.html#ab8f7cb78c57128f6a6df184a4d89f2bf"/>
@@ -1345,6 +1647,7 @@
 <keyword name="setFilterValue(const int photoRow)" id="SuggestionProxyModel::setFilterValue_add1caa599574ee457caa9f63251e5252" ref="class_suggestion_proxy_model.html#add1caa599574ee457caa9f63251e5252"/>
 <keyword name="setInCircleItemCoords(const double latitude, const double longitude)" id="PhotoModel::setInCircleItemCoords_aa35674fe9c8ec79d2993ce56614bb909" ref="class_photo_model.html#aa35674fe9c8ec79d2993ce56614bb909"/>
 <keyword name="setLoading(const bool state)" id="PhotoModel::setLoading_a5b6f4559d756ce4ca23aa60bf89f5f1c" ref="class_photo_model.html#a5b6f4559d756ce4ca23aa60bf89f5f1c"/>
+<keyword name="setOnTrack(int row, double lat, double lon)" id="PhotoModel::setOnTrack_adbd0bdd419294de0c9945072d30eb2e7" ref="class_photo_model.html#adbd0bdd419294de0c9945072d30eb2e7"/>
 <keyword name="setPhotoProperty(const int photo, const QString &amp;value, const QString &amp;property)" id="PhotoModel::setPhotoProperty_a165ad27d0e76a28be804d26fa26b9c15" ref="class_photo_model.html#a165ad27d0e76a28be804d26fa26b9c15"/>
 <keyword name="setPhotoProperty(int photo, string texte, string target)" id="Main::setPhotoProperty_ac0ff9966818be09f18bfe42bc766ae33" ref="class_main.html#ac0ff9966818be09f18bfe42bc766ae33"/>
 <keyword name="setSelectedItemsCoords(QGeoCoordinate coords)" id="PhotoModel::setSelectedItemsCoords_a614ead774ff62e4d0431a955abb56651" ref="class_photo_model.html#a614ead774ff62e4d0431a955abb56651"/>
@@ -1354,9 +1657,15 @@
 <keyword name="settings" id="PopupKeywordsForm::settings_a08faebdea308fdd3ce4375baed22ef78" ref="class_popup_keywords_form.html#a08faebdea308fdd3ce4375baed22ef78"/>
 <keyword name="settings" id="PopupSettingsForm::settings_a25842889117b9bda52cb863415225bd1" ref="class_popup_settings_form.html#a25842889117b9bda52cb863415225bd1"/>
 <keyword name="settings" id="ToolbarBottomForm::settings_a65d8668c22ab33337a1bc637b225722e" ref="class_toolbar_bottom_form.html#a65d8668c22ab33337a1bc637b225722e"/>
+<keyword name="settingsMenu" id="MainMenuBar::settingsMenu_ab029cf70ff79828424978a307758715c" ref="class_main_menu_bar.html#ab029cf70ff79828424978a307758715c"/>
+<keyword name="setWriteError(QModelIndex idx, const QString &amp;message)" id="PhotoModel::setWriteError_a24ad28505093881b0f6a134075fc6cfa" ref="class_photo_model.html#a24ad28505093881b0f6a134075fc6cfa"/>
 <keyword name="setWriteProgress(const int total=0)" id="PhotoModel::setWriteProgress_a55deb039e2fbabeb1de1f3ba871c3e48" ref="class_photo_model.html#a55deb039e2fbabeb1de1f3ba871c3e48"/>
 <keyword name="shutterSpeed" id="Photo::shutterSpeed_aeaeadb764ea3e33efa012abc317676db" ref="struct_photo.html#aeaeadb764ea3e33efa012abc317676db"/>
+<keyword name="snackbar" id="Main::snackbar_a21f1cc462970d3199d67476b7ecd9999" ref="class_main.html#a21f1cc462970d3199d67476b7ecd9999"/>
 <keyword name="software" id="Photo::software_a1e092e500b8cc02272e39b823f094180" ref="struct_photo.html#a1e092e500b8cc02272e39b823f094180"/>
+<keyword name="startTime" id="GpxFileInfo::startTime_a30adf61dea8dbd42a341344381cba308" ref="struct_gpx_file_info.html#a30adf61dea8dbd42a341344381cba308"/>
+<keyword name="StartTimeRole" id="GpxModel::StartTimeRole_ae76055335014cea9cbdbbc2dc87c0987a2e4e889c79b53f537f8bd46f8c845ab6" ref="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2e4e889c79b53f537f8bd46f8c845ab6"/>
+<keyword name="states" id="Chips::states_a17eb4ada1af0a1e453dc9e095f725f5b" ref="class_chips.html#a17eb4ada1af0a1e453dc9e095f725f5b"/>
 <keyword name="suggestFromPhoto(const int row)" id="PhotoModel::suggestFromPhoto_a23001133bf3fb44176664a2042e657ea" ref="class_photo_model.html#a23001133bf3fb44176664a2042e657ea"/>
 <keyword name="suggestFromSelection()" id="PhotoModel::suggestFromSelection_ac9b73a40d67ee00486147e487bc1a89b" ref="class_photo_model.html#ac9b73a40d67ee00486147e487bc1a89b"/>
 <keyword name="Suggestion()" id="Suggestion::Suggestion_af2eddc6a6b273397e3455724a25c88ef" ref="struct_suggestion.html#af2eddc6a6b273397e3455724a25c88ef"/>
@@ -1367,33 +1676,48 @@
 <keyword name="suggestionFlow" id="ZoneSuggestedLocationsForm::suggestionFlow_a85b1b89a70fe79cbf6a7f5977ab12c6d" ref="class_zone_suggested_locations_form.html#a85b1b89a70fe79cbf6a7f5977ab12c6d"/>
 <keyword name="SuggestionModel(QObject *parent=nullptr)" id="SuggestionModel::SuggestionModel_a0e304826f0095e36eecd9ce321ac4eb0" ref="class_suggestion_model.html#a0e304826f0095e36eecd9ce321ac4eb0"/>
 <keyword name="SuggestionProxyModel(QObject *parent=nullptr)" id="SuggestionProxyModel::SuggestionProxyModel_af3e1807aac2879bcb22d656c4aead90b" ref="class_suggestion_proxy_model.html#af3e1807aac2879bcb22d656c4aead90b"/>
-<keyword name="suggestionRepeater" id="ZoneSuggestedLocationsForm::suggestionRepeater_adf61ed5663f22607d285bc0982a72ed2" ref="class_zone_suggested_locations_form.html#adf61ed5663f22607d285bc0982a72ed2"/>
-<keyword name="suggestionRepeater" id="ZoneSuggestedTagsForm::suggestionRepeater_a90480726e53f412348cce34344d53d76" ref="class_zone_suggested_tags_form.html#a90480726e53f412348cce34344d53d76"/>
 <keyword name="surfaceContainerColor" id="Style::surfaceContainerColor_a8757f72daba53eee9779307960878d2c" ref="class_style.html#a8757f72daba53eee9779307960878d2c"/>
 <keyword name="swapArea" id="Chips::swapArea_a36109c87cdf79393873ff90b401ff37c" ref="class_chips.html#a36109c87cdf79393873ff90b401ff37c"/>
 <keyword name="swappable" id="Chips::swappable_aaa5a30cb10fb2709fb7832e95a2ad1b8" ref="class_chips.html#aaa5a30cb10fb2709fb7832e95a2ad1b8"/>
 <keyword name="sysLang" id="PopupSettings::sysLang_a35c96c11b5460c7638c6ccccc31e5c44" ref="class_popup_settings.html#a35c96c11b5460c7638c6ccccc31e5c44"/>
 <keyword name="t0" id="AboutDialog::t0_aeb4d0dacdd1ca4be43e9128233574aaf" ref="class_about_dialog.html#aeb4d0dacdd1ca4be43e9128233574aaf"/>
 <keyword name="t1" id="AboutDialog::t1_adcf1d8405dfc26a961936d0a9202b846" ref="class_about_dialog.html#adcf1d8405dfc26a961936d0a9202b846"/>
-<keyword name="t1" id="ApikeyDialog::t1_a3cf1f29639403a648d9d43f32ec0d963" ref="class_apikey_dialog.html#a3cf1f29639403a648d9d43f32ec0d963"/>
+<keyword name="t1" id="AiApikeyDialog::t1_a43131db7183d9fa7134b22e87ab7df52" ref="class_ai_apikey_dialog.html#a43131db7183d9fa7134b22e87ab7df52"/>
 <keyword name="t1" id="CreditsDialog::t1_a5bc7c076594c82949a1d38f899604a9a" ref="class_credits_dialog.html#a5bc7c076594c82949a1d38f899604a9a"/>
-<keyword name="t1" id="RescanWarning::t1_abe637228fd0b7515a1d262b46c0683fe" ref="class_rescan_warning.html#abe637228fd0b7515a1d262b46c0683fe"/>
-<keyword name="t2" id="ApikeyDialog::t2_a60e2320f69884ac00c63a5ef813c572f" ref="class_apikey_dialog.html#a60e2320f69884ac00c63a5ef813c572f"/>
+<keyword name="t1" id="MapApikeyDialog::t1_aad2f0d6d209fe7356072754ba39917e1" ref="class_map_apikey_dialog.html#aad2f0d6d209fe7356072754ba39917e1"/>
+<keyword name="t1" id="QuitWarningDialog::t1_a73f629a65e870d0c0b45c15224ce7541" ref="class_quit_warning_dialog.html#a73f629a65e870d0c0b45c15224ce7541"/>
+<keyword name="t1" id="RescanWarningDialog::t1_a66d664bd57f3fed217872d4ef147bfc8" ref="class_rescan_warning_dialog.html#a66d664bd57f3fed217872d4ef147bfc8"/>
+<keyword name="t2" id="AiApikeyDialog::t2_aafcf26da6355348efeb21167da641f19" ref="class_ai_apikey_dialog.html#aafcf26da6355348efeb21167da641f19"/>
 <keyword name="t2" id="CreditsDialog::t2_aaff5bedb86c49f807422c374ac218fdf" ref="class_credits_dialog.html#aaff5bedb86c49f807422c374ac218fdf"/>
-<keyword name="t2" id="RescanWarning::t2_a21bf376effbaf167249f0af4325faee8" ref="class_rescan_warning.html#a21bf376effbaf167249f0af4325faee8"/>
-<keyword name="t3" id="ApikeyDialog::t3_a102551dfb1f77889b1068af850ea82b2" ref="class_apikey_dialog.html#a102551dfb1f77889b1068af850ea82b2"/>
+<keyword name="t2" id="MapApikeyDialog::t2_aebcb70b8dd0f543a33f111bd36c652cf" ref="class_map_apikey_dialog.html#aebcb70b8dd0f543a33f111bd36c652cf"/>
+<keyword name="t2" id="QuitWarningDialog::t2_ac0fbeebb9725d26284d2e366187235d6" ref="class_quit_warning_dialog.html#ac0fbeebb9725d26284d2e366187235d6"/>
+<keyword name="t2" id="RescanWarningDialog::t2_a38d6815a18997269e9e461a55610e4e6" ref="class_rescan_warning_dialog.html#a38d6815a18997269e9e461a55610e4e6"/>
+<keyword name="t3" id="AiApikeyDialog::t3_a6ead3a6a2d537183a48aed19efa8ab25" ref="class_ai_apikey_dialog.html#a6ead3a6a2d537183a48aed19efa8ab25"/>
 <keyword name="t3" id="CreditsDialog::t3_a2f36c8775d70205e0290ba8d5292360b" ref="class_credits_dialog.html#a2f36c8775d70205e0290ba8d5292360b"/>
-<keyword name="t4" id="ApikeyDialog::t4_a005fad7191b042480690093c4af61a7a" ref="class_apikey_dialog.html#a005fad7191b042480690093c4af61a7a"/>
+<keyword name="t3" id="MapApikeyDialog::t3_acc6d46fd70f9fc868abf4883a5d62935" ref="class_map_apikey_dialog.html#acc6d46fd70f9fc868abf4883a5d62935"/>
+<keyword name="t4" id="AiApikeyDialog::t4_a6cb5a6615bd782f26a4984a8216cb88b" ref="class_ai_apikey_dialog.html#a6cb5a6615bd782f26a4984a8216cb88b"/>
 <keyword name="t4" id="CreditsDialog::t4_ab7aeb2139552d34b082c8070b20d1322" ref="class_credits_dialog.html#ab7aeb2139552d34b082c8070b20d1322"/>
-<keyword name="t5" id="ApikeyDialog::t5_aa7f432faeac5b3c4ace4e64fdb139570" ref="class_apikey_dialog.html#aa7f432faeac5b3c4ace4e64fdb139570"/>
+<keyword name="t4" id="MapApikeyDialog::t4_a1dccee404cc4a843a487fbbed32140b6" ref="class_map_apikey_dialog.html#a1dccee404cc4a843a487fbbed32140b6"/>
+<keyword name="t5" id="AiApikeyDialog::t5_a1012f9bc052630f64c4b419045641dfc" ref="class_ai_apikey_dialog.html#a1012f9bc052630f64c4b419045641dfc"/>
 <keyword name="t5" id="CreditsDialog::t5_a4dc551bdc0559b1ce614e54e14ed56f0" ref="class_credits_dialog.html#a4dc551bdc0559b1ce614e54e14ed56f0"/>
-<keyword name="t6" id="ApikeyDialog::t6_ad8f2978559722b57c8caa58d432dd610" ref="class_apikey_dialog.html#ad8f2978559722b57c8caa58d432dd610"/>
-<keyword name="t7" id="ApikeyDialog::t7_a289c5b3ccbd9c3047bf55585d3c379bd" ref="class_apikey_dialog.html#a289c5b3ccbd9c3047bf55585d3c379bd"/>
-<keyword name="t8" id="ApikeyDialog::t8_a0ff7f51ce108e4af07abe2110646b407" ref="class_apikey_dialog.html#a0ff7f51ce108e4af07abe2110646b407"/>
-<keyword name="t9" id="ApikeyDialog::t9_a750843e5f4f8037a8dcd1b74922d1fb0" ref="class_apikey_dialog.html#a750843e5f4f8037a8dcd1b74922d1fb0"/>
+<keyword name="t5" id="MapApikeyDialog::t5_a8fa6c3278cea1ba5b3e69c73e674fda6" ref="class_map_apikey_dialog.html#a8fa6c3278cea1ba5b3e69c73e674fda6"/>
+<keyword name="t6" id="AiApikeyDialog::t6_a7482ebcd6389153d40977e8ad60ba3b2" ref="class_ai_apikey_dialog.html#a7482ebcd6389153d40977e8ad60ba3b2"/>
+<keyword name="t6" id="CreditsDialog::t6_afd8a51371aba820f9d34ae09624b8d33" ref="class_credits_dialog.html#afd8a51371aba820f9d34ae09624b8d33"/>
+<keyword name="t6" id="MapApikeyDialog::t6_a728956514ae0a5fcbbc4742785b373dd" ref="class_map_apikey_dialog.html#a728956514ae0a5fcbbc4742785b373dd"/>
+<keyword name="t7" id="AiApikeyDialog::t7_a717f8529aafe005fce099faff52c6229" ref="class_ai_apikey_dialog.html#a717f8529aafe005fce099faff52c6229"/>
+<keyword name="t7" id="CreditsDialog::t7_a497d0aea30f804d36429dc8972d2aa21" ref="class_credits_dialog.html#a497d0aea30f804d36429dc8972d2aa21"/>
+<keyword name="t7" id="MapApikeyDialog::t7_ac2e6f01a9f28c7d75d3e3124af78a3fb" ref="class_map_apikey_dialog.html#ac2e6f01a9f28c7d75d3e3124af78a3fb"/>
+<keyword name="t8" id="AiApikeyDialog::t8_a99f9ebabbac88a683d9f0e70b4ca869a" ref="class_ai_apikey_dialog.html#a99f9ebabbac88a683d9f0e70b4ca869a"/>
+<keyword name="t8" id="MapApikeyDialog::t8_a39a22f449baa5016da93a14e5186128c" ref="class_map_apikey_dialog.html#a39a22f449baa5016da93a14e5186128c"/>
+<keyword name="t9" id="AiApikeyDialog::t9_a5960464a02ea5880995d86aa299a0f92" ref="class_ai_apikey_dialog.html#a5960464a02ea5880995d86aa299a0f92"/>
+<keyword name="t9" id="MapApikeyDialog::t9_a0b7fcf4777e51c8bf378c05023c70338" ref="class_map_apikey_dialog.html#a0b7fcf4777e51c8bf378c05023c70338"/>
 <keyword name="t_details" id="AboutDialog::t_details_a03d9881dcc0e8c344eb20a09092d4571" ref="class_about_dialog.html#a03d9881dcc0e8c344eb20a09092d4571"/>
 <keyword name="tabbedPage" id="Main::tabbedPage_a3994eabf899973374689e40d9deb48d7" ref="class_main.html#a3994eabf899973374689e40d9deb48d7"/>
 <keyword name="tabFrameGlobalTags" id="Main::tabFrameGlobalTags_a808b0b55bfd46ccf207d05db4ee86289" ref="class_main.html#a808b0b55bfd46ccf207d05db4ee86289"/>
+<keyword name="tabTextColor" id="Style::tabTextColor_ac321fe0a4fa9c6091a726c470104d70b" ref="class_style.html#ac321fe0a4fa9c6091a726c470104d70b"/>
+<keyword name="tagDescription" id="GlobalTag::tagDescription_a9c028f5bb26f6c47fae3f987a423b771" ref="class_global_tag.html#a9c028f5bb26f6c47fae3f987a423b771"/>
+<keyword name="tagName" id="GlobalTag::tagName_a404ef7f98d51d21e83e52701494a029e" ref="class_global_tag.html#a404ef7f98d51d21e83e52701494a029e"/>
+<keyword name="tagSuggestionRepeater" id="ZoneSuggestedTagsForm::tagSuggestionRepeater_a654c2acc79ba903e572b72777ea119db" ref="class_zone_suggested_tags_form.html#a654c2acc79ba903e572b72777ea119db"/>
 <keyword name="target" id="Suggestion::target_ac3b42e1b81fb69adfb3ad0334b80fe1e" ref="struct_suggestion.html#ac3b42e1b81fb69adfb3ad0334b80fe1e"/>
 <keyword name="target" id="Chips::target_a4fd70908a8c2a5512af1cf0068e61d20" ref="class_chips.html#a4fd70908a8c2a5512af1cf0068e61d20"/>
 <keyword name="targetName" id="Chips::targetName_ae3b1cb2195780ae3057bda1bca9b2ff6" ref="class_chips.html#ae3b1cb2195780ae3057bda1bca9b2ff6"/>
@@ -1412,8 +1736,8 @@
 <keyword name="topMargin" id="Chips::topMargin_ad762f22bce92fc0d8c1773b01cc1771f" ref="class_chips.html#ad762f22bce92fc0d8c1773b01cc1771f"/>
 <keyword name="toReadableDateTime(const QVariant value)" id="Utilities::toReadableDateTime_ae08d27f825de4f51f5523f6f014cf597" ref="class_utilities.html#ae08d27f825de4f51f5523f6f014cf597"/>
 <keyword name="toStandardDateTime(const QVariant value)" id="Utilities::toStandardDateTime_a11c06c3910d1553d791258b060d436d8" ref="class_utilities.html#a11c06c3910d1553d791258b060d436d8"/>
+<keyword name="tutorialPage" id="Main::tutorialPage_ae5478a9eb9286de56f56a19f11bb7c56" ref="class_main.html#ae5478a9eb9286de56f56a19f11bb7c56"/>
 <keyword name="UndatedPhotoProxyModel(QObject *parent=nullptr)" id="UndatedPhotoProxyModel::UndatedPhotoProxyModel_a427c0ae3d7123c5d2436f3905d4d4219" ref="class_undated_photo_proxy_model.html#a427c0ae3d7123c5d2436f3905d4d4219"/>
-<keyword name="updatePhotoKeyword(const QString &amp;keyword, int index)" id="PhotoModel::updatePhotoKeyword_a2288f782a336bc413295e6bc4be0f5ec" ref="class_photo_model.html#a2288f782a336bc413295e6bc4be0f5ec"/>
 <keyword name="usage" id="ZonePreview::usage_aac9591a5dcd80375b7e844fbb2daaad6" ref="class_zone_preview.html#aac9591a5dcd80375b7e844fbb2daaad6"/>
 <keyword name="usage1" id="ZoneGlobalTagsForm::usage1_a8846263fa65ecd0c3123a0de62bea38d" ref="class_zone_global_tags_form.html#a8846263fa65ecd0c3123a0de62bea38d"/>
 <keyword name="usage2" id="ZoneGlobalTagsForm::usage2_ab641d4ad383a9b539da34190b4f25146" ref="class_zone_global_tags_form.html#ab641d4ad383a9b539da34190b4f25146"/>
@@ -1421,9 +1745,13 @@
 <keyword name="Utilities()" id="Utilities::Utilities_ab1676c9ce35cf347a73d16f1094e1271" ref="class_utilities.html#ab1676c9ce35cf347a73d16f1094e1271"/>
 <keyword name="version" id="AboutDialog::version_a01aaf11038c1104c9ca9a09bda4c80d2" ref="class_about_dialog.html#a01aaf11038c1104c9ca9a09bda4c80d2"/>
 <keyword name="writeArgsFile()" id="ExifReadTask::writeArgsFile_a209baeebef9ede8dafc98844324bbaa9" ref="class_exif_read_task.html#a209baeebef9ede8dafc98844324bbaa9"/>
+<keyword name="writeError" id="Photo::writeError_a9aafc2bc1ed9f0ede911519f006c4a3a" ref="struct_photo.html#a9aafc2bc1ed9f0ede911519f006c4a3a"/>
+<keyword name="writeErrorOccurred(const QString &amp;filename, const QString &amp;message)" id="PhotoModel::writeErrorOccurred_ad84cf3bafbea60e8429873f3543deeed" ref="class_photo_model.html#ad84cf3bafbea60e8429873f3543deeed"/>
 <keyword name="writeProgress" id="PhotoModel::writeProgress_a0b76a1d12f7232ac14434c6a764d15e7" ref="class_photo_model.html#a0b76a1d12f7232ac14434c6a764d15e7"/>
 <keyword name="writeProgressChanged()" id="PhotoModel::writeProgressChanged_a5df97061b628ed74528bafb4764d8f71" ref="class_photo_model.html#a5df97061b628ed74528bafb4764d8f71"/>
 <keyword name="zoneBackgroundColor" id="Style::zoneBackgroundColor_a91ee7cc27aeb087d2d8999b1e0089cd3" ref="class_style.html#a91ee7cc27aeb087d2d8999b1e0089cd3"/>
+<keyword name="zoneGeolocMap" id="TabFramePhotoMap::zoneGeolocMap_a5d4283519cf3797cd159b6d270ba133e" ref="class_tab_frame_photo_map.html#a5d4283519cf3797cd159b6d270ba133e"/>
+<keyword name="zoneGpx" id="TabFrameGPX::zoneGpx_a76732e6a612af44c940014651b06977d" ref="class_tab_frame_g_p_x.html#a76732e6a612af44c940014651b06977d"/>
 <keyword name="zonePreview" id="TabFramePhotoPreview::zonePreview_acbb6f021c794fa3a8d29b0216adf1fed" ref="class_tab_frame_photo_preview.html#acbb6f021c794fa3a8d29b0216adf1fed"/>
 <keyword name="zoneSuggestedLocations" id="TabFramePhotoMap::zoneSuggestedLocations_ac903220ca750f18401dd2f1987f8a87a" ref="class_tab_frame_photo_map.html#ac903220ca750f18401dd2f1987f8a87a"/>
 <keyword name="zoomTowardsCursor" id="MapView::zoomTowardsCursor_af1384361524f4308e1d06d7bfae98092" ref="class_map_view.html#af1384361524f4308e1d06d7bfae98092"/>
@@ -1433,6 +1761,8 @@
 <file>_exif_read_task_8h_source.html</file>
 <file>_exif_write_task_8h_source.html</file>
 <file>_geocode_wrapper_8h_source.html</file>
+<file>_gpx_model_8h_source.html</file>
+<file>_landmark_wrapper_8h_source.html</file>
 <file>_on_the_map_proxy_model_8h_source.html</file>
 <file>_photo_8h_source.html</file>
 <file>_photo_model_8h_source.html</file>
@@ -1448,9 +1778,9 @@
 <file>class_about_dialog-members.html</file>
 <file>class_about_dialog.html</file>
 <file>class_about_dialog.png</file>
-<file>class_apikey_dialog-members.html</file>
-<file>class_apikey_dialog.html</file>
-<file>class_apikey_dialog.png</file>
+<file>class_ai_apikey_dialog-members.html</file>
+<file>class_ai_apikey_dialog.html</file>
+<file>class_ai_apikey_dialog.png</file>
 <file>class_application_logo-members.html</file>
 <file>class_application_logo.html</file>
 <file>class_application_logo.png</file>
@@ -1475,24 +1805,50 @@
 <file>class_geocode_wrapper-members.html</file>
 <file>class_geocode_wrapper.html</file>
 <file>class_geocode_wrapper.png</file>
+<file>class_ghost_chip-members.html</file>
+<file>class_ghost_chip.html</file>
+<file>class_ghost_chip.png</file>
+<file>class_global_tag-members.html</file>
+<file>class_global_tag.html</file>
+<file>class_global_tag.png</file>
+<file>class_gpx_model-members.html</file>
+<file>class_gpx_model.html</file>
+<file>class_gpx_model.png</file>
+<file>class_imagette_popup-members.html</file>
+<file>class_imagette_popup.html</file>
+<file>class_imagette_popup.png</file>
 <file>class_imagettes_list_view-members.html</file>
 <file>class_imagettes_list_view.html</file>
 <file>class_imagettes_list_view.png</file>
 <file>class_keywords_repeater-members.html</file>
 <file>class_keywords_repeater.html</file>
 <file>class_keywords_repeater.png</file>
+<file>class_landmark_wrapper-members.html</file>
+<file>class_landmark_wrapper.html</file>
+<file>class_landmark_wrapper.png</file>
+<file>class_list_view_g_p_xfiles-members.html</file>
+<file>class_list_view_g_p_xfiles.html</file>
+<file>class_list_view_g_p_xfiles.png</file>
 <file>class_main-members.html</file>
 <file>class_main.html</file>
 <file>class_main.png</file>
 <file>class_main_menu_bar-members.html</file>
 <file>class_main_menu_bar.html</file>
 <file>class_main_menu_bar.png</file>
+<file>class_map_apikey_dialog-members.html</file>
+<file>class_map_apikey_dialog.html</file>
+<file>class_map_apikey_dialog.png</file>
 <file>class_map_view-members.html</file>
 <file>class_map_view.html</file>
 <file>class_map_view.png</file>
 <file>class_model_folder_list-members.html</file>
 <file>class_model_folder_list.html</file>
 <file>class_model_folder_list.png</file>
+<file>class_model_gpx_list.html</file>
+<file>class_model_gpx_list.png</file>
+<file>class_my_tab_button-members.html</file>
+<file>class_my_tab_button.html</file>
+<file>class_my_tab_button.png</file>
 <file>class_on_the_map_proxy_model-members.html</file>
 <file>class_on_the_map_proxy_model.html</file>
 <file>class_on_the_map_proxy_model.png</file>
@@ -1505,9 +1861,6 @@
 <file>class_photo_model_wrapper-members.html</file>
 <file>class_photo_model_wrapper.html</file>
 <file>class_photo_model_wrapper.png</file>
-<file>class_popup_imagette-members.html</file>
-<file>class_popup_imagette.html</file>
-<file>class_popup_imagette.png</file>
 <file>class_popup_keywords-members.html</file>
 <file>class_popup_keywords.html</file>
 <file>class_popup_keywords.png</file>
@@ -1520,12 +1873,18 @@
 <file>class_popup_settings_form-members.html</file>
 <file>class_popup_settings_form.html</file>
 <file>class_popup_settings_form.png</file>
-<file>class_rescan_warning-members.html</file>
-<file>class_rescan_warning.html</file>
-<file>class_rescan_warning.png</file>
+<file>class_quit_warning_dialog-members.html</file>
+<file>class_quit_warning_dialog.html</file>
+<file>class_quit_warning_dialog.png</file>
+<file>class_rescan_warning_dialog-members.html</file>
+<file>class_rescan_warning_dialog.html</file>
+<file>class_rescan_warning_dialog.png</file>
 <file>class_selected_photo_proxy_model-members.html</file>
 <file>class_selected_photo_proxy_model.html</file>
 <file>class_selected_photo_proxy_model.png</file>
+<file>class_snackbar-members.html</file>
+<file>class_snackbar.html</file>
+<file>class_snackbar.png</file>
 <file>class_style-members.html</file>
 <file>class_style.html</file>
 <file>class_style.png</file>
@@ -1541,6 +1900,9 @@
 <file>class_suggestion_repeater-members.html</file>
 <file>class_suggestion_repeater.html</file>
 <file>class_suggestion_repeater.png</file>
+<file>class_tab_frame_g_p_x-members.html</file>
+<file>class_tab_frame_g_p_x.html</file>
+<file>class_tab_frame_g_p_x.png</file>
 <file>class_tab_frame_global_tags.html</file>
 <file>class_tab_frame_global_tags.png</file>
 <file>class_tab_frame_photo_map-members.html</file>
@@ -1573,6 +1935,12 @@
 <file>class_toolbar_filters-members.html</file>
 <file>class_toolbar_filters.html</file>
 <file>class_toolbar_filters.png</file>
+<file>class_toolbar_gpx-members.html</file>
+<file>class_toolbar_gpx.html</file>
+<file>class_toolbar_gpx.png</file>
+<file>class_toolbar_gpx_form-members.html</file>
+<file>class_toolbar_gpx_form.html</file>
+<file>class_toolbar_gpx_form.png</file>
 <file>class_toolbar_map-members.html</file>
 <file>class_toolbar_map.html</file>
 <file>class_toolbar_map.png</file>
@@ -1585,6 +1953,9 @@
 <file>class_toolbar_principale_form-members.html</file>
 <file>class_toolbar_principale_form.html</file>
 <file>class_toolbar_principale_form.png</file>
+<file>class_tutorial_popup-members.html</file>
+<file>class_tutorial_popup.html</file>
+<file>class_tutorial_popup.png</file>
 <file>class_undated_photo_proxy_model-members.html</file>
 <file>class_undated_photo_proxy_model.html</file>
 <file>class_undated_photo_proxy_model.png</file>
@@ -1611,6 +1982,9 @@
 <file>class_zone_global_tags_form-members.html</file>
 <file>class_zone_global_tags_form.html</file>
 <file>class_zone_global_tags_form.png</file>
+<file>class_zone_gpx-members.html</file>
+<file>class_zone_gpx.html</file>
+<file>class_zone_gpx.png</file>
 <file>class_zone_photo-members.html</file>
 <file>class_zone_photo.html</file>
 <file>class_zone_photo.png</file>
@@ -1667,6 +2041,7 @@
 <file>functions_d.html</file>
 <file>functions_e.html</file>
 <file>functions_enum.html</file>
+<file>functions_eval.html</file>
 <file>functions_f.html</file>
 <file>functions_func.html</file>
 <file>functions_g.html</file>
@@ -1703,6 +2078,7 @@
 <file>functions_vars_s.html</file>
 <file>functions_vars_t.html</file>
 <file>functions_vars_u.html</file>
+<file>functions_vars_w.html</file>
 <file>functions_vars_z.html</file>
 <file>functions_w.html</file>
 <file>functions_z.html</file>
@@ -1726,6 +2102,7 @@
 <file>search/all_13.js</file>
 <file>search/all_14.js</file>
 <file>search/all_15.js</file>
+<file>search/all_16.js</file>
 <file>search/all_2.js</file>
 <file>search/all_3.js</file>
 <file>search/all_4.js</file>
@@ -1742,6 +2119,7 @@
 <file>search/all_f.js</file>
 <file>search/classes_0.js</file>
 <file>search/classes_1.js</file>
+<file>search/classes_10.js</file>
 <file>search/classes_2.js</file>
 <file>search/classes_3.js</file>
 <file>search/classes_4.js</file>
@@ -1755,10 +2133,15 @@
 <file>search/classes_c.js</file>
 <file>search/classes_d.js</file>
 <file>search/classes_e.js</file>
+<file>search/classes_f.js</file>
 <file>search/enums_0.js</file>
+<file>search/enumvalues_0.js</file>
+<file>search/enumvalues_1.js</file>
+<file>search/enumvalues_2.js</file>
 <file>search/functions_0.js</file>
 <file>search/functions_1.js</file>
 <file>search/functions_10.js</file>
+<file>search/functions_11.js</file>
 <file>search/functions_2.js</file>
 <file>search/functions_3.js</file>
 <file>search/functions_4.js</file>
@@ -1789,6 +2172,8 @@
 <file>search/properties_10.js</file>
 <file>search/properties_11.js</file>
 <file>search/properties_12.js</file>
+<file>search/properties_13.js</file>
+<file>search/properties_14.js</file>
 <file>search/properties_2.js</file>
 <file>search/properties_3.js</file>
 <file>search/properties_4.js</file>
@@ -1812,6 +2197,7 @@
 <file>search/variables_11.js</file>
 <file>search/variables_12.js</file>
 <file>search/variables_13.js</file>
+<file>search/variables_14.js</file>
 <file>search/variables_2.js</file>
 <file>search/variables_3.js</file>
 <file>search/variables_4.js</file>
@@ -1826,6 +2212,10 @@
 <file>search/variables_d.js</file>
 <file>search/variables_e.js</file>
 <file>search/variables_f.js</file>
+<file>struct_gpx_file_info-members.html</file>
+<file>struct_gpx_file_info.html</file>
+<file>struct_gpx_track_point-members.html</file>
+<file>struct_gpx_track_point.html</file>
 <file>struct_photo-members.html</file>
 <file>struct_photo.html</file>
 <file>struct_suggestion-members.html</file>

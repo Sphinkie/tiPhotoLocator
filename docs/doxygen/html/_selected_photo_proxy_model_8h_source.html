@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -114,21 +114,23 @@ $(function(){initNavTree('_selected_photo_proxy_model_8h_source.html','',''); })
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// Méthodes pouvant être appelées depuis QML</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// -----------------------------------------------------</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Q_INVOKABLE <span class="keywordtype">int</span> <a class="code hl_function" href="class_selected_photo_proxy_model.html#abb05183baa0c9f88d72acd95adb64050">getSourceIndex</a>(<span class="keywordtype">int</span> row);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_selected_photo_proxy_model.html#a1aa20135c6b1f287c3fc4008c9f9102d">setFilterEnabled</a>(<span class="keywordtype">bool</span> enabled);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>signals:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_selected_photo_proxy_model.html#ab0bdb4985d3268f46d27076cf385d783">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_selected_photo_proxy_model.html#ab0bdb4985d3268f46d27076cf385d783">filterEnabledChanged</a>();  </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Q_INVOKABLE <span class="keywordtype">int</span> <a class="code hl_function" href="class_selected_photo_proxy_model.html#a1952d19843c3ad03c3f5b71bf0ae9c9d">getProxyIndex</a>(<span class="keywordtype">int</span> sourceRow);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_selected_photo_proxy_model.html#a1aa20135c6b1f287c3fc4008c9f9102d">setFilterEnabled</a>(<span class="keywordtype">bool</span> enabled);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>signals:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_selected_photo_proxy_model.html#ab0bdb4985d3268f46d27076cf385d783">   30</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_selected_photo_proxy_model.html#ab0bdb4985d3268f46d27076cf385d783">filterEnabledChanged</a>();  </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
 </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif </span><span class="comment">// SELECTEDPHOTOPROXYMODEL_H</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif </span><span class="comment">// SELECTEDPHOTOPROXYMODEL_H</span></div>
+<div class="ttc" id="aclass_selected_photo_proxy_model_html_a1952d19843c3ad03c3f5b71bf0ae9c9d"><div class="ttname"><a href="class_selected_photo_proxy_model.html#a1952d19843c3ad03c3f5b71bf0ae9c9d">SelectedPhotoProxyModel::getProxyIndex</a></div><div class="ttdeci">Q_INVOKABLE int getProxyIndex(int sourceRow)</div><div class="ttdoc">Cette fonction renvoie l&#39;indice dans ce proxyModel pour un indice du modèle source donné.</div><div class="ttdef"><b>Definition</b> SelectedPhotoProxyModel.cpp:51</div></div>
 <div class="ttc" id="aclass_selected_photo_proxy_model_html_a1aa20135c6b1f287c3fc4008c9f9102d"><div class="ttname"><a href="class_selected_photo_proxy_model.html#a1aa20135c6b1f287c3fc4008c9f9102d">SelectedPhotoProxyModel::setFilterEnabled</a></div><div class="ttdeci">void setFilterEnabled(bool enabled)</div><div class="ttdoc">Ce slot active ou désactive le filtrage par le proxyModel.</div><div class="ttdef"><b>Definition</b> SelectedPhotoProxyModel.cpp:34</div></div>
 <div class="ttc" id="aclass_selected_photo_proxy_model_html_a54094dbdfabf593edc0d881d1b197d84"><div class="ttname"><a href="class_selected_photo_proxy_model.html#a54094dbdfabf593edc0d881d1b197d84">SelectedPhotoProxyModel::SelectedPhotoProxyModel</a></div><div class="ttdeci">SelectedPhotoProxyModel(QObject *parent=nullptr)</div><div class="ttdoc">Contructeur. Pour ce proxy modèle assez simple, on utilise les fonctions basiques fournies par Qt....</div><div class="ttdef"><b>Definition</b> SelectedPhotoProxyModel.cpp:13</div></div>
 <div class="ttc" id="aclass_selected_photo_proxy_model_html_ab0bdb4985d3268f46d27076cf385d783"><div class="ttname"><a href="class_selected_photo_proxy_model.html#ab0bdb4985d3268f46d27076cf385d783">SelectedPhotoProxyModel::filterEnabledChanged</a></div><div class="ttdeci">void filterEnabledChanged()</div><div class="ttdoc">Signal émis quand l&#39;état du filtrage change.</div></div>
-<div class="ttc" id="aclass_selected_photo_proxy_model_html_abb05183baa0c9f88d72acd95adb64050"><div class="ttname"><a href="class_selected_photo_proxy_model.html#abb05183baa0c9f88d72acd95adb64050">SelectedPhotoProxyModel::getSourceIndex</a></div><div class="ttdeci">Q_INVOKABLE int getSourceIndex(int row)</div><div class="ttdoc">Cette fonction renvoie l&#39;indice de la Photo dans le modèle source.</div><div class="ttdef"><b>Definition</b> SelectedPhotoProxyModel.cpp:51</div></div>
+<div class="ttc" id="aclass_selected_photo_proxy_model_html_abb05183baa0c9f88d72acd95adb64050"><div class="ttname"><a href="class_selected_photo_proxy_model.html#abb05183baa0c9f88d72acd95adb64050">SelectedPhotoProxyModel::getSourceIndex</a></div><div class="ttdeci">Q_INVOKABLE int getSourceIndex(int row)</div><div class="ttdoc">Cette fonction renvoie l&#39;indice de la Photo dans le modèle source.</div><div class="ttdef"><b>Definition</b> SelectedPhotoProxyModel.cpp:63</div></div>
 <div class="ttc" id="aclass_selected_photo_proxy_model_html_ac975bdb37c62408e4f69e06050c9a9a9"><div class="ttname"><a href="class_selected_photo_proxy_model.html#ac975bdb37c62408e4f69e06050c9a9a9">SelectedPhotoProxyModel::filterEnabled</a></div><div class="ttdeci">bool filterEnabled</div><div class="ttdoc">filterEnabled manages the status of the filtering.</div><div class="ttdef"><b>Definition</b> SelectedPhotoProxyModel.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

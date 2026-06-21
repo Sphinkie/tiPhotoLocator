@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -95,7 +95,7 @@ $(function(){initNavTree('class_tab_frame_photo_map.html','','class_tab_frame_ph
 </div><!--header-->
 <div class="contents">
 
-<p>QML: Composition de la page de l'onglet "MAP". [ ToolBar de Map ] | Map |[zone1] | |[zone2].  
+<p>QML: Composition de la page de l'onglet "MAP". | ToolBarMap | | <a class="el" href="class_map_view.html" title="Affichage d&#39;une carte OpenStreetMap.">MapView</a> | zone tags | | | zone sugg |.  
  <a href="#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de TabFramePhotoMap:</div>
@@ -125,12 +125,15 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>columns</b></td></tr>
 <tr class="memitem:ad78ac3577fe11997cc5267d33d754f05" id="r_ad78ac3577fe11997cc5267d33d754f05"><td class="memItemLeft" align="right" valign="top"><a id="ad78ac3577fe11997cc5267d33d754f05" name="ad78ac3577fe11997cc5267d33d754f05"></a>
 <a class="el" href="class_map_view.html">MapView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mapView</b></td></tr>
 <tr class="memdesc:ad78ac3577fe11997cc5267d33d754f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">La carte est haute comme deux zones (controleur avec vue). <br /></td></tr>
+<tr class="memitem:a5d4283519cf3797cd159b6d270ba133e" id="r_a5d4283519cf3797cd159b6d270ba133e"><td class="memItemLeft" align="right" valign="top"><a id="a5d4283519cf3797cd159b6d270ba133e" name="a5d4283519cf3797cd159b6d270ba133e"></a>
+<a class="el" href="class_zone_geoloc.html">ZoneGeoloc</a>&#160;</td><td class="memItemRight" valign="bottom"><b>zoneGeolocMap</b></td></tr>
+<tr class="memdesc:a5d4283519cf3797cd159b6d270ba133e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_zone.html">Zone</a> 1: Affichage des infos supplémentaires (coords GPS, etc) <br /></td></tr>
 <tr class="memitem:ac903220ca750f18401dd2f1987f8a87a" id="r_ac903220ca750f18401dd2f1987f8a87a"><td class="memItemLeft" align="right" valign="top"><a id="ac903220ca750f18401dd2f1987f8a87a" name="ac903220ca750f18401dd2f1987f8a87a"></a>
 <a class="el" href="class_zone_suggested_locations.html">ZoneSuggestedLocations</a>&#160;</td><td class="memItemRight" valign="bottom"><b>zoneSuggestedLocations</b></td></tr>
-<tr class="memdesc:ac903220ca750f18401dd2f1987f8a87a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_zone.html">Zone</a> 2: Affichage du bouton "chercher" et des suggestions. <br /></td></tr>
+<tr class="memdesc:ac903220ca750f18401dd2f1987f8a87a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_zone.html">Zone</a> 2: Affichage du bouton "chercher geotags" et des suggestions. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>QML: Composition de la page de l'onglet "MAP". [ ToolBar de Map ] | Map |[zone1] | |[zone2]. </p>
+<div class="textblock"><p>QML: Composition de la page de l'onglet "MAP". | ToolBarMap | | <a class="el" href="class_map_view.html" title="Affichage d&#39;une carte OpenStreetMap.">MapView</a> | zone tags | | | zone sugg |. </p>
 <hr  />
  </div><hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>Sources/Qml/Components/<b>TabFramePhotoMap.qml</b></li>

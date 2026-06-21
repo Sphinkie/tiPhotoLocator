@@ -1,7 +1,7 @@
 var searchData=
 [
   ['imageheight_0',['imageHeight',['../struct_photo.html#a4555e7bf8da94eb11398e0948ab6c3d2',1,'Photo']]],
-  ['imagepreviewpopup_1',['imagePreviewPopup',['../class_main.html#ac08a4a5f2dc3d5ea2151e59d811cb02a',1,'Main']]],
+  ['imagepreviewpopup_1',['imagePreviewPopup',['../class_main.html#a22cce10650b6af0eb10f3e992db538d9',1,'Main']]],
   ['imagettes_2',['imagettes',['../class_main.html#af3dfb2a32b39c98a991299276fc2b67a',1,'Main']]],
   ['imageurl_3',['imageUrl',['../struct_photo.html#a201e9224f059933d60838a7fe331646d',1,'Photo']]],
   ['imagewidth_4',['imageWidth',['../struct_photo.html#a47567d8ecc3f845ae1846903113d625b',1,'Photo']]],
@@ -12,5 +12,6 @@ var searchData=
   ['interval_9',['interval',['../class_timer_load_folder.html#a1906929509d93e2b406fd5f8341b762d',1,'TimerLoadFolder']]],
   ['iscurrent_10',['isCurrent',['../struct_photo.html#abf2a8150f9347ce6870ec0fafac524fa',1,'Photo']]],
   ['ismarker_11',['isMarker',['../struct_photo.html#accaf8898f12c82d9872c555309d563b1',1,'Photo']]],
-  ['isselected_12',['isSelected',['../struct_photo.html#a8e391469cda515a3aacb6edafa2a8254',1,'Photo']]]
+  ['isontrack_12',['isOnTrack',['../struct_photo.html#a463d3ce695014135930aa012e926a887',1,'Photo']]],
+  ['isselected_13',['isSelected',['../struct_photo.html#a8e391469cda515a3aacb6edafa2a8254',1,'Photo']]]
 ];

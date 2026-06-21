@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -95,7 +95,7 @@ $(function(){initNavTree('class_zone_geoloc.html','','class_zone_geoloc-members'
 </div><!--header-->
 <div class="contents">
 
-<p>Controlleur de la zone d'affichage des données géographiques. Gère les boutons des <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a>.  
+<p>Controlleur de la zone d'affichage des données géographiques (onglet MAP). Gère aussi les boutons des <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a> de la zone.  
  <a href="#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de ZoneGeoloc:</div>
@@ -133,16 +133,16 @@ var chipCity revertArea&#160;</td><td class="memItemRight" valign="bottom"><b>on
 var chipCountry revertArea&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
 <tr class="memitem:a3a4ecb0766ede727f6d1623b74237c42" id="r_a3a4ecb0766ede727f6d1623b74237c42"><td class="memItemLeft" align="right" valign="top"><a id="a3a4ecb0766ede727f6d1623b74237c42" name="a3a4ecb0766ede727f6d1623b74237c42"></a>
 var chipLocation revertArea&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
-<tr class="memitem:a7e9867da90f6527511dfc8f9c87a55d6" id="r_a7e9867da90f6527511dfc8f9c87a55d6"><td class="memItemLeft" align="right" valign="top"><a id="a7e9867da90f6527511dfc8f9c87a55d6" name="a7e9867da90f6527511dfc8f9c87a55d6"></a>
-var chipLat deleteArea&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
-<tr class="memitem:a0ffc403277a262297d64d29be3cf6855" id="r_a0ffc403277a262297d64d29be3cf6855"><td class="memItemLeft" align="right" valign="top"><a id="a0ffc403277a262297d64d29be3cf6855" name="a0ffc403277a262297d64d29be3cf6855"></a>
-var chipLong deleteArea&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
-<tr class="memitem:ad26b8c6066243cddac1ddd24045efc7b" id="r_ad26b8c6066243cddac1ddd24045efc7b"><td class="memItemLeft" align="right" valign="top"><a id="ad26b8c6066243cddac1ddd24045efc7b" name="ad26b8c6066243cddac1ddd24045efc7b"></a>
-var chipCity deleteArea&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
-<tr class="memitem:acb0eee929b6ff7246989c8018e563d30" id="r_acb0eee929b6ff7246989c8018e563d30"><td class="memItemLeft" align="right" valign="top"><a id="acb0eee929b6ff7246989c8018e563d30" name="acb0eee929b6ff7246989c8018e563d30"></a>
-var chipCountry deleteArea&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
-<tr class="memitem:a0559449c603dca9957b79c6dbad49821" id="r_a0559449c603dca9957b79c6dbad49821"><td class="memItemLeft" align="right" valign="top"><a id="a0559449c603dca9957b79c6dbad49821" name="a0559449c603dca9957b79c6dbad49821"></a>
-var chipLocation deleteArea&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
+<tr class="memitem:a4cef68670cfda9817abf1b1c8712cd87" id="r_a4cef68670cfda9817abf1b1c8712cd87"><td class="memItemLeft" align="right" valign="top"><a id="a4cef68670cfda9817abf1b1c8712cd87" name="a4cef68670cfda9817abf1b1c8712cd87"></a>
+var chipLat&#160;</td><td class="memItemRight" valign="bottom"><b>onDeleteClicked</b></td></tr>
+<tr class="memitem:ab3ed0aecaf63a44c5d53c8f8861b5c10" id="r_ab3ed0aecaf63a44c5d53c8f8861b5c10"><td class="memItemLeft" align="right" valign="top"><a id="ab3ed0aecaf63a44c5d53c8f8861b5c10" name="ab3ed0aecaf63a44c5d53c8f8861b5c10"></a>
+var chipLong&#160;</td><td class="memItemRight" valign="bottom"><b>onDeleteClicked</b></td></tr>
+<tr class="memitem:a297da39f36978d2a829bced4f380f3ba" id="r_a297da39f36978d2a829bced4f380f3ba"><td class="memItemLeft" align="right" valign="top"><a id="a297da39f36978d2a829bced4f380f3ba" name="a297da39f36978d2a829bced4f380f3ba"></a>
+var chipCity&#160;</td><td class="memItemRight" valign="bottom"><b>onDeleteClicked</b></td></tr>
+<tr class="memitem:ad11ed825736da6715505f5290c3ca5d6" id="r_ad11ed825736da6715505f5290c3ca5d6"><td class="memItemLeft" align="right" valign="top"><a id="ad11ed825736da6715505f5290c3ca5d6" name="ad11ed825736da6715505f5290c3ca5d6"></a>
+var chipCountry&#160;</td><td class="memItemRight" valign="bottom"><b>onDeleteClicked</b></td></tr>
+<tr class="memitem:acf92d3f33a003b13205c2c8213eb40cf" id="r_acf92d3f33a003b13205c2c8213eb40cf"><td class="memItemLeft" align="right" valign="top"><a id="acf92d3f33a003b13205c2c8213eb40cf" name="acf92d3f33a003b13205c2c8213eb40cf"></a>
+var chipLocation&#160;</td><td class="memItemRight" valign="bottom"><b>onDeleteClicked</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Membres hérités additionnels</h2></td></tr>
@@ -168,7 +168,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>txtZone</b></td></t
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>dropable</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Controlleur de la zone d'affichage des données géographiques. Gère les boutons des <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a>. </p>
+<div class="textblock"><p>Controlleur de la zone d'affichage des données géographiques (onglet MAP). Gère aussi les boutons des <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a> de la zone. </p>
 <hr  />
  </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
 <a id="abd927a6d63bd1826940eda7227fc76d2" name="abd927a6d63bd1826940eda7227fc76d2"></a>
@@ -191,7 +191,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>dropable</b></td></tr
 </table>
 </div><div class="memdoc">
 <hr  />
-<p> On efface les coordonnées GPS de la photo sélectionnée. </p>
+<p> On efface les coordonnées GPS de la photo sélectionnée. Changer le State va déclencher l'animation de disparition. </p>
 
 </div>
 </div>

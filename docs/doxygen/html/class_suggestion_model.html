@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -145,6 +145,8 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>folderLocation</b>
 <tr class="memdesc:af3345223f2aa9b5d563b9097271a1d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug function that print (in the console) one line of the model at every call.  <br /></td></tr>
 <tr class="memitem:adf99459a4600a0d0aa9c77858bfa23e8" id="r_adf99459a4600a0d0aa9c77858bfa23e8"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf99459a4600a0d0aa9c77858bfa23e8">clear</a> ()</td></tr>
 <tr class="memdesc:adf99459a4600a0d0aa9c77858bfa23e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all the items of the Model.  <br /></td></tr>
+<tr class="memitem:af2e3d7cd156362e409d8f83a1928e8a7" id="r_af2e3d7cd156362e409d8f83a1928e8a7"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2e3d7cd156362e409d8f83a1928e8a7">clearByCategory</a> (const QString &amp;category)</td></tr>
+<tr class="memdesc:af2e3d7cd156362e409d8f83a1928e8a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime toutes les suggestions dont la catégorie contient la chaîne passée en paramètre.  <br /></td></tr>
 <tr class="memitem:ab69e53e15dc298ad51df7b8ee3fbddcf" id="r_ab69e53e15dc298ad51df7b8ee3fbddcf"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab69e53e15dc298ad51df7b8ee3fbddcf">setDefaultDateFromFolder</a> (const QString &amp;folderUrl)</td></tr>
 <tr class="memdesc:ab69e53e15dc298ad51df7b8ee3fbddcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrait date, lieu et commentaires du nom du dossier et les ajoute comme suggestions globales. Format attendu : YYYY[-. ]MM[-. ]&lt;lieu&gt;[-. ](&lt;commentaires&gt;) Valeurs par défaut si la date est absente: date courante.  <br /></td></tr>
 <tr class="memitem:aea38923e1af3b5faee8ba4caccc8281f" id="r_aea38923e1af3b5faee8ba4caccc8281f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea38923e1af3b5faee8ba4caccc8281f">removeCurrentPhotoFromSuggestion</a> (const QModelIndex index)</td></tr>
@@ -390,6 +392,32 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_folderLocation</
 <p>Deletes all the items of the Model. </p>
 <hr  />
 <p>On utilise cette fonction quand on scanne un nouveau répertoire de photos. </p>
+
+</div>
+</div>
+<a id="af2e3d7cd156362e409d8f83a1928e8a7" name="af2e3d7cd156362e409d8f83a1928e8a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2e3d7cd156362e409d8f83a1928e8a7">&#9670;&#160;</a></span>clearByCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SuggestionModel::clearByCategory </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime toutes les suggestions dont la catégorie contient la chaîne passée en paramètre. </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>: la catégorie à supprimer, par exemple "geo". </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

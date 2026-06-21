@@ -1,6 +1,9 @@
 var class_photo_listview =
 [
     [ "activatePhoto", "class_photo_listview.html#a7b01aee094d18d20caa64d58e3525fe8", null ],
+    [ "navigateNext", "class_photo_listview.html#a0520e6601955f319aae33555ac9e76b3", null ],
+    [ "navigatePrev", "class_photo_listview.html#a494ba6003c39f426684eb6476a42b000", null ],
+    [ "navigateTo", "class_photo_listview.html#ad30f48f39753777de55a0f056f2ce470", null ],
     [ "circleIcon", "class_photo_listview.html#afe9ad0639bdc8df220e4d4c3e1e6b5fd", null ],
     [ "cityText", "class_photo_listview.html#ae447aac43304d79184cd885e670a3dc7", null ],
     [ "footer", "class_photo_listview.html#a208f5856a00e10931fc5efba6c6f8522", null ],

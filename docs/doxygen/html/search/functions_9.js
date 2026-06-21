@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['normalise_0',['normalise',['../class_utilities.html#afdd3b18e7db7c7b7d397fd7b3c7201ab',1,'Utilities']]]
+  ['matchcountchanged_0',['matchCountChanged',['../class_gpx_model.html#ae34c9156a1ec7175a959821e041531d8',1,'GpxModel']]],
+  ['matchphotos_1',['matchPhotos',['../class_gpx_model.html#a6da2032e71565f43d785145a05b86c83',1,'GpxModel']]]
 ];

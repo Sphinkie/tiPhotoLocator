@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -112,6 +112,10 @@ Graphe d'héritage de ZoneSuggestedLocationsForm:</div>
 Propriétés</h2></td></tr>
 <tr class="memitem:a1a89f3a97e7258d6e9452385a9055168" id="r_a1a89f3a97e7258d6e9452385a9055168"><td class="memItemLeft" align="right" valign="top"><a id="a1a89f3a97e7258d6e9452385a9055168" name="a1a89f3a97e7258d6e9452385a9055168"></a>
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_getinfo</b></td></tr>
+<tr class="memitem:abdd1898adbc3e0fd4e7e9459bf5d5ab3" id="r_abdd1898adbc3e0fd4e7e9459bf5d5ab3"><td class="memItemLeft" align="right" valign="top"><a id="abdd1898adbc3e0fd4e7e9459bf5d5ab3" name="abdd1898adbc3e0fd4e7e9459bf5d5ab3"></a>
+alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_clear_geo_suggs</b></td></tr>
+<tr class="memitem:ab51161e211455aac5f6f0fb75b58bfe3" id="r_ab51161e211455aac5f6f0fb75b58bfe3"><td class="memItemLeft" align="right" valign="top"><a id="ab51161e211455aac5f6f0fb75b58bfe3" name="ab51161e211455aac5f6f0fb75b58bfe3"></a>
+alias&#160;</td><td class="memItemRight" valign="bottom"><b>getCenterForTarget</b></td></tr>
 <tr class="inherit_header properties_class_zone"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_zone')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Propriétés hérités de <a class="el" href="class_zone.html">Zone</a></td></tr>
 <tr class="memitem:a5e91e2d64c5e1039a525dc2ad04d5aca inherit properties_class_zone" id="r_a5e91e2d64c5e1039a525dc2ad04d5aca"><td class="memItemLeft" align="right" valign="top">
 string&#160;</td><td class="memItemRight" valign="bottom"><b>iconZone</b></td></tr>
@@ -131,12 +135,15 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>txtZone</b></td></tr>
 <tr class="memitem:a31c1fd694bf20154da18b502172f3ec1" id="r_a31c1fd694bf20154da18b502172f3ec1"><td class="memItemLeft" align="right" valign="top"><a id="a31c1fd694bf20154da18b502172f3ec1" name="a31c1fd694bf20154da18b502172f3ec1"></a>
 Button&#160;</td><td class="memItemRight" valign="bottom"><b>bt_getinfo</b></td></tr>
 <tr class="memdesc:a31c1fd694bf20154da18b502172f3ec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouton fixe en haut — fait appel à l'API Nominatim pour obtenir des suggestions de noms de lieux. <br /></td></tr>
+<tr class="memitem:add1ffa6e4b472e06fb63f3b64740f0a7" id="r_add1ffa6e4b472e06fb63f3b64740f0a7"><td class="memItemLeft" align="right" valign="top"><a id="add1ffa6e4b472e06fb63f3b64740f0a7" name="add1ffa6e4b472e06fb63f3b64740f0a7"></a>
+Button&#160;</td><td class="memItemRight" valign="bottom"><b>bt_clear_geo_suggs</b></td></tr>
+<tr class="memdesc:add1ffa6e4b472e06fb63f3b64740f0a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouton fixe en haut — Nettoie la liste des suggestions Nominatim. <br /></td></tr>
 <tr class="memitem:a85b1b89a70fe79cbf6a7f5977ab12c6d" id="r_a85b1b89a70fe79cbf6a7f5977ab12c6d"><td class="memItemLeft" align="right" valign="top"><a id="a85b1b89a70fe79cbf6a7f5977ab12c6d" name="a85b1b89a70fe79cbf6a7f5977ab12c6d"></a>
 Flow&#160;</td><td class="memItemRight" valign="bottom"><b>suggestionFlow</b></td></tr>
 <tr class="memdesc:a85b1b89a70fe79cbf6a7f5977ab12c6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le Flow positionne les <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a> les unes après les autres. <br /></td></tr>
-<tr class="memitem:adf61ed5663f22607d285bc0982a72ed2" id="r_adf61ed5663f22607d285bc0982a72ed2"><td class="memItemLeft" align="right" valign="top"><a id="adf61ed5663f22607d285bc0982a72ed2" name="adf61ed5663f22607d285bc0982a72ed2"></a>
-<a class="el" href="class_suggestion_repeater.html">SuggestionRepeater</a>&#160;</td><td class="memItemRight" valign="bottom"><b>suggestionRepeater</b></td></tr>
-<tr class="memdesc:adf61ed5663f22607d285bc0982a72ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le repeater affiche chacune des Suggestions (de catégorie "geo") du Model. <br /></td></tr>
+<tr class="memitem:aa14ca3665ec91145b66e50debe940cf3" id="r_aa14ca3665ec91145b66e50debe940cf3"><td class="memItemLeft" align="right" valign="top"><a id="aa14ca3665ec91145b66e50debe940cf3" name="aa14ca3665ec91145b66e50debe940cf3"></a>
+<a class="el" href="class_suggestion_repeater.html">SuggestionRepeater</a>&#160;</td><td class="memItemRight" valign="bottom"><b>geoSuggestionRepeater</b></td></tr>
+<tr class="memdesc:aa14ca3665ec91145b66e50debe940cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le repeater affiche chacune des Suggestions (de catégorie "geo") du Model. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Cette zone affiche les <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a> de <a class="el" href="struct_suggestion.html" title="A data structure containing a tag suggestion, for one or several Photo.">Suggestion</a> géographiques. </p>

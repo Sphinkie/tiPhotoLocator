@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -133,6 +133,10 @@ var <a class="el" href="class_chips.html#a93017c03e4e28b70d408806337be9f40">chip
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Membres hérités additionnels</h2></td></tr>
+<tr class="inherit_header signals_class_chips"><td colspan="2" onclick="javascript:dynsection.toggleInherit('signals_class_chips')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Signaux hérités de <a class="el" href="class_chips.html">Chips</a></td></tr>
+<tr class="memitem:a8284d8dd2a294d9e9a550b9409138cb9 inherit signals_class_chips" id="r_a8284d8dd2a294d9e9a550b9409138cb9"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteClicked</b> ()</td></tr>
+<tr class="memdesc:a8284d8dd2a294d9e9a550b9409138cb9 inherit signals_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">type:signal Emis après l'animation de suppression, pour déclencher la suppression réelle. <br /></td></tr>
 <tr class="inherit_header properties_class_chips"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_chips')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Propriétés hérités de <a class="el" href="class_chips.html">Chips</a></td></tr>
 <tr class="memitem:ac3230eb7d1b077f88145bc5293694cab inherit properties_class_chips" id="r_ac3230eb7d1b077f88145bc5293694cab"><td class="memItemLeft" align="right" valign="top">
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>canSave</b></td></tr>
@@ -165,9 +169,15 @@ MouseArea&#160;</td><td class="memItemRight" valign="bottom"><b>swapArea</b></td
 <tr class="memitem:a93017c03e4e28b70d408806337be9f40 inherit properties_class_chips" id="r_a93017c03e4e28b70d408806337be9f40"><td class="memItemLeft" align="right" valign="top">
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>chipText</b></td></tr>
 <tr class="memdesc:a93017c03e4e28b70d408806337be9f40 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour le controle inviduel des items. <br /></td></tr>
-<tr class="memitem:ab15d66ccd1252ebc60f1598bf56ec960 inherit properties_class_chips" id="r_ab15d66ccd1252ebc60f1598bf56ec960"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>hideTargetWhenFilled</b></td></tr>
-<tr class="memdesc:ab15d66ccd1252ebc60f1598bf56ec960 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si true, le targetName disparait dès que content est renseigné (pour <a class="el" href="class_fat_chip.html" title="Un chip un peu plus gros, qui permet un texte multiligne, pour la Description de l&#39;image....">FatChip</a>). <br /></td></tr>
+<tr class="memitem:ab15d66ccd1252ebc60f1598bf56ec960 inherit properties_class_chips" id="r_ab15d66ccd1252ebc60f1598bf56ec960"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chips.html#ab15d66ccd1252ebc60f1598bf56ec960">hideTargetWhenFilled</a></td></tr>
+<tr class="memitem:aa00ceffa48fe428d22b228b2b1c705c9 inherit properties_class_chips" id="r_aa00ceffa48fe428d22b228b2b1c705c9"><td class="memItemLeft" align="right" valign="top">
+string&#160;</td><td class="memItemRight" valign="bottom"><b>chipCategory</b></td></tr>
+<tr class="memdesc:aa00ceffa48fe428d22b228b2b1c705c9 inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Catégorie explicite du chip : "geo", "photo", "camera", "keyword". Vide = auto-détection depuis target. <br /></td></tr>
+<tr class="memitem:aeeaf03a04dbe214633dd839025a5e59f inherit properties_class_chips" id="r_aeeaf03a04dbe214633dd839025a5e59f"><td class="memItemLeft" align="right" valign="top">
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSuggestion</b></td></tr>
+<tr class="memdesc:aeeaf03a04dbe214633dd839025a5e59f inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si true, utilise la couleur pastel (Shade200) — pour les chips de suggestion (valeur proposée, non encore appliquée). <br /></td></tr>
+<tr class="memitem:a8d92398a7526ab31ccfd3b6899c70c7b inherit properties_class_chips" id="r_a8d92398a7526ab31ccfd3b6899c70c7b"><td class="memItemLeft" align="right" valign="top">color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chips.html#a8d92398a7526ab31ccfd3b6899c70c7b">chipColor</a></td></tr>
+<tr class="memdesc:a8d92398a7526ab31ccfd3b6899c70c7b inherit properties_class_chips"><td class="mdescLeft">&#160;</td><td class="mdescRight">Couleur de fond calculée selon la catégorie (ou target si chipCategory est vide).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Un chip un peu plus gros, qui permet un texte multiligne, pour la <b>Description</b> de l'image. content: "A character string giving the title of the image. It may be a comment such as '1988 company picnic' or the like. Two-bytes character codes cannot be used.". </p>

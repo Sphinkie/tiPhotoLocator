@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -95,6 +95,7 @@ $(function(){initNavTree('functions_c.html','',''); });
 
 <h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>CameraSet()&#160;:&#160;<a class="el" href="class_camera_set.html#a56a4c781a3334d0fcce5bbd955a373c6">CameraSet</a></li>
+<li>cameraTime()&#160;:&#160;<a class="el" href="class_zone_gpx.html#ac367d6c720e1be0b97fb02d2cc2829da">ZoneGpx</a></li>
 <li>camModel&#160;:&#160;<a class="el" href="struct_photo.html#a3c5204d88a446d1df0ee95feee81a574">Photo</a></li>
 <li>canSave&#160;:&#160;<a class="el" href="class_chips.html#ac3230eb7d1b077f88145bc5293694cab">Chips</a></li>
 <li>captionWriter&#160;:&#160;<a class="el" href="struct_photo.html#a1b1dde1eb075006ff85b5539eed40f94">Photo</a></li>
@@ -102,11 +103,19 @@ $(function(){initNavTree('functions_c.html','',''); });
 <li>cb_backups&#160;:&#160;<a class="el" href="class_toolbar_bottom_form.html#a2873cd1a15da2be98244d7f45e66dbe4">ToolbarBottomForm</a></li>
 <li>chipAperture&#160;:&#160;<a class="el" href="class_zone_preview_form.html#af9179ed07369d488ae6c8c23e51f15a8">ZonePreviewForm</a></li>
 <li>chipBackgroundColor&#160;:&#160;<a class="el" href="class_style.html#a27dd50f235bf592331ce9d975cf03893">Style</a></li>
+<li>chipCameraColor&#160;:&#160;<a class="el" href="class_style.html#abe4d439888b6b96a70029d6095ff5c49">Style</a></li>
+<li>chipCameraSuggestionColor&#160;:&#160;<a class="el" href="class_style.html#aef5730c2d4815405d94076f9b6d75d63">Style</a></li>
 <li>chipCamModel&#160;:&#160;<a class="el" href="class_zone_preview_form.html#a4f37f9b45ba737756bef40f6503c27a2">ZonePreviewForm</a></li>
+<li>chipCategory&#160;:&#160;<a class="el" href="class_chips.html#aa00ceffa48fe428d22b228b2b1c705c9">Chips</a>, <a class="el" href="class_global_tag.html#a998e7798f8c80ab63d59c740c513f619">GlobalTag</a></li>
+<li>chipCity&#160;:&#160;<a class="el" href="class_zone_preview_form.html#ae397f77fe756859f6e13827316124bc4">ZonePreviewForm</a></li>
+<li>chipColor&#160;:&#160;<a class="el" href="class_chips.html#a8d92398a7526ab31ccfd3b6899c70c7b">Chips</a>, <a class="el" href="class_ghost_chip.html#a86b6f1a0a417d1792af8432a7c0dccca">GhostChip</a></li>
 <li>chipCountry&#160;:&#160;<a class="el" href="class_zone_preview_form.html#a0f6d6c8e463b32dab4340bb3a319baa4">ZonePreviewForm</a></li>
 <li>chipDate&#160;:&#160;<a class="el" href="class_zone_preview_form.html#ac5d9ab0f3009190986540310d567992e">ZonePreviewForm</a></li>
 <li>chipDel&#160;:&#160;<a class="el" href="class_chips.html#a4b688f1cba635167b38d2ecea69a95dd">Chips</a></li>
+<li>chipDirtyColor&#160;:&#160;<a class="el" href="class_style.html#acdf48fbc85f1c4623d55b3722f9e2104">Style</a></li>
 <li>chipEdit&#160;:&#160;<a class="el" href="class_chips.html#ab58ee09ea98e269ee8957873a51f498b">Chips</a></li>
+<li>chipGeoColor&#160;:&#160;<a class="el" href="class_style.html#a9a5aaead6a8da09953afaa6634b0bac9">Style</a></li>
+<li>chipGeoSuggestionColor&#160;:&#160;<a class="el" href="class_style.html#a9c976d25911389bf7ba2624800f9bf92">Style</a></li>
 <li>chipKeyword0&#160;:&#160;<a class="el" href="class_zone_userdata_form.html#aeae5d4b151301c8819a342fbe84e8fc7">ZoneUserdataForm</a></li>
 <li>chipKeyword1&#160;:&#160;<a class="el" href="class_zone_userdata_form.html#abf8eccd325b75e50150c41c41a870b96">ZoneUserdataForm</a></li>
 <li>chipKeyword2&#160;:&#160;<a class="el" href="class_zone_userdata_form.html#a6ab36eca71dcac4361ac35f9232739dc">ZoneUserdataForm</a></li>
@@ -115,8 +124,12 @@ $(function(){initNavTree('functions_c.html','',''); });
 <li>chipKeyword5&#160;:&#160;<a class="el" href="class_zone_userdata_form.html#a12c312e270ca7e478b7d04ab4c615c16">ZoneUserdataForm</a></li>
 <li>chipKeyword6&#160;:&#160;<a class="el" href="class_zone_userdata_form.html#a726b28b47cea2c320cc766a7f2cc33b5">ZoneUserdataForm</a></li>
 <li>chipKeyword7&#160;:&#160;<a class="el" href="class_zone_userdata_form.html#a20a8836e1e9f5beef6ecff1e784b38c7">ZoneUserdataForm</a></li>
+<li>chipKeywordColor&#160;:&#160;<a class="el" href="class_style.html#a1eb76a7d2287095352ada68dad4e617e">Style</a></li>
+<li>chipKeywordSuggestionColor&#160;:&#160;<a class="el" href="class_style.html#a1bdd52a2cb4ef875b1b62fd06866db45">Style</a></li>
 <li>chipMake&#160;:&#160;<a class="el" href="class_zone_preview_form.html#ab0acb651e3434e8c12671a4a0a2f049b">ZonePreviewForm</a></li>
 <li>chipName&#160;:&#160;<a class="el" href="class_zone_preview_form.html#a00b9c2ffa880a2e5e00dfb95f4e3dbef">ZonePreviewForm</a></li>
+<li>chipPhotoColor&#160;:&#160;<a class="el" href="class_style.html#a3380792437e2a120178dc01e718f0ef3">Style</a></li>
+<li>chipPhotoSuggestionColor&#160;:&#160;<a class="el" href="class_style.html#a8b470f5edab7a3032f82eba6c3a1c81f">Style</a></li>
 <li>chipRectangle&#160;:&#160;<a class="el" href="class_chips.html#a384fd32c1dba1fee423da772f75c5070">Chips</a></li>
 <li>chipRevert&#160;:&#160;<a class="el" href="class_chips.html#a862a928f9c46196948e907beeeb568a6">Chips</a></li>
 <li>chipSave&#160;:&#160;<a class="el" href="class_chips.html#aaa9810e2d33ea0566ad0def1ff3fcf05">Chips</a></li>
@@ -125,22 +138,24 @@ $(function(){initNavTree('functions_c.html','',''); });
 <li>chipSpeed&#160;:&#160;<a class="el" href="class_zone_preview_form.html#a1936656ccded24e95039809b95251a07">ZonePreviewForm</a></li>
 <li>chipSwapTarget&#160;:&#160;<a class="el" href="class_chips.html#afa6e34912d890d70b733c12c43e8a41f">Chips</a></li>
 <li>chipTarget&#160;:&#160;<a class="el" href="class_chips.html#a85ac411f6727873de6634858d21d96f7">Chips</a></li>
-<li>chipText&#160;:&#160;<a class="el" href="class_chips.html#a93017c03e4e28b70d408806337be9f40">Chips</a></li>
+<li>chipText&#160;:&#160;<a class="el" href="class_chips.html#a93017c03e4e28b70d408806337be9f40">Chips</a>, <a class="el" href="class_ghost_chip.html#a08d857f25c1cedc3ff52f411b157ab67">GhostChip</a></li>
 <li>chipTime&#160;:&#160;<a class="el" href="class_zone_preview_form.html#a0b122e982e53a3b4545ba67c9b3539b4">ZonePreviewForm</a></li>
 <li>circleIcon&#160;:&#160;<a class="el" href="class_photo_listview.html#afe9ad0639bdc8df220e4d4c3e1e6b5fd">PhotoListview</a></li>
 <li>city&#160;:&#160;<a class="el" href="struct_photo.html#af69f56742ec76589b96b355cdc447149">Photo</a></li>
 <li>cityText&#160;:&#160;<a class="el" href="class_photo_listview.html#ae447aac43304d79184cd885e670a3dc7">PhotoListview</a></li>
 <li>clear()&#160;:&#160;<a class="el" href="class_photo_model.html#a1ff9f0f539d9b65e0521ebbaa498b21b">PhotoModel</a>, <a class="el" href="class_suggestion_model.html#adf99459a4600a0d0aa9c77858bfa23e8">SuggestionModel</a></li>
+<li>clearByCategory()&#160;:&#160;<a class="el" href="class_suggestion_model.html#af2e3d7cd156362e409d8f83a1928e8a7">SuggestionModel</a></li>
 <li>clearRecentFolders()&#160;:&#160;<a class="el" href="class_ti_folder_dialog.html#ae32cbc989574013941a87a969f51ae62">TiFolderDialog</a></li>
 <li>clearSavedPosition()&#160;:&#160;<a class="el" href="class_main.html#a5c48d62abe783b8012b9a03532505cec">Main</a></li>
 <li>closeButton&#160;:&#160;<a class="el" href="class_popup_keywords_form.html#a27d4aea06be73a03b53f86df0fb900f3">PopupKeywordsForm</a></li>
 <li>contains()&#160;:&#160;<a class="el" href="class_camera_set.html#ac004e13c349e7a7d1e448f423029617d">CameraSet</a></li>
-<li>content&#160;:&#160;<a class="el" href="class_chips.html#a923491728dbd5120266e2d3c4af62c31">Chips</a></li>
+<li>content&#160;:&#160;<a class="el" href="class_chips.html#a923491728dbd5120266e2d3c4af62c31">Chips</a>, <a class="el" href="class_global_tag.html#aa1fde29e08c8268639af91fb61e8759e">GlobalTag</a></li>
 <li>count&#160;:&#160;<a class="el" href="class_photo_model.html#a88c7ea8e69650c8e0f1f7bb61a105bc0">PhotoModel</a></li>
 <li>countChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#a84ce035a6d4b174261f3e4f7ed79399d">PhotoModel</a></li>
 <li>country&#160;:&#160;<a class="el" href="struct_photo.html#a9bf494760dfe13bc320c8395a1d8368f">Photo</a></li>
 <li>createInitialSuggestions()&#160;:&#160;<a class="el" href="class_suggestion_model.html#ae237db33f536544358c527f8ee0c3f18">SuggestionModel</a></li>
 <li>creator&#160;:&#160;<a class="el" href="struct_photo.html#a8557579ced9c4e8587443564bfe659dd">Photo</a></li>
+<li>creditsPage&#160;:&#160;<a class="el" href="class_main.html#a0a2efcc080855f7243a45c280f4dc45c">Main</a></li>
 <li>currentFolderUrl&#160;:&#160;<a class="el" href="class_main.html#a2bf237367c162dd11f4acbe25880aceb">Main</a></li>
 <li>currentItemCoords&#160;:&#160;<a class="el" href="class_photo_model.html#a944a184d2f60609c532a600aae3a8ba2">PhotoModel</a></li>
 <li>currentItemCoordsChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#aef20ff013a37689aac0a52cfd3d25ebc">PhotoModel</a></li>
@@ -148,6 +163,8 @@ $(function(){initNavTree('functions_c.html','',''); });
 <li>currentItemHasGPSChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#a1c16d2f5f763eef50fa1673bedbf0b46">PhotoModel</a></li>
 <li>currentItemRow&#160;:&#160;<a class="el" href="class_photo_model.html#a3ba134a102ab67149e79de8d8041958d">PhotoModel</a></li>
 <li>currentItemRowChanged()&#160;:&#160;<a class="el" href="class_photo_model.html#a32757262733f7c3667e3e1eb28c2dde4">PhotoModel</a></li>
+<li>currentStartTime&#160;:&#160;<a class="el" href="class_list_view_g_p_xfiles.html#a624f9a982193eefbb4a4a270fdc987ba">ListViewGPXfiles</a></li>
+<li>currentTrackPointsChanged()&#160;:&#160;<a class="el" href="class_gpx_model.html#a89d5153a753eb8bf4e853d052056b1ce">GpxModel</a></li>
 <li>currrentChip&#160;:&#160;<a class="el" href="class_suggestion_repeater.html#a466180a757e71f64499f94ad6bd3601c">SuggestionRepeater</a></li>
 <li>customModel&#160;:&#160;<a class="el" href="class_popup_keywords_form.html#a0e41995674e0d0d7785dbc0adaa0e696">PopupKeywordsForm</a></li>
 </ul>

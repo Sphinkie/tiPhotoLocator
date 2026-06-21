@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -107,6 +107,12 @@ Graphe d'héritage de Chips:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
+Signaux</h2></td></tr>
+<tr class="memitem:a8284d8dd2a294d9e9a550b9409138cb9" id="r_a8284d8dd2a294d9e9a550b9409138cb9"><td class="memItemLeft" align="right" valign="top"><a id="a8284d8dd2a294d9e9a550b9409138cb9" name="a8284d8dd2a294d9e9a550b9409138cb9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteClicked</b> ()</td></tr>
+<tr class="memdesc:a8284d8dd2a294d9e9a550b9409138cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">type:signal Emis après l'animation de suppression, pour déclencher la suppression réelle. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Propriétés</h2></td></tr>
 <tr class="memitem:ac3230eb7d1b077f88145bc5293694cab" id="r_ac3230eb7d1b077f88145bc5293694cab"><td class="memItemLeft" align="right" valign="top"><a id="ac3230eb7d1b077f88145bc5293694cab" name="ac3230eb7d1b077f88145bc5293694cab"></a>
@@ -140,12 +146,20 @@ MouseArea&#160;</td><td class="memItemRight" valign="bottom"><b>swapArea</b></td
 <tr class="memitem:a93017c03e4e28b70d408806337be9f40" id="r_a93017c03e4e28b70d408806337be9f40"><td class="memItemLeft" align="right" valign="top"><a id="a93017c03e4e28b70d408806337be9f40" name="a93017c03e4e28b70d408806337be9f40"></a>
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>chipText</b></td></tr>
 <tr class="memdesc:a93017c03e4e28b70d408806337be9f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour le controle inviduel des items. <br /></td></tr>
-<tr class="memitem:ab15d66ccd1252ebc60f1598bf56ec960" id="r_ab15d66ccd1252ebc60f1598bf56ec960"><td class="memItemLeft" align="right" valign="top"><a id="ab15d66ccd1252ebc60f1598bf56ec960" name="ab15d66ccd1252ebc60f1598bf56ec960"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>hideTargetWhenFilled</b></td></tr>
-<tr class="memdesc:ab15d66ccd1252ebc60f1598bf56ec960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si true, le targetName disparait dès que content est renseigné (pour <a class="el" href="class_fat_chip.html" title="Un chip un peu plus gros, qui permet un texte multiligne, pour la Description de l&#39;image....">FatChip</a>). <br /></td></tr>
+<tr class="memitem:ab15d66ccd1252ebc60f1598bf56ec960" id="r_ab15d66ccd1252ebc60f1598bf56ec960"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab15d66ccd1252ebc60f1598bf56ec960">hideTargetWhenFilled</a></td></tr>
+<tr class="memitem:aa00ceffa48fe428d22b228b2b1c705c9" id="r_aa00ceffa48fe428d22b228b2b1c705c9"><td class="memItemLeft" align="right" valign="top"><a id="aa00ceffa48fe428d22b228b2b1c705c9" name="aa00ceffa48fe428d22b228b2b1c705c9"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>chipCategory</b></td></tr>
+<tr class="memdesc:aa00ceffa48fe428d22b228b2b1c705c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Catégorie explicite du chip : "geo", "photo", "camera", "keyword". Vide = auto-détection depuis target. <br /></td></tr>
+<tr class="memitem:aeeaf03a04dbe214633dd839025a5e59f" id="r_aeeaf03a04dbe214633dd839025a5e59f"><td class="memItemLeft" align="right" valign="top"><a id="aeeaf03a04dbe214633dd839025a5e59f" name="aeeaf03a04dbe214633dd839025a5e59f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSuggestion</b></td></tr>
+<tr class="memdesc:aeeaf03a04dbe214633dd839025a5e59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si true, utilise la couleur pastel (Shade200) — pour les chips de suggestion (valeur proposée, non encore appliquée). <br /></td></tr>
+<tr class="memitem:a8d92398a7526ab31ccfd3b6899c70c7b" id="r_a8d92398a7526ab31ccfd3b6899c70c7b"><td class="memItemLeft" align="right" valign="top">color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d92398a7526ab31ccfd3b6899c70c7b">chipColor</a></td></tr>
+<tr class="memdesc:a8d92398a7526ab31ccfd3b6899c70c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Couleur de fond calculée selon la catégorie (ou target si chipCategory est vide).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
+<tr class="memitem:a3e4977a4e3e620fbdb4384944170d7d6" id="r_a3e4977a4e3e620fbdb4384944170d7d6"><td class="memItemLeft" align="right" valign="top"><a id="a3e4977a4e3e620fbdb4384944170d7d6" name="a3e4977a4e3e620fbdb4384944170d7d6"></a>
+var&#160;</td><td class="memItemRight" valign="bottom"><b>visible</b></td></tr>
 <tr class="memitem:ad762f22bce92fc0d8c1773b01cc1771f" id="r_ad762f22bce92fc0d8c1773b01cc1771f"><td class="memItemLeft" align="right" valign="top"><a id="ad762f22bce92fc0d8c1773b01cc1771f" name="ad762f22bce92fc0d8c1773b01cc1771f"></a>
 var Layout&#160;</td><td class="memItemRight" valign="bottom"><b>topMargin</b></td></tr>
 <tr class="memdesc:ad762f22bce92fc0d8c1773b01cc1771f"><td class="mdescLeft">&#160;</td><td class="mdescRight">marge haut (outside the item) <br /></td></tr>
@@ -167,11 +181,20 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>implicitWidth</b></td>
 <tr class="memitem:afa6e34912d890d70b733c12c43e8a41f" id="r_afa6e34912d890d70b733c12c43e8a41f"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa6e34912d890d70b733c12c43e8a41f">chipSwapTarget</a></td></tr>
 <tr class="memitem:a4b688f1cba635167b38d2ecea69a95dd" id="r_a4b688f1cba635167b38d2ecea69a95dd"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b688f1cba635167b38d2ecea69a95dd">chipDel</a></td></tr>
 <tr class="memitem:a862a928f9c46196948e907beeeb568a6" id="r_a862a928f9c46196948e907beeeb568a6"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a862a928f9c46196948e907beeeb568a6">chipRevert</a></td></tr>
+<tr class="memitem:a17eb4ada1af0a1e453dc9e095f725f5b" id="r_a17eb4ada1af0a1e453dc9e095f725f5b"><td class="memItemLeft" align="right" valign="top">var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17eb4ada1af0a1e453dc9e095f725f5b">states</a></td></tr>
+<tr class="memitem:a026960e3c5ac28fdbecbe569acf1a9d0" id="r_a026960e3c5ac28fdbecbe569acf1a9d0"><td class="memItemLeft" align="right" valign="top"><a id="a026960e3c5ac28fdbecbe569acf1a9d0" name="a026960e3c5ac28fdbecbe569acf1a9d0"></a>
+var&#160;</td><td class="memItemRight" valign="bottom"><b>transitions</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l'ombre doit être définie avant le rectangle, de façon à être dessinée avant, donc dessous. A noter que le Rectangle contient un texte, mais ne s'adapte pas automatiquement à la longueur du texte. C'est plutot le texte qui s'adapte au rectangle parent. </p>
 <hr  />
  <dl class="section see"><dt>Voir également</dt><dd>{<a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html">https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html</a>} </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>sur les properties<ul>
+<li>target : nom technique du champ EXIF/IPTC tel qu'il est passé à ExifTool ("city", "latitude", "keywords"…). Sert aussi à router la valeur vers le bon champ dans <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>.</li>
+<li>targetName : label purement visuel affiché dans le chip ("brand:", "content description:", "artist:"…). Calculé automatiquement depuis target, ou surchargé si le nom ExifTool n'est pas userfriendly (ex : target="make" → targetName="brand:").</li>
+<li>chipCategory : notion UI uniquement, sans lien avec ExifTool. Regroupe des targets de même domaine pour leur attribuer une couleur ("geo" = tout ce qui localise, "camera" = tout ce que le boîtier génère, "photo" = IPTC éditables, "keyword" = mots-clés). Nécessaire pour les chips qui n'ont pas de target (ils utilisent targetName directement). </li>
+</ul>
+</dd></dl>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
 <a id="a4b688f1cba635167b38d2ecea69a95dd" name="a4b688f1cba635167b38d2ecea69a95dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b688f1cba635167b38d2ecea69a95dd">&#9670;&#160;</a></span>chipDel</h2>
@@ -389,7 +412,56 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>implicitWidth</b></td>
 
 </div>
 </div>
+<a id="a17eb4ada1af0a1e453dc9e095f725f5b" name="a17eb4ada1af0a1e453dc9e095f725f5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17eb4ada1af0a1e453dc9e095f725f5b">&#9670;&#160;</a></span>states</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">var Chips::states</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> Etat "deleting" : le chip se réduit et disparait. </p>
+
+</div>
+</div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Documentation des propriétés</h2>
+<a id="a8d92398a7526ab31ccfd3b6899c70c7b" name="a8d92398a7526ab31ccfd3b6899c70c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d92398a7526ab31ccfd3b6899c70c7b">&#9670;&#160;</a></span>chipColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">color Chips::chipColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel read">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Couleur de fond calculée selon la catégorie (ou target si chipCategory est vide). </p>
+<dl class="section remark"><dt>Remarques</dt><dd>This property is read-only </dd></dl>
+
+</div>
+</div>
 <a id="af6f4c0da806a37ff3304980e3261a1bf" name="af6f4c0da806a37ff3304980e3261a1bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af6f4c0da806a37ff3304980e3261a1bf">&#9670;&#160;</a></span>deletable</h2>
 
@@ -434,7 +506,7 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>implicitWidth</b></td>
 </div><div class="memdoc">
 
 <p><a class="el" href="class_zone.html">Zone</a> cliquable du mini-bouton Delete. </p>
-<p>Clic sur l'icone DELETE: A gérer dans le controlleur de la <a class="el" href="class_zone.html">Zone</a> parente avec chipXXX.deleteArea.onClicked:{...}. </p>
+<p>Clic sur l'icone DELETE: déclenche l'animation, puis émet le signal chipXXX.onDeleteClicked. </p>
 
 </div>
 </div>
@@ -460,6 +532,29 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>implicitWidth</b></td>
 
 <p><a class="el" href="class_zone.html">Zone</a> cliquable du mini-bouton Edit. </p>
 <p>Clic sur l'icone EDIT: A gérer dans le controleur de la <a class="el" href="class_zone.html">Zone</a> parente avec chipXXX.editArea.onClicked:{...}. </p>
+
+</div>
+</div>
+<a id="ab15d66ccd1252ebc60f1598bf56ec960" name="ab15d66ccd1252ebc60f1598bf56ec960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15d66ccd1252ebc60f1598bf56ec960">&#9670;&#160;</a></span>hideTargetWhenFilled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Chips::hideTargetWhenFilled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel read">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Si true, le targetName disparait dès que content est renseigné (pour <a class="el" href="class_fat_chip.html" title="Un chip un peu plus gros, qui permet un texte multiligne, pour la Description de l&#39;image....">FatChip</a>). </p>
 
 </div>
 </div>

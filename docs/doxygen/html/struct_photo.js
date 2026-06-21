@@ -23,13 +23,17 @@ var struct_photo =
     [ "insideCircle", "struct_photo.html#a33f360a2eccf88cc843e3a469600b3d5", null ],
     [ "isCurrent", "struct_photo.html#abf2a8150f9347ce6870ec0fafac524fa", null ],
     [ "isMarker", "struct_photo.html#accaf8898f12c82d9872c555309d563b1", null ],
+    [ "isOnTrack", "struct_photo.html#a463d3ce695014135930aa012e926a887", null ],
     [ "isSelected", "struct_photo.html#a8e391469cda515a3aacb6edafa2a8254", null ],
     [ "keywords", "struct_photo.html#a76af2f2ab2fa057b17b00e796fcfe2b5", null ],
     [ "location", "struct_photo.html#a649223a8259c1bb869af35fe54ed5ff3", null ],
     [ "make", "struct_photo.html#a3f6620eb0f021aec853b0390d66c4898", null ],
     [ "metadata", "struct_photo.html#a263add422839a94cf7e9c7c5fe744d44", null ],
+    [ "onTrackLatitude", "struct_photo.html#a4ad3287779ab91c520c021d623e8cf52", null ],
+    [ "onTrackLongitude", "struct_photo.html#ae07599d85fd1780bf94e5ff96ffd791f", null ],
     [ "orientation", "struct_photo.html#a0f11a71d79268e835723f1db0f4acffa", null ],
     [ "shutterSpeed", "struct_photo.html#aeaeadb764ea3e33efa012abc317676db", null ],
     [ "software", "struct_photo.html#a1e092e500b8cc02272e39b823f094180", null ],
-    [ "toBeSaved", "struct_photo.html#a66c836579b45614de3f51edba11ea2fe", null ]
+    [ "toBeSaved", "struct_photo.html#a66c836579b45614de3f51edba11ea2fe", null ],
+    [ "writeError", "struct_photo.html#a9aafc2bc1ed9f0ede911519f006c4a3a", null ]
 ];

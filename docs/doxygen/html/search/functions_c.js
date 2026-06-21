@@ -1,22 +1,9 @@
 var searchData=
 [
-  ['readtaskfinished_0',['readTaskFinished',['../class_photo_model.html#a3d1e08915aeec13f2b27d92df7960606',1,'PhotoModel']]],
-  ['removecurrentphotofromsuggestion_1',['removeCurrentPhotoFromSuggestion',['../class_suggestion_model.html#aea38923e1af3b5faee8ba4caccc8281f',1,'SuggestionModel']]],
-  ['removedata_2',['removeData',['../class_photo_model.html#a1e2f3f829e54ef445a5b1dea07ad2118',1,'PhotoModel']]],
-  ['removefromselection_3',['removeFromSelection',['../class_photo_model.html#a550fbb31e5ea492677bff74d5274a2b4',1,'PhotoModel']]],
-  ['removefromsuggestion_4',['removeFromSuggestion',['../class_suggestion_model.html#a54ef63c254c7a560110977f2240156c6',1,'SuggestionModel']]],
-  ['removephotofromsuggestion_5',['removePhotoFromSuggestion',['../class_suggestion_proxy_model.html#a57f046aabf95036f87b02209f0174e10',1,'SuggestionProxyModel::removePhotoFromSuggestion(const int proxyRow)'],['../class_suggestion_proxy_model.html#ad0b9f7027dfc10c28e67fcf1edbeb66b',1,'SuggestionProxyModel::removePhotoFromSuggestion(const QModelIndex proxyIndex)'],['../class_main.html#acfd526f850b84d0b663152040c27f6a2',1,'Main::removePhotoFromSuggestion()']]],
-  ['removephotokeyword_6',['removePhotoKeyword',['../class_photo_model.html#ad3307d71659f79588f3bdb0908bd84eb',1,'PhotoModel::removePhotoKeyword()'],['../class_photo_model_wrapper.html#a3522f76919753b9434eb62126bebc7f1',1,'PhotoModelWrapper::removePhotoKeyword()']]],
-  ['removesavedposition_7',['removeSavedPosition',['../class_photo_model.html#a6c2e4a731969e952993dfe4d38e5788f',1,'PhotoModel']]],
-  ['replacekeywordforselection_8',['replaceKeywordForSelection',['../class_photo_model.html#afab571e974df0d79ee1d8e7f6d033b17',1,'PhotoModel']]],
-  ['requestcoordinates_9',['requestCoordinates',['../class_geocode_wrapper.html#afe24d64afb183a81c2daa97f380aec34',1,'GeocodeWrapper']]],
-  ['requestcoords_10',['requestCoords',['../class_main.html#afebb10e3f2840f2403b2fb10a9096e5e',1,'Main']]],
-  ['requestmeteo_11',['requestMeteo',['../class_camera_set.html#adfa00deb84c361446cafb946443c1997',1,'CameraSet']]],
-  ['requestreversegeocode_12',['requestReverseGeocode',['../class_geocode_wrapper.html#a122fadb46be185cb6e7e375d618f3d9c',1,'GeocodeWrapper::requestReverseGeocode()'],['../class_main.html#af95a1768861a370ba09089a7a6a97c09',1,'Main::requestReverseGeocode()']]],
-  ['requestthumb_13',['requestThumb',['../class_camera_set.html#a0fb996a8af37e012293507fef026a9db',1,'CameraSet']]],
-  ['resetcircle_14',['resetCircle',['../class_photo_model.html#a8b4c0daf563670d61c87102a19bead12',1,'PhotoModel']]],
-  ['resetselection_15',['resetSelection',['../class_photo_model.html#a3418791003f8f006300b65265a4aaf81',1,'PhotoModel']]],
-  ['rolenames_16',['roleNames',['../class_photo_model.html#aac3d5e1ae72e823b4e6091497c5cf27d',1,'PhotoModel::roleNames()'],['../class_suggestion_model.html#a5153ff9a46757355350432e5e8a810cd',1,'SuggestionModel::roleNames()']]],
-  ['rowcount_17',['rowCount',['../class_photo_model.html#a6be5a4ec62c39357efc906c2c9fc5515',1,'PhotoModel::rowCount()'],['../class_suggestion_model.html#a0c1caffe345aeb30f636f3a1784e9cea',1,'SuggestionModel::rowCount()']]],
-  ['run_18',['run',['../class_exif_read_task.html#a1f0693a4aa7d57897f906d3db0fd77b8',1,'ExifReadTask::run()'],['../class_exif_write_task.html#a62fcca5c4d5077f086df4b98cac752df',1,'ExifWriteTask::run()']]]
+  ['parsetrack_0',['parseTrack',['../class_gpx_model.html#a71007112af10fb87a695179be1f2d6f2',1,'GpxModel']]],
+  ['persistcustomkeywords_1',['persistCustomKeywords',['../class_popup_keywords.html#a0b49eab59ea17512060b8de719425e6b',1,'PopupKeywords']]],
+  ['photo_2',['Photo',['../struct_photo.html#a10ef03ede9235052eb9f7d5e950f85d3',1,'Photo::Photo()'],['../struct_photo.html#a70dea3e00c545305d4b59af51d8c8a9a',1,'Photo::Photo(const QString &amp;file_name, const QString &amp;image_url, const bool is_marker=false, bool is_current=false)']]],
+  ['photomodel_3',['PhotoModel',['../class_photo_model.html#a244f996eed49122ebe11c5369d63a0e2',1,'PhotoModel']]],
+  ['photomodelwrapper_4',['PhotoModelWrapper',['../class_photo_model_wrapper.html#a49c84b315f5fb6520abab97240e69c54',1,'PhotoModelWrapper']]],
+  ['processline_5',['processLine',['../class_exif_read_task.html#a425555d73b1bc4ba915e2a9f9a0884c6',1,'ExifReadTask']]]
 ];

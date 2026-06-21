@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -95,7 +95,7 @@ $(function(){initNavTree('class_toolbar_map.html','','class_toolbar_map-members'
 </div><!--header-->
 <div class="contents">
 
-<p>Controlleur pour la barre de boutons située au dessus de la carte.  
+<p>Controlleur pour la barre de boutons située au dessus de la carte (onglet MAP).  
  <a href="#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de ToolbarMap:</div>
@@ -103,12 +103,14 @@ Graphe d'héritage de ToolbarMap:</div>
  <div class="center">
   <img src="class_toolbar_map.png" usemap="#ToolbarMap_map" alt=""/>
   <map id="ToolbarMap_map" name="ToolbarMap_map">
-<area href="class_toolbar_map_form.html" title="Cette vue correspond à la barre d&#39;outils spécifiques à la carte." alt="ToolbarMapForm" shape="rect" coords="0,56,109,80"/>
+<area href="class_toolbar_map_form.html" title="Cette vue correspond à la barre d&#39;outils spécifiques à la carte (onglet MAP)." alt="ToolbarMapForm" shape="rect" coords="0,56,109,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
+<tr class="memitem:a96bf847067fb9aafe11495bc032a9e03" id="r_a96bf847067fb9aafe11495bc032a9e03"><td class="memItemLeft" align="right" valign="top"><a id="a96bf847067fb9aafe11495bc032a9e03" name="a96bf847067fb9aafe11495bc032a9e03"></a>
+Settings&#160;</td><td class="memItemRight" valign="bottom"><b>aiSettings</b></td></tr>
 <tr class="memitem:aed4a2dbdb73afce1823dddde725184fd" id="r_aed4a2dbdb73afce1823dddde725184fd"><td class="memItemLeft" align="right" valign="top"><a id="aed4a2dbdb73afce1823dddde725184fd" name="aed4a2dbdb73afce1823dddde725184fd"></a>
 var bt_find&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
 <tr class="memdesc:aed4a2dbdb73afce1823dddde725184fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clic sur "Find" : on demande les coords GPS du site mentionné dans le TextField. <br /></td></tr>
@@ -118,6 +120,9 @@ var txt_find&#160;</td><td class="memItemRight" valign="bottom"><b>onAccepted</b
 <tr class="memitem:a1691f414f41a43e20fb073d7c40c24a0" id="r_a1691f414f41a43e20fb073d7c40c24a0"><td class="memItemLeft" align="right" valign="top"><a id="a1691f414f41a43e20fb073d7c40c24a0" name="a1691f414f41a43e20fb073d7c40c24a0"></a>
 var bt_next&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
 <tr class="memdesc:a1691f414f41a43e20fb073d7c40c24a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clic sur "Next" : on demande les coords GPS suivantes. <br /></td></tr>
+<tr class="memitem:a7b90e6c1d16fb73f3bf80baaab8a3496" id="r_a7b90e6c1d16fb73f3bf80baaab8a3496"><td class="memItemLeft" align="right" valign="top"><a id="a7b90e6c1d16fb73f3bf80baaab8a3496" name="a7b90e6c1d16fb73f3bf80baaab8a3496"></a>
+var bt_ask_ai&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
+<tr class="memdesc:a7b90e6c1d16fb73f3bf80baaab8a3496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clic sur "Ask AI" : interroge Llama-3.2-Vision (Groq) pour identifier le lieu sur la photo. <br /></td></tr>
 <tr class="memitem:a5567dcac75eabc285e197a91a4f4595e" id="r_a5567dcac75eabc285e197a91a4f4595e"><td class="memItemLeft" align="right" valign="top"><a id="a5567dcac75eabc285e197a91a4f4595e" name="a5567dcac75eabc285e197a91a4f4595e"></a>
 var bt_save_pos&#160;</td><td class="memItemRight" valign="bottom"><b>onClicked</b></td></tr>
 <tr class="memdesc:a5567dcac75eabc285e197a91a4f4595e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clic sur "Save Position" : On enregistre la position de l'image dans la Saved Position. <br /></td></tr>
@@ -146,6 +151,8 @@ alias&#160;</td><td class="memItemRight" valign="bottom"><b>txt_find</b></td></t
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_find</b></td></tr>
 <tr class="memitem:a1a422851fd747efd86f07494bc898e05 inherit properties_class_toolbar_map_form" id="r_a1a422851fd747efd86f07494bc898e05"><td class="memItemLeft" align="right" valign="top">
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_next</b></td></tr>
+<tr class="memitem:a8e3a77ae1cd32d114ee4191fd7c6df92 inherit properties_class_toolbar_map_form" id="r_a8e3a77ae1cd32d114ee4191fd7c6df92"><td class="memItemLeft" align="right" valign="top">
+alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_ask_ai</b></td></tr>
 <tr class="memitem:ac17f53c7d61fac6f026703b0c5d0776f inherit properties_class_toolbar_map_form" id="r_ac17f53c7d61fac6f026703b0c5d0776f"><td class="memItemLeft" align="right" valign="top">
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_save_pos</b></td></tr>
 <tr class="memitem:ad765de39d3449bd7602b246dfcfe4368 inherit properties_class_toolbar_map_form" id="r_ad765de39d3449bd7602b246dfcfe4368"><td class="memItemLeft" align="right" valign="top">
@@ -158,7 +165,7 @@ alias&#160;</td><td class="memItemRight" valign="bottom"><b>slider_radius</b></t
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_revert</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Controlleur pour la barre de boutons située au dessus de la carte. </p>
+<div class="textblock"><p>Controlleur pour la barre de boutons située au dessus de la carte (onglet MAP). </p>
 <hr  />
  </div><hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>Sources/Qml/Controllers/<b>ToolbarMap.qml</b></li>

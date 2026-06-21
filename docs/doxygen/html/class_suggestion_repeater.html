@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -104,6 +104,15 @@ Graphe d'héritage de SuggestionRepeater:</div>
   <img src="class_suggestion_repeater.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Propriétés</h2></td></tr>
+<tr class="memitem:a0997c2b4e4deb9b7f1f81faf2c41a750" id="r_a0997c2b4e4deb9b7f1f81faf2c41a750"><td class="memItemLeft" align="right" valign="top"><a id="a0997c2b4e4deb9b7f1f81faf2c41a750" name="a0997c2b4e4deb9b7f1f81faf2c41a750"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>onlyKeywords</b></td></tr>
+<tr class="memdesc:a0997c2b4e4deb9b7f1f81faf2c41a750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si true, n'affiche que les suggestions de type "keywords" (panneau droit). <br /></td></tr>
+<tr class="memitem:a55ca9575344811a06d579613ecf81e51" id="r_a55ca9575344811a06d579613ecf81e51"><td class="memItemLeft" align="right" valign="top"><a id="a55ca9575344811a06d579613ecf81e51" name="a55ca9575344811a06d579613ecf81e51"></a>
+var&#160;</td><td class="memItemRight" valign="bottom"><b>getCenterForTarget</b></td></tr>
+<tr class="memdesc:a55ca9575344811a06d579613ecf81e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction reçue du parent : renvoie le centre (en coords ghostLayer) de la zone destination pour un target donné. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr class="memitem:a60a204a568c0acb2afa707f07cb88afe" id="r_a60a204a568c0acb2afa707f07cb88afe"><td class="memItemLeft" align="right" valign="top"><a id="a60a204a568c0acb2afa707f07cb88afe" name="a60a204a568c0acb2afa707f07cb88afe"></a>
@@ -114,6 +123,7 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>delegate</b></td></tr>
 var&#160;</td><td class="memItemRight" valign="bottom"><b>focus</b></td></tr>
 <tr class="memitem:a16a5777730b724d2c4b2c97dd2c39557" id="r_a16a5777730b724d2c4b2c97dd2c39557"><td class="memItemLeft" align="right" valign="top"><a id="a16a5777730b724d2c4b2c97dd2c39557" name="a16a5777730b724d2c4b2c97dd2c39557"></a>
 var&#160;</td><td class="memItemRight" valign="bottom"><b>clip</b></td></tr>
+<tr class="memitem:aaa64edb5d93b050218a1934ddc8cdeca" id="r_aaa64edb5d93b050218a1934ddc8cdeca"><td class="memItemLeft" align="right" valign="top">Component&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa64edb5d93b050218a1934ddc8cdeca">ghostChipComponent</a></td></tr>
 <tr class="memitem:ae368711aa06c4a024b6d7c4868145489" id="r_ae368711aa06c4a024b6d7c4868145489"><td class="memItemLeft" align="right" valign="top">Component&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae368711aa06c4a024b6d7c4868145489">suggestionDelegate</a></td></tr>
 <tr class="memitem:ae6f94907d0d26b2afce8bfec1ee02537" id="r_ae6f94907d0d26b2afce8bfec1ee02537"><td class="memItemLeft" align="right" valign="top"><a id="ae6f94907d0d26b2afce8bfec1ee02537" name="ae6f94907d0d26b2afce8bfec1ee02537"></a>
 Item&#160;</td><td class="memItemRight" valign="bottom"><b>currrentItem</b></td></tr>
@@ -144,6 +154,30 @@ Item&#160;</td><td class="memItemRight" valign="bottom"><b>currrentItem</b></td>
 </div><div class="memdoc">
 <hr  />
 <p> <a class="el" href="class_chips.html" title="Ce composant reproduit un MaterialDesign::Chip en se basant sur un Qt Rectangle. A noter que l&#39;ombre ...">Chips</a> de suggestion. </p>
+
+</div>
+</div>
+<a id="aaa64edb5d93b050218a1934ddc8cdeca" name="aaa64edb5d93b050218a1934ddc8cdeca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa64edb5d93b050218a1934ddc8cdeca">&#9670;&#160;</a></span>ghostChipComponent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Component SuggestionRepeater::ghostChipComponent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> Ghost chip : rectangle animé qui vole de la zone suggestion vers la zone destination. Créé dynamiquement dans ghostLayer lors du clic, détruit en fin d'animation. </p><dl class="section see"><dt>Voir également</dt><dd>GhostChip.qml </dd></dl>
 
 </div>
 </div>

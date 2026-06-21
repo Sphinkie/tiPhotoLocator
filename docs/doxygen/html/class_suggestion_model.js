@@ -11,6 +11,7 @@ var class_suggestion_model =
     [ "addPhotoToSuggestion", "class_suggestion_model.html#a0de02decfdbfe787caf63895eca58cb6", null ],
     [ "append", "class_suggestion_model.html#ad3ab6524021cc864b62b4eb9002bd152", null ],
     [ "clear", "class_suggestion_model.html#adf99459a4600a0d0aa9c77858bfa23e8", null ],
+    [ "clearByCategory", "class_suggestion_model.html#af2e3d7cd156362e409d8f83a1928e8a7", null ],
     [ "createInitialSuggestions", "class_suggestion_model.html#ae237db33f536544358c527f8ee0c3f18", null ],
     [ "data", "class_suggestion_model.html#a403421fd09afc22273162b74e74b7d7c", null ],
     [ "dumpData", "class_suggestion_model.html#af3345223f2aa9b5d563b9097271a1d20", null ],

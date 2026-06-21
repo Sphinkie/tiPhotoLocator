@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TiPhotoLocator: Référence de la classe LandmarkWrapper</title>
+<link rel="icon" href="logo_TPL.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">A tiny application to easily geotag your photos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_landmark_wrapper.html','','class_landmark_wrapper-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence de la classe LandmarkWrapper</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interroge le modèle Llama-3.2-Vision (HuggingFace Inference API) pour identifier un monument ou un lieu célèbre visible sur une photo.  
+ <a href="#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_landmark_wrapper_8h_source.html">LandmarkWrapper.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de LandmarkWrapper:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_landmark_wrapper.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
+Signaux</h2></td></tr>
+<tr class="memitem:a00eb6908a12b76875ee6977f2986335b" id="r_a00eb6908a12b76875ee6977f2986335b"><td class="memItemLeft" align="right" valign="top"><a id="a00eb6908a12b76875ee6977f2986335b" name="a00eb6908a12b76875ee6977f2986335b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>landmarkFound</b> (const QString &amp;name, double latitude, double longitude)</td></tr>
+<tr class="memitem:a2743bcc521b2f3b6621d0a86dd92587a" id="r_a2743bcc521b2f3b6621d0a86dd92587a"><td class="memItemLeft" align="right" valign="top"><a id="a2743bcc521b2f3b6621d0a86dd92587a" name="a2743bcc521b2f3b6621d0a86dd92587a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>locationUnknown</b> ()</td></tr>
+<tr class="memitem:abe5da475d052d03b6e757a5fa64255b4" id="r_abe5da475d052d03b6e757a5fa64255b4"><td class="memItemLeft" align="right" valign="top"><a id="abe5da475d052d03b6e757a5fa64255b4" name="abe5da475d052d03b6e757a5fa64255b4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>networkError</b> (const QString &amp;message)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a579ce7e2361a35f2a530442e05150e96" id="r_a579ce7e2361a35f2a530442e05150e96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a579ce7e2361a35f2a530442e05150e96">LandmarkWrapper</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a579ce7e2361a35f2a530442e05150e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructeur.  <br /></td></tr>
+<tr class="memitem:aa355c85096ffd145a2d3dff32a4cbcdb" id="r_aa355c85096ffd145a2d3dff32a4cbcdb"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa355c85096ffd145a2d3dff32a4cbcdb">identify</a> (const QString &amp;imageUrl, const QString &amp;apiKey)</td></tr>
+<tr class="memdesc:aa355c85096ffd145a2d3dff32a4cbcdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode l'image en binaire et envoie la requete REST à l'API Groq.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Connecteurs privés</h2></td></tr>
+<tr class="memitem:a081a0aea19184f5d7921126b680c6126" id="r_a081a0aea19184f5d7921126b680c6126"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a081a0aea19184f5d7921126b680c6126">onReplyFinished</a> ()</td></tr>
+<tr class="memdesc:a081a0aea19184f5d7921126b680c6126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal appelé lors de la réception de la réponse à la request. La réponse contient un JSON, soit vide; soit avec un texte contenant NAME, LON, LAT.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:afbebd99ab92e86b2390a3eff75023808" id="r_afbebd99ab92e86b2390a3eff75023808"><td class="memItemLeft" align="right" valign="top"><a id="afbebd99ab92e86b2390a3eff75023808" name="afbebd99ab92e86b2390a3eff75023808"></a>
+QNetworkAccessManager&#160;</td><td class="memItemRight" valign="bottom"><b>m_manager</b></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Interroge le modèle Llama-3.2-Vision (HuggingFace Inference API) pour identifier un monument ou un lieu célèbre visible sur une photo. </p>
+<hr  />
+ <p>Signaux émis après la réponse :</p><ul>
+<li>landmarkFound(name, lat, lon) : un lieu a été identifié</li>
+<li>locationUnknown() : aucun lieu identifiable</li>
+<li>networkError(message) : erreur réseau ou API </li>
+</ul>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="a579ce7e2361a35f2a530442e05150e96" name="a579ce7e2361a35f2a530442e05150e96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579ce7e2361a35f2a530442e05150e96">&#9670;&#160;</a></span>LandmarkWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LandmarkWrapper::LandmarkWrapper </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contructeur. </p>
+<hr  />
+ 
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<a id="aa355c85096ffd145a2d3dff32a4cbcdb" name="aa355c85096ffd145a2d3dff32a4cbcdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa355c85096ffd145a2d3dff32a4cbcdb">&#9670;&#160;</a></span>identify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LandmarkWrapper::identify </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>imageUrl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>apiKey</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode l'image en binaire et envoie la requete REST à l'API Groq. </p>
+<hr  />
+ <dl class="section note"><dt>Note</dt><dd>: Le token Groq doit avoir été mis dans la configuration </dd></dl>
+
+</div>
+</div>
+<a id="a081a0aea19184f5d7921126b680c6126" name="a081a0aea19184f5d7921126b680c6126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a081a0aea19184f5d7921126b680c6126">&#9670;&#160;</a></span>onReplyFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LandmarkWrapper::onReplyFinished </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal appelé lors de la réception de la réponse à la request. La réponse contient un JSON, soit vide; soit avec un texte contenant NAME, LON, LAT. </p>
+<hr  />
+ 
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>Sources/cpp/<a class="el" href="_landmark_wrapper_8h_source.html">LandmarkWrapper.h</a></li>
+<li>Sources/cpp/<b>LandmarkWrapper.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_landmark_wrapper.html">LandmarkWrapper</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

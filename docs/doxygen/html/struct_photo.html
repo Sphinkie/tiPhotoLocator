@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -142,9 +142,21 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isMarker</b> = false<
 <tr class="memitem:a33f360a2eccf88cc843e3a469600b3d5" id="r_a33f360a2eccf88cc843e3a469600b3d5"><td class="memItemLeft" align="right" valign="top"><a id="a33f360a2eccf88cc843e3a469600b3d5" name="a33f360a2eccf88cc843e3a469600b3d5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>insideCircle</b> = false</td></tr>
 <tr class="memdesc:a33f360a2eccf88cc843e3a469600b3d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">inside the radius of nearby photos <br /></td></tr>
+<tr class="memitem:a463d3ce695014135930aa012e926a887" id="r_a463d3ce695014135930aa012e926a887"><td class="memItemLeft" align="right" valign="top"><a id="a463d3ce695014135930aa012e926a887" name="a463d3ce695014135930aa012e926a887"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isOnTrack</b> = false</td></tr>
+<tr class="memdesc:a463d3ce695014135930aa012e926a887"><td class="mdescLeft">&#160;</td><td class="mdescRight">true si la photo correspond au track GPX sélectionné (temporaire) <br /></td></tr>
 <tr class="memitem:a66c836579b45614de3f51edba11ea2fe" id="r_a66c836579b45614de3f51edba11ea2fe"><td class="memItemLeft" align="right" valign="top"><a id="a66c836579b45614de3f51edba11ea2fe" name="a66c836579b45614de3f51edba11ea2fe"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>toBeSaved</b> = false</td></tr>
 <tr class="memdesc:a66c836579b45614de3f51edba11ea2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if one of the following fields has been modified <br /></td></tr>
+<tr class="memitem:a9aafc2bc1ed9f0ede911519f006c4a3a" id="r_a9aafc2bc1ed9f0ede911519f006c4a3a"><td class="memItemLeft" align="right" valign="top"><a id="a9aafc2bc1ed9f0ede911519f006c4a3a" name="a9aafc2bc1ed9f0ede911519f006c4a3a"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>writeError</b></td></tr>
+<tr class="memdesc:a9aafc2bc1ed9f0ede911519f006c4a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message d'erreur ExifTool si la dernière écriture a échoué <br /></td></tr>
+<tr class="memitem:a4ad3287779ab91c520c021d623e8cf52" id="r_a4ad3287779ab91c520c021d623e8cf52"><td class="memItemLeft" align="right" valign="top"><a id="a4ad3287779ab91c520c021d623e8cf52" name="a4ad3287779ab91c520c021d623e8cf52"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>onTrackLatitude</b> = 0</td></tr>
+<tr class="memdesc:a4ad3287779ab91c520c021d623e8cf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Latitude interpolée depuis le track GPX (temporaire, non sauvegardée) <br /></td></tr>
+<tr class="memitem:ae07599d85fd1780bf94e5ff96ffd791f" id="r_ae07599d85fd1780bf94e5ff96ffd791f"><td class="memItemLeft" align="right" valign="top"><a id="ae07599d85fd1780bf94e5ff96ffd791f" name="ae07599d85fd1780bf94e5ff96ffd791f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>onTrackLongitude</b> = 0</td></tr>
+<tr class="memdesc:ae07599d85fd1780bf94e5ff96ffd791f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Longitude interpolée depuis le track GPX (temporaire, non sauvegardée) <br /></td></tr>
 <tr class="memitem:a481cec4ea67fe90721b20510f55dee5a" id="r_a481cec4ea67fe90721b20510f55dee5a"><td class="memItemLeft" align="right" valign="top"><a id="a481cec4ea67fe90721b20510f55dee5a" name="a481cec4ea67fe90721b20510f55dee5a"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>dateTimeOriginal</b></td></tr>
 <tr class="memdesc:a481cec4ea67fe90721b20510f55dee5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time when the camera shutter was pressed (no changes allowed in this app) <br /></td></tr>

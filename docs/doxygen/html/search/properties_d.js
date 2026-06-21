@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['savearea_0',['saveArea',['../class_chips.html#a280cfbb450b5cc41e16f31ded7ede64c',1,'Chips']]],
-  ['savedpositionexists_1',['savedPositionExists',['../class_photo_model.html#a1153ffe0150ba4dcc0f9e1a7e246807d',1,'PhotoModel']]],
-  ['secondarycolor_2',['secondaryColor',['../class_style.html#adc59f5abcab055634f812375cbde99fb',1,'Style']]],
-  ['secondarytextcolor_3',['secondaryTextColor',['../class_style.html#aa2f5b14c301001e53a872963531c34be',1,'Style']]],
-  ['selectioncount_4',['selectionCount',['../class_photo_model.html#aa41215645b3d02fec1ffa4b94b88b9b0',1,'PhotoModel']]],
-  ['suggestionbackgroundcolor_5',['suggestionBackgroundColor',['../class_style.html#ae958fbfc96deca9e9a0b39d4e1e38404',1,'Style']]],
-  ['surfacecontainercolor_6',['surfaceContainerColor',['../class_style.html#a8757f72daba53eee9779307960878d2c',1,'Style']]],
-  ['swaparea_7',['swapArea',['../class_chips.html#a36109c87cdf79393873ff90b401ff37c',1,'Chips']]],
-  ['swappable_8',['swappable',['../class_chips.html#aaa5a30cb10fb2709fb7832e95a2ad1b8',1,'Chips']]],
-  ['syslang_9',['sysLang',['../class_popup_settings.html#a35c96c11b5460c7638c6ccccc31e5c44',1,'PopupSettings']]]
+  ['pages_0',['pages',['../class_tutorial_popup.html#add04f73e58ab5fc73707ee494d54e949',1,'TutorialPopup']]],
+  ['predefinedkeywords_1',['predefinedKeywords',['../class_popup_keywords_form.html#aaf53a93b3d69643187905cfe89fbd379',1,'PopupKeywordsForm']]],
+  ['primary_2',['primary',['../class_style.html#aefe914a366da64bbe72ae57153c61d28',1,'Style']]],
+  ['primarycolor_3',['primaryColor',['../class_style.html#a9d26a25965fed39e9def07c6e71d6d12',1,'Style']]],
+  ['primarytextcolor_4',['primaryTextColor',['../class_style.html#a7bc2b09d1d2e5db097456fba1d1773f6',1,'Style']]]
 ];

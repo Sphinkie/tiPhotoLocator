@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;1.7</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -95,7 +95,7 @@ $(function(){initNavTree('class_toolbar_map_form.html','','class_toolbar_map_for
 </div><!--header-->
 <div class="contents">
 
-<p>Cette vue correspond à la barre d'outils spécifiques à la carte.  
+<p>Cette vue correspond à la barre d'outils spécifiques à la carte (onglet MAP).  
  <a href="#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de ToolbarMapForm:</div>
@@ -103,7 +103,7 @@ Graphe d'héritage de ToolbarMapForm:</div>
  <div class="center">
   <img src="class_toolbar_map_form.png" usemap="#ToolbarMapForm_map" alt=""/>
   <map id="ToolbarMapForm_map" name="ToolbarMapForm_map">
-<area href="class_toolbar_map.html" title="Controlleur pour la barre de boutons située au dessus de la carte." alt="ToolbarMap" shape="rect" coords="0,112,109,136"/>
+<area href="class_toolbar_map.html" title="Controlleur pour la barre de boutons située au dessus de la carte (onglet MAP)." alt="ToolbarMap" shape="rect" coords="0,112,109,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -115,6 +115,8 @@ alias&#160;</td><td class="memItemRight" valign="bottom"><b>txt_find</b></td></t
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_find</b></td></tr>
 <tr class="memitem:a1a422851fd747efd86f07494bc898e05" id="r_a1a422851fd747efd86f07494bc898e05"><td class="memItemLeft" align="right" valign="top"><a id="a1a422851fd747efd86f07494bc898e05" name="a1a422851fd747efd86f07494bc898e05"></a>
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_next</b></td></tr>
+<tr class="memitem:a8e3a77ae1cd32d114ee4191fd7c6df92" id="r_a8e3a77ae1cd32d114ee4191fd7c6df92"><td class="memItemLeft" align="right" valign="top"><a id="a8e3a77ae1cd32d114ee4191fd7c6df92" name="a8e3a77ae1cd32d114ee4191fd7c6df92"></a>
+alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_ask_ai</b></td></tr>
 <tr class="memitem:ac17f53c7d61fac6f026703b0c5d0776f" id="r_ac17f53c7d61fac6f026703b0c5d0776f"><td class="memItemLeft" align="right" valign="top"><a id="ac17f53c7d61fac6f026703b0c5d0776f" name="ac17f53c7d61fac6f026703b0c5d0776f"></a>
 alias&#160;</td><td class="memItemRight" valign="bottom"><b>bt_save_pos</b></td></tr>
 <tr class="memitem:ad765de39d3449bd7602b246dfcfe4368" id="r_ad765de39d3449bd7602b246dfcfe4368"><td class="memItemLeft" align="right" valign="top"><a id="ad765de39d3449bd7602b246dfcfe4368" name="ad765de39d3449bd7602b246dfcfe4368"></a>
@@ -136,6 +138,8 @@ TextField&#160;</td><td class="memItemRight" valign="bottom"><b>txt_find</b></td
 RoundButton&#160;</td><td class="memItemRight" valign="bottom"><b>bt_find</b></td></tr>
 <tr class="memitem:a9b3824df1f36a64ec9ca1a735d2beee5" id="r_a9b3824df1f36a64ec9ca1a735d2beee5"><td class="memItemLeft" align="right" valign="top"><a id="a9b3824df1f36a64ec9ca1a735d2beee5" name="a9b3824df1f36a64ec9ca1a735d2beee5"></a>
 RoundButton&#160;</td><td class="memItemRight" valign="bottom"><b>bt_next</b></td></tr>
+<tr class="memitem:a272015608a1ba810afe924ff4995a25b" id="r_a272015608a1ba810afe924ff4995a25b"><td class="memItemLeft" align="right" valign="top"><a id="a272015608a1ba810afe924ff4995a25b" name="a272015608a1ba810afe924ff4995a25b"></a>
+Button&#160;</td><td class="memItemRight" valign="bottom"><b>bt_ask_ai</b></td></tr>
 <tr class="memitem:ad54a6fcf048b85dcde391d6a5636028d" id="r_ad54a6fcf048b85dcde391d6a5636028d"><td class="memItemLeft" align="right" valign="top"><a id="ad54a6fcf048b85dcde391d6a5636028d" name="ad54a6fcf048b85dcde391d6a5636028d"></a>
 Button&#160;</td><td class="memItemRight" valign="bottom"><b>bt_save_pos</b></td></tr>
 <tr class="memitem:a0d8911264539d8758fc4bddd5871ba78" id="r_a0d8911264539d8758fc4bddd5871ba78"><td class="memItemLeft" align="right" valign="top"><a id="a0d8911264539d8758fc4bddd5871ba78" name="a0d8911264539d8758fc4bddd5871ba78"></a>
@@ -150,7 +154,7 @@ Label&#160;</td><td class="memItemRight" valign="bottom"><b>slider_label</b></td
 Button&#160;</td><td class="memItemRight" valign="bottom"><b>bt_revert</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Cette vue correspond à la barre d'outils spécifiques à la carte. </p>
+<div class="textblock"><p>Cette vue correspond à la barre d'outils spécifiques à la carte (onglet MAP). </p>
 <hr  />
  </div><hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>Sources/Qml/Vues/<b>ToolbarMapForm.ui.qml</b></li>

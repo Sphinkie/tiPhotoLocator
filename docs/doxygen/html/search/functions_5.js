@@ -7,7 +7,8 @@ var searchData=
   ['filterenabledchanged_4',['filterEnabledChanged',['../class_on_the_map_proxy_model.html#aa7c81a7a958b6a60d0e39b1d166f6829',1,'OnTheMapProxyModel::filterEnabledChanged()'],['../class_selected_photo_proxy_model.html#ab0bdb4985d3268f46d27076cf385d783',1,'SelectedPhotoProxyModel::filterEnabledChanged()'],['../class_suggestion_category_proxy_model.html#acbcc572b70158e4c6b93a43494837c74',1,'SuggestionCategoryProxyModel::filterEnabledChanged()'],['../class_suggestion_proxy_model.html#a1b4ad3a4a83b4c7c959394a68871d349',1,'SuggestionProxyModel::filterEnabledChanged()'],['../class_undated_photo_proxy_model.html#a8f7fadf267c65157d70e3c2b650c6bdc',1,'UndatedPhotoProxyModel::filterEnabledChanged()']]],
   ['findincirclephotos_5',['findInCirclePhotos',['../class_photo_model.html#a262b8d92e3edf3884c723c965f7de5e1',1,'PhotoModel']]],
   ['firstcoordsready_6',['firstCoordsReady',['../class_photo_model.html#a187455537cc85b88e106f9c68cd64c7f',1,'PhotoModel']]],
-  ['fixdigits_7',['fixDigits',['../class_utilities.html#a1c31753eeb57b373d7a73c097e6766ee',1,'Utilities']]],
-  ['fixyear_8',['fixYear',['../class_utilities.html#a40979a50f9670f01945d07c9e80e9a33',1,'Utilities']]],
-  ['flags_9',['flags',['../class_photo_model.html#a1304d28519eb274764ef65afffec6c96',1,'PhotoModel::flags()'],['../class_suggestion_model.html#ae3b26fa49dff5a4c7f1a79e061dd9970',1,'SuggestionModel::flags()']]]
+  ['firstontrackfound_7',['firstOnTrackFound',['../class_gpx_model.html#a89922a519a0e937d9a4eddaa4643eac7',1,'GpxModel']]],
+  ['fixdigits_8',['fixDigits',['../class_utilities.html#a1c31753eeb57b373d7a73c097e6766ee',1,'Utilities']]],
+  ['fixyear_9',['fixYear',['../class_utilities.html#a40979a50f9670f01945d07c9e80e9a33',1,'Utilities']]],
+  ['flags_10',['flags',['../class_photo_model.html#a1304d28519eb274764ef65afffec6c96',1,'PhotoModel::flags()'],['../class_suggestion_model.html#ae3b26fa49dff5a4c7f1a79e061dd9970',1,'SuggestionModel::flags()']]]
 ];

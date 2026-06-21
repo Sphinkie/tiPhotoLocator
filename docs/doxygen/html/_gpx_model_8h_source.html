@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TiPhotoLocator:  Fichier source de Sources/cpp/Models/GpxModel.h</title>
+<link rel="icon" href="logo_TPL.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">A tiny application to easily geotag your photos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_gpx_model_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GpxModel.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef GPXMODEL_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define GPXMODEL_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QAbstractListModel&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QDateTime&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QGeoCoordinate&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QUrl&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_gpx_track_point.html">   12</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_gpx_track_point.html">GpxTrackPoint</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    QGeoCoordinate coord;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    QDateTime      time;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
+</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_gpx_file_info.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_gpx_file_info.html">GpxFileInfo</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_gpx_file_info.html#aebbda030f03cb3aa5f51fc2003cd7fec">   21</a></span>    QString <a class="code hl_variable" href="struct_gpx_file_info.html#aebbda030f03cb3aa5f51fc2003cd7fec">name</a>;       </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_gpx_file_info.html#ad9fc17afbd82a9a6ffcf22cc02d2574f">   22</a></span>    QString <a class="code hl_variable" href="struct_gpx_file_info.html#ad9fc17afbd82a9a6ffcf22cc02d2574f">filePath</a>;   </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_gpx_file_info.html#a30adf61dea8dbd42a341344381cba308">   23</a></span>    QString <a class="code hl_variable" href="struct_gpx_file_info.html#a30adf61dea8dbd42a341344381cba308">startTime</a>;  </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_gpx_model.html">   32</a></span><span class="keyword">class </span><a class="code hl_function" href="class_gpx_model.html#ab5f08b7eb04cd707addbf05e4b808781">GpxModel</a> : <span class="keyword">public</span> QAbstractListModel</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    Q_OBJECT</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    Q_PROPERTY(QVariantList currentTrackPoints READ currentTrackPoints NOTIFY <a class="code hl_signal" href="class_gpx_model.html#a89d5153a753eb8bf4e853d052056b1ce">currentTrackPointsChanged</a>)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    Q_PROPERTY(<span class="keywordtype">int</span> matchCount READ matchCount NOTIFY <a class="code hl_signal" href="class_gpx_model.html#ae34c9156a1ec7175a959821e041531d8">matchCountChanged</a>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QVariantList currentTrackPoints()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_gpx_model.html#aca36c25e3aecd48f7e02e214e21d621d">m_currentTrackPoints</a>; }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">int</span>          matchCount()<span class="keyword">         const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_gpx_model.html#af17837371e0c1f5fbf946cd688d4d940">m_matchCount</a>; }</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987">   44</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987">Roles</a> {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2f284328b63c0f3d82efc3278f558942">   45</a></span>        <a class="code hl_enumvalue" href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2f284328b63c0f3d82efc3278f558942">NameRole</a>      = Qt::UserRole,  </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a020a37e1814a273b8d85e49ed59c8f38">   46</a></span>        <a class="code hl_enumvalue" href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a020a37e1814a273b8d85e49ed59c8f38">FilePathRole</a>,                  </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2e4e889c79b53f537f8bd46f8c845ab6">   47</a></span>        <a class="code hl_enumvalue" href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2e4e889c79b53f537f8bd46f8c845ab6">StartTimeRole</a>                  </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    };</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_gpx_model.html#ab5f08b7eb04cd707addbf05e4b808781">GpxModel</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// Surcharges obligatoires</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">int</span>      <a class="code hl_function" href="class_gpx_model.html#ad8a3de6109996db37f599d5e1c8e194f">rowCount</a>(<span class="keyword">const</span> QModelIndex&amp; parent = QModelIndex()) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    QVariant <a class="code hl_function" href="class_gpx_model.html#af7f53e1fb305b56bb1c6badba881c7f5">data</a>(<span class="keyword">const</span> QModelIndex&amp; index, <span class="keywordtype">int</span> role = Qt::DisplayRole) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    QHash&lt;int, QByteArray&gt; <a class="code hl_function" href="class_gpx_model.html#a88b4c37bdb81ad85d0b22fcdf8b54555">roleNames</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_gpx_model.html#a1691546500164c1cc83e2f45bbc7c665">refresh</a>(<span class="keyword">const</span> QUrl&amp; folderUrl);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_gpx_model.html#a47af24a7ad95325a0951280fb368934f">selectTrack</a>(<span class="keywordtype">int</span> row);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_gpx_model.html#a6da2032e71565f43d785145a05b86c83">matchPhotos</a>(QObject* photoModelObj, <span class="keywordtype">int</span> offsetHours);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>signals:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_gpx_model.html#a89d5153a753eb8bf4e853d052056b1ce">   63</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_gpx_model.html#a89d5153a753eb8bf4e853d052056b1ce">currentTrackPointsChanged</a>();      </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_gpx_model.html#ae34c9156a1ec7175a959821e041531d8">   64</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_gpx_model.html#ae34c9156a1ec7175a959821e041531d8">matchCountChanged</a>();              </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_gpx_model.html#a89922a519a0e937d9a4eddaa4643eac7">   65</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_gpx_model.html#a89922a519a0e937d9a4eddaa4643eac7">firstOnTrackFound</a>(<span class="keywordtype">int</span> sourceRow); </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    QString                <a class="code hl_function" href="class_gpx_model.html#af0995bc254f67c88a268b5c1788e7213">readStartTime</a>(<span class="keyword">const</span> QString&amp; filePath);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    QVector&lt;GpxTrackPoint&gt; <a class="code hl_function" href="class_gpx_model.html#a71007112af10fb87a695179be1f2d6f2">parseTrack</a>(<span class="keyword">const</span> QString&amp; filePath);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_gpx_model.html#a9f48d83641f004bb16806df04fcef7aa">   71</a></span>    QVector&lt;GpxFileInfo&gt;   <a class="code hl_variable" href="class_gpx_model.html#a9f48d83641f004bb16806df04fcef7aa">m_files</a>;              </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_gpx_model.html#ac4d950fd7b0d1394e5a3ed5f1d547046">   72</a></span>    QVector&lt;GpxTrackPoint&gt; <a class="code hl_variable" href="class_gpx_model.html#ac4d950fd7b0d1394e5a3ed5f1d547046">m_currentTrack</a>;       </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_gpx_model.html#aca36c25e3aecd48f7e02e214e21d621d">   73</a></span>    QVariantList           <a class="code hl_variable" href="class_gpx_model.html#aca36c25e3aecd48f7e02e214e21d621d">m_currentTrackPoints</a>; </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_gpx_model.html#af17837371e0c1f5fbf946cd688d4d940">   74</a></span>    <span class="keywordtype">int</span>                    <a class="code hl_variable" href="class_gpx_model.html#af17837371e0c1f5fbf946cd688d4d940">m_matchCount</a> = 0;     </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// GPXMODEL_H</span></div>
+<div class="ttc" id="aclass_gpx_model_html_a1691546500164c1cc83e2f45bbc7c665"><div class="ttname"><a href="class_gpx_model.html#a1691546500164c1cc83e2f45bbc7c665">GpxModel::refresh</a></div><div class="ttdeci">void refresh(const QUrl &amp;folderUrl)</div><div class="ttdoc">Vide le modèle et le remplit avec les fichiers GPX trouvés dans les sous-dossiers.</div><div class="ttdef"><b>Definition</b> GpxModel.cpp:68</div></div>
+<div class="ttc" id="aclass_gpx_model_html_a47af24a7ad95325a0951280fb368934f"><div class="ttname"><a href="class_gpx_model.html#a47af24a7ad95325a0951280fb368934f">GpxModel::selectTrack</a></div><div class="ttdeci">void selectTrack(int row)</div><div class="ttdoc">Charge le tracé du fichier GPX sélectionné dans currentTrackPoints.</div><div class="ttdef"><b>Definition</b> GpxModel.cpp:106</div></div>
+<div class="ttc" id="aclass_gpx_model_html_a6da2032e71565f43d785145a05b86c83"><div class="ttname"><a href="class_gpx_model.html#a6da2032e71565f43d785145a05b86c83">GpxModel::matchPhotos</a></div><div class="ttdeci">void matchPhotos(QObject *photoModelObj, int offsetHours)</div><div class="ttdoc">Pour chaque photo du modèle, recherche si son horodatage correspond à un point du track....</div><div class="ttdef"><b>Definition</b> GpxModel.cpp:174</div></div>
+<div class="ttc" id="aclass_gpx_model_html_a71007112af10fb87a695179be1f2d6f2"><div class="ttname"><a href="class_gpx_model.html#a71007112af10fb87a695179be1f2d6f2">GpxModel::parseTrack</a></div><div class="ttdeci">QVector&lt; GpxTrackPoint &gt; parseTrack(const QString &amp;filePath)</div><div class="ttdoc">Parse tous les &lt;trkpt&gt; du fichier GPX et retourne les points avec coordonnées ET timestamps.</div><div class="ttdef"><b>Definition</b> GpxModel.cpp:129</div></div>
+<div class="ttc" id="aclass_gpx_model_html_a88b4c37bdb81ad85d0b22fcdf8b54555"><div class="ttname"><a href="class_gpx_model.html#a88b4c37bdb81ad85d0b22fcdf8b54555">GpxModel::roleNames</a></div><div class="ttdeci">QHash&lt; int, QByteArray &gt; roleNames() const override</div><div class="ttdoc">Retourne la table de correspondance rôle → nom QML.</div><div class="ttdef"><b>Definition</b> GpxModel.cpp:50</div></div>
+<div class="ttc" id="aclass_gpx_model_html_a89922a519a0e937d9a4eddaa4643eac7"><div class="ttname"><a href="class_gpx_model.html#a89922a519a0e937d9a4eddaa4643eac7">GpxModel::firstOnTrackFound</a></div><div class="ttdeci">void firstOnTrackFound(int sourceRow)</div><div class="ttdoc">Émis après matchPhotos() si au moins une photo est sur la track.</div></div>
+<div class="ttc" id="aclass_gpx_model_html_a89d5153a753eb8bf4e853d052056b1ce"><div class="ttname"><a href="class_gpx_model.html#a89d5153a753eb8bf4e853d052056b1ce">GpxModel::currentTrackPointsChanged</a></div><div class="ttdeci">void currentTrackPointsChanged()</div><div class="ttdoc">Emis quand une nouvelle track est chargée.</div></div>
+<div class="ttc" id="aclass_gpx_model_html_a9f48d83641f004bb16806df04fcef7aa"><div class="ttname"><a href="class_gpx_model.html#a9f48d83641f004bb16806df04fcef7aa">GpxModel::m_files</a></div><div class="ttdeci">QVector&lt; GpxFileInfo &gt; m_files</div><div class="ttdoc">Liste des fichiers GPX détectés.</div><div class="ttdef"><b>Definition</b> GpxModel.h:71</div></div>
+<div class="ttc" id="aclass_gpx_model_html_ab5f08b7eb04cd707addbf05e4b808781"><div class="ttname"><a href="class_gpx_model.html#ab5f08b7eb04cd707addbf05e4b808781">GpxModel::GpxModel</a></div><div class="ttdeci">GpxModel(QObject *parent=nullptr)</div><div class="ttdoc">Constructeur.</div><div class="ttdef"><b>Definition</b> GpxModel.cpp:13</div></div>
+<div class="ttc" id="aclass_gpx_model_html_ac4d950fd7b0d1394e5a3ed5f1d547046"><div class="ttname"><a href="class_gpx_model.html#ac4d950fd7b0d1394e5a3ed5f1d547046">GpxModel::m_currentTrack</a></div><div class="ttdeci">QVector&lt; GpxTrackPoint &gt; m_currentTrack</div><div class="ttdoc">Points du track sélectionné (avec timestamps).</div><div class="ttdef"><b>Definition</b> GpxModel.h:72</div></div>
+<div class="ttc" id="aclass_gpx_model_html_aca36c25e3aecd48f7e02e214e21d621d"><div class="ttname"><a href="class_gpx_model.html#aca36c25e3aecd48f7e02e214e21d621d">GpxModel::m_currentTrackPoints</a></div><div class="ttdeci">QVariantList m_currentTrackPoints</div><div class="ttdoc">Coordonnées seules pour MapPolyline QML.</div><div class="ttdef"><b>Definition</b> GpxModel.h:73</div></div>
+<div class="ttc" id="aclass_gpx_model_html_ad8a3de6109996db37f599d5e1c8e194f"><div class="ttname"><a href="class_gpx_model.html#ad8a3de6109996db37f599d5e1c8e194f">GpxModel::rowCount</a></div><div class="ttdeci">int rowCount(const QModelIndex &amp;parent=QModelIndex()) const override</div><div class="ttdoc">Retourne le nombre de fichiers GPX dans le modèle.</div><div class="ttdef"><b>Definition</b> GpxModel.cpp:21</div></div>
+<div class="ttc" id="aclass_gpx_model_html_ae34c9156a1ec7175a959821e041531d8"><div class="ttname"><a href="class_gpx_model.html#ae34c9156a1ec7175a959821e041531d8">GpxModel::matchCountChanged</a></div><div class="ttdeci">void matchCountChanged()</div><div class="ttdoc">Emis quand le nombre de photos matchées change.</div></div>
+<div class="ttc" id="aclass_gpx_model_html_ae76055335014cea9cbdbbc2dc87c0987"><div class="ttname"><a href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987">GpxModel::Roles</a></div><div class="ttdeci">Roles</div><div class="ttdoc">Rôles exposés au QML.</div><div class="ttdef"><b>Definition</b> GpxModel.h:44</div></div>
+<div class="ttc" id="aclass_gpx_model_html_ae76055335014cea9cbdbbc2dc87c0987a020a37e1814a273b8d85e49ed59c8f38"><div class="ttname"><a href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a020a37e1814a273b8d85e49ed59c8f38">GpxModel::FilePathRole</a></div><div class="ttdeci">@ FilePathRole</div><div class="ttdoc">Chemin absolu.</div><div class="ttdef"><b>Definition</b> GpxModel.h:46</div></div>
+<div class="ttc" id="aclass_gpx_model_html_ae76055335014cea9cbdbbc2dc87c0987a2e4e889c79b53f537f8bd46f8c845ab6"><div class="ttname"><a href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2e4e889c79b53f537f8bd46f8c845ab6">GpxModel::StartTimeRole</a></div><div class="ttdeci">@ StartTimeRole</div><div class="ttdoc">Heure de début &quot;HH:MM:SS&quot;.</div><div class="ttdef"><b>Definition</b> GpxModel.h:47</div></div>
+<div class="ttc" id="aclass_gpx_model_html_ae76055335014cea9cbdbbc2dc87c0987a2f284328b63c0f3d82efc3278f558942"><div class="ttname"><a href="class_gpx_model.html#ae76055335014cea9cbdbbc2dc87c0987a2f284328b63c0f3d82efc3278f558942">GpxModel::NameRole</a></div><div class="ttdeci">@ NameRole</div><div class="ttdoc">Nom du fichier.</div><div class="ttdef"><b>Definition</b> GpxModel.h:45</div></div>
+<div class="ttc" id="aclass_gpx_model_html_af0995bc254f67c88a268b5c1788e7213"><div class="ttname"><a href="class_gpx_model.html#af0995bc254f67c88a268b5c1788e7213">GpxModel::readStartTime</a></div><div class="ttdeci">QString readStartTime(const QString &amp;filePath)</div><div class="ttdoc">Lit le premier élément &lt;time&gt; du fichier GPX et retourne l&#39;heure au format &quot;HH:MM:SS&quot;.</div><div class="ttdef"><b>Definition</b> GpxModel.cpp:262</div></div>
+<div class="ttc" id="aclass_gpx_model_html_af17837371e0c1f5fbf946cd688d4d940"><div class="ttname"><a href="class_gpx_model.html#af17837371e0c1f5fbf946cd688d4d940">GpxModel::m_matchCount</a></div><div class="ttdeci">int m_matchCount</div><div class="ttdoc">Nombre de photos matchées sur le track courant.</div><div class="ttdef"><b>Definition</b> GpxModel.h:74</div></div>
+<div class="ttc" id="aclass_gpx_model_html_af7f53e1fb305b56bb1c6badba881c7f5"><div class="ttname"><a href="class_gpx_model.html#af7f53e1fb305b56bb1c6badba881c7f5">GpxModel::data</a></div><div class="ttdeci">QVariant data(const QModelIndex &amp;index, int role=Qt::DisplayRole) const override</div><div class="ttdoc">Retourne la donnée pour un rôle donné.</div><div class="ttdef"><b>Definition</b> GpxModel.cpp:31</div></div>
+<div class="ttc" id="astruct_gpx_file_info_html"><div class="ttname"><a href="struct_gpx_file_info.html">GpxFileInfo</a></div><div class="ttdoc">Structure interne décrivant un fichier GPX.</div><div class="ttdef"><b>Definition</b> GpxModel.h:20</div></div>
+<div class="ttc" id="astruct_gpx_file_info_html_a30adf61dea8dbd42a341344381cba308"><div class="ttname"><a href="struct_gpx_file_info.html#a30adf61dea8dbd42a341344381cba308">GpxFileInfo::startTime</a></div><div class="ttdeci">QString startTime</div><div class="ttdoc">Heure de début au format &quot;HH:MM:SS&quot; (vide si non trouvé).</div><div class="ttdef"><b>Definition</b> GpxModel.h:23</div></div>
+<div class="ttc" id="astruct_gpx_file_info_html_ad9fc17afbd82a9a6ffcf22cc02d2574f"><div class="ttname"><a href="struct_gpx_file_info.html#ad9fc17afbd82a9a6ffcf22cc02d2574f">GpxFileInfo::filePath</a></div><div class="ttdeci">QString filePath</div><div class="ttdoc">Chemin absolu complet.</div><div class="ttdef"><b>Definition</b> GpxModel.h:22</div></div>
+<div class="ttc" id="astruct_gpx_file_info_html_aebbda030f03cb3aa5f51fc2003cd7fec"><div class="ttname"><a href="struct_gpx_file_info.html#aebbda030f03cb3aa5f51fc2003cd7fec">GpxFileInfo::name</a></div><div class="ttdeci">QString name</div><div class="ttdoc">Nom de fichier (sans chemin).</div><div class="ttdef"><b>Definition</b> GpxModel.h:21</div></div>
+<div class="ttc" id="astruct_gpx_track_point_html"><div class="ttname"><a href="struct_gpx_track_point.html">GpxTrackPoint</a></div><div class="ttdoc">Un point du tracé GPX avec sa position et son horodatage.</div><div class="ttdef"><b>Definition</b> GpxModel.h:12</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_937900b87e0c7a5fa01190c395fb83f7.html">Sources</a></li><li class="navelem"><a href="dir_80deaa41e01a78ee3f8742fcac115338.html">cpp</a></li><li class="navelem"><a href="dir_c0f51bd6cbdfb01a1deb4e9b7e2c6004.html">Models</a></li><li class="navelem"><b>GpxModel.h</b></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

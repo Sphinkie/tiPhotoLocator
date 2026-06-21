@@ -2,6 +2,7 @@ var class_main =
 [
     [ "append", "class_main.html#aa28322e4b9aaf6ed8d659d57b7334cf5", null ],
     [ "applyCreatorToAll", "class_main.html#a580b6efa82d0e44235c259efd5c7d62e", null ],
+    [ "applyCreatorToSelection", "class_main.html#a38d2034da32743fed407bea33bd68c1f", null ],
     [ "applySavedPositionToCoords", "class_main.html#a827bdc33fe9a2ee87ed3de1d094da45e", null ],
     [ "clearSavedPosition", "class_main.html#a5c48d62abe783b8012b9a03532505cec", null ],
     [ "fetchExifMetadata", "class_main.html#ab7bec792dc2255b6f1a32a7475caa9e4", null ],
@@ -13,9 +14,13 @@ var class_main =
     [ "savePosition", "class_main.html#a5f6509a236e35dc1666aa6ed1b790c99", null ],
     [ "setCategoryFilter", "class_main.html#a7fca31d9bd8cce3190fe42c62dd946a9", null ],
     [ "setPhotoProperty", "class_main.html#ac0ff9966818be09f18bfe42bc766ae33", null ],
+    [ "aboutPage", "class_main.html#a4f956b7263c664340cb606ec2cc03aac", null ],
     [ "bottomToolBar", "class_main.html#afdf9d5f249ee4ef9573ae402aef38f7a", null ],
+    [ "creditsPage", "class_main.html#a0a2efcc080855f7243a45c280f4dc45c", null ],
+    [ "ghostLayer", "class_main.html#a8672070236403cae63f1abe1c92c73cc", null ],
+    [ "gpxTab", "class_main.html#a29a03d3ec8a1fbddef839c7287b35754", null ],
     [ "header", "class_main.html#aac07382860c30f1b9b149d4057b20fc4", null ],
-    [ "imagePreviewPopup", "class_main.html#ac08a4a5f2dc3d5ea2151e59d811cb02a", null ],
+    [ "imagePreviewPopup", "class_main.html#a22cce10650b6af0eb10f3e992db538d9", null ],
     [ "imagettes", "class_main.html#af3dfb2a32b39c98a991299276fc2b67a", null ],
     [ "line2", "class_main.html#a2c1d358ddafd73b36bfb1f50ba6b9ccd", null ],
     [ "line3", "class_main.html#a424dfda57077b446d80cf22e08f90ceb", null ],
@@ -25,7 +30,9 @@ var class_main =
     [ "menuBar", "class_main.html#aaa5a22b926b84f30d878945b8570bcee", null ],
     [ "photoTagsTab", "class_main.html#a937161b6dd4dce68dc7521e1b27819dd", null ],
     [ "previewView", "class_main.html#aac7638d6eb0c8f33f5cf7fe00e8eded7", null ],
+    [ "snackbar", "class_main.html#a21f1cc462970d3199d67476b7ecd9999", null ],
     [ "tabbedPage", "class_main.html#a3994eabf899973374689e40d9deb48d7", null ],
     [ "tabFrameGlobalTags", "class_main.html#a808b0b55bfd46ccf207d05db4ee86289", null ],
+    [ "tutorialPage", "class_main.html#ae5478a9eb9286de56f56a19f11bb7c56", null ],
     [ "currentFolderUrl", "class_main.html#a2bf237367c162dd11f4acbe25880aceb", null ]
 ];
