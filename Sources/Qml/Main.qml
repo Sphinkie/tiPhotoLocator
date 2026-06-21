@@ -178,15 +178,25 @@ ApplicationWindow {
                 Layout.leftMargin: 120
                 Layout.fillWidth: true
                 Layout.rightMargin: 40
+                property int previousTabIndex: 0
+                onCurrentIndexChanged: {
+                    // if (previousTabIndex === 2) _photoModel.resetOnTrack(); // quitte l'onglet GPS LOGGER
+                    previousTabIndex = currentIndex;
+                }
                 MyTabButton {
                     text: qsTr("PREVIEW")
                 }
                 MyTabButton {
                     text: qsTr("MAP")
-                    onClicked: _suggestionCategoryProxyModel.setFilterValue("geo")
+                    onClicked: {
+                        _suggestionCategoryProxyModel.setFilterValue("geo");
+                        // On désélectionne les photo de la track (au cas où)
+                        _photoModel.resetOnTrack();
+                    }
                 }
                 MyTabButton {
                     text: qsTr("GPS LOGGER")
+                    onClicked: _photoModel.resetCircle()
                 }
                 MyTabButton {
                     text: qsTr("EXIF / IPTC TAGS")

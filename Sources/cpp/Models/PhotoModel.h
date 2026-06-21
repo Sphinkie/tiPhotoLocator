@@ -78,6 +78,7 @@ public:
     Qt::ItemFlags flags(const QModelIndex &index) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+public:
     // -----------------------------------------------------
     // Méthodes pouvant être appelées depuis QML
     // -----------------------------------------------------
@@ -88,6 +89,8 @@ public:
     Q_INVOKABLE void addToSelection(int row, bool exclusive=false);
     Q_INVOKABLE void removeFromSelection(int row);
     Q_INVOKABLE void resetSelection();
+    Q_INVOKABLE void resetCircle();
+    Q_INVOKABLE void resetOnTrack();
     Q_INVOKABLE void selectUnlocalized();
     Q_INVOKABLE void selectUndated();
     Q_INVOKABLE void selectAll();
@@ -113,7 +116,6 @@ public:
     void append(const QVariantMap& data);
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;  // Surcharge
     void setOnTrack(int row, double lat, double lon);
-    void resetOnTrack();
     void setData(const QVariantMap &value_list);
     void selectFirstPhoto();
     void setWriteProgress(const int total = 0);
@@ -124,7 +126,6 @@ private:
     // Méthodes privées
     // -----------------------------------------------------
     void addTestItem();
-    void resetCircle();
     void setLoading(const bool state);
     void currentItemRow(const int row);
     void currentItemCoords(const QGeoCoordinate coords);

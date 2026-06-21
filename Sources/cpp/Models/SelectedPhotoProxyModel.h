@@ -21,6 +21,7 @@ public:
     // Méthodes pouvant être appelées depuis QML
     // -----------------------------------------------------
     Q_INVOKABLE int getSourceIndex(int row);
+    Q_INVOKABLE int getProxyIndex(int sourceRow);
 
 public slots:
     void setFilterEnabled(bool enabled);

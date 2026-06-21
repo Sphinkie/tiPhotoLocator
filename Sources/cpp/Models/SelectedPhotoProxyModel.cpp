@@ -44,6 +44,18 @@ void SelectedPhotoProxyModel::setFilterEnabled(bool enabled)
 
 
 /** **********************************************************************************************************
+ * @brief Cette fonction renvoie l'indice dans ce proxyModel pour un indice du modèle source donné.
+ * @param  sourceRow : L'indice de la Photo dans le \b sourceModel PhotoModel.
+ * @return l'indice dans ce \b proxyModel, ou -1 si la ligne est filtrée.
+ * ***********************************************************************************************************/
+int SelectedPhotoProxyModel::getProxyIndex(int sourceRow)
+{
+    const QModelIndex proxyIndex = mapFromSource(sourceModel()->index(sourceRow, 0));
+    return proxyIndex.isValid() ? proxyIndex.row() : -1;
+}
+
+
+/** **********************************************************************************************************
  * @brief Cette fonction renvoie l'indice de la Photo dans le modèle source.
  * @param  row : L'indice de la Photo dans ce \b proxyModel.
  * @return l'indice de la Photo dans le \b sourceModel PhotoModel.

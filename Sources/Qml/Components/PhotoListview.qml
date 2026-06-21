@@ -63,6 +63,18 @@ ListView {
     }
 
     /** ******************************************************************************************************
+     * Après chargement d'un track GPX, on positionne la liste sur la première photo trouvée sur le track.
+     * *******************************************************************************************************/
+    Connections {
+        target: _gpxModel
+        function onFirstOnTrackFound(sourceRow) {
+            var proxyRow = model.getProxyIndex(sourceRow);
+            if (proxyRow >= 0)
+                navigateTo(proxyRow);
+        }
+    }
+
+    /** ******************************************************************************************************
      * Navigation clavier dans la liste.
      * *******************************************************************************************************/
     Keys.onPressed: event => {

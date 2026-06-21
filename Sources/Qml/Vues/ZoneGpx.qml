@@ -5,7 +5,7 @@ import "../Components"
 import ".."
 
 /** **********************************************************************************************************
- * @brief Cette zone affiche les fichiers GPX associés au dossier de photos.
+ * @brief Cette zone affiche les fichiers GPX associés au dossier de photos (onglet GPS LOGGER).
  * ***********************************************************************************************************/
 Zone {
     property alias bt_refresh_gpx: bt_refresh_gpx
@@ -25,10 +25,12 @@ Zone {
         return (h < 10 ? "0" + h : "" + h) + ":" + m + ":" + s;
     }
 
+    /// Les différents items de la zone, disposés en colonne.
     ColumnLayout {
         width: parent.width
         spacing: 4
 
+        // Bouton pour raffraichier la ListViiew
         Button {
             id: bt_refresh_gpx
             enabled: window.currentFolderUrl != ""
@@ -45,6 +47,7 @@ Zone {
             }
         }
 
+        /// ListView des fichiers GPX
         ListViewGPXfiles {
             id: listGpx
             Layout.fillWidth: true
@@ -53,7 +56,7 @@ Zone {
             Layout.topMargin: 8
         }
 
-        /// Nombre de photos associées
+        /// Nombre de photos associées (matchées)
         RowLayout {
             Layout.leftMargin: 20
             Layout.topMargin: 12
@@ -61,12 +64,12 @@ Zone {
                 text: qsTr("Photo count:")
             }
             Label {
-                text: "12"  // TODO
+                text: _gpxModel.matchCount
                 font.bold: true
             }
         }
 
-        /// Heure de début du track GPX sélectionné
+        /// Heure de début de la track GPS sélectionnée
         RowLayout {
             Layout.leftMargin: 20
             Layout.topMargin: 12
@@ -79,7 +82,7 @@ Zone {
             }
         }
 
-        /// Décalage caméra / GPS (-12h .. +12h)
+        /// Décalage caméra p/r GPS (-12h .. +12h)
         RowLayout {
             Layout.leftMargin: 20
             Label {
@@ -101,7 +104,7 @@ Zone {
             }
         }
 
-        /// Re-match automatique quand un nouveau track est chargé
+        /// Re-match automatique quand une nouvelle track est chargée.
         Connections {
             target: _gpxModel
             function onCurrentTrackPointsChanged() {

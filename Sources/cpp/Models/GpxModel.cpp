@@ -186,6 +186,8 @@ void GpxModel::matchPhotos(QObject* photoModelObj, int offsetHours)
     if (!trackStart.isValid() || !trackEnd.isValid()) return;
 
     // On parcourt tout le PhotoModel
+    int firstOnTrackRow = -1;
+    int matchCount = 0;
     for (int row = 0; row < photoModel->rowCount(); ++row)
     {
         const QModelIndex idx = photoModel->index(row, 0);
@@ -238,7 +240,14 @@ void GpxModel::matchPhotos(QObject* photoModelObj, int offsetHours)
         }
         // La photo ayant été trouvée, on positionne le flag "isOnTrack" et on envoie ses coords supposées.
         photoModel->setOnTrack(row, lat, lon);
+        if (firstOnTrackRow == -1) firstOnTrackRow = row;
+        ++matchCount;
     }
+
+    m_matchCount = matchCount;
+    emit matchCountChanged();
+    if (firstOnTrackRow >= 0)
+        emit firstOnTrackFound(firstOnTrackRow);
 }
 
 

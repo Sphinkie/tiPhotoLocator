@@ -10,12 +10,12 @@ ToolbarGpxForm {
 
     /// Clic sur "Next" : passe à la photo suivante de la track
     bt_next.onClicked: {
-        // TODO
+        // TODO - passe à la photo suivante de la track
     }
 
-    /// Clic sur "Apply Track Point": On applique les coordonnées des track points àtoutes les photos de la track.
+    /// Clic sur "Apply One Track Point": On applique les coordonnées du track point à la photo courante.
     bt_apply_point.onClicked: {
-        // TODO
+        // TODO - On applique les coordonnées du point à la photo courante
     }
 
     /// Clic sur "Apply All Track Points": On applique les coordonnées des track points à toutes les photos de la track.
@@ -34,8 +34,8 @@ ToolbarGpxForm {
         window.fetchSingleExifMetadata(tabbedPage.currentPhoto.row);
     }
 
-    bt_apply_point.enabled: true  // TODO
-    bt_apply_all.enabled: true // TODO
+    bt_apply_point.enabled: false  // TODO utile ???
+    bt_apply_all.enabled: true // TODO vrai si count > 0
 
     /// Gestion du grisage des boutons
     Connections {
