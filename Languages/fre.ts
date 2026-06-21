@@ -198,9 +198,13 @@
         <translation>CARTE</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="189"/>
         <source>GPX</source>
-        <translation>GPX</translation>
+        <translation type="vanished">GPX</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Main.qml" line="189"/>
+        <source>GPS LOGGER</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Main.qml" line="192"/>

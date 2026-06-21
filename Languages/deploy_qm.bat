@@ -1,2 +1,3 @@
-move *.qm ../Resources\Translations/
-pause
+move *.qm ..\Resources\Translations\
+
+REM pause

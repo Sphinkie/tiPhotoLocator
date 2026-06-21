@@ -83,8 +83,10 @@ Item {
     // ----------------------------------------------------------------------
     // Textes
     // ----------------------------------------------------------------------
-    readonly property color primaryTextColor: "#212121" // gris foncé      : Listview + toolbar
-    readonly property color secondaryTextColor: "#757575" // gris moyen    : Répertoire dans la toolbar
+    // gris foncé      : Listview + toolbar
+    readonly property color primaryTextColor: "#212121"
+    // gris moyen    : Répertoire dans la toolbar
+    readonly property color secondaryTextColor: "#757575"
     // gris clair     : Annotations dans les settings
     readonly property color tertiaryTextColor: Material.color(Material.Black, Material.Shade200)
     /// filenames toBeSaved
