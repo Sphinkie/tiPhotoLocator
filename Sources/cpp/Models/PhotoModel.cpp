@@ -303,6 +303,24 @@ void PhotoModel::applyTrackPointCoords()
 
 
 /** **********************************************************************************************************
+ * @brief Applique les coordonnées interpolées de la track à toutes les photos isOnTrack.
+ * ***********************************************************************************************************/
+void PhotoModel::applyTrackPointCoordsToAll()
+{
+    for (int row = 0; row < m_photos.count(); ++row)
+    {
+        if (!m_photos[row].isOnTrack) continue;
+        m_photos[row].gpsLatitude  = m_photos[row].onTrackLatitude;
+        m_photos[row].gpsLongitude = m_photos[row].onTrackLongitude;
+        m_photos[row].hasGPS       = true;
+        m_photos[row].toBeSaved    = true;
+        const QModelIndex idx = index(row, 0);
+        emit dataChanged(idx, idx, {LatitudeRole, LongitudeRole, HasGPSRole, ToBeSavedRole});
+    }
+}
+
+
+/** **********************************************************************************************************
  * @brief Enregistre un message d'erreur d'écriture ExifTool pour une photo.
  *        Si message est vide, l'erreur précédente est effacée (écriture réussie).
  *        Si message est non-vide, émet writeErrorOccurred pour la snackbar QML.

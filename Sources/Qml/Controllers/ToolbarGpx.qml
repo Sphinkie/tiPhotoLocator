@@ -27,15 +27,7 @@ ToolbarGpxForm {
     }
 
     /// Clic sur "Apply All Track Points": On applique les coordonnées des track points à toutes les photos de la track.
-    bt_apply_all.onClicked: {
-        /*
-        window.setSelectedItemsCoords();
-        // On recentre la carte, si la nouvelle Position est en dehors de la vue actuelle
-        var pos = QtPositioning.coordinate(tabbedPage.currentPhoto.latitude, tabbedPage.currentPhoto.longitude);
-        if (!mapView.visibleRegion.contains(pos))
-            mapView.center = pos;
-            */
-    }
+    bt_apply_all.onClicked: _photoModel.applyTrackPointCoordsToAll()
 
     // Clic sur "Revert": On recharge les infos à partir de la photo du disque.
     bt_revert.onClicked: {

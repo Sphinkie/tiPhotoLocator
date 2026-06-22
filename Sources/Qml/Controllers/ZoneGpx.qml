@@ -36,7 +36,7 @@ ZoneGpxForm {
         }
         onValueChanged: {
             mapTab.mapTools.slider_radius.value = 0;
-            _gpxModel.matchPhotos(_photoModel, value);
+            _gpxModel.matchPhotos(_photoModel, offsetSpinBox.value);
             _photoModel.selectOnTrack();
         }
     }

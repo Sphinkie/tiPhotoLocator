@@ -98,6 +98,7 @@ public:
     Q_INVOKABLE void selectAll();
     Q_INVOKABLE void selectOnTrack();
     Q_INVOKABLE int  nextOnTrackRow(int currentRow) const;
+    Q_INVOKABLE void applyTrackPointCoordsToAll();
     Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
     Q_INVOKABLE void selectionCount();
     // Gestion  des keywords
