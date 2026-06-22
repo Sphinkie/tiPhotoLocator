@@ -1139,6 +1139,7 @@ void PhotoModel::selectOnTrack()
 }
 
 
+
 /** **********************************************************************************************************
  * @brief Parcourt toutes les Photo du modèle, et flague celles qui sont à l'interieur du cercle demandé.
  *        Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).
@@ -1652,3 +1653,19 @@ void PhotoModel::resetOnTrack()
     }
 }
 
+
+/** **********************************************************************************************************
+ * @brief Retourne le row de la prochaine photo isOnTrack après currentRow (avec wrap-around).
+ * @return Le row dans le sourceModel, ou -1 si aucune photo isOnTrack.
+ * ***********************************************************************************************************/
+int PhotoModel::nextOnTrackRow(int currentRow) const
+{
+    const int count = m_photos.count();
+    for (int i = 1; i < count; ++i)
+    {
+        const int row = (currentRow + i) % count;
+        if (m_photos[row].isOnTrack)
+            return row;
+    }
+    return -1;
+}

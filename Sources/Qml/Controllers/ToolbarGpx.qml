@@ -8,9 +8,17 @@ import "../Vues"
  * ***********************************************************************************************************/
 ToolbarGpxForm {
 
-    /// Clic sur "Next" : passe à la photo suivante de la track
+    /// Clic sur "Next" : passe à la photo suivante de la track (avec wrap-around)
     bt_next.onClicked: {
-        // TODO - passe à la photo suivante de la track
+        // On recupère le Row de la prochaine photo
+        var nextRow = _photoModel.nextOnTrackRow(tabbedPage.currentPhoto.row);
+        // Si ce n'est pas -1, on recupère son Index dans le ProxyModel
+        if (nextRow >= 0) {
+            var proxyIdx = _selectedPhotoProxyModel.getProxyIndex(nextRow);
+            // Si ce n'est pas -1, on se positionne dessus.
+            if (proxyIdx >= 0)
+                photoListView.navigateTo(proxyIdx);
+        }
     }
 
     /// Clic sur "Apply One Single Track Point": On applique les coordonnées du track point à la photo courante.

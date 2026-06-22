@@ -634,11 +634,6 @@
         <translation type="obsolete">Apply Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="32"/>
-        <source>Apply track point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Apply the stored position to the current photo</source>
         <translation type="obsolete">Apply the stored position to the current photo</translation>
     </message>
@@ -652,8 +647,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="32"/>
+        <source>Apply Single Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="50"/>
-        <source>Apply All</source>
+        <source>Apply All Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

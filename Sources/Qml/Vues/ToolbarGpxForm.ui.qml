@@ -29,7 +29,7 @@ Item {
     Button {
         id: bt_apply_point
         enabled: false
-        text: qsTr("Apply track point")
+        text: qsTr("Apply Single Point")
         icon.source: "qrc:/Images/bt-apply.png"
         anchors {
             left: bt_next.right
@@ -47,7 +47,7 @@ Item {
     Button {
         id: bt_apply_all
         enabled: false
-        text: qsTr("Apply All")
+        text: qsTr("Apply All Points")
         icon.source: "qrc:/Images/bt-apply.png"
         anchors {
             left: bt_apply_point.right
