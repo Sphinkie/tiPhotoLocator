@@ -9,6 +9,7 @@ import "../Components"
 Zone {
     id: gpxZone
     property alias bt_refresh_gpx: bt_refresh_gpx
+    property alias bt_clear_gpx: bt_clear_gpx
     property alias lb_camera_time: lb_camera_time
     property alias offsetSpinBox: offsetSpinBox
     property alias list_gpxfiles: list_gpxfiles

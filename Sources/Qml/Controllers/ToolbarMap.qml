@@ -39,8 +39,11 @@ ToolbarMapForm {
         target: _landmarkWrapper
 
         function onLandmarkFound(name, lat, lon) {
+            // On ajoute une suggestion de type Location
             _suggestionModel.append(name, "location", "geo", -2);
-            _photoModel.appendSavedPositionFromCoords(lat, lon);
+            // On stocke les coordonnées GPS trouvées par l'IA dans SavedPosition
+            _photoModel.setSavedPositionCoords(lat, lon);
+            // On recentre la carte
             mapView.center = QtPositioning.coordinate(lat, lon);
             bt_ask_ai.enabled = true;
         }

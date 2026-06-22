@@ -181,7 +181,7 @@
 <context>
     <name>ListViewGPXfiles</name>
     <message>
-        <location filename="../Sources/Qml/Components/ListViewGPXfiles.qml" line="23"/>
+        <location filename="../Sources/Qml/Components/ListViewGPXfiles.qml" line="24"/>
         <source>No GPX file</source>
         <translation>No GPX file</translation>
     </message>
@@ -670,7 +670,7 @@
 <context>
     <name>ToolbarMap</name>
     <message>
-        <location filename="../Sources/Qml/Controllers/ToolbarMap.qml" line="49"/>
+        <location filename="../Sources/Qml/Controllers/ToolbarMap.qml" line="52"/>
         <source>Unidentified</source>
         <translation>Unidentified location</translation>
     </message>
@@ -955,12 +955,12 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
 <context>
     <name>ZoneGpxForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="17"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="18"/>
         <source>GPX Tracking</source>
         <translation type="unfinished">GPX Tracking</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="31"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="32"/>
         <source>Refresh</source>
         <translation type="unfinished">Refresh</translation>
     </message>
@@ -969,27 +969,27 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
         <translation type="obsolete">Refresh GPX file list</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="40"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="41"/>
         <source>Unselect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="61"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="62"/>
         <source>Photo count:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="74"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="75"/>
         <source>GPX start:</source>
         <translation type="unfinished">GPX start:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="96"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="97"/>
         <source>Offset:</source>
         <translation type="unfinished">Offset:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="82"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="83"/>
         <source>Camera time:</source>
         <translation type="unfinished">Camera time:</translation>
     </message>

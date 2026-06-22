@@ -107,6 +107,7 @@ void GpxModel::selectTrack(int row)
 {
     if (row < 0 || row >= m_files.size())
     {
+        m_currentTrack.clear();
         m_currentTrackPoints.clear();
         emit currentTrackPointsChanged();
         return;

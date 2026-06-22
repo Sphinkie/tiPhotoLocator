@@ -13,6 +13,7 @@ Rectangle {
 
     /// Heure de début du fichier GPX sélectionné (ex: "14:23:00"), vide si aucun.
     property string currentStartTime: __lv.currentItem ? __lv.currentItem.startTime : ""
+    property alias currentIndex: __lv.currentIndex
 
     /** ******************************************************************************************************
   * La ListView

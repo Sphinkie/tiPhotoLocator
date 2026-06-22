@@ -20,6 +20,9 @@ ZoneGpxForm {
     /// Bouton pour raffraichir la ListView
     bt_refresh_gpx.onClicked: _gpxModel.refresh(window.currentFolderUrl)
 
+    /// Bouton vider la sélection : déselectionne la track (et donc toutes les photos).
+    bt_clear_gpx.onClicked: list_gpxfiles.currentIndex = -1
+
     /// Heure caméra théorique
     lb_camera_time.text: cameraTime(list_gpxfiles.currentStartTime, offsetSpinBox.value)
 
@@ -32,9 +35,9 @@ ZoneGpxForm {
             return parseInt(text);
         }
         onValueChanged: {
-            mapTab.mapTools.slider_radius.value = 0
-            _gpxModel.matchPhotos(_photoModel, value)
-            _photoModel.selectOnTrack()
+            mapTab.mapTools.slider_radius.value = 0;
+            _gpxModel.matchPhotos(_photoModel, value);
+            _photoModel.selectOnTrack();
         }
     }
 
@@ -42,7 +45,7 @@ ZoneGpxForm {
     Connections {
         target: _gpxModel
         function onCurrentTrackPointsChanged() {
-            mapTab.mapTools.slider_radius.value = 0
+            mapTab.mapTools.slider_radius.value = 0;
             _gpxModel.matchPhotos(_photoModel, offsetSpinBox.value);
             _photoModel.selectOnTrack();
         }

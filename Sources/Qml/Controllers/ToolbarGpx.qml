@@ -13,15 +13,15 @@ ToolbarGpxForm {
         // TODO - passe à la photo suivante de la track
     }
 
-    /// Clic sur "Apply One Track Point": On applique les coordonnées du track point à la photo courante.
+    /// Clic sur "Apply One Single Track Point": On applique les coordonnées du track point à la photo courante.
     bt_apply_point.onClicked: {
-        // TODO - On applique les coordonnées du point à la photo courante
+        _photoModel.applyTrackPointCoords();
     }
 
     /// Clic sur "Apply All Track Points": On applique les coordonnées des track points à toutes les photos de la track.
     bt_apply_all.onClicked: {
         /*
-        window.applySavedPositionToCoords();
+        window.setSelectedItemsCoords();
         // On recentre la carte, si la nouvelle Position est en dehors de la vue actuelle
         var pos = QtPositioning.coordinate(tabbedPage.currentPhoto.latitude, tabbedPage.currentPhoto.longitude);
         if (!mapView.visibleRegion.contains(pos))
@@ -34,8 +34,9 @@ ToolbarGpxForm {
         window.fetchSingleExifMetadata(tabbedPage.currentPhoto.row);
     }
 
-    bt_apply_point.enabled: false  // TODO utile ???
-    bt_apply_all.enabled: true // TODO vrai si count > 0
+    bt_next.enabled: _gpxModel.matchCount > 1
+    bt_apply_all.enabled: _gpxModel.matchCount > 0
+    bt_apply_point.enabled: _gpxModel.matchCount > 0
 
     /// Gestion du grisage des boutons
     Connections {

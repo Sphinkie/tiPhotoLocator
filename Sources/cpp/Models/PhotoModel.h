@@ -88,9 +88,11 @@ public:
     // Gestion de de la sélection
     Q_INVOKABLE void addToSelection(int row, bool exclusive=false);
     Q_INVOKABLE void removeFromSelection(int row);
+    // RAZ des selections
     Q_INVOKABLE void resetSelection();
     Q_INVOKABLE void resetCircle();
     Q_INVOKABLE void resetOnTrack();
+    // Sélection par critère
     Q_INVOKABLE void selectUnlocalized();
     Q_INVOKABLE void selectUndated();
     Q_INVOKABLE void selectAll();
@@ -103,11 +105,14 @@ public:
     Q_INVOKABLE void replaceKeywordForSelection(const QString& oldKeyword, const QString& newKeyword);
     Q_INVOKABLE void addKeywordToAll(const QString& keyword);
     Q_INVOKABLE void addKeywordToSelection(const QString& keyword);
-    Q_INVOKABLE void setSelectedItemsCoords(QGeoCoordinate coords);
     // Gestion des suggestions
     Q_INVOKABLE void suggestFromSelection();
     Q_INVOKABLE void suggestFromPhoto(const int row);
+    // Other
     Q_INVOKABLE int  scanFolder(const QString& folderUrl);
+    Q_INVOKABLE void setSelectedItemsCoords(QGeoCoordinate coords);
+    Q_INVOKABLE void setSavedPositionCoords(double latitude, double longitude);
+    Q_INVOKABLE void applyTrackPointCoords();
     Q_INVOKABLE void dumpData();
     Q_INVOKABLE void clear();
 
@@ -141,7 +146,6 @@ public slots:
     // -----------------------------------------------------
     void append(const QString& filename, const QString& url);
     void appendSavedPosition();
-    Q_INVOKABLE void appendSavedPositionFromCoords(double latitude, double longitude);
     void setWriteError(QModelIndex idx, const QString& message);
     void fetchExifMetadata(int row = -1);
     void readTaskFinished();
