@@ -310,7 +310,7 @@ ApplicationWindow {
         }
 
         /// Barre des imagettes
-        ImagettesListView {
+        ListViewImagettes {
             id: imagettes
             height: 160
             Layout.fillWidth: true

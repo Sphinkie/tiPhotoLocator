@@ -55,7 +55,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Components/GhostChip.qml
         Sources/Qml/Components/GlobalTag.qml
         Sources/Qml/Components/KeywordsRepeater.qml
-        Sources/Qml/Components/ImagettesListView.qml
+        Sources/Qml/Components/ListViewImagettes.qml
         Sources/Qml/Components/ListViewGPXfiles.qml
         Sources/Qml/Components/Snackbar.qml
         Sources/Qml/Components/SuggestionRepeater.qml
