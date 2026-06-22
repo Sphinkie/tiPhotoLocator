@@ -1091,6 +1091,40 @@ void PhotoModel::selectAll()
 
 
 /** **********************************************************************************************************
+ * @brief Sélectionne toutes les photos flagguées isOnTrack et désélectionne les autres.
+ * ***********************************************************************************************************/
+void PhotoModel::selectOnTrack()
+{
+    int selectionCount = 0;
+    for (int row = 0; row < m_photos.count(); ++row)
+    {
+        const bool wasSelected = m_photos[row].isSelected;
+        const bool wasInCircle = m_photos[row].insideCircle;
+        const bool onTrack     = m_photos[row].isOnTrack;
+
+        // Les photos sur la track sont sélectionnées
+        m_photos[row].isSelected   = onTrack;
+        // Les photos sont enlevées du cercle
+        m_photos[row].insideCircle = false;
+
+        // On envoie les signaux pour les photos qui ont changé de flag
+        QVector<int> changed;
+        if (wasSelected != onTrack) changed << IsSelectedRole;
+        if (wasInCircle)            changed << InsideCircleRole;
+        if (!changed.isEmpty())
+            emit dataChanged(index(row, 0), index(row, 0), changed);
+        if (onTrack) ++selectionCount;
+    }
+    m_selectionCount  = selectionCount;
+    m_circleResetted  = true;
+    m_lastCircleRadius = 0;
+    m_lastCircleLat   = -1000.0;
+    m_lastCircleLong  = -1000.0;
+    emit selectionCountChanged();
+}
+
+
+/** **********************************************************************************************************
  * @brief Parcourt toutes les Photo du modèle, et flague celles qui sont à l'interieur du cercle demandé.
  *        Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).
  * @param circle_radius: Le rayon du cercle (en mètres).

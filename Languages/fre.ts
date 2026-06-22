@@ -188,12 +188,12 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="187"/>
+        <location filename="../Sources/Qml/Main.qml" line="186"/>
         <source>PREVIEW</source>
         <translation>PREVIEW</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="190"/>
+        <location filename="../Sources/Qml/Main.qml" line="189"/>
         <source>MAP</source>
         <translation>CARTE</translation>
     </message>
@@ -202,22 +202,22 @@
         <translation type="vanished">GPX</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="198"/>
+        <location filename="../Sources/Qml/Main.qml" line="195"/>
         <source>GPS LOGGER</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="202"/>
+        <location filename="../Sources/Qml/Main.qml" line="198"/>
         <source>EXIF / IPTC TAGS</source>
         <translation>TAGS EXIF ET IPTC</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="206"/>
+        <location filename="../Sources/Qml/Main.qml" line="202"/>
         <source>GLOBAL</source>
         <translation>GLOBAL</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="336"/>
+        <location filename="../Sources/Qml/Main.qml" line="332"/>
         <source>Write error</source>
         <translation>Erreur d&apos;écriture</translation>
     </message>
@@ -959,32 +959,36 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
         <translation type="unfinished">Traces GPS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="28"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="31"/>
         <source>Refresh</source>
         <translation type="unfinished">Raffraîchir</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="34"/>
         <source>Refresh GPX file list</source>
-        <translation type="unfinished">Relit les fichiers GPS</translation>
+        <translation type="obsolete">Relit les fichiers GPS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="55"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="40"/>
+        <source>Unselect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="61"/>
         <source>Photo count:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="68"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="74"/>
         <source>GPX start:</source>
         <translation type="unfinished">Heure de début de la trace GPS:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="90"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="96"/>
         <source>Offset:</source>
         <translation type="unfinished">Décalage horaire:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="76"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="82"/>
         <source>Camera time:</source>
         <translation type="unfinished">Heure de l&apos;appareil photo:</translation>
     </message>

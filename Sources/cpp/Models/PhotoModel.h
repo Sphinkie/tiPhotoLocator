@@ -94,6 +94,7 @@ public:
     Q_INVOKABLE void selectUnlocalized();
     Q_INVOKABLE void selectUndated();
     Q_INVOKABLE void selectAll();
+    Q_INVOKABLE void selectOnTrack();
     Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
     Q_INVOKABLE void selectionCount();
     // Gestion  des keywords

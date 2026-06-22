@@ -31,14 +31,20 @@ ZoneGpxForm {
         valueFromText: function (text, locale) {
             return parseInt(text);
         }
-        onValueChanged: _gpxModel.matchPhotos(_photoModel, offsetSpinBox.value)
+        onValueChanged: {
+            mapTab.mapTools.slider_radius.value = 0
+            _gpxModel.matchPhotos(_photoModel, value)
+            _photoModel.selectOnTrack()
+        }
     }
 
     /// Re-match automatique quand une nouvelle track est chargée.
     Connections {
         target: _gpxModel
         function onCurrentTrackPointsChanged() {
+            mapTab.mapTools.slider_radius.value = 0
             _gpxModel.matchPhotos(_photoModel, offsetSpinBox.value);
+            _photoModel.selectOnTrack();
         }
     }
 }

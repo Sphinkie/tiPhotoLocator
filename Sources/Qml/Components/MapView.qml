@@ -208,8 +208,8 @@ Map {
                     : 44             // Les autres sont légèrement plus petites
                     width: height
                     source: isMarker ? "qrc:///Images/mappin-yellow.png" // le marker est jaune
-                    : isCurrent ? "qrc:///Images/mappin-red.png"    // la photo sélectionnée est rouge
-                    : isOnTrack ? "qrc:///Images/pin-green.png"     // la photo sur la track est verte
+                    : isCurrent ? "qrc:///Images/mappin-red.png"         // la photo sélectionnée est rouge
+                    : isOnTrack ? "qrc:///Images/mappin-green.png"       // la photo sur la track est verte
                     : "qrc:///Images/mappin-black.png"  // les autres sont en gris
                 }
             }

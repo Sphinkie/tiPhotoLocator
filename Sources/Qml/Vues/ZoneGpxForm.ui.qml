@@ -21,22 +21,28 @@ Zone {
         // width: parent.width
         anchors.fill: parent
         spacing: 4
-        /// Bouton pour raffraichir la ListView
-        Button {
-            id: bt_refresh_gpx
-            enabled: window.currentFolderUrl != ""
-            text: qsTr("Refresh")
-            icon.source: "qrc:/Images/bt-refresh.png"
+
+        RowLayout {
             Layout.leftMargin: 20
-            Layout.topMargin: 16
-            ToolTip {
-                visible: parent.hovered
-                text: qsTr("Refresh GPX file list")
-                delay: 500
-                y: -height - 4
+            /// Bouton pour raffraichir la ListView
+            Button {
+                id: bt_refresh_gpx
+                enabled: window.currentFolderUrl != ""
+                text: qsTr("Refresh")
+                icon.source: "qrc:/Images/bt-refresh.png"
+                Layout.leftMargin: 20
+                Layout.topMargin: 16
+            }
+            /// Bouton pour déselectionner la track
+            Button {
+                id: bt_clear_gpx
+                enabled: window.currentFolderUrl != ""
+                text: qsTr("Unselect")
+                icon.source: "qrc:/Images/bt-clear.png"
+                Layout.leftMargin: 20
+                Layout.topMargin: 16
             }
         }
-
         /// ListView des fichiers GPX
         ListViewGPXfiles {
             id: list_gpxfiles

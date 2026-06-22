@@ -144,23 +144,37 @@ ListView {
             visible: !isMarker // On n'affiche pas la "Saved Position"
 
             /** **********************************************************************************************
-             * icone "In Circle" / "On The Track"
+             * Icone Flag "In Circle" (onglet 1) / "On The Track" (onglet 2)
              * ***********************************************************************************************/
             Image {
-                id: circleIcon
+                id: flagIcon
                 anchors.left: parent.left
-                visible: insideCircle || isOnTrack
-                source: isOnTrack ? "qrc:///Images/pin-green.png" : "qrc:///Images/circle-red.png"
+                visible: {
+                    if (tabbedPage.currentIndex === 1)
+                        return insideCircle;
+                    else if (tabbedPage.currentIndex === 2)
+                        return isOnTrack;
+                    else
+                        return false;
+                }
+                source: {
+                    if (tabbedPage.currentIndex === 1)
+                        return "qrc:///Images/circle-red.png";
+                    else if (tabbedPage.currentIndex === 2)
+                        return "qrc:///Images/pin-green.png";
+                    else
+                        return "";
+                }
                 height: 24
                 width: 24
             }
 
             /** **********************************************************************************************
-             * icone "Has GPS".
+             * Icone "Has GPS".
              * ***********************************************************************************************/
             Image {
                 id: gpsIcon
-                anchors.left: circleIcon.right
+                anchors.left: flagIcon.right
                 visible: hasGPS
                 source: "qrc:///Images/mappin-red.png"
                 height: 24
