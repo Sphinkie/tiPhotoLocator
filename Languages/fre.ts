@@ -927,39 +927,66 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
 <context>
     <name>ZoneGpx</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="15"/>
         <source>GPX Tracking</source>
-        <translation>Traces GPS</translation>
+        <translation type="vanished">Traces GPS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="35"/>
         <source>Refresh</source>
-        <translation>Raffraîchir</translation>
+        <translation type="vanished">Raffraîchir</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="42"/>
         <source>Refresh GPX file list</source>
-        <translation>Relit les fichiers GPS</translation>
+        <translation type="vanished">Relit les fichiers GPS</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="61"/>
+        <source>GPX start:</source>
+        <translation type="vanished">Heure de début de la trace GPS:</translation>
+    </message>
+    <message>
+        <source>Offset:</source>
+        <translation type="vanished">Décalage horaire:</translation>
+    </message>
+    <message>
+        <source>Camera time:</source>
+        <translation type="vanished">Heure de l&apos;appareil photo:</translation>
+    </message>
+</context>
+<context>
+    <name>ZoneGpxForm.ui</name>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="17"/>
+        <source>GPX Tracking</source>
+        <translation type="unfinished">Traces GPS</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="28"/>
+        <source>Refresh</source>
+        <translation type="unfinished">Raffraîchir</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="34"/>
+        <source>Refresh GPX file list</source>
+        <translation type="unfinished">Relit les fichiers GPS</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="55"/>
         <source>Photo count:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="74"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="68"/>
         <source>GPX start:</source>
-        <translation>Heure de début de la trace GPS:</translation>
+        <translation type="unfinished">Heure de début de la trace GPS:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="86"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="90"/>
         <source>Offset:</source>
-        <translation>Décalage horaire:</translation>
+        <translation type="unfinished">Décalage horaire:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpx.qml" line="116"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="76"/>
         <source>Camera time:</source>
-        <translation>Heure de l&apos;appareil photo:</translation>
+        <translation type="unfinished">Heure de l&apos;appareil photo:</translation>
     </message>
 </context>
 <context>

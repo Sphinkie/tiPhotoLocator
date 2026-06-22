@@ -1,0 +1,44 @@
+import QtQuick
+import "../Vues"
+
+/** **********************************************************************************************************
+ * @brief Cette zone affiche les fichiers GPX associés au dossier de photos (onglet GPS LOGGER).
+ * ***********************************************************************************************************/
+ZoneGpxForm {
+
+    /// Retourne l'heure caméra théorique en appliquant le décalage horaire au temps GPX.
+    function cameraTime(gpxTime, offsetH) {
+        if (!gpxTime)
+            return "--:--:--";
+        var parts = gpxTime.split(":");
+        var h = ((parseInt(parts[0]) + offsetH) % 24 + 24) % 24;
+        var m = parts[1];
+        var s = parts[2];
+        return (h < 10 ? "0" + h : "" + h) + ":" + m + ":" + s;
+    }
+
+    /// Bouton pour raffraichir la ListView
+    bt_refresh_gpx.onClicked: _gpxModel.refresh(window.currentFolderUrl)
+
+    /// Heure caméra théorique
+    lb_camera_time.text: cameraTime(list_gpxfiles.currentStartTime, offsetSpinBox.value)
+
+    /// Décalage caméra p/r GPS (-12h .. +12h)
+    offsetSpinBox {
+        textFromValue: function (value, locale) {
+            return (value >= 0 ? "+" : "") + value + " h";
+        }
+        valueFromText: function (text, locale) {
+            return parseInt(text);
+        }
+        onValueChanged: _gpxModel.matchPhotos(_photoModel, offsetSpinBox.value)
+    }
+
+    /// Re-match automatique quand une nouvelle track est chargée.
+    Connections {
+        target: _gpxModel
+        function onCurrentTrackPointsChanged() {
+            _gpxModel.matchPhotos(_photoModel, offsetSpinBox.value);
+        }
+    }
+}

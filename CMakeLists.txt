@@ -83,6 +83,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Controllers/ZoneCamera.qml
         Sources/Qml/Controllers/ZoneGlobalTags.qml
         Sources/Qml/Controllers/ZoneGeoloc.qml
+        Sources/Qml/Controllers/ZoneGpx.qml
         Sources/Qml/Controllers/ZonePhoto.qml
         Sources/Qml/Controllers/ZonePreview.qml
         Sources/Qml/Controllers/ZoneSuggestedTags.qml
@@ -114,7 +115,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml
         Sources/Qml/Vues/ZoneSuggestedLocationsForm.ui.qml
         Sources/Qml/Vues/ZoneUserdataForm.ui.qml
-        Sources/Qml/Vues/ZoneGpx.qml
+        Sources/Qml/Vues/ZoneGpxForm.ui.qml
     QML_FILES
         Sources/Qml/Javascript/Chips.js
         Sources/Qml/Javascript/Networking.js
