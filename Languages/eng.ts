@@ -205,7 +205,7 @@
     <message>
         <location filename="../Sources/Qml/Main.qml" line="195"/>
         <source>GPS LOGGER</source>
-        <translation type="unfinished"></translation>
+        <translation>GPS LOGGER</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Main.qml" line="198"/>
@@ -642,29 +642,34 @@
         <translation type="obsolete">Clear Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="41"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="42"/>
         <source>Apply the track point to the current photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Apply the track point to the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="32"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="33"/>
         <source>Apply Single Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Apply Single Point</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="50"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="21"/>
+        <source>Next Point</source>
+        <translation>Next Point</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="51"/>
         <source>Apply All Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Apply All Points</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="76"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="77"/>
         <source>Restore</source>
-        <translation type="unfinished">Restore</translation>
+        <translation>Restore</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="85"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="86"/>
         <source>Reload the initial GPS coordinates of the photo</source>
-        <translation type="unfinished">Reload the initial GPS coordinates of the photo</translation>
+        <translation>Reload the initial GPS coordinates of the photo</translation>
     </message>
 </context>
 <context>
@@ -957,12 +962,12 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="18"/>
         <source>GPX Tracking</source>
-        <translation type="unfinished">GPX Tracking</translation>
+        <translation>GPX Tracking</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="32"/>
         <source>Refresh</source>
-        <translation type="unfinished">Refresh</translation>
+        <translation>Refresh</translation>
     </message>
     <message>
         <source>Refresh GPX file list</source>
@@ -971,27 +976,27 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="41"/>
         <source>Unselect</source>
-        <translation type="unfinished"></translation>
+        <translation>Unselect</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="62"/>
         <source>Photo count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Photo count:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="75"/>
         <source>GPX start:</source>
-        <translation type="unfinished">GPX start:</translation>
+        <translation>GPX start:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="97"/>
         <source>Offset:</source>
-        <translation type="unfinished">Offset:</translation>
+        <translation>Offset:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="83"/>
         <source>Camera time:</source>
-        <translation type="unfinished">Camera time:</translation>
+        <translation>Camera time:</translation>
     </message>
 </context>
 <context>
