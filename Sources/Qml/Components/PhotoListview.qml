@@ -244,14 +244,17 @@ ListView {
      * @param hasGPS : La propriété hasGPS de la photo.
      * @param city : La propriété city de la photo.
      * @param country : La propriété country de la photo.
-     * @param latitude : La propriété latitude de la photo.
-     * @param longitude : La propriété longitude de la photo.
      * ***********************************************************************************************************/
     function activatePhoto(pos, hasGPS, city, country) {
         var sourceindex = model.getSourceIndex(pos);
         _photoModel.currentItemRow = sourceindex; // Actualise le PhotoModel
-        // La photo courante est forcement sélectionée, mais de façon exclusive.
-        _photoModel.addToSelection(sourceindex, true);
+        // La photo courante est forcement sélectionée, mais de façon différente selon l'onglet
+        if (tabbedPage.currentIndex === 2)
+            // Si onglet GPS LOGGER : on garde les photos de la track
+            _photoModel.addToSelection(sourceindex, false, true);
+        else
+            // Si onglet MAP (ou TAGS) : on désélectionne toutes les autres photos
+            _photoModel.addToSelection(sourceindex, true, false);
 
         // On mémorise dans currentPhoto les data de l'item selectionné du modèle.
         // Cela permet de se passer de ProxyModel dans les onglets qui n'utilisent les data que d'un seul item.

@@ -50,4 +50,13 @@ ZoneGpxForm {
             _photoModel.selectOnTrack();
         }
     }
+
+    /// Si la photo cliquée n'est pas sur la track, on désélectionne le fichier GPX.
+    /// Cela déclenche selectTrack(-1) → resetOnTrack + selectOnTrack → tout se remet à zéro.
+    Connections {
+        target: _photoModel
+        function onTrackDeactivated() {
+            list_gpxfiles.currentIndex = -1;
+        }
+    }
 }

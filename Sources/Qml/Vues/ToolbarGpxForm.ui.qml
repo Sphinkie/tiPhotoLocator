@@ -15,9 +15,10 @@ Item {
 
     height: bt_apply_point.height + 20
 
-    RoundButton {
+    Button {
         id: bt_next
         enabled: false
+        text: qsTr("Next Point")
         icon.source: "qrc:/Images/bt-next.png"
         anchors {
             left: parent.left

@@ -27,6 +27,8 @@ class PhotoModel : public QAbstractListModel
     Q_PROPERTY(qreal writeProgress MEMBER m_writeProgress NOTIFY writeProgressChanged)
     //! Le nombre de photos dans la sélection.
     Q_PROPERTY(int selectionCount MEMBER m_selectionCount NOTIFY selectionCountChanged)
+    //! Le nombre de photos matchant le track GPX courant.
+    Q_PROPERTY(int onTrackCount READ getOnTrackCount NOTIFY trackCountChanged)
     //! Le nombre total de photos dans le modèle.
     Q_PROPERTY(int count READ getCount NOTIFY countChanged)
 
@@ -86,7 +88,7 @@ public:
     Q_INVOKABLE QVariant getUrl(int row);
     Q_INVOKABLE QVariantMap get(int row);
     // Gestion de de la sélection
-    Q_INVOKABLE void addToSelection(int row, bool exclusive=false);
+    Q_INVOKABLE void addToSelection(int row, bool unselectAllOther=false, bool keepOnTrack=false);
     Q_INVOKABLE void removeFromSelection(int row);
     // RAZ des selections
     Q_INVOKABLE void resetSelection();
@@ -138,6 +140,7 @@ private:
     void currentItemRow(const int row);
     void currentItemCoords(const QGeoCoordinate coords);
     int  getCurrentItemRow();
+    int  getOnTrackCount() const { return m_onTrackCount; }
     bool getCurrentItemHasGPS();
     QGeoCoordinate getCurrentItemCoords();
     bool belong(double pLa, double pLo, double oLa, double oLo, double rLa, double rLo);
@@ -178,6 +181,8 @@ signals:
     void writeErrorOccurred(const QString& filename, const QString& message);  //!< Signal émis quand ExifTool échoue à écrire une photo.                                             //!< Signal émis quand une SavedPosition est créée ou supprimée.
     void loadingChanged();                                                         //!< Signal émis quand le status loading change.
     void selectionCountChanged();                                                  //!< Signal émis quand le nombre de photos sélectionnées change.
+    void trackCountChanged();                                                    //!< Signal émis quand le nombre de photos on-track change.
+    void trackDeactivated();                                                       //!< Signal émis quand l'utilisateur clique une photo hors-track alors qu'une track était active.
     void countChanged();                                                           //!< Signal émis quand le nombre total de photos change.
 
     // -----------------------------------------------------
@@ -202,6 +207,7 @@ private:
     int m_totalWrite = 1;                  //!< Nombre de fichiers JPEG à modifier avec de nouvelles metadata.
     int m_countWrite = 0;                  //!< Nombre de fichiers JPEG modifiés avec de nouvelles metadata.
     int m_selectionCount = 0;              //!< Nombre de photos dans la sélection.
+    int m_onTrackCount = 0;               //!< Nombre de photos matchant le track GPX courant.
 };
 
 #endif // PHOTOMODEL_H

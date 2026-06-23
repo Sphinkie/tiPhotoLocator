@@ -205,8 +205,8 @@ Item {
             // Retour à la ligne si le texte est plus long que le Rectangle
             wrapMode: Text.Wrap
             clip: false // Le texte n'est pas tronqué
-            //  La taille max du texte pouvant être saisi (24 pour le Chips, 180 pour les FatChips).
-            maximumLength: 24
+            //  La taille max du texte pouvant être saisi (32 pour le Chips, 180 pour les FatChips).
+            maximumLength: 32
             // Avec inputMask, Suppr efface le caractère mais ne déplace pas le curseur.
             // On force l'avance d'une position pour que chaque Suppr efface un digit différent.
             Keys.onDeletePressed: function (event) {

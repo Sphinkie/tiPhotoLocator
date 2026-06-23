@@ -1035,14 +1035,42 @@ QVariantMap PhotoModel::get(int row)
 /** **********************************************************************************************************
  * @brief Cette méthode (invocable par QML) ajoute la photo désignée aux photos sélectionnées.
  * @param row : indice de la photo dans la listView
- * @param exclusive : if True, all other Photos are unselected.
+ * @param unselectAllOther : if True, all other photos are unselected.
+ * @param keepOnTrack : if True, all other photos are unselected except photo on the Track (that stay selected).
  * ***********************************************************************************************************/
-void PhotoModel::addToSelection(int row, bool exclusive)
+void PhotoModel::addToSelection(int row, bool unselectAllOther, bool keepOnTrack)
 {
     qDebug() << "addToSelection" << row;
-    // Le paramètre 'exclusive' déselectionne toutes les autres photos.
-    if (exclusive)
+    if (unselectAllOther)
+    {
+        // S'il y a une track sélectionnée : désélection + notification ZoneGpx.
+        if (m_onTrackCount > 0)
+            emit trackDeactivated();
         this->resetSelection();
+    }
+    else if (keepOnTrack)
+    {
+        const bool clickedIsOnTrack = (row >= 0 && row < m_photos.count() && m_photos[row].isOnTrack);
+        if (m_onTrackCount > 0 && clickedIsOnTrack)
+        {
+            // La photo cliquée est sur la track : désélectionne uniquement les photos non on-track.
+            for (int i = 0; i < m_photos.count(); ++i)
+            {
+                if (!m_photos[i].isOnTrack && m_photos[i].isSelected)
+                {
+                    m_photos[i].isSelected = false;
+                    emit dataChanged(index(i, 0), index(i, 0), {IsSelectedRole});
+                }
+            }
+            m_selectionCount = m_onTrackCount; // toutes les photos on-track restent sélectionnées
+            emit selectionCountChanged();
+            return;
+        }
+        // La photo cliquée n'est pas sur la track : désélection normale + notification ZoneGpx.
+        if (m_onTrackCount > 0)
+            emit trackDeactivated();
+        this->resetSelection();
+    }
     QModelIndex idx = this->index(row, 0);
     this->setData(idx, true, IsSelectedRole);
     m_selectionCount++;
@@ -1652,6 +1680,8 @@ void PhotoModel::setOnTrack(int row, double lat, double lon)
     m_photos[row].onTrackLongitude  = lon;
     const QModelIndex idx = index(row, 0);
     emit dataChanged(idx, idx, {IsOnTrackRole, OnTrackLatitudeRole, OnTrackLongitudeRole});
+    m_onTrackCount++;
+    emit trackCountChanged();
 }
 
 
@@ -1669,6 +1699,8 @@ void PhotoModel::resetOnTrack()
         const QModelIndex idx = index(row, 0);
         emit dataChanged(idx, idx, {IsOnTrackRole, OnTrackLatitudeRole, OnTrackLongitudeRole});
     }
+    m_onTrackCount = 0;
+    emit trackCountChanged();
 }
 
 
