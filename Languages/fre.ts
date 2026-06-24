@@ -990,7 +990,7 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="68"/>
         <source>Track points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de points:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="81"/>

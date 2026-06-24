@@ -991,7 +991,7 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="68"/>
         <source>Track points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Track points:</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="81"/>
