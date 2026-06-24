@@ -267,6 +267,8 @@ void PhotoModel::appendSavedPosition()
 /** **********************************************************************************************************
  * @brief Ajoute une entrée spéciale dans le modèle avec des coordonnées GPS explicites (marker jaune).
  * Utilisé par l'identification IA pour sauvegarder la position du lieu reconnu.
+ * @param latitude  : latitude en degrés décimaux (WGS84).
+ * @param longitude : longitude en degrés décimaux (WGS84).
  * ***********************************************************************************************************/
 void PhotoModel::setSavedPositionCoords(double latitude, double longitude)
 {
@@ -326,6 +328,8 @@ void PhotoModel::applyTrackPointCoordsToAll()
  * @brief Enregistre un message d'erreur d'écriture ExifTool pour une photo.
  *        Si message est vide, l'erreur précédente est effacée (écriture réussie).
  *        Si message est non-vide, émet writeErrorOccurred pour la snackbar QML.
+ * @param idx     : index de la photo dans le modèle.
+ * @param message : message d'erreur retourné par ExifTool, ou chaîne vide en cas de succès.
  * ***********************************************************************************************************/
 void PhotoModel::setWriteError(QModelIndex idx, const QString& message)
 {
@@ -726,6 +730,7 @@ void PhotoModel::setData(const QVariantMap &value_list)
 
 /** **********************************************************************************************************
  * @brief Returns the last selected row.
+ * @return Indice de la dernière photo sélectionnée dans m_photos.
  * ***********************************************************************************************************/
 int PhotoModel::getCurrentItemRow()
 {
@@ -734,6 +739,7 @@ int PhotoModel::getCurrentItemRow()
 
 /** **********************************************************************************************************
  * @brief Returns if the selected photo has GPS coordinates.
+ * @return true si la photo courante possède latitude ET longitude non nulles.
  * ***********************************************************************************************************/
 bool PhotoModel::getCurrentItemHasGPS()
 {
@@ -742,6 +748,7 @@ bool PhotoModel::getCurrentItemHasGPS()
 
 /** **********************************************************************************************************
  * @brief Returns the GPS Coords of the selected row.
+ * @return QGeoCoordinate (latitude, longitude) de la photo courante.
  * ***********************************************************************************************************/
 QGeoCoordinate PhotoModel::getCurrentItemCoords()
 {
@@ -1619,6 +1626,7 @@ void PhotoModel::suggestFromSelection()
 /** **********************************************************************************************************
  * @brief Envoie des suggestions de keywords, country, city, location pour la photo courante,
  * en allant regarder dans les tags de la photo fournie.
+ * @param row : indice de la photo source dans m_photos dont on extrait les tags.
  * ***********************************************************************************************************/
 void PhotoModel::suggestFromPhoto(const int row)
 {
@@ -1629,9 +1637,9 @@ void PhotoModel::suggestFromPhoto(const int row)
 
 
 /** **********************************************************************************************************
- * @brief PhotoModel::flags
- * @param index
- * @return
+ * @brief Retourne les flags Qt d'un élément (éditable, activé, sélectionnable).
+ * @param index : index de l'élément dans le modèle.
+ * @return Qt::NoItemFlags si index invalide, sinon ItemIsEditable | ItemIsEnabled | ItemIsSelectable.
  * ***********************************************************************************************************/
 Qt::ItemFlags PhotoModel::flags(const QModelIndex &index) const
 {
@@ -1672,7 +1680,8 @@ bool Photo::operator == (const Photo &photo)
  * @brief Marque la photo comme étant sur le track GPX et stocke ses coordonnées interpolées.
  * @note Ces données sont temporaires (non sauvegardées sur disque). Elles disparaissent au prochain refresh.
  * @param row : indice de la photo.
- * @param lat, lon : coordonnées GPS interpolées depuis le track GPX.
+ * @param lat : latitude GPS interpolée depuis le track GPX, en degrés décimaux.
+ * @param lon : longitude GPS interpolée depuis le track GPX, en degrés décimaux.
  * ***********************************************************************************************************/
 void PhotoModel::setOnTrack(int row, double lat, double lon)
 {
@@ -1708,6 +1717,7 @@ void PhotoModel::resetOnTrack()
 
 /** **********************************************************************************************************
  * @brief Retourne le row de la prochaine photo isOnTrack après currentRow (avec wrap-around).
+ * @param currentRow : row de départ dans m_photos (exclu de la recherche).
  * @return Le row dans le sourceModel, ou -1 si aucune photo isOnTrack.
  * ***********************************************************************************************************/
 int PhotoModel::nextOnTrackRow(int currentRow) const
@@ -1727,6 +1737,7 @@ int PhotoModel::nextOnTrackRow(int currentRow) const
 
 /** **********************************************************************************************************
  * @brief Retourne le row de la photo précédente isOnTrack avant currentRow (avec wrap-around).
+ * @param currentRow : row de départ dans m_photos (exclu de la recherche).
  * @return Le row dans le sourceModel, ou -1 si aucune photo isOnTrack.
  * ***********************************************************************************************************/
 int PhotoModel::previousOnTrackRow(int currentRow) const

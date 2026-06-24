@@ -66,7 +66,11 @@ signals:
 
 private:
     QString                readStartTime(const QString& filePath);
+    QString                readNmeaStartTime(const QString& filePath);
+    QString                readGpxStartTime(const QString& filePath);
     QVector<GpxTrackPoint> parseTrack(const QString& filePath);
+    QVector<GpxTrackPoint> parseNmeaTrack(const QString& filePath);
+    QVector<GpxTrackPoint> parseGpxTrack(const QString& filePath);
 
     QVector<GpxFileInfo>   m_files;              //!< Liste des fichiers GPX détectés.
     QVector<GpxTrackPoint> m_currentTrack;       //!< Points du track sélectionné (avec timestamps).

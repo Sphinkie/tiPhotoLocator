@@ -23,7 +23,7 @@ CameraSet::CameraSet(QObject *parent) : QObject(parent)
 /** **********************************************************************************************************
  * @brief Ajout d'un modèle de caméra dans la liste.
  *        S'il n'y est pas, on demande à deepAI de générer une imagette.
- * @param cam_model
+ * @param cam_model : nom du modèle de caméra (champ EXIF Make+Model).
  * ***********************************************************************************************************/
 void CameraSet::append(const QString& cam_model)
 {

@@ -85,7 +85,8 @@ void SuggestionModel::loadKeywordsFromFile(const QString &lang)
 /** **********************************************************************************************************
  * @brief Returns the number of elements in the model.
  * @note Implémentation obligatoire.
- * @param parent: parent of the model
+ * @param parent : index parent (doit être invalide pour un modèle à plat).
+ * @return Nombre de suggestions dans m_suggestions, ou 0 si parent est valide.
  * ***********************************************************************************************************/
 int SuggestionModel::rowCount(const QModelIndex& parent) const
 {
@@ -98,8 +99,9 @@ int SuggestionModel::rowCount(const QModelIndex& parent) const
 /** **********************************************************************************************************
  * @brief Returns the requested role value of an element of the model.
  * @note Implémentation obligatoire.
- * @param index: index of the element of the model.
- * @param role: the requested role (enum).
+ * @param index : index de l'élément dans le modèle.
+ * @param role  : rôle demandé (TextRole, TargetRole, CategoryRole, PhotosRole).
+ * @return QVariant contenant la valeur, ou QVariant vide si index invalide ou rôle inconnu.
  * ***********************************************************************************************************/
 QVariant SuggestionModel::data(const QModelIndex &index, int role) const
 {
@@ -124,6 +126,7 @@ QVariant SuggestionModel::data(const QModelIndex &index, int role) const
  * @brief Table of Role names.
  * @note Implémentation obligatoire.
  * @details C'est la correspondance entre le role C++ et le nom de la property dans QML.
+ * @return Table associant chaque valeur de Roles à son nom exposé en QML.
  * ***********************************************************************************************************/
 QHash<int, QByteArray> SuggestionModel::roleNames() const
 {
@@ -138,7 +141,9 @@ QHash<int, QByteArray> SuggestionModel::roleNames() const
 
 
 /** *********************************************************************************************************
- * @brief surcharge.
+ * @brief Retourne les flags Qt d'un élément (éditable, activé, sélectionnable).
+ * @param index : index de l'élément dans le modèle.
+ * @return Qt::NoItemFlags si index invalide, sinon ItemIsEditable | ItemIsEnabled | ItemIsSelectable.
  * **********************************************************************************************************/
 Qt::ItemFlags SuggestionModel::flags(const QModelIndex &index) const
 {
