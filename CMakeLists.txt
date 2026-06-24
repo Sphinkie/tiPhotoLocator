@@ -31,7 +31,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/cpp/ExifWriteTask.cpp         Sources/cpp/ExifWriteTask.h
         Sources/cpp/GeocodeWrapper.cpp        Sources/cpp/GeocodeWrapper.h
         Sources/cpp/LandmarkWrapper.cpp       Sources/cpp/LandmarkWrapper.h
-        Sources/cpp/PhotoModelWrapper.cpp     Sources/cpp/PhotoModelWrapper.h
+
         Sources/cpp/Utilities.cpp             Sources/cpp/Utilities.h
         Sources/cpp/Models/CameraSet.cpp      Sources/cpp/Models/CameraSet.h
         Sources/cpp/Models/Photo.h

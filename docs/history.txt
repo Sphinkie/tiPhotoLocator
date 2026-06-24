@@ -25,6 +25,7 @@ Support traces Olympus OI.Track
   - Helpers statiques nmeaToDecimal() et parseGprmc() ; QStringView pour mid()/left() sans allocation
   - refresh() : détecte *.LOG en plus de *.gpx dans les sous-dossiers GPX/ et GPSLOG/
   - docs/olympus.md : documentation du format LOG/SNS Olympus OI.Track
+  - ZoneGpx : affichage du nombre de points du track (trackPointCount) à côté du nombre de photos matchées
 
 Architecture & Qualité
   - ZoneGpx scindée en ZoneGpxForm.ui.qml (vue) + Controllers/ZoneGpx.qml (contrôleur)

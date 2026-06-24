@@ -70,7 +70,7 @@ Item {
                 Image {
                     id: camThumb
                     height: 128
-                    source: "../Cameras/default.png"
+                    source: ""
                     fillMode: Image.PreserveAspectFit
                 }
             }

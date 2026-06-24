@@ -1,7 +1,12 @@
+#include <QDir>
+#include <QFile>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QNetworkReply>
+#include <QRegularExpression>
 #include <QSettings>
-#include <QUrlQuery>
+#include <QStandardPaths>
+#include <QUrl>
 
 #include "CameraSet.h"
 
@@ -12,28 +17,47 @@
  * ***********************************************************************************************************/
 CameraSet::CameraSet(QObject *parent) : QObject(parent)
 {
-    // Pour deepAI, la clef-Api est dans les Settings, de façon à ne pas apparaitre en clair dans le code.
+    // Pour l'IA générative, la clef-Api est dans les Settings, de façon à ne pas apparaitre en clair dans le code.
     QSettings settings;
     m_deepaiKey = settings.value("deepaikey", "quickstart-QUdJIGlzIGNvbWluZy4uLi4K").toString();
 	// Qt recommande de n'instancier le Manager qu'une seule fois. On le fait donc dans le constructeur.
     m_networkMgr = new QNetworkAccessManager(this);
+    // Connexion unique : si connect() était appelé dans chaque méthode request*(),
+    // le slot onFinished() serait déclenché N fois pour une seule réponse.
+    connect(m_networkMgr, &QNetworkAccessManager::finished, this, &CameraSet::onFinished);
 }
 
 
 /** **********************************************************************************************************
  * @brief Ajout d'un modèle de caméra dans la liste.
  *        S'il n'y est pas, on demande à deepAI de générer une imagette.
- * @param cam_model : nom du modèle de caméra (champ EXIF Make+Model).
+ * @param cam_maker : marque de l'appareil photo. (champ EXIF Make).
+ * @param cam_model : nom du modèle d'appareil photo. (champ EXIF Model).
  * ***********************************************************************************************************/
-void CameraSet::append(const QString& cam_model)
+void CameraSet::append(const QString& cam_maker, const QString& cam_model)
 {
+    // m_cameras évite les requêtes API en double pour un même modèle.
     if (m_cameras.contains(cam_model))
-		// Modèle de caméra dejà connu : on ne fait rien
         return;
-    else
-        // Modèle de caméra inconnu :
-        this->requestMeteo();   // on demande le temps qu'il fait
-    // this->requestThumb(cam_model); // on demande une imagette à DeepAI
+    m_cameras.insert(cam_model);
+    qInfo() << "** Camera model has no thumbnail, requesting from API:" << cam_model;
+    this->requestThumb(cam_maker, cam_model);
+}
+
+
+/** **********************************************************************************************************
+ * @brief Retourne l'URL file:/// de la vignette IA en cache sur disque, ou une chaîne vide si absente.
+ * @param cam_model : nom du modèle d'appareil photo.
+ * @return URL file:/// de l'image, ou QString() si non trouvée.
+ * ***********************************************************************************************************/
+QString CameraSet::diskUrl(const QString& cam_model) const
+{
+    QString filename = cam_model;
+    filename.remove(QRegularExpression(R"([\s\\/])"));
+    const QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
+                         + "/Cameras_AI/" + filename + ".png";
+    qDebug() << "scan disc diskUrl:" << filename;
+    return QFile::exists(path) ? QUrl::fromLocalFile(path).toString() : QString();
 }
 
 
@@ -45,9 +69,8 @@ void CameraSet::append(const QString& cam_model)
  * ***********************************************************************************************************/
 bool CameraSet::contains(const QString& cam_model)
 {
-    return  m_cameras.contains(cam_model);
+    return m_cameras.contains(cam_model);
 }
-
 
 /** **********************************************************************************************************
  * @brief Ajoute un modèle d'appareil photo dans le Set. On lui fabrique alors une vignette.
@@ -61,98 +84,90 @@ void CameraSet::insert(const QString& cam_model)
 
 /** **********************************************************************************************************
  * @brief Envoi d'une requete POST à deepai.
- * @param cam_model : non utilisé pour l'instant
+ * @param cam_maker : marque de l'appareil photo issue des donnés EXIF.
+ * @param cam_model : modèle de camera issue des donnés EXIF.
  * ***********************************************************************************************************/
-void CameraSet::requestThumb(const QString& cam_model)
+void CameraSet::requestThumb(const QString& cam_maker, const QString& cam_model)
 {
-  //  QNetworkAccessManager* m_networkMgr = new QNetworkAccessManager(this);  // A été mis dans le Constructeur. Mais peut être mis ici pour les premiers tests. 
+    qDebug() << "requestThumb:" << cam_model;
 
-	// On definit les paramètres de la requète:
-    QUrlQuery params;
-	
-    // Dans le cas d'une requete POST, les params sont envoyés dans le body 
-	// Note: Si on utilise params.addQueryItem() le body sera au format "KEY=VALUE", ce qui ne convient pas pour deepai qui attend un format JSON.
-	// On utilise alors plutôt params.setQuery()
-    params.setQuery( "{\"text\":\"fastboat in a night storm\"}" );
-    // DDL : autres paramètres pour deepai, à ajouter plus tard...
-    //    {"grid_size" : "1"}     {"width" : "240"}     {"height" : "240"}
+    // Construction du body JSON via QJsonDocument : gère l'échappement automatiquement.
+    // (évite la concaténation manuelle qui casse le JSON si cam_model contient " ou \)
+    QJsonObject body;
+    body["text"]      = "Realistic front-view photo of camera " + cam_maker + " " + cam_model + ", white background, product shot";
+    body["grid_size"] = "1";
+    body["width"]     = "320";
+    body["height"]    = "320";
+    const QByteArray jsonData = QJsonDocument(body).toJson(QJsonDocument::Compact);
 
-    qDebug() << "params.query:" << params.query(QUrl::FullyDecoded).toUtf8();
-
-    // On definit l'URL de l'API
-    QUrl resource("https://api.deepai.org/api/cyberpunk-generator");
-    // Apparement, on peut aussi mettre les paramètres dans la query, plutôt que dans la commande m_networkMgr->post()
-    // ... A voir ...
-    // resource.setQuery(params);
-
-    // On definit la requète HTTP (avec son header)
+    QUrl resource("https://api.deepai.org/api/text2img");
     QNetworkRequest request;
     request.setUrl(resource);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     request.setRawHeader("Api-Key", m_deepaiKey.toUtf8());
+    // On tague la requête avec le nom du modèle pour pouvoir le récupérer dans onFinished().
+    request.setAttribute(QNetworkRequest::User, cam_model);
 
-    // Envoi de la requète POST
-    m_networkMgr->post(request, params.query(QUrl::FullyDecoded).toUtf8());
-
-    // On definit la fonction a appeler lors de la réception de la méthode: CameraSet::onFinished
-    connect(m_networkMgr, &QNetworkAccessManager::finished, this, &CameraSet::onFinished);		
+    m_networkMgr->post(request, jsonData);
 }
 
-
-/** **********************************************************************************************************
- * @brief Envoi d'une requete GET à openweathermap.
- * ***********************************************************************************************************/
-void CameraSet::requestMeteo()
-{
-    //  QNetworkAccessManager* m_networkMgr = new QNetworkAccessManager(this);  // A été mis dans le Constructeur. Mais peut être mis ici pour les premiers tests.
-
-    // On definit les paramètres de la requète:
-    QUrlQuery params;
-    // Dans le cas d'une requete GET, les params sont envoyés à la suite de l'url après le ?.
-    params.addQueryItem("appid", "000");                            // Mettre son API KEY ici
-    params.addQueryItem("q", "Montpellier,FR");
-    params.addQueryItem("lang", "fr");
-
-    // On definit l'URL de l'API
-    QUrl resource("http://api.openweathermap.org/data/2.5/weather");   // Call current weather data
-    resource.setQuery(params);
-
-    // On definit la requète HTTP (avec son header)
-    QNetworkRequest request;
-    request.setUrl(resource);
-
-    qDebug() << "resource:" << resource.toString();
-
-    // Envoi de la requete GET
-    m_networkMgr->get(request);
-
-    // On definit la fonction a appeler lors de la réception de la méthode: CameraSet::onFinished
-    connect(m_networkMgr, &QNetworkAccessManager::finished, this, &CameraSet::onFinished);
-}
 
 
 /** **********************************************************************************************************
  * @brief Appelé lors de la réception d'une réponse à une requete deepai.
- * @param reply : Le contenu de la réponse.
+ * @param reply : Le contenu de la réponse (URL d'une image).
+ * @code
+    {   "id": "6e91fc87-f176-45a1-9644-a787238bee10",
+        "output_url": "https://api.deepai.org/job-view-file/6e91fc87-f176-45a1-9644-a787238bee10/outputs/output.jpg",
+        "share_url": "https://images.deepai.org/art-image/dbc2662a3c824d6a9034f2872f33f1c7/realistic-front-view-photo-of-camera-e-m10markii-whit.jpg",
+        "backend_request_id": "e10ccd26-fdc5-45ee-bdd7-187f68734907"
+    }
+ * @endcode
  * ***********************************************************************************************************/
 void CameraSet::onFinished(QNetworkReply* reply)
 {
-	// Pour l'instant, on ne fait juste qu'afficher le contenu de la réponse 	
+    if (reply->error() != QNetworkReply::NoError) {
+        qWarning() << "CameraSet network error:" << reply->errorString();
+        reply->deleteLater();
+        return;
+    }
 
-	// On récupère les headers
-    QList<QByteArray> headers = reply->rawHeaderList();
-	
-	// On affiche, un par un, tous les headers de la réponse. (Bien qu'un seul soit interessant).
-    QListIterator<QByteArray> it(headers);
-    while (it.hasNext())
+    const QString cam_model = reply->request().attribute(QNetworkRequest::User).toString();
+
+    if (reply->operation() == QNetworkAccessManager::PostOperation)
     {
-        QByteArray hName = it.next();
-        qDebug() << "Header:" << hName << reply->rawHeader(hName);
-    };
-
-	// On affiche le contenu de la réponse
-    QByteArray contenu = reply->readAll();
-    qDebug() << "Reply:" << contenu;
+        // Étape 1 — réponse text2img : extraire output_url et télécharger l'image
+        const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+        const QString outputUrl = doc.object().value("output_url").toString();
+        qDebug() << "CameraSet output_url:" << outputUrl;
+        if (!outputUrl.isEmpty()) {
+            QNetworkRequest imgReq((QUrl(outputUrl)));
+            imgReq.setAttribute(QNetworkRequest::User, cam_model);
+            m_networkMgr->get(imgReq);
+        }
+    }
+    else
+    {
+        // Étape 2 — image reçue : sauvegarder dans AppData/Cameras_AI/
+        const QString cacheDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
+                                 + "/Cameras_AI/";
+        QDir().mkpath(cacheDir);
+        QString filename = cam_model;
+        filename.remove(QRegularExpression(R"([\s\\/])"));
+        const QString filePath = cacheDir + filename + ".png";
+        QFile file(filePath);
+        if (file.open(QIODevice::WriteOnly)) {
+            file.write(reply->readAll());
+            file.close();
+            m_cameras.insert(cam_model);
+            const QString fileUrl = QUrl::fromLocalFile(filePath).toString();
+            emit thumbnailReady(cam_model, fileUrl);
+            qInfo() << "Camera thumbnail saved:" << filePath;
+        } else {
+            qWarning() << "CameraSet: cannot write" << filePath;
+        }
+    }
+    reply->deleteLater();
 }
 
 
