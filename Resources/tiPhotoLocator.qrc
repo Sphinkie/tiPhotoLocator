@@ -84,5 +84,6 @@
         <file>Images/bt-clean-all.png</file>
         <file>Images/bt-clear-all.png</file>
         <file>Cameras/Credo60.png</file>
+        <file>Images/bt-previous.png</file>
     </qresource>
 </RCC>

@@ -641,32 +641,37 @@
         <translation type="obsolete">Suppr. Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="42"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="55"/>
         <source>Apply the track point to the current photo</source>
         <translation>Appliquer les coordonnées du point à la photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="33"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="46"/>
         <source>Apply Single Point</source>
         <translation>Appliquer à la photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="21"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="22"/>
+        <source>Previous Point</source>
+        <translation>Point précédent</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="34"/>
         <source>Next Point</source>
         <translation>Point suivant</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="51"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="64"/>
         <source>Apply All Points</source>
         <translation>Appliquer à toutes les photos</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="77"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="90"/>
         <source>Restore</source>
         <translation>Restaurer</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="86"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="99"/>
         <source>Reload the initial GPS coordinates of the photo</source>
         <translation>Recharge les coordonnées initiales de l&apos;image</translation>
     </message>

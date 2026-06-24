@@ -7,6 +7,7 @@ import "../Components"
  * @brief Cette vue correspond à la barre d'outils spécifiques à la carte (onglet GPS Logger).
  * ***********************************************************************************************************/
 Item {
+    property alias bt_previous: bt_previous
     property alias bt_next: bt_next
     property alias bt_apply_all: bt_apply_all
     property alias bt_apply_point: bt_apply_point
@@ -16,13 +17,25 @@ Item {
     height: bt_apply_point.height + 20
 
     Button {
+        id: bt_previous
+        enabled: false
+        text: qsTr("Previous Point")
+        icon.source: "qrc:/Images/bt-previous.png"
+        anchors {
+            left: parent.left
+            leftMargin: 0
+            verticalCenter: parent.verticalCenter
+        }
+    }
+
+    Button {
         id: bt_next
         enabled: false
         text: qsTr("Next Point")
         icon.source: "qrc:/Images/bt-next.png"
         anchors {
-            left: parent.left
-            leftMargin: 0
+            left: bt_previous.right
+            leftMargin: 20
             verticalCenter: parent.verticalCenter
         }
     }

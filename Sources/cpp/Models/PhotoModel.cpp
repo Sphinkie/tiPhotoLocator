@@ -297,6 +297,7 @@ void PhotoModel::applyTrackPointCoords()
     m_photos[row].gpsLongitude = m_photos[row].onTrackLongitude;
     m_photos[row].hasGPS       = true;
     m_photos[row].toBeSaved    = true;
+    m_photos[row].dirtyFields << "GPSLatitude" << "GPSLongitude";
     QModelIndex idx = this->index(row, 0);
     emit dataChanged(idx, idx, {LatitudeRole, LongitudeRole, HasGPSRole, ToBeSavedRole});
 }
@@ -314,6 +315,7 @@ void PhotoModel::applyTrackPointCoordsToAll()
         m_photos[row].gpsLongitude = m_photos[row].onTrackLongitude;
         m_photos[row].hasGPS       = true;
         m_photos[row].toBeSaved    = true;
+        m_photos[row].dirtyFields << "GPSLatitude" << "GPSLongitude";
         const QModelIndex idx = index(row, 0);
         emit dataChanged(idx, idx, {LatitudeRole, LongitudeRole, HasGPSRole, ToBeSavedRole});
     }
@@ -1711,9 +1713,32 @@ void PhotoModel::resetOnTrack()
 int PhotoModel::nextOnTrackRow(int currentRow) const
 {
     const int count = m_photos.count();
+    // Exemple;
+    // on parcourt les 100 photos à partir de la 20:
+    // 21-22-23-...-99-0-1-...-19
     for (int i = 1; i < count; ++i)
     {
         const int row = (currentRow + i) % count;
+        if (m_photos[row].isOnTrack)
+            return row;
+    }
+    return -1;
+}
+
+/** **********************************************************************************************************
+ * @brief Retourne le row de la photo précédente isOnTrack avant currentRow (avec wrap-around).
+ * @return Le row dans le sourceModel, ou -1 si aucune photo isOnTrack.
+ * ***********************************************************************************************************/
+int PhotoModel::previousOnTrackRow(int currentRow) const
+{
+    const int count = m_photos.count();
+    // Exemple;
+    // on parcourt les 100 photos backwards à partir de la 20:
+    // 19-18-17-...-1-0-99-98-...-21
+    for (int i = 1; i < count; ++i)
+    {
+        int row = (currentRow - i);
+        if (row < 0) row = count + row;
         if (m_photos[row].isOnTrack)
             return row;
     }

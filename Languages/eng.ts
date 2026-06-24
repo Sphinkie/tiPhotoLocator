@@ -642,32 +642,37 @@
         <translation type="obsolete">Clear Saved Position</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="42"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="55"/>
         <source>Apply the track point to the current photo</source>
         <translation>Apply the track point to the current photo</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="33"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="46"/>
         <source>Apply Single Point</source>
         <translation>Apply Single Point</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="21"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="22"/>
+        <source>Previous Point</source>
+        <translation>Previous Point</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="34"/>
         <source>Next Point</source>
         <translation>Next Point</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="51"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="64"/>
         <source>Apply All Points</source>
         <translation>Apply All Points</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="77"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="90"/>
         <source>Restore</source>
         <translation>Restore</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="86"/>
+        <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="99"/>
         <source>Reload the initial GPS coordinates of the photo</source>
         <translation>Reload the initial GPS coordinates of the photo</translation>
     </message>

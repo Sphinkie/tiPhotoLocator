@@ -8,9 +8,22 @@ import "../Vues"
  * ***********************************************************************************************************/
 ToolbarGpxForm {
 
+    /// Clic sur "Previous" : passe à la photo précédente de la track (avec wrap-around)
+    bt_previous.onClicked: {
+        // On recupère le Row de la photo précédente
+        var nextRow = _photoModel.previousOnTrackRow(tabbedPage.currentPhoto.row);
+        // Si ce n'est pas -1, on recupère son Index dans le ProxyModel
+        if (nextRow >= 0) {
+            var proxyIdx = _selectedPhotoProxyModel.getProxyIndex(nextRow);
+            // Si ce n'est pas -1, on se positionne dessus.
+            if (proxyIdx >= 0)
+                photoListView.navigateTo(proxyIdx);
+        }
+    }
+
     /// Clic sur "Next" : passe à la photo suivante de la track (avec wrap-around)
     bt_next.onClicked: {
-        // On recupère le Row de la prochaine photo
+        // On recupère le Row de la photo suivante
         var nextRow = _photoModel.nextOnTrackRow(tabbedPage.currentPhoto.row);
         // Si ce n'est pas -1, on recupère son Index dans le ProxyModel
         if (nextRow >= 0) {
@@ -34,6 +47,7 @@ ToolbarGpxForm {
         window.fetchSingleExifMetadata(tabbedPage.currentPhoto.row);
     }
 
+    bt_previous.enabled: _gpxModel.matchCount > 1
     bt_next.enabled: _gpxModel.matchCount > 1
     bt_apply_all.enabled: _gpxModel.matchCount > 0
     bt_apply_point.enabled: _gpxModel.matchCount > 0

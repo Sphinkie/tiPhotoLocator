@@ -100,6 +100,7 @@ public:
     Q_INVOKABLE void selectAll();
     Q_INVOKABLE void selectOnTrack();
     Q_INVOKABLE int  nextOnTrackRow(int currentRow) const;
+    Q_INVOKABLE int  previousOnTrackRow(int currentRow) const;
     Q_INVOKABLE void applyTrackPointCoordsToAll();
     Q_INVOKABLE void findInCirclePhotos(int circle_radius = -1);
     Q_INVOKABLE void selectionCount();
@@ -189,7 +190,7 @@ signals:
     // Membres
     // -----------------------------------------------------
 public:
-    QModelIndex m_markerIndex = QModelIndex();  //!< Index du marker SavedPosition. Initialisé à une valeur invalide.   
+    QModelIndex m_markerIndex = QModelIndex();  //!< Index du marker SavedPosition. Initialisé à une valeur invalide.
 protected:
     int m_markerRow = -1;                       //!< Position du marker SavedPosition
 private:
