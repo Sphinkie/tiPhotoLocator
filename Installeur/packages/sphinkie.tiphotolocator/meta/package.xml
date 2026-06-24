@@ -2,8 +2,8 @@
 <Package>
     <DisplayName>tiPhotoLocator</DisplayName>
     <Description>TiPhotoLocator is a desktop application to easily tag and geotag your photos.</Description>
-    <Version>2.0</Version>
-    <ReleaseDate>2026-06-19</ReleaseDate>
+    <Version>2.1</Version>
+    <ReleaseDate>2026-06-24</ReleaseDate>
     <Licenses>
         <License name="LGPL License" file="license.txt" />
     </Licenses>
