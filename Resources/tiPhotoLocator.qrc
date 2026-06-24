@@ -3,8 +3,6 @@
         <file>Logos/logo_TPL.ico</file>
         <file>Cameras/Canon.png</file>
         <file>Cameras/DMC-TZ10.png</file>
-        <file>Cameras/E-M10MarkII.png</file>
-        <file>Cameras/default.png</file>
         <file>Cameras/Midjourney.png</file>
         <file>Cameras/OpticFilm7200.png</file>
         <file>Cameras/YP-G70.png</file>
@@ -85,5 +83,7 @@
         <file>Images/bt-clear-all.png</file>
         <file>Cameras/Credo60.png</file>
         <file>Images/bt-previous.png</file>
+        <file>Cameras/Pixel8a.png</file>
+        <file>Cameras/E-M10MarkII.png</file>
     </qresource>
 </RCC>
