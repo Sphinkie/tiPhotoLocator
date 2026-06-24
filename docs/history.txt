@@ -20,6 +20,12 @@ GPS Logger & Synchronisation GPX
   - Exclusivité insideCircle / isOnTrack : remise à zéro automatique en changeant d'onglet (MAP ↔ GPS LOGGER)
   - Sélection et désélection des photos et des tracks différenciées selon l'onglet actif
 
+Support traces Olympus OI.Track
+  - GpxModel : parser NMEA pour fichiers .LOG Olympus (parseNmeaTrack, readNmeaStartTime)
+  - Helpers statiques nmeaToDecimal() et parseGprmc() ; QStringView pour mid()/left() sans allocation
+  - refresh() : détecte *.LOG en plus de *.gpx dans les sous-dossiers GPX/ et GPSLOG/
+  - docs/olympus.md : documentation du format LOG/SNS Olympus OI.Track
+
 Architecture & Qualité
   - ZoneGpx scindée en ZoneGpxForm.ui.qml (vue) + Controllers/ZoneGpx.qml (contrôleur)
   - ToolbarGpx.qml / ToolbarGpxForm.ui.qml : toolbar dédiée GPX (Apply, Next, Previous, Unselect)
@@ -27,6 +33,7 @@ Architecture & Qualité
   - PhotoListview : scroll automatique vers la 1ère photo on-track après match
   - ImagettesListView renommée ListViewImagettes (cohérence de nommage)
   - appendSavedPositionFromCoords déplacée de public slots vers Q_INVOKABLE
+  - Doxygen : @param et @return complétés dans GpxModel, PhotoModel, SuggestionModel, CameraSet, PhotoModelWrapper
 
 Icônes & Ressources
   - Icônes chip-city et chip-loc remises à jour

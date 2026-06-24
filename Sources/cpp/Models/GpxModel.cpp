@@ -172,14 +172,18 @@ void GpxModel::selectTrack(int row)
     {
         m_currentTrack.clear();
         m_currentTrackPoints.clear();
+        m_trackPointCount = 0;
         emit currentTrackPointsChanged();
+        emit trackPointCountChanged();
         return;
     }
     m_currentTrack = parseTrack(m_files.at(row).filePath);
     m_currentTrackPoints.clear();
     for (const GpxTrackPoint& pt : std::as_const(m_currentTrack))
         m_currentTrackPoints.append(QVariant::fromValue(pt.coord));
+    m_trackPointCount = m_currentTrack.size();
     emit currentTrackPointsChanged();
+    emit trackPointCountChanged();
 }
 
 

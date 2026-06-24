@@ -983,22 +983,27 @@ A la fin, cliquez sur &apos;Enregistrer &apos; pour écrire les métadonnées EX
         <translation>Désélectionner</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="62"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="61"/>
         <source>Photo count:</source>
         <translation>Photos:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="75"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="68"/>
+        <source>Track points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="81"/>
         <source>GPX start:</source>
         <translation>Heure de début de la trace GPS:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="97"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="103"/>
         <source>Offset:</source>
         <translation>Décalage horaire:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="83"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="89"/>
         <source>Camera time:</source>
         <translation>Heure de l&apos;appareil photo:</translation>
     </message>
@@ -1084,14 +1089,13 @@ Limited to 100 requests per day.</source>
 <context>
     <name>ZoneSuggestedTagsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="18"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="16"/>
         <source>Suggestions</source>
         <translation>Suggestions</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="43"/>
         <source>More tags...</source>
-        <translation>Autres tags...</translation>
+        <translation type="vanished">Autres tags...</translation>
     </message>
 </context>
 <context>

@@ -3,13 +3,11 @@ import QtQuick.Controls.Material
 import "../Components"
 import ".."
 
-
 /** **********************************************************************************************************
  * @brief Cette Zone "Suggestions" affiche les Chips de Suggestion de Tags pour cette photo.
  * ***********************************************************************************************************/
 Zone {
     id: suggestedTagsZone
-    property alias bt_getinfo: bt_getinfo
     property alias onlyKeywords: tagSuggestionRepeater.onlyKeywords
     property alias getCenterForTarget: tagSuggestionRepeater.getCenterForTarget
 
@@ -19,12 +17,17 @@ Zone {
 
     // Le Flickable permet de scroller s'il y a trop de suggestions.
     Flickable {
-        anchors { fill: parent; margins: 10 }
+        anchors {
+            fill: parent
+            margins: 10
+        }
         contentWidth: width
         contentHeight: grille.height
         clip: true
         flickableDirection: Flickable.VerticalFlick
-        ScrollBar.vertical: ScrollBar { policy: ScrollBar.AsNeeded }
+        ScrollBar.vertical: ScrollBar {
+            policy: ScrollBar.AsNeeded
+        }
 
         /// Le Flow positionne les Chips les unes après les autres.
         Flow {
@@ -35,14 +38,6 @@ Zone {
             /// Le repeater affiche chacune des Suggestions (de catégorie "tag") du Model.
             SuggestionRepeater {
                 id: tagSuggestionRepeater
-            }
-
-            /// En dernière position, on prévoit un bouton qui pourrait faire appel à une IA.
-            Button {
-                id: bt_getinfo
-                text: qsTr("More tags...")
-                icon.source: "qrc:/Images/icon-suggestion.png"
-                visible: false
             }
         }
     }

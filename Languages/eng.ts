@@ -984,22 +984,27 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
         <translation>Unselect</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="62"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="61"/>
         <source>Photo count:</source>
         <translation>Photo count:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="75"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="68"/>
+        <source>Track points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="81"/>
         <source>GPX start:</source>
         <translation>GPX start:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="97"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="103"/>
         <source>Offset:</source>
         <translation>Offset:</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="83"/>
+        <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="89"/>
         <source>Camera time:</source>
         <translation>Camera time:</translation>
     </message>
@@ -1085,14 +1090,13 @@ Limited to 100 requests per day.</source>
 <context>
     <name>ZoneSuggestedTagsForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="18"/>
+        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="16"/>
         <source>Suggestions</source>
         <translation>Suggestions</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="43"/>
         <source>More tags...</source>
-        <translation>More tags...</translation>
+        <translation type="vanished">More tags...</translation>
     </message>
 </context>
 <context>

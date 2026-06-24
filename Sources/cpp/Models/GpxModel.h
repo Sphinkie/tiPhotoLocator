@@ -33,11 +33,13 @@ class GpxModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(QVariantList currentTrackPoints READ currentTrackPoints NOTIFY currentTrackPointsChanged)
-    Q_PROPERTY(int matchCount READ matchCount NOTIFY matchCountChanged)
+    Q_PROPERTY(int matchCount       READ matchCount       NOTIFY matchCountChanged)
+    Q_PROPERTY(int trackPointCount  READ trackPointCount  NOTIFY trackPointCountChanged)
 
 public:
     QVariantList currentTrackPoints() const { return m_currentTrackPoints; }
     int          matchCount()         const { return m_matchCount; }
+    int          trackPointCount()    const { return m_trackPointCount; }
     /** ******************************************************************************************************
      * @brief Rôles exposés au QML.
      * *******************************************************************************************************/
@@ -62,6 +64,7 @@ public slots:
 signals:
     void currentTrackPointsChanged();      //!< Emis quand une nouvelle track est chargée
     void matchCountChanged();              //!< Emis quand le nombre de photos matchées change.
+    void trackPointCountChanged();         //!< Emis quand le nombre de points du track change.
     void firstOnTrackFound(int sourceRow); //!< Émis après matchPhotos() si au moins une photo est sur la track.
 
 private:
@@ -76,6 +79,7 @@ private:
     QVector<GpxTrackPoint> m_currentTrack;       //!< Points du track sélectionné (avec timestamps).
     QVariantList           m_currentTrackPoints; //!< Coordonnées seules pour MapPolyline QML.
     int                    m_matchCount = 0;     //!< Nombre de photos matchées sur le track courant.
+    int                    m_trackPointCount = 0;//!< Nombre de points GPS dans le track courant.
 };
 
 #endif // GPXMODEL_H

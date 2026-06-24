@@ -54,15 +54,21 @@ Zone {
             Layout.topMargin: 8
         }
 
-        /// Nombre de photos associées (matchées)
+        /// Nombre de photos matchées et nombre de points du track
         RowLayout {
             Layout.leftMargin: 20
             Layout.topMargin: 12
-            Label {
-                text: qsTr("Photo count:")
-            }
+            Label { text: qsTr("Photo count:") }
             Label {
                 text: _gpxModel.matchCount
+                font.bold: true
+            }
+            Label {
+                leftPadding: 24
+                text: qsTr("Track points:")
+            }
+            Label {
+                text: _gpxModel.trackPointCount
                 font.bold: true
             }
         }
