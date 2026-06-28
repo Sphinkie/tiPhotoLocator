@@ -85,5 +85,6 @@
         <file>Images/bt-previous.png</file>
         <file>Cameras/Pixel8a.png</file>
         <file>Cameras/E-M10MarkII.png</file>
+        <file>Cameras/AiConsistentCharacter.png</file>
     </qresource>
 </RCC>

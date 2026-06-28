@@ -931,7 +931,7 @@ void PhotoModel::saveMetadata()
 
 
 /** **********************************************************************************************************
- * @brief Adds a test item to the PhotoModel. (only if **DebugMode** is enabled in the *Settingss)
+ * @brief Adds a test item to the PhotoModel. (only if **DebugMode** is enabled in the Registry)
  * @note For testing purpose.
  * ***********************************************************************************************************/
 void PhotoModel::addTestItem()
@@ -941,23 +941,23 @@ void PhotoModel::addTestItem()
     if (!debugMode) return;
 
     this->m_photos << Photo("IMG_00000001", "qrc:///Pictures/IMG_00000001.png");
-    QVariantMap ibizaData;
-    ibizaData.insert("FileName", "IMG_00000001");
-    ibizaData.insert("DateTimeOriginal", "2023:08:25 01:03:16");
-    ibizaData.insert("Make", "Generative AI");
-    ibizaData.insert("Model", "Midjourney");
-    ibizaData.insert("ImageHeight", 603);
-    ibizaData.insert("ImageWidth", 603);
-    ibizaData.insert("City", "Ibiza");
-    ibizaData.insert("Country", "Baleares");
-    ibizaData.insert("Location", "Southern beach");
-    ibizaData.insert("Creator", "Midjourney");
-    ibizaData.insert("GPSLatitude", 38.9148);
-    ibizaData.insert("GPSLongitude", 1.4351);
-    ibizaData.insert("ShutterSpeed", 0.008);  // 1/125e
-    ibizaData.insert("FNumber", 2.8);
-    ibizaData.insert("Description", "Have fun !");
-    this->setData(ibizaData);
+    QVariantMap sampleData;
+    sampleData.insert("FileName", "IMG_00000001");
+    sampleData.insert("DateTimeOriginal", "2023:08:25 01:03:16");
+    sampleData.insert("Make", "Generative AI");
+    sampleData.insert("Model", "AiConsistentCharacter");
+    sampleData.insert("ImageHeight", 603);
+    sampleData.insert("ImageWidth", 603);
+    sampleData.insert("City", "Mytilène");
+    sampleData.insert("Country", "Greece");
+    sampleData.insert("Location", "Egean Sea");
+    sampleData.insert("Creator", "Bruno bellamy");
+    sampleData.insert("GPSLatitude", 39.1359);
+    sampleData.insert("GPSLongitude", 25.9305);
+    sampleData.insert("ShutterSpeed", 0.008);  // 1/125e
+    sampleData.insert("FNumber", 2.8);
+    sampleData.insert("Description", "Enjoy life!");
+    this->setData(sampleData);
 }
 
 

@@ -122,6 +122,7 @@ qt_add_qml_module(tiPhotoLocator
         Sources/Qml/Javascript/TiUtilities.js
         QML_FILES Sources/Qml/Controllers/ToolbarGpx.qml
         QML_FILES Sources/Qml/Vues/ToolbarGpxForm.ui.qml
+        RESOURCES
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
