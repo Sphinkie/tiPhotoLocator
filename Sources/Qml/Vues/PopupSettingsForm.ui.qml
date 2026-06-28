@@ -1,13 +1,14 @@
 import QtQuick
 import QtQuick.Window
 import QtQuick.Layouts
+import QtQuick.Controls
 import QtQuick.Controls.Material
 import QtCore
 import "../Components"
 
 /** **********************************************************************************************************
  * @brief Fenêtre popup de Configuration.
- * Elle se compose de deux frames: les valeurs par défaut et les reglages.
+ * Deux onglets : "General" (paramètres usuels) et "API Keys" (Map, Groq, DeepAI).
  * ***********************************************************************************************************/
 Popup {
     id: settingsForm
@@ -19,8 +20,6 @@ Popup {
     focus: true
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
     background: Rectangle {
-        // color: Style.tertiaryBackgroundColor
-        // border.color: Style.tertiaryForegroundColor
         border.width: 2
         radius: 8
     }
@@ -47,236 +46,312 @@ Popup {
         }
 
         /** *********************************************************************
-         * Group Box 1 : "Default values"
+         * TabBar : General / API Keys
          * *********************************************************************/
-        GroupBox {
-            id: groupBox1
-            Layout.margins: 10
+        TabBar {
+            id: tabBar
             Layout.fillWidth: true
-            title: qsTr("Default values")
+            Layout.leftMargin: 10
+            Layout.rightMargin: 10
 
-            ColumnLayout {
-                spacing: 14
-                /// Valeur par défaut pour CREATOR
-                RowLayout {
-                    Label {
-                        text: qsTr("Photographer name:")
-                        font.pixelSize: 12
-                    }
-                    TextFieldSettings {
-                        id: textFieldName
-                        Layout.fillWidth: true
-                        placeholderText: qsTr("Enter your name here")
-                    }
-                    Text {
-                        color: Style.tertiaryForegroundColor
-                        text: "Creator (IPTC)"
-                        font.pixelSize: 12
-                        style: Text.Normal
-                    }
-                }
-                /// Valeur par défaut pour CAPTION WRITER
-                RowLayout {
-                    Label {
-                        text: qsTr("Description writer initials:")
-                        font.pixelSize: 12
-                    }
-                    TextFieldSettings {
-                        id: textFieldInitials
-                        Layout.fillWidth: true
-                        horizontalAlignment: Text.AlignLeft
-                        Layout.minimumWidth: 116
-                        Layout.preferredWidth: 30
-                        placeholderText: qsTr("Initials")
-                    }
-                    Text {
-                        color: Style.tertiaryForegroundColor
-                        text: "Caption Writer (IPTC)"
-                        font.pixelSize: 12
-                        style: Text.Normal
-                    }
-                }
-                /// Valeur par défaut pour METADATA EDITING SOFTWARE
-                RowLayout {
-                    Label {
-                        text: qsTr("Application signature:")
-                        font.pixelSize: 12
-                    }
-                    TextFieldSettings {
-                        id: textFieldMetadataSoftware
-                        Layout.fillWidth: true
-                        text: "TiPhotoLocator"
-                        enabled: false
-                    }
-                    Text {
-                        color: Style.tertiaryForegroundColor
-                        text: "Metadata Software (EXIF)"
-                        font.pixelSize: 12
-                        style: Text.Normal
-                    }
-                }
+            MyTabButton {
+                text: qsTr("General")
+            }
+            MyTabButton {
+                text: qsTr("API Keys")
             }
         }
 
         /** *********************************************************************
-         * Group Box 2 "Configuration"
+         * Contenu des onglets
          * *********************************************************************/
-        GroupBox {
-            id: groupBox2
-            Layout.margins: 10
+        StackLayout {
+            currentIndex: tabBar.currentIndex
             Layout.fillWidth: true
-            title: qsTr("Settings")
+            Layout.fillHeight: true
 
-            ColumnLayout {
-                anchors.fill: parent
-                spacing: 14
+            // ─── Onglet General ──────────────────────────────────────────────
+            Item {
+                ColumnLayout {
+                    anchors.fill: parent
+                    spacing: 2
 
-                /// Ville sur laquelle centrer la carte
-                RowLayout {
-                    Label {
-                        text: qsTr("Map auto center:")
-                        font.pixelSize: 12
-                    }
-                    TextFieldSettings {
-                        id: textFieldHomecity
+                    /** ---------------------------------------------------------
+                     * Group Box 1 : "Default values"
+                     * --------------------------------------------------------*/
+                    GroupBox {
+                        Layout.margins: 10
                         Layout.fillWidth: true
-                        placeholderText: qsTr("Your most photographed place.")
-                    }
-                    Text {
-                        color: Style.tertiaryForegroundColor
-                        text: qsTr("Reboot needed")
-                        font.pixelSize: 12
-                        style: Text.Normal
-                    }
-                }
-                /// Langue de l'application
-                RowLayout {
-                    Label {
-                        text: qsTr("Application language:")
-                        font.pixelSize: 12
-                    }
-                    ComboBox {
-                        id: guiLanguages
-                        Layout.fillWidth: true
-                        implicitHeight: 36
-                        model: ["English", "Français"]
-                    }
-                    Text {
-                        color: Style.tertiaryForegroundColor
-                        text: qsTr("Reboot needed")
-                        font.pixelSize: 12
-                        style: Text.Normal
-                    }
-                }
-                /// Langue des suggestions
-                RowLayout {
-                    Label {
-                        text: qsTr("Tags and suggestions language:")
-                        font.pixelSize: 12
-                    }
-                    ComboBox {
-                        id: tagLanguages
-                        Layout.fillWidth: true
-                        implicitHeight: 36
-                        model: ["English", "Français"]
-                    }
-                    Text {
-                        color: Style.tertiaryForegroundColor
-                        text: qsTr("Reboot needed")
-                        font.pixelSize: 12
-                        style: Text.Normal
-                    }
-                }
-                /// Map Provider (Thunderforest or OpenStreetMap)
-                RowLayout {
-                    Label {
-                        text: qsTr("Map Provider:")
-                        font.pixelSize: 12
-                    }
-                    ComboBox {
-                        id: mapProvider
-                        Layout.fillWidth: true
-                        implicitHeight: 36
-                        model: ["OSM Street map", "OSM Terrain Map", "ThunderForest"]
-                    }
-                    Text {
-                        color: Style.tertiaryForegroundColor
-                        text: qsTr("Reboot needed")
-                        font.pixelSize: 12
-                        style: Text.Normal
-                    }
-                }
-                /// Style de carte
-                RowLayout {
-                    Label {
-                        text: qsTr("Map theme:")
-                        font.pixelSize: 12
-                    }
-                    ComboBox {
-                        id: mapTheme
-                        Layout.fillWidth: true
-                        implicitHeight: 36
-                        model: ["outdoors", "landscape", "cycle", "neighbourhood", "atlas"]
-                    }
-                    Text {
-                        color: Style.tertiaryForegroundColor
-                        text: qsTr("Reboot needed")
-                        font.pixelSize: 12
-                        style: Text.Normal
-                    }
-                }
-                /// Clef API pour les cartes
-                RowLayout {
-                    property bool apiKeyVisible: false
+                        title: qsTr("Default values")
 
-                    Label {
-                        text: qsTr("Map provider API key:")
-                        font.pixelSize: 12
-                    }
-                    TextFieldSettings {
-                        id: textFieldMapApiKey
-                        Layout.fillWidth: true
-                        placeholderText: qsTr("Thunderforest or OpenStreetMap")
-                        echoMode: parent.apiKeyVisible ? TextInput.Normal : TextInput.Password
-                    }
-                    RoundButton {
-                        icon.source: "qrc:/Images/bt-eye.png"
-                        flat: true
-                        implicitHeight: 42
-                        implicitWidth: 42
-                        onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
-                    }
-                }
-                /// Clef API (token) pour VLM (Model-Vision-Language)
-                RowLayout {
-                    property bool apiKeyVisible: false
+                        ColumnLayout {
+                            anchors.fill: parent
+                            spacing: 14
 
-                    Label {
-                        text: qsTr("VLM API key:")
-                        font.pixelSize: 12
+                            /// Valeur par défaut pour CREATOR
+                            RowLayout {
+                                Label {
+                                    text: qsTr("Photographer name:")
+                                    font.pixelSize: 12
+                                }
+                                TextFieldSettings {
+                                    id: textFieldName
+                                    Layout.fillWidth: true
+                                    placeholderText: qsTr("Enter your name here")
+                                }
+                                Text {
+                                    color: Style.tertiaryForegroundColor
+                                    text: "Creator (IPTC)"
+                                    font.pixelSize: 12
+                                }
+                            }
+                            /// Valeur par défaut pour CAPTION WRITER
+                            RowLayout {
+                                Label {
+                                    text: qsTr("Description writer initials:")
+                                    font.pixelSize: 12
+                                }
+                                TextFieldSettings {
+                                    id: textFieldInitials
+                                    Layout.fillWidth: true
+                                    horizontalAlignment: Text.AlignLeft
+                                    Layout.minimumWidth: 116
+                                    Layout.preferredWidth: 30
+                                    placeholderText: qsTr("Initials")
+                                }
+                                Text {
+                                    color: Style.tertiaryForegroundColor
+                                    text: "Caption Writer (IPTC)"
+                                    font.pixelSize: 12
+                                }
+                            }
+                            /// Valeur par défaut pour METADATA EDITING SOFTWARE
+                            RowLayout {
+                                Label {
+                                    text: qsTr("Application signature:")
+                                    font.pixelSize: 12
+                                }
+                                TextFieldSettings {
+                                    id: textFieldMetadataSoftware
+                                    Layout.fillWidth: true
+                                    text: "TiPhotoLocator"
+                                    enabled: false
+                                }
+                                Text {
+                                    color: Style.tertiaryForegroundColor
+                                    text: "Metadata Software (EXIF)"
+                                    font.pixelSize: 12
+                                }
+                            }
+                        }
                     }
-                    TextFieldSettings {
-                        id: textFieldVLMToken
+
+                    /** ---------------------------------------------------------
+                     * Group Box 2 : "Settings"
+                     * --------------------------------------------------------*/
+                    GroupBox {
+                        Layout.margins: 10
                         Layout.fillWidth: true
-                        placeholderText: qsTr("Groq API key")
-                        echoMode: parent.apiKeyVisible ? TextInput.Normal : TextInput.Password
+                        title: qsTr("Settings")
+
+                        ColumnLayout {
+                            anchors.fill: parent
+                            spacing: 14
+
+                            /// Ville sur laquelle centrer la carte
+                            RowLayout {
+                                Label {
+                                    text: qsTr("Map auto center:")
+                                    font.pixelSize: 12
+                                }
+                                TextFieldSettings {
+                                    id: textFieldHomecity
+                                    Layout.fillWidth: true
+                                    placeholderText: qsTr("Your most photographed place.")
+                                }
+                                Text {
+                                    color: Style.tertiaryForegroundColor
+                                    text: qsTr("Reboot needed")
+                                    font.pixelSize: 12
+                                }
+                            }
+                            /// Langue de l'application
+                            RowLayout {
+                                Label {
+                                    text: qsTr("Application language:")
+                                    font.pixelSize: 12
+                                }
+                                ComboBox {
+                                    id: guiLanguages
+                                    Layout.fillWidth: true
+                                    implicitHeight: 36
+                                    model: ["English", "Français"]
+                                }
+                                Text {
+                                    color: Style.tertiaryForegroundColor
+                                    text: qsTr("Reboot needed")
+                                    font.pixelSize: 12
+                                }
+                            }
+                            /// Langue des suggestions
+                            RowLayout {
+                                Label {
+                                    text: qsTr("Tags and suggestions language:")
+                                    font.pixelSize: 12
+                                }
+                                ComboBox {
+                                    id: tagLanguages
+                                    Layout.fillWidth: true
+                                    implicitHeight: 36
+                                    model: ["English", "Français"]
+                                }
+                                Text {
+                                    color: Style.tertiaryForegroundColor
+                                    text: qsTr("Reboot needed")
+                                    font.pixelSize: 12
+                                }
+                            }
+                            /// Map Provider (Thunderforest or OpenStreetMap)
+                            RowLayout {
+                                Label {
+                                    text: qsTr("Map Provider:")
+                                    font.pixelSize: 12
+                                }
+                                ComboBox {
+                                    id: mapProvider
+                                    Layout.fillWidth: true
+                                    implicitHeight: 36
+                                    model: ["OSM Street map", "OSM Terrain Map", "ThunderForest"]
+                                }
+                                Text {
+                                    color: Style.tertiaryForegroundColor
+                                    text: qsTr("Reboot needed")
+                                    font.pixelSize: 12
+                                }
+                            }
+                            /// Style de carte
+                            RowLayout {
+                                Label {
+                                    text: qsTr("Map theme:")
+                                    font.pixelSize: 12
+                                }
+                                ComboBox {
+                                    id: mapTheme
+                                    Layout.fillWidth: true
+                                    implicitHeight: 36
+                                    model: ["outdoors", "landscape", "cycle", "neighbourhood", "atlas"]
+                                }
+                                Text {
+                                    color: Style.tertiaryForegroundColor
+                                    text: qsTr("Reboot needed")
+                                    font.pixelSize: 12
+                                }
+                            }
+                            // Mode DEBUG (caché)
+                            RowLayout {
+                                CheckBox {
+                                    id: checkBoxDebug
+                                    text: "Debug mode"
+                                    visible: false
+                                }
+                            }
+                        }
                     }
-                    RoundButton {
-                        icon.source: "qrc:/Images/bt-eye.png"
-                        flat: true
-                        implicitHeight: 42
-                        implicitWidth: 42
-                        onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
+
+                    Item {
+                        Layout.fillHeight: true
                     }
                 }
-                // -------------------------------------------------------
-                /// Mode DEBUG
-                // -------------------------------------------------------
-                RowLayout {
-                    CheckBox {
-                        id: checkBoxDebug
-                        text: "Debug mode"
-                        visible: false
+            }
+
+            // ─── Onglet API Keys ─────────────────────────────────────────────
+            Item {
+                ColumnLayout {
+                    anchors.fill: parent
+                    spacing: 2
+
+                    GroupBox {
+                        Layout.margins: 10
+                        Layout.fillWidth: true
+                        title: qsTr("API Keys")
+
+                        ColumnLayout {
+                            anchors.fill: parent
+                            spacing: 14
+
+                            /// Clef API pour les cartes (Thunderforest)
+                            RowLayout {
+                                property bool apiKeyVisible: false
+
+                                Label {
+                                    text: qsTr("Map provider API key:")
+                                    font.pixelSize: 12
+                                }
+                                TextFieldSettings {
+                                    id: textFieldMapApiKey
+                                    Layout.fillWidth: true
+                                    placeholderText: qsTr("Thunderforest or OpenStreetMap")
+                                    echoMode: parent.apiKeyVisible ? TextInput.Normal : TextInput.Password
+                                }
+                                RoundButton {
+                                    icon.source: "qrc:/Images/bt-eye.png"
+                                    flat: true
+                                    implicitHeight: 42
+                                    implicitWidth: 42
+                                    onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
+                                }
+                            }
+
+                            /// Clef API (token) pour VLM (Groq / reconnaissance de lieux)
+                            RowLayout {
+                                property bool apiKeyVisible: false
+
+                                Label {
+                                    text: qsTr("VLM API key (Groq):")
+                                    font.pixelSize: 12
+                                }
+                                TextFieldSettings {
+                                    id: textFieldVLMToken
+                                    Layout.fillWidth: true
+                                    placeholderText: qsTr("Groq API key")
+                                    echoMode: parent.apiKeyVisible ? TextInput.Normal : TextInput.Password
+                                }
+                                RoundButton {
+                                    icon.source: "qrc:/Images/bt-eye.png"
+                                    flat: true
+                                    implicitHeight: 42
+                                    implicitWidth: 42
+                                    onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
+                                }
+                            }
+
+                            /// Clef API pour DeepAI (génération de vignettes d'APN)
+                            RowLayout {
+                                property bool apiKeyVisible: false
+
+                                Label {
+                                    text: qsTr("Camera AI (DeepAI):")
+                                    font.pixelSize: 12
+                                }
+                                TextFieldSettings {
+                                    id: textFieldDeepAIKey
+                                    Layout.fillWidth: true
+                                    placeholderText: qsTr("DeepAI API key (optional)")
+                                    echoMode: parent.apiKeyVisible ? TextInput.Normal : TextInput.Password
+                                }
+                                RoundButton {
+                                    icon.source: "qrc:/Images/bt-eye.png"
+                                    flat: true
+                                    implicitHeight: 42
+                                    implicitWidth: 42
+                                    onClicked: parent.apiKeyVisible = !parent.apiKeyVisible
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        Layout.fillHeight: true
                     }
                 }
             }
@@ -307,9 +382,10 @@ Popup {
         property alias homecity: textFieldHomecity.text
         property alias mapApikey: textFieldMapApiKey.text
         property alias vlmApiKey: textFieldVLMToken.text
+        property alias deepaikey: textFieldDeepAIKey.text
         property alias debugModeEnabled: checkBoxDebug.checked
-        property alias tagLanguage: tagLanguages.currentIndex // 0: English, 1: French
-        property alias guiLanguage: guiLanguages.currentIndex // 0: English, 1: French
+        property alias tagLanguage: tagLanguages.currentIndex
+        property alias guiLanguage: guiLanguages.currentIndex
         property alias mapTheme: mapTheme.currentText
         property alias mapProvider: mapProvider.currentIndex
     }

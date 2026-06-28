@@ -17,6 +17,6 @@ TabButton {
         font.pixelSize: parent.font.pixelSize
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        color: parent.checked ? Style.accentTabTextColor : Style.foregroundColor
+        color: parent.checked ? Style.accentTabTextColor : Style.tabTextColor
     }
 }
