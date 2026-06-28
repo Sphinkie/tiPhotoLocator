@@ -20,6 +20,7 @@ public:
     Q_INVOKABLE void    append(const QString& cam_maker, const QString& cam_model);
     Q_INVOKABLE bool    contains(const QString& cam_model);
     Q_INVOKABLE QString diskUrl(const QString& cam_model) const;
+    Q_INVOKABLE bool    qrcExists(const QString& qrcPath) const;
 
 signals:
     /** @brief Émis quand la vignette d'un modèle d'APN a été téléchargée et sauvegardée sur disque.

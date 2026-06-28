@@ -1,5 +1,7 @@
+#include <QColor>
 #include <QDir>
 #include <QFile>
+#include <QImage>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkReply>
@@ -9,6 +11,21 @@
 #include <QUrl>
 
 #include "CameraSet.h"
+
+// Convertit un JPEG fond blanc en PNG à fond transparent (alpha progressif, anti-aliasing).
+static QImage convertWithSoftEdges(const QImage& src)
+{
+    QImage result = src.convertToFormat(QImage::Format_ARGB32);
+    for (int y = 0; y < result.height(); ++y) {
+        for (int x = 0; x < result.width(); ++x) {
+            QColor c = result.pixelColor(x, y);
+            const double luminance = 0.299 * c.red() + 0.587 * c.green() + 0.114 * c.blue();
+            c.setAlpha(qBound(0, 255 - static_cast<int>(luminance), 255));
+            result.setPixelColor(x, y, c);
+        }
+    }
+    return result;
+}
 
 
 /** **********************************************************************************************************
@@ -58,6 +75,17 @@ QString CameraSet::diskUrl(const QString& cam_model) const
                          + "/Cameras_AI/" + filename + ".png";
     qDebug() << "scan disc diskUrl:" << filename;
     return QFile::exists(path) ? QUrl::fromLocalFile(path).toString() : QString();
+}
+
+
+/** **********************************************************************************************************
+ * @brief Indique si une ressource QRC existe (pour éviter le warning Image.Error côté QML).
+ * @param qrcPath : chemin QRC sans le préfixe ":" (ex: "/Cameras/SonyA7.png").
+ * @return true si le fichier est présent dans les ressources embarquées.
+ * ***********************************************************************************************************/
+bool CameraSet::qrcExists(const QString& qrcPath) const
+{
+    return QFile::exists(":" + qrcPath);
 }
 
 
@@ -148,17 +176,17 @@ void CameraSet::onFinished(QNetworkReply* reply)
     }
     else
     {
-        // Étape 2 — image reçue : sauvegarder dans AppData/Cameras_AI/
+        // Étape 2 — image reçue : fond blanc → transparent, puis sauvegarde PNG dans AppData/Cameras_AI/
         const QString cacheDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
                                  + "/Cameras_AI/";
         QDir().mkpath(cacheDir);
         QString filename = cam_model;
         filename.remove(QRegularExpression(R"([\s\\/])"));
         const QString filePath = cacheDir + filename + ".png";
-        QFile file(filePath);
-        if (file.open(QIODevice::WriteOnly)) {
-            file.write(reply->readAll());
-            file.close();
+        QImage src;
+        src.loadFromData(reply->readAll());
+        const QImage result = convertWithSoftEdges(src);
+        if (!result.isNull() && result.save(filePath, "PNG")) {
             m_cameras.insert(cam_model);
             const QString fileUrl = QUrl::fromLocalFile(filePath).toString();
             emit thumbnailReady(cam_model, fileUrl);

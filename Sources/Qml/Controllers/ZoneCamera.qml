@@ -36,17 +36,20 @@ ZoneCameraForm {
     property string camQrcPath: ""
 
     onCamPngChanged: {
-        camQrcPath = camPng ? "/Cameras/" + camPng.replace(/[\s\\\/]/g, '') + ".png" : "";
-        if (camPng !== "")
-            aiUrl = _cameraSet.diskUrl(camPng);
-        else
-            aiUrl = "";
+        const normalized = camPng ? camPng.replace(/[\s\\\/]/g, '') : "";
+        const qrcCandidate = normalized ? "/Cameras/" + normalized + ".png" : "";
+        // On ne charge le QRC que s'il existe réellement, pour éviter le warning Image.Error.
+        camQrcPath = (qrcCandidate && _cameraSet.qrcExists(qrcCandidate)) ? qrcCandidate : "";
+        aiUrl = (camPng !== "") ? _cameraSet.diskUrl(camPng) : "";
+        // Si ni QRC ni cache disque, déclencher directement l'API (évite le passage par Image.Error).
+        if (camPng !== "" && camQrcPath === "" && aiUrl === "")
+            _cameraSet.append(tabbedPage.currentPhoto.make, camPng);
     }
 
     // Source : vignette IA (disque ou API) si disponible, sinon QRC.
     camThumb.source: aiUrl !== "" ? aiUrl : camQrcPath
 
-    // Si ni QRC ni disque → déclencher la génération par API.
+    // Fallback de sécurité : si le chargement échoue malgré tout (fichier corrompu, etc.).
     camThumb.onStatusChanged: {
         if (camThumb.status === Image.Error && camPng !== "" && aiUrl === "")
             _cameraSet.append(tabbedPage.currentPhoto.make, camPng);
