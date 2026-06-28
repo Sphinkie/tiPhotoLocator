@@ -3,6 +3,30 @@
 ================================================================================
 
 --------------------------------------------------------------------------------
+ Version 2.2  (2026-06-28)
+--------------------------------------------------------------------------------
+
+Vignettes d'appareils photo (ZoneCamera)
+  - CameraSet : convertWithSoftEdges() — conversion fond blanc → PNG transparent via alpha
+    proportionnel à la luminosité perceptuelle (anti-aliasing, bords doux)
+  - L'image JPEG renvoyée par DeepAI est désormais transformée en PNG transparent
+    avant sauvegarde dans AppData/Cameras_AI/
+  - CameraSet::qrcExists() : teste l'existence d'une ressource QRC côté C++ (QFile::exists)
+    avant que QML ne tente de la charger, supprimant le warning Image.Error superflu
+  - ZoneCamera : onCamPngChanged déclenche l'API directement si ni QRC ni cache disque,
+    sans passer par Image.Error ; camThumb.onStatusChanged conservé en fallback de sécurité
+  - Les requêtes DeepAI en double sont déjà évitées nativement par m_cameras (QSet) :
+    insert() avant la requête bloque tout appel concurrent pour le même modèle
+
+Configuration
+  - PopupSettings restructuré avec un TabBar à deux onglets (MyTabButton) :
+    · General : paramètres usuels (nom photographe, langues, fournisseur de carte, thème)
+    · API Keys : Map provider, VLM/Groq, Camera AI DeepAI (nouveau champ)
+  - La clé DeepAI est persistée sous "deepaikey" dans QSettings, cohérent avec CameraSet.cpp
+  - MyTabButton : onglet non-sélectionné utilise désormais Style.tabTextColor
+    (DeepPurple Shade400) au lieu de foregroundColor
+
+--------------------------------------------------------------------------------
  Version 2.1  (2026-06-24)
 --------------------------------------------------------------------------------
 
