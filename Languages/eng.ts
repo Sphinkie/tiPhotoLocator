@@ -47,14 +47,6 @@
         <translation>- Give it a name, ie &lt;i&gt;TiPhotoLocator&lt;/i&gt;.&lt;br/&gt;</translation>
     </message>
     <message>
-        <source>- Submit</source>
-        <translation type="vanished">- Submit</translation>
-    </message>
-    <message>
-        <source>This AI will try to find the location of the photo, not keywords.</source>
-        <translation type="vanished">This AI will try to find the location of the photo, not keywords.</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Dialogs/AiApikeyDialog.qml" line="41"/>
         <source>Note: The AI will try to find the location of the photo, not keywords.&lt;br/&gt;AI suggests a &lt;b&gt;yellow marker&lt;/b&gt;, and a &lt;b&gt;location name&lt;/b&gt;.</source>
         <translation>Note: The AI will try to find the location of the photo, not keywords.&lt;br/&gt;AI suggests a &lt;b&gt;yellow marker&lt;/b&gt;, and a &lt;b&gt;location name&lt;/b&gt;.</translation>
@@ -197,10 +189,6 @@
         <location filename="../Sources/Qml/Main.qml" line="189"/>
         <source>MAP</source>
         <translation>MAP</translation>
-    </message>
-    <message>
-        <source>GPX</source>
-        <translation type="vanished">GPX</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Main.qml" line="195"/>
@@ -475,10 +463,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>VLM API key:</source>
-        <translation type="vanished">VLM API key:</translation>
-    </message>
-    <message>
         <location filename="../Sources/Qml/Vues/PopupSettingsForm.ui.qml" line="199"/>
         <source>Tags and suggestions language:</source>
         <translation>Tags and suggestions language:</translation>
@@ -654,18 +638,6 @@
 </context>
 <context>
     <name>ToolbarGpxForm.ui</name>
-    <message>
-        <source>Apply Saved Position</source>
-        <translation type="obsolete">Apply Saved Position</translation>
-    </message>
-    <message>
-        <source>Apply the stored position to the current photo</source>
-        <translation type="obsolete">Apply the stored position to the current photo</translation>
-    </message>
-    <message>
-        <source>Clear Saved Position</source>
-        <translation type="obsolete">Clear Saved Position</translation>
-    </message>
     <message>
         <location filename="../Sources/Qml/Vues/ToolbarGpxForm.ui.qml" line="55"/>
         <source>Apply the track point to the current photo</source>
@@ -961,33 +933,6 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
     </message>
 </context>
 <context>
-    <name>ZoneGpx</name>
-    <message>
-        <source>GPX Tracking</source>
-        <translation type="vanished">GPX Tracking</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation type="vanished">Refresh</translation>
-    </message>
-    <message>
-        <source>Refresh GPX file list</source>
-        <translation type="vanished">Refresh GPX file list</translation>
-    </message>
-    <message>
-        <source>GPX start:</source>
-        <translation type="vanished">GPX start:</translation>
-    </message>
-    <message>
-        <source>Offset:</source>
-        <translation type="vanished">Offset:</translation>
-    </message>
-    <message>
-        <source>Camera time:</source>
-        <translation type="vanished">Camera time:</translation>
-    </message>
-</context>
-<context>
     <name>ZoneGpxForm.ui</name>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="18"/>
@@ -998,10 +943,6 @@ Finally, hit &apos;Save&apos; to write the changes into the EXIF/IPTC data.</tra
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="32"/>
         <source>Refresh</source>
         <translation>Refresh</translation>
-    </message>
-    <message>
-        <source>Refresh GPX file list</source>
-        <translation type="obsolete">Refresh GPX file list</translation>
     </message>
     <message>
         <location filename="../Sources/Qml/Vues/ZoneGpxForm.ui.qml" line="41"/>
@@ -1118,10 +1059,6 @@ Limited to 100 requests per day.</source>
         <location filename="../Sources/Qml/Vues/ZoneSuggestedTagsForm.ui.qml" line="16"/>
         <source>Suggestions</source>
         <translation>Suggestions</translation>
-    </message>
-    <message>
-        <source>More tags...</source>
-        <translation type="vanished">More tags...</translation>
     </message>
 </context>
 <context>

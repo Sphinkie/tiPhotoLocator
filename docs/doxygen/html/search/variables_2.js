@@ -31,12 +31,11 @@ var searchData=
   ['chiptarget_28',['chipTarget',['../class_chips.html#a85ac411f6727873de6634858d21d96f7',1,'Chips']]],
   ['chiptext_29',['chipText',['../class_chips.html#a3f74a511ec723f48b14f24b60d07fa9a',1,'Chips']]],
   ['chiptime_30',['chipTime',['../class_zone_preview_form.html#a0b122e982e53a3b4545ba67c9b3539b4',1,'ZonePreviewForm']]],
-  ['circleicon_31',['circleIcon',['../class_photo_listview.html#afe9ad0639bdc8df220e4d4c3e1e6b5fd',1,'PhotoListview']]],
-  ['city_32',['city',['../struct_photo.html#af69f56742ec76589b96b355cdc447149',1,'Photo']]],
-  ['citytext_33',['cityText',['../class_photo_listview.html#ae447aac43304d79184cd885e670a3dc7',1,'PhotoListview']]],
-  ['closebutton_34',['closeButton',['../class_popup_keywords_form.html#a27d4aea06be73a03b53f86df0fb900f3',1,'PopupKeywordsForm']]],
-  ['country_35',['country',['../struct_photo.html#a9bf494760dfe13bc320c8395a1d8368f',1,'Photo']]],
-  ['creator_36',['creator',['../struct_photo.html#a8557579ced9c4e8587443564bfe659dd',1,'Photo']]],
-  ['creditspage_37',['creditsPage',['../class_main.html#a0a2efcc080855f7243a45c280f4dc45c',1,'Main']]],
-  ['currrentchip_38',['currrentChip',['../class_suggestion_repeater.html#a466180a757e71f64499f94ad6bd3601c',1,'SuggestionRepeater']]]
+  ['city_31',['city',['../struct_photo.html#af69f56742ec76589b96b355cdc447149',1,'Photo']]],
+  ['citytext_32',['cityText',['../class_photo_listview.html#ae447aac43304d79184cd885e670a3dc7',1,'PhotoListview']]],
+  ['closebutton_33',['closeButton',['../class_popup_keywords_form.html#a27d4aea06be73a03b53f86df0fb900f3',1,'PopupKeywordsForm']]],
+  ['country_34',['country',['../struct_photo.html#a9bf494760dfe13bc320c8395a1d8368f',1,'Photo']]],
+  ['creator_35',['creator',['../struct_photo.html#a8557579ced9c4e8587443564bfe659dd',1,'Photo']]],
+  ['creditspage_36',['creditsPage',['../class_main.html#a0a2efcc080855f7243a45c280f4dc45c',1,'Main']]],
+  ['currrentchip_37',['currrentChip',['../class_suggestion_repeater.html#a466180a757e71f64499f94ad6bd3601c',1,'SuggestionRepeater']]]
 ];

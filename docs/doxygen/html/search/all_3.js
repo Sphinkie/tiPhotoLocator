@@ -4,7 +4,7 @@ var searchData=
   ['datacleared_1',['dataCleared',['../class_photo_model.html#abdede59b31ccb60a9c2d3ad0838661c3',1,'PhotoModel']]],
   ['datasaved_2',['dataSaved',['../class_photo_model.html#af709f4fa981daf428fa902237f6820de',1,'PhotoModel']]],
   ['datetimeoriginal_3',['dateTimeOriginal',['../struct_photo.html#a481cec4ea67fe90721b20510f55dee5a',1,'Photo']]],
-  ['delegate_4',['delegate',['../class_imagettes_list_view.html#a69ad50dff6a6155056424e7bd783071b',1,'ImagettesListView']]],
+  ['delegate_4',['delegate',['../class_list_view_imagettes.html#a1280dec81c9ac93331347dd51f215712',1,'ListViewImagettes']]],
   ['delegategpx_5',['delegateGpx',['../class_list_view_g_p_xfiles.html#a9972632e3bc6bfcd441ff8b35bec4636',1,'ListViewGPXfiles']]],
   ['deletable_6',['deletable',['../class_chips.html#af6f4c0da806a37ff3304980e3261a1bf',1,'Chips::deletable'],['../class_fat_chip.html#aa282ad954d1119b29bd2db63ccd4f56a',1,'FatChip::deletable']]],
   ['deletearea_7',['deleteArea',['../class_chips.html#ad300d4af5e2a4d8826fbd6f475678ac8',1,'Chips']]],
@@ -16,9 +16,10 @@ var searchData=
   ['developper_20corner_13',['Developper Corner',['../index.html#autotoc_md3',1,'']]],
   ['diacriticletters_14',['diacriticLetters',['../class_utilities.html#a7e1e10ee30627aedf30eb97d8cf7d52a',1,'Utilities']]],
   ['dirtyfields_15',['dirtyFields',['../struct_photo.html#aeb680905b680957e72027a344d3fed28',1,'Photo']]],
-  ['documentation_16',['Documentation',['../md_docs_2compilation.html#autotoc_md13',1,'']]],
-  ['documentation_17',['Technical documentation',['../index.html#autotoc_md4',1,'']]],
-  ['dumpdata_18',['dumpData',['../class_photo_model.html#a822190ecc2081c7b49030c0f6a42317f',1,'PhotoModel::dumpData()'],['../class_suggestion_model.html#af3345223f2aa9b5d563b9097271a1d20',1,'SuggestionModel::dumpData()']]],
-  ['duplicatedata_19',['duplicateData',['../class_photo_model.html#aacde479b741e9f94c2077ad979e6b6a7',1,'PhotoModel']]],
-  ['duree_20',['duree',['../class_ghost_chip.html#a63911282b1c643c181bad07be419a1be',1,'GhostChip']]]
+  ['diskurl_16',['diskUrl',['../class_camera_set.html#a24d784978d5cece95d5e2c91e179ac9e',1,'CameraSet']]],
+  ['documentation_17',['Documentation',['../md_docs_2compilation.html#autotoc_md13',1,'']]],
+  ['documentation_18',['Technical documentation',['../index.html#autotoc_md4',1,'']]],
+  ['dumpdata_19',['dumpData',['../class_photo_model.html#a822190ecc2081c7b49030c0f6a42317f',1,'PhotoModel::dumpData()'],['../class_suggestion_model.html#af3345223f2aa9b5d563b9097271a1d20',1,'SuggestionModel::dumpData()']]],
+  ['duplicatedata_20',['duplicateData',['../class_photo_model.html#aacde479b741e9f94c2077ad979e6b6a7',1,'PhotoModel']]],
+  ['duree_21',['duree',['../class_ghost_chip.html#a63911282b1c643c181bad07be419a1be',1,'GhostChip']]]
 ];

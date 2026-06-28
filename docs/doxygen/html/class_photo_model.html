@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.2</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -157,8 +157,6 @@ Connecteurs publics</h2></td></tr>
 <tr class="memdesc:adadb528b29e9f53d5d547558766c7ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> to the model, with just a name and a path (url). Other data should be filled later, from exif metadata.  <br /></td></tr>
 <tr class="memitem:ada671ca616e073c328f32e77f8a86566" id="r_ada671ca616e073c328f32e77f8a86566"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada671ca616e073c328f32e77f8a86566">appendSavedPosition</a> ()</td></tr>
 <tr class="memdesc:ada671ca616e073c328f32e77f8a86566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une entrée spéciale dans le Modèle, correspondant à une position GPS mémorisée (marker jaune). Ses coordonnées GPS sont celles de la photo sélectionnée.  <br /></td></tr>
-<tr class="memitem:af5f930db4a232ac52701f0ff6c1381d3" id="r_af5f930db4a232ac52701f0ff6c1381d3"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5f930db4a232ac52701f0ff6c1381d3">appendSavedPositionFromCoords</a> (double latitude, double longitude)</td></tr>
-<tr class="memdesc:af5f930db4a232ac52701f0ff6c1381d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une entrée spéciale dans le modèle avec des coordonnées GPS explicites (marker jaune). Utilisé par l'identification IA pour sauvegarder la position du lieu reconnu.  <br /></td></tr>
 <tr class="memitem:a24ad28505093881b0f6a134075fc6cfa" id="r_a24ad28505093881b0f6a134075fc6cfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24ad28505093881b0f6a134075fc6cfa">setWriteError</a> (QModelIndex idx, const QString &amp;message)</td></tr>
 <tr class="memdesc:a24ad28505093881b0f6a134075fc6cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregistre un message d'erreur d'écriture ExifTool pour une photo. Si message est vide, l'erreur précédente est effacée (écriture réussie). Si message est non-vide, émet writeErrorOccurred pour la snackbar QML.  <br /></td></tr>
 <tr class="memitem:a3cc8c0b5e6803970def517a8d57ae155" id="r_a3cc8c0b5e6803970def517a8d57ae155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cc8c0b5e6803970def517a8d57ae155">fetchExifMetadata</a> (int row=-1)</td></tr>
@@ -221,6 +219,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>loadingChanged</b> ()
 <tr class="memitem:a8cc66b6d7ccc7f50bd419b00fbea1b53" id="r_a8cc66b6d7ccc7f50bd419b00fbea1b53"><td class="memItemLeft" align="right" valign="top"><a id="a8cc66b6d7ccc7f50bd419b00fbea1b53" name="a8cc66b6d7ccc7f50bd419b00fbea1b53"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>selectionCountChanged</b> ()</td></tr>
 <tr class="memdesc:a8cc66b6d7ccc7f50bd419b00fbea1b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand le nombre de photos sélectionnées change. <br /></td></tr>
+<tr class="memitem:a4d78fde3472859dbc3d2fde8b0f0a489" id="r_a4d78fde3472859dbc3d2fde8b0f0a489"><td class="memItemLeft" align="right" valign="top"><a id="a4d78fde3472859dbc3d2fde8b0f0a489" name="a4d78fde3472859dbc3d2fde8b0f0a489"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>trackCountChanged</b> ()</td></tr>
+<tr class="memdesc:a4d78fde3472859dbc3d2fde8b0f0a489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand le nombre de photos on-track change. <br /></td></tr>
+<tr class="memitem:a487d9fcb2dc0d7d607d550e932ddd2fd" id="r_a487d9fcb2dc0d7d607d550e932ddd2fd"><td class="memItemLeft" align="right" valign="top"><a id="a487d9fcb2dc0d7d607d550e932ddd2fd" name="a487d9fcb2dc0d7d607d550e932ddd2fd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>trackDeactivated</b> ()</td></tr>
+<tr class="memdesc:a487d9fcb2dc0d7d607d550e932ddd2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand l'utilisateur clique une photo hors-track alors qu'une track était active. <br /></td></tr>
 <tr class="memitem:a84ce035a6d4b174261f3e4f7ed79399d" id="r_a84ce035a6d4b174261f3e4f7ed79399d"><td class="memItemLeft" align="right" valign="top"><a id="a84ce035a6d4b174261f3e4f7ed79399d" name="a84ce035a6d4b174261f3e4f7ed79399d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>countChanged</b> ()</td></tr>
 <tr class="memdesc:a84ce035a6d4b174261f3e4f7ed79399d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis quand le nombre total de photos change. <br /></td></tr>
@@ -234,7 +238,7 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a3f09addf9a989e85b7ae5797156b270f" id="r_a3f09addf9a989e85b7ae5797156b270f"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f09addf9a989e85b7ae5797156b270f">data</a> (const QModelIndex &amp;index, int role=Qt::DisplayRole) const override</td></tr>
 <tr class="memdesc:a3f09addf9a989e85b7ae5797156b270f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the role value of an element of the model.  <br /></td></tr>
 <tr class="memitem:a1304d28519eb274764ef65afffec6c96" id="r_a1304d28519eb274764ef65afffec6c96"><td class="memItemLeft" align="right" valign="top">Qt::ItemFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1304d28519eb274764ef65afffec6c96">flags</a> (const QModelIndex &amp;index) const override</td></tr>
-<tr class="memdesc:a1304d28519eb274764ef65afffec6c96"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a1304d28519eb274764ef65afffec6c96" title="PhotoModel::flags.">PhotoModel::flags</a>.  <br /></td></tr>
+<tr class="memdesc:a1304d28519eb274764ef65afffec6c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne les flags Qt d'un élément (éditable, activé, sélectionnable).  <br /></td></tr>
 <tr class="memitem:aac3d5e1ae72e823b4e6091497c5cf27d" id="r_aac3d5e1ae72e823b4e6091497c5cf27d"><td class="memItemLeft" align="right" valign="top">QHash&lt; int, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac3d5e1ae72e823b4e6091497c5cf27d">roleNames</a> () const override</td></tr>
 <tr class="memdesc:aac3d5e1ae72e823b4e6091497c5cf27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table of Role names. C'est la correspondance entre le role C++ et le nom de la property dans QML.  <br /></td></tr>
 <tr class="memitem:a3c8036e57376630243dfa6841d7f2251" id="r_a3c8036e57376630243dfa6841d7f2251"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c8036e57376630243dfa6841d7f2251">getRoleName</a> (int role)</td></tr>
@@ -243,8 +247,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a1d2159990dbea68afefa28bfdd6804fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the full name of the photo. This is an example of unitary getter method.  <br /></td></tr>
 <tr class="memitem:a18fb19d062f2f7d7d79585d2e62c9634" id="r_a18fb19d062f2f7d7d79585d2e62c9634"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QVariantMap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18fb19d062f2f7d7d79585d2e62c9634">get</a> (int row)</td></tr>
 <tr class="memdesc:a18fb19d062f2f7d7d79585d2e62c9634"><td class="mdescLeft">&#160;</td><td class="mdescRight">La méthode <a class="el" href="#a18fb19d062f2f7d7d79585d2e62c9634" title="La méthode get() (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: titre ...">get()</a> (invocable par QML) renvoie les données de la photo demandée. Usage dans QML: <span class="tt">titre = myModel.get(1).title;</span>  <br /></td></tr>
-<tr class="memitem:a99a5d7ef237b87ff7173cdc669fafd3b" id="r_a99a5d7ef237b87ff7173cdc669fafd3b"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99a5d7ef237b87ff7173cdc669fafd3b">addToSelection</a> (int row, bool exclusive=false)</td></tr>
-<tr class="memdesc:a99a5d7ef237b87ff7173cdc669fafd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode (invocable par QML) ajoute la photo désignée aux photos sélectionnées.  <br /></td></tr>
+<tr class="memitem:aec7bb8873026a2ce87c6305314380b1c" id="r_aec7bb8873026a2ce87c6305314380b1c"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec7bb8873026a2ce87c6305314380b1c">addToSelection</a> (int row, bool unselectAllOther=false, bool keepOnTrack=false)</td></tr>
+<tr class="memdesc:aec7bb8873026a2ce87c6305314380b1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode (invocable par QML) ajoute la photo désignée aux photos sélectionnées.  <br /></td></tr>
 <tr class="memitem:a550fbb31e5ea492677bff74d5274a2b4" id="r_a550fbb31e5ea492677bff74d5274a2b4"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a550fbb31e5ea492677bff74d5274a2b4">removeFromSelection</a> (int row)</td></tr>
 <tr class="memdesc:a550fbb31e5ea492677bff74d5274a2b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode enlève la photo désignée des photos sélectionnées.  <br /></td></tr>
 <tr class="memitem:a3418791003f8f006300b65265a4aaf81" id="r_a3418791003f8f006300b65265a4aaf81"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3418791003f8f006300b65265a4aaf81">resetSelection</a> ()</td></tr>
@@ -259,6 +263,14 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a6a10a56693f2a9a186748cb02b8b763b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute le flag "isSelected" à toutes les photos qui n'ont pas de date.  <br /></td></tr>
 <tr class="memitem:af7a88bb9ca10eaf2d573ddb453650bdc" id="r_af7a88bb9ca10eaf2d573ddb453650bdc"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7a88bb9ca10eaf2d573ddb453650bdc">selectAll</a> ()</td></tr>
 <tr class="memdesc:af7a88bb9ca10eaf2d573ddb453650bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute le flag "isSelected" à toutes les photos.  <br /></td></tr>
+<tr class="memitem:a8324024fd50f0294183c7fe79d244d3a" id="r_a8324024fd50f0294183c7fe79d244d3a"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8324024fd50f0294183c7fe79d244d3a">selectOnTrack</a> ()</td></tr>
+<tr class="memdesc:a8324024fd50f0294183c7fe79d244d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sélectionne toutes les photos flagguées isOnTrack et désélectionne les autres.  <br /></td></tr>
+<tr class="memitem:a66a27fbd8889c8f0d257e101aa14e8b0" id="r_a66a27fbd8889c8f0d257e101aa14e8b0"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66a27fbd8889c8f0d257e101aa14e8b0">nextOnTrackRow</a> (int currentRow) const</td></tr>
+<tr class="memdesc:a66a27fbd8889c8f0d257e101aa14e8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le row de la prochaine photo isOnTrack après currentRow (avec wrap-around).  <br /></td></tr>
+<tr class="memitem:ad86bd89dfbd440efe2313d951d572e74" id="r_ad86bd89dfbd440efe2313d951d572e74"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad86bd89dfbd440efe2313d951d572e74">previousOnTrackRow</a> (int currentRow) const</td></tr>
+<tr class="memdesc:ad86bd89dfbd440efe2313d951d572e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le row de la photo précédente isOnTrack avant currentRow (avec wrap-around).  <br /></td></tr>
+<tr class="memitem:a68fe0522421a5c30dfe30bb1ae916010" id="r_a68fe0522421a5c30dfe30bb1ae916010"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68fe0522421a5c30dfe30bb1ae916010">applyTrackPointCoordsToAll</a> ()</td></tr>
+<tr class="memdesc:a68fe0522421a5c30dfe30bb1ae916010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique les coordonnées interpolées de la track à toutes les photos isOnTrack.  <br /></td></tr>
 <tr class="memitem:a262b8d92e3edf3884c723c965f7de5e1" id="r_a262b8d92e3edf3884c723c965f7de5e1"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a262b8d92e3edf3884c723c965f7de5e1">findInCirclePhotos</a> (int circle_radius=-1)</td></tr>
 <tr class="memdesc:a262b8d92e3edf3884c723c965f7de5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parcourt toutes les <a class="el" href="struct_photo.html" title="A data structure containing all the attributes for a photo picture: filename, GPS coordinates,...">Photo</a> du modèle, et flague celles qui sont à l'interieur du cercle demandé. Fonction avec mécanisme de Mutuelle Exclusion (MUTEX).  <br /></td></tr>
 <tr class="memitem:a0de6d700a5cf86a76f4858dd848cb4e7" id="r_a0de6d700a5cf86a76f4858dd848cb4e7"><td class="memItemLeft" align="right" valign="top"><a id="a0de6d700a5cf86a76f4858dd848cb4e7" name="a0de6d700a5cf86a76f4858dd848cb4e7"></a>
@@ -273,14 +285,18 @@ Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>selection
 <tr class="memdesc:acc4cc81a42b022cd529c4d6408688f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un mot-clef à toutes les photos qui ne le possèdent pas déjà.  <br /></td></tr>
 <tr class="memitem:a3086b8033fdb5e88cb72cee975cea8dc" id="r_a3086b8033fdb5e88cb72cee975cea8dc"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3086b8033fdb5e88cb72cee975cea8dc">addKeywordToSelection</a> (const QString &amp;keyword)</td></tr>
 <tr class="memdesc:a3086b8033fdb5e88cb72cee975cea8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un mot-clef aux photos sélectionnées qui ne le possèdent pas déjà.  <br /></td></tr>
-<tr class="memitem:a614ead774ff62e4d0431a955abb56651" id="r_a614ead774ff62e4d0431a955abb56651"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a614ead774ff62e4d0431a955abb56651">setSelectedItemsCoords</a> (QGeoCoordinate coords)</td></tr>
-<tr class="memdesc:a614ead774ff62e4d0431a955abb56651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affecte les coordonnées GPS fournies à toutes les photos sélectionnées.  <br /></td></tr>
 <tr class="memitem:ac9b73a40d67ee00486147e487bc1a89b" id="r_ac9b73a40d67ee00486147e487bc1a89b"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9b73a40d67ee00486147e487bc1a89b">suggestFromSelection</a> ()</td></tr>
 <tr class="memdesc:ac9b73a40d67ee00486147e487bc1a89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cherche des suggestions de keywords, country, city, location pour la photo courante, en allant regarder dans les tags des autres photos de la selection.  <br /></td></tr>
 <tr class="memitem:a23001133bf3fb44176664a2042e657ea" id="r_a23001133bf3fb44176664a2042e657ea"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23001133bf3fb44176664a2042e657ea">suggestFromPhoto</a> (const int row)</td></tr>
 <tr class="memdesc:a23001133bf3fb44176664a2042e657ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie des suggestions de keywords, country, city, location pour la photo courante, en allant regarder dans les tags de la photo fournie.  <br /></td></tr>
 <tr class="memitem:ae0685e0e936d1b7c58ef98ad237e6eea" id="r_ae0685e0e936d1b7c58ef98ad237e6eea"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0685e0e936d1b7c58ef98ad237e6eea">scanFolder</a> (const QString &amp;folderUrl)</td></tr>
 <tr class="memdesc:ae0685e0e936d1b7c58ef98ad237e6eea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scanne un dossier directement via QDir (fallback pour les chemins UNC que FolderListModel ne supporte pas).  <br /></td></tr>
+<tr class="memitem:a614ead774ff62e4d0431a955abb56651" id="r_a614ead774ff62e4d0431a955abb56651"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a614ead774ff62e4d0431a955abb56651">setSelectedItemsCoords</a> (QGeoCoordinate coords)</td></tr>
+<tr class="memdesc:a614ead774ff62e4d0431a955abb56651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affecte les coordonnées GPS fournies à toutes les photos sélectionnées.  <br /></td></tr>
+<tr class="memitem:ab59e242de3fee450d8e4234fad4ec8b9" id="r_ab59e242de3fee450d8e4234fad4ec8b9"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab59e242de3fee450d8e4234fad4ec8b9">setSavedPositionCoords</a> (double latitude, double longitude)</td></tr>
+<tr class="memdesc:ab59e242de3fee450d8e4234fad4ec8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une entrée spéciale dans le modèle avec des coordonnées GPS explicites (marker jaune). Utilisé par l'identification IA pour sauvegarder la position du lieu reconnu.  <br /></td></tr>
+<tr class="memitem:a71ca7edf86b7af8899e4a58ac518977d" id="r_a71ca7edf86b7af8899e4a58ac518977d"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71ca7edf86b7af8899e4a58ac518977d">applyTrackPointCoords</a> ()</td></tr>
+<tr class="memdesc:a71ca7edf86b7af8899e4a58ac518977d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique les coords.  <br /></td></tr>
 <tr class="memitem:a822190ecc2081c7b49030c0f6a42317f" id="r_a822190ecc2081c7b49030c0f6a42317f"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a822190ecc2081c7b49030c0f6a42317f">dumpData</a> ()</td></tr>
 <tr class="memdesc:a822190ecc2081c7b49030c0f6a42317f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug function that print (in the console) one line of the model at every call.  <br /></td></tr>
 <tr class="memitem:a1ff9f0f539d9b65e0521ebbaa498b21b" id="r_a1ff9f0f539d9b65e0521ebbaa498b21b"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ff9f0f539d9b65e0521ebbaa498b21b">clear</a> ()</td></tr>
@@ -334,6 +350,9 @@ qreal&#160;</td><td class="memItemRight" valign="bottom"><b>writeProgress</b></t
 <tr class="memdesc:a0b76a1d12f7232ac14434c6a764d15e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le modele est en train d'écrire les données Exif. <br /></td></tr>
 <tr class="memitem:aa41215645b3d02fec1ffa4b94b88b9b0" id="r_aa41215645b3d02fec1ffa4b94b88b9b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa41215645b3d02fec1ffa4b94b88b9b0">selectionCount</a></td></tr>
 <tr class="memdesc:aa41215645b3d02fec1ffa4b94b88b9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de photos dans la sélection.  <br /></td></tr>
+<tr class="memitem:abf239359d91b8212c1c8aff8f9b26474" id="r_abf239359d91b8212c1c8aff8f9b26474"><td class="memItemLeft" align="right" valign="top"><a id="abf239359d91b8212c1c8aff8f9b26474" name="abf239359d91b8212c1c8aff8f9b26474"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>onTrackCount</b></td></tr>
+<tr class="memdesc:abf239359d91b8212c1c8aff8f9b26474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de photos matchant le track GPX courant. <br /></td></tr>
 <tr class="memitem:a88c7ea8e69650c8e0f1f7bb61a105bc0" id="r_a88c7ea8e69650c8e0f1f7bb61a105bc0"><td class="memItemLeft" align="right" valign="top"><a id="a88c7ea8e69650c8e0f1f7bb61a105bc0" name="a88c7ea8e69650c8e0f1f7bb61a105bc0"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>count</b></td></tr>
 <tr class="memdesc:a88c7ea8e69650c8e0f1f7bb61a105bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre total de photos dans le modèle. <br /></td></tr>
@@ -341,7 +360,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>count</b></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
 <tr class="memitem:af43bef19e91b11bf4e79c55fe458d0a1" id="r_af43bef19e91b11bf4e79c55fe458d0a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af43bef19e91b11bf4e79c55fe458d0a1">addTestItem</a> ()</td></tr>
-<tr class="memdesc:af43bef19e91b11bf4e79c55fe458d0a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a test item to the <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. (only if <b>DebugMode</b> is enabled in the *Settingss)  <br /></td></tr>
+<tr class="memdesc:af43bef19e91b11bf4e79c55fe458d0a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a test item to the <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. (only if <b>DebugMode</b> is enabled in the Registry)  <br /></td></tr>
 <tr class="memitem:a5b6f4559d756ce4ca23aa60bf89f5f1c" id="r_a5b6f4559d756ce4ca23aa60bf89f5f1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b6f4559d756ce4ca23aa60bf89f5f1c">setLoading</a> (const bool state)</td></tr>
 <tr class="memdesc:a5b6f4559d756ce4ca23aa60bf89f5f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positionne le flag "loading" qui indique que le modèle est en train de se remplir avec les données EXIF.  <br /></td></tr>
 <tr class="memitem:ae9bd8bb5a9b1bfa42e4bccd4ffebda16" id="r_ae9bd8bb5a9b1bfa42e4bccd4ffebda16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9bd8bb5a9b1bfa42e4bccd4ffebda16">currentItemRow</a> (const int row)</td></tr>
@@ -350,6 +369,8 @@ Fonctions membres privées</h2></td></tr>
 <tr class="memdesc:ab2a9ae6ee15c2e8aa80dfd123bc9b4ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mémorise les coordonnées dans la photo sélectionnée.  <br /></td></tr>
 <tr class="memitem:a38fac21208306e1a156e08c1c37c974f" id="r_a38fac21208306e1a156e08c1c37c974f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38fac21208306e1a156e08c1c37c974f">getCurrentItemRow</a> ()</td></tr>
 <tr class="memdesc:a38fac21208306e1a156e08c1c37c974f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last selected row.  <br /></td></tr>
+<tr class="memitem:acfce86ed31095ed26a5869a64480fcfe" id="r_acfce86ed31095ed26a5869a64480fcfe"><td class="memItemLeft" align="right" valign="top"><a id="acfce86ed31095ed26a5869a64480fcfe" name="acfce86ed31095ed26a5869a64480fcfe"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getOnTrackCount</b> () const</td></tr>
 <tr class="memitem:ae2115960e95b3b8e4877a90fd362a66c" id="r_ae2115960e95b3b8e4877a90fd362a66c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2115960e95b3b8e4877a90fd362a66c">getCurrentItemHasGPS</a> ()</td></tr>
 <tr class="memdesc:ae2115960e95b3b8e4877a90fd362a66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the selected photo has GPS coordinates.  <br /></td></tr>
 <tr class="memitem:a81b05ee0e6c3c97a5807f16203ed6215" id="r_a81b05ee0e6c3c97a5807f16203ed6215"><td class="memItemLeft" align="right" valign="top">QGeoCoordinate&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81b05ee0e6c3c97a5807f16203ed6215">getCurrentItemCoords</a> ()</td></tr>
@@ -401,6 +422,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_countWrite</b> = 0</
 <tr class="memitem:af373da3d07c97e28d3347cb67fa06c58" id="r_af373da3d07c97e28d3347cb67fa06c58"><td class="memItemLeft" align="right" valign="top"><a id="af373da3d07c97e28d3347cb67fa06c58" name="af373da3d07c97e28d3347cb67fa06c58"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> = 0</td></tr>
 <tr class="memdesc:af373da3d07c97e28d3347cb67fa06c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de photos dans la sélection. <br /></td></tr>
+<tr class="memitem:a654421bf27d5e225460573864d80dcfc" id="r_a654421bf27d5e225460573864d80dcfc"><td class="memItemLeft" align="right" valign="top"><a id="a654421bf27d5e225460573864d80dcfc" name="a654421bf27d5e225460573864d80dcfc"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_onTrackCount</b> = 0</td></tr>
+<tr class="memdesc:a654421bf27d5e225460573864d80dcfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de photos matchant le track GPX courant. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>The <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a> class manages a list of photo data. </p>
@@ -534,14 +558,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 </table>
 </div><div class="memdoc">
 
-<p>Adds a test item to the <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. (only if <b>DebugMode</b> is enabled in the *Settingss) </p>
+<p>Adds a test item to the <a class="el" href="class_photo_model.html" title="The PhotoModel class manages a list of photo data.">PhotoModel</a>. (only if <b>DebugMode</b> is enabled in the Registry) </p>
 <hr  />
  <dl class="section note"><dt>Note</dt><dd>For testing purpose. </dd></dl>
 
 </div>
 </div>
-<a id="a99a5d7ef237b87ff7173cdc669fafd3b" name="a99a5d7ef237b87ff7173cdc669fafd3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99a5d7ef237b87ff7173cdc669fafd3b">&#9670;&#160;</a></span>addToSelection()</h2>
+<a id="aec7bb8873026a2ce87c6305314380b1c" name="aec7bb8873026a2ce87c6305314380b1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec7bb8873026a2ce87c6305314380b1c">&#9670;&#160;</a></span>addToSelection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -554,7 +578,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>exclusive</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>unselectAllOther</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>keepOnTrack</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -564,7 +593,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">row</td><td>: indice de la photo dans la listView </td></tr>
-    <tr><td class="paramname">exclusive</td><td>: if True, all other Photos are unselected. </td></tr>
+    <tr><td class="paramname">unselectAllOther</td><td>: if True, all other photos are unselected. </td></tr>
+    <tr><td class="paramname">keepOnTrack</td><td>: if True, all other photos are unselected except photo on the Track (that stay selected). </td></tr>
   </table>
   </dd>
 </dl>
@@ -669,38 +699,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
  
 </div>
 </div>
-<a id="af5f930db4a232ac52701f0ff6c1381d3" name="af5f930db4a232ac52701f0ff6c1381d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5f930db4a232ac52701f0ff6c1381d3">&#9670;&#160;</a></span>appendSavedPositionFromCoords</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PhotoModel::appendSavedPositionFromCoords </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>latitude</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>longitude</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Ajoute une entrée spéciale dans le modèle avec des coordonnées GPS explicites (marker jaune). Utilisé par l'identification IA pour sauvegarder la position du lieu reconnu. </p>
-<hr  />
- 
-</div>
-</div>
 <a id="a536c2a2381b3ce827257068f5bf43933" name="a536c2a2381b3ce827257068f5bf43933"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a536c2a2381b3ce827257068f5bf43933">&#9670;&#160;</a></span>applyCreatorToAll</h2>
 
@@ -757,6 +755,46 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 <hr  />
 <p>Le nom du photographe est configuré dans les Settings. </p>
 
+</div>
+</div>
+<a id="a71ca7edf86b7af8899e4a58ac518977d" name="a71ca7edf86b7af8899e4a58ac518977d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71ca7edf86b7af8899e4a58ac518977d">&#9670;&#160;</a></span>applyTrackPointCoords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::applyTrackPointCoords </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applique les coords. </p>
+<hr  />
+ 
+</div>
+</div>
+<a id="a68fe0522421a5c30dfe30bb1ae916010" name="a68fe0522421a5c30dfe30bb1ae916010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68fe0522421a5c30dfe30bb1ae916010">&#9670;&#160;</a></span>applyTrackPointCoordsToAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::applyTrackPointCoordsToAll </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applique les coordonnées interpolées de la track à toutes les photos isOnTrack. </p>
+<hr  />
+ 
 </div>
 </div>
 <a id="aa26cbc3ffc9ede489900b49a602a73f7" name="aa26cbc3ffc9ede489900b49a602a73f7"></a>
@@ -1093,15 +1131,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a1304d28519eb274764ef65afffec6c96" title="PhotoModel::flags.">PhotoModel::flags</a>. </p>
+<p>Retourne les flags Qt d'un élément (éditable, activé, sélectionnable). </p>
 <hr  />
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">index</td><td>: index de l'élément dans le modèle. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Qt::NoItemFlags si index invalide, sinon ItemIsEditable | ItemIsEnabled | ItemIsSelectable. </dd></dl>
 
 </div>
 </div>
@@ -1157,7 +1195,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 
 <p>Returns the GPS Coords of the selected row. </p>
 <hr  />
- 
+ <dl class="section return"><dt>Renvoie</dt><dd>QGeoCoordinate (latitude, longitude) de la photo courante. </dd></dl>
+
 </div>
 </div>
 <a id="ae2115960e95b3b8e4877a90fd362a66c" name="ae2115960e95b3b8e4877a90fd362a66c"></a>
@@ -1185,7 +1224,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 
 <p>Returns if the selected photo has GPS coordinates. </p>
 <hr  />
- 
+ <dl class="section return"><dt>Renvoie</dt><dd>true si la photo courante possède latitude ET longitude non nulles. </dd></dl>
+
 </div>
 </div>
 <a id="a38fac21208306e1a156e08c1c37c974f" name="a38fac21208306e1a156e08c1c37c974f"></a>
@@ -1213,7 +1253,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
 
 <p>Returns the last selected row. </p>
 <hr  />
- 
+ <dl class="section return"><dt>Renvoie</dt><dd>Indice de la dernière photo sélectionnée dans m_photos. </dd></dl>
+
 </div>
 </div>
 <a id="a3c8036e57376630243dfa6841d7f2251" name="a3c8036e57376630243dfa6841d7f2251"></a>
@@ -1267,6 +1308,60 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_selectionCount</b> =
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>a QVariant containing the absolute path and full name (image URL) of the photo. </dd></dl>
+
+</div>
+</div>
+<a id="a66a27fbd8889c8f0d257e101aa14e8b0" name="a66a27fbd8889c8f0d257e101aa14e8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66a27fbd8889c8f0d257e101aa14e8b0">&#9670;&#160;</a></span>nextOnTrackRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PhotoModel::nextOnTrackRow </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>currentRow</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le row de la prochaine photo isOnTrack après currentRow (avec wrap-around). </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentRow</td><td>: row de départ dans m_photos (exclu de la recherche). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le row dans le sourceModel, ou -1 si aucune photo isOnTrack. </dd></dl>
+
+</div>
+</div>
+<a id="ad86bd89dfbd440efe2313d951d572e74" name="ad86bd89dfbd440efe2313d951d572e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86bd89dfbd440efe2313d951d572e74">&#9670;&#160;</a></span>previousOnTrackRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PhotoModel::previousOnTrackRow </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>currentRow</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le row de la photo précédente isOnTrack avant currentRow (avec wrap-around). </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentRow</td><td>: row de départ dans m_photos (exclu de la recherche). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le row dans le sourceModel, ou -1 si aucune photo isOnTrack. </dd></dl>
 
 </div>
 </div>
@@ -1706,6 +1801,26 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
  
 </div>
 </div>
+<a id="a8324024fd50f0294183c7fe79d244d3a" name="a8324024fd50f0294183c7fe79d244d3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8324024fd50f0294183c7fe79d244d3a">&#9670;&#160;</a></span>selectOnTrack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::selectOnTrack </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sélectionne toutes les photos flagguées isOnTrack et désélectionne les autres. </p>
+<hr  />
+ 
+</div>
+</div>
 <a id="a6a10a56693f2a9a186748cb02b8b763b" name="a6a10a56693f2a9a186748cb02b8b763b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a10a56693f2a9a186748cb02b8b763b">&#9670;&#160;</a></span>selectUndated()</h2>
 
@@ -1974,7 +2089,8 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">row</td><td>: indice de la photo. </td></tr>
-    <tr><td class="paramname">lat,lon</td><td>: coordonnées GPS interpolées depuis le track GPX. </td></tr>
+    <tr><td class="paramname">lat</td><td>: latitude GPS interpolée depuis le track GPX, en degrés décimaux. </td></tr>
+    <tr><td class="paramname">lon</td><td>: longitude GPS interpolée depuis le track GPX, en degrés décimaux. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2033,6 +2149,37 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
 
 </div>
 </div>
+<a id="ab59e242de3fee450d8e4234fad4ec8b9" name="ab59e242de3fee450d8e4234fad4ec8b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab59e242de3fee450d8e4234fad4ec8b9">&#9670;&#160;</a></span>setSavedPositionCoords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhotoModel::setSavedPositionCoords </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>latitude</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>longitude</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute une entrée spéciale dans le modèle avec des coordonnées GPS explicites (marker jaune). Utilisé par l'identification IA pour sauvegarder la position du lieu reconnu. </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">latitude</td><td>: latitude en degrés décimaux (WGS84). </td></tr>
+    <tr><td class="paramname">longitude</td><td>: longitude en degrés décimaux (WGS84). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a614ead774ff62e4d0431a955abb56651" name="a614ead774ff62e4d0431a955abb56651"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a614ead774ff62e4d0431a955abb56651">&#9670;&#160;</a></span>setSelectedItemsCoords()</h2>
 
@@ -2088,7 +2235,14 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
 
 <p>Enregistre un message d'erreur d'écriture ExifTool pour une photo. Si message est vide, l'erreur précédente est effacée (écriture réussie). Si message est non-vide, émet writeErrorOccurred pour la snackbar QML. </p>
 <hr  />
- 
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>: index de la photo dans le modèle. </td></tr>
+    <tr><td class="paramname">message</td><td>: message d'erreur retourné par ExifTool, ou chaîne vide en cas de succès. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a55deb039e2fbabeb1de1f3ba871c3e48" name="a55deb039e2fbabeb1de1f3ba871c3e48"></a>
@@ -2134,7 +2288,13 @@ Tags automatiques: <span class="tt">GPS Ref, MetadataEditingSoftware</span>. </d
 
 <p>Envoie des suggestions de keywords, country, city, location pour la photo courante, en allant regarder dans les tags de la photo fournie. </p>
 <hr  />
- 
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>: indice de la photo source dans m_photos dont on extrait les tags. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ac9b73a40d67ee00486147e487bc1a89b" name="ac9b73a40d67ee00486147e487bc1a89b"></a>

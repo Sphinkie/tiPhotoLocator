@@ -43,7 +43,7 @@ var NAVTREE =
       [ "Hiérarchie des classes", "hierarchy.html", "hierarchy" ],
       [ "Membres de classe", "functions.html", [
         [ "Tout", "functions.html", "functions_dup" ],
-        [ "Fonctions", "functions_func.html", null ],
+        [ "Fonctions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Énumérations", "functions_enum.html", null ],
         [ "Valeurs énumérées", "functions_eval.html", null ],
@@ -59,9 +59,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_camera_set_8h_source.html",
-"class_photo_listview.html#a1e0ea04da8274245f1d6d0aab18e780d",
-"class_suggestion_model.html#ae89572184f274b27c827e5f419a0df8f",
-"struct_photo.html#a481cec4ea67fe90721b20510f55dee5a"
+"class_on_the_map_proxy_model.html#aea978750450595380acfab7c3d60ef12",
+"class_suggestion_model.html#a7472cc4f2bde6a78f4be33bcb05c8d5e",
+"functions_w.html"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

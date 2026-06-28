@@ -1,7 +1,7 @@
 var searchData=
 [
   ['datetimeoriginal_0',['dateTimeOriginal',['../struct_photo.html#a481cec4ea67fe90721b20510f55dee5a',1,'Photo']]],
-  ['delegate_1',['delegate',['../class_imagettes_list_view.html#a69ad50dff6a6155056424e7bd783071b',1,'ImagettesListView']]],
+  ['delegate_1',['delegate',['../class_list_view_imagettes.html#a1280dec81c9ac93331347dd51f215712',1,'ListViewImagettes']]],
   ['delegategpx_2',['delegateGpx',['../class_list_view_g_p_xfiles.html#a9972632e3bc6bfcd441ff8b35bec4636',1,'ListViewGPXfiles']]],
   ['deletable_3',['deletable',['../class_fat_chip.html#aa282ad954d1119b29bd2db63ccd4f56a',1,'FatChip']]],
   ['description_4',['description',['../struct_photo.html#a6fe05dc549b7caf2ee3232476d41e760',1,'Photo']]],

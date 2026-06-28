@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.2</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -131,6 +131,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>currentTrackPointsCha
 <tr class="memitem:ae34c9156a1ec7175a959821e041531d8" id="r_ae34c9156a1ec7175a959821e041531d8"><td class="memItemLeft" align="right" valign="top"><a id="ae34c9156a1ec7175a959821e041531d8" name="ae34c9156a1ec7175a959821e041531d8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>matchCountChanged</b> ()</td></tr>
 <tr class="memdesc:ae34c9156a1ec7175a959821e041531d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emis quand le nombre de photos matchées change. <br /></td></tr>
+<tr class="memitem:aa4e8f8f4320af4fd5cf4493e001ffa80" id="r_aa4e8f8f4320af4fd5cf4493e001ffa80"><td class="memItemLeft" align="right" valign="top"><a id="aa4e8f8f4320af4fd5cf4493e001ffa80" name="aa4e8f8f4320af4fd5cf4493e001ffa80"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>trackPointCountChanged</b> ()</td></tr>
+<tr class="memdesc:aa4e8f8f4320af4fd5cf4493e001ffa80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emis quand le nombre de points du track change. <br /></td></tr>
 <tr class="memitem:a89922a519a0e937d9a4eddaa4643eac7" id="r_a89922a519a0e937d9a4eddaa4643eac7"><td class="memItemLeft" align="right" valign="top"><a id="a89922a519a0e937d9a4eddaa4643eac7" name="a89922a519a0e937d9a4eddaa4643eac7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>firstOnTrackFound</b> (int sourceRow)</td></tr>
 <tr class="memdesc:a89922a519a0e937d9a4eddaa4643eac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Émis après <a class="el" href="#a6da2032e71565f43d785145a05b86c83" title="Pour chaque photo du modèle, recherche si son horodatage correspond à un point du track....">matchPhotos()</a> si au moins une photo est sur la track. <br /></td></tr>
@@ -141,6 +144,8 @@ Fonctions membres publiques</h2></td></tr>
 QVariantList&#160;</td><td class="memItemRight" valign="bottom"><b>currentTrackPoints</b> () const</td></tr>
 <tr class="memitem:ab03fed1490cb66ee2b430ac732a79417" id="r_ab03fed1490cb66ee2b430ac732a79417"><td class="memItemLeft" align="right" valign="top"><a id="ab03fed1490cb66ee2b430ac732a79417" name="ab03fed1490cb66ee2b430ac732a79417"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>matchCount</b> () const</td></tr>
+<tr class="memitem:a105b3163ee7a2d8eb68a67628ae22265" id="r_a105b3163ee7a2d8eb68a67628ae22265"><td class="memItemLeft" align="right" valign="top"><a id="a105b3163ee7a2d8eb68a67628ae22265" name="a105b3163ee7a2d8eb68a67628ae22265"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>trackPointCount</b> () const</td></tr>
 <tr class="memitem:ab5f08b7eb04cd707addbf05e4b808781" id="r_ab5f08b7eb04cd707addbf05e4b808781"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5f08b7eb04cd707addbf05e4b808781">GpxModel</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:ab5f08b7eb04cd707addbf05e4b808781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <br /></td></tr>
 <tr class="memitem:ad8a3de6109996db37f599d5e1c8e194f" id="r_ad8a3de6109996db37f599d5e1c8e194f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8a3de6109996db37f599d5e1c8e194f">rowCount</a> (const QModelIndex &amp;parent=QModelIndex()) const override</td></tr>
@@ -156,13 +161,23 @@ Propriétés</h2></td></tr>
 QVariantList&#160;</td><td class="memItemRight" valign="bottom"><b>currentTrackPoints</b></td></tr>
 <tr class="memitem:a4a4351e894d2e36e50a45bf743d5f50b" id="r_a4a4351e894d2e36e50a45bf743d5f50b"><td class="memItemLeft" align="right" valign="top"><a id="a4a4351e894d2e36e50a45bf743d5f50b" name="a4a4351e894d2e36e50a45bf743d5f50b"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>matchCount</b></td></tr>
+<tr class="memitem:a44e215bdb110b4269a26f712c1640258" id="r_a44e215bdb110b4269a26f712c1640258"><td class="memItemLeft" align="right" valign="top"><a id="a44e215bdb110b4269a26f712c1640258" name="a44e215bdb110b4269a26f712c1640258"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>trackPointCount</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
 <tr class="memitem:af0995bc254f67c88a268b5c1788e7213" id="r_af0995bc254f67c88a268b5c1788e7213"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0995bc254f67c88a268b5c1788e7213">readStartTime</a> (const QString &amp;filePath)</td></tr>
-<tr class="memdesc:af0995bc254f67c88a268b5c1788e7213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit le premier élément &lt;time&gt; du fichier GPX et retourne l'heure au format "HH:MM:SS".  <br /></td></tr>
+<tr class="memdesc:af0995bc254f67c88a268b5c1788e7213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détermine le StartTime de la trace GPS.  <br /></td></tr>
+<tr class="memitem:a23de7990e74c3beb2807f78aee90c714" id="r_a23de7990e74c3beb2807f78aee90c714"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23de7990e74c3beb2807f78aee90c714">readNmeaStartTime</a> (const QString &amp;filePath)</td></tr>
+<tr class="memdesc:a23de7990e74c3beb2807f78aee90c714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit le premier $GPRMC valide du fichier .LOG et retourne l'heure de début "HH:MM:SS" (UTC).  <br /></td></tr>
+<tr class="memitem:a10ea7600014ee589d8290ce301aa8de6" id="r_a10ea7600014ee589d8290ce301aa8de6"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10ea7600014ee589d8290ce301aa8de6">readGpxStartTime</a> (const QString &amp;filePath)</td></tr>
+<tr class="memdesc:a10ea7600014ee589d8290ce301aa8de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit la première balise XML "time" du fichier .GPX et retourne l'heure de début "HH:MM:SS" (UTC).  <br /></td></tr>
 <tr class="memitem:a71007112af10fb87a695179be1f2d6f2" id="r_a71007112af10fb87a695179be1f2d6f2"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="struct_gpx_track_point.html">GpxTrackPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71007112af10fb87a695179be1f2d6f2">parseTrack</a> (const QString &amp;filePath)</td></tr>
-<tr class="memdesc:a71007112af10fb87a695179be1f2d6f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse tous les &lt;trkpt&gt; du fichier GPX et retourne les points avec coordonnées ET timestamps.  <br /></td></tr>
+<tr class="memdesc:a71007112af10fb87a695179be1f2d6f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatche vers <a class="el" href="#affb64311a3ffa2888f9c9d213ea0dec7" title="Parse un fichier .LOG Olympus OI.Track et retourne les track-points GPS.">parseNmeaTrack()</a> ou le parseur GPX/XML selon l'extension du fichier.  <br /></td></tr>
+<tr class="memitem:affb64311a3ffa2888f9c9d213ea0dec7" id="r_affb64311a3ffa2888f9c9d213ea0dec7"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="struct_gpx_track_point.html">GpxTrackPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affb64311a3ffa2888f9c9d213ea0dec7">parseNmeaTrack</a> (const QString &amp;filePath)</td></tr>
+<tr class="memdesc:affb64311a3ffa2888f9c9d213ea0dec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse un fichier .LOG Olympus OI.Track et retourne les track-points GPS.  <br /></td></tr>
+<tr class="memitem:a88fa844367b056d4531672d6c49fa5fd" id="r_a88fa844367b056d4531672d6c49fa5fd"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="struct_gpx_track_point.html">GpxTrackPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88fa844367b056d4531672d6c49fa5fd">parseGpxTrack</a> (const QString &amp;filePath)</td></tr>
+<tr class="memdesc:a88fa844367b056d4531672d6c49fa5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse un fichier .GPX et retourne les track-points GPS. Parcourt les balises XML "trkpt" et lit les attributs "lat", "long" et la balise fille "time". Structure GPX : <span class="tt">&lt;trkpt lat="..." lon="..."&gt;&lt;time&gt;ISO8601&lt;/time&gt;...&lt;/trkpt&gt;</span>  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
@@ -178,6 +193,9 @@ QVariantList&#160;</td><td class="memItemRight" valign="bottom"><b>m_currentTrac
 <tr class="memitem:af17837371e0c1f5fbf946cd688d4d940" id="r_af17837371e0c1f5fbf946cd688d4d940"><td class="memItemLeft" align="right" valign="top"><a id="af17837371e0c1f5fbf946cd688d4d940" name="af17837371e0c1f5fbf946cd688d4d940"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>m_matchCount</b> = 0</td></tr>
 <tr class="memdesc:af17837371e0c1f5fbf946cd688d4d940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de photos matchées sur le track courant. <br /></td></tr>
+<tr class="memitem:a79ad0b5f7b8e7318a29d7548a154301c" id="r_a79ad0b5f7b8e7318a29d7548a154301c"><td class="memItemLeft" align="right" valign="top"><a id="a79ad0b5f7b8e7318a29d7548a154301c" name="a79ad0b5f7b8e7318a29d7548a154301c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_trackPointCount</b> = 0</td></tr>
+<tr class="memdesc:a79ad0b5f7b8e7318a29d7548a154301c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de points GPS dans le track courant. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>The <a class="el" href="class_gpx_model.html" title="The GpxModel class expose la liste des fichiers GPX du sous-dossier de photos.">GpxModel</a> class expose la liste des fichiers GPX du sous-dossier de photos. </p>
@@ -268,7 +286,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_matchCount</b> = 0</
 
 <p>Retourne la donnée pour un rôle donné. </p>
 <hr  />
- 
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>: index de la ligne dans le modèle. </td></tr>
+    <tr><td class="paramname">role</td><td>: rôle demandé (NameRole, FilePathRole, StartTimeRole). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>QVariant contenant la valeur, ou QVariant vide si index ou rôle invalide. </dd></dl>
+
 </div>
 </div>
 <a id="a6da2032e71565f43d785145a05b86c83" name="a6da2032e71565f43d785145a05b86c83"></a>
@@ -310,6 +336,76 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_matchCount</b> = 0</
 
 </div>
 </div>
+<a id="a88fa844367b056d4531672d6c49fa5fd" name="a88fa844367b056d4531672d6c49fa5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88fa844367b056d4531672d6c49fa5fd">&#9670;&#160;</a></span>parseGpxTrack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; <a class="el" href="struct_gpx_track_point.html">GpxTrackPoint</a> &gt; GpxModel::parseGpxTrack </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse un fichier .GPX et retourne les track-points GPS. Parcourt les balises XML "trkpt" et lit les attributs "lat", "long" et la balise fille "time". Structure GPX : <span class="tt">&lt;trkpt lat="..." lon="..."&gt;&lt;time&gt;ISO8601&lt;/time&gt;...&lt;/trkpt&gt;</span> </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>: chemin absolu du fichier .GPX. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>QVector&lt;GpxTrackPoint&gt; trié chronologiquement (l'ordre du fichier est supposé croissant). </dd></dl>
+
+</div>
+</div>
+<a id="affb64311a3ffa2888f9c9d213ea0dec7" name="affb64311a3ffa2888f9c9d213ea0dec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affb64311a3ffa2888f9c9d213ea0dec7">&#9670;&#160;</a></span>parseNmeaTrack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; <a class="el" href="struct_gpx_track_point.html">GpxTrackPoint</a> &gt; GpxModel::parseNmeaTrack </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse un fichier .LOG Olympus OI.Track et retourne les track-points GPS. </p>
+<hr  />
+ <p>Seules les sentences $GPRMC avec statut "A" (fix valide) sont traitées. Les timestamps sont en UTC (convention NMEA). </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>: chemin absolu du fichier .LOG. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>QVector&lt;GpxTrackPoint&gt; trié chronologiquement (l'ordre du fichier est supposé croissant). </dd></dl>
+
+</div>
+</div>
 <a id="a71007112af10fb87a695179be1f2d6f2" name="a71007112af10fb87a695179be1f2d6f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a71007112af10fb87a695179be1f2d6f2">&#9670;&#160;</a></span>parseTrack()</h2>
 
@@ -333,15 +429,85 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_matchCount</b> = 0</
 </table>
 </div><div class="memdoc">
 
-<p>Parse tous les &lt;trkpt&gt; du fichier GPX et retourne les points avec coordonnées ET timestamps. </p>
+<p>Dispatche vers <a class="el" href="#affb64311a3ffa2888f9c9d213ea0dec7" title="Parse un fichier .LOG Olympus OI.Track et retourne les track-points GPS.">parseNmeaTrack()</a> ou le parseur GPX/XML selon l'extension du fichier. </p>
 <hr  />
- <p>Structure GPX : &lt;trkpt lat="..." lon="..."&gt;&lt;time&gt;ISO8601&lt;/time&gt;...&lt;/trkpt&gt; </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filePath</td><td>: chemin absolu du fichier .gpx. </td></tr>
+    <tr><td class="paramname">filePath</td><td>: chemin absolu du fichier (.gpx ou .LOG). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>QVector&lt;GpxTrackPoint&gt; trié chronologiquement. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>QVector&lt;GpxTrackPoint&gt; des points du tracé, ou vecteur vide si le fichier est illisible. </dd></dl>
+
+</div>
+</div>
+<a id="a10ea7600014ee589d8290ce301aa8de6" name="a10ea7600014ee589d8290ce301aa8de6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ea7600014ee589d8290ce301aa8de6">&#9670;&#160;</a></span>readGpxStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GpxModel::readGpxStartTime </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lit la première balise XML "time" du fichier .GPX et retourne l'heure de début "HH:MM:SS" (UTC). </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>: chemin absolu du fichier .GPX. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>"HH:MM:SS" (UTC) ou chaîne vide si aucun fix valide trouvé / fichier illisible. </dd></dl>
+
+</div>
+</div>
+<a id="a23de7990e74c3beb2807f78aee90c714" name="a23de7990e74c3beb2807f78aee90c714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23de7990e74c3beb2807f78aee90c714">&#9670;&#160;</a></span>readNmeaStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GpxModel::readNmeaStartTime </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lit le premier $GPRMC valide du fichier .LOG et retourne l'heure de début "HH:MM:SS" (UTC). </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>: chemin absolu du fichier .LOG. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>"HH:MM:SS" (UTC) ou chaîne vide si aucun fix valide trouvé / fichier illisible. </dd></dl>
 
 </div>
 </div>
@@ -368,15 +534,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_matchCount</b> = 0</
 </table>
 </div><div class="memdoc">
 
-<p>Lit le premier élément &lt;time&gt; du fichier GPX et retourne l'heure au format "HH:MM:SS". </p>
+<p>Détermine le StartTime de la trace GPS. </p>
 <hr  />
- <p>Format ISO 8601 dans un GPX : "2017-08-18T09:12:00Z" ou "2017-08-18T09:12:00+02:00". On extrait les 8 caractères après le 'T'. </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filePath</td><td>: chemin absolu du fichier .gpx. </td></tr>
+    <tr><td class="paramname">filePath</td><td>: chemin absolu du fichier (.gpx ou .LOG). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>"HH:MM:SS" ou chaîne vide si non trouvé / fichier illisible. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>"HH:MM:SS" (UTC) ou chaîne vide si non trouvé / fichier illisible. </dd></dl>
 
 </div>
 </div>
@@ -439,7 +605,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_matchCount</b> = 0</
 
 <p>Retourne la table de correspondance rôle → nom QML. </p>
 <hr  />
- 
+ <dl class="section return"><dt>Renvoie</dt><dd>Table associant chaque valeur de <a class="el" href="#ae76055335014cea9cbdbbc2dc87c0987" title="Rôles exposés au QML.">Roles</a> à son nom exposé en QML. </dd></dl>
+
 </div>
 </div>
 <a id="ad8a3de6109996db37f599d5e1c8e194f" name="ad8a3de6109996db37f599d5e1c8e194f"></a>
@@ -467,7 +634,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_matchCount</b> = 0</
 
 <p>Retourne le nombre de fichiers GPX dans le modèle. </p>
 <hr  />
- 
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>: index parent (doit être invalide pour un modèle à plat). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Nombre d'entrées dans m_files, ou 0 si parent est valide. </dd></dl>
+
 </div>
 </div>
 <a id="a47af24a7ad95325a0951280fb368934f" name="a47af24a7ad95325a0951280fb368934f"></a>

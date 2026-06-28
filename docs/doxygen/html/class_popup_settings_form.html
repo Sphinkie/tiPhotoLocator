@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.2</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -95,7 +95,7 @@ $(function(){initNavTree('class_popup_settings_form.html','','class_popup_settin
 </div><!--header-->
 <div class="contents">
 
-<p>Fenêtre popup de Configuration. Elle se compose de deux frames: les valeurs par défaut et les reglages.  
+<p>Fenêtre popup de Configuration. Deux onglets : "General" (paramètres usuels) et "API Keys" (Map, Groq, DeepAI).  
  <a href="#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de PopupSettingsForm:</div>
@@ -134,14 +134,13 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>parent</b></td></tr>
 var Overlay&#160;</td><td class="memItemRight" valign="bottom"><b>modal</b></td></tr>
 <tr class="memitem:a93af3a23bcf83aa377092e31f08a5a2a" id="r_a93af3a23bcf83aa377092e31f08a5a2a"><td class="memItemLeft" align="right" valign="top"><a id="a93af3a23bcf83aa377092e31f08a5a2a" name="a93af3a23bcf83aa377092e31f08a5a2a"></a>
 var anchors&#160;</td><td class="memItemRight" valign="bottom"><b>centerIn</b></td></tr>
-<tr class="memitem:a5b2041f31c1ba7e1e9cdbe6b7cf39707" id="r_a5b2041f31c1ba7e1e9cdbe6b7cf39707"><td class="memItemLeft" align="right" valign="top">GroupBox&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b2041f31c1ba7e1e9cdbe6b7cf39707">groupBox1</a></td></tr>
+<tr class="memitem:ae8ef3ccb7a2b46ce078ceea845ba430f" id="r_ae8ef3ccb7a2b46ce078ceea845ba430f"><td class="memItemLeft" align="right" valign="top">TabBar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8ef3ccb7a2b46ce078ceea845ba430f">tabBar</a></td></tr>
 <tr class="memitem:a3dbd74ffa990011c06c77b39987f3732" id="r_a3dbd74ffa990011c06c77b39987f3732"><td class="memItemLeft" align="right" valign="top"><a id="a3dbd74ffa990011c06c77b39987f3732" name="a3dbd74ffa990011c06c77b39987f3732"></a>
 <a class="el" href="class_text_field_settings.html">TextFieldSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>textFieldName</b></td></tr>
 <tr class="memitem:a67b0ccb423509ea531a072b0cda196f3" id="r_a67b0ccb423509ea531a072b0cda196f3"><td class="memItemLeft" align="right" valign="top"><a id="a67b0ccb423509ea531a072b0cda196f3" name="a67b0ccb423509ea531a072b0cda196f3"></a>
 <a class="el" href="class_text_field_settings.html">TextFieldSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>textFieldInitials</b></td></tr>
 <tr class="memitem:a6ee2f9b9e632e26737cd9ac32e5dc8cc" id="r_a6ee2f9b9e632e26737cd9ac32e5dc8cc"><td class="memItemLeft" align="right" valign="top"><a id="a6ee2f9b9e632e26737cd9ac32e5dc8cc" name="a6ee2f9b9e632e26737cd9ac32e5dc8cc"></a>
 <a class="el" href="class_text_field_settings.html">TextFieldSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>textFieldMetadataSoftware</b></td></tr>
-<tr class="memitem:ad75a5f1370e59c5c8c58637fd2e9ac25" id="r_ad75a5f1370e59c5c8c58637fd2e9ac25"><td class="memItemLeft" align="right" valign="top">GroupBox&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad75a5f1370e59c5c8c58637fd2e9ac25">groupBox2</a></td></tr>
 <tr class="memitem:ab6f565015683391f703675ddd20823d6" id="r_ab6f565015683391f703675ddd20823d6"><td class="memItemLeft" align="right" valign="top"><a id="ab6f565015683391f703675ddd20823d6" name="ab6f565015683391f703675ddd20823d6"></a>
 <a class="el" href="class_text_field_settings.html">TextFieldSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>textFieldHomecity</b></td></tr>
 <tr class="memitem:a4544d068581f28f339dfd909bb9e9c6a" id="r_a4544d068581f28f339dfd909bb9e9c6a"><td class="memItemLeft" align="right" valign="top"><a id="a4544d068581f28f339dfd909bb9e9c6a" name="a4544d068581f28f339dfd909bb9e9c6a"></a>
@@ -152,17 +151,19 @@ ComboBox&#160;</td><td class="memItemRight" valign="bottom"><b>tagLanguages</b><
 ComboBox&#160;</td><td class="memItemRight" valign="bottom"><b>mapProvider</b></td></tr>
 <tr class="memitem:ad82f36c0cf440beaefa0bd9c654685e3" id="r_ad82f36c0cf440beaefa0bd9c654685e3"><td class="memItemLeft" align="right" valign="top"><a id="ad82f36c0cf440beaefa0bd9c654685e3" name="ad82f36c0cf440beaefa0bd9c654685e3"></a>
 ComboBox&#160;</td><td class="memItemRight" valign="bottom"><b>mapTheme</b></td></tr>
+<tr class="memitem:a7c7ac59646aab8c155bb399a48e69833" id="r_a7c7ac59646aab8c155bb399a48e69833"><td class="memItemLeft" align="right" valign="top"><a id="a7c7ac59646aab8c155bb399a48e69833" name="a7c7ac59646aab8c155bb399a48e69833"></a>
+CheckBox&#160;</td><td class="memItemRight" valign="bottom"><b>checkBoxDebug</b></td></tr>
 <tr class="memitem:a4dedc280653d83c68d3431e559ad9bed" id="r_a4dedc280653d83c68d3431e559ad9bed"><td class="memItemLeft" align="right" valign="top"><a id="a4dedc280653d83c68d3431e559ad9bed" name="a4dedc280653d83c68d3431e559ad9bed"></a>
 <a class="el" href="class_text_field_settings.html">TextFieldSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>textFieldMapApiKey</b></td></tr>
 <tr class="memitem:ace007f845d073d823a17f3370ed832c6" id="r_ace007f845d073d823a17f3370ed832c6"><td class="memItemLeft" align="right" valign="top"><a id="ace007f845d073d823a17f3370ed832c6" name="ace007f845d073d823a17f3370ed832c6"></a>
 <a class="el" href="class_text_field_settings.html">TextFieldSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>textFieldVLMToken</b></td></tr>
-<tr class="memitem:a7c7ac59646aab8c155bb399a48e69833" id="r_a7c7ac59646aab8c155bb399a48e69833"><td class="memItemLeft" align="right" valign="top"><a id="a7c7ac59646aab8c155bb399a48e69833" name="a7c7ac59646aab8c155bb399a48e69833"></a>
-CheckBox&#160;</td><td class="memItemRight" valign="bottom"><b>checkBoxDebug</b></td></tr>
+<tr class="memitem:ac1bff60ce708d068188628e9b4eb0371" id="r_ac1bff60ce708d068188628e9b4eb0371"><td class="memItemLeft" align="right" valign="top"><a id="ac1bff60ce708d068188628e9b4eb0371" name="ac1bff60ce708d068188628e9b4eb0371"></a>
+<a class="el" href="class_text_field_settings.html">TextFieldSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>textFieldDeepAIKey</b></td></tr>
 <tr class="memitem:a3ac03b678e11889c0f00b290efba3d91" id="r_a3ac03b678e11889c0f00b290efba3d91"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ac03b678e11889c0f00b290efba3d91">buttonClose</a></td></tr>
 <tr class="memitem:a25842889117b9bda52cb863415225bd1" id="r_a25842889117b9bda52cb863415225bd1"><td class="memItemLeft" align="right" valign="top">Settings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25842889117b9bda52cb863415225bd1">settings</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Fenêtre popup de Configuration. Elle se compose de deux frames: les valeurs par défaut et les reglages. </p>
+<div class="textblock"><p>Fenêtre popup de Configuration. Deux onglets : "General" (paramètres usuels) et "API Keys" (Map, Groq, DeepAI). </p>
 <hr  />
  </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
 <a id="a3ac03b678e11889c0f00b290efba3d91" name="a3ac03b678e11889c0f00b290efba3d91"></a>
@@ -189,54 +190,6 @@ CheckBox&#160;</td><td class="memItemRight" valign="bottom"><b>checkBoxDebug</b>
 
 </div>
 </div>
-<a id="a5b2041f31c1ba7e1e9cdbe6b7cf39707" name="a5b2041f31c1ba7e1e9cdbe6b7cf39707"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b2041f31c1ba7e1e9cdbe6b7cf39707">&#9670;&#160;</a></span>groupBox1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">GroupBox PopupSettingsForm::groupBox1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<hr  />
-<p> Group Box 1 : "Default values" </p>
-
-</div>
-</div>
-<a id="ad75a5f1370e59c5c8c58637fd2e9ac25" name="ad75a5f1370e59c5c8c58637fd2e9ac25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad75a5f1370e59c5c8c58637fd2e9ac25">&#9670;&#160;</a></span>groupBox2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">GroupBox PopupSettingsForm::groupBox2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<hr  />
-<p> Group Box 2 "Configuration" </p>
-
-</div>
-</div>
 <a id="a25842889117b9bda52cb863415225bd1" name="a25842889117b9bda52cb863415225bd1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25842889117b9bda52cb863415225bd1">&#9670;&#160;</a></span>settings</h2>
 
@@ -258,6 +211,30 @@ CheckBox&#160;</td><td class="memItemRight" valign="bottom"><b>checkBoxDebug</b>
 </div><div class="memdoc">
 <hr  />
 <p> On mémorise la configuration dans les Settings </p>
+
+</div>
+</div>
+<a id="ae8ef3ccb7a2b46ce078ceea845ba430f" name="ae8ef3ccb7a2b46ce078ceea845ba430f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ef3ccb7a2b46ce078ceea845ba430f">&#9670;&#160;</a></span>tabBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TabBar PopupSettingsForm::tabBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> TabBar : General / API Keys </p>
 
 </div>
 </div>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quitwarningdialog_0',['QuitWarningDialog',['../class_quit_warning_dialog.html',1,'']]]
+  ['qrcexists_0',['qrcExists',['../class_camera_set.html#aa83f149dc2319f940c2d90ae763601c7',1,'CameraSet']]],
+  ['quitwarningdialog_1',['QuitWarningDialog',['../class_quit_warning_dialog.html',1,'']]]
 ];

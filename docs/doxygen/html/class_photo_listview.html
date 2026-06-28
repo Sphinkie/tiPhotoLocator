@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.2</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -135,7 +135,7 @@ var&#160;</td><td class="memItemRight" valign="bottom"><b>highlightMoveVelocity<
 <tr class="memitem:a1e0ea04da8274245f1d6d0aab18e780d" id="r_a1e0ea04da8274245f1d6d0aab18e780d"><td class="memItemLeft" align="right" valign="top">Component&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e0ea04da8274245f1d6d0aab18e780d">listDelegate</a></td></tr>
 <tr class="memitem:a1e5dec182d42b0edd1c0714d197b960d" id="r_a1e5dec182d42b0edd1c0714d197b960d"><td class="memItemLeft" align="right" valign="top"><a id="a1e5dec182d42b0edd1c0714d197b960d" name="a1e5dec182d42b0edd1c0714d197b960d"></a>
 Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
-<tr class="memitem:afe9ad0639bdc8df220e4d4c3e1e6b5fd" id="r_afe9ad0639bdc8df220e4d4c3e1e6b5fd"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe9ad0639bdc8df220e4d4c3e1e6b5fd">circleIcon</a></td></tr>
+<tr class="memitem:a4ebda10921968131b34c34fbb6962ae0" id="r_a4ebda10921968131b34c34fbb6962ae0"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ebda10921968131b34c34fbb6962ae0">flagIcon</a></td></tr>
 <tr class="memitem:a541ea37c55ae2e2943b6ffcd890967b3" id="r_a541ea37c55ae2e2943b6ffcd890967b3"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a541ea37c55ae2e2943b6ffcd890967b3">gpsIcon</a></td></tr>
 <tr class="memitem:a1d8e398d484387aa153d46916c91ed6d" id="r_a1d8e398d484387aa153d46916c91ed6d"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d8e398d484387aa153d46916c91ed6d">nameText</a></td></tr>
 <tr class="memitem:ae447aac43304d79184cd885e670a3dc7" id="r_ae447aac43304d79184cd885e670a3dc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tiny_chip.html">TinyChip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae447aac43304d79184cd885e670a3dc7">cityText</a></td></tr>
@@ -182,8 +182,6 @@ Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
     <tr><td class="paramname">hasGPS</td><td>: La propriété hasGPS de la photo. </td></tr>
     <tr><td class="paramname">city</td><td>: La propriété city de la photo. </td></tr>
     <tr><td class="paramname">country</td><td>: La propriété country de la photo. </td></tr>
-    <tr><td class="paramname">latitude</td><td>: La propriété latitude de la photo. </td></tr>
-    <tr><td class="paramname">longitude</td><td>: La propriété longitude de la photo. </td></tr>
   </table>
   </dd>
 </dl>
@@ -248,30 +246,6 @@ Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
-<a id="afe9ad0639bdc8df220e4d4c3e1e6b5fd" name="afe9ad0639bdc8df220e4d4c3e1e6b5fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe9ad0639bdc8df220e4d4c3e1e6b5fd">&#9670;&#160;</a></span>circleIcon</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Image PhotoListview::circleIcon</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<hr  />
-<p> icone "In Circle" / "On The Track" </p>
-
-</div>
-</div>
 <a id="ae447aac43304d79184cd885e670a3dc7" name="ae447aac43304d79184cd885e670a3dc7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae447aac43304d79184cd885e670a3dc7">&#9670;&#160;</a></span>cityText</h2>
 
@@ -293,6 +267,30 @@ Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
 </div><div class="memdoc">
 <hr  />
 <p> Tag City avec le nom de la ville associée. </p>
+
+</div>
+</div>
+<a id="a4ebda10921968131b34c34fbb6962ae0" name="a4ebda10921968131b34c34fbb6962ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ebda10921968131b34c34fbb6962ae0">&#9670;&#160;</a></span>flagIcon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Image PhotoListview::flagIcon</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> Icone Flag "In Circle" (onglet 1) / "On The Track" (onglet 2) </p>
 
 </div>
 </div>
@@ -364,7 +362,7 @@ Item&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b></td></tr>
 </table>
 </div><div class="memdoc">
 <hr  />
-<p> icone "Has GPS". </p>
+<p> Icone "Has GPS". </p>
 
 </div>
 </div>

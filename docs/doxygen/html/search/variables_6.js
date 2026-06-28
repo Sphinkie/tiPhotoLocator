@@ -10,7 +10,5 @@ var searchData=
   ['gpxpolyline_7',['gpxPolyline',['../class_tab_frame_g_p_x.html#a6b6b998b8952e40efbb3c40c33196ccd',1,'TabFrameGPX']]],
   ['gpxtab_8',['gpxTab',['../class_main.html#a29a03d3ec8a1fbddef839c7287b35754',1,'Main']]],
   ['gpxtools_9',['gpxTools',['../class_tab_frame_g_p_x.html#a139708d9193dc759fbc4640250a9ba9e',1,'TabFrameGPX']]],
-  ['grille_10',['grille',['../class_zone_suggested_tags_form.html#a2f052f343e3eb8b17815b3a29cc7459a',1,'ZoneSuggestedTagsForm']]],
-  ['groupbox1_11',['groupBox1',['../class_popup_settings_form.html#a5b2041f31c1ba7e1e9cdbe6b7cf39707',1,'PopupSettingsForm']]],
-  ['groupbox2_12',['groupBox2',['../class_popup_settings_form.html#ad75a5f1370e59c5c8c58637fd2e9ac25',1,'PopupSettingsForm']]]
+  ['grille_10',['grille',['../class_zone_suggested_tags_form.html#a2f052f343e3eb8b17815b3a29cc7459a',1,'ZoneSuggestedTagsForm']]]
 ];

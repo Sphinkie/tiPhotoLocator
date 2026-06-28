@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.2</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -113,23 +113,30 @@ Connecteurs publics</h2></td></tr>
 <tr class="memitem:a77e050b451359a66ab6d161477597b44" id="r_a77e050b451359a66ab6d161477597b44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77e050b451359a66ab6d161477597b44">onError</a> ()</td></tr>
 <tr class="memdesc:a77e050b451359a66ab6d161477597b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appelée en cas d'erreur de la demande Rest. A voir si on met quelque chose d'utile ici.  <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
+Signaux</h2></td></tr>
+<tr class="memitem:a5302aa8810def02026559c3320db2a91" id="r_a5302aa8810def02026559c3320db2a91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5302aa8810def02026559c3320db2a91">thumbnailReady</a> (const QString &amp;cam_model, const QString &amp;fileUrl)</td></tr>
+<tr class="memdesc:a5302aa8810def02026559c3320db2a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Émis quand la vignette d'un modèle d'APN a été téléchargée et sauvegardée sur disque.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a56a4c781a3334d0fcce5bbd955a373c6" id="r_a56a4c781a3334d0fcce5bbd955a373c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56a4c781a3334d0fcce5bbd955a373c6">CameraSet</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:a56a4c781a3334d0fcce5bbd955a373c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce Constructeur instancie le Network Manager utilisé pour les requètes REST.  <br /></td></tr>
-<tr class="memitem:a9a155700c83f05cfc0a8f5ffd3328e4f" id="r_a9a155700c83f05cfc0a8f5ffd3328e4f"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a155700c83f05cfc0a8f5ffd3328e4f">append</a> (const QString &amp;cam_model)</td></tr>
-<tr class="memdesc:a9a155700c83f05cfc0a8f5ffd3328e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'un modèle de caméra dans la liste. S'il n'y est pas, on demande à deepAI de générer une imagette.  <br /></td></tr>
+<tr class="memitem:af357d42bd58641d165024781331750f9" id="r_af357d42bd58641d165024781331750f9"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af357d42bd58641d165024781331750f9">append</a> (const QString &amp;cam_maker, const QString &amp;cam_model)</td></tr>
+<tr class="memdesc:af357d42bd58641d165024781331750f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'un modèle de caméra dans la liste. S'il n'y est pas, on demande à deepAI de générer une imagette.  <br /></td></tr>
 <tr class="memitem:ac004e13c349e7a7d1e448f423029617d" id="r_ac004e13c349e7a7d1e448f423029617d"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac004e13c349e7a7d1e448f423029617d">contains</a> (const QString &amp;cam_model)</td></tr>
 <tr class="memdesc:ac004e13c349e7a7d1e448f423029617d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le modèle d'appareil photo demandé est déjà référencé. Si oui, il possède alors déjà une vignette.  <br /></td></tr>
+<tr class="memitem:a24d784978d5cece95d5e2c91e179ac9e" id="r_a24d784978d5cece95d5e2c91e179ac9e"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24d784978d5cece95d5e2c91e179ac9e">diskUrl</a> (const QString &amp;cam_model) const</td></tr>
+<tr class="memdesc:a24d784978d5cece95d5e2c91e179ac9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'URL <a href="file:///">file:///</a> de la vignette IA en cache sur disque, ou une chaîne vide si absente.  <br /></td></tr>
+<tr class="memitem:aa83f149dc2319f940c2d90ae763601c7" id="r_aa83f149dc2319f940c2d90ae763601c7"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa83f149dc2319f940c2d90ae763601c7">qrcExists</a> (const QString &amp;qrcPath) const</td></tr>
+<tr class="memdesc:aa83f149dc2319f940c2d90ae763601c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si une ressource QRC existe (pour éviter le warning Image.Error côté QML).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
 <tr class="memitem:a9ff75bb43b7296cf4835c471e80f88db" id="r_a9ff75bb43b7296cf4835c471e80f88db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ff75bb43b7296cf4835c471e80f88db">insert</a> (const QString &amp;cam_model)</td></tr>
 <tr class="memdesc:a9ff75bb43b7296cf4835c471e80f88db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un modèle d'appareil photo dans le Set. On lui fabrique alors une vignette.  <br /></td></tr>
-<tr class="memitem:a0fb996a8af37e012293507fef026a9db" id="r_a0fb996a8af37e012293507fef026a9db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fb996a8af37e012293507fef026a9db">requestThumb</a> (const QString &amp;cam_model)</td></tr>
-<tr class="memdesc:a0fb996a8af37e012293507fef026a9db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoi d'une requete POST à deepai.  <br /></td></tr>
-<tr class="memitem:adfa00deb84c361446cafb946443c1997" id="r_adfa00deb84c361446cafb946443c1997"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfa00deb84c361446cafb946443c1997">requestMeteo</a> ()</td></tr>
-<tr class="memdesc:adfa00deb84c361446cafb946443c1997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoi d'une requete GET à openweathermap.  <br /></td></tr>
+<tr class="memitem:a9a2d4c7ac7d42fafed176719463ea494" id="r_a9a2d4c7ac7d42fafed176719463ea494"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a2d4c7ac7d42fafed176719463ea494">requestThumb</a> (const QString &amp;cam_maker, const QString &amp;cam_model)</td></tr>
+<tr class="memdesc:a9a2d4c7ac7d42fafed176719463ea494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoi d'une requete POST à deepai.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
@@ -183,8 +190,8 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></t
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
-<a id="a9a155700c83f05cfc0a8f5ffd3328e4f" name="a9a155700c83f05cfc0a8f5ffd3328e4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a155700c83f05cfc0a8f5ffd3328e4f">&#9670;&#160;</a></span>append()</h2>
+<a id="af357d42bd58641d165024781331750f9" name="af357d42bd58641d165024781331750f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af357d42bd58641d165024781331750f9">&#9670;&#160;</a></span>append()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,8 +199,12 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></t
         <tr>
           <td class="memname">void CameraSet::append </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cam_model</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cam_maker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cam_model</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -202,7 +213,8 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></t
 <hr  />
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cam_model</td><td></td></tr>
+    <tr><td class="paramname">cam_maker</td><td>: marque de l'appareil photo. (champ EXIF Make). </td></tr>
+    <tr><td class="paramname">cam_model</td><td>: nom du modèle d'appareil photo. (champ EXIF Model). </td></tr>
   </table>
   </dd>
 </dl>
@@ -233,6 +245,33 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></t
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>true si ce modèle existe déja dans le Set. </dd></dl>
+
+</div>
+</div>
+<a id="a24d784978d5cece95d5e2c91e179ac9e" name="a24d784978d5cece95d5e2c91e179ac9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d784978d5cece95d5e2c91e179ac9e">&#9670;&#160;</a></span>diskUrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString CameraSet::diskUrl </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cam_model</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne l'URL <a href="file:///">file:///</a> de la vignette IA en cache sur disque, ou une chaîne vide si absente. </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam_model</td><td>: nom du modèle d'appareil photo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>URL <a href="file:///">file:///</a> de l'image, ou QString() si non trouvée. </dd></dl>
 
 </div>
 </div>
@@ -325,43 +364,47 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></t
 <hr  />
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">reply</td><td>: Le contenu de la réponse. </td></tr>
+    <tr><td class="paramname">reply</td><td>: Le contenu de la réponse (URL d'une image). <div class="fragment"><div class="line">{   <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;6e91fc87-f176-45a1-9644-a787238bee10&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;output_url&quot;</span>: <span class="stringliteral">&quot;https://api.deepai.org/job-view-file/6e91fc87-f176-45a1-9644-a787238bee10/outputs/output.jpg&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;share_url&quot;</span>: <span class="stringliteral">&quot;https://images.deepai.org/art-image/dbc2662a3c824d6a9034f2872f33f1c7/realistic-front-view-photo-of-camera-e-m10markii-whit.jpg&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;backend_request_id&quot;</span>: <span class="stringliteral">&quot;e10ccd26-fdc5-45ee-bdd7-187f68734907&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="adfa00deb84c361446cafb946443c1997" name="adfa00deb84c361446cafb946443c1997"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfa00deb84c361446cafb946443c1997">&#9670;&#160;</a></span>requestMeteo()</h2>
+<a id="aa83f149dc2319f940c2d90ae763601c7" name="aa83f149dc2319f940c2d90ae763601c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83f149dc2319f940c2d90ae763601c7">&#9670;&#160;</a></span>qrcExists()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CameraSet::requestMeteo </td>
+          <td class="memname">bool CameraSet::qrcExists </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>qrcPath</em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Envoi d'une requete GET à openweathermap. </p>
+<p>Indique si une ressource QRC existe (pour éviter le warning Image.Error côté QML). </p>
 <hr  />
- 
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qrcPath</td><td>: chemin QRC sans le préfixe ":" (ex: "/Cameras/SonyA7.png"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si le fichier est présent dans les ressources embarquées. </dd></dl>
+
 </div>
 </div>
-<a id="a0fb996a8af37e012293507fef026a9db" name="a0fb996a8af37e012293507fef026a9db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fb996a8af37e012293507fef026a9db">&#9670;&#160;</a></span>requestThumb()</h2>
+<a id="a9a2d4c7ac7d42fafed176719463ea494" name="a9a2d4c7ac7d42fafed176719463ea494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a2d4c7ac7d42fafed176719463ea494">&#9670;&#160;</a></span>requestThumb()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,8 +415,12 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></t
         <tr>
           <td class="memname">void CameraSet::requestThumb </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cam_model</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cam_maker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cam_model</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -387,7 +434,46 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_deepaiKey</b></t
 <hr  />
  <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cam_model</td><td>: non utilisé pour l'instant </td></tr>
+    <tr><td class="paramname">cam_maker</td><td>: marque de l'appareil photo issue des donnés EXIF. </td></tr>
+    <tr><td class="paramname">cam_model</td><td>: modèle de camera issue des donnés EXIF. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5302aa8810def02026559c3320db2a91" name="a5302aa8810def02026559c3320db2a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5302aa8810def02026559c3320db2a91">&#9670;&#160;</a></span>thumbnailReady</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraSet::thumbnailReady </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cam_model</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>fileUrl</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Émis quand la vignette d'un modèle d'APN a été téléchargée et sauvegardée sur disque. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam_model</td><td>: nom du modèle (clef de lookup). </td></tr>
+    <tr><td class="paramname">fileUrl</td><td>: URL <a href="file:///">file:///</a> de l'image sauvegardée. </td></tr>
   </table>
   </dd>
 </dl>

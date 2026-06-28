@@ -52,7 +52,7 @@ var hierarchy =
       [ "ModelGpxList", "class_model_gpx_list.html", null ]
     ] ],
     [ "ListView", null, [
-      [ "ImagettesListView", "class_imagettes_list_view.html", null ],
+      [ "ListViewImagettes", "class_list_view_imagettes.html", null ],
       [ "PhotoListview", "class_photo_listview.html", null ]
     ] ],
     [ "Map", null, [
@@ -85,8 +85,7 @@ var hierarchy =
     [ "QObject", null, [
       [ "CameraSet", "class_camera_set.html", null ],
       [ "GeocodeWrapper", "class_geocode_wrapper.html", null ],
-      [ "LandmarkWrapper", "class_landmark_wrapper.html", null ],
-      [ "PhotoModelWrapper", "class_photo_model_wrapper.html", null ]
+      [ "LandmarkWrapper", "class_landmark_wrapper.html", null ]
     ] ],
     [ "QRunnable", null, [
       [ "ExifReadTask", "class_exif_read_task.html", null ],
@@ -117,7 +116,9 @@ var hierarchy =
         [ "ZoneGlobalTagsForm", "class_zone_global_tags_form.html", [
           [ "ZoneGlobalTags", "class_zone_global_tags.html", null ]
         ] ],
-        [ "ZoneGpx", "class_zone_gpx.html", null ],
+        [ "ZoneGpxForm", "class_zone_gpx_form.html", [
+          [ "ZoneGpx", "class_zone_gpx.html", null ]
+        ] ],
         [ "ZonePreviewForm", "class_zone_preview_form.html", [
           [ "ZonePreview", "class_zone_preview.html", null ]
         ] ],

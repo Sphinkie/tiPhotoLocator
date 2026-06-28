@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo_TPL3.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">TiPhotoLocator<span id="projectnumber">&#160;2.2</span>
    </div>
    <div id="projectbrief">A tiny application to easily geotag your photos</div>
   </td>
@@ -138,7 +138,7 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>folderLocation</b>
 <tr class="memitem:a403421fd09afc22273162b74e74b7d7c" id="r_a403421fd09afc22273162b74e74b7d7c"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a403421fd09afc22273162b74e74b7d7c">data</a> (const QModelIndex &amp;index, int role=Qt::DisplayRole) const override</td></tr>
 <tr class="memdesc:a403421fd09afc22273162b74e74b7d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the requested role value of an element of the model.  <br /></td></tr>
 <tr class="memitem:ae3b26fa49dff5a4c7f1a79e061dd9970" id="r_ae3b26fa49dff5a4c7f1a79e061dd9970"><td class="memItemLeft" align="right" valign="top">Qt::ItemFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3b26fa49dff5a4c7f1a79e061dd9970">flags</a> (const QModelIndex &amp;index) const override</td></tr>
-<tr class="memdesc:ae3b26fa49dff5a4c7f1a79e061dd9970"><td class="mdescLeft">&#160;</td><td class="mdescRight">surcharge.  <br /></td></tr>
+<tr class="memdesc:ae3b26fa49dff5a4c7f1a79e061dd9970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne les flags Qt d'un élément (éditable, activé, sélectionnable).  <br /></td></tr>
 <tr class="memitem:a5153ff9a46757355350432e5e8a810cd" id="r_a5153ff9a46757355350432e5e8a810cd"><td class="memItemLeft" align="right" valign="top">QHash&lt; int, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5153ff9a46757355350432e5e8a810cd">roleNames</a> () const override</td></tr>
 <tr class="memdesc:a5153ff9a46757355350432e5e8a810cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table of Role names.  <br /></td></tr>
 <tr class="memitem:af3345223f2aa9b5d563b9097271a1d20" id="r_af3345223f2aa9b5d563b9097271a1d20"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3345223f2aa9b5d563b9097271a1d20">dumpData</a> ()</td></tr>
@@ -481,11 +481,12 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_folderLocation</
  <dl class="section note"><dt>Note</dt><dd>Implémentation obligatoire. </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>index of the element of the model. </td></tr>
-    <tr><td class="paramname">role</td><td>the requested role (enum). </td></tr>
+    <tr><td class="paramname">index</td><td>: index de l'élément dans le modèle. </td></tr>
+    <tr><td class="paramname">role</td><td>: rôle demandé (TextRole, TargetRole, CategoryRole, PhotosRole). </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Renvoie</dt><dd>QVariant contenant la valeur, ou QVariant vide si index invalide ou rôle inconnu. </dd></dl>
 
 </div>
 </div>
@@ -532,9 +533,16 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_folderLocation</
 </table>
 </div><div class="memdoc">
 
-<p>surcharge. </p>
+<p>Retourne les flags Qt d'un élément (éditable, activé, sélectionnable). </p>
 <hr  />
- 
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>: index de l'élément dans le modèle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Qt::NoItemFlags si index invalide, sinon ItemIsEditable | ItemIsEnabled | ItemIsSelectable. </dd></dl>
+
 </div>
 </div>
 <a id="ac0cbea5880d75c4b7e15171811a4a4e0" name="ac0cbea5880d75c4b7e15171811a4a4e0"></a>
@@ -711,7 +719,7 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_folderLocation</
 <p>Table of Role names. </p>
 <hr  />
  <dl class="section note"><dt>Note</dt><dd>Implémentation obligatoire.</dd></dl>
-<p>C'est la correspondance entre le role C++ et le nom de la property dans QML. </p>
+<p>C'est la correspondance entre le role C++ et le nom de la property dans QML. </p><dl class="section return"><dt>Renvoie</dt><dd>Table associant chaque valeur de <a class="el" href="#a7c221c2ccd838f3f3d83f11460322e19" title="The Roles enum lists the roles associated to each attribute of a Suggestion.">Roles</a> à son nom exposé en QML. </dd></dl>
 
 </div>
 </div>
@@ -743,10 +751,11 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_folderLocation</
  <dl class="section note"><dt>Note</dt><dd>Implémentation obligatoire. </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>parent of the model </td></tr>
+    <tr><td class="paramname">parent</td><td>: index parent (doit être invalide pour un modèle à plat). </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Nombre de suggestions dans m_suggestions, ou 0 si parent est valide. </dd></dl>
 
 </div>
 </div>

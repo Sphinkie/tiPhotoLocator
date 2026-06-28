@@ -21,7 +21,7 @@ var class_main =
     [ "gpxTab", "class_main.html#a29a03d3ec8a1fbddef839c7287b35754", null ],
     [ "header", "class_main.html#aac07382860c30f1b9b149d4057b20fc4", null ],
     [ "imagePreviewPopup", "class_main.html#a22cce10650b6af0eb10f3e992db538d9", null ],
-    [ "imagettes", "class_main.html#af3dfb2a32b39c98a991299276fc2b67a", null ],
+    [ "imagettes", "class_main.html#a8132dc7bea5f13563619d4c52f969e02", null ],
     [ "line2", "class_main.html#a2c1d358ddafd73b36bfb1f50ba6b9ccd", null ],
     [ "line3", "class_main.html#a424dfda57077b446d80cf22e08f90ceb", null ],
     [ "line4", "class_main.html#a26c5b37c4904dd52c911e44da994b6a5", null ],
