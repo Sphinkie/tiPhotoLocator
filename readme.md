@@ -34,7 +34,7 @@ Developpers can access to [doxygen documentation here](https://sphinkie.github.i
 
 Explanation concerning the compiler configuration are on [this page](./docs/compilation.md).
 
-Access to Tooomm [Download counter](https://tooomm.github.io/github-release-stats/?username=sphinkie&repository=TiPhotoLocator)
+Access to [Tooomm Download counter](https://tooomm.github.io/github-release-stats/?username=sphinkie&repository=TiPhotoLocator)
 
 
 

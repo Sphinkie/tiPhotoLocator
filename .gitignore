@@ -8,5 +8,8 @@ CMakeLists.txt.user
 /installeur/packages/microsoft.vcredist/data/*
 /installeur/*.exe
 /installeur/*.zip
+/installeur/*.pfx
+/installeur/create_certificate.ps1
+/installeur/sign.local.bat
 /.claude
 /Tests
