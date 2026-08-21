@@ -301,7 +301,6 @@ ApplicationWindow {
         /// Barre de boutons
         ToolbarBottom {
             id: bottomToolBar
-            height: 160
             Layout.preferredWidth: 380
         }
 

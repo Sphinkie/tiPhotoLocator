@@ -940,7 +940,12 @@ void PhotoModel::addTestItem()
     bool debugMode = settings.value("debugModeEnabled", false).toBool();
     if (!debugMode) return;
 
+    int row = m_photos.count();
+    beginInsertRows(QModelIndex(), row, row);
     this->m_photos << Photo("IMG_00000001", "qrc:///Pictures/IMG_00000001.png");
+    endInsertRows();
+    emit countChanged();
+
     QVariantMap sampleData;
     sampleData.insert("FileName", "IMG_00000001");
     sampleData.insert("DateTimeOriginal", "2023:08:25 01:03:16");

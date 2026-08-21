@@ -206,7 +206,7 @@
         <translation>GLOBAL</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="332"/>
+        <location filename="../Sources/Qml/Main.qml" line="331"/>
         <source>Write error</source>
         <translation>Write error</translation>
     </message>
@@ -558,12 +558,12 @@
 <context>
     <name>ToolbarBottomForm.ui</name>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="56"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="65"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
     <message numerus="yes">
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="34"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="43"/>
         <source>%n selected photos / </source>
         <comment>0</comment>
         <translation>
@@ -572,33 +572,33 @@
         </translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="44"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="53"/>
         <source>Generate backups</source>
         <translation>Generate backups</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="48"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="57"/>
         <source>Check to keep a copy of the original photos (IMAGENAME.jpg_original)</source>
         <translation>Check to keep a copy of the original photos (IMAGENAME.jpg_original)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="61"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="70"/>
         <source>Save EXIF tags of edited photos</source>
         <translation>Save EXIF tags of edited photos</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="68"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="77"/>
         <source>Quit</source>
         <translation>Quit</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="73"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="82"/>
         <source>Quit application</source>
         <translation>Quit application</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="99"/>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="114"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="113"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="125"/>
         <source>DEBUG: display one line of the model in the console</source>
         <translation>DEBUG: display one line of the model in the console</translation>
     </message>
