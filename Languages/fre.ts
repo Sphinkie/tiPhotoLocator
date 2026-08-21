@@ -164,7 +164,12 @@
         <translation>Impossible de lire l&apos;image: </translation>
     </message>
     <message>
-        <location filename="../Sources/cpp/LandmarkWrapper.cpp" line="116"/>
+        <location filename="../Sources/cpp/LandmarkWrapper.cpp" line="114"/>
+        <source>Groq rate limit reached, please wait a moment before retrying.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Sources/cpp/LandmarkWrapper.cpp" line="122"/>
         <source>Invalid JSON response from API.</source>
         <translation>Réception d&apos;un JSON invalide.</translation>
     </message>

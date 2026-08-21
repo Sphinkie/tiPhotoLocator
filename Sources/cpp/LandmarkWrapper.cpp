@@ -81,9 +81,10 @@ void LandmarkWrapper::identify(const QString& imageUrl, const QString& apiKey)
     messages.append(userMessage);
 
     QJsonObject body;
-    body["model"]      = "meta-llama/llama-4-scout-17b-16e-instruct";
-    body["messages"]   = messages;
-    body["max_tokens"] = 100;
+    body["model"]            = "qwen/qwen3.6-27b";
+    body["messages"]         = messages;
+    body["max_tokens"]       = 150;
+    body["reasoning_effort"] = "none"; // qwen3.6 est un modèle "thinking" par défaut ; on veut une réponse directe
 
     QNetworkRequest request((QUrl(API_URL)));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
@@ -104,14 +105,19 @@ void LandmarkWrapper::onReplyFinished()
     if (!reply) return;
     reply->deleteLater();
 
+    const QByteArray body = reply->readAll();
+    const int httpStatus = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+
     if (reply->error() != QNetworkReply::NoError) {
-        QString body = reply->readAll();
-        qDebug() << "LandmarkWrapper HTTP error body:" << body;
-        emit networkError(reply->errorString() + " | " + body);
+        qDebug() << "LandmarkWrapper body error:" << body;
+        if (httpStatus == 429)
+            emit networkError(tr("Groq rate limit reached, please wait a moment before retrying."));
+        else
+            emit networkError(reply->errorString() + " | " + QString::fromUtf8(body));
         return;
     }
 
-    QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+    QJsonDocument doc = QJsonDocument::fromJson(body);
     if (doc.isNull()) {
         emit networkError(tr("Invalid JSON response from API."));
         return;
@@ -120,6 +126,7 @@ void LandmarkWrapper::onReplyFinished()
     QString content = doc["choices"][0]["message"]["content"].toString().trimmed();
 
     if (content.contains("LOCATION: unidentified", Qt::CaseInsensitive)) {
+        qDebug() << "LandmarkWrapper cannot identify location:" << body;
         emit locationUnknown();
         return;
     }
@@ -128,6 +135,7 @@ void LandmarkWrapper::onReplyFinished()
     QString name;
     double lat = 0.0, lon = 0.0;
     bool okLat = false, okLon = false;
+    qDebug() << "LandmarkWrapper has identified a location:" << body;
 
     for (const QString& line : content.split('\n')) {
         const QString t = line.trimmed();
