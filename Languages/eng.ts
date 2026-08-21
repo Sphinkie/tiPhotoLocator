@@ -582,23 +582,23 @@
         <translation>Check to keep a copy of the original photos (IMAGENAME.jpg_original)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="70"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="71"/>
         <source>Save EXIF tags of edited photos</source>
         <translation>Save EXIF tags of edited photos</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="77"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="78"/>
         <source>Quit</source>
         <translation>Quit</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="82"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="83"/>
         <source>Quit application</source>
         <translation>Quit application</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="113"/>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="125"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="114"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="126"/>
         <source>DEBUG: display one line of the model in the console</source>
         <translation>DEBUG: display one line of the model in the console</translation>
     </message>

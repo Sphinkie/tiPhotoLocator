@@ -65,6 +65,7 @@ Rectangle {
                 text: qsTr("Save")
                 Layout.topMargin: 10
                 highlighted: shouldSave
+                enabled: shouldSave
                 ToolTip {
                     visible: parent.hovered
                     text: qsTr("Save EXIF tags of edited photos")

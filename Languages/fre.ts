@@ -576,13 +576,13 @@
         <translation>Cocher pour faire une sauvegarde des photos originales (IMAGENAME.jpg_original)</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="70"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="71"/>
         <source>Save EXIF tags of edited photos</source>
         <translation>Enregistre les tags EXIF des photos modifiées</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="113"/>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="125"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="114"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="126"/>
         <source>DEBUG: display one line of the model in the console</source>
         <translation>DEBUG: Affiche une ligne du modèle dans la console</translation>
     </message>
@@ -592,12 +592,12 @@
         <translation>Enregistrer</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="77"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="78"/>
         <source>Quit</source>
         <translation>Quitter</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="82"/>
+        <location filename="../Sources/Qml/Vues/ToolbarBottomForm.ui.qml" line="83"/>
         <source>Quit application</source>
         <translation>Quitte l&apos;application</translation>
     </message>
