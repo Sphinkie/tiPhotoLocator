@@ -30,6 +30,7 @@ public:
 
 signals:
     void centerMap(QGeoCoordinate coord);
+    void geocodeError(const QString& message);
 
 public slots:
     void requestReverseGeocode(double lati, double longi);

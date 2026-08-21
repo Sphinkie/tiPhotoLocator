@@ -58,6 +58,7 @@ void GeocodeWrapper::requestReverseGeocode(double lati, double longi)
     if (geoReply->isFinished())
     {
         qWarning() << "requestReverseGeocode" << geoReply->error();
+        emit geocodeError(geoReply->errorString());
         geoReply->deleteLater();
     }
 }
@@ -80,6 +81,7 @@ void GeocodeWrapper::requestCoordinates(const QString& city, const bool home)
     if (geoReply->isFinished())
     {
         qWarning() << "requestCoordinates" << geoReply->error();
+        emit geocodeError(geoReply->errorString());
         geoReply->deleteLater();
     }
 }
@@ -98,7 +100,10 @@ void GeocodeWrapper::geoCodeFinished(QGeoCodeReply* reply)
 {
     qDebug() << "finished with code" << reply->error();
     if (reply->error() != QGeoCodeReply::NoError)
+    {
         qWarning() << reply->errorString();
+        emit geocodeError(reply->errorString());
+    }
     else if (reply->locations().count() >0)
     {
         qDebug() << "locations found" << reply->locations().count() ;

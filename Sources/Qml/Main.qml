@@ -318,10 +318,15 @@ ApplicationWindow {
     }
 
     /** *****************************************************************************
-     * Snackbar pour les erreurs d'écriture ExifTool.
+     * Snackbar pour les erreurs d'écriture ExifTool, de géolocalisation et d'API IA.
      * ******************************************************************************/
     Snackbar {
         id: snackbar
+    }
+
+    /// Affiche un message d'erreur dans le snackbar. Appelable depuis les composants enfants (window.showSnackbar(...)).
+    function showSnackbar(message) {
+        snackbar.show(message);
     }
 
     /// Connexion pour le snackbar
@@ -329,6 +334,14 @@ ApplicationWindow {
         target: _photoModel
         function onWriteErrorOccurred(filename, message) {
             snackbar.show(qsTr("Write error") + " — " + filename + " : " + message);
+        }
+    }
+
+    /// Connexion pour les erreurs de géolocalisation (GeocodeWrapper)
+    Connections {
+        target: _geocodeWrapper
+        function onGeocodeError(message) {
+            snackbar.show(qsTr("Geolocation error") + " — " + message);
         }
     }
 

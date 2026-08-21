@@ -55,6 +55,7 @@ ToolbarMapForm {
 
         function onNetworkError(message) {
             console.error("LandmarkWrapper: " + message);
+            window.showSnackbar(qsTr("AI landmark request failed") + " — " + message);
             bt_ask_ai.enabled = true;
         }
     }

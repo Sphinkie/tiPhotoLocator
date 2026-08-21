@@ -30,17 +30,29 @@ Rectangle {
 
     Timer {
         id: snackbarTimer
-        interval: 5000
+        interval: 8000
         onTriggered: hideAnim.start()
     }
 
-    NumberAnimation { id: showAnim; target: snackbar; property: "opacity"; to: 1; duration: 200 }
-    NumberAnimation { id: hideAnim;  target: snackbar; property: "opacity"; to: 0; duration: 400 }
+    NumberAnimation {
+        id: showAnim
+        target: snackbar
+        property: "opacity"
+        to: 1
+        duration: 200
+    }
+    NumberAnimation {
+        id: hideAnim
+        target: snackbar
+        property: "opacity"
+        to: 0
+        duration: 400
+    }
 
     function show(msg) {
-        snackbarText.text = msg
-        hideAnim.stop()
-        showAnim.start()
-        snackbarTimer.restart()
+        snackbarText.text = msg;
+        hideAnim.stop();
+        showAnim.start();
+        snackbarTimer.restart();
     }
 }

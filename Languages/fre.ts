@@ -205,9 +205,14 @@
         <translation>GLOBAL</translation>
     </message>
     <message>
-        <location filename="../Sources/Qml/Main.qml" line="331"/>
+        <location filename="../Sources/Qml/Main.qml" line="336"/>
         <source>Write error</source>
         <translation>Erreur d&apos;écriture</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Main.qml" line="344"/>
+        <source>Geolocation error</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -679,6 +684,11 @@
         <location filename="../Sources/Qml/Controllers/ToolbarMap.qml" line="52"/>
         <source>Unidentified</source>
         <translation>Emplacement non reconnu</translation>
+    </message>
+    <message>
+        <location filename="../Sources/Qml/Controllers/ToolbarMap.qml" line="58"/>
+        <source>AI landmark request failed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
