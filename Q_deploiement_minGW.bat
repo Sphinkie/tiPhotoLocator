@@ -5,7 +5,7 @@
 
 setlocal 
 set "AppName=TiPhotoLocator"
-set "SourceDir=.\build\Desktop_Qt_6_11_1_llvm_mingw_64_bit-MinSizeRel"
+set "SourceDir=.\build\Desktop_Qt_6_11_1_llvm_mingw_64_bit_MinSizeRel"
 set "TargetDir=.\Installeur\packages\sphinkie.%AppName%\data\"
 REM set TargetDir = .\dist
 
