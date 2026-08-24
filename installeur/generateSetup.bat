@@ -16,7 +16,8 @@ if exist "%~dp0sign.local.bat" call "%~dp0sign.local.bat"
 REM Recherche de signtool.exe dans le PATH puis dans le Windows SDK
 for /f "delims=" %%i in ('where signtool 2^>nul') do set "SignTool=%%i"
 if not defined SignTool (
-    set "SignTool=C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64\signtool.exe"
+	set "SignTool=C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe"
+	if not exist "!SignTool!" set "SignTool=C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64\signtool.exe"
     if not exist "!SignTool!" set "SignTool="
 )
 
