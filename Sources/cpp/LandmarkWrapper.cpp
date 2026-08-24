@@ -19,8 +19,8 @@ static const char* PROMPT =
     "NAME: <name of the place>\n"
     "LAT: <decimal latitude>\n"
     "LON: <decimal longitude>\n\n"
-    "If the photo shows only generic content (countryside, fields, sea, sky, portrait, animals, food, "
-    "everyday scenes, or any unidentifiable place), respond with ONLY:\n"
+    "If the photo shows only generic content (countryside, fields, sea, sky, portrait, animals, food "
+    "or any unidentifiable place), respond with ONLY:\n"
     "LOCATION: unidentified";
 
 /** **********************************************************************************************************
@@ -36,7 +36,7 @@ LandmarkWrapper::LandmarkWrapper(QObject* parent) : QObject(parent) {}
 void LandmarkWrapper::identify(const QString& imageUrl, const QString& apiKey)
 {
     if (apiKey.isEmpty()) {
-        emit networkError(tr("VLM API key is not set."));
+        emit networkError(tr("VisionLanguageModel API key is not set."));
         return;
     }
 
@@ -84,7 +84,7 @@ void LandmarkWrapper::identify(const QString& imageUrl, const QString& apiKey)
     body["model"]            = "qwen/qwen3.6-27b";
     body["messages"]         = messages;
     body["max_tokens"]       = 150;
-    body["reasoning_effort"] = "none"; // qwen3.6 est un modèle "thinking" par défaut ; on veut une réponse directe
+    body["reasoning_effort"] = "none"; // qwen3.6 est un modèle "thinking" par défaut. Or on veut une réponse directe.
 
     QNetworkRequest request((QUrl(API_URL)));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
