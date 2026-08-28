@@ -1,0 +1,20 @@
+Get-AuthenticodeSignature "tiPhotoLocatorSetup.exe" | Format-List Status, StatusMessage, SignerCertificate, TimeStamperCertificate
+
+
+Status                 : UnknownError
+StatusMessage          : Une chaîne de certificats a été traitée mais s’est terminée par un certificat racine qui n’est pas approuvé par le fournisseur d’approbation
+
+SignerCertificate      : [Subject]	CN=Sphinkie
+                         [Issuer]	CN=Sphinkie
+                         [Serial Number]	3C5C1A3F99AFD48E4347A2E3A7AED06F
+                         [Not Before]		07/07/2026 09:04:37
+                         [Not After]		07/07/2031 09:14:37
+                         [Thumbprint]		F72F8A54BE18AFBC2010126B5B4348908E244C9C
+
+TimeStamperCertificate : [Subject]	CN=DigiCert SHA256 RSA4096 Timestamp Responder 2025 1, O="DigiCert, Inc.", C=US
+                         [Issuer]	CN=DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1, O="DigiCert, Inc.", C=US
+                         [Serial Number]	0A80EF184B8DF10582D1C476A7957468
+                         [Not Before]		04/06/2025 02:00:00
+                         [Not After]		04/09/2036 01:59:59
+                         [Thumbprint]		DD6230AC860A2D306BDA38B16879523007FB417E
+
